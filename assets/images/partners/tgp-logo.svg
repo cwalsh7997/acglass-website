@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 100">
   <style>
-    text { font-family: 'Helvetica Neue', Arial, sans-serif; }
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   </style>
   <!-- TGP letters -->
-  <text x="10" y="42" font-size="42" font-weight="800" fill="#003366" letter-spacing="3">TGP</text>
+  <text x="16" y="56" font-size="58" font-weight="900" fill="#003366" letter-spacing="5">TGP</text>
+  <!-- Red accent bar -->
+  <rect x="16" y="66" width="180" height="3" fill="#C41220"/>
   <!-- Tagline -->
-  <rect x="10" y="50" width="130" height="1.5" fill="#C41220"/>
-  <text x="10" y="64" font-size="7" font-weight="500" fill="#666" letter-spacing="2">FIRE-RATED GLASS &amp; FRAMING</text>
+  <text x="16" y="86" font-size="10" font-weight="600" fill="#666" letter-spacing="3">FIRE-RATED GLASS &amp; FRAMING</text>
 </svg>
