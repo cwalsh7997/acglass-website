@@ -5,10 +5,10 @@
   <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="qsi2Km3KPIFuKS6p41yGs8E_HQT152ByMCzyl1hSJ1E" />
+  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ACG partners with industry-leading manufacturers including ESWindows, Eurowall, TGP, Allegion, and Slimpact for premium commercial glazing systems across Florida.">
-  <title>Partners &amp; Manufacturers | American Commercial Glass</title>
+  <meta name="description" content="ACG partners with premium manufacturers including ESWindows, Eurowall, Allegion, Slimpact, and Technical Glass Products for high-performance glazing systems.">
+  <title>Partners | American Commercial Glass</title>
 
   <!-- Favicon Links -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -20,9 +20,9 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Partners & Manufacturers | American Commercial Glass">
-  <meta property="og:description" content="ACG partners with industry-leading manufacturers including ESWindows, Eurowall, TGP, Allegion, and Slimpact for premium commercial glazing systems.">
-  <meta property="og:url" content="https://acglass.ai/manufacturers.html">
+  <meta property="og:title" content="Partners | American Commercial Glass">
+  <meta property="og:description" content="ACG partners with premium manufacturers including ESWindows, Eurowall, Allegion, Slimpact, and Technical Glass Products for high-performance glazing systems.">
+  <meta property="og:url" content="https://acglass.com/manufacturers.html">
 
   <!-- SEO Meta Tags -->
   <meta name="robots" content="index, follow">
@@ -34,327 +34,242 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <style>
-    /* ================================================================
-       PARTNERS PAGE â Premium Redesign Styles
-       ================================================================ */
-
+    /* Partners Page Styles */
     .partners-hero {
-      background: linear-gradient(170deg, var(--navy-950) 0%, var(--navy-900) 40%, var(--navy-700) 100%);
-      padding: 160px 0 100px;
+      padding: 160px 0 80px;
+      background: var(--navy-800);
+      color: var(--white);
+      text-align: center;
+    }
+    .partners-hero .label {
+      color: var(--red-400);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .partners-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .partners-hero p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Logo Grid */
+    .partners-grid {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .partners-grid-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .partner-card {
+      background: var(--gray-25);
+      border: 1px solid var(--gray-100);
+      border-radius: 16px;
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
       position: relative;
       overflow: hidden;
     }
-    .partners-hero::before {
+    .partner-card::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(ellipse 800px 600px at 20% 80%, rgba(196,18,32,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 600px 400px at 80% 20%, rgba(35,87,143,0.1) 0%, transparent 70%);
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--red-600);
+      transform: scaleX(0);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .partners-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 64px 64px;
-      pointer-events: none;
+    .partner-card:hover {
+      border-color: var(--gray-200);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
     }
-    .partners-hero .container { position: relative; z-index: 1; }
-    .partners-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
+    .partner-card:hover::before {
+      transform: scaleX(1);
+    }
+    .partner-card--featured {
+      grid-column: 1 / -1;
+      padding: 72px 64px;
+    }
+    .partner-card--featured .partner-logo-wrap {
+      max-width: 400px;
+      height: 120px;
+    }
+    .partner-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 320px;
+      height: 100px;
+      margin-bottom: 32px;
+    }
+    .partner-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .partner-name {
+      font-size: 1.375rem;
       font-weight: 800;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
+      color: var(--navy-800);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .partner-card--featured .partner-name {
+      font-size: 1.75rem;
+    }
+    .partner-desc {
+      font-size: 0.9375rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      max-width: 460px;
+    }
+    .partner-card--featured .partner-desc {
+      max-width: 600px;
+      font-size: 1rem;
+    }
+    .partner-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      background: var(--navy-50);
+      color: var(--navy-600);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 100px;
       margin-bottom: 24px;
     }
-    .partners-hero .hero-subtitle {
-      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-      color: rgba(255,255,255,0.65);
-      line-height: 1.7;
-      max-width: 640px;
-      margin-bottom: 48px;
+    .partner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--red-600);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: gap 0.3s;
     }
-    .partner-stats { display: flex; gap: 48px; flex-wrap: wrap; }
-    .partner-stat { text-align: left; }
-    .partner-stat-number {
-      font-size: 2.5rem; font-weight: 800; color: var(--white);
-      letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px;
+    .partner-card:hover .partner-cta {
+      gap: 12px;
     }
-    .partner-stat-label {
-      font-size: var(--text-sm); color: rgba(255,255,255,0.45);
-      font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;
+    .partner-cta svg {
+      transition: transform 0.3s;
     }
-    .logo-ticker-section {
-      background: var(--white); border-bottom: 1px solid var(--gray-100);
-      padding: 48px 0; overflow: hidden;
+    .partner-card:hover .partner-cta svg {
+      transform: translateX(2px);
     }
-    .logo-ticker-wrapper { position: relative; overflow: hidden; }
-    .logo-ticker-wrapper::before, .logo-ticker-wrapper::after {
-      content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
-    }
-    .logo-ticker-wrapper::before { left: 0; background: linear-gradient(90deg, var(--white), transparent); }
-    .logo-ticker-wrapper::after { right: 0; background: linear-gradient(-90deg, var(--white), transparent); }
-    .logo-ticker {
-      display: flex; align-items: center; gap: 64px;
-      animation: tickerScroll 40s linear infinite; width: max-content;
-    }
-    @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .partner-filters {
-      background: var(--white); position: sticky; top: 72px; z-index: 90;
-      border-bottom: 1px solid var(--gray-100); transition: box-shadow 0.3s var(--ease-out);
-    }
-    .partner-filters.has-shadow { box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-    .filter-tabs {
-      display: flex; gap: 4px; padding: 16px 0;
-      overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
-    }
-    .filter-tabs::-webkit-scrollbar { display: none; }
-    .filter-tab {
-      padding: 10px 20px; border-radius: 100px; font-size: var(--text-sm);
-      font-weight: 600; color: var(--gray-500); background: transparent;
-      border: 1px solid transparent; cursor: pointer; white-space: nowrap;
-      transition: all 0.25s var(--ease-out); font-family: var(--font-primary);
-    }
-    .filter-tab:hover { color: var(--gray-700); background: var(--gray-50); }
-    .filter-tab.active { color: var(--white); background: var(--navy-900); border-color: var(--navy-900); }
-    .partners-grid-section { background: var(--gray-25); padding: 80px 0 100px; }
-    .section-header { margin-bottom: 48px; }
-    .section-header .label { margin-bottom: 12px; }
-    .section-header h2 {
-      font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800;
-      color: var(--gray-900); letter-spacing: -0.03em; margin-bottom: 12px;
-    }
-    .section-header p { font-size: var(--text-lg); color: var(--gray-500); max-width: 600px; line-height: 1.65; }
-    .partners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; }
-    .partner-card {
-      background: var(--white); border-radius: var(--radius-lg);
-      border: 1px solid var(--gray-100); overflow: hidden;
-      transition: all 0.4s var(--ease-out); display: flex; flex-direction: column;
-    }
-    .partner-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); border-color: transparent; }
-    .partner-card-logo {
-      padding: 40px 32px; display: flex; align-items: center; justify-content: center;
-      background: var(--gray-25); border-bottom: 1px solid var(--gray-100);
-      min-height: 140px; transition: background 0.4s var(--ease-out);
-    }
-    .partner-card:hover .partner-card-logo { background: var(--gray-50); }
-    .partner-card-body { padding: 28px 32px 32px; flex: 1; display: flex; flex-direction: column; }
-    .partner-card-category {
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px;
-    }
-    .partner-card-name {
-      font-size: var(--text-xl); font-weight: 700; color: var(--gray-900);
-      margin-bottom: 12px; letter-spacing: -0.01em;
-    }
-    .partner-card-desc { font-size: var(--text-sm); color: var(--gray-500); line-height: 1.7; margin-bottom: 20px; flex: 1; }
-    .partner-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-    .partner-tag {
-      font-size: 0.7rem; font-weight: 600; padding: 4px 10px;
-      border-radius: 100px; background: var(--gray-50); color: var(--gray-500);
-      border: 1px solid var(--gray-100);
-    }
-    .partner-card-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: var(--text-sm); font-weight: 600; color: var(--accent);
-      text-decoration: none; transition: gap 0.25s var(--ease-out); margin-top: auto;
-    }
-    .partner-card-link:hover { gap: 10px; }
-    .partner-card-link svg { width: 16px; height: 16px; transition: transform 0.25s var(--ease-out); }
-    .partner-card-link:hover svg { transform: translateX(2px); }
-    .featured-partner { padding: 100px 0; background: var(--white); border-bottom: 1px solid var(--gray-100); }
-    .featured-partner:nth-child(even) { background: var(--gray-25); }
-    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .featured-grid.reverse .featured-visual { order: -1; }
-    .featured-visual {
-      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-700) 100%);
-      border-radius: var(--radius-lg); aspect-ratio: 4/3;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      position: relative; overflow: hidden; padding: 48px;
-    }
-    .featured-visual::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-    .featured-visual-badge {
-      position: absolute; bottom: 24px; left: 24px;
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: rgba(255,255,255,0.4); z-index: 1;
-    }
-    .featured-content .label { margin-bottom: 12px; }
-    .featured-content h3 {
-      font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 800;
-      color: var(--gray-900); letter-spacing: -0.03em; margin-bottom: 20px; line-height: 1.15;
-    }
-    .featured-content p { font-size: var(--text-base); color: var(--gray-500); line-height: 1.75; margin-bottom: 16px; }
-    .featured-content .highlight-text { font-weight: 600; color: var(--gray-700); }
-    .featured-products { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 32px; }
-    .featured-product { display: flex; align-items: flex-start; gap: 10px; font-size: var(--text-sm); color: var(--gray-600); line-height: 1.5; }
-    .featured-product svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--accent); margin-top: 1px; }
-    .why-partner { background: var(--navy-900); padding: 100px 0; position: relative; overflow: hidden; }
-    .why-partner::before {
-      content: ''; position: absolute; inset: 0;
-      background-image: radial-gradient(ellipse 600px 400px at 80% 100%, rgba(196,18,32,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .why-partner .container { position: relative; z-index: 1; }
-    .why-partner h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: var(--white);
-      letter-spacing: -0.03em; margin-bottom: 48px; text-align: center;
-    }
-    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .why-card {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius-lg); padding: 36px 32px; transition: all 0.4s var(--ease-out);
-    }
-    .why-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1); transform: translateY(-4px); }
-    .why-card-icon {
-      width: 48px; height: 48px; border-radius: var(--radius-sm);
-      background: rgba(196,18,32,0.12); display: flex; align-items: center;
-      justify-content: center; margin-bottom: 20px;
-    }
-    .why-card-icon svg { width: 24px; height: 24px; color: var(--red-400); }
-    .why-card h4 { font-size: var(--text-lg); font-weight: 700; color: var(--white); margin-bottom: 12px; }
-    .why-card p { font-size: var(--text-sm); color: rgba(255,255,255,0.5); line-height: 1.7; }
-    .logo-text {
-      font-family: var(--font-primary); font-weight: 800; font-size: 1.5rem;
-      color: var(--gray-700); letter-spacing: -0.02em; text-align: center; line-height: 1.2;
-    }
-    .logo-text-sm {
-      font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--gray-400); display: block; margin-top: 4px;
-    }
-    .ticker-logo-text {
-      font-family: var(--font-primary); font-weight: 800; font-size: 1.1rem;
-      color: var(--gray-400); letter-spacing: -0.01em; white-space: nowrap;
-      opacity: 0.4; transition: opacity 0.4s var(--ease-out); flex-shrink: 0; user-select: none;
-    }
-    .ticker-logo-text:hover { opacity: 0.8; }
 
-    /* ---- Project Showcase ---- */
-    .project-showcase { padding: 120px 0; background: var(--gray-25); border-top: 1px solid var(--gray-100); }
-    .project-showcase .section-header { text-align: center; margin-bottom: 56px; }
-    .project-showcase .section-header .label { display: block; margin-bottom: 12px; }
-    .project-showcase .section-header h2 {
-      font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800;
-      color: var(--gray-900); letter-spacing: -0.03em; margin-bottom: 16px;
+    /* Detail Sections */
+    .partner-detail {
+      padding: 100px 0;
     }
-    .project-showcase .section-header p {
-      font-size: var(--text-lg); color: var(--gray-500); max-width: 640px; margin: 0 auto; line-height: 1.7;
+    .partner-detail:nth-child(even) {
+      background: var(--gray-25);
     }
-    .project-gallery {
+    .partner-detail-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
-    .project-gallery-card {
-      position: relative; border-radius: var(--radius-lg); overflow: hidden;
-      aspect-ratio: 4/3; cursor: pointer; group: true;
+    .partner-detail-logo {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 20px;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px;
     }
-    .project-gallery-card.featured-project {
-      grid-column: span 2; grid-row: span 2; aspect-ratio: auto;
+    .partner-detail:nth-child(even) .partner-detail-logo {
+      background: var(--white);
     }
-    .project-gallery-card img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    .partner-detail-logo img {
+      max-width: 85%;
+      max-height: 80%;
+      object-fit: contain;
     }
-    .project-gallery-card:hover img { transform: scale(1.06); }
-    .project-gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(10,26,46,0.85) 100%);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 28px; transition: background 0.4s ease;
+    .partner-detail-content .label {
+      margin-bottom: 12px;
     }
-    .project-gallery-card:hover .project-gallery-overlay {
-      background: linear-gradient(180deg, transparent 20%, rgba(10,26,46,0.92) 100%);
+    .partner-detail-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--navy-800);
+      margin-bottom: 20px;
+      line-height: 1.15;
     }
-    .project-gallery-meta {
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--red-400); margin-bottom: 6px;
+    .partner-detail-content p {
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-bottom: 16px;
     }
-    .project-gallery-overlay h3 {
-      font-size: clamp(1.1rem, 1.5vw, 1.4rem); font-weight: 700;
-      color: var(--white); letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 6px;
+    .partner-detail-content strong {
+      color: var(--navy-700);
     }
-    .project-gallery-overlay p {
-      font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.5;
-      max-height: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease; opacity: 0;
-    }
-    .project-gallery-card:hover .project-gallery-overlay p { max-height: 80px; opacity: 1; }
-    .project-gallery-tags {
-      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
-    }
-    .project-gallery-tag {
-      font-size: 0.65rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.06em; padding: 3px 10px; border-radius: 100px;
-      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .project-view-all {
-      text-align: center; margin-top: 48px;
-    }
-    .project-view-all a {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: var(--text-base); font-weight: 600; color: var(--accent);
-      text-decoration: none; transition: gap 0.3s ease;
-    }
-    .project-view-all a:hover { gap: 14px; }
-    .project-view-all a svg { width: 20px; height: 20px; }
-
-    /* Updated featured-visual with images */
-    .featured-visual img {
-      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .featured-visual:hover img { transform: scale(1.04); }
-    .featured-visual-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(135deg, rgba(10,26,46,0.7) 0%, rgba(10,26,46,0.4) 100%);
+    .partner-detail-content .btn {
+      margin-top: 12px;
     }
 
-    @media (max-width: 1024px) {
-      .partners-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-      .featured-grid { grid-template-columns: 1fr; gap: 48px; }
-      .featured-grid.reverse .featured-visual { order: 0; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 1024px) {
-      .project-gallery { grid-template-columns: 1fr 1fr; }
-      .project-gallery-card.featured-project { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
-    }
+    /* Responsive */
     @media (max-width: 768px) {
-      .partners-hero { padding: 140px 0 72px; }
-      .partner-stats { gap: 32px; }
-      .partner-stat-number { font-size: 2rem; }
-      .partners-grid { grid-template-columns: 1fr; }
-      .project-showcase { padding: 80px 0; }
-      .project-gallery { grid-template-columns: 1fr; }
-      .project-gallery-card.featured-project { grid-column: span 1; aspect-ratio: 4/3; }
-      .why-grid { grid-template-columns: 1fr; }
-      .featured-products { grid-template-columns: 1fr; }
-      .filter-tabs { padding: 12px 0; }
-    }
-    @media (max-width: 480px) {
-      .partner-card-body { padding: 20px 24px 24px; }
-      .partner-card-logo { padding: 32px 24px; min-height: 120px; }
+      .partners-grid-inner {
+        grid-template-columns: 1fr;
+      }
+      .partner-card--featured {
+        grid-column: auto;
+        padding: 48px 32px;
+      }
+      .partner-card {
+        padding: 40px 28px;
+      }
+      .partner-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .partner-detail-logo {
+        aspect-ratio: 16/9;
+        padding: 40px;
+      }
+      .partner-detail-grid--reverse .partner-detail-logo {
+        order: -1;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) - Replace GTM-XXXXXXX with your container ID -->
+  <!-- Google Tag Manager (noscript) -->
   <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
-
+  <!-- Header -->
   <header class="site-header" id="header">
     <div class="header-inner">
-      <a href="index.html" class="header-logo"><img src="assets/images/brand/american_commercial_glass_inc_horizontal_white.png" alt="American Commercial Glass"></a>
+      <a href="index.html" class="header-logo"><img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass"></a>
       <nav class="header-nav">
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -375,354 +290,171 @@
     <a href="contact.html" class="mobile-cta">Request a Bid</a>
   </nav>
 
+  <!-- Hero -->
   <section class="partners-hero">
     <div class="container">
-      <div class="reveal">
-        <span class="label" style="color:var(--red-400);">Our Partners &amp; Manufacturers</span>
-        <h1>Built on the Industry's<br>Strongest Partnerships.</h1>
-        <p class="hero-subtitle">ACG specifies and installs systems from the most respected names in commercial glazing. Every manufacturer we partner with is selected for engineering excellence, proven field performance, and the technical support that serious commercial projects demand.</p>
-        <div class="partner-stats">
-          <div class="partner-stat">
-            <div class="partner-stat-number" data-count="5" data-suffix="">0</div>
-            <div class="partner-stat-label">Manufacturer Partners</div>
-          </div>
-          <div class="partner-stat">
-            <div class="partner-stat-number" data-count="46" data-suffix="+">0+</div>
-            <div class="partner-stat-label">Years Combined Experience</div>
-          </div>
-          <div class="partner-stat">
-            <div class="partner-stat-number" data-count="100" data-suffix="%">0%</div>
-            <div class="partner-stat-label">Factory-Certified Installs</div>
-          </div>
-        </div>
-      </div>
+      <span class="label">Our Manufacturing Partners</span>
+      <h1>Built on the Best Systems<br>in the Industry.</h1>
+      <p>ACG exclusively specifies manufacturers engineered for serious commercial work. Every partnership is selected for performance, reliability, and technical alignment with our standards.</p>
     </div>
   </section>
 
-  <section class="logo-ticker-section">
-    <div class="logo-ticker-wrapper">
-      <div class="logo-ticker">
-        <span class="ticker-logo-text">ESWINDOWS</span>
-        <span class="ticker-logo-text">EUROWALL</span>
-        <span class="ticker-logo-text">TGP</span>
-        <span class="ticker-logo-text">ALLEGION</span>
-        <span class="ticker-logo-text">SLIMPACT</span>
-        <span class="ticker-logo-text">ESWINDOWS</span>
-        <span class="ticker-logo-text">EUROWALL</span>
-        <span class="ticker-logo-text">TGP</span>
-        <span class="ticker-logo-text">ALLEGION</span>
-        <span class="ticker-logo-text">SLIMPACT</span>
-        <span class="ticker-logo-text">ESWINDOWS</span>
-        <span class="ticker-logo-text">EUROWALL</span>
-        <span class="ticker-logo-text">TGP</span>
-        <span class="ticker-logo-text">ALLEGION</span>
-        <span class="ticker-logo-text">SLIMPACT</span>
-        <span class="ticker-logo-text">ESWINDOWS</span>
-        <span class="ticker-logo-text">EUROWALL</span>
-        <span class="ticker-logo-text">TGP</span>
-        <span class="ticker-logo-text">ALLEGION</span>
-        <span class="ticker-logo-text">SLIMPACT</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="partner-filters" id="partner-filters">
+  <!-- Partner Logo Grid -->
+  <section class="partners-grid">
     <div class="container">
-      <div class="filter-tabs">
-        <button class="filter-tab active" data-filter="all">All Partners</button>
-        <button class="filter-tab" data-filter="impact">Impact-Rated Systems</button>
-        <button class="filter-tab" data-filter="curtainwall">Curtainwall &amp; Window Wall</button>
-        <button class="filter-tab" data-filter="entrances">Entrances &amp; Access Control</button>
-        <button class="filter-tab" data-filter="specialty">Fire-Rated &amp; Specialty</button>
-      </div>
-    </div>
-  </div>
+      <div class="partners-grid-inner">
 
-  <section class="partners-grid-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="label">Strategic Partnerships</span>
-        <h2>The Systems Behind Our Work</h2>
-        <p>Every manufacturer in our network has been vetted for quality, reliability, and the engineering support that commercial projects demand.</p>
-      </div>
-
-      <div class="partners-grid">
-        <div class="partner-card reveal" data-category="impact">
-          <div class="partner-card-logo"><div class="logo-text" style="color:var(--navy-700);">ES<span style="font-weight:400;">WINDOWS</span></div></div>
-          <div class="partner-card-body">
-            <div class="partner-card-category">Impact-Rated Systems</div>
-            <div class="partner-card-name">ESWindows</div>
-            <p class="partner-card-desc">Impact-rated window and door systems engineered to Florida Building Code requirements with zero compromise. ESWindows' product testing and HVHZ approvals represent the performance standard for coastal projects where hurricane protection meets design intent.</p>
-            <div class="partner-card-tags"><span class="partner-tag">Impact Windows</span><span class="partner-tag">Impact Doors</span><span class="partner-tag">HVHZ Rated</span></div>
-            <a href="contact.html" class="partner-card-link">Specify ESWindows <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <!-- ESWindows - Featured -->
+        <a href="#eswindows" class="partner-card partner-card--featured reveal">
+          <span class="partner-tag">Impact-Rated Systems</span>
+          <div class="partner-logo-wrap">
+            <img src="assets/images/partners/eswindows-logo.svg" alt="ESWindows">
           </div>
-        </div>
+          <div class="partner-name">ESWindows</div>
+          <p class="partner-desc">Impact-rated window and door systems engineered to Florida Building Code with no compromise. The performance standard for coastal projects where hurricane protection meets design intent.</p>
+          <span class="partner-cta">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
 
-        <div class="partner-card reveal" data-category="curtainwall">
-          <div class="partner-card-logo"><div class="logo-text">EUROWALL</div></div>
-          <div class="partner-card-body">
-            <div class="partner-card-category">Window Wall &amp; Curtainwall</div>
-            <div class="partner-card-name">Eurowall</div>
-            <p class="partner-card-desc">European precision engineering applied to window wall and curtainwall systems. Eurowall's thermal performance, tight envelope integration, and manufacturing tolerances set the benchmark for complex commercial facades demanding structural integrity.</p>
-            <div class="partner-card-tags"><span class="partner-tag">Window Wall</span><span class="partner-tag">Curtainwall</span><span class="partner-tag">Thermal Systems</span></div>
-            <a href="contact.html" class="partner-card-link">Specify Eurowall <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <!-- Eurowall -->
+        <a href="#eurowall" class="partner-card reveal">
+          <span class="partner-tag">Curtainwall & Window Wall</span>
+          <div class="partner-logo-wrap">
+            <img src="assets/images/partners/eurowall-logo.svg" alt="Eurowall">
           </div>
-        </div>
+          <div class="partner-name">Eurowall</div>
+          <p class="partner-desc">European precision engineering for window wall and curtainwall systems. The benchmark for complex commercial facades.</p>
+          <span class="partner-cta">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
 
-        <div class="partner-card reveal" data-category="entrances">
-          <div class="partner-card-logo"><div class="logo-text" style="color:#E31B23;">allegion</div></div>
-          <div class="partner-card-body">
-            <div class="partner-card-category">Entrances &amp; Access Control</div>
-            <div class="partner-card-name">Allegion</div>
-            <p class="partner-card-desc">Global leader in automatic entrance and access control systems. Allegion's portfolio spans sliding, swinging, and revolving doors engineered for durability, ADA compliance, and seamless integration with building automation systems.</p>
-            <div class="partner-card-tags"><span class="partner-tag">Automatic Entrances</span><span class="partner-tag">Access Control</span><span class="partner-tag">ADA</span></div>
-            <a href="contact.html" class="partner-card-link">Specify Allegion <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <!-- Allegion -->
+        <a href="#allegion" class="partner-card reveal">
+          <span class="partner-tag">Automatic Entrances</span>
+          <div class="partner-logo-wrap">
+            <img src="assets/images/partners/allegion-logo.svg" alt="Allegion">
           </div>
-        </div>
+          <div class="partner-name">Allegion</div>
+          <p class="partner-desc">Global leader in automatic entrance and access control systems. Durability, ADA compliance, and seamless building integration.</p>
+          <span class="partner-cta">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
 
-        <div class="partner-card reveal" data-category="impact">
-          <div class="partner-card-logo"><div class="logo-text">SLIM<span style="font-weight:400;">PACT</span></div></div>
-          <div class="partner-card-body">
-            <div class="partner-card-category">Impact-Rated Systems</div>
-            <div class="partner-card-name">Slimpact</div>
-            <p class="partner-card-desc">Ultra-slim profile impact-rated systems delivering maximum hurricane resistance without visual bulk. Slimpact proves impact protection and contemporary architectural design are compatible requirements, not competing compromises.</p>
-            <div class="partner-card-tags"><span class="partner-tag">Slim Impact</span><span class="partner-tag">Hurricane Rated</span><span class="partner-tag">Design-Forward</span></div>
-            <a href="contact.html" class="partner-card-link">Specify Slimpact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <!-- Slimpact -->
+        <a href="#slimpact" class="partner-card reveal">
+          <span class="partner-tag">Slim-Profile Impact</span>
+          <div class="partner-logo-wrap">
+            <img src="assets/images/partners/slimpact-logo.svg" alt="Slimpact">
           </div>
-        </div>
+          <div class="partner-name">Slimpact</div>
+          <p class="partner-desc">Ultra-slim profile impact-rated systems. Maximum hurricane resistance without visual bulk or design compromise.</p>
+          <span class="partner-cta">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
 
-        <div class="partner-card reveal" data-category="specialty">
-          <div class="partner-card-logo"><div class="logo-text" style="color:#003087;">TGP<span class="logo-text-sm">Technical Glass Products</span></div></div>
-          <div class="partner-card-body">
-            <div class="partner-card-category">Specialty Systems</div>
-            <div class="partner-card-name">Technical Glass Products</div>
-            <p class="partner-card-desc">Industry standard for fire-rated glazing assemblies. TGP's tested and labeled systems set the performance benchmark for transparent fire protection, from 20-minute to 2-hour ratings across fire-protective and fire-resistive applications.</p>
-            <div class="partner-card-tags"><span class="partner-tag">Fire-Rated Glass</span><span class="partner-tag">Fire Frames</span><span class="partner-tag">Code Compliance</span></div>
-            <a href="contact.html" class="partner-card-link">Specify TGP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <!-- TGP -->
+        <a href="#tgp" class="partner-card reveal">
+          <span class="partner-tag">Fire-Rated Glazing</span>
+          <div class="partner-logo-wrap">
+            <img src="assets/images/partners/tgp-logo.svg" alt="Technical Glass Products">
           </div>
-        </div>
+          <div class="partner-name">Technical Glass Products</div>
+          <p class="partner-desc">Industry standard for fire-rated glazing assemblies. Tested and labeled systems from 20-minute to 2-hour ratings.</p>
+          <span class="partner-cta">Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
 
       </div>
     </div>
   </section>
 
-  <!-- Project Showcase -->
-  <section class="project-showcase">
+  <!-- Detail Sections -->
+
+  <!-- ESWindows Detail -->
+  <section class="partner-detail" id="eswindows">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="label">Our Work</span>
-        <h2>Projects Built With Our Partners</h2>
-        <p>Real-world results across Florida's most demanding commercial projects â powered by the manufacturer partnerships that make precision glazing possible.</p>
-      </div>
-
-      <div class="project-gallery">
-        <!-- Featured: Atlantic Fields Clubhouse -->
-        <div class="project-gallery-card featured-project reveal">
-          <img src="assets/images/projects/padel-club.jpg" alt="Atlantic Fields Clubhouse â commercial curtainwall and storefront by ACG" loading="lazy">
-          <div class="project-gallery-overlay">
-            <span class="project-gallery-meta">Commercial &bull; Curtainwall &bull; Storefront</span>
-            <h3>Atlantic Fields Clubhouse</h3>
-            <p>Full-envelope glazing featuring curtainwall and custom storefront â engineered for Florida's coastal conditions.</p>
-            <div class="project-gallery-tags">
-              <span class="project-gallery-tag">Eurowall</span>
-              <span class="project-gallery-tag">ESWindows</span>
-            </div>
-          </div>
+      <div class="partner-detail-grid reveal">
+        <div class="partner-detail-logo">
+          <img src="assets/images/partners/eswindows-logo.svg" alt="ESWindows Logo">
         </div>
-
-        <!-- Ocean Prime -->
-        <div class="project-gallery-card reveal">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&auto=format" alt="Ocean Prime â hospitality storefront and curtainwall by ACG" loading="lazy">
-          <div class="project-gallery-overlay">
-            <span class="project-gallery-meta">Hospitality &bull; Storefront</span>
-            <h3>Ocean Prime</h3>
-            <p>Premium restaurant facade with floor-to-ceiling glass and custom entrance systems.</p>
-            <div class="project-gallery-tags">
-              <span class="project-gallery-tag">Allegion</span>
-              <span class="project-gallery-tag">ESWindows</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Eau Palm Beach Resort -->
-        <div class="project-gallery-card reveal">
-          <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80&auto=format" alt="Eau Palm Beach Resort â impact-rated systems by ACG" loading="lazy">
-          <div class="project-gallery-overlay">
-            <span class="project-gallery-meta">Hospitality &bull; Impact Systems</span>
-            <h3>Eau Palm Beach Resort</h3>
-            <p>Full resort renovation with HVHZ-rated impact windows and sliding door systems.</p>
-            <div class="project-gallery-tags">
-              <span class="project-gallery-tag">ESWindows</span>
-              <span class="project-gallery-tag">Slimpact</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Savannas Ridge -->
-        <div class="project-gallery-card reveal">
-          <img src="assets/images/projects/savannas-ridge.jpg" alt="Savannas Ridge Retail Center â storefront by ACG" loading="lazy">
-          <div class="project-gallery-overlay">
-            <span class="project-gallery-meta">Retail &bull; Storefront</span>
-            <h3>Savannas Ridge Retail Center</h3>
-            <p>Multi-tenant retail storefront with Eurowall framing and high-performance insulated glass.</p>
-            <div class="project-gallery-tags">
-              <span class="project-gallery-tag">Eurowall</span>
-              <span class="project-gallery-tag">TGP</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bobcat Dealership -->
-        <div class="project-gallery-card reveal">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format" alt="Bobcat Dealership â industrial storefront by ACG" loading="lazy">
-          <div class="project-gallery-overlay">
-            <span class="project-gallery-meta">Industrial &bull; Storefront</span>
-            <h3>Bobcat Dealership</h3>
-            <p>Heavy commercial storefront designed for high-traffic industrial showroom use.</p>
-            <div class="project-gallery-tags">
-              <span class="project-gallery-tag">Allegion</span>
-              <span class="project-gallery-tag">Slimpact</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bagel Brothers -->
-        <div class="project-gallery-card reveal">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&auto=format" alt="Bagel Brothers â retail storefront by ACG" loading="lazy">
-          <div class="project-gallery-overlay">
-            <span class="project-gallery-meta">Retail &bull; Storefront</span>
-            <h3>Bagel Brothers</h3>
-            <p>Modern retail storefront with frameless glass entries and automatic door systems.</p>
-            <div class="project-gallery-tags">
-              <span class="project-gallery-tag">Allegion</span>
-              <span class="project-gallery-tag">TGP</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-view-all">
-        <a href="portfolio.html">View Full Project Portfolio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Partners Deep Dives -->
-  <section class="featured-partner" id="eurowall">
-    <div class="container">
-      <div class="featured-grid reverse reveal">
-        <div class="featured-content">
-          <span class="label">Featured Partner</span>
-          <h3>Eurowall â European Engineering, Florida Performance</h3>
-          <p>European precision engineering applied to window wall and curtainwall systems. Eurowall's thermal performance, tight envelope integration, and manufacturing tolerances set the benchmark for complex commercial facades demanding structural integrity.</p>
-          <p><span class="highlight-text">Why ACG specifies Eurowall:</span> Their window wall and curtainwall systems deliver exceptional thermal performance with tight manufacturing tolerances that eliminate field adjustments. Eurowall's engineering team works directly with ACG to solve complex facade challenges, ensuring every installation achieves the design intent.</p>
-          <div class="featured-products">
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Window Wall Systems</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Curtainwall Systems</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Thermal Break Technology</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>European Precision</span></div>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Discuss Your Project</a>
-        </div>
-        <div class="featured-visual">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format" alt="Eurowall window wall system on a modern commercial building" loading="lazy">
-          <div class="featured-visual-overlay"></div>
-          <div class="logo-text" style="color:white;font-size:2.5rem;position:relative;z-index:2;">EUROWALL</div>
-          <div class="featured-visual-badge">Window Wall &amp; Curtainwall</div>
+        <div class="partner-detail-content">
+          <span class="label">Partner</span>
+          <h2>ESWindows</h2>
+          <p>Impact-rated window and door systems engineered to Florida Building Code requirements with no compromise. ESWindows' product testing and HVHZ approvals represent the performance standard for coastal projects where hurricane protection meets design intent.</p>
+          <p><strong>Why ACG specifies them:</strong> ESWindows delivers industry-leading impact ratings verified against Florida's strictest code requirements. Their manufacturing consistency, documented testing protocols, and responsive engineering support align with ACG's zero-tolerance approach.</p>
+          <p><strong>Typical applications:</strong> Multifamily coastal residential, mixed-use commercial in high-wind zones, premium hospitality with HVHZ requirements, any envelope where impact rating is code-mandated or design-critical.</p>
+          <a href="contact.html" class="btn btn--primary">Specify ESWindows</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="featured-partner" id="tgp">
+  <!-- Eurowall Detail -->
+  <section class="partner-detail" id="eurowall">
     <div class="container">
-      <div class="featured-grid reveal">
-        <div class="featured-content">
-          <span class="label">Featured Partner</span>
-          <h3>TGP â The Standard in Fire-Rated Glazing</h3>
-          <p>Technical Glass Products sets the industry standard for fire-rated glazing assemblies. TGP's tested and labeled systems provide transparent fire protection from 20-minute to 2-hour ratings, meeting the strictest building code requirements without compromising on design.</p>
-          <p><span class="highlight-text">Why ACG specifies TGP:</span> When fire-rated glazing is required, TGP delivers the most comprehensive range of tested and labeled assemblies in the industry. Their engineering support team provides detailed specifications and shop drawings, ensuring ACG's installations pass inspection on the first attempt.</p>
-          <div class="featured-products">
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Fire-Rated Glass</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Fire-Rated Frames</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>20-Min to 2-Hour Ratings</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Code Compliance</span></div>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Discuss Your Project</a>
+      <div class="partner-detail-grid partner-detail-grid--reverse reveal">
+        <div class="partner-detail-content">
+          <span class="label">Partner</span>
+          <h2>Eurowall</h2>
+          <p>European precision engineering applied to window wall and curtainwall systems. Eurowall's thermal performance, tight envelope integration, and manufacturing tolerances set the benchmark for complex commercial facades demanding structural integrity and architectural clarity.</p>
+          <p><strong>Why ACG specifies them:</strong> Eurowall systems are engineered for high-complexity projects where thermal performance and design precision are non-negotiable. ACG values their engineering rigor, product modularity, and ability to solve complex envelope integration challenges.</p>
+          <p><strong>Typical applications:</strong> High-rise residential towers, commercial office with stringent thermal codes, premium mixed-use developments, hospitality where envelope performance and aesthetics demand excellence.</p>
+          <a href="contact.html" class="btn btn--primary">Specify Eurowall</a>
         </div>
-        <div class="featured-visual">
-          <img src="https://images.unsplash.com/photo-1577985043696-8bd54d9c4f57?w=800&q=80&auto=format" alt="TGP fire-rated glazing system in a commercial building" loading="lazy">
-          <div class="featured-visual-overlay"></div>
-          <div class="logo-text" style="color:white;font-size:2.5rem;position:relative;z-index:2;">TGP</div>
-          <div class="featured-visual-badge">Fire-Rated Glazing</div>
+        <div class="partner-detail-logo">
+          <img src="assets/images/partners/eurowall-logo.svg" alt="Eurowall Logo">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="featured-partner" id="eswindows">
+  <!-- Allegion Detail -->
+  <section class="partner-detail" id="allegion">
     <div class="container">
-      <div class="featured-grid reverse reveal">
-        <div class="featured-content">
-          <span class="label">Featured Partner</span>
-          <h3>ESWindows â Hurricane Protection Without Compromise</h3>
-          <p>Impact-rated window and door systems engineered specifically for Florida's demanding building code requirements. ESWindows' HVHZ approvals and consistent manufacturing quality make them the standard for coastal commercial projects.</p>
-          <p><span class="highlight-text">Why ACG specifies ESWindows:</span> When a project's hurricane protection is non-negotiable, ESWindows delivers industry-leading impact ratings verified against Florida's strictest code requirements. Their documented testing protocols and responsive engineering support align perfectly with ACG's zero-tolerance approach to envelope performance.</p>
-          <div class="featured-products">
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Impact-Rated Windows</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Impact Door Systems</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>HVHZ Certified</span></div>
-            <div class="featured-product"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>FBC Approved</span></div>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Discuss Your Project</a>
+      <div class="partner-detail-grid reveal">
+        <div class="partner-detail-logo">
+          <img src="assets/images/partners/allegion-logo.svg" alt="Allegion Logo">
         </div>
-        <div class="featured-visual" style="background:linear-gradient(135deg,#1a3a5c 0%,#0a2540 100%);">
-          <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=80&auto=format" alt="Impact-rated window systems on a Florida coastal building" loading="lazy">
-          <div class="featured-visual-overlay"></div>
-          <div class="logo-text" style="color:white;font-size:2.2rem;position:relative;z-index:2;">ES<span style="font-weight:400;">WINDOWS</span></div>
-          <div class="featured-visual-badge">Impact-Rated Systems</div>
+        <div class="partner-detail-content">
+          <span class="label">Partner</span>
+          <h2>Allegion</h2>
+          <p>Global leader in automatic entrance and access control systems. Allegion's portfolio spans sliding, swinging, and revolving doors engineered for durability, ADA compliance, and seamless integration with building access and fire safety systems.</p>
+          <p><strong>Why ACG specifies them:</strong> Allegion's comprehensive product range and access control integration capabilities solve complex entry requirements across institutional, healthcare, and hospitality sectors. ACG values their reliability and parts availability across the Southeast.</p>
+          <p><strong>Typical applications:</strong> Commercial building lobbies, healthcare facility entrances, hospitality check-in, institutional main entries, any project requiring ADA compliance and access control system integration.</p>
+          <a href="contact.html" class="btn btn--primary">Specify Allegion</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why We Partner -->
-  <section class="why-partner">
+  <!-- Slimpact Detail -->
+  <section class="partner-detail" id="slimpact">
     <div class="container">
-      <div class="reveal">
-        <span class="label" style="color:var(--red-400);text-align:center;display:block;">Our Approach</span>
-        <h2>Why Our Partnerships Matter</h2>
+      <div class="partner-detail-grid partner-detail-grid--reverse reveal">
+        <div class="partner-detail-content">
+          <span class="label">Partner</span>
+          <h2>Slimpact</h2>
+          <p>Ultra-slim profile impact-rated systems engineered to deliver maximum hurricane resistance without visual bulk. Slimpact proves impact protection and contemporary architectural design are compatible requirements, not competing compromises.</p>
+          <p><strong>Why ACG specifies them:</strong> Premium projects increasingly demand impact rating without sacrificing design language. Slimpact eliminates that conflict. ACG specifies Slimpact when projects require Florida's strictest wind and debris ratings while maintaining clean, modern sightlines.</p>
+          <p><strong>Typical applications:</strong> High-end residential design projects, premium hospitality properties, coastal commercial where impact protection cannot compromise architecture, mixed-use developments balancing code compliance and design intent.</p>
+          <a href="contact.html" class="btn btn--primary">Specify Slimpact</a>
+        </div>
+        <div class="partner-detail-logo">
+          <img src="assets/images/partners/slimpact-logo.svg" alt="Slimpact Logo">
+        </div>
       </div>
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h4>Factory-Certified Installation</h4>
-          <p>ACG's field crews maintain active factory certifications with every manufacturer we specify. This means your warranty is valid, your installation meets spec, and there are no gaps between what's engineered and what's built.</p>
+    </div>
+  </section>
+
+  <!-- TGP Detail -->
+  <section class="partner-detail" id="tgp">
+    <div class="container">
+      <div class="partner-detail-grid reveal">
+        <div class="partner-detail-logo">
+          <img src="assets/images/partners/tgp-logo.svg" alt="Technical Glass Products Logo">
         </div>
-        <div class="why-card reveal">
-          <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-          <h4>Direct Engineering Support</h4>
-          <p>Our manufacturer relationships aren't transactional â they're collaborative. ACG works directly with each partner's engineering teams to resolve design challenges, optimize specifications, and solve problems before they reach the field.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <h4>Supply Chain Reliability</h4>
-          <p>Strategic partnerships with major manufacturers mean priority access to materials, accurate lead time commitments, and the purchasing power to keep your project on schedule â even when markets tighten.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-          <h4>Code Compliance Confidence</h4>
-          <p>Every system ACG installs comes with complete documentation â test reports, NOA approvals, FL product approvals, and fire ratings. Our manufacturer partnerships ensure your project passes inspection the first time.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-          <h4>Competitive Pricing</h4>
-          <p>Volume relationships with the industry's top manufacturers translate directly to competitive pricing for your project. ACG's purchasing power means you get premium systems without premium markups.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="why-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h4>Full Warranty Protection</h4>
-          <p>Factory-certified installation by ACG activates the full manufacturer warranty on every system we install. Your investment is protected by both the manufacturer's product warranty and ACG's installation workmanship guarantee.</p>
+        <div class="partner-detail-content">
+          <span class="label">Partner</span>
+          <h2>Technical Glass Products</h2>
+          <p>Industry standard for fire-rated glazing assemblies. TGP's tested and labeled systems set the performance benchmark for transparent fire protection, from 20-minute to 2-hour ratings across fire-protective and fire-resistive applications.</p>
+          <p><strong>Why ACG specifies them:</strong> Fire-rated glazing represents the most code-sensitive scope in commercial construction. TGP's rigorous testing protocols, comprehensive labeling, and documentation provide confidence across architects, building officials, and insurers.</p>
+          <p><strong>Typical applications:</strong> Interior corridor glazing, stairwell enclosures, exterior fire-rated walls, institutional facilities, healthcare buildings, any project where building code mandates transparent fire protection.</p>
+          <a href="contact.html" class="btn btn--primary">Specify TGP</a>
         </div>
       </div>
     </div>
@@ -732,55 +464,79 @@
   <section class="section section--darker cta-block">
     <div class="container reveal">
       <h2>Need System Selection Guidance?</h2>
-      <p>ACG's manufacturer partnerships mean your project gets the right system â specified correctly, sourced efficiently, and installed to factory standards. Let's find the solution for your scope.</p>
+      <p>ACG partners with manufacturers engineered for your project's requirements. Let's specify the system that solves your scope.</p>
       <div class="cta-block-actions">
         <a href="contact.html" class="btn btn--primary btn--lg">Request a Bid</a>
-        <a href="services.html" class="btn btn--outline btn--lgÝ[OHÜ\XÛÛÜØJMKMKMKNØÛÛÜ\K]Ú]JNÈY]ÈÝ\Ù\XÙ\ÏØOÙ]Ù]ÜÙXÝ[ÛKKHÛÝ\KOÛÝ\Û\ÜÏHÚ]KYÛÝ\]Û\ÜÏHÛÛZ[\]Û\ÜÏHÛÝ\YÜY]Û\ÜÏHÛÝ\X[[YÈÜÏH\ÜÙ]ËÚ[XYÙ\ËØ[Ø[Y\XØ[ØÛÛ[Y\ÚX[ÙÛ\Ü×Ú[×ÚÜ^Û[ÝÚ]KÈ[H[Y\XØ[ÛÛ[Y\ÚX[Û\ÜÈÛ\ÜÏHÛÝ\X[[ÙÛÈ[\Ù\XÙHÛÛ[Y\ÚX[Û^[ÈÛÛXÝÜÜXÚX[^[È[ÝÜYÛÝ\Z[Ø[Ú[ÝÈØ[[\XÝ\]YÞ\Ý[\Ë[]]ÛX]XÈ[[Ù\ÈXÜÜÜÈÜYH[HÛÝ]X\ÝÜ]Û\ÜÏHÛÝ\XÛÛXÝHYH[ÌMÍÌÍÌLHÝÈÚYHMZYÚHMY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYH]HLMLØLKLNNKÎHNKÎHKNËLËÈNKHNKHKMMNKÎHNKÎHKLËËNÐLMLHØLLKÌLLÈHKKHLSHKLXLMMKËLKØLLLKKHLLKÐLLMLÏÜÝÏÍÌHMÍÌLOØOÜ[Ý[OH\Ü^N[[KY^Ø[YÛZ][\ÎÙ[\ÙØ\ÈÙ\Ý[HXXÚ	[È\\È	[È[\OÜÜ[HYHXZ[Î[ÐXÙÛ\ÜËÛÛHÝÈÚYHMZYÚHMY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYH]HMMÌKHHLÌKKKHLËLKHLKKLLÌLKKKLLÏÛ[[HÚ[ÏHLLÈÏÜÝÏ[ÐXÙÛ\ÜËÛÛOØOÙ]Ù]]Û\ÜÏHÛÝ\XÛÛÛÛ\[OÚHYHXÝ][XÝ]PÑÏØOHYHÙ\XÙ\Ë[Ù\XÙ\ÏØOHYHÜÛ[Ë[ÚXÝÏØOHYHX[YXÝ\\Ë[\\ÏØOHYHÛÛXÝ[ÛÛXÝØOÙ]]Û\ÜÏHÛÝ\XÛÛÙ\XÙ\ÏÚHYHÙ\XÙ\Ë[ÜÝÜYÛÝÜYÛØOHYHÙ\XÙ\Ë[ØÝ\Z[Ø[Ý\Z[Ø[ØOHYHÙ\XÙ\Ë[ÝÚ[ÝÝØ[Ú[ÝÈØ[ØOHYHÙ\XÙ\Ë[Ú[\XÝ[\XÝÚ[ÝÜÏØOHYHÙ\XÙ\Ë[Ø]]ÛX]XÈ]]ÛX]XÈ[[Ù\ÏØOHYHÙ\XÙ\Ë[Ú[\[Ü[\[ÜÝÜYÛØOHYHÙ\XÙ\Ë[Ù\K\]Y\KT]YØOÙ]]Û\ÜÏHÛÝ\XÛÛ\ÛÝ\Ù\ÏÚHYHÛÛXÝ[\]Y\ÝHYØOHYHÈØ\X[]Y\ÈÝ][Y[ØOHYHÈØ\Y\ÏØOHYHX[YXÝ\\Ë[\\ÏØOÙ]Ù]]ÛUÜÏHÛÝ\XÝÛHÜ[ÛÜNÈ[Y\XØ[ÛÛ[Y\ÚX[Û\ÜË[Ë[YÚÈ\Ù\YÜÜ[]Û\ÜÏHÛÝ\XÝÛK[[ÜÈHYHÈ]XÞHÛXÞOØOHYHÈ\\ÈÙ\ÙOØOÙ]Ù]Ù]ÙÛÝ\ØÜ\ÜÏH\ÜÙ]ËÚËÛXZ[ÈÜØÜ\ØÜ\ËÈÛÝ[\[[X][ÛÜ\ÈÝ]ÂØÝ[Y[]Y\TÙ[XÝÜ[
-	Ë\\\Ý][[X\Ù]KXÛÝ[IÊKÜXXÚ
-[OÂÛÛÝØÙ\\H]È[\ÙXÝ[ÛØÙ\\
-[Y\ÊHOÂ[Y\ËÜXXÚ
-[HOÂY
-[K\Ò[\ÙXÝ[ÊHÂÛÛÝ\Ù]H\ÙR[
-[]\Ù]ÛÝ[L
-NÂÛÛÝÝY^H[]\Ù]ÝY^	ÉÎÂÛÛÝ\][ÛHÂÛÛÝÝ\[YHH\ÜX[ÙKÝÊ
-NÂÛÛÝ[[X]HH
-Ý\[[YJHOÂÛÛÝ[\ÙYHÝ\[[YHHÝ\[YNÂÛÛÝÙÜ\ÜÈHX]Z[[\ÙYÈ\][ÛJNÂÛÛÝX\ÙYHHHX]ÝÊHHÙÜ\ÜË
-NÂ[^ÛÛ[HX]Ý[
-\Ù]
-X\ÙY
-H
-ÈÝY^ÂY
-ÙÜ\ÜÈJH\]Y\Ý[[X][Û[YJ[[X]JNÂ[ÙH[^ÛÛ[H\Ù]
-ÈÝY^ÂNÂ\]Y\Ý[[X][Û[YJ[[X]JNÂØÙ\\[ØÙ\J[
-NÂBJNÂKÈ\ÚÛHJNÂØÙ\\ØÙ\J[
-NÂJNÂËÈ[\XÂÛÛÝ[\XÈHØÝ[Y[]Y\TÙ[XÝÜ[
-	Ë[\]XÊNÂÛÛÝ\\Ø\ÈHØÝ[Y[]Y\TÙ[XÝÜ[
-	Ë\\XØ\	ÊNÂ[\XËÜXXÚ
-XOÂXY][\Ý[\	ØÛXÚÉË
+      </div>
+    </div>
+  </section>
 
-HOÂÛÛÝ[\HX]\Ù][\Â[\XËÜXXÚ
-OÛ\ÜÓ\Ý[[ÝJ	ØXÝ]IÊJNÂXÛ\ÜÓ\ÝY
-	ØXÝ]IÊNÂ][^HHÂ\\Ø\ËÜXXÚ
-Ø\OÂÛÛÝØ]YÛÜY\ÈH
-Ø\]\Ù]Ø]YÛÜH	ÉÊKÜ]
-	Ë	ÊNÂÛÛÝX]ÚH[\OOH	Ø[	ÈØ]YÛÜY\Ë[ÛY\Ê[\NÂY
-X]Ú
-HÂØ\Ý[K\Ü^HH	ÉÎÂØ\Ý[KÜXÚ]HH	Ì	ÎÂØ\Ý[K[ÙÜHH	Ý[Û]VJL
-IÎÂÙ][Y[Ý]
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass" class="footer-brand-logo">
+          <p>Full-service commercial glazing contractor specializing in storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.</p>
+          <div class="footer-contact">
+            <a href="tel:+17724867711"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>(772) 486-7711</a>
+            <span style="display:inline-flex;align-items:center;gap:8px;">West Palm Beach &bull; Naples &bull; Tampa</span>
+            <a href="mailto:info@acglass.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@acglass.com</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About ACG</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="portfolio.html">Projects</a><a href="manufacturers.html">Partners</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Services</h4><a href="commercial-storefront-systems.html">Storefront</a><a href="curtainwall-installation.html">Curtainwall</a><a href="window-wall-systems.html">Window Wall</a><a href="impact-windows-doors-florida.html">Impact Windows</a><a href="automatic-entrance-systems.html">Automatic Entrances</a><a href="interior-glass-partitions.html">Interior Glass</a><a href="fire-rated-glass-systems.html">Fire-Rated</a></div>
+        <div class="footer-col"><h4>Markets</h4><a href="multifamily-glazing.html">Multifamily</a><a href="hospitality-hotel-glazing.html">Hospitality</a><a href="retail-storefront-glazing.html">Retail</a><a href="commercial-glazing-miami.html">Miami</a><a href="commercial-glazing-naples.html">Naples</a><a href="commercial-glazing-orlando.html">Orlando</a><a href="commercial-glazing-tampa.html">Tampa</a><a href="commercial-glazing-south-florida.html">South Florida</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 American Commercial Glass, Inc. All rights reserved.</span>
+        <div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
 
+  <script src="assets/js/main.js"></script>
 
-HOÂØ\Ý[K[Ú][ÛH	ÛÜXÚ]HÈÝXXËX^Y\MKËJK[ÙÜHÈÝXXËX^Y\MKËJIÎÂØ\Ý[KÜXÚ]HH	ÌIÎÂØ\Ý[K[ÙÜHH	Ý[Û]VJ
-IÎÂK[^JNÂ[^H
-ÏHLÂH[ÙHÂØ\Ý[K[Ú][ÛH	ÛÜXÚ]HÈX\ÙK[ÙÜHÈX\ÙIÎÂØ\Ý[KÜXÚ]HH	Ì	ÎÂØ\Ý[K[ÙÜHH	ÜØØ[JMÊIÎÂÙ][Y[Ý]
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
+  "alternateName": "ACG",
+  "url": "https://acglass.com",
+  "telephone": "+1-772-486-7711",
+  "email": "info@acglass.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US",
+    "addressRegion": "Florida"
+  },
+  "sameAs": [],
+  "description": "Full-service commercial glazing contractor delivering storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.",
+  "image": "https://acglass.com/assets/images/brand/full-logo-white.svg"
+}
+</script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Partners",
+      "item": "https://acglass.com/manufacturers.html"
+    }
+  ]
+}
+</script>
 
-HOÈØ\Ý[K\Ü^HH	ÛÛIÎÈK
-NÂBJNÂJNÂJNÂËÈÝXÚÞH[\ÚYÝÂÛÛÝ[\Ñ[HØÝ[Y[Ù][[Y[RY
-	Ü\\Y[\ÉÊNÂY
-[\Ñ[
-HÂÛÛÝØÙ\\H]È[\ÙXÝ[ÛØÙ\\
-ÙWJHO[\Ñ[Û\ÜÓ\ÝÙÙÛJ	Ú\Ë\ÚYÝÉËK[\ÙXÝ[Û][ÈJKÈ\ÚÛÌWKÛÝX\Ú[	ËL\	ÈB
-NÂØÙ\\ØÙ\J[\Ñ[
-NÂBÜØÜ\ØÜ\\OH\XØ][ÛÛ
-ÚÛÛÈÛÛ^ÎËÜØÚ[XKÜÈ\HÜØ[^][Û[YH[Y\XØ[ÛÛ[Y\ÚX[Û\ÜÈ[\]S[YHPÑÈ\ÎËØXÙÛ\ÜËZH[\ÛHÌKMÍÌMMÍÌLH[XZ[[ÐXÙÛ\ÜËÛÛHY\ÜÈÈ\HÜÝ[Y\ÜÈY\ÜÐÛÝ[HTÈY\ÜÔYÚ[ÛÜYHK\ØÜ\[Û[\Ù\XÙHÛÛ[Y\ÚX[Û^[ÈÛÛXÝÜ[]\[ÈÝÜYÛÝ\Z[Ø[Ú[ÝÈØ[[\XÝ\]YÞ\Ý[\Ë[]]ÛX]XÈ[[Ù\ÈXÜÜÜÈÜYH[HÛÝ]X\Ý[XYÙHÎËØXÙÛ\ÜËZKØ\ÜÙ]ËÚ[XYÙ\ËØ[Ù[[ÙÛË]Ú]KÝÈBÜØÜ\ØÜ\\OH\XØ][ÛÛ
-ÚÛÛÈÛÛ^ÎËÜØÚ[XKÜÈ\HXYÜ[X\Ý][S\Ý[[Y[ÞÈ\H\Ý][HÜÚ][ÛK[YHÛYH][HÎËØXÙÛ\ÜËZKÚ[^[KÈ\H\Ý][HÜÚ][Û[YH\\È	X[YXÝ\\È][HÎËØXÙÛ\ÜËZKÛX[YXÝ\\Ë[W_BÜØÜ\ØÙOÚ[
+</body>
+</html>
