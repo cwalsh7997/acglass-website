@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://acglass.ai/sitemap.xml
+Sitemap: https://acglass.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
