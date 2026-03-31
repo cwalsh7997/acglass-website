@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60">
+  <style>
+    text { font-family: 'Helvetica Neue', Arial, sans-serif; }
+  </style>
+  <text x="10" y="42" font-size="32" font-weight="300" fill="#1a1a1a" letter-spacing="2">EURO</text>
+  <text x="108" y="42" font-size="32" font-weight="700" fill="#1a1a1a" letter-spacing="2">WALL</text>
+  <rect x="10" y="50" width="220" height="2" fill="#C41220"/>
+</svg>

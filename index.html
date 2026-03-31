@@ -32,6 +32,84 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Local Business Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "alternateName": "ACG",
+    "url": "https://www.acglass.com",
+    "logo": "https://www.acglass.com/assets/images/brand/full-logo-white.svg",
+    "description": "Full-service commercial glazing contractor delivering storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida.",
+    "areaServed": {
+      "@type": "State",
+      "name": "Florida"
+    },
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 10,
+      "maxValue": 50
+    },
+    "foundingLocation": "West Palm Beach, FL",
+    "knowsAbout": ["Commercial Glazing", "Storefront Systems", "Curtainwall", "Window Wall", "Impact Windows", "Automatic Entrances", "Interior Glass Partitions"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Commercial Glazing Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Storefront Systems"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Wall Systems"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Impact Windows & Doors"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatic Entrances"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Curtainwall Installation"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Interior Glass Partitions"}}
+      ]
+    },
+    "location": [
+      {
+        "@type": "LocalBusiness",
+        "name": "American Commercial Glass - West Palm Beach (HQ)",
+        "image": "https://www.acglass.com/assets/images/brand/full-logo-white.svg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "West Palm Beach",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 26.7153,
+          "longitude": -80.0534
+        },
+        "areaServed": ["West Palm Beach", "Palm Beach County", "Boca Raton", "Boynton Beach", "Delray Beach", "Jupiter", "Port St. Lucie"]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "American Commercial Glass - Naples",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Naples",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "areaServed": ["Naples", "Fort Myers", "Cape Coral", "Bonita Springs", "Sarasota", "Southwest Florida"]
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "American Commercial Glass - Tampa",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tampa",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "areaServed": ["Tampa", "St. Petersburg", "Clearwater", "Bradenton", "Lakeland", "Central Florida"]
+      }
+    ],
+    "sameAs": []
+  }
+  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) - Replace GTM-XXXXXXX with your container ID -->
@@ -42,7 +120,7 @@
   <header class="site-header" id="header">
     <div class="header-inner">
       <a href="index.html" class="header-logo" aria-label="American Commercial Glass &mdash; Home">
-        <img src="assets/images/brand/american_commercial_glass_inc_horizontal_white.png" alt="American Commercial Glass">
+        <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass">
       </a>
       <nav class="header-nav">
         <a href="about.html">About</a>
@@ -424,7 +502,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/brand/american_commercial_glass_inc_horizontal_white.png" alt="American Commercial Glass" class="footer-brand-logo">
+          <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass" class="footer-brand-logo">
           <p>Full-service commercial glazing contractor delivering storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.</p>
           <div class="footer-contact">
             <a href="tel:+17724867711">

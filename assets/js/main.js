@@ -1,5 +1,5 @@
 /* ================================================================
-   AMERICAN COMMERCIAL GLASS â Main JavaScript v4
+   AMERICAN COMMERCIAL GLASS — Main JavaScript v4
    Clean, performant interactions for Figma-style design
    ================================================================ */
 

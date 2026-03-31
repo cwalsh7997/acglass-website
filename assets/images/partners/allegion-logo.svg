@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60">
+  <style>
+    text { font-family: 'Helvetica Neue', Arial, sans-serif; }
+  </style>
+  <!-- Allegion shield icon -->
+  <path d="M22 6 L22 28 C22 38 14 44 14 44 C14 44 6 38 6 28 L6 6 Z" fill="none" stroke="#D4451C" stroke-width="2.5"/>
+  <circle cx="14" cy="22" r="4" fill="none" stroke="#D4451C" stroke-width="1.5"/>
+  <!-- Allegion text -->
+  <text x="34" y="36" font-size="26" font-weight="700" fill="#333333" letter-spacing="1">allegion</text>
+</svg>

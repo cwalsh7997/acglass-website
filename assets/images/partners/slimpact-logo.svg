@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60">
+  <style>
+    text { font-family: 'Helvetica Neue', Arial, sans-serif; }
+  </style>
+  <text x="10" y="40" font-size="28" font-weight="300" fill="#1a1a1a" letter-spacing="4">SLIM</text>
+  <text x="102" y="40" font-size="28" font-weight="800" fill="#1a1a1a" letter-spacing="4">PACT</text>
+  <text x="10" y="54" font-size="8" font-weight="400" fill="#666" letter-spacing="3">BY FAOUR GLASS TECHNOLOGIES</text>
+  <rect x="214" y="28" width="6" height="6" rx="3" fill="#C41220"/>
+</svg>

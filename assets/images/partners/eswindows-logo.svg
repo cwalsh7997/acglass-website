@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <style>
+    text { font-family: 'Helvetica Neue', Arial, sans-serif; }
+  </style>
+  <!-- ES mark -->
+  <rect x="10" y="18" width="28" height="4" rx="1" fill="#4BA8D6"/>
+  <rect x="10" y="30" width="22" height="4" rx="1" fill="#4BA8D6"/>
+  <rect x="10" y="42" width="28" height="4" rx="1" fill="#4BA8D6"/>
+  <text x="44" y="47" font-size="38" font-weight="700" fill="#4BA8D6" letter-spacing="-1">S</text>
+  <!-- WINDOWS text -->
+  <text x="10" y="68" font-size="12" font-weight="400" fill="#4BA8D6" letter-spacing="6">WINDOWS</text>
+</svg>
