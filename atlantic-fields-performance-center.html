@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atlantic Fields Performance Center â Full curtainwall and storefront glazing package by ACG. Floor-to-ceiling glass walls, spa enclosures, and custom entry systems in Hobe Sound, FL.">
+  <title>Atlantic Fields Performance Center | ACG Projects</title>
+
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="American Commercial Glass">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Atlantic Fields Performance Center | ACG Projects">
+  <meta property="og:description" content="Full curtainwall and storefront glazing for a world-class golf performance center. Floor-to-ceiling glass, spa enclosures, and custom entries.">
+  <meta property="og:url" content="https://acglass.com/atlantic-fields-performance-center.html">
+  <meta property="og:image" content="https://acglass.com/assets/images/projects/atlantic-fields/hero-exterior.jpg">
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A1A2E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* Project Detail Page Styles */
+    .project-hero {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+      max-height: 800px;
+      overflow: hidden;
+    }
+    .project-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 80px 0 48px;
+      background: linear-gradient(to top, rgba(10,26,46,0.92) 0%, rgba(10,26,46,0.5) 60%, transparent 100%);
+      color: var(--white);
+    }
+    .project-hero-overlay .label {
+      color: var(--red-400);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .project-hero-overlay h1 {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .project-hero-overlay .project-location {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* Project Info Bar */
+    .project-info-bar {
+      background: var(--navy-800);
+      color: var(--white);
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 32px;
+    }
+    .project-info-item {
+      text-align: center;
+    }
+    .project-info-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red-400);
+      margin-bottom: 6px;
+    }
+    .project-info-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    /* Project Content */
+    .project-content {
+      padding: 80px 0;
+    }
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: start;
+    }
+    .project-narrative h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy-800);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .project-narrative p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+    .project-narrative p strong {
+      color: var(--navy-800);
+    }
+
+    /* Scope Sidebar */
+    .project-scope {
+      background: var(--gray-25);
+      border: 1px solid var(--gray-100);
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: sticky;
+      top: 120px;
+    }
+    .project-scope h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red-600);
+      margin-bottom: 24px;
+    }
+    .scope-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .scope-item:last-child {
+      border-bottom: none;
+    }
+    .scope-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--red-600);
+      margin-top: 2px;
+    }
+    .scope-item span {
+      font-size: 0.9375rem;
+      color: var(--gray-700);
+      line-height: 1.5;
+    }
+
+    /* Gallery */
+    .project-gallery {
+      padding: 0 0 100px;
+    }
+    .project-gallery .section-header {
+      margin-bottom: 48px;
+    }
+    .project-gallery .section-header .label {
+      margin-bottom: 12px;
+    }
+    .project-gallery .section-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-item--wide {
+      grid-column: span 2;
+    }
+    .gallery-item--tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 20px 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      color: white;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+
+    /* Back Link */
+    .project-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+      margin-bottom: 16px;
+    }
+    .project-back:hover {
+      opacity: 1;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+      background: none;
+      border: none;
+    }
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .project-hero { height: 50vh; min-height: 360px; }
+      .project-content-grid { grid-template-columns: 1fr; gap: 40px; }
+      .project-scope { position: static; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item--wide { grid-column: span 2; }
+      .gallery-item--tall { grid-row: span 1; aspect-ratio: 4/3; }
+      .project-info-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item--wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo"><img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass"></a>
+      <nav class="header-nav">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="manufacturers.html">Partners</a>
+        <a href="contact.html" class="header-cta">Request a Bid</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <button class="mobile-close">&times;</button>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="manufacturers.html">Partners</a>
+    <a href="contact.html" class="mobile-cta">Request a Bid</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="project-hero">
+    <img src="assets/images/projects/atlantic-fields/hero-exterior.jpg" alt="Atlantic Fields Performance Center â full curtainwall glazing by ACG">
+    <div class="project-hero-overlay">
+      <div class="container">
+        <a href="portfolio.html" class="project-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+          All Projects
+        </a>
+        <span class="label">Featured Project</span>
+        <h1>Atlantic Fields Performance Center</h1>
+        <span class="project-location">Hobe Sound, Florida</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Bar -->
+  <section class="project-info-bar">
+    <div class="container">
+      <div class="project-info-grid">
+        <div class="project-info-item">
+          <div class="project-info-label">Client</div>
+          <div class="project-info-value">Atlantic Fields</div>
+        </div>
+        <div class="project-info-item">
+          <div class="project-info-label">Market</div>
+          <div class="project-info-value">Private Club / Commercial</div>
+        </div>
+        <div class="project-info-item">
+          <div class="project-info-label">Systems</div>
+          <div class="project-info-value">Curtainwall &bull; Storefront</div>
+        </div>
+        <div class="project-info-item">
+          <div class="project-info-label">Location</div>
+          <div class="project-info-value">Hobe Sound, FL</div>
+        </div>
+        <div class="project-info-item">
+          <div class="project-info-label">Scope</div>
+          <div class="project-info-value">Supply &amp; Install</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="project-content">
+    <div class="container">
+      <div class="project-content-grid reveal">
+        <div class="project-narrative">
+          <h2>Full Glazing Package for a World-Class Performance Center</h2>
+          <p>The Atlantic Fields Performance Center demanded a glazing solution that matched its architectural ambition â a modern, resort-caliber wellness and fitness facility set on a premier golf course in Hobe Sound, Florida. ACG delivered the complete curtainwall and storefront glazing package, engineering seamless transitions between indoor training environments and the expansive golf course landscape.</p>
+          <p><strong>The design intent was uncompromising:</strong> floor-to-ceiling glass walls that dissolve the boundary between the fitness center, spa facilities, and the natural environment surrounding the building. Every opening required precise coordination with the structural steel and wood-clad facade system to maintain clean sightlines and zero-tolerance alignment.</p>
+          <p>ACG's scope included the full-height curtainwall system wrapping the fitness center, spa plunge pool enclosure with impact-rated glazing, custom storefront entry systems, and operable sliding glass panels for the outdoor terrace areas. The wood and steel architectural language of the building required meticulous interface detailing at every glass-to-structure connection.</p>
+          <p>The result is a facility where the glazing disappears â exactly what great commercial glass work should do. Members train, recover, and relax with uninterrupted views across the course, while the building envelope performs at the level coastal Florida demands.</p>
+        </div>
+
+        <div class="project-scope">
+          <h3>Scope of Work</h3>
+          <div class="scope-item">
+            <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Full-height curtainwall system â fitness center and spa wings</span>
+          </div>
+          <div class="scope-item">
+            <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Spa plunge pool glass enclosure with impact-rated glazing</span>
+          </div>
+          <div class="scope-item">
+            <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Custom storefront entry systems with glass doors</span>
+          </div>
+          <div class="scope-item">
+            <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Operable sliding glass panels â outdoor terrace</span>
+          </div>
+          <div class="scope-item">
+            <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Steel and wood facade interface detailing</span>
+          </div>
+          <div class="scope-item">
+            <svg class="scope-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Full supply and installation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="project-gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label">Gallery</span>
+        <h2>Project Photography</h2>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gallery-item--wide" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/fitness-center-glass.jpg" alt="Fitness center with floor-to-ceiling curtainwall overlooking golf course" loading="lazy">
+          <div class="gallery-caption">Fitness Center â Full-Height Curtainwall</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/entry-walkway.jpg" alt="Performance center entry with wood cladding and glass doors" loading="lazy">
+          <div class="gallery-caption">Main Entry</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/spa-plunge-pool.jpg" alt="Spa plunge pool enclosed with glass walls looking onto course" loading="lazy">
+          <div class="gallery-caption">Spa Plunge Pool Enclosure</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/exterior-lawn.jpg" alt="Performance center exterior from lawn with glass facade" loading="lazy">
+          <div class="gallery-caption">Exterior â Lawn View</div>
+        </div>
+        <div class="gallery-item gallery-item--wide" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/outdoor-terrace.jpg" alt="Outdoor terrace with operable sliding glass panels" loading="lazy">
+          <div class="gallery-caption">Terrace â Operable Sliding Glass</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/glass-panels-palms.jpg" alt="Side elevation showing glass panels through palm trees" loading="lazy">
+          <div class="gallery-caption">Glass Panels â Side Elevation</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/fitness-interior.jpg" alt="Fitness center interior with glass walls and wood ceiling" loading="lazy">
+          <div class="gallery-caption">Fitness Center Interior</div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="assets/images/projects/atlantic-fields/connor-onsite.jpg" alt="ACG founder Connor Walsh on site at Atlantic Fields Performance Center" loading="lazy">
+          <div class="gallery-caption">ACG On Site</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark cta-block">
+    <div class="container reveal">
+      <h2>Ready to Start Your Project?</h2>
+      <p>Submit your plans or request a budget. ACG responds to all inquiries within 24 hours.</p>
+      <div class="cta-block-actions">
+        <a href="contact.html" class="btn btn--primary btn--lg">Request a Bid</a>
+        <a href="portfolio.html" class="btn btn--outline btn--lg">View More Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass" class="footer-brand-logo">
+          <p>Full-service commercial glazing contractor specializing in storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.</p>
+          <div class="footer-contact">
+            <a href="tel:+17724867711"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>(772) 486-7711</a>
+            <span style="display:inline-flex;align-items:center;gap:8px;">West Palm Beach &bull; Naples &bull; Tampa</span>
+            <a href="mailto:info@acglass.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@acglass.com</a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Company</h4><a href="about.html">About ACG</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="portfolio.html">Projects</a><a href="manufacturers.html">Partners</a><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Services</h4><a href="commercial-storefront-systems.html">Storefront</a><a href="curtainwall-installation.html">Curtainwall</a><a href="window-wall-systems.html">Window Wall</a><a href="impact-windows-doors-florida.html">Impact Windows</a><a href="automatic-entrance-systems.html">Automatic Entrances</a><a href="interior-glass-partitions.html">Interior Glass</a><a href="fire-rated-glass-systems.html">Fire-Rated</a></div>
+        <div class="footer-col"><h4>Markets</h4><a href="multifamily-glazing.html">Multifamily</a><a href="hospitality-hotel-glazing.html">Hospitality</a><a href="retail-storefront-glazing.html">Retail</a><a href="commercial-glazing-miami.html">Miami</a><a href="commercial-glazing-naples.html">Naples</a><a href="commercial-glazing-orlando.html">Orlando</a><a href="commercial-glazing-tampa.html">Tampa</a><a href="commercial-glazing-south-florida.html">South Florida</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 American Commercial Glass, Inc. All rights reserved.</span>
+        <div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Project",
+    "name": "Atlantic Fields Performance Center",
+    "description": "Full curtainwall and storefront glazing package for a world-class golf performance center in Hobe Sound, Florida.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hobe Sound",
+      "addressRegion": "FL"
+    },
+    "contractor": {
+      "@type": "Organization",
+      "name": "American Commercial Glass",
+      "url": "https://acglass.com"
+    }
+  }
+  </script>
+</body>
+</html>
