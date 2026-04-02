@@ -1,4 +1,4 @@
-/* ================================================================
+h/* ================================================================
    AMERICAN COMMERCIAL GLASS — Figma-Style Design System v3
    Clean. Premium. World-Class.
    ================================================================ */
@@ -334,11 +334,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .site-header.scrolled .header-inner { height: 64px; }
 
 .header-logo img {
-  height: 36px;
+  height: 52px;
   transition: all var(--transition-base);
 }
 
-.site-header.scrolled .header-logo img { height: 28px; }
+.site-header.scrolled .header-logo img { height: 38px; }
 
 /* Scrolled state: invert logo to navy */
 .site-header.scrolled .header-logo img {
