@@ -5,28 +5,303 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | American Commercial Glass</title>
   <link rel="icon" type="image/svg+xml" href="images/acg-logo-icon.svg">
-  <meta name="description" content="Explore our portfolio of completed commercial glazing projects — from multifamily to hospitality, retail to corporate offices.">
+  <meta name="description" content="Explore ACG's portfolio of completed commercial glazing projects — residential, multifamily, healthcare, retail, and industrial across Florida.">
+  <link rel="canonical" href="https://acglass.com/portfolio.html">
+  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── PORTFOLIO HERO ── */
+    .pf-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 82vh;
+      align-items: center;
+      padding-top: 80px;
+      gap: 0;
+      overflow: hidden;
+    }
+    .pf-hero-left {
+      padding: clamp(48px, 7vw, 96px) clamp(24px, 5vw, 80px) clamp(48px, 7vw, 96px) clamp(24px, 6vw, 96px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .pf-hero-left .label {
+      margin-bottom: 20px;
+    }
+    .pf-hero-left h1 {
+      font-size: clamp(44px, 5.5vw, 80px);
+      font-weight: 900;
+      line-height: 1.04;
+      margin-bottom: clamp(20px, 2.5vw, 32px);
+    }
+    .pf-hero-left p {
+      font-size: clamp(15px, 1.2vw, 18px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      max-width: 440px;
+      margin-bottom: clamp(32px, 3vw, 48px);
+    }
+    .pf-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .pf-stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .pf-stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(26px, 2.5vw, 36px);
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+    }
+    .pf-stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.4);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── HERO MOSAIC ── */
+    .pf-hero-right {
+      height: 100%;
+      min-height: 82vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+      position: relative;
+    }
+    .pf-hero-right::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 80px;
+      background: linear-gradient(to right, var(--bg), transparent);
+      z-index: 2;
+    }
+    .mosaic-img {
+      overflow: hidden;
+      position: relative;
+    }
+    .mosaic-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .mosaic-img:hover img { transform: scale(1.04); }
+    .mosaic-img.tall { grid-row: 1 / 3; }
+
+    /* ── STICKY FILTER BAR ── */
+    .pf-filter-bar {
+      position: sticky;
+      top: 60px;
+      z-index: 40;
+      background: rgba(5, 10, 18, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 clamp(16px, 4vw, 48px);
+    }
+    .pf-filter-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: space-between;
+    }
+    .pf-filter-btns {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      flex: 1;
+    }
+    .pf-filter-btns::-webkit-scrollbar { display: none; }
+    .pf-filter-btn {
+      padding: 14px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+      position: relative;
+    }
+    .pf-filter-btn:hover { color: rgba(255,255,255,0.8); }
+    .pf-filter-btn.active {
+      color: white;
+      border-bottom-color: var(--accent);
+    }
+    .pf-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding: 14px 0 14px 24px;
+      border-left: 1px solid rgba(255,255,255,0.1);
+      margin-left: 16px;
+    }
+
+    /* ── PROJECT GRID ── */
+    .pf-grid-wrap {
+      padding: 2px 0 clamp(80px, 10vw, 160px);
+    }
+    .pf-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 6px;
+    }
+
+    /* Card base */
+    .pf-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255,255,255,0.03);
+    }
+    .pf-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .pf-card:hover img { transform: scale(1.05); }
+
+    /* Overlay */
+    .pf-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,10,18,0.92) 0%, rgba(5,10,18,0.1) 55%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(16px, 2vw, 28px);
+    }
+    .pf-card:hover .pf-overlay { opacity: 1; }
+
+    /* Always-visible bottom strip */
+    .pf-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: clamp(12px, 1.5vw, 20px) clamp(16px, 2vw, 28px);
+      background: linear-gradient(to top, rgba(5,10,18,0.85) 0%, transparent 100%);
+      transition: transform 0.3s ease;
+    }
+    .pf-card:hover .pf-bottom { transform: translateY(-8px); }
+
+    .pf-cat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+    .pf-title {
+      font-size: clamp(14px, 1.3vw, 18px);
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .pf-loc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+    .pf-arrow {
+      position: absolute;
+      top: clamp(12px, 1.5vw, 20px);
+      right: clamp(12px, 1.5vw, 20px);
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .pf-card:hover .pf-arrow {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .pf-arrow svg { color: white; }
+
+    /* Grid span classes */
+    .span-8 { grid-column: span 8; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-3 { grid-column: span 3; }
+    .span-12 { grid-column: span 12; }
+
+    /* Row heights */
+    .row-tall { aspect-ratio: 16/10; }
+    .row-std  { aspect-ratio: 4/3; }
+    .row-wide { aspect-ratio: 21/9; }
+    .row-sq   { aspect-ratio: 1/1; }
+
+    /* Hidden when filtered */
+    .pf-card.filtered { display: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .pf-hero { grid-template-columns: 1fr; min-height: auto; }
+      .pf-hero-right { min-height: 50vw; grid-template-rows: 1fr; }
+      .pf-hero-right::before { display: none; }
+      .mosaic-img.tall { grid-row: auto; }
+      .pf-hero-left { padding: clamp(100px, 12vw, 140px) clamp(24px, 6vw, 60px) 48px; }
+      .span-8, .span-6, .span-4, .span-3 { grid-column: span 6; }
+    }
+    @media (max-width: 640px) {
+      .span-8, .span-6, .span-4, .span-3 { grid-column: span 12; }
+      .row-tall, .row-std, .row-wide, .row-sq { aspect-ratio: 4/3; }
+      .pf-filter-btn { padding: 12px 14px; font-size: 10px; }
+      .pf-count { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- GRAIN OVERLAY -->
   <div class="grain"></div>
-
-  <!-- CUSTOM CURSOR -->
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- NAV -->
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
       </a>
-
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="portfolio.html" class="active">Portfolio</a>
@@ -35,7 +310,6 @@
         <a href="manufacturers.html">Partners</a>
         <a href="contact.html" class="nav-cta">Send Us Plans</a>
       </div>
-
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -43,251 +317,234 @@
   </nav>
 
 
-  <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-hero-content" data-reveal>
-        <div class="label"><span class="line"></span> Proof of Execution</div>
-        <h1>We Don't Talk.<br>We <span class="accent">Show.</span></h1>
-        <p class="hero-sub">Every project below was delivered on time, in spec, and without the drama you're used to from other glazing subs. Click through and see the caliber of work your project will get.</p>
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="pf-hero">
+
+    <!-- LEFT: Text + Stats -->
+    <div class="pf-hero-left">
+      <div class="label"><span class="line"></span> Proof of Execution</div>
+      <h1>We Don't<br>Talk. We <span class="accent">Show.</span></h1>
+      <p>Every project below was delivered on time, in spec, and without the drama you're used to from other glazing subs.</p>
+      <div class="pf-stats">
+        <div class="pf-stat-item">
+          <div class="pf-stat-num">14+</div>
+          <div class="pf-stat-label">Projects</div>
+        </div>
+        <div class="pf-stat-item">
+          <div class="pf-stat-num">10+</div>
+          <div class="pf-stat-label">GC Partners</div>
+        </div>
+        <div class="pf-stat-item">
+          <div class="pf-stat-num">8</div>
+          <div class="pf-stat-label">Markets</div>
+        </div>
+        <div class="pf-stat-item">
+          <div class="pf-stat-num">0</div>
+          <div class="pf-stat-label">Excuses</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Photo Mosaic -->
+    <div class="pf-hero-right">
+      <div class="mosaic-img tall">
+        <img src="images/projects/1172-s-harbor/pool-twilight.jpg" alt="1172 S Harbor luxury pool at twilight">
+      </div>
+      <div class="mosaic-img">
+        <img src="images/projects/carib-circle/hero-twilight.jpg" alt="2143 Carib Circle twilight">
+      </div>
+      <div class="mosaic-img">
+        <img src="images/projects/hca-cape-coral/pond-view.jpg" alt="HCA Cape Coral Emergency">
       </div>
     </div>
   </section>
 
 
-  <!-- ========== FILTERS ========== -->
-  <section class="section" style="padding: clamp(40px, 5vw, 60px) 0;">
-    <div class="container">
-      <div class="filter-buttons" data-reveal>
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="residential">Residential</button>
-        <button class="filter-btn" data-filter="fitness">Fitness & Wellness</button>
-        <button class="filter-btn" data-filter="retail">Retail</button>
-        <button class="filter-btn" data-filter="recreation">Recreation</button>
-        <button class="filter-btn" data-filter="multifamily">Multifamily</button>
-        <button class="filter-btn" data-filter="commercial">Commercial</button>
-        <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+  <!-- ═══════════════ STICKY FILTER BAR ═══════════════ -->
+  <div class="pf-filter-bar" id="filterBar">
+    <div class="pf-filter-inner">
+      <div class="pf-filter-btns">
+        <button class="pf-filter-btn active" data-filter="all">All</button>
+        <button class="pf-filter-btn" data-filter="residential">Residential</button>
+        <button class="pf-filter-btn" data-filter="commercial">Commercial</button>
+        <button class="pf-filter-btn" data-filter="retail">Retail</button>
+        <button class="pf-filter-btn" data-filter="multifamily">Multifamily</button>
+        <button class="pf-filter-btn" data-filter="healthcare">Healthcare</button>
+        <button class="pf-filter-btn" data-filter="fitness">Fitness</button>
+        <button class="pf-filter-btn" data-filter="recreation">Recreation</button>
       </div>
+      <div class="pf-count" id="pf-count">14 Projects</div>
     </div>
-  </section>
+  </div>
 
 
-  <!-- ========== PROJECT GRID ========== -->
-  <section class="section" style="padding-bottom: clamp(80px, 10vw, 160px);">
-    <div class="container">
-      <div class="project-grid" data-reveal>
+  <!-- ═══════════════ PROJECT GRID ═══════════════ -->
+  <div class="pf-grid-wrap">
+    <div class="pf-grid" id="pfGrid">
 
-        <!-- 2143 Carib Circle (Featured) -->
-        <a href="2143-carib-circle.html" class="project-grid-item featured" data-category="residential" data-delay="0" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/carib-circle/hero-twilight.jpg" alt="2143 Carib Circle" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Residential</div>
-            <h4>2143 Carib Circle</h4>
-            <div class="loc">South Florida — ES Prestige</div>
-          </div>
-        </a>
-
-        <!-- Medley Business Park -->
-        <a href="medley-business-park.html" class="project-grid-item" data-category="commercial" data-delay="200" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/medley-business-park/street-view.jpg" alt="Medley Business Park" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Commercial</div>
-            <h4>Medley Business Park</h4>
-            <div class="loc">Medley, FL &mdash; CGIC</div>
-          </div>
-        </a>
-
-        <!-- Westlake Hialeah Retrofit -->
-        <a href="westlake-hialeah-retrofit.html" class="project-grid-item" data-category="retail" data-delay="300" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/westlake-hialeah/storefront-detail.jpg" alt="Westlake Shopping Center Hialeah" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Retail &mdash; Full Retrofit</div>
-            <h4>Westlake Shopping Center</h4>
-            <div class="loc">Hialeah, FL &mdash; ESWindows</div>
-          </div>
-        </a>
-
-        <!-- Lake Park Innovation Center -->
-        <a href="lake-park-innovation-center.html" class="project-grid-item" data-category="commercial" data-delay="0" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/lake-park-innovation/hero.jpg" alt="Lake Park Innovation Center West Palm Beach" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Commercial &mdash; 3 Buildings</div>
-            <h4>Lake Park Innovation Center</h4>
-            <div class="loc">West Palm Beach, FL &mdash; ESWindows</div>
-          </div>
-        </a>
-
-        <!-- CubeSmart Davie -->
-        <a href="cubesmart-davie.html" class="project-grid-item" data-category="commercial" data-delay="100" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/cubesmart-davie/hero.jpg" alt="CubeSmart Self Storage Davie FL" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Commercial</div>
-            <h4>CubeSmart Self Storage</h4>
-            <div class="loc">Davie, FL &mdash; YKK AP</div>
-          </div>
-        </a>
-
-        <!-- Turbine Technologies -->
-        <a href="turbine-technologies-jupiter.html" class="project-grid-item" data-category="commercial" data-delay="100" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/turbine-technologies/entrance.jpg" alt="Turbine Technologies Jupiter FL" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Commercial</div>
-            <h4>Turbine Technologies</h4>
-            <div class="loc">Jupiter, FL &mdash; Trulite</div>
-          </div>
-        </a>
-
-        <!-- Atlantic Fields Performance Center -->
-        <a href="atlantic-fields-performance-center.html" class="project-grid-item" data-category="fitness" data-delay="100" style="text-decoration:none;color:inherit;">
-          <img src="images/atlantic-fields-card.jpg" alt="Atlantic Fields Performance Center" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Fitness &amp; Wellness</div>
-            <h4>Atlantic Fields Performance Center</h4>
-            <div class="loc">Hobe Sound, FL</div>
-          </div>
-        </a>
-
-        <!-- Hardy World 4.0 -->
-        <a href="hardy-world-melbourne.html" class="project-grid-item" data-category="retail" data-delay="200" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/hardy-world/hero-twilight.jpg" alt="Hardy World 4.0 Melbourne FL" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Retail</div>
-            <h4>Hardy World 4.0</h4>
-            <div class="loc">Melbourne, FL &mdash; Trulite</div>
-          </div>
-        </a>
-
-        <!-- Aspen Dental Edgewater -->
-        <a href="aspen-dental-edgewater.html" class="project-grid-item" data-category="retail" data-delay="300" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental retail plaza Edgewater FL" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Retail / Healthcare</div>
-            <h4>Aspen Dental Plaza</h4>
-            <div class="loc">Edgewater, FL &mdash; ESWindows</div>
-          </div>
-        </a>
-
-        <!-- Savannas Ridge -->
-        <div class="project-grid-item" data-category="retail" data-delay="200">
-          <img src="images/savannas-ridge.jpg" alt="Savannas Ridge" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Retail</div>
-            <h4>Savannas Ridge</h4>
-            <div class="loc">Port St. Lucie, FL</div>
-          </div>
+      <!-- ROW 1: Hero pair — 1172 S Harbor (wide) + Carib Circle (square) -->
+      <a href="1172-s-harbor.html" class="pf-card span-8 row-tall" data-category="residential">
+        <img src="images/projects/1172-s-harbor/hero-twilight.jpg" alt="1172 S Harbor" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Residential</div>
+          <div class="pf-title">1172 S Harbor</div>
+          <div class="pf-loc">South Florida — ES Prestige</div>
         </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
-        <!-- Padel Club -->
-        <div class="project-grid-item" data-category="recreation" data-delay="300">
-          <img src="images/padel-club.jpg" alt="Padel Club" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Recreation</div>
-            <h4>Padel Club</h4>
-            <div class="loc">South Florida</div>
-          </div>
+      <a href="2143-carib-circle.html" class="pf-card span-4 row-tall" data-category="residential">
+        <img src="images/projects/carib-circle/hero-twilight.jpg" alt="2143 Carib Circle" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Residential</div>
+          <div class="pf-title">2143 Carib Circle</div>
+          <div class="pf-loc">South Florida — ES Prestige</div>
         </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
-        <!-- 1172 S Harbor -->
-        <a href="1172-s-harbor.html" class="project-grid-item" data-category="residential" data-delay="0" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/1172-s-harbor/pool-twilight.jpg" alt="1172 S Harbor luxury waterfront home" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Residential</div>
-            <h4>1172 S Harbor</h4>
-            <div class="loc">South Florida &mdash; ES Prestige</div>
-          </div>
-        </a>
+      <!-- ROW 2: Three equal -->
+      <a href="lake-park-innovation-center.html" class="pf-card span-4 row-std" data-category="commercial">
+        <img src="images/projects/lake-park-innovation/hero.jpg" alt="Lake Park Innovation Center" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Commercial — 3 Buildings</div>
+          <div class="pf-title">Lake Park Innovation Center</div>
+          <div class="pf-loc">West Palm Beach, FL — ESWindows</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
-        <!-- HCA Cape Coral -->
-        <a href="hca-cape-coral-emergency.html" class="project-grid-item" data-category="healthcare" data-delay="0" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/hca-cape-coral/hero.jpg" alt="HCA Florida Cape Coral Emergency" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Healthcare</div>
-            <h4>HCA Cape Coral Emergency</h4>
-            <div class="loc">Cape Coral, FL &mdash; YKK AP + Vitro</div>
-          </div>
-        </a>
+      <a href="imperial-crossings-bonita-springs.html" class="pf-card span-4 row-std" data-category="multifamily">
+        <img src="images/projects/imperial-crossings/hero.jpg" alt="Imperial Crossings" style="object-position:center 35%;" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Multifamily</div>
+          <div class="pf-title">Imperial Crossings</div>
+          <div class="pf-loc">Bonita Springs, FL — PGT</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
-        <!-- Imperial Crossings -->
-        <a href="imperial-crossings-bonita-springs.html" class="project-grid-item" data-category="multifamily" data-delay="0" style="text-decoration:none;color:inherit;">
-          <img src="images/projects/imperial-crossings/hero.jpg" alt="Imperial Crossings Bonita Springs" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;position:absolute;inset:0;">
-          <div class="project-grid-overlay">
-            <div class="cat">Multifamily</div>
-            <h4>Imperial Crossings</h4>
-            <div class="loc">Bonita Springs, FL &mdash; PGT</div>
-          </div>
-        </a>
+      <a href="hca-cape-coral-emergency.html" class="pf-card span-4 row-std" data-category="healthcare">
+        <img src="images/projects/hca-cape-coral/hero.jpg" alt="HCA Cape Coral Emergency" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Healthcare</div>
+          <div class="pf-title">HCA Cape Coral Emergency</div>
+          <div class="pf-loc">Cape Coral, FL — YKK AP + Vitro</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
+      <!-- ROW 3: Wide + narrow -->
+      <a href="hardy-world-melbourne.html" class="pf-card span-6 row-std" data-category="retail">
+        <img src="images/projects/hardy-world/hero-twilight.jpg" alt="Hardy World 4.0" style="object-position:center 55%;" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Retail</div>
+          <div class="pf-title">Hardy World 4.0</div>
+          <div class="pf-loc">Melbourne, FL — Trulite</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
+      <a href="westlake-hialeah-retrofit.html" class="pf-card span-3 row-std" data-category="retail">
+        <img src="images/projects/westlake-hialeah/storefront-detail.jpg" alt="Westlake Shopping Center" style="object-position:center 40%;" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Retail — Full Retrofit</div>
+          <div class="pf-title">Westlake Shopping Center</div>
+          <div class="pf-loc">Hialeah, FL — ESWindows</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
 
+      <a href="atlantic-fields-performance-center.html" class="pf-card span-3 row-std" data-category="fitness">
+        <img src="images/atlantic-fields-card.jpg" alt="Atlantic Fields Performance Center" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Fitness &amp; Wellness</div>
+          <div class="pf-title">Atlantic Fields</div>
+          <div class="pf-loc">Hobe Sound, FL</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <!-- ROW 4: Three equal -->
+      <a href="medley-business-park.html" class="pf-card span-4 row-std" data-category="commercial">
+        <img src="images/projects/medley-business-park/street-view.jpg" alt="Medley Business Park" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Commercial</div>
+          <div class="pf-title">Medley Business Park</div>
+          <div class="pf-loc">Medley, FL — CGIC</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a href="aspen-dental-edgewater.html" class="pf-card span-4 row-std" data-category="retail">
+        <img src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental Plaza" style="object-position:center 40%;" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Retail / Healthcare</div>
+          <div class="pf-title">Aspen Dental Plaza</div>
+          <div class="pf-loc">Edgewater, FL — ESWindows</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a href="turbine-technologies-jupiter.html" class="pf-card span-4 row-std" data-category="commercial">
+        <img src="images/projects/turbine-technologies/entrance.jpg" alt="Turbine Technologies" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Commercial</div>
+          <div class="pf-title">Turbine Technologies</div>
+          <div class="pf-loc">Jupiter, FL — Trulite</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <!-- ROW 5: Wide industrial + two small -->
+      <a href="cubesmart-davie.html" class="pf-card span-3 row-std" data-category="commercial">
+        <img src="images/projects/cubesmart-davie/hero.jpg" alt="CubeSmart Davie" style="object-position:center 30%;" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Commercial</div>
+          <div class="pf-title">CubeSmart Self Storage</div>
+          <div class="pf-loc">Davie, FL — YKK AP</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <div class="pf-card span-3 row-std" data-category="retail">
+        <img src="images/savannas-ridge.jpg" alt="Savannas Ridge" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Retail</div>
+          <div class="pf-title">Savannas Ridge</div>
+          <div class="pf-loc">Port St. Lucie, FL</div>
+        </div>
       </div>
+
+      <div class="pf-card span-3 row-std" data-category="recreation">
+        <img src="images/padel-club.jpg" alt="Padel Club" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Recreation</div>
+          <div class="pf-title">Padel Club</div>
+          <div class="pf-loc">South Florida</div>
+        </div>
+      </div>
+
+      <a href="1172-s-harbor.html" class="pf-card span-3 row-std" data-category="residential">
+        <img src="images/projects/1172-s-harbor/pool-twilight.jpg" alt="1172 S Harbor pool" style="object-position:center 40%;" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Residential</div>
+          <div class="pf-title">1172 S Harbor — Pool</div>
+          <div class="pf-loc">ES Prestige</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
     </div>
-  </section>
+  </div>
 
 
-  <!-- ========== PROJECT SPOTLIGHT ========== -->
-  <section class="section" style="padding: clamp(40px, 5vw, 60px) 0;">
-    <div class="container">
-      <div data-reveal>
-        <div class="label" style="margin-bottom: 20px;"><span class="line"></span> Project Spotlight</div>
-        <h2 style="margin-bottom: 60px;">2143 Carib Circle</h2>
-      </div>
-
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; margin-bottom: 80px;" data-reveal data-delay="200">
-        <div>
-          <div class="project-detail-img">
-            <img src="images/projects/carib-circle/front.jpg" alt="2143 Carib Circle front elevation" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
-          </div>
-        </div>
-
-        <div>
-          <div class="project-meta" style="margin-bottom: 40px;">
-            <div class="meta-item">
-              <span class="meta-label">Location</span>
-              <span class="meta-value">South Florida</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Category</span>
-              <span class="meta-value">Residential New Construction</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">GC</span>
-              <span class="meta-value">High Tide Properties</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Systems</span>
-              <span class="meta-value">ES Prestige Impact Windows & Doors</span>
-            </div>
-          </div>
-
-          <p style="margin-bottom: 30px;">A luxury waterfront residence built by High Tide Properties, designed around glass. ACG supplied and installed the complete ES Prestige impact-rated window and door package — including oversized multi-panel sliding doors, fixed picture windows, casement and awning units, and frameless glass shower enclosures.</p>
-
-          <p>Every opening is impact-rated. Every unit coordinated with structural openings, verified against shop drawings, and installed to manufacturer spec.</p>
-
-          <a href="2143-carib-circle.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;margin-top:20px;text-decoration:none;">View Full Project <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <div class="detail-images-grid" data-reveal data-delay="300">
-        <div class="detail-img">
-          <img src="images/projects/carib-circle/back2.jpg" alt="Rear elevation with impact sliding doors" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
-        </div>
-        <div class="detail-img">
-          <img src="images/projects/carib-circle/interior.jpg" alt="Interior with floor-to-ceiling ES Prestige glass" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
-        </div>
-        <div class="detail-img">
-          <img src="images/projects/carib-circle/bathroom.jpg" alt="Master bath with impact windows and glass shower" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== CTA SECTION ========== -->
+  <!-- ═══════════════ CTA ═══════════════ -->
   <section class="cta-section">
     <div class="container" data-reveal>
       <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>NEXT</div>
       <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Every project above started the same way — plans on our desk and a GC who needed a glazing sub they could actually trust. Send your drawings and get a scope in 48 hours.</p>
+      <p>Every project above started the same way — plans on a desk and a GC who needed a glazing sub they could actually trust. Send your drawings and get a scope in 48 hours.</p>
       <a href="contact.html" class="btn btn-primary btn-lg">
         Send Us Plans
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -296,7 +553,7 @@
   </section>
 
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -306,7 +563,6 @@
           </a>
           <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
         </div>
-
         <div>
           <h5>Company</h5>
           <div class="footer-links">
@@ -317,7 +573,6 @@
             <a href="contact.html">Contact</a>
           </div>
         </div>
-
         <div>
           <h5>Services</h5>
           <div class="footer-links">
@@ -328,7 +583,6 @@
             <a href="services.html">Fire-Rated Glass</a>
           </div>
         </div>
-
         <div>
           <h5>Contact</h5>
           <div class="footer-contact">
@@ -347,7 +601,6 @@
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 American Commercial Glass</span>
         <span>Built with precision.</span>
@@ -356,5 +609,34 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Filter system
+    const btns = document.querySelectorAll('.pf-filter-btn');
+    const cards = document.querySelectorAll('.pf-card');
+    const countEl = document.getElementById('pf-count');
+
+    function updateCount() {
+      const visible = [...cards].filter(c => !c.classList.contains('filtered')).length;
+      if (countEl) countEl.textContent = visible + ' Project' + (visible !== 1 ? 's' : '');
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('filtered');
+          } else {
+            card.classList.add('filtered');
+          }
+        });
+        updateCount();
+      });
+    });
+
+    updateCount();
+  </script>
 </body>
 </html>
