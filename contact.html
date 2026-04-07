@@ -80,7 +80,9 @@
         <div>
           <h2 class="section-title reveal" style="margin-bottom:32px;">Your Glazing Inquiry</h2>
 
-          <form class="form-grid reveal">
+          <form class="form-grid reveal" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_subject" value="New Bid Request from ACG Website">
+            <input type="hidden" name="_next" value="https://acglass.com/contact.html?submitted=true">
 
             <!-- Name -->
             <div class="form-group">
@@ -243,32 +245,12 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    // File upload drag-and-drop functionality
-    const fileUploadArea = document.getElementById('file-upload-area');
-    const fileInput = document.getElementById('plan-upload');
-
-    if (fileUploadArea && fileInput) {
-      // Click to upload
-      fileUploadArea.addEventListener('click', () => fileInput.click());
-
-      // Drag and drop
-      fileUploadArea.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        fileUploadArea.style.backgroundColor = 'var(--gray-100)';
-        fileUploadArea.style.borderColor = 'var(--primary)';
-      });
-
-      fileUploadArea.addEventListener('dragleave', () => {
-        fileUploadArea.style.backgroundColor = '';
-        fileUploadArea.style.borderColor = '';
-      });
-
-      fileUploadArea.addEventListener('drop', (e) => {
-        e.preventDefault();
-        fileUploadArea.style.backgroundColor = '';
-        fileUploadArea.style.borderColor = '';
-        fileInput.files = e.dataTransfer.files;
-      });
+    // Show success message if redirected back after submission
+    if (window.location.search.includes('submitted=true')) {
+      const form = document.getElementById('contact-form');
+      if (form) {
+        form.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:64px 24px;"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="margin:0 auto 24px;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3 style="font-size:24px;font-weight:700;margin-bottom:12px;color:var(--navy-700);">Bid Request Received</h3><p style="font-size:16px;line-height:1.7;color:var(--text-secondary);max-width:440px;margin:0 auto;">Our team will review your project details and respond within 24 hours. If you need immediate assistance, call us at <a href="tel:+17724867711" style="color:var(--navy-700);font-weight:600;">(772) 486-7711</a>.</p></div>';
+      }
     }
   </script>
 
