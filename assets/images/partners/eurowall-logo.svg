@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 100">
-  <style>
-    text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-  </style>
-  <text x="16" y="58" font-size="46" font-weight="300" fill="#1a1a1a" letter-spacing="3">EURO</text>
-  <text x="156" y="58" font-size="46" font-weight="800" fill="#1a1a1a" letter-spacing="3">WALL</text>
-  <rect x="16" y="68" width="310" height="3" fill="#C41220"/>
-  <text x="16" y="86" font-size="10" font-weight="500" fill="#888" letter-spacing="4">PRECISION GLAZING SYSTEMS</text>
-</svg>

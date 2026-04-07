@@ -1,387 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager - Replace GTM-XXXXXXX with your container ID -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
-
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about American Commercial Glass — a growth-focused, operationally strong commercial glazing contractor built for scale and long-term partnerships.">
   <title>About ACG | American Commercial Glass</title>
-
-  <!-- Favicon Links -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <!-- Open Graph Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="American Commercial Glass">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="About ACG | American Commercial Glass">
-  <meta property="og:description" content="Learn about American Commercial Glass — a growth-focused, operationally strong commercial glazing contractor built for scale and long-term partnerships.">
-  <meta property="og:url" content="https://acglass.com/about.html">
-
-  <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0A1A2E">
-
+  <link rel="icon" type="image/svg+xml" href="images/acg-logo-icon.svg">
+  <meta name="description" content="About American Commercial Glass — elite commercial glazing contractor built in Florida, scaling nationally with 500+ projects and 15+ years of execution.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) - Replace GTM-XXXXXXX with your container ID -->
-  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
 
-  <!-- ============================================================
-       HEADER
-       ============================================================ -->
-  <header class="site-header" id="header">
-    <div class="header-inner">
-      <a href="index.html" class="header-logo" aria-label="American Commercial Glass — Home">
-        <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass">
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
       </a>
-      <nav class="header-nav">
-        <a href="about.html">About</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <a href="portfolio.html">Projects</a>
+        <a href="about.html" class="active">About</a>
         <a href="manufacturers.html">Partners</a>
-        <a href="contact.html" class="header-cta">Request a Bid</a>
-      </nav>
-      <button class="mobile-toggle" aria-label="Open menu">
+        <a href="contact.html" class="nav-cta">Send Us Plans</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
-
-  <!-- Mobile Nav -->
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-  <nav class="mobile-nav" id="mobile-nav">
-    <button class="mobile-close" aria-label="Close menu">&times;</button>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Projects</a>
-    <a href="manufacturers.html">Partners</a>
-    <a href="contact.html" class="mobile-cta">Request a Bid</a>
   </nav>
 
-  <!-- ============================================================
-       PAGE HERO
-       ============================================================ -->
-  <section class="page-hero">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" style="min-height: 60vh; justify-content: center; padding-bottom: 100px;">
+    <div class="hero-bg">
+      <div class="hero-visual"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
     <div class="container">
-      <span class="label">About ACG</span>
-      <h1>Enterprise Glazing.<br>Precision Execution.</h1>
-      <p>We deliver world-class commercial glazing systems to the nation's largest GCs and developers. Systems-driven operations. Zero-deviation execution. Scalable capacity.</p>
+      <div class="hero-content">
+        <div class="label" style="animation: fadeUp 0.8s var(--ease-out) 0.2s forwards; opacity: 0;">
+          <span class="line"></span> Who We Are
+        </div>
+
+        <h1>
+          <span class="line">About</span>
+          <span class="line"><span class="accent">ACG</span></span>
+        </h1>
+
+        <p class="hero-sub">
+          Built in Florida. Scaling nationally.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       COMPANY OVERVIEW
-       ============================================================ -->
-  <section class="section section--light">
+
+  <!-- ========== ABOUT SPLIT ========== -->
+  <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
+      <div class="about-split" data-reveal>
         <div>
-          <h2 class="section-title">The Company</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">ACG is a Florida-based commercial glazing contractor with capability across storefront, curtainwall, window wall, impact-rated systems, automatic entrances, and specialty applications. We execute supply-only, installation-only, or full-scope delivery to the nation's premier GCs and developers.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">We operate with enterprise discipline. Documented processes. Rigorous preconstruction. Accurate scheduling. Responsive coordination. Our competitors hustle. We systematize. Every project runs the same way — on time, on budget, to specification.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Built for scale and built to expand. Our team structure, our operational infrastructure, and our manufacturer partnerships support regional and national growth. We are architected to double in size without losing precision.</p>
-          <p style="color:var(--gray-500);line-height:1.75;">We are a company designed for one principle: glazing execution without compromise.</p>
+          <h2>Built Because GCs<br>Deserved <span class="accent">Better.</span></h2>
+          <div class="divider"></div>
+          <p class="text-lg" style="margin-bottom: 24px;">
+            ACG was founded after watching too many glazing subs fail the contractors who trusted them. Missed shop drawing deadlines. Material that showed up wrong. Crews that no-showed on install day. Change orders for scope that was clearly in the drawings. We've seen every version of it — and we built ACG to be the opposite.
+          </p>
+          <p class="text-lg" style="margin-bottom: 24px;">
+            Every project gets a dedicated project manager who actually answers the phone. Our leadership walks jobsites personally. We submit shop drawings when we say we will. We coordinate with your waterproofing, framing, and stucco trades proactively — not after you've sent us three emails asking for an update.
+          </p>
+          <p class="text-lg">
+            The result? GCs who use us once, use us on every project after. Developers who request us by name. And a track record of 500+ completed projects, 50M+ SF of glass installed, with repeat clients who trust us to protect their schedules, budgets, and reputations.
+          </p>
         </div>
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;"></div>
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" style="position:relative;z-index:1;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+
+        <div class="about-image">
+          <div class="ph" style="display: flex; align-items: center; justify-content: center; background: var(--surface-light);">
+            About ACG Image
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       MISSION & VALUES
-       ============================================================ -->
-  <section class="section section--light" id="mission">
-    <div class="container">
-      <div class="text-center reveal" style="margin-bottom:60px;">
-        <h2 class="section-title">What Drives ACG</h2>
-        <p class="section-subtitle">Three core principles guide every decision, every project, and every relationship.</p>
-      </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:40px;">
-        <div class="reveal reveal-delay-1">
-          <div style="background:var(--navy-900);width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 style="margin-bottom:12px;font-weight:700;font-size:18px;">Systems-Driven Execution</h3>
-          <p style="color:var(--gray-500);line-height:1.75;">Documented processes. Consistent methodology. Accountability at every phase. Every project operates under the same playbook — preconstruction through final punch. Schedules held. Budgets met. Zero shortcuts.</p>
-        </div>
-
-        <div class="reveal reveal-delay-2">
-          <div style="background:var(--navy-900);width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="1.5"><path d="M12 2v20M2 12h20M6 6h12v12H6z"/></svg>
-          </div>
-          <h3 style="margin-bottom:12px;font-weight:700;font-size:18px;">Deep Technical Capability</h3>
-          <p style="color:var(--gray-500);line-height:1.75;">Engineering expertise. Code mastery. Product depth. Our team reviews plans with architect-level rigor, engineers with consultant-grade precision, and installs with specialty craftsmanship. Problems get caught before they reach the field.</p>
-        </div>
-
-        <div class="reveal reveal-delay-3">
-          <div style="background:var(--navy-900);width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
-          </div>
-          <h3 style="margin-bottom:12px;font-weight:700;font-size:18px;">Partner-Grade Commitment</h3>
-          <p style="color:var(--gray-500);line-height:1.75;">We pursue long-term relationships, not transaction extraction. You will have direct access, rapid responses, and proactive problem-flagging. Your schedule matters because your success determines ours.</p>
-        </div>
-      </div>
+  <!-- ========== STATS ROW ========== -->
+  <div class="stats-row" data-reveal-fade>
+    <div class="stat-block">
+      <div class="num" data-count="500" data-suffix="+">0</div>
+      <div class="stat-text">Projects Completed</div>
     </div>
-  </section>
+    <div class="stat-block">
+      <div class="num" data-count="15" data-suffix="+">0</div>
+      <div class="stat-text">Years of Execution</div>
+    </div>
+    <div class="stat-block">
+      <div class="num" data-count="50" data-suffix="M+">0</div>
+      <div class="stat-text">SF Glass Installed</div>
+    </div>
+    <div class="stat-block">
+      <div class="num" data-count="5">0</div>
+      <div class="stat-text">MFG Partners</div>
+    </div>
+  </div>
 
-  <!-- ============================================================
-       GROWTH TIMELINE
-       ============================================================ -->
-  <section class="section section--dark" id="timeline">
+
+  <!-- ========== VALUES ========== -->
+  <section class="section">
     <div class="container">
-      <div class="text-center reveal" style="margin-bottom:60px;">
-        <h2 class="section-title" style="color:var(--white);">Our Growth Trajectory</h2>
-        <p class="section-subtitle" style="color:var(--gray-300);">From startup to scalable operation.</p>
+      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
+        <div class="label"><span class="line"></span> What GCs Get From ACG</div>
+        <h2>The Problems We Solve</h2>
       </div>
 
-      <div style="position:relative;max-width:900px;margin:0 auto;">
-        <!-- Timeline Line -->
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:100%;background:linear-gradient(to bottom, var(--red-400), transparent);"></div>
-
-        <!-- 2008 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;align-items:center;" class="reveal">
-          <div style="text-align:right;">
-            <h3 style="color:var(--white);font-size:20px;font-weight:700;margin-bottom:8px;">2008</h3>
-            <p style="color:var(--gray-300);font-size:14px;">Founded in South Florida. Commercial glazing foundation established.</p>
-          </div>
-          <div style="position:relative;">
-            <div style="position:absolute;left:-39px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--red-400);border-radius:50%;border:3px solid var(--navy-900);z-index:10;"></div>
-          </div>
-        </div>
-
-        <!-- 2012 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;align-items:center;" class="reveal reveal-delay-1">
-          <div style="position:relative;">
-            <div style="position:absolute;right:-39px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--red-400);border-radius:50%;border:3px solid var(--navy-900);z-index:10;"></div>
-          </div>
+      <div style="max-width: 700px;" data-reveal data-delay="200">
+        <div class="value-block">
+          <div class="value-num">01</div>
           <div>
-            <h3 style="color:var(--white);font-size:20px;font-weight:700;margin-bottom:8px;">2012</h3>
-            <p style="color:var(--gray-300);font-size:14px;">Full-scope commercial transition. Major multifamily and curtainwall expertise developed.</p>
+            <h4>Your Schedule Is Sacred</h4>
+            <p>Your glazing sub blows a deadline and suddenly your drywall, paint, and flooring trades are stacked up waiting. We commit to dates and hit them — because we know every day we're late costs you money and credibility with your owner.</p>
           </div>
         </div>
 
-        <!-- 2016 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;align-items:center;" class="reveal reveal-delay-2">
-          <div style="text-align:right;">
-            <h3 style="color:var(--white);font-size:20px;font-weight:700;margin-bottom:8px;">2016</h3>
-            <p style="color:var(--gray-300);font-size:14px;">Operational scaling. Dedicated preconstruction and project management infrastructure built.</p>
-          </div>
-          <div style="position:relative;">
-            <div style="position:absolute;left:-39px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--red-400);border-radius:50%;border:3px solid var(--navy-900);z-index:10;"></div>
-          </div>
-        </div>
-
-        <!-- 2020 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px;align-items:center;" class="reveal reveal-delay-3">
-          <div style="position:relative;">
-            <div style="position:absolute;right:-39px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--red-400);border-radius:50%;border:3px solid var(--navy-900);z-index:10;"></div>
-          </div>
+        <div class="value-block">
+          <div class="value-num">02</div>
           <div>
-            <h3 style="color:var(--white);font-size:20px;font-weight:700;margin-bottom:8px;">2020</h3>
-            <p style="color:var(--gray-300);font-size:14px;">Systems transformation. Digital infrastructure and process automation implemented across all operations.</p>
+            <h4>No Scope Gaps. No Surprises.</h4>
+            <p>We review drawings thoroughly before we bid. If there's a conflict between architectural and structural, we flag it during buyout — not during install when it's a $200K change order. Our submittals are complete, our shop drawings are accurate, and our pricing covers what it says it covers.</p>
           </div>
         </div>
 
-        <!-- 2024 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;" class="reveal reveal-delay-4">
-          <div style="text-align:right;">
-            <h3 style="color:var(--white);font-size:20px;font-weight:700;margin-bottom:8px;">2024</h3>
-            <p style="color:var(--gray-300);font-size:14px;">Enterprise scale. Multi-million SF annual capacity. Positioned for national expansion with proven operations model.</p>
-          </div>
-          <div style="position:relative;">
-            <div style="position:absolute;left:-39px;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--red-400);border-radius:50%;border:3px solid var(--navy-900);z-index:10;"></div>
+        <div class="value-block">
+          <div class="value-num">03</div>
+          <div>
+            <h4>Communication That Actually Works</h4>
+            <p>You shouldn't have to chase your glazing sub for a status update. Our PMs send weekly progress reports, attend your OAC meetings prepared, and respond to RFIs within 24 hours. When there's a problem, we tell you first — with a solution attached.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       THE ACG DIFFERENCE
-       ============================================================ -->
-  <section class="section section--light" id="difference">
+
+  <!-- ========== MARKETS ========== -->
+  <section class="section">
     <div class="container">
-      <div class="text-center reveal" style="margin-bottom:60px;">
-        <h2 class="section-title">Why GCs Choose ACG</h2>
-        <p class="section-subtitle">Three things that separate us from the rest of the market.</p>
+      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
+        <div class="label"><span class="line"></span> Markets We Serve</div>
+        <h2>Where ACG Builds</h2>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:40px;">
-        <div class="reveal reveal-delay-1" style="padding:32px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);">
-          <div style="font-size:32px;font-weight:900;color:var(--red-400);margin-bottom:16px;">01</div>
-          <h3 style="margin-bottom:12px;font-weight:700;font-size:18px;">Preconstruction Excellence</h3>
-          <p style="color:var(--gray-500);line-height:1.75;">We perform architect-level plan review before quoting. Dimensional verification. Code alignment. Conflict identification. Spec compliance. Problems caught upstream never reach the field.</p>
+      <div class="grid grid-4" data-reveal data-delay="200">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h4>Multifamily</h4>
+          <p>Window wall systems and impact doors for residential towers and mid-rise developments.</p>
         </div>
-
-        <div class="reveal reveal-delay-2" style="padding:32px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);">
-          <div style="font-size:32px;font-weight:900;color:var(--red-400);margin-bottom:16px;">02</div>
-          <h3 style="margin-bottom:12px;font-weight:700;font-size:18px;">Reliable Schedules</h3>
-          <p style="color:var(--gray-500);line-height:1.75;">We commit only to dates we can meet. Lead time management. Fabrication coordination. Field sequencing discipline. Your schedule depends on glazing. Ours depends on you meeting your deadline.</p>
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h4>Hospitality</h4>
+          <p>High-performance glazing for hotels, resorts, and mixed-use hospitality projects.</p>
         </div>
-
-        <div class="reveal reveal-delay-3" style="padding:32px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);">
-          <div style="font-size:32px;font-weight:900;color:var(--red-400);margin-bottom:16px;">03</div>
-          <h3 style="margin-bottom:12px;font-weight:700;font-size:18px;">Proactive Coordination</h3>
-          <p style="color:var(--gray-500);line-height:1.75;">Dedicated point of contact. Same-day RFI response. Regular status reporting. Issues surfaced before they become problems. Transparency and accountability embedded in our model.</p>
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h4>Commercial Office</h4>
+          <p>Storefront systems, window wall, and specialty glass for modern office environments.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TEAM & CAPABILITY
-       ============================================================ -->
-  <section class="section section--dark" id="team">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div>
-          <h2 class="section-title" style="color:var(--white);">Built for Growth</h2>
-          <p style="color:var(--gray-300);line-height:1.75;margin-bottom:16px;">ACG operates on organizational strength, not individual heroics. We have invested in people, systems, and infrastructure designed to scale — multiple crews, dedicated project management, experienced estimators, in-house engineering capability, and digital systems managing full project lifecycle.</p>
-          <p style="color:var(--gray-300);line-height:1.75;margin-bottom:16px;">Our Florida foundation provides deep market relationships with leading GCs, architects, and developers. We are architected to expand regionally and nationally while maintaining operational discipline and response quality.</p>
-          <p style="color:var(--gray-300);line-height:1.75;margin-bottom:24px;">We partner with market-leading manufacturers — ESWindows, Eurowall, Allegion, Slimpact, and Technical Glass Products. These relationships provide product depth and supply reliability that competitors lack.</p>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
+        <div class="service-card">
+          <div class="service-number">04</div>
+          <h4>Retail</h4>
+          <p>Clean-line storefronts and glass systems for retail and mixed-use developments.</p>
         </div>
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;"></div>
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" style="position:relative;z-index:1;"><g><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></g></svg>
+        <div class="service-card">
+          <div class="service-number">05</div>
+          <h4>Clubhouses & Amenities</h4>
+          <p>Architectural glass for community clubhouses, fitness centers, and recreation facilities.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       STATS
-       ============================================================ -->
-  <section class="section section--light" id="stats">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:40px;text-align:center;">
-        <div class="reveal">
-          <div style="font-size:48px;font-weight:900;color:var(--navy-900);margin-bottom:8px;">250+</div>
-          <p style="color:var(--gray-500);font-weight:500;">Projects Delivered</p>
+        <div class="service-card">
+          <div class="service-number">06</div>
+          <h4>Healthcare</h4>
+          <p>Fire-rated and specialty glass for medical facilities and healthcare buildings.</p>
         </div>
-        <div class="reveal reveal-delay-1">
-          <div style="font-size:48px;font-weight:900;color:var(--navy-900);margin-bottom:8px;">18+</div>
-          <p style="color:var(--gray-500);font-weight:500;">Years in Commercial Glazing</p>
+        <div class="service-card">
+          <div class="service-number">07</div>
+          <h4>Education</h4>
+          <p>Durable glazing systems for universities, schools, and educational facilities.</p>
         </div>
-        <div class="reveal reveal-delay-2">
-          <div style="font-size:48px;font-weight:900;color:var(--navy-900);margin-bottom:8px;">2M+</div>
-          <p style="color:var(--gray-500);font-weight:500;">Square Feet Installed</p>
-        </div>
-        <div class="reveal reveal-delay-3">
-          <div style="font-size:48px;font-weight:900;color:var(--navy-900);margin-bottom:8px;">100%</div>
-          <p style="color:var(--gray-500);font-weight:500;">GC Repeat Rate</p>
+        <div class="service-card">
+          <div class="service-number">08</div>
+          <h4>Government</h4>
+          <p>Specification-grade glazing for government and institutional projects.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CTA BLOCK
-       ============================================================ -->
-  <section class="section section--darker cta-block">
-    <div class="container reveal">
-      <h2>Partner With ACG</h2>
-      <p>Need a glazing contractor who delivers schedules, budgets, and zero-deviation execution? We provide competitive bids, engineering clarity, and operational reliability.</p>
-      <div class="cta-block-actions">
-        <a href="contact.html" class="btn btn--primary btn--lg">Request a Bid</a>
-      </div>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section">
+    <div class="container" data-reveal>
+      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>TOGETHER</div>
+      <h2>Let's Build Something<br>Together</h2>
+      <p>Send us your plans and get a detailed scope and estimate from our team within 48 hours.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">
+        Send Us Plans
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass" class="footer-brand-logo">
-          <p>Full-service commercial glazing contractor specializing in storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.</p>
-          <div class="footer-contact">
-            <a href="tel:+17724867711">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-              (772) 486-7711
-            </a>
-            <a href="mailto:info@acglass.com">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              info@acglass.com
-            </a>
+          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+            <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
+          </a>
+          <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="manufacturers.html">Partners</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
 
-        <div class="footer-col"><h4>Company</h4><a href="about.html">About ACG</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="portfolio.html">Projects</a><a href="manufacturers.html">Partners</a><a href="contact.html">Contact</a></div>
-        <div class="footer-col"><h4>Services</h4><a href="commercial-storefront-systems.html">Storefront</a><a href="curtainwall-installation.html">Curtainwall</a><a href="window-wall-systems.html">Window Wall</a><a href="impact-windows-doors-florida.html">Impact Windows</a><a href="automatic-entrance-systems.html">Automatic Entrances</a><a href="interior-glass-partitions.html">Interior Glass</a><a href="fire-rated-glass-systems.html">Fire-Rated</a></div>
-        <div class="footer-col"><h4>Markets</h4><a href="multifamily-glazing.html">Multifamily</a><a href="hospitality-hotel-glazing.html">Hospitality</a><a href="retail-storefront-glazing.html">Retail</a><a href="commercial-glazing-miami.html">Miami</a><a href="commercial-glazing-naples.html">Naples</a><a href="commercial-glazing-orlando.html">Orlando</a><a href="commercial-glazing-tampa.html">Tampa</a><a href="commercial-glazing-south-florida.html">South Florida</a></div>
+        <div>
+          <h5>Services</h5>
+          <div class="footer-links">
+            <a href="services.html">Impact Windows</a>
+            <a href="services.html">Storefronts</a>
+            <a href="services.html">Window Wall</a>
+            <a href="services.html">Sliding Systems</a>
+            <a href="services.html">Fire-Rated Glass</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <div class="footer-contact">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              connor@acglass.com
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (772) 486-7711
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              South Florida
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 American Commercial Glass, Inc. All rights reserved.</span>
-        <div class="footer-bottom-links">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-use.html">Terms of Use</a>
-        </div>
+        <span>&copy; 2026 American Commercial Glass</span>
+        <span>Built with precision.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "American Commercial Glass",
-  "alternateName": "ACG",
-  "url": "https://acglass.com",
-  "telephone": "+1-772-486-7711",
-  "email": "info@acglass.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "US",
-    "addressRegion": "Florida"
-  },
-  "sameAs": [],
-  "description": "Full-service commercial glazing contractor delivering storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.",
-  "image": "https://acglass.com/assets/images/brand/full-logo-white.svg"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://acglass.com/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "About",
-      "item": "https://acglass.com/about.html"
-    }
-  ]
-}
-</script>
-
-  </body>
+  <script src="js/main.js"></script>
+</body>
 </html>

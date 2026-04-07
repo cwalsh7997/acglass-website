@@ -1,147 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager - Replace GTM-XXXXXXX with your container ID -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
-
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore ACG's portfolio of completed commercial glazing projects across Florida â storefront, curtainwall, window wall, impact systems, and more.">
-  <title>Projects | American Commercial Glass</title>
-
-  <!-- Favicon Links -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <!-- Open Graph Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="American Commercial Glass">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Projects | American Commercial Glass">
-  <meta property="og:description" content="Explore ACG's portfolio of completed commercial glazing projects across Florida â storefront, curtainwall, window wall, impact systems, and more.">
-  <meta property="og:url" content="https://acglass.ai/portfolio.html">
-
-  <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0A1A2E">
-
+  <title>Portfolio | American Commercial Glass</title>
+  <link rel="icon" type="image/svg+xml" href="images/acg-logo-icon.svg">
+  <meta name="description" content="Explore our portfolio of completed commercial glazing projects — from multifamily to hospitality, retail to corporate offices.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) - Replace GTM-XXXXXXX with your container ID -->
-  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
 
-  <!-- Header -->
-  <header class="site-header" id="header">
-    <div class="header-inner">
-      <a href="index.html" class="header-logo"><img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass"></a>
-      <nav class="header-nav">
-        <a href="about.html">About</a>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
         <a href="services.html">Services</a>
-        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <a href="contact.html" class="header-cta">Request a Bid</a>
-      </nav>
-      <button class="mobile-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <a href="contact.html" class="nav-cta">Send Us Plans</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-  <nav class="mobile-nav" id="mobile-nav">
-    <button class="mobile-close">&times;</button>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Projects</a>
-    <a href="manufacturers.html">Partners</a>
-    <a href="contact.html" class="mobile-cta">Request a Bid</a>
   </nav>
 
-  <!-- Page Hero -->
-  <section class="page-hero reveal">
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
     <div class="container">
-      <span class="label">Project Portfolio</span>
-      <h1>Commercial Glazing Built Right</h1>
-      <p>Precision execution across Florida's most demanding commercial projects. Storefront, curtainwall, window wall, and impact systems installed with zero tolerance for error.</p>
+      <div class="page-hero-content" data-reveal>
+        <div class="label"><span class="line"></span> Proof of Execution</div>
+        <h1>We Don't Talk.<br>We <span class="accent">Show.</span></h1>
+        <p class="hero-sub">Every project below was delivered on time, in spec, and without the drama you're used to from other glazing subs. Click through and see the caliber of work your project will get.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section class="section">
-    <div class="container">
 
-      <!-- Filters -->
-      <div class="portfolio-filters reveal">
+  <!-- ========== FILTERS ========== -->
+  <section class="section" style="padding: clamp(40px, 5vw, 60px) 0;">
+    <div class="container">
+      <div class="filter-buttons" data-reveal>
         <button class="filter-btn active" data-filter="all">All Projects</button>
         <button class="filter-btn" data-filter="multifamily">Multifamily</button>
+        <button class="filter-btn" data-filter="clubhouse">Clubhouses</button>
         <button class="filter-btn" data-filter="commercial">Commercial</button>
         <button class="filter-btn" data-filter="retail">Retail</button>
         <button class="filter-btn" data-filter="hospitality">Hospitality</button>
-        <button class="filter-btn" data-filter="storefront">Storefront</button>
-        <button class="filter-btn" data-filter="windowwall">Window Wall</button>
-        <button class="filter-btn" data-filter="impact">Impact Systems</button>
-        <button class="filter-btn" data-filter="curtainwall">Curtainwall</button>
       </div>
+    </div>
+  </section>
 
-      <!-- Project Grid -->
-      <div class="portfolio-grid">
 
-        <!-- Atlantic Fields Performance Center -->
-        <a href="atlantic-fields-performance-center.html" class="portfolio-card reveal" data-type="commercial,storefront,curtainwall" style="aspect-ratio:4/3;text-decoration:none;color:inherit;">
-          <img src="assets/images/projects/atlantic-fields-card.jpg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="portfolio-card-overlay" style="opacity:1;">
-            <span class="portfolio-card-meta">Commercial &bull; Curtainwall &bull; Storefront</span>
-            <h3>Atlantic Fields Performance Center</h3>
-          </div>
-        </a>
+  <!-- ========== PROJECT GRID ========== -->
+  <section class="section" style="padding-bottom: clamp(80px, 10vw, 160px);">
+    <div class="container">
+      <div class="project-grid" data-reveal>
 
-        <!-- Ocean Prime -->
-        <div class="portfolio-card reveal reveal-delay-1" data-type="hospitality,storefront,curtainwall" style="aspect-ratio:4/3;">
-          <img src="assets/images/projects/ocean-prime.jpg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="portfolio-card-overlay" style="opacity:1;">
-            <span class="portfolio-card-meta">Hospitality &bull; Storefront &bull; Curtainwall</span>
-            <h3>Ocean Prime</h3>
+        <!-- Project 1: Featured -->
+        <div class="project-grid-item featured" data-category="multifamily" data-delay="0">
+          <div class="ph ph-1">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Multifamily</div>
+            <h4>The Residences at Marina Bay</h4>
+            <div class="loc">Fort Lauderdale, FL</div>
           </div>
         </div>
 
-        <!-- Eau Palm Beach Resort -->
-        <a href="eau-palm-beach-resort.html" class="portfolio-card reveal reveal-delay-2" data-type="hospitality,impact,storefront" style="aspect-ratio:4/3;text-decoration:none;color:inherit;">
-          <img src="assets/images/projects/eau-palm-beach.jpg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="portfolio-card-overlay" style="opacity:1;">
-            <span class="portfolio-card-meta">Hospitality &bull; Folding Glass &bull; Custom Entries</span>
-            <h3>Eau Palm Beach Resort</h3>
-          </div>
-        </a>
-
-        <!-- Bagel Brothers -->
-        <div class="portfolio-card reveal" data-type="retail,storefront" style="aspect-ratio:4/3;">
-          <img src="assets/images/projects/bagel-brothers.jpg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="portfolio-card-overlay" style="opacity:1;">
-            <span class="portfolio-card-meta">Retail &bull; Storefront</span>
-            <h3>Bagel Brothers</h3>
+        <!-- Project 2 -->
+        <div class="project-grid-item" data-category="clubhouse" data-delay="100">
+          <div class="ph ph-2">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Clubhouse</div>
+            <h4>Avenir Clubhouse</h4>
+            <div class="loc">Palm Beach Gardens, FL</div>
           </div>
         </div>
 
-        <!-- Savannas Ridge Retail Center -->
-        <div class="portfolio-card reveal reveal-delay-1" data-type="retail,storefront" style="aspect-ratio:4/3;">
-          <img src="assets/images/projects/savannas-ridge.jpg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="portfolio-card-overlay" style="opacity:1;">
-            <span class="portfolio-card-meta">Retail &bull; Storefront</span>
-            <h3>Savannas Ridge Retail Center</h3>
+        <!-- Project 3 -->
+        <div class="project-grid-item" data-category="commercial" data-delay="200">
+          <div class="ph ph-3">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Commercial</div>
+            <h4>Brickell Financial Tower</h4>
+            <div class="loc">Miami, FL</div>
           </div>
         </div>
 
-        <!-- Bobcat Dealership -->
-        <div class="portfolio-card reveal reveal-delay-2" data-type="commercial,storefront" style="aspect-ratio:4/3;">
-          <img src="assets/images/projects/bobcat.jpg" style="width:100%;height:100%;object-fit:cover;">
-          <div class="portfolio-card-overlay" style="opacity:1;">
-            <span class="portfolio-card-meta">Industrial &bull; Storefront</span>
-            <h3>Bobcat Dealership</h3>
+        <!-- Project 4 -->
+        <div class="project-grid-item" data-category="retail" data-delay="300">
+          <div class="ph ph-4">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Retail</div>
+            <h4>Aventura Town Center</h4>
+            <div class="loc">Aventura, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-grid-item" data-category="multifamily" data-delay="400">
+          <div class="ph ph-5">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Multifamily</div>
+            <h4>Soleste Grand Central</h4>
+            <div class="loc">Miami, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-grid-item" data-category="hospitality" data-delay="500">
+          <div class="ph ph-6">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Hospitality</div>
+            <h4>The Grand Resort & Spa</h4>
+            <div class="loc">Naples, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-grid-item" data-category="clubhouse" data-delay="0">
+          <div class="ph ph-1">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Clubhouse</div>
+            <h4>GL Homes Clubhouse</h4>
+            <div class="loc">Boca Raton, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-grid-item" data-category="commercial" data-delay="100">
+          <div class="ph ph-2">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Commercial</div>
+            <h4>One Flagler Office Tower</h4>
+            <div class="loc">West Palm Beach, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="project-grid-item" data-category="retail" data-delay="200">
+          <div class="ph ph-3">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Retail</div>
+            <h4>Sawgrass Mills Expansion</h4>
+            <div class="loc">Sunrise, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 10 -->
+        <div class="project-grid-item" data-category="multifamily" data-delay="300">
+          <div class="ph ph-4">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Multifamily</div>
+            <h4>Circ Residences</h4>
+            <div class="loc">Hollywood, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 11 -->
+        <div class="project-grid-item" data-category="commercial" data-delay="400">
+          <div class="ph ph-5">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Commercial</div>
+            <h4>Doral Corporate Campus</h4>
+            <div class="loc">Doral, FL</div>
+          </div>
+        </div>
+
+        <!-- Project 12 -->
+        <div class="project-grid-item" data-category="hospitality" data-delay="500">
+          <div class="ph ph-6">Your Project Image</div>
+          <div class="project-grid-overlay">
+            <div class="cat">Hospitality</div>
+            <h4>Oceanfront Hotel & Residences</h4>
+            <div class="loc">Miami Beach, FL</div>
           </div>
         </div>
 
@@ -149,83 +199,136 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--dark cta-block">
-    <div class="container reveal">
-      <h2>Ready to Start Your Project?</h2>
-      <p>Submit your plans or request a budget. ACG responds to all inquiries within 24 hours.</p>
-      <div class="cta-block-actions">
-        <a href="contact.html" class="btn btn--primary btn--lg">Request a Bid</a>
+
+  <!-- ========== PROJECT SPOTLIGHT ========== -->
+  <section class="section" style="padding: clamp(40px, 5vw, 60px) 0;">
+    <div class="container">
+      <div data-reveal>
+        <div class="label" style="margin-bottom: 20px;"><span class="line"></span> Project Spotlight</div>
+        <h2 style="margin-bottom: 60px;">The Residences at Marina Bay</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start; margin-bottom: 80px;" data-reveal data-delay="200">
+        <div>
+          <div class="project-detail-img">
+            <div class="ph ph-1">Project Hero Image</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="project-meta" style="margin-bottom: 40px;">
+            <div class="meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Fort Lauderdale, FL</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Category</span>
+              <span class="meta-value">Multifamily Residential</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Scope</span>
+              <span class="meta-value">Window Wall Systems & Storefronts</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Systems</span>
+              <span class="meta-value">Impact Windows, Commercial Glazing</span>
+            </div>
+          </div>
+
+          <p style="margin-bottom: 30px;">The Residences at Marina Bay is a 32-story, 485-unit luxury tower featuring a comprehensive window wall and storefront glazing system. Our team managed the installation of over 8,000 linear feet of aluminum framing and 65,000 SF of impact-rated glass, coordinating with the developer's tight construction schedule and demanding architectural specifications.</p>
+
+          <p>The project required precision coordination between our crews, the structural steel teams, and the mechanical trades to ensure flawless installation on this high-visibility downtown property.</p>
+        </div>
+      </div>
+
+      <div class="detail-images-grid" data-reveal data-delay="300">
+        <div class="detail-img">
+          <div class="ph ph-2">Detail Image 1</div>
+        </div>
+        <div class="detail-img">
+          <div class="ph ph-3">Detail Image 2</div>
+        </div>
+        <div class="detail-img">
+          <div class="ph ph-4">Detail Image 3</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section">
+    <div class="container" data-reveal>
+      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>NEXT</div>
+      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
+      <p>Every project above started the same way — plans on our desk and a GC who needed a glazing sub they could actually trust. Send your drawings and get a scope in 48 hours.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">
+        Send Us Plans
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass" class="footer-brand-logo">
-          <p>Full-service commercial glazing contractor specializing in storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.</p>
-          <div class="footer-contact">
-            <a href="tel:+17724867711"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>(772) 486-7711</a>
-            <span style="display:inline-flex;align-items:center;gap:8px;">West Palm Beach &bull; Naples &bull; Tampa</span>
-            <a href="mailto:info@acglass.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@acglass.com</a>
+          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+            <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
+          </a>
+          <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="manufacturers.html">Partners</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
-        <div class="footer-col"><h4>Company</h4><a href="about.html">About ACG</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="portfolio.html">Projects</a><a href="manufacturers.html">Partners</a><a href="contact.html">Contact</a></div>
-        <div class="footer-col"><h4>Services</h4><a href="commercial-storefront-systems.html">Storefront</a><a href="curtainwall-installation.html">Curtainwall</a><a href="window-wall-systems.html">Window Wall</a><a href="impact-windows-doors-florida.html">Impact Windows</a><a href="automatic-entrance-systems.html">Automatic Entrances</a><a href="interior-glass-partitions.html">Interior Glass</a><a href="fire-rated-glass-systems.html">Fire-Rated</a></div>
-        <div class="footer-col"><h4>Markets</h4><a href="multifamily-glazing.html">Multifamily</a><a href="hospitality-hotel-glazing.html">Hospitality</a><a href="retail-storefront-glazing.html">Retail</a><a href="commercial-glazing-miami.html">Miami</a><a href="commercial-glazing-naples.html">Naples</a><a href="commercial-glazing-orlando.html">Orlando</a><a href="commercial-glazing-tampa.html">Tampa</a><a href="commercial-glazing-south-florida.html">South Florida</a></div>
+
+        <div>
+          <h5>Services</h5>
+          <div class="footer-links">
+            <a href="services.html">Impact Windows</a>
+            <a href="services.html">Storefronts</a>
+            <a href="services.html">Window Wall</a>
+            <a href="services.html">Sliding Systems</a>
+            <a href="services.html">Fire-Rated Glass</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <div class="footer-contact">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              connor@acglass.com
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (772) 486-7711
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              South Florida
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <span>&copy; 2026 American Commercial Glass, Inc. All rights reserved.</span>
-        <div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
+        <span>&copy; 2026 American Commercial Glass</span>
+        <span>Built with precision.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "American Commercial Glass",
-  "alternateName": "ACG",
-  "url": "https://acglass.ai",
-  "telephone": "+1-772-486-7711",
-  "email": "info@acglass.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "US",
-    "addressRegion": "Florida"
-  },
-  "sameAs": [],
-  "description": "Full-service commercial glazing contractor delivering storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.",
-  "image": "https://acglass.ai/assets/images/brand/full-logo-white.svg"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://acglass.ai/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Portfolio",
-      "item": "https://acglass.ai/portfolio.html"
-    }
-  ]
-}
-</script>
-
-  </body>
+  <script src="js/main.js"></script>
+</body>
 </html>

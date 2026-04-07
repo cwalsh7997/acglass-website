@@ -1,385 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager - Replace GTM-XXXXXXX with your container ID -->
-  <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
-
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Full-spectrum commercial glazing solutions: storefront, curtainwall, window wall, impact-rated systems, automatic entrances, and fire-rated assemblies. Supply, installation, or turnkey.">
   <title>Services | American Commercial Glass</title>
-
-  <!-- Favicon Links -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <!-- Open Graph Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="American Commercial Glass">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Services | American Commercial Glass">
-  <meta property="og:description" content="Full-spectrum commercial glazing solutions: storefront, curtainwall, window wall, impact-rated systems, automatic entrances, and fire-rated assemblies. Supply, installation, or turnkey.">
-  <meta property="og:url" content="https://acglass.com/services.html">
-
-  <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0A1A2E">
-
+  <link rel="icon" type="image/svg+xml" href="images/acg-logo-icon.svg">
+  <meta name="description" content="Commercial glazing services from American Commercial Glass: impact windows, storefronts, window walls, sliding systems, bifold doors, fire-rated glass, interior glazing, and complete installation.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) - Replace GTM-XXXXXXX with your container ID -->
-  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
+  <!-- GRAIN OVERLAY -->
+  <div class="grain"></div>
 
-  <!-- Header -->
-  <header class="site-header" id="header">
-    <div class="header-inner">
-      <a href="index.html" class="header-logo"><img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass"></a>
-      <nav class="header-nav">
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html" class="active">Services</a>
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Projects</a>
         <a href="manufacturers.html">Partners</a>
-        <a href="contact.html" class="header-cta">Request a Bid</a>
-      </nav>
-      <button class="mobile-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <a href="contact.html" class="nav-cta">Send Us Plans</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-  <nav class="mobile-nav" id="mobile-nav">
-    <button class="mobile-close">&times;</button>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Projects</a>
-    <a href="manufacturers.html">Partners</a>
-    <a href="contact.html" class="mobile-cta">Request a Bid</a>
   </nav>
 
-  <!-- Page Hero -->
+
+  <!-- ========== PAGE HERO ========== -->
   <section class="page-hero">
     <div class="container">
-      <span class="label">Comprehensive Glazing Solutions</span>
-      <h1>Full-Spectrum<br>Commercial Glazing</h1>
-      <p>Storefront to curtainwall. Supply to turnkey. ACG delivers every glazing system your project requires — engineered, installed, and inspected to national standards.</p>
+      <div class="label" data-reveal><span class="line"></span> Full-Scope Glazing</div>
+      <h1 data-reveal data-delay="100">Every System.<br>One Sub.</h1>
+      <p data-reveal data-delay="200">Stop piecing together your glazing package from five different subs. ACG handles the complete scope — impact windows, storefronts, window wall, specialty systems — with one contract, one schedule, and one team that actually coordinates with your other trades.</p>
     </div>
   </section>
 
-  <!-- Services List -->
-  <section class="section" id="storefront">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Storefront Systems</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Engineered aluminum storefronts for retail, office, mixed-use, and institutional projects. ACG specifies and installs thermally broken profiles from premium manufacturers, designed to meet project performance and aesthetic requirements.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">From single-bay retail to complex multi-story applications with integrated entrances, ACG coordinates with adjacent trades and executes to tolerance. Every installation is inspected and sealed to code.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Retail</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Office</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Mixed-Use</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Institutional</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
+
+  <!-- ========== SERVICE 01 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 01</div>
+        <h3>Impact Windows & Doors</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">HVHZ-rated impact systems engineered to meet or exceed Florida Building Code and large missile impact requirements.</p>
+        <p style="margin-bottom: 24px;">Full range of impact window and door configurations. Laminated glass, structural silicone, thermal breaks. Certified hardware and installation methods. Meets the nation's most stringent hurricane protection codes.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Hurricane Rated</span>
+          <span class="tag">Impact Tested</span>
+          <span class="tag">FBC Approved</span>
+          <span class="tag">HVHZ</span>
         </div>
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-1">Impact Windows & Doors</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="curtainwall">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;order:-1;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><rect x="2" y="4" width="20" height="16" rx="1"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="8" y1="4" x2="8" y2="20"/><line x1="16" y1="4" x2="16" y2="20"/></svg>
+  <!-- ========== SERVICE 02 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 02</div>
+        <h3>Storefront Systems</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">Flush-glazed and thermally broken storefronts with custom finishes and architectural precision.</p>
+        <p style="margin-bottom: 24px;">Commercial-grade framing systems with thermal performance and clean aesthetics. Anodized or powder-coated aluminum in custom colors. Seamless glazing from floor to ceiling, storefront entries, and tempered or laminated glass options.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Flush Glazed</span>
+          <span class="tag">Thermal Break</span>
+          <span class="tag">Custom Finishes</span>
+          <span class="tag">Commercial Grade</span>
         </div>
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Curtainwall Systems</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Unitized and stick-built curtainwall for high-rise and institutional applications. ACG provides full engineering coordination, fabrication oversight, and precision field installation for complex exterior envelopes.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">From structural analysis and shop drawing review through glazing and sealant, ACG manages the entire curtainwall scope. We partner directly with engineers and architects to ensure system performance, weather resistance, and code compliance on every project.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">High-Rise</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Commercial</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Institutional</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-2">Storefront Systems</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="windowwall">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Window Wall Systems</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">High-performance window wall for multifamily, hospitality, and commercial high-rise applications. Single point of accountability: system selection, engineering, procurement, and installation through final inspection.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">ACG specializes in the complex coordination between window wall, structure, waterproofing, and interior finishes. Deep experience with Eurowall and ESWindows. We engineer for performance, we install with precision.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Multifamily</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Hospitality</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">High-Rise</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
+  <!-- ========== SERVICE 03 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 03</div>
+        <h3>Window Wall Systems</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">Slab-to-slab high-performance glazing systems for multifamily, hospitality, and mixed-use development.</p>
+        <p style="margin-bottom: 24px;">Full curtainwall and window wall assemblies. Structural glazing or unitized systems. Impact-rated options for coastal markets. Thermal performance that exceeds code. Coordination with MEP trades and structural systems.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Slab-to-Slab</span>
+          <span class="tag">High Performance</span>
+          <span class="tag">Impact Rated</span>
+          <span class="tag">Unitized</span>
         </div>
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-3">Window Wall Systems</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="impact">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;order:-1;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+  <!-- ========== SERVICE 04 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 04</div>
+        <h3>Sliding & Multi-Slide Doors</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">Multi-track pocket and stack-glass systems for seamless indoor-outdoor connectivity.</p>
+        <p style="margin-bottom: 24px;">Heavy-duty aluminum framing with precision hardware. Pocket and stack configurations up to 20+ feet wide. Impact-rated options. Floor or pocket-mount installations. Full range of finishes and glass options.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Multi-Track</span>
+          <span class="tag">Pocket & Stack</span>
+          <span class="tag">Impact Rated</span>
+          <span class="tag">Wide Span</span>
         </div>
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Impact Windows &amp; Doors</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Florida-code-compliant hurricane impact systems for coastal and HVHZ projects. ACG installs tested, NOA-approved impact windows and doors from ESWindows and Slimpact that meet the nation's most stringent wind and impact requirements.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">Impact glazing demands technical precision. Code zones vary, product approvals must align with project conditions, and installation details are inspected rigorously. ACG has the product knowledge and field expertise to get it right every time.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Coastal</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">HVHZ</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Multifamily</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Commercial</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-4">Sliding & Multi-Slide Doors</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="automatic">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Automatic Entrances</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Sliding, swinging, and revolving automatic entrance systems for commercial, hospitality, and healthcare applications. ACG installs Allegion systems that are ADA-compliant, code-certified, and fully integrated with access control and fire safety.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">Automatic entrance coordination is critical. ACG handles the detail work proactively — reviewing power requirements, header conditions, and interface details during preconstruction to ensure installation executes smoothly.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Commercial</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Hospitality</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Healthcare</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
+  <!-- ========== SERVICE 05 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 05</div>
+        <h3>Bifold Door Systems</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">Full-opening aluminum bifold systems that transform interior and exterior spaces.</p>
+        <p style="margin-bottom: 24px;">Lightweight aluminum framing with heavy-duty tracks and rollers. Single or double-acting panels. Impact-rated glass options. Thermal breaks for energy efficiency. Contemporary hardware and custom finishes.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Full Opening</span>
+          <span class="tag">Aluminum Frames</span>
+          <span class="tag">Impact Options</span>
+          <span class="tag">Custom Hardware</span>
         </div>
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-5">Bifold Door Systems</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="interior">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;order:-1;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+  <!-- ========== SERVICE 06 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 06</div>
+        <h3>Fire-Rated Glass</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">UL-certified fire-rated glazing systems from 20 to 120 minutes.</p>
+        <p style="margin-bottom: 24px;">Transparent and opaque fire-rated glass products. Life-safety rated framing systems. Integration with fire doors and building envelope requirements. Full compliance with IBC and local codes.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">20-120 Min Rated</span>
+          <span class="tag">UL Certified</span>
+          <span class="tag">Life Safety</span>
+          <span class="tag">IBC Compliant</span>
         </div>
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Interior Storefront &amp; Glass Partitions</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Interior aluminum and glass partition systems for offices, lobbies, conference rooms, and retail environments. ACG installs clean-lined profiles that deliver visual openness while meeting acoustic separation and fire-rating requirements.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">Interior glazing demands flawless execution. ACG's crews specialize in precision fitment, tight tolerances, and hardware that functions perfectly on day one. Detail work that makes glazing invisible.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Office</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Retail</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Lobby</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-6">Fire-Rated Glass</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="fire-rated">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Fire-Rated Systems</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Fire-rated glazing assemblies for interior and exterior applications requiring code-mandated fire resistance. ACG installs tested, labeled assemblies from Technical Glass Products — fire-protective and fire-resistive solutions rated 20 minutes to 2 hours.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">Fire-rated glazing is detail-sensitive work. Product selection, framing compatibility, labeling, and inspection all demand precision. ACG partners with architects and code reviewers to ensure every assembly meets specifications.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Corridors</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Stairwells</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Exterior</span>
-            <span style="font-size:13px;font-weight:500;padding:6px 14px;background:var(--off-white);border-radius:100px;color:var(--gray-600);">Institutional</span>
-          </div>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
+  <!-- ========== SERVICE 07 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 07</div>
+        <h3>Interior Glass Systems</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">Glass partitions, office fronts, and demising walls for modern interiors.</p>
+        <p style="margin-bottom: 24px;">Frameless and framed partition systems. Acoustic and non-acoustic options. Switchable glass and privacy film. Custom hardware and finishes. Fire-rated interior glazing available.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Glass Partitions</span>
+          <span class="tag">Office Fronts</span>
+          <span class="tag">Custom Hardware</span>
+          <span class="tag">Acoustic Options</span>
         </div>
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-1">Interior Glass Systems</div>
       </div>
     </div>
   </section>
 
-  <div style="height:1px;background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);max-width:var(--container-max);margin:0 auto;"></div>
 
-  <section class="section" id="custom">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="reveal">
-        <div style="background:linear-gradient(135deg,#0A1A2E 0%,#14345A 100%);border-radius:var(--radius-lg);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;order:-1;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;"></div>
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+  <!-- ========== SERVICE 08 ========== -->
+  <section class="section" style="padding: 0;">
+    <div class="service-detail" data-reveal>
+      <div class="service-detail-content">
+        <div class="label"><span class="line"></span> 08</div>
+        <h3>Supply & Installation</h3>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom: 16px;">Full project delivery from shop drawings through on-site installation and commissioning.</p>
+        <p style="margin-bottom: 24px;">Coordination with architects, engineers, and general contractors. Plan review and constructability assessment. Shop drawing development and approval. Field installation with quality assurance. Punch-out and final commissioning.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag">Plan Review</span>
+          <span class="tag">Shop Drawings</span>
+          <span class="tag">Full Installation</span>
+          <span class="tag">Commissioning</span>
         </div>
-        <div>
-          <span class="label">Service</span>
-          <h2 class="section-title">Custom &amp; Specialty Glazing</h2>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:16px;">Non-standard applications requiring engineering creativity and installation expertise. Structural glass, point-supported systems, decorative glass, oversized lites, radius glazing — specialty configurations outside typical categories.</p>
-          <p style="color:var(--gray-500);line-height:1.75;margin-bottom:24px;">When the spec calls for something complex, ACG has the technical depth to engineer it and the field capability to execute it. We collaborate with architects and engineers to deliver design intent.</p>
-          <a href="contact.html" class="btn btn--primary">Request a Bid</a>
-        </div>
+      </div>
+      <div class="service-detail-visual">
+        <div class="ph ph-2">Supply & Installation</div>
       </div>
     </div>
   </section>
 
-  <!-- Supply / Install / Both -->
-  <section class="section section--dark" id="supply">
-    <div class="container text-center">
-      <div class="reveal">
-        <span class="label">Flexible Engagement Models</span>
-        <h2 class="section-title">Supply. Install. Or Both.</h2>
-        <p class="section-subtitle">ACG adapts to your project structure — not the other way around.</p>
-      </div>
 
-      <div class="flex-grid" style="margin-top:48px;">
-        <div class="flex-card reveal reveal-delay-1">
-          <div class="flex-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M7 4v6M4 7h6M17 14v6M14 17h6"/></svg>
-          </div>
-          <h3>Full-Service</h3>
-          <p>Material procurement, fabrication coordination, and installation under one contract. Single point of accountability for complex glazing packages. Lowest risk structure for the GC.</p>
-        </div>
-        <div class="flex-card reveal reveal-delay-2">
-          <div class="flex-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <h3>Installation Only</h3>
-          <p>Already have a supplier? ACG installs. System-agnostic, experienced across all major manufacturer lines, equipped to install per specification.</p>
-        </div>
-        <div class="flex-card reveal reveal-delay-3">
-          <div class="flex-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <h3>Supply Only</h3>
-          <p>Material packages without installation. ACG supplies storefront, window wall, and impact systems to contractors with their own crews. Ideal for out-of-state GCs entering Florida.</p>
-        </div>
-      </div>
+  <!-- ========== BIG TEXT / CTA ========== -->
+  <section class="cta-section">
+    <div class="container" data-reveal>
+      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
+      <h2>Plans on Your Desk?<br>Scope on Ours in <span class="accent">48 Hours.</span></h2>
+      <p>No vague allowances. No hidden exclusions. Send your drawings and we'll return a line-item scope with system recommendations, lead times, and pricing you can actually hold us to.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">
+        Request a Scope
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section section--darker cta-block">
-    <div class="container reveal">
-      <h2>Ready to Quote Your Glazing Project?</h2>
-      <p>Send plans, request a budget, or discuss scope. ACG responds fast.</p>
-      <div class="cta-block-actions">
-        <a href="contact.html" class="btn btn--primary btn--lg">Request a Bid</a>
-        <a href="tel:+17724867711" class="btn btn--secondary btn--lg">Call (772) 486-7711</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/brand/full-logo-white.svg" alt="American Commercial Glass" class="footer-brand-logo">
-          <p>National-tier commercial glazing contractor. Full-service supply and installation of storefront, curtainwall, window wall, impact-rated systems, automatic entrances, and fire-rated assemblies.</p>
-          <div class="footer-contact">
-            <a href="tel:+17724867711"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>(772) 486-7711</a>
-            <a href="mailto:info@acglass.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@acglass.com</a>
+          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+            <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
+          </a>
+          <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="manufacturers.html">Partners</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
-        <div class="footer-col"><h4>Company</h4><a href="about.html">About ACG</a><a href="services.html">Services</a><a href="industries.html">Industries</a><a href="portfolio.html">Projects</a><a href="manufacturers.html">Partners</a><a href="contact.html">Contact</a></div>
-        <div class="footer-col"><h4>Services</h4><a href="commercial-storefront-systems.html">Storefront</a><a href="curtainwall-installation.html">Curtainwall</a><a href="window-wall-systems.html">Window Wall</a><a href="impact-windows-doors-florida.html">Impact Windows</a><a href="automatic-entrance-systems.html">Automatic Entrances</a><a href="interior-glass-partitions.html">Interior Glass</a><a href="fire-rated-glass-systems.html">Fire-Rated</a></div>
-        <div class="footer-col"><h4>Markets</h4><a href="multifamily-glazing.html">Multifamily</a><a href="hospitality-hotel-glazing.html">Hospitality</a><a href="retail-storefront-glazing.html">Retail</a><a href="commercial-glazing-miami.html">Miami</a><a href="commercial-glazing-naples.html">Naples</a><a href="commercial-glazing-orlando.html">Orlando</a><a href="commercial-glazing-tampa.html">Tampa</a><a href="commercial-glazing-south-florida.html">South Florida</a></div>
+
+        <div>
+          <h5>Services</h5>
+          <div class="footer-links">
+            <a href="services.html">Impact Windows</a>
+            <a href="services.html">Storefronts</a>
+            <a href="services.html">Window Wall</a>
+            <a href="services.html">Sliding Systems</a>
+            <a href="services.html">Fire-Rated Glass</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <div class="footer-contact">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              connor@acglass.com
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (772) 486-7711
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              South Florida
+            </p>
+          </div>
+        </div>
       </div>
+
       <div class="footer-bottom">
-        <span>&copy; 2026 American Commercial Glass, Inc. All rights reserved.</span>
-        <div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
+        <span>&copy; 2026 American Commercial Glass</span>
+        <span>Built with precision.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "American Commercial Glass",
-  "alternateName": "ACG",
-  "url": "https://acglass.com",
-  "telephone": "+1-772-486-7711",
-  "email": "info@acglass.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "US",
-    "addressRegion": "Florida"
-  },
-  "sameAs": [],
-  "description": "Full-service commercial glazing contractor delivering storefront, curtainwall, window wall, impact-rated systems, and automatic entrances across Florida and the Southeast.",
-  "image": "https://acglass.com/assets/images/brand/full-logo-white.svg"
-}
-</script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://acglass.com/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://acglass.com/services.html"
-    }
-  ]
-}
-</script>
-
-  </body>
+  <script src="js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
+  <!-- Emblem -->
+  <g transform="translate(2, 4)">
+    <path d="M34,0 L62,56 L48,56 L34,28 L20,56 L6,56 Z" fill="#1B3A5C"/>
+    <polygon points="6,56 24,0 35,0 17,56" fill="#E21B2C"/>
+  </g>
+  <!-- "ACG" Text -->
+  <text x="76" y="42" font-family="'Inter', 'Arial Black', Arial, sans-serif" font-weight="900" font-size="38" letter-spacing="2">
+    <tspan fill="#E21B2C">A</tspan><tspan fill="#FFFFFF">CG</tspan>
+  </text>
+  <!-- Subtitle -->
+  <text x="76" y="62" font-family="'Inter', Arial, sans-serif" font-weight="500" font-size="9.5" fill="rgba(255,255,255,0.4)" letter-spacing="3">AMERICAN COMMERCIAL GLASS</text>
+</svg>

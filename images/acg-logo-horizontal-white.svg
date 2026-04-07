@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Emblem -->
+  <g transform="translate(2, 2)">
+    <path d="M38,0 L70,64 L54,64 L38,32 L22,64 L6,64 Z" fill="#1B3A5C"/>
+    <polygon points="6,64 26,0 39,0 19,64" fill="#E21B2C"/>
+  </g>
+  <!-- "ACG" Text -->
+  <text x="86" y="54" font-family="'Inter', 'Arial Black', Arial, sans-serif" font-weight="900" font-size="50" letter-spacing="2">
+    <tspan fill="#E21B2C">A</tspan><tspan fill="#FFFFFF">CG</tspan>
+  </text>
+</svg>

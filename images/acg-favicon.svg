@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" fill="none">
+  <!-- White triangle / chevron "A" (for dark backgrounds) -->
+  <path d="M200,0 L360,320 L280,320 L200,160 L120,320 L40,320 Z" fill="#1B3A5C"/>
+  <!-- Red diagonal slash -->
+  <polygon points="40,320 148,0 212,0 104,320" fill="#E21B2C"/>
+</svg>
