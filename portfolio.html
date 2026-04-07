@@ -171,6 +171,7 @@
     .pf-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 400px;
       gap: 6px;
     }
 
@@ -182,7 +183,7 @@
       display: block;
       text-decoration: none;
       color: inherit;
-      background: rgba(255,255,255,0.03);
+      background: #0b1220;
     }
     .pf-card img {
       width: 100%;
@@ -193,26 +194,15 @@
     }
     .pf-card:hover img { transform: scale(1.05); }
 
-    /* Overlay */
-    .pf-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(5,10,18,0.92) 0%, rgba(5,10,18,0.1) 55%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(16px, 2vw, 28px);
-    }
-    .pf-card:hover .pf-overlay { opacity: 1; }
+    /* Row span for hero card */
+    .row-span-2 { grid-row: span 2; }
 
     /* Always-visible bottom strip */
     .pf-bottom {
       position: absolute;
       bottom: 0; left: 0; right: 0;
       padding: clamp(12px, 1.5vw, 20px) clamp(16px, 2vw, 28px);
-      background: linear-gradient(to top, rgba(5,10,18,0.85) 0%, transparent 100%);
+      background: linear-gradient(to top, rgba(5,10,18,0.88) 0%, rgba(5,10,18,0.3) 60%, transparent 100%);
       transition: transform 0.3s ease;
     }
     .pf-card:hover .pf-bottom { transform: translateY(-8px); }
@@ -251,24 +241,13 @@
       transform: scale(0.7);
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
-    .pf-card:hover .pf-arrow {
-      opacity: 1;
-      transform: scale(1);
-    }
+    .pf-card:hover .pf-arrow { opacity: 1; transform: scale(1); }
     .pf-arrow svg { color: white; }
 
     /* Grid span classes */
-    .span-8 { grid-column: span 8; }
-    .span-6 { grid-column: span 6; }
-    .span-4 { grid-column: span 4; }
-    .span-3 { grid-column: span 3; }
-    .span-12 { grid-column: span 12; }
-
-    /* Row heights */
-    .row-tall { aspect-ratio: 16/10; }
-    .row-std  { aspect-ratio: 4/3; }
-    .row-wide { aspect-ratio: 21/9; }
-    .row-sq   { aspect-ratio: 1/1; }
+    .span-8  { grid-column: span 8; }
+    .span-4  { grid-column: span 4; }
+    .span-3  { grid-column: span 3; }
 
     /* Hidden when filtered */
     .pf-card.filtered { display: none; }
@@ -280,11 +259,16 @@
       .pf-hero-right::before { display: none; }
       .mosaic-img.tall { grid-row: auto; }
       .pf-hero-left { padding: clamp(100px, 12vw, 140px) clamp(24px, 6vw, 60px) 48px; }
-      .span-8, .span-6, .span-4, .span-3 { grid-column: span 6; }
+      .pf-grid { grid-auto-rows: 300px; }
+      .span-8 { grid-column: span 6; }
+      .span-4 { grid-column: span 6; }
+      .span-3 { grid-column: span 6; }
+      .row-span-2 { grid-row: span 1; }
     }
     @media (max-width: 640px) {
-      .span-8, .span-6, .span-4, .span-3 { grid-column: span 12; }
-      .row-tall, .row-std, .row-wide, .row-sq { aspect-ratio: 4/3; }
+      .pf-grid { grid-auto-rows: 260px; }
+      .span-8, .span-4, .span-3 { grid-column: span 12; }
+      .row-span-2 { grid-row: span 1; }
       .pf-filter-btn { padding: 12px 14px; font-size: 10px; }
       .pf-count { display: none; }
     }
@@ -382,8 +366,8 @@
   <div class="pf-grid-wrap">
     <div class="pf-grid" id="pfGrid">
 
-      <!-- ROW 1: Hero pair — 1172 S Harbor (wide) + Carib Circle (square) -->
-      <a href="1172-s-harbor.html" class="pf-card span-8 row-tall" data-category="residential">
+      <!-- ROW 1-2: Hero (1172 spans 2 rows tall) + 2 stacked right -->
+      <a href="1172-s-harbor.html" class="pf-card span-8 row-span-2" data-category="residential">
         <img src="images/projects/1172-s-harbor/hero-twilight.jpg" alt="1172 S Harbor" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Residential</div>
@@ -393,7 +377,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a href="2143-carib-circle.html" class="pf-card span-4 row-tall" data-category="residential">
+      <a href="2143-carib-circle.html" class="pf-card span-4" data-category="residential">
         <img src="images/projects/carib-circle/hero-twilight.jpg" alt="2143 Carib Circle" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Residential</div>
@@ -403,18 +387,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <!-- ROW 2: Three equal -->
-      <a href="lake-park-innovation-center.html" class="pf-card span-4 row-std" data-category="commercial">
-        <img src="images/projects/lake-park-innovation/hero.jpg" alt="Lake Park Innovation Center" loading="lazy">
-        <div class="pf-bottom">
-          <div class="pf-cat">Commercial — 3 Buildings</div>
-          <div class="pf-title">Lake Park Innovation Center</div>
-          <div class="pf-loc">West Palm Beach, FL — ESWindows</div>
-        </div>
-        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-      </a>
-
-      <a href="imperial-crossings-bonita-springs.html" class="pf-card span-4 row-std" data-category="multifamily">
+      <a href="imperial-crossings-bonita-springs.html" class="pf-card span-4" data-category="multifamily">
         <img src="images/projects/imperial-crossings/hero.jpg" alt="Imperial Crossings" style="object-position:center 35%;" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Multifamily</div>
@@ -424,7 +397,18 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a href="hca-cape-coral-emergency.html" class="pf-card span-4 row-std" data-category="healthcare">
+      <!-- ROW 3: Three equal -->
+      <a href="lake-park-innovation-center.html" class="pf-card span-4" data-category="commercial">
+        <img src="images/projects/lake-park-innovation/hero.jpg" alt="Lake Park Innovation Center" loading="lazy">
+        <div class="pf-bottom">
+          <div class="pf-cat">Commercial — 3 Buildings</div>
+          <div class="pf-title">Lake Park Innovation Center</div>
+          <div class="pf-loc">West Palm Beach, FL — ESWindows</div>
+        </div>
+        <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+
+      <a href="hca-cape-coral-emergency.html" class="pf-card span-4" data-category="healthcare">
         <img src="images/projects/hca-cape-coral/hero.jpg" alt="HCA Cape Coral Emergency" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Healthcare</div>
@@ -434,8 +418,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <!-- ROW 3: Wide + narrow -->
-      <a href="hardy-world-melbourne.html" class="pf-card span-6 row-std" data-category="retail">
+      <a href="hardy-world-melbourne.html" class="pf-card span-4" data-category="retail">
         <img src="images/projects/hardy-world/hero-twilight.jpg" alt="Hardy World 4.0" style="object-position:center 55%;" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Retail</div>
@@ -445,7 +428,8 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a href="westlake-hialeah-retrofit.html" class="pf-card span-3 row-std" data-category="retail">
+      <!-- ROW 4: Three equal -->
+      <a href="westlake-hialeah-retrofit.html" class="pf-card span-4" data-category="retail">
         <img src="images/projects/westlake-hialeah/storefront-detail.jpg" alt="Westlake Shopping Center" style="object-position:center 40%;" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Retail — Full Retrofit</div>
@@ -455,7 +439,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a href="atlantic-fields-performance-center.html" class="pf-card span-3 row-std" data-category="fitness">
+      <a href="atlantic-fields-performance-center.html" class="pf-card span-4" data-category="fitness">
         <img src="images/atlantic-fields-card.jpg" alt="Atlantic Fields Performance Center" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Fitness &amp; Wellness</div>
@@ -465,8 +449,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <!-- ROW 4: Three equal -->
-      <a href="medley-business-park.html" class="pf-card span-4 row-std" data-category="commercial">
+      <a href="medley-business-park.html" class="pf-card span-4" data-category="commercial">
         <img src="images/projects/medley-business-park/street-view.jpg" alt="Medley Business Park" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Commercial</div>
@@ -476,7 +459,8 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a href="aspen-dental-edgewater.html" class="pf-card span-4 row-std" data-category="retail">
+      <!-- ROW 5: Three equal -->
+      <a href="aspen-dental-edgewater.html" class="pf-card span-4" data-category="retail">
         <img src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental Plaza" style="object-position:center 40%;" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Retail / Healthcare</div>
@@ -486,7 +470,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <a href="turbine-technologies-jupiter.html" class="pf-card span-4 row-std" data-category="commercial">
+      <a href="turbine-technologies-jupiter.html" class="pf-card span-4" data-category="commercial">
         <img src="images/projects/turbine-technologies/entrance.jpg" alt="Turbine Technologies" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Commercial</div>
@@ -496,8 +480,7 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <!-- ROW 5: Wide industrial + two small -->
-      <a href="cubesmart-davie.html" class="pf-card span-3 row-std" data-category="commercial">
+      <a href="cubesmart-davie.html" class="pf-card span-4" data-category="commercial">
         <img src="images/projects/cubesmart-davie/hero.jpg" alt="CubeSmart Davie" style="object-position:center 30%;" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Commercial</div>
@@ -507,7 +490,8 @@
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </a>
 
-      <div class="pf-card span-3 row-std" data-category="retail">
+      <!-- ROW 6: Three equal -->
+      <div class="pf-card span-4" data-category="retail">
         <img src="images/savannas-ridge.jpg" alt="Savannas Ridge" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Retail</div>
@@ -516,7 +500,7 @@
         </div>
       </div>
 
-      <div class="pf-card span-3 row-std" data-category="recreation">
+      <div class="pf-card span-4" data-category="recreation">
         <img src="images/padel-club.jpg" alt="Padel Club" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Recreation</div>
@@ -525,11 +509,11 @@
         </div>
       </div>
 
-      <a href="1172-s-harbor.html" class="pf-card span-3 row-std" data-category="residential">
+      <a href="1172-s-harbor.html" class="pf-card span-4" data-category="residential">
         <img src="images/projects/1172-s-harbor/pool-twilight.jpg" alt="1172 S Harbor pool" style="object-position:center 40%;" loading="lazy">
         <div class="pf-bottom">
           <div class="pf-cat">Residential</div>
-          <div class="pf-title">1172 S Harbor — Pool</div>
+          <div class="pf-title">1172 S Harbor — Pool at Dusk</div>
           <div class="pf-loc">ES Prestige</div>
         </div>
         <div class="pf-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
