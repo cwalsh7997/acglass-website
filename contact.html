@@ -5,38 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Send Us Your Plans | American Commercial Glass</title>
   <link rel="icon" type="image/svg+xml" href="images/acg-logo-icon.svg">
-  <meta name="description" content="Send your architectural plans to American Commercial Glass. Get a detailed scope and estimate within 48 hours.">
+  <meta name="description" content="Send your architectural plans to American Commercial Glass. Get a detailed scope and estimate within 48 hours. Three Florida offices — West Palm Beach, Naples, Tampa.">
   <link rel="canonical" href="https://acglass.com/contact.html">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
-  <meta property="og:title" content="Contact American Commercial Glass | Get a Glazing Estimate">
-  <meta property="og:description" content="Send your plans to ACG and receive a detailed glazing scope and competitive estimate within 48 hours. South Florida's most responsive commercial glazing contractor.">
+  <meta property="og:title" content="Contact American Commercial Glass | Get a Glazing Scope in 48 Hours">
+  <meta property="og:description" content="Send your plans to ACG and receive a detailed glazing scope and competitive estimate within 48 hours. Three Florida offices: West Palm Beach, Naples, Tampa.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/contact.html">
   <meta property="og:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact American Commercial Glass | Get a Glazing Estimate">
-  <meta name="twitter:description" content="Send your plans to ACG and receive a detailed glazing scope and competitive estimate within 48 hours. South Florida's most responsive commercial glazing contractor.">
+  <meta name="twitter:title" content="Contact American Commercial Glass | Get a Glazing Scope in 48 Hours">
+  <meta name="twitter:description" content="Send your plans to ACG and receive a detailed glazing scope and competitive estimate within 48 hours. Three Florida offices: West Palm Beach, Naples, Tampa.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- ContactPage Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact American Commercial Glass",
+    "description": "Send drawings to ACG and receive a complete commercial glazing scope letter with pricing, system recommendations, and exclusion list within 48 hours.",
     "url": "https://acglass.com/contact.html",
     "mainEntity": {
       "@type": "Organization",
       "name": "American Commercial Glass",
+      "alternateName": "ACG",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
-      "url": "https://acglass.com"
+      "url": "https://acglass.com",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "West Palm Beach",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Naples",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Tampa",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        }
+      ]
     }
   }
   </script>
+
+  <style>
+    .next-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .next-step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .next-step-content h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 5px;
+    }
+    .next-step-content p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .doc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .doc-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+    .doc-list li:last-child {
+      border-bottom: none;
+    }
+    .doc-list li::before {
+      content: '—';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .doc-list li span {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+      display: block;
+      margin-top: 2px;
+    }
+    .office-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .office-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 20px 24px;
+    }
+    .office-item .off-tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .office-item .off-city {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .office-item .off-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+    .reach-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .reach-method:first-of-type {
+      padding-top: 0;
+    }
+    .reach-method:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .reach-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(210,0,0,0.12);
+      border: 1px solid rgba(210,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .reach-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent);
+    }
+    .reach-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 4px;
+    }
+    .reach-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+    }
+    .reach-value a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .reach-value a:hover {
+      color: var(--accent);
+    }
+    .reach-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 3px;
+    }
+  </style>
 </head>
 <body>
 
@@ -47,7 +224,7 @@
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- NAVIGATION -->
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -69,8 +246,7 @@
     </div>
   </nav>
 
-
-  <!-- ========== PAGE HERO ========== -->
+  <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
       <div data-reveal>
@@ -83,17 +259,16 @@
     </div>
   </section>
 
-
-  <!-- ========== CONTACT GRID ========== -->
+  <!-- CONTACT GRID -->
   <section class="section">
     <div class="container">
       <div class="contact-grid">
 
         <!-- LEFT SIDE: CONTACT FORM -->
         <div data-reveal>
-          <h3 style="margin-bottom: 32px;">Project Inquiry</h3>
+          <h3 style="margin-bottom:32px;">Project Inquiry</h3>
 
-          <p style="margin-bottom: 28px; font-size: 0.95rem;">Have plans ready? Email them directly to <a href="mailto:connor@acglass.com" style="color: var(--red); font-weight: 600; transition: opacity 0.3s;">connor@acglass.com</a> along with your submission below for fastest processing.</p>
+          <p style="margin-bottom:28px;font-size:0.95rem;">Have plans ready? Email them directly to <a href="mailto:connor@acglass.com" style="color:var(--red);font-weight:600;transition:opacity 0.3s;">connor@acglass.com</a> along with your submission below for fastest processing.</p>
 
           <form id="contact-form">
 
@@ -101,23 +276,11 @@
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="John Smith"
-                  required
-                />
+                <input type="text" id="name" name="name" placeholder="John Smith" required />
               </div>
               <div class="form-group">
                 <label for="company">Company</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Your Company"
-                  required
-                />
+                <input type="text" id="company" name="company" placeholder="Your Company" required />
               </div>
             </div>
 
@@ -125,22 +288,11 @@
             <div class="form-grid">
               <div class="form-group">
                 <label for="email">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="john@company.com"
-                  required
-                />
+                <input type="email" id="email" name="email" placeholder="john@company.com" required />
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="(772) 486-7711"
-                />
+                <input type="tel" id="phone" name="phone" placeholder="(772) 486-7711" />
               </div>
             </div>
 
@@ -163,16 +315,11 @@
             <!-- Project Details -->
             <div class="form-group">
               <label for="message">Project Details</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us about your project scope, timeline, budget, and any specific requirements..."
-                required
-              ></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your project scope, location, timeline, and any specific requirements..." required></textarea>
             </div>
 
             <!-- Form Note -->
-            <p style="font-size: 0.8rem; color: var(--white-30); margin-bottom: 24px;">Clicking submit will open your email client. Alternatively, email plans directly to connor@acglass.com.</p>
+            <p style="font-size:0.8rem;color:var(--white-30);margin-bottom:24px;">Clicking submit will open your email client. Alternatively, email plans directly to connor@acglass.com.</p>
 
             <!-- Submit Button -->
             <button type="submit" class="btn btn-primary btn-lg">
@@ -185,87 +332,206 @@
         <!-- RIGHT SIDE: CONTACT INFO -->
         <div data-reveal data-delay="100">
 
-          <h3 style="margin-bottom: 40px;">Contact Information</h3>
+          <!-- WAYS TO REACH US -->
+          <h3 style="margin-bottom:32px;">Ways to Reach Us</h3>
 
-          <!-- Contact Info Items -->
-          <div class="contact-info-item">
-            <div class="contact-icon">
+          <div class="reach-method">
+            <div class="reach-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <div>
-              <div style="font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-30); margin-bottom: 4px;">Email</div>
-              <a href="mailto:connor@acglass.com" style="color: var(--white); font-weight: 600;">connor@acglass.com</a>
+              <div class="reach-label">Email — Fastest for Plans</div>
+              <div class="reach-value"><a href="mailto:connor@acglass.com">connor@acglass.com</a></div>
+              <div class="reach-note">Attach drawings directly. We respond within 48 hours with a complete scope letter.</div>
             </div>
           </div>
 
-          <div class="contact-info-item">
-            <div class="contact-icon">
+          <div class="reach-method">
+            <div class="reach-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div>
-              <div style="font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-30); margin-bottom: 4px;">Phone</div>
-              <a href="tel:(555)123-4567" style="color: var(--white); font-weight: 600;">(772) 486-7711</a>
+              <div class="reach-label">Phone — Quick Questions</div>
+              <div class="reach-value"><a href="tel:7724867711">(772) 486-7711</a></div>
+              <div class="reach-note">For questions about scope, timeline, or project-specific detail — call direct.</div>
             </div>
           </div>
 
-          <div class="contact-info-item">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div style="font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-30); margin-bottom: 4px;">Location</div>
-              <p style="margin: 0; color: var(--white);">West Palm Beach · Naples · Tampa</p>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-icon">
+          <div class="reach-method">
+            <div class="reach-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div>
-              <div style="font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-30); margin-bottom: 4px;">Response Time</div>
-              <p style="margin: 0; color: var(--white);">Within 48 hours</p>
+              <div class="reach-label">Response Time</div>
+              <div class="reach-value">Within 48 Hours</div>
+              <div class="reach-note">All bid requests receive a complete scope letter within 48 hours of receiving usable drawings.</div>
             </div>
           </div>
 
-          <!-- What to Include Info Box -->
-          <div class="info-box" style="margin-top: 40px;">
-            <h4 style="font-size: 1.1rem;">What to Include</h4>
-            <ul style="list-style-position: inside; font-size: 0.9rem; color: var(--white-50); line-height: 1.8;">
-              <li>Architectural plans & elevations</li>
-              <li>Project location & timeline</li>
-              <li>Scope description & square footage</li>
-              <li>System preferences & performance specs</li>
-              <li>Budget range (if applicable)</li>
-            </ul>
-          </div>
-
         </div>
-
       </div>
     </div>
   </section>
 
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div style="max-width:860px;">
+        <div data-reveal>
+          <div class="label"><span class="line"></span> After You Submit</div>
+          <h2>What Happens <span class="accent">Next.</span></h2>
+          <div class="divider"></div>
+          <p class="text-lg" style="margin-bottom:clamp(28px,4vw,40px);">Here's exactly what the 48-hour scope process looks like from the moment we receive your drawings.</p>
+        </div>
 
-  <!-- ========== CTA SECTION ========== -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <h2>Ready for Your Estimate?</h2>
-      <p>Our team is standing by to review your plans and provide a detailed, competitive quote. Get the conversation started today.</p>
-      <a href="index.html" class="btn btn-ghost btn-lg">
-        Back to Home
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+        <div data-reveal data-delay="100">
+          <div class="next-step">
+            <div class="next-step-num">1</div>
+            <div class="next-step-content">
+              <h5>We Receive Your Drawings</h5>
+              <p>As soon as your drawings arrive — by email or form submission — they're logged in ACG's project system. You'll receive an acknowledgment confirming receipt and your expected response date. If we need something additional to complete the scope (a missing spec section, structural drawings for a curtainwall scope), we'll ask within the first few hours — not 47 hours later.</p>
+            </div>
+          </div>
+          <div class="next-step">
+            <div class="next-step-num">2</div>
+            <div class="next-step-content">
+              <h5>Takeoff and System Analysis</h5>
+              <p>ACG's estimating team completes a full opening-by-opening takeoff, reviews the specification sections (particularly Division 08), identifies applicable Florida Product Approvals, and evaluates any conflicts between the architectural and structural drawings. If there are drawing conflicts that affect the scope, we document them with specific sheet references so you can issue an RFI or clarification.</p>
+            </div>
+          </div>
+          <div class="next-step">
+            <div class="next-step-num">3</div>
+            <div class="next-step-content">
+              <h5>Scope Letter Delivered Within 48 Hours</h5>
+              <p>You receive a complete scope letter with: quantities broken out by system type, system recommendations for each opening category, Florida Product Approval paths identified, competitive pricing, and an explicit exclusion list. Nothing is buried in boilerplate. If something isn't in our price, we say so plainly and tell you what information we'd need to include it.</p>
+            </div>
+          </div>
+          <div class="next-step">
+            <div class="next-step-num">4</div>
+            <div class="next-step-content">
+              <h5>Questions Answered — Ready for Award</h5>
+              <p>If you have questions about the scope, system selections, or pricing, ACG responds same day. If the project is awarded, we initiate shop drawing production immediately — day one, not week two. See our full <a href="how-it-works.html" style="color:var(--accent);">6-step process</a> for what happens after award.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- WHAT TO SEND US -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:start;" data-reveal>
+        <div>
+          <div class="label"><span class="line"></span> Submission Checklist</div>
+          <h2>What to Send <span class="accent">Us.</span></h2>
+          <div class="divider"></div>
+          <p class="text-lg" style="margin-bottom:24px;">The more complete the set, the more complete the scope. Here's what ACG needs to produce a detailed, accurate scope letter — and what's optional but helpful.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.5);">Don't have a complete set? Send what you have. We can identify system types and rough quantities from partial drawings and flag what we'll need to finalize pricing.</p>
+        </div>
+        <div>
+          <div style="margin-bottom:24px;">
+            <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">Required for a Complete Scope</div>
+            <ul class="doc-list">
+              <li>
+                Architectural drawings — floor plans, elevations, sections, details
+                <span>PDF or DWF preferred. Full set if available.</span>
+              </li>
+              <li>
+                Structural drawings — especially slab edge details and header conditions
+                <span>Required for curtainwall and window wall scopes.</span>
+              </li>
+              <li>
+                Specifications — Division 08 (Openings)
+                <span>Section 08 41 13 (Aluminum Entrances), 08 44 13 (Curtainwall), etc.</span>
+              </li>
+              <li>
+                Window schedule (if provided by architect)
+                <span>Helps cross-reference opening types against plan notes.</span>
+              </li>
+              <li>
+                Addenda issued to date
+                <span>We need to scope against the current design, not the original issue.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">Helpful But Not Required</div>
+            <ul class="doc-list">
+              <li>
+                Project location and municipality
+                <span>Helps identify wind zone, exposure category, and applicable codes.</span>
+              </li>
+              <li>
+                Bid deadline and project construction schedule
+                <span>Helps us confirm we can meet your bid date and identify potential material lead-time issues early.</span>
+              </li>
+              <li>
+                Owner or architect product preferences
+                <span>If the spec names a manufacturer or system, let us know — we'll verify PA compliance.</span>
+              </li>
+              <li>
+                Budget constraints or value engineering targets
+                <span>If there's a glazing budget, we can identify systems and alternatives within it.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- THREE OFFICES -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div data-reveal>
+        <div class="label"><span class="line"></span> ACG Office Locations</div>
+        <h2>Three Florida Offices.<br>One <span class="accent">Consistent Standard.</span></h2>
+        <div class="divider"></div>
+        <p class="text-lg" style="max-width:680px;margin-bottom:0;">Every ACG office operates on the same standards — same submittal process, same quality expectations, same communication protocols. The office that handles your project depends on where you're building, not which office is easier for us.</p>
+      </div>
+      <div class="office-row" data-reveal data-delay="200">
+        <div class="office-item">
+          <div class="off-tag">Headquarters &mdash; Founded Here</div>
+          <div class="off-city">West Palm Beach, FL</div>
+          <div class="off-desc">Serving Palm Beach, Broward, Miami-Dade, and the Treasure Coast. South Florida's primary ACG office and founding location. HVHZ expertise and direct familiarity with complex South Florida permitting.</div>
+        </div>
+        <div class="office-item">
+          <div class="off-tag">Southwest Florida</div>
+          <div class="off-city">Naples, FL</div>
+          <div class="off-desc">Serving Collier, Lee, Charlotte, and surrounding counties. Local crews for Fort Myers, Cape Coral, Bonita Springs, Marco Island, and Southwest Florida's growing commercial market.</div>
+        </div>
+        <div class="office-item">
+          <div class="off-tag">Tampa Bay and I-75 Corridor</div>
+          <div class="off-city">Tampa, FL</div>
+          <div class="off-desc">Serving Hillsborough, Pasco, Pinellas, Sarasota, and Manatee counties. Local field crews for Tampa Bay's fast-growing commercial market — not day trips from South Florida.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container" data-reveal>
+      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>48HR</div>
+      <h2>Send the Drawings.<br>We'll Handle <span class="accent">the Rest.</span></h2>
+      <p>Email your plans to <strong>connor@acglass.com</strong> or use the form above. ACG responds within 48 hours with a scope you can actually use.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:16px;">
+        <a href="mailto:connor@acglass.com" class="btn btn-primary btn-lg">
+          Email Plans Now
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="how-it-works.html" class="btn btn-ghost btn-lg">See the Full Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+          <a href="index.html" class="nav-logo" style="margin-bottom:0;">
             <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
           </a>
           <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
@@ -277,6 +543,8 @@
             <a href="about.html">About</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
             <a href="blog.html">Blog</a>
             <a href="manufacturers.html">Partners</a>
             <a href="contact.html">Contact</a>
@@ -284,13 +552,12 @@
         </div>
 
         <div>
-          <h5>Services</h5>
+          <h5>Process & Trust</h5>
           <div class="footer-links">
-            <a href="services.html">Impact Windows</a>
-            <a href="services.html">Storefronts</a>
-            <a href="services.html">Window Wall</a>
-            <a href="services.html">Sliding Systems</a>
-            <a href="services.html">Fire-Rated Glass</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
+            <a href="licensed-glazing-contractor-florida.html">FL License</a>
+            <a href="division-08-subcontractor-florida.html">Division 08</a>
           </div>
         </div>
 

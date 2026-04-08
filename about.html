@@ -3,42 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About American Commercial Glass | Florida Commercial Glazing Contractor</title>
+  <title>About American Commercial Glass | Florida's Commercial Glazing Contractor</title>
   <link rel="icon" type="image/svg+xml" href="images/acg-logo-icon.svg">
-  <meta name="description" content="About American Commercial Glass — elite commercial glazing contractor built in Florida, scaling nationally with 350+ projects and 14+ years of execution.">
+  <meta name="description" content="American Commercial Glass — built in South Florida for commercial GCs who needed a glazing sub that operated like a real contractor. 350+ projects. 3 offices. AI-managed.">
   <link rel="canonical" href="https://acglass.com/about.html">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
-  <meta property="og:title" content="About American Commercial Glass | Elite Glazing Contractor">
-  <meta property="og:description" content="Meet the team behind ACG — Florida's elite commercial glazing contractor with 14+ years of execution, 350+ projects, and 1M+ SF of glass installed.">
+  <meta property="og:title" content="About American Commercial Glass | Florida's Commercial Glazing Contractor">
+  <meta property="og:description" content="American Commercial Glass — built in South Florida for commercial GCs who needed a glazing sub that operated like a real contractor. 350+ projects. 3 offices. AI-managed.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/about.html">
   <meta property="og:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About American Commercial Glass | Elite Glazing Contractor">
-  <meta name="twitter:description" content="Meet the team behind ACG — Florida's elite commercial glazing contractor with 14+ years of execution, 350+ projects, and 1M+ SF of glass installed.">
+  <meta name="twitter:title" content="About American Commercial Glass | Florida's Commercial Glazing Contractor">
+  <meta name="twitter:description" content="American Commercial Glass — built in South Florida for commercial GCs who needed a glazing sub that operated like a real contractor. 350+ projects. 3 offices. AI-managed.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- AboutPage Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About American Commercial Glass",
-    "description": "American Commercial Glass is a commercial glazing contractor serving all of Florida. Founded 14+ years ago, ACG has delivered 350+ projects across West Palm Beach, Naples, and Tampa.",
-    "url": "https://acglass.com/about.html",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "American Commercial Glass",
-      "url": "https://acglass.com",
-      "foundingDate": "2010",
-      "numberOfEmployees": {"@type": "QuantitativeValue", "value": "15+"},
-      "areaServed": "Florida"
-    }
+    "description": "American Commercial Glass is a commercial glazing contractor founded in South Florida and serving all of Florida from offices in West Palm Beach, Naples, and Tampa. 350+ commercial projects delivered.",
+    "url": "https://acglass.com/about.html"
   }
   </script>
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "alternateName": "ACG",
+    "url": "https://acglass.com",
+    "logo": "https://acglass.com/images/acg-logo-full-white.svg",
+    "telephone": "+17724867711",
+    "email": "connor@acglass.com",
+    "description": "Commercial glazing contractor serving all of Florida. Founded in West Palm Beach, with additional offices in Naples and Tampa. 350+ commercial projects delivered across multifamily, hospitality, healthcare, retail, and office sectors.",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "West Palm Beach, FL"
+    },
+    "areaServed": "Florida",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "15+"
+    },
+    "serviceType": [
+      "Commercial Glazing",
+      "Curtainwall Installation",
+      "Storefront Installation",
+      "Impact Windows and Doors",
+      "Window Wall Systems",
+      "Fire-Rated Glass",
+      "Automatic Entrance Systems"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "West Palm Beach",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Naples",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      {
+        "@type": "PostalAddress",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    ],
+    "sameAs": ["https://acglass.com"]
+  }
+  </script>
+
+  <style>
+    .about-section {
+      padding: clamp(48px, 7vw, 80px) 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .about-section:last-of-type {
+      border-bottom: none;
+    }
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+    .office-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: clamp(24px, 3vw, 36px);
+    }
+    .office-card .office-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .office-card .office-tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .office-card p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .ai-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .ai-feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .ai-feature-text h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .ai-feature-text p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .mission-stat {
+      text-align: center;
+      padding: clamp(24px, 3vw, 36px);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+    }
+    .mission-stat .m-num {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .mission-stat .m-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
 
@@ -49,7 +196,7 @@
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- NAVIGATION -->
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -71,48 +218,56 @@
     </div>
   </nav>
 
-
-  <!-- ========== HERO ========== -->
-  <section class="hero" style="min-height: 60vh; justify-content: center; padding-bottom: 100px;">
+  <!-- HERO -->
+  <section class="hero" style="min-height:60vh;justify-content:center;padding-bottom:100px;">
     <div class="hero-bg">
       <img src="images/projects/hca-cape-coral/hero.jpg" alt="ACG commercial glazing project" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
     </div>
     <div class="hero-overlay"></div>
-
     <div class="container">
       <div class="hero-content">
-        <div class="label" style="animation: fadeUp 0.8s var(--ease-out) 0.2s forwards; opacity: 0;">
+        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;">
           <span class="line"></span> Who We Are
         </div>
-
         <h1>Florida's Commercial<br>Glazing Contractor.<br><span class="accent">Built to Execute.</span></h1>
-
-        <p class="hero-sub">
-          Built in Florida. Scaling nationally. West Palm Beach &bull; Naples &bull; Tampa.
-        </p>
+        <p class="hero-sub">West Palm Beach &bull; Naples &bull; Tampa &bull; 350+ Projects Delivered.</p>
       </div>
     </div>
   </section>
 
+  <!-- STATS ROW -->
+  <div class="stats-row" data-reveal-fade>
+    <div class="stat-block">
+      <div class="num" data-count="350" data-suffix="+">350+</div>
+      <div class="stat-text">Projects Completed</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">5+</div>
+      <div class="stat-text">Years in Florida</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">1M+</div>
+      <div class="stat-text">SF Glass Installed</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">3</div>
+      <div class="stat-text">Florida Offices</div>
+    </div>
+  </div>
 
-  <!-- ========== ABOUT SPLIT ========== -->
-  <section class="section">
+  <!-- SECTION 1: THE COMPANY STORY -->
+  <section class="section about-section">
     <div class="container">
       <div class="about-split" data-reveal>
         <div>
-          <h2>Built Because GCs<br>Deserved <span class="accent">Better.</span></h2>
+          <div class="section-eyebrow">The Company</div>
+          <h2>Built Because GCs Deserved<br>a Glazing Sub That <span class="accent">Actually Performed.</span></h2>
           <div class="divider"></div>
-          <p class="text-lg" style="margin-bottom: 24px;">
-            ACG was founded after watching too many glazing subs fail the contractors who trusted them. Missed shop drawing deadlines. Material that showed up wrong. Crews that no-showed on install day. Change orders for scope that was clearly in the drawings. We've seen every version of it — and we built ACG to be the opposite.
-          </p>
-          <p class="text-lg" style="margin-bottom: 24px;">
-            Every project gets a dedicated project manager who actually answers the phone. Our leadership walks jobsites personally. We submit shop drawings when we say we will. We coordinate with your waterproofing, framing, and stucco trades proactively — not after you've sent us three emails asking for an update.
-          </p>
-          <p class="text-lg">
-            The result? GCs who use us once, use us on every project after. Developers who request us by name. And a track record of 350+ completed projects, 1M+ SF of glass installed, with repeat clients who trust us to protect their schedules, budgets, and reputations.
-          </p>
+          <p class="text-lg" style="margin-bottom:24px;">ACG was founded in South Florida on a straightforward premise: general contractors deserved a glazing subcontractor that operated with the same level of professionalism they brought to the job. Not a residential glass shop that occasionally takes commercial work. Not a sub that submits shop drawings when they get around to it and shows up to install when the schedule still works for them. A contractor, in the real sense of the word.</p>
+          <p class="text-lg" style="margin-bottom:24px;">The commercial construction market in South Florida is demanding. Permitting is rigorous. Wind codes are among the strictest in the country. Building departments know the difference between a submittal that's been assembled by someone who understands the code and one that was thrown together to get through plan review. GCs working in this market have been burned enough times to know that the cheapest glazing bid is rarely the cheapest glazing scope when the job is done.</p>
+          <p class="text-lg" style="margin-bottom:24px;">ACG grew from a single West Palm Beach office into a three-office Florida operation over the past 5+ years, delivering 350+ commercial projects across multifamily, hospitality, healthcare, retail, office, and institutional sectors. That growth happened because GCs who used ACG once came back for the next project — and the one after that.</p>
+          <p class="text-lg">We're still a lean operation. No sprawling corporate structure. No accounts that get handed off to a junior rep after the contract is signed. The same people who bid your project are the people who deliver it.</p>
         </div>
-
         <div class="about-image">
           <img src="images/projects/atlantic-fields-golf-house/connor-facade.jpg" alt="ACG commercial glazing — Atlantic Fields Golf House, Hobe Sound FL" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
         </div>
@@ -120,139 +275,268 @@
     </div>
   </section>
 
-
-  <!-- ========== STATS ROW ========== -->
-  <div class="stats-row" data-reveal-fade>
-    <div class="stat-block">
-      <div class="num" data-count="350" data-suffix="+">350+</div>
-      <div class="stat-text">Projects Completed</div>
-    </div>
-    <div class="stat-block">
-      <div class="num" data-count="14" data-suffix="+">14+</div>
-      <div class="stat-text">Years of Execution</div>
-    </div>
-    <div class="stat-block">
-      <div class="num" data-count="1" data-suffix="M+">1M+</div>
-      <div class="stat-text">SF Glass Installed</div>
-    </div>
-    <div class="stat-block">
-      <div class="num" data-count="9">9</div>
-      <div class="stat-text">MFG Partners</div>
-    </div>
-  </div>
-
-
-  <!-- ========== VALUES ========== -->
-  <section class="section">
+  <!-- SECTION 2: WHAT MAKES ACG DIFFERENT -->
+  <section class="section about-section">
     <div class="container">
-      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
-        <div class="label"><span class="line"></span> What GCs Get From ACG</div>
-        <h2>The Problems We Solve</h2>
+      <div data-reveal>
+        <div class="section-eyebrow">What Makes ACG Different</div>
+        <h2>AI-Managed. Lean-Operated.<br><span class="accent">No Middlemen.</span></h2>
+        <div class="divider"></div>
       </div>
 
-      <div style="max-width: 700px;" data-reveal data-delay="200">
-        <div class="value-block">
-          <div class="value-num">01</div>
-          <div>
-            <h4>Your Schedule Is Sacred</h4>
-            <p>Your glazing sub blows a deadline and suddenly your drywall, paint, and flooring trades are stacked up waiting. We commit to dates and hit them — because we know every day we're late costs you money and credibility with your owner.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);margin-top:clamp(32px,4vw,48px);" data-reveal>
+        <div>
+          <p class="text-lg" style="margin-bottom:24px;">ACG uses AI-managed project operations — and it's worth being specific about what that means, because "AI" gets attached to a lot of things that don't deserve the label.</p>
+          <p class="text-lg" style="margin-bottom:28px;">ACG's AI-managed system is a project management infrastructure that tracks every active job in real time across all three Florida offices. It isn't a chatbot. It isn't a marketing claim. It's the architecture that makes it possible for a lean team to manage a high volume of concurrent commercial projects without things falling through the cracks.</p>
+
+          <div class="ai-feature">
+            <div class="ai-feature-dot"></div>
+            <div class="ai-feature-text">
+              <h5>Real-Time Submittal Tracking</h5>
+              <p>Every submittal is logged, tracked, and flagged when it's at risk of missing a deadline. Shop drawing schedules, AHJ review windows, material approval dependencies — all monitored without relying on a coordinator's memory.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-dot"></div>
+            <div class="ai-feature-text">
+              <h5>Proactive Schedule Coordination</h5>
+              <p>The system generates alerts when installation windows are approaching and preconditions haven't been confirmed. Your superintendent gets contacted by ACG before there's a problem — not after one has developed.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-dot"></div>
+            <div class="ai-feature-text">
+              <h5>Material Procurement Tied to Approvals</h5>
+              <p>Orders are placed against approved shop drawings, not assumed lead times. The system tracks material status from order to delivery and triggers proactive notification if a manufacturer's schedule changes.</p>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-dot"></div>
+            <div class="ai-feature-text">
+              <h5>Closeout Documentation Management</h5>
+              <p>As-built drawings, FL Product Approval certificates, warranty documents, and lien waivers are tracked and assembled automatically as milestones are completed — not assembled at closeout from a pile of loose files.</p>
+            </div>
           </div>
         </div>
 
-        <div class="value-block">
-          <div class="value-num">02</div>
-          <div>
-            <h4>No Scope Gaps. No Surprises.</h4>
-            <p>We review drawings thoroughly before we bid. If there's a conflict between architectural and structural, we flag it during buyout — not during install when it's a $200K change order. Our submittals are complete, our shop drawings are accurate, and our pricing covers what it says it covers.</p>
+        <div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:clamp(24px,3vw,36px);margin-bottom:24px;">
+            <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">Lean Management Model</div>
+            <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:16px;">ACG runs a flat management structure. When a project is awarded, a single project coordinator is assigned — and that person is your point of contact for shop drawings, submittals, material status, scheduling, and closeout. You're not calling a general office line and hoping someone picks up who knows your job.</p>
+            <p style="font-size:0.95rem;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:0;">There's no account manager who hands off to a project manager who hands off to a field supervisor who hands off to a crew chief. The coordinator knows the job because they've been on it from kickoff. When you have a question, you call the person who has the answer.</p>
           </div>
-        </div>
 
-        <div class="value-block">
-          <div class="value-num">03</div>
-          <div>
-            <h4>Communication That Actually Works</h4>
-            <p>You shouldn't have to chase your glazing sub for a status update. Our PMs send weekly progress reports, attend your OAC meetings prepared, and respond to RFIs within 24 hours. When there's a problem, we tell you first — with a solution attached.</p>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:clamp(24px,3vw,36px);">
+            <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">What GCs Get</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                48-hour scope turnaround from plan receipt
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                Single project coordinator — one call, one answer
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                Shop drawing submittals within 2–4 weeks of award
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                Proactive communication — not reactive updates
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                Florida PA and NOA documentation included standard
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                Self-performed installation — no sub-subs
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.7);">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;"></div>
+                Closeout package ready before final inspection
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ========== MARKETS ========== -->
-  <section class="section">
+  <!-- SECTION 3: THE TEAM -->
+  <section class="section about-section">
     <div class="container">
-      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
-        <div class="label"><span class="line"></span> Markets We Serve</div>
-        <h2>Where ACG Builds</h2>
+      <div style="max-width:800px;" data-reveal>
+        <div class="section-eyebrow">The Team</div>
+        <h2>Professional. Responsive.<br><span class="accent">Accountable.</span></h2>
+        <div class="divider"></div>
+        <p class="text-lg" style="margin-bottom:24px;">ACG's team is built around a simple hiring standard: people who understand commercial construction, communicate proactively, and take ownership of the results. That's harder to find than it sounds in a trade where the default is to wait for the GC to ask before providing an update.</p>
+        <p class="text-lg" style="margin-bottom:24px;">Project coordinators at ACG come from construction backgrounds — they've been on jobsites, they understand the language of a master schedule, they know what it means when your super says the openings won't be ready until next Tuesday. They're not order-processors reading from a script. They're construction people managing a scope.</p>
+        <p class="text-lg" style="margin-bottom:24px;">Field crews are experienced commercial glaziers — not residential installers making a jump to commercial work. There's a meaningful difference between installing a residential window and installing a commercial curtainwall system to engineered shop drawings on a building with an occupied lower floor. ACG's crews understand that difference and are selected accordingly.</p>
+        <p class="text-lg">The culture ACG has built is straightforward: when something goes wrong — and in construction, something always eventually goes wrong — you tell the GC immediately, with a solution. Not after you've tried to fix it quietly and made it worse. Not after three emails asking for a status update. Immediately, in writing, with a path forward. GCs who've worked with ACG consistently mention this as the thing that separates us from the other glazing subs they've used.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE OFFICES -->
+  <section class="section about-section">
+    <div class="container">
+      <div data-reveal>
+        <div class="section-eyebrow">Three Florida Offices</div>
+        <h2>Where ACG <span class="accent">Operates.</span></h2>
+        <div class="divider"></div>
+        <p class="text-lg" style="max-width:700px;margin-bottom:clamp(32px,5vw,48px);">Having local offices matters in commercial glazing. Local field crews, local supply relationships, and direct familiarity with local building departments make a meaningful difference in how smoothly a project runs.</p>
+      </div>
+
+      <div class="grid grid-3" data-reveal data-delay="200">
+        <div class="office-card">
+          <div class="office-tag">Headquarters &mdash; Founded Here</div>
+          <div class="office-name">West Palm Beach, FL</div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);margin:16px 0;"></div>
+          <p>ACG's home base and founding market. South Florida's construction market is among the most technically demanding in the country — high wind speeds, complex permit processes, HVHZ compliance in southern areas, and a sophisticated GC community that expects genuine professionalism from their subs. ACG built its processes and standards here, and it shows in the work.</p>
+          <p style="margin-top:12px;">From West Palm Beach, ACG serves Palm Beach County, Broward County, Miami-Dade County, and the Treasure Coast — from Jupiter to Homestead and across the I-95 corridor.</p>
+        </div>
+        <div class="office-card">
+          <div class="office-tag">Southwest Florida Coverage</div>
+          <div class="office-name">Naples, FL</div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);margin:16px 0;"></div>
+          <p>Southwest Florida is a different market than South Florida — a mix of high-end residential-scale commercial, healthcare, hospitality, and the explosive growth along Collier, Lee, and Charlotte counties. The Naples office positions ACG to serve this corridor with local crews and direct familiarity with Collier County's building department processes.</p>
+          <p style="margin-top:12px;">Coverage extends through Fort Myers, Cape Coral, Bonita Springs, Marco Island, and across the Southwest Florida construction market. For complex coastal projects, proximity to the work matters.</p>
+        </div>
+        <div class="office-card">
+          <div class="office-tag">Tampa Bay and I-75 Corridor</div>
+          <div class="office-name">Tampa, FL</div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);margin:16px 0;"></div>
+          <p>Tampa Bay is one of Florida's fastest-growing construction markets — Water Street Tampa, the Wesley Chapel commercial corridor, the suburban explosion in Brandon, Riverview, and east Hillsborough, and continued multifamily and mixed-use growth across the bay in Clearwater and St. Petersburg. ACG's Tampa office is active across all of it.</p>
+          <p style="margin-top:12px;">Local field crews mean no day trips from South Florida. Local familiarity with Hillsborough County's building department means submittals built to pass review the first time. Coverage extends through Pasco, Pinellas, Sarasota, and Manatee counties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: THE MISSION -->
+  <section class="section about-section">
+    <div class="container">
+      <div data-reveal>
+        <div class="section-eyebrow">The Mission</div>
+        <h2>One Goal: Be the Glazing Sub<br>GCs <span class="accent">Call Back.</span></h2>
+        <div class="divider"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);margin-top:clamp(32px,4vw,48px);" data-reveal>
+        <div>
+          <p class="text-lg" style="margin-bottom:24px;">ACG's mission isn't complicated: be the glazing sub that general contractors call back for the next job. Not because of price — competitive pricing is table stakes, not a differentiator. Because of execution.</p>
+          <p class="text-lg" style="margin-bottom:24px;">ACG measures success in three ways. Zero callbacks — meaning the work is done right the first time, the punch list is closed before the GC walk, and warranty claims are a rarity rather than a budget line. Zero missed TCOs — meaning the glazing scope never holds up a certificate of occupancy. And repeat clients — GCs who used ACG on one project and came back for the second, third, fifth, tenth.</p>
+          <p class="text-lg" style="margin-bottom:24px;">The relationships ACG has built in Florida's commercial construction community are the result of 350+ projects where the job got done, the schedule was protected, and the GC didn't have to chase their glazing sub for a status update. That's not marketing — it's the record.</p>
+          <p class="text-lg">This is a business built for the long term. ACG has no interest in winning projects by undercutting and then making it up on change orders. The business model only works if GCs want to work with ACG again — and that only happens if the execution warrants it.</p>
+        </div>
+
+        <div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+            <div class="mission-stat">
+              <div class="m-num">0</div>
+              <div class="m-label">Missed TCOs<br>as Goal</div>
+            </div>
+            <div class="mission-stat">
+              <div class="m-num">350+</div>
+              <div class="m-label">Projects<br>Delivered</div>
+            </div>
+            <div class="mission-stat">
+              <div class="m-num">48hr</div>
+              <div class="m-label">Scope<br>Turnaround</div>
+            </div>
+            <div class="mission-stat">
+              <div class="m-num">3</div>
+              <div class="m-label">Florida<br>Offices</div>
+            </div>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px;">
+            <div style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">What "Repeat Client" Means</div>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:12px;">ACG's GC clients include contractors who have worked with us on 3, 5, and more than 10 projects. Some have been working with ACG since the company's first year of operation. Others found us on a specific project and immediately included us in their standard bid lists.</p>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:0;">The construction industry in Florida is smaller than it looks. Reputation travels fast. GCs talk. The best endorsement ACG has is a GC who, when another GC asks about glazing subs, gives our number without being asked.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div style="margin-bottom:clamp(32px,5vw,48px);" data-reveal>
+        <div class="label"><span class="line"></span> Sectors We Serve</div>
+        <h2>Where ACG <span class="accent">Builds.</span></h2>
       </div>
 
       <div class="grid grid-4" data-reveal data-delay="200">
         <div class="service-card">
           <div class="service-number">01</div>
           <h4>Multifamily</h4>
-          <p>Window wall systems and impact doors for residential towers and mid-rise developments.</p>
+          <p>Window wall systems, impact doors, and storefront for residential towers, mid-rise, and garden-style developments.</p>
         </div>
         <div class="service-card">
           <div class="service-number">02</div>
           <h4>Hospitality</h4>
-          <p>High-performance glazing for hotels, resorts, and mixed-use hospitality projects.</p>
+          <p>High-performance glazing for hotels, resorts, and mixed-use hospitality — systems built for Florida's wind and moisture requirements.</p>
         </div>
         <div class="service-card">
           <div class="service-number">03</div>
           <h4>Commercial Office</h4>
-          <p>Storefront systems, window wall, and specialty glass for modern office environments.</p>
+          <p>Storefront, window wall, and curtainwall for commercial office buildings, corporate campuses, and mixed-use commercial.</p>
         </div>
         <div class="service-card">
           <div class="service-number">04</div>
           <h4>Retail</h4>
-          <p>Clean-line storefronts and glass systems for retail and mixed-use developments.</p>
+          <p>Clean-line storefronts and impact glass systems for retail and mixed-use — installed on schedule to protect your tenant delivery date.</p>
         </div>
         <div class="service-card">
           <div class="service-number">05</div>
-          <h4>Clubhouses & Amenities</h4>
-          <p>Architectural glass for community clubhouses, fitness centers, and recreation facilities.</p>
+          <h4>Clubhouses &amp; Amenities</h4>
+          <p>Architectural glass for community clubhouses, fitness centers, pool facilities, and recreation amenity buildings.</p>
         </div>
         <div class="service-card">
           <div class="service-number">06</div>
           <h4>Healthcare</h4>
-          <p>Fire-rated and specialty glass for medical facilities and healthcare buildings.</p>
+          <p>Fire-rated and specialty glass for medical office buildings, outpatient facilities, and healthcare campuses. UL-listed assemblies standard.</p>
         </div>
         <div class="service-card">
           <div class="service-number">07</div>
           <h4>Education</h4>
-          <p>Durable glazing systems for universities, schools, and educational facilities.</p>
+          <p>Impact-rated and blast-resistant glazing systems for universities, charter schools, and educational facilities.</p>
         </div>
         <div class="service-card">
           <div class="service-number">08</div>
-          <h4>Government</h4>
-          <p>Specification-grade glazing for government and institutional projects.</p>
+          <h4>Government &amp; Institutional</h4>
+          <p>Specification-grade glazing for government buildings, courthouses, and institutional projects with full compliance documentation.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ========== CTA SECTION ========== -->
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>TOGETHER</div>
-      <h2>Let's Build Something<br>Together</h2>
-      <p>Send us your plans and get a detailed scope and estimate from our team within 48 hours.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>TOGETHER</div>
+      <h2>Let's Build Something<br><span class="accent">That Works.</span></h2>
+      <p>Send your drawings and get a complete scope, system recommendations, and competitive pricing within 48 hours. No chasing required.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="contact.html" class="btn btn-primary btn-lg">
+          Send Us Plans
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="how-it-works.html" class="btn btn-ghost btn-lg">How It Works</a>
+      </div>
     </div>
   </section>
 
-
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+          <a href="index.html" class="nav-logo" style="margin-bottom:0;">
             <img src="images/acg-logo-full-white.svg" alt="ACG - American Commercial Glass" class="logo-img">
           </a>
           <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
@@ -264,6 +548,8 @@
             <a href="about.html">About</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
             <a href="blog.html">Blog</a>
             <a href="manufacturers.html">Partners</a>
             <a href="contact.html">Contact</a>
@@ -271,13 +557,12 @@
         </div>
 
         <div>
-          <h5>Services</h5>
+          <h5>Process & Trust</h5>
           <div class="footer-links">
-            <a href="services.html">Impact Windows</a>
-            <a href="services.html">Storefronts</a>
-            <a href="services.html">Window Wall</a>
-            <a href="services.html">Sliding Systems</a>
-            <a href="services.html">Fire-Rated Glass</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
+            <a href="licensed-glazing-contractor-florida.html">FL License</a>
+            <a href="division-08-subcontractor-florida.html">Division 08</a>
           </div>
         </div>
 
