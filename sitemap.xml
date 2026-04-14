@@ -879,6 +879,8 @@
   <url>
     <loc>https://acglass.com/blog/how-much-does-commercial-storefront-glass-cost.html</loc>
     <lastmod>2026-04-14</lastmod>
+    <loc>https://acglass.com/commercial-glazing-palm-beach.html</loc>
+    <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -935,5 +937,9 @@
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <loc>https://acglass.com/locations.html</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
