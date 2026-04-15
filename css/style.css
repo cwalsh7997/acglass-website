@@ -50,6 +50,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   scrollbar-width: thin;
   scrollbar-color: var(--white-15) transparent;
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar { width: 6px; }
@@ -121,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   line-height: 1.05;
   color: var(--white);
+  word-break: break-word;
 }
 
 h1 {
@@ -179,12 +181,13 @@ p {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 60px);
+  padding: 0 clamp(20px, 5vw, 60px);
 }
 
 .container-full {
   width: 100%;
-  padding: 0 clamp(24px, 5vw, 60px);
+  padding: 0 clamp(20px, 5vw, 60px);
+  overflow: hidden;
 }
 
 .section {
@@ -1410,4 +1413,201 @@ p {
 }
 @media (max-width: 640px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE OVERHAUL — MAX 768px
+   ============================================ */
+
+/* ---------- GLOBAL OVERFLOW FIX ---------- */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* ---------- CONTAINER PADDING ---------- */
+  .container,
+  .container-full {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* ---------- MARQUEE / TICKER ---------- */
+  /* .marquee already has overflow:hidden — ensure section wrapper doesn't overflow */
+  .marquee {
+    overflow: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  /* ---------- HORIZONTAL SCROLL PORTFOLIO ---------- */
+  /* Allow internal horizontal scroll but contain it within the page */
+  .portfolio-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Ensure it doesn't bleed past viewport */
+    max-width: 100%;
+  }
+
+  /* Make project cards appropriately sized on mobile */
+  .project-card {
+    width: clamp(280px, 80vw, 380px);
+    flex-shrink: 0;
+  }
+
+  /* ---------- TYPOGRAPHY SCALING ---------- */
+  h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+  h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  h3 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+
+  /* ---------- INLINE GRID OVERRIDES (1fr 1fr → 1fr) ---------- */
+  /* These target inline style grids that can't be overridden without !important */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [style*="grid-template-columns: 1fr 1fr; gap"],
+  [style*="grid-template-columns:1fr 1fr;gap"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- STATS ROW ---------- */
+  /* Already handled at 768px (2-col), but ensure no overflow */
+  .stats-row {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* ---------- SERVICE DETAIL (SPLIT SECTIONS) ---------- */
+  .service-detail {
+    grid-template-columns: 1fr !important;
+  }
+  .service-detail:nth-child(even) .service-detail-content { order: 1; }
+  .service-detail:nth-child(even) .service-detail-visual { order: 2; }
+
+  /* ---------- ABOUT SPLIT ---------- */
+  .about-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- CONTACT GRID ---------- */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- FORM GRID ---------- */
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- BUTTONS — FULL WIDTH ON MOBILE ---------- */
+  .hero-actions .btn,
+  .cta-section .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  /* Min touch target for all buttons and links */
+  .btn, .filter-btn, .arrow-link, .nav-links a, .nav-cta {
+    min-height: 44px;
+  }
+
+  /* ---------- IMAGES ---------- */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ---------- MFG STRIP ---------- */
+  .mfg-strip {
+    justify-content: center;
+    gap: 20px 30px;
+  }
+
+  /* ---------- HERO SIDE STATS ---------- */
+  .hero-side {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  /* ---------- PAGE HERO ---------- */
+  .page-hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+
+  /* ---------- VALUE BLOCKS ---------- */
+  /* Ensure the grids containing value blocks collapse properly */
+  .grid-4.value-blocks,
+  .grid-3.value-blocks {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ---------- CTA SECTION TEXT ---------- */
+  .cta-section .text-massive {
+    font-size: clamp(3rem, 15vw, 6rem);
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+/* ---------- SMALL MOBILE (max 480px) ---------- */
+@media (max-width: 480px) {
+  /* ---------- STATS ROW — STACK FULLY ---------- */
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .stat-block:nth-child(2) { border-right: none; }
+  .stat-block:nth-child(1),
+  .stat-block:nth-child(2) { border-bottom: 1px solid var(--border); }
+
+  /* ---------- MISSION STATS GRID ---------- */
+  [style*="grid-template-columns: 1fr 1fr; gap: 16px"],
+  [style*="grid-template-columns:1fr 1fr;gap:16px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ---------- PROJECT CARDS ---------- */
+  .project-card {
+    width: clamp(260px, 85vw, 340px);
+  }
+
+  /* ---------- SECTION PADDING ---------- */
+  .section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ---------- NAV MOBILE (max 900px already handled in main nav section) ---------- */
+/* Ensure nav-toggle shows and nav-links work — already in main styles at 900px */
+/* Add extra safety for 768px: */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex !important;
+  }
+  .nav-links:not(.open) {
+    pointer-events: none;
+    opacity: 0;
+  }
 }

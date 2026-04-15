@@ -124,6 +124,10 @@
       <p data-reveal data-delay="200" style="max-width:640px;">Send us plans. Get a complete Division 08 scope, system recommendations, and competitive pricing back in 48 hours. One point of contact. No runaround.</p>
       <div data-reveal data-delay="300" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
         <a href="contact.html" class="btn btn-primary">Send Us Plans &rarr;</a>
+        <a href="scope-engine.html" class="btn btn-ghost" style="display:inline-flex;align-items:center;gap:8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Try Our Scope Engine
+        </a>
         <a href="tel:7724867711" class="btn btn-ghost">(772) 486-7711</a>
       </div>
     </div>
@@ -455,6 +459,35 @@
     }
     .gc-partner-item:nth-last-child(-n+3) {
       border-bottom: none;
+    }
+    @media (max-width: 768px) {
+      .gc-partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gc-partner-item:nth-child(3n) {
+        border-right: 1px solid rgba(255,255,255,0.07);
+      }
+      .gc-partner-item:nth-child(2n) {
+        border-right: none;
+      }
+      .gc-partner-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+      .gc-partner-item:nth-last-child(-n+2) {
+        border-bottom: none;
+      }
+    }
+    @media (max-width: 480px) {
+      .gc-partners-grid {
+        grid-template-columns: 1fr;
+      }
+      .gc-partner-item:nth-child(n) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+      .gc-partner-item:last-child {
+        border-bottom: none;
+      }
     }
     .gc-partner-arrow {
       font-family: 'JetBrains Mono', monospace;

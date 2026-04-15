@@ -96,6 +96,18 @@
       .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
     }
   </style>
+  <style>
+    /* Responsive 2-column split — collapses to 1 column on mobile */
+    .split-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .split-2col { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -173,8 +185,9 @@
             Send Us Your Plans
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="portfolio.html" class="btn btn-ghost btn-lg">
-            View Our Work
+          <a href="scope-engine.html" class="btn btn-ghost btn-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Try Our Scope Engine
           </a>
         </div>
       </div>
@@ -230,7 +243,7 @@
   <!-- ========== WHAT WE DO ========== -->
   <section class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 100px); align-items: start;">
+      <div class="split-2col">
         <div data-reveal>
           <div class="label"><span class="line"></span> What We Do</div>
           <h2>One Sub. Every<br>Glazing <span class="accent">Scope.</span></h2>
@@ -534,10 +547,17 @@
       <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
       <h2>Have Plans?<br>We'll Have a Scope in <span class="accent">48 Hours.</span></h2>
       <p>Send your drawings. Our team responds with a detailed scope, system recommendations, and competitive pricing — within 48 hours.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center;">
+        <a href="contact.html" class="btn btn-primary btn-lg">
+          Send Us Plans
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="scope-engine.html" class="btn btn-ghost btn-lg" style="display:inline-flex;align-items:center;gap:10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Try Our Scope Engine
+        </a>
+      </div>
+      <p style="margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.06em;">ACG Scope Intelligence Engine &mdash; Proprietary Technology &mdash; v2.1</p>
     </div>
   </section>
 

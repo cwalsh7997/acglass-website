@@ -92,6 +92,23 @@
   </script>
 
   <style>
+    /* Responsive 2-column layout — collapses to 1 column on mobile */
+    .about-split-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .about-split-2col { grid-template-columns: 1fr; gap: 32px; }
+    }
+    /* Mission stats 2x2 grid */
+    .mission-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    /* No additional breakpoint needed — 2x2 is fine on mobile at 375px */
     .about-section {
       padding: clamp(48px, 7vw, 80px) 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -318,7 +335,7 @@
         <div class="divider"></div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);margin-top:clamp(32px,4vw,48px);" data-reveal>
+      <div class="about-split-2col" style="margin-top:clamp(32px,4vw,48px);" data-reveal>
         <div>
           <p class="text-lg" style="margin-bottom:24px;">ACG uses AI-managed project operations — and it's worth being specific about what that means, because "AI" gets attached to a lot of things that don't deserve the label.</p>
           <p class="text-lg" style="margin-bottom:28px;">ACG's AI-managed system is a project management infrastructure that tracks every active job in real time across all three Florida offices. It isn't a chatbot. It isn't a marketing claim. It's the architecture that makes it possible for a lean team to manage a high volume of concurrent commercial projects without things falling through the cracks.</p>
@@ -458,7 +475,7 @@
         <div class="divider"></div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);margin-top:clamp(32px,4vw,48px);" data-reveal>
+      <div class="about-split-2col" style="margin-top:clamp(32px,4vw,48px);" data-reveal>
         <div>
           <p class="text-lg" style="margin-bottom:24px;">ACG's mission isn't complicated: be the glazing sub that general contractors call back for the next job. Not because of price — competitive pricing is table stakes, not a differentiator. Because of execution.</p>
           <p class="text-lg" style="margin-bottom:24px;">ACG measures success in three ways. Zero callbacks — meaning the work is done right the first time, the punch list is closed before the GC walk, and warranty claims are a rarity rather than a budget line. Zero missed TCOs — meaning the glazing scope never holds up a certificate of occupancy. And repeat clients — GCs who used ACG on one project and came back for the second, third, fifth, tenth.</p>
@@ -467,7 +484,7 @@
         </div>
 
         <div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+          <div class="mission-stats-grid" style="margin-bottom:24px;">
             <div class="mission-stat">
               <div class="m-num">0</div>
               <div class="m-label">Missed TCOs<br>as Goal</div>
