@@ -1,13 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
-  <!-- Emblem -->
-  <g transform="translate(2, 4)">
-    <path d="M34,0 L62,56 L48,56 L34,28 L20,56 L6,56 Z" fill="#1B3A5C"/>
-    <polygon points="6,56 24,0 35,0 17,56" fill="#E21B2C"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 50" fill="none">
+  <!-- ACG full logo — icon + wordmark for dark backgrounds -->
+  
+  <!-- "A" Mark (scaled to ~40px tall) -->
+  <g transform="translate(0,3) scale(0.42)">
+    <!-- Red diagonal slash -->
+    <polygon points="30,0 48,0 18,105 0,105" fill="#E21B2C"/>
+    <!-- White "A" triangle -->
+    <path d="M58,0 L100,105 L74,105 L58,68 L42,105 L16,105 Z" fill="#FFFFFF"/>
+    <!-- "A" cutout -->
+    <polygon points="58,42 48,70 68,70" fill="#050A12"/>
   </g>
-  <!-- "ACG" Text -->
-  <text x="76" y="42" font-family="'Inter', 'Arial Black', Arial, sans-serif" font-weight="900" font-size="38" letter-spacing="2">
-    <tspan fill="#E21B2C">A</tspan><tspan fill="#FFFFFF">CG</tspan>
-  </text>
-  <!-- Subtitle -->
-  <text x="76" y="62" font-family="'Inter', Arial, sans-serif" font-weight="500" font-size="9.5" fill="rgba(255,255,255,0.4)" letter-spacing="3">AMERICAN COMMERCIAL GLASS</text>
+  
+  <!-- Wordmark -->
+  <text x="52" y="22" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="19" fill="#FFFFFF" letter-spacing="0.5">ACG</text>
+  <text x="52" y="38" font-family="Inter, -apple-system, sans-serif" font-weight="500" font-size="8.5" fill="rgba(255,255,255,0.55)" letter-spacing="1.8">AMERICAN COMMERCIAL GLASS</text>
 </svg>

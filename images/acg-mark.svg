@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- ACG "A" brand mark — red diagonal + navy triangle -->
+  <!-- Red diagonal slash -->
+  <polygon points="32,0 50,0 18,100 0,100" fill="#E21B2C"/>
+  <!-- Navy "A" triangle -->
+  <path d="M60,0 L100,100 L72,100 L60,72 L48,100 L20,100 Z" fill="#1B3052"/>
+  <!-- "A" interior cutout -->
+  <polygon points="60,40 50,68 70,68" fill="white"/>
+</svg>

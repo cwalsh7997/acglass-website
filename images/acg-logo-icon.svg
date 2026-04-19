@@ -1,6 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" fill="none">
-  <!-- Navy triangle / chevron "A" shape (right side, behind slash) -->
-  <path d="M200,0 L360,320 L280,320 L200,160 L120,320 L40,320 Z" fill="#1B3A5C"/>
-  <!-- Red diagonal slash (parallelogram, overlapping left leg) -->
-  <polygon points="40,320 148,0 212,0 104,320" fill="#E21B2C"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
+  <!-- ACG "A" mark — red diagonal slash + navy/white triangle -->
+  <!-- Left: Red diagonal parallelogram -->
+  <polygon points="28,0 48,0 20,100 0,100" fill="#E21B2C"/>
+  <!-- Right: Navy/white triangle "A" shape -->
+  <polygon points="70,20 120,100 92,100 80,75 70,75 62,58 70,58" fill="#1B3052"/>
+  <polygon points="70,20 100,100 40,100 70,20" fill="#1B3052"/>
+  <!-- Cutout for the "A" opening -->
+  <polygon points="70,52 58,82 82,82" fill="white"/>
 </svg>
