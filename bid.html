@@ -2417,6 +2417,7 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
   <script src="js/main.js"></script>
 
   <script>
@@ -2453,15 +2454,16 @@
 
   // ---- PRICING DATA ----
   // Glass SF/price ranges per building type
+  // TIGHTENED PRICING — base rates per type, then adjusted by requirements
   const PRICING = {
-    retail:      { psfLow: 45,  psfHigh: 85,  glassRatio: 0.15, label: 'Retail / Storefront' },
-    hospitality: { psfLow: 80,  psfHigh: 200, glassRatio: 0.20, label: 'Hospitality / Restaurant' },
-    healthcare:  { psfLow: 60,  psfHigh: 120, glassRatio: 0.12, label: 'Healthcare / Medical' },
-    office:      { psfLow: 50,  psfHigh: 100, glassRatio: 0.18, label: 'Office / Commercial' },
-    multifamily: { psfLow: 40,  psfHigh: 80,  glassRatio: 0.10, label: 'Multifamily / Apartments' },
-    government:  { psfLow: 60,  psfHigh: 130, glassRatio: 0.15, label: 'Government / Institutional' },
-    seniorliving:{ psfLow: 45,  psfHigh: 90,  glassRatio: 0.10, label: 'Senior Living / CCRC' },
-    industrial:  { psfLow: 35,  psfHigh: 70,  glassRatio: 0.05, label: 'Industrial / Warehouse' }
+    retail:      { psfBase: 58, psfSpread: 12, glassRatio: 0.15, label: 'Retail / Storefront' },
+    hospitality: { psfBase: 95, psfSpread: 25, glassRatio: 0.20, label: 'Hospitality / Restaurant' },
+    healthcare:  { psfBase: 78, psfSpread: 16, glassRatio: 0.12, label: 'Healthcare / Medical' },
+    office:      { psfBase: 65, psfSpread: 15, glassRatio: 0.18, label: 'Office / Commercial' },
+    multifamily: { psfBase: 52, psfSpread: 12, glassRatio: 0.10, label: 'Multifamily / Apartments' },
+    government:  { psfBase: 82, psfSpread: 18, glassRatio: 0.15, label: 'Government / Institutional' },
+    seniorliving:{ psfBase: 58, psfSpread: 14, glassRatio: 0.10, label: 'Senior Living / CCRC' },
+    industrial:  { psfBase: 42, psfSpread: 10, glassRatio: 0.05, label: 'Industrial / Warehouse' }
   };
 
   // ---- SYSTEM RECOMMENDATIONS ----
@@ -2845,21 +2847,39 @@
     if (!glassSF && state.buildingSF) {
       glassSF = Math.round(state.buildingSF * pricing.glassRatio);
     }
-    if (!glassSF) glassSF = 2500; // fallback
-
+    if (!glassSF) glassSF = 2500;
     state.computedGlassSF = glassSF;
 
-    // Floor multiplier (larger buildings = more SF but same psf)
-    let floorMult = 1;
+    // Start with base PSF
+    let basePSF = pricing.psfBase;
+    let spread = pricing.psfSpread;
+
+    // Requirement adjustments (tighten range based on known requirements)
+    const reqs = (state.requirements || '').toLowerCase();
+    let reqMult = 1.0;
+    if (reqs.includes('impact'))    reqMult += 0.32;  // impact glass adds ~32%
+    if (reqs.includes('fire'))      reqMult += 0.28;  // fire-rated adds ~28%
+    if (reqs.includes('sound'))     reqMult += 0.18;  // STC rated adds ~18%
+    if (reqs.includes('energy'))    reqMult += 0.12;  // energy code upgrades ~12%
+    if (reqs.includes('blast'))     reqMult += 0.45;  // blast-resistant adds ~45%
+
+    basePSF = Math.round(basePSF * reqMult);
+
+    // Floor adjustment (+3% per floor above 1 for access equipment)
     const floors = parseInt(state.floors) || 1;
-    if (floors >= 6) floorMult = 1.08;
-    else if (floors >= 4) floorMult = 1.04;
+    const floorMult = 1 + (Math.max(0, floors - 1) * 0.03);
 
-    // Renovation premium
-    const renvoPremium = state.constructionType === 'renovation' ? 1.12 : 1;
+    // Renovation premium (+10% for demo, phasing, protection)
+    const renvoPremium = state.constructionType === 'renovation' ? 1.10 : 1;
 
-    state.scopeLow  = Math.round(glassSF * pricing.psfLow  * floorMult * renvoPremium / 1000) * 1000;
-    state.scopeHigh = Math.round(glassSF * pricing.psfHigh * floorMult * renvoPremium / 1000) * 1000;
+    // Final PSF range: base ± spread (tight ~20% margin)
+    const psfLow  = Math.round(basePSF * floorMult * renvoPremium);
+    const psfHigh = Math.round((basePSF + spread) * floorMult * renvoPremium);
+
+    state.psfLow = psfLow;
+    state.psfHigh = psfHigh;
+    state.scopeLow  = Math.round(glassSF * psfLow  / 500) * 500;
+    state.scopeHigh = Math.round(glassSF * psfHigh / 500) * 500;
   }
 
   // ====================
@@ -2945,7 +2965,7 @@
     document.getElementById('cost-low').textContent  = '$' + (state.scopeLow  || 0).toLocaleString();
     document.getElementById('cost-high').textContent = '$' + (state.scopeHigh || 0).toLocaleString();
     document.getElementById('res-glass-sf').textContent = (state.computedGlassSF || '—').toLocaleString();
-    document.getElementById('res-psf').innerHTML = `$${pricing.psfLow}–$${pricing.psfHigh}/SF`;
+    document.getElementById('res-psf').innerHTML = `$${state.psfLow || pricing.psfBase}–$${state.psfHigh || (pricing.psfBase + pricing.psfSpread)}/SF`;
 
     // Labels
     document.getElementById('res-type-label').textContent = state.buildingTypeLabel || '';
@@ -2961,6 +2981,17 @@
 
     // Contact confirmation
     document.getElementById('confirm-email').textContent = state.contactEmail;
+
+    // Add download PDF button if not already present
+    if (!document.getElementById('download-pdf-btn')) {
+      const costSection = document.querySelector('.be-cost-card') || document.querySelector('#results-panel .be-cost-display');
+      if (costSection) {
+        const btnWrap = document.createElement('div');
+        btnWrap.style.cssText = 'text-align:center;margin-top:16px;';
+        btnWrap.innerHTML = '<button id="download-pdf-btn" onclick="generateBidPDF()" style="background:var(--accent,#E11320);color:white;border:none;padding:12px 28px;border-radius:6px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">\u2193 Download Official Bid Estimate (PDF)</button>';
+        costSection.parentNode.insertBefore(btnWrap, costSection.nextSibling);
+      }
+    }
 
     // Timeline
     renderTimeline();
@@ -2980,6 +3011,185 @@
         value: Math.round((state.scopeLow + state.scopeHigh) / 2)
       });
     }
+
+    // Generate and auto-download the PDF bid estimate
+    setTimeout(() => { generateBidPDF(); }, 1500);
+  }
+
+  // ====================
+  // PDF BID ESTIMATE
+  // ====================
+  function generateBidPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'letter');
+    const W = 215.9;
+    const margin = 20;
+    const cw = W - margin * 2;
+    let y = 20;
+
+    // Colors
+    const red = [225, 19, 32];
+    const dark = [5, 10, 18];
+    const gray = [120, 120, 120];
+    const white = [255, 255, 255];
+
+    // Header bar
+    doc.setFillColor(...dark);
+    doc.rect(0, 0, W, 45, 'F');
+    doc.setFillColor(...red);
+    doc.rect(0, 42, W, 3, 'F');
+
+    // Company name
+    doc.setTextColor(...white);
+    doc.setFontSize(22);
+    doc.setFont('helvetica', 'bold');
+    doc.text('ACG', margin, 18);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('AMERICAN COMMERCIAL GLASS', margin, 24);
+
+    // Right side header
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('PRELIMINARY SCOPE ESTIMATE', W - margin, 16, { align: 'right' });
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    doc.text('Date: ' + today, W - margin, 22, { align: 'right' });
+    doc.text('Ref: ACG-BID-' + Date.now().toString(36).toUpperCase(), W - margin, 27, { align: 'right' });
+    doc.text('CGC License #1531993', W - margin, 32, { align: 'right' });
+
+    y = 55;
+
+    // Project Info Section
+    doc.setTextColor(...dark);
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Project Information', margin, y);
+    y += 2;
+    doc.setDrawColor(...red);
+    doc.setLineWidth(0.5);
+    doc.line(margin, y, margin + 40, y);
+    y += 8;
+
+    doc.setFontSize(10);
+    const fields = [
+      ['Project Name', state.projectName || '—'],
+      ['Location', state.projectAddress || '—'],
+      ['Building Type', state.buildingTypeLabel || '—'],
+      ['Building SF', state.buildingSF ? state.buildingSF.toLocaleString() + ' SF' : '—'],
+      ['Estimated Glass SF', state.computedGlassSF ? state.computedGlassSF.toLocaleString() + ' SF' : '—'],
+      ['Floors', state.floors || '1'],
+      ['Construction Type', state.constructionType === 'renovation' ? 'Renovation' : 'New Construction'],
+      ['Special Requirements', state.requirements || 'Standard'],
+    ];
+
+    fields.forEach(([label, value]) => {
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(...gray);
+      doc.text(label + ':', margin, y);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(...dark);
+      doc.text(String(value), margin + 55, y);
+      y += 6;
+    });
+
+    y += 8;
+
+    // Scope Estimate Box
+    doc.setFillColor(245, 245, 245);
+    doc.roundedRect(margin, y, cw, 35, 3, 3, 'F');
+    doc.setFillColor(...red);
+    doc.roundedRect(margin, y, cw, 3, 3, 3, 'F');
+    doc.rect(margin, y + 2, cw, 1, 'F');
+
+    y += 12;
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...gray);
+    doc.text('ESTIMATED GLAZING SCOPE VALUE', margin + cw / 2, y, { align: 'center' });
+    y += 10;
+    doc.setFontSize(24);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    const scopeText = '$' + (state.scopeLow || 0).toLocaleString() + '  \u2014  $' + (state.scopeHigh || 0).toLocaleString();
+    doc.text(scopeText, margin + cw / 2, y, { align: 'center' });
+    y += 8;
+    doc.setFontSize(8);
+    doc.setTextColor(...gray);
+    doc.text('Based on ' + (state.computedGlassSF || 0).toLocaleString() + ' SF glass \u00b7 $' + (state.psfLow || 0) + '\u2013$' + (state.psfHigh || 0) + '/SF installed', margin + cw / 2, y, { align: 'center' });
+
+    y += 18;
+
+    // Recommended System
+    const sys = SYSTEMS[state.buildingType] || SYSTEMS.office;
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    doc.text('Recommended System', margin, y);
+    y += 2;
+    doc.setDrawColor(...red);
+    doc.line(margin, y, margin + 40, y);
+    y += 8;
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text(sys.name, margin, y);
+    y += 5;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...gray);
+    const descLines = doc.splitTextToSize(sys.desc, cw);
+    doc.text(descLines, margin, y);
+    y += descLines.length * 4.5 + 4;
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    doc.text('Manufacturer: ' + sys.mfrName, margin, y);
+    y += 12;
+
+    // Timeline
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Estimated Timeline', margin, y);
+    y += 2;
+    doc.setDrawColor(...red);
+    doc.line(margin, y, margin + 40, y);
+    y += 8;
+    doc.setFontSize(9);
+    TIMELINE_PHASES.forEach(phase => {
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(...gray);
+      doc.text(phase.name, margin, y);
+      doc.setTextColor(...dark);
+      doc.text(phase.weeks + ' weeks', margin + 60, y);
+      y += 5;
+    });
+    y += 2;
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    doc.text('Total Estimated Duration: 13\u201324 weeks', margin, y);
+    y += 14;
+
+    // Disclaimer
+    doc.setFontSize(7.5);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(...gray);
+    const disclaimer = 'DISCLAIMER: This is a preliminary scope estimate generated by the ACG Bid Engine based on project parameters provided. Actual pricing will be determined after review of construction documents by the ACG estimating team. This estimate is not a binding proposal, contract, or guarantee of final pricing. Material costs, labor availability, site conditions, and specification changes may affect the final scope value. A detailed bid will be provided within 48 hours of plan review.';
+    const discLines = doc.splitTextToSize(disclaimer, cw);
+    doc.text(discLines, margin, y);
+    y += discLines.length * 3.5 + 8;
+
+    // Footer bar
+    doc.setFillColor(...dark);
+    doc.rect(0, 267, W, 15, 'F');
+    doc.setTextColor(...white);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'normal');
+    doc.text('American Commercial Glass  \u00b7  (772) 486-7711  \u00b7  connor@acglass.com  \u00b7  acglass.com', margin, 274);
+    doc.text('CGC #1531993  \u00b7  WBE  \u00b7  SBE', W - margin, 274, { align: 'right' });
+
+    // Save
+    const filename = 'ACG-Bid-Estimate-' + (state.projectName || 'Project').replace(/[^a-zA-Z0-9]/g, '-') + '.pdf';
+    doc.save(filename);
   }
 
   function renderTimeline() {
