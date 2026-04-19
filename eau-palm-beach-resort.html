@@ -147,7 +147,61 @@
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 8px;
       transition: border-color 0.2s, background 0.2s;
+      flex-wrap: wrap;
     }
+    .scope-img {
+      width: 100%;
+      margin-top: 14px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .scope-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .scope-img img:hover {
+      transform: scale(1.02);
+    }
+    /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,10,18,0.95);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 40px;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 28px;
+      z-index: 10000;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 32px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: white; }
     .scope-list li:hover {
       border-color: rgba(225,19,32,0.3);
       background: rgba(225,19,32,0.04);
@@ -401,6 +455,7 @@
               <div class="scope-body">
                 <strong>The New Front Door</strong>
                 <span>Custom decorative glass entrance doors — the resort's first impression. An elegant curved interlocking pattern set in white framing. The signature entry to Eau Palm Beach, visible from S Ocean Blvd, executed to the detail level the address demands.</span>
+                <div class="scope-img"><img src="images/projects/eau-palm-beach/connor-front-doors.jpg" alt="Connor Walsh at the custom front doors of Eau Palm Beach Resort" class="lightbox-trigger" loading="lazy"></div>
               </div>
             </li>
             <li>
@@ -408,6 +463,7 @@
               <div class="scope-body">
                 <strong>Polpo Exterior Facade Wall</strong>
                 <span>The centerpiece of the renovation. A bi-fold opening glass wall system for Polpo restaurant that collapses the boundary between the dining room and the ocean terrace. When open, guests experience the Atlantic without interruption — palm trees, sea breeze, the full oceanfront panorama.</span>
+                <div class="scope-img"><img src="images/projects/eau-palm-beach/polpo-exterior-ocean.jpg" alt="Polpo restaurant bi-fold glass wall open to the Atlantic Ocean" class="lightbox-trigger" loading="lazy"></div>
               </div>
             </li>
             <li>
@@ -415,6 +471,7 @@
               <div class="scope-body">
                 <strong>Polpo Interior</strong>
                 <span>Arched glass windows throughout the fine dining room — custom curved glass in arched frames. The chandeliers visible through the glass, the crisp white tablecloths, the Atlantic beyond: a dining room interior designed around what the glass frames and reveals.</span>
+                <div class="scope-img"><img src="images/projects/eau-palm-beach/polpo-arched-window.jpg" alt="Arched glass windows at Polpo — custom curved frames with ocean view" class="lightbox-trigger" loading="lazy"></div>
               </div>
             </li>
             <li>
@@ -422,6 +479,7 @@
               <div class="scope-body">
                 <strong>Kids Club &amp; Ice Cream Shop</strong>
                 <span>Floor-to-ceiling glazing for the resort's children's activity center and ice cream shop. Natural light and ocean views built into what could have been an interior space. The same standard of glass, applied to every corner of the property.</span>
+                <div class="scope-img"><img src="images/projects/eau-palm-beach/kids-club-interior.jpg" alt="Kids Club at Eau Palm Beach — floor-to-ceiling glass with ocean views" class="lightbox-trigger" loading="lazy"></div>
               </div>
             </li>
             <li>
@@ -436,6 +494,7 @@
               <div class="scope-body">
                 <strong>Rear Facade Entrances</strong>
                 <span>Updated glazing for the rear entry points of the resort. The back-of-house entrances that staff, service vehicles, and some guests use — held to the same standard as the front, because at a Forbes Five-Star property, there is no "back of house" standard.</span>
+                <div class="scope-img"><img src="images/projects/eau-palm-beach/entrance-dusk.jpg" alt="Eau Palm Beach entrance at dusk — updated glazing with blue accent lighting" class="lightbox-trigger" loading="lazy"></div>
               </div>
             </li>
           </ul>
@@ -578,7 +637,40 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
   <script src="js/main.js"></script>
+  <script>
+    // Lightbox functionality
+    (function(){
+      var overlay = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightbox-img');
+      var triggers = document.querySelectorAll('.lightbox-trigger, .gallery-full img, .gallery-2up img');
+      triggers.forEach(function(img){
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function(){
+          lbImg.src = this.src;
+          lbImg.alt = this.alt;
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      overlay.addEventListener('click', function(){
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape' && overlay.classList.contains('active')){
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    })();
+  </script>
   <script>
     (function(){var d=document.querySelector('.nav-dropdown'),t=d&&d.querySelector('.nav-dropdown-trigger');if(t&&d){t.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});document.addEventListener('click',function(e){if(!d.contains(e.target)){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E11320)';a.style.fontWeight='600'}})}})();
   </script>
