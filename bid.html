@@ -2904,8 +2904,15 @@
           // Submit form to Formspree (non-blocking — doesn't depend on success)
           try {
             const formData = new FormData(document.getElementById('bid-form'));
-            fetch('https://formspree.io/f/placeholder', { method: 'POST', body: formData, headers: { Accept: 'application/json' } })
-              .catch(() => {});
+            // Send form data to Connor via FormSubmit
+            formData.append('_subject', 'ACG Bid Engine — New Scope Request: ' + (state.projectName || 'Unknown Project'));
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            fetch('https://formsubmit.co/ajax/connor@acglass.com', {
+              method: 'POST',
+              body: formData,
+              headers: { Accept: 'application/json' }
+            }).catch(() => {});
           } catch(e) {}
         }, 500);
       }
