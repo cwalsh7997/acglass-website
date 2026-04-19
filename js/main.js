@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------- SCROLL REVEAL ----------
-  const revealElements = document.querySelectorAll('[data-reveal], [data-reveal-fade]');
+  const revealElements = document.querySelectorAll('[data-reveal], [data-reveal-fade], [data-reveal-scale]');
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

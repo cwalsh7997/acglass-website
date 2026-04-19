@@ -1611,3 +1611,190 @@ p {
     opacity: 0;
   }
 }
+
+/* ========== LOGO WALL ========== */
+.logo-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+}
+.logo-wall-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  border-right: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  width: 100%;
+  height: 80px;
+}
+.logo-wall-item:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.03);
+}
+.logo-wall-item svg {
+  width: 100%;
+  max-width: 140px;
+  height: 36px;
+}
+@media (max-width: 768px) {
+  .logo-wall {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .logo-wall-item {
+    padding: 18px 12px;
+    height: 64px;
+  }
+  .logo-wall-item svg {
+    max-width: 100px;
+    height: 28px;
+  }
+}
+
+/* ========== GC PARTNER WALL ========== */
+.gc-logo-wall {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16px;
+}
+.gc-name {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.35);
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.gc-name:hover {
+  color: rgba(255,255,255,0.8);
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.03);
+}
+@media (max-width: 768px) {
+  .gc-name {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+/* ========== ENHANCED SCROLL REVEAL ========== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal-fade] {
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal-fade].revealed {
+  opacity: 1;
+}
+[data-reveal-scale] {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal-scale].revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ========== MOBILE POLISH (Top 1% Sprint) ========== */
+@media (max-width: 768px) {
+  /* Fix hero stats bleeding to edge */
+  .hero-side {
+    padding: 0 20px;
+    right: 0;
+    width: 100%;
+  }
+  .hero-stat {
+    padding: 0 4px;
+  }
+
+  /* Better hero image positioning on mobile */
+  .hero-bg img {
+    object-position: center center;
+  }
+
+  /* Increase touch targets for secondary CTAs */
+  .arrow-link {
+    padding: 12px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Better button sizing on mobile */
+  .btn-ghost {
+    padding: 14px 24px;
+    min-height: 48px;
+  }
+
+  /* Fix marquee edge clipping */
+  .marquee {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  /* Tighter GC wall on mobile */
+  .gc-logo-wall {
+    gap: 6px 8px;
+  }
+
+  /* Better testimonial card padding */
+  .grid.grid-3 > div {
+    padding: clamp(20px, 3vw, 32px);
+  }
+}
+
+/* ========== HOVER MICRO-INTERACTIONS ========== */
+.project-card-img img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card:hover .project-card-img img {
+  transform: scale(1.05);
+}
+
+.service-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+}
+
+/* Logo wall subtle animation */
+.logo-wall-item {
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+.logo-wall-item:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth stat block hover */
+.stat-block {
+  transition: transform 0.3s ease;
+}
+.stat-block:hover {
+  transform: translateY(-2px);
+}

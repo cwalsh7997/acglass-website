@@ -1,0 +1,386 @@
+[
+  {
+    "name": "Eau Palm Beach Resort & Spa",
+    "type": "Hospitality",
+    "city": "Manalapan",
+    "lat": 26.5746,
+    "lng": -80.0364,
+    "url": "eau-palm-beach-resort.html"
+  },
+  {
+    "name": "Ocean Prime",
+    "type": "Hospitality",
+    "city": "Fort Lauderdale",
+    "lat": 26.1224,
+    "lng": -80.1373,
+    "url": "ocean-prime-fort-lauderdale.html"
+  },
+  {
+    "name": "Compass at Alton Town Center",
+    "type": "Retail",
+    "city": "Palm Beach Gardens",
+    "lat": 26.8423,
+    "lng": -80.0878,
+    "url": "compass-alton-town-center.html"
+  },
+  {
+    "name": "Dale Mabry Retail",
+    "type": "Retail",
+    "city": "Tampa",
+    "lat": 27.9506,
+    "lng": -82.5015,
+    "url": "dale-mabry-retail-tampa.html"
+  },
+  {
+    "name": "Hardy World 4.0",
+    "type": "Retail",
+    "city": "Melbourne",
+    "lat": 28.0836,
+    "lng": -80.6081,
+    "url": "hardy-world-melbourne.html"
+  },
+  {
+    "name": "Atlantic Fields Golf House",
+    "type": "Hospitality",
+    "city": "Hobe Sound",
+    "lat": 27.0598,
+    "lng": -80.1367,
+    "url": "atlantic-fields-golf-house.html"
+  },
+  {
+    "name": "Panther National Clubhouse",
+    "type": "Hospitality",
+    "city": "Palm Beach Gardens",
+    "lat": 26.8517,
+    "lng": -80.1592,
+    "url": "panther-national-clubhouse.html"
+  },
+  {
+    "name": "Gulf Harbour Country Club",
+    "type": "Hospitality",
+    "city": "Fort Myers",
+    "lat": 26.5354,
+    "lng": -82.0046,
+    "url": "gulf-harbour-country-club.html"
+  },
+  {
+    "name": "Wild Blue Clubhouse",
+    "type": "Hospitality",
+    "city": "Estero",
+    "lat": 26.4376,
+    "lng": -81.8014,
+    "url": "wild-blue-clubhouse.html"
+  },
+  {
+    "name": "Waxin's",
+    "type": "Retail",
+    "city": "West Palm Beach",
+    "lat": 26.7153,
+    "lng": -80.0534,
+    "url": "waxins-west-palm-beach.html"
+  },
+  {
+    "name": "KLUS Lighting",
+    "type": "Retail",
+    "city": "Vero Beach",
+    "lat": 27.6386,
+    "lng": -80.3973,
+    "url": "klus-lighting-vero-beach.html"
+  },
+  {
+    "name": "HCA Cape Coral Emergency",
+    "type": "Healthcare",
+    "city": "Cape Coral",
+    "lat": 26.5629,
+    "lng": -81.9495,
+    "url": "hca-cape-coral-emergency.html"
+  },
+  {
+    "name": "Ginsberg Eye Center",
+    "type": "Healthcare",
+    "city": "Estero",
+    "lat": 26.4388,
+    "lng": -81.7934,
+    "url": "ginsberg-eye-center-estero.html"
+  },
+  {
+    "name": "Aspen Dental Plaza",
+    "type": "Healthcare",
+    "city": "Edgewater",
+    "lat": 28.9589,
+    "lng": -80.9026,
+    "url": "aspen-dental-edgewater.html"
+  },
+  {
+    "name": "Baron Shoppes at Tradition",
+    "type": "Retail",
+    "city": "Port St. Lucie",
+    "lat": 27.2153,
+    "lng": -80.3891,
+    "url": "baron-shoppes-tradition.html"
+  },
+  {
+    "name": "Siena Lakes",
+    "type": "Multifamily",
+    "city": "Naples",
+    "lat": 26.2379,
+    "lng": -81.7637,
+    "url": "siena-lakes-naples.html"
+  },
+  {
+    "name": "Haines City EOC",
+    "type": "Government",
+    "city": "Haines City",
+    "lat": 28.1145,
+    "lng": -81.6178,
+    "url": "haines-city-eoc.html"
+  },
+  {
+    "name": "Cudjoe Key Fire Station",
+    "type": "Government",
+    "city": "Cudjoe Key",
+    "lat": 24.6693,
+    "lng": -81.5027,
+    "url": "cudjoe-key-fire-station.html"
+  },
+  {
+    "name": "Lake Park Innovation Center",
+    "type": "Commercial",
+    "city": "West Palm Beach",
+    "lat": 26.8006,
+    "lng": -80.0635,
+    "url": "lake-park-innovation-center.html"
+  },
+  {
+    "name": "Imperial Crossings",
+    "type": "Multifamily",
+    "city": "Bonita Springs",
+    "lat": 26.3398,
+    "lng": -81.7787,
+    "url": "imperial-crossings-bonita-springs.html"
+  },
+  {
+    "name": "Harbour Cay II",
+    "type": "Multifamily",
+    "city": "Fort Pierce",
+    "lat": 27.4468,
+    "lng": -80.3256,
+    "url": "harbour-cay-fort-pierce.html"
+  },
+  {
+    "name": "Savannas Ridge Clubhouse",
+    "type": "Hospitality",
+    "city": "Fort Pierce",
+    "lat": 27.4244,
+    "lng": -80.3489,
+    "url": "savannas-ridge-clubhouse.html"
+  },
+  {
+    "name": "Tradewinds Clubhouse",
+    "type": "Hospitality",
+    "city": "Port St. Lucie",
+    "lat": 27.2784,
+    "lng": -80.3558,
+    "url": "tradewinds-clubhouse.html"
+  },
+  {
+    "name": "Lucie at Tradition Clubhouse",
+    "type": "Hospitality",
+    "city": "Port St. Lucie",
+    "lat": 27.2157,
+    "lng": -80.3879,
+    "url": "lucie-at-tradition-clubhouse.html"
+  },
+  {
+    "name": "Tomoka Town Center",
+    "type": "Retail",
+    "city": "Daytona Beach",
+    "lat": 29.1869,
+    "lng": -81.07,
+    "url": "tomoka-town-center.html"
+  },
+  {
+    "name": "736 Lagoon Drive",
+    "type": "Residential",
+    "city": "West Palm Beach",
+    "lat": 26.7189,
+    "lng": -80.0531,
+    "url": "736-lagoon-dr.html"
+  },
+  {
+    "name": "1172 S Harbor",
+    "type": "Residential",
+    "city": "West Palm Beach",
+    "lat": 26.713,
+    "lng": -80.051,
+    "url": "1172-s-harbor.html"
+  },
+  {
+    "name": "Shoppes at Westlake Point",
+    "type": "Retail",
+    "city": "Westlake",
+    "lat": 26.787,
+    "lng": -80.2144,
+    "url": "shoppes-westlake-point.html"
+  },
+  {
+    "name": "Gulfside Twelve",
+    "type": "Multifamily",
+    "city": "Siesta Key",
+    "lat": 27.2678,
+    "lng": -82.5517,
+    "url": "gulfside-twelve.html"
+  },
+  {
+    "name": "Estero Vista",
+    "type": "Commercial",
+    "city": "Estero",
+    "lat": 26.4386,
+    "lng": -81.8079,
+    "url": "estero-vista.html"
+  },
+  {
+    "name": "Medley Business Park",
+    "type": "Commercial",
+    "city": "Medley",
+    "lat": 25.8604,
+    "lng": -80.3427,
+    "url": "medley-business-park.html"
+  },
+  {
+    "name": "Illumina Fort Myers",
+    "type": "Multifamily",
+    "city": "Fort Myers",
+    "lat": 26.6318,
+    "lng": -81.8723,
+    "url": "illumina-fort-myers.html"
+  },
+  {
+    "name": "Wave Haven",
+    "type": "Hospitality",
+    "city": "Stuart",
+    "lat": 27.1975,
+    "lng": -80.2528,
+    "url": "wave-haven.html"
+  },
+  {
+    "name": "Bradley Daytona",
+    "type": "Multifamily",
+    "city": "Daytona Beach",
+    "lat": 29.2108,
+    "lng": -81.0228,
+    "url": "bradley-daytona.html"
+  },
+  {
+    "name": "Westlake Hialeah",
+    "type": "Retail",
+    "city": "Hialeah",
+    "lat": 25.8576,
+    "lng": -80.2781,
+    "url": "westlake-hialeah.html"
+  },
+  {
+    "name": "Carib Circle",
+    "type": "Residential",
+    "city": "West Palm Beach",
+    "lat": 26.7161,
+    "lng": -80.0529,
+    "url": "carib-circle.html"
+  },
+  {
+    "name": "Causeway Building",
+    "type": "Commercial",
+    "city": "West Palm Beach",
+    "lat": 26.7196,
+    "lng": -80.0521,
+    "url": "causeway-building.html"
+  },
+  {
+    "name": "Pointe Palm Bay",
+    "type": "Multifamily",
+    "city": "Palm Bay",
+    "lat": 27.9937,
+    "lng": -80.6488,
+    "url": "pointe-palm-bay.html"
+  },
+  {
+    "name": "SROA Storage",
+    "type": "Commercial",
+    "city": "Vero Beach",
+    "lat": 27.6386,
+    "lng": -80.3922,
+    "url": "sroa-vero-beach.html"
+  },
+  {
+    "name": "Rome Collective",
+    "type": "Retail",
+    "city": "Port St. Lucie",
+    "lat": 27.273,
+    "lng": -80.3501,
+    "url": "rome-collective.html"
+  },
+  {
+    "name": "Hulett Environmental",
+    "type": "Commercial",
+    "city": "West Palm Beach",
+    "lat": 26.7053,
+    "lng": -80.0934,
+    "url": "hulett-environmental.html"
+  },
+  {
+    "name": "El Car Wash Northlake",
+    "type": "Retail",
+    "city": "West Palm Beach",
+    "lat": 26.7981,
+    "lng": -80.0878,
+    "url": "el-car-wash-northlake.html"
+  },
+  {
+    "name": "CubeSmart Davie",
+    "type": "Commercial",
+    "city": "Davie",
+    "lat": 26.0629,
+    "lng": -80.2331,
+    "url": "cubesmart-davie.html"
+  },
+  {
+    "name": "Project LIFT",
+    "type": "Government",
+    "city": "West Palm Beach",
+    "lat": 26.7153,
+    "lng": -80.0534,
+    "url": "project-lift.html"
+  },
+  {
+    "name": "Turbine Technologies",
+    "type": "Commercial",
+    "city": "Stuart",
+    "lat": 27.1987,
+    "lng": -80.2534,
+    "url": "turbine-technologies.html"
+  },
+  {
+    "name": "Prestige Marble",
+    "type": "Commercial",
+    "city": "West Palm Beach",
+    "lat": 26.7153,
+    "lng": -80.0934,
+    "url": "prestige-marble.html"
+  },
+  {
+    "name": "Indiantown High School",
+    "type": "Education",
+    "city": "Indiantown",
+    "lat": 27.0276,
+    "lng": -80.4837,
+    "url": "indiantown-high-school.html"
+  },
+  {
+    "name": "StayApt Suites Lafayette",
+    "type": "Hospitality",
+    "city": "Lafayette",
+    "lat": 30.2241,
+    "lng": -92.0198,
+    "url": "stayapt-suites-lafayette.html"
+  }
+]
