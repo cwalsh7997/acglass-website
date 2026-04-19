@@ -390,5 +390,13 @@
     "lat": 28.32,
     "lng": -80.6076,
     "url": "wave-food-hall-cocoa-beach.html"
+  },
+  {
+    "name": "Storage King USA",
+    "type": "Commercial",
+    "city": "Winter Haven",
+    "lat": 28.0222,
+    "lng": -81.7329,
+    "url": "storage-king-winter-haven.html"
   }
 ]
