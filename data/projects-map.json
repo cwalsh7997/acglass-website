@@ -382,5 +382,13 @@
     "lat": 30.2241,
     "lng": -92.0198,
     "url": "stayapt-suites-lafayette.html"
+  },
+  {
+    "name": "Wave Food Hall",
+    "type": "Restaurant",
+    "city": "Cocoa Beach",
+    "lat": 28.32,
+    "lng": -80.6076,
+    "url": "wave-food-hall-cocoa-beach.html"
   }
 ]
