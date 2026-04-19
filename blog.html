@@ -6,26 +6,227 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commercial Glazing Blog | Technical Resources for GCs | ACG</title>
+  <title>ACG Blog — Commercial Glazing Insights | American Commercial Glass</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
+  <meta name="description" content="90 articles on commercial glazing systems, Florida building code, GC resources, project management, and industry trends from the experts at American Commercial Glass.">
+  <link rel="canonical" href="https://acglass.com/blog.html">
+  <meta name="keywords" content="commercial glazing blog, Florida building code glazing, curtainwall guide, storefront glass cost, HVHZ requirements, impact glass Florida, GC resources glazing, commercial glass contractor">
+  <meta name="geo.region" content="US-FL">
+  <meta name="geo.placename" content="Florida">
+  <meta name="geo.position" content="27.994402;-81.760254">
+  <meta name="ICBM" content="27.994402, -81.760254">
+  <meta property="og:title" content="ACG Blog — Commercial Glazing Insights | American Commercial Glass">
+  <meta property="og:description" content="90 articles on glazing systems, Florida building code, project management, and industry trends from ACG — Florida's trusted commercial glazing subcontractor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://acglass.com/blog.html">
+  <meta property="og:site_name" content="American Commercial Glass">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ACG Blog — Commercial Glazing Insights">
+  <meta name="twitter:description" content="90 articles on glazing systems, Florida building code, project management, and industry trends.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="Commercial glazing technical guides, code references, and industry insights from ACG — written for general contractors building in Florida.">
-  <link rel="canonical" href="https://acglass.com/blog.html">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "ACG Commercial Glazing Blog",
-    "description": "Technical resources and guides for general contractors, architects, and developers on commercial glazing systems, Florida building code, and glazing subcontractor selection.",
-    "url": "https://acglass.com/blog.html",
-    "publisher": {"@type": "Organization", "name": "American Commercial Glass", "url": "https://acglass.com"}
-  }
-  </script>
+
   <style>
+    /* ── BLOG HERO ── */
+    .blog-hero {
+      padding: clamp(120px, 14vw, 180px) clamp(24px, 6vw, 96px) clamp(60px, 7vw, 96px);
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .blog-hero .label {
+      margin-bottom: 20px;
+    }
+    .blog-hero h1 {
+      font-size: clamp(38px, 5vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: clamp(16px, 2vw, 24px);
+      letter-spacing: -0.02em;
+    }
+    .blog-hero p {
+      font-size: clamp(15px, 1.2vw, 18px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      max-width: 560px;
+    }
+
+    /* ── STICKY FILTER BAR ── */
+    .blog-filter-bar {
+      position: sticky;
+      top: 60px;
+      z-index: 40;
+      background: rgba(5, 10, 18, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      padding: 0 clamp(16px, 4vw, 48px);
+    }
+    .blog-filter-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      justify-content: space-between;
+    }
+    .blog-filter-btns {
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      flex: 1;
+    }
+    .blog-filter-btns::-webkit-scrollbar { display: none; }
+    .blog-filter-btn {
+      padding: 14px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+      position: relative;
+    }
+    .blog-filter-btn:hover { color: rgba(255,255,255,0.8); }
+    .blog-filter-btn.active {
+      color: white;
+      border-bottom-color: var(--accent);
+    }
+    .blog-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding: 14px 0 14px 24px;
+      border-left: 1px solid rgba(255,255,255,0.1);
+      margin-left: 16px;
+    }
+
+    /* ── BLOG GRID ── */
+    .blog-grid-wrap {
+      padding: clamp(32px, 4vw, 56px) clamp(24px, 6vw, 96px) clamp(80px, 10vw, 140px);
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* ── BLOG CARD ── */
+    .blog-card {
+      background: #0b1220;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .blog-card:hover::before {
+      transform: scaleX(1);
+    }
+    .blog-cat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .blog-card h3 {
+      font-size: clamp(15px, 1.1vw, 17px);
+      font-weight: 700;
+      color: white;
+      line-height: 1.3;
+      margin: 0;
+      flex: 1;
+    }
+    .blog-card p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.45);
+      margin: 0;
+    }
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+    .blog-read-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+    }
+    .blog-arrow {
+      width: 28px;
+      height: 28px;
+      background: rgba(226,27,44,0.1);
+      border: 1px solid rgba(226,27,44,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .blog-card:hover .blog-arrow {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .blog-arrow svg { color: var(--accent); transition: color 0.2s; }
+    .blog-card:hover .blog-arrow svg { color: white; }
+
+    /* Hidden when filtered */
+    .blog-card.filtered { display: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .blog-hero { padding-left: clamp(24px, 5vw, 60px); padding-right: clamp(24px, 5vw, 60px); }
+      .blog-grid-wrap { padding-left: clamp(24px, 5vw, 60px); padding-right: clamp(24px, 5vw, 60px); }
+    }
+    @media (max-width: 640px) {
+      .blog-grid { grid-template-columns: 1fr; gap: 12px; }
+      .blog-filter-btn { padding: 12px 14px; font-size: 10px; }
+      .blog-count { display: none; }
+      .blog-hero h1 { letter-spacing: -0.01em; }
+    }
+
+    /* ── NAV DROPDOWN ── */
     .nav-dropdown{position:relative}
     .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
     .nav-dropdown-trigger:hover{color:#fff}
@@ -41,23 +242,56 @@
       .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://acglass.com/blog.html",
+        "url": "https://acglass.com/blog.html",
+        "name": "ACG Blog — Commercial Glazing Insights",
+        "description": "90 articles on commercial glazing systems, Florida building code, GC resources, project management, and industry trends from American Commercial Glass.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "American Commercial Glass",
+          "url": "https://acglass.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://acglass.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://acglass.com/blog.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- GRAIN OVERLAY -->
   <div class="grain"></div>
-
-  <!-- CUSTOM CURSOR -->
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- NAV -->
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img">
       </a>
-
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
@@ -81,442 +315,1042 @@
         </div>
         <a href="contact.html" class="nav-cta">Send Us Plans</a>
       </div>
-
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero">
-    <div class="container">
-      <div class="label" data-reveal><span class="line"></span> Technical Resources</div>
-      <h1 data-reveal data-delay="100">Glazing Knowledge<br>Built for <span class="accent">GCs.</span></h1>
-      <p data-reveal data-delay="200">Technical guides, code references, and industry insights written for general contractors who need accurate information — not marketing content.</p>
-    </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="blog-hero">
+    <div class="label"><span class="line"></span> Commercial Glazing Knowledge Base</div>
+    <h1>ACG Blog —<br><span class="accent">Commercial Glazing</span><br>Insights</h1>
+    <p>90 articles on glazing systems, Florida building code, project management, and industry trends — written for GCs, developers, and architects who need accurate field-level information.</p>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-4">
-        <a href="blog/commercial-glazing-tampa-bay-market-2026.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">MARKET GUIDE &bull; 2026-07-10</div>
-          <h4>Tampa Bay Commercial Glazing Market: What GCs Need to Know in 2026</h4>
-          <p style="margin-top:8px;">Water Street, Midtown Tampa, Westshore, St. Pete waterfront — Tampa's construction boom is real. Wind zones, project types, and why local presence matters for your glazing sub.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/why-acg-opened-tampa-office.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">COMPANY STORY &bull; 2026-07-10</div>
-          <h4>Why American Commercial Glass Opened a Tampa Office</h4>
-          <p style="margin-top:8px;">From the Treasure Coast to Naples to Tampa — how ACG followed Florida's growth west, and what a local Tampa office means for GCs building in Hillsborough, Pinellas, and Pasco counties.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/tampa-commercial-construction-boom-glazing.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">MARKET ANALYSIS &bull; 2026-07-10</div>
-          <h4>Tampa's Construction Boom: What It Means for Commercial Glazing</h4>
-          <p style="margin-top:8px;">Water Street Phase 2, Midtown Tampa, Tampa General expansion — Tampa Bay's pipeline is massive. What it means for glazing lead times, product availability, and why GCs need to engage their glazing sub early.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/eau-palm-beach-resort-glazing.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROJECT SPOTLIGHT &bull; 2026-07-01</div>
-          <h4>Behind the Glass at Eau Palm Beach &mdash; A Forbes Five-Star Renovation</h4>
-          <p style="margin-top:8px;">Seven phases of glazing at one of Florida's most iconic oceanfront resorts. Custom front doors, Polpo's opening glass wall, arched dining room windows, spa additions &mdash; and what it takes to deliver at the Forbes Five-Star standard.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/nannette-walsh-top-chef-martin-county-2026.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">COMMUNITY &bull; 2026-04-15</div>
-          <h4>Nannette Walsh Wins Top Chef &amp; Top Dish at Martin County Top Chef 2026</h4>
-          <p style="margin-top:8px;">ACG\'s own Nannette Walsh swept both awards at the 2026 Top Chef competition benefiting House of Hope. $118,000 raised for Martin County families.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-lead-times-2026.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PLANNING GUIDE &bull; 2026-06-02</div>
-          <h4>Commercial Glazing Lead Times in 2026 — What to Expect</h4>
-          <p style="margin-top:8px;">Current lead times by system: storefront 4–6 weeks, curtainwall 10–14 weeks, impact windows 6–8 weeks, Eurowall 12–16 weeks. What affects them and how GCs can plan around them.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-a-product-approval-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE COMPLIANCE &bull; 2026-06-02</div>
-          <h4>What Is a Florida Product Approval? (And Why Your Glazing Sub Needs One)</h4>
-          <p style="margin-top:8px;">FL PA vs. Miami-Dade NOA, how to verify approvals, and what happens when a glazing sub installs non-approved products on a permitted Florida project.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/impact-glass-vs-shutters-commercial.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-06-02</div>
-          <h4>Impact Glass vs Hurricane Shutters for Commercial Buildings — Which Is Better?</h4>
-          <p style="margin-top:8px;">Head-to-head comparison of cost, deployment, labor, aesthetics, and code compliance. Why most Florida commercial developers choose impact glass.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-to-read-a-door-schedule.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROCUREMENT GUIDE &bull; 2026-06-02</div>
-          <h4>How to Read a Door and Window Schedule (For People Who Aren't Architects)</h4>
-          <p style="margin-top:8px;">What every column in a door and window schedule means — mark number, size, type, frame, hardware, fire rating, and glazing. And what happens when it's missing.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-low-e-glass-commercial.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-06-02</div>
-          <h4>What Is Low-E Glass? (And Why Your Commercial Building Needs It)</h4>
-          <p style="margin-top:8px;">Low-E explained in plain English — what the coating does, how SHGC and U-factor work, why Florida energy code requires it, and hard coat vs. soft coat differences.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-a-curtainwall-system.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">FUNDAMENTALS &bull; 2026-06-02</div>
-          <h4>What Is a Curtainwall System? (Simple Guide for Non-Engineers)</h4>
-          <p style="margin-top:8px;">Curtainwall explained for property owners and developers — what it is, where you see it, how it differs from storefront and window wall, and why it costs more.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/waxins-eurowall-clematis-street.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROJECT SPOTLIGHT &bull; 2026-04-25</div>
-          <h4>How Eurowall Glass Transformed Waxin's on Clematis Street</h4>
-          <p style="margin-top:8px;">The engineering behind ACG's Eurowall opening glass system at Waxin's WPB — corner configurations, Florida impact requirements, and why restaurants are specifying opening glass walls.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/bradley-daytona-multifamily-glazing.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROJECT SPOTLIGHT &bull; 2026-05-01</div>
-          <h4>The Bradley Daytona — 300 Units of Glazing in Volusia County</h4>
-          <p style="margin-top:8px;">What goes into glazing a 300-unit luxury apartment complex? A look inside ACG's full scope at The Bradley Daytona — multifamily windows, doors, and storefront for Waypoint Construction Group in Daytona Beach.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/impact-windows-vs-hurricane-shutters.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-03-15</div>
-          <h4>Impact Windows vs. Hurricane Shutters</h4>
-          <p style="margin-top:8px;">The code, the cost, and the practical reality for commercial construction in Florida's HVHZ.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/storefront-vs-curtainwall.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-03-08</div>
-          <h4>Storefront vs. Curtainwall</h4>
-          <p style="margin-top:8px;">The structural differences, performance tradeoffs, and when to specify each system for your commercial project.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/hvhz-glazing-requirements-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE COMPLIANCE &bull; 2026-02-20</div>
-          <h4>HVHZ Glazing Requirements in Florida</h4>
-          <p style="margin-top:8px;">Everything general contractors need to know about the High Velocity Hurricane Zone — from product approvals to inspection documentation.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/window-wall-multifamily-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-02-10</div>
-          <h4>Window Wall for Multifamily Construction</h4>
-          <p style="margin-top:8px;">The complete guide for general contractors — system selection, sequencing, trade coordination, and HVHZ compliance for Florida residential projects.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/lucie-at-tradition-clubhouse-glazing.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROJECT SPOTLIGHT &bull; 2026-04-14</div>
-          <h4>Lucie at Tradition Clubhouse — Multifamily Glazing Done Right</h4>
-          <p style="margin-top:8px;">How ACG delivered the storefront glazing package for the Lucie at Tradition clubhouse in Port St. Lucie. ESWindows, coastal design, Treasure Coast multifamily.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-to-choose-glazing-contractor.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">INDUSTRY INSIGHT &bull; 2026-01-28</div>
-          <h4>How to Choose a Glazing Contractor</h4>
-          <p style="margin-top:8px;">What separates a reliable glazing sub from one that blows your schedule. A practical guide for general contractors.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-storefront-installation-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-01-15</div>
-          <h4>Commercial Storefront Installation Guide</h4>
-          <p style="margin-top:8px;">What GCs need to know about sequencing, coordination, and quality standards for commercial storefront systems.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/fire-rated-glass-code-compliance.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE COMPLIANCE &bull; 2026-01-05</div>
-          <h4>Fire-Rated Glass Code Compliance</h4>
-          <p style="margin-top:8px;">IBC requirements, rating classifications, opening limitations, and what GCs need to know about fire-rated glazing on commercial projects.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/south-florida-building-code-glazing.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE COMPLIANCE &bull; 2025-12-20</div>
-          <h4>South Florida Building Code Glazing Guide</h4>
-          <p style="margin-top:8px;">Florida Building Code glazing requirements specific to South Florida — what GCs need to know about HVHZ, county amendments, and compliance documentation.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/automatic-entrance-ada-compliance.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE COMPLIANCE &bull; 2025-12-10</div>
-          <h4>Automatic Entrance ADA Compliance</h4>
-          <p style="margin-top:8px;">Everything GCs need to know about ADA requirements for commercial automatic entrance systems — from door width to timing to documentation.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/interior-glass-partitions-office-trends.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">INDUSTRY INSIGHT &bull; 2025-11-30</div>
-          <h4>Interior Glass Partitions: Office Design Trends</h4>
-          <p style="margin-top:8px;">What's driving interior glass partition specification in modern office design — and what GCs need to know for successful fit-out execution.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-a-glazing-subcontractor.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">FUNDAMENTALS &bull; 2026-04-08</div>
-          <h4>What Is a Glazing Subcontractor?</h4>
-          <p style="margin-top:8px;">Glazier vs. glass shop vs. glazing sub — what they do, what they're responsible for on a job, and what to look for when hiring one.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/curtainwall-vs-storefront-cost-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">COST GUIDE &bull; 2026-04-08</div>
-          <h4>Curtainwall vs. Storefront: Cost &amp; Performance</h4>
-          <p style="margin-top:8px;">Real cost ranges per SF, structural differences, and what happens when GCs try to substitute one system for the other.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-cost-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">COST GUIDE &bull; 2026-04-08</div>
-          <h4>Commercial Glazing Cost in Florida: 2026 Guide</h4>
-          <p style="margin-top:8px;">Real cost ranges for storefront ($45&ndash;$90/SF), window wall ($80&ndash;$160/SF), and curtainwall ($150&ndash;$350+/SF) — and what drives the variation.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/hvhz-certified-glazing-contractor-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">HVHZ &bull; 2026-04-08</div>
-          <h4>How to Find an HVHZ-Certified Glazing Contractor</h4>
-          <p style="margin-top:8px;">Miami-Dade NOA vs. Florida PA, TAS testing, and what documentation to demand before awarding a South Florida glazing scope.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-miami-dade-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">MIAMI-DADE &bull; 2026-04-08</div>
-          <h4>Commercial Glazing in Miami-Dade: Code &amp; NOA Guide</h4>
-          <p style="margin-top:8px;">The strictest glazing market in the US — NOA requirements, TAS testing standards, common compliance failures, and the inspection process.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/window-wall-systems-florida-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">SYSTEMS &bull; 2026-04-08</div>
-          <h4>Window Wall Systems in Florida: Complete Guide</h4>
-          <p style="margin-top:8px;">Types of window wall, Florida code requirements, thermal performance, and the submittal/engineering process for commercial and multifamily projects.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/glazing-subcontractor-scope-letter-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROCUREMENT &bull; 2026-04-08</div>
-          <h4>How to Evaluate a Glazing Subcontractor's Scope Letter</h4>
-          <p style="margin-top:8px;">What a complete glazing scope includes, common exclusions GCs miss, and how to compare glazing bids apples-to-apples.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/impact-window-contractor-commercial-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">HVHZ &bull; 2026-04-08</div>
-          <h4>Choosing a Commercial Impact Window Contractor in Florida</h4>
-          <p style="margin-top:8px;">HVHZ requirements, Florida product approvals, and what separates a commercial impact window sub from a residential glass shop.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/storefront-glass-installation-tampa.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TAMPA &bull; 2026-04-08</div>
-          <h4>Commercial Storefront Installation in Tampa, FL</h4>
-          <p style="margin-top:8px;">Florida Building Code requirements for commercial storefronts in Hillsborough County — what GCs need to know before the bid goes out.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-orlando-fl.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">MARKET GUIDE &bull; 2026-04-08</div>
-          <h4>Commercial Glazing in Orlando, FL</h4>
-          <p style="margin-top:8px;">Orlando's construction market, Orange County code requirements, and what GCs building in Central Florida need from a glazing sub.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/wesley-chapel-brandon-commercial-construction.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">MARKET GUIDE &bull; 2026-04-08</div>
-          <h4>Glazing for Wesley Chapel &amp; Brandon's Construction Boom</h4>
-          <p style="margin-top:8px;">The glazing guide for GCs building in Pasco County and east Hillsborough — permits, wind zones, and finding qualified subs.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-subcontractor-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">FLORIDA GUIDE &bull; 2026-04-08</div>
-          <h4>How to Hire a Commercial Glazing Subcontractor in Florida</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/impact-glass-vs-laminated-glass-commercial.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL &bull; 2026-04-08</div>
-          <h4>Impact Glass vs. Laminated Glass: What Florida GCs Need to Know</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-project-timeline.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PLANNING &bull; 2026-04-08</div>
-          <h4>Commercial Glazing Project Timeline: What GCs Should Expect</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/florida-product-approval-glazing-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE GUIDE &bull; 2026-04-08</div>
-          <h4>Florida Product Approval for Glazing: A GC's Complete Guide</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-miami-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">MARKET GUIDE &bull; 2026-04-08</div>
-          <h4>Commercial Glazing Contractors in Miami, FL</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/storefronts-vs-windows-commercial-buildings.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL &bull; 2026-04-08</div>
-          <h4>Storefront Systems vs. Windows: What's the Difference?</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-contractors-tampa-fl.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TAMPA GUIDE &bull; 2026-04-08</div>
-          <h4>How to Choose a Commercial Glazing Contractor in Tampa, FL</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/ai-project-management-commercial-glazing.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">OPERATIONS &bull; 2026-04-08</div>
-          <h4>How AI-Managed Scheduling Is Changing Commercial Glazing</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/hurricane-impact-vs-non-impact-commercial.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE GUIDE &bull; 2026-04-08</div>
-          <h4>Hurricane Impact vs. Non-Impact Glass for Commercial Buildings</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/division-08-specifications-guide.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL &bull; 2026-04-08</div>
-          <h4>Division 08 Specifications: A GC's Guide to the Openings Spec</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/selecting-curtainwall-contractor-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">GC GUIDE &bull; 2026-04-08</div>
-          <h4>How to Select a Curtainwall Contractor in Florida</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-healthcare-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">HEALTHCARE &bull; 2026-04-08</div>
-          <h4>Commercial Glazing for Healthcare Facilities in Florida</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glass-replacement-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">REPLACEMENT &bull; 2026-04-08</div>
-          <h4>Commercial Glass Replacement in Florida: A Contractor's Guide</h4>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-to-choose-glazing-subcontractor.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">GC GUIDE &bull; 2026-04-10</div>
-          <h4>How to Choose a Glazing Subcontractor</h4>
-          <p style="margin-top:8px;">What to look for, what to avoid, and why the GC-glazing sub relationship makes or breaks complex commercial projects.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/curtainwall-vs-storefront-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-04-10</div>
-          <h4>Curtainwall vs Storefront Systems: What Florida GCs Need to Know</h4>
-          <p style="margin-top:8px;">Technical differences, cost ranges, structural requirements, hurricane ratings, NOAs, and when each system gets specified.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/florida-commercial-glazing-hurricane-code.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE COMPLIANCE &bull; 2026-04-10</div>
-          <h4>Florida Commercial Glazing &amp; Hurricane Code</h4>
-          <p style="margin-top:8px;">HVHZ vs standard zones, NOA requirements, Large Missile Impact testing, and what happens when glazing fails inspection.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-storefront-installation-process.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-04-10</div>
-          <h4>Commercial Storefront Installation: The Full Process Explained</h4>
-          <p style="margin-top:8px;">Submittals through closeout — every stage of how a commercial storefront gets installed and what can go wrong at each step.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-much-does-commercial-storefront-glass-cost.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PRICING GUIDE &bull; 2026-04-14</div>
-          <h4>How Much Does Commercial Storefront Glass Cost? (2026 Pricing Guide)</h4>
-          <p style="margin-top:8px;">Real price ranges: $40&ndash;$100/SF for storefront, $150&ndash;$350+/SF for curtainwall. What drives cost up or down in Florida.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-a-storefront-glazing-system.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">FUNDAMENTALS &bull; 2026-04-14</div>
-          <h4>What Is a Storefront Glazing System? (Simple Explanation)</h4>
-          <p style="margin-top:8px;">Aluminum frame + glass panels + doors explained clearly for property owners who want to understand what they're buying.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-long-does-storefront-installation-take.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PLANNING GUIDE &bull; 2026-04-14</div>
-          <h4>How Long Does Storefront Glass Installation Take?</h4>
-          <p style="margin-top:8px;">Typical timeline: 2 weeks submittals, 4&ndash;6 weeks fabrication, 1&ndash;3 weeks install. What causes delays — and how to avoid them.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/hurricane-impact-windows-commercial-building-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">HURRICANE CODE &bull; 2026-04-14</div>
-          <h4>Hurricane Impact Windows for Commercial Buildings in Florida</h4>
-          <p style="margin-top:8px;">HVHZ requirements, Large Missile Impact testing, FL Product Approval vs Miami-Dade NOA — and when you need impact vs non-impact glazing.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/storefront-glass-replacement-when-to-replace.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">REPLACEMENT GUIDE &bull; 2026-04-14</div>
-          <h4>When Should You Replace Commercial Storefront Glass?</h4>
-          <p style="margin-top:8px;">Foggy glass, water intrusion, failed hardware, code violations — the signs you need replacement and what it will cost.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-does-a-glazing-contractor-do.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">FUNDAMENTALS &bull; 2026-04-14</div>
-          <h4>What Does a Glazing Contractor Do? (And Why You Need One)</h4>
-          <p style="margin-top:8px;">Simplest possible explanation: we install glass on commercial buildings. Storefronts, curtainwall, windows, doors — and how we're different from a window company.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glass-types-explained.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">TECHNICAL GUIDE &bull; 2026-04-14</div>
-          <h4>Commercial Glass Types Explained — Tempered, Laminated, Insulated, Low-E</h4>
-          <p style="margin-top:8px;">Simple breakdown of every commercial glass type, when each is used, and a comparison table to help you understand what you need.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-to-get-a-glazing-bid-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PROCUREMENT GUIDE &bull; 2026-04-14</div>
-          <h4>How to Get a Commercial Glazing Bid in Florida (Step by Step)</h4>
-          <p style="margin-top:8px;">What to send, what to expect back, how to compare bids apples-to-apples — and why ACG returns a complete scope in 48 hours.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/storefront-vs-curtainwall-when-to-use-which.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">SYSTEM GUIDE &bull; 2026-04-14</div>
-          <h4>Storefront vs Curtainwall — When Do You Use Which?</h4>
-          <p style="margin-top:8px;">Under 15 feet = storefront ($40&ndash;$100/SF). Spanning floors = curtainwall ($150&ndash;$350+/SF). Simple decision guide with cost breakdown.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/florida-building-code-commercial-windows-2026.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE GUIDE &bull; 2026-04-14</div>
-          <h4>Florida Building Code for Commercial Windows — 2026 Guide</h4>
-          <p style="margin-top:8px;">Wind zones, HVHZ boundaries, energy code requirements (SHGC, U-factor), and when you need an NOA vs Florida Product Approval.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-much-does-curtainwall-cost-per-square-foot.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">COST GUIDE &bull; 2026-06-10</div>
-          <h4>How Much Does Curtainwall Cost Per Square Foot? (2026 Guide)</h4>
-          <p style="margin-top:8px;">$150&ndash;$350+/SF depending on system type, Florida HVHZ requirements, height, and custom profiles. Stick-built vs unitized breakdown.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-a-window-wall-system.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">SYSTEM GUIDE &bull; 2026-06-10</div>
-          <h4>What Is a Window Wall System? (And How It's Different from Curtainwall)</h4>
-          <p style="margin-top:8px;">Window wall sits slab-to-slab. Curtainwall hangs in front. The difference explained simply — with cost comparison and when to use each one.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/what-is-division-08-construction.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">INDUSTRY REFERENCE &bull; 2026-06-10</div>
-          <h4>What Is Division 08 in Construction? (The Complete Guide to Openings)</h4>
-          <p style="margin-top:8px;">Division 08 = Openings in the CSI MasterFormat. Every sub-section from 08 11 through 08 88 explained — doors, windows, storefronts, curtainwall, hardware.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/eurowall-sliding-glass-door-system.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PRODUCT GUIDE &bull; 2026-06-10</div>
-          <h4>Eurowall Sliding Glass Door System — What It Is and Where to Use It</h4>
-          <p style="margin-top:8px;">European lift-and-slide technology for restaurants, clubhouses, and luxury projects. Panels up to 12ft tall, corner configs, $200&ndash;$500/SF installed.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/fire-rated-glass-requirements-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">CODE REFERENCE &bull; 2026-06-10</div>
-          <h4>Fire-Rated Glass Requirements in Florida — What You Need to Know</h4>
-          <p style="margin-top:8px;">When fire-rated glass is required, rating levels (20/45/60/90 min), glass types (ceramic, tempered, wired), and testing standards (UL 9, UL 10B/C, NFPA 252).</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/how-to-spec-commercial-storefront.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">ARCHITECT'S GUIDE &bull; 2026-06-10</div>
-          <h4>How to Spec a Commercial Storefront System (Architect's Quick Guide)</h4>
-          <p style="margin-top:8px;">Frame depth, thermal break, glass selection, ADA hardware, Florida wind loads, and finish options — the complete storefront spec checklist.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/commercial-glazing-inspection-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">FIELD GUIDE &bull; 2026-06-10</div>
-          <h4>What Happens During a Commercial Glazing Inspection in Florida?</h4>
-          <p style="margin-top:8px;">What inspectors check: product approvals, glass labels, installation compliance, sealants, hardware. Common fail points and how to prepare.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
-        <a href="blog/best-commercial-storefront-systems-florida.html" style="display:block;text-decoration:none;" class="service-card" data-reveal>
-          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 8px;">PRODUCT COMPARISON &bull; 2026-06-10</div>
-          <h4>Best Commercial Storefront Systems for Florida (2026 Comparison)</h4>
-          <p style="margin-top:8px;">ESWindows, YKK AP YES 45, Kawneer Trifab, Oldcastle FG 501T, and Arcadia AA3200 compared by frame depth, thermal performance, Florida PA, and price tier.</p>
-          <div style="margin-top:16px;" class="arrow-link">Read Article <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
+
+  <!-- ═══════════════ STICKY FILTER BAR ═══════════════ -->
+  <div class="blog-filter-bar" id="blogFilterBar">
+    <div class="blog-filter-inner">
+      <div class="blog-filter-btns">
+        <button class="blog-filter-btn active" data-filter="all">All Articles</button>
+        <button class="blog-filter-btn" data-filter="pricing">Pricing &amp; Costs</button>
+        <button class="blog-filter-btn" data-filter="technical">Technical Guides</button>
+        <button class="blog-filter-btn" data-filter="gc-resources">GC Resources</button>
+        <button class="blog-filter-btn" data-filter="florida-code">Florida Code</button>
+        <button class="blog-filter-btn" data-filter="industry">Industry News</button>
+        <button class="blog-filter-btn" data-filter="projects">Project Spotlights</button>
       </div>
+      <div class="blog-count" id="blog-count">90 Articles</div>
     </div>
-  </section>
+  </div>
 
-  <!-- ========== CTA ========== -->
+
+  <!-- ═══════════════ BLOG GRID ═══════════════ -->
+  <div class="blog-grid-wrap">
+    <div class="blog-grid" id="blogGrid">
+
+      <!-- 1 -->
+      <a href="blog/ai-project-management-commercial-glazing.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>How AI-Managed Scheduling Is Changing Commercial Glazing</h3>
+        <p>How AI-driven project management is transforming commercial glazing subcontractors — what it means for GCs, schedules, and fewer calls to the glazing sub.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a href="blog/automatic-entrance-ada-compliance.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Automatic Entrance ADA Compliance Guide for Commercial Doors</h3>
+        <p>Complete guide to ADA requirements for automatic entrance systems — door width, approach clearances, operating force, timing, and what GCs need to know.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a href="blog/automatic-entrance-systems-commercial-buildings-florida.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Automatic Entrance Systems for Commercial Buildings: Types, Costs &amp; ADA Requirements</h3>
+        <p>Complete guide to automatic entrance systems: sliding, swinging, revolving, and folding types, ADA compliance requirements, cost ranges, and manufacturer comparisons.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a href="blog/best-commercial-storefront-systems-florida.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Best Commercial Storefront Systems for Florida (2026 Comparison)</h3>
+        <p>ESWindows, YKK AP YES 45, Kawneer Trifab, Oldcastle FG 501T, and Arcadia AA3200 compared by frame depth, thermal performance, and Florida Product Approval.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a href="blog/bi-fold-glass-walls-restaurants-hospitality.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Bi-Fold Glass Walls for Restaurants &amp; Hospitality: Indoor-Outdoor Dining Done Right</h3>
+        <p>Bi-fold glass walls for restaurants in Florida — NanaWall and Eurowall systems, design considerations, wind load requirements, impact-rated options, and cost ranges.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 6 -->
+      <a href="blog/bradley-daytona-multifamily-glazing.html" class="blog-card" data-category="projects">
+        <div class="blog-cat">Project Spotlights</div>
+        <h3>The Bradley Daytona — 300 Units of Glazing in Volusia County</h3>
+        <p>What goes into glazing a 300-unit luxury apartment complex? ACG breaks down the scope, logistics, and coordination behind The Bradley Daytona in Daytona Beach, FL.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 7 -->
+      <a href="blog/commercial-glass-replacement-florida.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Commercial Glass Replacement in Florida: What You Need to Know</h3>
+        <p>Commercial glass replacement for Florida businesses — what's involved, code requirements, insurance claims, and finding a qualified commercial glazing contractor.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 8 -->
+      <a href="blog/commercial-glass-types-explained.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Commercial Glass Types Explained — Tempered, Laminated, Insulated, Low-E</h3>
+        <p>Commercial glass types explained simply: tempered, laminated, insulated (IGU), Low-E, and impact glass. What each type is, where it's used, and when you need it in Florida.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 9 -->
+      <a href="blog/commercial-glass-types-guide-florida.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Commercial Glass Types: A Complete Guide for Florida Projects</h3>
+        <p>A complete guide to commercial glass types for Florida projects: tempered, laminated, IGU, Low-E, impact-rated, fire-rated, tinted, and reflective — with costs and code compliance.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">10 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 10 -->
+      <a href="blog/commercial-glazing-contractors-tampa-fl.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>Best Commercial Glazing Contractors in Tampa FL (2026 Guide)</h3>
+        <p>A GC's guide to choosing a commercial glazing contractor in Tampa. What to look for, what questions to ask, and why ACG's Tampa office is the right partner for your next project.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 11 -->
+      <a href="blog/commercial-glazing-cost-florida.html" class="blog-card" data-category="pricing">
+        <div class="blog-cat">Pricing &amp; Costs</div>
+        <h3>Commercial Glazing Cost in Florida: What GCs Actually Pay (2026)</h3>
+        <p>Real cost ranges for commercial glazing scopes in Florida — storefront, curtainwall, window wall, and impact window packages. What drives cost and how to evaluate a glazing bid.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 12 -->
+      <a href="blog/commercial-glazing-healthcare-florida.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Commercial Glazing for Healthcare Facilities in Florida</h3>
+        <p>Healthcare glazing in Florida — fire-rated glass, infection control, impact requirements, and what GCs building hospitals need from their glazing sub.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 13 -->
+      <a href="blog/commercial-glazing-inspection-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>What Happens During a Commercial Glazing Inspection in Florida?</h3>
+        <p>What inspectors check during a commercial glazing inspection in Florida: product approvals, labels, installation per manufacturer instructions, sealants, hardware, and common fail points.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 14 -->
+      <a href="blog/commercial-glazing-lead-times-2026.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>Commercial Glazing Lead Times in 2026 — What to Expect</h3>
+        <p>Commercial glazing lead times in 2026 — current lead times by system type, what affects them, and how GCs can plan around them to protect their schedule.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 15 -->
+      <a href="blog/commercial-glazing-miami-dade-guide.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Commercial Glazing in Miami-Dade County: The Complete Code Guide</h3>
+        <p>Miami-Dade County has the strictest glazing requirements in the US. A complete guide for GCs on HVHZ requirements, NOA documentation, and finding a qualified glazing sub.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 16 -->
+      <a href="blog/commercial-glazing-miami-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Commercial Glazing Contractors in Miami, FL: What GCs Need to Know</h3>
+        <p>A GC's guide to commercial glazing in Miami — HVHZ requirements, NOA documentation, finding a qualified sub, and what makes Miami the hardest glazing market in the US.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 17 -->
+      <a href="blog/commercial-glazing-orlando-fl.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>Commercial Glazing in Orlando FL — Guide for GCs</h3>
+        <p>Everything Orlando-area GCs need to know about commercial glazing — systems, contractors, code requirements, and why ACG serves the Greater Orlando market from its Florida offices.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 18 -->
+      <a href="blog/commercial-glazing-project-delays-how-to-avoid.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>5 Common Commercial Glazing Delays and How to Avoid Them</h3>
+        <p>The 5 most common glazing delays on commercial construction projects — late submittals, RFI loops, material lead times, trade coordination, and punch list scope creep.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 19 -->
+      <a href="blog/commercial-glazing-project-timeline.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>Commercial Glazing Project Timeline: What GCs Should Expect</h3>
+        <p>A realistic timeline for commercial glazing scopes — from bid award to final inspection. What takes time, what GCs can control, and what ACG does differently.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 20 -->
+      <a href="blog/commercial-glazing-subcontractor-florida.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Hire a Commercial Glazing Subcontractor in Florida</h3>
+        <p>A GC's step-by-step guide to hiring a commercial glazing subcontractor in Florida — vetting, licensing, scope review, and what to look for in the field.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 21 -->
+      <a href="blog/commercial-glazing-submittal-process-guide.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>The Commercial Glazing Submittal Process: What GCs Need to Know</h3>
+        <p>A GC's guide to the commercial glazing submittal process — what's included, typical timelines, review cycles, common rejection reasons, and how to keep glazing submittals on schedule.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 22 -->
+      <a href="blog/commercial-glazing-tampa-bay-market-2026.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>Tampa Bay Commercial Glazing Market: What GCs Need to Know in 2026</h3>
+        <p>Tampa Bay's commercial construction pipeline is massive in 2026. Here's what GCs building in Hillsborough, Pinellas, and Pasco counties need to know about glazing.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 23 -->
+      <a href="blog/commercial-storefront-installation-guide.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>Commercial Storefront Installation Guide for GCs</h3>
+        <p>A practical guide for general contractors on commercial storefront installation — sequence, coordination requirements, common problems, and what to look for in your glazing sub's installation.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 24 -->
+      <a href="blog/commercial-storefront-installation-process.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Commercial Storefront Installation: The Full Process Explained</h3>
+        <p>The complete commercial storefront installation process — submittals, shop drawings, product approval, delivery, field install, caulking, and punch list. What can go wrong at each stage.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 25 -->
+      <a href="blog/curtainwall-systems-explained-commercial-construction.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Curtainwall Systems Explained: How They Work &amp; When Your Building Needs One</h3>
+        <p>What is a curtainwall system? How curtainwall works, stick-built vs unitized types, when your building needs curtainwall vs storefront, and typical cost ranges in Florida.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 26 -->
+      <a href="blog/curtainwall-vs-storefront-cost-guide.html" class="blog-card" data-category="pricing">
+        <div class="blog-cat">Pricing &amp; Costs</div>
+        <h3>Curtainwall vs. Storefront: Cost, Performance &amp; When to Use Each</h3>
+        <p>A GC's guide to choosing between curtainwall and storefront systems — cost differences, performance comparison, and which system the architect spec actually calls for.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 27 -->
+      <a href="blog/curtainwall-vs-storefront-florida.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Curtainwall vs Storefront Systems: What Florida GCs Need to Know</h3>
+        <p>Curtainwall vs storefront systems in Florida — technical differences, cost ranges, structural requirements, hurricane ratings, NOAs, and when each system gets specified.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 28 -->
+      <a href="blog/division-08-specifications-guide.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>Division 08 Specifications: A GC's Reference Guide</h3>
+        <p>What's in Division 08 of a commercial construction specification? A GC's guide to the openings spec — glass, glazing, hardware, and what to look for.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 29 -->
+      <a href="blog/eau-palm-beach-resort-glazing.html" class="blog-card" data-category="projects">
+        <div class="blog-cat">Project Spotlights</div>
+        <h3>Behind the Glass at Eau Palm Beach — A Forbes Five-Star Renovation</h3>
+        <p>How ACG glazed seven areas of Eau Palm Beach Resort &amp; Spa — one of Florida's most iconic Forbes Five-Star oceanfront properties. Custom front doors, opening glass walls, arched dining rooms.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 30 -->
+      <a href="blog/energy-efficient-commercial-glass-florida-code.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Energy-Efficient Commercial Glass in Florida: Meeting Code While Cutting Costs</h3>
+        <p>How to meet Florida Building Code energy requirements for commercial glass — SHGC, U-value, Low-E coatings, insulated glass units, and how to balance energy code with hurricane code.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 31 -->
+      <a href="blog/eurowall-sliding-glass-door-system.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Eurowall Sliding Glass Door System — What It Is and Where to Use It</h3>
+        <p>Eurowall sliding glass door systems use European lift-and-slide technology — massive panels up to 12ft tall, corner configurations, and full wall openings. Florida code compliance and cost range.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 32 -->
+      <a href="blog/fire-rated-glass-code-compliance.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Fire-Rated Glass Code Compliance: IBC Requirements Guide</h3>
+        <p>Complete guide to fire-rated glass code requirements — IBC classifications, opening limitations, F vs T ratings, and what GCs need to know to specify and inspect fire-rated glazing correctly.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 33 -->
+      <a href="blog/fire-rated-glass-requirements-commercial-buildings.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Fire-Rated Glass for Commercial Buildings: Requirements, Types &amp; Installation</h3>
+        <p>Where is fire-rated glass required in commercial buildings? Fire ratings (20, 45, 60, 90 min), glass types (wired, ceramic, intumescent), TGP products, cost premiums, and IBC code requirements.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 34 -->
+      <a href="blog/fire-rated-glass-requirements-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Fire-Rated Glass Requirements in Florida — What You Need to Know</h3>
+        <p>Fire-rated glass requirements in Florida: when it's required, rating levels (20/45/60/90 min), glass types, testing standards (UL 9, UL 10B/C, NFPA 252), and Florida Building Code references.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 35 -->
+      <a href="blog/florida-building-code-commercial-glazing-guide.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Florida Building Code for Commercial Glazing: A Contractor's Reference</h3>
+        <p>A practical contractor's reference for Florida Building Code requirements for commercial glazing — FBC 8th Edition, energy code, wind load, HVHZ, and Florida Product Approval.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">10 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 36 -->
+      <a href="blog/florida-building-code-commercial-windows-2026.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Florida Building Code for Commercial Windows — 2026 Guide</h3>
+        <p>Florida Building Code for commercial windows in 2026 — wind zones, design pressures, HVHZ boundaries, energy code requirements (SHGC, U-factor), and when you need an NOA vs Florida Product Approval.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 37 -->
+      <a href="blog/florida-commercial-glazing-hurricane-code.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Florida Commercial Glazing &amp; Hurricane Code: What Contractors Need to Know</h3>
+        <p>Florida Building Code impact requirements for commercial glazing — HVHZ vs standard zones, NOA requirements, product approvals, Large Missile Impact testing, and what happens when glazing fails inspection.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 38 -->
+      <a href="blog/florida-product-approval-glazing-guide.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Florida Product Approval for Glazing: The Complete Guide</h3>
+        <p>Everything Florida GCs need to know about product approvals for commercial glazing — FL# numbers, NOA, what to verify before installation, and common failures.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 39 -->
+      <a href="blog/glass-partition-walls-office-commercial-guide.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Glass Partition Walls for Offices: Types, Costs &amp; Design Guide</h3>
+        <p>Complete guide to glass partition walls for offices: frameless, framed, sliding, demountable, and fire-rated types. Cost ranges ($50–$150/SF), STC sound ratings, and design considerations.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 40 -->
+      <a href="blog/glazing-subcontractor-scope-letter-guide.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Write (or Evaluate) a Glazing Subcontractor Scope Letter</h3>
+        <p>A GC's guide to what a complete glazing subcontractor scope letter should include — and what exclusions and vague language to watch for before you sign the sub agreement.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 41 -->
+      <a href="blog/how-long-does-commercial-glass-installation-take.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How Long Does Commercial Glass Installation Take? Project Timeline Guide</h3>
+        <p>How long does commercial glass installation take? A realistic guide to glazing project timelines — submittals, shop drawings, fabrication, installation, and closeout.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 42 -->
+      <a href="blog/how-long-does-storefront-installation-take.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How Long Does Storefront Glass Installation Take?</h3>
+        <p>Typical storefront installation timeline is 8–11 weeks total: 2 weeks for submittals, 4–6 weeks fabrication, 1–3 weeks installation. Here's what causes delays.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 43 -->
+      <a href="blog/how-much-does-commercial-storefront-glass-cost-florida.html" class="blog-card" data-category="pricing">
+        <div class="blog-cat">Pricing &amp; Costs</div>
+        <h3>How Much Does Commercial Storefront Glass Cost in Florida? (2026 Pricing Guide)</h3>
+        <p>What does commercial storefront glass cost in Florida in 2026? Tempered, laminated, IGU, and impact glass pricing per SF — plus storefront vs curtainwall cost comparison.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 44 -->
+      <a href="blog/how-much-does-commercial-storefront-glass-cost.html" class="blog-card" data-category="pricing">
+        <div class="blog-cat">Pricing &amp; Costs</div>
+        <h3>How Much Does Commercial Storefront Glass Cost? (2026 Pricing Guide)</h3>
+        <p>Real price ranges — $40–$100/SF for storefront, $150–$350+/SF for curtainwall — plus what drives cost up or down in Florida. Updated for 2026 material costs.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 45 -->
+      <a href="blog/how-much-does-curtainwall-cost-per-square-foot.html" class="blog-card" data-category="pricing">
+        <div class="blog-cat">Pricing &amp; Costs</div>
+        <h3>How Much Does Curtainwall Cost Per Square Foot? (2026 Guide)</h3>
+        <p>Curtainwall cost per square foot in 2026: $150–$350+ depending on system type, height, wind loads, and Florida HVHZ requirements. Stick-built vs unitized cost breakdown.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 46 -->
+      <a href="blog/how-to-choose-commercial-glass-contractor-florida.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Choose a Commercial Glass Contractor in Florida: The Complete Checklist</h3>
+        <p>Hiring a commercial glazing subcontractor in Florida? This complete checklist covers licensing, insurance, portfolio review, manufacturer partnerships, bid evaluation, and more.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 47 -->
+      <a href="blog/how-to-choose-glazing-contractor.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Choose a Commercial Glazing Contractor — GC Guide</h3>
+        <p>A practical guide for general contractors on how to evaluate and select a commercial glazing sub — what questions to ask, red flags to watch for, and what separates good subs from bad ones.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 48 -->
+      <a href="blog/how-to-choose-glazing-subcontractor.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Choose a Glazing Subcontractor — What GCs Need to Know</h3>
+        <p>A practical guide for general contractors on how to choose a glazing subcontractor — what to look for, what to avoid, and why the GC-glazing sub relationship matters on complex projects.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 49 -->
+      <a href="blog/how-to-evaluate-glazing-subcontractor-bid.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Evaluate a Glazing Subcontractor Bid: A GC's Practical Guide</h3>
+        <p>A GC's practical guide to evaluating glazing subcontractor bids — what a complete Div 08 bid includes, red flags, how to compare bids fairly, and why lowest price isn't always best.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 50 -->
+      <a href="blog/how-to-get-a-glazing-bid-florida.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Get a Commercial Glazing Bid in Florida (Step by Step)</h3>
+        <p>How to get a commercial glazing bid in Florida — what to send, what to expect back, how to compare bids, and why ACG returns a complete scope in 48 hours.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 51 -->
+      <a href="blog/how-to-read-a-door-schedule.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Read a Door and Window Schedule (For People Who Didn't Go to Architecture School)</h3>
+        <p>How to read a door and window schedule in construction plans — what every column means, why it matters for glazing bids, and what to do when the schedule is missing.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 52 -->
+      <a href="blog/how-to-spec-commercial-storefront.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>How to Spec a Commercial Storefront System</h3>
+        <p>How to spec a commercial storefront system for Florida projects: frame depth selection, thermal break options, glass selection, ADA compliance, wind loads, and finish options.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 53 -->
+      <a href="blog/hurricane-impact-vs-non-impact-commercial.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Hurricane Impact vs. Non-Impact Glass for Commercial Buildings in Florida</h3>
+        <p>When does Florida Building Code require impact glass for commercial buildings? A GC's guide to impact vs. non-impact glazing requirements by location.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 54 -->
+      <a href="blog/hurricane-impact-windows-commercial-building-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Hurricane Impact Windows for Commercial Buildings in Florida</h3>
+        <p>Hurricane impact windows for commercial buildings in Florida — HVHZ requirements, Large Missile Impact testing, Florida Product Approval vs Miami-Dade NOA, and wind zone map explained.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 55 -->
+      <a href="blog/hurricane-impact-windows-vs-shutters-commercial.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Hurricane Impact Windows vs Shutters for Commercial Buildings: Which Is Better?</h3>
+        <p>Impact windows vs hurricane shutters for commercial buildings: cost comparison, insurance implications, FBC requirements, aesthetics, and maintenance. The clear winner for commercial properties.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 56 -->
+      <a href="blog/hvhz-certified-glazing-contractor-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>How to Find an HVHZ-Certified Glazing Contractor in Florida</h3>
+        <p>A GC's guide to finding a glazing contractor certified for HVHZ work in Florida — Miami-Dade NOA requirements, what to verify before hiring, and what makes an HVHZ-qualified glazing sub.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 57 -->
+      <a href="blog/hvhz-glazing-requirements-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>HVHZ Glazing Requirements Florida — Miami-Dade NOA Guide</h3>
+        <p>Complete guide to Florida High Velocity Hurricane Zone glazing requirements — Miami-Dade NOA, large missile impact testing, FBC Section 1609, and what GCs need to know to close out clean.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 58 -->
+      <a href="blog/impact-glass-vs-laminated-glass-commercial.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Impact Glass vs. Laminated Glass: What Florida GCs Need to Know</h3>
+        <p>The real difference between impact glass and laminated glass for commercial projects in Florida — code requirements, performance specs, and when each is appropriate.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 59 -->
+      <a href="blog/impact-glass-vs-shutters-commercial.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Impact Glass vs Hurricane Shutters for Commercial Buildings — Which Is Better?</h3>
+        <p>Impact glass vs hurricane shutters for commercial buildings in Florida — a head-to-head comparison of cost, convenience, code compliance, and long-term value.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 60 -->
+      <a href="blog/impact-rated-glass-requirements-florida-2026.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>Impact-Rated Glass Requirements in Florida: What You Need to Know in 2026</h3>
+        <p>Where is impact glass required in Florida in 2026? HVHZ, wind-borne debris regions, FBC 8th Edition, Miami-Dade NOA vs FL Product Approval, large vs small missile zones explained.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 61 -->
+      <a href="blog/impact-window-contractor-commercial-florida.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Choose a Commercial Impact Window Contractor in Florida</h3>
+        <p>Florida GCs and developers: what to look for in a commercial impact window contractor — HVHZ ratings, product approvals, Florida Building Code compliance, and installation experience.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 62 -->
+      <a href="blog/impact-windows-vs-hurricane-shutters.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Impact Windows vs Hurricane Shutters — Which is Right for Your Project?</h3>
+        <p>Impact windows vs hurricane shutters for commercial construction — code requirements, cost tradeoffs, and why most Florida GCs are specifying impact glass for new construction.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 63 -->
+      <a href="blog/interior-glass-partitions-office-trends.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Interior Glass Partitions: Office Design Trends for 2026</h3>
+        <p>How interior glass partition systems are evolving in modern office design — acoustic performance, switchable glass, frameless systems, and what GCs need to know for office fit-out projects.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 64 -->
+      <a href="blog/lucie-at-tradition-clubhouse-glazing.html" class="blog-card" data-category="projects">
+        <div class="blog-cat">Project Spotlights</div>
+        <h3>Lucie at Tradition Clubhouse — Multifamily Glazing in Port St. Lucie</h3>
+        <p>How ACG delivered the storefront glazing package for the Lucie at Tradition clubhouse in Port St. Lucie, FL. ESWindows product, coastal design, Treasure Coast multifamily.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 65 -->
+      <a href="blog/nannette-walsh-top-chef-martin-county-2026.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>Nannette Walsh Wins Top Chef Martin County 2026</h3>
+        <p>ACG's own Nannette Walsh took home both Top Chef and Top Dish at the 2026 Martin County Top Chef competition benefiting House of Hope. ACG was a proud Savory Sponsor.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">3 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 66 -->
+      <a href="blog/questions-to-ask-glazing-subcontractor-before-hiring.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>10 Questions to Ask a Glazing Subcontractor Before You Hire Them</h3>
+        <p>Before you award a glazing scope, ask these 10 questions. A GC's checklist for vetting glazing subcontractors — license, insurance, experience, submittals, and more.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 67 -->
+      <a href="blog/selecting-curtainwall-contractor-florida.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>How to Select a Curtainwall Contractor in Florida</h3>
+        <p>A GC's guide to selecting a curtainwall contractor for Florida commercial projects — what to verify, what questions to ask, and what the spec requires.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 68 -->
+      <a href="blog/south-florida-building-code-glazing.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>South Florida Building Code Glazing Requirements — FBC Guide</h3>
+        <p>Understanding South Florida building code glazing requirements — FBC amendments, Miami-Dade and Broward county-specific rules, wind design, and HVHZ compliance for GCs.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 69 -->
+      <a href="blog/storefront-glass-installation-tampa.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>Commercial Storefront Installation in Tampa FL — ACG Guide</h3>
+        <p>Everything a Tampa GC needs to know about commercial storefront glass installation — systems, permits, Hillsborough County code requirements, and timelines.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 70 -->
+      <a href="blog/storefront-glass-replacement-when-to-replace.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>When Should You Replace Commercial Storefront Glass?</h3>
+        <p>Signs include foggy IGUs, cracked seals, water intrusion, failed hardware, and code violations. Here's how to know when it's time to replace commercial storefront glass.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 71 -->
+      <a href="blog/storefront-vs-curtainwall-vs-window-wall-difference.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Storefront vs Curtainwall vs Window Wall: What's the Difference?</h3>
+        <p>Storefront, curtainwall, and window wall — what's the difference? Cost, performance, and when to use each system explained, with side-by-side comparison table.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 72 -->
+      <a href="blog/storefront-vs-curtainwall-when-to-use-which.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Storefront vs Curtainwall — When Do You Use Which?</h3>
+        <p>Simple decision guide: under 15 feet = storefront ($40–$100/SF). Spanning floors = curtainwall ($150–$350+/SF). Cost differences and selection criteria explained.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 73 -->
+      <a href="blog/storefront-vs-curtainwall.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Storefront vs Curtainwall — Which System Does Your Project Need?</h3>
+        <p>Storefront vs curtainwall for commercial construction — understand the structural, performance, and cost differences so you can advise your owners and architect on the right system.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 74 -->
+      <a href="blog/storefronts-vs-windows-commercial-buildings.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Storefront Systems vs. Windows: What's the Difference for Commercial Buildings?</h3>
+        <p>GC's guide: what's the difference between a commercial storefront system and commercial windows — and why it matters for your glazing scope and budget.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 75 -->
+      <a href="blog/tampa-commercial-construction-boom-glazing.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>Tampa's Commercial Construction Boom: What It Means for Glazing</h3>
+        <p>Tampa's construction pipeline in 2026 is one of the largest in Florida. Water Street Phase 2, Midtown Tampa, Tampa General expansion — here's what the boom means for commercial glazing.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 76 -->
+      <a href="blog/waxins-eurowall-clematis-street.html" class="blog-card" data-category="projects">
+        <div class="blog-cat">Project Spotlights</div>
+        <h3>How Eurowall Glass Transformed Waxin's on Clematis Street</h3>
+        <p>How ACG installed the Eurowall lift-and-slide glass system at Waxin's on Clematis Street in West Palm Beach — and why opening glass systems are changing restaurant design in Florida.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 77 -->
+      <a href="blog/wesley-chapel-brandon-commercial-construction.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>Commercial Construction Growth in Wesley Chapel &amp; Brandon FL — Glazing Guide</h3>
+        <p>Wesley Chapel and Brandon are Florida's fastest-growing commercial construction markets. A guide for GCs on glazing requirements, permit processes, and finding the right glazing sub.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 78 -->
+      <a href="blog/what-does-a-glazing-contractor-do.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>What Does a Glazing Contractor Do? (And Why You Need One)</h3>
+        <p>What does a glazing contractor do? They install commercial glass systems — storefronts, curtainwall, windows, doors. Here's the simple explanation and how they differ from window companies.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 79 -->
+      <a href="blog/what-does-a-glazing-subcontractor-do.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>What Does a Glazing Subcontractor Do? Scope, Role &amp; What GCs Should Know</h3>
+        <p>What does a glazing subcontractor actually do on a commercial project? Scope, role, typical work items, when to involve them, trade coordination, and what separates a good sub from the rest.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">7 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 80 -->
+      <a href="blog/what-is-a-curtainwall-system.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>What Is a Curtainwall System? (Simple Guide for Non-Engineers)</h3>
+        <p>A plain-English guide for property owners, developers, and GCs — how curtainwall works, where it's used, and how it differs from storefront.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 81 -->
+      <a href="blog/what-is-a-glazing-subcontractor.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>What Is a Glazing Subcontractor? Everything a GC Needs to Know</h3>
+        <p>Everything a general contractor needs to know about glazing subcontractors — what they do, what they're responsible for, and what to look for when hiring one.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 82 -->
+      <a href="blog/what-is-a-product-approval-florida.html" class="blog-card" data-category="florida-code">
+        <div class="blog-cat">Florida Code</div>
+        <h3>What Is a Florida Product Approval? (And Why Your Glazing Sub Needs One)</h3>
+        <p>What is a Florida Product Approval for glazing? How FL PA differs from Miami-Dade NOA, how to verify approvals, and what happens when a glazing sub uses non-approved products.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">6 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 83 -->
+      <a href="blog/what-is-a-storefront-glazing-system.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>What Is a Storefront Glazing System? (Simple Explanation)</h3>
+        <p>What is a storefront glazing system? Simple explanation of aluminum frames, glass panels, and doors — what they are, where you see them, and why they matter for commercial buildings.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">4 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 84 -->
+      <a href="blog/what-is-a-window-wall-system.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>What Is a Window Wall System? (And How It Differs from Curtainwall)</h3>
+        <p>A window wall system sits between floor slabs — different from curtainwall which hangs in front of the structure. Learn the difference, costs, and when each is used in Florida.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 85 -->
+      <a href="blog/what-is-division-08-construction.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>What Is Division 08 in Construction? (The Complete Guide to Openings)</h3>
+        <p>Division 08 in the CSI MasterFormat covers Openings — doors, windows, storefronts, curtainwall, and hardware. Complete guide to every sub-section from 08 11 through 08 88.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 86 -->
+      <a href="blog/what-is-division-08-glazing-construction.html" class="blog-card" data-category="gc-resources">
+        <div class="blog-cat">GC Resources</div>
+        <h3>What Is Division 08 in Construction? A Complete Guide to Glazing Specifications</h3>
+        <p>A complete GC's guide to CSI MasterFormat Division 08 — openings, glazing, storefronts, curtainwall, doors, hardware, and fire-rated assemblies.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 87 -->
+      <a href="blog/what-is-low-e-glass-commercial.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>What Is Low-E Glass? (And Why Your Commercial Building Needs It)</h3>
+        <p>What is Low-E glass for commercial buildings? Plain-English explanation of the coating, SHGC, U-factor, Florida energy code requirements, and how it saves money on AC.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">5 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 88 -->
+      <a href="blog/why-acg-opened-tampa-office.html" class="blog-card" data-category="industry">
+        <div class="blog-cat">Industry News</div>
+        <h3>Why American Commercial Glass Opened a Tampa Office</h3>
+        <p>ACG started on Florida's Treasure Coast, expanded to Naples, and now serves Tampa Bay. Why we moved west — and what it means for GCs building in Hillsborough, Pinellas, and Pasco counties.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">4 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 89 -->
+      <a href="blog/window-wall-multifamily-guide.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Window Wall for Multifamily Construction: A GC's Field Guide</h3>
+        <p>Everything general contractors need to know about window wall systems for multifamily construction — system selection, coordination, tolerances, and HVHZ requirements for Florida projects.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">8 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- 90 -->
+      <a href="blog/window-wall-systems-florida-guide.html" class="blog-card" data-category="technical">
+        <div class="blog-cat">Technical Guides</div>
+        <h3>Window Wall Systems in Florida: A Complete Guide for GCs and Developers</h3>
+        <p>Everything you need to know about window wall systems for Florida commercial and multifamily projects — types, costs, Florida code requirements, and installation process.</p>
+        <div class="blog-card-footer">
+          <span class="blog-read-time">9 min read</span>
+          <div class="blog-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════ CTA ═══════════════ -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
-      <h2>Have Plans?<br>We'll Have a Scope in <span class="accent">48 Hours.</span></h2>
-      <p>No chasing. No ghosting. Send your drawings and our team delivers a detailed scope, system recommendations, and competitive pricing — fast.</p>
+      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>READY</div>
+      <h2>Ready to Talk<br><span class="accent">About Your Project?</span></h2>
+      <p>You've read the guides. Now let's talk about your specific scope. Send plans and get a complete glazing bid in 48 hours.</p>
       <a href="contact.html" class="btn btn-primary btn-lg">
         Send Us Plans
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -524,7 +1358,8 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -534,29 +1369,29 @@
           </a>
           <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
         </div>
-
         <div>
           <h5>Company</h5>
           <div class="footer-links">
             <a href="about.html">About</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">Blog</a>
             <a href="manufacturers.html">Partners</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>
-
         <div>
           <h5>Services</h5>
           <div class="footer-links">
-            <a href="/impact-windows-doors-florida.html">Impact Windows</a>
-            <a href="/commercial-storefront-systems.html">Storefronts</a>
-            <a href="/window-wall-systems.html">Window Wall</a>
-            <a href="/curtainwall-installation.html">Curtainwall</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
+            <a href="services.html">Impact Windows</a>
+            <a href="services.html">Storefronts</a>
+            <a href="services.html">Window Wall</a>
+            <a href="services.html">Sliding Systems</a>
+            <a href="services.html">Fire-Rated Glass</a>
           </div>
         </div>
-
         <div>
           <h5>Contact</h5>
           <div class="footer-contact">
@@ -570,12 +1405,11 @@
             </p>
             <p>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              West Palm Beach &bull; Naples &bull; Tampa
+              South Florida
             </p>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 American Commercial Glass</span>
         <span>Built with precision.</span>
@@ -584,6 +1418,49 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Blog Filter System
+    const blogBtns = document.querySelectorAll('.blog-filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const blogCountEl = document.getElementById('blog-count');
+
+    function updateBlogCount() {
+      const visible = [...blogCards].filter(c => !c.classList.contains('filtered')).length;
+      if (blogCountEl) blogCountEl.textContent = visible + ' Article' + (visible !== 1 ? 's' : '');
+    }
+
+    function filterBlogByCategory(filter) {
+      blogBtns.forEach(b => b.classList.remove('active'));
+      const matchBtn = [...blogBtns].find(b => b.dataset.filter === filter);
+      if (matchBtn) matchBtn.classList.add('active');
+      blogCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('filtered');
+        } else {
+          card.classList.add('filtered');
+        }
+      });
+      updateBlogCount();
+    }
+
+    blogBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBlogByCategory(btn.dataset.filter);
+        history.replaceState(null, '', window.location.pathname + (btn.dataset.filter !== 'all' ? '?cat=' + btn.dataset.filter : ''));
+      });
+    });
+
+    // Check URL params on load
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('cat');
+      if (cat) {
+        filterBlogByCategory(cat);
+      } else {
+        updateBlogCount();
+      }
+    })();
+  </script>
   <script>
     (function(){var d=document.querySelector('.nav-dropdown'),t=d&&d.querySelector('.nav-dropdown-trigger');if(t&&d){t.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});document.addEventListener('click',function(e){if(!d.contains(e.target)){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})}})();
   </script>
