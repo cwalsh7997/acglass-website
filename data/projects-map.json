@@ -398,5 +398,13 @@
     "lat": 28.0222,
     "lng": -81.7329,
     "url": "storage-king-winter-haven.html"
+  },
+  {
+    "name": "Bobcat of the Treasure Coast",
+    "type": "Commercial",
+    "city": "Fort Pierce",
+    "lat": 27.4468,
+    "lng": -80.3256,
+    "url": "bobcat-treasure-coast.html"
   }
 ]
