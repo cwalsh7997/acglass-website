@@ -18,12 +18,12 @@
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <meta property="og:title" content="Wild Blue at Waterside Clubhouse | Resort Glazing — ACG">
   <meta property="og:description" content="ACG is the Division 08 glazing subcontractor for the Wild Blue at Waterside Clubhouse — the resort-style centerpiece amenity of Neal Communities' luxury master-planned community in Lakewood Ranch, FL. Storefront, curtainwall, and entry systems.">
-  <meta property="og:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
+  <meta property="og:image" content="https://acglass.com/images/projects/wild-blue/wild-blue-hero-progress.jpg">
   <meta property="og:url" content="https://acglass.com/wild-blue-clubhouse.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Wild Blue at Waterside Clubhouse — Resort Glazing In Progress | ACG">
-  <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
+  <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue/wild-blue-hero-progress.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
         "publisher": {"@type": "Organization", "name": "American Commercial Glass", "url": "https://acglass.com", "logo": {"@type": "ImageObject", "url": "https://acglass.com/images/acg-logo-nav@2x.png"}},
         "datePublished": "2026-04-21",
         "dateModified": "2026-04-21",
-        "image": "https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg",
+        "image": "https://acglass.com/images/projects/wild-blue/wild-blue-hero-progress.jpg",
         "mainEntityOfPage": {"@type": "WebPage", "@id": "https://acglass.com/wild-blue-clubhouse.html"},
         "keywords": "Wild Blue at Waterside, Lakewood Ranch clubhouse glazing, resort clubhouse curtainwall, Neal Communities, commercial glazing Sarasota County, storefront entry systems Florida"
       },
@@ -353,6 +353,182 @@
       .nav-dropdown.open .nav-dropdown-menu{max-height:500px;transform:none}
       .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
     }
+
+    /* ── PROGRESS GALLERY ── */
+    .progress-gallery-section {
+      padding: clamp(64px, 8vw, 100px) 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .progress-gallery-header {
+      margin-bottom: clamp(32px, 4vw, 52px);
+    }
+    .progress-gallery-header h2 {
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .progress-gallery-header .gallery-subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .pg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .pg-card {
+      position: relative;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+    .pg-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(225,19,32,0.3), 0 8px 32px rgba(225,19,32,0.12);
+      transform: scale(1.015);
+    }
+    .pg-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+    .pg-card:hover img {
+      transform: scale(1.04);
+    }
+    .pg-caption {
+      padding: 12px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+    }
+
+    /* ── LIGHTBOX ── */
+    #lb-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(5,10,18,0.96);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+    #lb-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    #lb-overlay img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+    }
+    #lb-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: rgba(255,255,255,0.7);
+      transition: background 0.2s, color 0.2s;
+      font-size: 20px;
+      line-height: 1;
+    }
+    #lb-close:hover {
+      background: var(--accent);
+      color: white;
+    }
+    #lb-caption-text {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.45);
+      white-space: nowrap;
+    }
+
+    /* ── FINAL VISION ── */
+    .final-vision-section {
+      padding: clamp(64px, 8vw, 100px) 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .final-vision-section h2 {
+      font-size: clamp(24px, 3vw, 40px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .final-vision-section .fv-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .final-vision-section p {
+      font-size: clamp(15px, 1.2vw, 17px);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 640px;
+      margin-top: 20px;
+    }
+    .fv-image-wrap {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-top: 36px;
+    }
+    .fv-image-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .fv-render-badge {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(5,10,18,0.82);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+    }
   </style>
 
 <script type="application/ld+json">
@@ -461,7 +637,7 @@
 
   <!-- ═══════════════════════════════════════════ HERO ═══ -->
   <section class="project-hero">
-    <img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside Clubhouse — resort-style commercial glazing, Lakewood Ranch, FL">
+    <img src="images/projects/wild-blue/wild-blue-hero-progress.jpg" alt="Wild Blue at Waterside Clubhouse — glazing installation in progress, Lakewood Ranch, FL">
     <div class="project-hero-content">
       <div class="container">
         <div class="status-badge-hero">
@@ -473,7 +649,7 @@
           <span>Hospitality / Resort Amenity &mdash; Lakewood Ranch, FL</span>
         </div>
         <h1>Wild Blue at Waterside Clubhouse</h1>
-        <p class="subtitle">Commercial Glazing &mdash; In Progress &nbsp;&middot;&nbsp; Lakewood Ranch, FL</p>
+        <p class="subtitle">Glazing Installation Underway &mdash; March 2026 &nbsp;&middot;&nbsp; Lakewood Ranch, FL</p>
       </div>
     </div>
   </section>
@@ -497,7 +673,7 @@
         <div><div class="meta-label">Type</div><div class="meta-value">Hospitality / Resort Amenity</div></div>
         <div><div class="meta-label">Developer</div><div class="meta-value">Neal Communities</div></div>
         <div><div class="meta-label">General Contractor</div><div class="meta-value">TBD / Not Disclosed</div></div>
-        <div><div class="meta-label">Status</div><div class="meta-value" style="display:flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pfPulse 1.5s ease-in-out infinite;display:inline-block;"></span>In Progress</div></div>
+        <div><div class="meta-label">Status</div><div class="meta-value" style="display:flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pfPulse 1.5s ease-in-out infinite;display:inline-block;"></span>Glazing Installation Underway &mdash; March 2026</div></div>
         <div><div class="meta-label">Scope</div><div class="meta-value">Storefront, Curtainwall, Entry Systems</div></div>
         <div><div class="meta-label">Community</div><div class="meta-value">Wild Blue at Waterside</div></div>
       </div>
@@ -546,9 +722,9 @@
           <div class="timeline-block">
             <div class="timeline-block-header">
               <span class="pulse-dot"></span>
-              <span>Project Status — In Progress</span>
+              <span>Project Status — Glazing Installation Underway</span>
             </div>
-            <p>This project is currently underway. Completed installation photography will be added upon project completion. Check back for finished photos and full project documentation.</p>
+            <p>Glazing installation is actively underway as of March 2026. Progress photography from the field is documented below — storefront wall installation, dormer windows, entry doors, and interior ribbon window bays.</p>
           </div>
 
           <div style="margin-top:40px;">
@@ -559,14 +735,81 @@
           </div>
         </div>
 
-        <!-- RIGHT: HERO IMAGE -->
+        <!-- RIGHT: PROGRESS PHOTO -->
         <div>
-          <img src="images/projects/wild-blue-clubhouse-hero.jpg"
-            alt="Wild Blue at Waterside Clubhouse — resort-style clubhouse, Lakewood Ranch, FL"
-            style="width:100%;border-radius:var(--radius,8px);display:block;">
-          <p style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.35);text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Wild Blue at Waterside &mdash; Lakewood Ranch, FL &mdash; Project Underway</p>
+          <img src="images/projects/wild-blue/wild-blue-storefront-progress.jpg"
+            alt="Wild Blue Clubhouse — main storefront wall glazing installation, March 2026"
+            style="width:100%;border-radius:var(--radius,8px);display:block;cursor:pointer;"
+            onclick="openLightbox('images/projects/wild-blue/wild-blue-storefront-progress.jpg','Main Storefront Wall — March 2026')">
+          <p style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.35);text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Main Storefront Wall &mdash; ACG Installation &mdash; March 2026</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ PROGRESS GALLERY ═══ -->
+  <section class="progress-gallery-section">
+    <div class="container" data-reveal>
+      <div class="progress-gallery-header">
+        <div class="gallery-subtitle">Progress Gallery</div>
+        <h2>March 2026 — Glazing Installation Underway</h2>
+      </div>
+      <div class="pg-grid">
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-storefront-progress.jpg','Main Storefront Wall')">
+          <img src="images/projects/wild-blue/wild-blue-storefront-progress.jpg" alt="Wild Blue Clubhouse — main storefront wall glazing" loading="lazy">
+          <div class="pg-caption">Main Storefront Wall</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-dormer-progress.jpg','Upper Dormer Windows')">
+          <img src="images/projects/wild-blue/wild-blue-dormer-progress.jpg" alt="Wild Blue Clubhouse — upper dormer windows" loading="lazy">
+          <div class="pg-caption">Upper Dormer Windows</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-architectural-detail.jpg','Two-Story Architectural Detail')">
+          <img src="images/projects/wild-blue/wild-blue-architectural-detail.jpg" alt="Wild Blue Clubhouse — two-story architectural detail" loading="lazy">
+          <div class="pg-caption">Two-Story Architectural Detail</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-entry-doors.jpg','French Entry Door Installation')">
+          <img src="images/projects/wild-blue/wild-blue-entry-doors.jpg" alt="Wild Blue Clubhouse — French entry doors installed" loading="lazy">
+          <div class="pg-caption">French Entry Door Installation</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-interior-view.jpg','Interior — Ribbon Window Bay')">
+          <img src="images/projects/wild-blue/wild-blue-interior-view.jpg" alt="Wild Blue Clubhouse — interior ribbon window bay view" loading="lazy">
+          <div class="pg-caption">Interior &mdash; Ribbon Window Bay</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-exterior-progress.jpg','Exterior Progress — West Elevation')">
+          <img src="images/projects/wild-blue/wild-blue-exterior-progress.jpg" alt="Wild Blue Clubhouse — exterior progress west elevation" loading="lazy">
+          <div class="pg-caption">Exterior Progress &mdash; West Elevation</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-rear-elevation.jpg','Rear Elevation')">
+          <img src="images/projects/wild-blue/wild-blue-rear-elevation.jpg" alt="Wild Blue Clubhouse — rear elevation with multiple windows" loading="lazy">
+          <div class="pg-caption">Rear Elevation</div>
+        </div>
+
+        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-front-elevation.jpg','Front Elevation')">
+          <img src="images/projects/wild-blue/wild-blue-front-elevation.jpg" alt="Wild Blue Clubhouse — front elevation progress" loading="lazy">
+          <div class="pg-caption">Front Elevation</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ FINAL VISION ═══ -->
+  <section class="final-vision-section">
+    <div class="container" data-reveal>
+      <div class="fv-label">Final Vision</div>
+      <h2>The Finished Clubhouse</h2>
+      <p>When complete, the clubhouse will anchor the Wild Blue at Waterside community with resort-style amenities — expansive glazed facades, indoor-outdoor connections, and a design caliber that matches the standard of Sarasota's finest residential communities.</p>
+      <div class="fv-image-wrap">
+        <img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside Clubhouse — artist rendering, Neal Communities">
+        <span class="fv-render-badge">Artist Rendering &mdash; Neal Communities</span>
       </div>
     </div>
   </section>
@@ -657,7 +900,41 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Photo lightbox" onclick="closeLightbox(event)">
+    <button id="lb-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <img id="lb-img" src="" alt="">
+    <span id="lb-caption-text"></span>
+  </div>
+
   <script src="js/main.js"></script>
+  <script>
+    function openLightbox(src, caption) {
+      var lb = document.getElementById('lb-overlay');
+      var img = document.getElementById('lb-img');
+      var cap = document.getElementById('lb-caption-text');
+      img.src = src;
+      img.alt = caption || '';
+      cap.textContent = caption || '';
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lb-overlay') && e.target !== document.getElementById('lb-close')) return;
+      var lb = document.getElementById('lb-overlay');
+      lb.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        var lb = document.getElementById('lb-overlay');
+        if (lb.classList.contains('active')) {
+          lb.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  </script>
   <script>
     (function(){var d=document.querySelector('.nav-dropdown'),t=d&&d.querySelector('.nav-dropdown-trigger');if(t&&d){t.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});document.addEventListener('click',function(e){if(!d.contains(e.target)){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E11320)';a.style.fontWeight='600'}})}})();
   </script>
