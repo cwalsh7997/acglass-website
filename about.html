@@ -290,7 +290,16 @@
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <a href="about.html" class="active">About</a>
+        <div class="nav-dropdown open-active">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html">Our Story</a>
+            <a href="leadership.html">Leadership</a>
+            <a href="capabilities.html">Capabilities</a>
+            <a href="manufacturers.html">Manufacturer Partners</a>
+            <a href="portfolio.html">Portfolio</a>
+          </div>
+        </div>
         <a href="manufacturers.html">Partners</a>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -613,74 +622,46 @@
     </div>
   </section>
 
-  <!-- ========== LEADERSHIP ========== -->
+  <!-- ========== LEADERSHIP TEASER ========== -->
   <section class="section about-section" id="leadership">
     <div class="container">
-      <div style="margin-bottom:clamp(32px,5vw,48px);text-align:center;" data-reveal>
+      <div style="text-align:center;margin-bottom:clamp(32px,4vw,48px);" data-reveal>
         <div class="label" style="justify-content:center;"><span class="line"></span> Leadership <span class="line"></span></div>
         <h2 style="font-size:clamp(32px,4vw,56px);font-weight:900;margin-top:16px;">Run by owners. <span class="accent">Built for builders.</span></h2>
-        <p style="max-width:700px;margin:24px auto 0;color:rgba(255,255,255,0.65);font-size:clamp(16px,1.3vw,18px);line-height:1.65;">Two executives — one principal-in-charge of operations, one leading strategy and growth. Every project has an owner-level decision-maker one phone call away.</p>
+        <p style="max-width:720px;margin:24px auto 0;color:rgba(255,255,255,0.65);font-size:clamp(16px,1.3vw,18px);line-height:1.65;">Two executives. Both accountable. One &mdash; an ex-commercial jet pilot now qualifying Florida license CGC #1531993. The other &mdash; MTSU-trained in concrete industry management, formerly on the exterior stoneworks at The Estates at Aqualina.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(24px,3vw,48px);max-width:960px;margin:0 auto;" data-reveal data-delay="200">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.5vw,32px);max-width:900px;margin:0 auto;" data-reveal data-delay="200">
 
-        <!-- Rielly Walsh — CEO -->
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);position:relative;overflow:hidden;">
-          <div style="aspect-ratio:4/5;overflow:hidden;">
-            <picture>
-              <source type="image/webp" srcset="images/team/rielly-walsh-portrait.webp">
-              <img src="images/team/rielly-walsh-portrait.jpg" alt="Rielly Walsh, CEO of American Commercial Glass" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
-            </picture>
+        <a href="leadership.html#rielly" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);overflow:hidden;text-decoration:none;display:block;transition:transform .3s, border-color .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(226,27,44,.3)';" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.08)';">
+          <div style="aspect-ratio:1/1;overflow:hidden;">
+            <picture><source type="image/webp" srcset="images/team/rielly-walsh-portrait.webp"><img src="images/team/rielly-walsh-portrait.jpg" alt="Rielly Walsh, CEO" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></picture>
           </div>
-          <div style="padding:clamp(28px,3.5vw,40px);position:relative;">
-            <div style="position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right, rgba(226,27,44,0.12), transparent 70%);pointer-events:none;"></div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">01 &mdash; Chief Executive Officer</div>
-            <h3 style="font-size:clamp(28px,2.8vw,36px);font-weight:800;margin:0 0 8px;line-height:1.1;">Rielly Walsh</h3>
-            <div style="font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:24px;">CEO &amp; Co-Founder</div>
-            <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">Rielly studied <strong>Concrete Industry Management</strong> at Middle Tennessee State University &mdash; one of only four schools in the United States offering the specialized program. She came up through construction the right way: not in an office, but on-site.</p>
-            <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">Before ACG, Rielly served as <strong>lead superintendent for the exterior stoneworks at The Estates at Aqualina</strong> &mdash; the ultra-luxury Sunny Isles Beach oceanfront tower where material precision and field coordination define the finished building. That discipline is what she brought to ACG in 2022 when she joined to launch the company into its current chapter.</p>
-            <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:20px;">Today, Rielly leads ACG's strategy, growth, and long-term vision &mdash; driving expansion across Florida, the investment in AI-managed operations that sets ACG apart from legacy subcontractors, and the relationships with flagship product partners ESWindows and Euro-Wall.</p>
-            <div style="display:flex;flex-direction:column;gap:8px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);">
-              <a href="mailto:rielly@acglass.com" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                rielly@acglass.com
-              </a>
-              <a href="tel:+15618905778" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                (561) 890-5778
-              </a>
-            </div>
+          <div style="padding:clamp(20px,2.5vw,28px);">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">01 &mdash; CEO</div>
+            <h3 style="font-size:clamp(22px,2.2vw,28px);font-weight:800;margin:0 0 6px;color:#fff;">Rielly Walsh</h3>
+            <div style="font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:12px;">CEO &amp; Co-Founder</div>
+            <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7);margin:0 0 14px;">MTSU, Concrete Industry Management. Former lead super on exterior stoneworks at The Estates at Aqualina.</p>
+            <span style="color:var(--accent);font-weight:600;font-size:13px;">Read full bio &rarr;</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Connor Walsh — President -->
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);position:relative;overflow:hidden;">
-          <div style="aspect-ratio:4/5;overflow:hidden;background:#0a1220;">
-            <picture>
-              <source srcset="images/team/connor-walsh-portrait.webp" type="image/webp">
-              <img src="images/team/connor-walsh-portrait.jpg" alt="Connor Walsh, President of American Commercial Glass" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
-            </picture>
+        <a href="leadership.html#connor" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);overflow:hidden;text-decoration:none;display:block;transition:transform .3s, border-color .3s;" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(226,27,44,.3)';" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,.08)';">
+          <div style="aspect-ratio:1/1;overflow:hidden;background:#0a1220;">
+            <picture><source type="image/webp" srcset="images/team/connor-walsh-portrait.webp"><img src="images/team/connor-walsh-portrait.jpg" alt="Connor Walsh, President" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"></picture>
           </div>
-          <div style="padding:clamp(28px,3.5vw,40px);position:relative;">
-            <div style="position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right, rgba(226,27,44,0.12), transparent 70%);pointer-events:none;"></div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;">02 &mdash; President</div>
-            <h3 style="font-size:clamp(28px,2.8vw,36px);font-weight:800;margin:0 0 8px;line-height:1.1;">Connor Walsh</h3>
-            <div style="font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:24px;">President &amp; Qualifier &mdash; CGC #1531993</div>
-            <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">Before construction, Connor flew as a <strong>commercial-rated private jet pilot</strong> &mdash; captaining the Bombardier Challenger 601, Cessna Citation 650, and Gulfstream GIII. Twelve years in the cockpit taught him something that defines how ACG runs every project: checklists, preflight discipline, and the habit of assuming nothing.</p>
-            <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:16px;">Today Connor runs ACG's day-to-day operations &mdash; estimating, GC relationships, project management oversight, and the ESWindows account. He is ACG's qualifier on Florida license <strong>CGC #1531993</strong> and the direct point of contact for VIP general contractors including DeAngelis Diamond, Verdex, Proctor, Curran Young, Rycon, and Suffolk.</p>
-            <p style="font-size:16px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:20px;">The aviation background is not window-dressing. It is the reason ACG ships detailed submittals early, flags risk before it bites, and treats every scope the way a captain treats a flight plan &mdash; signed off, double-checked, and executed without drama.</p>
-            <div style="display:flex;flex-direction:column;gap:8px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);">
-              <a href="mailto:connor@acglass.com" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                connor@acglass.com
-              </a>
-              <a href="tel:+17724867711" style="color:rgba(255,255,255,0.65);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                (772) 486-7711
-              </a>
-            </div>
+          <div style="padding:clamp(20px,2.5vw,28px);">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">02 &mdash; President</div>
+            <h3 style="font-size:clamp(22px,2.2vw,28px);font-weight:800;margin:0 0 6px;color:#fff;">Connor Walsh</h3>
+            <div style="font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:12px;">President &amp; Qualifier &mdash; CGC #1531993</div>
+            <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,0.7);margin:0 0 14px;">Former commercial jet pilot &mdash; Challenger 601, Citation 650, Gulfstream GIII. Runs ACG day-to-day.</p>
+            <span style="color:var(--accent);font-weight:600;font-size:13px;">Read full bio &rarr;</span>
           </div>
-        </div>
+        </a>
+      </div>
+
+      <div style="text-align:center;margin-top:clamp(32px,4vw,48px);" data-reveal data-delay="400">
+        <a href="leadership.html" class="btn btn-primary btn-lg">Meet the Full Leadership Team <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </section>
@@ -796,7 +777,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    (function(){var d=document.querySelector('.nav-dropdown'),t=d&&d.querySelector('.nav-dropdown-trigger');if(t&&d){t.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});document.addEventListener('click',function(e){if(!d.contains(e.target)){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})}})();
+    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
 </body>
 </html>
