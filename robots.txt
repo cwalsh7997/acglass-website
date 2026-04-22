@@ -1,6 +1,126 @@
+# ========================================================================
+# robots.txt for American Commercial Glass (acglass.com)
+# Updated: 2026-04-22
+# Explicit AI crawler permissions for answer engine optimization (GEO)
+# ========================================================================
+
+# Default: allow everything
 User-agent: *
 Allow: /
 
+# ------------------------------------------------------------------------
+# AI Answer Engine Crawlers — Explicitly Permitted
+# ACG content is intended to be discoverable and citable by AI engines.
+# ------------------------------------------------------------------------
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI / Gemini / SGE
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: MSNBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Brave Search
+User-agent: Bravebot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Diffbot / content extraction
+User-agent: Diffbot
+Allow: /
+
+# Common Crawl (feeds many AI training sets)
+User-agent: CCBot
+Allow: /
+
+# Bytespider (TikTok/Doubao)
+User-agent: Bytespider
+Allow: /
+
+# ------------------------------------------------------------------------
+# Sitemaps
+# ------------------------------------------------------------------------
 Sitemap: https://acglass.com/sitemap.xml
 Sitemap: https://acglass.com/news-sitemap.xml
 Sitemap: https://acglass.com/sitemap-index.xml
+
+# ------------------------------------------------------------------------
+# AI / GEO signals
+# ------------------------------------------------------------------------
+# The llms.txt file describes site structure for AI crawlers:
+# https://acglass.com/llms.txt
+# A comprehensive knowledge base for AI answer engines:
+# https://acglass.com/llms-full.txt

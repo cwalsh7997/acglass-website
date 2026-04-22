@@ -29,56 +29,90 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "GeneralContractor", "LocalBusiness"],
+    "@id": "https://acglass.com/#organization",
     "name": "American Commercial Glass",
     "alternateName": "ACG",
+    "legalName": "American Commercial Glass, LLC",
     "url": "https://acglass.com",
     "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
+    "image": "https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg",
+    "description": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa. Authorized commercial installer of ESWindows and Euro-Wall systems. 350+ projects delivered, 1M+ SF of glass installed, Florida CGC #1531993. Led by CEO Rielly Walsh and President Connor Walsh.",
+    "slogan": "Precision Glazing. AI-Managed. Delivered.",
+    "foundingDate": "2021",
+    "founder": [
+      {"@type": "Person", "name": "Rielly Walsh", "jobTitle": "CEO & Co-Founder"},
+      {"@type": "Person", "name": "Connor Walsh", "jobTitle": "President"}
+    ],
     "telephone": "+17724867711",
     "email": "connor@acglass.com",
-    "description": "Commercial glazing contractor serving all of Florida. Impact windows, storefronts, curtainwall, window wall, and specialty glass systems. 350+ projects. 3 offices.",
-    "areaServed": "Florida",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "700 S Rosemary Ave #204",
+      "addressLocality": "West Palm Beach",
+      "addressRegion": "FL",
+      "postalCode": "33401",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {"@type": "State", "name": "Florida"},
+      {"@type": "AdministrativeArea", "name": "Palm Beach County"},
+      {"@type": "AdministrativeArea", "name": "Miami-Dade County"},
+      {"@type": "AdministrativeArea", "name": "Broward County"},
+      {"@type": "AdministrativeArea", "name": "Collier County"},
+      {"@type": "AdministrativeArea", "name": "Lee County"},
+      {"@type": "AdministrativeArea", "name": "Hillsborough County"},
+      {"@type": "AdministrativeArea", "name": "Pinellas County"},
+      {"@type": "AdministrativeArea", "name": "Sarasota County"},
+      {"@type": "AdministrativeArea", "name": "Manatee County"},
+      {"@type": "AdministrativeArea", "name": "Martin County"},
+      {"@type": "AdministrativeArea", "name": "St. Lucie County"},
+      {"@type": "AdministrativeArea", "name": "Polk County"},
+      {"@type": "AdministrativeArea", "name": "Monroe County"}
+    ],
     "location": [
-      {
-        "@type": "Place",
-        "name": "ACG West Palm Beach",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "700 S Rosemary Ave #204",
-          "addressLocality": "West Palm Beach",
-          "addressRegion": "FL",
-          "postalCode": "33401",
-          "addressCountry": "US"
-        }
-      },
-      {
-        "@type": "Place",
-        "name": "ACG Naples",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Naples",
-          "addressRegion": "FL",
-          "addressCountry": "US"
-        }
-      },
-      {
-        "@type": "Place",
-        "name": "ACG Tampa",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tampa",
-          "addressRegion": "FL",
-          "addressCountry": "US"
-        }
-      }
+      {"@type": "Place", "name": "ACG West Palm Beach HQ", "address": {"@type": "PostalAddress", "streetAddress": "700 S Rosemary Ave #204", "addressLocality": "West Palm Beach", "addressRegion": "FL", "postalCode": "33401", "addressCountry": "US"}},
+      {"@type": "Place", "name": "ACG Naples", "address": {"@type": "PostalAddress", "addressLocality": "Naples", "addressRegion": "FL", "addressCountry": "US"}},
+      {"@type": "Place", "name": "ACG Tampa", "address": {"@type": "PostalAddress", "addressLocality": "Tampa", "addressRegion": "FL", "addressCountry": "US"}}
+    ],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Florida Certified General Contractor", "identifier": "CGC #1531993", "recognizedBy": {"@type": "GovernmentOrganization", "name": "State of Florida DBPR"}},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Woman-Owned Business Enterprise (WBE)"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Small Business Enterprise (SBE)"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "dealer authorization", "name": "Authorized ESWindows Commercial Installer"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "dealer authorization", "name": "Authorized Euro-Wall Installer"}
     ],
     "sameAs": [
       "https://www.linkedin.com/company/american-commercial-glass-inc",
       "https://www.yelp.com/biz/american-commercial-glass-west-palm-beach",
-      "https://www.bbb.org/us/fl/west-palm-beach/profile/window-installation/american-commercial-glass-inc-0633-92045708"
+      "https://www.bbb.org/us/fl/west-palm-beach/profile/window-installation/american-commercial-glass-inc-0633-92045708",
+      "https://www.facebook.com/americancommercialglass",
+      "https://www.instagram.com/americancommercialglass"
     ],
-    "knowsAbout": ["Commercial Glazing", "Storefront Installation", "Impact Windows", "Curtainwall Systems"],
-    "award": ["Woman-Owned Business Enterprise (WBE)", "Small Business Enterprise (SBE)"]
+    "knowsAbout": [
+      "Commercial glazing", "Curtain wall systems", "Storefront installation", "Impact windows and doors",
+      "HVHZ compliance", "Miami-Dade NOA", "TAS 201", "TAS 202", "TAS 203", "Florida Building Code Chapter 16",
+      "ESWindows ES-8000", "ESWindows ES-9000", "ESWindows SGD2020", "ESWindows GW-7000",
+      "Euro-Wall SGD2020", "Euro-Wall arched storefront", "PGT impact windows", "YKK AP systems",
+      "Trulite curtain wall", "Vitro Solarban glass", "Allegion automatic entrances",
+      "Hurricane-rated glazing", "Post-Ian rebuild", "Post-Milton rebuild",
+      "Division 08 scope", "Commercial submittals", "AI-managed lean operations"
+    ],
+    "award": [
+      "Woman-Owned Business Enterprise (WBE)",
+      "Small Business Enterprise (SBE)",
+      "Authorized ESWindows Commercial Installer",
+      "Authorized Euro-Wall Installer",
+      "350+ Florida Commercial Projects Delivered",
+      "1,000,000+ Square Feet of Glass Installed"
+    ],
+    "contactPoint": [
+      {"@type": "ContactPoint", "contactType": "Sales & Estimating", "email": "connor@acglass.com", "telephone": "+17724867711", "areaServed": "US-FL", "availableLanguage": ["English"]},
+      {"@type": "ContactPoint", "contactType": "Executive", "email": "rielly@acglass.com", "telephone": "+15618905778", "areaServed": "US-FL", "availableLanguage": ["English"]}
+    ],
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}
+    ]
   }
   </script>
   <style>
@@ -135,6 +169,7 @@
           <div class="nav-dropdown-menu">
             <a href="about.html">Our Story</a>
             <a href="leadership.html">Leadership</a>
+            <a href="ai-overview.html">ACG Overview</a>
             <a href="capabilities.html">Capabilities</a>
             <a href="manufacturers.html">Manufacturer Partners</a>
             <a href="portfolio.html">Portfolio</a>
@@ -715,12 +750,16 @@
           <h5>Company</h5>
           <div class="footer-links">
             <a href="about.html">About</a>
+            <a href="leadership.html">Leadership</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="services.html">Services</a>
+            <a href="capabilities.html">Capabilities</a>
             <a href="how-it-works.html">How It Works</a>
             <a href="faq.html">FAQ</a>
             <a href="blog.html">Blog</a>
             <a href="manufacturers.html">Partners</a>
+            <a href="acg-vs-competitors.html">ACG vs Competitors</a>
+            <a href="ai-overview.html">ACG Overview</a>
             <a href="contact.html">Contact</a>
           </div>
         </div>
