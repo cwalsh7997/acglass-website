@@ -597,7 +597,7 @@
       <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(4px,1vw,8px);">
 
         <!-- Euro-Wall — PRIMARY position with accent styling -->
-        <a href="#eurowall-feature" style="display:flex;align-items:center;justify-content:center;gap:8px;min-width:clamp(130px,14vw,200px);height:64px;background:rgba(226,27,44,0.09);border:1px solid rgba(226,27,44,0.3);border-radius:8px;padding:0 24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(226,27,44,0.16)';this.style.borderColor='rgba(226,27,44,0.55)';" onmouseout="this.style.background='rgba(226,27,44,0.09)';this.style.borderColor='rgba(226,27,44,0.3)';">
+        <a href="euro-wall.html" style="display:flex;align-items:center;justify-content:center;gap:8px;min-width:clamp(130px,14vw,200px);height:64px;background:rgba(226,27,44,0.09);border:1px solid rgba(226,27,44,0.3);border-radius:8px;padding:0 24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(226,27,44,0.16)';this.style.borderColor='rgba(226,27,44,0.55)';" onmouseout="this.style.background='rgba(226,27,44,0.09)';this.style.borderColor='rgba(226,27,44,0.3)';">
           <span style="font-size:16px;font-weight:800;color:white;letter-spacing:-0.01em;">Euro<span style="color:#E21B2C;">-Wall</span></span>
           <span style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#E21B2C;background:rgba(226,27,44,0.15);border:1px solid rgba(226,27,44,0.3);padding:2px 6px;border-radius:3px;">Primary</span>
         </a>
@@ -635,165 +635,44 @@
   </section>
 
 
-  <!-- ========== EURO-WALL FEATURE SECTION ========== -->
-  <section id="eurowall-feature" class="ew-feature">
+  <!-- ========== EURO-WALL TEASER (full showcase at /euro-wall.html) ========== -->
+  <section id="eurowall-feature" class="ew-feature" style="padding: clamp(70px, 9vw, 120px) 0 clamp(60px, 8vw, 100px);">
     <div class="container">
 
-      <!-- Header band -->
-      <div class="ew-header-band" data-reveal>
-        <div><span class="ew-primary-badge">Leading Partnership</span></div>
-        <h2>Euro-Wall Systems</h2>
-        <p class="ew-subhead">Our primary distributorship partner — superior by design</p>
-      </div>
+      <a href="euro-wall.html" class="ew-teaser" data-reveal style="display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;max-width:1200px;margin:0 auto;padding:clamp(28px,3vw,44px);background:linear-gradient(135deg,rgba(226,27,44,0.06) 0%,rgba(255,255,255,0.02) 60%);border:1px solid rgba(226,27,44,0.18);border-radius:12px;text-decoration:none;transition:all .35s cubic-bezier(.16,1,.3,1);" onmouseover="this.style.borderColor='rgba(226,27,44,0.45)';this.style.transform='translateY(-3px)';this.style.boxShadow='0 20px 50px rgba(226,27,44,0.12)';" onmouseout="this.style.borderColor='rgba(226,27,44,0.18)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
 
-      <!-- Hero image -->
-      <a class="ew-hero-img" href="javascript:void(0)" onclick="ewOpenLightbox('images/partners/eurowall/project-lemoyne-interior.jpg','52 LeMoyne — Interior folding glass wall')" data-reveal>
-        <img
-          src="images/partners/eurowall/project-lemoyne-interior.jpg"
-          alt="Euro-Wall folding glass wall system — 52 LeMoyne interior installation"
-          loading="lazy"
-        >
+        <!-- Left: banner image -->
+        <div style="position:relative;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#0A121E;">
+          <img src="images/partners/eurowall/project-american-harvest.jpg" alt="Euro-Wall impact-rated folding system — American Harvest, Miami" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(5,10,18,0.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(226,27,44,0.4);padding:6px 12px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#E21B2C;">
+            <span style="width:6px;height:6px;background:#E21B2C;border-radius:50%;"></span>
+            Leading Partnership
+          </div>
+        </div>
+
+        <!-- Right: copy + cta -->
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#E21B2C;margin-bottom:14px;">ACG Presents &mdash; Partner Feature No. 01</div>
+          <h2 style="font-size:clamp(28px,3.6vw,48px);font-weight:900;line-height:1.05;letter-spacing:-0.025em;margin:0 0 18px;color:#fff;">Euro-Wall &mdash; Our Leading Partnership</h2>
+          <p style="font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:rgba(255,255,255,0.7);margin:0 0 28px;max-width:48ch;">Toby Bostwick, Wade Mammon, and the FOR YOU Crew build the finest impact-rated folding, sliding, pivot, and window systems in the country. See the full showcase &mdash; product deep-dive, installations, and why ACG specifies Euro-Wall on Florida&apos;s most demanding projects.</p>
+          <div style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:#E21B2C;color:#fff;border-radius:4px;font-size:14px;font-weight:600;letter-spacing:0.02em;transition:background .25s;">
+            View the Full Showcase
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
       </a>
 
-      <!-- Story -->
-      <div class="ew-story" data-reveal>
-        <p>Euro-Wall is more than a manufacturer to us — they are the backbone of our ability to deliver some of Florida's most demanding impact-rated glazing systems. Headquartered in North Port, FL and born from firsthand knowledge of what South Florida weather demands, Euro-Wall engineers American-made folding, sliding, pivot, casement, and fixed glass wall systems with the industry's thinnest profiles, largest heights and widths, and highest load capacities. Every product meets Miami-Dade HVHZ standards — the most demanding impact certification in the country.</p>
-        <p>Their Kynar AAMA 2605 finishes come standard, not as an upsell. Their 10-year warranty is more than triple the industry standard. But what truly sets Euro-Wall apart is their people — led by CEO Toby Bostwick and backed by an exceptional team including Wade Mammon, Director of Sales for the East Region, and their "FOR YOU Crew" specialists. ACG is only as strong as the partners who stand behind us, and Euro-Wall's team is one of the biggest reasons for our success. Their product excellence and their people excellence are equally rare.</p>
-      </div>
-
-      <!-- Leadership callout -->
-      <div class="ew-leadership" data-reveal>
-        <div class="ew-leadership-title">Euro-Wall Leadership</div>
-        <div class="ew-leadership-names">
-          <div>
-            <div class="ew-person-name">Toby Bostwick</div>
-            <div class="ew-person-role">Chief Executive Officer</div>
-          </div>
-          <div>
-            <div class="ew-person-name">Wade Mammon</div>
-            <div class="ew-person-role">Director of Sales — East Region</div>
-          </div>
-        </div>
-        <div class="ew-foryou"><strong>FOR YOU Crew&#8482;</strong> — live specialist support from spec through install</div>
-      </div>
-
-      <!-- Product lineup -->
-      <div class="ew-products-heading" data-reveal>
-        <div class="ew-products-label">Product Systems</div>
-        <h3>The Vista Line</h3>
-      </div>
-
-      <div class="ew-product-grid">
-
-        <div class="ew-product-card" data-reveal>
-          <img src="images/partners/eurowall/product-multislide.jpg" alt="Vista Multi Slide — impact-rated sliding glass walls" loading="lazy">
-          <div class="ew-product-card-body">
-            <div class="ew-product-name">Vista Multi Slide</div>
-            <div class="ew-product-desc">Impact-rated sliding glass walls with edge-to-edge glazing and zero obstructive sightlines.</div>
-          </div>
-        </div>
-
-        <div class="ew-product-card" data-reveal data-delay="80">
-          <img src="images/partners/eurowall/product-folding.jpg" alt="Vista Fold — impact-rated folding door systems" loading="lazy">
-          <div class="ew-product-card-body">
-            <div class="ew-product-name">Vista Fold</div>
-            <div class="ew-product-desc">Impact-rated folding door systems. Open entire walls with industry-thinnest profiles.</div>
-          </div>
-        </div>
-
-        <div class="ew-product-card" data-reveal data-delay="160">
-          <img src="images/partners/eurowall/product-pivot.jpg" alt="Vista Pivot — statement impact pivot doors" loading="lazy">
-          <div class="ew-product-card-body">
-            <div class="ew-product-name">Vista Pivot</div>
-            <div class="ew-product-desc">Statement impact pivot doors engineered for oversized commercial entries.</div>
-          </div>
-        </div>
-
-        <div class="ew-product-card" data-reveal data-delay="240">
-          <img src="images/partners/eurowall/product-windows.jpg" alt="Vista Window Systems — thin-line casement and direct-set windows" loading="lazy">
-          <div class="ew-product-card-body">
-            <div class="ew-product-name">Vista Window Systems</div>
-            <div class="ew-product-desc">Thin-line, casement, and direct-set windows with AAMA 2605 Kynar finish standard.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Project gallery -->
-      <div class="ew-gallery-heading" data-reveal>
-        <div class="ew-products-label">Euro-Wall Portfolio</div>
-        <h3>System Capabilities in the Field</h3>
-      </div>
-
-      <div class="ew-gallery" data-reveal>
-
-        <div class="ew-gallery-item" onclick="ewOpenLightbox('images/partners/eurowall/project-allen-residence.jpg','Allen Residence — Folding door system')">
-          <img src="images/partners/eurowall/project-allen-residence.jpg" alt="Allen Residence — Euro-Wall folding door system" loading="lazy">
-          <div class="ew-gallery-caption">Allen Residence — Folding door system</div>
-        </div>
-
-        <div class="ew-gallery-item" onclick="ewOpenLightbox('images/partners/eurowall/project-american-harvest.jpg','American Harvest Miami — Commercial folding')">
-          <img src="images/partners/eurowall/project-american-harvest.jpg" alt="American Harvest Miami — Euro-Wall commercial folding system" loading="lazy">
-          <div class="ew-gallery-caption">American Harvest Miami — Commercial folding</div>
-        </div>
-
-        <div class="ew-gallery-item" onclick="ewOpenLightbox('images/partners/eurowall/project-lemoyne-interior.jpg','52 LeMoyne — Interior folding glass wall')">
-          <img src="images/partners/eurowall/project-lemoyne-interior.jpg" alt="52 LeMoyne — Euro-Wall interior folding glass wall" loading="lazy">
-          <div class="ew-gallery-caption">52 LeMoyne — Interior folding glass wall</div>
-        </div>
-
-        <div class="ew-gallery-item" onclick="ewOpenLightbox('images/partners/eurowall/project-alkai-estates.jpg','Alkai Estates — Multi-slide luxury install')">
-          <img src="images/partners/eurowall/project-alkai-estates.jpg" alt="Alkai Estates — Euro-Wall multi-slide luxury installation" loading="lazy">
-          <div class="ew-gallery-caption">Alkai Estates — Multi-slide luxury install</div>
-        </div>
-
-        <div class="ew-gallery-item" onclick="ewOpenLightbox('images/partners/eurowall/project-oilnutbay.jpg','Oil Nut Bay, Virgin Gorda — Featured project')">
-          <img src="images/partners/eurowall/project-oilnutbay.jpg" alt="Oil Nut Bay, Virgin Gorda — Euro-Wall featured project" loading="lazy">
-          <div class="ew-gallery-caption">Oil Nut Bay, Virgin Gorda — Featured project</div>
-        </div>
-
-        <div class="ew-gallery-item" onclick="ewOpenLightbox('images/partners/eurowall/project-yeti.jpg','YETI Headquarters — Commercial installation')">
-          <img src="images/partners/eurowall/project-yeti.jpg" alt="YETI Headquarters — Euro-Wall commercial installation" loading="lazy">
-          <div class="ew-gallery-caption">YETI Headquarters — Commercial installation</div>
-        </div>
-
-      </div>
-
-      <p class="ew-gallery-note">Installations pictured are from Euro-Wall's portfolio demonstrating system capabilities.</p>
-
-      <!-- Value bar -->
-      <div class="ew-value-bar" data-reveal>
-
-        <div class="ew-value-pill">
-          <div class="ew-value-pill-label">Certification</div>
-          <div class="ew-value-pill-text">HVHZ + Miami-Dade Approved</div>
-        </div>
-
-        <div class="ew-value-pill">
-          <div class="ew-value-pill-label">Finish Standard</div>
-          <div class="ew-value-pill-text">AAMA 2605 Kynar Standard</div>
-        </div>
-
-        <div class="ew-value-pill">
-          <div class="ew-value-pill-label">Coverage</div>
-          <div class="ew-value-pill-text">10-Year Warranty</div>
-        </div>
-
-      </div>
-
-      <!-- CTA strip -->
-      <div class="ew-cta-strip" data-reveal>
-        <div class="ew-cta-text">
-          Ask us about specifying Euro-Wall on your next project &rarr; <a href="contact.html">Contact ACG</a>
-        </div>
-        <a href="https://euro-wall.com" target="_blank" rel="noopener" class="ew-ext-link">
-          Visit Euro-Wall.com
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
+      <!-- Responsive collapse -->
+      <style>
+        @media (max-width: 780px) {
+          .ew-teaser { grid-template-columns: 1fr !important; }
+        }
+      </style>
 
     </div>
   </section>
+
 
   <!-- Lightbox -->
   <div class="ew-lightbox" id="ewLightbox" onclick="if(event.target===this)ewCloseLightbox()">
