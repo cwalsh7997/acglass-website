@@ -945,6 +945,15 @@
       .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
     }
   </style>
+<style>@media(max-width:900px){
+.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7) !important}
+.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff !important}
+.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
+.nav-dropdown-menu{position:static !important;transform:none !important;min-width:unset !important;background:transparent !important;border:none !important;padding:0 0 8px 20px !important;box-shadow:none !important;opacity:1 !important;visibility:visible !important;max-height:0;overflow:hidden;transition:max-height .3s}
+.nav-dropdown.open .nav-dropdown-menu{max-height:600px !important;transform:none !important}
+.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block !important;border-radius:0 !important}
+.nav-dropdown-menu a:hover{color:#fff !important;background:transparent !important}
+}</style>
 </head>
 
 <body class="es-body">

@@ -157,11 +157,15 @@
     .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
     .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
     .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:768px){
-      .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 0 16px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-      .nav-dropdown.open .nav-dropdown-menu{max-height:500px;transform:none}
-      .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
-    }
+    @media(max-width:900px){
+.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
+.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
+.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
+.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
+.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
+.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
+.nav-dropdown-menu a:hover{color:#fff !important}
+}
   </style>
 
   <!-- AI Overview — Organization Schema (comprehensive with sameAs) -->
