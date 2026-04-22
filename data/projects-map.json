@@ -336,6 +336,14 @@
     "url": "el-car-wash-northlake.html"
   },
   {
+    "name": "Tradewinds Hobe Sound",
+    "type": "Multifamily",
+    "city": "Hobe Sound",
+    "lat": 27.0639,
+    "lng": -80.1378,
+    "url": "tradewinds-hobe-sound.html"
+  },
+  {
     "name": "CubeSmart Davie",
     "type": "Commercial",
     "city": "Davie",
