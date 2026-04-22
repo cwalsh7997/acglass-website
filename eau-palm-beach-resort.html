@@ -716,6 +716,70 @@
   </section>
 
   <!-- ═══════════════════════════════════════════ CTA ═══ -->
+  
+  <!-- ========== BEFORE / AFTER SLIDER (BEFORE_AFTER_SLIDER) ========== -->
+  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+    <div class="container">
+      <div style="margin-bottom:clamp(24px,3vw,36px);">
+        <div class="label"><span class="line"></span> Proof of Execution</div>
+        <h2>Before. <span class="accent">After.</span> Drag to Reveal.</h2>
+        <p style="max-width:680px;color:rgba(255,255,255,.65);margin-top:12px;">The POLPO restaurant arched storefronts — from construction phase through finished installation. Drag the slider to compare.</p>
+      </div>
+      <div class="ba-wrap" id="baWrap" style="position:relative;max-width:1200px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;cursor:ew-resize;user-select:none;background:#050a12;box-shadow:0 20px 60px rgba(0,0,0,.35);">
+        <picture style="position:absolute;inset:0;"><source type="image/webp" srcset="images/projects/eau-palm-beach/polpo-interior-arches.webp"><img src="images/projects/eau-palm-beach/polpo-interior-arches.jpg" alt="POLPO completed interior with Euro-Wall arched storefronts" draggable="false" style="width:100%;height:100%;object-fit:cover;display:block;"></picture>
+        <div class="ba-after" id="baAfter" style="position:absolute;inset:0;overflow:hidden;clip-path:polygon(0 0,50% 0,50% 100%,0 100%);will-change:clip-path;">
+          <picture style="position:absolute;inset:0;"><source type="image/webp" srcset="images/projects/eau-palm-beach/polpo-construction-arches.webp"><img src="images/projects/eau-palm-beach/polpo-construction-arches.jpg" alt="POLPO under construction" draggable="false" style="width:100%;height:100%;object-fit:cover;display:block;"></picture>
+        </div>
+        <!-- Labels: clip-path starts at 50% so LEFT half shows 'after' image (the clipped overlay) -->
+        <div style="position:absolute;top:16px;left:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.7);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:4px;backdrop-filter:blur(6px);">Before</div>
+        <div style="position:absolute;top:16px;right:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:rgba(225,19,32,.75);border:1px solid var(--accent);padding:6px 12px;border-radius:4px;backdrop-filter:blur(6px);">After</div>
+        <!-- Handle -->
+        <div class="ba-handle" id="baHandle" style="position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.3), 0 4px 20px rgba(0,0,0,.35);transform:translateX(-50%);pointer-events:none;">
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.35);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#050a12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);">Drag or tap anywhere on the image to slide</div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var wrap = document.getElementById('baWrap');
+    var after = document.getElementById('baAfter');
+    var handle = document.getElementById('baHandle');
+    if (!wrap || !after || !handle) return;
+    var dragging = false;
+    function setPct(pct){
+      pct = Math.max(0, Math.min(100, pct));
+      after.style.clipPath = 'polygon(0 0,' + pct + '% 0,' + pct + '% 100%, 0 100%)';
+      handle.style.left = pct + '%';
+    }
+    function onMove(e){
+      if (!dragging) return;
+      var rect = wrap.getBoundingClientRect();
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      setPct((x / rect.width) * 100);
+    }
+    function onDown(e){ dragging = true; onMove(e); e.preventDefault(); }
+    function onUp(){ dragging = false; }
+    wrap.addEventListener('mousedown', onDown);
+    wrap.addEventListener('touchstart', onDown, {passive:false});
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('touchmove', onMove, {passive:false});
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchend', onUp);
+    // Auto demo on load
+    var demoPct = 50, dir = 1, demoStart = Date.now();
+    var demoTimer = setInterval(function(){
+      if (dragging || (Date.now() - demoStart) > 4000){ clearInterval(demoTimer); return; }
+      demoPct += dir * 1.2;
+      if (demoPct > 72 || demoPct < 28) dir *= -1;
+      setPct(demoPct);
+    }, 40);
+  })();
+  </script>
+
   <section class="cta-section">
     <div class="container" data-reveal>
       <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
