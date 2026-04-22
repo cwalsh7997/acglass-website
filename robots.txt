@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://acglass.com/sitemap.xml
+Sitemap: https://acglass.com/news-sitemap.xml
+Sitemap: https://acglass.com/sitemap-index.xml
