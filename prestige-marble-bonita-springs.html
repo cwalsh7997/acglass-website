@@ -112,6 +112,42 @@
     </div>
   </section>
 
+  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
+  <section class="project-meta-strip" aria-label="Project details">
+    <div class="pm-inner">
+        <div class="pm-cell">
+          <div class="pm-label">Sector</div>
+          <div class="pm-value">Commercial</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-label">General Contractor</div>
+          <div class="pm-value">Prestige Marble (Owner)</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-label">Glazing System</div>
+          <div class="pm-value">ESWindows</div>
+        </div>
+        <div class="pm-cell">
+          <div class="pm-label">Location</div>
+          <div class="pm-value">Bonita Springs, FL</div>
+        </div>
+    </div>
+  </section>
+  <style>
+    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
+    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
+    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
+    .project-meta-strip .pm-cell:last-child{border-right:none}
+    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
+    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
+    @media (max-width:780px){
+      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
+      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
+      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
+    }
+  </style>
+
+
   <section class="section" style="padding-top:clamp(48px,6vw,80px);">
     <div class="container">
       <div class="meta-grid" data-reveal>
