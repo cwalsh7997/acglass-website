@@ -1749,24 +1749,8 @@
     /* Number highlight */
     .accent-text { color: var(--be-accent); }
   </style>
-
-<style id="a11y-skip-style">
-.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
-.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
-*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
-</style>
-
-<style id="a11y-contrast-tweak">
-/* Lift low-contrast muted text to meet WCAG AA body copy threshold */
-.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
-/* Focus-visible outline already handled in skip-style */
-/* Ensure form inputs and buttons show focus */
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
-</style>
 </head>
 <body class="be-page">
-<a href="#main-content" class="skip-to-content">Skip to main content</a>
-
 
   <div class="grain"></div>
   <div class="cursor-dot"></div>
@@ -1859,8 +1843,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
       </button>
     </div>
   </nav>
-  <main id="main-content">
-
 
   <!-- ===== ENGINE HEADER ===== -->
   <div class="be-header">
@@ -2387,4 +2369,960 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </div><!-- end be-body -->
 
   <!-- ===== FOOTER ===== -->
-  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+            <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
+          </a>
+          <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">Blog</a>
+            <a href="manufacturers.html">Partners</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Services</h5>
+          <div class="footer-links">
+            <a href="impact-windows-doors-florida.html">Impact Windows</a>
+            <a href="commercial-storefront-systems.html">Storefronts</a>
+            <a href="window-wall-systems.html">Window Wall</a>
+            <a href="curtainwall-installation.html">Curtainwall</a>
+            <a href="division-08-subcontractor-florida.html">Division 08</a>
+            <a href="fire-rated-glass-systems.html">Fire-Rated Glass</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <div class="footer-contact">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              connor@acglass.com
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (772) 486-7711
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              West Palm Beach &bull; Naples &bull; Tampa
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 American Commercial Glass &bull; CGC1531993</span>
+        <span>ACG Bid Engine &bull; Proprietary Technology</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+  // =============================================
+  // ACG BID ENGINE v1.0
+  // Proprietary — American Commercial Glass
+  // © 2026 ACG. All rights reserved.
+  // =============================================
+
+  // ---- STATE ----
+  const state = {
+    currentStep: 1,
+    projectName: '',
+    projectAddress: '',
+    buildingType: null,
+    buildingTypeLabel: null,
+    buildingSF: null,
+    glassSF: null,
+    floors: null,
+    constructionType: 'new',
+    uploadedFiles: [],
+    requirements: [],
+    specialNotes: '',
+    contactName: '',
+    contactCompany: '',
+    contactEmail: '',
+    contactPhone: '',
+    contactRole: '',
+    // Computed
+    computedGlassSF: null,
+    scopeLow: null,
+    scopeHigh: null
+  };
+
+  // ---- PRICING DATA ----
+  // Glass SF/price ranges per building type
+  // TIGHTENED PRICING — base rates per type, then adjusted by requirements
+  const PRICING = {
+    retail:      { psfBase: 58, psfSpread: 12, glassRatio: 0.15, label: 'Retail / Storefront' },
+    hospitality: { psfBase: 95, psfSpread: 25, glassRatio: 0.20, label: 'Hospitality / Restaurant' },
+    healthcare:  { psfBase: 78, psfSpread: 16, glassRatio: 0.12, label: 'Healthcare / Medical' },
+    office:      { psfBase: 65, psfSpread: 15, glassRatio: 0.18, label: 'Office / Commercial' },
+    multifamily: { psfBase: 52, psfSpread: 12, glassRatio: 0.10, label: 'Multifamily / Apartments' },
+    government:  { psfBase: 82, psfSpread: 18, glassRatio: 0.15, label: 'Government / Institutional' },
+    seniorliving:{ psfBase: 58, psfSpread: 14, glassRatio: 0.10, label: 'Senior Living / CCRC' },
+    industrial:  { psfBase: 42, psfSpread: 10, glassRatio: 0.05, label: 'Industrial / Warehouse' }
+  };
+
+  // ---- SYSTEM RECOMMENDATIONS ----
+  const SYSTEMS = {
+    retail:      { name: 'Commercial Storefront System', desc: 'Aluminum storefront framing with thermally broken frames. High-performance low-e glass. PGT, Kawneer, or YKK systems. Standard for retail and entry applications.', mfrName: 'Kawneer / PGT / YKK AP', mfrDesc: 'ACG specifies Kawneer 350/500 series, PGT WinGuard, and YKK AP storefronts for retail. All Florida product-approved.' },
+    hospitality: { name: 'Sliding / Bi-fold System (Eurowall)', desc: 'Large-format sliding or bi-fold glass wall systems for open-to-outside hospitality applications. Folding Glass Walls, NanaWall, or custom curtainwall. Specialty hardware, multiple panel configurations.', mfrName: 'NanaWall / Folding Glass Walls / Kawneer', mfrDesc: 'ACG installs NanaWall SL60 and Folding Glass Walls systems for hospitality. Custom configurations available.' },
+    healthcare:  { name: 'Impact-Rated Window Wall', desc: 'Impact-rated window wall with thermally broken aluminum frames. Low-e coatings for SHGC compliance. Specialized vision glass and spandrel panels. Certifications for healthcare construction.', mfrName: 'Kawneer / Oldcastle / PGT', mfrDesc: 'ACG specifies Kawneer 1600 Wall and Oldcastle BuildingEnvelope for healthcare. All HVHZ and FBC approved.' },
+    office:      { name: 'Curtainwall or Window Wall', desc: 'Unitized or stick-built curtainwall for office tower applications. High-performance double insulating glass units, low-e coatings, aluminum extrusions. Floor-to-ceiling vision or spandrel configuration.', mfrName: 'Kawneer / Viracon / Oldcastle', mfrDesc: 'ACG self-performs curtainwall with Kawneer 1600 Wall XT and Viracon high-performance glass units. 100+ office projects completed.' },
+    multifamily: { name: 'Impact Window Package', desc: 'PGT or CGI impact-rated windows and balcony doors. Thermally broken frames for energy compliance. Single-unit replacement windows or new construction window package. Florida product approved.', mfrName: 'PGT WinGuard / CGI / Eco Window', mfrDesc: 'ACG installs PGT WinGuard and CGI Guardian windows for multifamily. Full Florida NOA compliance on all units.' },
+    government:  { name: 'Government-Grade Storefront / Blast-Resistant Glazing', desc: 'Heavy-gauge aluminum storefront or curtainwall with blast-resistant glazing where required. Security laminated glass, anchored framing systems. ASTM F2248 blast testing compliance available.', mfrName: 'Kawneer / Oldcastle / Norshield', mfrDesc: 'ACG has completed government, courthouse, and institutional projects with blast-rated and high-security glazing systems.' },
+    seniorliving:{ name: 'Impact Window Package + Storefront', desc: 'Impact-rated aluminum storefront for common areas and PGT window units for resident rooms. Energy-code compliant low-e glass. Accessible hardware specifications. Senior living experience since 2019.', mfrName: 'PGT WinGuard / Kawneer / CGI', mfrDesc: 'ACG has completed multiple CCRC and ALF projects across Florida, including Panther National and The Preserve.' },
+    industrial:  { name: 'Commercial Storefront + Overhead Glazing', desc: 'Standard commercial storefront for office areas and clerestory windows for warehouse sections. Heavy-duty aluminum frames. Clear or tinted float glass where impact not required.', mfrName: 'Kawneer / YKK AP / PGT', mfrDesc: 'ACG installs Kawneer and YKK AP storefront systems for industrial office/warehouse combinations.' }
+  };
+
+  // ---- TIMELINE PHASES ----
+  const TIMELINE_PHASES = [
+    { name: 'Award & Mobilization',  weeks: 2,  pct: 0.15 },
+    { name: 'Shop Drawings',         weeks: 4,  pct: 0.30 },
+    { name: 'Approval / Permitting', weeks: 3,  pct: 0.22 },
+    { name: 'Fabrication',           weeks: 8,  pct: 0.60 },
+    { name: 'Field Installation',    weeks: 6,  pct: 0.46 },
+    { name: 'Punch / Closeout',      weeks: 1,  pct: 0.08 }
+  ];
+
+  // ====================
+  // STEP NAVIGATION
+  // ====================
+
+  function showStep(n, direction) {
+    const panels = document.querySelectorAll('.be-step-panel');
+    panels.forEach(p => {
+      p.classList.remove('active', 'anim-in', 'anim-back');
+    });
+
+    const target = document.getElementById('step-' + n);
+    if (!target) return;
+    target.classList.add('active');
+    target.classList.add(direction === 'back' ? 'anim-back' : 'anim-in');
+
+    // Force reflow so animation triggers
+    void target.offsetWidth;
+
+    updateProgressBar(n);
+    window.scrollTo({ top: document.querySelector('.be-header').offsetTop, behavior: 'smooth' });
+  }
+
+  function updateProgressBar(activeStep) {
+    document.querySelectorAll('.be-progress-step').forEach(step => {
+      const n = parseInt(step.dataset.step);
+      step.classList.remove('active', 'done');
+      if (n === activeStep) step.classList.add('active');
+      else if (n < activeStep) step.classList.add('done');
+    });
+  }
+
+  function nextStep(from, skip) {
+    // Validate
+    if (!skip && !validateStep(from)) return;
+
+    // Persist data from current step
+    collectStep(from);
+
+    const next = from + 1;
+    if (next > 6) return;
+
+    // Populate review on step 6
+    if (next === 6) buildReview();
+
+    state.currentStep = next;
+    showStep(next, 'forward');
+  }
+
+  function prevStep(from) {
+    const prev = from - 1;
+    if (prev < 1) return;
+    state.currentStep = prev;
+    showStep(prev, 'back');
+  }
+
+  // ====================
+  // VALIDATION
+  // ====================
+
+  function validateStep(n) {
+    const valEl = document.getElementById('val-' + n);
+
+    if (n === 1) {
+      const name = document.getElementById('project-name').value.trim();
+      const type = state.buildingType;
+      if (!name || !type) {
+        if (valEl) { valEl.classList.add('show'); setTimeout(() => valEl.classList.remove('show'), 3000); }
+        return false;
+      }
+    }
+
+    if (n === 2) {
+      const bsf = document.getElementById('building-sf').value.trim();
+      const floors = state.floors;
+      if (!bsf || !floors) {
+        if (valEl) { valEl.classList.add('show'); setTimeout(() => valEl.classList.remove('show'), 3000); }
+        return false;
+      }
+    }
+
+    if (n === 5) {
+      const name = document.getElementById('contact-name').value.trim();
+      const company = document.getElementById('contact-company').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!name || !company || !email || !phone || !emailValid) {
+        if (valEl) { valEl.classList.add('show'); setTimeout(() => valEl.classList.remove('show'), 3000); }
+        // Highlight invalid fields
+        ['contact-name','contact-company','contact-email','contact-phone'].forEach(id => {
+          const el = document.getElementById(id);
+          if (!el.value.trim()) el.classList.add('error');
+          else el.classList.remove('error');
+        });
+        const emailEl = document.getElementById('contact-email');
+        if (!emailValid) emailEl.classList.add('error');
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  // ====================
+  // DATA COLLECTION
+  // ====================
+
+  function collectStep(n) {
+    if (n === 1) {
+      state.projectName = document.getElementById('project-name').value.trim();
+      state.projectAddress = document.getElementById('project-address').value.trim();
+    }
+    if (n === 2) {
+      state.buildingSF = parseInt(document.getElementById('building-sf').value) || null;
+      state.glassSF = parseInt(document.getElementById('glass-sf').value) || null;
+    }
+    if (n === 4) {
+      state.specialNotes = document.getElementById('special-notes').value.trim();
+    }
+    if (n === 5) {
+      state.contactName = document.getElementById('contact-name').value.trim();
+      state.contactCompany = document.getElementById('contact-company').value.trim();
+      state.contactEmail = document.getElementById('contact-email').value.trim();
+      state.contactPhone = document.getElementById('contact-phone').value.trim();
+      state.contactRole = document.getElementById('contact-role').value;
+    }
+  }
+
+  // ====================
+  // BUILDING TYPE CARDS
+  // ====================
+
+  document.querySelectorAll('#step-1 .be-type-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('#step-1 .be-type-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      state.buildingType = card.dataset.value;
+      state.buildingTypeLabel = card.dataset.label;
+    });
+  });
+
+  // ====================
+  // FLOOR PILLS
+  // ====================
+
+  document.querySelectorAll('#floors-grid .be-floor-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('#floors-grid .be-floor-pill').forEach(p => p.classList.remove('selected'));
+      pill.classList.add('selected');
+      state.floors = pill.dataset.value;
+    });
+  });
+
+  // ====================
+  // CONSTRUCTION TYPE TOGGLE
+  // ====================
+
+  function selectConstructionType(el) {
+    document.querySelectorAll('#construction-type .be-radio-option').forEach(o => o.classList.remove('active'));
+    el.classList.add('active');
+    state.constructionType = el.dataset.value;
+  }
+
+  // ====================
+  // FILE UPLOAD
+  // ====================
+
+  const uploadZone = document.getElementById('upload-zone');
+  const fileList = document.getElementById('file-list');
+
+  uploadZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadZone.classList.add('drag-over');
+  });
+
+  uploadZone.addEventListener('dragleave', () => {
+    uploadZone.classList.remove('drag-over');
+  });
+
+  uploadZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadZone.classList.remove('drag-over');
+    handleFiles(e.dataTransfer.files);
+  });
+
+  function handleFiles(files) {
+    Array.from(files).forEach(file => {
+      // Deduplicate by name
+      if (state.uploadedFiles.find(f => f.name === file.name)) return;
+      state.uploadedFiles.push(file);
+    });
+    renderFileList();
+  }
+
+  function renderFileList() {
+    fileList.innerHTML = '';
+    state.uploadedFiles.forEach((file, idx) => {
+      const size = formatFileSize(file.size);
+      const item = document.createElement('div');
+      item.className = 'be-file-item';
+      item.innerHTML = `
+        <div class="be-file-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="be-file-info">
+          <div class="be-file-name">${escapeHtml(file.name)}</div>
+          <div class="be-file-size">${size}</div>
+        </div>
+        <button class="be-file-remove" onclick="removeFile(${idx})" aria-label="Remove file">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      `;
+      fileList.appendChild(item);
+    });
+
+    if (state.uploadedFiles.length > 0) {
+      uploadZone.classList.add('has-files');
+      uploadZone.querySelector('.be-upload-title').textContent = `${state.uploadedFiles.length} file${state.uploadedFiles.length > 1 ? 's' : ''} ready`;
+    } else {
+      uploadZone.classList.remove('has-files');
+      uploadZone.querySelector('.be-upload-title').textContent = 'Drop plans here or click to browse';
+    }
+  }
+
+  function removeFile(idx) {
+    state.uploadedFiles.splice(idx, 1);
+    renderFileList();
+  }
+
+  function formatFileSize(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ====================
+  // CHECKBOXES
+  // ====================
+
+  document.querySelectorAll('#step-4 .be-checkbox-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const val = item.dataset.value;
+      if (val === 'none') {
+        // Deselect all others
+        document.querySelectorAll('#step-4 .be-checkbox-item').forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+        state.requirements = ['none'];
+      } else {
+        // Deselect 'none'
+        document.querySelectorAll('#step-4 .be-checkbox-item[data-value="none"]').forEach(i => i.classList.remove('selected'));
+        item.classList.toggle('selected');
+        state.requirements = Array.from(document.querySelectorAll('#step-4 .be-checkbox-item.selected')).map(i => i.dataset.label);
+      }
+    });
+  });
+
+  // ====================
+  // BUILD REVIEW (Step 6)
+  // ====================
+
+  function buildReview() {
+    // Project
+    const rp = document.getElementById('review-project');
+    rp.innerHTML = `
+      <div class="be-review-row"><span class="be-review-key">Name</span><span class="be-review-val">${escapeHtml(state.projectName || '—')}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Address</span><span class="be-review-val">${escapeHtml(state.projectAddress || '—')}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Type</span><span class="be-review-val">${escapeHtml(state.buildingTypeLabel || '—')}</span></div>
+    `;
+
+    // Scale
+    const rs = document.getElementById('review-scale');
+    rs.innerHTML = `
+      <div class="be-review-row"><span class="be-review-key">Building SF</span><span class="be-review-val">${state.buildingSF ? state.buildingSF.toLocaleString() + ' SF' : '—'}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Glass SF</span><span class="be-review-val">${state.glassSF ? state.glassSF.toLocaleString() + ' SF' : 'Estimated by ACG'}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Floors</span><span class="be-review-val">${state.floors || '—'}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Construction</span><span class="be-review-val">${state.constructionType === 'new' ? 'New Construction' : 'Renovation'}</span></div>
+    `;
+
+    // Files
+    const rf = document.getElementById('review-files');
+    if (state.uploadedFiles.length === 0) {
+      rf.innerHTML = '<div class="be-review-row"><span class="be-review-key">Files</span><span class="be-review-val" style="color:var(--be-text-faint);">No files uploaded — Connor will follow up</span></div>';
+    } else {
+      rf.innerHTML = state.uploadedFiles.map(f =>
+        `<div class="be-review-row"><span class="be-review-key" style="font-size:11px;">${escapeHtml(f.name)}</span><span class="be-review-val" style="color:var(--be-text-faint);">${formatFileSize(f.size)}</span></div>`
+      ).join('');
+    }
+
+    // Contact
+    const rc = document.getElementById('review-contact');
+    rc.innerHTML = `
+      <div class="be-review-row"><span class="be-review-key">Name</span><span class="be-review-val">${escapeHtml(state.contactName)}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Company</span><span class="be-review-val">${escapeHtml(state.contactCompany)}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Email</span><span class="be-review-val">${escapeHtml(state.contactEmail)}</span></div>
+      <div class="be-review-row"><span class="be-review-key">Phone</span><span class="be-review-val">${escapeHtml(state.contactPhone)}</span></div>
+    `;
+
+    // Requirements
+    const rr = document.getElementById('review-requirements');
+    rr.innerHTML = state.requirements.length > 0
+      ? `<div style="font-size:13px;color:var(--be-text-muted);">${state.requirements.join(' &bull; ')}</div>`
+      : `<div style="font-size:13px;color:var(--be-text-faint);">None selected</div>`;
+    if (state.specialNotes) {
+      rr.innerHTML += `<div style="font-size:12px;color:var(--be-text-faint);margin-top:8px;font-style:italic;">"${escapeHtml(state.specialNotes)}"</div>`;
+    }
+  }
+
+  // ====================
+  // SUBMIT + ANALYZE
+  // ====================
+
+  function submitBid() {
+    // Populate hidden form fields
+    document.getElementById('form-project-name').value = state.projectName;
+    document.getElementById('form-project-address').value = state.projectAddress;
+    document.getElementById('form-building-type').value = state.buildingTypeLabel || '';
+    document.getElementById('form-building-sf').value = state.buildingSF || '';
+    document.getElementById('form-glass-sf').value = state.glassSF || '';
+    document.getElementById('form-floors').value = state.floors || '';
+    document.getElementById('form-construction-type').value = state.constructionType;
+    document.getElementById('form-requirements').value = state.requirements.join(', ');
+    document.getElementById('form-notes').value = state.specialNotes;
+    document.getElementById('form-contact-name').value = state.contactName;
+    document.getElementById('form-contact-company').value = state.contactCompany;
+    document.getElementById('form-contact-email').value = state.contactEmail;
+    document.getElementById('form-contact-phone').value = state.contactPhone;
+    document.getElementById('form-contact-role').value = state.contactRole;
+    document.getElementById('form-replyto').value = state.contactEmail;
+
+    // Calculate scope now
+    calculateScope();
+
+    document.getElementById('form-scope-low').value = state.scopeLow || '';
+    document.getElementById('form-scope-high').value = state.scopeHigh || '';
+
+    // Show analyzing overlay
+    runAnalysis();
+  }
+
+  // ====================
+  // PRICING CALCULATION
+  // ====================
+
+  function calculateScope() {
+    const type = state.buildingType || 'office';
+    const pricing = PRICING[type] || PRICING.office;
+
+    // Determine glass SF
+    let glassSF = state.glassSF;
+    if (!glassSF && state.buildingSF) {
+      glassSF = Math.round(state.buildingSF * pricing.glassRatio);
+    }
+    if (!glassSF) glassSF = 2500;
+    state.computedGlassSF = glassSF;
+
+    // Start with base PSF
+    let basePSF = pricing.psfBase;
+    let spread = pricing.psfSpread;
+
+    // Requirement adjustments (tighten range based on known requirements)
+    const reqs = (state.requirements || '').toLowerCase();
+    let reqMult = 1.0;
+    if (reqs.includes('impact'))    reqMult += 0.32;  // impact glass adds ~32%
+    if (reqs.includes('fire'))      reqMult += 0.28;  // fire-rated adds ~28%
+    if (reqs.includes('sound'))     reqMult += 0.18;  // STC rated adds ~18%
+    if (reqs.includes('energy'))    reqMult += 0.12;  // energy code upgrades ~12%
+    if (reqs.includes('blast'))     reqMult += 0.45;  // blast-resistant adds ~45%
+
+    basePSF = Math.round(basePSF * reqMult);
+
+    // Floor adjustment (+3% per floor above 1 for access equipment)
+    const floors = parseInt(state.floors) || 1;
+    const floorMult = 1 + (Math.max(0, floors - 1) * 0.03);
+
+    // Renovation premium (+10% for demo, phasing, protection)
+    const renvoPremium = state.constructionType === 'renovation' ? 1.10 : 1;
+
+    // Final PSF range: base ± spread (tight ~20% margin)
+    const psfLow  = Math.round(basePSF * floorMult * renvoPremium);
+    const psfHigh = Math.round((basePSF + spread) * floorMult * renvoPremium);
+
+    state.psfLow = psfLow;
+    state.psfHigh = psfHigh;
+    state.scopeLow  = Math.round(glassSF * psfLow  / 500) * 500;
+    state.scopeHigh = Math.round(glassSF * psfHigh / 500) * 500;
+  }
+
+  // ====================
+  // ANALYZING ANIMATION
+  // ====================
+
+  function runAnalysis() {
+    const overlay = document.getElementById('analyzing-overlay');
+    const bar = document.getElementById('analyzing-bar');
+    overlay.classList.add('active');
+
+    const steps = document.querySelectorAll('.be-analyzing-step');
+    let progress = 0;
+    let stepIdx = 0;
+
+    // Activate first step immediately
+    steps[0].classList.add('active');
+
+    const interval = setInterval(() => {
+      progress += 2.5;
+      bar.style.width = Math.min(progress, 100) + '%';
+
+      // Mark steps as done at milestones
+      const milestone = Math.floor(progress / (100 / steps.length));
+      if (milestone > stepIdx && stepIdx < steps.length) {
+        steps[stepIdx].classList.remove('active');
+        steps[stepIdx].classList.add('done');
+        stepIdx++;
+        if (stepIdx < steps.length) {
+          steps[stepIdx].classList.add('active');
+        }
+      }
+
+      if (progress >= 100) {
+        clearInterval(interval);
+        // Finish all steps
+        steps.forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
+
+        setTimeout(() => {
+          overlay.classList.remove('active');
+          showResults();
+          // Submit form to Formspree (non-blocking — doesn't depend on success)
+          try {
+            const formData = new FormData(document.getElementById('bid-form'));
+            // Send form data to Connor via FormSubmit
+            formData.append('_subject', 'ACG Bid Engine — New Scope Request: ' + (state.projectName || 'Unknown Project'));
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+            fetch('https://formsubmit.co/ajax/connor@acglass.com', {
+              method: 'POST',
+              body: formData,
+              headers: { Accept: 'application/json' }
+            }).catch(() => {});
+          } catch(e) {}
+        }, 500);
+      }
+    }, 75); // ~3 seconds total
+  }
+
+  // ====================
+  // SHOW RESULTS
+  // ====================
+
+  function showResults() {
+    // Hide all step panels
+    document.querySelectorAll('.be-step-panel').forEach(p => p.classList.remove('active'));
+
+    // Mark all progress steps done
+    document.querySelectorAll('.be-progress-step').forEach(s => {
+      s.classList.remove('active');
+      s.classList.add('done');
+    });
+
+    const panel = document.getElementById('results-panel');
+    panel.classList.add('active');
+    window.scrollTo({ top: document.querySelector('.be-header').offsetTop, behavior: 'smooth' });
+
+    const type = state.buildingType || 'office';
+    const pricing = PRICING[type] || PRICING.office;
+    const system = SYSTEMS[type] || SYSTEMS.office;
+
+    // Scope range
+    document.getElementById('cost-low').textContent  = '$' + (state.scopeLow  || 0).toLocaleString();
+    document.getElementById('cost-high').textContent = '$' + (state.scopeHigh || 0).toLocaleString();
+    document.getElementById('res-glass-sf').textContent = (state.computedGlassSF || '—').toLocaleString();
+    document.getElementById('res-psf').innerHTML = `$${state.psfLow || pricing.psfBase}–$${state.psfHigh || (pricing.psfBase + pricing.psfSpread)}/SF`;
+
+    // Labels
+    document.getElementById('res-type-label').textContent = state.buildingTypeLabel || '';
+    document.getElementById('res-sf-note').textContent = state.buildingSF
+      ? (state.buildingSF.toLocaleString() + ' SF building')
+      : (state.computedGlassSF.toLocaleString() + ' SF glass est.');
+
+    // Systems
+    document.getElementById('res-system-name').textContent = system.name;
+    document.getElementById('res-system-desc').textContent = system.desc;
+    document.getElementById('res-mfr-name').textContent = system.mfrName;
+    document.getElementById('res-mfr-desc').textContent = system.mfrDesc;
+
+    // Contact confirmation
+    document.getElementById('confirm-email').textContent = state.contactEmail;
+
+    // Add download PDF button if not already present
+    if (!document.getElementById('download-pdf-btn')) {
+      const costSection = document.querySelector('.be-cost-card') || document.querySelector('#results-panel .be-cost-display');
+      if (costSection) {
+        const btnWrap = document.createElement('div');
+        btnWrap.style.cssText = 'text-align:center;margin-top:16px;';
+        btnWrap.innerHTML = '<button id="download-pdf-btn" onclick="generateBidPDF()" style="background:var(--accent,#E11320);color:white;border:none;padding:12px 28px;border-radius:6px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">\u2193 Download Official Bid Estimate (PDF)</button>';
+        costSection.parentNode.insertBefore(btnWrap, costSection.nextSibling);
+      }
+    }
+
+    // Timeline
+    renderTimeline();
+
+    // Animate timeline bars
+    setTimeout(() => {
+      document.querySelectorAll('.be-phase-bar').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }, 400);
+
+    // GA event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'bid_submitted', {
+        event_category: 'BidEngine',
+        event_label: state.buildingTypeLabel,
+        value: Math.round((state.scopeLow + state.scopeHigh) / 2)
+      });
+    }
+
+    // Generate and auto-download the PDF bid estimate
+    setTimeout(() => { generateBidPDF(); }, 1500);
+  }
+
+  // ====================
+  // PDF BID ESTIMATE
+  // ====================
+  function generateBidPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'letter');
+    const W = 215.9;
+    const margin = 20;
+    const cw = W - margin * 2;
+    let y = 20;
+
+    // Colors
+    const red = [225, 19, 32];
+    const dark = [5, 10, 18];
+    const gray = [120, 120, 120];
+    const white = [255, 255, 255];
+
+    // Header bar
+    doc.setFillColor(...dark);
+    doc.rect(0, 0, W, 45, 'F');
+    doc.setFillColor(...red);
+    doc.rect(0, 42, W, 3, 'F');
+
+    // Company name
+    doc.setTextColor(...white);
+    doc.setFontSize(22);
+    doc.setFont('helvetica', 'bold');
+    doc.text('ACG', margin, 18);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.text('AMERICAN COMMERCIAL GLASS', margin, 24);
+
+    // Right side header
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('PRELIMINARY SCOPE ESTIMATE', W - margin, 16, { align: 'right' });
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    doc.text('Date: ' + today, W - margin, 22, { align: 'right' });
+    doc.text('Ref: ACG-BID-' + Date.now().toString(36).toUpperCase(), W - margin, 27, { align: 'right' });
+    doc.text('CGC License #1531993', W - margin, 32, { align: 'right' });
+
+    y = 55;
+
+    // Project Info Section
+    doc.setTextColor(...dark);
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Project Information', margin, y);
+    y += 2;
+    doc.setDrawColor(...red);
+    doc.setLineWidth(0.5);
+    doc.line(margin, y, margin + 40, y);
+    y += 8;
+
+    doc.setFontSize(10);
+    const fields = [
+      ['Project Name', state.projectName || '—'],
+      ['Location', state.projectAddress || '—'],
+      ['Building Type', state.buildingTypeLabel || '—'],
+      ['Building SF', state.buildingSF ? state.buildingSF.toLocaleString() + ' SF' : '—'],
+      ['Estimated Glass SF', state.computedGlassSF ? state.computedGlassSF.toLocaleString() + ' SF' : '—'],
+      ['Floors', state.floors || '1'],
+      ['Construction Type', state.constructionType === 'renovation' ? 'Renovation' : 'New Construction'],
+      ['Special Requirements', state.requirements || 'Standard'],
+    ];
+
+    fields.forEach(([label, value]) => {
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(...gray);
+      doc.text(label + ':', margin, y);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(...dark);
+      doc.text(String(value), margin + 55, y);
+      y += 6;
+    });
+
+    y += 8;
+
+    // Scope Estimate Box
+    doc.setFillColor(245, 245, 245);
+    doc.roundedRect(margin, y, cw, 35, 3, 3, 'F');
+    doc.setFillColor(...red);
+    doc.roundedRect(margin, y, cw, 3, 3, 3, 'F');
+    doc.rect(margin, y + 2, cw, 1, 'F');
+
+    y += 12;
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...gray);
+    doc.text('ESTIMATED GLAZING SCOPE VALUE', margin + cw / 2, y, { align: 'center' });
+    y += 10;
+    doc.setFontSize(24);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    const scopeText = '$' + (state.scopeLow || 0).toLocaleString() + '  \u2014  $' + (state.scopeHigh || 0).toLocaleString();
+    doc.text(scopeText, margin + cw / 2, y, { align: 'center' });
+    y += 8;
+    doc.setFontSize(8);
+    doc.setTextColor(...gray);
+    doc.text('Based on ' + (state.computedGlassSF || 0).toLocaleString() + ' SF glass \u00b7 $' + (state.psfLow || 0) + '\u2013$' + (state.psfHigh || 0) + '/SF installed', margin + cw / 2, y, { align: 'center' });
+
+    y += 18;
+
+    // Recommended System
+    const sys = SYSTEMS[state.buildingType] || SYSTEMS.office;
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    doc.text('Recommended System', margin, y);
+    y += 2;
+    doc.setDrawColor(...red);
+    doc.line(margin, y, margin + 40, y);
+    y += 8;
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text(sys.name, margin, y);
+    y += 5;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...gray);
+    const descLines = doc.splitTextToSize(sys.desc, cw);
+    doc.text(descLines, margin, y);
+    y += descLines.length * 4.5 + 4;
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    doc.text('Manufacturer: ' + sys.mfrName, margin, y);
+    y += 12;
+
+    // Timeline
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Estimated Timeline', margin, y);
+    y += 2;
+    doc.setDrawColor(...red);
+    doc.line(margin, y, margin + 40, y);
+    y += 8;
+    doc.setFontSize(9);
+    TIMELINE_PHASES.forEach(phase => {
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(...gray);
+      doc.text(phase.name, margin, y);
+      doc.setTextColor(...dark);
+      doc.text(phase.weeks + ' weeks', margin + 60, y);
+      y += 5;
+    });
+    y += 2;
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(...dark);
+    doc.text('Total Estimated Duration: 13\u201324 weeks', margin, y);
+    y += 14;
+
+    // Disclaimer
+    doc.setFontSize(7.5);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(...gray);
+    const disclaimer = 'DISCLAIMER: This is a preliminary scope estimate generated by the ACG Bid Engine based on project parameters provided. Actual pricing will be determined after review of construction documents by the ACG estimating team. This estimate is not a binding proposal, contract, or guarantee of final pricing. Material costs, labor availability, site conditions, and specification changes may affect the final scope value. A detailed bid will be provided within 48 hours of plan review.';
+    const discLines = doc.splitTextToSize(disclaimer, cw);
+    doc.text(discLines, margin, y);
+    y += discLines.length * 3.5 + 8;
+
+    // Footer bar
+    doc.setFillColor(...dark);
+    doc.rect(0, 267, W, 15, 'F');
+    doc.setTextColor(...white);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'normal');
+    doc.text('American Commercial Glass  \u00b7  (772) 486-7711  \u00b7  connor@acglass.com  \u00b7  acglass.com', margin, 274);
+    doc.text('CGC #1531993  \u00b7  WBE  \u00b7  SBE', W - margin, 274, { align: 'right' });
+
+    // Save
+    const filename = 'ACG-Bid-Estimate-' + (state.projectName || 'Project').replace(/[^a-zA-Z0-9]/g, '-') + '.pdf';
+    doc.save(filename);
+  }
+
+  function renderTimeline() {
+    const container = document.getElementById('timeline-phases');
+    container.innerHTML = '';
+    let totalWeeks = 0;
+
+    TIMELINE_PHASES.forEach(phase => {
+      totalWeeks += phase.weeks;
+      const row = document.createElement('div');
+      row.className = 'be-timeline-phase';
+      row.innerHTML = `
+        <div class="be-phase-name">${phase.name}</div>
+        <div class="be-phase-bar-wrap">
+          <div class="be-phase-bar" data-pct="${Math.round(phase.pct * 100)}" style="width:0%"></div>
+        </div>
+        <div class="be-phase-weeks">${phase.weeks} wks</div>
+      `;
+      container.appendChild(row);
+    });
+
+    document.getElementById('timeline-total').textContent = totalWeeks + ' – ' + (totalWeeks + 2) + ' weeks';
+  }
+
+  // ====================
+  // RESTART
+  // ====================
+
+  function restartEngine() {
+    // Reset state
+    Object.assign(state, {
+      currentStep: 1,
+      projectName: '',
+      projectAddress: '',
+      buildingType: null,
+      buildingTypeLabel: null,
+      buildingSF: null,
+      glassSF: null,
+      floors: null,
+      constructionType: 'new',
+      uploadedFiles: [],
+      requirements: [],
+      specialNotes: '',
+      contactName: '',
+      contactCompany: '',
+      contactEmail: '',
+      contactPhone: '',
+      contactRole: '',
+      computedGlassSF: null,
+      scopeLow: null,
+      scopeHigh: null
+    });
+
+    // Reset UI
+    document.querySelectorAll('.be-type-card').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.be-floor-pill').forEach(p => p.classList.remove('selected'));
+    document.querySelectorAll('.be-checkbox-item').forEach(i => i.classList.remove('selected'));
+    document.querySelectorAll('.be-input, .be-select, .be-textarea').forEach(el => {
+      el.value = '';
+      el.classList.remove('error');
+    });
+    document.querySelectorAll('.be-radio-option').forEach(o => o.classList.remove('active'));
+    document.querySelector('.be-radio-option[data-value="new"]').classList.add('active');
+    state.constructionType = 'new';
+    state.uploadedFiles = [];
+    renderFileList();
+
+    // Show results then hide
+    document.getElementById('results-panel').classList.remove('active');
+
+    showStep(1, 'back');
+  }
+
+  // ====================
+  // INPUT EVENTS — clear error on type
+  // ====================
+
+  ['contact-name','contact-company','contact-email','contact-phone'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => el.classList.remove('error'));
+  });
+
+  // ====================
+  // NAV DROPDOWNS (from main.js pattern)
+  // ====================
+  document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    const trigger = dd.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = dd.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+      if (!open) {
+        dd.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+      } else {
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+      d.classList.remove('open');
+      const t = d.querySelector('.nav-dropdown-trigger');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+  }
+
+  </script>
+</body>
+</html>

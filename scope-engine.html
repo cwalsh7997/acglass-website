@@ -1404,24 +1404,8 @@
     "description": "Proprietary glazing scope estimation tool. Input project details and receive instant cost estimates, system recommendations, timelines, and Florida code requirements."
   }
   </script>
-
-<style id="a11y-skip-style">
-.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
-.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
-*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
-</style>
-
-<style id="a11y-contrast-tweak">
-/* Lift low-contrast muted text to meet WCAG AA body copy threshold */
-.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
-/* Focus-visible outline already handled in skip-style */
-/* Ensure form inputs and buttons show focus */
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
-</style>
 </head>
 <body class="se-page">
-<a href="#main-content" class="skip-to-content">Skip to main content</a>
-
 
   <div class="grain"></div>
   <div class="cursor-dot"></div>
@@ -1490,8 +1474,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
       </button>
     </div>
   </nav>
-  <main id="main-content">
-
 
   <!-- ===== ENGINE HEADER ===== -->
   <div class="se-header">
@@ -1908,4 +1890,782 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </div><!-- end se-body -->
 
   <!-- ===== FOOTER ===== -->
-  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
+            <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
+          </a>
+          <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
+        </div>
+
+        <div>
+          <h5>Company</h5>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="faq.html">FAQ</a>
+            <a href="blog.html">Blog</a>
+            <a href="manufacturers.html">Partners</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Services</h5>
+          <div class="footer-links">
+            <a href="impact-windows-doors-florida.html">Impact Windows</a>
+            <a href="commercial-storefront-systems.html">Storefronts</a>
+            <a href="window-wall-systems.html">Window Wall</a>
+            <a href="curtainwall-installation.html">Curtainwall</a>
+            <a href="division-08-subcontractor-florida.html">Division 08</a>
+            <a href="fire-rated-glass-systems.html">Fire-Rated Glass</a>
+          </div>
+        </div>
+
+        <div>
+          <h5>Contact</h5>
+          <div class="footer-contact">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              connor@acglass.com
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (772) 486-7711
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              West Palm Beach &bull; Naples &bull; Tampa
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 American Commercial Glass</span>
+        <span>ACG Scope Intelligence Engine &bull; Proprietary Technology</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script>
+  // =============================================
+  // ACG SCOPE INTELLIGENCE ENGINE v2.1
+  // Proprietary Algorithm — American Commercial Glass
+  // =============================================
+
+  // ---- STATE ----
+  const state = {
+    currentStep: 1,
+    projectType: null,
+    projectTypeLabel: null,
+    sizeOption: 'a',
+    glassSF: 2500,
+    openings: null,
+    buildingSF: null,
+    computedGlassSF: 2500,
+    location: null,
+    locationLabel: null,
+    requirements: [],
+    systemType: 'recommend',
+    systemTypeLabel: 'Recommend for me'
+  };
+
+  // ---- COST DATA ----
+  const COST_DATA = {
+    storefront:     { low: 45,  high: 85  },
+    curtainwall:    { low: 150, high: 350 },
+    window_wall:    { low: 80,  high: 150 },
+    eurowall:       { low: 200, high: 500 },
+    impact_windows: { low: 60,  high: 120 },
+    interior:       { low: 40,  high: 80  }
+  };
+
+  // ---- LOCATION METADATA ----
+  const LOCATION_META = {
+    se_fl: {
+      label: 'Southeast Florida (HVHZ)',
+      isHVHZ: true,
+      premium: { low: 0.15, high: 0.25 },
+      codeNote: 'High Velocity Hurricane Zone (HVHZ) — Miami-Dade NOA required for all glazing products.',
+      codes: [
+        'High Velocity Hurricane Zone (HVHZ) designation — Miami-Dade NOA required for all products',
+        'HVHZ: Minimum design wind speed 175 mph (3-second gust), FBC Chapter 16',
+        'HVHZ: Large missile impact testing required per TAS-201/202/203',
+        'Florida Building Code (FBC) 8th Edition — Energy code SHGC ≤ 0.25 for WWR > 40%',
+        'Miami-Dade Building Code Product Approval — Section 1714.5',
+        'Flood zone consideration — many SE FL sites require WISPs',
+        'ACG is fully approved for HVHZ work with current product approvals on file'
+      ]
+    },
+    treasure_coast: {
+      label: 'Treasure Coast',
+      isHVHZ: false,
+      premium: { low: 0, high: 0 },
+      codeNote: 'Wind-borne debris region. Impact-rated or protected glazing required per FBC.',
+      codes: [
+        'Wind-borne debris region — impact protection or impact-rated glazing required within 1 mile of coast',
+        'ASCE 7-22 design wind speeds: 140–160 mph (Martin, St. Lucie, Indian River)',
+        'Florida Building Code (FBC) 8th Edition — Commercial Energy Code ASHRAE 90.1-2019',
+        'Storm shutters acceptable alternative to impact glazing per FBC R301.2.1.2',
+        'Product approval per Florida Statute 553.842 required for all exterior glazing'
+      ]
+    },
+    sw_fl: {
+      label: 'Southwest Florida',
+      isHVHZ: false,
+      premium: { low: 0, high: 0 },
+      codeNote: 'Wind-borne debris region. Lee and Collier counties require NOA/product approval.',
+      codes: [
+        'Wind-borne debris region — impact-rated glazing required within 1 mile of coast and high-wind zones',
+        'ASCE 7-22 design wind speeds: 140–170 mph (Lee, Collier; higher in coastal zones)',
+        'Florida Building Code (FBC) 8th Edition — South Florida Building Code Chapter 16 applies to Collier',
+        'Collier County: additional AHJ review for coastal construction setbacks',
+        'Florida Product Approval per FS 553.842 — FL# number required on all submittals'
+      ]
+    },
+    tampa_bay: {
+      label: 'Tampa Bay',
+      isHVHZ: false,
+      premium: { low: 0, high: 0 },
+      codeNote: 'Wind-borne debris region applies to coastal areas. FBC commercial energy code.',
+      codes: [
+        'Wind-borne debris region — coastal parcels require impact-rated or protected glazing',
+        'ASCE 7-22 design wind speeds: 120–140 mph (Hillsborough, Pinellas, Pasco)',
+        'Florida Building Code (FBC) 8th Edition — Commercial Chapter 13 Energy Code',
+        'Pinellas County: coastal construction control line considerations for beachfront sites',
+        'Florida Product Approval FS 553.842 — FL# required on all exterior glazing submittals'
+      ]
+    },
+    central_fl: {
+      label: 'Central Florida',
+      isHVHZ: false,
+      premium: { low: 0, high: 0 },
+      codeNote: 'Inland — standard FBC wind requirements. HVHZ does not apply.',
+      codes: [
+        'Non-HVHZ jurisdiction — standard FBC 8th Edition wind requirements apply',
+        'ASCE 7-22 design wind speeds: 115–130 mph (inland; higher near coast)',
+        'Florida Building Code (FBC) — ASHRAE 90.1-2019 commercial energy standard',
+        'Orange County: product approval required, FL# on all exterior glazing submittals',
+        'Standard ASTM E1300 structural glass design required for all projects'
+      ]
+    },
+    ne_fl: {
+      label: 'Northeast Florida',
+      isHVHZ: false,
+      premium: { low: 0, high: 0 },
+      codeNote: 'Coastal areas are wind-borne debris regions. FBC 8th Edition applies.',
+      codes: [
+        'Wind-borne debris region — coastal and near-coastal parcels require impact protection',
+        'ASCE 7-22 design wind speeds: 120–140 mph (Duval, St. Johns coastal zones)',
+        'Florida Building Code (FBC) 8th Edition — statewide commercial code',
+        'Duval County: AHJ product approval process; Florida Product Approval FS 553.842',
+        'Flood Zone compliance per FEMA FIRM maps — coastal construction setback verification'
+      ]
+    },
+    panhandle: {
+      label: 'Florida Panhandle',
+      isHVHZ: false,
+      premium: { low: 0, high: 0 },
+      codeNote: 'Wind-borne debris designation applies in coastal areas. Escambia / Bay / Okaloosa.',
+      codes: [
+        'Wind-borne debris region — coastal areas require impact-rated or protected glazing',
+        'ASCE 7-22 design wind speeds: 120–150 mph (panhandle coastal; Escambia higher)',
+        'Florida Building Code (FBC) 8th Edition — standard commercial requirements',
+        'Bay County (Panama City area): additional post-Michael requirements for 160+ mph wind design',
+        'Florida Product Approval per FS 553.842 required for all exterior glazing'
+      ]
+    },
+    keys: {
+      label: 'Florida Keys (HVHZ)',
+      isHVHZ: true,
+      premium: { low: 0.20, high: 0.30 },
+      codeNote: 'Monroe County — HVHZ designation with some of Florida\'s most stringent requirements.',
+      codes: [
+        'High Velocity Hurricane Zone (HVHZ) — Monroe County; most stringent glazing requirements in FL',
+        'HVHZ: Miami-Dade NOA required for all exterior glazing products',
+        'HVHZ: Minimum design wind speed 185–200 mph (3-second gust) in lower Keys',
+        'Coastal construction control line (CCCL) review required for all oceanfront projects',
+        'Florida Keys: additional flood zone considerations; finished floor elevations per FEMA BFE',
+        'Monroe County AHJ: additional review cycle for HVHZ product approvals'
+      ]
+    }
+  };
+
+  // ---- SYSTEM RECOMMENDATION LOGIC ----
+  function recommendSystem() {
+    const { projectType, glassSF, computedGlassSF, location, requirements, systemType } = state;
+    if (systemType && systemType !== 'recommend') return systemType;
+
+    // Healthcare → fire-rated + storefront
+    if (projectType === 'healthcare') return 'storefront';
+    // Restaurant / hospitality → Eurowall for indoor/outdoor potential
+    if (projectType === 'hospitality') return 'eurowall';
+    // Multifamily → impact windows
+    if (projectType === 'multifamily') return 'impact_windows';
+    // Large SF or multi-story indicators
+    const sf = computedGlassSF || glassSF;
+    if (sf > 15000) return 'curtainwall';
+    if (sf > 6000) return 'window_wall';
+    // Retail, office, industrial, government, senior default to storefront
+    return 'storefront';
+  }
+
+  const SYSTEM_META = {
+    storefront: {
+      name: 'Commercial Storefront System',
+      desc: 'Aluminum storefront framing with thermally broken profiles. Ideal for single-story and low-rise commercial applications. ACG installs Kawneer 350/451T and YKK AP systems. Integrates with automatic entrances, sidelites, and transoms.',
+      mfr: 'Kawneer, YKK AP',
+      mfrDesc: 'ACG primarily specifies Kawneer 350/451T storefront and YKK AP 500/700 Series for commercial storefronts — both with current FL Product Approvals and established Miami-Dade NOAs for HVHZ applications.'
+    },
+    curtainwall: {
+      name: 'Curtainwall System',
+      desc: 'High-performance curtainwall for multi-story and large-span applications. Full structural coordination with building envelope. ACG installs Kawneer 1600 Wall System and YKK AP CW-300 Series. Engineered for Florida wind loads.',
+      mfr: 'Kawneer, YKK AP',
+      mfrDesc: 'ACG specifies Kawneer 1600 Wall System II and YKK AP Unitized Curtainwall for large-scale glazing envelopes. Both systems carry extensive Florida Product Approvals and meet ASCE 7-22 wind load requirements for all Florida wind zones.'
+    },
+    window_wall: {
+      name: 'Window Wall System',
+      desc: 'Floor-to-floor window wall providing high glass-to-floor ratios with simplified installation coordination. ACG specifies YKK AP Window Wall and Kawneer 1600UT for mid-rise multifamily, hospitality, and office projects.',
+      mfr: 'YKK AP, Kawneer',
+      mfrDesc: 'ACG specifies YKK AP Window Wall Series and Kawneer 1600UT for window wall applications. These systems offer excellent thermal performance (U ≤ 0.40) and are pre-engineered for Florida wind loads up to 175 mph.'
+    },
+    eurowall: {
+      name: 'Sliding / Bi-fold (Eurowall) System',
+      desc: 'Multi-slide and bi-fold door systems for indoor/outdoor living and hospitality applications. ACG specifies NanaWall and Western Window Systems. Available with impact-rated laminated glass for Florida applications.',
+      mfr: 'NanaWall, Western Window Systems',
+      mfrDesc: 'ACG specifies NanaWall SL70 and Western Window Systems MSLW for multi-slide door systems. Both carry HVHZ product approvals for applicable configurations, with SHGC options meeting FBC energy requirements.'
+    },
+    impact_windows: {
+      name: 'Impact Windows & Doors',
+      desc: 'HVHZ-rated PGT Winguard, CGI, or aluminum storefront impact systems for residential and multifamily applications. All products carry Miami-Dade NOA or Florida Product Approval.',
+      mfr: 'PGT, CGI, Kawneer',
+      mfrDesc: 'ACG specifies PGT Winguard Series, CGI Series 50/55 and Kawneer impact storefront for impact window and door applications. All carry current Miami-Dade NOA or statewide FL Product Approvals with current ACG installer credentials on file.'
+    },
+    interior: {
+      name: 'Interior Glass System',
+      desc: 'Frameless and framed interior glass partitions, storefronts, and specialty applications. ACG installs CRL (C.R. Laurence), Dorma Glas, and standard storefront systems for interior glazing scopes.',
+      mfr: 'CRL, Dorma Glas, Kawneer',
+      mfrDesc: 'ACG specifies CRL frameless glass systems, Dorma Glas partitions, and Kawneer storefront for interior glazing applications. Interior scopes include office fronts, conference rooms, lobby glass, and specialty frameless assemblies.'
+    }
+  };
+
+  // ---- COMPUTE GLASS SF ----
+  function computeGlassSF() {
+    const { sizeOption, glassSF, openings, buildingSF, projectType } = state;
+    if (sizeOption === 'a') return glassSF;
+    if (sizeOption === 'b' && openings) {
+      // Average ~30 SF per commercial opening
+      const avgPerOpening = projectType === 'multifamily' ? 25 : (projectType === 'curtainwall' ? 40 : 30);
+      return openings * 30;
+    }
+    if (sizeOption === 'c' && buildingSF) {
+      // Glass ratio: retail 12%, office 10%, hospitality 12%, healthcare 8%, multifamily 8%, industrial 5%, government 9%
+      const ratios = { retail: 0.12, office: 0.10, hospitality: 0.12, healthcare: 0.08, multifamily: 0.08, industrial: 0.05, government: 0.09, seniorliving: 0.09 };
+      const ratio = ratios[projectType] || 0.10;
+      return Math.round(buildingSF * ratio);
+    }
+    return glassSF;
+  }
+
+  // ---- LOCATION CODE INFO ----
+  const LOCATION_CODES = LOCATION_META;
+
+  function onLocationChange() {
+    const val = document.getElementById('location-select').value;
+    const box = document.getElementById('code-preview-box');
+    if (val && LOCATION_CODES[val]) {
+      const meta = LOCATION_CODES[val];
+      document.getElementById('code-preview-label').textContent = meta.isHVHZ ? 'HVHZ Zone Detected' : 'Code Note';
+      document.getElementById('code-preview-text').textContent = meta.codeNote;
+      box.classList.add('visible');
+    } else {
+      box.classList.remove('visible');
+    }
+  }
+
+  // ---- TIMELINE LOGIC ----
+  function buildTimeline(systemKey, sf) {
+    const phases = [
+      { name: 'Submittals', min: 2, max: 3 },
+      { name: 'Shop Drawings', min: 2, max: 4 },
+      { name: 'Fabrication', min: systemKey === 'curtainwall' ? 8 : 4, max: systemKey === 'curtainwall' ? 12 : 8 },
+      { name: 'Installation', min: Math.ceil(sf / 1500), max: Math.ceil(sf / 800) },
+      { name: 'Punch / Closeout', min: 1, max: 2 }
+    ];
+    const totalMin = phases.reduce((a, p) => a + p.min, 0);
+    const totalMax = phases.reduce((a, p) => a + p.max, 0);
+    return { phases, totalMin, totalMax };
+  }
+
+  // ---- CASE STUDIES ----
+  const CASE_STUDIES = {
+    retail: [
+      { name: 'Baron Shoppes at Tradition', type: 'Retail Storefront', loc: 'Port St. Lucie, FL', url: 'baron-shoppes-tradition.html', img: 'images/projects/baron-shoppes/hero.jpg' },
+      { name: 'Shoppes at Westlake Point', type: 'Retail Storefront', loc: 'Loxahatchee, FL', url: 'shoppes-westlake-point.html', img: 'images/projects/shoppes-westlake-point/hero.jpg' },
+      { name: 'KLUS Lighting — Vero Beach', type: 'Commercial Storefront', loc: 'Vero Beach, FL', url: 'klus-lighting-vero-beach.html', img: 'images/projects/klus-lighting/hero.jpg' }
+    ],
+    multifamily: [
+      { name: 'Bradley Daytona', type: 'Multifamily Window Wall', loc: 'Daytona Beach, FL', url: 'bradley-daytona.html', img: 'images/projects/bradley-daytona/hero.jpg' },
+      { name: 'Lucie at Tradition', type: 'Multifamily Windows', loc: 'Port St. Lucie, FL', url: 'lucie-at-tradition.html', img: 'images/projects/lucie-at-tradition/hero.jpg' },
+      { name: 'Imperial Crossings', type: 'Multifamily Storefront', loc: 'Bonita Springs, FL', url: 'imperial-crossings-bonita-springs.html', img: 'images/projects/imperial-crossings/hero.jpg' }
+    ],
+    hospitality: [
+      { name: "Waxin's — West Palm Beach", type: 'Hospitality Eurowall', loc: 'West Palm Beach, FL', url: 'waxins-west-palm-beach.html', img: 'images/projects/waxins/hero.jpg' },
+      { name: 'Gulf Harbour Country Club', type: 'Hospitality Glazing', loc: 'Fort Myers, FL', url: 'gulf-harbour-country-club.html', img: 'images/projects/gulf-harbour/hero.jpg' },
+      { name: 'Ocean Prime — Fort Lauderdale', type: 'Restaurant Glazing', loc: 'Fort Lauderdale, FL', url: 'ocean-prime-ft-lauderdale.html', img: 'images/projects/ocean-prime/hero.jpg' }
+    ],
+    healthcare: [
+      { name: 'HCA Cape Coral Emergency', type: 'Healthcare Glazing', loc: 'Cape Coral, FL', url: 'hca-cape-coral-emergency.html', img: 'images/projects/hca-cape-coral/hero.jpg' },
+      { name: 'Ginsberg Eye Center', type: 'Medical Office', loc: 'Florida', url: 'ginsberg-eye-center.html', img: 'images/projects/ginsberg-eye/hero.jpg' },
+      { name: 'Aspen Dental — Edgewater', type: 'Medical Retail', loc: 'Edgewater, FL', url: 'aspen-dental-edgewater.html', img: 'images/projects/aspen-dental/hero.jpg' }
+    ],
+    government: [
+      { name: 'Cudjoe Key Fire Station', type: 'Government HVHZ', loc: 'Cudjoe Key, FL', url: 'cudjoe-key-fire-station.html', img: 'images/projects/cudjoe-key/hero.jpg' },
+      { name: 'Haines City EOC', type: 'Emergency Operations', loc: 'Haines City, FL', url: 'city-of-haines-emergency.html', img: 'images/projects/haines-city-eoc/hero.jpg' },
+      { name: 'Turbine Technologies', type: 'Institutional', loc: 'Jupiter, FL', url: 'turbine-technologies-jupiter.html', img: 'images/projects/turbine-technologies/hero.jpg' }
+    ],
+    office: [
+      { name: 'Lake Park Innovation Center', type: 'Office / Commercial', loc: 'Lake Park, FL', url: 'lake-park-innovation-center.html', img: 'images/projects/lake-park/hero.jpg' },
+      { name: '2143 Carib Circle', type: 'Office Storefront', loc: 'Florida', url: '2143-carib-circle.html', img: 'images/projects/2143-carib/hero.jpg' },
+      { name: 'Atlantic Fields Performance Center', type: 'Commercial Glazing', loc: 'Hobe Sound, FL', url: 'atlantic-fields-performance-center.html', img: 'images/projects/atlantic-fields-performance/hero.jpg' }
+    ],
+    seniorliving: [
+      { name: 'Siena Lakes — Naples', type: 'Senior Living / CCRC', loc: 'Naples, FL', url: 'siena-lakes-naples.html', img: 'images/projects/siena-lakes/hero.jpg' },
+      { name: 'Illumina — Fort Myers', type: 'Senior Living', loc: 'Fort Myers, FL', url: 'illumina-fort-myers.html', img: 'images/projects/illumina/hero.jpg' },
+      { name: 'Gulfside Twelve', type: 'Senior Multifamily', loc: 'Florida', url: 'gulfside-twelve.html', img: 'images/projects/gulfside-twelve/hero.jpg' }
+    ],
+    industrial: [
+      { name: 'Hardy World — Melbourne', type: 'Industrial Storefront', loc: 'Melbourne, FL', url: 'hardy-world-melbourne.html', img: 'images/projects/hardy-world/hero.jpg' },
+      { name: 'Medley Business Park', type: 'Industrial / Warehouse', loc: 'Medley, FL', url: 'medley-business-park.html', img: 'images/projects/medley-business-park/hero.jpg' },
+      { name: 'CubeSmart — Davie', type: 'Industrial Storefront', loc: 'Davie, FL', url: 'cubesmart-davie.html', img: 'images/projects/cubesmart/hero.jpg' }
+    ]
+  };
+
+  // ---- PROJECT TYPE CARD SELECTION ----
+  document.querySelectorAll('.se-type-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.se-type-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      state.projectType = card.dataset.value;
+      state.projectTypeLabel = card.dataset.label;
+      document.getElementById('val-1').classList.remove('show');
+    });
+  });
+
+  // ---- SYSTEM CARD SELECTION ----
+  document.querySelectorAll('.se-system-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.se-system-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      state.systemType = card.dataset.value;
+    });
+  });
+
+  // ---- REQUIREMENT CHECKBOX SELECTION ----
+  document.querySelectorAll('.se-checkbox-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const val = item.dataset.value;
+      if (val === 'none') {
+        // Deselect all others
+        document.querySelectorAll('.se-checkbox-item').forEach(i => i.classList.remove('selected'));
+        item.classList.add('selected');
+        state.requirements = ['none'];
+      } else {
+        // Remove 'none' if it's selected
+        const noneItem = document.querySelector('.se-checkbox-item[data-value="none"]');
+        if (noneItem) noneItem.classList.remove('selected');
+        state.requirements = state.requirements.filter(r => r !== 'none');
+
+        if (item.classList.contains('selected')) {
+          item.classList.remove('selected');
+          state.requirements = state.requirements.filter(r => r !== val);
+        } else {
+          item.classList.add('selected');
+          state.requirements.push(val);
+        }
+      }
+    });
+  });
+
+  // ---- SLIDER ----
+  const slider = document.getElementById('glass-sf-slider');
+  const sliderDisplay = document.getElementById('slider-display');
+
+  slider.addEventListener('input', () => {
+    const val = parseInt(slider.value);
+    state.glassSF = val;
+    sliderDisplay.textContent = val >= 50000 ? '50,000+' : val.toLocaleString();
+    // Update slider fill
+    const pct = ((val - 500) / (50000 - 500)) * 100;
+    slider.style.background = `linear-gradient(to right, #E11320 0%, #E11320 ${pct}%, rgba(255,255,255,0.1) ${pct}%, rgba(255,255,255,0.1) 100%)`;
+  });
+
+  // Init slider fill
+  slider.style.background = `linear-gradient(to right, #E11320 0%, #E11320 4%, rgba(255,255,255,0.1) 4%, rgba(255,255,255,0.1) 100%)`;
+
+  // ---- SIZE OPTION SELECTION ----
+  function selectSizeOption(opt) {
+    state.sizeOption = opt;
+    ['a', 'b', 'c'].forEach(o => {
+      document.getElementById(`radio-${o}`).classList.remove('checked');
+      document.getElementById(`size-opt-${o}`).classList.remove('active-option');
+    });
+    document.getElementById(`radio-${opt}`).classList.add('checked');
+    document.getElementById(`size-opt-${opt}`).classList.add('active-option');
+
+    document.getElementById('slider-section').style.display = opt === 'a' ? 'block' : 'none';
+    document.getElementById('openings-section').style.display = opt === 'b' ? 'block' : 'none';
+    document.getElementById('building-section').style.display = opt === 'c' ? 'block' : 'none';
+  }
+
+  // ---- STEP NAVIGATION ----
+  function showStep(n) {
+    // Hide all
+    document.querySelectorAll('.se-step-panel').forEach(p => {
+      p.classList.remove('active', 'visible');
+    });
+    document.getElementById('results-panel').classList.remove('active', 'visible');
+
+    // Update progress
+    document.querySelectorAll('.se-progress-step').forEach(s => {
+      const sn = parseInt(s.dataset.step);
+      s.classList.remove('active', 'done');
+      if (sn < n) s.classList.add('done');
+      if (sn === n) s.classList.add('active');
+    });
+
+    state.currentStep = n;
+
+    if (n <= 5) {
+      const panel = document.getElementById(`step-${n}`);
+      panel.classList.add('active');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          panel.classList.add('visible');
+        });
+      });
+    }
+
+    // Scroll to top of engine
+    document.querySelector('.se-header').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function nextStep(from) {
+    // Validation
+    if (from === 1) {
+      if (!state.projectType) {
+        document.getElementById('val-1').classList.add('show');
+        return;
+      }
+    }
+    if (from === 2) {
+      const sf = computeGlassSF();
+      if (!sf || sf < 1) {
+        document.getElementById('val-2').classList.add('show');
+        return;
+      }
+      state.computedGlassSF = sf;
+      document.getElementById('val-2').classList.remove('show');
+    }
+    if (from === 3) {
+      const loc = document.getElementById('location-select').value;
+      if (!loc) {
+        document.getElementById('val-3').classList.add('show');
+        return;
+      }
+      state.location = loc;
+      state.locationLabel = LOCATION_META[loc].label;
+      document.getElementById('val-3').classList.remove('show');
+    }
+    showStep(from + 1);
+  }
+
+  function prevStep(from) {
+    showStep(from - 1);
+  }
+
+  // ---- ANALYZING ANIMATION ----
+  function runAnalyzing() {
+    return new Promise(resolve => {
+      const overlay = document.getElementById('analyzing-overlay');
+      const bar = document.getElementById('analyzing-bar');
+      overlay.classList.add('active');
+
+      const steps = ['astep-1', 'astep-2', 'astep-3', 'astep-4', 'astep-5'];
+      let progress = 0;
+      let stepIndex = 0;
+
+      const interval = setInterval(() => {
+        progress += 2;
+        bar.style.width = `${Math.min(progress, 100)}%`;
+
+        if (progress === 20) document.getElementById(steps[0]).classList.add('done');
+        if (progress === 40) document.getElementById(steps[1]).classList.add('done');
+        if (progress === 60) document.getElementById(steps[2]).classList.add('done');
+        if (progress === 80) document.getElementById(steps[3]).classList.add('done');
+        if (progress === 95) document.getElementById(steps[4]).classList.add('done');
+
+        if (progress >= 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            overlay.classList.remove('active');
+            // Reset steps for next run
+            steps.forEach(s => document.getElementById(s).classList.remove('done'));
+            bar.style.width = '0';
+            resolve();
+          }, 400);
+        }
+      }, 30);
+    });
+  }
+
+  // ---- NUMBER ANIMATION ----
+  function animateNumber(el, target, prefix = '$', duration = 800) {
+    const startTime = performance.now();
+    const start = 0;
+
+    function formatNum(n) {
+      if (n >= 1000000) return `${prefix}${(n / 1000000).toFixed(1)}M`;
+      if (n >= 1000) return `${prefix}${Math.round(n / 1000) * 1000 >= 1000000 ? (n/1000000).toFixed(1)+'M' : Math.round(n).toLocaleString()}`;
+      return `${prefix}${Math.round(n).toLocaleString()}`;
+    }
+
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = start + (target - start) * eased;
+      el.textContent = formatNum(current);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // ---- TIMELINE RENDER ----
+  function renderTimeline(systemKey, sf) {
+    const { phases, totalMin, totalMax } = buildTimeline(systemKey, sf);
+    const container = document.getElementById('timeline-phases');
+    container.innerHTML = '';
+
+    const maxVal = Math.max(...phases.map(p => p.max));
+
+    phases.forEach((phase, i) => {
+      const el = document.createElement('div');
+      el.className = 'se-timeline-phase';
+      const barPct = (phase.max / maxVal) * 100;
+      el.innerHTML = `
+        <div class="se-phase-name">${phase.name}</div>
+        <div class="se-phase-bar-wrap">
+          <div class="se-phase-bar" data-pct="${barPct}" style="width:0%"></div>
+        </div>
+        <div class="se-phase-weeks">${phase.min}–${phase.max}w</div>
+      `;
+      container.appendChild(el);
+    });
+
+    document.getElementById('timeline-total').textContent = `${totalMin}–${totalMax} weeks`;
+
+    // Animate bars
+    setTimeout(() => {
+      container.querySelectorAll('.se-phase-bar').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }, 200);
+  }
+
+  // ---- CASE STUDY RENDER ----
+  function renderCaseStudies(projectType) {
+    const studies = CASE_STUDIES[projectType] || CASE_STUDIES.office;
+    const container = document.getElementById('similar-projects');
+    container.innerHTML = '';
+
+    studies.slice(0, 3).forEach(study => {
+      const a = document.createElement('a');
+      a.className = 'se-project-card';
+      a.href = study.url;
+      a.innerHTML = `
+        <img class="se-project-img" src="${study.img}" alt="${study.name}" onerror="this.style.background='#111E30';this.style.height='140px';" loading="lazy">
+        <div class="se-project-body">
+          <div class="se-project-type">${study.type}</div>
+          <div class="se-project-name">${study.name}</div>
+          <div class="se-project-loc">${study.loc}</div>
+        </div>
+      `;
+      container.appendChild(a);
+    });
+  }
+
+  // ---- COST CALCULATION ----
+  function calculateCost(systemKey, sf, location, requirements, projectType) {
+    const base = COST_DATA[systemKey] || COST_DATA.storefront;
+    let lowMultiplier = 1;
+    let highMultiplier = 1;
+
+    // Location premium (HVHZ)
+    const locMeta = LOCATION_META[location];
+    if (locMeta && locMeta.isHVHZ) {
+      lowMultiplier += locMeta.premium.low;
+      highMultiplier += locMeta.premium.high;
+    }
+
+    // Requirement premiums
+    if (requirements.includes('fire_rated')) {
+      lowMultiplier += 0.40;
+      highMultiplier += 0.60;
+    }
+    if (requirements.includes('blast')) {
+      lowMultiplier += 0.25;
+      highMultiplier += 0.40;
+    }
+
+    // Project type overhead
+    if (projectType === 'healthcare' || projectType === 'government') {
+      lowMultiplier += 0.10;
+      highMultiplier += 0.15;
+    }
+
+    const lowPSF = base.low * lowMultiplier;
+    const highPSF = base.high * highMultiplier;
+
+    return {
+      lowTotal: Math.round(lowPSF * sf),
+      highTotal: Math.round(highPSF * sf),
+      lowPSF: Math.round(lowPSF),
+      highPSF: Math.round(highPSF)
+    };
+  }
+
+  // ---- RENDER RESULTS ----
+  async function runEngine() {
+    // Collect final state
+    state.computedGlassSF = computeGlassSF();
+    state.location = document.getElementById('location-select').value || state.location;
+
+    // Run analyzing animation
+    await runAnalyzing();
+
+    // Determine system
+    const systemKey = recommendSystem();
+    const systemMeta = SYSTEM_META[systemKey] || SYSTEM_META.storefront;
+
+    // Cost
+    const sf = state.computedGlassSF;
+    const cost = calculateCost(systemKey, sf, state.location, state.requirements, state.projectType);
+
+    // Show results panel
+    document.querySelectorAll('.se-step-panel').forEach(p => p.classList.remove('active', 'visible'));
+    document.querySelectorAll('.se-progress-step').forEach(s => {
+      const n = parseInt(s.dataset.step);
+      s.classList.remove('active', 'done');
+      if (n < 6) s.classList.add('done');
+      if (n === 6) s.classList.add('active');
+    });
+
+    const panel = document.getElementById('results-panel');
+    panel.classList.add('active');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        panel.classList.add('visible');
+      });
+    });
+
+    // Fill results header
+    document.getElementById('res-type-label').textContent = state.projectTypeLabel || 'Commercial Project';
+    document.getElementById('res-location-label').textContent = state.locationLabel || 'Florida';
+    document.getElementById('res-sf-label').textContent = sf.toLocaleString();
+    document.getElementById('res-psf-label').textContent = `$${cost.lowPSF}–$${cost.highPSF}/SF`;
+
+    // Animate cost numbers
+    animateNumber(document.getElementById('cost-low'), cost.lowTotal);
+    animateNumber(document.getElementById('cost-high'), cost.highTotal);
+
+    // System
+    document.getElementById('res-system-name').textContent = systemMeta.name;
+    document.getElementById('res-system-desc').textContent = systemMeta.desc;
+    document.getElementById('res-mfr-name').textContent = systemMeta.mfr;
+    document.getElementById('res-mfr-desc').textContent = systemMeta.mfrDesc;
+
+    // Timeline
+    renderTimeline(systemKey, sf);
+
+    // Code requirements
+    const locMeta = LOCATION_META[state.location] || LOCATION_META['treasure_coast'];
+    const codeContainer = document.getElementById('code-items');
+    codeContainer.innerHTML = '';
+    locMeta.codes.forEach(code => {
+      const el = document.createElement('div');
+      el.className = 'se-code-item';
+      el.textContent = code;
+      codeContainer.appendChild(el);
+    });
+
+    // Case studies
+    renderCaseStudies(state.projectType);
+
+    // Scroll to results
+    document.querySelector('.se-header').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ---- RESTART ----
+  function restartEngine() {
+    state.currentStep = 1;
+    state.projectType = null;
+    state.projectTypeLabel = null;
+    state.sizeOption = 'a';
+    state.glassSF = 2500;
+    state.openings = null;
+    state.buildingSF = null;
+    state.computedGlassSF = 2500;
+    state.location = null;
+    state.locationLabel = null;
+    state.requirements = [];
+    state.systemType = 'recommend';
+
+    // Reset UI
+    document.querySelectorAll('.se-type-card').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.se-checkbox-item').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.se-system-card').forEach(c => c.classList.remove('selected'));
+    document.querySelector('.se-system-card[data-value="recommend"]').classList.add('selected');
+    document.getElementById('location-select').value = '';
+    document.getElementById('code-preview-box').classList.remove('visible');
+    document.getElementById('glass-sf-slider').value = 2500;
+    document.getElementById('slider-display').textContent = '2,500';
+    slider.style.background = `linear-gradient(to right, #E11320 0%, #E11320 4%, rgba(255,255,255,0.1) 4%, rgba(255,255,255,0.1) 100%)`;
+
+    document.getElementById('results-panel').classList.remove('active', 'visible');
+
+    showStep(1);
+  }
+
+  // ---- OPENINGS INPUT ----
+  document.getElementById('openings-input').addEventListener('input', (e) => {
+    state.openings = parseInt(e.target.value) || null;
+  });
+
+  document.getElementById('building-input').addEventListener('input', (e) => {
+    state.buildingSF = parseInt(e.target.value.replace(/,/g, '')) || null;
+  });
+
+  // ---- INIT ----
+  // Show step 1
+  document.getElementById('step-1').classList.add('active');
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('step-1').classList.add('visible');
+    });
+  });
+
+  </script>
+
+<script>(function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();</script>
+</body>
+</html>
