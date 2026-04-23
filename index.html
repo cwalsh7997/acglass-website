@@ -93,8 +93,8 @@
       "Commercial glazing", "Curtain wall systems", "Storefront installation", "Impact windows and doors",
       "HVHZ compliance", "Miami-Dade NOA", "TAS 201", "TAS 202", "TAS 203", "Florida Building Code Chapter 16",
       "ESWindows ES-8000", "ESWindows ES-9000", "ESWindows SGD2020", "ESWindows GW-7000",
-      "Euro-Wall SGD2020", "Euro-Wall arched storefront", "PGT impact windows", "YKK AP systems",
-      "Trulite curtain wall", "Vitro Solarban glass", "Allegion automatic entrances",
+      "Euro-Wall SGD2020", "Euro-Wall arched storefront", "PGT impact windows", 
+      "Allegion automatic entrances", "TGP fire-rated glazing", "Slimpact impact windows",
       "Hurricane-rated glazing", "Post-Ian rebuild", "Post-Milton rebuild",
       "Division 08 scope", "Commercial submittals", "AI-managed lean operations"
     ],
@@ -161,7 +161,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img">
+        <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
       </a>
 
       <div class="nav-links">
@@ -209,16 +209,17 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero">
+    <link rel="preload" as="image" href="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp" type="image/webp" fetchpriority="high">
     <div class="hero-bg" id="heroFilmstrip">
-      <!-- Filmstrip: 8 flagship projects, rotating with Ken Burns zoom -->
-      <div class="hs-slide is-active"><picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp"><img src="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale &mdash; twilight waterfront" style="object-position:center 50%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/gulfside-twelve/hero-twilight-beachfront.webp"><img src="images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve Fort Myers Beach at twilight" style="object-position:center 50%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/panther-national/aerial-golf-course.webp"><img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National Clubhouse aerial" style="object-position:center 55%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/eau-palm-beach/aerial-resort.webp"><img src="images/projects/eau-palm-beach/aerial-resort.jpg" alt="Eau Palm Beach Resort" style="object-position:center 50%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/card-golden-hour.webp"><img src="images/projects/atlantic-fields-golf-house/card-golden-hour.jpg" alt="Atlantic Fields Golf House" style="object-position:center 50%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/wild-blue-clubhouse-hero.webp"><img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside" style="object-position:center 50%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.webp"><img src="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.jpg" alt="Cudjoe Key Fire Station at twilight" style="object-position:center 50%;"></picture></div>
-      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.webp"><img src="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.jpg" alt="Haines City Emergency Operations Center" style="object-position:center 50%;"></picture></div>
+      <!-- Filmstrip: LCP slide eagerly preloaded, rest lazy-loaded after first paint -->
+      <div class="hs-slide is-active"><picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp"><img src="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale — twilight waterfront with Euro-Wall glazing by ACG" width="2000" height="1125" fetchpriority="high" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide" data-src-webp="images/projects/gulfside-twelve/hero-twilight-beachfront.webp" data-src-jpg="images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" data-alt="Gulfside Twelve Fort Myers Beach at twilight"></div>
+      <div class="hs-slide" data-src-webp="images/projects/panther-national/aerial-golf-course.webp" data-src-jpg="images/projects/panther-national/aerial-golf-course.jpg" data-alt="Panther National Clubhouse aerial"></div>
+      <div class="hs-slide" data-src-webp="images/projects/eau-palm-beach/aerial-resort.webp" data-src-jpg="images/projects/eau-palm-beach/aerial-resort.jpg" data-alt="Eau Palm Beach Resort"></div>
+      <div class="hs-slide" data-src-webp="images/projects/atlantic-fields-golf-house/card-golden-hour.webp" data-src-jpg="images/projects/atlantic-fields-golf-house/card-golden-hour.jpg" data-alt="Atlantic Fields Golf House"></div>
+      <div class="hs-slide" data-src-webp="images/projects/wild-blue-clubhouse-hero.webp" data-src-jpg="images/projects/wild-blue-clubhouse-hero.jpg" data-alt="Wild Blue at Waterside"></div>
+      <div class="hs-slide" data-src-webp="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.webp" data-src-jpg="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.jpg" data-alt="Cudjoe Key Fire Station at twilight"></div>
+      <div class="hs-slide" data-src-webp="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.webp" data-src-jpg="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.jpg" data-alt="Haines City Emergency Operations Center"></div>
     </div>
 
     <style>
@@ -232,14 +233,36 @@
     </style>
     <script>
     (function(){
-      var slides = document.querySelectorAll('#heroFilmstrip .hs-slide');
+      var slides = Array.prototype.slice.call(document.querySelectorAll('#heroFilmstrip .hs-slide'));
       if (slides.length < 2) return;
+      // Lazy-hydrate slides 2..N after first paint to keep initial page weight minimal
+      function hydrate(slide){
+        if (slide.dataset.hydrated) return;
+        var webp = slide.getAttribute('data-src-webp');
+        var jpg = slide.getAttribute('data-src-jpg');
+        var alt = slide.getAttribute('data-alt') || '';
+        var p = document.createElement('picture');
+        p.innerHTML = '<source type="image/webp" srcset="'+webp+'"><img src="'+jpg+'" alt="'+alt+'" width="2000" height="1125" loading="lazy" style="object-position:center 50%;">';
+        slide.appendChild(p);
+        slide.dataset.hydrated = '1';
+      }
+      // Hydrate slide 2 immediately, and the rest on idle
+      if (slides[1]) hydrate(slides[1]);
+      function idleHydrate(){
+        for (var i = 2; i < slides.length; i++) hydrate(slides[i]);
+      }
+      if (window.requestIdleCallback) requestIdleCallback(idleHydrate, { timeout: 3000 });
+      else setTimeout(idleHydrate, 1500);
+
       var cur = 0, playing = true, duration = 6500;
       function next(){
         if (!playing) return;
         slides[cur].classList.remove('is-active');
         cur = (cur+1) % slides.length;
         slides[cur].classList.add('is-active');
+        // Ensure upcoming slide is hydrated
+        var upcoming = slides[(cur+1) % slides.length];
+        if (upcoming) hydrate(upcoming);
       }
       var timer = setInterval(next, duration);
       document.addEventListener('visibilitychange', function(){
@@ -552,7 +575,7 @@
         </a>
       </div>
       <div class="service-detail-visual">
-        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/hero-elevation.webp"><img src="images/projects/atlantic-fields-golf-house/hero-elevation.jpg" alt="ACG commercial glazing — Atlantic Fields Golf House, Hobe Sound FL" style="object-position:center 40%;"></picture>
+        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/hero-elevation.webp"><img src="images/projects/atlantic-fields-golf-house/hero-elevation.jpg" alt="ACG commercial glazing — Atlantic Fields Golf House, Hobe Sound FL" style="object-position:center 40%;" loading="lazy" decoding="async"></picture>
       </div>
     </div>
   </section>
@@ -782,7 +805,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img">
+            <img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
           </a>
           <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
         </div>
