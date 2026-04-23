@@ -27,12 +27,12 @@ One quick ask: if ACG hit the mark on the glazing scope, would you mind leaving 
 
 Here's the direct link — takes about 90 seconds:
 
-[ACG West Palm Beach Google Review Link]
-https://g.page/r/[YOUR_WPB_GBP_REVIEW_LINK]/review
+**ACG West Palm Beach (HQ) — primary link:**
+https://search.google.com/local/writereview?placeid=ChIJT6EKF8pECOURYaNbVLnjzAo
 
 (Or the Naples / Tampa location if that's closer to the job:)
-- Naples: https://g.page/r/[YOUR_NAPLES_GBP_REVIEW_LINK]/review
-- Tampa: https://g.page/r/[YOUR_TAMPA_GBP_REVIEW_LINK]/review
+- **Naples:** https://search.google.com/local/writereview?placeid=ChIJowyx9n8Z24gRJad2VRNeFoI
+- **Tampa:** https://search.google.com/local/writereview?placeid=ChIJLRlp11DpwogRBRnCJot9iww
 
 If there's anything that didn't go the way you expected on this job, I'd rather hear about it direct before a review — just reply to this email and I'll make it right.
 
