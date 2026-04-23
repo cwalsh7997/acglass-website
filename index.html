@@ -209,10 +209,47 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <div class="hero-bg">
-      <!-- REPLACE: Full-screen project hero image -->
-      <picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale.webp"><img src="images/projects/ocean-prime-ft-lauderdale.jpg" alt="Ocean Prime Fort Lauderdale — two levels of floor-to-ceiling commercial glazing at dusk, ACG installation" style="object-position: center 30%;"></picture>
+    <div class="hero-bg" id="heroFilmstrip">
+      <!-- Filmstrip: 8 flagship projects, rotating with Ken Burns zoom -->
+      <div class="hs-slide is-active"><picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp"><img src="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale &mdash; twilight waterfront" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/gulfside-twelve/hero-twilight-beachfront.webp"><img src="images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve Fort Myers Beach at twilight" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/panther-national/aerial-golf-course.webp"><img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National Clubhouse aerial" style="object-position:center 55%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/eau-palm-beach/aerial-resort.webp"><img src="images/projects/eau-palm-beach/aerial-resort.jpg" alt="Eau Palm Beach Resort" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/card-golden-hour.webp"><img src="images/projects/atlantic-fields-golf-house/card-golden-hour.jpg" alt="Atlantic Fields Golf House" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/wild-blue-clubhouse-hero.webp"><img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.webp"><img src="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.jpg" alt="Cudjoe Key Fire Station at twilight" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide"><picture><source type="image/webp" srcset="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.webp"><img src="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.jpg" alt="Haines City Emergency Operations Center" style="object-position:center 50%;"></picture></div>
     </div>
+
+    <style>
+      .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+      .hs-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.4s cubic-bezier(.4,.14,.3,1),visibility 0s linear 1.4s}
+      .hs-slide.is-active{opacity:1;visibility:visible;transition:opacity 1.4s cubic-bezier(.4,.14,.3,1)}
+      .hs-slide picture,.hs-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+      .hs-slide img{transform:scale(1.04);transition:transform 11s linear}
+      .hs-slide.is-active img{transform:scale(1.14)}
+      @media (prefers-reduced-motion: reduce){.hs-slide img{transition:none;transform:scale(1)}.hs-slide.is-active img{transform:scale(1)}}
+    </style>
+    <script>
+    (function(){
+      var slides = document.querySelectorAll('#heroFilmstrip .hs-slide');
+      if (slides.length < 2) return;
+      var cur = 0, playing = true, duration = 6500;
+      function next(){
+        if (!playing) return;
+        slides[cur].classList.remove('is-active');
+        cur = (cur+1) % slides.length;
+        slides[cur].classList.add('is-active');
+      }
+      var timer = setInterval(next, duration);
+      document.addEventListener('visibilitychange', function(){
+        playing = !document.hidden;
+      });
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        playing = false; clearInterval(timer);
+      }
+    })();
+    </script>
     <div class="hero-overlay"></div>
 
     <div class="container">
@@ -761,7 +798,8 @@
             <a href="how-it-works.html">How It Works</a>
             <a href="faq.html">FAQ</a>
             <a href="blog.html">Blog</a>
-            <a href="manufacturers.html">Partners</a>
+            <a href="manufacturers.html">Manufacturer Partners</a>
+            <a href="division-08-scope.html">Division 08 Scope</a>
             <a href="acg-vs-competitors.html">ACG vs Competitors</a>
             <a href="ai-overview.html">ACG Overview</a>
             <a href="contact.html">Contact</a>
