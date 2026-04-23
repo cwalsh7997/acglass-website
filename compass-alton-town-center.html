@@ -154,8 +154,24 @@
 .nav-dropdown-menu a:hover{color:#fff !important}
 }
 </style>
+
+<style id="a11y-skip-style">
+.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
+.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
+*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
+</style>
+
+<style id="a11y-contrast-tweak">
+/* Lift low-contrast muted text to meet WCAG AA body copy threshold */
+.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
+/* Focus-visible outline already handled in skip-style */
+/* Ensure form inputs and buttons show focus */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
+</style>
 </head>
 <body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
@@ -183,6 +199,8 @@
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+  <main id="main-content">
+
 
   <section class="project-hero">
     <picture><source type="image/webp" srcset="images/projects/compass-alton/storefront.webp"><img src="images/projects/compass-alton/storefront.jpg" alt="Compass Real Estate at Alton Town Center — commercial storefront glazing by ACG" loading="lazy" decoding="async"></picture>
@@ -309,18 +327,4 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand"><a href="index.html" class="nav-logo" style="margin-bottom:0;"><img src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="lazy" decoding="async"></a><p>Elite commercial glazing for the nation's most demanding projects.</p></div>
-        <div><h5>Company</h5><div class="footer-links"><a href="about.html">About</a><a href="portfolio.html">Portfolio</a><a href="services.html">Services</a><a href="blog.html">Blog</a><a href="manufacturers.html">Partners</a><a href="capabilities.html">Capabilities</a><a href="contact.html">Contact</a></div></div>
-        <div><h5>Services</h5><div class="footer-links"><a href="services.html">Storefronts</a><a href="services.html">Window Wall</a><a href="services.html">Curtainwall</a><a href="services.html">Impact Windows</a></div></div>
-        <div><h5>Contact</h5><div class="footer-contact"><p>connor@acglass.com</p><p>(772) 486-7711</p><p>West Palm Beach &bull; Naples &bull; Tampa</p></div></div>
-      </div>
-      <div class="footer-bottom"><span>&copy; 2026 American Commercial Glass</span><span>Built with precision.</span></div>
-    </div>
-  </footer>
-  <script src="js/main.js"></script>
-<script>(function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();</script>
-</body>
-</html>
+  
