@@ -1964,3 +1964,194 @@ a[href="eau-palm-beach-resort.html"]:hover img {
 @media (min-width: 769px) {
   .mobile-cta-bar { display: none !important; }
 }
+
+/* ============================================
+   PROOF BAR — Homepage credibility strip
+   Sits between hero and marquee
+   ============================================ */
+.proof-bar {
+  padding: clamp(36px, 5vw, 56px) 0 clamp(28px, 3.5vw, 40px);
+  background: linear-gradient(180deg, rgba(255,255,255,.02) 0%, rgba(255,255,255,0) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.proof-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px 32px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.proof-bar-stat {
+  padding: 12px 8px;
+  position: relative;
+}
+.proof-bar-stat + .proof-bar-stat::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 14px;
+  bottom: 14px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+@media (max-width: 640px) {
+  .proof-bar-stat + .proof-bar-stat::before { display: none; }
+}
+
+.proof-bar-num {
+  font-size: clamp(36px, 4.6vw, 56px);
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-feature-settings: "tnum" 1;
+}
+.proof-bar-num span {
+  font-size: 0.55em;
+  font-weight: 700;
+  margin-left: 2px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.proof-bar-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  margin-top: 10px;
+}
+
+.proof-bar-partners {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proof-bar-partners-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+  margin-bottom: 12px;
+}
+
+.proof-bar-partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: clamp(14px, 1.25vw, 17px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.01em;
+}
+.proof-bar-partners-logos .dot {
+  color: var(--accent, #E11320);
+  font-size: 0.8em;
+}
+
+/* ============================================
+   QUALIFICATIONS PAGE
+   ============================================ */
+.qual-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.qual-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
+.qual-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent, #E11320);
+  margin-bottom: 6px;
+}
+.qual-card-value {
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.qual-card-value[data-placeholder] {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+.qual-card-detail {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.qual-pill {
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.qual-pill:hover {
+  background: rgba(225, 19, 32, 0.08);
+  border-color: rgba(225, 19, 32, 0.3);
+}
+
+.qual-partner {
+  padding: 24px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.qual-partner:hover {
+  border-color: var(--accent, #E11320);
+  background: rgba(225, 19, 32, 0.05);
+  transform: translateY(-2px);
+}
+.qual-partner-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.qual-partner-role {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
