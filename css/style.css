@@ -1907,3 +1907,60 @@ a[href="eau-palm-beach-resort.html"]:hover img {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ============================================
+   STICKY MOBILE CTA BAR
+   Injected by main.js on mobile only
+   ============================================ */
+.mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  background: rgba(5, 10, 18, 0.96);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap: 8px;
+}
+
+.mobile-cta-bar .mcb-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 11px 6px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.2s ease;
+  min-height: 44px;
+}
+.mobile-cta-bar .mcb-btn:active { transform: scale(0.97); }
+
+.mobile-cta-bar .mcb-call {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.mobile-cta-bar .mcb-email {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.mobile-cta-bar .mcb-plans {
+  color: #fff;
+  background: var(--red, #E11320);
+}
+.mobile-cta-bar svg { flex-shrink: 0; }
+.mobile-cta-bar span { white-space: nowrap; }
+
+@media (min-width: 769px) {
+  .mobile-cta-bar { display: none !important; }
+}

@@ -240,3 +240,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+  // ============================================
+  // ---------- GA4 CONVERSION EVENTS ----------
+  // ============================================
+  function trackEvent(name, params = {}) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, params);
+    }
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: name, ...params });
+    }
+  }
+
+  // Phone clicks (tel: links)
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => trackEvent('phone_click', {
+      phone_number: a.getAttribute('href').replace('tel:', ''),
+      page_location: location.pathname
+    }));
+  });
+
+  // Email clicks (mailto: links)
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.addEventListener('click', () => trackEvent('email_click', {
+      email_address: a.getAttribute('href').replace('mailto:', ''),
+      page_location: location.pathname
+    }));
+  });
+
+  // Send Us Plans CTA clicks (anywhere on site)
+  document.querySelectorAll('a').forEach(a => {
+    const text = (a.textContent || '').trim().toLowerCase();
+    const href = a.getAttribute('href') || '';
+    if (text.includes('send us plans') ||
+        text.includes('submit plans') ||
+        text === 'send plans' ||
+        href.endsWith('/send-plans.html') ||
+        href.endsWith('send-plans.html')) {
+      a.addEventListener('click', () => trackEvent('cta_submit_plans_click', {
+        cta_text: (a.textContent || '').trim(),
+        page_location: location.pathname,
+        cta_href: href
+      }));
+    }
+  });
+
+  // Scope Engine start/complete
+  if (location.pathname.includes('scope-engine')) {
+    trackEvent('scope_engine_start', { page_location: location.pathname });
+  }
+
+  // PDF download tracking
+  document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
+    a.addEventListener('click', () => trackEvent('resource_download', {
+      file_name: (a.getAttribute('href') || '').split('/').pop(),
+      file_url: a.getAttribute('href'),
+      link_text: (a.textContent || '').trim()
+    }));
+  });
+
+  // Portfolio case study view (when on a project detail page)
+  const isProjectPage = location.pathname.match(/-clubhouse\.html|-twelve\.html|-prime-|panther-|wild-blue|atlantic-fields|eau-palm/i);
+  if (isProjectPage) {
+    trackEvent('portfolio_case_study_view', {
+      project_slug: location.pathname.replace(/^\//, '').replace('.html', ''),
+      page_location: location.pathname
+    });
+  }
+
+  // ============================================
+  // ---------- STICKY MOBILE CTA BAR ----------
+  // ============================================
+  // Only show on mobile (<=768px), hide on /send-plans.html + /contact.html
+  if (window.innerWidth <= 768 &&
+      !/send-plans\.html|contact\.html/.test(location.pathname)) {
+    const bar = document.createElement('div');
+    bar.className = 'mobile-cta-bar';
+    bar.innerHTML = `
+      <a href="tel:+17724867711" class="mcb-btn mcb-call" aria-label="Call ACG">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.05 15.05 0 01-6.59-6.59l2.2-2.21a1 1 0 00.25-1A11.36 11.36 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1 17 17 0 0017 17 1 1 0 001-1v-3.5a1 1 0 00-1-1z"/></svg>
+        <span>Call</span>
+      </a>
+      <a href="mailto:connor@acglass.com" class="mcb-btn mcb-email" aria-label="Email ACG">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>Email</span>
+      </a>
+      <a href="send-plans.html" class="mcb-btn mcb-plans" aria-label="Send us plans">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 14h8v2H8zm0 4h8v2H8zm0-8h4v2H8z"/></svg>
+        <span>Send Plans</span>
+      </a>
+    `;
+    document.body.appendChild(bar);
+    // Apply body padding so content clears the fixed bar
+    document.body.style.paddingBottom = '72px';
+  }
