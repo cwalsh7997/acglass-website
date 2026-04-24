@@ -2496,6 +2496,9 @@
       <image:loc>https://acglass.com/images/acg-logo-nav@2x.png</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://acglass.com/images/projects/hca-cape-coral/ambulance-bay-day.jpg</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://acglass.com/images/projects/hca-cape-coral/ambulance-bay.jpg</image:loc>
     </image:image>
     <image:image>
@@ -2518,9 +2521,6 @@
     </image:image>
     <image:image>
       <image:loc>https://acglass.com/images/projects/hca-cape-coral/pond-view.webp</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg</image:loc>
     </image:image>
   </url>
   <url>
