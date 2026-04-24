@@ -2301,3 +2301,371 @@ a[href="eau-palm-beach-resort.html"]:hover img {
   font-weight: 700;
   color: #fff;
 }
+
+/* ============================================
+   ARCHITECT RESOURCES — Manufacturer Document Library
+   ============================================ */
+
+.doc-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(32px, 4vw, 48px);
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.doc-filter {
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.doc-filter:hover {
+  border-color: rgba(225, 19, 32, 0.4);
+  color: #fff;
+}
+.doc-filter.active {
+  background: var(--accent, #E11320);
+  border-color: var(--accent, #E11320);
+  color: #fff;
+}
+
+/* Manufacturer section */
+.mfg-section {
+  padding-top: clamp(56px, 7vw, 88px);
+  padding-bottom: clamp(56px, 7vw, 88px);
+  scroll-margin-top: 80px;
+}
+.mfg-section:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mfg-header {
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.mfg-header-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent, #E11320);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.mfg-header-tag .line {
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--accent, #E11320);
+}
+
+.mfg-header-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(24px, 3vw, 44px);
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .mfg-header-row { grid-template-columns: 1fr; }
+}
+
+.mfg-header-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+}
+
+.mfg-header-intro {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  font-size: clamp(15px, 1.1vw, 17px);
+  margin-top: 14px;
+  max-width: 640px;
+}
+
+.mfg-header-meta {
+  display: flex;
+  gap: 24px;
+  padding: 20px 28px;
+  background: rgba(225, 19, 32, 0.06);
+  border: 1px solid rgba(225, 19, 32, 0.2);
+  border-radius: 12px;
+}
+
+.mfg-header-stat-num {
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.mfg-header-stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 6px;
+}
+
+.mfg-header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mfg-header-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mfg-header-link:hover { color: var(--accent, #E11320); }
+
+/* Systems grid */
+.mfg-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 540px) {
+  .mfg-systems-grid { grid-template-columns: 1fr; }
+}
+
+.mfg-system-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: clamp(20px, 2.5vw, 28px);
+}
+
+.mfg-system-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.mfg-system-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, #E11320);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.mfg-system-name {
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.mfg-system-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mfg-system-desc {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 13.5px;
+  margin: 0 0 18px;
+}
+
+.mfg-system-docs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.doc-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.doc-row:hover {
+  background: rgba(225, 19, 32, 0.06);
+  border-color: rgba(225, 19, 32, 0.3);
+}
+.doc-row:hover .doc-row-arrow {
+  transform: translate(2px, -2px);
+  color: var(--accent, #E11320);
+}
+
+.doc-row-left { min-width: 0; }
+
+.doc-type-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-bottom: 6px;
+}
+
+.doc-row-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.35;
+}
+
+.doc-row-notes {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+.doc-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.doc-row-size {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.doc-row-arrow {
+  color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+/* Portal cards */
+.portal-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s;
+}
+.portal-card:hover {
+  background: rgba(225, 19, 32, 0.06);
+  border-color: var(--accent, #E11320);
+  transform: translateY(-2px);
+}
+
+.portal-card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent, #E11320);
+  font-weight: 700;
+}
+.portal-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+.portal-card-desc {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+.portal-card-arrow {
+  margin-top: auto;
+  padding-top: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent, #E11320);
+}
+
+/* Specifier service cards */
+.spec-service-card {
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.spec-service-card:hover {
+  border-color: rgba(225, 19, 32, 0.3);
+  background: rgba(225, 19, 32, 0.04);
+}
+
+.spec-service-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent, #E11320);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.spec-service-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.spec-service-card p {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  margin: 0;
+}

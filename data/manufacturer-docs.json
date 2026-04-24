@@ -1,0 +1,723 @@
+{
+  "eswindows": {
+    "systems": [
+      {
+        "name": "GW-5250",
+        "category": "Commercial Window Wall",
+        "description": "Thermally improved impact-rated window wall; Miami-Dade certified, LMI + SMI, DP +130/-130 psf, 2.5\" sightline, dual finish capability.",
+        "notes": "ESWindows designates this product as 'GW-5250' (not 'ES 5250'). The Series-5250 NOA documents on Miami-Dade use the original '5250' series name. No standalone GW-5250 datasheet PDF was found publicly on eswindows.com (product page is JS-rendered behind Cloudflare). NOA PDFs are hosted on Miami-Dade's server.",
+        "documents": [
+          {
+            "title": "NOA 18-0404.02 — Series 5250 Aluminum Curtain Wall System (LMI)",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/18040402.pdf",
+            "year": "2018",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for Series 5250 LMI Curtain Wall System. Issued to E.S. Windows, LLC."
+          },
+          {
+            "title": "NOA 18-0404.03 — Series 5250 Aluminum Curtain Wall System (SMI)",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/18040403.pdf",
+            "year": "2018",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for Series 5250 SMI Curtain Wall System."
+          },
+          {
+            "title": "NOA 21-0914.03 — ES-8000T Thermally Broken Aluminum Window Wall LMI (most current for 8000T)",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/21091403.pdf",
+            "year": "2021",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for ES-8000T LMI, exp. Aug 2031. Included here as the thermal variant related to the 5250/8000T family."
+          }
+        ]
+      },
+      {
+        "name": "ES-7000 / ES-7100",
+        "category": "Commercial Window Wall",
+        "description": "Pre-assembled, pre-glazed window wall system; ES-7000 = LMI, ES-7100 = SMI; 6-1/8\" frame depth, flush glazed, DP +125/-150 psf, screw spline construction, compatible with ES-9000 door.",
+        "documents": [
+          {
+            "title": "ES-7000 / ES-7100 Technical Datasheet",
+            "type": "datasheet",
+            "url": "https://eswindows.com/wp-content/uploads/2019/06/FT-DD-37_ES-7000-ES-7100-TECHNICAL-DATASHEET.pdf",
+            "year": "2016",
+            "size": "1.6 MB",
+            "notes": "System description, glass options, features, materials."
+          },
+          {
+            "title": "ES-7000 Installation Instructions (REV-2)",
+            "type": "install_guide",
+            "url": "https://eswindows.com/wp-content/uploads/2019/06/ES-7000_INSTALLATION-INSTRUCTIVE-REV-2.pdf",
+            "year": "2019",
+            "size": "4.0 MB",
+            "notes": "Full installation guide for the ES-7000 unitized window wall system."
+          },
+          {
+            "title": "NOA 23-0724.09 — ES-7000 Window Wall LMI",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072409.pdf",
+            "year": "2023",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for ES-7000 LMI as Series '7000', exp. Jul 2028."
+          }
+        ]
+      },
+      {
+        "name": "ES-8000",
+        "category": "Commercial Storefront / Impact Window Wall",
+        "description": "Impact-resistant storefront system; pre-assembled with screw spline construction, pre-glazed; LMI rated; 5\" frame depth, 1.75\" + 1\" recessed fin sight line; 9/16\" laminated glass; DP +80/-130 psf; compatible with ES-9000 door. Also available as ES-8000T (thermally broken pour-and-debridge).",
+        "documents": [
+          {
+            "title": "ES-8000 Technical Datasheet (Original)",
+            "type": "datasheet",
+            "url": "https://eswindows.com/wp-content/uploads/2018/03/ES-8000-TECHNICAL_DATASHEET-1.pdf",
+            "year": "2018",
+            "size": "~1.0 MB",
+            "notes": "Original datasheet for ES-8000 storefront system."
+          },
+          {
+            "title": "ES-8000 Technical Datasheet (REV-3)",
+            "type": "datasheet",
+            "url": "https://residential.eswindows.com/wp-content/uploads/2022/04/FT-DD-35_ES-8000-TECHNICAL-DATASHEET-REV-3.pdf",
+            "year": "2022",
+            "size": "~1.0 MB",
+            "notes": "Updated datasheet for ES-8000 storefront; includes 5\" frame, LMI specs."
+          },
+          {
+            "title": "ES-8000 / ES-8000T Installation Instructions (REV-3)",
+            "type": "install_guide",
+            "url": "https://eswindows.com/wp-content/uploads/2019/09/ES-8000-8000T_INSTALATION-INSTRUCTIONS-REV-3.pdf",
+            "year": "2019",
+            "size": "6.8 MB",
+            "notes": "Full installation guide covering ES-8000 and ES-8000T storefront systems."
+          },
+          {
+            "title": "NOA 24-0321.07 — ES-8000 Aluminum Window Wall LMI",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/24032107.pdf",
+            "year": "2024",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for Series 'ES-8000' LMI Window Wall; DP +80/-130 psf; exp. Apr 2028."
+          },
+          {
+            "title": "NOA 20-1118.02 / REV-1 — ES-8000T Thermally Broken LMI + SMI",
+            "type": "noa",
+            "url": "https://eswindows.com/wp-content/uploads/2024/11/NOA_ES-8000T-LMI-SMI_20-1118.02-REV-1.pdf",
+            "year": "2021",
+            "size": "~1.0 MB",
+            "notes": "ESWindows-hosted NOA for ES-8000T Thermally Broken LMI; exp. Aug 2026. Hosted on eswindows.com."
+          }
+        ]
+      },
+      {
+        "name": "ES-9000 / ES-9100",
+        "category": "Commercial Impact Door System",
+        "description": "Impact-rated commercial entry door; outswing and inswing configurations; LMI + SMI rated; DP +130/-130 psf (single); compatible with ES-8000 storefront and ES-7000 window wall; pre-assembled door leaf; ADA threshold option.",
+        "documents": [
+          {
+            "title": "ES-9000 Technical Datasheet (REV-4)",
+            "type": "datasheet",
+            "url": "https://residential.eswindows.com/wp-content/uploads/2025/05/ES-9000-TECHNICAL-DATASHEET-REV-4.pdf",
+            "year": "2025",
+            "size": "~1.0 MB",
+            "notes": "Most current datasheet for ES-9000 impact door system."
+          },
+          {
+            "title": "ES-9000 & ES-9000 Inswing Installation Guide (REV-15)",
+            "type": "install_guide",
+            "url": "https://residential.eswindows.com/wp-content/uploads/2025/05/ES-9000-INSTALLATION-GUIDE-REV-15.pdf",
+            "year": "2025",
+            "size": "~5.0 MB",
+            "notes": "Most current installation guide for ES-9000 outswing and inswing door; covers ES-8000 and ES-7000 storefront integrations."
+          },
+          {
+            "title": "ES-9000 & ES-9000 Inswing Installation Guide (REV-10, 2021)",
+            "type": "install_guide",
+            "url": "https://eswindows.com/wp-content/uploads/2021/01/ES-9000-ES-9000-INSWING-INSTALLATION-GUIDE.pdf",
+            "year": "2021",
+            "size": "5.8 MB",
+            "notes": "Previous combined installation guide (Version 10, June 2021)."
+          },
+          {
+            "title": "ES-9000 Inswing Installation Guide (REV-0)",
+            "type": "install_guide",
+            "url": "https://residential.eswindows.com/wp-content/uploads/2022/04/ES-9000-INSWING-INSTALLATION-GUIDE-REV-0.pdf",
+            "year": "2022",
+            "size": "~2.0 MB",
+            "notes": "Dedicated inswing installation guide for ES-9000."
+          },
+          {
+            "title": "NOA 23-0724.12 — ES-9000 French Door LMI (with/without Transom)",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072412.pdf",
+            "year": "2023",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for Series '9000' French Door LMI; exp. Dec 2028."
+          },
+          {
+            "title": "NOA 23-0724.13 — ES-9100 Door SMI",
+            "type": "noa",
+            "url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072413.pdf",
+            "year": "2023",
+            "size": "~1.0 MB",
+            "notes": "Miami-Dade NOA for Series 'ES-9100' SMI door; exp. Oct 2027."
+          }
+        ]
+      }
+    ],
+    "notes": {
+      "cad_revit": "ESWindows CAD/Revit files require a form request at https://residential.eswindows.com/solicitud-archivos-revit-cad-gi/ — not publicly downloadable.",
+      "product_resources_page": "https://eswindows.com/product-resources/ — page is behind Cloudflare bot protection and requires a browser; shows brochure thumbnails for Architectural Guide, Commercial Products, etc. but PDF URLs are dynamically loaded.",
+      "fpa": "Florida Product Approval documents for ESWindows commercial systems are registered under the Florida Building Commission but direct PDF links were not found publicly on eswindows.com. Miami-Dade NOA PDFs (above) serve as the primary approval documents.",
+      "commercial_brochure": "The 'Commercial Products' brochure shown on the product resources page is referenced but its direct PDF URL was not discoverable; it likely requires a JS-rendered page session."
+    }
+  },
+  "eurowall": {
+    "systems": [
+      {
+        "name": "Vista Fold (Impact Rated — C3)",
+        "category": "Folding Door System",
+        "description": "Impact-rated aluminum folding door; HVHZ approved (Miami-Dade); panels up to 144\" tall, 53\" wide; DP up to 100 psf; LMI + SMI; ADA sill option; 10-year warranty; Florida Product Approval FL 27023.",
+        "documents": [
+          {
+            "title": "Vista Fold™ Impact Rated Brochure (V2, 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ig2hl5e4/vista_foldc3_brochure_v2.pdf",
+            "year": "2025",
+            "size": "15.5 MB",
+            "notes": "Full product brochure for impact-rated Vista Fold (C3 series)."
+          },
+          {
+            "title": "Vista Fold™ Impact Rated Architect Cut Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ve1bocji/vista_foldc3_cutsheet_v1_102025.pdf",
+            "year": "2025",
+            "size": "8.1 MB",
+            "notes": "Architect cut sheet with system dimensions, performance data, and design pressure chart."
+          },
+          {
+            "title": "Vista Fold™ Impact Rated Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/4sunkdhb/vista_foldc3_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "8.1 MB",
+            "notes": "Updated architect cut sheet for impact-rated Vista Fold."
+          },
+          {
+            "title": "Vista Fold™ Installation Guide (V1, Oct 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/kuxnfbtg/vista_foldc3_installguide_v1_102025.pdf",
+            "year": "2025",
+            "size": "6.1 MB",
+            "notes": "Full installation guide for Vista Fold impact-rated folding door."
+          },
+          {
+            "title": "Vista Fold™ Installation Guide (V2, Feb 2026)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/s4ckwexj/vista_foldc3_installguide_v2_022026.pdf",
+            "year": "2026",
+            "size": "6.1 MB",
+            "notes": "Updated installation guide for Vista Fold impact-rated folding door."
+          },
+          {
+            "title": "Vista Fold™ Extrusion Profile Sheet (V1, Sep 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/lcxfkji3/vista_foldc3_extrusionsheet_v1_092025.pdf",
+            "year": "2025",
+            "size": "0.2 MB",
+            "notes": "Extrusion cross-section profile sheet for Vista Fold impact-rated series."
+          },
+          {
+            "title": "Vista Fold™ CSI 3-Part Spec — Folding Doors (08-35-13)",
+            "type": "spec",
+            "url": "https://euro-wall.com/media/f5lpzus3/08-35-13-folding-doors-002.docx",
+            "year": "2024",
+            "size": "0.07 MB",
+            "notes": "CSI MasterFormat 3-part specification for aluminum folding door systems. DOCX format. FPA FL 27023 referenced."
+          },
+          {
+            "title": "Vista Fold™ Product Comparison Chart",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/zoqldx5s/vista-fold-comparison-chart-1.pdf",
+            "year": "2024",
+            "size": "0.15 MB",
+            "notes": "Comparison chart showing Vista Fold features vs. competitors."
+          },
+          {
+            "title": "Muntin / SDL Profile Sheet — 9/16\" Glass",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/wc1jdyeh/muntin_sdl_profile_chart_9_16.pdf",
+            "year": "2025",
+            "size": "0.2 MB",
+            "notes": "Muntin/SDL profile chart for 9/16\" glass option on Vista Fold and related systems."
+          },
+          {
+            "title": "Muntin / SDL Profile Sheet — 1\" Glass",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/txvnlywv/muntin_sdl_profile_chart_1_in.pdf",
+            "year": "2025",
+            "size": "0.2 MB",
+            "notes": "Muntin/SDL profile chart for 1\" glass option on Vista Fold and related systems."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Euro-Wall 10-year limited warranty covering all product lines."
+          }
+        ]
+      },
+      {
+        "name": "Vista Fold Thermally Broken (C5)",
+        "category": "Folding Door System — Thermally Broken",
+        "description": "Thermally broken aluminum folding door; impact and non-impact rated; larger panel sizes than standard C3 (up to 168\" tall, 52\" wide); DP up to 100 psf; LMI rated; Florida Product Approval included.",
+        "documents": [
+          {
+            "title": "Vista Fold™ Thermally Broken Brochure (V2, 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ptwpzt1f/vista_foldc5_brochure_v2.pdf",
+            "year": "2025",
+            "size": "13.9 MB",
+            "notes": "Full product brochure for thermally broken Vista Fold (C5 series)."
+          },
+          {
+            "title": "Vista Fold™ Thermally Broken Brochure (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ba3jvff2/vista_foldc5_brochure_v1_102025final.pdf",
+            "year": "2025",
+            "size": "13.9 MB",
+            "notes": "Earlier V1 brochure for thermally broken Vista Fold."
+          },
+          {
+            "title": "Vista Fold™ Thermally Broken Architect Cut Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/2nxbeqje/vista_foldc5_cutsheet_v1_102025.pdf",
+            "year": "2025",
+            "size": "9.4 MB",
+            "notes": "Architect cut sheet for thermally broken Vista Fold."
+          },
+          {
+            "title": "Vista Fold™ Thermally Broken Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/txahohpx/vista_foldc5_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "10.7 MB",
+            "notes": "Updated architect cut sheet for thermally broken Vista Fold."
+          },
+          {
+            "title": "Vista Fold™ Thermally Broken Installation Guide (V2, Feb 2026)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/1mjf3x0k/vista_foldc5_installguide_v2_022026.pdf",
+            "year": "2026",
+            "size": "6.2 MB",
+            "notes": "Installation guide for thermally broken Vista Fold."
+          },
+          {
+            "title": "Vista Fold™ Thermally Broken Extrusion Profile Sheet (V1, Sep 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/1itiznkn/vista_foldc5_extrusionsheet_v1_092025.pdf",
+            "year": "2025",
+            "size": "0.2 MB",
+            "notes": "Extrusion cross-section profiles for thermally broken Vista Fold."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Shared warranty document covering Vista Fold Thermally Broken."
+          }
+        ]
+      },
+      {
+        "name": "Vista Multi Slide",
+        "category": "Multi-Panel Sliding Door System",
+        "description": "Impact-rated multi-slide door; thinnest interlock profile on market (<1\" sight line); panels up to 70 sq ft (144\" tall × 96\" wide); DP up to 70 psf; HVHZ approved; flush embedded water-rated sill; no sill riser; Florida Product Approval FL 27423.",
+        "documents": [
+          {
+            "title": "Vista Multi Slide™ Brochure (V2)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/jhidfj0k/vista_ms_brochure_v2.pdf",
+            "year": "2025",
+            "size": "16.1 MB",
+            "notes": "Full product brochure including DP charts, configuration samples, and performance data."
+          },
+          {
+            "title": "Vista Multi Slide™ Brochure (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/1uulskxa/vista_ms_brochure_v1_102025-1.pdf",
+            "year": "2025",
+            "size": "16.1 MB",
+            "notes": "Earlier V1 brochure for Vista Multi Slide."
+          },
+          {
+            "title": "Vista Multi Slide™ Architect Cut Sheet (V1, Nov 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/pnolob3l/vista_ms_cutsheet_v1_1132025.pdf",
+            "year": "2025",
+            "size": "10.3 MB",
+            "notes": "Architect cut sheet with system overview, FPA FL 27423, test performance."
+          },
+          {
+            "title": "Vista Multi Slide™ Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/tbplib2y/vista_ms_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "9.9 MB",
+            "notes": "Updated architect cut sheet for Vista Multi Slide."
+          },
+          {
+            "title": "Vista Multi Slide™ Installation Guide (V1, Sep 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/xcabknpp/vista_ms_installguide_v1_92025.pdf",
+            "year": "2025",
+            "size": "11.8 MB",
+            "notes": "Full installation guide for Vista Multi Slide sliding door system."
+          },
+          {
+            "title": "Vista Multi Slide™ Installation Guide (V1, Oct 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/kvymrbn4/vista_ms_installguide_v1_102025.pdf",
+            "year": "2025",
+            "size": "12.4 MB",
+            "notes": "Updated installation guide for Vista Multi Slide."
+          },
+          {
+            "title": "Vista Multi Slide™ Extrusion Profile Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ktllcrhn/vista_ms_extrusionsheet_v1_102025.pdf",
+            "year": "2025",
+            "size": "0.8 MB",
+            "notes": "Extrusion cross-section profiles for Vista Multi Slide components."
+          },
+          {
+            "title": "Vista Multi Slide™ Product Comparison Chart",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ggtj0wf2/euro-vista-multi-slide-comparison-chart-1.pdf",
+            "year": "2024",
+            "size": "0.1 MB",
+            "notes": "Competitive comparison chart for Vista Multi Slide vs. other systems."
+          },
+          {
+            "title": "Vista Multi Slide™ Muntin / SDL Profile Chart",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/xapbzpbd/muntin_sdl_profile_chart_ms.pdf",
+            "year": "2025",
+            "size": "0.07 MB",
+            "notes": "Muntin/SDL profile sheet specific to Vista Multi Slide glass configurations."
+          },
+          {
+            "title": "CSI 3-Part Spec — Sliding Aluminum Framed Glass Doors (08-32-13)",
+            "type": "spec",
+            "url": "https://euro-wall.com/media/loyprczq/08-32-13-sliding-aluminum-framed-glass-doors.docx",
+            "year": "2024",
+            "size": "0.07 MB",
+            "notes": "CSI MasterFormat 3-part specification for sliding aluminum glass door systems. DOCX format. References FL 27423."
+          },
+          {
+            "title": "Euro-Wall Hardware Catalog 2024",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ntslsxom/hardware-catalog_2024.pdf",
+            "year": "2024",
+            "size": "7.5 MB",
+            "notes": "Comprehensive hardware catalog covering parts for Vista Multi Slide and other Euro-Wall systems."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Shared warranty document."
+          }
+        ]
+      },
+      {
+        "name": "Vista Pivot",
+        "category": "Pivot Door System",
+        "description": "Impact and non-impact rated pivot door; heights up to 14' (168\"), widths up to 100\"; aluminum, interior wood clad, or faux wood grain kynar finish; designed for commercial and residential applications.",
+        "documents": [
+          {
+            "title": "Vista Pivot™ Brochure (V3)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/bggmfb4w/vista_pivot_brochure_v3.pdf",
+            "year": "2025",
+            "size": "17.9 MB",
+            "notes": "Full product brochure for Vista Pivot including impact and non-impact versions."
+          },
+          {
+            "title": "Vista Pivot™ Brochure (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/5qfnd2ot/vista-pivot_brochure_v1_102025.pdf",
+            "year": "2025",
+            "size": "19.9 MB",
+            "notes": "Earlier V1 full brochure for Vista Pivot."
+          },
+          {
+            "title": "Vista Pivot™ Product Overview Guide",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/5ybaiavi/productoverviewguide_pivot.pdf",
+            "year": "2025",
+            "size": "1.9 MB",
+            "notes": "Concise overview guide for Vista Pivot door system."
+          },
+          {
+            "title": "Vista Pivot™ Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/w5tjy4it/vista_pivot_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "4.7 MB",
+            "notes": "Architect cut sheet with performance data and system specifications."
+          },
+          {
+            "title": "Vista Pivot™ Installation Guide (V1, Oct 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/v2kar1g0/vista_pivot_installguide_v1_102025.pdf",
+            "year": "2025",
+            "size": "5.0 MB",
+            "notes": "Full installation guide for Vista Pivot door system."
+          },
+          {
+            "title": "Vista Pivot™ Extrusion Profile Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ni4peaxt/vista_pivot_extrusionsheet_v1_101625.pdf",
+            "year": "2025",
+            "size": "0.2 MB",
+            "notes": "Extrusion cross-section profiles for Vista Pivot components."
+          },
+          {
+            "title": "FPA — Euro-Pivot Inswing & Outswing Door (Non-HVHZ, Non-Impact)",
+            "type": "fpa",
+            "url": "https://euro-wall.com/media/zvjiecez/vista-pivot_fpa_non-impact_v1_7232025.pdf",
+            "year": "2025",
+            "size": "1.6 MB",
+            "notes": "Florida Product Approval document for non-impact Vista Pivot; FL#22410; engineering drawings by Hermes F. Norero, P.E."
+          },
+          {
+            "title": "CSI 3-Part Spec — Aluminum Doors (08-13-16)",
+            "type": "spec",
+            "url": "https://euro-wall.com/media/epvnfq5x/08-13-16-aluminum-doors.docx",
+            "year": "2024",
+            "size": "~0.1 MB",
+            "notes": "CSI MasterFormat 3-part specification for aluminum pivot doors. DOCX format."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Shared warranty document."
+          }
+        ]
+      },
+      {
+        "name": "Vista TL (Tilt & Lift)",
+        "category": "Lift-and-Slide Door System",
+        "description": "Euro-Wall lift-and-tilt sliding door system; commercial and residential applications; impact and non-impact rated configurations.",
+        "documents": [
+          {
+            "title": "Vista TL™ Brochure (V2)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/jgxioa40/vista_tl_brochure_v2.pdf",
+            "year": "2025",
+            "size": "7.0 MB",
+            "notes": "Full product brochure for Vista TL lift-and-tilt door system."
+          },
+          {
+            "title": "Vista TL™ Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/kdimohlz/vista_tl_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "5.9 MB",
+            "notes": "Architect cut sheet with system specifications and performance data."
+          },
+          {
+            "title": "Vista TL™ Installation Guide (V1, Oct 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/24ua0dcb/vista-tl_installguide_v1_102025.pdf",
+            "year": "2025",
+            "size": "2.3 MB",
+            "notes": "Full installation guide for Vista TL door system."
+          },
+          {
+            "title": "Vista TL™ Extrusion Profile Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/ugqckxmr/vista_tl_extrusionsheet_v1_102025.pdf",
+            "year": "2025",
+            "size": "0.1 MB",
+            "notes": "Extrusion cross-section profiles for Vista TL components."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Shared warranty document."
+          }
+        ]
+      },
+      {
+        "name": "Vista CT (Casement & Tilt-Turn Window)",
+        "category": "Window System",
+        "description": "Casement and tilt-turn window system; impact and non-impact rated; designed to complement Euro-Wall door systems.",
+        "documents": [
+          {
+            "title": "Vista CT™ Brochure (V2)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/rsobwbuz/vista_ct_brochure_v2.pdf",
+            "year": "2025",
+            "size": "8.2 MB",
+            "notes": "Full product brochure for Vista CT casement/tilt-turn window system."
+          },
+          {
+            "title": "Vista CT™ Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/4moezyan/vista_ct_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "4.6 MB",
+            "notes": "Architect cut sheet with system specifications."
+          },
+          {
+            "title": "Vista CT™ Installation Guide (V1, Oct 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/f4uflozr/vista_ct_installguide_v1_102025.pdf",
+            "year": "2025",
+            "size": "5.4 MB",
+            "notes": "Full installation guide for Vista CT window system."
+          },
+          {
+            "title": "Vista CT™ Installation Guide (Jun 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/1nrfrmds/vista-ct_ig_61625.pdf",
+            "year": "2025",
+            "size": "1.5 MB",
+            "notes": "Earlier installation guide for Vista CT."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Shared warranty document."
+          }
+        ]
+      },
+      {
+        "name": "Vista DS (Direct Set Fixed Window)",
+        "category": "Window System — Fixed",
+        "description": "Impact-rated fixed window / direct-set glazing system; HVHZ approved; Florida Product Approval FL 46965; panels from 18\" to 108\" wide, 18\" to 168\" tall; complements all Euro-Wall door systems.",
+        "documents": [
+          {
+            "title": "Vista DS™ Brochure (V2)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/rgvilteb/vista_ds_brochure_v2.pdf",
+            "year": "2025",
+            "size": "6.8 MB",
+            "notes": "Full product brochure for Vista DS fixed window system."
+          },
+          {
+            "title": "Vista DS™ Brochure (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/24rmavmt/vista_ds_brochure_v1_102025.pdf",
+            "year": "2025",
+            "size": "6.7 MB",
+            "notes": "Earlier V1 brochure for Vista DS."
+          },
+          {
+            "title": "Vista DS™ Architect Cut Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/1hbkoajv/vista_ds_cutsheet_v1_102025.pdf",
+            "year": "2025",
+            "size": "4.6 MB",
+            "notes": "Architect cut sheet; FPA FL 46965; HVHZ approved."
+          },
+          {
+            "title": "Vista DS™ Architect Cut Sheet (V1, Apr 2026)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/d5qdbei0/vista_ds_cutsheet_v1_04232026.pdf",
+            "year": "2026",
+            "size": "4.6 MB",
+            "notes": "Updated architect cut sheet for Vista DS."
+          },
+          {
+            "title": "Vista DS™ Installation Guide (V1, Oct 2025)",
+            "type": "install_guide",
+            "url": "https://euro-wall.com/media/y2zdvr3h/vista_ds_installguide_v1_102025.pdf",
+            "year": "2025",
+            "size": "4.4 MB",
+            "notes": "Full installation guide for Vista DS fixed window system."
+          },
+          {
+            "title": "Vista DS™ Extrusion Profile Sheet (V1, Oct 2025)",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/azjhmoau/vista_ds_extrusionsheet_v1_102025.pdf",
+            "year": "2025",
+            "size": "0.1 MB",
+            "notes": "Extrusion cross-section profiles for Vista DS components."
+          },
+          {
+            "title": "FPA — Vista DS Non-Impact (FL22410-type, Non-HVHZ)",
+            "type": "fpa",
+            "url": "https://euro-wall.com/media/pa3prvxm/vista-ds_fpa_non-impact_v1_7232025.pdf",
+            "year": "2025",
+            "size": "1.0 MB",
+            "notes": "Florida Product Approval engineering drawings for Vista DS non-impact version."
+          },
+          {
+            "title": "FPA — Vista DS Impact HVHZ (FL46965, EWS043)",
+            "type": "fpa",
+            "url": "https://euro-wall.com/media/mnrbzf14/fl46965_r0_ii_ews043-ss-2024-08-22.pdf",
+            "year": "2024",
+            "size": "1.0 MB",
+            "notes": "Florida Product Approval FL46965 approval document for Vista DS impact system (EWS043)."
+          },
+          {
+            "title": "FPA — Vista DS Impact HVHZ (FL46965, EWS042)",
+            "type": "fpa",
+            "url": "https://euro-wall.com/media/4ynjw0o3/fl46965_r0_ii_ews042-ss-2024-08-22.pdf",
+            "year": "2024",
+            "size": "1.0 MB",
+            "notes": "Florida Product Approval FL46965 approval document for Vista DS impact system (EWS042)."
+          },
+          {
+            "title": "Vista DS™ Configuration Samples",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/fjzajbw4/ew-print-directsetconfigurations-v02.pdf",
+            "year": "2024",
+            "size": "1.2 MB",
+            "notes": "Configuration layout samples for Vista DS fixed window / direct-set panel systems."
+          },
+          {
+            "title": "Vista DS™ Muntin / SDL Profile Chart",
+            "type": "datasheet",
+            "url": "https://euro-wall.com/media/0kqfadnz/muntin_sdl_profile_chart_ds.pdf",
+            "year": "2025",
+            "size": "0.1 MB",
+            "notes": "Muntin/SDL profile chart specific to Vista DS glass configurations."
+          },
+          {
+            "title": "Euro-Wall 10-Year Limited Warranty",
+            "type": "warranty",
+            "url": "https://euro-wall.com/media/ovhd5ig5/eurowall_limited_warranty_4202026.pdf",
+            "year": "2026",
+            "size": "0.2 MB",
+            "notes": "Shared warranty document."
+          }
+        ]
+      }
+    ],
+    "notes": {
+      "revit_cad": "Euro-Wall Revit files and CAD downloads are listed on the resources page (https://euro-wall.com/support/resources/) and product pages but require a user account login to download. The resources page shows '65 results' under 'Revit Files' filter but URLs are behind authentication.",
+      "fpa_for_fold_and_ms": "The Vista Fold FPA (FL 27023) and Vista Multi Slide FPA (FL 27423) are referenced in brochures and cut sheets but their direct downloadable PDF links were not publicly accessible from euro-wall.com media URLs. They are registered at https://floridabuilding.org and can be searched by product number.",
+      "dealer_area": "Euro-Wall's 'FOR PROS' dealer area may have additional gated resources. Public documents are comprehensively captured above."
+    }
+  }
+}
