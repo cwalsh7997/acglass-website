@@ -2032,4 +2032,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-</urlset>
+<url>
+    <loc>https://acglass.com/impact-windows-doors.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://acglass.com/curtainwall-systems.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://acglass.com/multi-slide-bifold-doors.html</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  </urlset>
