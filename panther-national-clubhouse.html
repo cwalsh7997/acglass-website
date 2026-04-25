@@ -330,9 +330,17 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (VIDEO RENDERING) -->
   <section class="project-hero">
-    <picture><source type="image/webp" srcset="images/projects/panther-national/aerial-golf-course.webp"><img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National Clubhouse under construction — aerial view overlooking championship golf course" loading="lazy" decoding="async"></picture>
+    <video autoplay muted loop playsinline preload="metadata"
+      poster="videos/panther-national-clubhouse-poster.jpg"
+      aria-label="Panther National Clubhouse — architectural rendering fly-through of glazing, Palm Beach Gardens FL"
+      style="width:100%;height:100%;object-fit:cover;display:block;">
+      <source src="videos/panther-national-clubhouse.mp4" type="video/mp4">
+    </video>
+    <noscript>
+      <picture><source type="image/webp" srcset="images/projects/panther-national/aerial-golf-course.webp"><img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National Clubhouse — aerial view overlooking championship golf course"></picture>
+    </noscript>
     <div class="project-hero-content">
       <div class="container">
         <div class="in-progress-badge">Currently Under Construction</div>
