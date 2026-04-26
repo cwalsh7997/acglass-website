@@ -700,6 +700,222 @@
   </div>
 
 
+  <!-- ═══════════════ TRUST SPINE ═══════════════ -->
+  <style>
+    .ts-wrap { padding: clamp(60px,7vw,100px) clamp(20px,4vw,48px) clamp(20px,3vw,40px); max-width: 1480px; margin: 0 auto; }
+    .ts-band { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; border-top: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); margin-bottom: clamp(48px,6vw,80px); }
+    .ts-band-cell { padding: clamp(24px,3vw,38px) clamp(18px,2.2vw,28px); border-right: 1px solid rgba(255,255,255,.08); position:relative; }
+    .ts-band-cell:last-child { border-right: none; }
+    @media (max-width:780px){ .ts-band-cell{ border-right:none; border-bottom:1px solid rgba(255,255,255,.08);} .ts-band-cell:last-child{border-bottom:none;} }
+    .ts-num { font-family:'Inter',sans-serif; font-weight:900; font-size:clamp(36px,4.4vw,58px); line-height:1; letter-spacing:-.025em; color:#fff; }
+    .ts-num small { font-size:.42em; font-weight:700; color:rgba(255,255,255,.5); margin-left:4px; letter-spacing:.04em; }
+    .ts-num .accent { color:var(--accent,#E11320); }
+    .ts-label { margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.55); font-weight:700; }
+    .ts-bar { margin-top:14px; height:3px; background:rgba(255,255,255,.06); border-radius:2px; overflow:hidden; }
+    .ts-bar-fill { height:100%; background:linear-gradient(90deg, var(--accent,#E11320) 0%, rgba(225,19,32,.4) 100%); transform-origin:left; transform:scaleX(0); transition: transform 1.6s cubic-bezier(.16,1,.3,1); }
+    .ts-band.in .ts-bar-fill { transform: scaleX(var(--ts-fill, 1)); }
+
+    .ts-section-label { display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent,#E11320); font-weight:700; margin-bottom:18px; }
+    .ts-section-label::before, .ts-section-label::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.08); }
+    .ts-h2 { font-family:'Inter',sans-serif; font-weight:900; font-size:clamp(26px,3vw,40px); line-height:1.05; letter-spacing:-.02em; color:#fff; text-align:center; margin:0 0 12px; }
+    .ts-h2-sub { text-align:center; max-width:680px; margin:0 auto clamp(36px,5vw,56px); color:rgba(255,255,255,.7); font-size:clamp(14px,1.05vw,16px); line-height:1.6; }
+
+    /* GC Partners */
+    .ts-gc-block { background: rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:clamp(28px,3.5vw,44px) clamp(20px,3vw,40px); margin-bottom:clamp(48px,6vw,80px); }
+    .ts-gc-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; }
+    .ts-gc-cell { padding:18px 14px; border-right:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; min-height:90px; transition:background .25s; text-decoration:none; color:inherit; }
+    .ts-gc-cell:hover { background:rgba(255,255,255,.03); }
+    .ts-gc-cell:nth-child(5n){ border-right:none; }
+    @media(max-width:1100px){ .ts-gc-cell:nth-child(5n){border-right:1px solid rgba(255,255,255,.06);} .ts-gc-cell:nth-child(3n){border-right:none;} }
+    @media(max-width:680px){ .ts-gc-cell:nth-child(3n){border-right:1px solid rgba(255,255,255,.06);} .ts-gc-cell:nth-child(2n){border-right:none;} }
+    .ts-gc-name { font-family:'Inter',sans-serif; font-weight:700; font-size:clamp(13px,1.05vw,16px); color:#fff; letter-spacing:-.005em; line-height:1.2; text-align:center; }
+    .ts-gc-meta { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.45); font-weight:600; }
+
+    /* Florida Map */
+    .ts-map-block { display:grid; grid-template-columns: 1.1fr 1fr; gap:clamp(28px,4vw,60px); align-items:center; margin-bottom:clamp(48px,6vw,80px); padding:clamp(28px,3.5vw,44px) clamp(20px,3vw,40px); background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius:12px; }
+    @media(max-width:880px){ .ts-map-block{grid-template-columns:1fr; gap:24px;} }
+    .ts-map-svg { width:100%; height:auto; display:block; }
+    .ts-map-svg .fl-shape { fill: rgba(255,255,255,.04); stroke: rgba(255,255,255,.18); stroke-width: 1.2; }
+    .ts-map-svg .pin { fill: var(--accent,#E11320); stroke: rgba(255,255,255,.85); stroke-width: 1; opacity:.95; transition: r .25s, opacity .25s; cursor: pointer; }
+    .ts-map-svg .pin:hover { opacity:1; r:8; }
+    .ts-map-svg .pin-pulse { fill: var(--accent,#E11320); opacity:.25; animation: tsPulse 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes tsPulse { 0%,100% { opacity:.0; r:4; } 50% { opacity:.3; r:10; } }
+    .ts-map-cities { display:grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 12px 24px; }
+    .ts-map-city { display:flex; justify-content:space-between; align-items:baseline; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.06); font-size:14px; }
+    .ts-map-city-name { color:rgba(255,255,255,.85); font-weight:600; }
+    .ts-map-city-count { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--accent,#E11320); font-weight:700; letter-spacing:.05em; }
+
+    /* Manufacturer logos strip */
+    .ts-mfg-strip { display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:0; border-top: 1px solid rgba(255,255,255,.08); border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom:clamp(40px,5vw,60px); }
+    .ts-mfg-cell { padding:clamp(20px,2.5vw,30px) 16px; border-right:1px solid rgba(255,255,255,.06); display:flex; flex-direction:column; align-items:center; gap:6px; transition:background .25s; text-decoration:none; color:inherit; }
+    .ts-mfg-cell:hover { background:rgba(255,255,255,.03); }
+    .ts-mfg-cell:last-child { border-right:none; }
+    @media(max-width:780px){ .ts-mfg-cell{border-right:none; border-bottom:1px solid rgba(255,255,255,.06);} .ts-mfg-cell:last-child{border-bottom:none;} }
+    .ts-mfg-name { font-family:'Inter',sans-serif; font-weight:800; font-size:clamp(15px,1.2vw,18px); color:#fff; letter-spacing:-.01em; }
+    .ts-mfg-tag { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.45); font-weight:600; }
+  </style>
+
+  <section class="ts-wrap" aria-label="ACG portfolio at a glance — trust signals">
+
+    <!-- BY THE NUMBERS BAND -->
+    <div class="ts-section-label">By the Numbers</div>
+    <h2 class="ts-h2">Five years. <span style="color:var(--accent,#E11320);">350+ projects.</span> Across every sector.</h2>
+    <p class="ts-h2-sub">A working sample of the projects ACG has delivered. Filterable by sector, manufacturer, and general contractor.</p>
+
+    <div class="ts-band" id="tsBand" data-reveal>
+      <div class="ts-band-cell">
+        <div class="ts-num">14<small>+</small></div>
+        <div class="ts-label">Hospitality</div>
+        <div class="ts-bar"><div class="ts-bar-fill" style="--ts-fill:1;"></div></div>
+      </div>
+      <div class="ts-band-cell">
+        <div class="ts-num">18<small>+</small></div>
+        <div class="ts-label">Commercial</div>
+        <div class="ts-bar"><div class="ts-bar-fill" style="--ts-fill:1;"></div></div>
+      </div>
+      <div class="ts-band-cell">
+        <div class="ts-num">9<small>+</small></div>
+        <div class="ts-label">Multifamily</div>
+        <div class="ts-bar"><div class="ts-bar-fill" style="--ts-fill:.65;"></div></div>
+      </div>
+      <div class="ts-band-cell">
+        <div class="ts-num">7<small>+</small></div>
+        <div class="ts-label">Retail</div>
+        <div class="ts-bar"><div class="ts-bar-fill" style="--ts-fill:.55;"></div></div>
+      </div>
+      <div class="ts-band-cell">
+        <div class="ts-num">4</div>
+        <div class="ts-label">Institutional</div>
+        <div class="ts-bar"><div class="ts-bar-fill" style="--ts-fill:.35;"></div></div>
+      </div>
+      <div class="ts-band-cell">
+        <div class="ts-num">2</div>
+        <div class="ts-label">Healthcare</div>
+        <div class="ts-bar"><div class="ts-bar-fill" style="--ts-fill:.22;"></div></div>
+      </div>
+    </div>
+
+    <!-- GC PARTNERS -->
+    <div class="ts-section-label">General Contractor Partners</div>
+    <h2 class="ts-h2">The GCs we work with.</h2>
+    <p class="ts-h2-sub">A working list of the general contractors who've put ACG on their projects. The names below all have at least one completed project on this page.</p>
+
+    <div class="ts-gc-block" data-reveal>
+      <div class="ts-gc-grid">
+        <a href="portfolio.html?gc=proctor" class="ts-gc-cell"><div class="ts-gc-name">Proctor Construction</div><div class="ts-gc-meta">5 Projects</div></a>
+        <a href="portfolio.html?gc=verdex" class="ts-gc-cell"><div class="ts-gc-name">Verdex</div><div class="ts-gc-meta">Panther National</div></a>
+        <a href="portfolio.html?gc=west" class="ts-gc-cell"><div class="ts-gc-name">West Construction</div><div class="ts-gc-meta">Eau Palm Beach</div></a>
+        <a href="portfolio.html?gc=ahrens" class="ts-gc-cell"><div class="ts-gc-name">Ahrens Companies</div><div class="ts-gc-meta">Bobcat TC</div></a>
+        <a href="portfolio.html?gc=sisca" class="ts-gc-cell"><div class="ts-gc-name">SISCA</div><div class="ts-gc-meta">Compass Alton, Westlake</div></a>
+        <a href="portfolio.html?gc=hooks" class="ts-gc-cell"><div class="ts-gc-name">Hooks Construction</div><div class="ts-gc-meta">Hulett, Baron</div></a>
+        <a href="portfolio.html?gc=rycon" class="ts-gc-cell"><div class="ts-gc-name">Rycon</div><div class="ts-gc-meta">Storage King, StayApt</div></a>
+        <a href="portfolio.html?gc=mason" class="ts-gc-cell"><div class="ts-gc-name">Mason</div><div class="ts-gc-meta">Harbour Cay</div></a>
+        <a href="portfolio.html?gc=allsite" class="ts-gc-cell"><div class="ts-gc-name">Allsite Construction</div><div class="ts-gc-meta">Villa L'Onz</div></a>
+        <a href="portfolio.html?gc=olympus" class="ts-gc-cell"><div class="ts-gc-name">Olympus</div><div class="ts-gc-meta">Pointe at Palm Bay</div></a>
+        <a href="portfolio.html?gc=waypoint" class="ts-gc-cell"><div class="ts-gc-name">Waypoint</div><div class="ts-gc-meta">Gulf Harbour CC</div></a>
+        <a href="portfolio.html?gc=parkway" class="ts-gc-cell"><div class="ts-gc-name">Parkway Construction</div><div class="ts-gc-meta">iFLY Miami</div></a>
+        <a href="portfolio.html?gc=certified" class="ts-gc-cell"><div class="ts-gc-name">Certified GC</div><div class="ts-gc-meta">Wave Food Hall</div></a>
+        <a href="portfolio.html?gc=wallace" class="ts-gc-cell"><div class="ts-gc-name">Wallace Construction</div><div class="ts-gc-meta">Dale Mabry Retail</div></a>
+        <a href="send-plans.html" class="ts-gc-cell" style="background:rgba(225,19,32,.04);"><div class="ts-gc-name" style="color:var(--accent,#E11320);">+ Your Project</div><div class="ts-gc-meta">Send Plans</div></a>
+      </div>
+    </div>
+
+    <!-- FLORIDA MAP -->
+    <div class="ts-section-label">Florida Coverage</div>
+    <h2 class="ts-h2">Three offices. <span style="color:var(--accent,#E11320);">Statewide reach.</span></h2>
+    <p class="ts-h2-sub">Project locations across Florida from West Palm Beach HQ, Naples, and Tampa. Each pin is a delivered project on this page.</p>
+
+    <div class="ts-map-block" data-reveal>
+      <div>
+        <svg class="ts-map-svg" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" aria-label="Map of ACG project locations across Florida">
+          <!-- Simplified Florida outline -->
+          <path class="fl-shape" d="M 30 30 L 320 30 L 325 50 L 330 80 L 320 110 L 310 130 L 295 145 L 280 155 L 265 165 L 255 180 L 248 200 L 245 225 L 250 250 L 258 275 L 268 300 L 280 320 L 290 340 L 295 360 L 290 380 L 280 395 L 265 408 L 245 415 L 220 420 L 195 418 L 175 412 L 160 402 L 150 388 L 145 370 L 145 350 L 150 330 L 158 308 L 165 285 L 168 260 L 165 235 L 158 210 L 148 190 L 135 175 L 118 165 L 95 158 L 70 152 L 50 142 L 35 125 L 25 100 L 22 75 L 25 50 Z"/>
+          <!-- Office markers (white squares) -->
+          <g aria-label="ACG offices">
+            <!-- WPB HQ -->
+            <rect x="285" y="195" width="10" height="10" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2"/>
+            <text x="299" y="203" font-family="'JetBrains Mono',monospace" font-size="9" fill="#fff" font-weight="700" letter-spacing="1">WPB — HQ</text>
+            <!-- Naples -->
+            <rect x="180" y="310" width="8" height="8" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2"/>
+            <text x="194" y="317" font-family="'JetBrains Mono',monospace" font-size="9" fill="#fff" font-weight="700" letter-spacing="1">NAPLES</text>
+            <!-- Tampa -->
+            <rect x="170" y="180" width="8" height="8" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2"/>
+            <text x="184" y="187" font-family="'JetBrains Mono',monospace" font-size="9" fill="#fff" font-weight="700" letter-spacing="1">TAMPA</text>
+          </g>
+          <!-- Project pins -->
+          <g aria-label="Project pins">
+            <!-- Treasure Coast — Hobe Sound, Stuart, PSL, Jupiter, Vero, Fort Pierce -->
+            <circle class="pin" cx="280" cy="175" r="5"><title>Vero Beach — KLUS Lighting, SROA</title></circle>
+            <circle class="pin-pulse" cx="280" cy="175" r="5"></circle>
+            <circle class="pin" cx="285" cy="185" r="5"><title>Fort Pierce — Bobcat, Harbour Cay</title></circle>
+            <circle class="pin" cx="290" cy="190" r="5"><title>Port St. Lucie — Hulett Environmental, Project LIFT, Lucie Tradition</title></circle>
+            <circle class="pin" cx="282" cy="190" r="5"><title>Hobe Sound — Atlantic Fields, Tradewinds</title></circle>
+            <!-- Palm Beach County — WPB, Manalapan, Westlake, Wellington, Riviera Beach -->
+            <circle class="pin" cx="289" cy="199" r="5"><title>Manalapan — Eau Palm Beach</title></circle>
+            <circle class="pin" cx="292" cy="203" r="5"><title>West Palm Beach — Waxin's, Panther National</title></circle>
+            <circle class="pin" cx="288" cy="206" r="5"><title>Lake Park — Innovation Center</title></circle>
+            <circle class="pin" cx="293" cy="210" r="5"><title>Riviera Beach — Villa L'Onz</title></circle>
+            <!-- Broward / Miami-Dade -->
+            <circle class="pin" cx="290" cy="222" r="5"><title>Fort Lauderdale — Ocean Prime</title></circle>
+            <circle class="pin" cx="285" cy="232" r="5"><title>Davie — CubeSmart</title></circle>
+            <circle class="pin" cx="282" cy="242" r="5"><title>Miami — iFLY Miami, Medley</title></circle>
+            <circle class="pin" cx="275" cy="248" r="5"><title>Hialeah — Westlake Retrofit</title></circle>
+            <!-- Florida Keys -->
+            <circle class="pin" cx="230" cy="310" r="5"><title>Cudjoe Key — Fire Station 11</title></circle>
+            <!-- SW Florida — Naples, Bonita, Fort Myers, Estero -->
+            <circle class="pin" cx="178" cy="305" r="5"><title>Naples — Siena Lakes</title></circle>
+            <circle class="pin" cx="182" cy="295" r="5"><title>Bonita Springs — Imperial, Causeway, Prestige</title></circle>
+            <circle class="pin" cx="180" cy="285" r="5"><title>Estero — Estero Vista, Wild Blue, Gulf Harbour</title></circle>
+            <circle class="pin" cx="175" cy="275" r="5"><title>Fort Myers — Illumina, Cape Coral HCA</title></circle>
+            <!-- Tampa Bay area -->
+            <circle class="pin" cx="168" cy="175" r="5"><title>Tampa — Dale Mabry Retail</title></circle>
+            <!-- Central FL — Hardy Melbourne, Cocoa Beach, Daytona, Haines City, Indiantown, Lake Park, Winter Haven, Palm Bay -->
+            <circle class="pin" cx="265" cy="165" r="5"><title>Melbourne — Hardy World</title></circle>
+            <circle class="pin" cx="265" cy="160" r="5"><title>Cocoa Beach — Wave Food Hall, Wave Haven</title></circle>
+            <circle class="pin" cx="258" cy="150" r="5"><title>Daytona — The Bradley</title></circle>
+            <circle class="pin" cx="230" cy="180" r="5"><title>Winter Haven — Storage King</title></circle>
+            <circle class="pin" cx="230" cy="165" r="5"><title>Haines City — EOC</title></circle>
+            <circle class="pin" cx="265" cy="170" r="5"><title>Palm Bay — The Pointe</title></circle>
+            <circle class="pin" cx="272" cy="180" r="5"><title>Indiantown — High School</title></circle>
+            <!-- Panhandle / NW — Lafayette LA shown elsewhere -->
+          </g>
+        </svg>
+      </div>
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-bottom:24px;">
+          <div><div class="ts-num" style="font-size:clamp(28px,3vw,38px);">8</div><div class="ts-label">Markets</div></div>
+          <div><div class="ts-num" style="font-size:clamp(28px,3vw,38px);">3</div><div class="ts-label">Offices</div></div>
+          <div><div class="ts-num" style="font-size:clamp(28px,3vw,38px);">25<small>+</small></div><div class="ts-label">Cities</div></div>
+        </div>
+        <div class="ts-map-cities">
+          <div class="ts-map-city"><span class="ts-map-city-name">Palm Beach County</span><span class="ts-map-city-count">9 projects</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">Treasure Coast</span><span class="ts-map-city-count">11 projects</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">Broward / Miami</span><span class="ts-map-city-count">5 projects</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">SW Florida</span><span class="ts-map-city-count">8 projects</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">Tampa Bay</span><span class="ts-map-city-count">3 projects</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">Central / Space Coast</span><span class="ts-map-city-count">6 projects</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">Florida Keys</span><span class="ts-map-city-count">1 project</span></div>
+          <div class="ts-map-city"><span class="ts-map-city-name">Out of State</span><span class="ts-map-city-count">1 project</span></div>
+        </div>
+        <p style="margin-top:24px;font-size:13px;line-height:1.6;color:rgba(255,255,255,.55);">From the Treasure Coast to the Keys, the Tampa Bay area to the Space Coast — ACG's three Florida offices keep crews and supervision within reach of every project on the map.</p>
+      </div>
+    </div>
+
+    <!-- MANUFACTURER PARTNERS STRIP -->
+    <div class="ts-section-label">Manufacturer Partners</div>
+    <h2 class="ts-h2">The systems behind the work.</h2>
+    <p class="ts-h2-sub">ACG installs only six manufacturer lines, all of them top-tier. Every project on this page uses one of these systems.</p>
+
+    <div class="ts-mfg-strip" data-reveal>
+      <a href="manufacturers.html#eswindows" class="ts-mfg-cell"><div class="ts-mfg-name">ESWindows</div><div class="ts-mfg-tag">Storefront &middot; Curtainwall</div></a>
+      <a href="manufacturers.html#eurowall" class="ts-mfg-cell"><div class="ts-mfg-name">Euro-Wall</div><div class="ts-mfg-tag">Multi-Slide &middot; Pivot</div></a>
+      <a href="manufacturers.html#pgt" class="ts-mfg-cell"><div class="ts-mfg-name">PGT</div><div class="ts-mfg-tag">Impact Windows</div></a>
+      <a href="manufacturers.html#allegion" class="ts-mfg-cell"><div class="ts-mfg-name">Allegion</div><div class="ts-mfg-tag">Door Hardware</div></a>
+      <a href="manufacturers.html#tgp" class="ts-mfg-cell"><div class="ts-mfg-name">TGP</div><div class="ts-mfg-tag">Fire-Rated Glazing</div></a>
+      <a href="manufacturers.html#slimpact" class="ts-mfg-cell"><div class="ts-mfg-name">Slimpact</div><div class="ts-mfg-tag">Slim-Profile Impact</div></a>
+    </div>
+  </section>
+
   <!-- ═══════════════ PROJECT GRID ═══════════════ -->
   <div class="pf-grid-wrap">
     <div class="pf-grid" id="pfGrid">
