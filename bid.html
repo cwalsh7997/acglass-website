@@ -5,6 +5,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
   <meta charset="UTF-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACG Bid Engine | Upload Plans. Get a Glazing Scope in 48 Hours.</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png">
@@ -2125,7 +2128,7 @@
 
       <div class="be-field">
         <label class="be-label" for="special-notes">Additional Notes <span class="be-optional-tag">Optional</span></label>
-        <textarea class="be-textarea" id="special-notes" placeholder="Any special requirements, preferred manufacturers (e.g. Kawneer, PGT, YKK), or schedule constraints..."></textarea>
+        <textarea class="be-textarea" id="special-notes" placeholder="Any special requirements, preferred manufacturers (e.g. ESWindows, PGT, Euro-Wall), or schedule constraints..."></textarea>
       </div>
 
       <div class="be-btn-row" style="margin-top:24px;">
@@ -2229,8 +2232,8 @@
         By submitting, you'll receive a <strong>preliminary scope range instantly</strong> and a <strong>detailed Division 08 bid from ACG within 48 hours</strong>. Your plans will be reviewed personally by Connor Walsh. This is not an automated system — every bid is human-reviewed.
       </div>
 
-      <!-- Hidden form for Formspree submission -->
-      <form id="bid-form" action="https://formspree.io/f/placeholder" method="POST" enctype="multipart/form-data" style="display:none;">
+      <!-- Hidden form — results emailed via send-plans.html flow once Formspree ID is provisioned -->
+      <form id="bid-form" action="send-plans.html" method="GET" style="display:none;">
         <input type="hidden" name="project_name" id="form-project-name">
         <input type="hidden" name="project_address" id="form-project-address">
         <input type="hidden" name="building_type" id="form-building-type">
@@ -2444,7 +2447,7 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" integrity="sha384-5MXQT3yrGpx6/FO6Z5JlMsn1xsN/OggV+b88W2CfpNqmvPfmv7JW/O8x78GzptfE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/main.js"></script>
 
   <script>
@@ -2495,14 +2498,14 @@
 
   // ---- SYSTEM RECOMMENDATIONS ----
   const SYSTEMS = {
-    retail:      { name: 'Commercial Storefront System', desc: 'Aluminum storefront framing with thermally broken frames. High-performance low-e glass. PGT, Kawneer, or YKK systems. Standard for retail and entry applications.', mfrName: 'Kawneer / PGT / YKK AP', mfrDesc: 'ACG specifies Kawneer 350/500 series, PGT WinGuard, and YKK AP storefronts for retail. All Florida product-approved.' },
-    hospitality: { name: 'Sliding / Bi-fold System (Eurowall)', desc: 'Large-format sliding or bi-fold glass wall systems for open-to-outside hospitality applications. Folding Glass Walls, NanaWall, or custom curtainwall. Specialty hardware, multiple panel configurations.', mfrName: 'NanaWall / Folding Glass Walls / Kawneer', mfrDesc: 'ACG installs NanaWall SL60 and Folding Glass Walls systems for hospitality. Custom configurations available.' },
-    healthcare:  { name: 'Impact-Rated Window Wall', desc: 'Impact-rated window wall with thermally broken aluminum frames. Low-e coatings for SHGC compliance. Specialized vision glass and spandrel panels. Certifications for healthcare construction.', mfrName: 'Kawneer / Oldcastle / PGT', mfrDesc: 'ACG specifies Kawneer 1600 Wall and Oldcastle BuildingEnvelope for healthcare. All HVHZ and FBC approved.' },
-    office:      { name: 'Curtainwall or Window Wall', desc: 'Unitized or stick-built curtainwall for office tower applications. High-performance double insulating glass units, low-e coatings, aluminum extrusions. Floor-to-ceiling vision or spandrel configuration.', mfrName: 'Kawneer / Viracon / Oldcastle', mfrDesc: 'ACG self-performs curtainwall with Kawneer 1600 Wall XT and Viracon high-performance glass units. 100+ office projects completed.' },
+    retail:      { name: 'Commercial Storefront System', desc: 'Aluminum storefront framing with thermally broken frames. High-performance low-e glass. PGT, ESWindows, or PGT systems. Standard for retail and entry applications.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG specifies ESWindows ES-8000 series, PGT WinGuard, and Euro-Wall storefronts for retail. All Florida product-approved.' },
+    hospitality: { name: 'Sliding / Bi-fold System (Euro-Wall)', desc: 'Large-format sliding or bi-fold glass wall systems for open-to-outside hospitality applications. Folding Glass Walls, NanaWall, or custom curtainwall. Specialty hardware, multiple panel configurations.', mfrName: 'NanaWall / Folding Glass Walls / ESWindows', mfrDesc: 'ACG installs NanaWall SL60 and Folding Glass Walls systems for hospitality. Custom configurations available.' },
+    healthcare:  { name: 'Impact-Rated Window Wall', desc: 'Impact-rated window wall with thermally broken aluminum frames. Low-e coatings for SHGC compliance. Specialized vision glass and spandrel panels. Certifications for healthcare construction.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG specifies ESWindows 1600 Wall and PGT BuildingEnvelope for healthcare. All HVHZ and FBC approved.' },
+    office:      { name: 'Curtainwall or Window Wall', desc: 'Unitized or stick-built curtainwall for office tower applications. High-performance double insulating glass units, low-e coatings, aluminum extrusions. Floor-to-ceiling vision or spandrel configuration.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG self-performs curtainwall with ESWindows 1600 Wall XT and PGT high-performance glass units. 100+ office projects completed.' },
     multifamily: { name: 'Impact Window Package', desc: 'PGT or CGI impact-rated windows and balcony doors. Thermally broken frames for energy compliance. Single-unit replacement windows or new construction window package. Florida product approved.', mfrName: 'PGT WinGuard / CGI / Eco Window', mfrDesc: 'ACG installs PGT WinGuard and CGI Guardian windows for multifamily. Full Florida NOA compliance on all units.' },
-    government:  { name: 'Government-Grade Storefront / Blast-Resistant Glazing', desc: 'Heavy-gauge aluminum storefront or curtainwall with blast-resistant glazing where required. Security laminated glass, anchored framing systems. ASTM F2248 blast testing compliance available.', mfrName: 'Kawneer / Oldcastle / Norshield', mfrDesc: 'ACG has completed government, courthouse, and institutional projects with blast-rated and high-security glazing systems.' },
-    seniorliving:{ name: 'Impact Window Package + Storefront', desc: 'Impact-rated aluminum storefront for common areas and PGT window units for resident rooms. Energy-code compliant low-e glass. Accessible hardware specifications. Senior living experience since 2019.', mfrName: 'PGT WinGuard / Kawneer / CGI', mfrDesc: 'ACG has completed multiple CCRC and ALF projects across Florida, including Panther National and The Preserve.' },
-    industrial:  { name: 'Commercial Storefront + Overhead Glazing', desc: 'Standard commercial storefront for office areas and clerestory windows for warehouse sections. Heavy-duty aluminum frames. Clear or tinted float glass where impact not required.', mfrName: 'Kawneer / YKK AP / PGT', mfrDesc: 'ACG installs Kawneer and YKK AP storefront systems for industrial office/warehouse combinations.' }
+    government:  { name: 'Government-Grade Storefront / Blast-Resistant Glazing', desc: 'Heavy-gauge aluminum storefront or curtainwall with blast-resistant glazing where required. Security laminated glass, anchored framing systems. ASTM F2248 blast testing compliance available.', mfrName: 'ESWindows / PGT / Norshield', mfrDesc: 'ACG has completed government, courthouse, and institutional projects with blast-rated and high-security glazing systems.' },
+    seniorliving:{ name: 'Impact Window Package + Storefront', desc: 'Impact-rated aluminum storefront for common areas and PGT window units for resident rooms. Energy-code compliant low-e glass. Accessible hardware specifications. Senior living experience since 2019.', mfrName: 'PGT WinGuard / ESWindows / CGI', mfrDesc: 'ACG has completed multiple CCRC and ALF projects across Florida, including Panther National and The Preserve.' },
+    industrial:  { name: 'Commercial Storefront + Overhead Glazing', desc: 'Standard commercial storefront for office areas and clerestory windows for warehouse sections. Heavy-duty aluminum frames. Clear or tinted float glass where impact not required.', mfrName: 'ESWindows / Euro-Wall / PGT', mfrDesc: 'ACG installs ESWindows and Euro-Wall storefront systems for industrial office/warehouse combinations.' }
   };
 
   // ---- TIMELINE PHASES ----

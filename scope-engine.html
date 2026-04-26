@@ -5,6 +5,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
   <meta charset="UTF-8">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACG Scope Intelligence Engine | Glazing Cost Estimator Florida</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -1805,7 +1808,7 @@
           <div class="se-system-range">$80 – $150 / SF</div>
         </div>
         <div class="se-system-card" data-value="eurowall">
-          <div class="se-system-name">Sliding / Bi-fold (Eurowall)</div>
+          <div class="se-system-name">Sliding / Bi-fold (Euro-Wall)</div>
           <div class="se-system-range">$200 – $500 / SF</div>
         </div>
         <div class="se-system-card" data-value="impact_windows">
@@ -2138,7 +2141,7 @@
 
     // Healthcare → fire-rated + storefront
     if (projectType === 'healthcare') return 'storefront';
-    // Restaurant / hospitality → Eurowall for indoor/outdoor potential
+    // Restaurant / hospitality → Euro-Wall for indoor/outdoor potential
     if (projectType === 'hospitality') return 'eurowall';
     // Multifamily → impact windows
     if (projectType === 'multifamily') return 'impact_windows';
@@ -2153,24 +2156,24 @@
   const SYSTEM_META = {
     storefront: {
       name: 'Commercial Storefront System',
-      desc: 'Aluminum storefront framing with thermally broken profiles. Ideal for single-story and low-rise commercial applications. ACG installs Kawneer 350/451T and YKK AP systems. Integrates with automatic entrances, sidelites, and transoms.',
-      mfr: 'Kawneer, YKK AP',
-      mfrDesc: 'ACG primarily specifies Kawneer 350/451T storefront and YKK AP 500/700 Series for commercial storefronts — both with current FL Product Approvals and established Miami-Dade NOAs for HVHZ applications.'
+      desc: 'Aluminum storefront framing with thermally broken profiles. Ideal for single-story and low-rise commercial applications. ACG installs ESWindows 350/451T and PGT systems. Integrates with automatic entrances, sidelites, and transoms.',
+      mfr: 'ESWindows, Euro-Wall AP',
+      mfrDesc: 'ACG primarily specifies ESWindows 350/451T storefront and PGT 500/700 Series for commercial storefronts — both with current FL Product Approvals and established Miami-Dade NOAs for HVHZ applications.'
     },
     curtainwall: {
       name: 'Curtainwall System',
-      desc: 'High-performance curtainwall for multi-story and large-span applications. Full structural coordination with building envelope. ACG installs Kawneer 1600 Wall System and YKK AP CW-300 Series. Engineered for Florida wind loads.',
-      mfr: 'Kawneer, YKK AP',
-      mfrDesc: 'ACG specifies Kawneer 1600 Wall System II and YKK AP Unitized Curtainwall for large-scale glazing envelopes. Both systems carry extensive Florida Product Approvals and meet ASCE 7-22 wind load requirements for all Florida wind zones.'
+      desc: 'High-performance curtainwall for multi-story and large-span applications. Full structural coordination with building envelope. ACG installs ESWindows 1600 Wall System and PGT CW-300 Series. Engineered for Florida wind loads.',
+      mfr: 'ESWindows, Euro-Wall AP',
+      mfrDesc: 'ACG specifies ESWindows 1600 Wall System II and PGT Unitized Curtainwall for large-scale glazing envelopes. Both systems carry extensive Florida Product Approvals and meet ASCE 7-22 wind load requirements for all Florida wind zones.'
     },
     window_wall: {
       name: 'Window Wall System',
-      desc: 'Floor-to-floor window wall providing high glass-to-floor ratios with simplified installation coordination. ACG specifies YKK AP Window Wall and Kawneer 1600UT for mid-rise multifamily, hospitality, and office projects.',
-      mfr: 'YKK AP, Kawneer',
-      mfrDesc: 'ACG specifies YKK AP Window Wall Series and Kawneer 1600UT for window wall applications. These systems offer excellent thermal performance (U ≤ 0.40) and are pre-engineered for Florida wind loads up to 175 mph.'
+      desc: 'Floor-to-floor window wall providing high glass-to-floor ratios with simplified installation coordination. ACG specifies PGT Window Wall and ESWindows 1600UT for mid-rise multifamily, hospitality, and office projects.',
+      mfr: 'ESWindows, Euro-Wall',
+      mfrDesc: 'ACG specifies PGT Window Wall Series and ESWindows 1600UT for window wall applications. These systems offer excellent thermal performance (U ≤ 0.40) and are pre-engineered for Florida wind loads up to 175 mph.'
     },
     eurowall: {
-      name: 'Sliding / Bi-fold (Eurowall) System',
+      name: 'Sliding / Bi-fold (Euro-Wall) System',
       desc: 'Multi-slide and bi-fold door systems for indoor/outdoor living and hospitality applications. ACG specifies NanaWall and Western Window Systems. Available with impact-rated laminated glass for Florida applications.',
       mfr: 'NanaWall, Western Window Systems',
       mfrDesc: 'ACG specifies NanaWall SL70 and Western Window Systems MSLW for multi-slide door systems. Both carry HVHZ product approvals for applicable configurations, with SHGC options meeting FBC energy requirements.'
@@ -2178,14 +2181,14 @@
     impact_windows: {
       name: 'Impact Windows & Doors',
       desc: 'HVHZ-rated PGT Winguard, CGI, or aluminum storefront impact systems for residential and multifamily applications. All products carry Miami-Dade NOA or Florida Product Approval.',
-      mfr: 'PGT, CGI, Kawneer',
-      mfrDesc: 'ACG specifies PGT Winguard Series, CGI Series 50/55 and Kawneer impact storefront for impact window and door applications. All carry current Miami-Dade NOA or statewide FL Product Approvals with current ACG installer credentials on file.'
+      mfr: 'PGT, CGI, ESWindows',
+      mfrDesc: 'ACG specifies PGT Winguard Series, CGI Series 50/55 and ESWindows impact storefront for impact window and door applications. All carry current Miami-Dade NOA or statewide FL Product Approvals with current ACG installer credentials on file.'
     },
     interior: {
       name: 'Interior Glass System',
       desc: 'Frameless and framed interior glass partitions, storefronts, and specialty applications. ACG installs CRL (C.R. Laurence), Dorma Glas, and standard storefront systems for interior glazing scopes.',
-      mfr: 'CRL, Dorma Glas, Kawneer',
-      mfrDesc: 'ACG specifies CRL frameless glass systems, Dorma Glas partitions, and Kawneer storefront for interior glazing applications. Interior scopes include office fronts, conference rooms, lobby glass, and specialty frameless assemblies.'
+      mfr: 'CRL, Dorma Glas, ESWindows',
+      mfrDesc: 'ACG specifies CRL frameless glass systems, Dorma Glas partitions, and ESWindows storefront for interior glazing applications. Interior scopes include office fronts, conference rooms, lobby glass, and specialty frameless assemblies.'
     }
   };
 
@@ -2250,7 +2253,7 @@
       { name: 'Imperial Crossings', type: 'Multifamily Storefront', loc: 'Bonita Springs, FL', url: 'imperial-crossings-bonita-springs.html', img: 'images/projects/imperial-crossings/hero.jpg' }
     ],
     hospitality: [
-      { name: "Waxin's — West Palm Beach", type: 'Hospitality Eurowall', loc: 'West Palm Beach, FL', url: 'waxins-west-palm-beach.html', img: 'images/projects/waxins/hero.jpg' },
+      { name: "Waxin's — West Palm Beach", type: 'Hospitality Euro-Wall', loc: 'West Palm Beach, FL', url: 'waxins-west-palm-beach.html', img: 'images/projects/waxins/hero.jpg' },
       { name: 'Gulf Harbour Country Club', type: 'Hospitality Glazing', loc: 'Fort Myers, FL', url: 'gulf-harbour-country-club.html', img: 'images/projects/gulf-harbour/hero.jpg' },
       { name: 'Ocean Prime — Fort Lauderdale', type: 'Restaurant Glazing', loc: 'Fort Lauderdale, FL', url: 'ocean-prime-ft-lauderdale.html', img: 'images/projects/ocean-prime/hero.jpg' }
     ],

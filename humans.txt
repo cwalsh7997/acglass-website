@@ -1,0 +1,23 @@
+/* TEAM */
+  President: Connor Walsh
+  Contact: connor@acglass.com
+  CEO: Rielly Walsh
+  Contact: rielly@acglass.com
+  Phone: (772) 486-7711
+  Location: West Palm Beach · Naples · Tampa, Florida
+  License: FL CGC #1531993
+
+/* COMPANY */
+  Name: American Commercial Glass, Inc.
+  Established: 2020
+  Specialization: Florida's commercial glazing specialists.
+  Stats: 350+ projects · 1M+ SF installed · 3 offices · 5+ years · 0 OSHA recordables
+
+/* MANUFACTURER PARTNERS */
+  ESWindows · Euro-Wall · PGT · Allegion · TGP · Slimpact
+
+/* SITE */
+  Build: Static HTML / CSS / JS — hosted on GitHub Pages
+  Last update: April 2026
+  Standards: HTML5, CSS3, ES6, WCAG 2.1 AA
+  Design: Editorial · Navy + Cream + Accent Red

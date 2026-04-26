@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none">
-  <!-- ACG "A" mark — red diagonal slash + navy/white triangle -->
-  <!-- Left: Red diagonal parallelogram -->
-  <polygon points="28,0 48,0 20,100 0,100" fill="#E21B2C"/>
-  <!-- Right: Navy/white triangle "A" shape -->
-  <polygon points="70,20 120,100 92,100 80,75 70,75 62,58 70,58" fill="#1B3052"/>
-  <polygon points="70,20 100,100 40,100 70,20" fill="#1B3052"/>
-  <!-- Cutout for the "A" opening -->
-  <polygon points="70,52 58,82 82,82" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" fill="none" aria-label="ACG mark">
+  <!-- Red parallelogram slash -->
+  <polygon points="44.44,0 75.11,0 30.82,99.61 0,99.61" fill="#E21B2C"/>
+  <!-- Navy A triangle -->
+  <polygon points="82.22,15.73 119.55,99.61 44.89,99.61" fill="#1B3052"/>
+  <!-- Inverted V cutout (transparent on transparent bg) -->
+  <polygon points="82.29,84.85 88.88,99.61 75.56,99.61" fill="white"/>
 </svg>

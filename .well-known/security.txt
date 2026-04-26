@@ -1,0 +1,11 @@
+Contact: mailto:connor@acglass.com
+Contact: tel:+17724867711
+Expires: 2027-04-26T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://acglass.com/.well-known/security.txt
+Policy: https://acglass.com/security-policy.html
+
+# American Commercial Glass — Security Disclosure
+# If you've discovered a security vulnerability on acglass.com,
+# please report it via email to connor@acglass.com.
+# We acknowledge reports within 48 business hours.
