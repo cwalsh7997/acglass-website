@@ -11,11 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Send Plans for Bid | American Commercial Glass</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <meta name="description" content="Submit your commercial glazing plans for a scoped bid in 48 hours. ACG reviews Division 08 scope, flags system conflicts, returns detailed proposals for Florida GCs.">
-  <link rel="canonical" href="https://acglass.com/reviews.html">
+  <meta name="description" content="Submit your Division 08 plans to ACG — detailed scope and price within 48 hours. Florida's commercial glazing specialists. (772) 486-7711.">
+  <link rel="canonical" href="https://acglass.com/send-plans.html">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <meta property="og:title" content="Send Plans for Bid | ACG">
-  <meta property="og:description" content="Client reviews and testimonials for American Commercial Glass (ACG). General contractor and architect feedback on ACG's Division 08 scope delivery, submittals, HVHZ compliance, and project execution across Florida.">
+  <meta property="og:description" content="Send your Division 08 plans to ACG. Drawings, specs, schedule — we'll reply with a detailed scope and price within 48 hours. FL CGC #1531993.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/send-plans.html">
   <meta property="og:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
@@ -188,6 +188,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Send Plans","item":"https://acglass.com/send-plans.html"}]}</script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
@@ -212,6 +213,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
             <a href="ai-overview.html">ACG Overview</a>
             <a href="capabilities.html">Capabilities</a>
             <a href="manufacturers.html">Manufacturer Partners</a>
+            <a href="careers.html">Careers</a>
             <a href="portfolio.html">Portfolio</a>
           </div>
         </div>
@@ -323,8 +325,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         <p style="color:rgba(255,255,255,.7);max-width:640px;margin:16px auto 0;">The more info you share, the faster we scope. Required fields are marked. File uploads accept up to 25 MB total.</p>
       </div>
 
+      <!-- TODO: Replace formspree-pending with real Formspree form ID once provisioned. JS submit handler below catches the placeholder and instructs the user to email Connor directly. -->
       <form id="send-plans-form"
-            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+            action="https://formspree.io/f/formspree-pending"
             method="POST"
             enctype="multipart/form-data"
             data-reveal data-delay="100"
@@ -572,10 +575,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
       });
       form.addEventListener('submit', function(e){
         // If Formspree endpoint is still the placeholder, fall back to email
-        if (form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
+        if (form.action.indexOf('formspree-pending') !== -1 || form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
           e.preventDefault();
           status.style.color = 'var(--accent)';
-          status.textContent = 'Form endpoint not yet configured. Please email plans to connor@acglass.com for now.';
+          status.innerHTML = 'Form endpoint not yet configured. Please email plans to <a href="mailto:connor@acglass.com" style="color:inherit;text-decoration:underline;">connor@acglass.com</a> or call (772) 486-7711.';
           return;
         }
         // Let Formspree handle; just track the event

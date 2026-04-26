@@ -2669,3 +2669,23 @@ a[href="eau-palm-beach-resort.html"]:hover img {
   line-height: 1.65;
   margin: 0;
 }
+
+/* === Skip to main content (a11y) === */
+.skip-link{
+  position:absolute;
+  top:-100px;
+  left:0;
+  z-index:10000;
+  padding:12px 24px;
+  background:var(--accent,#E11320);
+  color:#fff;
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:0 0 6px 0;
+  transition:top .2s;
+}
+.skip-link:focus{ top:0; outline:2px solid #fff; outline-offset:2px; }
