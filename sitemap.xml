@@ -517,6 +517,36 @@
     </image:image>
   </url>
   <url>
+    <loc>https://acglass.com/author-connor-walsh.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://acglass.com/images/acg-logo-nav@2x.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://acglass.com/images/leadership/connor-walsh-headshot.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://acglass.com/images/leadership/connor-walsh-headshot.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://acglass.com/author-rielly-walsh.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://acglass.com/images/acg-logo-nav@2x.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://acglass.com/images/leadership/rielly-panther-square.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://acglass.com/images/leadership/rielly-panther-square.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://acglass.com/automatic-entrance-systems.html</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
