@@ -712,8 +712,8 @@
     .ts-num .accent { color:var(--accent,#E11320); }
     .ts-label { margin-top:12px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.55); font-weight:700; }
     .ts-bar { margin-top:14px; height:3px; background:rgba(255,255,255,.06); border-radius:2px; overflow:hidden; }
-    .ts-bar-fill { height:100%; background:linear-gradient(90deg, var(--accent,#E11320) 0%, rgba(225,19,32,.4) 100%); transform-origin:left; transform:scaleX(var(--ts-fill, 1)); animation: tsBarGrow 1.6s cubic-bezier(.16,1,.3,1) both; }
-    @keyframes tsBarGrow { from { transform: scaleX(0); } to { transform: scaleX(var(--ts-fill, 1)); } }
+    .ts-bar-fill { height:100%; background:linear-gradient(90deg, var(--accent,#E11320) 0%, rgba(225,19,32,.4) 100%); transform-origin:left; transform:scaleX(0); transition: transform 1.6s cubic-bezier(.16,1,.3,1); }
+    .ts-band.in .ts-bar-fill { transform: scaleX(var(--ts-fill, 1)); }
 
     .ts-section-label { display:flex; align-items:center; gap:14px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent,#E11320); font-weight:700; margin-bottom:18px; }
     .ts-section-label::before, .ts-section-label::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.08); }
@@ -827,51 +827,57 @@
 
     <div class="ts-map-block" data-reveal>
       <div>
-        <svg class="ts-map-svg" viewBox="0 0 380 440" xmlns="http://www.w3.org/2000/svg" aria-label="Map of ACG project locations across Florida">
-          <!-- Florida outline — stylized peninsula + panhandle -->
-          <path class="fl-shape" d="M 20 95 L 50 88 L 90 90 L 130 95 L 170 100 L 210 108 L 245 118 L 270 132 L 290 152 L 300 178 L 305 205 L 305 232 L 300 258 L 290 285 L 278 308 L 268 332 L 255 355 L 240 375 L 222 392 L 202 405 L 182 410 L 165 408 L 150 400 L 140 388 L 132 372 L 128 354 L 130 335 L 138 318 L 150 305 L 160 292 L 168 278 L 172 262 L 170 246 L 162 232 L 150 222 L 132 215 L 110 210 L 85 200 L 60 188 L 38 170 L 22 145 L 18 120 Z"/>
-          <!-- Office markers (white squares with accent border) -->
+        <svg class="ts-map-svg" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" aria-label="Map of ACG project locations across Florida">
+          <!-- Simplified Florida outline -->
+          <path class="fl-shape" d="M 30 30 L 320 30 L 325 50 L 330 80 L 320 110 L 310 130 L 295 145 L 280 155 L 265 165 L 255 180 L 248 200 L 245 225 L 250 250 L 258 275 L 268 300 L 280 320 L 290 340 L 295 360 L 290 380 L 280 395 L 265 408 L 245 415 L 220 420 L 195 418 L 175 412 L 160 402 L 150 388 L 145 370 L 145 350 L 150 330 L 158 308 L 165 285 L 168 260 L 165 235 L 158 210 L 148 190 L 135 175 L 118 165 L 95 158 L 70 152 L 50 142 L 35 125 L 25 100 L 22 75 L 25 50 Z"/>
+          <!-- Office markers (white squares) -->
           <g aria-label="ACG offices">
-            <rect x="275" y="222" width="11" height="11" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2.5"/>
-            <text x="290" y="232" font-family="'JetBrains Mono',monospace" font-size="10" fill="#fff" font-weight="700" letter-spacing="1">WPB &mdash; HQ</text>
-            <rect x="159" y="288" width="9" height="9" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2.5"/>
-            <text x="118" y="297" font-family="'JetBrains Mono',monospace" font-size="10" fill="#fff" font-weight="700" letter-spacing="1">NAPLES</text>
-            <rect x="167" y="183" width="9" height="9" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2.5"/>
-            <text x="180" y="192" font-family="'JetBrains Mono',monospace" font-size="10" fill="#fff" font-weight="700" letter-spacing="1">TAMPA</text>
+            <!-- WPB HQ -->
+            <rect x="285" y="195" width="10" height="10" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2"/>
+            <text x="299" y="203" font-family="'JetBrains Mono',monospace" font-size="9" fill="#fff" font-weight="700" letter-spacing="1">WPB — HQ</text>
+            <!-- Naples -->
+            <rect x="180" y="310" width="8" height="8" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2"/>
+            <text x="194" y="317" font-family="'JetBrains Mono',monospace" font-size="9" fill="#fff" font-weight="700" letter-spacing="1">NAPLES</text>
+            <!-- Tampa -->
+            <rect x="170" y="180" width="8" height="8" fill="#fff" stroke="var(--accent,#E11320)" stroke-width="2"/>
+            <text x="184" y="187" font-family="'JetBrains Mono',monospace" font-size="9" fill="#fff" font-weight="700" letter-spacing="1">TAMPA</text>
           </g>
-          <!-- Project pins (each clustered city = 1 dot, spaced for readability) -->
+          <!-- Project pins -->
           <g aria-label="Project pins">
-            <!-- Treasure Coast east coast strip -->
-            <circle class="pin" cx="272" cy="152" r="4.5"><title>Daytona — The Bradley</title></circle>
-            <circle class="pin" cx="275" cy="168" r="4.5"><title>Cocoa Beach — Wave Food Hall, Wave Haven</title></circle>
-            <circle class="pin" cx="275" cy="176" r="4.5"><title>Melbourne — Hardy World</title></circle>
-            <circle class="pin" cx="278" cy="190" r="4.5"><title>Vero Beach — KLUS Lighting, SROA</title></circle>
-            <circle class="pin-pulse" cx="278" cy="190" r="5"></circle>
-            <circle class="pin" cx="282" cy="200" r="4.5"><title>Fort Pierce — Bobcat, Harbour Cay</title></circle>
-            <circle class="pin" cx="285" cy="210" r="4.5"><title>Port St. Lucie — Hulett, Project LIFT</title></circle>
-            <circle class="pin" cx="290" cy="218" r="4.5"><title>Hobe Sound — Atlantic Fields, Tradewinds</title></circle>
-            <!-- Palm Beach County (left side cluster) -->
-            <circle class="pin" cx="272" cy="232" r="4.5"><title>West Palm Beach — Waxin's, Panther National</title></circle>
-            <circle class="pin" cx="262" cy="240" r="4.5"><title>Manalapan — Eau Palm Beach</title></circle>
+            <!-- Treasure Coast — Hobe Sound, Stuart, PSL, Jupiter, Vero, Fort Pierce -->
+            <circle class="pin" cx="280" cy="175" r="5"><title>Vero Beach — KLUS Lighting, SROA</title></circle>
+            <circle class="pin-pulse" cx="280" cy="175" r="5"></circle>
+            <circle class="pin" cx="285" cy="185" r="5"><title>Fort Pierce — Bobcat, Harbour Cay</title></circle>
+            <circle class="pin" cx="290" cy="190" r="5"><title>Port St. Lucie — Hulett Environmental, Project LIFT, Lucie Tradition</title></circle>
+            <circle class="pin" cx="282" cy="190" r="5"><title>Hobe Sound — Atlantic Fields, Tradewinds</title></circle>
+            <!-- Palm Beach County — WPB, Manalapan, Westlake, Wellington, Riviera Beach -->
+            <circle class="pin" cx="289" cy="199" r="5"><title>Manalapan — Eau Palm Beach</title></circle>
+            <circle class="pin" cx="292" cy="203" r="5"><title>West Palm Beach — Waxin's, Panther National</title></circle>
+            <circle class="pin" cx="288" cy="206" r="5"><title>Lake Park — Innovation Center</title></circle>
+            <circle class="pin" cx="293" cy="210" r="5"><title>Riviera Beach — Villa L'Onz</title></circle>
             <!-- Broward / Miami-Dade -->
-            <circle class="pin" cx="248" cy="260" r="4.5"><title>Fort Lauderdale — Ocean Prime</title></circle>
-            <circle class="pin" cx="232" cy="275" r="4.5"><title>Davie — CubeSmart</title></circle>
-            <circle class="pin" cx="218" cy="288" r="4.5"><title>Miami — iFLY Miami, Medley</title></circle>
-            <circle class="pin" cx="205" cy="298" r="4.5"><title>Hialeah — Westlake Retrofit</title></circle>
+            <circle class="pin" cx="290" cy="222" r="5"><title>Fort Lauderdale — Ocean Prime</title></circle>
+            <circle class="pin" cx="285" cy="232" r="5"><title>Davie — CubeSmart</title></circle>
+            <circle class="pin" cx="282" cy="242" r="5"><title>Miami — iFLY Miami, Medley</title></circle>
+            <circle class="pin" cx="275" cy="248" r="5"><title>Hialeah — Westlake Retrofit</title></circle>
             <!-- Florida Keys -->
-            <circle class="pin" cx="195" cy="385" r="4.5"><title>Cudjoe Key — Fire Station 11</title></circle>
-            <!-- SW Florida cluster -->
-            <circle class="pin" cx="175" cy="305" r="4.5"><title>Naples — Siena Lakes</title></circle>
-            <circle class="pin" cx="170" cy="288" r="4.5"><title>Bonita Springs — Imperial, Causeway, Prestige</title></circle>
-            <circle class="pin" cx="168" cy="272" r="4.5"><title>Estero — Estero Vista, Wild Blue, Gulf Harbour</title></circle>
-            <circle class="pin" cx="165" cy="258" r="4.5"><title>Fort Myers / Cape Coral — Illumina, HCA</title></circle>
-            <!-- Tampa Bay -->
-            <circle class="pin" cx="172" cy="190" r="4.5"><title>Tampa — Dale Mabry Retail</title></circle>
-            <!-- Central FL inland -->
-            <circle class="pin" cx="218" cy="195" r="4.5"><title>Winter Haven — Storage King</title></circle>
-            <circle class="pin" cx="235" cy="190" r="4.5"><title>Haines City — EOC</title></circle>
-            <circle class="pin" cx="250" cy="218" r="4.5"><title>Indiantown — High School</title></circle>
-            <circle class="pin" cx="262" cy="185" r="4.5"><title>Palm Bay — The Pointe</title></circle>
+            <circle class="pin" cx="230" cy="310" r="5"><title>Cudjoe Key — Fire Station 11</title></circle>
+            <!-- SW Florida — Naples, Bonita, Fort Myers, Estero -->
+            <circle class="pin" cx="178" cy="305" r="5"><title>Naples — Siena Lakes</title></circle>
+            <circle class="pin" cx="182" cy="295" r="5"><title>Bonita Springs — Imperial, Causeway, Prestige</title></circle>
+            <circle class="pin" cx="180" cy="285" r="5"><title>Estero — Estero Vista, Wild Blue, Gulf Harbour</title></circle>
+            <circle class="pin" cx="175" cy="275" r="5"><title>Fort Myers — Illumina, Cape Coral HCA</title></circle>
+            <!-- Tampa Bay area -->
+            <circle class="pin" cx="168" cy="175" r="5"><title>Tampa — Dale Mabry Retail</title></circle>
+            <!-- Central FL — Hardy Melbourne, Cocoa Beach, Daytona, Haines City, Indiantown, Lake Park, Winter Haven, Palm Bay -->
+            <circle class="pin" cx="265" cy="165" r="5"><title>Melbourne — Hardy World</title></circle>
+            <circle class="pin" cx="265" cy="160" r="5"><title>Cocoa Beach — Wave Food Hall, Wave Haven</title></circle>
+            <circle class="pin" cx="258" cy="150" r="5"><title>Daytona — The Bradley</title></circle>
+            <circle class="pin" cx="230" cy="180" r="5"><title>Winter Haven — Storage King</title></circle>
+            <circle class="pin" cx="230" cy="165" r="5"><title>Haines City — EOC</title></circle>
+            <circle class="pin" cx="265" cy="170" r="5"><title>Palm Bay — The Pointe</title></circle>
+            <circle class="pin" cx="272" cy="180" r="5"><title>Indiantown — High School</title></circle>
+            <!-- Panhandle / NW — Lafayette LA shown elsewhere -->
           </g>
         </svg>
       </div>
