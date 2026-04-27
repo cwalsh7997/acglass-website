@@ -9,7 +9,7 @@
 
 /* COMPANY */
   Name: American Commercial Glass, Inc.
-  Established: 2020
+  Established: 2021
   Specialization: Florida's commercial glazing specialists.
   Stats: 350+ projects · 1M+ SF installed · 3 offices · 5+ years · 0 OSHA recordables
 
