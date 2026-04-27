@@ -9,6 +9,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D1E36">
   <title>Send Plans for Bid | American Commercial Glass</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="description" content="Submit your Division 08 plans to ACG — detailed scope and price within 48 hours. Florida's commercial glazing specialists. (772) 486-7711.">
@@ -25,9 +26,10 @@
   <meta property="og:image:alt" content="American Commercial Glass — Florida\'s commercial glazing specialists">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Reviews | ACG Commercial Glazing Contractor | Florida GC and Architect Feedback">
-  <meta name="twitter:description" content="Client reviews and testimonials for American Commercial Glass (ACG). General contractor and architect feedback on ACG's Division 08 scope delivery, submittals, HVHZ compliance, and project execution across Florida.">
+  <meta name="twitter:title" content="Send Plans for Bid | ACG">
+  <meta name="twitter:description" content="Send your Division 08 plans to ACG. Drawings, specs, schedule — we'll reply with a detailed scope and price within 48 hours. FL CGC #1531993.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css?v=1777294558">
 
   <!-- AboutPage Schema -->
@@ -575,19 +577,31 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         }
       });
       form.addEventListener('submit', function(e){
-        // If Formspree endpoint is still the placeholder, fall back to email
-        if (form.action.indexOf('formspree-pending') !== -1 || form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
-          e.preventDefault();
-          status.style.color = 'var(--accent)';
-          status.innerHTML = 'Form endpoint not yet configured. Please email plans to <a href="mailto:connor@acglass.com" style="color:inherit;text-decoration:underline;">connor@acglass.com</a> or call (772) 486-7711.';
-          return;
-        }
-        // Let Formspree handle; just track the event
+        // Track submit
         if (typeof gtag === 'function') {
           gtag('event', 'bid_form_submit', {
             project_type: form.project_type ? form.project_type.value : '',
             bid_type: form.bid_type ? form.bid_type.value : ''
           });
+        }
+        // If Formspree endpoint is still a placeholder, build a prefilled mailto: link
+        // so the lead actually reaches Connor today. Replace placeholder with a real
+        // form ID later and this branch becomes unreachable.
+        if (form.action.indexOf('formspree-pending') !== -1 || form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
+          e.preventDefault();
+          var data = new FormData(form);
+          var subject = 'Plans for bid: ' + (data.get('project_type') || 'New project') + (data.get('project_name') ? ' — ' + data.get('project_name') : '');
+          var lines = [];
+          data.forEach(function(value, key){
+            if (!value) return;
+            var label = key.replace(/_/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+            lines.push(label + ': ' + value);
+          });
+          var body = lines.join('\n') + '\n\n— Submitted from acglass.com/send-plans.html';
+          var mailto = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          status.style.color = '#fff';
+          status.innerHTML = 'Opening your email — please attach the drawings and hit send. If your email did not open, write to <a href="mailto:connor@acglass.com" style="color:var(--accent);text-decoration:underline;">connor@acglass.com</a> directly.';
+          window.location.href = mailto;
         }
       });
     })();

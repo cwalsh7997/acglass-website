@@ -9,6 +9,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D1E36">
   <title>Send Us Your Plans | American Commercial Glass</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="description" content="Send plans to ACG — scoped bid in 48 hours. Three Florida offices: West Palm Beach (HQ), Naples, Tampa. (772) 486-7711.">
@@ -28,6 +29,7 @@
   <meta name="twitter:title" content="Contact American Commercial Glass | Get a Glazing Scope in 48 Hours">
   <meta name="twitter:description" content="Send your plans to ACG and receive a detailed glazing scope and competitive estimate within 48 hours. Three Florida offices: West Palm Beach, Naples, Tampa.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css?v=1777294558">
 
   <!-- ContactPage Schema -->
@@ -790,6 +792,42 @@
   <script src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
+  </script>
+  <script>
+    // Contact form submit handler — mailto: fallback so leads actually reach
+    // Connor without depending on a third-party form service. Replace with a
+    // server-side action (Formspree/Web3Forms/etc.) when one is provisioned.
+    (function(){
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var started = false;
+      form.addEventListener('focusin', function(){
+        if (!started && typeof gtag === 'function') {
+          gtag('event', 'contact_form_start', { page_location: location.pathname });
+          started = true;
+        }
+      });
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var data = new FormData(form);
+        var subject = 'Inquiry from ' + (data.get('company') || data.get('name') || 'website') + ' — ' + (data.get('project-type') || 'Project');
+        var lines = [];
+        data.forEach(function(value, key){
+          if (!value) return;
+          var label = key.replace(/[-_]/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+          lines.push(label + ': ' + value);
+        });
+        var body = lines.join('\n') + '\n\n— Submitted from acglass.com/contact.html';
+        var mailto = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact_form_submit', {
+            project_type: data.get('project-type') || '',
+            page_location: location.pathname
+          });
+        }
+        window.location.href = mailto;
+      });
+    })();
   </script>
 </body>
 </html>
