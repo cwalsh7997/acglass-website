@@ -72,6 +72,36 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* ---------- BYLINE META (mono caption: author / date / divider) ---------- */
+.byline-meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+.byline-meta a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.byline-meta a:hover { color: rgba(255,255,255,0.85); }
+.byline-meta-accent {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.eyebrow-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.mono-accent {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
 /* ---------- FAQ ACCORDIONS (native <details>/<summary>) ---------- */
 .faq-item {
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -220,6 +250,12 @@
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+  /* Aliases for variables referenced by inline styles elsewhere on the site.
+     Without these, ~390 inline `style=` attributes silently fall back to
+     defaults (Inter for the mono and white-90 for muted). */
+  --font-mono: var(--mono);
+  --text-muted: var(--white-50);
 
   --section-pad: clamp(80px, 10vw, 160px);
 
