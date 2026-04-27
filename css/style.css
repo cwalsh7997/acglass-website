@@ -101,6 +101,36 @@
   font-size: 0.8rem;
   color: var(--accent);
 }
+.feature-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.feature-value {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 4px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.content-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.accent-link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.body-sm {
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  line-height: 1.8;
+}
 
 /* ---------- FAQ ACCORDIONS (native <details>/<summary>) ---------- */
 .faq-item {

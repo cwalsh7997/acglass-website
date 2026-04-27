@@ -600,7 +600,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
           var body = lines.join('\n') + '\n\n— Submitted from acglass.com/send-plans.html';
           var mailto = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
           status.style.color = '#fff';
-          status.innerHTML = 'Opening your email — please attach the drawings and hit send. If your email did not open, write to <a href="mailto:connor@acglass.com" style="color:var(--accent);text-decoration:underline;">connor@acglass.com</a> directly.';
+          status.innerHTML = 'Opening your email — please attach the drawings and hit send. If your email did not open, write to <a href="mailto:connor@acglass.com" class="accent-link">connor@acglass.com</a> directly.';
           window.location.href = mailto;
         }
       });
