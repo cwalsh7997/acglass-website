@@ -72,6 +72,23 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* ---------- CITY PILLS (used on location pages' "Cities We Serve" lists) ---------- */
+.city-pill {
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  font-size: 13px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.city-pill:hover,
+.city-pill:focus {
+  border-color: rgba(225,19,32,0.4);
+  color: #fff;
+}
+
 /* ---------- RESET ---------- */
 *, *::before, *::after {
   margin: 0;
