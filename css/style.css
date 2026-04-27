@@ -180,6 +180,46 @@
   color: rgba(255,255,255,0.6);
   line-height: 1.45;
 }
+/* ---------- SHARE BUTTONS (LinkedIn / Facebook / generic) ---------- */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.share-btn:hover { background: rgba(255,255,255,0.08); }
+.share-btn-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10,102,194,0.15);
+  border: 1px solid rgba(10,102,194,0.3);
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.share-btn-linkedin:hover { background: rgba(10,102,194,0.25); }
+.share-btn-facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24,119,242,0.15);
+  border: 1px solid rgba(24,119,242,0.3);
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.share-btn-facebook:hover { background: rgba(24,119,242,0.25); }
 
 /* ---------- FAQ ACCORDIONS (native <details>/<summary>) ---------- */
 .faq-item {
