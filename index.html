@@ -250,7 +250,7 @@
     <link rel="preload" as="image" href="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp" type="image/webp" fetchpriority="high">
     <div class="hero-bg" id="heroFilmstrip">
       <!-- Filmstrip: LCP slide eagerly preloaded, rest lazy-loaded after first paint -->
-      <div class="hs-slide is-active"><picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp"><img src="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale — twilight waterfront with Euro-Wall glazing by ACG" width="2000" height="1125" fetchpriority="high" style="object-position:center 50%;"></picture></div>
+      <div class="hs-slide is-active"><picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp"><img src="images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale — twilight waterfront with Euro-Wall glazing by ACG" width="2000" height="1125" fetchpriority="high" style="object-position:center 50%;" decoding="async"></picture></div>
       <div class="hs-slide" data-src-webp="images/projects/gulfside-twelve/hero-twilight-beachfront.webp" data-src-jpg="images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" data-alt="Gulfside Twelve Fort Myers Beach at twilight"></div>
       <div class="hs-slide" data-src-webp="images/projects/panther-national/aerial-golf-course.webp" data-src-jpg="images/projects/panther-national/aerial-golf-course.jpg" data-alt="Panther National Clubhouse aerial"></div>
       <div class="hs-slide" data-src-webp="images/projects/eau-palm-beach/aerial-resort.webp" data-src-jpg="images/projects/eau-palm-beach/aerial-resort.jpg" data-alt="Eau Palm Beach Resort"></div>
@@ -280,7 +280,7 @@
         var jpg = slide.getAttribute('data-src-jpg');
         var alt = slide.getAttribute('data-alt') || '';
         var p = document.createElement('picture');
-        p.innerHTML = '<source type="image/webp" srcset="'+webp+'"><img src="'+jpg+'" alt="'+alt+'" width="2000" height="1125" loading="lazy" style="object-position:center 50%;">';
+        p.innerHTML = '<source type="image/webp" srcset="'+webp+'"><img src="'+jpg+'" alt="'+alt+'" width="2000" height="1125" loading="lazy" style="object-position:center 50%;" decoding="async">';
         slide.appendChild(p);
         slide.dataset.hydrated = '1';
       }
@@ -486,11 +486,11 @@
       <a href="eau-palm-beach-resort.html" style="display:block;text-decoration:none;color:inherit;" data-reveal-scale>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;border-radius:12px;overflow:hidden;position:relative;">
           <div style="position:relative;overflow:hidden;aspect-ratio:16/10;">
-            <picture><source type="image/webp" srcset="images/projects/eau-palm-beach/polpo-construction-arches.webp"><img src="images/projects/eau-palm-beach/polpo-construction-arches.jpg" alt="Eau Palm Beach during construction" style="width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);" loading="lazy" width="1440" height="1080"></picture>
+            <picture><source type="image/webp" srcset="images/projects/eau-palm-beach/polpo-construction-arches.webp"><img src="images/projects/eau-palm-beach/polpo-construction-arches.jpg" alt="Eau Palm Beach during construction" style="width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);" loading="lazy" width="1440" height="1080" decoding="async"></picture>
             <div style="position:absolute;bottom:12px;left:12px;background:rgba(5,10,18,0.75);backdrop-filter:blur(8px);padding:5px 12px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:rgba(255,255,255,0.7);text-transform:uppercase;">During Construction</div>
           </div>
           <div style="position:relative;overflow:hidden;aspect-ratio:16/10;">
-            <picture><source type="image/webp" srcset="images/projects/eau-palm-beach/polpo-exterior-ocean.webp"><img src="images/projects/eau-palm-beach/polpo-exterior-ocean.jpg" alt="Eau Palm Beach completed — Polpo bi-fold wall open to the ocean" style="width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);" loading="lazy" width="1080" height="720"></picture>
+            <picture><source type="image/webp" srcset="images/projects/eau-palm-beach/polpo-exterior-ocean.webp"><img src="images/projects/eau-palm-beach/polpo-exterior-ocean.jpg" alt="Eau Palm Beach completed — Polpo bi-fold wall open to the ocean" style="width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);" loading="lazy" width="1080" height="720" decoding="async"></picture>
             <div style="position:absolute;bottom:12px;left:12px;background:rgba(5,10,18,0.75);backdrop-filter:blur(8px);padding:5px 12px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:rgba(255,255,255,0.7);text-transform:uppercase;">Completed</div>
           </div>
           <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;background:var(--accent,#E11320);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(225,19,32,0.4);">
@@ -692,7 +692,7 @@
         <!-- Project 1 — Eau Palm Beach Resort -->
         <a href="eau-palm-beach-resort.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="project-card-img" data-index="01">
-            <picture><source type="image/webp" srcset="images/projects/eau-palm-beach/entrance-dusk.webp"><img src="images/projects/eau-palm-beach/entrance-dusk.jpg" alt="Eau Palm Beach Resort & Spa — Forbes Five-Star multi-phase glazing renovation" loading="lazy" width="1080" height="721"></picture>
+            <picture><source type="image/webp" srcset="images/projects/eau-palm-beach/entrance-dusk.webp"><img src="images/projects/eau-palm-beach/entrance-dusk.jpg" alt="Eau Palm Beach Resort & Spa — Forbes Five-Star multi-phase glazing renovation" loading="lazy" width="1080" height="721" decoding="async"></picture>
           </div>
           <div class="project-card-info">
             <div class="cat">Hospitality</div>
@@ -704,7 +704,7 @@
         <!-- Project 2 — Ocean Prime -->
         <a href="ocean-prime-ft-lauderdale.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="project-card-img" data-index="02">
-            <picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale.webp"><img src="images/projects/ocean-prime-ft-lauderdale.jpg" alt="Ocean Prime Fort Lauderdale — restaurant storefront glazing" loading="lazy" width="2000" height="1497"></picture>
+            <picture><source type="image/webp" srcset="images/projects/ocean-prime-ft-lauderdale.webp"><img src="images/projects/ocean-prime-ft-lauderdale.jpg" alt="Ocean Prime Fort Lauderdale — restaurant storefront glazing" loading="lazy" width="2000" height="1497" decoding="async"></picture>
           </div>
           <div class="project-card-info">
             <div class="cat">Restaurant</div>
@@ -716,7 +716,7 @@
         <!-- Project 3 — Compass at Alton Town Center -->
         <a href="compass-alton-town-center.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="project-card-img" data-index="03">
-            <picture><source type="image/webp" srcset="images/projects/compass-alton/storefront.webp"><img src="images/projects/compass-alton/storefront.jpg" alt="Compass at Alton Town Center — commercial storefront" loading="lazy" width="1360" height="1008"></picture>
+            <picture><source type="image/webp" srcset="images/projects/compass-alton/storefront.webp"><img src="images/projects/compass-alton/storefront.jpg" alt="Compass at Alton Town Center — commercial storefront" loading="lazy" width="1360" height="1008" decoding="async"></picture>
           </div>
           <div class="project-card-info">
             <div class="cat">Retail</div>
@@ -728,7 +728,7 @@
         <!-- Project 4 — Dale Mabry Retail Tampa -->
         <a href="dale-mabry-retail-tampa.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="project-card-img" data-index="04">
-            <picture><source type="image/webp" srcset="images/projects/dale-mabry-retail/hero-entry.webp"><img src="images/projects/dale-mabry-retail/hero-entry.jpg" alt="Dale Mabry Retail — Tampa commercial storefront" loading="lazy" width="2000" height="1500"></picture>
+            <picture><source type="image/webp" srcset="images/projects/dale-mabry-retail/hero-entry.webp"><img src="images/projects/dale-mabry-retail/hero-entry.jpg" alt="Dale Mabry Retail — Tampa commercial storefront" loading="lazy" width="2000" height="1500" decoding="async"></picture>
           </div>
           <div class="project-card-info">
             <div class="cat">Retail &bull; Tampa</div>
@@ -740,7 +740,7 @@
         <!-- Project 5 — Hardy World 4.0 -->
         <a href="hardy-world-melbourne.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="project-card-img" data-index="05">
-            <picture><source type="image/webp" srcset="images/projects/hardy-world/hero-twilight.webp"><img src="images/projects/hardy-world/hero-twilight.jpg" alt="Hardy World 4.0 — retail storefront glazing" loading="lazy" width="1440" height="1080"></picture>
+            <picture><source type="image/webp" srcset="images/projects/hardy-world/hero-twilight.webp"><img src="images/projects/hardy-world/hero-twilight.jpg" alt="Hardy World 4.0 — retail storefront glazing" loading="lazy" width="1440" height="1080" decoding="async"></picture>
           </div>
           <div class="project-card-info">
             <div class="cat">Retail</div>
@@ -752,7 +752,7 @@
         <!-- Project 6 — Atlantic Fields Golf House -->
         <a href="atlantic-fields-golf-house.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="project-card-img" data-index="06">
-            <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/hero-open-wall.webp"><img src="images/projects/atlantic-fields-golf-house/hero-open-wall.jpg" alt="Atlantic Fields Golf House — window wall system" loading="lazy" width="1620" height="1080"></picture>
+            <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/hero-open-wall.webp"><img src="images/projects/atlantic-fields-golf-house/hero-open-wall.jpg" alt="Atlantic Fields Golf House — window wall system" loading="lazy" width="1620" height="1080" decoding="async"></picture>
           </div>
           <div class="project-card-info">
             <div class="cat">Hospitality</div>
