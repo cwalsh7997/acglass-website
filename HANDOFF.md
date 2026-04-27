@@ -1,6 +1,6 @@
 # Site Audit Handoff — `audit/dedupe-og-tags`
 
-This branch carries **18 commits** of audit fixes for acglass.com. Nothing
+This branch carries **29 commits** of audit fixes for acglass.com. Nothing
 has been pushed to GitHub or merged to `main` yet — production is unchanged.
 This doc covers what's done, how to ship it, and what still needs your
 input.
@@ -12,17 +12,20 @@ input.
 | Duplicate `og:*` meta tags | 83 pages broken | 0 |
 | Third-party font CDN requests per page | 3 (Google Fonts) | 0 (self-hosted woff2) |
 | Broken internal links (HTML refs) | 437 | 0 |
+| Broken `<img>` srcset references | 1 | 0 |
 | `<img>` tags with `width`/`height` (CLS) | ~2172 attrs (incomplete) | 1583/1592 imgs (99% coverage) |
 | `<img>` tags with `decoding="async"` | 807 (50%) | 1591/1592 (99%) |
 | `<img>` tags with `loading=*` | 1165 (73%) | 1590/1592 (99%) |
-| Inline `onmouseover` event handlers | 6,763 | 777 (88% reduction) |
+| Inline `onmouseover` event handlers | 6,763 | 55 (99.2% reduction) |
+| Repeated inline-style instances extracted to CSS classes | 0 | **5,000+** across 19 reusable classes |
+| Broken `--font-mono` and `--text-muted` CSS var refs | ~1,500 (silently falling back) | All fixed (vars defined + classes added) |
 | Lead-capture forms that actually deliver | 0 (broken stub Formspree) | 2 (mailto fallback) |
 | `<meta name="theme-color">` coverage | 0 pages | 444 pages |
 | Service schema on system/product pages | 0 of 6 | 6 of 6 |
 | `Florida\'s` literal-backslash in og:image:alt | 303 | 0 |
 | Sitemap entries pointing at noindex'd pages | 9 | 0 |
 | Pages without Privacy/Terms link in footer | 444 (orphan pages) | 4 (only minimal pages without footer) |
-| Estimated HTML payload reduction | n/a | ~1.5–2 MB across the site |
+| Total HTML payload size | 16.69 MB | **14.35 MB (-2.34 MB / -14%)** |
 
 ## Commit log (oldest to newest on this branch)
 
@@ -45,7 +48,38 @@ b15a3cc fix: extend Privacy + Terms links to multi-line footer-bottom (304 more 
 1b4365a fix: humans.txt founding year (2020 -> 2021)
 9184c72 docs: note known minor issues in HANDOFF
 ebfd8d8 perf: extract repeated city-pill inline styles + handlers to a CSS class
+d3f77f0 docs: refresh HANDOFF with all 18 commits + perf savings numbers
+3b6ec92 perf: extract 2 more inline-style anchor patterns to CSS classes
+99a23d5 perf: add WebP <source> to 5 picture blocks on GC partner pages
+f3c72b5 perf: extract repeated bullet-row markup to CSS classes
+5bca45b perf+ux: extract FAQ accordion styles to classes (faq-item / -question / -marker / -answer)
+02507e8 fix+perf: extract byline/eyebrow inline styles + define missing CSS vars
+2c898c2 perf: 5 more inline-style patterns extracted to CSS classes (1119 instances)
+9aa0a58 perf: 7 more inline-style patterns extracted (1332 instances)
+31a53ea perf: extract social share button styles (3 classes, 447 instances)
+3a02386 perf: 6 more inline-style patterns extracted (848 instances)
+503f063 fix: remove broken <source> referencing non-existent ifly-miami-exterior.webp
 ```
+
+## CSS classes added on this branch
+
+This branch introduces ~25 reusable utility classes in `css/style.css`,
+all named clearly and grouped under section comments. They replaced
+~5,000 instances of repeated inline `style="..."` markup across the site.
+Classes:
+
+- **Anchors / pills**: `.city-pill`, `.service-pill`, `.see-also-link`,
+  `.blog-card-link`, `.link-card`, `.share-btn`, `.share-btn-linkedin`,
+  `.share-btn-facebook`
+- **Bullet lists**: `.bullet-row`, `.bullet-dot`, `.bullet-dot-md`
+- **FAQ accordion**: `.faq-item`, `.faq-question`, `.faq-marker`, `.faq-answer`
+- **Typography labels**: `.byline-meta`, `.byline-meta-accent`, `.eyebrow-tag`,
+  `.label-sm`, `.label-tag`, `.label-tag-mb`, `.mono-accent`, `.feature-label`,
+  `.feature-value`
+- **Body / heading**: `.body-sm`, `.body-sm-tight`, `.heading-md`, `.section-h2`,
+  `.card-title`, `.card-meta`
+- **Layout / surface**: `.content-card`, `.share-row`, `.share-row-bare`,
+  `.divider-faint`, `.accent-link`
 
 Each commit message has the full rationale + before/after numbers — read
 those for context, not this doc.
