@@ -221,6 +221,46 @@
 }
 .share-btn-facebook:hover { background: rgba(24,119,242,0.25); }
 
+/* ---------- More extracted inline patterns ---------- */
+.share-row {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.share-row-bare {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.divider-faint { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.heading-md {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.bullet-dot-md {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.label-tag-mb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
 /* ---------- FAQ ACCORDIONS (native <details>/<summary>) ---------- */
 .faq-item {
   border-bottom: 1px solid rgba(255,255,255,0.1);
