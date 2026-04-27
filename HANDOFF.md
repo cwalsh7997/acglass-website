@@ -1,7 +1,7 @@
 # Site Audit Handoff — `audit/dedupe-og-tags`
 
-This branch carries 12 commits of audit fixes for acglass.com. Nothing has
-been pushed to GitHub or merged to `main` yet — production is unchanged.
+This branch carries **18 commits** of audit fixes for acglass.com. Nothing
+has been pushed to GitHub or merged to `main` yet — production is unchanged.
 This doc covers what's done, how to ship it, and what still needs your
 input.
 
@@ -15,12 +15,14 @@ input.
 | `<img>` tags with `width`/`height` (CLS) | ~2172 attrs (incomplete) | 1583/1592 imgs (99% coverage) |
 | `<img>` tags with `decoding="async"` | 807 (50%) | 1591/1592 (99%) |
 | `<img>` tags with `loading=*` | 1165 (73%) | 1590/1592 (99%) |
+| Inline `onmouseover` event handlers | 6,763 | 777 (88% reduction) |
 | Lead-capture forms that actually deliver | 0 (broken stub Formspree) | 2 (mailto fallback) |
 | `<meta name="theme-color">` coverage | 0 pages | 444 pages |
 | Service schema on system/product pages | 0 of 6 | 6 of 6 |
 | `Florida\'s` literal-backslash in og:image:alt | 303 | 0 |
 | Sitemap entries pointing at noindex'd pages | 9 | 0 |
-| Pages stripped of inert `<picture>` width corruption | n/a | 8 |
+| Pages without Privacy/Terms link in footer | 444 (orphan pages) | 4 (only minimal pages without footer) |
+| Estimated HTML payload reduction | n/a | ~1.5–2 MB across the site |
 
 ## Commit log (oldest to newest on this branch)
 
@@ -37,6 +39,12 @@ cdc950c feat(seo): add Service schema to 6 product/system pages
 bc44120 fix: remove stray backslash from "Florida's" in og:image:alt across 301 pages
 82769a2 perf: add decoding="async" to 784 <img> tags that lacked it
 888e636 perf: add loading="lazy" to 425 below-the-fold <img> tags
+f432e93 docs: add HANDOFF.md summarizing the audit branch
+4a3c4de fix: surface Privacy + Terms links from footer on 135 pages
+b15a3cc fix: extend Privacy + Terms links to multi-line footer-bottom (304 more pages)
+1b4365a fix: humans.txt founding year (2020 -> 2021)
+9184c72 docs: note known minor issues in HANDOFF
+ebfd8d8 perf: extract repeated city-pill inline styles + handlers to a CSS class
 ```
 
 Each commit message has the full rationale + before/after numbers — read
