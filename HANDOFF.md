@@ -186,6 +186,27 @@ you ever shoot photos for those projects (Boca Raton commercial, Daytona,
 Hulett Port St Lucie, etc.), update the city pages' service-detail-visual
 section to use the real photo.
 
+## Known minor issues (browsers handle gracefully)
+
+- **4 pages with unbalanced `<div>` tags** — fixable but risky to mass-edit
+  without visual verification:
+  - `commercial-glazing-naples.html` — 1 missing `</div>`
+  - `eswindows-installer-miami.html` — 1 extra `</div>`
+  - `portfolio.html` — 1 missing `</div>` (the `<div class="pf-grid-wrap">`
+    on line 712 doesn't have a clearly matching close)
+  - `location-template-snippet.html` — 2 missing `</div>` (it's a partial
+    snippet so this is expected)
+  Browsers auto-close at end of section / document so these don't visibly
+  break, but they show up as warnings in HTML validators.
+
+- **839 heading-level skips** (mostly H2 → H4 / H5 in footer) — flagged
+  in #5 below.
+
+- **Some JPGs declare og:image as 1200×630 but the actual file is bigger**
+  (e.g., 1600×900). Facebook crops automatically; not a render bug. To fix
+  perfectly you'd produce 1200×630 versions of the 30 or so most-used og
+  images — image-processing work I couldn't do without ImageMagick.
+
 ## What I deliberately didn't touch
 
 - Image compression / WebP encoding for PNGs (need ImageMagick).
