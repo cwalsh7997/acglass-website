@@ -72,6 +72,37 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
+/* ---------- FAQ ACCORDIONS (native <details>/<summary>) ---------- */
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 24px 0;
+  cursor: pointer;
+}
+.faq-item[open] { padding-bottom: 24px; }
+.faq-question {
+  font-size: clamp(16px, 1.4vw, 19px);
+  font-weight: 700;
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-marker {
+  color: var(--accent);
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform 0.2s;
+}
+.faq-item[open] .faq-marker { transform: rotate(45deg); }
+.faq-answer {
+  margin-top: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+
 /* ---------- BULLET ROWS (red dot + text, used in feature/checklist lists) ---------- */
 .bullet-row {
   display: flex;
