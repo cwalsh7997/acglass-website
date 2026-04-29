@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Currently under construction">
+  <defs>
+    <radialGradient id="ibg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#15243D"/>
+      <stop offset="100%" stop-color="#070C18"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#ibg)" stroke="#E11320" stroke-width="1.5"/>
+  <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(225,19,32,0.35)" stroke-width="0.5"/>
+  <!-- Pulsing dot -->
+  <circle cx="50" cy="36" r="3.5" fill="#E11320">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="50" y="58" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#FFFFFF" font-weight="900" letter-spacing="1">LIVE</text>
+  <text x="50" y="72" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="6" fill="#E11320" font-weight="700" letter-spacing="2">IN PROGRESS</text>
+  <text x="50" y="82" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="5" fill="rgba(255,255,255,0.55)" font-weight="700" letter-spacing="2">2026</text>
+</svg>

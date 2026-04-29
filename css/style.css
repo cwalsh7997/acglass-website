@@ -573,6 +573,32 @@ p {
 
 .hero-stat { text-align: right; }
 
+/* === ACG Trust Seal === */
+.hero-seal-wrap {
+  align-items: center;
+  justify-content: center;
+}
+.hero-seal {
+  width: clamp(180px, 17vw, 260px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 48px rgba(0,0,0,0.55))
+          drop-shadow(0 0 28px rgba(225,19,32,0.18));
+  animation: sealFloat 6s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes sealFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-6px) rotate(0.4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-seal { animation: none; }
+}
+@media (max-width: 900px) {
+  /* Hide seal on small screens — hero is too tight; trust signals already in proof-bar below */
+  .hero-seal-wrap { display: none; }
+}
+
 .hero-stat .number {
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 900;
@@ -2056,6 +2082,36 @@ a[href="eau-palm-beach-resort.html"]:hover img {
 .proof-bar-partners-logos .dot {
   color: var(--accent, #E11320);
   font-size: 0.8em;
+}
+
+/* === Partner wordmark strip (homepage proof-bar) === */
+.partner-wordmarks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3vw, 44px);
+  row-gap: 14px;
+  padding: 4px 0;
+}
+.partner-wordmarks > * {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .25s, transform .25s;
+  text-decoration: none;
+  opacity: 0.85;
+}
+.partner-wordmarks > a:hover, .partner-wordmarks > img:hover { opacity: 1; transform: translateY(-2px); }
+.partner-wordmarks img {
+  height: 26px;
+  width: auto;
+  max-width: 160px;
+}
+@media (max-width: 720px) {
+  .partner-wordmarks { gap: 16px; }
+  .partner-wordmarks img { height: 20px; }
 }
 
 /* ============================================

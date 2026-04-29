@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="ACG trust seal: Florida licensed, bonded, 350+ projects, zero OSHA recordables">
+  <defs>
+    <!-- Curved paths for circular text. Both arcs sweep so text baseline points outward (top reads normally, bottom reads normally too because we draw left-to-right along the lower arc with sweep flag 1). -->
+    <path id="acg-seal-top" d="M 24 110 a 86 86 0 0 1 172 0" fill="none"/>
+    <!-- Subtle radial fill for depth -->
+    <radialGradient id="acg-seal-bg" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#15243D" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#0A1322" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer ring -->
+  <circle cx="110" cy="110" r="106" fill="url(#acg-seal-bg)" stroke="#E11320" stroke-width="2"/>
+
+  <!-- Inner ring -->
+  <circle cx="110" cy="110" r="86" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+  <!-- Decorative dot at the top -->
+  <circle cx="110" cy="24" r="2.5" fill="#E11320"/>
+  <!-- Decorative dot at the bottom -->
+  <circle cx="110" cy="196" r="2" fill="#E11320"/>
+
+  <!-- Curved text — top arc -->
+  <text font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="11.5" font-weight="700" letter-spacing="3"
+        fill="#FFFFFF" text-rendering="geometricPrecision">
+    <textPath href="#acg-seal-top" startOffset="50%" text-anchor="middle">
+      AMERICAN COMMERCIAL GLASS
+    </textPath>
+  </text>
+
+  <!-- Bottom flat label — simpler than curved text, reads cleanly at every size -->
+  <text x="110" y="187" text-anchor="middle"
+        font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="7" font-weight="700" letter-spacing="1.6"
+        fill="rgba(255,255,255,0.6)">
+    FL CGC 1531993 · EST 2020
+  </text>
+
+  <!-- Center stack: stat numbers -->
+  <g text-anchor="middle" font-family="'Inter', sans-serif">
+
+    <!-- Top stat: 350+ -->
+    <text x="110" y="80"
+          font-size="22" font-weight="900"
+          letter-spacing="-1.2" fill="#FFFFFF">350+</text>
+    <text x="110" y="92"
+          font-size="6.5" font-weight="700" letter-spacing="2.2"
+          fill="rgba(255,255,255,0.55)"
+          font-family="'JetBrains Mono', ui-monospace, monospace">FL PROJECTS</text>
+
+    <!-- Middle: red divider with $3M/$6M -->
+    <line x1="80" y1="100" x2="140" y2="100" stroke="#E11320" stroke-width="1.4"/>
+    <text x="110" y="120"
+          font-size="20" font-weight="900"
+          letter-spacing="-0.8" fill="#E11320">$3M / $6M</text>
+    <text x="110" y="132"
+          font-size="6.5" font-weight="700" letter-spacing="2.2"
+          fill="rgba(255,255,255,0.55)"
+          font-family="'JetBrains Mono', ui-monospace, monospace">BONDED</text>
+
+    <!-- Bottom: 0 OSHA -->
+    <line x1="80" y1="140" x2="140" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <text x="110" y="158"
+          font-size="13" font-weight="800" letter-spacing="0.5"
+          fill="#FFFFFF">ZERO OSHA</text>
+    <text x="110" y="170"
+          font-size="6.5" font-weight="700" letter-spacing="2.2"
+          fill="rgba(255,255,255,0.55)"
+          font-family="'JetBrains Mono', ui-monospace, monospace">RECORDABLES</text>
+  </g>
+</svg>
