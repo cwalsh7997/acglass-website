@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D1E36">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Dealer Admin | ACG</title>
+  <link rel="icon" type="image/png" href="../images/favicon-32.png">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="../fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css?v=1777294558">
+  <link rel="stylesheet" href="dealer.css?v=1">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="grain"></div>
+
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async" width="338" height="72">
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../become-a-dealer.html">Become a Dealer</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" class="admin-shell">
+    <div style="margin-bottom:24px;">
+      <div class="label"><span class="line"></span> Internal &mdash; ACG Dealer Admin</div>
+      <h1 style="margin-top:8px;font-size:clamp(1.75rem,3vw,2.25rem);">Dealer Applications</h1>
+      <p style="color:rgba(255,255,255,.6);max-width:680px;font-size:.95rem;">Review incoming dealer applications from <a href="../become-a-dealer.html" style="color:var(--accent);">acglass.com/become-a-dealer</a>. Token is stored in this browser only.</p>
+    </div>
+
+    <!-- Token gate -->
+    <div id="token-gate" style="display:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;margin-bottom:24px;max-width:520px;">
+      <h3 style="margin-bottom:12px;font-size:1.1rem;">Admin Token Required</h3>
+      <p style="font-size:.875rem;color:rgba(255,255,255,.6);margin-bottom:16px;">Paste the admin token from your Worker secrets. It is stored in this browser's localStorage only.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input type="password" id="token-input" class="admin-input" placeholder="Admin token" autocomplete="off" style="flex:1;min-width:240px;">
+        <button id="token-submit" class="btn btn-primary">Save</button>
+      </div>
+      <p id="token-error" style="margin-top:10px;color:#ff8a8a;font-size:.85rem;display:none;"></p>
+    </div>
+
+    <!-- Toolbar (visible when authenticated) -->
+    <div id="admin-toolbar" class="admin-toolbar" style="display:none;">
+      <input type="text" id="search" class="admin-input" placeholder="Filter by name, company, email…">
+      <select id="status-filter" class="admin-input">
+        <option value="">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <span class="filler"></span>
+      <button id="refresh-btn" class="btn btn-ghost">Refresh</button>
+      <button id="export-csv" class="btn btn-ghost">Export CSV</button>
+      <button id="logout-btn" class="btn btn-ghost" title="Clear admin token from this browser">Logout</button>
+    </div>
+
+    <!-- Status -->
+    <div id="admin-status" class="dealer-status is-info" style="display:none;"></div>
+
+    <!-- Applications table -->
+    <div id="table-wrap" style="overflow-x:auto;display:none;">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Submitted</th>
+            <th>Status</th>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Email / Phone</th>
+            <th>Volume / Mfgs</th>
+            <th class="col-notes">Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="applications-tbody"></tbody>
+      </table>
+    </div>
+
+    <div id="empty-state" class="admin-empty" style="display:none;">
+      No applications match your filters yet.
+    </div>
+  </main>
+
+  <script>
+    /* eslint-disable */
+    (function () {
+      'use strict';
+
+      // ---- Config: API base ----
+      // Set window.ACG_DEALER_API on this page or via <meta>, same as the form.
+      function resolveApiBase() {
+        if (typeof window.ACG_DEALER_API === 'string' && window.ACG_DEALER_API.length > 0) {
+          return window.ACG_DEALER_API.replace(/\/$/, '');
+        }
+        var meta = document.querySelector('meta[name="acg-dealer-api"]');
+        if (meta && meta.content) return meta.content.replace(/\/$/, '');
+        return null;
+      }
+      var API_BASE = resolveApiBase();
+      var TOKEN_KEY = 'acg_dealer_admin_token';
+
+      // ---- DOM refs ----
+      var tokenGate = document.getElementById('token-gate');
+      var tokenInput = document.getElementById('token-input');
+      var tokenSubmit = document.getElementById('token-submit');
+      var tokenError = document.getElementById('token-error');
+      var toolbar = document.getElementById('admin-toolbar');
+      var statusEl = document.getElementById('admin-status');
+      var tableWrap = document.getElementById('table-wrap');
+      var emptyEl = document.getElementById('empty-state');
+      var tbody = document.getElementById('applications-tbody');
+      var searchInput = document.getElementById('search');
+      var statusFilter = document.getElementById('status-filter');
+      var refreshBtn = document.getElementById('refresh-btn');
+      var exportBtn = document.getElementById('export-csv');
+      var logoutBtn = document.getElementById('logout-btn');
+
+      var allApplications = [];
+
+      function getToken() {
+        try { return localStorage.getItem(TOKEN_KEY); } catch (e) { return null; }
+      }
+      function setToken(t) {
+        try { localStorage.setItem(TOKEN_KEY, t); } catch (e) {}
+      }
+      function clearToken() {
+        try { localStorage.removeItem(TOKEN_KEY); } catch (e) {}
+      }
+
+      function showStatus(kind, msg) {
+        statusEl.style.display = 'block';
+        statusEl.className = 'dealer-status is-' + kind;
+        statusEl.textContent = msg;
+      }
+      function hideStatus() { statusEl.style.display = 'none'; }
+
+      function showAuthenticated() {
+        tokenGate.style.display = 'none';
+        toolbar.style.display = 'flex';
+      }
+      function showUnauthenticated() {
+        tokenGate.style.display = 'block';
+        toolbar.style.display = 'none';
+        tableWrap.style.display = 'none';
+        emptyEl.style.display = 'none';
+      }
+
+      function fmtDate(iso) {
+        if (!iso) return '';
+        try {
+          var d = new Date(iso);
+          return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+        } catch (e) { return iso; }
+      }
+
+      function escapeHtml(s) {
+        if (s == null) return '';
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function render(list) {
+        tbody.innerHTML = '';
+        if (!list.length) {
+          tableWrap.style.display = 'none';
+          emptyEl.style.display = 'block';
+          return;
+        }
+        tableWrap.style.display = 'block';
+        emptyEl.style.display = 'none';
+
+        list.forEach(function (app) {
+          var tr = document.createElement('tr');
+          var status = app.status || 'pending';
+          var actions = '';
+          if (status === 'pending') {
+            actions =
+              '<button class="btn btn-ghost" data-action="approve" data-id="' + app.id + '" style="font-size:.75rem;padding:6px 12px;margin-right:6px;">Approve</button>' +
+              '<button class="btn btn-ghost" data-action="reject" data-id="' + app.id + '" style="font-size:.75rem;padding:6px 12px;">Reject</button>';
+          } else {
+            actions = '<button class="btn btn-ghost" data-action="reset" data-id="' + app.id + '" style="font-size:.75rem;padding:6px 12px;">Reset</button>';
+          }
+
+          tr.innerHTML =
+            '<td>' + escapeHtml(fmtDate(app.created_at)) + '</td>' +
+            '<td><span class="admin-status-pill s-' + status + '">' + status + '</span></td>' +
+            '<td><strong>' + escapeHtml(app.company) + '</strong><br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">' + escapeHtml(app.address || '') + '</span></td>' +
+            '<td>' + escapeHtml(app.contact_name) + '<br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">Lic: ' + escapeHtml(app.license_number || '—') + ' / ' + escapeHtml(app.years_in_business || '—') + ' yrs</span></td>' +
+            '<td><a href="mailto:' + escapeHtml(app.email) + '" style="color:var(--accent);">' + escapeHtml(app.email) + '</a><br><span style="color:rgba(255,255,255,.6);">' + escapeHtml(app.phone || '') + '</span></td>' +
+            '<td>' + escapeHtml(app.annual_volume || '') + '<br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">' + escapeHtml(app.manufacturers || '') + '</span></td>' +
+            '<td class="col-notes">' + escapeHtml(app.notes || '') + '</td>' +
+            '<td>' + actions + '</td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      function applyFilters() {
+        var q = (searchInput.value || '').trim().toLowerCase();
+        var s = statusFilter.value || '';
+        var filtered = allApplications.filter(function (app) {
+          if (s && (app.status || 'pending') !== s) return false;
+          if (q) {
+            var hay = [app.company, app.contact_name, app.email, app.phone, app.address].join(' ').toLowerCase();
+            if (hay.indexOf(q) === -1) return false;
+          }
+          return true;
+        });
+        render(filtered);
+      }
+
+      function fetchApplications() {
+        if (!API_BASE) {
+          showStatus('error', 'API not configured. Set window.ACG_DEALER_API or the meta tag, then refresh.');
+          tableWrap.style.display = 'none';
+          return;
+        }
+        var token = getToken();
+        if (!token) { showUnauthenticated(); return; }
+
+        showStatus('info', 'Loading applications…');
+        fetch(API_BASE + '/api/applications', {
+          headers: { 'Authorization': 'Bearer ' + token }
+        }).then(function (res) {
+          if (res.status === 401 || res.status === 403) {
+            clearToken();
+            showUnauthenticated();
+            tokenError.style.display = 'block';
+            tokenError.textContent = 'That token was rejected. Try again.';
+            hideStatus();
+            return null;
+          }
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        }).then(function (body) {
+          if (!body) return;
+          allApplications = (body.applications || []).slice().sort(function (a, b) {
+            return (b.created_at || '').localeCompare(a.created_at || '');
+          });
+          hideStatus();
+          applyFilters();
+        }).catch(function (err) {
+          showStatus('error', 'Failed to load: ' + err.message);
+        });
+      }
+
+      function patchApplication(id, status) {
+        var token = getToken();
+        if (!token) return Promise.reject(new Error('No token'));
+        return fetch(API_BASE + '/api/applications/' + encodeURIComponent(id), {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify({ status: status })
+        }).then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        });
+      }
+
+      function exportCsv() {
+        if (!allApplications.length) { showStatus('info', 'Nothing to export.'); return; }
+        var headers = ['id','created_at','status','company','contact_name','email','phone','address','license_number','years_in_business','manufacturers','annual_volume','notes'];
+        var rows = [headers.join(',')];
+        allApplications.forEach(function (a) {
+          rows.push(headers.map(function (h) {
+            var v = a[h] == null ? '' : String(a[h]);
+            if (/[",\n\r]/.test(v)) {
+              return '"' + v.replace(/"/g, '""') + '"';
+            }
+            return v;
+          }).join(','));
+        });
+        var blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'acg-dealer-applications-' + new Date().toISOString().slice(0,10) + '.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // ---- Event wiring ----
+      tokenSubmit.addEventListener('click', function () {
+        var v = (tokenInput.value || '').trim();
+        if (!v) { tokenError.style.display = 'block'; tokenError.textContent = 'Token is required.'; return; }
+        setToken(v);
+        tokenError.style.display = 'none';
+        tokenInput.value = '';
+        showAuthenticated();
+        fetchApplications();
+      });
+      tokenInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') tokenSubmit.click();
+      });
+      refreshBtn.addEventListener('click', fetchApplications);
+      exportBtn.addEventListener('click', exportCsv);
+      logoutBtn.addEventListener('click', function () {
+        clearToken();
+        allApplications = [];
+        render([]);
+        showUnauthenticated();
+      });
+      searchInput.addEventListener('input', applyFilters);
+      statusFilter.addEventListener('change', applyFilters);
+
+      tbody.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        var id = btn.getAttribute('data-id');
+        var action = btn.getAttribute('data-action');
+        var nextStatus = action === 'approve' ? 'approved' : action === 'reject' ? 'rejected' : 'pending';
+        btn.disabled = true;
+        patchApplication(id, nextStatus).then(function () {
+          fetchApplications();
+        }).catch(function (err) {
+          btn.disabled = false;
+          showStatus('error', 'Update failed: ' + err.message);
+        });
+      });
+
+      // ---- Init ----
+      if (!API_BASE) {
+        showStatus('error', 'API not configured. Set window.ACG_DEALER_API on this page or add <meta name="acg-dealer-api" content="https://your-worker-url"> in the head, then reload.');
+      } else if (getToken()) {
+        showAuthenticated();
+        fetchApplications();
+      } else {
+        showUnauthenticated();
+      }
+    })();
+  </script>
+</body>
+</html>

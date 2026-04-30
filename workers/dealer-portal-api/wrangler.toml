@@ -1,0 +1,49 @@
+#:schema node_modules/wrangler/config-schema.json
+# ACG Dealer Portal API — Cloudflare Worker config
+#
+# Deploy:
+#   cd workers/dealer-portal-api
+#   npm install -g wrangler
+#   wrangler login
+#   wrangler d1 create acg-dealer-portal           # one-time, capture the database_id
+#   # Paste the printed database_id into [[d1_databases]] below.
+#   wrangler d1 execute acg-dealer-portal --file=./schema.sql
+#   wrangler secret put ADMIN_TOKEN                # paste a long random string
+#   wrangler secret put RESEND_API_KEY             # optional — enables email notifications
+#   wrangler deploy
+#
+# Local dev:
+#   wrangler dev
+#   wrangler d1 execute acg-dealer-portal --local --file=./schema.sql
+
+name = "acg-dealer-portal-api"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true                # gives you a https://acg-dealer-portal-api.<your-subdomain>.workers.dev URL
+
+# ---- Database ----
+# Replace database_id after `wrangler d1 create acg-dealer-portal` prints it.
+[[d1_databases]]
+binding = "DB"
+database_name = "acg-dealer-portal"
+database_id = "REPLACE_ME_AFTER_WRANGLER_D1_CREATE"
+
+# ---- Public env vars (non-secret) ----
+[vars]
+ALLOWED_ORIGIN = "https://acglass.com"
+NOTIFY_EMAIL   = "connor@acglass.com"
+RESEND_FROM    = "ACG Dealer Portal <noreply@acglass.com>"
+
+# ---- Secrets (set via `wrangler secret put`) ----
+# ADMIN_TOKEN     — required. Paste any long random string. Use the same value
+#                   in /dealer/admin.html when prompted for the admin token.
+# RESEND_API_KEY  — optional. Enables email notifications via Resend.com.
+#                   Without it, applications are still saved; you just won't
+#                   get an email — you'll need to refresh the admin page.
+
+# ---- Optional custom route ----
+# Uncomment and adjust to bind a custom subdomain like api.acglass.com.
+# Requires that you've added an api.acglass.com DNS record in Cloudflare first.
+# [[routes]]
+# pattern = "api.acglass.com/api/*"
+# zone_name = "acglass.com"
