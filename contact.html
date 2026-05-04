@@ -371,7 +371,7 @@
 
           <p style="margin-bottom:28px;font-size:0.95rem;">Have plans ready? Email them directly to <a href="mailto:connor@acglass.com" style="color:var(--red);font-weight:600;transition:opacity 0.3s;">connor@acglass.com</a> along with your submission below for fastest processing.</p>
 
-          <form id="contact-form">
+          <form id="contact-form" onsubmit="return handleContactSubmit(event)">
 
             <!-- Name & Company -->
             <div class="form-grid">
@@ -427,7 +427,29 @@
               Send Inquiry
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
+            <p id="contact-form-status" style="margin-top:14px;font-size:0.85rem;color:var(--white-60);"></p>
           </form>
+          <script>
+            function handleContactSubmit(e){
+              e.preventDefault();
+              var f = document.getElementById('contact-form');
+              var get = function(id){ var el=f.querySelector('#'+id); return el ? el.value.trim() : ''; };
+              var name = get('name'), company = get('company'), email = get('email'),
+                  phone = get('phone'), pt = get('project-type'), msg = get('message');
+              var subject = 'Project Inquiry — ' + (company || name);
+              var body = 'Name: ' + name + '%0D%0A' +
+                         'Company: ' + company + '%0D%0A' +
+                         'Email: ' + email + '%0D%0A' +
+                         'Phone: ' + phone + '%0D%0A' +
+                         'Project Type: ' + pt + '%0D%0A%0D%0A' +
+                         'Project Details:%0D%0A' + msg + '%0D%0A%0D%0A' +
+                         'Submitted from acglass.com/contact';
+              var status = document.getElementById('contact-form-status');
+              status.textContent = 'Opening your email client — if it does not open, copy your details and email connor@acglass.com directly.';
+              window.location.href = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+              return false;
+            }
+          </script>
         </div>
 
         <!-- RIGHT SIDE: CONTACT INFO -->
