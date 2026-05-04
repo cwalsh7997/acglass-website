@@ -2745,3 +2745,37 @@ a[href="eau-palm-beach-resort.html"]:hover img {
   transition:top .2s;
 }
 .skip-link:focus{ top:0; outline:2px solid #fff; outline-offset:2px; }
+
+/* === ACG Quick Answer block (AI extraction-optimized) === */
+.acg-quick-answer{
+  position:relative;
+  margin:0 0 36px 0;
+  padding:24px 28px 24px 32px;
+  background:rgba(255,255,255,0.025);
+  border:1px solid rgba(255,255,255,0.08);
+  border-left:3px solid var(--accent, #E11320);
+  border-radius:6px;
+}
+.acg-quick-answer .acg-qa-label{
+  font-family:var(--mono, 'JetBrains Mono', monospace);
+  font-size:0.7rem;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--accent, #E11320);
+  font-weight:600;
+  margin-bottom:10px;
+}
+.acg-quick-answer p{
+  margin:0;
+  font-size:1.02rem;
+  line-height:1.65;
+  color:rgba(255,255,255,0.92);
+}
+.acg-quick-answer p strong{
+  color:#fff;
+  font-weight:700;
+}
+@media (max-width:680px){
+  .acg-quick-answer{padding:20px 22px 20px 24px;}
+  .acg-quick-answer p{font-size:0.96rem;}
+}
