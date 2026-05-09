@@ -1,0 +1,81 @@
+SECTION 08 44 13 — ALUMINUM-FRAMED CURTAINWALL
+American Commercial Glass | acglass.com | FL CGC #1531993
+Last updated: 2026-05-09
+======================================================================
+
+PART 1 GENERAL
+
+1.1 SUMMARY
+A. Section includes aluminum-framed curtainwall, including unitized and stick-built systems, structural silicone glazing where specified, and HVHZ-rated assemblies.
+
+1.2 REFERENCES
+A. AAMA CW-DG-1 — Aluminum Curtain Wall Design Guide Manual.
+B. AAMA TIR-A8 — Structural Performance of Composite Thermal Barrier Framing Systems.
+C. ASTM C1184 — Standard Specification for Structural Silicone Sealants.
+D. ASTM E283, E330, E331, E1105, E1886, E1996.
+E. ASCE 7-22.
+F. Florida Building Code 8th Edition (2026), HVHZ provisions where applicable.
+
+1.3 PERFORMANCE REQUIREMENTS
+A. Wind Load: Design pressures per ASCE 7-22 for project location and exposure.
+B. Air Infiltration: Maximum 0.06 cfm/SF at 6.24 psf per ASTM E283.
+C. Water Penetration: No uncontrolled water penetration at 20 psf static and dynamic pressure per ASTM E331 / AAMA 501.1.
+D. Pressure Equalization: Pressure-equalized rain screen design with continuous compartmentalized drainage cavity.
+E. Thermal Movement: Accommodate 180 deg F operating range without permanent deformation, sealant failure, or glass breakage.
+F. Structural Silicone: Conform to ASTM C1184 with manufacturer's project-specific approval letter.
+G. Impact Resistance (HVHZ): Pass ASTM E1886 / E1996.
+
+1.4 SUBMITTALS
+A. Product Data, Shop Drawings (sealed by Florida PE), Calculations (sealed), Florida Product Approval / NOA, Mock-up Test Reports.
+B. Structural Silicone Application Plan including applicator certification and lab-test report on substrate adhesion.
+C. Manufacturer's Authorization Letter listing the installer.
+D. AAMA InstallationMasters or equivalent installer certification.
+
+1.5 QUALITY ASSURANCE
+A. Manufacturer: Minimum 10 years of continuous curtainwall production.
+B. Installer: Authorized by manufacturer; minimum 5 projects of similar size and complexity in Florida; structural silicone applicator certified by sealant manufacturer.
+C. Mock-up: Visual mock-up plus full-scale performance mock-up tested per AAMA 501.1 at independent testing laboratory.
+
+PART 2 PRODUCTS
+
+2.1 MANUFACTURERS
+A. Acceptable manufacturers:
+1. ESWindows (ES-7000, ES-8000 series).
+2. Other manufacturers with FPA/NOA documentation, approved in writing prior to bid.
+
+2.2 ALUMINUM FRAMING
+A. Aluminum: 6063-T6 per ASTM B221.
+B. Frame Depth: 6 inches minimum.
+C. Thermal Break: Pour-and-debridge polyurethane or composite thermal isolator.
+D. Finish: AAMA 2605 70 percent fluoropolymer or Class I anodized; color as selected.
+
+2.3 GLAZING
+A. Insulating Glass Units: 1-inch overall, dual-pane with low-E coating; outboard heat-strengthened minimum; inboard laminated for impact assemblies.
+B. Spandrel Panels: Heat-strengthened with ceramic frit on #2 surface or back-painted on #4 surface, opaque.
+C. Structural Silicone: Two-part neutral cure, ASTM C1184 conforming, manufacturer's pre-tested compatibility with framing and gaskets.
+
+2.4 SEALANTS AND GASKETS
+A. Perimeter Sealant: ASTM C920 Type S, Grade NS, Class 50, neutral cure silicone.
+B. Glazing Gaskets: EPDM or silicone, factory cured.
+C. Setting Blocks and Edge Blocks: Silicone-compatible, durometer per manufacturer.
+
+PART 3 EXECUTION
+
+3.1 INSTALLATION
+A. Install per approved shop drawings, manufacturer's instructions, and FPA/NOA installation diagrams.
+B. Verify anchor locations and structural backup prior to installation.
+C. Maintain pressure-equalization compartments per shop drawing tolerances.
+D. Structural silicone application: lab-trained applicator only; cure conditions per manufacturer; quality-control documentation maintained on site.
+
+3.2 FIELD QUALITY CONTROL
+A. Water Test per AAMA 501.2 or ASTM E1105 on installed curtainwall: minimum 25 percent of openings or as directed by Architect; no water penetration permitted.
+B. HVHZ projects: field water test required by AHJ.
+
+3.3 CLEANING, PROTECTION, AND WARRANTY
+A. Clean per manufacturer's instructions.
+B. Provide 10-year manufacturer's warranty on framing and finish; 10-year structural silicone warranty; 2-year installer warranty.
+
+END OF SECTION
+
+======================================================================
+Source: https://acglass.com/architect-specs/section-08-44-13-aluminum-curtainwall.html

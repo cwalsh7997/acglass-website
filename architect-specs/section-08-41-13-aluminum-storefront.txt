@@ -1,0 +1,101 @@
+SECTION 08 41 13 — ALUMINUM-FRAMED STOREFRONT
+American Commercial Glass | acglass.com | FL CGC #1531993
+Last updated: 2026-05-09
+======================================================================
+
+PART 1 GENERAL
+
+1.1 SUMMARY
+A. Section includes thermally broken aluminum storefront framing with 1-inch insulating glass, doors, hardware, and accessories.
+B. Related Sections:
+1. Section 08 80 00 — Glazing
+2. Section 08 71 00 — Door Hardware
+
+1.2 REFERENCES
+A. AAMA 501.2 — Field Check of Metal Storefronts, Curtainwalls, and Sloped Glazing for Water Leakage.
+B. AAMA 1503 — Voluntary Test Method for Thermal Transmittance and Condensation Resistance.
+C. ASCE 7-22 — Minimum Design Loads for Buildings and Other Structures.
+D. ASTM E283 — Standard Test Method for Determining Rate of Air Leakage.
+E. ASTM E330 — Standard Test Method for Structural Performance.
+F. ASTM E331 — Standard Test Method for Water Penetration.
+G. ASTM E1886 / E1996 — Standard Test Methods for Performance of Exterior Windows, Curtain Walls, Doors, and Impact-Protective Systems Impacted by Missile and Pressure Cycles.
+H. ANSI Z97.1 — Performance Specifications for Safety Glazing Materials.
+I. Florida Building Code (FBC) 8th Edition (2026), including HVHZ provisions where applicable.
+J. Miami-Dade Notice of Acceptance (NOA) for HVHZ projects.
+
+1.3 PERFORMANCE REQUIREMENTS
+A. Wind Load: Design pressures calculated per ASCE 7-22 for Florida exposure category C unless noted otherwise on Drawings.
+B. Air Infiltration: Maximum 0.06 cfm/SF at 6.24 psf per ASTM E283.
+C. Water Penetration: No water penetration at static pressure of 12 psf per ASTM E331.
+D. Structural Performance: No permanent deformation greater than L/175 of span at 1.5x design wind load per ASTM E330.
+E. Impact Resistance (HVHZ projects): Pass ASTM E1886 large-missile impact and ASTM E1996 cyclic pressure tests.
+F. Thermal Performance: U-factor not greater than 0.55 BTU/hr-SF-deg F per AAMA 1503; SHGC and Visible Transmittance per Florida Energy Code.
+
+1.4 SUBMITTALS
+A. Product Data: Manufacturer's catalog data, finishes, performance ratings.
+B. Shop Drawings: Elevations, sections, details, anchor locations, glazing methods, sealant joints. Sealed by Florida Professional Engineer.
+C. Florida Product Approval (FPA) or Miami-Dade NOA for the proposed assembly.
+D. Wind-load calculations sealed by Florida PE for each opening size and exposure.
+E. Samples: 12-inch corner sample of framing system in specified finish; 6-inch glass sample with edge condition.
+F. Manufacturer's Authorization Letter listing the installer as authorized for the proposed system.
+G. AAMA InstallationMasters certification or equivalent for installer.
+H. Warranty: 5-year minimum manufacturer's warranty; 2-year installer warranty.
+
+1.5 QUALITY ASSURANCE
+A. Manufacturer Qualifications: Minimum 10 years of continuous production of aluminum storefront systems.
+B. Installer Qualifications: Authorized by manufacturer; AAMA InstallationMasters certified or equivalent; minimum 5 years installing similar work in Florida.
+C. Mock-up: 8 ft x 8 ft minimum, including all conditions, to be approved by Architect prior to general fabrication.
+
+1.6 DELIVERY, STORAGE, AND HANDLING
+A. Deliver materials to site in protective wrapping.
+B. Store vertical, off the ground, in dry location protected from weather and construction operations.
+
+PART 2 PRODUCTS
+
+2.1 MANUFACTURERS
+A. Acceptable manufacturers, subject to Florida Product Approval / Miami-Dade NOA verification:
+1. ESWindows (Series ES-50 or approved equivalent).
+2. Euro-Wall (DirectSet storefront series).
+3. Other manufacturers with equivalent FPA/NOA documentation, approved in writing by Architect prior to bid.
+
+2.2 ALUMINUM FRAMING
+A. Aluminum: 6063-T6 alloy and temper conforming to ASTM B221.
+B. Wall Thickness: 1/8 inch minimum nominal.
+C. Frame Depth: 4-1/2 inches minimum unless noted otherwise.
+D. Thermal Break: Polyurethane or polyamide thermal isolator, factory installed.
+E. Finish: Class I anodized (AAMA 611) or AAMA 2605 fluoropolymer coating, color as selected by Architect from manufacturer's standard range.
+
+2.3 GLAZING
+A. Insulating Glass Units: 1-inch overall thickness; outboard 1/4-inch heat-strengthened with low-E coating; 1/2-inch air space with argon fill; inboard 1/4-inch laminated for impact assemblies (PVB or SGP interlayer per FBC).
+B. Safety Glazing: All glazing within 24 inches of doors, within 18 inches of finished floor, and other ANSI Z97.1 / 16 CFR 1201 mandated locations: tempered or laminated.
+
+2.4 DOORS AND HARDWARE
+A. Doors: Wide-stile aluminum, 1-3/4 inches thick, matching framing finish.
+B. Hardware: Section 08 71 00. ANSI A156.10 / A156.19 automatic operators where indicated.
+
+PART 3 EXECUTION
+
+3.1 EXAMINATION
+A. Verify openings are plumb, square, and within construction tolerances. Notify Architect of conditions outside tolerance prior to commencing work.
+
+3.2 INSTALLATION
+A. Install framing per approved shop drawings, manufacturer's instructions, and FPA/NOA installation diagrams.
+B. Anchor patterns must match the tested assembly. Substitution of anchors voids the FPA/NOA.
+C. Install perimeter sealant per ASTM C920 Class 50 weather-rated.
+D. Install glazing using approved gaskets and structural silicone where specified. Wet-glaze applications require lab-trained applicator.
+
+3.3 FIELD QUALITY CONTROL
+A. Field water test per AAMA 501.2 or ASTM E1105 at locations and frequency directed by Architect; no water penetration permitted.
+B. HVHZ projects: field water test required by AHJ.
+
+3.4 CLEANING AND PROTECTION
+A. Clean exterior glass and framing per manufacturer's instructions immediately after installation.
+B. Protect installed work from damage by other trades through Substantial Completion.
+
+3.5 WARRANTY
+A. Provide manufacturer's 5-year warranty against defects and 2-year installer warranty against installation defects.
+
+END OF SECTION
+
+======================================================================
+Source: https://acglass.com/architect-specs/section-08-41-13-aluminum-storefront.html

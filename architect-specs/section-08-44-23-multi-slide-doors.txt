@@ -1,0 +1,49 @@
+SECTION 08 44 23 — MULTI-SLIDE GLASS DOOR SYSTEMS
+American Commercial Glass | acglass.com | FL CGC #1531993
+Last updated: 2026-05-09
+======================================================================
+
+PART 1 GENERAL
+
+1.1 SUMMARY
+A. Section includes multi-slide aluminum glass door systems for indoor-outdoor commercial applications.
+
+1.2 REFERENCES
+A. AAMA 920, ASTM E283, E330, E331, E1886, E1996, ANSI Z97.1.
+B. Florida Building Code 8th Edition; Miami-Dade NOA for HVHZ.
+
+1.3 PERFORMANCE REQUIREMENTS
+A. Wind load per ASCE 7-22.
+B. Air infiltration: 0.10 cfm/SF max at 6.24 psf.
+C. Water penetration: no uncontrolled penetration at 12 psf per ASTM E331.
+D. Impact resistance (HVHZ): ASTM E1886 / E1996.
+
+1.4 SUBMITTALS
+A. Product Data, Shop Drawings (sealed), FPA / NOA, Hardware Cut Sheets, Sample.
+
+PART 2 PRODUCTS
+
+2.1 MANUFACTURERS
+A. Acceptable: Euro-Wall multi-slide series; other manufacturers with FPA/NOA approved prior to bid.
+
+2.2 SYSTEM
+A. Frame: Aluminum with thermal break.
+B. Glazing: 1-inch insulating laminated impact (HVHZ) or non-impact per project location.
+C. Hardware: Stainless steel rolling hardware, recessed sill option for ADA, manual or motorized operation.
+
+PART 3 EXECUTION
+
+3.1 INSTALLATION
+A. Install per shop drawings and FPA/NOA. Maintain anchor pattern from tested assembly.
+B. Verify floor flatness within manufacturer tolerance prior to track installation.
+
+3.2 FIELD QUALITY CONTROL
+A. Demonstrate operation; verify locking and weatherseal engagement.
+
+3.3 WARRANTY
+A. 5-year hardware, 2-year installer.
+
+END OF SECTION
+
+======================================================================
+Source: https://acglass.com/architect-specs/section-08-44-23-multi-slide-doors.html

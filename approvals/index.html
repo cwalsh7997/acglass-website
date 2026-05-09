@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florida Product Approval & Miami-Dade NOA Lookup | ACG</title>
+  <meta name="description" content="Searchable index of Florida Product Approvals (FPA) and Miami-Dade NOAs for commercial glazing systems ACG installs. ESWindows, Euro-Wall, PGT, TGP, Slimpact authorized assemblies.">
+  <link rel="canonical" href="https://acglass.com/approvals/">
+  <meta property="og:title" content="Florida Product Approval & Miami-Dade NOA Lookup">
+  <meta property="og:description" content="Quick lookup for FPAs and NOAs on commercial glazing systems.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://acglass.com/approvals/">
+  <meta property="og:image" content="https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/acg-favicon.svg" type="image/svg+xml">
+
+  <style>
+    .ap-hero { padding: 100px 0 30px; max-width: 1080px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+    .ap-hero .eyebrow { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent, #E11320); margin-bottom: 14px; font-weight: 700; }
+    .ap-hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.04; letter-spacing: -0.025em; margin: 0 0 22px; }
+    .ap-hero .lead { color: rgba(255,255,255,0.84); font-size: 1.04rem; line-height: 1.65; max-width: 720px; }
+
+    .ap-search { max-width: 1080px; margin: 0 auto 30px; padding: 0 28px; }
+    .ap-search input { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff; font-size: 1rem; font-family: inherit; }
+    .ap-search input:focus { outline: none; border-color: var(--accent, #E11320); }
+
+    .ap-grid { max-width: 1080px; margin: 0 auto 80px; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+    .ap-card { padding: 22px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-left: 3px solid var(--accent, #E11320); border-radius: 6px; }
+    .ap-card .mfr { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent, #E11320); font-weight: 700; margin-bottom: 6px; }
+    .ap-card h3 { font-size: 1.1rem; margin: 0 0 8px; color: #fff; }
+    .ap-card .desc { font-size: 0.92rem; color: rgba(255,255,255,0.78); line-height: 1.55; margin-bottom: 12px; }
+    .ap-card .approval { font-family: var(--mono, monospace); font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+    .ap-card .approval span { color: rgba(255,255,255,0.85); }
+
+    .ap-note { max-width: 1080px; margin: 0 auto 80px; padding: 24px 28px; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; }
+    .ap-note a { color: rgba(255,255,255,0.95); border-bottom: 1px solid rgba(255,255,255,0.3); }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="ap-hero">
+      <div class="eyebrow">Product Approval Lookup</div>
+      <h1>Florida Product Approvals &amp; Miami-Dade NOAs.</h1>
+      <p class="lead">Quick reference for the commercial glazing assemblies ACG is authorized to install. Search by manufacturer, system, or approval number. For binding approval verification on a specific project, always cross-reference with <a href="https://www.floridabuilding.org" style="color:rgba(255,255,255,0.95);border-bottom:1px solid rgba(255,255,255,0.3);">FloridaBuilding.org</a> or Miami-Dade's NOA database before submission.</p>
+    </section>
+
+    <div class="ap-search">
+      <input id="apSearch" type="search" placeholder="Search manufacturer, system, or approval number..." oninput="filterApprovals()">
+    </div>
+
+    <div class="ap-grid" id="apGrid">
+      <!-- Cards populated by JS for filtering -->
+    </div>
+
+    <div class="ap-note">
+      <p><strong>Disclaimer:</strong> Approval numbers and ratings change. ACG verifies the current FPA / NOA documentation on every project bid. The list above represents the manufacturer-authorized systems ACG installs in 2026. Listing on this page does not guarantee specific design pressure, glass make-up, or anchor pattern compatibility for your project — that requires project-specific sealed engineering.</p>
+      <p><strong>Need a specific approval verified?</strong> Email <a href="mailto:specs@acglass.com">specs@acglass.com</a> with the system, framing, glass make-up, and design pressure required. ACG can confirm approval coverage and submit a sealed bid.</p>
+    </div>
+  </main>
+
+  <footer style="background:#050a12;padding:40px 28px;text-align:center;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;color:rgba(255,255,255,0.6);font-size:0.9rem;">
+      <p>&copy; 2026 American Commercial Glass &middot; FL CGC #1531993</p>
+      <p style="margin-top:12px;"><a href="../architect-specs/" style="color:rgba(255,255,255,0.7);margin:0 12px;">Spec Library</a> <a href="../glossary.html" style="color:rgba(255,255,255,0.7);margin:0 12px;">Glossary</a> <a href="../contact.html" style="color:rgba(255,255,255,0.7);margin:0 12px;">Contact</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const APPROVALS = [
+      // ESWindows
+      { mfr: 'ESWindows', system: 'ES-50 Storefront', desc: 'Impact-rated 4-1/2" thermally broken aluminum storefront for ground-floor commercial.', type: 'FPA / NOA' },
+      { mfr: 'ESWindows', system: 'ES-7000 Curtainwall', desc: 'High-performance unitized curtainwall with structural silicone glazing. HVHZ NOA-listed.', type: 'FPA / NOA' },
+      { mfr: 'ESWindows', system: 'ES-8000 Curtainwall', desc: 'Larger-span unitized curtainwall for Class-A office and high-rise hospitality.', type: 'FPA / NOA' },
+      { mfr: 'ESWindows', system: 'ES Casement Window', desc: 'Impact-rated commercial casement, fixed, and projected window assemblies.', type: 'FPA / NOA' },
+      // Euro-Wall
+      { mfr: 'Euro-Wall', system: 'DirectSet Storefront', desc: 'Heavy commercial storefront with deep frame and HVHZ-rated impact glazing.', type: 'FPA / NOA' },
+      { mfr: 'Euro-Wall', system: 'Multi-Slide System', desc: 'Pocketing or stacking multi-slide doors, 3-6 panels, indoor-outdoor commercial.', type: 'FPA / NOA' },
+      { mfr: 'Euro-Wall', system: 'Vistafold Bi-Fold', desc: 'Bi-fold (folding) glass walls in 2/3/5/7-panel configurations up to 40 ft wide.', type: 'FPA / NOA' },
+      { mfr: 'Euro-Wall', system: 'Pivot Door', desc: 'Single and double pivot door assemblies with center-pivot or offset-pivot hardware.', type: 'FPA' },
+      // PGT
+      { mfr: 'PGT', system: 'WinGuard Aluminum Impact', desc: 'Aluminum impact-resistant casement, single-hung, and horizontal-roller assemblies.', type: 'FPA / NOA' },
+      { mfr: 'PGT', system: 'WinGuard Vinyl Impact', desc: 'Vinyl impact-resistant fenestration for residential and light commercial.', type: 'FPA' },
+      // TGP
+      { mfr: 'TGP', system: 'FireLite Plus 20-min', desc: 'Ceramic glazing for 20-minute door and sidelight applications.', type: 'UL Listed' },
+      { mfr: 'TGP', system: 'Pilkington Pyrostop 60-min', desc: 'Multi-layer intumescent glazing for 60-minute fire-rated assemblies.', type: 'UL Listed' },
+      { mfr: 'TGP', system: 'Pilkington Pyrostop 90-min', desc: 'Multi-layer intumescent glazing for 90-minute fire-rated assemblies.', type: 'UL Listed' },
+      { mfr: 'TGP', system: 'Pilkington Pyrostop 120-min', desc: 'Multi-layer intumescent glazing for 120-minute fire-rated assemblies.', type: 'UL Listed' },
+      { mfr: 'TGP', system: 'FireFrames Designer Series', desc: 'Steel framing system for fire-rated glazing, polished or paint finish.', type: 'UL Listed' },
+      // Slimpact
+      { mfr: 'Slimpact', system: 'Steel Framing System', desc: 'Impact-rated steel framing for fire + impact + security applications.', type: 'FPA / NOA / UL' },
+      // Allegion
+      { mfr: 'Allegion', system: 'LCN 4040XP Closer', desc: 'Heavy-duty cast iron closer for commercial entry doors. ANSI A156.4.', type: 'BHMA' },
+      { mfr: 'Allegion', system: 'LCN 4640 Series Operator', desc: 'Low-energy automatic operator. ANSI A156.19.', type: 'BHMA / ADA' },
+      { mfr: 'Allegion', system: 'Von Duprin 99 Series', desc: 'Rim, surface vertical rod, mortise, and concealed panic exit devices.', type: 'BHMA / UL' },
+      { mfr: 'Allegion', system: 'Schlage L-Series Mortise Lock', desc: 'Heavy-duty commercial mortise lock with lever options. ANSI A156.13.', type: 'BHMA' },
+    ];
+
+    function render(items) {
+      const grid = document.getElementById('apGrid');
+      grid.innerHTML = items.map(a => `
+        <div class="ap-card">
+          <div class="mfr">${a.mfr}</div>
+          <h3>${a.system}</h3>
+          <p class="desc">${a.desc}</p>
+          <div class="approval">Approval: <span>${a.type}</span></div>
+        </div>
+      `).join('');
+      if (!items.length) {
+        grid.innerHTML = '<p style="color:rgba(255,255,255,0.6);grid-column:1/-1;text-align:center;padding:40px;">No matches. Try a manufacturer name like ESWindows, Euro-Wall, PGT, TGP, Slimpact, or Allegion.</p>';
+      }
+    }
+
+    function filterApprovals() {
+      const q = document.getElementById('apSearch').value.toLowerCase().trim();
+      if (!q) { render(APPROVALS); return; }
+      render(APPROVALS.filter(a =>
+        (a.mfr + ' ' + a.system + ' ' + a.desc + ' ' + a.type).toLowerCase().includes(q)
+      ));
+    }
+
+    render(APPROVALS);
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+SECTION 08 71 00 — AUTOMATIC ENTRANCE DOOR HARDWARE
+American Commercial Glass | acglass.com | FL CGC #1531993
+Last updated: 2026-05-09
+======================================================================
+
+PART 1 GENERAL
+
+1.1 SUMMARY
+A. Section includes automatic operators, panic exit devices, locks, hinges, closers, and other commercial entrance hardware.
+
+1.2 REFERENCES
+A. ANSI / BHMA A156.4 — Door Closers.
+B. ANSI / BHMA A156.10 — Power Operated Pedestrian Doors.
+C. ANSI / BHMA A156.19 — Low-Energy Power Operated Doors.
+D. NFPA 80 — Standard for Fire Doors.
+E. NFPA 101 — Life Safety Code.
+F. ADA Standards for Accessible Design (2010 / FBC Accessibility Code).
+
+1.3 PERFORMANCE REQUIREMENTS
+A. ADA Compliance: 32-inch minimum clear width; 5 lbf maximum interior opening force where automatic operator not used; 60x60-inch maneuvering clearances on push and pull sides.
+B. Automatic Operators: ANSI A156.10 (full energy) or A156.19 (low energy) as specified.
+
+1.4 SUBMITTALS
+A. Hardware Schedule, Cut Sheets, Wiring Diagrams (where applicable), Keying Schedule, Samples on request.
+
+PART 2 PRODUCTS
+
+2.1 MANUFACTURERS
+A. Allegion (LCN closers, Von Duprin panic devices, Schlage locks) — basis of design.
+B. ASSA ABLOY (Sargent, Norton, Yale, Securitron) — equivalent.
+C. Other manufacturers approved by Architect prior to bid.
+
+2.2 AUTOMATIC OPERATORS
+A. Low-Energy Operators: LCN 4640 series or equivalent A156.19 unit.
+B. Full-Energy (Sliding/Swing): Stanley Magic-Force or equivalent A156.10 unit.
+
+2.3 PANIC EXIT DEVICES
+A. Von Duprin 99 series rim, surface vertical rod, mortise, or concealed vertical rod as scheduled.
+B. Fire-rated devices: UL listed for opening's required rating.
+
+2.4 LEVER HARDWARE AND CLOSERS
+A. Levers: Schlage L-series or equivalent. ADA-compliant lever return.
+B. Closers: LCN 4040XP or equivalent. Adjustable closing speed.
+
+PART 3 EXECUTION
+
+3.1 INSTALLATION
+A. Install per manufacturer's instructions and approved hardware schedule.
+B. Wire automatic operators per manufacturer's wiring diagram. Coordinate with electrical.
+C. Adjust closing speed and latching speed for ANSI compliance.
+
+3.2 FIELD QUALITY CONTROL
+A. Verify clear width, opening force, and operator activation. Document per ADA compliance plan.
+
+3.3 WARRANTY
+A. Operators: 1-year manufacturer's warranty.
+B. Closers / Locks / Panic Devices: Manufacturer's standard.
+
+END OF SECTION
+
+======================================================================
+Source: https://acglass.com/architect-specs/section-08-71-00-automatic-entrance-door-hardware.html

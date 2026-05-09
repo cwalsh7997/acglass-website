@@ -1,0 +1,58 @@
+SECTION 08 43 29 — FOLDING (BI-FOLD) GLASS WALLS
+American Commercial Glass | acglass.com | FL CGC #1531993
+Last updated: 2026-05-09
+======================================================================
+
+PART 1 GENERAL
+
+1.1 SUMMARY
+A. Section includes bi-fold (folding) glass wall systems with 2-, 3-, 5-, 7-, and 8-panel configurations.
+
+1.2 REFERENCES
+A. AAMA 920 — Specification for Operating Cycle Performance for Side-Hinged Exterior Door Systems.
+B. ASTM E283, E330, E331, E1886, E1996.
+C. ANSI Z97.1.
+D. Florida Building Code 8th Edition; Miami-Dade NOA for HVHZ projects.
+
+1.3 PERFORMANCE REQUIREMENTS
+A. Wind Load: Per ASCE 7-22 for project location.
+B. Operating Cycles: Minimum 100,000 cycles without component failure per AAMA 920.
+C. Impact Resistance (HVHZ): ASTM E1886 / E1996.
+
+1.4 SUBMITTALS
+A. Product Data, Shop Drawings (sealed by Florida PE), Florida Product Approval, Operating Hardware Cut Sheets, Sample of Hinges and Roller System.
+
+1.5 QUALITY ASSURANCE
+A. Manufacturer: Florida Product Approval listed for proposed system.
+B. Installer: Manufacturer-authorized; minimum 5 installations of similar size in Florida.
+
+PART 2 PRODUCTS
+
+2.1 MANUFACTURERS
+A. Acceptable Manufacturers:
+1. Euro-Wall Vistafold series (basis of design).
+2. Other manufacturers with FPA / NOA documentation, approved prior to bid.
+
+2.2 SYSTEM
+A. Frame: Aluminum 6063-T6 with thermal break.
+B. Glazing: 1-inch insulating glass with laminated impact glass for HVHZ.
+C. Hardware: Stainless steel hinges, multipoint locking system, top-hung or bottom-rolling configuration as specified.
+D. Sill: Low-profile or recessed track for ADA compliance where required.
+
+PART 3 EXECUTION
+
+3.1 INSTALLATION
+A. Install per approved shop drawings and manufacturer instructions.
+B. Verify structural header above the opening; folding wall is not load-bearing.
+C. Adjust panels for smooth operation; lubricate per manufacturer.
+
+3.2 FIELD QUALITY CONTROL
+A. Demonstrate full operation through 5 cycles; no binding, dragging, or leakage.
+
+3.3 WARRANTY
+A. 5-year manufacturer's warranty on hardware; 2-year installer warranty.
+
+END OF SECTION
+
+======================================================================
+Source: https://acglass.com/architect-specs/section-08-43-29-folding-glass-walls.html

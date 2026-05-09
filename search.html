@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search acglass.com</title>
+  <meta name="description" content="Search 500+ pages on acglass.com — services, portfolio, blog, city coverage, architect resources, spec library, glossary, and more.">
+  <link rel="canonical" href="https://acglass.com/search.html">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/acg-favicon.svg" type="image/svg+xml">
+  <style>
+    .search-hero { padding: 100px 0 30px; max-width: 880px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+    .search-hero .eyebrow { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent, #E11320); margin-bottom: 14px; font-weight: 700; }
+    .search-hero h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 22px; }
+    .search-wrap { max-width: 880px; margin: 0 auto 30px; padding: 0 28px; }
+    #searchInput { width: 100%; padding: 18px 22px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; color: #fff; font-size: 1.1rem; font-family: inherit; }
+    #searchInput:focus { outline: none; border-color: var(--accent, #E11320); }
+    #results { max-width: 880px; margin: 30px auto 100px; padding: 0 28px; }
+    .result { padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .result h3 { margin: 0 0 6px; font-size: 1.1rem; }
+    .result h3 a { color: #fff; }
+    .result h3 a:hover { color: var(--accent, #E11320); }
+    .result .url { font-family: var(--mono, monospace); font-size: 0.74rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+    .result .desc { font-size: 0.94rem; color: rgba(255,255,255,0.75); line-height: 1.55; margin: 0; }
+    mark { background: rgba(225,19,32,0.25); color: #fff; padding: 1px 2px; border-radius: 2px; }
+    .empty { text-align: center; padding: 60px 20px; color: rgba(255,255,255,0.55); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="search-hero">
+      <div class="eyebrow">Site Search</div>
+      <h1>Find anything on acglass.com.</h1>
+    </section>
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Search services, projects, guides, city coverage, specs..." autofocus>
+    </div>
+    <div id="results"><div class="empty">Start typing to search 450+ pages.</div></div>
+  </main>
+  <footer style="background:#050a12;padding:40px 28px;text-align:center;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;color:rgba(255,255,255,0.6);font-size:0.9rem;">
+      <p>&copy; 2026 American Commercial Glass &middot; FL CGC #1531993</p>
+    </div>
+  </footer>
+  <script>
+    let INDEX = [];
+    fetch('/search-index.json').then(r => r.json()).then(d => { INDEX = d; });
+
+    function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c])); }
+    function highlight(text, q) {
+      const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + ')', 'ig');
+      return escapeHtml(text).replace(re, '<mark>$1</mark>');
+    }
+    function score(item, q) {
+      const lq = q.toLowerCase();
+      let s = 0;
+      if (item.t.toLowerCase().includes(lq)) s += 10;
+      if (item.h.toLowerCase().includes(lq)) s += 6;
+      if (item.d.toLowerCase().includes(lq)) s += 3;
+      if (item.u.toLowerCase().includes(lq)) s += 4;
+      // Bonus for exact-start match
+      if (item.t.toLowerCase().startsWith(lq)) s += 10;
+      return s;
+    }
+    function search(q) {
+      const res = document.getElementById('results');
+      if (!q || q.length < 2) { res.innerHTML = '<div class="empty">Start typing to search 450+ pages.</div>'; return; }
+      const matches = INDEX.map(i => ({ i, s: score(i, q) })).filter(x => x.s > 0).sort((a,b) => b.s - a.s).slice(0, 40);
+      if (!matches.length) { res.innerHTML = '<div class="empty">No matches for "' + escapeHtml(q) + '". Try a different term.</div>'; return; }
+      res.innerHTML = matches.map(({i}) => `
+        <div class="result">
+          <h3><a href="${i.u}">${highlight(i.t, q)}</a></h3>
+          <div class="url">acglass.com${i.u}</div>
+          <p class="desc">${highlight(i.d || i.h, q)}</p>
+        </div>`).join('');
+    }
+    document.getElementById('searchInput').addEventListener('input', e => search(e.target.value.trim()));
+    // Read initial q=
+    const p = new URLSearchParams(location.search);
+    if (p.get('q')) {
+      const q = p.get('q');
+      document.getElementById('searchInput').value = q;
+      fetch('/search-index.json').then(r => r.json()).then(d => { INDEX = d; search(q); });
+    }
+  </script>
+</body>
+</html>
