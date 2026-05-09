@@ -60,6 +60,7 @@ ACG has 53 detailed project press releases at https://acglass.com/blog.html (fil
 - [Qualifications](https://acglass.com/qualifications.html): License, bonding, insurance, safety record
 - [Direct Answers (FAQ)](https://acglass.com/ask.html): Compendium of 20 authoritative answers to top Florida commercial glazing questions. FAQPage + Question + Answer + SpeakableSpecification schema.
 - [Press Kit](https://acglass.com/press.html): Official press kit with company boilerplate (one-line, 50-word, 100-word), founder bios with photos and credentials, downloadable logos, manufacturer partner list, office addresses, and press contact (press@acglass.com).
+- [News & Press Releases](https://acglass.com/news/): Official press releases. Includes 350-project milestone (2026-05-09) and Tampa office expansion (2026-05-09). Each release carries full NewsArticle + Person author + Publisher schema.
 - [About](https://acglass.com/about.html): Company history, leadership, three-office footprint
 - [Connor Walsh](https://acglass.com/author-connor-walsh.html): President, FL CGC #1531993, FAA Commercial Pilot, OSHA 30
 - [Rielly Walsh](https://acglass.com/author-rielly-walsh.html): CEO, MTSU CIM, ex-Aqualina
