@@ -1796,7 +1796,7 @@
   </url>
   <url>
     <loc>https://acglass.com/commercial-glazing-west-palm-beach.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -2396,7 +2396,7 @@
   </url>
   <url>
     <loc>https://acglass.com/eswindows-installer-florida.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -2522,7 +2522,7 @@
   </url>
   <url>
     <loc>https://acglass.com/euro-wall.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -4889,7 +4889,7 @@
   </url>
   <url>
     <loc>https://acglass.com/security-policy.html</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -7607,7 +7607,7 @@
   </url>
   <url>
     <loc>https://acglass.com/news/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -7733,13 +7733,13 @@
   </url>
   <url>
     <loc>https://acglass.com/architect-specs/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://acglass.com/project-map.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -7763,7 +7763,7 @@
   </url>
   <url>
     <loc>https://acglass.com/approvals/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -7829,20 +7829,26 @@
   </url>
   <url>
     <loc>https://acglass.com/commercial-glass-cost-data.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://acglass.com/curtainwall-vs-window-wall.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://acglass.com/miami-hvhz-glazing-contractor.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://acglass.com/llms.txt</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

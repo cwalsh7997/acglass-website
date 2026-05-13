@@ -1474,7 +1474,7 @@
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
+        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async" fetchpriority="high">
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
@@ -2535,7 +2535,7 @@
       a.className = 'se-project-card';
       a.href = study.url;
       a.innerHTML = `
-        <img class="se-project-img" src="${study.img}" alt="${study.name}" onerror="this.style.background='#111E30';this.style.height='140px';" loading="lazy">
+        <img class="se-project-img" src="${study.img}" alt="${study.name}" onerror="this.style.background='#111E30';this.style.height='140px';" loading="lazy" decoding="async">
         <div class="se-project-body">
           <div class="se-project-type">${study.type}</div>
           <div class="se-project-name">${study.name}</div>

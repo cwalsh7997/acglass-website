@@ -27,6 +27,61 @@
     .news-readmore { font-family: var(--mono, monospace); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent, #E11320); }
     @media (max-width: 700px) { .news-item { grid-template-columns: 1fr; gap: 8px; } }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://acglass.com/news/#webpage",
+      "name": "ACG News & Press Releases",
+      "description": "Latest news, press releases, and announcements from American Commercial Glass.",
+      "url": "https://acglass.com/news/",
+      "publisher": {
+        "@id": "https://acglass.com/#organization"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://acglass.com",
+        "name": "American Commercial Glass"
+      },
+      "breadcrumb": {
+        "@id": "https://acglass.com/news/#breadcrumb"
+      }
+    },
+    {
+      "@type": [
+        "GeneralContractor",
+        "LocalBusiness"
+      ],
+      "@id": "https://acglass.com/#organization",
+      "name": "American Commercial Glass, Inc.",
+      "alternateName": "ACG",
+      "url": "https://acglass.com",
+      "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
+      "telephone": "+1-772-486-7711"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://acglass.com/news/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "News",
+          "item": "https://acglass.com/news/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <main>
