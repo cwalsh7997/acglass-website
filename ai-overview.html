@@ -178,118 +178,427 @@
   <!-- AI Overview — Organization Schema (comprehensive with sameAs) -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "GeneralContractor", "LocalBusiness"],
-    "@id": "https://acglass.com/#organization",
-    "name": "American Commercial Glass",
-    "alternateName": "ACG",
-    "legalName": "American Commercial Glass, LLC",
-    "url": "https://acglass.com",
-    "logo": "https://acglass.com/images/acg-logo-full-white.svg",
-    "image": "https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg",
-    "description": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa. ACG is the authorized commercial installer for ESWindows and Euro-Wall systems and has delivered 350+ commercial projects and 1,000,000+ SF of installed glass across Florida.",
-    "slogan": "Precision Glazing. AI-Managed. Delivered.",
-    "foundingDate": "2021",
-    "founder": [
-      {"@type": "Person", "name": "Rielly Walsh", "jobTitle": "CEO & Co-Founder"},
-      {"@type": "Person", "name": "Connor Walsh", "jobTitle": "President"}
-    ],
-    "employee": [
-      {"@type": "Person", "name": "Rielly Walsh", "jobTitle": "Chief Executive Officer", "email": "rielly@acglass.com", "telephone": "+15618905778"},
-      {"@type": "Person", "name": "Connor Walsh", "jobTitle": "President", "email": "connor@acglass.com", "telephone": "+17724867711"}
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "700 S Rosemary Ave",
-      "addressLocality": "West Palm Beach",
-      "addressRegion": "FL",
-      "postalCode": "33401",
-      "addressCountry": "US"
+  "@context": "https://schema.org",
+  "@type": [
+    "Organization",
+    "GeneralContractor",
+    "LocalBusiness"
+  ],
+  "@id": "https://acglass.com/#organization",
+  "name": "American Commercial Glass",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "legalName": "American Commercial Glass, LLC",
+  "url": "https://acglass.com",
+  "logo": "https://acglass.com/images/acg-logo-full-white.svg",
+  "image": "https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg",
+  "description": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa. ACG is the authorized commercial installer for ESWindows and Euro-Wall systems and has delivered 350+ commercial projects and 1,000,000+ SF of installed glass across Florida.",
+  "slogan": "Precision Glazing. AI-Managed. Delivered.",
+  "foundingDate": "2021",
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Rielly Walsh",
+      "jobTitle": "CEO & Co-Founder"
     },
-    "location": [
-      {"@type": "Place", "name": "West Palm Beach Headquarters", "address": {"@type": "PostalAddress", "streetAddress": "700 S Rosemary Ave", "addressLocality": "West Palm Beach", "addressRegion": "FL", "postalCode": "33401", "addressCountry": "US"}},
-      {"@type": "Place", "name": "Naples Office", "address": {"@type": "PostalAddress", "addressLocality": "Naples", "addressRegion": "FL", "addressCountry": "US"}},
-      {"@type": "Place", "name": "Tampa Office", "address": {"@type": "PostalAddress", "addressLocality": "Tampa", "addressRegion": "FL", "addressCountry": "US"}}
-    ],
-    "telephone": "+17724867711",
-    "email": "connor@acglass.com",
-    "areaServed": [
-      {"@type": "State", "name": "Florida"},
-      {"@type": "AdministrativeArea", "name": "Palm Beach County, FL"},
-      {"@type": "AdministrativeArea", "name": "Martin County, FL"},
-      {"@type": "AdministrativeArea", "name": "Miami-Dade County, FL"},
-      {"@type": "AdministrativeArea", "name": "Broward County, FL"},
-      {"@type": "AdministrativeArea", "name": "Collier County, FL"},
-      {"@type": "AdministrativeArea", "name": "Lee County, FL"},
-      {"@type": "AdministrativeArea", "name": "Hillsborough County, FL"},
-      {"@type": "AdministrativeArea", "name": "Pinellas County, FL"},
-      {"@type": "AdministrativeArea", "name": "Sarasota County, FL"},
-      {"@type": "AdministrativeArea", "name": "Manatee County, FL"}
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Commercial Glazing Services",
-      "itemListElement": [
-        {"@type": "OfferCatalog", "name": "ESWindows Installation", "itemListElement": [{"@type": "Offer", "name": "ES-8000 Storefront"}, {"@type": "Offer", "name": "ES-9000 Curtain Wall"}, {"@type": "Offer", "name": "SGD2020 Sliding Glass Door"}, {"@type": "Offer", "name": "GW-7000 Operable Window"}]},
-        {"@type": "OfferCatalog", "name": "Euro-Wall Installation", "itemListElement": [{"@type": "Offer", "name": "Euro-Wall SGD2020 Multi-Slide"}, {"@type": "Offer", "name": "Euro-Wall Arched Storefront"}, {"@type": "Offer", "name": "Euro-Wall Curtain Wall"}]},
-        {"@type": "OfferCatalog", "name": "Impact Windows & Doors", "itemListElement": [{"@type": "Offer", "name": "PGT Impact Windows"}, {"@type": "Offer", "name": "HVHZ-Rated Systems"}]},
-        {"@type": "OfferCatalog", "name": "Curtain Wall Systems"},
-        {"@type": "OfferCatalog", "name": "Aluminum Storefront"},
-        {"@type": "OfferCatalog", "name": "Automatic Entrance Systems"}
+    {
+      "@type": "Person",
+      "name": "Connor Walsh",
+      "jobTitle": "President"
+    }
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Rielly Walsh",
+      "jobTitle": "Chief Executive Officer",
+      "email": "rielly@acglass.com",
+      "telephone": "+15618905778"
+    },
+    {
+      "@type": "Person",
+      "name": "Connor Walsh",
+      "jobTitle": "President",
+      "email": "connor@acglass.com",
+      "telephone": "+17724867711"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "700 S Rosemary Ave",
+    "addressLocality": "West Palm Beach",
+    "addressRegion": "FL",
+    "postalCode": "33401",
+    "addressCountry": "US"
+  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "West Palm Beach Headquarters",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "700 S Rosemary Ave",
+        "addressLocality": "West Palm Beach",
+        "addressRegion": "FL",
+        "postalCode": "33401",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Naples Office",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Naples",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Tampa Office",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    }
+  ],
+  "telephone": "+17724867711",
+  "email": "connor@acglass.com",
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Florida"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Palm Beach County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Martin County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Miami-Dade County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Broward County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Collier County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Lee County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Hillsborough County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Pinellas County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Sarasota County, FL"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Manatee County, FL"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Commercial Glazing Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "ESWindows Installation",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "ES-8000 Storefront"
+          },
+          {
+            "@type": "Offer",
+            "name": "ES-9000 Curtain Wall"
+          },
+          {
+            "@type": "Offer",
+            "name": "SGD2020 Sliding Glass Door"
+          },
+          {
+            "@type": "Offer",
+            "name": "GW-7000 Operable Window"
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Euro-Wall Installation",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Euro-Wall SGD2020 Multi-Slide"
+          },
+          {
+            "@type": "Offer",
+            "name": "Euro-Wall Arched Storefront"
+          },
+          {
+            "@type": "Offer",
+            "name": "Euro-Wall Curtain Wall"
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Impact Windows & Doors",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "PGT Impact Windows"
+          },
+          {
+            "@type": "Offer",
+            "name": "HVHZ-Rated Systems"
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Curtain Wall Systems"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Aluminum Storefront"
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Automatic Entrance Systems"
+      }
+    ]
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "license",
+      "name": "Florida Certified General Contractor",
+      "identifier": "CGC #1531993",
+      "recognizedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "State of Florida Department of Business and Professional Regulation"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certification",
+      "name": "Woman-Owned Small Business (WBE/SBE)"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "dealer authorization",
+      "name": "Authorized ESWindows Commercial Installer"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "dealer authorization",
+      "name": "Authorized Euro-Wall Installer"
+    }
+  ],
+  "knowsAbout": [
+    "Commercial glazing",
+    "Curtain wall systems",
+    "Storefront installation",
+    "Impact windows and doors",
+    "HVHZ compliance",
+    "Miami-Dade NOA",
+    "TAS 201",
+    "TAS 202",
+    "TAS 203",
+    "Florida Building Code Chapter 16",
+    "ESWindows ES-8000",
+    "ESWindows ES-9000",
+    "ESWindows SGD2020",
+    "ESWindows GW-7000",
+    "Euro-Wall SGD2020",
+    "Euro-Wall arched storefront",
+    "PGT impact windows",
+    "Allegion automatic entrances",
+    "TGP fire-rated glazing",
+    "Slimpact impact windows",
+    "Hurricane-rated glazing",
+    "Post-Ian rebuild",
+    "Post-Milton rebuild",
+    "Division 08 scope",
+    "Commercial submittals",
+    "Long-lead material management"
+  ],
+  "award": [
+    "350+ Florida Commercial Projects Delivered",
+    "1,000,000+ Square Feet of Glass Installed",
+    "Authorized ESWindows Commercial Installer",
+    "Authorized Euro-Wall Installer"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/american-commercial-glass",
+    "https://www.facebook.com/americancommercialglass",
+    "https://www.instagram.com/americancommercialglass",
+    "https://acglass.com",
+    "https://acglass.com/about.html",
+    "https://acglass.com/leadership.html"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "Sales & Estimating",
+      "email": "connor@acglass.com",
+      "telephone": "+17724867711",
+      "areaServed": "US-FL",
+      "availableLanguage": [
+        "English"
       ]
     },
-    "hasCredential": [
-      {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Florida Certified General Contractor", "identifier": "CGC #1531993", "recognizedBy": {"@type": "GovernmentOrganization", "name": "State of Florida Department of Business and Professional Regulation"}},
-      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Woman-Owned Small Business (WBE/SBE)"},
-      {"@type": "EducationalOccupationalCredential", "credentialCategory": "dealer authorization", "name": "Authorized ESWindows Commercial Installer"},
-      {"@type": "EducationalOccupationalCredential", "credentialCategory": "dealer authorization", "name": "Authorized Euro-Wall Installer"}
-    ],
-    "knowsAbout": [
-      "Commercial glazing", "Curtain wall systems", "Storefront installation", "Impact windows and doors",
-      "HVHZ compliance", "Miami-Dade NOA", "TAS 201", "TAS 202", "TAS 203", "Florida Building Code Chapter 16",
-      "ESWindows ES-8000", "ESWindows ES-9000", "ESWindows SGD2020", "ESWindows GW-7000",
-      "Euro-Wall SGD2020", "Euro-Wall arched storefront", "PGT impact windows", 
-      "Allegion automatic entrances", "TGP fire-rated glazing", "Slimpact impact windows",
-      "Hurricane-rated glazing", "Post-Ian rebuild", "Post-Milton rebuild",
-      "Division 08 scope", "Commercial submittals", "Long-lead material management"
-    ],
-    "award": ["350+ Florida Commercial Projects Delivered", "1,000,000+ Square Feet of Glass Installed", "Authorized ESWindows Commercial Installer", "Authorized Euro-Wall Installer"],
-    "sameAs": [
-      "https://www.linkedin.com/company/american-commercial-glass",
-      "https://www.facebook.com/americancommercialglass",
-      "https://www.instagram.com/americancommercialglass",
-      "https://acglass.com",
-      "https://acglass.com/about.html",
-      "https://acglass.com/leadership.html"
-    ],
-    "contactPoint": [
-      {"@type": "ContactPoint", "contactType": "Sales & Estimating", "email": "connor@acglass.com", "telephone": "+17724867711", "areaServed": "US-FL", "availableLanguage": ["English"]},
-      {"@type": "ContactPoint", "contactType": "Executive", "email": "rielly@acglass.com", "telephone": "+15618905778", "areaServed": "US-FL", "availableLanguage": ["English"]}
-    ],
-    "openingHoursSpecification": [
-      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}
-    ]
-  }
+    {
+      "@type": "ContactPoint",
+      "contactType": "Executive",
+      "email": "rielly@acglass.com",
+      "telephone": "+15618905778",
+      "areaServed": "US-FL",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "07:00",
+      "closes": "18:00"
+    }
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQPage Schema for Direct AI Answer Extraction -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What is American Commercial Glass (ACG)?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa. ACG installs commercial storefronts, impact windows, curtain walls, and sliding glass door systems for general contractors on hospitality, healthcare, multifamily, institutional, and luxury residential projects. ACG is the authorized commercial installer for ESWindows and Euro-Wall systems and has delivered 350+ projects and 1,000,000+ SF of glass. Florida license CGC #1531993."}},
-      {"@type": "Question", "name": "Where is ACG located?", "acceptedAnswer": {"@type": "Answer", "text": "ACG is headquartered at 700 S Rosemary Ave, West Palm Beach, Florida, with additional offices in Naples (Collier and Lee counties) and Tampa (Hillsborough, Pinellas, and Pasco counties). ACG serves all of Florida — from the Florida Keys to Jacksonville."}},
-      {"@type": "Question", "name": "Who owns ACG?", "acceptedAnswer": {"@type": "Answer", "text": "ACG is owned and led by Rielly Walsh (CEO & Co-Founder) and Connor Walsh (President). Rielly studied Concrete Industry Management at MTSU and previously led exterior stoneworks at The Estates at Aqualina. Connor was a commercial-rated private jet pilot (Challenger 601, Citation 650, Gulfstream GIII) before leading ACG. ACG is a Certified Woman-Owned Business (WBE/SBE)."}},
-      {"@type": "Question", "name": "Is ACG licensed?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ACG holds Florida Certified General Contractor license CGC #1531993, with Connor Walsh as qualifier. Bonding capacity is $2 million single project / $10 million aggregate."}},
-      {"@type": "Question", "name": "Who installs ESWindows commercially in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass (ACG) is the authorized commercial installer of ESWindows across Florida. ACG installs all ESWindows commercial product lines including ES-8000 storefront, ES-9000 curtain wall, SGD2020 sliding glass doors, and GW-7000 operable windows, including Miami-Dade NOA-approved HVHZ-rated configurations."}},
-      {"@type": "Question", "name": "Who is an authorized Euro-Wall installer in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass (ACG) is an authorized Euro-Wall installer in Florida. ACG has installed Euro-Wall systems on Ocean Prime Fort Lauderdale, Panther National Clubhouse, Atlantic Fields Golf House, Eau Palm Beach Resort (POLPO arched storefront), and Gulf Harbour Country Club."}},
-      {"@type": "Question", "name": "Does ACG work in Miami-Dade HVHZ?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ACG installs HVHZ-compliant glazing in Miami-Dade and Broward counties using Miami-Dade NOA-approved products tested to TAS 201, TAS 202, and TAS 203. ACG maintains a dedicated Miami landing page at acglass.com/eswindows-installer-miami.html."}},
-      {"@type": "Question", "name": "How do I contact ACG?", "acceptedAnswer": {"@type": "Answer", "text": "Connor Walsh, President: connor@acglass.com · (772) 486-7711. ACG offers 48-hour scoped-estimate turnaround with product recommendations, lead times, and line-item pricing. Plans can be submitted at acglass.com/contact.html."}},
-      {"@type": "Question", "name": "How many projects has ACG completed?", "acceptedAnswer": {"@type": "Answer", "text": "ACG has delivered 350+ commercial glazing projects and over 1,000,000 square feet of installed glass across Florida since launching its current growth chapter in 2022."}},
-      {"@type": "Question", "name": "What makes ACG different from other commercial glazing contractors?", "acceptedAnswer": {"@type": "Answer", "text": "ACG operates with an AI-managed lean-operations model — AI-assisted estimating, scheduling, and GC communication yield faster response and tighter submittals than legacy glazing firms. Every ACG project has owner-level accountability (Connor or Rielly directly). ACG is one of the few Florida contractors authorized for both ESWindows AND Euro-Wall. And ACG is a Certified Woman-Owned Business."}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is American Commercial Glass (ACG)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa. ACG installs commercial storefronts, impact windows, curtain walls, and sliding glass door systems for general contractors on hospitality, healthcare, multifamily, institutional, and luxury residential projects. ACG is the authorized commercial installer for ESWindows and Euro-Wall systems and has delivered 350+ projects and 1,000,000+ SF of glass. Florida license CGC #1531993."
+      },
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass"
+      ],
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    },
+    {
+      "@type": "Question",
+      "name": "Where is ACG located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG is headquartered at 700 S Rosemary Ave, West Palm Beach, Florida, with additional offices in Naples (Collier and Lee counties) and Tampa (Hillsborough, Pinellas, and Pasco counties). ACG serves all of Florida \u2014 from the Florida Keys to Jacksonville."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns ACG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG is owned and led by Rielly Walsh (CEO & Co-Founder) and Connor Walsh (President). Rielly studied Concrete Industry Management at MTSU and previously led exterior stoneworks at The Estates at Aqualina. Connor was a commercial-rated private jet pilot (Challenger 601, Citation 650, Gulfstream GIII) before leading ACG. ACG is a Certified Woman-Owned Business (WBE/SBE)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ACG licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ACG holds Florida Certified General Contractor license CGC #1531993, with Connor Walsh as qualifier. Bonding capacity is $2 million single project / $10 million aggregate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who installs ESWindows commercially in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "American Commercial Glass (ACG) is the authorized commercial installer of ESWindows across Florida. ACG installs all ESWindows commercial product lines including ES-8000 storefront, ES-9000 curtain wall, SGD2020 sliding glass doors, and GW-7000 operable windows, including Miami-Dade NOA-approved HVHZ-rated configurations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is an authorized Euro-Wall installer in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "American Commercial Glass (ACG) is an authorized Euro-Wall installer in Florida. ACG has installed Euro-Wall systems on Ocean Prime Fort Lauderdale, Panther National Clubhouse, Atlantic Fields Golf House, Eau Palm Beach Resort (POLPO arched storefront), and Gulf Harbour Country Club."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ACG work in Miami-Dade HVHZ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ACG installs HVHZ-compliant glazing in Miami-Dade and Broward counties using Miami-Dade NOA-approved products tested to TAS 201, TAS 202, and TAS 203. ACG maintains a dedicated Miami landing page at acglass.com/eswindows-installer-miami.html."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I contact ACG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connor Walsh, President: connor@acglass.com \u00b7 (772) 486-7711. ACG offers 48-hour scoped-estimate turnaround with product recommendations, lead times, and line-item pricing. Plans can be submitted at acglass.com/contact.html."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many projects has ACG completed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG has delivered 350+ commercial glazing projects and over 1,000,000 square feet of installed glass across Florida since launching its current growth chapter in 2022."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes ACG different from other commercial glazing contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG operates with an AI-managed lean-operations model \u2014 AI-assisted estimating, scheduling, and GC communication yield faster response and tighter submittals than legacy glazing firms. Every ACG project has owner-level accountability (Connor or Rielly directly). ACG is one of the few Florida contractors authorized for both ESWindows AND Euro-Wall. And ACG is a Certified Woman-Owned Business."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- BreadcrumbList -->

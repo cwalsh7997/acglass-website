@@ -40,34 +40,45 @@
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "American Commercial Glass",
-    "alternateName": "ACG",
-    "description": "Hospitality glazing contractor serving all of Florida — hotel and resort storefronts, lobby curtainwall, pool enclosures, country club and marina clubhouse glazing. 350+ projects statewide.",
-    "url": "https://acglass.com/hospitality-glazing-florida.html",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "areaServed": [
-      "Florida",
-      "Fort Myers, FL",
-      "Naples, FL",
-      "Palm Beach Gardens, FL",
-      "Fort Lauderdale, FL",
-      "Tampa, FL",
-      "West Palm Beach, FL"
-    ],
-    "serviceType": [
-      "Hospitality Glazing",
-      "Hotel Glazing",
-      "Resort Glazing",
-      "Country Club Glazing",
-      "Lobby Storefront",
-      "Curtainwall Installation"
-    ],
-    "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
-    "sameAs": ["https://acglass.com"]
-  }
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "American Commercial Glass",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "description": "Hospitality glazing contractor serving all of Florida \u2014 hotel and resort storefronts, lobby curtainwall, pool enclosures, country club and marina clubhouse glazing. 350+ projects statewide.",
+  "url": "https://acglass.com/hospitality-glazing-florida.html",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "areaServed": [
+    "Florida",
+    "Fort Myers, FL",
+    "Naples, FL",
+    "Palm Beach Gardens, FL",
+    "Fort Lauderdale, FL",
+    "Tampa, FL",
+    "West Palm Beach, FL"
+  ],
+  "serviceType": [
+    "Hospitality Glazing",
+    "Hotel Glazing",
+    "Resort Glazing",
+    "Country Club Glazing",
+    "Lobby Storefront",
+    "Curtainwall Installation"
+  ],
+  "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
+  "sameAs": [
+    "https://acglass.com"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQ Schema -->
@@ -125,13 +136,30 @@
   </style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Hospitality Glazing",
-    "provider": {"@type": "Organization", "name": "American Commercial Glass", "url": "https://acglass.com"},
-    "areaServed": {"@type": "State", "name": "Florida"},
-    "description": "Commercial glazing for hotels, resorts, restaurants, and country clubs in Florida. Lobby storefronts, curtainwall, pool enclosures, and Euro-Wall opening systems."
-  }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Hospitality Glazing",
+  "provider": {
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Florida"
+  },
+  "description": "Commercial glazing for hotels, resorts, restaurants, and country clubs in Florida. Lobby storefronts, curtainwall, pool enclosures, and Euro-Wall opening systems."
+}
   </script>
 <script type="application/ld+json">
 {
@@ -145,11 +173,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

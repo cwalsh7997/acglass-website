@@ -27,42 +27,72 @@
   <!-- Service Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AI-Managed Commercial Glazing Operations",
-    "provider": {
-      "@type": "Organization",
-      "name": "American Commercial Glass",
-      "url": "https://acglass.com",
-      "telephone": "(772) 486-7711",
-      "email": "connor@acglass.com"
-    },
-    "description": "ACG operates with AI-managed scheduling and project coordination — real-time submittal tracking, procurement sequencing, installation coordination, and proactive GC communication across simultaneous projects statewide and nationally.",
-    "areaServed": "United States",
-    "serviceType": [
-      "AI-Managed Glazing Operations",
-      "Commercial Glazing Project Management",
-      "Division 08 Subcontracting",
-      "Glazing Submittal Management",
-      "Construction Schedule Coordination"
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI-Managed Commercial Glazing Operations",
+  "provider": {
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "telephone": "(772) 486-7711",
+    "email": "connor@acglass.com",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "description": "ACG operates with AI-managed scheduling and project coordination \u2014 real-time submittal tracking, procurement sequencing, installation coordination, and proactive GC communication across simultaneous projects statewide and nationally.",
+  "areaServed": "United States",
+  "serviceType": [
+    "AI-Managed Glazing Operations",
+    "Commercial Glazing Project Management",
+    "Division 08 Subcontracting",
+    "Glazing Submittal Management",
+    "Construction Schedule Coordination"
+  ]
+}
   </script>
 
   <!-- Organization Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "American Commercial Glass",
-    "alternateName": "ACG",
-    "url": "https://acglass.com",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "description": "AI-managed commercial glazing contractor. Full Division 08 scope. 350+ projects delivered statewide and nationally. Florida headquarters with three offices.",
-    "areaServed": ["Florida", "Georgia", "Louisiana", "Tennessee", "North Carolina", "South Carolina", "Texas", "Alabama"],
-    "sameAs": ["https://acglass.com"]
-  }
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "url": "https://acglass.com",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "description": "AI-managed commercial glazing contractor. Full Division 08 scope. 350+ projects delivered statewide and nationally. Florida headquarters with three offices.",
+  "areaServed": [
+    "Florida",
+    "Georgia",
+    "Louisiana",
+    "Tennessee",
+    "North Carolina",
+    "South Carolina",
+    "Texas",
+    "Alabama"
+  ],
+  "sameAs": [
+    "https://acglass.com"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQPage Schema -->
@@ -158,11 +188,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

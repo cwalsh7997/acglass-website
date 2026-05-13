@@ -31,40 +31,91 @@
   <!-- Service Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Glazing Subcontractor Services for General Contractors",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "American Commercial Glass",
-      "alternateName": "ACG",
-      "url": "https://acglass.com",
-      "telephone": "(772) 486-7711",
-      "email": "connor@acglass.com",
-      "areaServed": [
-        "Florida",
-        "West Palm Beach, FL",
-        "Naples, FL",
-        "Tampa, FL"
-      ]
-    },
-    "serviceType": "Glazing Subcontractor",
-    "description": "Full Division 08 glazing subcontractor for Florida general contractors. 48-hour scope turnaround, AI-managed scheduling, one point of contact. Services include storefronts, curtainwall, window wall, impact windows, entrances, interior glass, fire-rated assemblies, and hardware.",
-    "url": "https://acglass.com/gc.html",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Division 08 Glazing Scope",
-      "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial Storefront Systems"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Curtainwall Systems"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Wall Systems"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Impact Windows & Doors"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatic Entrance Systems"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Interior Glass Partitions"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fire-Rated Glass Assemblies"}}
-      ]
-    }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Glazing Subcontractor Services for General Contractors",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "American Commercial Glass",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "url": "https://acglass.com",
+    "telephone": "(772) 486-7711",
+    "email": "connor@acglass.com",
+    "areaServed": [
+      "Florida",
+      "West Palm Beach, FL",
+      "Naples, FL",
+      "Tampa, FL"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "serviceType": "Glazing Subcontractor",
+  "description": "Full Division 08 glazing subcontractor for Florida general contractors. 48-hour scope turnaround, AI-managed scheduling, one point of contact. Services include storefronts, curtainwall, window wall, impact windows, entrances, interior glass, fire-rated assemblies, and hardware.",
+  "url": "https://acglass.com/gc.html",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Division 08 Glazing Scope",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Storefront Systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Curtainwall Systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Window Wall Systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Impact Windows & Doors"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automatic Entrance Systems"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Interior Glass Partitions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fire-Rated Glass Assemblies"
+        }
+      }
+    ]
   }
+}
   </script>
   <style>
     .nav-dropdown{position:relative}
@@ -88,15 +139,28 @@
   </style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "For General Contractors | American Commercial Glass",
-    "description": "Dedicated resource page for general contractors. 48-hour scope turnaround, full Division 08 coverage, direct contact with ownership.",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", ".service-card h3"]
-    }
-  }
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "For General Contractors | American Commercial Glass",
+  "description": "Dedicated resource page for general contractors. 48-hour scope turnaround, full Division 08 coverage, direct contact with ownership.",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      ".service-card h3"
+    ]
+  },
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
 <script type="application/ld+json">
@@ -123,11 +187,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

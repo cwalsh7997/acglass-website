@@ -40,24 +40,34 @@
   <!-- CollectionPage Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Glazing Resources & Knowledge Center",
-    "description": "A comprehensive library of commercial glazing knowledge for general contractors, architects, and project managers — covering costs, Florida code compliance, systems selection, and project spotlights.",
-    "url": "https://acglass.com/resources.html",
-    "publisher": {
-      "@type": "Organization",
-      "name": "American Commercial Glass",
-      "url": "https://acglass.com",
-      "telephone": "(772) 486-7711",
-      "email": "connor@acglass.com"
-    },
-    "mainEntity": {
-      "@type": "ItemList",
-      "name": "Commercial Glazing Knowledge Articles",
-      "numberOfItems": 27
-    }
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Glazing Resources & Knowledge Center",
+  "description": "A comprehensive library of commercial glazing knowledge for general contractors, architects, and project managers \u2014 covering costs, Florida code compliance, systems selection, and project spotlights.",
+  "url": "https://acglass.com/resources.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "telephone": "(772) 486-7711",
+    "email": "connor@acglass.com",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Commercial Glazing Knowledge Articles",
+    "numberOfItems": 27
   }
+}
   </script>
 
   <!-- BreadcrumbList Schema -->
@@ -118,11 +128,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

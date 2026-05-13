@@ -1138,21 +1138,64 @@
   <!-- ========== SCHEMA ========== -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Hotel", "LodgingBusiness", "Place"],
-        "@id": "https://acglass.com/eau-palm-beach-resort.html#place",
-        "name": "Eau Palm Beach Resort & Spa",
-        "alternateName": ["Eau Palm Beach", "Eau Resort Manalapan"],
-        "description": "Eau Palm Beach Resort & Spa is a Forbes Five-Star oceanfront resort in Manalapan, Florida — 309 guestrooms and suites on seven private acres of Atlantic beachfront, with the 42,000-square-foot Eau Spa and the Polpo restaurant. American Commercial Glass (ACG) completed a seven-phase, owner-led design-build glazing renovation of the property.",
-        "url": "https://acglass.com/eau-palm-beach-resort.html",
-        "image": [
-          "https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg",
-          "https://acglass.com/images/projects/eau-palm-beach/polpo-interior-arches.jpg",
-          "https://acglass.com/images/projects/eau-palm-beach/aerial-resort.jpg",
-          "https://acglass.com/images/projects/eau-palm-beach/entrance-dusk.jpg"
-        ],
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Hotel",
+        "LodgingBusiness",
+        "Place"
+      ],
+      "@id": "https://acglass.com/eau-palm-beach-resort.html#place",
+      "name": "Eau Palm Beach Resort & Spa",
+      "alternateName": [
+        "Eau Palm Beach",
+        "Eau Resort Manalapan"
+      ],
+      "description": "Eau Palm Beach Resort & Spa is a Forbes Five-Star oceanfront resort in Manalapan, Florida \u2014 309 guestrooms and suites on seven private acres of Atlantic beachfront, with the 42,000-square-foot Eau Spa and the Polpo restaurant. American Commercial Glass (ACG) completed a seven-phase, owner-led design-build glazing renovation of the property.",
+      "url": "https://acglass.com/eau-palm-beach-resort.html",
+      "image": [
+        "https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg",
+        "https://acglass.com/images/projects/eau-palm-beach/polpo-interior-arches.jpg",
+        "https://acglass.com/images/projects/eau-palm-beach/aerial-resort.jpg",
+        "https://acglass.com/images/projects/eau-palm-beach/entrance-dusk.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 S Ocean Blvd",
+        "addressLocality": "Manalapan",
+        "addressRegion": "FL",
+        "postalCode": "33462",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.5746,
+        "longitude": -80.0364
+      },
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "author": {
+          "@type": "Organization",
+          "name": "Forbes Travel Guide"
+        }
+      }
+    },
+    {
+      "@type": [
+        "Project",
+        "ConstructionProject"
+      ],
+      "@id": "https://acglass.com/eau-palm-beach-resort.html#project",
+      "name": "Eau Palm Beach Resort & Spa \u2014 Seven-Phase Glazing Renovation",
+      "description": "ACG executed a seven-phase, owner-led design-build glazing renovation at Eau Palm Beach Resort & Spa in Manalapan, FL. Scopes included custom decorative front entrance doors, Polpo restaurant's bi-fold Euro-Wall ocean-facing wall, custom arched interior windows at Polpo, floor-to-ceiling glazing at the Kids Club and ice cream shop, spa additions, and updated rear facade entrances.",
+      "url": "https://acglass.com/eau-palm-beach-resort.html",
+      "image": "https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg",
+      "location": {
+        "@type": "Place",
+        "name": "Manalapan, FL",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "100 S Ocean Blvd",
@@ -1160,89 +1203,169 @@
           "addressRegion": "FL",
           "postalCode": "33462",
           "addressCountry": "US"
-        },
-        "geo": {"@type": "GeoCoordinates", "latitude": 26.5746, "longitude": -80.0364},
-        "starRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5", "author": {"@type": "Organization", "name": "Forbes Travel Guide"}}
-      },
-      {
-        "@type": ["Project", "ConstructionProject"],
-        "@id": "https://acglass.com/eau-palm-beach-resort.html#project",
-        "name": "Eau Palm Beach Resort & Spa — Seven-Phase Glazing Renovation",
-        "description": "ACG executed a seven-phase, owner-led design-build glazing renovation at Eau Palm Beach Resort & Spa in Manalapan, FL. Scopes included custom decorative front entrance doors, Polpo restaurant's bi-fold Euro-Wall ocean-facing wall, custom arched interior windows at Polpo, floor-to-ceiling glazing at the Kids Club and ice cream shop, spa additions, and updated rear facade entrances.",
-        "url": "https://acglass.com/eau-palm-beach-resort.html",
-        "image": "https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg",
-        "location": {
-          "@type": "Place",
-          "name": "Manalapan, FL",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "100 S Ocean Blvd",
-            "addressLocality": "Manalapan",
-            "addressRegion": "FL",
-            "postalCode": "33462",
-            "addressCountry": "US"
-          }
-        },
-        "agent": {
-          "@type": "Organization",
-          "name": "American Commercial Glass",
-          "url": "https://acglass.com",
-          "telephone": "+1-772-486-7711"
-        },
-        "additionalType": "Forbes Five-Star Luxury Resort Renovation",
-        "isPartOf": {
-          "@type": "CreativeWork",
-          "name": "American Commercial Glass — Project Portfolio",
-          "url": "https://acglass.com/portfolio.html"
-        },
-        "participant": [
-          {"@type": "Organization", "name": "Eau Palm Beach Resort & Spa", "roleName": "Owner / Design-Build Lead"}
-        ],
-        "offers": {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Euro-Wall Commercial Glazing System",
-            "manufacturer": {
-              "@type": "Organization",
-              "name": "Euro-Wall",
-              "description": "Glazing product manufacturer",
-              "url": "https://www.eurowall.com"
-            }
-          }
         }
       },
-      {
+      "agent": {
         "@type": "Organization",
-        "@id": "https://acglass.com/eau-palm-beach-resort.html#organization-ref",
-        "name": "American Commercial Glass, Inc.",
-        "alternateName": "ACG",
-        "url": "https://acglass.com/",
-        "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+        "name": "American Commercial Glass",
+        "url": "https://acglass.com",
+        "telephone": "+1-772-486-7711",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://acglass.com/eau-palm-beach-resort.html#faq",
-        "mainEntity": [
-          {"@type":"Question","name":"Where is Eau Palm Beach Resort & Spa?","acceptedAnswer":{"@type":"Answer","text":"Eau Palm Beach is at 100 S Ocean Blvd, Manalapan, Florida 33462 — seven private acres of Atlantic Ocean beachfront in Palm Beach County, approximately 15 minutes south of Palm Beach International Airport."}},
-          {"@type":"Question","name":"What was ACG's scope at Eau Palm Beach?","acceptedAnswer":{"@type":"Answer","text":"ACG executed a seven-phase glazing renovation: the new custom front entrance doors, Polpo's bi-fold ocean wall, Polpo's arched interior windows, the Kids Club and ice cream shop floor-to-ceiling glazing, the Eau Spa additions, the updated rear facade entrances, and the sequencing discipline that kept the resort operating through every phase."}},
-          {"@type":"Question","name":"Was there a general contractor on the renovation?","acceptedAnswer":{"@type":"Answer","text":"No. The renovation was delivered as an owner-led design-build. ACG worked directly with resort ownership and management — with no GC layer — on each of the seven phases."}},
-          {"@type":"Question","name":"What glazing systems were used?","acceptedAnswer":{"@type":"Answer","text":"The Polpo bi-fold ocean wall is a Euro-Wall system. Other phases use impact-rated storefront and curtainwall with custom framing to accommodate the resort's arched openings and decorative-glass entrance doors."}},
-          {"@type":"Question","name":"How did ACG work inside an operating Five-Star resort?","acceptedAnswer":{"@type":"Answer","text":"The work was sequenced around Polpo's dinner service, around Eau Spa appointments, and around guest arrivals. Cranes and heavy work were scheduled before guest hours, and daily punch-list closure happened before turndown. The resort never lost a reservation or a star during any phase."}},
-          {"@type":"Question","name":"Is Eau Palm Beach still Forbes Five-Star?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eau Palm Beach has held a Forbes Travel Guide Five-Star rating for more than a decade and is a member of Preferred Hotels & Resorts' Legend Collection."}}
-        ]
+      "additionalType": "Forbes Five-Star Luxury Resort Renovation",
+      "isPartOf": {
+        "@type": "CreativeWork",
+        "name": "American Commercial Glass \u2014 Project Portfolio",
+        "url": "https://acglass.com/portfolio.html",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://acglass.com/eau-palm-beach-resort.html#breadcrumb",
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},
-          {"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},
-          {"@type":"ListItem","position":3,"name":"Eau Palm Beach Resort & Spa"}
-        ]
+      "participant": [
+        {
+          "@type": "Organization",
+          "name": "Eau Palm Beach Resort & Spa",
+          "roleName": "Owner / Design-Build Lead"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Euro-Wall Commercial Glazing System",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Euro-Wall",
+            "description": "Glazing product manufacturer",
+            "url": "https://www.eurowall.com"
+          }
+        }
       }
-    ]
-  }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://acglass.com/eau-palm-beach-resort.html#organization-ref",
+      "name": "American Commercial Glass, Inc.",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass"
+      ],
+      "url": "https://acglass.com/",
+      "mainEntityOfPage": {
+        "@id": "https://acglass.com/#organization",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
+      },
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://acglass.com/eau-palm-beach-resort.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Eau Palm Beach Resort & Spa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eau Palm Beach is at 100 S Ocean Blvd, Manalapan, Florida 33462 \u2014 seven private acres of Atlantic Ocean beachfront in Palm Beach County, approximately 15 minutes south of Palm Beach International Airport."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What was ACG's scope at Eau Palm Beach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG executed a seven-phase glazing renovation: the new custom front entrance doors, Polpo's bi-fold ocean wall, Polpo's arched interior windows, the Kids Club and ice cream shop floor-to-ceiling glazing, the Eau Spa additions, the updated rear facade entrances, and the sequencing discipline that kept the resort operating through every phase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was there a general contractor on the renovation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The renovation was delivered as an owner-led design-build. ACG worked directly with resort ownership and management \u2014 with no GC layer \u2014 on each of the seven phases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What glazing systems were used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Polpo bi-fold ocean wall is a Euro-Wall system. Other phases use impact-rated storefront and curtainwall with custom framing to accommodate the resort's arched openings and decorative-glass entrance doors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How did ACG work inside an operating Five-Star resort?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The work was sequenced around Polpo's dinner service, around Eau Spa appointments, and around guest arrivals. Cranes and heavy work were scheduled before guest hours, and daily punch-list closure happened before turndown. The resort never lost a reservation or a star during any phase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Eau Palm Beach still Forbes Five-Star?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Eau Palm Beach has held a Forbes Travel Guide Five-Star rating for more than a decade and is a member of Preferred Hotels & Resorts' Legend Collection."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://acglass.com/eau-palm-beach-resort.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://acglass.com/portfolio.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Eau Palm Beach Resort & Spa"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <!-- Reveal animations -->

@@ -40,34 +40,45 @@
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "American Commercial Glass",
-    "alternateName": "ACG",
-    "description": "Glazing subcontractor serving Florida general contractors — full scope glazing supply and install, 48-hour scope turnaround, AI-managed scheduling, direct contact. GC partners include Verdex, Pirtle Construction, Hooks Construction, Rycon Construction, and Ahrens Companies.",
-    "url": "https://acglass.com/glazing-subcontractor-florida.html",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "areaServed": [
-      "Florida",
-      "West Palm Beach, FL",
-      "Naples, FL",
-      "Tampa, FL",
-      "Miami, FL",
-      "Fort Lauderdale, FL",
-      "Fort Myers, FL",
-      "Orlando, FL"
-    ],
-    "serviceType": [
-      "Glazing Subcontractor",
-      "Commercial Glazing Subcontractor",
-      "Florida Glazing Sub",
-      "Division 08 Glazing",
-      "Commercial Glass Supply and Install"
-    ],
-    "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
-    "sameAs": ["https://acglass.com"]
-  }
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "American Commercial Glass",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "description": "Glazing subcontractor serving Florida general contractors \u2014 full scope glazing supply and install, 48-hour scope turnaround, AI-managed scheduling, direct contact. GC partners include Verdex, Pirtle Construction, Hooks Construction, Rycon Construction, and Ahrens Companies.",
+  "url": "https://acglass.com/glazing-subcontractor-florida.html",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "areaServed": [
+    "Florida",
+    "West Palm Beach, FL",
+    "Naples, FL",
+    "Tampa, FL",
+    "Miami, FL",
+    "Fort Lauderdale, FL",
+    "Fort Myers, FL",
+    "Orlando, FL"
+  ],
+  "serviceType": [
+    "Glazing Subcontractor",
+    "Commercial Glazing Subcontractor",
+    "Florida Glazing Sub",
+    "Division 08 Glazing",
+    "Commercial Glass Supply and Install"
+  ],
+  "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
+  "sameAs": [
+    "https://acglass.com"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQ Schema -->
@@ -125,13 +136,30 @@
   </style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Glazing Subcontractor Services",
-    "provider": {"@type": "Organization", "name": "American Commercial Glass", "url": "https://acglass.com"},
-    "areaServed": {"@type": "State", "name": "Florida"},
-    "description": "Licensed glazing subcontractor serving general contractors throughout Florida. Division 08 scopes, 48-hour scope turnaround, full insurance and bonding, and direct access to ownership."
-  }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Glazing Subcontractor Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Florida"
+  },
+  "description": "Licensed glazing subcontractor serving general contractors throughout Florida. Division 08 scopes, 48-hour scope turnaround, full insurance and bonding, and direct access to ownership."
+}
   </script>
 
 <script type="application/ld+json">
@@ -158,11 +186,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

@@ -40,35 +40,46 @@
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "American Commercial Glass",
-    "alternateName": "ACG",
-    "description": "Healthcare glazing contractor serving all of Florida — infection-control glass partitions, fire-rated glass assemblies, curtainwall for hospitals, emergency departments, medical offices, and outpatient clinics. 350+ projects statewide.",
-    "url": "https://acglass.com/healthcare-glazing-florida.html",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "areaServed": [
-      "Florida",
-      "Cape Coral, FL",
-      "Tampa, FL",
-      "West Palm Beach, FL",
-      "Naples, FL",
-      "Fort Myers, FL",
-      "Miami, FL",
-      "Orlando, FL"
-    ],
-    "serviceType": [
-      "Healthcare Glazing",
-      "Hospital Glazing",
-      "Infection-Control Glass Partitions",
-      "Fire-Rated Glass Systems",
-      "Medical Office Glazing",
-      "Curtainwall for Medical Buildings"
-    ],
-    "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
-    "sameAs": ["https://acglass.com"]
-  }
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "American Commercial Glass",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "description": "Healthcare glazing contractor serving all of Florida \u2014 infection-control glass partitions, fire-rated glass assemblies, curtainwall for hospitals, emergency departments, medical offices, and outpatient clinics. 350+ projects statewide.",
+  "url": "https://acglass.com/healthcare-glazing-florida.html",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "areaServed": [
+    "Florida",
+    "Cape Coral, FL",
+    "Tampa, FL",
+    "West Palm Beach, FL",
+    "Naples, FL",
+    "Fort Myers, FL",
+    "Miami, FL",
+    "Orlando, FL"
+  ],
+  "serviceType": [
+    "Healthcare Glazing",
+    "Hospital Glazing",
+    "Infection-Control Glass Partitions",
+    "Fire-Rated Glass Systems",
+    "Medical Office Glazing",
+    "Curtainwall for Medical Buildings"
+  ],
+  "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
+  "sameAs": [
+    "https://acglass.com"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQ Schema -->
@@ -134,13 +145,30 @@
   </style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Healthcare Facility Glazing",
-    "provider": {"@type": "Organization", "name": "American Commercial Glass", "url": "https://acglass.com"},
-    "areaServed": {"@type": "State", "name": "Florida"},
-    "description": "Commercial glazing for hospitals, medical offices, emergency departments, and outpatient clinics in Florida. Infection-control rated, fire-rated, and code-compliant systems."
-  }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Healthcare Facility Glazing",
+  "provider": {
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Florida"
+  },
+  "description": "Commercial glazing for hospitals, medical offices, emergency departments, and outpatient clinics in Florida. Infection-control rated, fire-rated, and code-compliant systems."
+}
   </script>
 <script type="application/ld+json">
 {
@@ -154,11 +182,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

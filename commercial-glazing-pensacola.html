@@ -45,43 +45,55 @@
   <!-- LocalBusiness Schema — Pensacola -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "American Commercial Glass — Pensacola",
-    "alternateName": "ACG Pensacola",
-    "description": "Commercial glazing contractor serving Pensacola and Northwest Florida. Impact-rated windows and doors, storefronts, curtainwall, and government/military construction glazing for GCs throughout Escambia and Santa Rosa counties.",
-    "url": "https://acglass.com/commercial-glazing-pensacola.html",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pensacola",
-      "addressRegion": "FL",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      "Pensacola, FL",
-      "Escambia County, FL",
-      "Santa Rosa County, FL",
-      "Pensacola Beach, FL",
-      "Gulf Breeze, FL",
-      "Milton, FL",
-      "Pace, FL",
-      "Navarre, FL"
-    ],
-    "serviceType": [
-      "Commercial Glazing",
-      "Impact Windows",
-      "Impact Doors",
-      "Storefront Installation",
-      "Curtainwall Installation",
-      "Window Wall Systems",
-      "Government Facility Glazing",
-      "Military Base Construction Glazing"
-    ],
-    "hasMap": "https://maps.google.com/?q=Pensacola,FL",
-    "sameAs": ["https://acglass.com"]
-  }
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "American Commercial Glass \u2014 Pensacola",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass",
+    "ACG Pensacola"
+  ],
+  "description": "Commercial glazing contractor serving Pensacola and Northwest Florida. Impact-rated windows and doors, storefronts, curtainwall, and government/military construction glazing for GCs throughout Escambia and Santa Rosa counties.",
+  "url": "https://acglass.com/commercial-glazing-pensacola.html",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pensacola",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Pensacola, FL",
+    "Escambia County, FL",
+    "Santa Rosa County, FL",
+    "Pensacola Beach, FL",
+    "Gulf Breeze, FL",
+    "Milton, FL",
+    "Pace, FL",
+    "Navarre, FL"
+  ],
+  "serviceType": [
+    "Commercial Glazing",
+    "Impact Windows",
+    "Impact Doors",
+    "Storefront Installation",
+    "Curtainwall Installation",
+    "Window Wall Systems",
+    "Government Facility Glazing",
+    "Military Base Construction Glazing"
+  ],
+  "hasMap": "https://maps.google.com/?q=Pensacola,FL",
+  "sameAs": [
+    "https://acglass.com"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQ Schema -->
@@ -185,7 +197,13 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "American Commercial Glass",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/commercial-glazing-pensacola.html",
   "telephone": "(772) 486-7711",
   "email": "connor@acglass.com",
@@ -212,7 +230,10 @@
     "addressRegion": "FL",
     "postalCode": "33401",
     "addressCountry": "US"
-  }
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 
@@ -220,11 +241,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

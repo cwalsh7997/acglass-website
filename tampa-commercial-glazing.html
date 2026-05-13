@@ -50,140 +50,268 @@
   <!-- JSON-LD Schema: LocalBusiness + Service + BreadcrumbList + FAQPage + Organization -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "additionalType": "https://schema.org/Glazier",
-        "@id": "https://acglass.com/#localbusiness-tampa",
-        "name": "American Commercial Glass — Tampa",
-        "alternateName": "ACG Tampa",
-        "description": "Commercial glazing subcontractor serving Tampa and the greater Tampa Bay area. Division 08 full scope — storefront, curtainwall, impact windows, window wall, entry systems, fire-rated glass. 350+ projects across Florida. 48-hour bid turnaround.",
-        "url": "https://acglass.com/tampa-commercial-glazing.html",
-        "telephone": "(772) 486-7711",
-        "email": "connor@acglass.com",
-        "license": "CGC1531993",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tampa",
-          "addressRegion": "FL",
-          "addressCountry": "US",
-          "description": "Tampa office — by appointment"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "additionalType": "https://schema.org/Glazier",
+      "@id": "https://acglass.com/#localbusiness-tampa",
+      "name": "American Commercial Glass \u2014 Tampa",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass",
+        "ACG Tampa"
+      ],
+      "description": "Commercial glazing subcontractor serving Tampa and the greater Tampa Bay area. Division 08 full scope \u2014 storefront, curtainwall, impact windows, window wall, entry systems, fire-rated glass. 350+ projects across Florida. 48-hour bid turnaround.",
+      "url": "https://acglass.com/tampa-commercial-glazing.html",
+      "telephone": "(772) 486-7711",
+      "email": "connor@acglass.com",
+      "license": "CGC1531993",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "addressCountry": "US",
+        "description": "Tampa office \u2014 by appointment"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.9506",
+        "longitude": "-82.4572"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "27.9506",
-          "longitude": "-82.4572"
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tampa"
         },
-        "openingHoursSpecification": [
-          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"},
-          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "17:00"}
-        ],
-        "areaServed": [
-          {"@type": "City", "name": "Tampa"},
-          {"@type": "City", "name": "St. Petersburg"},
-          {"@type": "City", "name": "Clearwater"},
-          {"@type": "City", "name": "Brandon"},
-          {"@type": "City", "name": "Riverview"},
-          {"@type": "City", "name": "Wesley Chapel"},
-          {"@type": "City", "name": "Lutz"},
-          {"@type": "AdministrativeArea", "name": "Tampa Bay"},
-          {"@type": "AdministrativeArea", "name": "Hillsborough County"},
-          {"@type": "AdministrativeArea", "name": "Pinellas County"},
-          {"@type": "AdministrativeArea", "name": "Pasco County"}
-        ],
-        "serviceType": ["Commercial Glazing","Storefront Glazing","Curtainwall Installation","Impact Windows","Window Wall Systems","Fire-Rated Glass","Entry Door Systems","Interior Glass Partitions","Automatic Entrances"]
+        {
+          "@type": "City",
+          "name": "St. Petersburg"
+        },
+        {
+          "@type": "City",
+          "name": "Clearwater"
+        },
+        {
+          "@type": "City",
+          "name": "Brandon"
+        },
+        {
+          "@type": "City",
+          "name": "Riverview"
+        },
+        {
+          "@type": "City",
+          "name": "Wesley Chapel"
+        },
+        {
+          "@type": "City",
+          "name": "Lutz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Tampa Bay"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hillsborough County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pinellas County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pasco County"
+        }
+      ],
+      "serviceType": [
+        "Commercial Glazing",
+        "Storefront Glazing",
+        "Curtainwall Installation",
+        "Impact Windows",
+        "Window Wall Systems",
+        "Fire-Rated Glass",
+        "Entry Door Systems",
+        "Interior Glass Partitions",
+        "Automatic Entrances"
+      ],
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://acglass.com/#service-tampa",
+      "name": "Commercial Glazing Services \u2014 Tampa",
+      "description": "Full Division 08 commercial glazing services in Tampa, FL. Storefront, curtainwall, impact windows, window wall, entry systems, fire-rated glass, and automatic entrances for general contractors throughout Hillsborough, Pinellas, and Pasco counties.",
+      "provider": {
+        "@id": "https://acglass.com/#localbusiness-tampa"
       },
-      {
-        "@type": "Service",
-        "@id": "https://acglass.com/#service-tampa",
-        "name": "Commercial Glazing Services — Tampa",
-        "description": "Full Division 08 commercial glazing services in Tampa, FL. Storefront, curtainwall, impact windows, window wall, entry systems, fire-rated glass, and automatic entrances for general contractors throughout Hillsborough, Pinellas, and Pasco counties.",
-        "provider": {"@id": "https://acglass.com/#localbusiness-tampa"},
-        "areaServed": [
-          {"@type": "City", "name": "Tampa"},
-          {"@type": "City", "name": "St. Petersburg"},
-          {"@type": "City", "name": "Clearwater"},
-          {"@type": "City", "name": "Brandon"},
-          {"@type": "City", "name": "Riverview"},
-          {"@type": "City", "name": "Wesley Chapel"},
-          {"@type": "City", "name": "Lutz"},
-          {"@type": "AdministrativeArea", "name": "Hillsborough County"},
-          {"@type": "AdministrativeArea", "name": "Pinellas County"},
-          {"@type": "AdministrativeArea", "name": "Pasco County"}
-        ],
-        "serviceOutput": "Commercial glazing installation — storefront, curtainwall, impact windows, window wall, entry systems"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-          {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://acglass.com/services.html"},
-          {"@type": "ListItem", "position": 3, "name": "Tampa Commercial Glazing", "item": "https://acglass.com/tampa-commercial-glazing.html"}
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the typical bid turnaround time for commercial glazing in Tampa?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ACG provides commercial glazing bids within 48 hours of receiving plans. Our AI-managed intake system reviews plans, builds the takeoff, and delivers pricing faster than traditional glazing subcontractors."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does ACG work on residential projects?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. ACG is a commercial-only subcontractor. We partner with general contractors, developers, and architects on Division 08 scopes. For residential impact windows, we recommend a residential specialist."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What types of commercial buildings does ACG work on in Tampa?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We install glazing on commercial and hospitality projects including restaurants, hotels, office buildings, multifamily residential, healthcare facilities, fitness centers, country clubs, retail centers, and institutional buildings."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is ACG licensed and insured in Florida?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. ACG holds Florida CGC1531993 and carries full general liability and workers compensation insurance. We are a Woman-Owned Business Enterprise (WBE) and Small Business Enterprise (SBE)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What manufacturers does ACG specify in Tampa?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ACG partners with ESWindows, Euro-Wall, PGT, CGI, Allegion, TGP, and Slimpact. We specify based on project requirements — HVHZ compliance, Miami-Dade NOA, budget, and architectural intent."
-            }
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tampa"
+        },
+        {
+          "@type": "City",
+          "name": "St. Petersburg"
+        },
+        {
+          "@type": "City",
+          "name": "Clearwater"
+        },
+        {
+          "@type": "City",
+          "name": "Brandon"
+        },
+        {
+          "@type": "City",
+          "name": "Riverview"
+        },
+        {
+          "@type": "City",
+          "name": "Wesley Chapel"
+        },
+        {
+          "@type": "City",
+          "name": "Lutz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hillsborough County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pinellas County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pasco County"
+        }
+      ],
+      "serviceOutput": "Commercial glazing installation \u2014 storefront, curtainwall, impact windows, window wall, entry systems"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://acglass.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tampa Commercial Glazing",
+          "item": "https://acglass.com/tampa-commercial-glazing.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the typical bid turnaround time for commercial glazing in Tampa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG provides commercial glazing bids within 48 hours of receiving plans. Our AI-managed intake system reviews plans, builds the takeoff, and delivers pricing faster than traditional glazing subcontractors."
           }
-        ]
+        },
+        {
+          "@type": "Question",
+          "name": "Does ACG work on residential projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. ACG is a commercial-only subcontractor. We partner with general contractors, developers, and architects on Division 08 scopes. For residential impact windows, we recommend a residential specialist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of commercial buildings does ACG work on in Tampa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We install glazing on commercial and hospitality projects including restaurants, hotels, office buildings, multifamily residential, healthcare facilities, fitness centers, country clubs, retail centers, and institutional buildings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ACG licensed and insured in Florida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ACG holds Florida CGC1531993 and carries full general liability and workers compensation insurance. We are a Woman-Owned Business Enterprise (WBE) and Small Business Enterprise (SBE)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What manufacturers does ACG specify in Tampa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG partners with ESWindows, Euro-Wall, PGT, CGI, Allegion, TGP, and Slimpact. We specify based on project requirements \u2014 HVHZ compliance, Miami-Dade NOA, budget, and architectural intent."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://acglass.com/#organization",
+      "name": "American Commercial Glass",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass"
+      ],
+      "url": "https://acglass.com",
+      "telephone": "(772) 486-7711",
+      "email": "connor@acglass.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://acglass.com/images/acg-logo-nav@2x.png"
       },
-      {
-        "@type": "Organization",
-        "@id": "https://acglass.com/#organization",
-        "name": "American Commercial Glass",
-        "alternateName": "ACG",
-        "url": "https://acglass.com",
-        "telephone": "(772) 486-7711",
-        "email": "connor@acglass.com",
-        "logo": {"@type": "ImageObject", "url": "https://acglass.com/images/acg-logo-nav@2x.png"},
-        "sameAs": [
-          "https://www.instagram.com/acglass.co",
-          "https://www.linkedin.com/company/american-commercial-glass-inc",
-          "https://www.facebook.com/americancommercialglass"
-        ]
-      }
-    ]
-  }
+      "sameAs": [
+        "https://www.instagram.com/acglass.co",
+        "https://www.linkedin.com/company/american-commercial-glass-inc",
+        "https://www.facebook.com/americancommercialglass"
+      ],
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    }
+  ]
+}
   </script>
 
   <style>

@@ -852,72 +852,141 @@
   <!-- ========== SCHEMA ========== -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Project", "ConstructionProject"],
-        "@id": "https://acglass.com/atlantic-fields-sales-center.html#project",
-        "name": "Atlantic Fields Sales Center",
-        "alternateName": ["Atlantic Fields Discovery Center", "Atlantic Fields Sales Pavilion"],
-        "description": "ACG's first project at Atlantic Fields — the Sales Center pavilion in Hobe Sound, Florida. A glass-walled sales gallery for Discovery Land Company built with Proctor Construction. Storefront, pocketing multi-slide doors, service-block glazing, and interior glass divisions.",
-        "url": "https://acglass.com/atlantic-fields-sales-center.html",
-        "image": [
-          "https://acglass.com/images/projects/atlantic-fields-sales-center/hero-pavilion-glow.jpg",
-          "https://acglass.com/images/projects/atlantic-fields-sales-center/long-elevation-patio.jpg",
-          "https://acglass.com/images/projects/atlantic-fields-sales-center/community-aerial.jpg",
-          "https://acglass.com/images/projects/atlantic-fields-sales-center/racquet-context-aerial.jpg"
-        ],
-        "additionalType": "Sales Pavilion",
-        "location": {
-          "@type": "Place",
-          "name": "Atlantic Fields",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "2645 Southeast Bridge Road",
-            "addressLocality": "Hobe Sound",
-            "addressRegion": "FL",
-            "postalCode": "33455",
-            "addressCountry": "US"
-          },
-          "geo": {"@type": "GeoCoordinates", "latitude": 27.0612, "longitude": -80.1378}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Project",
+        "ConstructionProject"
+      ],
+      "@id": "https://acglass.com/atlantic-fields-sales-center.html#project",
+      "name": "Atlantic Fields Sales Center",
+      "alternateName": [
+        "Atlantic Fields Discovery Center",
+        "Atlantic Fields Sales Pavilion"
+      ],
+      "description": "ACG's first project at Atlantic Fields \u2014 the Sales Center pavilion in Hobe Sound, Florida. A glass-walled sales gallery for Discovery Land Company built with Proctor Construction. Storefront, pocketing multi-slide doors, service-block glazing, and interior glass divisions.",
+      "url": "https://acglass.com/atlantic-fields-sales-center.html",
+      "image": [
+        "https://acglass.com/images/projects/atlantic-fields-sales-center/hero-pavilion-glow.jpg",
+        "https://acglass.com/images/projects/atlantic-fields-sales-center/long-elevation-patio.jpg",
+        "https://acglass.com/images/projects/atlantic-fields-sales-center/community-aerial.jpg",
+        "https://acglass.com/images/projects/atlantic-fields-sales-center/racquet-context-aerial.jpg"
+      ],
+      "additionalType": "Sales Pavilion",
+      "location": {
+        "@type": "Place",
+        "name": "Atlantic Fields",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2645 Southeast Bridge Road",
+          "addressLocality": "Hobe Sound",
+          "addressRegion": "FL",
+          "postalCode": "33455",
+          "addressCountry": "US"
         },
-        "agent": {
-          "@type": "Organization",
-          "name": "American Commercial Glass",
-          "url": "https://acglass.com",
-          "telephone": "+1-772-486-7711",
-          "roleName": "Glazing Contractor (Division 08)"
-        },
-        "isPartOf": {
-          "@type": "Place",
-          "name": "Atlantic Fields",
-          "url": "https://acglass.com/atlantic-fields.html"
-        },
-        "participant": [
-          {"@type": "Organization", "name": "Proctor Construction", "url": "https://proctorcc.com/", "roleName": "General Contractor"},
-          {"@type": "Organization", "name": "Discovery Land Company", "roleName": "Developer"}
-        ]
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 27.0612,
+          "longitude": -80.1378
+        }
       },
-      {
+      "agent": {
         "@type": "Organization",
-        "@id": "https://acglass.com/atlantic-fields-sales-center.html#organization-ref",
-        "name": "American Commercial Glass, Inc.",
-        "alternateName": "ACG",
-        "url": "https://acglass.com/",
-        "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+        "name": "American Commercial Glass",
+        "url": "https://acglass.com",
+        "telephone": "+1-772-486-7711",
+        "roleName": "Glazing Contractor (Division 08)",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://acglass.com/atlantic-fields-sales-center.html#breadcrumb",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-          {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://acglass.com/portfolio.html"},
-          {"@type": "ListItem", "position": 3, "name": "Atlantic Fields", "item": "https://acglass.com/atlantic-fields.html"},
-          {"@type": "ListItem", "position": 4, "name": "Atlantic Fields Sales Center"}
-        ]
-      }
-    ]
-  }
+      "isPartOf": {
+        "@type": "Place",
+        "name": "Atlantic Fields",
+        "url": "https://acglass.com/atlantic-fields.html"
+      },
+      "participant": [
+        {
+          "@type": "Organization",
+          "name": "Proctor Construction",
+          "url": "https://proctorcc.com/",
+          "roleName": "General Contractor"
+        },
+        {
+          "@type": "Organization",
+          "name": "Discovery Land Company",
+          "roleName": "Developer"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://acglass.com/atlantic-fields-sales-center.html#organization-ref",
+      "name": "American Commercial Glass, Inc.",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass"
+      ],
+      "url": "https://acglass.com/",
+      "mainEntityOfPage": {
+        "@id": "https://acglass.com/#organization",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
+      },
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://acglass.com/atlantic-fields-sales-center.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://acglass.com/portfolio.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Atlantic Fields",
+          "item": "https://acglass.com/atlantic-fields.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Atlantic Fields Sales Center"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <!-- Reveal animations -->

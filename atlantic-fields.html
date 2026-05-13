@@ -981,83 +981,232 @@
   <!-- ========== SCHEMA ========== -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Place", "ResidentialComplex"],
-        "@id": "https://acglass.com/atlantic-fields.html#place",
-        "name": "Atlantic Fields",
-        "alternateName": ["Atlantic Fields Club", "Atlantic Fields Hobe Sound", "Atlantic Fields Discovery Land"],
-        "description": "Atlantic Fields is a 1,500-acre private golf community in Hobe Sound, Florida — Discovery Land Company's first East Coast property, developed in partnership with the Becker Holding Corporation. The community features a Tom Fazio-designed championship golf course, a 10-hole short course, the Discovery Performance Center for wellness and golf training, an equestrian center on the historic Hobe Sound polo grounds, and 317 custom estate homesites.",
-        "url": "https://acglass.com/atlantic-fields.html",
-        "image": [
-          "https://acglass.com/images/projects/atlantic-fields/development/polo-match-sunset.jpg",
-          "https://acglass.com/images/projects/atlantic-fields/development/fazio-course-sunset.jpg",
-          "https://acglass.com/images/projects/atlantic-fields/development/lakeside-dining-sunset.jpg",
-          "https://acglass.com/images/projects/atlantic-fields/development/racquet-club-aerial.jpg"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "2645 Southeast Bridge Road",
-          "addressLocality": "Hobe Sound",
-          "addressRegion": "FL",
-          "postalCode": "33455",
-          "addressCountry": "US"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Place",
+        "ResidentialComplex"
+      ],
+      "@id": "https://acglass.com/atlantic-fields.html#place",
+      "name": "Atlantic Fields",
+      "alternateName": [
+        "Atlantic Fields Club",
+        "Atlantic Fields Hobe Sound",
+        "Atlantic Fields Discovery Land"
+      ],
+      "description": "Atlantic Fields is a 1,500-acre private golf community in Hobe Sound, Florida \u2014 Discovery Land Company's first East Coast property, developed in partnership with the Becker Holding Corporation. The community features a Tom Fazio-designed championship golf course, a 10-hole short course, the Discovery Performance Center for wellness and golf training, an equestrian center on the historic Hobe Sound polo grounds, and 317 custom estate homesites.",
+      "url": "https://acglass.com/atlantic-fields.html",
+      "image": [
+        "https://acglass.com/images/projects/atlantic-fields/development/polo-match-sunset.jpg",
+        "https://acglass.com/images/projects/atlantic-fields/development/fazio-course-sunset.jpg",
+        "https://acglass.com/images/projects/atlantic-fields/development/lakeside-dining-sunset.jpg",
+        "https://acglass.com/images/projects/atlantic-fields/development/racquet-club-aerial.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2645 Southeast Bridge Road",
+        "addressLocality": "Hobe Sound",
+        "addressRegion": "FL",
+        "postalCode": "33455",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.0612,
+        "longitude": -80.1378
+      },
+      "containsPlace": [
+        {
+          "@type": "GolfCourse",
+          "name": "Atlantic Fields Championship Course (Tom Fazio)"
         },
-        "geo": {"@type": "GeoCoordinates", "latitude": 27.0612, "longitude": -80.1378},
-        "containsPlace": [
-          {"@type": "GolfCourse", "name": "Atlantic Fields Championship Course (Tom Fazio)"},
-          {"@type": "GolfCourse", "name": "Atlantic Fields Short Course"},
-          {"@type": "Place", "name": "Discovery Performance Center"},
-          {"@type": "Place", "name": "Equestrian Center"},
-          {"@type": "Place", "name": "Lake Club"}
-        ]
+        {
+          "@type": "GolfCourse",
+          "name": "Atlantic Fields Short Course"
+        },
+        {
+          "@type": "Place",
+          "name": "Discovery Performance Center"
+        },
+        {
+          "@type": "Place",
+          "name": "Equestrian Center"
+        },
+        {
+          "@type": "Place",
+          "name": "Lake Club"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://acglass.com/atlantic-fields.html#projects",
+      "name": "ACG Projects at Atlantic Fields",
+      "description": "Three completed glazing projects executed by American Commercial Glass at Atlantic Fields, all under general contractor Proctor Construction.",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": [
+              "Project",
+              "ConstructionProject"
+            ],
+            "name": "Atlantic Fields Sales Center",
+            "url": "https://acglass.com/atlantic-fields-sales-center.html",
+            "description": "ACG's first project at Atlantic Fields \u2014 a glass sales pavilion built with Proctor Construction. Storefront, pocketing multi-slide doors, and interior glass divisions.",
+            "additionalType": "Sales Pavilion"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": [
+              "Project",
+              "ConstructionProject"
+            ],
+            "name": "Atlantic Fields Golf House",
+            "url": "https://acglass.com/atlantic-fields-golf-house.html",
+            "description": "Members-only halfway house with full-height window wall and Euro-Wall multi-slide system opening to the Tom Fazio course.",
+            "additionalType": "Halfway House / Golf Hospitality"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": [
+              "Project",
+              "ConstructionProject"
+            ],
+            "name": "Atlantic Fields Discovery Performance Center",
+            "url": "https://acglass.com/atlantic-fields-performance-center.html",
+            "description": "Wellness and golf training pavilion with storefront-wrapped cardio floor and a Euro-Wall recovery-terrace opening.",
+            "additionalType": "Performance / Wellness Center"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://acglass.com/atlantic-fields.html#organization-ref",
+      "name": "American Commercial Glass, Inc.",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass"
+      ],
+      "url": "https://acglass.com/",
+      "mainEntityOfPage": {
+        "@id": "https://acglass.com/#organization",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
       },
-      {
-        "@type": "ItemList",
-        "@id": "https://acglass.com/atlantic-fields.html#projects",
-        "name": "ACG Projects at Atlantic Fields",
-        "description": "Three completed glazing projects executed by American Commercial Glass at Atlantic Fields, all under general contractor Proctor Construction.",
-        "itemListOrder": "https://schema.org/ItemListOrderAscending",
-        "numberOfItems": 3,
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"item":{"@type":["Project","ConstructionProject"],"name":"Atlantic Fields Sales Center","url":"https://acglass.com/atlantic-fields-sales-center.html","description":"ACG's first project at Atlantic Fields — a glass sales pavilion built with Proctor Construction. Storefront, pocketing multi-slide doors, and interior glass divisions.","additionalType":"Sales Pavilion"}},
-          {"@type":"ListItem","position":2,"item":{"@type":["Project","ConstructionProject"],"name":"Atlantic Fields Golf House","url":"https://acglass.com/atlantic-fields-golf-house.html","description":"Members-only halfway house with full-height window wall and Euro-Wall multi-slide system opening to the Tom Fazio course.","additionalType":"Halfway House / Golf Hospitality"}},
-          {"@type":"ListItem","position":3,"item":{"@type":["Project","ConstructionProject"],"name":"Atlantic Fields Discovery Performance Center","url":"https://acglass.com/atlantic-fields-performance-center.html","description":"Wellness and golf training pavilion with storefront-wrapped cardio floor and a Euro-Wall recovery-terrace opening.","additionalType":"Performance / Wellness Center"}}
-        ]
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://acglass.com/atlantic-fields.html#organization-ref",
-        "name": "American Commercial Glass, Inc.",
-        "alternateName": "ACG",
-        "url": "https://acglass.com/",
-        "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://acglass.com/atlantic-fields.html#faq",
-        "mainEntity": [
-          {"@type":"Question","name":"Where is Atlantic Fields located?","acceptedAnswer":{"@type":"Answer","text":"Atlantic Fields is in Hobe Sound, Florida — Martin County, on the Treasure Coast. The community spans 1,500 acres at 2645 Southeast Bridge Road, less than 30 minutes from Palm Beach International Airport. It shares an entrance drive with Michael Jordan's Grove XXIII and borders the 6,000-acre Atlantic Ridge Preserve State Park."}},
-          {"@type":"Question","name":"Who is the developer of Atlantic Fields?","acceptedAnswer":{"@type":"Answer","text":"Atlantic Fields is being developed by Discovery Land Company in partnership with the Becker Holding Corporation. It is Discovery Land Company's first community on Florida's east coast. Mike Meldman is the chairman and founder of Discovery Land Company."}},
-          {"@type":"Question","name":"Who designed the golf course at Atlantic Fields?","acceptedAnswer":{"@type":"Answer","text":"The 18-hole championship course at Atlantic Fields was designed by Tom Fazio. The 10-hole short course features more than 120 routing options and 37 tee boxes. The championship course opened for play in late 2025."}},
-          {"@type":"Question","name":"Who is the glazing contractor at Atlantic Fields?","acceptedAnswer":{"@type":"Answer","text":"American Commercial Glass (ACG) is the glazing contractor of record on the projects ACG has executed at Atlantic Fields, working under general contractor Proctor Construction. ACG has completed three buildings inside the community to date — the Sales Center, the Golf House, and the Discovery Performance Center."}},
-          {"@type":"Question","name":"How many homes are at Atlantic Fields?","acceptedAnswer":{"@type":"Answer","text":"Atlantic Fields will have 317 single-family custom-estate home sites on its 1,500-acre footprint. Lots start at $6 million per the developer."}},
-          {"@type":"Question","name":"What amenities does Atlantic Fields have?","acceptedAnswer":{"@type":"Answer","text":"A Tom Fazio championship course, 10-hole short course, Discovery Performance Center for golf and wellness, equestrian center on the historic Hobe Sound polo grounds, Lake Club, Family Park with kids' club and waterpark, tennis/pickleball/padel courts, organic farm with farm-to-table dining, and Discovery's signature Outdoor Pursuits program."}},
-          {"@type":"Question","name":"When did the Tom Fazio course at Atlantic Fields open?","acceptedAnswer":{"@type":"Answer","text":"The 18-hole championship course at Atlantic Fields debuted in late 2025."}}
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://acglass.com/atlantic-fields.html#breadcrumb",
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},
-          {"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},
-          {"@type":"ListItem","position":3,"name":"Atlantic Fields"}
-        ]
-      }
-    ]
-  }
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://acglass.com/atlantic-fields.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Atlantic Fields located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atlantic Fields is in Hobe Sound, Florida \u2014 Martin County, on the Treasure Coast. The community spans 1,500 acres at 2645 Southeast Bridge Road, less than 30 minutes from Palm Beach International Airport. It shares an entrance drive with Michael Jordan's Grove XXIII and borders the 6,000-acre Atlantic Ridge Preserve State Park."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the developer of Atlantic Fields?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atlantic Fields is being developed by Discovery Land Company in partnership with the Becker Holding Corporation. It is Discovery Land Company's first community on Florida's east coast. Mike Meldman is the chairman and founder of Discovery Land Company."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who designed the golf course at Atlantic Fields?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 18-hole championship course at Atlantic Fields was designed by Tom Fazio. The 10-hole short course features more than 120 routing options and 37 tee boxes. The championship course opened for play in late 2025."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is the glazing contractor at Atlantic Fields?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "American Commercial Glass (ACG) is the glazing contractor of record on the projects ACG has executed at Atlantic Fields, working under general contractor Proctor Construction. ACG has completed three buildings inside the community to date \u2014 the Sales Center, the Golf House, and the Discovery Performance Center."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many homes are at Atlantic Fields?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atlantic Fields will have 317 single-family custom-estate home sites on its 1,500-acre footprint. Lots start at $6 million per the developer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What amenities does Atlantic Fields have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Tom Fazio championship course, 10-hole short course, Discovery Performance Center for golf and wellness, equestrian center on the historic Hobe Sound polo grounds, Lake Club, Family Park with kids' club and waterpark, tennis/pickleball/padel courts, organic farm with farm-to-table dining, and Discovery's signature Outdoor Pursuits program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When did the Tom Fazio course at Atlantic Fields open?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 18-hole championship course at Atlantic Fields debuted in late 2025."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://acglass.com/atlantic-fields.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio",
+          "item": "https://acglass.com/portfolio.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Atlantic Fields"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <!-- Reveal animations -->

@@ -40,28 +40,37 @@
   <!-- Service Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Educational & Institutional Commercial Glazing",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "American Commercial Glass",
-      "alternateName": "ACG",
-      "url": "https://acglass.com",
-      "telephone": "(772) 486-7711",
-      "email": "connor@acglass.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "West Palm Beach",
-        "addressRegion": "FL",
-        "addressCountry": "US"
-      },
-      "areaServed": "Florida"
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Educational & Institutional Commercial Glazing",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "American Commercial Glass",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "url": "https://acglass.com",
+    "telephone": "(772) 486-7711",
+    "email": "connor@acglass.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "West Palm Beach",
+      "addressRegion": "FL",
+      "addressCountry": "US"
     },
-    "serviceType": "Commercial Glazing for Educational and Institutional Buildings",
-    "description": "ACG provides the complete commercial glazing scope for Florida school construction, university campus projects, government facilities, and public buildings — including impact-rated systems, fire-rated assemblies, security glazing, and occupied-facility scheduling.",
-    "areaServed": "Florida"
-  }
+    "areaServed": "Florida",
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "serviceType": "Commercial Glazing for Educational and Institutional Buildings",
+  "description": "ACG provides the complete commercial glazing scope for Florida school construction, university campus projects, government facilities, and public buildings \u2014 including impact-rated systems, fire-rated assemblies, security glazing, and occupied-facility scheduling.",
+  "areaServed": "Florida"
+}
   </script>
 
   <!-- FAQ Schema -->
@@ -143,11 +152,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

@@ -40,37 +40,48 @@
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "American Commercial Glass",
-    "alternateName": "ACG",
-    "description": "Commercial glass installation contractor serving all of Florida — supply and install under one contract. Storefront systems, curtainwall, window wall, impact windows. 350+ projects. 3 offices statewide.",
-    "url": "https://acglass.com/commercial-glass-installation-florida.html",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "areaServed": [
-      "Florida",
-      "West Palm Beach, FL",
-      "Naples, FL",
-      "Tampa, FL",
-      "Miami, FL",
-      "Fort Lauderdale, FL",
-      "Orlando, FL",
-      "Fort Myers, FL",
-      "Sarasota, FL",
-      "Jacksonville, FL"
-    ],
-    "serviceType": [
-      "Commercial Glass Installation",
-      "Commercial Storefront Installation",
-      "Curtainwall Installation",
-      "Window Wall Installation",
-      "Impact Window Installation",
-      "Commercial Glazing Supply and Install"
-    ],
-    "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
-    "sameAs": ["https://acglass.com"]
-  }
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "American Commercial Glass",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "description": "Commercial glass installation contractor serving all of Florida \u2014 supply and install under one contract. Storefront systems, curtainwall, window wall, impact windows. 350+ projects. 3 offices statewide.",
+  "url": "https://acglass.com/commercial-glass-installation-florida.html",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "areaServed": [
+    "Florida",
+    "West Palm Beach, FL",
+    "Naples, FL",
+    "Tampa, FL",
+    "Miami, FL",
+    "Fort Lauderdale, FL",
+    "Orlando, FL",
+    "Fort Myers, FL",
+    "Sarasota, FL",
+    "Jacksonville, FL"
+  ],
+  "serviceType": [
+    "Commercial Glass Installation",
+    "Commercial Storefront Installation",
+    "Curtainwall Installation",
+    "Window Wall Installation",
+    "Impact Window Installation",
+    "Commercial Glazing Supply and Install"
+  ],
+  "hasMap": "https://maps.google.com/?q=West+Palm+Beach,FL",
+  "sameAs": [
+    "https://acglass.com"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- FAQ Schema -->
@@ -136,13 +147,30 @@
   </style>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Commercial Glass Installation",
-    "provider": {"@type": "Organization", "name": "American Commercial Glass", "url": "https://acglass.com"},
-    "areaServed": {"@type": "State", "name": "Florida"},
-    "description": "Full-service commercial glass installation contractor in Florida. Supply and install storefronts, curtainwall, window wall, impact windows, fire-rated assemblies, and specialty glazing systems."
-  }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Commercial Glass Installation",
+  "provider": {
+    "@type": "Organization",
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Florida"
+  },
+  "description": "Full-service commercial glass installation contractor in Florida. Supply and install storefronts, curtainwall, window wall, impact windows, fire-rated assemblies, and specialty glazing systems."
+}
   </script>
 <script type="application/ld+json">
 {
@@ -156,11 +184,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

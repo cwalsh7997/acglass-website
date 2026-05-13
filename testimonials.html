@@ -40,45 +40,76 @@
   <!-- Review Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "American Commercial Glass",
-    "url": "https://acglass.com",
-    "telephone": "(772) 486-7711",
-    "email": "connor@acglass.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "West Palm Beach",
-      "addressRegion": "FL",
-      "addressCountry": "US"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "3",
-      "bestRating": "5"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "General Contractor, Port St. Lucie"},
-        "reviewBody": "ACG is our go-to glazing sub for anything on the Treasure Coast. Responsive, competitive, and they close their punch lists."
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "American Commercial Glass",
+  "url": "https://acglass.com",
+  "telephone": "(772) 486-7711",
+  "email": "connor@acglass.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "West Palm Beach",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "3",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
       },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "Project Manager, South Florida GC"},
-        "reviewBody": "We've used ACG on three projects now. They hit every date and the submittals are always clean."
+      "author": {
+        "@type": "Person",
+        "name": "General Contractor, Port St. Lucie"
       },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "Superintendent, Palm Beach County"},
-        "reviewBody": "Most glazing subs make you chase them. ACG is the opposite — Connor picks up the phone every time."
-      }
-    ]
-  }
+      "reviewBody": "ACG is our go-to glazing sub for anything on the Treasure Coast. Responsive, competitive, and they close their punch lists."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Project Manager, South Florida GC"
+      },
+      "reviewBody": "We've used ACG on three projects now. They hit every date and the submittals are always clean."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Superintendent, Palm Beach County"
+      },
+      "reviewBody": "Most glazing subs make you chase them. ACG is the opposite \u2014 Connor picks up the phone every time."
+    }
+  ],
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
+}
   </script>
 
   <!-- BreadcrumbList Schema -->
@@ -141,11 +172,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>

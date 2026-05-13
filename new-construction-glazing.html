@@ -40,98 +40,144 @@
   <!-- LocalBusiness + Service + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "American Commercial Glass",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass"
+      ],
+      "description": "Division 08 glazing subcontractor serving Florida general contractors on new construction commercial, multifamily, hospitality, and institutional projects. CGC1531993.",
+      "url": "https://acglass.com/new-construction-glazing.html",
+      "telephone": "(772) 486-7711",
+      "email": "connor@acglass.com",
+      "areaServed": [
+        "Florida",
+        "West Palm Beach",
+        "Tampa",
+        "Naples",
+        "Miami",
+        "Orlando",
+        "Jacksonville",
+        "Fort Myers",
+        "Sarasota"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.6648,
+        "longitude": -81.5158
+      },
+      "sameAs": [
+        "https://acglass.com"
+      ],
+      "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993"
+    },
+    {
+      "@type": "Service",
+      "serviceType": "New Construction Commercial Glazing",
+      "provider": {
+        "@type": "Organization",
         "name": "American Commercial Glass",
-        "alternateName": "ACG",
-        "description": "Division 08 glazing subcontractor serving Florida general contractors on new construction commercial, multifamily, hospitality, and institutional projects. CGC1531993.",
-        "url": "https://acglass.com/new-construction-glazing.html",
-        "telephone": "(772) 486-7711",
-        "email": "connor@acglass.com",
-        "areaServed": ["Florida", "West Palm Beach", "Tampa", "Naples", "Miami", "Orlando", "Jacksonville", "Fort Myers", "Sarasota"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "FL",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 27.6648,
-          "longitude": -81.5158
-        },
-        "sameAs": ["https://acglass.com"]
+        "url": "https://acglass.com",
+        "alternateName": [
+          "ACG",
+          "ACG Glass",
+          "ACG Florida",
+          "American Commercial Glass Florida",
+          "ACG Commercial Glass"
+        ],
+        "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+        "naics": "238150",
+        "iso6523Code": "0199:CGC1531993"
       },
-      {
-        "@type": "Service",
-        "serviceType": "New Construction Commercial Glazing",
-        "provider": {
-          "@type": "Organization",
-          "name": "American Commercial Glass",
-          "url": "https://acglass.com"
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Florida"
-        },
-        "description": "Division 08 glazing subcontractor for ground-up new construction. Shop drawings, submittals, NOA documentation, pre-glazed storefront, curtainwall, impact windows, entry doors, and sliding glass doors on Florida commercial, multifamily, hospitality, and institutional projects."
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},
-          {"@type":"ListItem","position":2,"name":"Services","item":"https://acglass.com/services.html"},
-          {"@type":"ListItem","position":3,"name":"New Construction Glazing","item":"https://acglass.com/new-construction-glazing.html"}
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How early in a project should ACG be involved?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "As early as possible. Design-assist engagement during schematic and design development reduces RFIs, catches NOA documentation issues before permit, and lets ACG align system selection with the architect's performance intent. Late-stage involvement after CDs are issued still works, but the value of early input is real."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does ACG handle shop drawings and engineering?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. ACG runs a full in-house submittal workflow — takeoff, shop drawings, engineering calculations, product approval documentation, and Florida-licensed PE-stamped drawings for permit. We do not rely on the architect to produce fabrication-level details."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What systems does ACG install on new construction?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The full Division 08 scope: pre-glazed aluminum storefront, stick-built and unitized curtainwall, impact windows, commercial entry door systems, sliding glass doors, folding glass walls, interior glass partitions and office fronts, skylights where specified, and glass railings."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can ACG meet aggressive schedules?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. ACG's pre-glazed storefront approach installs at roughly 1,000 SF per day per crew — about twice the rate of stick-built field glazing, which typically runs 500 SF per day. Combined with a 48-hour bid turnaround and in-house shop drawings, ACG can compress the critical path meaningfully on schedule-sensitive projects."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does ACG work with any GC, or only specific partners?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ACG is open to qualified commercial general contractors across Florida. We currently have active project relationships with 30+ GC partners on ground-up work, ranging from large ENR-listed firms to regional commercial builders."
-            }
+      "description": "Division 08 glazing subcontractor for ground-up new construction. Shop drawings, submittals, NOA documentation, pre-glazed storefront, curtainwall, impact windows, entry doors, and sliding glass doors on Florida commercial, multifamily, hospitality, and institutional projects."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://acglass.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "New Construction Glazing",
+          "item": "https://acglass.com/new-construction-glazing.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How early in a project should ACG be involved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As early as possible. Design-assist engagement during schematic and design development reduces RFIs, catches NOA documentation issues before permit, and lets ACG align system selection with the architect's performance intent. Late-stage involvement after CDs are issued still works, but the value of early input is real."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "Does ACG handle shop drawings and engineering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ACG runs a full in-house submittal workflow \u2014 takeoff, shop drawings, engineering calculations, product approval documentation, and Florida-licensed PE-stamped drawings for permit. We do not rely on the architect to produce fabrication-level details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What systems does ACG install on new construction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The full Division 08 scope: pre-glazed aluminum storefront, stick-built and unitized curtainwall, impact windows, commercial entry door systems, sliding glass doors, folding glass walls, interior glass partitions and office fronts, skylights where specified, and glass railings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can ACG meet aggressive schedules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ACG's pre-glazed storefront approach installs at roughly 1,000 SF per day per crew \u2014 about twice the rate of stick-built field glazing, which typically runs 500 SF per day. Combined with a 48-hour bid turnaround and in-house shop drawings, ACG can compress the critical path meaningfully on schedule-sensitive projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does ACG work with any GC, or only specific partners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG is open to qualified commercial general contractors across Florida. We currently have active project relationships with 30+ GC partners on ground-up work, ranging from large ENR-listed firms to regional commercial builders."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <style>
     .nav-dropdown{position:relative}
@@ -164,11 +210,36 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization-ref",
-  "@type": ["Organization", "LocalBusiness", "HomeAndConstructionBusiness"],
+  "@type": [
+    "Organization",
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
   "name": "American Commercial Glass, Inc.",
-  "alternateName": "ACG",
+  "alternateName": [
+    "ACG",
+    "ACG Glass",
+    "ACG Florida",
+    "American Commercial Glass Florida",
+    "ACG Commercial Glass"
+  ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {"@id": "https://acglass.com/#organization"}
+  "mainEntityOfPage": {
+    "@id": "https://acglass.com/#organization",
+    "alternateName": [
+      "ACG",
+      "ACG Glass",
+      "ACG Florida",
+      "American Commercial Glass Florida",
+      "ACG Commercial Glass"
+    ],
+    "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+    "naics": "238150",
+    "iso6523Code": "0199:CGC1531993"
+  },
+  "disambiguatingDescription": "American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor based in West Palm Beach. ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer. ACG installs; AGC manufactures.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>
