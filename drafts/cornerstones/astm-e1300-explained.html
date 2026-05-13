@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASTM E1300 Explained — Glass Strength, Design Loads, and What Spec Writers Miss (2026)</title>
+  <meta name="description" content="ASTM E1300 explained: what the standard covers, how engineers use it to size glass under design loads, glass type strength factors, load duration, common spec errors, and relationship to HVHZ compliance.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://acglass.com/astm-e1300-explained.html">
+  <meta property="og:title" content="ASTM E1300 Explained — Glass Strength, Design Loads, and What Spec Writers Miss">
+  <meta property="og:description" content="A working CGC and glazing contractor explains ASTM E1300: glass types, design pressure sizing, load duration factor, and the errors that most commonly show up in commercial glazing specs.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://acglass.com/astm-e1300-explained.html">
+  <meta property="og:image" content="https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="icon" href="../../images/acg-favicon.svg" type="image/svg+xml">
+
+  <!-- ======= SCHEMA: Article ======= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ASTM E1300 Explained — Glass Strength, Design Loads, and What Spec Writers Miss",
+    "description": "What ASTM E1300 tells you about glass structural design under wind loads: glass type strength factors (annealed, heat-strengthened, tempered, laminated), load duration factor, how engineers use load resistance charts, common errors treating laminated glass as monolithic, and the relationship between E1300 and HVHZ compliance.",
+    "author": {
+      "@type": "Person",
+      "name": "Connor Walsh",
+      "jobTitle": "President, American Commercial Glass",
+      "url": "https://acglass.com/author-connor-walsh.html",
+      "sameAs": ["https://www.linkedin.com/in/connorwalshacg/"],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "Florida Certified General Contractor CGC1531993",
+          "recognizedBy": {"@type": "Organization", "name": "Florida Department of Business and Professional Regulation"}
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "FAA Private Pilot Certificate — Commercial-Rated",
+          "recognizedBy": {"@type": "Organization", "name": "Federal Aviation Administration"}
+        }
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "American Commercial Glass",
+      "logo": {"@type": "ImageObject", "url": "https://acglass.com/images/acg-logo-nav@2x.png"}
+    },
+    "datePublished": "2026-05-13",
+    "dateModified": "2026-05-13",
+    "mainEntityOfPage": "https://acglass.com/astm-e1300-explained.html",
+    "image": "https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg",
+    "wordCount": 2100,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "#answer-box", ".faq-section h3"]
+    },
+    "about": [
+      {"@type": "DefinedTerm", "name": "ASTM E1300", "description": "Standard practice for determining load resistance of glass in buildings — used by structural engineers to specify glass thickness and type based on design loads, glass dimensions, and glass type."},
+      {"@type": "DefinedTerm", "name": "Load duration factor", "description": "A coefficient in ASTM E1300 that accounts for the reduced strength of glass under long-term sustained loads compared to short-duration wind loads."}
+    ]
+  }
+  </script>
+
+  <!-- ======= SCHEMA: FAQPage ======= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does ASTM E1300 cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ASTM E1300 is the Standard Practice for Determining Load Resistance of Glass in Buildings. It provides charts, tables, and calculation procedures that engineers use to determine the minimum glass thickness required for a given glass type, panel dimensions, and design load (design pressure in PSF). It covers annealed, heat-strengthened, fully tempered, and laminated glass types, and accounts for load duration through the load duration factor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is glass thickness calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Glass thickness for a given application is determined by entering the design load (PSF), panel dimensions (width x height), and glass type into the ASTM E1300 load resistance charts. The charts give the maximum area a specific glass type and thickness can resist at a given load with acceptable probability of breakage (8 lites per 1,000 is the standard criterion). If the panel area exceeds the chart value for a given thickness, a thicker glass or stronger glass type is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is load duration factor in ASTM E1300?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Load duration factor accounts for glass fatigue under sustained loads. Glass is weaker under long-term constant load than under a short-duration wind load. ASTM E1300 applies different factors depending on load type: wind loads use a duration factor based on 3-second gusts; snow, dead, and live loads use different factors reflecting longer load durations. Using the wrong load duration factor when sizing glass for snow or structural loads is a common error in mixed-climate specs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does ASTM E1300 matter for HVHZ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ASTM E1300 determines the structural glass thickness — but it does not by itself certify impact resistance or cyclic pressure performance. In HVHZ, glass must also pass TAS 201 large missile impact testing and TAS 203 cyclic pressure testing as part of an NOA assembly. A glass thickness that meets E1300 at a given design pressure may not be the same glass configuration that appears in the NOA's approved glass list. Always verify the NOA glass list separately from the E1300 calculation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between ASTM E1300 and ASTM E2190?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ASTM E1300 covers structural design of glass under loads — it determines thickness and type for structural adequacy. ASTM E2190 covers the specification for insulating glass unit (IGU) performance — specifically edge seal performance, thermal cycling, humidity, and fogging resistance. They address different aspects of glass performance and are both cited in commercial glazing specifications. E1300 governs structural sizing; E2190 governs IGU durability."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ======= SCHEMA: BreadcrumbList ======= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/ask.html"},
+      {"@type": "ListItem", "position": 3, "name": "ASTM E1300 Explained", "item": "https://acglass.com/astm-e1300-explained.html"}
+    ]
+  }
+  </script>
+
+  <style>
+    .draft-banner {
+      background: #fff8f8;
+      border: 3px dashed #E11320;
+      color: #7a0008;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 14px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+    .draft-banner span { display: block; margin-top: 4px; font-weight: 400; font-size: 0.72rem; color: #a00010; }
+
+    .page-hero { padding: 90px 0 36px; max-width: 1080px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+    .page-hero .eyebrow { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent, #E11320); margin-bottom: 14px; font-weight: 700; }
+    .page-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 22px; color: #fff; }
+    .page-hero .lead { font-size: 1.04rem; line-height: 1.65; color: rgba(255,255,255,0.84); max-width: 760px; }
+    .byline { font-family: var(--mono, monospace); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 18px; }
+
+    #answer-box { background: rgba(225,19,32,0.06); border-left: 3px solid #E11320; padding: 22px 26px; max-width: 1024px; margin: 40px auto; border-radius: 6px; }
+    #answer-box h2 { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #E11320; margin: 0 0 12px; font-weight: 700; }
+    #answer-box p { font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.92); margin: 0; }
+
+    main.content { max-width: 880px; margin: 60px auto 100px; padding: 0 28px; }
+    main.content h2 { font-size: 1.7rem; letter-spacing: -0.01em; margin: 54px 0 18px; color: #fff; }
+    main.content h3 { font-size: 1.15rem; margin: 32px 0 10px; color: rgba(255,255,255,0.95); }
+    main.content p { color: rgba(255,255,255,0.85); line-height: 1.75; font-size: 1.02rem; margin-bottom: 18px; }
+    main.content ul, main.content ol { color: rgba(255,255,255,0.85); line-height: 1.85; padding-left: 24px; margin-bottom: 18px; }
+    main.content li { margin-bottom: 6px; }
+    main.content table { width: 100%; border-collapse: collapse; margin: 22px 0 32px; font-size: 0.94rem; }
+    main.content th { text-align: left; padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.18); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #E11320; font-weight: 700; }
+    main.content td { padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.88); vertical-align: top; }
+    main.content td:first-child { color: #fff; font-weight: 600; }
+
+    .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 20px 28px; border-radius: 8px; margin: 30px 0; }
+    .toc h3 { margin: 0 0 12px; font-family: var(--mono, monospace); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    .toc ul { margin: 0; padding-left: 18px; }
+    .toc a { color: rgba(255,255,255,0.8); text-decoration: none; }
+    .toc a:hover { color: #E11320; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin: 32px 0; }
+    .stat-card { padding: 22px; background: rgba(0,0,0,0.25); border: 1px solid rgba(225,19,32,0.2); border-radius: 10px; }
+    .stat-card .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: #E11320; margin-bottom: 8px; }
+    .stat-card .value { font-size: 22px; font-weight: 800; color: #fff; line-height: 1.15; }
+    .stat-card .note { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+    .cta-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 30px; margin: 50px 0; border-radius: 8px; }
+    .cta-box h3 { margin-top: 0; font-size: 1.2rem; color: #fff; }
+    .cta-box a { color: #E11320; font-weight: 700; text-decoration: none; }
+    .cta-box a:hover { text-decoration: underline; }
+
+    .faq-section h3 { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 22px; }
+    a { color: #E11320; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== DRAFT BANNER — REMOVE ON LAUNCH ===== -->
+  <div class="draft-banner">
+    DRAFT — CONNOR REVIEW — DO NOT DEPLOY
+    <span>Remove this banner and set meta robots to "index,follow" before publishing. File: astm-e1300-explained.html</span>
+  </div>
+
+  <header class="site-nav" style="background:#050A12;border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div style="max-width:1200px;margin:0 auto;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;">
+      <a href="/" style="color:#fff;font-weight:700;text-decoration:none;font-size:1.05rem;">ACG</a>
+      <nav style="display:flex;gap:24px;font-size:0.92rem;">
+        <a href="/services.html" style="color:rgba(255,255,255,0.85);text-decoration:none;">Services</a>
+        <a href="/portfolio.html" style="color:rgba(255,255,255,0.85);text-decoration:none;">Portfolio</a>
+        <a href="/ask.html" style="color:rgba(255,255,255,0.85);text-decoration:none;">Resources</a>
+        <a href="/contact.html" style="color:rgba(255,255,255,0.85);text-decoration:none;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav aria-label="Breadcrumb" style="max-width:1080px;margin:0 auto;padding:14px 28px;font-size:0.82rem;color:rgba(255,255,255,0.45);">
+    <a href="/" style="color:rgba(255,255,255,0.55);text-decoration:none;">Home</a>
+    <span style="margin:0 8px;">/</span>
+    <a href="/ask.html" style="color:rgba(255,255,255,0.55);text-decoration:none;">Resources</a>
+    <span style="margin:0 8px;">/</span>
+    <span style="color:rgba(255,255,255,0.85);">ASTM E1300 Explained</span>
+  </nav>
+
+  <section class="page-hero">
+    <div class="eyebrow">Glass Structural Design &middot; 2026 Reference</div>
+    <h1>ASTM E1300 explained — glass strength, design loads, and what spec writers miss</h1>
+    <p class="lead">ASTM E1300 is the standard every commercial glazing specification references and very few people fully understand. It is not a performance certification — it is a design tool. This page covers what the standard actually tells you, how engineers use it to size glass, where the most common errors occur on commercial specs, and why E1300 alone does not satisfy HVHZ requirements.</p>
+    <div class="byline">By Connor Walsh &middot; President, American Commercial Glass &middot; FL CGC #1531993 &middot; FAA Pilot &middot; Published May 13, 2026</div>
+  </section>
+
+  <div id="answer-box">
+    <h2>The short answer</h2>
+    <p>ASTM E1300 is the standard practice for determining load resistance of glass in buildings. It tells you the minimum glass thickness and type required to withstand a given design pressure across given panel dimensions. It is a structural sizing tool — it does not certify impact resistance, cyclic performance, or NOA compliance. In HVHZ, E1300 calculations are necessary but not sufficient: the glass must also appear in an NOA-approved glass list.</p>
+  </div>
+
+  <main class="content">
+
+    <div class="toc">
+      <h3>On this page</h3>
+      <ul>
+        <li><a href="#what-e1300-covers">What ASTM E1300 covers</a></li>
+        <li><a href="#glass-types">Glass type strength factors</a></li>
+        <li><a href="#how-engineers-use-it">How engineers use E1300</a></li>
+        <li><a href="#load-duration">Load duration factor explained</a></li>
+        <li><a href="#laminated-error">The laminated glass error</a></li>
+        <li><a href="#hvhz-relationship">Relationship to HVHZ and NOA compliance</a></li>
+        <li><a href="#e2190">ASTM E1300 vs ASTM E2190</a></li>
+        <li><a href="#spec-errors">What spec writers most commonly miss</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ul>
+    </div>
+
+    <!-- TRUST SIGNALS -->
+    <div class="stat-grid">
+      <div class="stat-card"><div class="label">CGC License</div><div class="value">#1531993</div><div class="note">FL Certified General Contractor</div></div>
+      <div class="stat-card"><div class="label">Projects</div><div class="value">350+</div><div class="note">Commercial installs</div></div>
+      <div class="stat-card"><div class="label">Glass Installed</div><div class="value">1M+ SF</div><div class="note">Storefront, curtainwall, window wall</div></div>
+      <div class="stat-card"><div class="label">Bonding</div><div class="value">$3M/$6M</div><div class="note">Per occurrence / aggregate</div></div>
+      <div class="stat-card"><div class="label">OSHA Recordables</div><div class="value">Zero</div><div class="note">Since 2021</div></div>
+      <div class="stat-card"><div class="label">Offices</div><div class="value">3 + 1</div><div class="note">WPB · Naples · Tampa · Nashville 2026</div></div>
+    </div>
+
+    <h2 id="what-e1300-covers">What ASTM E1300 covers</h2>
+
+    <h3>The scope of the standard</h3>
+    <p>ASTM E1300, Standard Practice for Determining Load Resistance of Glass in Buildings, provides tables and charts that structural engineers use to determine the minimum glass type and nominal thickness for a given set of conditions: the design load (expressed in PSF), the panel dimensions (width by height), and the glass type. The standard covers monolithic glass (annealed, heat-strengthened, fully tempered), laminated glass, and insulating glass units (IGUs) composed of various glass type combinations.</p>
+    <p>The standard is probabilistic. It is based on an acceptable probability of breakage — the default criterion is that no more than 8 lites in 1,000 (0.8%) will break at the specified design load. The load resistance charts in E1300 reflect that criterion. If a project requires a lower probability of breakage, adjustments are needed. The standard provides guidance for alternate design criteria.</p>
+
+    <h3>What E1300 does not cover</h3>
+    <p>ASTM E1300 does not certify impact resistance, blast resistance, or cyclic pressure performance. It does not test assemblies — it provides a design methodology for specifying glass. It does not tell you what frame to use, what anchorage pattern to use, or how the glass is retained. E1300 is the starting point for glass specification, not the complete picture. For commercial glazing in Florida, the framing system, anchorage, and combined assembly performance are governed by the product approval system (FPA or NOA) independent of E1300.</p>
+
+    <h2 id="glass-types">Glass type strength factors</h2>
+
+    <p>The four primary glass types covered by ASTM E1300 have different load resistance capacities. The standard expresses these differences through tables at different probability-of-breakage levels. The following represents the relative strength relationships established in the standard — for specific values, consult the current ASTM E1300 edition published by ASTM International:</p>
+
+    <table>
+      <thead>
+        <tr><th>Glass type</th><th>Relative strength vs annealed</th><th>Failure mode</th><th>Common HVHZ use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Annealed (AN)</td><td>Baseline</td><td>Large, irregular shards</td><td>Not approved for HVHZ exterior openings without laminating</td></tr>
+        <tr><td>Heat-strengthened (HS)</td><td>Approximately 2× annealed</td><td>Larger pieces than FT; less hazardous than AN</td><td>Used as ply in laminated assemblies for HVHZ</td></tr>
+        <tr><td>Fully tempered (FT)</td><td>Approximately 4× annealed</td><td>Small, relatively safe fragments</td><td>Not approved as single-ply exterior in HVHZ; used in laminated configurations</td></tr>
+        <tr><td>Laminated (LG)</td><td>Depends on ply composition and interlayer</td><td>Fractures but remains in frame if interlayer intact</td><td>Required for HVHZ exterior; interlayer holds glass after impact</td></tr>
+      </tbody>
+    </table>
+
+    <p>The strength advantage of fully tempered glass over annealed is significant for structural sizing, but FT alone is not approved for HVHZ exterior openings because upon fracture, FT glass falls out of the frame — even in small fragments, this creates a breach in the building envelope. HVHZ requires laminated glass so that even after fracture, the interlayer holds the glass in place and maintains the envelope. This is why HVHZ glass specs always call for laminated glass with a PVB or ionoplast interlayer, typically using HS or FT plies.</p>
+
+    <h2 id="how-engineers-use-it">How engineers use ASTM E1300</h2>
+
+    <h3>The basic process</h3>
+    <p>An engineer sizing glass for a commercial project starts with the design pressure — determined from the wind load calculation per ASCE 7. They know the panel dimensions from the architectural drawings. Using the E1300 load resistance charts, they find the minimum glass type and thickness that provides adequate load resistance at the specified DP with acceptable probability of breakage.</p>
+    <p>For a simple monolithic pane, the process is direct: enter the chart with panel area and design load, read the required thickness for the glass type. For laminated glass, E1300 provides procedures for combining the contributions of each ply, taking into account that a laminated unit's strength is not the simple sum of its plies — the interlayer shear properties affect load sharing between plies.</p>
+
+    <h3>How it interacts with the framing spec</h3>
+    <p>Glass sizing from E1300 must coordinate with the framing system. The frame must be capable of accepting the glass edge bite required for the thickness, the structural deflection of the frame under load must not overstress the glass bite, and the glass bite itself must be sufficient to retain the glass at design load. These interactions mean that glass sizing is not done independently of framing — the glazing contractor and the EOR coordinate glass specification against the approved framing system's structural data. See our related page on <a href="/design-pressure-explained.html">design pressure explained</a> for how DP, deflection limits, and framing interact.</p>
+
+    <h2 id="load-duration">Load duration factor explained</h2>
+
+    <p>Glass strength is not constant over time — it degrades under sustained load due to stress corrosion in the presence of moisture. ASTM E1300 accounts for this through the load duration factor, which adjusts the apparent strength of glass depending on how long the load is applied. For wind loads (3-second gust), the load duration factor is favorable because wind loads are short in duration. For snow loads, the factor reflects the potential for weeks or months of sustained load and the apparent strength is lower.</p>
+
+    <p>In Florida, snow loads are not a design consideration. However, on projects with structural glass floors, glass stairs, overhead glazing under pedestrian traffic, or architectural glass elements under sustained dead load, the load duration factor must be applied correctly. Using the wind load duration factor for a sustained dead load application is a specification error. It results in glass that is structurally undersized for long-term load carrying and may fail progressively over time.</p>
+
+    <h2 id="laminated-error">The laminated glass error — treating it as monolithic</h2>
+
+    <p>The most consequential E1300 error we see on commercial specs is treating a laminated glass unit as if it were a monolithic pane of the same total thickness. A laminated unit composed of two 1/4" plies is not structurally equivalent to a monolithic 1/2" pane under load. The interlayer shear properties determine how load is distributed between the plies, and those properties are temperature and time dependent.</p>
+
+    <p>ASTM E1300 provides specific procedures for laminated glass load resistance that account for interlayer shear coupling. For stiff interlayers (ionoplast, such as SentryGlas), the coupling factor approaches 1.0 and the unit behaves closer to monolithic. For softer interlayers (PVB), coupling is lower — particularly at elevated temperatures, which is relevant for Florida glazing exposed to summer solar loading. A PVB-laminate that was sized for structural adequacy at 70°F may behave differently on a south-facing wall that reaches 140°F on a July afternoon. This is not a theoretical concern — it is a real design variable that the EOR must address.</p>
+
+    <h2 id="hvhz-relationship">Relationship to HVHZ and NOA compliance</h2>
+
+    <p>In HVHZ, E1300 and the NOA system address different but overlapping requirements. E1300 determines structural adequacy under load — the glass has sufficient strength to resist the design pressure without exceeding the probability-of-breakage criterion. The NOA addresses impact resistance and cyclic performance — the glass has been physically tested, as part of a specific assembly, to survive a large missile impact and 9,000 cyclic pressure cycles.</p>
+
+    <p>These are not the same requirement. A glass configuration that is structurally adequate by E1300 for a given DP may not be the same configuration tested and approved in the NOA. In HVHZ, the NOA's approved glass list controls. If the EOR's E1300 calculation calls for 3/16" + 0.060" PVB + 3/16" laminate, that specific configuration must appear in the NOA's glass list. If the NOA only covers 1/4" + 0.060" PVB + 1/4", you have a mismatch. The solution is to either select a product with an NOA covering the E1300-required configuration, or work with the EOR and manufacturer to verify engineering equivalency — which the AHJ will need to approve.</p>
+
+    <p>We see this mismatch most often on curtainwall projects where the structural engineer sizes glass independently from the product selection, then the glazing contractor discovers the NOA doesn't cover the sized configuration. Resolve this during design, not at submittal. For related reading on <a href="/florida-hvhz-glazing-complete-guide.html">HVHZ compliance requirements</a>, see our complete guide.</p>
+
+    <h2 id="e2190">ASTM E1300 vs ASTM E2190</h2>
+
+    <p>These two standards are often cited together in glazing specs but address completely different aspects of glass performance:</p>
+
+    <table>
+      <thead>
+        <tr><th>Standard</th><th>Scope</th><th>What it measures</th><th>Who references it</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ASTM E1300</td><td>Structural load resistance of glass</td><td>Glass thickness and type required for given design load and panel dimensions</td><td>Structural engineer, glazing contractor, spec writer</td></tr>
+        <tr><td>ASTM E2190</td><td>Insulating glass unit (IGU) performance</td><td>Edge seal durability under thermal cycling, humidity exposure, and fogging resistance</td><td>Spec writer, owner's rep, energy consultant</td></tr>
+        <tr><td>ASTM E1886/E1996</td><td>Impact and cyclic resistance</td><td>Missile impact resistance and post-impact cyclic pressure performance for FPA</td><td>Structural engineer, code compliance, product approval</td></tr>
+        <tr><td>TAS 201/203</td><td>HVHZ-specific impact and cyclic testing</td><td>Miami-Dade NOA certification testing for HVHZ assemblies</td><td>Miami-Dade Product Control, HVHZ project EOR</td></tr>
+      </tbody>
+    </table>
+
+    <p>ASTM E2190 matters for Florida commercial projects because IGU edge seal performance in high-humidity, high-temperature environments is critical for long-term glass clarity and thermal performance. An IGU that fails its edge seal in year 3 will fog internally and require full replacement. Specifying IGU performance requirements per ASTM E2190 is standard practice on commercial glazing specs and should not be omitted.</p>
+
+    <h2 id="spec-errors">What spec writers most commonly miss on E1300</h2>
+
+    <h3>Citing the standard without specifying the glass type</h3>
+    <p>We frequently see specs that say "glass per ASTM E1300" with no specification of glass type (AN, HS, FT, or LG) and no indication of which load resistance chart was used. This leaves the contractor free to interpret, and interpretations vary. Always specify the glass type, the minimum nominal thickness, and the design pressure used for sizing.</p>
+
+    <h3>Not differentiating zones</h3>
+    <p>ASCE 7 wind load analysis produces different DPs for different zones on a building — interior zones, edge zones, and corner zones. Corner zones can be 1.5 to 2 times the interior zone DP. A spec that specifies a single glass type and thickness for an entire building without differentiating zones may be adequate for interior zones but undersized for corner zones. The EOR must zone the glass specification to match the wind load zoning.</p>
+
+    <h3>Using nominal thickness as actual thickness</h3>
+    <p>Glass is manufactured to nominal thicknesses with allowed tolerances. "1/4-inch glass" is nominal; the actual thickness may vary. ASTM E1300 uses minimum thickness in its load resistance tables, which is less than nominal. When using E1300, confirm whether the calculation is based on minimum thickness (conservative) or nominal (potentially non-conservative). For critical applications, specify minimum thickness.</p>
+
+    <h3>Overlooking post-breakage performance</h3>
+    <p>ASTM E1300's probability-of-breakage criterion addresses the probability that glass breaks — not what happens after it breaks. For overhead glazing, glass floors, and applications where broken glass poses safety risk, post-breakage performance (the laminate holding the fragments) must be specified separately. ASTM E1300 Appendix X9 provides guidance on post-breakage structural capacity for laminated glass, but it requires specific analysis — it is not automatic from the standard E1300 procedure.</p>
+
+    <div class="faq-section">
+      <h2 id="faq">Frequently asked questions</h2>
+
+      <h3>What does ASTM E1300 cover?</h3>
+      <p>ASTM E1300 is the Standard Practice for Determining Load Resistance of Glass in Buildings. It provides the methodology — charts, tables, and equations — that engineers use to specify minimum glass type and thickness for a given design load and panel dimensions. It covers annealed, heat-strengthened, fully tempered, laminated, and insulating glass unit types.</p>
+
+      <h3>How is glass thickness calculated?</h3>
+      <p>Using the ASTM E1300 load resistance charts: enter the design pressure (PSF), the panel dimensions (width by height), and the glass type. The chart returns the maximum area a given thickness will support at that load with acceptable probability of breakage (8 per 1,000 default). If the panel area exceeds the value for a given thickness, increase thickness or glass type. For current chart values, consult the current ASTM E1300 edition from ASTM International.</p>
+
+      <h3>What is load duration factor?</h3>
+      <p>Load duration factor accounts for glass strength degradation under sustained loads. Short-duration wind loads use a favorable factor; long-duration loads (snow, dead load) use a lower factor reflecting reduced apparent strength under sustained stress. Using the wrong load duration factor for a sustained load application — such as a glass floor or overhead glazing — is a common error resulting in undersized glass.</p>
+
+      <h3>Why does ASTM E1300 matter for HVHZ?</h3>
+      <p>E1300 determines structural glass sizing — but it does not certify impact resistance or NOA compliance in HVHZ. In HVHZ, the glass must also be part of an NOA-listed assembly with its specific type and thickness appearing in the NOA's approved glass list. An E1300-adequate glass configuration that is not in the NOA glass list cannot be used without EOR certification and AHJ review.</p>
+
+      <h3>What is the difference between ASTM E1300 and ASTM E2190?</h3>
+      <p>ASTM E1300 governs structural sizing of glass under loads. ASTM E2190 governs insulating glass unit (IGU) performance — edge seal durability, thermal cycling resistance, and fogging resistance. Both are referenced in commercial glazing specs and address entirely different performance aspects. E1300 is about structural strength; E2190 is about IGU long-term durability.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>Have a project? Send drawings.</h3>
+      <p>We coordinate glass sizing, E1300 compliance, and NOA/FPA approval verification on every commercial glazing project. Florida CGC #1531993 — 350+ commercial projects. We catch glass spec errors before they become field problems or permit rejections.</p>
+      <p><a href="/bid.html">Submit plans →</a> &nbsp;|&nbsp; <a href="/architect-specs/">Architect spec resources →</a> &nbsp;|&nbsp; <a href="/approvals/">Product approval index →</a></p>
+    </div>
+
+    <h2>Related resources</h2>
+    <ul>
+      <li><a href="/design-pressure-explained.html">Design pressure explained for commercial glazing</a></li>
+      <li><a href="/florida-hvhz-glazing-complete-guide.html">HVHZ complete guide — what the zone legally requires</a></li>
+      <li><a href="/miami-dade-noa-explained.html">Miami-Dade NOA explained</a></li>
+      <li><a href="/florida-product-approval-explained.html">Florida Product Approval explained</a></li>
+      <li><a href="/storefront-vs-curtainwall.html">Storefront vs curtainwall — when to use each</a></li>
+      <li><a href="/curtainwall-vs-window-wall.html">Curtainwall vs window wall</a></li>
+      <li><a href="/florida-hvhz-glazing-contractor.html">Florida HVHZ glazing contractor</a></li>
+      <li><a href="/approvals/">Product approval and NOA index</a></li>
+      <li><a href="/architect-specs/">Architect CSI MasterFormat sections</a></li>
+      <li><a href="/eswindows-installer-florida.html">ESWindows commercial installer Florida</a></li>
+      <li><a href="/euro-wall.html">Euro-Wall commercial systems</a></li>
+      <li><a href="/commercial-glass-cost-data.html">Commercial glass cost data</a></li>
+    </ul>
+
+  </main>
+
+  <footer style="background:#050A12;padding:40px 28px;text-align:center;border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;color:rgba(255,255,255,0.6);font-size:0.9rem;">
+      <p>&copy; 2026 American Commercial Glass &middot; FL CGC #1531993 &middot; West Palm Beach &middot; Naples &middot; Tampa &middot; Nashville (2026)</p>
+      <p style="margin-top:12px;">
+        <a href="/services.html" style="color:rgba(255,255,255,0.7);margin:0 12px;">Services</a>
+        <a href="/ask.html" style="color:rgba(255,255,255,0.7);margin:0 12px;">Resources</a>
+        <a href="/approvals/" style="color:rgba(255,255,255,0.7);margin:0 12px;">Approvals</a>
+        <a href="/contact.html" style="color:rgba(255,255,255,0.7);margin:0 12px;">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
