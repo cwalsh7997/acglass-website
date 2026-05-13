@@ -578,11 +578,35 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         }
       });
       form.addEventListener('submit', function(e){
-        // If Formspree endpoint is still the placeholder, fall back to email
+        // Always use mailto delivery (reliable, no third-party dependency)
         if (form.action.indexOf('formspree-pending') !== -1 || form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
           e.preventDefault();
+          var get = function(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value : ''; };
+          var name = get('name'), company = get('company'), email = get('email'), phone = get('phone');
+          var role = get('role'), project = get('project_name'), location = get('project_location');
+          var btype = get('building_type'), bidtype = get('bid_type'), sf = get('total_sf');
+          var due = get('bid_due'), notes = get('notes');
+          var subject = 'Plans Submission — ' + (project || company || name);
+          var body = 'PROJECT INFO%0D%0A' +
+                     'Project: ' + project + '%0D%0A' +
+                     'Location: ' + location + '%0D%0A' +
+                     'Building Type: ' + btype + '%0D%0A' +
+                     'Total SF: ' + sf + '%0D%0A' +
+                     'Bid Due: ' + due + '%0D%0A' +
+                     'Bid Type: ' + bidtype + '%0D%0A%0D%0A' +
+                     'CONTACT%0D%0A' +
+                     'Name: ' + name + '%0D%0A' +
+                     'Company: ' + company + '%0D%0A' +
+                     'Role: ' + role + '%0D%0A' +
+                     'Email: ' + email + '%0D%0A' +
+                     'Phone: ' + phone + '%0D%0A%0D%0A' +
+                     'NOTES%0D%0A' + notes + '%0D%0A%0D%0A' +
+                     'NOTE: Drawing files cannot be attached through this form. Please attach plans (PDF, DWG, ZIP) to this email before sending. For files over 25MB, paste a Procore/BuildingConnected/Dropbox link in the Notes section above and re-send.%0D%0A%0D%0A' +
+                     'Submitted from acglass.com/send-plans';
           status.style.color = 'var(--accent)';
-          status.innerHTML = 'Form endpoint not yet configured. Please email plans to <a href="mailto:connor@acglass.com" style="color:inherit;text-decoration:underline;">connor@acglass.com</a> or call (772) 486-7711.';
+          status.innerHTML = 'Opening your email — please attach drawing files before sending. If your mail client did not open, email plans to <a href="mailto:connor@acglass.com" style="color:inherit;text-decoration:underline;">connor@acglass.com</a>.';
+          window.location.href = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+          if (typeof gtag === 'function') gtag('event', 'bid_form_submit_mailto', { bid_type: bidtype });
           return;
         }
         // Let Formspree handle; just track the event
