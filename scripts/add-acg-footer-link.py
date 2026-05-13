@@ -32,11 +32,13 @@ INSERT_SNIPPET = (
     '</div>\n'
 )
 
-# Anchor we insert before
-ANCHOR = '<div class="footer-bottom">'
+# Primary anchor (newer templates)
+ANCHOR_PRIMARY = '<div class="footer-bottom">'
+# Fallback anchor (older/alternate templates) — insert just before </footer>
+ANCHOR_FALLBACK = '</footer>'
 
 # Files to skip
-SKIP = {'404.html'}
+SKIP = {'404.html', 'google9d45280643313cec.html', 'location-template-snippet.html'}
 
 changed = 0
 skipped = 0
@@ -60,10 +62,13 @@ for fname in sorted(os.listdir(ROOT)):
     if MARKER in html:
         unchanged += 1
         continue
-    if ANCHOR not in html:
+    if ANCHOR_PRIMARY in html:
+        new_html = html.replace(ANCHOR_PRIMARY, INSERT_SNIPPET + '      ' + ANCHOR_PRIMARY, 1)
+    elif ANCHOR_FALLBACK in html:
+        new_html = html.replace(ANCHOR_FALLBACK, INSERT_SNIPPET + '    ' + ANCHOR_FALLBACK, 1)
+    else:
         unchanged += 1
         continue
-    new_html = html.replace(ANCHOR, INSERT_SNIPPET + '      ' + ANCHOR, 1)
     if new_html == html:
         unchanged += 1
         continue
