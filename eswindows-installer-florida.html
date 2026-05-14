@@ -1328,5 +1328,22 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
+
+<!-- BEGIN Featured projects (added 2026-05-13) -->
+<section style="padding:44px 0;border-top:1px solid rgba(255,255,255,0.06);background:rgba(225,19,32,0.02)">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px">
+    <h2 style="font-size:24px;color:#fff;margin:0 0 16px;letter-spacing:-.01em">Featured ACG projects using ESWindows</h2>
+    <p style="color:#E6EAF2;font-size:15.5px;margin:0 0 18px;max-width:880px">A short selection of named ACG installations using ESWindows systems. Each project page includes scope, glass make-up, code references, and an FAQ block.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+<a href="/case-study-panther-national.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Panther National</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Private golf community — ESWindows curtainwall, Palm Beach County</span></a>
+<a href="/case-study-atlantic-fields.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Atlantic Fields</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Private golf club main package — ESWindows, Hobe Sound</span></a>
+<a href="/case-study-atlantic-fields-golf-house.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Atlantic Fields Golf House</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Golf house glazing — ESWindows</span></a>
+<a href="/case-study-wild-blue-clubhouse.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Wild Blue Clubhouse</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Private club clubhouse — ESWindows, Estero</span></a>
+<a href="/case-study-illumia-fort-myers.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Illumia Fort Myers</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Mid-rise commercial — ESWindows curtainwall</span></a>
+<a href="/case-study-causeway-building-bonita-springs.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Causeway Building Bonita Springs</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Class A office — ESWindows</span></a>
+    </div>
+  </div>
+</section>
+<!-- END Featured projects -->
 </body>
 </html>
