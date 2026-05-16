@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/commercial-glazing-nashville.html",
+      "destination": "/commercial-glazing-nashville-tn.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-alabama.html",
+      "destination": "/commercial-glazing-al.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-georgia.html",
+      "destination": "/commercial-glazing-ga.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-tennessee.html",
+      "destination": "/commercial-glazing-tn.html",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": false,
+  "trailingSlash": false
+}
