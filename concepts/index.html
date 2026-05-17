@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Homepage Concepts — ACG Internal Review</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0d12;--ink:#fff;--rule:#1a1f29;--text:#cad2e0;--mute:#7a8499;
+  --red:#e11320;--navy:#0e284f;--paper:#f5f1ea;
+  --sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:#fff;font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+.page{max-width:1280px;margin:0 auto;padding:80px 32px}
+.head{margin-bottom:56px;padding-bottom:32px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+h1{font-size:48px;font-weight:800;letter-spacing:-.025em;line-height:1.05;margin-bottom:14px}
+.head .lede{font-size:17px;color:var(--text);max-width:760px;line-height:1.55}
+.meta{margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.04em}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#13171f;border:1px solid var(--rule);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s ease,border-color .35s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(225,19,32,.35)}
+.card-tag{padding:14px 18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff}
+.card.a .card-tag{background:#0b1220}
+.card.b .card-tag{background:#0a1428}
+.card.c .card-tag{background:#080a0e}
+.card-tag .red{color:var(--red)}
+.preview{aspect-ratio:16/10;background:#000;display:grid;place-items:center;color:var(--mute);font-family:var(--mono);font-size:13px;position:relative;overflow:hidden}
+.preview img{width:100%;height:100%;object-fit:cover}
+.preview .label{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);padding:6px 12px;border-radius:4px;font-size:10.5px;color:#fff;letter-spacing:.1em}
+.body-pad{padding:28px;flex:1;display:flex;flex-direction:column}
+h2{font-size:22px;font-weight:700;letter-spacing:-.015em;margin-bottom:8px}
+.byline{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.06em;margin-bottom:20px}
+.desc{font-size:14px;color:var(--text);line-height:1.65;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px}
+.tag{font-family:var(--mono);font-size:10.5px;color:var(--text);background:rgba(255,255,255,.04);border:1px solid var(--rule);padding:4px 9px;border-radius:14px;letter-spacing:.04em}
+.btn-row{display:flex;gap:8px;margin-top:auto}
+.btn-pri{flex:1;background:var(--red);color:#fff;padding:13px;text-align:center;font-weight:700;font-size:13px;letter-spacing:.02em;border-radius:6px}
+.btn-pri:hover{background:#c50f1c}
+
+.tradeoffs{margin-top:80px;padding-top:40px;border-top:1px solid var(--rule)}
+.tradeoffs h2{font-size:28px;margin-bottom:24px}
+.compare{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.compare > div{padding:14px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:13.5px}
+.compare > div:nth-child(4n){border-right:none}
+.compare .h{background:rgba(255,255,255,.025);font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mute);text-transform:uppercase;font-weight:600}
+.compare .row-label{color:var(--mute);font-family:var(--mono);font-size:11px;letter-spacing:.04em}
+.compare b{color:#fff}
+.legend{margin-top:24px;font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.04em}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr;gap:18px}
+  h1{font-size:34px}
+  .compare{grid-template-columns:1fr 1fr}
+  .compare > div{border-right:none}
+  .compare > div:nth-child(2n){border-right:none}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="head">
+    <div class="eyebrow">— Internal Review · Connor Walsh</div>
+    <h1>Homepage redesign — three concept directions</h1>
+    <p class="lede">Each is a working prototype, not a mockup. Same content stack (proof points, projects, capabilities, CTA) — three different reads on what ACG looks like to a GC walking in cold for the first time. Click through, scroll, click around. Then tell me which one feels like the company.</p>
+    <p class="meta">2026-05-17 · noindex · staging only · navy / red / Inter brand-locked</p>
+  </header>
+
+  <div class="grid">
+    <div class="card a">
+      <div class="card-tag">Concept <span class="red">A</span> — Editorial / Project-First</div>
+      <a href="a/" class="preview">
+        <span class="label">Ocean Prime · Twilight</span>
+        <img src="../images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp" alt="Concept A preview">
+      </a>
+      <div class="body-pad">
+        <h2>Editorial / Project-First</h2>
+        <div class="byline">Hero: Ocean Prime Fort Lauderdale (twilight)</div>
+        <p class="desc">Reads like an architecture monograph. Cream paper background, Fraunces serif for display, drop-cap lede. Project work dominates. The buyer feels the company is serious, considered, and the kind of firm that wins on portfolio depth — not features.</p>
+        <div class="tags">
+          <span class="tag">Cream + Navy + Red</span>
+          <span class="tag">Fraunces serif display</span>
+          <span class="tag">Drop-cap lede</span>
+          <span class="tag">Hospitality lead</span>
+        </div>
+        <div class="btn-row"><a href="a/" class="btn-pri">View Concept A →</a></div>
+      </div>
+    </div>
+
+    <div class="card b">
+      <div class="card-tag">Concept <span class="red">B</span> — GC Operator / Data-Driven</div>
+      <a href="b/" class="preview">
+        <span class="label">Panther National · Clubhouse</span>
+        <img src="../images/projects/panther-national/brochure-clubhouse-hero.webp" alt="Concept B preview">
+      </a>
+      <div class="body-pad">
+        <h2>GC Operator / Data-Driven</h2>
+        <div class="byline">Hero: live status terminal + Panther National</div>
+        <p class="desc">Built like Ramp or Vercel. Deep navy. Live "active projects" counter, on-time data card, GC-vs-Owner path split. Speaks directly to procurement teams who skim landing pages for proof. The strongest path for converting GCs who don't yet know us.</p>
+        <div class="tags">
+          <span class="tag">Deep navy + red accent</span>
+          <span class="tag">Inter 800 + JetBrains Mono</span>
+          <span class="tag">Live data card</span>
+          <span class="tag">GC / Owner split</span>
+        </div>
+        <div class="btn-row"><a href="b/" class="btn-pri">View Concept B →</a></div>
+      </div>
+    </div>
+
+    <div class="card c">
+      <div class="card-tag">Concept <span class="red">C</span> — AI-Managed Differentiator</div>
+      <a href="c/" class="preview">
+        <span class="label">Atlantic Fields · Performance Center</span>
+        <img src="../images/projects/atlantic-fields-performance/hero-gym-interior.webp" alt="Concept C preview">
+      </a>
+      <div class="body-pad">
+        <h2>AI-Managed Differentiator</h2>
+        <div class="byline">Hero: live Sub.ai terminal + Atlantic Fields</div>
+        <p class="desc">The boldest positioning bet. Leans hard into Sub.ai / jobcost.ai / CFO Agent — your custom apps as the moat. Black ink with red glow gradients, bento capabilities grid, terminal demo of the actual AI scope generator. Works only if "AI-managed glazing contractor" is the company identity, not just an angle.</p>
+        <div class="tags">
+          <span class="tag">Pure dark + red glow</span>
+          <span class="tag">Bento layout</span>
+          <span class="tag">Terminal demo</span>
+          <span class="tag">Atlantic Fields glass-led</span>
+        </div>
+        <div class="btn-row"><a href="c/" class="btn-pri">View Concept C →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="tradeoffs">
+    <h2>Side-by-side trade-offs</h2>
+    <div class="compare">
+      <div class="h">Dimension</div>
+      <div class="h">Concept A · Editorial</div>
+      <div class="h">Concept B · Operator</div>
+      <div class="h">Concept C · AI-Diff</div>
+
+      <div class="row-label">Primary buyer</div>
+      <div>Owner / architect (taste)</div>
+      <div><b>GC procurement (proof)</b></div>
+      <div>GC + tech-forward owner (story)</div>
+
+      <div class="row-label">Hero photo</div>
+      <div>Ocean Prime twilight (mood)</div>
+      <div>Panther National (status)</div>
+      <div>Atlantic Fields gym (the glass itself)</div>
+
+      <div class="row-label">Headline tone</div>
+      <div>Poetic — "envelope is the building"</div>
+      <div>Direct — "48 hours to scope"</div>
+      <div>Confident — "drawings in, scope in 48"</div>
+
+      <div class="row-label">Risk</div>
+      <div>Reads as residential / luxury</div>
+      <div>Reads like a SaaS, not contractor</div>
+      <div>Bold — only works if you own AI angle</div>
+
+      <div class="row-label">Conversion path</div>
+      <div>Send Drawings (single CTA)</div>
+      <div>For GCs / For Owners (split)</div>
+      <div>Send Drawings · See How It Works</div>
+
+      <div class="row-label">Defensibility vs competitors</div>
+      <div>Photography quality</div>
+      <div>Operational data + bonding</div>
+      <div><b>Custom AI ops stack</b></div>
+
+      <div class="row-label">Time to build production</div>
+      <div>~3 days (typography QA, photo retouching)</div>
+      <div>~4 days (live data wiring)</div>
+      <div>~5 days (terminal demo polish, AI page)</div>
+
+      <div class="row-label">Best if you want to win on...</div>
+      <div>Brand prestige</div>
+      <div>GC-procurement velocity</div>
+      <div>Category creation</div>
+    </div>
+    <p class="legend">Each can be tuned in either direction. The question now isn't "which is finished" — they all need 2-5 more days of polish — it's "which direction is right for ACG?"</p>
+  </section>
+</div>
+
+</body>
+</html>

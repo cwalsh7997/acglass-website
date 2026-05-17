@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Concept A — Editorial / Project-First | ACG</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e284f;
+  --navy-deep:#081a35;
+  --ink:#0b1220;
+  --paper:#f5f1ea;
+  --paper-dim:#ebe6dd;
+  --red:#e11320;
+  --mute:#6a7484;
+  --rule:#d9d4c8;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --display:'Fraunces','Times New Roman',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+
+/* Concept badge */
+.concept-tag{position:fixed;top:18px;right:18px;z-index:100;background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:24px;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+/* Nav */
+.nav{position:absolute;top:0;left:0;right:0;z-index:50;padding:28px 40px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:var(--display);font-weight:500;font-size:22px;color:#fff;letter-spacing:-.01em}
+.nav-logo b{font-weight:600;color:var(--red)}
+.nav-links{display:flex;gap:36px;font-size:13.5px;color:#fff;letter-spacing:.01em}
+.nav-cta{background:#fff;color:var(--ink);padding:11px 22px;border-radius:2px;font-weight:600;font-size:13px;letter-spacing:.01em}
+
+/* HERO — editorial, full bleed */
+.hero{position:relative;height:96vh;min-height:720px;overflow:hidden;background:#000}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,26,53,.5) 0%,rgba(8,26,53,.05) 35%,rgba(8,26,53,.65) 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 56px 64px;color:#fff;z-index:5}
+.hero-eyebrow{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#fff;opacity:.85;margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--red)}
+h1.hero-h1{font-family:var(--display);font-weight:300;font-size:clamp(48px,7vw,108px);line-height:.98;letter-spacing:-.035em;max-width:1400px;color:#fff}
+h1.hero-h1 em{font-style:italic;font-weight:400;color:#fff}
+h1.hero-h1 .red{color:var(--red);font-style:italic;font-weight:500}
+.hero-sub{font-size:18px;font-weight:300;max-width:640px;margin-top:28px;color:rgba(255,255,255,.85);line-height:1.55}
+.hero-byline{position:absolute;bottom:30px;right:56px;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);text-align:right;line-height:1.7}
+
+/* Proof bar - editorial style */
+.proof{padding:56px 56px;background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;gap:0}
+.proof-num{font-family:var(--display);font-weight:300;font-size:48px;letter-spacing:-.02em;line-height:1}
+.proof-lbl{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:10px}
+.proof-cell{padding-right:32px;border-right:1px solid rgba(255,255,255,.1)}
+.proof-cell:last-child{border-right:none}
+
+/* Lede section */
+.lede{padding:140px 56px 120px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:96px;align-items:start}
+.lede-eyebrow{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:24px}
+.lede h2{font-family:var(--display);font-weight:300;font-size:clamp(36px,4.2vw,62px);line-height:1.05;letter-spacing:-.025em;color:var(--ink)}
+.lede h2 em{font-style:italic;color:var(--navy)}
+.lede-body p{font-size:18px;line-height:1.7;color:#3a4252;margin-bottom:18px;font-weight:400}
+.lede-body p:first-letter{font-family:var(--display);font-weight:400;font-size:62px;float:left;line-height:.85;padding-right:14px;padding-top:7px;color:var(--navy)}
+.lede-body .author{margin-top:30px;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);display:flex;gap:18px;align-items:center}
+.lede-body .author::before{content:"";width:30px;height:1px;background:var(--ink)}
+
+/* Project gallery — editorial spread */
+.projects-header{padding:0 56px;max-width:1280px;margin:0 auto 56px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px;border-top:1px solid var(--rule);padding-top:56px}
+.projects-header h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,3.8vw,52px);line-height:1.05;letter-spacing:-.02em;max-width:680px}
+.projects-header h2 em{font-style:italic;color:var(--navy)}
+.projects-header .meta{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);text-align:right;line-height:1.8}
+
+.projects{padding:0 56px 140px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(12,1fr);gap:32px}
+.proj{position:relative;overflow:hidden;background:var(--paper-dim);border-radius:2px}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.16,.84,.34,1)}
+.proj:hover img{transform:scale(1.04)}
+.proj-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px 28px 26px;background:linear-gradient(180deg,transparent,rgba(11,18,32,.85));color:#fff}
+.proj-title{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:-.01em;line-height:1.15}
+.proj-meta{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:6px}
+
+.proj.feature{grid-column:span 8;aspect-ratio:16/10}
+.proj.side{grid-column:span 4;aspect-ratio:4/5}
+.proj.half{grid-column:span 6;aspect-ratio:5/4}
+.proj.third{grid-column:span 4;aspect-ratio:4/5}
+
+/* Capabilities — editorial list */
+.caps{background:var(--ink);color:var(--paper);padding:140px 56px}
+.caps-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:120px;align-items:start}
+.caps-eyebrow{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:24px}
+.caps h2{font-family:var(--display);font-weight:300;font-size:clamp(36px,4.2vw,62px);line-height:1.05;letter-spacing:-.025em;color:#fff}
+.caps h2 em{font-style:italic;color:#fff;opacity:.9}
+.caps-list{display:flex;flex-direction:column}
+.cap-row{padding:32px 0;border-bottom:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:48px 1fr 24px;gap:32px;align-items:start;cursor:default;transition:padding-left .4s ease}
+.cap-row:hover{padding-left:18px}
+.cap-num{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.15em;color:rgba(255,255,255,.45);padding-top:6px}
+.cap-title{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:-.015em;color:#fff;line-height:1.15;margin-bottom:8px}
+.cap-desc{font-size:15px;color:rgba(255,255,255,.65);line-height:1.6;max-width:560px}
+.cap-arrow{color:var(--red);font-size:22px;padding-top:6px;transition:transform .3s ease}
+.cap-row:hover .cap-arrow{transform:translateX(6px)}
+
+/* CTA strip */
+.cta-block{padding:140px 56px;text-align:center;max-width:980px;margin:0 auto}
+.cta-eyebrow{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:30px}
+.cta-block h2{font-family:var(--display);font-weight:300;font-size:clamp(40px,5vw,76px);line-height:1.02;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px}
+.cta-block h2 em{font-style:italic;color:var(--navy)}
+.cta-block p{font-size:18px;color:var(--mute);max-width:580px;margin:0 auto 44px;line-height:1.55}
+.cta-row{display:inline-flex;gap:16px}
+.btn-pri{background:var(--red);color:#fff;padding:18px 36px;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;border-radius:2px}
+.btn-sec{background:transparent;color:var(--ink);padding:18px 36px;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--ink);border-radius:2px}
+
+/* Footer */
+footer{background:var(--navy-deep);color:#fff;padding:80px 56px 50px}
+.foot-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px}
+.foot-brand{font-family:var(--display);font-weight:500;font-size:24px;color:#fff;margin-bottom:14px}
+.foot-brand b{color:var(--red)}
+.foot-tag{font-size:14px;opacity:.7;max-width:300px;line-height:1.55}
+.foot-col h4{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:16px;font-weight:500}
+.foot-col a{display:block;color:rgba(255,255,255,.85);font-size:14px;margin-bottom:9px}
+.foot-col a:hover{color:#fff}
+.foot-bottom{max-width:1280px;margin:64px auto 0;padding-top:30px;border-top:1px solid rgba(255,255,255,.1);font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4);display:flex;justify-content:space-between}
+
+@media (max-width:1024px){
+  .nav{padding:22px 24px}
+  .nav-links{display:none}
+  .hero-content{padding:0 28px 50px}
+  .hero-byline{display:none}
+  .proof{padding:36px 24px;grid-template-columns:repeat(2,1fr);gap:28px}
+  .proof-cell{border:none;padding:0}
+  .lede{padding:90px 24px;grid-template-columns:1fr;gap:42px}
+  .projects-header{padding:56px 24px 0;flex-direction:column;align-items:flex-start;gap:18px;margin:0 auto 42px}
+  .projects-header .meta{text-align:left}
+  .projects{padding:0 24px 90px}
+  .proj.feature,.proj.side,.proj.half,.proj.third{grid-column:span 12;aspect-ratio:5/4}
+  .caps{padding:90px 24px}
+  .caps-inner{grid-template-columns:1fr;gap:50px}
+  .cta-block{padding:90px 24px}
+  .cta-row{flex-direction:column;width:100%}
+  .btn-pri,.btn-sec{display:block}
+  footer{padding:60px 24px 40px}
+  .foot-inner{grid-template-columns:1fr 1fr;gap:40px}
+}
+</style>
+</head>
+<body>
+
+<div class="concept-tag">Concept A · Editorial</div>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">American Commercial Glass <b>·</b></a>
+  <div class="nav-links">
+    <a href="#">For GCs</a>
+    <a href="#">Projects</a>
+    <a href="#">Capabilities</a>
+    <a href="#">About</a>
+  </div>
+  <a href="#" class="nav-cta">Send Drawings</a>
+</nav>
+
+<section class="hero">
+  <img class="hero-img" src="../../images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp" alt="Ocean Prime Fort Lauderdale — twilight waterfront with Euro-Wall folding doors by American Commercial Glass">
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Florida Commercial Glazing · Division 08</div>
+    <h1 class="hero-h1">The envelope is <em>the building.</em><br><span class="red">We build envelopes</span> for the rest of us.</h1>
+    <p class="hero-sub">Storefront, curtainwall, impact glazing, multi-slide doors. 350+ commercial projects across Florida — for the general contractors who can't afford a glazing scope that fails on submittal or on schedule.</p>
+  </div>
+  <div class="hero-byline">Ocean Prime · Fort Lauderdale<br>Euro-Wall folding system · 2025</div>
+</section>
+
+<section class="proof">
+  <div class="proof-cell"><div class="proof-num">350<span style="font-size:.55em;vertical-align:super">+</span></div><div class="proof-lbl">Projects</div></div>
+  <div class="proof-cell"><div class="proof-num">1M<span style="font-size:.55em;vertical-align:super">+</span></div><div class="proof-lbl">Sq Ft Installed</div></div>
+  <div class="proof-cell"><div class="proof-num">$3M<span style="font-size:.55em;vertical-align:super">/$6M</span></div><div class="proof-lbl">Bonding</div></div>
+  <div class="proof-cell"><div class="proof-num">0</div><div class="proof-lbl">OSHA Recordables</div></div>
+  <div class="proof-cell"><div class="proof-num">48<span style="font-size:.55em">hr</span></div><div class="proof-lbl">Scope Turnaround</div></div>
+</section>
+
+<section class="lede">
+  <div>
+    <div class="lede-eyebrow">— The Position</div>
+    <h2>Glass is <em>not</em> a commodity.<br>It's a trust contract.</h2>
+  </div>
+  <div class="lede-body">
+    <p>For five years, American Commercial Glass has installed the exterior envelope on Florida's most demanding commercial projects — hospitality, country clubs, multifamily, healthcare, and the buildings where the glass is the point.</p>
+    <p>Speed and reliability are not slogans. A glazing sub that loses a week on submittals costs the GC a month on schedule. A glazing sub that mis-orders a Euro-Wall configuration costs the owner a season. The work happens before the silicone bead, in the prequalification, the NOA cross-reference, the field-measure tolerance check — and that is where we win.</p>
+    <p>ESWindows. Euro-Wall. PGT. Allegion. TGP. Slimpact. Six approved manufacturer partnerships. Three Florida offices. Nashville Q3 2026. FL CGC #1531993.</p>
+    <div class="author">Connor Walsh · President &amp; Co-founder</div>
+  </div>
+</section>
+
+<div class="projects-header">
+  <h2>Recent <em>work</em></h2>
+  <div class="meta">15 of 350+ delivered<br>2024 – 2026</div>
+</div>
+
+<section class="projects">
+  <a href="#" class="proj feature">
+    <img src="../../images/projects/panther-national/brochure-clubhouse-hero.webp" alt="Panther National Clubhouse — luxury private club glazing">
+    <div class="proj-overlay">
+      <div class="proj-title">Panther National Clubhouse</div>
+      <div class="proj-meta">Palm Beach Gardens · Private Club · ESWindows</div>
+    </div>
+  </a>
+  <a href="#" class="proj side">
+    <img src="../../images/projects/atlantic-fields-performance/hero-gym-interior.webp" alt="Atlantic Fields Performance Center — glass-led training facility">
+    <div class="proj-overlay">
+      <div class="proj-title">Atlantic Fields Performance Center</div>
+      <div class="proj-meta">Hobe Sound · Curtainwall · Multi-Slide</div>
+    </div>
+  </a>
+  <a href="#" class="proj half">
+    <img src="../../images/projects/wild-blue-clubhouse-hero.webp" alt="Wild Blue Clubhouse — full Division 08 multi-system package">
+    <div class="proj-overlay">
+      <div class="proj-title">Wild Blue at Waterside Clubhouse</div>
+      <div class="proj-meta">Naples · Hospitality · Full Division 08</div>
+    </div>
+  </a>
+  <a href="#" class="proj third">
+    <img src="../../images/projects/gulfside-twelve/aerial-sunset-beach.webp" alt="Gulfside Twelve — Gulf Coast luxury condominium">
+    <div class="proj-overlay">
+      <div class="proj-title">Gulfside Twelve</div>
+      <div class="proj-meta">Naples · Hospitality · Impact Glazing</div>
+    </div>
+  </a>
+  <a href="#" class="proj third">
+    <img src="../../images/projects/dale-mabry-retail/hero-entry.webp" alt="Dale Mabry Retail — Tampa storefront installation">
+    <div class="proj-overlay">
+      <div class="proj-title">Dale Mabry Retail</div>
+      <div class="proj-meta">Tampa · Retail · Storefront</div>
+    </div>
+  </a>
+</section>
+
+<section class="caps">
+  <div class="caps-inner">
+    <div>
+      <div class="caps-eyebrow">— Capabilities</div>
+      <h2>One subcontractor.<br>One <em>schedule.</em><br>Every system.</h2>
+    </div>
+    <div class="caps-list">
+      <a href="#" class="cap-row">
+        <div class="cap-num">/01</div>
+        <div>
+          <div class="cap-title">Commercial Storefront</div>
+          <div class="cap-desc">ESWindows aluminum storefront systems for retail, restaurant, office, and clubhouse work.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </a>
+      <a href="#" class="cap-row">
+        <div class="cap-num">/02</div>
+        <div>
+          <div class="cap-title">Curtainwall &amp; Window Wall</div>
+          <div class="cap-desc">Stick-built and unitized curtainwall up to five stories. Slab-to-slab window wall.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </a>
+      <a href="#" class="cap-row">
+        <div class="cap-num">/03</div>
+        <div>
+          <div class="cap-title">Impact Glazing — HVHZ</div>
+          <div class="cap-desc">NOA-certified TAS 201/202/203 impact systems for Miami-Dade, Broward, and statewide HVHZ.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </a>
+      <a href="#" class="cap-row">
+        <div class="cap-num">/04</div>
+        <div>
+          <div class="cap-title">Euro-Wall Multi-Slide</div>
+          <div class="cap-desc">Authorized commercial installer. Folding, sliding, lift-and-slide, pivot systems up to 30+ ft openings.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </a>
+      <a href="#" class="cap-row">
+        <div class="cap-num">/05</div>
+        <div>
+          <div class="cap-title">Fire-Rated Glazing</div>
+          <div class="cap-desc">TGP Pilkington Pyrostop &amp; Pyrobel — 20-180 minute ratings, NFPA 80 compliant.</div>
+        </div>
+        <div class="cap-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="cta-eyebrow">— Send Drawings</div>
+  <h2>You have a project.<br>We have <em>48 hours.</em></h2>
+  <p>Detailed scope letter, named manufacturer systems, NOA references, exclusion list. Three offices. No long-haul mobilization.</p>
+  <div class="cta-row">
+    <a href="#" class="btn-pri">Send Bid Drawings</a>
+    <a href="#" class="btn-sec">For General Contractors →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">American Commercial Glass <b>·</b></div>
+      <p class="foot-tag">Florida commercial glazing contractor. FL CGC #1531993. ESWindows &amp; Euro-Wall authorized installer.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Offices</h4>
+      <a href="#">West Palm Beach</a>
+      <a href="#">Naples</a>
+      <a href="#">Tampa</a>
+      <a href="#">Nashville · Q3 2026</a>
+    </div>
+    <div class="foot-col">
+      <h4>For Buyers</h4>
+      <a href="#">General Contractors</a>
+      <a href="#">Architects</a>
+      <a href="#">Owners</a>
+      <a href="#">Send Plans</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="tel:7724867711">(772) 486-7711</a>
+      <a href="mailto:connor@acglass.com">connor@acglass.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 American Commercial Glass, Inc.</span>
+    <span>FL CGC #1531993</span>
+  </div>
+</footer>
+
+</body>
+</html>
