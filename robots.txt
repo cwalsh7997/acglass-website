@@ -1,11 +1,15 @@
 # ========================================================================
 # robots.txt for American Commercial Glass (acglass.com)
-# Updated: 2026-04-22
+# Updated: 2026-05-17
 # Explicit AI crawler permissions for answer engine optimization (GEO)
 # ========================================================================
 
-# Default: allow everything
+# Content Signals Policy (https://contentsignals.org/)
+# search=yes:    allow indexing for traditional search results
+# ai-input=yes:  allow content as real-time AI input (RAG, AI overviews)
+# ai-train=no:   do not use content for AI model training
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # ------------------------------------------------------------------------

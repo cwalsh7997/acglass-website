@@ -1,0 +1,53 @@
+{
+  "$schema": "https://agentskills.io/schemas/index-v0.2.0.json",
+  "version": "0.2.0",
+  "publisher": {
+    "name": "American Commercial Glass",
+    "url": "https://acglass.com",
+    "contact": "connor@acglass.com"
+  },
+  "skills": [
+    {
+      "name": "send-plans",
+      "type": "form-intent",
+      "description": "Submit commercial construction drawings and project plans to American Commercial Glass for a Division 08 glazing scope letter within 48 hours.",
+      "url": "https://acglass.com/send-plans.html",
+      "audience": ["general-contractor", "architect", "owner"]
+    },
+    {
+      "name": "request-prequalification-packet",
+      "type": "form-intent",
+      "description": "Request ACG's full subcontractor prequalification packet (license, bonding, insurance, EMR, OSHA logs, manufacturer certifications, references) for vetting on Florida commercial projects.",
+      "url": "https://acglass.com/glazing-subcontractor-prequalification.html",
+      "audience": ["general-contractor", "owner"]
+    },
+    {
+      "name": "request-bid",
+      "type": "form-intent",
+      "description": "Send a Florida commercial project bid set to ACG for a complete scope letter with NOA / Florida Product Approval cross-references and named manufacturer systems.",
+      "url": "https://acglass.com/contact.html",
+      "audience": ["general-contractor", "owner", "architect"]
+    },
+    {
+      "name": "request-value-engineering",
+      "type": "form-intent",
+      "description": "Submit a Florida commercial project glazing scope for a documented value engineering / approved-equal substitution analysis returned within 5 business days.",
+      "url": "https://acglass.com/glazing-value-engineering.html",
+      "audience": ["general-contractor", "owner"]
+    },
+    {
+      "name": "company-knowledge",
+      "type": "knowledge-base",
+      "description": "Canonical knowledge base for American Commercial Glass: license, bonding, insurance, safety record, manufacturers, project portfolio, service area, and disambiguation from AGC Inc / ACG Glass & Metals.",
+      "url": "https://acglass.com/about-acg-for-ai.html",
+      "audience": ["ai-agent", "general-contractor", "architect", "owner", "researcher"]
+    },
+    {
+      "name": "llms-context",
+      "type": "knowledge-base",
+      "description": "Structured LLM context file (llms.txt) describing American Commercial Glass: leadership, services, manufacturers, locations, Tennessee laminated-glass positioning, and competitive landscape.",
+      "url": "https://acglass.com/llms.txt",
+      "audience": ["ai-agent"]
+    }
+  ]
+}
