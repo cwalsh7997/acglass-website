@@ -81,18 +81,18 @@ CITY_HUB_TEMPLATE = '''<!DOCTYPE html>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{city} Commercial Glazing Contractor | Storefronts, Impact, Curtainwall | ACG</title>
+<title>Storefront Glazier {city} | Commercial Windows & Doors | ACG</title>
 <link rel="icon" type="image/png" href="/images/favicon-32.png">
-<meta name="description" content="Commercial glazing in {city}, FL — storefronts, all-glass entrances, hurricane impact windows, glass railings. ACG is a Florida-licensed contractor (CGC #1531993) with 350+ commercial projects.{project_meta_suffix}">
-<meta name="keywords" content="commercial glazing {city_lower}, storefront {city_lower}, impact windows {city_lower}, glazier {city_lower}, glass contractor {city_lower} fl">
+<meta name="description" content="Storefront glazier in {city}, FL. ACG does all things commercial storefront, commercial windows, and commercial doors. Hurricane impact, all-glass entrances, glass railings. Florida-licensed contractor CGC #1531993. 350+ commercial projects.{project_meta_suffix}">
+<meta name="keywords" content="storefront glazier {city_lower}, commercial storefront {city_lower}, commercial windows {city_lower}, commercial doors {city_lower}, impact windows {city_lower}, glazier near {city_lower} fl, glass contractor {city_lower}">
 <link rel="canonical" href="https://acglass.com/{slug}/">
 <meta name="geo.position" content="{lat};{lon}">
 <meta name="geo.placename" content="{city}, FL">
 <meta name="geo.region" content="US-FL">
 <meta name="ICBM" content="{lat}, {lon}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Commercial Glazing — {city}, FL | ACG">
-<meta property="og:description" content="ACG is a Florida-licensed commercial glazing contractor serving {city}. Storefronts, impact glass, curtainwall, Euro-Wall. CGC #1531993.">
+<meta property="og:title" content="Storefront Glazier &mdash; {city}, FL | ACG">
+<meta property="og:description" content="ACG is a Florida storefront glazing company serving {city}. All things commercial storefront, commercial windows, and commercial doors. CGC #1531993.">
 <meta property="og:url" content="https://acglass.com/{slug}/">
 <meta property="og:image" content="https://acglass.com/images/projects/ocean-prime-marina-aerial.jpg">
 <meta property="og:site_name" content="American Commercial Glass">
@@ -133,8 +133,8 @@ CITY_HUB_TEMPLATE = '''<!DOCTYPE html>
 <main id="main-content">
   <section class="loc-hero">
     <div class="container">
-      <div class="loc-label">Commercial Glazing &mdash; {city}, FL</div>
-      <h1 style="font-size:clamp(38px,5.5vw,72px);font-weight:900;line-height:1.05;max-width:1000px;margin-bottom:22px;">Commercial glazing contractor <span class="accent">in {city}.</span></h1>
+      <div class="loc-label">Storefront Glazier &mdash; {city}, FL</div>
+      <h1 style="font-size:clamp(38px,5.5vw,72px);font-weight:900;line-height:1.05;max-width:1000px;margin-bottom:22px;">Storefront glazier <span class="accent">in {city}.</span></h1>
       <p style="font-size:clamp(16px,1.35vw,19px);color:rgba(255,255,255,0.7);max-width:820px;line-height:1.6;margin-bottom:22px;">{hero_intro}</p>
       <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;">
         <a href="/send-plans.html" class="btn btn-primary">Send Us Plans</a>
@@ -155,7 +155,7 @@ CITY_HUB_TEMPLATE = '''<!DOCTYPE html>
   <section class="section">
     <div class="container">
       <div class="loc-label">Services in {city}</div>
-      <h2 class="section-h">Four commercial glazing services. <span class="accent">All available in {city}.</span></h2>
+      <h2 class="section-h">Commercial storefront, window, and door services <span class="accent">in {city}.</span></h2>
       <div class="card-grid">
         <a href="/{slug}/commercial-storefronts/" class="card">
           <div class="card-num">01 &mdash; Storefronts</div>
@@ -540,26 +540,29 @@ def render_city_hub(city_data):
         names = [p.replace("case-study-", "").replace("-", " ").title() for p in projects[:2]]
         project_meta_suffix = f" Notable projects: {', '.join(names)}."
 
+    hvhz_note = (f"Every commercial opening in {city} is in HVHZ and requires Miami-Dade NOA documentation. ACG carries the NOA inventory current."
+        if hvhz else f"{city} commercial work requires Florida Product Approval (FL#) documentation, which ACG includes in every submittal package.")
     hero_intro = (
-        f"American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor "
-        f"serving {city}, {county} County, and the rest of {region}. We install storefront systems, "
-        f"all-glass entrances, hurricane impact windows, glass railings, and curtainwall for general "
-        f"contractors and commercial owners. {('Every commercial opening in ' + city + ' is in HVHZ and requires Miami-Dade NOA documentation. ACG carries the NOA inventory current.') if hvhz else f'{city} commercial work requires Florida Product Approval (FL#) documentation, which ACG includes in every submittal package.'} "
+        f"American Commercial Glass (ACG) is a Florida storefront glazing company serving {city}, {county} County, "
+        f"and the rest of {region}. We do all things commercial storefront, commercial windows, and commercial doors "
+        f"&mdash; storefront systems, entrances, hurricane impact glass, glass railings, and the full Division 08 envelope &mdash; "
+        f"for general contractors, restaurant operators, hospitality groups, and developers. {hvhz_note} "
         f"350+ commercial projects, 1M+ SF installed. CGC #1531993. 48-hour bid turnaround."
     )
+    # END hero_intro
 
     # Context body
     hvhz_sentence = (
-        "It is in Florida's High-Velocity Hurricane Zone (HVHZ), which means every commercial opening &mdash; storefront, impact window, curtainwall, all-glass entrance &mdash; must carry Miami-Dade NOA documentation for the specific configuration installed."
+        "It is in Florida's High-Velocity Hurricane Zone (HVHZ), which means every commercial storefront, window, and door must carry Miami-Dade NOA documentation for the specific configuration installed."
         if hvhz else
-        "It is outside HVHZ but commercial systems still require Florida Product Approval (FL#) documentation under FBC Section 1709."
+        "It is outside HVHZ but commercial storefronts, windows, and doors still require Florida Product Approval (FL#) documentation under FBC Section 1709."
     )
     exposure_suffix = " for direct ocean or Gulf-front sites" if exposure == "D" else ""
     context_parts = [
-        f"<p class='body-p'><strong>{city} commercial glazing context.</strong> {city} is in {county} County, in Florida's {region} market. {hvhz_sentence} Exposure category for {city} commercial work is typically <strong>{exposure}</strong>{exposure_suffix}.</p>",
-        f"<p class='body-p'><strong>What we install in {city}.</strong> ACG handles the full Division 08 commercial glazing scope: storefront systems for ground-floor retail and restaurants, all-glass entrance doors with hardware and operator coordination, hurricane impact windows from ESWindows, PGT, and Slimpact, and glass railing systems for terraces and balconies. Every installation includes the manufacturer NOA or FL# documentation, engineer-stamped shop drawings where the project requires, and a field inspection log the GC can use to close out the scope at certificate of occupancy.</p>",
-        f"<p class='body-p'><strong>Who we work with in {city}.</strong> ACG bids directly to general contractors active in the {city} market, restaurant operators specifying Euro-Wall folding walls and impact storefronts, hospitality and hotel ownership groups, healthcare systems, private clubs, and commercial developers. We are active on Procore and BuildingConnected for {city} project invites, and the 48-hour bid turnaround that ACG runs on commercial work fits the {city} operator and GC timeline at the front of the project.</p>",
-        f"<p class='body-p'><strong>Pricing and timeline for {city} commercial glazing.</strong> Commercial storefronts run $66-$142 per square foot installed in {city}, depending on glass make-up and exposure category. Impact windows run $78-$195/SF. All-glass entrances run $4,500-$18,000 per opening. Glass railings run $145-$385/LF. Lead times are 8-16 weeks from approved shop drawings depending on system, plus 2-8 days of field installation. ACG locks rough opening dimensions and configuration in pre-construction so the field install runs to the planned schedule.</p>",
+        f"<p class='body-p'><strong>{city} storefront glazing context.</strong> {city} is in {county} County, in Florida's {region} market. {hvhz_sentence} Exposure category for {city} commercial work is typically <strong>{exposure}</strong>{exposure_suffix}.</p>",
+        f"<p class='body-p'><strong>What ACG does in {city}.</strong> We do all things commercial storefront, commercial windows, and commercial doors. Storefront systems for ground-floor retail, restaurants, and commercial buildings. Commercial entrance doors &mdash; aluminum-framed, all-glass, automatic sliders, pivots. Hurricane impact windows and impact-rated commercial doors. Window walls and curtainwall. Glass railings for balconies and terraces. The full Division 08 scope, single-source from the storefront frame to the hardware to the submittal package.</p>",
+        f"<p class='body-p'><strong>Who we work with in {city}.</strong> ACG bids directly to general contractors active in the {city} market, restaurant operators, hospitality and hotel ownership groups, healthcare systems, private clubs, multifamily developers, and commercial property owners. We are active on Procore and BuildingConnected for {city} project invites, and the 48-hour bid turnaround that ACG runs on commercial storefront and window work fits the operator and GC timeline at the front of the project.</p>",
+        f"<p class='body-p'><strong>Pricing and timeline for {city} storefront and commercial window work.</strong> Commercial storefronts run $66-$142 per square foot installed in {city}, depending on glass make-up and exposure category. Hurricane impact commercial windows run $78-$195/SF. All-glass commercial entrance doors run $4,500-$18,000 per opening. Glass railings run $145-$385/LF. Lead times are 8-16 weeks from approved shop drawings depending on system, plus 2-8 days of field installation. ACG locks rough opening dimensions in pre-construction so the field install runs on schedule.</p>",
     ]
     context_body = "\n        ".join(context_parts)
 
@@ -707,8 +710,8 @@ def render_service_page(city_data, service):
         )
     elif service_slug == "impact-windows-hurricane":
         s1_body = (
-            f"<p class='body-p'><strong>{city} commercial impact window context.</strong> ACG installs commercial-grade hurricane impact windows and doors in {city}, {county} County. {impact_s1_open} ACG sources from ESWindows (Tecnoglass commercial line), PGT Innovations, Slimpact, and other manufacturers with current Florida documentation.</p>"
-            f"<p class='body-p'><strong>System selection in {city}.</strong> ACG specifies impact window configurations based on the {city} site exposure category (typically Exposure {exposure}{expo_label_frag}), design pressure requirements from the project structural engineer, glass make-up (laminate thickness, low-E coating, thermal performance), and frame profile and finish. The 8000-series ESWindows storefront, 9000-series window wall, and SGD2020 sliding door are the most-specified commercial configurations in {city} for HVHZ and high-wind applications.</p>"
+            f"<p class='body-p'><strong>{city} commercial impact window context.</strong> ACG installs commercial-grade hurricane impact windows and doors in {city}, {county} County. {impact_s1_open} As a commercial storefront and window contractor, we source from the leading manufacturers with current Florida Product Approval and Miami-Dade NOA documentation. We are an authorized installer for major commercial impact glass and impact-rated door product lines.</p>"
+            f"<p class='body-p'><strong>System selection in {city}.</strong> ACG specifies impact window configurations based on the {city} site exposure category (typically Exposure {exposure}{expo_label_frag}), design pressure requirements from the project structural engineer, glass make-up (laminate thickness, low-E coating, thermal performance), and frame profile and finish. We source from leading commercial impact storefront, window wall, and sliding door manufacturers with current Florida documentation. The right system for the project is selected together with the architect &mdash; ACG installs the system the architect specified.</p>"
             f"<p class='body-p'><strong>Investment in {city}.</strong> Commercial impact windows in {city} run ${service['price_low']}-${service['price_high']} per square foot installed for the all-in scope. {impact_invest_frag} ACG includes material, labor, NOA or FL# documentation, and the full submittal package.</p>"
         )
         s2_h2 = "NOA, FL#, and Florida Building Code."

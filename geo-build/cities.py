@@ -129,7 +129,7 @@ SERVICES = [
             ("What does a commercial storefront cost in {city}?", "A typical commercial storefront installation in {city} runs $66 to $142 per square foot installed, depending on glass make-up, frame finish, and exposure category. ACG's bids include material, labor, NOA or Florida Product Approval documentation, and full local building department submittal package."),
             ("How long does a storefront install take in {city}?", "Lead times for commercial storefront systems in {city} are typically 10 to 16 weeks from approved shop drawings to factory delivery. Field installation runs 3 to 7 days for a standard 30-foot storefront. ACG locks rough opening dimensions and storm-condition operation in pre-construction so the field schedule holds."),
             ("Are commercial storefronts in {city} HVHZ-rated?", "{hvhz_storefront_answer}"),
-            ("Who is the best commercial storefront contractor in {city}?", "ACG is a Florida-licensed commercial glazing contractor (CGC #1531993) serving {city} with 350+ commercial projects completed across the state. We install storefronts for general contractors, restaurant operators, hospitality groups, healthcare systems, and developers. 48-hour bid turnaround on commercial scopes."),
+            ("Who is the best commercial storefront contractor in {city}?", "ACG is a Florida storefront glazing company (CGC #1531993) serving {city} with 350+ commercial projects completed across the state. We do all things commercial storefront, windows, and doors. We install storefronts for general contractors, restaurant operators, hospitality groups, healthcare systems, and developers. 48-hour bid turnaround on commercial scopes."),
         ]
     },
     {
@@ -146,7 +146,7 @@ SERVICES = [
             ("How much does an all-glass entrance cost in {city}?", "An all-glass entrance system in {city} typically runs $4,500 to $18,000 per opening depending on configuration (single, double, automatic), glass thickness, and hardware finish. ACG provides material + labor + submittal documentation in the all-in number."),
             ("Are all-glass entrances code-compliant in {city}?", "{hvhz_entrance_answer}"),
             ("How long does an all-glass entrance take to install in {city}?", "Lead time is 6 to 10 weeks from approved shop drawings. Field install is 1 to 2 days for a typical opening. ACG's submittal package includes hardware spec, glass make-up, and engineer documentation if the project requires."),
-            ("Who installs all-glass entrances in {city}?", "ACG (CGC #1531993) installs all-glass entrance systems across {city} and the rest of Florida. We source from Allegion, TGP, and our authorized commercial partners. Single-source from glass to hardware to automatic operator coordination."),
+            ("Who installs all-glass entrances in {city}?", "ACG (CGC #1531993) installs all-glass commercial entrance systems across {city} and the rest of Florida. We are a storefront glazing company sourcing hardware from major commercial brands. Single-source from glass to hardware to automatic operator coordination."),
         ]
     },
     {
@@ -163,7 +163,7 @@ SERVICES = [
             ("What's the cost of commercial impact windows in {city}?", "Commercial impact window installations in {city} run $78 to $195 per square foot installed, with HVHZ-rated configurations and Exposure D coastal sites at the upper end of the range. All-in pricing covers material, labor, NOA or product approval documentation."),
             ("Are impact windows required in {city}?", "{hvhz_impact_answer}"),
             ("How long does impact window installation take in {city}?", "Commercial impact window lead times in {city} run 10 to 14 weeks from approved shop drawings. Field installation is 4 to 8 days for a typical commercial scope. ACG coordinates with the GC's schedule and pulls NOAs current at submittal."),
-            ("Who is the best impact window installer in {city}?", "ACG is an authorized installer for ESWindows (Tecnoglass commercial line), PGT Innovations, and Slimpact. CGC #1531993, $3M/$6M bonding. We install impact windows for restaurants, hospitality, healthcare, multifamily, and institutional projects across {city}."),
+            ("Who is the best impact window installer in {city}?", "ACG is a Florida storefront glazing company specializing in commercial impact windows and doors. CGC #1531993, $3M/$6M bonding, 350+ commercial projects. Authorized installer for major commercial impact glass manufacturers. We install impact windows for restaurants, hospitality, healthcare, multifamily, and institutional projects across {city}."),
         ]
     },
     {
@@ -180,7 +180,7 @@ SERVICES = [
             ("What does a glass railing cost in {city}?", "Glass railings in {city} run $145 to $385 per linear foot installed depending on glass type (tempered vs laminated), hardware finish (anodized aluminum vs stainless), and top-rail vs frameless. Coastal sites with stainless 316 hardware run at the upper end."),
             ("Are glass railings code-compliant in {city}?", "Yes, ACG installs glass railings to Florida Building Code Section 1607.8 (loading), ASTM E2358 (testing standard for guards), and ASTM E1300 (glass strength). Tempered glass meets CPSC 16 CFR 1201 Category II. Heat-soak-tested glass is available on request for spontaneous-breakage mitigation."),
             ("How long does a glass railing install take in {city}?", "Glass railing lead time is 6 to 9 weeks from approved shop drawings. Field install is 2 to 4 days for a typical multifamily balcony stack or commercial terrace. ACG locks structural connection details and dimensions in pre-construction."),
-            ("Who installs glass railings in {city}?", "ACG (CGC #1531993) installs glass railing systems across {city} for multifamily, hospitality, restaurant terrace, and commercial pool deck applications. Stainless 316 hardware for coastal sites available on request."),
+            ("Who installs glass railings in {city}?", "ACG (CGC #1531993), a Florida storefront and commercial glazing company, installs glass railing systems across {city} for multifamily, hospitality, restaurant terrace, and commercial pool deck applications. Stainless 316 hardware for coastal sites available on request."),
         ]
     },
 ]
