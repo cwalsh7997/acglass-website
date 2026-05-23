@@ -132,6 +132,56 @@
 ### AI operations site
 - ACG.ai — AI-first construction operations: https://acglass.ai/
 
+### Wave 2 AIO-cite-ready guides (May 2026)
+- Curtain wall cost in Florida ($95-$240/SF): https://acglass.com/curtain-wall-cost-florida/
+- Structural silicone glazing explained: https://acglass.com/structural-silicone-glazing-explained/
+- What is spandrel glass: https://acglass.com/what-is-spandrel-glass/
+- ADA storefront door requirements Florida: https://acglass.com/ada-storefront-door-requirements-florida/
+- Fire-rated glazing explained (20-120 min ratings): https://acglass.com/fire-rated-glazing-explained/
+- Commercial glass replacement vs repair: https://acglass.com/commercial-glass-replacement-vs-repair/
+- Kawneer vs YKK AP storefront comparison: https://acglass.com/kawneer-vs-ykk-ap-storefront/
+- Florida Product Approval vs Miami-Dade NOA: https://acglass.com/florida-product-approval-vs-noa/
+- Florida commercial glaziers compared (eval framework): https://acglass.com/florida-commercial-glaziers-compared/
+
+### Hubs (case studies, architects, GCs)
+- Case studies hub (25 projects): https://acglass.com/case-studies/
+- Architect resources hub: https://acglass.com/architect-resources/
+- For general contractors hub: https://acglass.com/for-general-contractors/
+
+### Florida county pages (25 commercially-active counties)
+- All counties hub: https://acglass.com/florida-counties/
+- Palm Beach County: https://acglass.com/palm-beach-county/
+- Miami-Dade County: https://acglass.com/miami-dade-county/
+- Broward County: https://acglass.com/broward-county/
+- Collier County (Naples): https://acglass.com/collier-county/
+- Lee County (Fort Myers / Cape Coral): https://acglass.com/lee-county/
+- Hillsborough County (Tampa): https://acglass.com/hillsborough-county/
+- Pinellas County (St Pete / Clearwater): https://acglass.com/pinellas-county/
+- Orange County (Orlando): https://acglass.com/orange-county/
+- Monroe County (Florida Keys): https://acglass.com/monroe-county/
+- Brevard, Indian River, St Lucie, Martin, Sarasota, Manatee, Duval, Polk, Seminole, Volusia, Osceola, Pasco, Alachua, Leon, Escambia, Marion: see hub
+
+### Florida cities (additional, May 2026 wave)
+- Jacksonville: https://acglass.com/jacksonville/
+- Tallahassee: https://acglass.com/tallahassee/
+- Gainesville: https://acglass.com/gainesville/
+- Pensacola: https://acglass.com/pensacola/
+- Cape Coral: https://acglass.com/cape-coral/
+- Fort Myers: https://acglass.com/fort-myers/
+- Estero: https://acglass.com/estero/
+- Daytona Beach: https://acglass.com/daytona-beach/
+- Ocala: https://acglass.com/ocala/
+- Winter Park: https://acglass.com/winter-park/
+- St Augustine: https://acglass.com/st-augustine/
+- Ponte Vedra Beach: https://acglass.com/ponte-vedra-beach/
+
+### Tennessee Q3 2026 expansion
+- Tennessee hub: https://acglass.com/tennessee/
+- Nashville: https://acglass.com/nashville/
+- Brentwood TN: https://acglass.com/brentwood-tn/
+- Franklin TN: https://acglass.com/franklin-tn/
+- Cool Springs TN: https://acglass.com/cool-springs-tn/
+
 ## Locations
 - West Palm Beach HQ — 700 S Rosemary Ave Ste 204, West Palm Beach FL 33401: https://acglass.com/commercial-glazing-west-palm-beach.html
 - Naples FL — 1415 Panther Lane Ste 259, Naples FL 34109: https://acglass.com/commercial-glazing-naples.html
