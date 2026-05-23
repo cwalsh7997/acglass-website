@@ -19,33 +19,226 @@
       "source": "/commercial-glazing-tennessee.html",
       "destination": "/commercial-glazing-tn.html",
       "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-aventura.html",
+      "destination": "/aventura/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-boca-raton.html",
+      "destination": "/boca-raton/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-boynton-beach.html",
+      "destination": "/boynton-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-coral-gables.html",
+      "destination": "/coral-gables/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-davie.html",
+      "destination": "/davie/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-deerfield-beach.html",
+      "destination": "/deerfield-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-delray-beach.html",
+      "destination": "/delray-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-fort-lauderdale.html",
+      "destination": "/fort-lauderdale/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-juno-beach.html",
+      "destination": "/juno-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-jupiter.html",
+      "destination": "/jupiter/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-miami.html",
+      "destination": "/miami/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-miami-beach.html",
+      "destination": "/miami-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-north-palm-beach.html",
+      "destination": "/north-palm-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-palm-beach.html",
+      "destination": "/palm-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-palm-beach-gardens.html",
+      "destination": "/palm-beach-gardens/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-pompano-beach.html",
+      "destination": "/pompano-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-tequesta.html",
+      "destination": "/tequesta/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-west-palm-beach.html",
+      "destination": "/west-palm-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-weston.html",
+      "destination": "/weston/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-hobe-sound.html",
+      "destination": "/hobe-sound/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-port-st-lucie.html",
+      "destination": "/port-saint-lucie/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-stuart.html",
+      "destination": "/stuart/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-vero-beach.html",
+      "destination": "/vero-beach/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-bonita-springs.html",
+      "destination": "/bonita-springs/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-fort-myers.html",
+      "destination": "/fort-myers/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-marco-island.html",
+      "destination": "/marco-island/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-naples.html",
+      "destination": "/naples/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-bradenton.html",
+      "destination": "/bradenton/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-sarasota.html",
+      "destination": "/sarasota/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-clearwater.html",
+      "destination": "/clearwater/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-lakeland.html",
+      "destination": "/lakeland/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-st-petersburg.html",
+      "destination": "/st-petersburg/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-tampa.html",
+      "destination": "/tampa/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-kissimmee.html",
+      "destination": "/kissimmee/",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-orlando.html",
+      "destination": "/orlando/",
+      "permanent": true
     }
   ],
   "headers": [
     {
       "source": "/",
       "headers": [
-        { "key": "Link", "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\", </about-acg-for-ai.html>; rel=\"about\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"" }
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\", </about-acg-for-ai.html>; rel=\"about\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+        }
       ]
     },
     {
       "source": "/index.html",
       "headers": [
-        { "key": "Link", "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\", </about-acg-for-ai.html>; rel=\"about\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"" }
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/agent-skills/index.json>; rel=\"https://agentskills.io/rel/skills-index\"; type=\"application/json\", </about-acg-for-ai.html>; rel=\"about\"; type=\"text/html\", </sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/.well-known/agent-skills/index.json",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     }
   ],
