@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wind Pressure Calculator ASCE 7-22 (Free Tool) | ACG</title>
+<meta name="description" content="Free ASCE 7-22 wind pressure calculator for commercial building walls in Florida. Estimate design pressure by wind speed, height, exposure, and surface location.">
+<link rel="canonical" href="https://acglass.com/tools/wind-pressure-calculator/">
+<link rel="icon" type="image/png" href="/images/favicon-32.png">
+<meta name="geo.region" content="US-FL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wind Pressure Calculator ASCE 7-22 (Free Tool) | ACG">
+<meta property="og:description" content="Free ASCE 7-22 wind pressure calculator for commercial building walls in Florida. Estimate design pressure by wind speed, height, exposure, and surface location.">
+<meta property="og:url" content="https://acglass.com/tools/wind-pressure-calculator/">
+<meta property="og:image" content="https://acglass.com/images/projects/ocean-prime-marina-aerial.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=1777031720">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Organization", "LocalBusiness"], "@id": "https://acglass.com/tools/wind-pressure-calculator/#org", "name": "American Commercial Glass", "url": "https://acglass.com", "logo": "https://acglass.com/images/acg-logo-nav@2x.png", "telephone": "+17724867711", "email": "info@acglass.com", "address": {"@type": "PostalAddress", "streetAddress": "700 S Rosemary Ave Suite 204", "addressLocality": "West Palm Beach", "addressRegion": "FL", "postalCode": "33401", "addressCountry": "US"}, "sameAs": ["https://www.wikidata.org/wiki/Q139858578", "https://www.linkedin.com/company/acglass", "https://www.facebook.com/acommercialglass", "https://www.instagram.com/acglass.co", "https://network.procore.com/p/american-commercial-glass-west-palm-beach", "https://www.bbb.org/us/fl/west-palm-beach/profile/window-installation/american-commercial-glass-inc-0633-92045708", "https://downtobid.com/company/american-commercial-glass", "https://www.yelp.com/biz/american-commercial-glass-west-palm-beach", "https://www.buildzoom.com/contractor/american-commercial-glass-inc", "https://acglass.ai/"], "areaServed": [{"@type": "State", "name": "Florida"}, {"@type": "State", "name": "Tennessee"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "ASCE 7-22 Wind Pressure Calculator", "applicationCategory": "BusinessApplication", "operatingSystem": "Any (Web)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://acglass.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "Wind Pressure Calculator", "item": "https://acglass.com/tools/wind-pressure-calculator/"}]}</script>
+</head>
+<body>
+<nav class="nav scrolled"><div class="nav-inner">
+<a href="/index.html" class="nav-logo"><img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="lazy"></a>
+<div class="nav-links">
+<a href="/index.html">Home</a><a href="/portfolio.html">Portfolio</a><a href="/services.html">Services</a>
+<a href="/tools/">Tools</a><a href="/resources/">Resources</a>
+<a href="/send-plans.html" class="nav-cta">Send Us Plans</a>
+</div>
+<button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+<section style="background:linear-gradient(180deg,#050A12 0%,#0e284f 100%);padding:80px 0 40px;">
+<div class="container">
+<div class="eyebrow" style="color:#E11320;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;">Tool &middot; Free</div>
+<h1 style="color:#fff;font-size:clamp(32px,4.5vw,48px);margin:0 0 16px;">Wind Pressure Calculator (ASCE 7-22)</h1>
+<p style="color:rgba(255,255,255,0.8);font-size:18px;line-height:1.6;max-width:850px;">Estimate design wind pressure on a building wall surface per ASCE 7-22 simplified procedure. For preliminary glass and framing sizing only — final design pressures should come from the project structural engineer.</p>
+</div>
+</section>
+
+<section style="background:#050A12;padding:40px 0 80px;">
+<div class="container" style="max-width:800px;">
+<form onsubmit="return false;" style="background:#0e284f;padding:40px;border-radius:12px;">
+
+<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Design wind speed (3-sec gust, mph)</label>
+<select id="V" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:24px;">
+<option value="135">135 mph (inland Florida, standard)</option>
+<option value="145">145 mph (Tampa Bay area)</option>
+<option value="150">150 mph (Treasure Coast / Brevard)</option>
+<option value="160" selected>160 mph (Palm Beach, Collier)</option>
+<option value="170">170 mph (Broward)</option>
+<option value="175">175 mph (Miami-Dade)</option>
+<option value="180">180 mph (Florida Keys)</option>
+</select>
+
+<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Building height (feet)</label>
+<input id="z" type="number" value="30" min="10" max="500" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:24px;">
+
+<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Exposure category</label>
+<select id="exp" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:24px;">
+<option value="B">Exposure B (urban / suburban, sheltered)</option>
+<option value="C" selected>Exposure C (open terrain, scattered obstructions)</option>
+<option value="D">Exposure D (open water, direct coastal)</option>
+</select>
+
+<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Surface location</label>
+<select id="loc" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:32px;">
+<option value="field">Wall field (away from corners)</option>
+<option value="corner">Wall corner zone (within 10% of building width)</option>
+</select>
+
+<button onclick="calcW()" style="width:100%;background:#E11320;color:#fff;padding:18px;border:0;font-size:18px;font-weight:600;border-radius:6px;cursor:pointer;">Calculate pressure</button>
+
+<div id="r" style="display:none;margin-top:32px;padding:32px;background:#050A12;border-left:3px solid #E11320;border-radius:6px;">
+<div style="color:rgba(255,255,255,0.6);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;margin-bottom:8px;">DESIGN PRESSURE (TYPICAL VALUE)</div>
+<div id="psf" style="color:#fff;font-size:48px;font-weight:800;"></div>
+<div id="psfdetail" style="color:rgba(255,255,255,0.8);font-size:15px;margin-top:16px;line-height:1.7;"></div>
+<p style="color:rgba(255,255,255,0.5);font-size:12px;margin-top:20px;font-style:italic;">Estimate per simplified ASCE 7-22 envelope procedure. Use project-specific engineering for final design. Component & cladding pressures for individual elements (storefront mullions, IGUs) are larger and require detailed calculation.</p>
+</div>
+</form>
+
+<script>
+function calcW(){
+  const V=parseFloat(document.getElementById('V').value);
+  const z=parseFloat(document.getElementById('z').value);
+  const exp=document.getElementById('exp').value;
+  const loc=document.getElementById('loc').value;
+  // Kz coefficient (rough): B=0.62 at 30ft, C=0.98 at 30ft, D=1.16 at 30ft
+  const heightFactor=Math.pow(z/30,0.18);
+  let Kz=exp==='B'?0.62:exp==='C'?0.98:1.16;
+  Kz=Kz*heightFactor;
+  // qz = 0.00256 * Kz * Kzt * Kd * V^2 (Kzt=1, Kd=0.85)
+  const qz=0.00256*Kz*1.0*0.85*V*V;
+  // GCp for wall: field about +0.8 (windward) / -0.5 (leeward), corner -1.0 / -1.4
+  const GCp_pos=0.8;
+  const GCp_neg=loc==='corner'?-1.4:-0.8;
+  const Ppos=Math.round(qz*GCp_pos*10)/10;
+  const Pneg=Math.round(qz*GCp_neg*10)/10;
+  document.getElementById('psf').innerText='+'+Ppos+' / '+Pneg+' PSF';
+  document.getElementById('psfdetail').innerHTML='<strong>Positive (pressure):</strong> '+Ppos+' PSF<br><strong>Negative (suction):</strong> '+Pneg+' PSF<br><br>Glass and framing must be rated to resist both positive and negative values. Glaziers should select systems with tested design pressure ratings of at least '+Math.round(Math.max(Ppos,Math.abs(Pneg))*1.2)+' PSF (with 20% safety margin).';
+  document.getElementById('r').style.display='block';
+}
+</script>
+</div>
+</section>
+<footer class="footer"><div class="container"><div class="footer-grid">
+<div><img src="/images/acg-logo-nav@2x.png" alt="ACG" style="height:36px;width:auto;margin-bottom:16px;"><p style="color:rgba(255,255,255,0.6);font-size:14px;line-height:1.6;">Florida commercial storefront glazing contractor.<br>CGC #1531993 · $3M/$6M bonding · 350+ projects.</p></div>
+<div><h4>Tools</h4><ul><li><a href="/tools/">All Tools</a></li><li><a href="/tools/storefront-cost-estimator/">Cost Estimator</a></li><li><a href="/tools/wind-pressure-calculator/">Wind Calculator</a></li><li><a href="/tools/glass-weight-calculator/">Weight Calculator</a></li></ul></div>
+<div><h4>Industries</h4><ul><li><a href="/restaurant-glazier-florida/">Restaurants</a></li><li><a href="/hotel-glazing-contractor-florida/">Hotels</a></li><li><a href="/medical-office-glazier-florida/">Medical</a></li><li><a href="/school-glazier-florida/">Schools</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="/resources/">All Resources</a></li><li><a href="/glossary/">Glossary</a></li><li><a href="/florida-commercial-glass-statistics-2026/">FL Stats 2026</a></li></ul></div>
+<div><h4>Contact</h4><p style="color:rgba(255,255,255,0.6);font-size:14px;line-height:1.8;">700 S Rosemary Ave Suite 204<br>West Palm Beach, FL 33401<br><a href="tel:+17724867711" style="color:#E11320;">(772) 486-7711</a></p></div>
+</div><div class="footer-bottom"><p>&copy; 2026 American Commercial Glass, Inc. CGC #1531993.</p></div></div></footer>
+</body>
+</html>

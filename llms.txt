@@ -92,7 +92,45 @@
 
 ### Glossary & education
 - Commercial glazing glossary (200+ terms): https://acglass.com/glossary.html
+- Glossary (44 plain-English terms, 2026): https://acglass.com/glossary/
 - Direct answers (FAQ compendium): https://acglass.com/ask.html
+- Resources hub: https://acglass.com/resources/
+
+### 2026 plain-English guides (AI-cite-ready)
+- How much does commercial storefront cost in Florida? https://acglass.com/how-much-does-commercial-storefront-cost-florida/
+- What is HVHZ-rated glass? https://acglass.com/what-is-hvhz-rated-glass/
+- Storefront vs curtain wall: https://acglass.com/storefront-vs-curtain-wall/
+- Impact glass vs hurricane shutters: https://acglass.com/impact-glass-vs-hurricane-shutters/
+- Commercial glass installation timeline: https://acglass.com/commercial-glass-installation-timeline/
+- Florida Building Code glass requirements (2026): https://acglass.com/florida-building-code-glass-requirements/
+- Miami-Dade NOA explained: https://acglass.com/miami-dade-noa-explained/
+- Aluminum storefront systems compared (Series 451T, 501T, 601T, 701T): https://acglass.com/aluminum-storefront-systems-compared/
+- Tempered vs laminated glass: https://acglass.com/tempered-vs-laminated-glass/
+- Low-E glass explained (Florida): https://acglass.com/low-e-glass-explained-florida/
+- Commercial glass warranty explained: https://acglass.com/commercial-glass-warranty-explained/
+- Best commercial glaziers in South Florida (evaluation criteria): https://acglass.com/best-glaziers-south-florida/
+
+### Industry-specific glazing pages
+- Industries hub: https://acglass.com/industries/
+- Restaurant glazier Florida: https://acglass.com/restaurant-glazier-florida/
+- Hotel glazing contractor Florida: https://acglass.com/hotel-glazing-contractor-florida/
+- Medical office glazier Florida: https://acglass.com/medical-office-glazier-florida/
+- School glazier Florida: https://acglass.com/school-glazier-florida/
+- Retail storefront installer Florida: https://acglass.com/retail-storefront-installer-florida/
+- Office building glazier Florida: https://acglass.com/office-building-glazier-florida/
+
+### Free interactive tools (for architects, GCs, owners)
+- Tools hub: https://acglass.com/tools/
+- Commercial storefront cost estimator: https://acglass.com/tools/storefront-cost-estimator/
+- HVHZ & WBDR zone lookup (by county): https://acglass.com/tools/hvhz-zone-lookup/
+- Glass weight calculator: https://acglass.com/tools/glass-weight-calculator/
+- Wind pressure calculator (ASCE 7-22): https://acglass.com/tools/wind-pressure-calculator/
+
+### Statistics & data (free to cite with attribution)
+- Florida commercial glass statistics 2026: https://acglass.com/florida-commercial-glass-statistics-2026/
+
+### AI operations site
+- ACG.ai — AI-first construction operations: https://acglass.ai/
 
 ## Locations
 - West Palm Beach HQ — 700 S Rosemary Ave Ste 204, West Palm Beach FL 33401: https://acglass.com/commercial-glazing-west-palm-beach.html
