@@ -25,110 +25,160 @@
 <nav class="nav scrolled"><div class="nav-inner">
 <a href="/index.html" class="nav-logo"><img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy"></a>
 <div class="nav-links"><a href="/index.html">Home</a><a href="/blog.html">Blog</a><a href="/case-studies/">Case Studies</a><a href="/resources/">Resources</a><a href="/send-plans.html" class="nav-cta">Send Us Plans</a></div></div></nav>
-<main class="page-main" style="padding-top:0;">
+<main class="page-main" style="padding-top:0;background:#050a12;overflow:hidden;">
 
-<!-- HERO — 100vh cinematic -->
-<section class="acg-hero" style="position:relative;min-height:100vh;display:flex;align-items:center;background:#050a12;background-image:linear-gradient(180deg,rgba(5,10,18,0.35) 0%,rgba(5,10,18,0.72) 100%),url('/images/projects/imperial-crossings/three-story-storm-clouds.jpg');background-size:cover;background-position:center center;background-repeat:no-repeat;">
-<div style="max-width:1400px;margin:0 auto;padding:160px 32px 100px;width:100%;position:relative;z-index:2;">
-<p style="color:#e11320;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:24px;opacity:0.95;">Multifamily Commercial Glazing</p>
-<h1 style="color:#ffffff;font-size:clamp(48px, 7vw, 96px);line-height:1.02;font-weight:800;letter-spacing:-0.035em;margin:0 0 32px;max-width:1100px;">Multifamily glazing,<br>built like an institution.</h1>
-<p style="color:rgba(255,255,255,0.78);font-size:clamp(18px, 1.4vw, 22px);line-height:1.5;font-weight:400;max-width:680px;margin:0;">Apartment, condominium, mixed-use. Florida-licensed, $6M bonded, 350+ commercial projects. ACG bids in 48 hours and ships submittals right on the first round.</p>
-<div style="margin-top:48px;display:flex;gap:16px;align-items:center;">
-<a href="/send-plans.html" style="background:#e11320;color:#ffffff;padding:18px 32px;font-size:15px;font-weight:600;letter-spacing:0.01em;text-decoration:none;border-radius:2px;display:inline-block;transition:transform 0.2s ease;">Send us plans</a>
-<a href="#scopes" style="color:#ffffff;font-size:14px;font-weight:500;letter-spacing:0.05em;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:4px;">See the work ↓</a>
+<style>
+.acg-hover-scale { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.acg-hover-scale:hover { transform: scale(1.04); }
+.acg-fade-in { animation: acgFade 1.2s ease-out forwards; }
+@keyframes acgFade { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.acg-marquee { display: flex; animation: acgMarquee 30s linear infinite; }
+@keyframes acgMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.acg-grid-text { font-size: clamp(120px, 18vw, 280px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.9; }
+.acg-num-block { position: relative; overflow: hidden; aspect-ratio: 4/5; }
+.acg-num-block img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+.acg-process-num { font-size: clamp(80px, 10vw, 140px); font-weight: 900; letter-spacing: -0.05em; color: rgba(225,19,32,0.18); line-height: 1; }
+@media (max-width: 768px) { .acg-grid-text { font-size: 22vw; } .acg-process-num { font-size: 20vw; } }
+</style>
+
+<!-- ASYMMETRIC SPLIT-SCREEN HERO -->
+<section style="min-height:100vh;display:grid;grid-template-columns:1fr 1.2fr;background:#050a12;">
+
+<!-- LEFT TEXT PANEL -->
+<div style="background:#050a12;display:flex;flex-direction:column;justify-content:center;padding:140px 60px 80px;position:relative;">
+<div style="position:absolute;left:0;top:0;bottom:0;width:4px;background:#e11320;"></div>
+<p style="color:#e11320;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:32px;">Florida Commercial Glazing · Multifamily</p>
+<h1 style="color:#ffffff;font-size:clamp(44px, 5.5vw, 88px);line-height:0.95;font-weight:900;letter-spacing:-0.04em;margin:0 0 32px;">Multifamily that the lender, the architect, and the resident all sign off on.</h1>
+<p style="color:rgba(255,255,255,0.72);font-size:18px;line-height:1.6;margin:0 0 40px;max-width:520px;">Apartment, condominium, mixed-use. Self-performed by a Florida-licensed commercial general contractor. 350+ projects shipped. The bid lands in 48 hours.</p>
+<div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+<a href="/send-plans.html" style="background:#e11320;color:#ffffff;padding:18px 36px;font-size:15px;font-weight:600;letter-spacing:0.02em;text-decoration:none;display:inline-block;">Send us plans →</a>
+<a href="#numbers" style="color:#ffffff;font-size:14px;font-weight:500;letter-spacing:0.05em;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:4px;">See the numbers</a>
+</div>
+<div style="margin-top:64px;display:flex;gap:32px;color:rgba(255,255,255,0.5);font-size:13px;letter-spacing:0.05em;flex-wrap:wrap;">
+<span>FL CGC #1531993</span><span>$6M bonded</span><span>0 OSHA recordables since 2021</span>
+</div>
+</div>
+
+<!-- RIGHT PHOTO PANEL -->
+<div style="background-image:url('/images/projects/imperial-crossings/three-story-storm-clouds.jpg');background-size:cover;background-position:center;position:relative;min-height:100vh;">
+<div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,10,18,0.4) 0%,transparent 50%,rgba(5,10,18,0.5) 100%);"></div>
+<div style="position:absolute;bottom:40px;right:40px;color:#ffffff;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;opacity:0.8;">Imperial Crossings · Treasure Coast</div>
+</div>
+
+</section>
+
+<!-- MANUFACTURER MARQUEE -->
+<section style="background:#050a12;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);padding:32px 0;overflow:hidden;">
+<div style="display:flex;align-items:center;justify-content:center;gap:64px;color:rgba(255,255,255,0.5);font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:600;flex-wrap:wrap;padding:0 24px;">
+<span>Kawneer</span><span style="opacity:0.4;">·</span>
+<span>YKK AP</span><span style="opacity:0.4;">·</span>
+<span>Tubelite</span><span style="opacity:0.4;">·</span>
+<span>EFCO</span><span style="opacity:0.4;">·</span>
+<span>ESWindows</span><span style="opacity:0.4;">·</span>
+<span>Euro-Wall</span><span style="opacity:0.4;">·</span>
+<span>Dow Corning</span><span style="opacity:0.4;">·</span>
+<span>Sika</span>
+</div>
+<p style="text-align:center;color:rgba(255,255,255,0.35);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:12px;">Direct manufacturer relationships</p>
+</section>
+
+<!-- MASSIVE NUMBERS GRID -->
+<section id="numbers" style="background:#050a12;padding:140px 0 80px;">
+<div style="max-width:1600px;margin:0 auto;padding:0 32px;">
+<p style="color:#e11320;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;">By the numbers</p>
+<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 64px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 80px;max-width:1000px;">A commercial glazing operating system, not a marketing pitch.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(255,255,255,0.1);">
+<div class="acg-num-block"><img src="/images/projects/imperial-crossings/aerial-townhomes-construction.jpg" alt=""><div style="position:relative;z-index:2;padding:40px 32px;height:100%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,transparent 0%,rgba(5,10,18,0.85) 100%);"><div style="color:#e11320;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Speed</div><div><div class="acg-grid-text" style="color:#ffffff;">48</div><div style="color:#ffffff;font-size:18px;font-weight:600;margin-top:8px;">hour bid turnaround</div><div style="color:rgba(255,255,255,0.55);font-size:13px;margin-top:6px;line-height:1.4;">Florida market average: 7-15 business days</div></div></div></div>
+<div class="acg-num-block"><img src="/images/projects/imperial-crossings/building-lake.jpg" alt=""><div style="position:relative;z-index:2;padding:40px 32px;height:100%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,transparent 0%,rgba(5,10,18,0.85) 100%);"><div style="color:#e11320;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Scale</div><div><div class="acg-grid-text" style="color:#ffffff;">350</div><div style="color:#ffffff;font-size:18px;font-weight:600;margin-top:8px;">commercial projects, Florida</div><div style="color:rgba(255,255,255,0.55);font-size:13px;margin-top:6px;line-height:1.4;">From $50K tenant-improvements to $2M+ envelope scopes</div></div></div></div>
+<div class="acg-num-block"><img src="/images/projects/imperial-crossings/clubhouse-entry-glass.jpg" alt=""><div style="position:relative;z-index:2;padding:40px 32px;height:100%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,transparent 0%,rgba(5,10,18,0.85) 100%);"><div style="color:#e11320;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Capital</div><div><div class="acg-grid-text" style="color:#ffffff;">$6M</div><div style="color:#ffffff;font-size:18px;font-weight:600;margin-top:8px;">aggregate bonding</div><div style="color:rgba(255,255,255,0.55);font-size:13px;margin-top:6px;line-height:1.4;">Qualified for commercial scopes to $2M+</div></div></div></div>
+<div class="acg-num-block"><img src="/images/projects/imperial-crossings/aerial-townhomes-construction.jpg" alt=""><div style="position:relative;z-index:2;padding:40px 32px;height:100%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,transparent 0%,rgba(5,10,18,0.85) 100%);"><div style="color:#e11320;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;">Safety</div><div><div class="acg-grid-text" style="color:#ffffff;">0</div><div style="color:#ffffff;font-size:18px;font-weight:600;margin-top:8px;">OSHA recordables since 2021</div><div style="color:rgba(255,255,255,0.55);font-size:13px;margin-top:6px;line-height:1.4;">Written safety-checklist protocol on every site</div></div></div></div>
 </div>
 </div>
 </section>
 
-<!-- CREDENTIAL STRIP -->
-<section style="background:#050a12;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);padding:48px 32px;">
-<div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:48px;">
-<div><div style="color:#ffffff;font-size:42px;font-weight:800;letter-spacing:-0.03em;line-height:1;">48hr</div><div style="color:rgba(255,255,255,0.55);font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;font-weight:600;">Bid turnaround</div></div>
-<div><div style="color:#ffffff;font-size:42px;font-weight:800;letter-spacing:-0.03em;line-height:1;">$6M</div><div style="color:rgba(255,255,255,0.55);font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;font-weight:600;">Aggregate bonded</div></div>
-<div><div style="color:#ffffff;font-size:42px;font-weight:800;letter-spacing:-0.03em;line-height:1;">350+</div><div style="color:rgba(255,255,255,0.55);font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;font-weight:600;">Florida projects</div></div>
-<div><div style="color:#ffffff;font-size:42px;font-weight:800;letter-spacing:-0.03em;line-height:1;">0</div><div style="color:rgba(255,255,255,0.55);font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-top:8px;font-weight:600;">OSHA recordables since 2021</div></div>
-</div>
-</section>
-
-<!-- FULL-BLEED CINEMATIC IMAGE 1 -->
-<section style="position:relative;height:80vh;min-height:600px;background:#050a12;overflow:hidden;">
-<img src="/images/projects/imperial-crossings/aerial-townhomes-construction.jpg" alt="Imperial Crossings — aerial view of multifamily townhome construction" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
-<div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(5,10,18,0.5) 70%,rgba(5,10,18,0.92) 100%);"></div>
-<div style="position:absolute;left:0;right:0;bottom:80px;text-align:center;padding:0 32px;">
-<p style="color:#e11320;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:16px;">Imperial Crossings · Treasure Coast</p>
-<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 64px);font-weight:700;letter-spacing:-0.025em;line-height:1.05;margin:0;max-width:1100px;margin:0 auto;">The whole envelope, self-performed.</h2>
-</div>
-</section>
-
-<!-- SCOPES — REFINED CARDS -->
-<section id="scopes" style="background:#050a12;padding:160px 32px;">
-<div style="max-width:1400px;margin:0 auto;">
-<p style="color:#e11320;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">What we install</p>
-<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 60px);font-weight:700;letter-spacing:-0.025em;line-height:1.05;margin:0 0 80px;max-width:900px;">Eight scope categories. One general contractor.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:rgba(255,255,255,0.1);">
-<div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">01</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Ground-floor amenity storefront</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Aluminum systems with thermal break. Kawneer Trifab VG 451, YKK AP YES 45 IG, Tubelite T14000 — direct manufacturer relationships.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">02</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Building exterior punched windows</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Impact-rated assemblies where the AHJ requires. ESWindows architectural series. Florida Building Code 1626 compliant in HVHZ markets.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">03</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Balcony glass railings</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Laminated SGP with stainless structural patch fittings. Engineered for code-required guard loads.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">04</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Folding glass walls at amenity decks</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Euro-Wall and NanaWall — verified installer. Indoor-outdoor amenity, pool deck, and event space transitions.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">05</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">All-glass entrance doors</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Structural patch fittings, automatic operators where ADA scope requires. Lobby and amenity entries.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">06</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Fire-rated corridor glazing</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">TGP, SAFTI FIRST, Vetrotech assemblies per Florida Fire Prevention Code corridor ratings.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">07</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Pool enclosures and rooftop rails</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Laminated SGP with stainless cable rail or full panel. Coastal-rated stainless.</p></div><div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:14px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px;">08</div><h3 style="color:#ffffff;font-size:22px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;margin:0 0 12px;">Tenant improvement re-glazing</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Phased install on occupied multifamily assets. Weather protection between removal and reinstall.</p></div>
+<!-- ASYMMETRIC PHOTO GRID — FEATURED + MOSAIC -->
+<section style="background:#050a12;padding:80px 0 120px;">
+<div style="max-width:1600px;margin:0 auto;padding:0 32px;">
+<p style="color:#e11320;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;">Recent Florida multifamily</p>
+<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 56px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 60px;max-width:900px;">Imperial Crossings — every scope, self-performed.</h2>
+<div style="display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(2,1fr);gap:8px;height:80vh;min-height:600px;">
+<div style="grid-column:1/8;grid-row:1/3;overflow:hidden;"><img src="/images/projects/imperial-crossings/three-story-storm-clouds.jpg" alt="Imperial Crossings 3-story multifamily building" class="acg-hover-scale" style="width:100%;height:100%;object-fit:cover;"></div>
+<div style="grid-column:8/13;grid-row:1/2;overflow:hidden;"><img src="/images/projects/imperial-crossings/aerial-townhomes-construction.jpg" alt="Imperial Crossings aerial of townhomes" class="acg-hover-scale" style="width:100%;height:100%;object-fit:cover;"></div>
+<div style="grid-column:8/13;grid-row:2/3;overflow:hidden;"><img src="/images/projects/imperial-crossings/clubhouse-entry-glass.jpg" alt="Imperial Crossings clubhouse glass entry" class="acg-hover-scale" style="width:100%;height:100%;object-fit:cover;"></div>
 </div>
 </div>
 </section>
 
-<!-- FULL-BLEED CINEMATIC IMAGE 2 — clubhouse craft detail -->
-<section style="position:relative;height:80vh;min-height:600px;background:#050a12;overflow:hidden;">
-<img src="/images/projects/imperial-crossings/clubhouse-entry-glass.jpg" alt="Imperial Crossings clubhouse — all-glass entry installation" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,10,18,0.75) 0%,rgba(5,10,18,0.1) 60%,transparent 100%);"></div>
-<div style="position:absolute;left:0;top:50%;transform:translateY(-50%);max-width:1400px;width:100%;left:50%;transform:translate(-50%,-50%);padding:0 32px;">
-<div style="max-width:540px;">
-<p style="color:#e11320;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:20px;">Project Detail</p>
-<h2 style="color:#ffffff;font-size:clamp(34px, 4vw, 52px);font-weight:700;letter-spacing:-0.025em;line-height:1.1;margin:0 0 24px;">All-glass clubhouse entry, structural patch fittings.</h2>
-<p style="color:rgba(255,255,255,0.82);font-size:18px;line-height:1.6;margin:0;">Imperial Crossings, Treasure Coast. Laminated impact glass to Florida Building Code. ACG self-performed installation, anchoring, and sealant — a single contractor warrants the entire assembly.</p>
+<!-- PROCESS — NUMBERED STEPS -->
+<section style="background:#050a12;padding:140px 0;border-top:1px solid rgba(255,255,255,0.08);">
+<div style="max-width:1400px;margin:0 auto;padding:0 32px;">
+<p style="color:#e11320;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;">How a multifamily scope ships</p>
+<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 56px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 80px;max-width:900px;">Four phases. One contractor. No subcontractor stack.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:64px 48px;">
+<div><div class="acg-process-num">01</div><h3 style="color:#ffffff;font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:16px 0 12px;">Plans land</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Drop drawings at info@acglass.com or the intake form. We acknowledge inside 2 business hours, bid inside 48 hours on complete RFQ packages.</p></div>
+<div><div class="acg-process-num">02</div><h3 style="color:#ffffff;font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:16px 0 12px;">Submittal package</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Shop drawings, product data, NOA documentation, structural calcs, sealant letters — complete on first submission. 10-15 business day turnaround.</p></div>
+<div><div class="acg-process-num">03</div><h3 style="color:#ffffff;font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:16px 0 12px;">Material order</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">Aluminum extrusions, laminated glass, hardware ordered on signed contract — not permit issuance. Saves 2-3 weeks of schedule.</p></div>
+<div><div class="acg-process-num">04</div><h3 style="color:#ffffff;font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:16px 0 12px;">Self-performed install</h3><p style="color:rgba(255,255,255,0.62);font-size:15px;line-height:1.6;margin:0;">ACG W-2 employees install every assembly. One contractor warrants the entire envelope. Weekly look-aheads every Friday. 24-hour RFI response.</p></div>
 </div>
 </div>
 </section>
 
-<!-- PULL QUOTE — BIG -->
-<section style="background:#050a12;padding:160px 32px;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);">
-<div style="max-width:1100px;margin:0 auto;">
-<p style="color:#ffffff;font-size:clamp(32px, 4.2vw, 58px);font-weight:600;letter-spacing:-0.03em;line-height:1.15;margin:0;">Multifamily developers come back to ACG because the bid lands in 48 hours, the submittal is right on the first round, and the crew shows up on the day they said they would.</p>
-<p style="margin-top:32px;color:rgba(255,255,255,0.45);font-size:13px;text-transform:uppercase;letter-spacing:2px;font-weight:600;">Connor Walsh, President — American Commercial Glass</p>
+<!-- CONNOR QUOTE WITH PORTRAIT -->
+<section style="background:#050a12;padding:140px 0;border-top:1px solid rgba(255,255,255,0.08);">
+<div style="max-width:1400px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center;">
+<div>
+<img src="/images/team/connor-walsh-portrait.jpg" alt="Connor Walsh, President of American Commercial Glass" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;">
+<div style="margin-top:20px;">
+<div style="color:#ffffff;font-size:18px;font-weight:600;">Connor Walsh</div>
+<div style="color:rgba(255,255,255,0.5);font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;">President · American Commercial Glass</div>
 </div>
-</section>
-
-<!-- TRUST CREDENTIALS — REFINED -->
-<section style="background:#050a12;padding:120px 32px;">
-<div style="max-width:1400px;margin:0 auto;">
-<p style="color:#e11320;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">Verified credentials</p>
-<h2 style="color:#ffffff;font-size:clamp(34px, 4vw, 52px);font-weight:700;letter-spacing:-0.025em;line-height:1.1;margin:0 0 64px;max-width:780px;">A contractor general contractors can write a check to.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;">
-<div><div style="color:#ffffff;font-size:20px;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;">Florida CGC #1531993</div><div style="color:rgba(255,255,255,0.55);font-size:15px;line-height:1.6;">Certified general contractor. Verifiable at MyFloridaLicense.com.</div></div>
-<div><div style="color:#ffffff;font-size:20px;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;">$6M aggregate bonded</div><div style="color:rgba(255,255,255,0.55);font-size:15px;line-height:1.6;">Qualified for commercial scopes to $2M+. Bonding letter on request.</div></div>
-<div><div style="color:#ffffff;font-size:20px;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;">$3M general liability</div><div style="color:rgba(255,255,255,0.55);font-size:15px;line-height:1.6;">Coverage current. Certificate of insurance on request.</div></div>
-<div><div style="color:#ffffff;font-size:20px;font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;">Zero OSHA recordables since 2021</div><div style="color:rgba(255,255,255,0.55);font-size:15px;line-height:1.6;">Documented safety record. Written checklist protocol on every site.</div></div>
+</div>
+<div>
+<div style="color:#e11320;font-size:80px;font-weight:900;line-height:0.5;margin-bottom:16px;">“</div>
+<p style="color:#ffffff;font-size:clamp(28px, 3.5vw, 44px);font-weight:600;line-height:1.25;letter-spacing:-0.025em;margin:0;">Multifamily developers come back to ACG because the bid lands in 48 hours, the submittal is right on the first round, and the crew shows up on the day they said they would. That’s the operating system. The rest is execution.</p>
 </div>
 </div>
 </section>
 
-<!-- CITIES SUB-NAV -->
-<section style="background:#050a12;padding:120px 32px;border-top:1px solid rgba(255,255,255,0.08);">
-<div style="max-width:1400px;margin:0 auto;">
-<p style="color:#e11320;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">Multifamily glazing by Florida city</p>
-<h2 style="color:#ffffff;font-size:clamp(32px, 4vw, 48px);font-weight:700;letter-spacing:-0.025em;line-height:1.1;margin:0 0 56px;max-width:780px;">Active across every major Florida multifamily market.</h2>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(255,255,255,0.1);">
-<a href="/multifamily-glazing-miami/" style="background:#050a12;padding:32px;text-decoration:none;display:block;color:#ffffff;transition:background 0.3s;"><div style="color:#ffffff;font-size:18px;font-weight:600;letter-spacing:-0.01em;">Miami →</div></a>
-<a href="/multifamily-glazing-west-palm-beach/" style="background:#050a12;padding:32px;text-decoration:none;display:block;color:#ffffff;"><div style="color:#ffffff;font-size:18px;font-weight:600;letter-spacing:-0.01em;">West Palm Beach →</div></a>
-<a href="/multifamily-glazing-fort-lauderdale/" style="background:#050a12;padding:32px;text-decoration:none;display:block;color:#ffffff;"><div style="color:#ffffff;font-size:18px;font-weight:600;letter-spacing:-0.01em;">Fort Lauderdale →</div></a>
-<a href="/multifamily-glazing-tampa/" style="background:#050a12;padding:32px;text-decoration:none;display:block;color:#ffffff;"><div style="color:#ffffff;font-size:18px;font-weight:600;letter-spacing:-0.01em;">Tampa →</div></a>
-<a href="/multifamily-glazing-orlando/" style="background:#050a12;padding:32px;text-decoration:none;display:block;color:#ffffff;"><div style="color:#ffffff;font-size:18px;font-weight:600;letter-spacing:-0.01em;">Orlando →</div></a>
-<a href="/multifamily-glazing-naples/" style="background:#050a12;padding:32px;text-decoration:none;display:block;color:#ffffff;"><div style="color:#ffffff;font-size:18px;font-weight:600;letter-spacing:-0.01em;">Naples →</div></a>
+<!-- CREDENTIALS — REFINED -->
+<section style="background:#050a12;padding:140px 0;border-top:1px solid rgba(255,255,255,0.08);">
+<div style="max-width:1400px;margin:0 auto;padding:0 32px;">
+<p style="color:#e11320;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;">Verified credentials</p>
+<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 56px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 64px;max-width:780px;">A contractor general contractors can write a check to.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(255,255,255,0.1);">
+<div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:16px;">License</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">FL CGC #1531993</div><div style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.5;">Certified general contractor. Verifiable at MyFloridaLicense.com.</div></div>
+<div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:16px;">Bonding</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">$6M aggregate</div><div style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.5;">Qualified for commercial scopes to $2M+. Bonding letter on request.</div></div>
+<div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:16px;">Insurance</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">$3M general liability</div><div style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.5;">Coverage current. Certificate of insurance available on request.</div></div>
+<div style="background:#050a12;padding:40px 32px;"><div style="color:#e11320;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:16px;">Safety</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;">Zero OSHA recordables since 2021</div><div style="color:rgba(255,255,255,0.55);font-size:14px;line-height:1.5;">Written checklist protocol on every site. Documented record.</div></div>
 </div>
 </div>
 </section>
 
-<!-- CTA — REFINED -->
-<section style="background:#050a12;padding:160px 32px;border-top:1px solid rgba(255,255,255,0.08);">
-<div style="max-width:1100px;margin:0 auto;text-align:center;">
-<p style="color:#e11320;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:24px;">Send plans</p>
-<h2 style="color:#ffffff;font-size:clamp(40px, 5vw, 72px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin:0 0 24px;">48 hours to a real number.</h2>
-<p style="color:rgba(255,255,255,0.65);font-size:20px;line-height:1.5;margin:0 0 40px;max-width:680px;margin:0 auto 40px;">Send commercial plans to info@acglass.com or use the intake form. No filler, no “we’ll get back to you.”</p>
-<a href="/send-plans.html" style="background:#e11320;color:#ffffff;padding:20px 40px;font-size:16px;font-weight:600;letter-spacing:0.01em;text-decoration:none;border-radius:2px;display:inline-block;">Send us plans →</a>
+<!-- CITY GRID -->
+<section style="background:#050a12;padding:140px 0;border-top:1px solid rgba(255,255,255,0.08);">
+<div style="max-width:1400px;margin:0 auto;padding:0 32px;">
+<p style="color:#e11320;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;">Florida coverage</p>
+<h2 style="color:#ffffff;font-size:clamp(36px, 4.5vw, 56px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin:0 0 64px;max-width:900px;">Active across every Florida multifamily market.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,0.1);">
+<a href="/multifamily-glazing-miami/" style="background:#050a12;padding:40px 32px;text-decoration:none;display:block;"><div style="color:rgba(255,255,255,0.45);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">South FL</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;">Miami →</div></a>
+<a href="/multifamily-glazing-fort-lauderdale/" style="background:#050a12;padding:40px 32px;text-decoration:none;display:block;"><div style="color:rgba(255,255,255,0.45);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">South FL</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;">Fort Lauderdale →</div></a>
+<a href="/multifamily-glazing-west-palm-beach/" style="background:#050a12;padding:40px 32px;text-decoration:none;display:block;"><div style="color:rgba(255,255,255,0.45);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">Palm Beach</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;">West Palm Beach →</div></a>
+<a href="/multifamily-glazing-tampa/" style="background:#050a12;padding:40px 32px;text-decoration:none;display:block;"><div style="color:rgba(255,255,255,0.45);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">Tampa Bay</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;">Tampa →</div></a>
+<a href="/multifamily-glazing-orlando/" style="background:#050a12;padding:40px 32px;text-decoration:none;display:block;"><div style="color:rgba(255,255,255,0.45);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">Central FL</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;">Orlando →</div></a>
+<a href="/multifamily-glazing-naples/" style="background:#050a12;padding:40px 32px;text-decoration:none;display:block;"><div style="color:rgba(255,255,255,0.45);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;">Gulf Coast</div><div style="color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.01em;">Naples →</div></a>
+</div>
+</div>
+</section>
+
+<!-- CINEMATIC CTA -->
+<section style="position:relative;background:#050a12;padding:0;min-height:80vh;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+<img src="/images/projects/imperial-crossings/clubhouse-entry-glass.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,10,18,0.7) 0%,rgba(5,10,18,0.92) 100%);"></div>
+<div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:120px 32px;text-align:center;">
+<p style="color:#e11320;font-size:13px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:24px;">Send plans</p>
+<h2 style="color:#ffffff;font-size:clamp(48px, 6.5vw, 96px);font-weight:900;letter-spacing:-0.04em;line-height:0.95;margin:0 0 32px;">48 hours.<br>One real number.</h2>
+<p style="color:rgba(255,255,255,0.72);font-size:20px;line-height:1.5;margin:0 auto 48px;max-width:680px;">Send commercial plans to info@acglass.com or use the intake form. We acknowledge inside 2 business hours and bid inside 48 hours on complete RFQ packages.</p>
+<a href="/send-plans.html" style="background:#e11320;color:#ffffff;padding:22px 48px;font-size:16px;font-weight:600;letter-spacing:0.02em;text-decoration:none;display:inline-block;">Send us plans →</a>
 <p style="margin-top:24px;color:rgba(255,255,255,0.4);font-size:14px;">Or call (772) 486-7711</p>
 </div>
 </section>
