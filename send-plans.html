@@ -605,8 +605,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
                      'Submitted from acglass.com/send-plans';
           status.style.color = 'var(--accent)';
           status.innerHTML = 'Opening your email — please attach drawing files before sending. If your mail client did not open, email plans to <a href="mailto:connor@acglass.com" style="color:inherit;text-decoration:underline;">connor@acglass.com</a>.';
+          // Fire GA4 conversion event
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              form_id: 'send-plans-form',
+              source_page: '/send-plans',
+              bid_type: bidtype,
+              currency: 'USD',
+              value: 750
+            });
+            gtag('event', 'bid_form_submit_mailto', { bid_type: bidtype });
+          }
           window.location.href = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-          if (typeof gtag === 'function') gtag('event', 'bid_form_submit_mailto', { bid_type: bidtype });
           return;
         }
         // Let Formspree handle; just track the event

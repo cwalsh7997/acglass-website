@@ -873,21 +873,21 @@
           <div class="grid-2">
             <div>
               <label for="in-name">Name</label>
-              <input id="in-name" type="text" required>
+              <input id="in-name" name="name" type="text" required>
             </div>
             <div>
               <label for="in-company">Company</label>
-              <input id="in-company" type="text" required>
+              <input id="in-company" name="company" type="text" required>
             </div>
           </div>
           <div class="grid-2">
             <div>
               <label for="in-email">Email</label>
-              <input id="in-email" type="email" required>
+              <input id="in-email" name="email" type="email" required>
             </div>
             <div>
               <label for="in-role">Role</label>
-              <select id="in-role" required>
+              <select id="in-role" name="role" required>
                 <option value="">Select your role</option>
                 <option>General Contractor</option>
                 <option>Architect</option>
@@ -900,11 +900,11 @@
           <div class="grid-2">
             <div>
               <label for="in-city">Project City</label>
-              <input id="in-city" type="text" placeholder="e.g., Nashville, TN" required>
+              <input id="in-city" name="city" type="text" placeholder="e.g., Nashville, TN" required>
             </div>
             <div>
               <label for="in-type">Project Type</label>
-              <select id="in-type" required>
+              <select id="in-type" name="project_type" required>
                 <option value="">Select project type</option>
                 <option>Class-A Office</option>
                 <option>Multifamily / Mixed-Use</option>
@@ -920,15 +920,17 @@
           <div class="grid-2">
             <div>
               <label for="in-sf">Estimated SF of Glazing</label>
-              <input id="in-sf" type="text" placeholder="e.g., 12,000 SF">
+              <input id="in-sf" name="estimated_sf" type="text" placeholder="e.g., 12,000 SF">
             </div>
             <div>
               <label for="in-date">Target Bid Date</label>
-              <input id="in-date" type="text" placeholder="e.g., Q1 2027">
+              <input id="in-date" name="target_bid_date" type="text" placeholder="e.g., Q1 2027">
             </div>
           </div>
           <label for="in-notes">Notes</label>
-          <textarea id="in-notes" placeholder="Spec, timeline, manufacturer preferences, or anything else helpful..."></textarea>
+          <textarea id="in-notes" name="notes" placeholder="Spec, timeline, manufacturer preferences, or anything else helpful..."></textarea>
+
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
           <button type="submit">Submit to Early-Bid List</button>
           <p class="note">Submits directly to connor@acglass.com. Your information is not shared with anyone outside ACG. For urgent project inquiries, call (772) 486-7711.</p>
@@ -950,27 +952,55 @@
   <script>
     function submitIntake(e) {
       e.preventDefault();
-      var get = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-      var name = get('in-name'), company = get('in-company'), email = get('in-email'),
-          role = get('in-role'), city = get('in-city'), type = get('in-type'),
-          sf = get('in-sf'), date = get('in-date'), notes = get('in-notes');
-
-      var subject = 'Nashville Early-Bid List: ' + (company || name) + ' — ' + (city || 'Project');
-      var body = 'Name: ' + name + '%0D%0A' +
-                 'Company: ' + company + '%0D%0A' +
-                 'Email: ' + email + '%0D%0A' +
-                 'Role: ' + role + '%0D%0A%0D%0A' +
-                 'Project City: ' + city + '%0D%0A' +
-                 'Project Type: ' + type + '%0D%0A' +
-                 'Estimated SF: ' + sf + '%0D%0A' +
-                 'Target Bid Date: ' + date + '%0D%0A%0D%0A' +
-                 'Notes:%0D%0A' + notes + '%0D%0A%0D%0A' +
-                 'Submitted via acglass.com/commercial-glazing-nashville-tn.html';
-
+      var form = document.getElementById('intakeForm');
       var status = document.getElementById('intakeStatus');
-      status.textContent = 'Opening your email client — if it does not open, copy your details and email connor@acglass.com directly.';
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      // Honeypot check
+      var hp = form.querySelector('input[name="_honey"]');
+      if (hp && hp.value) { return false; }
+
+      status.textContent = 'Joining your project to the Nashville early-bid list…';
       status.classList.add('show');
-      window.location.href = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
+
+      var formData = new FormData(form);
+      var company = formData.get('in-company') || formData.get('company') || '';
+      var nm = formData.get('in-name') || formData.get('name') || '';
+      var city = formData.get('in-city') || formData.get('city') || '';
+      formData.append('_subject', 'Nashville Early-Bid List: ' + (company || nm) + ' — ' + (city || 'Project'));
+      formData.append('_captcha', 'false');
+      formData.append('_template', 'table');
+      formData.append('_source_page', '/commercial-glazing-nashville-tn');
+
+      // Fire GA4 conversion event
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          form_id: 'nashville-early-bid',
+          source_page: '/commercial-glazing-nashville-tn',
+          currency: 'USD',
+          value: 1000
+        });
+      }
+
+      fetch('https://formsubmit.co/ajax/connor@acglass.com', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response){
+        if (response.ok) {
+          status.textContent = '✓ You are on the Nashville early-bid list. We will reach out within 48 hours.';
+          form.reset();
+        } else {
+          status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+        }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+      })
+      .catch(function(){
+        status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+      });
       return false;
     }
 
