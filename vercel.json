@@ -194,6 +194,106 @@
       "source": "/commercial-glazing-orlando.html",
       "destination": "/orlando/",
       "permanent": true
+    },
+    {
+      "source": "/kawneer-installer-florida/",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-installer-florida",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-storefront-installer-orlando/",
+      "destination": "/storefront-glazier-orlando-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-storefront-installer-orlando",
+      "destination": "/storefront-glazier-orlando-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-storefront-installer-tampa/",
+      "destination": "/storefront-glazier-tampa-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-storefront-installer-tampa",
+      "destination": "/storefront-glazier-tampa-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-vs-ykk-ap-storefront/",
+      "destination": "/storefront-systems-comparison.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-vs-ykk-ap-storefront",
+      "destination": "/storefront-systems-comparison.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-vs-ykk-ap-storefront-systems/",
+      "destination": "/storefront-systems-comparison.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-vs-ykk-ap-storefront-systems",
+      "destination": "/storefront-systems-comparison.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-1600-vs-ykk-yhc-300-curtain-wall/",
+      "destination": "/curtainwall-vs-window-wall.html",
+      "permanent": true
+    },
+    {
+      "source": "/kawneer-1600-vs-ykk-yhc-300-curtain-wall",
+      "destination": "/curtainwall-vs-window-wall.html",
+      "permanent": true
+    },
+    {
+      "source": "/ykk-ap-installer-florida/",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/ykk-ap-installer-florida",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/ykk-ap-storefront-installer-jacksonville/",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/ykk-ap-storefront-installer-jacksonville",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/tubelite-installer-florida/",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/tubelite-installer-florida",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/tubelite-storefront-installer-miami/",
+      "destination": "/storefront-glazier-miami-florida/",
+      "permanent": true
+    },
+    {
+      "source": "/tubelite-storefront-installer-miami",
+      "destination": "/storefront-glazier-miami-florida/",
+      "permanent": true
     }
   ],
   "headers": [
