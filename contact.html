@@ -639,8 +639,11 @@
               <textarea id="message" name="message" placeholder="Tell us about your project scope, location, timeline, and any specific requirements..." required></textarea>
             </div>
 
+            <!-- Honeypot (anti-spam) -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
             <!-- Form Note -->
-            <p style="font-size:0.8rem;color:var(--white-30);margin-bottom:24px;">Clicking submit will open your email client. Alternatively, email plans directly to connor@acglass.com.</p>
+            <p style="font-size:0.8rem;color:var(--white-30);margin-bottom:24px;">We respond within 48 hours. You can also email plans directly to connor@acglass.com or call (772) 486-7711.</p>
 
             <!-- Submit Button -->
             <button type="submit" class="btn btn-primary btn-lg">
@@ -653,20 +656,55 @@
             function handleContactSubmit(e){
               e.preventDefault();
               var f = document.getElementById('contact-form');
-              var get = function(id){ var el=f.querySelector('#'+id); return el ? el.value.trim() : ''; };
-              var name = get('name'), company = get('company'), email = get('email'),
-                  phone = get('phone'), pt = get('project-type'), msg = get('message');
-              var subject = 'Project Inquiry — ' + (company || name);
-              var body = 'Name: ' + name + '%0D%0A' +
-                         'Company: ' + company + '%0D%0A' +
-                         'Email: ' + email + '%0D%0A' +
-                         'Phone: ' + phone + '%0D%0A' +
-                         'Project Type: ' + pt + '%0D%0A%0D%0A' +
-                         'Project Details:%0D%0A' + msg + '%0D%0A%0D%0A' +
-                         'Submitted from acglass.com/contact';
               var status = document.getElementById('contact-form-status');
-              status.textContent = 'Opening your email client — if it does not open, copy your details and email connor@acglass.com directly.';
-              window.location.href = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+              var submitBtn = f.querySelector('button[type="submit"]');
+
+              // Honeypot — if filled, silently abort (bot)
+              var hp = f.querySelector('input[name="_honey"]');
+              if (hp && hp.value) { return false; }
+
+              status.textContent = 'Sending your message…';
+              status.style.color = 'var(--white-60)';
+              if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
+
+              var formData = new FormData(f);
+              formData.append('_subject', 'Project Inquiry — ' + (formData.get('company') || formData.get('name') || 'New lead'));
+              formData.append('_captcha', 'false');
+              formData.append('_template', 'table');
+              formData.append('_source_page', '/contact');
+
+              // Fire GA4 conversion event BEFORE fetch so it counts even if network is slow
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                  'form_id': 'contact-form',
+                  'source_page': '/contact',
+                  'currency': 'USD',
+                  'value': 500
+                });
+              }
+
+              fetch('https://formsubmit.co/ajax/connor@acglass.com', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+              })
+              .then(function(response){
+                if (response.ok) {
+                  status.textContent = '✓ Sent. We will respond within 48 hours.';
+                  status.style.color = '#34D399';
+                  f.reset();
+                } else {
+                  status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+                  status.style.color = '#FBBF24';
+                }
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+              })
+              .catch(function(){
+                status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+                status.style.color = '#FBBF24';
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
+              });
+
               return false;
             }
           </script>
