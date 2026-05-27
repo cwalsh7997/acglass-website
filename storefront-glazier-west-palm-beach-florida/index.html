@@ -273,6 +273,24 @@
   .wpb-nav-cta { background: #e11320; color: #fff !important; padding: 10px 18px; border-radius: 6px; font-weight: 600; }
   .wpb-nav-cta:hover { background: #c10f1c; color: #fff !important; }
 
+  /* Sticky bottom CTA bar — mobile-first, always above the fold */
+  .acg-sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 100; padding: 0; box-shadow: 0 -8px 24px rgba(0,0,0,.45); background: linear-gradient(180deg, rgba(5,10,18,.0) 0%, rgba(5,10,18,.85) 35%, rgba(5,10,18,.98) 100%); padding-top: 18px; pointer-events: none; }
+  .acg-sticky-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; max-width: 1280px; margin: 0 auto; padding: 12px 18px 14px; background: #050a12; border-top: 2px solid #e11320; pointer-events: auto; }
+  .acg-sticky-cta-text { color: #fff; font-size: 14px; font-weight: 600; line-height: 1.25; letter-spacing: -.01em; flex: 1; min-width: 0; }
+  .acg-sticky-cta-text small { display: block; color: rgba(255,255,255,.55); font-weight: 400; font-size: 12px; margin-top: 2px; }
+  .acg-sticky-cta-btn { background: #e11320; color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 8px; font-weight: 700; font-size: 15px; letter-spacing: -.01em; white-space: nowrap; transition: background .15s ease, transform .15s ease; box-shadow: 0 4px 14px rgba(225,19,32,.4); flex-shrink: 0; }
+  .acg-sticky-cta-btn:hover { background: #c10f1c; transform: translateY(-1px); }
+  .acg-sticky-cta-btn:active { transform: translateY(0); }
+  @media (max-width: 640px) {
+    .acg-sticky-cta-text { font-size: 13px; }
+    .acg-sticky-cta-text small { font-size: 11px; }
+    .acg-sticky-cta-btn { padding: 11px 16px; font-size: 14px; }
+    .acg-sticky-cta-inner { padding: 10px 14px 12px; gap: 10px; }
+  }
+  /* Add bottom padding to body so sticky bar doesn't cover footer content */
+  body.has-sticky-cta { padding-bottom: 76px; }
+  @media (max-width: 640px) { body.has-sticky-cta { padding-bottom: 72px; } }
+
   .wpb-hero { position: relative; min-height: 92vh; display: flex; align-items: center; padding: 100px 0 80px; overflow: hidden; }
   .wpb-hero-bg { position: absolute; inset: 0; z-index: 0; }
   .wpb-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.06); }
@@ -406,10 +424,19 @@
       <a href="/services.html">Services</a>
       <a href="/west-palm-beach-commercial-glazing.html">West Palm Beach</a>
       <a href="/about.html">About</a>
-      <a href="/send-plans.html" class="wpb-nav-cta">Send Us Plans</a>
+      <a href="/bid.html" class="wpb-nav-cta" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'nav_get_bid',source_page:'/storefront-glazier-west-palm-beach-florida/'});">Get a 48-Hour Bid</a>
     </div>
   </div>
 </nav>
+
+<!-- Sticky bottom CTA (mobile + desktop) -->
+<div class="acg-sticky-cta" id="acgStickyCta" role="complementary" aria-label="Get a bid">
+  <div class="acg-sticky-cta-inner">
+    <div class="acg-sticky-cta-text">Need a commercial glazing bid in West Palm Beach?<small>FL CGC #1531993 &middot; $3M/$6M bonded &middot; ESWindows authorized</small></div>
+    <a href="/bid.html" class="acg-sticky-cta-btn" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'sticky_bottom_get_bid',source_page:'/storefront-glazier-west-palm-beach-florida/'});">Get a 48-Hour Bid →</a>
+  </div>
+</div>
+<script>document.body.classList.add('has-sticky-cta');</script>
 
 <header class="wpb-hero">
   <div class="wpb-hero-bg">
