@@ -2310,7 +2310,8 @@
         <input type="hidden" name="contact_role" id="form-contact-role">
         <input type="hidden" name="scope_range_low" id="form-scope-low">
         <input type="hidden" name="scope_range_high" id="form-scope-high">
-        <input type="hidden" name="_subject" value="New ACG Bid Request — Plan Upload">
+        <input type="hidden" name="_subject" value="[ACG LEAD] Bid request — plans attached">
+        <input type="hidden" name="_template" value="basic">
         <input type="hidden" name="_replyto" id="form-replyto">
       </form>
 
@@ -3029,8 +3030,10 @@
           try {
             const formData = new FormData(document.getElementById('bid-form'));
             // Send form data to Connor via FormSubmit
-            formData.append('_subject', 'ACG Bid Engine — New Scope Request: ' + (state.projectName || 'Unknown Project'));
-            formData.append('_template', 'table');
+            formData.append('_subject', '[ACG LEAD] Bid Engine — ' + (state.projectName || 'Scope request'));
+            formData.append('_template', 'basic');
+            var submitterEmail = (state.contactEmail || state.email || '');
+            if (submitterEmail) { formData.append('_replyto', submitterEmail); }
             formData.append('_captcha', 'false');
             fetch('https://formsubmit.co/ajax/connor@acglass.com', {
               method: 'POST',

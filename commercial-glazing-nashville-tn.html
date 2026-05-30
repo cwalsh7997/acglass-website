@@ -968,10 +968,12 @@
       var company = formData.get('in-company') || formData.get('company') || '';
       var nm = formData.get('in-name') || formData.get('name') || '';
       var city = formData.get('in-city') || formData.get('city') || '';
-      formData.append('_subject', 'Nashville Early-Bid List: ' + (company || nm) + ' — ' + (city || 'Project'));
+      var submitterEmail = formData.get('in-email') || formData.get('email') || '';
+      formData.append('_subject', '[ACG LEAD - Nashville] ' + (company || nm || 'Nashville inquiry'));
       formData.append('_captcha', 'false');
-      formData.append('_template', 'table');
+      formData.append('_template', 'basic');
       formData.append('_source_page', '/commercial-glazing-nashville-tn');
+      if (submitterEmail) { formData.append('_replyto', submitterEmail); }
 
       // Fire GA4 conversion event
       if (typeof gtag === 'function') {

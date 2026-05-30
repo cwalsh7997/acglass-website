@@ -668,10 +668,14 @@
               if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '0.6'; }
 
               var formData = new FormData(f);
-              formData.append('_subject', 'Project Inquiry — ' + (formData.get('company') || formData.get('name') || 'New lead'));
+              var submitterEmail = formData.get('email') || '';
+              var submitterName = formData.get('name') || '';
+              var submitterCompany = formData.get('company') || '';
+              formData.append('_subject', '[ACG LEAD] ' + (submitterCompany || submitterName || 'New project inquiry'));
               formData.append('_captcha', 'false');
-              formData.append('_template', 'table');
+              formData.append('_template', 'basic');
               formData.append('_source_page', '/contact');
+              if (submitterEmail) { formData.append('_replyto', submitterEmail); }
 
               // Fire GA4 conversion event BEFORE fetch so it counts even if network is slow
               if (typeof gtag !== 'undefined') {
