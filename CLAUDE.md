@@ -129,6 +129,7 @@ If there's a merge conflict, default to the most recent commit unless context sa
 | May 30 | Phase 1 audit cherry-picks: dedupe og:* tags on 117 pages (318 dups removed), Florida\'s literal-backslash fix on 295 pages, humans.txt founding year 2020→2021, Service schema added to curtainwall/impact/multi-slide pages | Real SEO + share-card quality wins, no risk |
 | May 30 | Phase 2 audit #5: declared `--font-mono` and `--text-muted` CSS vars in `:root` of `css/style.css` (alias for `--mono` and `--white-50`) | ~1,500 inline `style="..."` instances reference these var names; without the declarations, byline + caption text was silently falling back to defaults |
 | May 30 | Phase 2 audit #8: deduped `<meta name="robots">` in `404.html` (had two conflicting tags: `noindex,follow` and `noindex, nofollow`) — kept `noindex, nofollow` | Conservative for an error page: don't waste crawl budget on links from a 404 |
+| May 30 | Phase 2 audit #6: added `<meta name="robots" content="noindex,follow">` to 9 out-of-state pages (commercial-glazing-{alabama,georgia,louisiana,tennessee,texas,north-carolina,south-carolina,southeast}.html + national-commercial-glazing-contractor.html); pruned the same 9 URLs from `sitemap.xml` (1371→1362 entries) | ACG is FL-licensed only. Pages were attracting leads ACG can't fulfill + risking HCU demotion for templated localized content. `noindex,follow` preserves any inbound-link equity while removing the pages from Google's index over the next 4-8 weeks. |
 
 ---
 
