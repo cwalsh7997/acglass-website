@@ -127,6 +127,7 @@ If there's a merge conflict, default to the most recent commit unless context sa
 | May 30 | All 3 forms: subject changed to `[ACG LEAD] ...`, template→basic, Reply-To→submitter | Outlook was filing submissions in Promotions folder |
 | May 30 | Shipped Dealer Portal Phase 1 (cherry-pick 58b0e4a7 from acg-dealer-portal): become-a-dealer.html, dealer/* admin + login + thanks pages, dealer.css/js, workers/dealer-portal-api/* (Cloudflare Worker, NOT deployed) | Connor's April work, no conflicts |
 | May 30 | Phase 1 audit cherry-picks: dedupe og:* tags on 117 pages (318 dups removed), Florida\'s literal-backslash fix on 295 pages, humans.txt founding year 2020→2021, Service schema added to curtainwall/impact/multi-slide pages | Real SEO + share-card quality wins, no risk |
+| May 30 | Phase 2 audit #5: declared `--font-mono` and `--text-muted` CSS vars in `:root` of `css/style.css` (alias for `--mono` and `--white-50`) | ~1,500 inline `style="..."` instances reference these var names; without the declarations, byline + caption text was silently falling back to defaults |
 
 ---
 

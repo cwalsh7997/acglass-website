@@ -36,6 +36,13 @@
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
 
+  /* Compat aliases for inline `style="..."` that reference these var names
+     (~1,500 instances site-wide). Without these, the inline styles silently
+     fall back to defaults (Inter for the mono spans and full-white for muted
+     text), which is a visible regression in byline + caption rendering. */
+  --font-mono: var(--mono);
+  --text-muted: var(--white-50);
+
   --section-pad: clamp(80px, 10vw, 160px);
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
