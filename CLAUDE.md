@@ -125,6 +125,8 @@ If there's a merge conflict, default to the most recent commit unless context sa
 | May 26 | Google Ads campaign cleaned: Nashville removed from geo, Final URL Expansion OFF, 31 negatives added, In-market Construction + Commercial RE + ACG Bid Platforms audience signals added | Burning budget on hotel-searchers |
 | May 27 | Sticky bottom CTA added to `/storefront-glazier-west-palm-beach-florida/`, nav CTA rewritten to "Get a 48-Hour Bid" → `/bid.html` | 99.7% drop-off between ad-landing and contact form |
 | May 30 | All 3 forms: subject changed to `[ACG LEAD] ...`, template→basic, Reply-To→submitter | Outlook was filing submissions in Promotions folder |
+| May 30 | Shipped Dealer Portal Phase 1 (cherry-pick 58b0e4a7 from acg-dealer-portal): become-a-dealer.html, dealer/* admin + login + thanks pages, dealer.css/js, workers/dealer-portal-api/* (Cloudflare Worker, NOT deployed) | Connor's April work, no conflicts |
+| May 30 | Phase 1 audit cherry-picks: dedupe og:* tags on 117 pages (318 dups removed), Florida\'s literal-backslash fix on 295 pages, humans.txt founding year 2020→2021, Service schema added to curtainwall/impact/multi-slide pages | Real SEO + share-card quality wins, no risk |
 
 ---
 
@@ -132,6 +134,8 @@ If there's a merge conflict, default to the most recent commit unless context sa
 
 - **`/eau-palm-beach-resort.html`** — Connor decided to leave it for now (May 30). Page still draws 1 click / 38 impressions per 14 days. Flagged on the unverified-project list.
 - **Sticky CTA only on WPB landing page** — could roll out to other 78 city pages. Hasn't been requested yet.
+- **Dealer Portal Cloudflare Worker NOT deployed** — `workers/dealer-portal-api/` is in the repo but Connor needs to `wrangler deploy` it. Until then, become-a-dealer.html falls back to mailto.
+- **Audit branch Phase 2/3 still pending** — see `AUDIT-TRIAGE.md` on origin/audit/dedupe-og-tags. Self-hosted fonts, image dimensions for CLS, privacy/terms in footer, lazy-loading, city-pill class extraction are queued REWORKS.
 - **Google Ads "Fix it" call-only banner** — Claude Browser couldn't click through due to an ad blocker in Connor's session. Open question: which legacy call asset is being flagged for Feb 2027 deprecation.
 - **AI visibility on commercial queries: 0%** — long-term work, not a today issue.
 
