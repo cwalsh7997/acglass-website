@@ -139,7 +139,7 @@ If there's a merge conflict, default to the most recent commit unless context sa
 - **`/eau-palm-beach-resort.html`** — Connor decided to leave it for now (May 30). Page still draws 1 click / 38 impressions per 14 days. Flagged on the unverified-project list.
 - **Sticky CTA only on WPB landing page** — could roll out to other 78 city pages. Hasn't been requested yet.
 - **Dealer Portal Cloudflare Worker NOT deployed** — `workers/dealer-portal-api/` is in the repo but Connor needs to `wrangler deploy` it. Until then, become-a-dealer.html falls back to mailto.
-- **Audit branch Phase 2/3 still pending** — see `AUDIT-TRIAGE.md` on origin/audit/dedupe-og-tags. Self-hosted fonts, image dimensions for CLS, privacy/terms in footer, lazy-loading, city-pill class extraction are queued REWORKS.
+- **Audit branch Phase 3 (REWORKS) still pending** — see `AUDIT-TRIAGE.md` on origin/audit/dedupe-og-tags. Phase 2 carve-outs (CSS var aliases, 404 robots dedupe, noindex out-of-state, theme-color) shipped May 30. Still queued: self-hosted fonts (~30 min), image dimensions for CLS (~30 min), privacy/terms in footer (~20 min), `loading="lazy"` + `decoding="async"` (~15 min), city-pill + other inline-style → CSS class extractions (~1-2 hrs), broken-link re-audit. Each needs re-extraction against current main due to file drift, not a verbatim cherry-pick.
 - **Google Ads "Fix it" call-only banner** — Claude Browser couldn't click through due to an ad blocker in Connor's session. Open question: which legacy call asset is being flagged for Feb 2027 deprecation.
 - **AI visibility on commercial queries: 0%** — long-term work, not a today issue.
 
