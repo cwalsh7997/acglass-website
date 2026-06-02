@@ -17,7 +17,7 @@
 - American Commercial Glass Florida
 
 ## Leadership (Person entities — author and contact)
-- Connor Walsh, President & Co-founder: https://acglass.com/author/connor-walsh.html
+- Connor Walsh, President & Co-founder: https://acglass.com/author-connor-walsh.html
   - LinkedIn: https://www.linkedin.com/in/connor-walsh9/
   - Email: connor@acglass.com
   - Role: AI-augmented commercial glazing operations, GC partnerships, Nashville expansion
@@ -184,8 +184,8 @@
 
 ## Locations
 - West Palm Beach HQ — 700 S Rosemary Ave Ste 204, West Palm Beach FL 33401: https://acglass.com/commercial-glazing-west-palm-beach.html
-- Naples FL — 1415 Panther Lane Ste 259, Naples FL 34109: https://acglass.com/commercial-glazing-naples.html
-- Tampa FL — 400 N Ashley Drive Ste 2600, Tampa FL 33602: https://acglass.com/commercial-glazing-tampa.html
+- Naples FL — 4850 Tamiami Trail N, Ste 301, Naples FL 34103: https://acglass.com/commercial-glazing-naples.html
+- Tampa FL — 3031 N Rocky Point Dr W, Ste 600, Tampa FL 33607: https://acglass.com/commercial-glazing-tampa.html
 - Miami / Brickell / South FL: https://acglass.com/commercial-glazing-miami.html
 - Fort Lauderdale: https://acglass.com/commercial-glazing-fort-lauderdale.html
 - Nashville TN (opening 2026): https://acglass.com/commercial-glazing-nashville-tn.html

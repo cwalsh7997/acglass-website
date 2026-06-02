@@ -195,7 +195,12 @@
   ],
   "legalName": "American Commercial Glass, Inc.",
   "url": "https://acglass.com",
-  "logo": "https://acglass.com/images/acg-mark.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://acglass.com/images/acg-mark.png",
+    "width": 200,
+    "height": 200
+  },
   "image": "https://acglass.com/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg",
   "description": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa. ACG installs commercial storefronts, impact windows, curtain wall, and sliding glass door systems for general contractors across Florida, and is the authorized commercial installer for ESWindows and Euro-Wall.",
   "slogan": "One sub for everything — storefronts, curtainwall, impact glass, window wall, entrances, interior glass.",
@@ -204,6 +209,13 @@
   "email": "connor@acglass.com",
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993",
+  "priceRange": "$$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Check, ACH, Wire Transfer",
+  "knowsLanguage": [
+    "en",
+    "es"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "700 S Rosemary Ave Suite 204",
@@ -211,6 +223,11 @@
     "addressRegion": "FL",
     "postalCode": "33401",
     "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 26.707159,
+    "longitude": -80.057072
   },
   "location": [
     {
@@ -225,7 +242,27 @@
         "postalCode": "33401",
         "addressCountry": "US"
       },
-      "telephone": "+1-772-486-7711"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.707159,
+        "longitude": -80.057072
+      },
+      "telephone": "+1-772-486-7711",
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
     },
     {
       "@type": "LocalBusiness",
@@ -239,7 +276,27 @@
         "postalCode": "34103",
         "addressCountry": "US"
       },
-      "telephone": "+1-772-486-7711"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.2052801,
+        "longitude": -81.7997463
+      },
+      "telephone": "+1-772-486-7711",
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
     },
     {
       "@type": "LocalBusiness",
@@ -253,7 +310,27 @@
         "postalCode": "33607",
         "addressCountry": "US"
       },
-      "telephone": "+1-772-486-7711"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.9686273,
+        "longitude": -82.5686677
+      },
+      "telephone": "+1-772-486-7711",
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
     }
   ],
   "founder": [
@@ -333,6 +410,201 @@
     {
       "@type": "AdministrativeArea",
       "name": "Monroe County"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 27.6648,
+      "longitude": -81.5158
+    },
+    "geoRadius": "500000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "ACG Commercial Glazing Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Storefront Systems",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ESWindows ES-9500 Storefront Installation",
+              "serviceType": "Commercial Storefront"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ESWindows ES-8000 Storefront Installation",
+              "serviceType": "Commercial Storefront"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Aluminum Storefront Fabrication",
+              "serviceType": "Commercial Storefront"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Curtain Wall",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stick-Built Curtain Wall Installation",
+              "serviceType": "Curtain Wall"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Unitized Curtain Wall Installation",
+              "serviceType": "Curtain Wall"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Impact Windows & Doors",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ESWindows Impact Windows Installation (HVHZ)",
+              "serviceType": "Impact Windows"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "PGT Impact Window Installation",
+              "serviceType": "Impact Windows"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Slimpact Impact Window Installation",
+              "serviceType": "Impact Windows"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Sliding & Folding Door Systems",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Euro-Wall Folding Door Installation",
+              "serviceType": "Folding Glass Door"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Euro-Wall Multi-Slide Door Installation",
+              "serviceType": "Multi-Slide Door"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ESWindows SGD2020 Sliding Glass Door Installation",
+              "serviceType": "Sliding Glass Door"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Automatic Entrances & Hardware",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Allegion Automatic Entrance Installation",
+              "serviceType": "Automatic Entrance"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Door Hardware & Closer Coordination",
+              "serviceType": "Commercial Hardware"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Fire-Rated & Specialty Glazing",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "TGP Fire-Rated Glazing Installation",
+              "serviceType": "Fire-Rated Glass"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Decorative Interior Glass Walls",
+              "serviceType": "Interior Glass"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Division 08 Single-Source",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CSI Division 08 Single-Source Subcontracting",
+              "serviceType": "Division 08"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Glazing Bid Submission"
+      },
+      "description": "48-hour bid turnaround on Florida commercial glazing scopes"
     }
   ],
   "hasCredential": [
@@ -465,28 +737,62 @@
   "familyName": "Walsh",
   "jobTitle": "CEO & Co-Founder",
   "description": "Rielly Walsh is the CEO and co-founder of American Commercial Glass (ACG), a Florida-licensed commercial glazing contractor. She studied Concrete Industry Management at Middle Tennessee State University and previously served as lead superintendent for exterior stoneworks at The Estates at Acqualina in Sunny Isles Beach.",
-  "url": "https://acglass.com/ai-overview.html",
-  "image": "https://acglass.com/images/team/rielly-walsh-portrait.jpg",
+  "url": "https://acglass.com/author/rielly-walsh/",
+  "mainEntityOfPage": "https://acglass.com/author/rielly-walsh/",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://acglass.com/images/team/rielly-walsh-portrait.jpg",
+    "width": 800,
+    "height": 1000,
+    "caption": "Rielly Walsh, CEO of American Commercial Glass"
+  },
   "gender": "Female",
+  "nationality": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "spouse": {
+    "@id": "https://acglass.com/#connor-walsh"
+  },
+  "colleague": {
+    "@id": "https://acglass.com/#connor-walsh"
+  },
   "worksFor": {
+    "@id": "https://acglass.com/#organization"
+  },
+  "memberOf": {
     "@id": "https://acglass.com/#organization"
   },
   "alumniOf": {
     "@type": "CollegeOrUniversity",
     "name": "Middle Tennessee State University",
-    "sameAs": "https://en.wikipedia.org/wiki/Middle_Tennessee_State_University"
+    "sameAs": "https://en.wikipedia.org/wiki/Middle_Tennessee_State_University",
+    "url": "https://www.mtsu.edu/"
   },
   "knowsAbout": [
     "Construction Management",
     "Concrete Industry Management",
     "Commercial Glazing Operations",
-    "Field Superintendence"
+    "Field Superintendence",
+    "Exterior stoneworks",
+    "Hospitality construction"
   ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Construction Executive",
+    "occupationLocation": {
+      "@type": "City",
+      "name": "West Palm Beach, Florida"
+    }
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "West Palm Beach",
     "addressRegion": "FL",
     "addressCountry": "US"
+  },
+  "workLocation": {
+    "@id": "https://acglass.com/#hq-west-palm-beach"
   }
 }
 </script>

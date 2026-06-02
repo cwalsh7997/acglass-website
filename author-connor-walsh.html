@@ -40,11 +40,31 @@
   "jobTitle": "President & Co-Founder",
   "description": "Connor Walsh is the President and co-founder of American Commercial Glass (ACG), a Florida-licensed commercial glazing contractor. He is the qualifier for Florida Certified General Contractor license CGC #1531993 and leads ACG's commercial glazing operations across Florida.",
   "url": "https://acglass.com/author-connor-walsh.html",
-  "image": "https://acglass.com/images/team/connor-walsh-portrait.jpg",
+  "mainEntityOfPage": "https://acglass.com/author-connor-walsh.html",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://acglass.com/images/team/connor-walsh-portrait.jpg",
+    "width": 1072,
+    "height": 1072,
+    "caption": "Connor Walsh, President of American Commercial Glass"
+  },
   "email": "connor@acglass.com",
   "telephone": "+1-772-486-7711",
   "gender": "Male",
+  "nationality": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "spouse": {
+    "@id": "https://acglass.com/#rielly-walsh"
+  },
+  "colleague": {
+    "@id": "https://acglass.com/#rielly-walsh"
+  },
   "worksFor": {
+    "@id": "https://acglass.com/#organization"
+  },
+  "memberOf": {
     "@id": "https://acglass.com/#organization"
   },
   "knowsAbout": [
@@ -57,7 +77,11 @@
     "Impact Windows",
     "Division 08 Coordination",
     "Project Estimating",
-    "Construction Project Management"
+    "Construction Project Management",
+    "ESWindows installation",
+    "Euro-Wall installation",
+    "Multi-slide glass doors",
+    "AI-managed construction operations"
   ],
   "hasOccupation": {
     "@type": "Occupation",
@@ -65,19 +89,32 @@
     "occupationLocation": {
       "@type": "City",
       "name": "West Palm Beach, Florida"
+    },
+    "estimatedSalary": {
+      "@type": "MonetaryAmountDistribution",
+      "currency": "USD",
+      "duration": "P1Y",
+      "median": 175000
     }
   },
   "hasCredential": {
     "@type": "EducationalOccupationalCredential",
     "credentialCategory": "license",
     "name": "Florida Certified General Contractor (Qualifier)",
-    "identifier": "CGC #1531993"
+    "identifier": "CGC #1531993",
+    "recognizedBy": {
+      "@type": "GovernmentOrganization",
+      "name": "Florida Department of Business and Professional Regulation"
+    }
   },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "West Palm Beach",
     "addressRegion": "FL",
     "addressCountry": "US"
+  },
+  "workLocation": {
+    "@id": "https://acglass.com/#hq-west-palm-beach"
   },
   "sameAs": [
     "https://www.linkedin.com/in/connor-walsh9"
