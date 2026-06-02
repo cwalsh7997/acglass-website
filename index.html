@@ -365,16 +365,23 @@
 }
 </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["h1", "h2", ".section-intro", "p[data-reveal][data-delay=\"200\"]"],
-      "xpath": ["/html/head/title", "/html/head/meta[@name='description']/@content"]
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "h1",
+      "h2",
+      ".hero-sub"
+    ],
+    "xpath": [
+      "/html/head/title",
+      "/html/head/meta[@name='description']/@content"
+    ]
   }
-  </script>
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -385,17 +392,7 @@
       "url": "https://acglass.com",
       "name": "American Commercial Glass",
       "publisher": {
-        "@id": "https://acglass.com/#organization",
-        "alternateName": [
-          "ACG",
-          "ACG Glass",
-          "ACG Florida",
-          "American Commercial Glass Florida",
-          "ACG Commercial Glass"
-        ],
-        "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-        "naics": "238150",
-        "iso6523Code": "0199:CGC1531993"
+        "@id": "https://acglass.com/#organization"
       },
       "inLanguage": "en-US",
       "potentialAction": {
@@ -410,9 +407,7 @@
         "American Commercial Glass Florida",
         "ACG Commercial Glass"
       ],
-      "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-      "naics": "238150",
-      "iso6523Code": "0199:CGC1531993"
+      "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings."
     }
   ]
 }
