@@ -38,10 +38,11 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/dale-mabry-retail/hero-entry.jpg">
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "American Commercial Glass \u2014 South Tampa",
+  "@id": "https://acglass.com/#organization",
+  "name": "American Commercial Glass — South Tampa",
   "description": "Commercial glazing contractor serving South Tampa, FL. Storefronts, window wall, curtainwall, and specialty glazing for design-forward commercial projects in SoHo, Hyde Park, Harbour Island, and the Channel District.",
   "url": "https://acglass.com/commercial-glazing-south-tampa.html",
   "telephone": "(772) 486-7711",
@@ -72,52 +73,67 @@
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
 }
-  </script>
+</script>
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does ACG have experience with design-forward glazing in urban South Tampa environments?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. South Tampa projects — SoHo, Hyde Park Village, Harbour Island, the Channel District — often require glazing systems specified beyond standard commercial-grade, with custom sightlines, flush detailing, specialty glass coatings, and tight architectural tolerances. ACG's experience with complex commercial glazing packages, including specialty systems from Euro-Wall and PGT, gives us the technical capability to meet design-intent specifications in these demanding urban environments."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does ACG handle logistics on tight urban South Tampa job sites?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Urban South Tampa sites — particularly Harbour Island, the Channel District, and SoHo — require precision scheduling because there's limited staging area, active pedestrian and vehicle traffic, and adjacent occupied buildings. ACG's AI-managed scheduling platform coordinates material deliveries and crew arrivals to minimize staging time and avoid conflicts with other trades. We've worked in constrained urban environments and our project management approach is built for the complexity that comes with them."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What glazing systems does ACG use for South Tampa's coastal exposure requirements?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "South Tampa's Bayshore Boulevard, Harbour Island, and coastal-adjacent areas require wind-rated glazing systems engineered for Florida's coastal exposure zones. ACG specifies ESWindows, CGI, and Slimpact impact systems — all with Florida Product Approvals — and uses wind-rated storefront and curtainwall systems from Euro-Wall and PGT that are tested and certified to the applicable ASCE wind load requirements. Our shop drawing packages include the product approval documentation required for Hillsborough County plan review."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does ACG have experience with design-forward glazing in urban South Tampa environments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. South Tampa projects — SoHo, Hyde Park Village, Harbour Island, the Channel District — often require glazing systems specified beyond standard commercial-grade, with custom sightlines, flush detailing, specialty glass coatings, and tight architectural tolerances. ACG's experience with complex commercial glazing packages, including specialty systems from Euro-Wall and PGT, gives us the technical capability to meet design-intent specifications in these demanding urban environments."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "How does ACG handle logistics on tight urban South Tampa job sites?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Urban South Tampa sites — particularly Harbour Island, the Channel District, and SoHo — require precision scheduling because there's limited staging area, active pedestrian and vehicle traffic, and adjacent occupied buildings. ACG's AI-managed scheduling platform coordinates material deliveries and crew arrivals to minimize staging time and avoid conflicts with other trades. We've worked in constrained urban environments and our project management approach is built for the complexity that comes with them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What glazing systems does ACG use for South Tampa's coastal exposure requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "South Tampa's Bayshore Boulevard, Harbour Island, and coastal-adjacent areas require wind-rated glazing systems engineered for Florida's coastal exposure zones. ACG specifies ESWindows, CGI, and Slimpact impact systems — all with Florida Product Approvals — and uses wind-rated storefront and curtainwall systems from Euro-Wall and PGT that are tested and certified to the applicable ASCE wind load requirements. Our shop drawing packages include the product approval documentation required for Hillsborough County plan review."
+      }
+    }
+  ]
+}
+</script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://acglass.com/commercial-glazing-south-florida.html"},
-      {"@type": "ListItem", "position": 3, "name": "Commercial Glazing South Tampa", "item": "https://acglass.com/commercial-glazing-south-tampa.html"}
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://acglass.com/commercial-glazing-south-florida.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Glazing South Tampa",
+      "item": "https://acglass.com/commercial-glazing-south-tampa.html"
+    }
+  ]
+}
+</script>
   <style>
     .nav-dropdown{position:relative}
     .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
@@ -144,7 +160,7 @@
   "@context": "https://schema.org",
   "@type": "Place",
   "name": "South Tampa, FL",
-  "description": "ACG commercial glazing service area \u2014 Hillsborough County",
+  "description": "ACG commercial glazing service area — Hillsborough County",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 27.9231,
@@ -156,6 +172,7 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://acglass.com/#organization",
   "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
@@ -200,7 +217,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@id": "https://acglass.com/#organization-ref",
+  "@id": "https://acglass.com/#organization",
   "@type": [
     "Organization",
     "LocalBusiness",
@@ -267,7 +284,7 @@
       "name": "Do I need impact windows for a South Tampa commercial building?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If your South Tampa commercial project is in a wind-borne debris region (WBDR) or High-Velocity Hurricane Zone (HVHZ \u2014 Miami-Dade and Broward counties), impact-rated glazing or code-equivalent shutters are required by the Florida Building Code 8th Edition (2026). Most modern commercial buildings in South Tampa specify impact glazing to reduce insurance, speed post-storm reopening, and avoid shutter logistics."
+        "text": "If your South Tampa commercial project is in a wind-borne debris region (WBDR) or High-Velocity Hurricane Zone (HVHZ — Miami-Dade and Broward counties), impact-rated glazing or code-equivalent shutters are required by the Florida Building Code 8th Edition (2026). Most modern commercial buildings in South Tampa specify impact glazing to reduce insurance, speed post-storm reopening, and avoid shutter logistics."
       }
     },
     {
@@ -275,7 +292,7 @@
       "name": "What manufacturers does ACG install in South Tampa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ACG installs ESWindows (impact storefront and curtainwall \u2014 ES-50, ES-7000, ES-8000), Euro-Wall (multi-slide, bi-fold Vistafold, pivot, DirectSet), PGT (impact-resistant residential and light commercial), Allegion (commercial hardware, LCN automatic operators), TGP (fire-rated glazing \u2014 UL 9, UL 10B, UL 263), and Slimpact (impact-rated steel framing). ACG does not substitute in unauthorized manufacturers or off-spec systems."
+        "text": "ACG installs ESWindows (impact storefront and curtainwall — ES-50, ES-7000, ES-8000), Euro-Wall (multi-slide, bi-fold Vistafold, pivot, DirectSet), PGT (impact-resistant residential and light commercial), Allegion (commercial hardware, LCN automatic operators), TGP (fire-rated glazing — UL 9, UL 10B, UL 263), and Slimpact (impact-rated steel framing). ACG does not substitute in unauthorized manufacturers or off-spec systems."
       }
     }
   ]

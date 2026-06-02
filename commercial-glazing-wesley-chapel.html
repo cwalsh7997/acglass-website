@@ -25,10 +25,11 @@
   <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="feed.xml">
   <!-- LocalBusiness Schema -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "American Commercial Glass \u2014 Wesley Chapel",
+  "@id": "https://acglass.com/#organization",
+  "name": "American Commercial Glass — Wesley Chapel",
   "description": "Commercial glazing contractor serving Wesley Chapel, FL and Pasco County. Impact windows, storefronts, curtainwall, and window wall systems for general contractors.",
   "url": "https://acglass.com/commercial-glazing-wesley-chapel.html",
   "telephone": "(772) 486-7711",
@@ -58,41 +59,41 @@
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
 }
-  </script>
+</script>
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do you pull permits in Pasco County for commercial glazing work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. ACG is a licensed glazing contractor in Florida and handles the full permit application process with Pasco County's Building and Construction Services department. We submit shop drawings, product approval documentation (NOA), and all required calculations to get through plan review without revision cycles that slow your schedule."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly can ACG mobilize for a Wesley Chapel commercial project?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our Tampa office is approximately 30 minutes from Wesley Chapel. Once a contract is executed and the permit is approved, we can typically mobilize field crews within 1–2 weeks depending on material lead times. Our AI-managed scheduling means your superintendent gets real-time crew and delivery updates, not a phone tag game."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What types of commercial projects does ACG typically glaze in Wesley Chapel?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wesley Chapel's commercial growth is diverse. We work across retail storefronts and strip centers along SR-54 and SR-56, medical office buildings and hospital-adjacent facilities, mixed-use and multi-family podium projects in Wiregrass and KRATE-area developments, and big-box retail. We bring the same process rigor whether it's a 3,000 SF inline tenant or a full curtainwall package on a mid-rise."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you pull permits in Pasco County for commercial glazing work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ACG is a licensed glazing contractor in Florida and handles the full permit application process with Pasco County's Building and Construction Services department. We submit shop drawings, product approval documentation (NOA), and all required calculations to get through plan review without revision cycles that slow your schedule."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can ACG mobilize for a Wesley Chapel commercial project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Tampa office is approximately 30 minutes from Wesley Chapel. Once a contract is executed and the permit is approved, we can typically mobilize field crews within 1–2 weeks depending on material lead times. Our AI-managed scheduling means your superintendent gets real-time crew and delivery updates, not a phone tag game."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of commercial projects does ACG typically glaze in Wesley Chapel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wesley Chapel's commercial growth is diverse. We work across retail storefronts and strip centers along SR-54 and SR-56, medical office buildings and hospital-adjacent facilities, mixed-use and multi-family podium projects in Wiregrass and KRATE-area developments, and big-box retail. We bring the same process rigor whether it's a 3,000 SF inline tenant or a full curtainwall package on a mid-rise."
+      }
+    }
+  ]
+}
+</script>
   <meta property="og:title" content="Commercial Glazing Wesley Chapel, FL | Storefronts & Curtainwall — ACG">
   <meta property="og:description" content="Commercial glazing contractor in Wesley Chapel, FL — ACG serves Pasco County's fastest-growing commercial market. Impact windows, storefronts, and cur">
   <meta property="og:image" content="https://acglass.com/images/projects/lake-park-innovation/hero.jpg">
@@ -101,16 +102,31 @@
   <meta property="og:image:alt" content="American Commercial Glass — Florida's commercial glazing specialists">
   <meta property="og:type" content="website">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://acglass.com/commercial-glazing-south-florida.html"},
-      {"@type": "ListItem", "position": 3, "name": "Commercial Glazing Wesley Chapel", "item": "https://acglass.com/commercial-glazing-wesley-chapel.html"}
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Service Areas",
+      "item": "https://acglass.com/commercial-glazing-south-florida.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Glazing Wesley Chapel",
+      "item": "https://acglass.com/commercial-glazing-wesley-chapel.html"
+    }
+  ]
+}
+</script>
   <style>
     .nav-dropdown{position:relative}
     .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
@@ -137,7 +153,7 @@
   "@context": "https://schema.org",
   "@type": "Place",
   "name": "Wesley Chapel, FL",
-  "description": "ACG commercial glazing service area \u2014 Pasco County",
+  "description": "ACG commercial glazing service area — Pasco County",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 28.2397,
@@ -149,6 +165,7 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://acglass.com/#organization",
   "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
@@ -193,7 +210,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@id": "https://acglass.com/#organization-ref",
+  "@id": "https://acglass.com/#organization",
   "@type": [
     "Organization",
     "LocalBusiness",
@@ -260,7 +277,7 @@
       "name": "Do I need impact windows for a Wesley Chapel commercial building?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If your Wesley Chapel commercial project is in a wind-borne debris region (WBDR) or High-Velocity Hurricane Zone (HVHZ \u2014 Miami-Dade and Broward counties), impact-rated glazing or code-equivalent shutters are required by the Florida Building Code 8th Edition (2026). Most modern commercial buildings in Wesley Chapel specify impact glazing to reduce insurance, speed post-storm reopening, and avoid shutter logistics."
+        "text": "If your Wesley Chapel commercial project is in a wind-borne debris region (WBDR) or High-Velocity Hurricane Zone (HVHZ — Miami-Dade and Broward counties), impact-rated glazing or code-equivalent shutters are required by the Florida Building Code 8th Edition (2026). Most modern commercial buildings in Wesley Chapel specify impact glazing to reduce insurance, speed post-storm reopening, and avoid shutter logistics."
       }
     },
     {
@@ -268,7 +285,7 @@
       "name": "What manufacturers does ACG install in Wesley Chapel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ACG installs ESWindows (impact storefront and curtainwall \u2014 ES-50, ES-7000, ES-8000), Euro-Wall (multi-slide, bi-fold Vistafold, pivot, DirectSet), PGT (impact-resistant residential and light commercial), Allegion (commercial hardware, LCN automatic operators), TGP (fire-rated glazing \u2014 UL 9, UL 10B, UL 263), and Slimpact (impact-rated steel framing). ACG does not substitute in unauthorized manufacturers or off-spec systems."
+        "text": "ACG installs ESWindows (impact storefront and curtainwall — ES-50, ES-7000, ES-8000), Euro-Wall (multi-slide, bi-fold Vistafold, pivot, DirectSet), PGT (impact-resistant residential and light commercial), Allegion (commercial hardware, LCN automatic operators), TGP (fire-rated glazing — UL 9, UL 10B, UL 263), and Slimpact (impact-rated steel framing). ACG does not substitute in unauthorized manufacturers or off-spec systems."
       }
     }
   ]

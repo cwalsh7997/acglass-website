@@ -66,7 +66,26 @@
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},{"@type":"ListItem","position":3,"name":"Indiantown High School","item":"https://acglass.com/indiantown-high-school.html"}]
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Portfolio",
+      "item": "https://acglass.com/portfolio.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Indiantown High School",
+      "item": "https://acglass.com/indiantown-high-school.html"
+    }
+  ]
 }
 </script>
 
@@ -81,7 +100,7 @@
       ],
       "@id": "https://acglass.com/indiantown-high-school.html#project",
       "name": "Indiantown High School",
-      "description": "Indiantown High School in Indiantown, FL \u2014 interior glass partition and storefront scope by ACG. Educational institutional glazing in Martin County.",
+      "description": "Indiantown High School in Indiantown, FL — interior glass partition and storefront scope by ACG. Educational institutional glazing in Martin County.",
       "url": "https://acglass.com/indiantown-high-school.html",
       "image": "https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg",
       "location": {
@@ -110,10 +129,10 @@
         "naics": "238150",
         "iso6523Code": "0199:CGC1531993"
       },
-      "additionalType": "Educational \u2014 K-12",
+      "additionalType": "Educational — K-12",
       "isPartOf": {
         "@type": "CreativeWork",
-        "name": "American Commercial Glass \u2014 Project Portfolio",
+        "name": "American Commercial Glass — Project Portfolio",
         "url": "https://acglass.com/portfolio.html",
         "alternateName": [
           "ACG",
@@ -158,7 +177,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@id": "https://acglass.com/#organization-ref",
+  "@id": "https://acglass.com/#organization",
   "@type": [
     "Organization",
     "LocalBusiness",
@@ -476,10 +495,11 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Indiantown High School \u2014 Interior Glass Partitions & Storefront, Martin County FL",
+  "headline": "Indiantown High School — Interior Glass Partitions & Storefront, Martin County FL",
   "description": "Interior glass partition and storefront scope for Indiantown High School in Indiantown, FL by American Commercial Glass.",
   "publisher": {
     "@type": "Organization",
@@ -496,7 +516,8 @@
     "naics": "238150",
     "iso6523Code": "0199:CGC1531993"
   }
-}</script>
+}
+</script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>

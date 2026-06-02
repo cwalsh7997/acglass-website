@@ -128,7 +128,26 @@
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},{"@type":"ListItem","position":3,"name":"The Bradley Daytona","item":"https://acglass.com/bradley-daytona.html"}]
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Portfolio",
+      "item": "https://acglass.com/portfolio.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Bradley Daytona",
+      "item": "https://acglass.com/bradley-daytona.html"
+    }
+  ]
 }
 </script>
 
@@ -143,7 +162,7 @@
       ],
       "@id": "https://acglass.com/bradley-daytona.html#project",
       "name": "The Bradley Daytona",
-      "description": "The Bradley Daytona \u2014 ACG delivered the complete glazing package for this 300-unit luxury apartment community in Daytona Beach, FL. Windows, doors, and storefront for Waypoint Construction Group.",
+      "description": "The Bradley Daytona — ACG delivered the complete glazing package for this 300-unit luxury apartment community in Daytona Beach, FL. Windows, doors, and storefront for Waypoint Construction Group.",
       "url": "https://acglass.com/bradley-daytona.html",
       "image": "https://acglass.com/images/projects/bradley-daytona.jpg",
       "location": {
@@ -175,7 +194,7 @@
       "additionalType": "Commercial",
       "isPartOf": {
         "@type": "CreativeWork",
-        "name": "American Commercial Glass \u2014 Project Portfolio",
+        "name": "American Commercial Glass — Project Portfolio",
         "url": "https://acglass.com/portfolio.html",
         "alternateName": [
           "ACG",
@@ -220,7 +239,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@id": "https://acglass.com/#organization-ref",
+  "@id": "https://acglass.com/#organization",
   "@type": [
     "Organization",
     "LocalBusiness",
@@ -546,11 +565,12 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script type="application/ld+json">{
+  <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Bradley Daytona \u2014 300-Unit Multifamily Glazing, Daytona Beach FL",
-  "description": "ACG delivered the complete glazing package \u2014 impact-rated windows, storefront systems, and doors \u2014 for The Bradley Daytona, a 300-unit luxury apartment community built by Waypoint Construction Group in Daytona Beach, FL.",
+  "headline": "The Bradley Daytona — 300-Unit Multifamily Glazing, Daytona Beach FL",
+  "description": "ACG delivered the complete glazing package — impact-rated windows, storefront systems, and doors — for The Bradley Daytona, a 300-unit luxury apartment community built by Waypoint Construction Group in Daytona Beach, FL.",
   "publisher": {
     "@type": "Organization",
     "name": "American Commercial Glass",
@@ -566,7 +586,8 @@
     "naics": "238150",
     "iso6523Code": "0199:CGC1531993"
   }
-}</script>
+}
+</script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>

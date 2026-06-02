@@ -23,9 +23,10 @@
 
   <!-- LocalBusiness Schema — National -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://acglass.com/#organization",
   "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
@@ -34,7 +35,7 @@
     "American Commercial Glass Florida",
     "ACG Commercial Glass"
   ],
-  "description": "National commercial glazing contractor providing full Division 08 scope \u2014 impact windows, storefronts, curtainwall, window wall, and specialty glazing \u2014 for general contractors across Florida, the Southeast, and nationwide.",
+  "description": "National commercial glazing contractor providing full Division 08 scope — impact windows, storefronts, curtainwall, window wall, and specialty glazing — for general contractors across Florida, the Southeast, and nationwide.",
   "url": "https://acglass.com/national-commercial-glazing-contractor.html",
   "telephone": "(772) 486-7711",
   "email": "connor@acglass.com",
@@ -62,13 +63,14 @@
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
 }
-  </script>
+</script>
 
   <!-- Organization Schema -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://acglass.com/#organization",
   "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
@@ -94,14 +96,14 @@
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
 }
-  </script>
+</script>
 
   <!-- Service Schema -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "National Commercial Glazing \u2014 Division 08",
+  "name": "National Commercial Glazing — Division 08",
   "provider": {
     "@type": "Organization",
     "name": "American Commercial Glass",
@@ -130,69 +132,79 @@
     "Specialty Glazing"
   ]
 }
-  </script>
+</script>
 
   <!-- FAQPage Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does ACG work on commercial glazing projects outside of Florida?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. ACG is an active national glazing contractor. We self-perform and coordinate commercial glazing scopes outside Florida through our GC partner network. Our most recent out-of-state project: StayApt Suites Lafayette with Rycon Construction in Louisiana. We serve Florida, Georgia, Louisiana, Tennessee, North Carolina, South Carolina, Texas, and Alabama — and we're expanding."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does ACG coordinate glazing scopes remotely for out-of-state projects?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ACG uses AI-managed operations to coordinate submittals, material procurement, and installation scheduling from Florida for out-of-state projects. Our platform tracks deadlines against the master schedule in real time, flags slippage proactively, and keeps the GC's superintendent informed without requiring constant back-and-forth. The same operational model that runs our Florida offices scales nationally."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What states does ACG serve for commercial glazing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ACG currently serves Florida (three offices), Georgia, Louisiana, Tennessee, North Carolina, South Carolina, Texas, and Alabama. Our national reach is driven by GC partner relationships — when our GC partners build outside their home market, we travel with them."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What project types does ACG handle nationally?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ACG handles the full Division 08 scope nationally: impact-rated windows and doors, commercial storefronts, curtainwall systems, window wall, fire-rated glass assemblies, automatic entrances, and specialty glazing. Hospitality, multifamily, medical, mixed-use, retail, and office — one sub, every opening."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly can ACG turn around a scope for a national project?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Send us your drawings and we return a detailed scope — system recommendations, quantities, and Division 08 scope breakdown — within 48 hours, regardless of where the project is located. Out-of-state scopes follow the same 48-hour standard."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does ACG work on commercial glazing projects outside of Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ACG is an active national glazing contractor. We self-perform and coordinate commercial glazing scopes outside Florida through our GC partner network. Our most recent out-of-state project: StayApt Suites Lafayette with Rycon Construction in Louisiana. We serve Florida, Georgia, Louisiana, Tennessee, North Carolina, South Carolina, Texas, and Alabama — and we're expanding."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "How does ACG coordinate glazing scopes remotely for out-of-state projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG uses AI-managed operations to coordinate submittals, material procurement, and installation scheduling from Florida for out-of-state projects. Our platform tracks deadlines against the master schedule in real time, flags slippage proactively, and keeps the GC's superintendent informed without requiring constant back-and-forth. The same operational model that runs our Florida offices scales nationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What states does ACG serve for commercial glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG currently serves Florida (three offices), Georgia, Louisiana, Tennessee, North Carolina, South Carolina, Texas, and Alabama. Our national reach is driven by GC partner relationships — when our GC partners build outside their home market, we travel with them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What project types does ACG handle nationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG handles the full Division 08 scope nationally: impact-rated windows and doors, commercial storefronts, curtainwall systems, window wall, fire-rated glass assemblies, automatic entrances, and specialty glazing. Hospitality, multifamily, medical, mixed-use, retail, and office — one sub, every opening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can ACG turn around a scope for a national project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send us your drawings and we return a detailed scope — system recommendations, quantities, and Division 08 scope breakdown — within 48 hours, regardless of where the project is located. Out-of-state scopes follow the same 48-hour standard."
+      }
+    }
+  ]
+}
+</script>
 
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "National Commercial Glazing Contractor", "item": "https://acglass.com/national-commercial-glazing-contractor.html"}
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "National Commercial Glazing Contractor",
+      "item": "https://acglass.com/national-commercial-glazing-contractor.html"
+    }
+  ]
+}
+</script>
   <meta property="og:title" content="National Commercial Glazing Contractor | Division 08 Nationwide | ACG">
   <meta property="og:description" content="ACG is a national commercial glazing contractor. Full Division 08 scope. AI-managed. 350+ projects from Florida to the Southeast and beyond.">
   <meta property="og:image" content="https://acglass.com/images/projects/panther-national/rendering.jpg">
@@ -224,7 +236,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@id": "https://acglass.com/#organization-ref",
+  "@id": "https://acglass.com/#organization",
   "@type": [
     "Organization",
     "LocalBusiness",
