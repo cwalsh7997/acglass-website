@@ -695,16 +695,9 @@
               formData.append('_source_page', '/contact');
               if (submitterEmail) { formData.append('_replyto', submitterEmail); }
 
-              // Fire GA4 conversion event BEFORE fetch so it counts even if network is slow
-              if (typeof gtag !== 'undefined') {
-                gtag('event', 'generate_lead', {
-                  'form_id': 'contact-form',
-                  'source_page': '/contact',
-                  'currency': 'USD',
-                  'value': 500
-                });
-              }
-
+              // Submit FIRST, then only fire generate_lead on a confirmed-successful response.
+              // (Earlier version fired the event before the fetch, which logged phantom
+              // conversions for failed/blocked POSTs and inflated GA4 vs real inbox volume.)
               fetch('https://formsubmit.co/ajax/connor@acglass.com', {
                 method: 'POST',
                 body: formData,
@@ -712,16 +705,40 @@
               })
               .then(function(response){
                 if (response.ok) {
+                  // Real submission — fire conversion event NOW.
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', {
+                      'form_id': 'contact-form',
+                      'source_page': '/contact',
+                      'currency': 'USD',
+                      'value': 500
+                    });
+                  }
                   status.textContent = '✓ Sent. We will respond within 48 hours.';
                   status.style.color = '#34D399';
                   f.reset();
                 } else {
+                  // Log failure separately so we can see formsubmit rejection volume.
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission_failed', {
+                      'form_id': 'contact-form',
+                      'source_page': '/contact',
+                      'http_status': response.status
+                    });
+                  }
                   status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
                   status.style.color = '#FBBF24';
                 }
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
               })
-              .catch(function(){
+              .catch(function(err){
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'form_submission_failed', {
+                    'form_id': 'contact-form',
+                    'source_page': '/contact',
+                    'error_type': 'network'
+                  });
+                }
                 status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
                 status.style.color = '#FBBF24';
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }

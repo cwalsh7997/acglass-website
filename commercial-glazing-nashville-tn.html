@@ -992,16 +992,6 @@
       formData.append('_source_page', '/commercial-glazing-nashville-tn');
       if (submitterEmail) { formData.append('_replyto', submitterEmail); }
 
-      // Fire GA4 conversion event
-      if (typeof gtag === 'function') {
-        gtag('event', 'generate_lead', {
-          form_id: 'nashville-early-bid',
-          source_page: '/commercial-glazing-nashville-tn',
-          currency: 'USD',
-          value: 1000
-        });
-      }
-
       fetch('https://formsubmit.co/ajax/connor@acglass.com', {
         method: 'POST',
         body: formData,
@@ -1009,14 +999,37 @@
       })
       .then(function(response){
         if (response.ok) {
+          // Real submission — fire conversion event AFTER confirmed success.
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              form_id: 'nashville-early-bid',
+              source_page: '/commercial-glazing-nashville-tn',
+              currency: 'USD',
+              value: 1000
+            });
+          }
           status.textContent = '✓ You are on the Nashville early-bid list. We will reach out within 48 hours.';
           form.reset();
         } else {
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submission_failed', {
+              form_id: 'nashville-early-bid',
+              source_page: '/commercial-glazing-nashville-tn',
+              http_status: response.status
+            });
+          }
           status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
         }
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       })
       .catch(function(){
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submission_failed', {
+            form_id: 'nashville-early-bid',
+            source_page: '/commercial-glazing-nashville-tn',
+            error_type: 'network'
+          });
+        }
         status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       });
