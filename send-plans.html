@@ -328,9 +328,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         <p style="color:rgba(255,255,255,.7);max-width:640px;margin:16px auto 0;">The more info you share, the faster we scope. Required fields are marked. File uploads accept up to 25 MB total.</p>
       </div>
 
-      <!-- TODO: Replace formspree-pending with real Formspree form ID once provisioned. JS submit handler below catches the placeholder and instructs the user to email Connor directly. -->
+      <!-- Backend: formsubmit.co (same proven endpoint as contact form / scope-engine).
+           No build step. To swap to Formspree later, change action below + remove _template/_captcha. -->
       <form id="send-plans-form"
-            action="https://formspree.io/f/formspree-pending"
+            action="https://formsubmit.co/connor@acglass.com"
             method="POST"
             enctype="multipart/form-data"
             data-reveal data-delay="100"
@@ -338,8 +339,22 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
         <!-- Honeypot anti-spam -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-        <input type="hidden" name="_subject" value="New bid submission from acglass.com">
+        <input type="hidden" name="_subject" value="[ACG LEAD] New plans submission via send-plans">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://acglass.com/send-plans.html?submitted=1">
         <input type="hidden" name="_language" value="en">
+        <input type="hidden" name="submission_source" value="send-plans-form">
+
+        <!-- Scope engine carryover (populated by JS from URL params if present) -->
+        <input type="hidden" name="scope_engine_project_type" id="sp-scope-project-type">
+        <input type="hidden" name="scope_engine_height" id="sp-scope-height">
+        <input type="hidden" name="scope_engine_location" id="sp-scope-location">
+        <input type="hidden" name="scope_engine_system" id="sp-scope-system">
+        <input type="hidden" name="scope_engine_system_sf" id="sp-scope-system-sf">
+        <input type="hidden" name="scope_engine_requirements" id="sp-scope-requirements">
+        <input type="hidden" name="scope_engine_estimate_low" id="sp-scope-estimate-low">
+        <input type="hidden" name="scope_engine_estimate_high" id="sp-scope-estimate-high">
 
         <!-- Contact -->
         <fieldset style="border:0;padding:0;margin:0 0 24px;">
@@ -576,55 +591,120 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
           started = true;
         }
       });
-      form.addEventListener('submit', function(e){
-        // Always use mailto delivery (reliable, no third-party dependency)
-        if (form.action.indexOf('formspree-pending') !== -1 || form.action.indexOf('YOUR_FORMSPREE_ID') !== -1) {
-          e.preventDefault();
-          var get = function(n){ var el = form.querySelector('[name="'+n+'"]'); return el ? el.value : ''; };
-          var name = get('name'), company = get('company'), email = get('email'), phone = get('phone');
-          var role = get('role'), project = get('project_name'), location = get('project_location');
-          var btype = get('building_type'), bidtype = get('bid_type'), sf = get('total_sf');
-          var due = get('bid_due'), notes = get('notes');
-          var subject = 'Plans Submission — ' + (project || company || name);
-          var body = 'PROJECT INFO%0D%0A' +
-                     'Project: ' + project + '%0D%0A' +
-                     'Location: ' + location + '%0D%0A' +
-                     'Building Type: ' + btype + '%0D%0A' +
-                     'Total SF: ' + sf + '%0D%0A' +
-                     'Bid Due: ' + due + '%0D%0A' +
-                     'Bid Type: ' + bidtype + '%0D%0A%0D%0A' +
-                     'CONTACT%0D%0A' +
-                     'Name: ' + name + '%0D%0A' +
-                     'Company: ' + company + '%0D%0A' +
-                     'Role: ' + role + '%0D%0A' +
-                     'Email: ' + email + '%0D%0A' +
-                     'Phone: ' + phone + '%0D%0A%0D%0A' +
-                     'NOTES%0D%0A' + notes + '%0D%0A%0D%0A' +
-                     'NOTE: Drawing files cannot be attached through this form. Please attach plans (PDF, DWG, ZIP) to this email before sending. For files over 25MB, paste a Procore/BuildingConnected/Dropbox link in the Notes section above and re-send.%0D%0A%0D%0A' +
-                     'Submitted from acglass.com/send-plans';
-          status.style.color = 'var(--accent)';
-          status.innerHTML = 'Opening your email — please attach drawing files before sending. If your mail client did not open, email plans to <a href="mailto:connor@acglass.com" style="color:inherit;text-decoration:underline;">connor@acglass.com</a>.';
-          // Fire GA4 conversion event
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', {
-              form_id: 'send-plans-form',
-              source_page: '/send-plans',
-              bid_type: bidtype,
-              currency: 'USD',
-              value: 750
-            });
-            gtag('event', 'bid_form_submit_mailto', { bid_type: bidtype });
+      /* ============================================================================
+         URL-PARAM PREFILL FROM SCOPE-ENGINE
+         When user arrives via the Scope Engine 'Send Us Plans' link, the URL
+         carries the scope context. Fill matching fields + hidden carry-overs
+         + a banner so the visitor knows their scope was pulled across.
+         ============================================================================ */
+      // Success confirmation banner (when formsubmit redirects back with ?submitted=1)
+      (function showSubmittedBanner() {
+        var qp = new URLSearchParams(location.search);
+        if (qp.get('submitted') !== '1') return;
+        var banner = document.createElement('div');
+        banner.style.cssText = 'background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.32);border-radius:8px;padding:18px 22px;margin-bottom:20px;font-size:14px;line-height:1.5;color:#fff;';
+        banner.innerHTML = '<strong style="color:#34D399;">\u2713 Plans received.</strong> A copy is in your inbox and with our estimating team. Expect a scope reply within 48 hours. For urgent items, call <a href="tel:+17724867711" style="color:#fff;">(772) 486-7711</a>.';
+        form.parentNode.insertBefore(banner, form);
+        if (typeof gtag === 'function') gtag('event', 'bid_form_confirmed');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })();
+
+      (function prefillFromScopeEngine() {
+        var qp = new URLSearchParams(location.search);
+        if (!qp.has('project_type') && !qp.has('system') && !qp.has('estimate_low')) return;
+
+        // Map values into existing form fields (best-effort)
+        var ptMap = {
+          storefront:   'Retail',          office:       'Office / Commercial',
+          multifamily:  'Multifamily',     hospitality:  'Hospitality',
+          healthcare:   'Healthcare',      government:   'Municipal / Public',
+          interior:     'Office / Commercial', industrial:   'Industrial',
+        };
+        var pt = qp.get('project_type');
+        if (pt && form.project_type) {
+          var opt = ptMap[pt] || 'Office / Commercial';
+          for (var i = 0; i < form.project_type.options.length; i++) {
+            if (form.project_type.options[i].value === opt || form.project_type.options[i].text === opt) {
+              form.project_type.selectedIndex = i; break;
+            }
           }
-          window.location.href = 'mailto:connor@acglass.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-          return;
         }
-        // Let Formspree handle; just track the event
+        // Location label into project_location
+        var locLabel = qp.get('location_label') || qp.get('location') || '';
+        var locInput = form.querySelector('[name="project_location"]');
+        if (locInput && locLabel && !locInput.value) locInput.value = locLabel;
+
+        // Total SF
+        var sfInput = form.querySelector('[name="total_sf"]');
+        if (sfInput && qp.get('system_sf') && !sfInput.value) sfInput.value = qp.get('system_sf');
+
+        // Hidden carry-overs
+        ['project_type','height','location','system','system_sf','requirements','estimate_low','estimate_high'].forEach(function(k){
+          var v = qp.get(k);
+          var h = document.getElementById('sp-scope-' + k.replace(/_/g,'-'));
+          if (h && v) h.value = v;
+        });
+
+        // Notes pre-populate with the estimate summary
+        var notesInput = form.querySelector('[name="notes"]');
+        if (notesInput && !notesInput.value) {
+          var lines = [];
+          lines.push('=== FROM ACG SCOPE ENGINE ===');
+          if (qp.get('project_type')) lines.push('Project type: ' + qp.get('project_type'));
+          if (qp.get('height')) lines.push('Building height: ' + qp.get('height').replace('_',' '));
+          if (qp.get('location_label')) lines.push('Region: ' + qp.get('location_label'));
+          if (qp.get('system_sf')) lines.push('System SF (computed): ' + qp.get('system_sf'));
+          if (qp.get('system')) lines.push('Recommended system: ' + qp.get('system'));
+          if (qp.get('requirements')) lines.push('Requirements: ' + qp.get('requirements'));
+          if (qp.get('estimate_low_fmt')) lines.push('Engine estimate: ' + qp.get('estimate_low_fmt') + ' \u2014 ' + qp.get('estimate_high_fmt'));
+          lines.push('');
+          lines.push('(Add anything else below)');
+          notesInput.value = lines.join('\n');
+        }
+
+        // Show banner above the form
+        var banner = document.createElement('div');
+        banner.style.cssText = 'background:rgba(225,19,32,.08);border:1px solid rgba(225,19,32,.32);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:14px;line-height:1.5;color:#fff;';
+        banner.innerHTML = '<strong style="color:#E11320;letter-spacing:.04em;">Carried over from the Scope Engine.</strong> Your project type, location, and notes have been pre-filled. Add plans (PDF / DWG / ZIP) below and the rest of any details.';
+        form.parentNode.insertBefore(banner, form);
+      })();
+
+      // Real POST to formsubmit.co. Native form submit (so file uploads work).
+      // We let the form post naturally, then formsubmit redirects to _next.
+      // GA4 tracking fires only when the form is actually submitting.
+      form.addEventListener('submit', function(e){
+        // Set _replyto to whatever email the user typed (formsubmit uses this for reply chain)
+        var emailEl = form.querySelector('[name="email"]');
+        if (emailEl && emailEl.value) {
+          var existing = form.querySelector('[name="_replyto"]');
+          if (!existing) {
+            var r = document.createElement('input');
+            r.type = 'hidden'; r.name = '_replyto'; r.value = emailEl.value;
+            form.appendChild(r);
+          } else {
+            existing.value = emailEl.value;
+          }
+        }
+        // GA4: fire conversion event (we're about to navigate away to formsubmit's _next page)
         if (typeof gtag === 'function') {
+          var bidtype = (form.bid_type && form.bid_type.value) || '';
           gtag('event', 'bid_form_submit', {
             project_type: form.project_type ? form.project_type.value : '',
-            bid_type: form.bid_type ? form.bid_type.value : ''
+            bid_type: bidtype,
+            source_page: '/send-plans.html'
+          });
+          gtag('event', 'generate_lead', {
+            form_id: 'send-plans-form',
+            source_page: '/send-plans.html',
+            bid_type: bidtype,
+            currency: 'USD',
+            value: 750
           });
         }
+        // Visual status while submitting
+        status.style.color = 'var(--accent)';
+        status.innerHTML = 'Sending\u2026';
+        // Allow native POST to proceed
       });
     })();
   </script>
