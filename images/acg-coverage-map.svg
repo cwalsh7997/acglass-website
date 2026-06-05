@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc" style="max-width:100%;height:auto;display:block;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+  <title id="title">ACG U.S. coverage map — Florida active, Tennessee Q3 2026, Southeast bidding tier</title>
+  <desc id="desc">Map of the continental United States showing American Commercial Glass coverage: Florida and Tennessee active markets, Southeast U.S. project-by-project bidding markets.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B1424"/>
+      <stop offset="100%" stop-color="#050A12"/>
+    </linearGradient>
+    <radialGradient id="hqGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E11320" stop-opacity="0.65"/>
+      <stop offset="60%" stop-color="#E11320" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#E11320" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tnGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFB021" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#FFB021" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFB021" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="560" fill="url(#bg)"/>
+
+  <!-- Subtle latitude/longitude grid for "national" feel -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="0" y1="140" x2="900" y2="140"/>
+    <line x1="0" y1="280" x2="900" y2="280"/>
+    <line x1="0" y1="420" x2="900" y2="420"/>
+    <line x1="225" y1="0" x2="225" y2="560"/>
+    <line x1="450" y1="0" x2="450" y2="560"/>
+    <line x1="675" y1="0" x2="675" y2="560"/>
+  </g>
+
+  <!-- ===== State boundaries (simplified, Tier 3 / Southeast bidding states) ===== -->
+  <!-- Approximate continental US silhouette as a soft outline -->
+  <path d="M 70 200 Q 100 160 160 150 L 240 130 L 320 125 L 410 120 L 500 118 L 600 122 L 700 130 L 780 145 L 830 175 L 845 215 L 840 260 L 825 305 L 800 345 L 760 380 L 720 400 L 680 410 L 650 420 L 640 445 L 660 475 L 690 495 L 720 510 L 700 530 L 660 525 L 620 510 L 580 490 L 540 470 L 500 455 L 460 445 L 420 440 L 380 435 L 340 425 L 300 410 L 270 390 L 240 365 L 200 340 L 165 305 L 130 270 L 100 235 Z" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+
+  <!-- ===== TIER 3 STATES: Southeast bidding (subtle blue glow) ===== -->
+  <!-- Georgia -->
+  <path d="M 565 360 L 615 358 L 625 410 L 615 445 L 590 465 L 560 460 L 555 415 Z" fill="rgba(96,200,255,0.10)" stroke="rgba(96,200,255,0.32)" stroke-width="1.2"/>
+  <text x="585" y="410" text-anchor="middle" fill="rgba(96,200,255,0.6)" font-size="11" font-weight="600" letter-spacing="0.5">GA</text>
+
+  <!-- Alabama -->
+  <path d="M 515 355 L 562 358 L 555 415 L 560 460 L 530 463 L 515 415 Z" fill="rgba(96,200,255,0.10)" stroke="rgba(96,200,255,0.32)" stroke-width="1.2"/>
+  <text x="535" y="410" text-anchor="middle" fill="rgba(96,200,255,0.6)" font-size="11" font-weight="600" letter-spacing="0.5">AL</text>
+
+  <!-- South Carolina -->
+  <path d="M 618 355 L 670 345 L 690 380 L 660 405 L 625 410 Z" fill="rgba(96,200,255,0.10)" stroke="rgba(96,200,255,0.32)" stroke-width="1.2"/>
+  <text x="650" y="380" text-anchor="middle" fill="rgba(96,200,255,0.6)" font-size="11" font-weight="600" letter-spacing="0.5">SC</text>
+
+  <!-- North Carolina -->
+  <path d="M 600 320 L 720 305 L 740 340 L 690 350 L 618 355 L 600 345 Z" fill="rgba(96,200,255,0.10)" stroke="rgba(96,200,255,0.32)" stroke-width="1.2"/>
+  <text x="670" y="332" text-anchor="middle" fill="rgba(96,200,255,0.6)" font-size="11" font-weight="600" letter-spacing="0.5">NC</text>
+
+  <!-- Mississippi -->
+  <path d="M 465 355 L 513 358 L 515 415 L 530 463 L 500 465 L 470 415 Z" fill="rgba(96,200,255,0.10)" stroke="rgba(96,200,255,0.32)" stroke-width="1.2"/>
+  <text x="490" y="410" text-anchor="middle" fill="rgba(96,200,255,0.6)" font-size="11" font-weight="600" letter-spacing="0.5">MS</text>
+
+  <!-- ===== TIER 2: TENNESSEE (Q3 2026 — gold) ===== -->
+  <path d="M 463 330 L 600 320 L 600 345 L 515 355 L 463 353 Z" fill="rgba(255,176,33,0.18)" stroke="#FFB021" stroke-width="2"/>
+  <text x="530" y="343" text-anchor="middle" fill="#FFB021" font-size="13" font-weight="800" letter-spacing="1">TENNESSEE</text>
+
+  <!-- Nashville pin -->
+  <circle cx="540" cy="338" r="40" fill="url(#tnGlow)"/>
+  <circle cx="540" cy="338" r="6" fill="#FFB021"/>
+  <circle cx="540" cy="338" r="2.5" fill="#0e284f"/>
+  <text x="540" y="318" text-anchor="middle" fill="#FFB021" font-size="10" font-weight="700" letter-spacing="0.5">NASHVILLE</text>
+  <text x="540" y="385" text-anchor="middle" fill="rgba(255,176,33,0.75)" font-size="9" font-weight="600" letter-spacing="0.8">Q3 2026</text>
+
+  <!-- ===== TIER 1: FLORIDA (active — red) ===== -->
+  <path d="M 555 465 L 620 460 L 660 475 L 690 495 L 720 510 L 700 530 L 660 525 L 620 510 L 580 490 L 555 480 Z" fill="rgba(225,19,32,0.25)" stroke="#E11320" stroke-width="2.5"/>
+
+  <!-- Florida label outside the panhandle for clarity -->
+  <text x="690" y="468" text-anchor="middle" fill="#E11320" font-size="13" font-weight="800" letter-spacing="1">FLORIDA</text>
+  <text x="690" y="482" text-anchor="middle" fill="rgba(225,19,32,0.7)" font-size="9" font-weight="600" letter-spacing="0.8">HQ · 350+ PROJECTS · 1M+ SF</text>
+
+  <!-- Office pins on FL -->
+  <!-- West Palm Beach HQ -->
+  <circle cx="690" cy="510" r="36" fill="url(#hqGlow)"/>
+  <circle cx="690" cy="510" r="7" fill="#E11320" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="690" cy="510" r="2.5" fill="#fff"/>
+  <text x="690" y="532" text-anchor="middle" fill="#fff" font-size="9" font-weight="800" letter-spacing="0.6">WPB · HQ</text>
+
+  <!-- Naples (SW Florida) -->
+  <circle cx="650" cy="515" r="22" fill="url(#hqGlow)"/>
+  <circle cx="650" cy="515" r="5" fill="#E11320" stroke="#fff" stroke-width="1.2"/>
+  <text x="645" y="510" text-anchor="end" fill="rgba(255,255,255,0.75)" font-size="9" font-weight="700" letter-spacing="0.5">NAPLES</text>
+
+  <!-- Tampa (West Florida) -->
+  <circle cx="630" cy="490" r="22" fill="url(#hqGlow)"/>
+  <circle cx="630" cy="490" r="5" fill="#E11320" stroke="#fff" stroke-width="1.2"/>
+  <text x="624" y="494" text-anchor="end" fill="rgba(255,255,255,0.75)" font-size="9" font-weight="700" letter-spacing="0.5">TAMPA</text>
+
+  <!-- ===== LEGEND ===== -->
+  <g transform="translate(50, 460)">
+    <rect x="0" y="0" width="280" height="80" rx="6" fill="rgba(11,20,36,0.85)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+    <text x="14" y="20" fill="rgba(255,255,255,0.45)" font-size="9" font-weight="700" letter-spacing="1.5">COVERAGE TIERS</text>
+
+    <circle cx="22" cy="36" r="5" fill="#E11320" stroke="#fff" stroke-width="1"/>
+    <text x="36" y="40" fill="#fff" font-size="11" font-weight="600">Tier 1 — Active offices</text>
+    <text x="170" y="40" fill="rgba(255,255,255,0.55)" font-size="10">FL · 3 offices</text>
+
+    <circle cx="22" cy="54" r="5" fill="#FFB021"/>
+    <text x="36" y="58" fill="#fff" font-size="11" font-weight="600">Tier 2 — Q3 2026 opening</text>
+    <text x="170" y="58" fill="rgba(255,255,255,0.55)" font-size="10">TN · Nashville</text>
+
+    <rect x="17" y="68" width="10" height="4" fill="rgba(96,200,255,0.4)" stroke="#60C8FF" stroke-width="0.8"/>
+    <text x="36" y="74" fill="#fff" font-size="11" font-weight="600">Tier 3 — Bidding (per GC)</text>
+    <text x="170" y="74" fill="rgba(255,255,255,0.55)" font-size="10">GA · AL · SC · NC · MS</text>
+  </g>
+
+  <!-- Title block / corner -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" fill="rgba(255,255,255,0.45)" font-size="10" font-weight="700" letter-spacing="2.5">AMERICAN COMMERCIAL GLASS</text>
+    <text x="0" y="24" fill="#fff" font-size="22" font-weight="900" letter-spacing="-0.5">U.S. Coverage Map</text>
+    <text x="0" y="46" fill="rgba(255,255,255,0.55)" font-size="11" font-weight="500">Florida HQ · Tennessee Q3 2026 · Southeast bidding tier</text>
+  </g>
+
+  <!-- Corner attribution -->
+  <text x="850" y="545" text-anchor="end" fill="rgba(255,255,255,0.25)" font-size="9" font-weight="500" letter-spacing="0.5">acglass.com · CGC #1531993</text>
+</svg>

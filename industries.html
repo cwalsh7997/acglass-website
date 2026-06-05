@@ -10,28 +10,30 @@
   <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e284f">
-  <title>Industries | Commercial Glazing for Every Sector | ACG</title>
+  <title>Industries We Serve | Commercial Glazing by Sector | ACG</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=1780170887">
-  <meta name="description" content="ACG delivers commercial glazing across every sector — multifamily, hospitality, retail, healthcare, office, industrial, and mixed-use development">
+  <meta name="description" content="American Commercial Glass serves hospitality, healthcare, government, multifamily, restaurants, and education projects across Florida and Tennessee. 350+ commercial projects, 1M+ SF installed.">
   <link rel="canonical" href="https://acglass.com/industries.html">
   <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="feed.xml">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Industries | Commercial Glazing for Every Sector">
-  <meta property="og:description" content="ACG delivers commercial glazing across every sector — multifamily, hospitality, retail, healthcare, office, industrial, and mixed-use development">
+  <meta property="og:title" content="Industries We Serve | Commercial Glazing by Sector | ACG">
+  <meta property="og:description" content="ACG delivers commercial glazing for hospitality, healthcare, government, multifamily, restaurants, and education across Florida and Tennessee. 350+ projects, 1M+ SF installed.">
   <meta property="og:url" content="https://acglass.com/industries.html">
-  <meta property="og:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://acglass.com/images/acg-coverage-map.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="American Commercial Glass — Florida's commercial glazing specialists">
+  <meta property="og:image:alt" content="American Commercial Glass — industry sectors and coverage map">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Industries | Commercial Glazing for Every Sector">
-  <meta name="twitter:description" content="ACG delivers commercial glazing across every sector — multifamily, hospitality, retail, healthcare, office, industrial, and mixed-use development">
-  <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
+  <meta name="twitter:title" content="Industries We Serve | Commercial Glazing by Sector | ACG">
+  <meta name="twitter:description" content="ACG delivers commercial glazing for hospitality, healthcare, government, multifamily, restaurants, and education across Florida and Tennessee.">
+  <meta name="twitter:image" content="https://acglass.com/images/acg-coverage-map.svg">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=1780170887">
+
   <style>
+    /* ===== NAV DROPDOWN ===== */
     .nav-dropdown{position:relative}
     .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
     .nav-dropdown-trigger:hover{color:#fff}
@@ -42,57 +44,185 @@
     .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
     .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
     @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
+      .nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
+      .nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
+      .nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
+      .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
+      .nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
+      .nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
+      .nav-dropdown-menu a:hover{color:#fff !important}
+    }
+
+    /* ===== SECTOR TILES ===== */
+    .sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);margin-top:clamp(40px,5vw,56px)}
+    @media(max-width:1024px){.sector-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.sector-grid{grid-template-columns:1fr}}
+
+    .sector-tile{display:flex;flex-direction:column;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:clamp(24px,3vw,32px);text-decoration:none;transition:all .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+    .sector-tile::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(225,19,32,.05),transparent);opacity:0;transition:opacity .3s}
+    .sector-tile:hover{border-color:rgba(225,19,32,.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+    .sector-tile:hover::before{opacity:1}
+    .sector-icon{width:44px;height:44px;background:rgba(225,19,32,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;flex-shrink:0}
+    .sector-icon svg{width:22px;height:22px;color:#E11320}
+    .sector-code{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+    .sector-tile h3{font-size:clamp(1.125rem,1.8vw,1.375rem);font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.015em}
+    .sector-tile p{font-size:.875rem;line-height:1.65;color:rgba(255,255,255,.65);margin-bottom:14px;flex:1}
+    .sector-systems{font-size:.8125rem;color:rgba(255,255,255,.5);margin-bottom:12px;line-height:1.5}
+    .sector-projects{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+    .sector-project-tag{font-family:'JetBrains Mono',monospace;font-size:.6875rem;letter-spacing:.04em;padding:4px 9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.65)}
+    .sector-link{font-size:.8125rem;font-weight:600;color:#E11320;text-decoration:none;display:inline-flex;align-items:center;gap:6px;letter-spacing:.01em;margin-top:auto}
+    .sector-link:hover{color:#ff3040}
+    .sector-link svg{width:14px;height:14px;transition:transform .2s}
+    .sector-link:hover svg{transform:translateX(3px)}
+
+    /* ===== COVERAGE MAP BLOCK ===== */
+    .coverage-block{background:linear-gradient(135deg,rgba(14,40,79,.0),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:clamp(32px,4vw,56px);overflow:hidden}
+    .coverage-map-img{width:100%;max-width:1800px;height:auto;display:block;margin:0 auto;border-radius:8px;opacity:.92}
+
+    /* ===== MULTI-STATE TABLE ===== */
+    .state-coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);margin-top:clamp(32px,4vw,48px)}
+    @media(max-width:640px){.state-coverage-grid{grid-template-columns:1fr}}
+    .state-col{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:clamp(20px,2.5vw,28px)}
+    .state-col-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.07)}
+    .state-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px}
+    .state-badge-fl{background:#E11320;color:#fff}
+    .state-badge-tn{background:#FFB021;color:#0e284f}
+    .state-col h4{font-size:1.125rem;font-weight:800;color:#fff;margin:0}
+    .state-sector-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.875rem}
+    .state-sector-row:last-child{border-bottom:none}
+    .state-sector-name{color:rgba(255,255,255,.8);font-weight:500}
+    .state-sector-status{font-family:'JetBrains Mono',monospace;font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px}
+    .status-active{background:rgba(225,19,32,.15);color:#ff6b75;border:1px solid rgba(225,19,32,.25)}
+    .status-launching{background:rgba(255,176,33,.12);color:#ffc340;border:1px solid rgba(255,176,33,.2)}
+
+    /* ===== FLAGSHIP 4-COL FOOTER ===== */
+    .flagship-footer{background:var(--navy,#0e284f);border-top:1px solid rgba(255,255,255,.07);padding:clamp(48px,6vw,80px) 0 0}
+    .flagship-footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px)}
+    @media(max-width:900px){.flagship-footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.flagship-footer-grid{grid-template-columns:1fr}}
+    .ff-col h5{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}
+    .ff-col-links{display:flex;flex-direction:column;gap:7px}
+    .ff-col-links a{font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;transition:color .15s;line-height:1.4}
+    .ff-col-links a:hover{color:#fff}
+    .ff-col-addr{font-size:.8125rem;color:rgba(255,255,255,.55);line-height:1.65}
+    .ff-col-addr strong{color:rgba(255,255,255,.85);font-weight:600;display:block;margin-bottom:2px}
+    .ff-trust-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.5}
+    .ff-trust-item svg{width:14px;height:14px;flex-shrink:0;margin-top:2px;color:#E11320}
+    .flagship-footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:clamp(32px,4vw,48px);padding:20px 0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8125rem;color:rgba(255,255,255,.45)}
+    .flagship-footer-bottom a{color:rgba(255,255,255,.45);text-decoration:none}
+    .flagship-footer-bottom a:hover{color:#fff}
+
+    /* ===== PROOF BAR OVERRIDE ===== */
+    .proof-bar-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+    @media(max-width:640px){.proof-bar-inner{grid-template-columns:repeat(2,1fr)}}
+    .proof-bar-item{padding:clamp(20px,3vw,32px) clamp(16px,2.5vw,32px);border-right:1px solid rgba(255,255,255,.07)}
+    .proof-bar-item:last-child{border-right:none}
+    .proof-bar-num{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-.03em;color:#fff;line-height:1}
+    .proof-bar-label{font-size:.8125rem;color:rgba(255,255,255,.55);margin-top:4px}
+
+    /* ===== SECTOR DETAIL PANEL ===== */
+    .detail-panel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start;margin-top:clamp(32px,5vw,64px)}
+    @media(max-width:768px){.detail-panel{grid-template-columns:1fr}}
+    .detail-panel-text h2{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:900;letter-spacing:-.025em;line-height:1.1;color:#fff;margin-bottom:16px}
+    .detail-panel-text p{font-size:.9375rem;line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:14px}
+    .detail-panel-right{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:clamp(24px,3vw,36px)}
+
+    /* ===== GC CALLOUT ===== */
+    .gc-callout{background:linear-gradient(135deg,rgba(225,19,32,.08),rgba(14,40,79,.0));border:1px solid rgba(225,19,32,.2);border-radius:12px;padding:clamp(28px,3.5vw,44px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+    @media(max-width:640px){.gc-callout{grid-template-columns:1fr}}
+    .gc-callout h3{font-size:clamp(1.25rem,2.2vw,1.625rem);font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.015em}
+    .gc-callout p{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.6;margin:0}
   </style>
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://acglass.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Industries Served"
-    }
-  ]
+  "@type": "WebPage",
+  "@id": "https://acglass.com/industries.html",
+  "name": "Industries We Serve | Commercial Glazing by Sector | ACG",
+  "url": "https://acglass.com/industries.html",
+  "description": "American Commercial Glass serves hospitality, healthcare, government, multifamily, restaurants, and education projects across Florida and Tennessee.",
+  "publisher": {
+    "@id": "https://acglass.com/#organization"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://acglass.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Industries",
+        "item": "https://acglass.com/industries.html"
+      }
+    ]
+  }
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@id": "https://acglass.com/#organization",
+  "@type": ["Organization","LocalBusiness","HomeAndConstructionBusiness"],
+  "name": "American Commercial Glass, Inc.",
+  "alternateName": ["ACG","ACG Glass","ACG Florida","American Commercial Glass Florida","ACG Commercial Glass"],
+  "url": "https://acglass.com/",
+  "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
+  "telephone": "+1-772-486-7711",
+  "email": "connor@acglass.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "700 S Rosemary Ave Ste 204",
+    "addressLocality": "West Palm Beach",
+    "addressRegion": "FL",
+    "postalCode": "33401",
+    "addressCountry": "US"
+  },
+  "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass &amp; Metals (acrystalglass.com), a separate company.",
+  "naics": "238150",
+  "iso6523Code": "0199:CGC1531993"
 }
 </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <!-- GRAIN OVERLAY -->
   <div class="grain"></div>
-
-  <!-- CUSTOM CURSOR -->
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- ===== NAV ===== -->
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
       </a>
-
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
+        <a href="industries.html" style="color:#fff;font-weight:600;">Industries</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <a href="commercial-glazing-palm-beach.html">Palm Beach</a>
+            <a href="commercial-glazing-miami.html">Miami</a>
+            <a href="commercial-glazing-fort-lauderdale.html">Fort Lauderdale</a>
+            <a href="commercial-glazing-boca-raton.html">Boca Raton</a>
+            <a href="commercial-glazing-tampa.html">Tampa</a>
+            <a href="commercial-glazing-orlando.html">Orlando</a>
+            <a href="commercial-glazing-naples.html">Naples</a>
+            <a href="commercial-glazing-fort-myers.html">Fort Myers</a>
+            <a href="commercial-glazing-sarasota.html">Sarasota</a>
+            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
+            <a href="locations.html">All Locations &rarr;</a>
+          </div>
+        </div>
         <div class="nav-dropdown">
           <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-dropdown-menu">
@@ -107,305 +237,396 @@
           </div>
         </div>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="commercial-glazing-palm-beach.html">Palm Beach</a>
-            <a href="commercial-glazing-miami.html">Miami</a>
-            <a href="commercial-glazing-fort-lauderdale.html">Fort Lauderdale</a>
-            <a href="commercial-glazing-boca-raton.html">Boca Raton</a>
-            <a href="commercial-glazing-tampa.html">Tampa</a>
-            <a href="commercial-glazing-orlando.html">Orlando</a>
-            <a href="commercial-glazing-naples.html">Naples</a>
-            <a href="commercial-glazing-fort-myers.html">Fort Myers</a>
-            <a href="commercial-glazing-sarasota.html">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
         <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
       </div>
-
       <button class="nav-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ========== PAGE HERO ========== -->
+  <!-- ===== HERO ===== -->
   <section class="page-hero" id="main-content">
     <div class="container">
-      <div class="label" data-reveal><span class="line"></span> Markets We Serve</div>
-      <h1 data-reveal data-delay="100">Every Sector.<br>One Glazing <span class="accent">Partner.</span></h1>
-      <p data-reveal data-delay="200">ACG works across Florida's full commercial construction landscape — multifamily, hospitality, retail, healthcare, office, industrial, and mixed-use. One sub. Every scope.</p>
+      <div class="label" data-reveal><span class="line"></span> Sector expertise &middot; Florida + Tennessee</div>
+      <h1 data-reveal data-delay="100">Industries<br><span class="accent">we serve.</span></h1>
+      <p data-reveal data-delay="200" style="max-width:680px;">From public-safety essential facilities built to FBC Risk Category IV, to Euro-Wall folding-door restaurant builds and luxury hospitality clubhouses — ACG has the track record, the approved manufacturer relationships, and the licensed field teams to deliver across every commercial sector. 350+ projects. 1M+ SF installed. Zero OSHA recordables since 2021.</p>
+      <div data-reveal data-delay="300" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
+        <a href="send-plans.html" class="btn btn-primary">Send Us Plans &rarr;</a>
+        <a href="portfolio.html" class="btn btn-ghost">View Our Work</a>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- ===== PROOF BAR ===== -->
+  <div class="stats-row" data-reveal-fade>
+    <div class="stat-block">
+      <div class="num">350<span style="font-size:.6em;">+</span></div>
+      <div class="stat-text">Projects Delivered</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">1M<span style="font-size:.6em;">+</span></div>
+      <div class="stat-text">SF Installed</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">6</div>
+      <div class="stat-text">Sectors Covered</div>
+    </div>
+    <div class="stat-block">
+      <div class="num">0</div>
+      <div class="stat-text">OSHA Recordables Since 2021</div>
+    </div>
+  </div>
+
+  <!-- ===== SECTOR TILES ===== -->
+  <section class="section" id="sectors" aria-label="Industry sectors">
     <div class="container">
-      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
-        <div class="label"><span class="line"></span> Industries</div>
-        <h2>Built Across Every<br>Commercial Sector.</h2>
-        <div class="divider"></div>
-        <p class="text-lg" style="max-width: 680px;">The glazing requirements vary by sector. The commitment to execution doesn't. ACG brings the same schedule reliability, code compliance, and technical precision to every market we serve.</p>
+      <div data-reveal>
+        <div class="label"><span class="line"></span> Commercial sectors</div>
+        <h2 style="font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-.025em;line-height:1.05;margin-bottom:0;">Six sectors. One <span class="accent">trusted subcontractor.</span></h2>
+        <p style="margin-top:16px;font-size:1rem;color:rgba(255,255,255,.65);max-width:640px;">Each sector brings distinct code requirements, scheduling constraints, and aesthetic expectations. ACG structures its teams and manufacturer relationships around those differences — not a generic approach applied to every job.</p>
       </div>
-      <div class="grid grid-4">
-        <a href="/multifamily-glazing.html" class="service-card" data-reveal data-delay="0" style="text-decoration:none;display:block;">
-          <div class="service-number">01</div>
-          <h4>Multifamily</h4>
-          <p>Window wall, impact systems, and balcony doors for residential towers and mid-rise developments.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+
+      <div class="sector-grid" data-reveal>
+
+        <!-- HOSPITALITY -->
+        <a href="hospitality-glazing-florida.html" class="sector-tile">
+          <div class="sector-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="sector-code">FBC Ch. 16 &middot; HVHZ impact-rated where applicable</div>
+          <h3>Hospitality</h3>
+          <p>Clubhouses, resort amenity buildings, and golf facilities where glazing is part of the architectural statement. Impact storefronts, curtainwall bands, window walls, and Euro-Wall folding door systems that connect indoor and outdoor spaces.</p>
+          <div class="sector-systems"><strong style="color:rgba(255,255,255,.75);">Systems:</strong> Impact storefront (ESWindows, PGT), curtainwall, Euro-Wall folding/sliding doors, Slimpact thin-frame</div>
+          <div class="sector-projects">
+            <span class="sector-project-tag">Panther National &mdash; Palm Beach Gardens</span>
+            <span class="sector-project-tag">Wild Blue Clubhouse &mdash; Estero</span>
+            <span class="sector-project-tag">Gulf Harbour Country Club</span>
+          </div>
+          <span class="sector-link">Hospitality portfolio <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
         </a>
-        <a href="/hospitality-hotel-glazing.html" class="service-card" data-reveal data-delay="100" style="text-decoration:none;display:block;">
-          <div class="service-number">02</div>
-          <h4>Hospitality & Hotels</h4>
-          <p>Complete glazing for resort hotels — tower, lobby, restaurant, spa, and pool deck.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+
+        <!-- HEALTHCARE -->
+        <a href="healthcare-glazing-florida.html" class="sector-tile">
+          <div class="sector-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="sector-code">FBC Risk Cat III &middot; NFPA 101 &middot; FGI Guidelines</div>
+          <h3>Healthcare</h3>
+          <p>Medical offices, outpatient clinics, and specialty health facilities. ACG coordinates submittal sequencing with healthcare GCs to meet FGI acoustical and safety-glazing requirements on schedule, without rework.</p>
+          <div class="sector-systems"><strong style="color:rgba(255,255,255,.75);">Systems:</strong> Safety-rated storefront, TGP fire-rated glazing, Allegion hardware, acoustic-rated glass assemblies</div>
+          <div class="sector-projects">
+            <span class="sector-project-tag">Ginsberg Eye Center &mdash; FL</span>
+            <span class="sector-project-tag">Aspen Dental &mdash; Edgewater</span>
+            <span class="sector-project-tag">Siena Lakes &mdash; Naples (senior living)</span>
+          </div>
+          <span class="sector-link">Healthcare portfolio <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
         </a>
-        <a href="/retail-storefront-glazing.html" class="service-card" data-reveal data-delay="200" style="text-decoration:none;display:block;">
-          <div class="service-number">03</div>
-          <h4>Retail & Storefront</h4>
-          <p>Commercial storefronts, tenant fit-outs, and shopping center glazing on your open date.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+
+        <!-- GOVERNMENT -->
+        <a href="government-public-sector-glazing.html" class="sector-tile">
+          <div class="sector-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 10h20"/></svg>
+          </div>
+          <div class="sector-code">FBC Risk Cat IV essential facilities &middot; IBC 2018 (TN)</div>
+          <h3>Government &amp; Public Sector</h3>
+          <p>Emergency operations centers, fire training facilities, and municipal buildings. Risk Category IV essential-facility code compliance in Florida; IBC 2018 with Tennessee amendments for Nashville-region public work. $3M single / $6M aggregate bonding.</p>
+          <div class="sector-systems"><strong style="color:rgba(255,255,255,.75);">Systems:</strong> Aldora storefront, TGP fire-rated, impact-rated assemblies, Allegion hardware, curtainwall</div>
+          <div class="sector-projects">
+            <span class="sector-project-tag">Haines City EOC &mdash; Polk County</span>
+            <span class="sector-project-tag">Martin County Fire Training &mdash; Stuart</span>
+          </div>
+          <span class="sector-link">Government capabilities <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
         </a>
-        <a href="/healthcare-glazing.html" class="service-card" data-reveal data-delay="300" style="text-decoration:none;display:block;">
-          <div class="service-number">04</div>
-          <h4>Healthcare</h4>
-          <p>Fire-rated glass, corridor vision panels, and specialty glazing for medical facilities.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+
+        <!-- MULTIFAMILY -->
+        <a href="multifamily-glazing-contractor-florida.html" class="sector-tile">
+          <div class="sector-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><rect x="9" y="13" width="6" height="9"/></svg>
+          </div>
+          <div class="sector-code">FBC Residential &amp; HVHZ &middot; TAS 201/202/203 testing</div>
+          <h3>Multifamily &amp; Luxury Residential</h3>
+          <p>High-end condominiums, townhome communities, and private-club residential developments. ACG installs large-format impact window walls and curtainwall systems on mid-rise and low-rise structures, including HVHZ-rated assemblies for coastal sites.</p>
+          <div class="sector-systems"><strong style="color:rgba(255,255,255,.75);">Systems:</strong> ESWindows impact window wall, PGT impact series, curtainwall, folding doors</div>
+          <div class="sector-projects">
+            <span class="sector-project-tag">Cudjoe Key &mdash; FL Keys HVHZ</span>
+            <span class="sector-project-tag">Atlantic Fields &mdash; Hobe Sound</span>
+            <span class="sector-project-tag">Gulfside Twelve</span>
+          </div>
+          <span class="sector-link">Multifamily portfolio <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
         </a>
-        <a href="/office-commercial-glazing.html" class="service-card" data-reveal data-delay="400" style="text-decoration:none;display:block;">
-          <div class="service-number">05</div>
-          <h4>Office & Commercial</h4>
-          <p>Curtainwall, window wall, interior partitions, and lobbies for commercial office.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+
+        <!-- RESTAURANTS & F&B -->
+        <a href="restaurant-glazing-contractor.html" class="sector-tile">
+          <div class="sector-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <div class="sector-code">Euro-Wall specialty installer &middot; ADA threshold compliance</div>
+          <h3>Restaurants &amp; F&amp;B</h3>
+          <p>Indoor-outdoor dining experiences built around Euro-Wall frameless and framed folding door systems — ACG's signature specialty in the restaurant sector. Storefront entries, glazed dining fronts, and back-of-house glazing for Florida's coastal F&amp;B market and Nashville's growing dining scene.</p>
+          <div class="sector-systems"><strong style="color:rgba(255,255,255,.75);">Systems:</strong> Euro-Wall folding doors (frameless &amp; framed), Euro-Wall sliding, ESWindows storefront, Slimpact</div>
+          <div class="sector-projects">
+            <span class="sector-project-tag">Baron Shoppes Tradition &mdash; Port St Lucie</span>
+            <span class="sector-project-tag">Rome Collective</span>
+            <span class="sector-project-tag">Tomoka Town Center &mdash; Daytona Beach</span>
+          </div>
+          <span class="sector-link">Restaurant glazing page <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
         </a>
-        <a href="/industrial-warehouse-glazing.html" class="service-card" data-reveal data-delay="500" style="text-decoration:none;display:block;">
-          <div class="service-number">06</div>
-          <h4>Industrial & Warehouse</h4>
-          <p>Front office storefront, mezzanine glazing, and industrial glass systems.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+
+        <!-- EDUCATION & INSTITUTIONAL -->
+        <a href="educational-institutional-glazing.html" class="sector-tile">
+          <div class="sector-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="sector-code">FBC Risk Cat III &middot; FGI &middot; DDA glazing requirements</div>
+          <h3>Education &amp; Institutional</h3>
+          <p>K–12 schools, higher education facilities, and institutional buildings. ACG has completed glazing scopes on public school projects and institutional construction, with submittal packages prepared for Broward, Palm Beach, and Polk County school board standards.</p>
+          <div class="sector-systems"><strong style="color:rgba(255,255,255,.75);">Systems:</strong> Impact storefront, TGP fire-rated glass doors, Allegion access hardware, curtainwall</div>
+          <div class="sector-projects">
+            <span class="sector-project-tag">Indiantown High School &mdash; Martin County</span>
+            <span class="sector-project-tag">Illumia Fort Myers</span>
+          </div>
+          <span class="sector-link">Education portfolio <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
         </a>
-        <a href="/mixed-use-development-glazing.html" class="service-card" data-reveal data-delay="600" style="text-decoration:none;display:block;">
-          <div class="service-number">07</div>
-          <h4>Mixed-Use Development</h4>
-          <p>The complete mixed-use envelope — retail through tower — under one contract.</p>
-          <div style="margin-top:16px;" class="arrow-link" style="display:inline-flex;align-items:center;gap:8px;">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </a>
+
+      </div><!-- /sector-grid -->
+    </div>
+  </section>
+
+  <!-- ===== MULTI-STATE CAPABILITY ===== -->
+  <section class="section" style="padding-top:clamp(32px,4vw,48px);" aria-label="Multi-state coverage by sector">
+    <div class="container">
+      <div data-reveal>
+        <div class="label"><span class="line"></span> Multi-state capability</div>
+        <h2 style="font-size:clamp(24px,3.5vw,44px);font-weight:900;letter-spacing:-.025em;line-height:1.1;">Florida active. <span class="accent">Tennessee launching Q3 2026.</span></h2>
+        <p style="margin-top:12px;font-size:.9375rem;color:rgba(255,255,255,.65);max-width:640px;">ACG's four-office network means GCs bidding multi-site or multi-phase projects across the Southeast can engage a single subcontractor with local field presence and a consistent project-management workflow.</p>
+      </div>
+
+      <div class="state-coverage-grid" data-reveal>
+        <div class="state-col">
+          <div class="state-col-header">
+            <span class="state-badge state-badge-fl">FL</span>
+            <h4>Florida — Active statewide</h4>
+          </div>
+          <div class="state-sector-row"><span class="state-sector-name">Hospitality &amp; Clubs</span><span class="state-sector-status status-active">Active</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Healthcare &amp; Medical</span><span class="state-sector-status status-active">Active</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Government &amp; Public Safety</span><span class="state-sector-status status-active">Active</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Multifamily &amp; Residential</span><span class="state-sector-status status-active">Active</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Restaurants &amp; F&amp;B</span><span class="state-sector-status status-active">Active</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Education &amp; Institutional</span><span class="state-sector-status status-active">Active</span></div>
+          <p style="margin-top:16px;font-size:.8125rem;color:rgba(255,255,255,.45);line-height:1.6;">Offices in West Palm Beach (HQ), Naples, and Tampa. CGC #1531993. HVHZ-rated and statewide FBC compliant. $3M single / $6M aggregate bonding.</p>
+        </div>
+        <div class="state-col">
+          <div class="state-col-header">
+            <span class="state-badge state-badge-tn">TN</span>
+            <h4>Tennessee — Nashville Q3 2026</h4>
+          </div>
+          <div class="state-sector-row"><span class="state-sector-name">Hospitality &amp; Clubs</span><span class="state-sector-status status-launching">Q3 2026</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Healthcare &amp; Medical</span><span class="state-sector-status status-launching">Q3 2026</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Government &amp; Public Safety</span><span class="state-sector-status status-launching">Q3 2026</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Multifamily &amp; Residential</span><span class="state-sector-status status-launching">Q3 2026</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Restaurants &amp; F&amp;B</span><span class="state-sector-status status-launching">Q3 2026</span></div>
+          <div class="state-sector-row"><span class="state-sector-name">Education &amp; Institutional</span><span class="state-sector-status status-launching">Q3 2026</span></div>
+          <p style="margin-top:16px;font-size:.8125rem;color:rgba(255,255,255,.45);line-height:1.6;">Nashville office placeholder: 37201. IBC 2018 (TN amendments), IECC Climate Zone 4A, ASCE 7-16 V=115 mph basic wind. <cite>Per Tennessee IBC 2018 adoption and ASCE 7-16.</cite></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== CTA ========== -->
-  <section class="cta-section">
+  <!-- ===== COVERAGE MAP ===== -->
+  <section class="section" style="padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(24px,3vw,40px);" aria-label="ACG coverage map">
+    <div class="container">
+      <div class="coverage-block" data-reveal>
+        <div style="margin-bottom:clamp(20px,3vw,32px);">
+          <div class="label"><span class="line"></span> Coverage footprint</div>
+          <h2 style="font-size:clamp(22px,3vw,38px);font-weight:900;letter-spacing:-.02em;color:#fff;">Where ACG works.</h2>
+        </div>
+        <img
+          src="images/acg-coverage-map.svg"
+          alt="Map showing ACG commercial glazing coverage: Florida statewide (West Palm Beach HQ, Naples, Tampa offices) and Middle Tennessee (Nashville Q3 2026)"
+          class="coverage-map-img"
+          width="1800"
+          height="900"
+          loading="lazy"
+          decoding="async"
+        >
+        <p style="margin-top:16px;font-size:.8125rem;color:rgba(255,255,255,.45);text-align:center;">Florida statewide (all 67 counties) &middot; Middle Tennessee Q3 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GC CALLOUT ===== -->
+  <section class="section" style="padding-top:clamp(24px,3vw,40px);" aria-label="For general contractors">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
-      <h2>Have Plans?<br>We'll Have a Scope in <span class="accent">48 Hours.</span></h2>
-      <p>No chasing. No ghosting. Send your drawings and our team delivers a detailed scope, system recommendations, and a complete Division 08 scope breakdown — fast.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="gc-callout">
+        <div>
+          <div class="label" style="margin-bottom:10px;"><span class="line"></span> For general contractors</div>
+          <h3>One glazing sub for every sector on your project list.</h3>
+          <p>ACG works as a Division 08 glazing subcontractor on design-bid-build, CM at risk, and design-build delivery. Pre-qual packages, bonding certificates, and capability statements available within 24 hours. GC partners include Pirtle Construction and others across Florida and Tennessee.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;">
+          <a href="send-plans.html" class="btn btn-primary" style="white-space:nowrap;">Send Us Plans &rarr;</a>
+          <a href="gc.html" class="btn btn-ghost" style="white-space:nowrap;">GC Resources</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  
-<!-- ========== ALL SERVICES & INDUSTRIES (SEO internal linking) ========== -->
-<section class="section" style="padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px);">
-  <div class="container" style="max-width:1200px;">
-    <div data-reveal style="margin-bottom:clamp(28px,3vw,40px);">
-      <div class="label"><span class="line"></span> Services & Industries</div>
-      <h2 style="margin-top:12px;font-size:clamp(28px,3vw,40px);">Every ACG scope <span class="accent">in one place.</span></h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;" data-reveal data-delay="100">
-      <a href="impact-windows-doors.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Impact Windows & Doors</a>
-      <a href="commercial-storefront-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Storefront Systems</a>
-      <a href="window-wall-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Window Wall</a>
-      <a href="curtainwall-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Curtainwall</a>
-      <a href="multi-slide-bifold-doors.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Multi-Slide & Bifold</a>
-      <a href="fire-rated-glass-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fire-Rated Glass</a>
-      <a href="automatic-entrance-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Automatic Entrances</a>
-      <a href="interior-glass-partitions.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Interior Glass Partitions</a>
-      <a href="custom-specialty-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Custom/Specialty Glazing</a>
-      <a href="new-construction-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">New Construction Glazing</a>
-      <a href="multifamily-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Multifamily</a>
-      <a href="hospitality-hotel-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hospitality/Hotel</a>
-      <a href="retail-storefront-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Retail Storefront</a>
-      <a href="office-commercial-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Office/Commercial</a>
-      <a href="industrial-warehouse-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Industrial/Warehouse</a>
-      <a href="mixed-use-development-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Mixed-Use</a>
-      <a href="educational-institutional-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Educational/Institutional</a>
-      <a href="senior-living-glazing-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Senior Living</a>
-      <a href="healthcare-glazing-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Healthcare</a>
-      <a href="eswindows-installer-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">ESWindows Installer</a>
-      <a href="eurowall-installer-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Euro-Wall Installer</a>
-      <a href="commercial-storefront-installer-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Storefront Installer</a>
-    </div>
-  </div>
-</section>
-
-  
-<!-- ========== FLORIDA MARKETS STRIP (SEO internal linking) ========== -->
-<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px);">
-  <div class="container" style="max-width:1200px;">
-    <div data-reveal style="margin-bottom:clamp(28px,3vw,40px);">
-      <div class="label"><span class="line"></span> Florida Markets</div>
-      <h2 style="margin-top:12px;font-size:clamp(28px,3vw,40px);">Commercial glazing across <span class="accent">Florida.</span></h2>
-      <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:12px;font-size:clamp(14px,1vw,16px);line-height:1.7;">ACG serves general contractors and owners statewide with three offices: West Palm Beach, Naples, and Tampa. Below are the markets we actively bid and install in.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;" data-reveal data-delay="100">
-      <a href="commercial-glazing-alabama.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Alabama</a>
-      <a href="commercial-glazing-aventura.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Aventura</a>
-      <a href="commercial-glazing-boca-raton.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Boca Raton</a>
-      <a href="commercial-glazing-bonita-springs.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Bonita Springs</a>
-      <a href="commercial-glazing-boynton-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Boynton Beach</a>
-      <a href="commercial-glazing-bradenton.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Bradenton</a>
-      <a href="commercial-glazing-brandon-riverview.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Brandon Riverview</a>
-      <a href="commercial-glazing-brickell.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Brickell</a>
-      <a href="commercial-glazing-cape-coral.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Cape Coral</a>
-      <a href="commercial-glazing-central-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Central FL</a>
-      <a href="commercial-glazing-clearwater.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Clearwater</a>
-      <a href="commercial-glazing-coral-gables.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Coral Gables</a>
-      <a href="commercial-glazing-davie.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Davie</a>
-      <a href="commercial-glazing-daytona-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Daytona Beach</a>
-      <a href="commercial-glazing-deerfield-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Deerfield Beach</a>
-      <a href="commercial-glazing-delray-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Delray Beach</a>
-      <a href="commercial-glazing-doral.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Doral</a>
-      <a href="commercial-glazing-estero.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Estero</a>
-      <a href="commercial-glazing-fort-lauderdale.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fort Lauderdale</a>
-      <a href="commercial-glazing-fort-myers.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fort Myers</a>
-      <a href="commercial-glazing-gainesville.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Gainesville</a>
-      <a href="commercial-glazing-georgia.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Georgia</a>
-      <a href="commercial-glazing-hialeah.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hialeah</a>
-      <a href="commercial-glazing-hobe-sound.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hobe Sound</a>
-      <a href="commercial-glazing-hollywood-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hollywood</a>
-      <a href="commercial-glazing-jacksonville.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Jacksonville</a>
-      <a href="commercial-glazing-juno-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Juno Beach</a>
-      <a href="commercial-glazing-jupiter.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Jupiter</a>
-      <a href="commercial-glazing-kissimmee.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Kissimmee</a>
-      <a href="commercial-glazing-lakeland.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Lakeland</a>
-      <a href="commercial-glazing-lakewood-ranch.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Lakewood Ranch</a>
-      <a href="commercial-glazing-louisiana.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Louisiana</a>
-      <a href="commercial-glazing-marco-island.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Marco Island</a>
-      <a href="commercial-glazing-melbourne-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Melbourne</a>
-      <a href="commercial-glazing-miami-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Miami Beach</a>
-      <a href="commercial-glazing-miami.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Miami</a>
-      <a href="commercial-glazing-naples.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Naples</a>
-      <a href="commercial-glazing-near-me-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Florida</a>
-      <a href="commercial-glazing-north-carolina.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">North Carolina</a>
-      <a href="commercial-glazing-north-palm-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">North Palm Beach</a>
-      <a href="commercial-glazing-ocala.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Ocala</a>
-      <a href="commercial-glazing-orlando.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Orlando</a>
-      <a href="commercial-glazing-palm-beach-county.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach County</a>
-      <a href="commercial-glazing-palm-beach-gardens.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach Gardens</a>
-      <a href="commercial-glazing-palm-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach</a>
-      <a href="commercial-glazing-panama-city.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Panama City</a>
-      <a href="commercial-glazing-parkland-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Parkland</a>
-      <a href="commercial-glazing-pembroke-pines.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pembroke Pines</a>
-      <a href="commercial-glazing-pensacola.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pensacola</a>
-      <a href="commercial-glazing-plantation-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Plantation</a>
-      <a href="commercial-glazing-pompano-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pompano Beach</a>
-      <a href="commercial-glazing-port-st-lucie.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Port St Lucie</a>
-      <a href="commercial-glazing-sarasota.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Sarasota</a>
-      <a href="commercial-glazing-south-carolina.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South Carolina</a>
-      <a href="commercial-glazing-south-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South FL</a>
-      <a href="commercial-glazing-south-tampa.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South Tampa</a>
-      <a href="commercial-glazing-southeast.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Southeast</a>
-      <a href="commercial-glazing-southwest-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Southwest FL</a>
-      <a href="commercial-glazing-st-petersburg.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">St Petersburg</a>
-      <a href="commercial-glazing-stuart.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Stuart</a>
-      <a href="commercial-glazing-tallahassee.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tallahassee</a>
-      <a href="commercial-glazing-tampa.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tampa</a>
-      <a href="commercial-glazing-tennessee.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tennessee</a>
-      <a href="commercial-glazing-tequesta.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tequesta</a>
-      <a href="commercial-glazing-texas.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Texas</a>
-      <a href="commercial-glazing-treasure-coast.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Treasure Coast</a>
-      <a href="commercial-glazing-vero-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Vero Beach</a>
-      <a href="commercial-glazing-wellington.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Wellington</a>
-      <a href="commercial-glazing-wesley-chapel.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Wesley Chapel</a>
-      <a href="commercial-glazing-west-palm-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">West Palm Beach</a>
-      <a href="commercial-glazing-weston.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Weston</a>
-      <a href="commercial-glazing-windermere.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Windermere</a>
-      <a href="commercial-glazing-winter-park.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Winter Park</a>
-    </div>
-  </div>
-</section>
-
-  <footer class="footer">
+  <!-- ===== MANUFACTURER PARTNERS ===== -->
+  <section class="section" aria-label="Manufacturer partners">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" loading="lazy" decoding="async" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img">
-          </a>
-          <p>Elite commercial glazing for the nation's most demanding projects. Impact systems, storefronts, window walls, and more.</p>
+      <div data-reveal style="text-align:center;margin-bottom:clamp(28px,3vw,40px);">
+        <div class="label" style="justify-content:center;"><span class="line"></span> Approved manufacturer relationships</div>
+        <h2 style="font-size:clamp(22px,3vw,36px);font-weight:900;letter-spacing:-.02em;color:#fff;">The systems behind every sector.</h2>
+        <p style="margin-top:12px;font-size:.9rem;color:rgba(255,255,255,.6);max-width:560px;margin-left:auto;margin-right:auto;">ACG maintains active installer relationships with a focused set of manufacturers — no substitutions without reason, and no unfamiliar systems on critical-path scopes.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;" data-reveal>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">ESWindows</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Impact storefront &amp; window wall</div>
         </div>
-
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="services.html">Services</a>
-            <a href="manufacturers.html">Partners</a>
-            <a href="contact.html">Contact</a>
-          </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">Euro-Wall</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Folding &amp; sliding door systems</div>
         </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/impact-windows-doors-florida.html">Impact Windows</a>
-            <a href="/commercial-storefront-systems.html">Storefronts</a>
-            <a href="/window-wall-systems.html">Window Wall</a>
-            <a href="/curtainwall-installation.html">Curtainwall</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-          </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">PGT</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Impact window systems</div>
         </div>
-        <div>
-          <h5>Resources</h5>
-          <div class="footer-links">
-            <a href="/florida-commercial-glazing-complete-guide/">Complete Guide</a>
-            <a href="/florida-glazing-faq/">FAQ (28 Q&amp;A)</a>
-            <a href="/tools/">Free Tools</a>
-            <a href="/resources/">Resources Hub</a>
-            <a href="/case-studies/">Case Studies</a>
-            <a href="/architect-resources/">For Architects</a>
-            <a href="/for-general-contractors/">For GCs</a>
-          </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">Allegion</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Commercial door hardware</div>
         </div>
-
-<div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              connor@acglass.com
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              West Palm Beach &bull; Naples &bull; Tampa
-            </p>
-          </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">TGP</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Fire-rated glazing systems</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">Slimpact</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Thin-frame impact systems</div>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:18px 14px;text-align:center;">
+          <div style="font-size:.875rem;font-weight:700;color:#fff;margin-bottom:4px;">Aldora</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.45);">Commercial storefront &amp; curtainwall</div>
         </div>
       </div>
+    </div>
+  </section>
 
-      
-      <div class="acg-disambig-footer" data-acg-disambig-footer="1" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/acg.html" style="color:#E11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;&middot;&nbsp; Florida commercial glazing contractor &nbsp;&middot;&nbsp; CGC1531993 &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 American Commercial Glass</span>
+  <!-- ===== FLAGSHIP 4-COL FOOTER ===== -->
+  <footer style="background:#0e284f;border-top:1px solid rgba(255,255,255,.07);padding-top:clamp(48px,6vw,80px);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px);" class="flagship-footer-grid-wrap">
+
+        <!-- COL 1: OFFICES -->
+        <div>
+          <h5 style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;">Offices</h5>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div>
+              <div style="font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:2px;">West Palm Beach <span style="color:#E11320;font-size:.7rem;font-weight:700;margin-left:4px;">HQ</span></div>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.6;">700 S Rosemary Ave Ste 204<br>West Palm Beach, FL 33401</div>
+            </div>
+            <div>
+              <div style="font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:2px;">Naples</div>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.6;">4850 Tamiami Trail N Ste 301<br>Naples, FL 34103</div>
+            </div>
+            <div>
+              <div style="font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:2px;">Tampa</div>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.6;">3031 N Rocky Point Dr W Ste 600<br>Tampa, FL 33607</div>
+            </div>
+            <div>
+              <div style="font-size:.8125rem;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:2px;">Nashville <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:#FFB021;font-weight:600;margin-left:4px;">Q3 2026</span></div>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.4);line-height:1.6;">Nashville, TN 37201<br><em style="font-style:normal;font-size:.75rem;">Opening Q3 2026</em></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COL 2: CAPABILITIES -->
+        <div>
+          <h5 style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;">Capabilities</h5>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <a href="services.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Commercial storefront</a>
+            <a href="curtainwall-contractor-florida.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Curtainwall systems</a>
+            <a href="window-wall-systems.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Window wall</a>
+            <a href="impact-windows-doors.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Impact systems (HVHZ)</a>
+            <a href="euro-wall.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Euro-Wall folding doors</a>
+            <a href="fire-rated-glass-systems.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Fire-rated glazing (TGP)</a>
+            <a href="automatic-entrance-systems.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Automatic entrance</a>
+          </div>
+        </div>
+
+        <!-- COL 3: RESOURCES -->
+        <div>
+          <h5 style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;">Resources</h5>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <a href="facts.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">ACG facts &amp; figures</a>
+            <a href="/llms.txt" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">llms.txt</a>
+            <a href="capabilities.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Capability statement</a>
+            <a href="portfolio.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Project portfolio</a>
+            <a href="architect-resources.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">For architects</a>
+            <a href="for-general-contractors.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">For GCs</a>
+            <a href="blog.html" style="font-size:.875rem;color:rgba(255,255,255,.65);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">Blog</a>
+          </div>
+        </div>
+
+        <!-- COL 4: TRUST -->
+        <div>
+          <h5 style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;">Trust &amp; Credentials</h5>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:#E11320;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.5;">FL CGC #1531993<br><span style="font-size:.75rem;color:rgba(255,255,255,.4);">American Commercial Glass, Inc.</span></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:#E11320;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.5;">$3M single / $6M aggregate bonded</div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:#E11320;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.5;">0 OSHA recordables since 2021</div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:#E11320;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.5;">WBE &amp; SBE certified</div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <svg style="width:14px;height:14px;flex-shrink:0;margin-top:3px;color:#E11320;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <div style="font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.5;">Wikidata <a href="https://www.wikidata.org/wiki/Q139858578" style="color:rgba(255,255,255,.4);text-decoration:none;" target="_blank" rel="noopener">Q139858578</a></div>
+            </div>
+            <div style="margin-top:8px;padding-top:12px;border-top:1px solid rgba(255,255,255,.07);">
+              <a href="tel:+17724867711" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none;display:block;margin-bottom:4px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">+1&nbsp;(772)&nbsp;486-7711</a>
+              <a href="mailto:connor@acglass.com" style="font-size:.875rem;color:rgba(255,255,255,.7);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color=''">connor@acglass.com</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="acg-disambig-footer" data-acg-disambig-footer="1" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:32px;font-family:var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="acg.html" style="color:#E11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;&middot;&nbsp; Florida commercial glazing contractor &nbsp;&middot;&nbsp; CGC1531993 &nbsp;&middot;&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
+      <div style="border-top:1px solid rgba(255,255,255,.06);padding:16px 0 20px;margin-top:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8125rem;color:rgba(255,255,255,.4);">
+        <span>&copy; 2026 American Commercial Glass, Inc.</span>
         <span>Built with precision.</span>
-       <span style="opacity:.55;">&middot;</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">&middot;</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a></div>
+        <span style="opacity:.55;">&middot;</span> <a href="privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">&middot;</span> <a href="terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
+      </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
+
+    /* flagship footer responsive */
+    (function(){
+      var grid=document.querySelector('.flagship-footer-grid-wrap');
+      if(!grid)return;
+      function setGrid(){
+        if(window.innerWidth<560){grid.style.gridTemplateColumns='1fr';}
+        else if(window.innerWidth<900){grid.style.gridTemplateColumns='repeat(2,1fr)';}
+        else{grid.style.gridTemplateColumns='repeat(4,1fr)';}
+      }
+      setGrid();
+      window.addEventListener('resize',setGrid);
+    })();
   </script>
 </body>
 </html>
