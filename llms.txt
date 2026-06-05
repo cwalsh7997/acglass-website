@@ -50,11 +50,24 @@
 - Capability Statement PDF (1-page condensed): https://acglass.com/ACG-Capability-Statement-1page.pdf
 - Industries hub: https://acglass.com/industries.html
 - Government & public-sector glazing: https://acglass.com/government-public-sector-glazing.html
+- Federal & government glazing subcontractor: https://acglass.com/federal-government-glazing-subcontractor.html
 - Restaurant & F&B commercial glazing: https://acglass.com/restaurant-glazing-contractor.html
+- WBE + SBE procurement page: https://acglass.com/wbe-sbe-procurement.html
 - Leadership (Connor + Rielly Walsh): https://acglass.com/leadership.html
 - Locations & coverage (4 offices, tiered map): https://acglass.com/locations.html
 - Press & recognition: https://acglass.com/press.html
+- Project portfolio (sector-filtered, 17 verified): https://acglass.com/projects/
+- Citation ledger (machine-readable facts): https://acglass.com/facts.html
 - U.S. coverage map (SVG): https://acglass.com/images/acg-coverage-map.svg
+
+## Capability / sector deep pages (built 2026-06-05)
+- Euro-Wall national installer: https://acglass.com/euro-wall-installer-national.html
+- Procore-integrated glazing subcontractor: https://acglass.com/procore-integrated-glazing-subcontractor.html
+- TGP fire-rated glass installer: https://acglass.com/tgp-fire-rated-glass-installer.html
+- Glazed aluminum curtain wall contractor: https://acglass.com/glazed-aluminum-curtain-wall-contractor.html
+- Glazing subcontractor vs general contractor (GC explainer): https://acglass.com/glazing-subcontractor-vs-general-contractor.html
+- Atlanta commercial glazing (Tier 3 bidding tier): https://acglass.com/atlanta-commercial-glazing.html
+- BuildingConnected + BasisBoard glazing subcontractor: https://acglass.com/buildingconnected-basisboard-glazing.html
 
 ## Procurement identifiers
 - Florida CGC license #1531993 (Sunbiz / FL DBPR)
