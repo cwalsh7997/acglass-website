@@ -178,12 +178,26 @@
 - St Augustine: https://acglass.com/st-augustine/
 - Ponte Vedra Beach: https://acglass.com/ponte-vedra-beach/
 
-### Tennessee Q3 2026 expansion
-- Tennessee hub: https://acglass.com/tennessee/
-- Nashville: https://acglass.com/nashville/
-- Brentwood TN: https://acglass.com/brentwood-tn/
-- Franklin TN: https://acglass.com/franklin-tn/
-- Cool Springs TN: https://acglass.com/cool-springs-tn/
+### Tennessee Q3 2026 expansion (Middle TN + statewide)
+- Tennessee state hub: https://acglass.com/commercial-glazing-tennessee.html
+- Nashville (primary): https://acglass.com/commercial-glazing-nashville-tn.html
+- Nashville storefront installer: https://acglass.com/storefront-installer-nashville.html
+- Franklin TN (Williamson Co — Cool Springs/McEwen): https://acglass.com/commercial-glazing-franklin-tn.html
+- Brentwood TN (Williamson Co — corporate HQ row): https://acglass.com/commercial-glazing-brentwood-tn.html
+- Murfreesboro TN (Rutherford Co — MTSU/Medical Pkwy): https://acglass.com/commercial-glazing-murfreesboro-tn.html
+- Smyrna TN (Rutherford Co — Nissan campus): https://acglass.com/commercial-glazing-smyrna-tn.html
+- La Vergne TN (Rutherford Co — Ingram Content): https://acglass.com/commercial-glazing-la-vergne-tn.html
+- Mt Juliet TN (Wilson Co — Providence Marketplace): https://acglass.com/commercial-glazing-mt-juliet-tn.html
+- Lebanon TN (Wilson Co — Cracker Barrel HQ): https://acglass.com/commercial-glazing-lebanon-tn.html
+- Hendersonville TN (Sumner Co — Indian Lake Village): https://acglass.com/commercial-glazing-hendersonville-tn.html
+- Gallatin TN (Sumner Co — Vol State): https://acglass.com/commercial-glazing-gallatin-tn.html
+- Goodlettsville TN (Davidson/Sumner — Dollar General HQ): https://acglass.com/commercial-glazing-goodlettsville-tn.html
+- Columbia TN (Maury Co — GM Spring Hill supplier corridor): https://acglass.com/commercial-glazing-columbia-tn.html
+- Spring Hill TN (Maury/Williamson — GM plant corridor): https://acglass.com/commercial-glazing-spring-hill-tennessee.html
+- Clarksville TN (Montgomery Co — Fort Campbell): https://acglass.com/commercial-glazing-clarksville-tn.html
+- Chattanooga TN: https://acglass.com/commercial-glazing-chattanooga-tn.html
+- Knoxville TN: https://acglass.com/commercial-glazing-knoxville-tn.html
+- Memphis TN: https://acglass.com/commercial-glazing-memphis-tn.html
 
 ## Locations
 - West Palm Beach HQ — 700 S Rosemary Ave Ste 204, West Palm Beach FL 33401: https://acglass.com/commercial-glazing-west-palm-beach.html
@@ -191,7 +205,9 @@
 - Tampa FL — 3031 N Rocky Point Dr W, Ste 600, Tampa FL 33607: https://acglass.com/commercial-glazing-tampa.html
 - Miami / Brickell / South FL: https://acglass.com/commercial-glazing-miami.html
 - Fort Lauderdale: https://acglass.com/commercial-glazing-fort-lauderdale.html
-- Nashville TN (opening 2026): https://acglass.com/commercial-glazing-nashville-tn.html
+- Nashville TN (office opens Q3 2026): https://acglass.com/commercial-glazing-nashville-tn.html
+  - Coverage: Davidson, Williamson, Rutherford, Wilson, Sumner, Maury, Montgomery counties + statewide TN
+  - Code framing: IBC 2018 (TN amendments) · IECC Climate Zone 4A · ASCE 7-16 V=115 mph basic wind · NO HVHZ / NO Miami-Dade NOA references
 
 ## Project portfolio
 - Full portfolio (350+ projects): https://acglass.com/portfolio.html
