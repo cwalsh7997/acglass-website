@@ -63,6 +63,8 @@
 <meta name="twitter:image" content="https://acglass.com/images/projects/panther-national/rendering.jpg">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css?v=1780170887">
+<!-- jsPDF for branded PDF generation (UMD build, runs in browser) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" defer></script>
 
 <!-- Schema Markup -->
 <script type="application/ld+json">
@@ -1600,6 +1602,406 @@ function animateHeadline(el, low, high, finalText) {
 }
 
 
+
+/* ============================================================================
+   BRANDED PDF GENERATOR — jsPDF, runs in browser, no server needed.
+   Multi-page A4 portrait layout: Cover · System · Timeline + Code · Assumptions
+   Triggered on successful lead form submit. Auto-downloads.
+   ============================================================================ */
+
+// ACG mark — base64-encoded PNG (200x200, navy). Embedded to avoid network call.
+const ACG_LOGO_B64 = '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';
+
+function generateBrandedPDF() {
+  if (!window.jspdf || !window.jspdf.jsPDF) {
+    console.warn('jsPDF not loaded yet');
+    return null;
+  }
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
+
+  // === BRAND PALETTE ===
+  const NAVY = [14, 40, 79];          // #0e284f
+  const NAVY_DEEP = [5, 10, 18];      // #050A12
+  const RED  = [225, 19, 32];          // #e11320
+  const SAND = [245, 241, 234];        // #f5f1ea  (NOT lifestyle wording — this is the brand cream from the site)
+  const INK  = [17, 17, 17];           // body text
+  const INK_MID = [86, 96, 110];       // muted text
+  const WHITE = [255, 255, 255];
+  const LINE = [218, 218, 220];        // separators
+
+  // === PAGE DIMENSIONS (pt) ===
+  const W = 595.28;
+  const H = 841.89;
+  const M = 50; // outer margin
+
+  const c = state.cost;
+  const t = state.timeline;
+  const sys = ACG_CONFIG.systems[state.recommendedSystem];
+  const loc = ACG_CONFIG.location[state.location];
+  const heightLabel = ACG_CONFIG.height[state.height].label;
+  const ptName = state.projectType.replace(/_/g,' ').replace(/\b\w/g, l => l.toUpperCase());
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const leadId = (typeof genLeadId === 'function') ? genLeadId() : ('ACG-' + Date.now().toString(36).toUpperCase());
+
+  /* ----- helpers ----- */
+  const setFill = (rgb) => doc.setFillColor(rgb[0], rgb[1], rgb[2]);
+  const setText = (rgb) => doc.setTextColor(rgb[0], rgb[1], rgb[2]);
+  const setStroke = (rgb) => doc.setDrawColor(rgb[0], rgb[1], rgb[2]);
+  const fH = (size, weight='bold') => { doc.setFont('helvetica', weight); doc.setFontSize(size); };
+  const fJB = (size, weight='normal') => { doc.setFont('courier', weight); doc.setFontSize(size); }; // closest built-in mono to JetBrains Mono
+
+  // Mono caps eyebrow
+  function eyebrow(text, x, y, color) {
+    fJB(8, 'normal');
+    setText(color || INK_MID);
+    doc.text(text.toUpperCase(), x, y, { charSpace: 1.2 });
+  }
+
+  // Footer (every page except cover)
+  function drawFooter(pageNum, totalPages) {
+    setStroke(LINE);
+    doc.setLineWidth(0.5);
+    doc.line(M, H - 50, W - M, H - 50);
+    fJB(8, 'normal');
+    setText(INK_MID);
+    doc.text('AMERICAN COMMERCIAL GLASS · CGC #1531993', M, H - 32, { charSpace: 0.8 });
+    doc.text('(772) 486-7711 · connor@acglass.com · acglass.com', M, H - 20, { charSpace: 0.8 });
+    fJB(8, 'normal');
+    setText(INK_MID);
+    const pgStr = String(pageNum).padStart(2, '0') + ' / ' + String(totalPages).padStart(2, '0');
+    doc.text(pgStr, W - M, H - 25, { align: 'right' });
+    // Red accent dot bottom-left
+    setFill(RED);
+    doc.circle(M - 14, H - 30, 2.5, 'F');
+  }
+
+  /* =====================================================================
+     PAGE 1 — COVER
+     ===================================================================== */
+  // Top half: navy block
+  setFill(NAVY);
+  doc.rect(0, 0, W, 500, 'F');
+  // Subtle gradient feel: deeper navy strip at top
+  setFill(NAVY_DEEP);
+  doc.rect(0, 0, W, 8, 'F');
+  // Red accent vertical bar
+  setFill(RED);
+  doc.rect(M, 80, 3, 56, 'F');
+
+  // Logo (top-right)
+  try { doc.addImage('data:image/png;base64,' + ACG_LOGO_B64, 'PNG', W - M - 56, 56, 56, 56); } catch(e) {}
+
+  // Top eyebrow line
+  setText(WHITE);
+  fJB(8, 'normal');
+  doc.text('AMERICAN COMMERCIAL GLASS · CGC #1531993', M, 70, { charSpace: 1.2 });
+
+  // Title
+  fH(11, 'bold');
+  setText([255,255,255]);
+  doc.text('BUDGET SCOPE REPORT', M + 14, 102, { charSpace: 1.5 });
+  fH(9, 'normal');
+  doc.setTextColor(255, 255, 255);
+  doc.text('Generated by the ACG Scope Intelligence Engine', M + 14, 122);
+
+  // BIG estimate range
+  fH(40, 'bold');
+  setText(WHITE);
+  const rangeText = fmtCost(c.totalLow) + '  —  ' + fmtCost(c.totalHigh);
+  doc.text(rangeText, M, 220);
+
+  // Sub-line: $/SF + total SF
+  fH(13, 'normal');
+  setText([200, 210, 225]);
+  doc.text(`${fmtPsf(c.psfLow)} — ${fmtPsf(c.psfHigh)} per system SF  ·  ${fmtSF(state.computedSystemSF)} SF total`, M, 248);
+
+  // Confidence pill
+  setFill([255,255,255]);
+  doc.roundedRect(M, 270, doc.getStringUnitWidth(c.confidence.label) * 9 + 28, 22, 11, 11, 'F');
+  fJB(9, 'normal');
+  setText(NAVY);
+  doc.text(c.confidence.label.toUpperCase(), M + 14, 285, { charSpace: 0.8 });
+
+  // Divider zigzag (subtle bottom edge of navy block)
+  setFill(SAND);
+  doc.rect(0, 500, W, 1, 'F'); // hairline transition
+
+  // Bottom half: SAND with project meta
+  setFill(SAND);
+  doc.rect(0, 500, W, H - 500, 'F');
+
+  // "FOR" label
+  eyebrow('PROJECT  ·  ' + dateStr, M, 540, [120, 130, 145]);
+
+  // Project type + height
+  fH(24, 'bold');
+  setText(NAVY);
+  doc.text(ptName, M, 580);
+  fH(13, 'normal');
+  setText(INK);
+  doc.text(heightLabel + '  ·  ' + loc.label.split('(')[0].trim(), M, 605);
+
+  // Three-up meta block
+  const metaY = 660;
+  const colW = (W - M*2) / 3;
+  const drawMeta = (col, label, value, valueSub) => {
+    eyebrow(label, M + col*colW, metaY, RED);
+    fH(11, 'bold');
+    setText(NAVY);
+    doc.text(value, M + col*colW, metaY + 22);
+    if (valueSub) {
+      fH(9, 'normal');
+      setText(INK_MID);
+      doc.text(valueSub, M + col*colW, metaY + 38);
+    }
+  };
+  drawMeta(0, 'Recommended system', sys.name.split(' ').slice(0,3).join(' '), sys.name.split(' ').slice(3).join(' '));
+  drawMeta(1, 'Schedule', `${t.totalLow}–${t.totalHigh} weeks`, 'contract → punch');
+  drawMeta(2, 'Glass makeup', ACG_CONFIG.glassMakeup[c.makeupUsed].label, '');
+
+  // Report ID bottom
+  eyebrow('REPORT ID  ·  ' + leadId, M, H - 80, INK_MID);
+
+  // CTA strip at bottom
+  setFill(RED);
+  doc.rect(0, H - 60, W, 60, 'F');
+  setText(WHITE);
+  fH(11, 'bold');
+  doc.text('Reach Connor directly to convert this estimate to a real bid.', M, H - 35);
+  fH(10, 'normal');
+  doc.text('(772) 486-7711   ·   connor@acglass.com   ·   acglass.com/send-plans', M, H - 18);
+
+  /* =====================================================================
+     PAGE 2 — SYSTEM + SPEC
+     ===================================================================== */
+  doc.addPage();
+  // Top eyebrow strip
+  setFill(NAVY);
+  doc.rect(0, 0, W, 30, 'F');
+  setText(WHITE);
+  fJB(8, 'normal');
+  doc.text('ACG SCOPE INTELLIGENCE ENGINE  ·  REPORT  ·  PAGE 02', M, 19, { charSpace: 1.2 });
+
+  let y = 80;
+  eyebrow('RECOMMENDED SYSTEM', M, y, RED);
+  y += 28;
+  fH(26, 'bold');
+  setText(NAVY);
+  doc.text(sys.name, M, y, { maxWidth: W - M*2 });
+  y += 36;
+
+  // Why box
+  setFill(SAND);
+  doc.rect(M, y, W - M*2, 70, 'F');
+  setFill(RED);
+  doc.rect(M, y, 3, 70, 'F');
+  setText(NAVY);
+  fJB(9, 'bold');
+  doc.text('WHY THIS SYSTEM', M + 14, y + 18, { charSpace: 0.8 });
+  fH(11, 'normal');
+  setText(INK);
+  const whyText = buildWhyText();
+  const whyLines = doc.splitTextToSize(whyText, W - M*2 - 28);
+  doc.text(whyLines, M + 14, y + 38);
+  y += 90;
+
+  // Spec table (two-column rows)
+  eyebrow('SYSTEM SPECIFICATIONS', M, y, INK_MID);
+  y += 18;
+  const specs = [
+    ['Manufacturers',    sys.manufacturers],
+    ['U-value',          sys.uvalue],
+    ['SHGC',             sys.shgc],
+    ['Framing',          sys.framing],
+    ['Glass makeup',     sys.glass],
+    ['Max opening',      sys.maxOpening],
+    ['Glass tier used',  ACG_CONFIG.glassMakeup[c.makeupUsed].label],
+  ];
+  specs.forEach(([k, v]) => {
+    setStroke(LINE);
+    doc.setLineWidth(0.4);
+    doc.line(M, y, W - M, y);
+    y += 14;
+    fJB(8, 'normal');
+    setText(INK_MID);
+    doc.text(k.toUpperCase(), M, y, { charSpace: 0.8 });
+    fH(11, 'normal');
+    setText(INK);
+    const vLines = doc.splitTextToSize(String(v), W - M*2 - 160);
+    doc.text(vLines, M + 160, y);
+    y += Math.max(20, vLines.length * 14);
+  });
+  setStroke(LINE);
+  doc.line(M, y, W - M, y);
+
+  drawFooter(2, 4);
+
+  /* =====================================================================
+     PAGE 3 — TIMELINE + CODE
+     ===================================================================== */
+  doc.addPage();
+  setFill(NAVY);
+  doc.rect(0, 0, W, 30, 'F');
+  setText(WHITE);
+  fJB(8, 'normal');
+  doc.text('ACG SCOPE INTELLIGENCE ENGINE  ·  REPORT  ·  PAGE 03', M, 19, { charSpace: 1.2 });
+
+  y = 80;
+  eyebrow('REALISTIC INSTALL TIMELINE', M, y, RED);
+  y += 28;
+  fH(20, 'bold');
+  setText(NAVY);
+  doc.text(`${t.totalLow}–${t.totalHigh} weeks`, M, y);
+  fH(11, 'normal');
+  setText(INK_MID);
+  doc.text('contract award to final punch', M + 130, y);
+  y += 28;
+
+  // Phase rows
+  t.phases.forEach((p, i) => {
+    setStroke(LINE);
+    doc.setLineWidth(0.4);
+    doc.line(M, y - 4, W - M, y - 4);
+    fJB(8, 'bold');
+    setText(RED);
+    doc.text(`PHASE ${String(i+1).padStart(2,'0')}`, M, y + 10, { charSpace: 0.8 });
+    fH(12, 'normal');
+    setText(NAVY);
+    doc.text(p.name, M + 70, y + 10);
+    fJB(11, 'bold');
+    setText(INK);
+    doc.text(`${p.weeks[0]}–${p.weeks[1]} wks`, W - M, y + 10, { align: 'right' });
+    y += 28;
+  });
+  setStroke(LINE);
+  doc.line(M, y - 4, W - M, y - 4);
+
+  if (t.riskNote) {
+    y += 14;
+    setFill([254, 246, 231]);
+    doc.rect(M, y, W - M*2, 50, 'F');
+    setFill([251, 191, 36]);
+    doc.rect(M, y, 3, 50, 'F');
+    fJB(8, 'bold');
+    setText([161, 98, 7]);
+    doc.text('SCHEDULE RISK', M + 14, y + 18, { charSpace: 0.8 });
+    fH(10, 'normal');
+    setText(INK);
+    doc.text(doc.splitTextToSize(t.riskNote, W - M*2 - 28), M + 14, y + 34);
+    y += 70;
+  } else { y += 20; }
+
+  // Code requirements
+  eyebrow('CODE REQUIREMENTS · ' + loc.label.split('(')[0].trim(), M, y, INK_MID);
+  y += 22;
+  loc.codes.forEach(code => {
+    setStroke(LINE);
+    doc.setLineWidth(0.4);
+    doc.line(M, y - 4, W - M, y - 4);
+    fJB(9, 'bold');
+    setText(RED);
+    doc.text(code.key, M, y + 10, { charSpace: 0.8 });
+    fH(10, 'normal');
+    setText(INK);
+    const valLines = doc.splitTextToSize(code.val, W - M*2 - 110);
+    doc.text(valLines, M + 110, y + 10);
+    y += Math.max(22, valLines.length * 14 + 10);
+  });
+  setStroke(LINE);
+  doc.line(M, y - 4, W - M, y - 4);
+
+  drawFooter(3, 4);
+
+  /* =====================================================================
+     PAGE 4 — ASSUMPTIONS · DISCLAIMER · NEXT STEPS
+     ===================================================================== */
+  doc.addPage();
+  setFill(NAVY);
+  doc.rect(0, 0, W, 30, 'F');
+  setText(WHITE);
+  fJB(8, 'normal');
+  doc.text('ACG SCOPE INTELLIGENCE ENGINE  ·  REPORT  ·  PAGE 04', M, 19, { charSpace: 1.2 });
+
+  y = 80;
+  eyebrow('ASSUMPTIONS BEHIND THE NUMBER', M, y, RED);
+  y += 22;
+  fH(13, 'normal');
+  setText(INK_MID);
+  doc.text('What this estimate includes — and what it doesn\'t.', M, y);
+  y += 24;
+
+  // Assumptions list
+  const assumptions = [
+    `${fmtSF(state.computedSystemSF)} SF of system area (framing + glass, not vision-glass only). Computed from ${state.sizeMethod.replace(/_/g,' ')}.`,
+    `${ACG_CONFIG.glassMakeup[c.makeupUsed].label} glass makeup assumed.`,
+    loc.hvhz ? 'HVHZ approvals included (Miami-Dade NOA + TAS testing).' : 'Florida Statewide Product Approval pathway assumed; no Miami-Dade NOA cost included.',
+    `${heightLabel} cost factor applied.`,
+    'Installed price, system-SF basis. Includes framing, glass, sealants within scope, standard install.',
+    'EXCLUDES: GC overhead/profit, blocking/backer, perimeter sealants outside glazing scope, special inspection fees, bonding above standard rate, off-hours / accelerated schedule premiums.',
+  ];
+  if (state.recommendedSystem === 'multislide_eurowall') {
+    assumptions.push('Multi-slide/folding doors are normally priced per unit or linear foot — the SF-basis here is rough. Get a real takeoff for this scope.');
+  }
+  if (state.requirements.length) {
+    assumptions.push('Selected requirements applied: ' + state.requirements.map(r => ACG_CONFIG.requirements[r].label).join(', ') + '.');
+  }
+
+  assumptions.forEach(text => {
+    setFill(RED);
+    doc.circle(M + 3, y + 4, 1.6, 'F');
+    fH(10, 'normal');
+    setText(INK);
+    const lines = doc.splitTextToSize(text, W - M*2 - 14);
+    doc.text(lines, M + 12, y + 7);
+    y += lines.length * 13 + 6;
+  });
+
+  y += 16;
+  // Disclaimer block
+  setFill([248, 248, 250]);
+  doc.rect(M, y, W - M*2, 110, 'F');
+  fJB(8, 'bold');
+  setText(NAVY);
+  doc.text('FULL DISCLAIMER', M + 14, y + 18, { charSpace: 0.8 });
+  fH(8.5, 'normal');
+  setText(INK_MID);
+  const disclaimer = 'The ACG Scope Intelligence Engine returns a budget-level range based on the inputs you provided, ACG\'s recent Florida project history, and current Florida Building Code (8th Ed., 2023). It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter. Numbers shown are installed system $/SF on a system-area basis (framing + glass), exclusive of GC overhead/profit and items listed under EXCLUDES above. Calibrated as of 2026.';
+  const dLines = doc.splitTextToSize(disclaimer, W - M*2 - 28);
+  doc.text(dLines, M + 14, y + 36);
+
+  y += 130;
+  // Next steps CTA card
+  setFill(NAVY);
+  doc.rect(M, y, W - M*2, 130, 'F');
+  setFill(RED);
+  doc.rect(M, y, 3, 130, 'F');
+  eyebrow('NEXT STEPS', M + 14, y + 22, [255, 200, 200]);
+  fH(16, 'bold');
+  setText(WHITE);
+  doc.text('Convert this estimate to a real bid.', M + 14, y + 50);
+  fH(10, 'normal');
+  setText([200, 210, 225]);
+  doc.text('Send us your drawings — site walk + sealed scope letter back to you in 48 hours.', M + 14, y + 68, { maxWidth: W - M*2 - 28 });
+  fJB(9, 'bold');
+  setText(WHITE);
+  doc.text('CALL  ', M + 14, y + 100, { charSpace: 0.8 });
+  doc.text('(772) 486-7711', M + 50, y + 100);
+  doc.text('EMAIL  ', M + 14, y + 116, { charSpace: 0.8 });
+  doc.text('connor@acglass.com', M + 50, y + 116);
+  doc.text('SEND PLANS  ', W - M - 130, y + 100, { charSpace: 0.8 });
+  doc.text('acglass.com/send-plans', W - M - 130, y + 116);
+
+  drawFooter(4, 4);
+
+  // Save
+  const filename = `ACG-Scope-Report-${(ptName||'project').replace(/\s+/g,'-')}-${leadId}.pdf`;
+  doc.save(filename);
+  return filename;
+}
+
 /* ============================================================================
    LEAD CAPTURE — SUBMIT TO formsubmit.co
    ============================================================================ */
@@ -1704,11 +2106,13 @@ Confidence: ${c.confidence.label}
 Recommended system: ${ACG_CONFIG.systems[state.recommendedSystem].name}
 Schedule: ${state.timeline.totalLow}–${state.timeline.totalHigh} weeks from award to punch.
 
-To save a branded PDF of the full report, open the engine again at:
-${ACG_CONFIG.page_url}
-…then use your browser's Print → Save as PDF.
+A branded PDF of the full report was auto-downloaded to your device when
+you submitted the form. Look for a file named ACG-Scope-Report-*.pdf in
+your Downloads folder. If you didn't get it, reply to this email and we'll
+resend.
 
 For a real bid on plans, reply to this email or call (772) 486-7711.
+For faster turnaround, send drawings via: ${ACG_CONFIG.page_url.replace('/scope-engine.html','/send-plans.html')}
 
 — Connor Walsh, President
 American Commercial Glass | FL CGC #1531993`;
@@ -1775,12 +2179,32 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         currency: 'USD', value: 1000,
       });
       status.className = 'se-form-status ok';
-      status.innerHTML = '✓ Got it. A copy is in your inbox + with our estimating team. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Save this report as PDF</button>';
-      // Wire the print button
-      setTimeout(() => {
-        const pb = document.getElementById('print-pdf-btn');
-        if (pb) pb.addEventListener('click', () => { ga('scope_pdf_print'); window.print(); });
-      }, 50);
+      status.innerHTML = '✓ Got it. Generating your branded PDF report&hellip;';
+
+      // Generate + download branded PDF (no server required)
+      let pdfFilename = null;
+      try {
+        pdfFilename = generateBrandedPDF();
+        ga('scope_pdf_generated', { filename: pdfFilename });
+      } catch (e) {
+        console.warn('PDF generation failed:', e);
+        ga('scope_pdf_failed', { error: String(e).slice(0, 100) });
+      }
+
+      if (pdfFilename) {
+        status.innerHTML = '✓ Got it. Your branded PDF report just downloaded — check your downloads folder for <strong>' + pdfFilename + '</strong>. A copy is also with our estimating team; we will reach out within 48 hours.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
+        setTimeout(() => {
+          const rb = document.getElementById('redownload-pdf-btn');
+          if (rb) rb.addEventListener('click', () => { ga('scope_pdf_redownload'); generateBrandedPDF(); });
+        }, 50);
+      } else {
+        // Graceful fallback to browser print
+        status.innerHTML = '✓ Got it. A copy is in your inbox + with our estimating team. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print this report (save as PDF)</button>';
+        setTimeout(() => {
+          const pb = document.getElementById('print-pdf-btn');
+          if (pb) pb.addEventListener('click', () => { ga('scope_pdf_print'); window.print(); });
+        }, 50);
+      }
       // Disable inputs
       document.getElementById('lead-form').querySelectorAll('input, select').forEach(el => el.disabled = true);
     } else {
