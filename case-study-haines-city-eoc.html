@@ -370,7 +370,7 @@ footer{padding:36px 0 70px;color:var(--mute);font-size:12px;font-family:var(--mo
   </div>
 </section>
 
-<div class="lightbox" id="lb"><button class="lb-close" onclick="document.getElementById('lb').classList.remove('open')">Close ✕</button><img id="lbimg" src="" alt=""></div>
+<div class="lightbox" id="lb"><button class="lb-close" onclick="document.getElementById('lb').classList.remove('open')">Close ✕</button><img id="lbimg" src="" alt="" loading="lazy" decoding="async"></div>
 <script>
 document.querySelectorAll('.gallery a[data-lightbox]').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();const lb=document.getElementById('lb'),img=document.getElementById('lbimg');img.src=a.href;img.alt=a.querySelector('img').alt;lb.classList.add('open');});

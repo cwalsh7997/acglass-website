@@ -138,11 +138,19 @@ Allow: /
 
 # ------------------------------------------------------------------------
 # Sitemaps
+# Primary: sitemap index (segmented by content type for efficient crawling)
 # ------------------------------------------------------------------------
-Sitemap: https://acglass.com/sitemap.xml
-Sitemap: https://acglass.com/sitemap-llm.xml
-Sitemap: https://acglass.com/news-sitemap.xml
 Sitemap: https://acglass.com/sitemap-index.xml
+Sitemap: https://acglass.com/sitemap-pages.xml
+Sitemap: https://acglass.com/sitemap-blog.xml
+Sitemap: https://acglass.com/sitemap-projects.xml
+Sitemap: https://acglass.com/sitemap-cities.xml
+Sitemap: https://acglass.com/sitemap-services.xml
+Sitemap: https://acglass.com/sitemap-images.xml
+Sitemap: https://acglass.com/news-sitemap.xml
+Sitemap: https://acglass.com/sitemap-llm.xml
+# Master combined sitemap retained for tools that do not follow sitemap indexes
+Sitemap: https://acglass.com/sitemap.xml
 
 # ------------------------------------------------------------------------
 # AI / GEO signals

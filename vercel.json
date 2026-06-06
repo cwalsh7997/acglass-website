@@ -294,6 +294,86 @@
       "source": "/tubelite-storefront-installer-miami",
       "destination": "/storefront-glazier-miami-florida/",
       "permanent": true
+    },
+    {
+      "source": "/case-study-ocean-prime-fort-lauderdale.html",
+      "destination": "/portfolio.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-study-ocean-prime.html",
+      "destination": "/portfolio.html",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-prime-fort-lauderdale/",
+      "destination": "/portfolio.html",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-prime-fort-lauderdale",
+      "destination": "/portfolio.html",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-prime-ft-lauderdale.html",
+      "destination": "/portfolio.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ocean-prime-ft-lauderdale-glazing.html",
+      "destination": "/portfolio.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glass-cost-data.html",
+      "destination": "/capabilities.html",
+      "permanent": true
+    },
+    {
+      "source": "/cost-calculator.html",
+      "destination": "/capabilities.html",
+      "permanent": true
+    },
+    {
+      "source": "/tools/storefront-cost-estimator/",
+      "destination": "/capabilities.html",
+      "permanent": true
+    },
+    {
+      "source": "/tools/storefront-cost-estimator",
+      "destination": "/capabilities.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-cost-florida-vs-tennessee/",
+      "destination": "/locations.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-cost-florida-vs-tennessee",
+      "destination": "/locations.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glass-replacement.html",
+      "destination": "/commercial-glass-replacement-vs-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/hvhz-glazing-requirements.html",
+      "destination": "/florida-hvhz-glazing-requirements.html",
+      "permanent": true
+    },
+    {
+      "source": "/trulite-installer-florida.html",
+      "destination": "/commercial-storefront-installer-florida.html",
+      "permanent": true
+    },
+    {
+      "source": "/why-acg.html",
+      "destination": "/about.html",
+      "permanent": true
     }
   ],
   "headers": [

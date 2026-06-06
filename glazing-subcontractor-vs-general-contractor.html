@@ -131,6 +131,18 @@
     </div>
   </section>
 
+  <!-- FEATURED-SNIPPET DIRECT ANSWER (Agent IFS) -->
+  <section class="direct-answer-band" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(24px,3vw,36px) 0;">
+    <div class="container" style="max-width:880px;">
+      <div class="direct-answer" itemscope itemtype="https://schema.org/Question">
+        <p itemprop="name" hidden>What is the difference between a glazing subcontractor and a general contractor?</p>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text" style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#fff;margin:0;"><strong>A glazing subcontractor self-performs the Division 08 glass and glazing scope (storefronts, curtain wall, impact windows), while a general contractor manages the entire project and hires subcontractors. American Commercial Glass works as the glazing subcontractor for general contractors statewide, holding Florida license CGC #1531993 and bonding of $3M single / $6M aggregate.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- THE QUESTION -->
   <section class="guide-section">
     <div class="container">
@@ -405,7 +417,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
   <script>(function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();</script>
 </body>
 </html>

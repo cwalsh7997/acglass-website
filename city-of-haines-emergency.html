@@ -678,7 +678,7 @@
   <!-- Lightbox for project gallery -->
   <div id="acg-lb" style="position:fixed;inset:0;background:rgba(5,10,18,.94);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;">
     <button id="acg-lb-close" style="position:absolute;top:18px;right:24px;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.4);padding:8px 14px;cursor:pointer;">Close &times;</button>
-    <img id="acg-lb-img" src="" alt="" style="max-width:96vw;max-height:92vh;border-radius:4px;">
+    <img id="acg-lb-img" src="" alt="" loading="lazy" decoding="async" style="max-width:96vw;max-height:92vh;border-radius:4px;">
   </div>
   <script>
   (function(){
@@ -692,7 +692,7 @@
   })();
   </script>
 
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>

@@ -843,7 +843,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>

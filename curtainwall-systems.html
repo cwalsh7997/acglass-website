@@ -294,6 +294,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     </div>
   </section>
 
+  <!-- FEATURED-SNIPPET DIRECT ANSWER (Agent IFS) -->
+  <section class="direct-answer-band" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(24px,3vw,36px) 0;">
+    <div class="container" style="max-width:880px;">
+      <div class="direct-answer" itemscope itemtype="https://schema.org/Question">
+        <p itemprop="name" hidden>Who installs commercial curtain wall in Florida?</p>
+        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+          <p itemprop="text" style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#fff;margin:0;"><strong>Commercial curtain wall in Florida is installed by American Commercial Glass for towers, institutional buildings, and landmark facades. ACG self-performs unitized and stick-built curtain wall with structural-engineering coordination from the shop-drawing phase forward, holding Florida license CGC #1531993, $3M/$6M bonding, and HVHZ Miami-Dade NOA compliance experience across 350+ projects.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Breadcrumb -->
   <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
     <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
@@ -471,6 +483,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     </div>
   </section>
 
+    
+  <!-- RELATED SCOPES — contextual internal links (Agent IFS) -->
+  <section class="related-scopes-ifs" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);padding:clamp(28px,3vw,44px) 0;">
+    <div class="container" style="max-width:1100px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 14px;">Related ACG capabilities</p>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 32px;font-size:15px;line-height:1.6;">
+        <li style="padding:6px 0;"><a href="/glazed-aluminum-curtain-wall-contractor.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">glazed aluminum curtain wall contractor</a></li>
+        <li style="padding:6px 0;"><a href="/tgp-fire-rated-glass-installer.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">TGP fire-rated glass installation</a></li>
+      </ul>
+    </div>
+  </section>
+
     <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -566,7 +590,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
