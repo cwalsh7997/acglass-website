@@ -32,8 +32,72 @@
   <meta name="twitter:description" content="American Commercial Glass project portfolio: 350+ commercial glazing projects across Florida. Hospitality, healthcare, government, retail, multifamily. CGC #1531993.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/1172-s-harbor/hero-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=1780170887">
-  <style>
+  <!-- Critical above-the-fold CSS (inlined, render-blocking eliminated) -->
+  <style id="crit-css">*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#050A12;--navy:#0D1E36;--navy-light:#132B4A;--navy-mid:#1B3A5C;--surface:#0D1B30;--surface-light:#132640;--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.12);--red:#E21B2C;--red-glow:rgba(226,27,44,0.4);--red-soft:rgba(226,27,44,0.12);--white:#FFFFFF;--white-90:rgba(255,255,255,0.9);--white-70:rgba(255,255,255,0.7);--white-50:rgba(255,255,255,0.5);--white-30:rgba(255,255,255,0.3);--white-15:rgba(255,255,255,0.15);--white-08:rgba(255,255,255,0.08);--white-04:rgba(255,255,255,0.04);--font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'JetBrains Mono','SF Mono','Fira Code',monospace;--font-mono:var(--mono);--text-muted:var(--white-50);--section-pad:clamp(80px,10vw,160px);--ease:cubic-bezier(0.25,0.46,0.45,0.94);--ease-out:cubic-bezier(0.16,1,0.3,1);--ease-expo:cubic-bezier(0.19,1,0.22,1);--hp-navy:#0e284f;--hp-navy-deep:#0a1e3c;--hp-red:#e11320;--hp-ink:#0e284f;--hp-line:rgba(14,40,79,0.12)}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scrollbar-width:thin;scrollbar-color:var(--white-15) transparent;overflow-x:hidden}
+body{font-family:var(--font);color:var(--white-70);background:var(--black);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul,ol{list-style:none}
+button{font-family:var(--font);cursor:pointer}
+::selection{background:var(--red);color:var(--white)}
+h1,h2,h3,h4,h5,h6{font-family:var(--font);font-weight:800;line-height:1.05;color:var(--white);word-break:break-word}
+h1{font-size:clamp(3.5rem,8vw,8rem);letter-spacing:-0.04em;font-weight:900}
+h2{font-size:clamp(2.5rem,5vw,5rem);letter-spacing:-0.03em}
+h3{font-size:clamp(1.5rem,2.5vw,2.2rem);letter-spacing:-0.02em;font-weight:700}
+p{font-size:clamp(0.95rem,1.1vw,1.1rem);line-height:1.7;color:var(--white-50)}
+.accent{color:var(--red);-webkit-text-fill-color:var(--red)}
+.container{width:100%;max-width:1400px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.container-full{width:100%;padding:0 clamp(20px,5vw,60px);overflow:hidden}
+.section{padding:var(--section-pad) 0;position:relative}
+.label{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:24px}
+.label .line{width:40px;height:1px;background:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 36px;font-family:var(--font);font-size:0.9rem;font-weight:600;letter-spacing:0.03em;border:none;border-radius:0;cursor:pointer;transition:all 0.4s var(--ease-out);position:relative;overflow:hidden;white-space:nowrap}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.1);transition:left 0.5s var(--ease-out)}
+.btn:hover::before{left:100%}
+.btn-primary{background:var(--red);color:var(--white)}
+.btn-primary:hover{box-shadow:0 0 40px var(--red-glow);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);border:1px solid var(--white-15)}
+.btn-ghost:hover{border-color:var(--white-50);background:var(--white-08)}
+.btn-lg{padding:20px 48px;font-size:1rem}
+.btn svg{width:16px;height:16px;transition:transform 0.4s var(--ease-out)}
+.btn:hover svg{transform:translateX(4px)}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;background:rgba(5,10,18,0.85);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);border-bottom:1px solid rgba(255,255,255,0.05);transition:background 0.35s var(--ease),padding 0.35s var(--ease),border-color 0.35s var(--ease)}
+.nav.scrolled{background:rgba(5,10,18,0.96);backdrop-filter:blur(30px) saturate(150%);-webkit-backdrop-filter:blur(30px) saturate(150%);padding:12px 0;border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 clamp(24px,5vw,60px)}
+.nav-logo{display:flex;align-items:center;gap:14px;z-index:1001}
+.nav-logo img,.nav-logo .logo-img{height:38px;width:auto}
+.nav-links{display:flex;align-items:center;gap:clamp(24px,3vw,44px)}
+.nav-links a{font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.92);letter-spacing:0.04em;transition:color 0.3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-cta{padding:10px 24px !important;background:var(--red) !important;color:var(--white) !important;font-weight:600 !important;transition:all 0.3s var(--ease) !important}
+.nav-cta:hover{box-shadow:0 0 30px var(--red-glow) !important}
+.nav-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:5px;background:none;border:none;z-index:1001}
+.nav-toggle span{display:block;width:28px;height:1.5px;background:var(--white);transition:all 0.4s var(--ease-out);transform-origin:center}
+.nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5.5px,5.5px)}
+.nav-toggle.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5.5px,-5.5px)}
+.nav-scope{display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.92);letter-spacing:0.04em;transition:color 0.3s var(--ease)}
+.nav-scope:hover{color:#fff}
+.nav-badge{font-family:var(--mono);font-size:0.56rem;font-weight:700;letter-spacing:0.12em;line-height:1;padding:3px 6px;border-radius:3px;background:var(--hp-red);color:#fff;text-transform:uppercase}
+.nav-phone{font-family:var(--mono);font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.02em;transition:color 0.3s var(--ease)}
+.nav-phone:hover{color:#fff}
+.skip-link{position:absolute;top:-100px;left:0;z-index:10000;padding:12px 24px;background:var(--accent,#E11320);color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:0 0 6px 0;transition:top .2s}
+.skip-link:focus{top:0;outline:2px solid #fff;outline-offset:2px}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(60px,8vh,100px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img,.hero-bg .hero-visual{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,10,18,0.3) 0%,rgba(5,10,18,0.1) 40%,rgba(5,10,18,0.7) 80%,rgba(5,10,18,0.95) 100%);z-index:1}
+.hero-content{position:relative;z-index:2}
+.hero h1{margin-bottom:28px;overflow:hidden}
+.hero-sub{font-size:clamp(1rem,1.4vw,1.25rem);color:var(--white-50);max-width:550px;line-height:1.7;margin-bottom:40px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px}
+@media (max-width:900px){.nav-toggle{display:flex}.nav-links{position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--black);flex-direction:column;align-items:flex-start;justify-content:center;padding:40px;gap:0;opacity:0;pointer-events:none;transition:opacity 0.5s var(--ease-out)}.nav-links.open{opacity:1;pointer-events:all}.nav-links a{font-size:clamp(1.5rem,5vw,2.5rem);font-weight:700;padding:12px 0;display:block;transform:translateY(20px);opacity:0;transition:all 0.5s var(--ease-out)}.nav-links.open a{transform:translateY(0);opacity:1}.nav-cta{margin-top:20px}.nav-scope{font-size:clamp(1.5rem,5vw,2.5rem);font-weight:700;padding:12px 0}.nav-badge{font-size:0.6rem;padding:4px 7px}.nav-phone{font-size:clamp(1.1rem,4vw,1.6rem);padding:12px 0}}</style>
+  <!-- Full stylesheet loaded asynchronously -->
+  <link rel="preload" as="style" href="css/style.css?v=20260606crit" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css?v=20260606crit"></noscript>
+<style>
 
     /* ── PORTFOLIO HERO ── */
     .pf-hero {
@@ -320,6 +384,10 @@
   "name": "ACG Commercial Glazing Portfolio — Florida Projects",
   "description": "Portfolio of completed commercial glazing projects by American Commercial Glass across Florida — storefronts, curtainwall, window wall, impact systems, and specialty glass.",
   "url": "https://acglass.com/portfolio.html",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".fs-h1", "h1", ".direct-answer p"]
+  },
   "publisher": {
     "@type": "Organization",
     "name": "American Commercial Glass",
@@ -1808,6 +1876,14 @@
   </script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
+  </script>
+  <!-- Service Worker registration (offline shell + asset caching) -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    });
+  }
   </script>
 </body>
 </html>
