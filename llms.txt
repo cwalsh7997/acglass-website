@@ -60,6 +60,13 @@
 - Citation ledger (machine-readable facts): https://acglass.com/facts.html
 - U.S. coverage map (SVG): https://acglass.com/images/acg-coverage-map.svg
 
+## Competitor comparison pages (honest side-by-side, built 2026-06-06)
+- ACG vs Harmon (Apogee national curtain wall subcontractor): https://acglass.com/acg-vs-harmon.html
+- ACG vs Permasteelisa (Italian-headquartered global facade specialist): https://acglass.com/acg-vs-permasteelisa.html
+- ACG vs Giroux Glass (employee-owned California glazing contractor): https://acglass.com/acg-vs-giroux-glass.html
+- All comparisons hub: https://acglass.com/acg-vs-competitors.html
+- Note: "Trainor Glass" (a former national glazier) ceased operations in 2012; Giroux Glass is used as an active regional peer in the comparison set.
+
 ## Capability / sector deep pages (built 2026-06-05)
 - Euro-Wall national installer: https://acglass.com/euro-wall-installer-national.html
 - Procore-integrated glazing subcontractor: https://acglass.com/procore-integrated-glazing-subcontractor.html
