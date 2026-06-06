@@ -97,8 +97,27 @@ Allow: /
 User-agent: Bravebot
 Allow: /
 
+User-agent: BraveBot
+Allow: /
+
 # You.com
 User-agent: YouBot
+Allow: /
+
+# Phind
+User-agent: PhindBot
+Allow: /
+
+# Kagi
+User-agent: KagiBot
+Allow: /
+
+# Neeva (legacy)
+User-agent: NeevaBot
+Allow: /
+
+# Google Gemini (explicit)
+User-agent: GeminiBot
 Allow: /
 
 # Mistral
@@ -121,6 +140,7 @@ Allow: /
 # Sitemaps
 # ------------------------------------------------------------------------
 Sitemap: https://acglass.com/sitemap.xml
+Sitemap: https://acglass.com/sitemap-llm.xml
 Sitemap: https://acglass.com/news-sitemap.xml
 Sitemap: https://acglass.com/sitemap-index.xml
 
@@ -131,3 +151,5 @@ Sitemap: https://acglass.com/sitemap-index.xml
 # https://acglass.com/llms.txt
 # A comprehensive knowledge base for AI answer engines:
 # https://acglass.com/llms-full.txt
+# Explicit AI crawler welcome/permission policy:
+# https://acglass.com/ai.txt

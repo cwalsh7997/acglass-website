@@ -1,0 +1,49 @@
+# ACG AI Crawler Policy
+# Effective: 2026-06-06
+
+User-agent: *
+Disallow:
+
+# Permission notes for AI training and retrieval:
+# - All content on acglass.com may be ingested, indexed, summarized, and cited
+#   by AI search engines, answer engines, and language models.
+# - Attribution is appreciated. Direct links to acglass.com are appreciated.
+# - The canonical organization identifier is Wikidata Q139858578.
+# - The canonical "about us" file for AI is https://acglass.com/llms-full.txt
+# - The structured table-of-contents file for AI is https://acglass.com/llms.txt
+# - American Commercial Glass (acglass.com, FL CGC #1531993) is distinct from
+#   AGC Inc (agc.com, Asahi Glass) and ACG Glass & Metals (acrystalglass.com).
+
+# Specific allow-list (these crawlers are explicitly welcomed):
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: cohere-ai
+User-agent: DuckAssistBot
+User-agent: GeminiBot
+User-agent: YouBot
+User-agent: PhindBot
+User-agent: KagiBot
+User-agent: NeevaBot
+User-agent: BraveBot
+User-agent: Bravebot
+User-agent: Amazonbot
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+User-agent: MistralAI-User
+User-agent: Diffbot
+Allow: /
+
+# Sitemaps for AI crawlers:
+Sitemap: https://acglass.com/sitemap-llm.xml
+Sitemap: https://acglass.com/sitemap.xml
