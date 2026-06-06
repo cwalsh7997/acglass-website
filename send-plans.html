@@ -546,10 +546,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
           <summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">What file size limit? <span style="color:var(--accent);">+</span></summary>
           <p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">25 MB total through the form. If your drawing set is bigger, share a Procore, BuildingConnected, or BIM 360 link in the Notes field, or email it to connor@acglass.com and reference the form submission.</p>
         </details>
-        <details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;">
-          <summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Budget pricing vs full hard bid &mdash; which do I pick? <span style="color:var(--accent);">+</span></summary>
-          <p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">Pick Budget Pricing for pre-DD / schematic projects to get a working number. Pick Full Bid when you have CDs and a real bid due date. VE Alternate is when you already have a number and want a second look to value-engineer the glazing package.</p>
-        </details>
+        
         <details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;">
           <summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Do you bid jobs outside Florida? <span style="color:var(--accent);">+</span></summary>
           <p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">Florida only for install. Supply-only arrangements are possible on certain manufacturer packages (ESWindows, Euro-Wall) for out-of-state GCs. Submit the form and we'll tell you on the call.</p>
@@ -618,8 +615,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
           storefront:   'Retail',          office:       'Office / Commercial',
           multifamily:  'Multifamily',     hospitality:  'Hospitality',
           healthcare:   'Healthcare',      government:   'Municipal / Public',
-          interior:     'Office / Commercial', industrial:   'Industrial',
-        };
+          interior:     'Office / Commercial', industrial:   'Industrial'};
         var pt = qp.get('project_type');
         if (pt && form.project_type) {
           var opt = ptMap[pt] || 'Office / Commercial';

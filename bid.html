@@ -13,11 +13,11 @@
   <title>ACG Bid Engine | Upload Plans. Get a Glazing Scope in 48</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <meta name="description" content="Upload your construction plans and get an instant preliminary glazing bid from ACG. Florida's first GC-facing glazing bid engine.">
+  <meta name="description" content="Upload your construction plans and ACG returns an itemized commercial glazing bid within 48 hours. Florida's GC-facing glazing bid engine.">
   <link rel="canonical" href="https://acglass.com/bid.html">
   <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="feed.xml">
   <meta property="og:title" content="ACG Bid Engine | Upload Plans. Get a Glazing Scope in 48 Hours.">
-  <meta property="og:description" content="Upload your architectural drawings and get an instant preliminary glazing scope range, plus a detailed Division 08 bid from ACG within 48 hours. First in the industry.">
+  <meta property="og:description" content="Upload your architectural drawings and get a recommended glazing scope, plus a detailed Division 08 itemized bid from ACG within 48 hours. First in the industry.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/bid.html">
   <meta property="og:image" content="https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg">
@@ -2338,16 +2338,14 @@
         <p class="be-results-sub">Based on <span id="res-type-label" style="color:#fff;font-weight:600;"></span> — <span id="res-sf-note" style="color:#fff;font-weight:600;"></span></p>
       </div>
 
-      <!-- Scope Range Card -->
+      <!-- Scope Summary Card -->
       <div class="be-scope-card">
-        <div class="be-scope-label">Estimated Glazing Scope Value</div>
-        <div class="be-scope-range">
-          <span id="cost-low">$—</span>
-          <span class="dash">—</span>
-          <span id="cost-high">$—</span>
+        <div class="be-scope-label">Glazing Scope Summary</div>
+        <div class="be-scope-range" style="font-size:22px;">
+          <span id="cost-low">Send plans for an itemized bid</span>
         </div>
         <div class="be-scope-meta">
-          Based on <span id="res-glass-sf">—</span> SF glass &bull; <span id="res-psf">$— – $—/SF</span>
+          Estimated glass area: <span id="res-glass-sf">—</span> SF &bull; ACG returns line-item pricing within 48 hours
         </div>
       </div>
 
@@ -2557,17 +2555,16 @@
   };
 
   // ---- PRICING DATA ----
-  // Glass SF/price ranges per building type
-  // TIGHTENED PRICING — base rates per type, then adjusted by requirements
+  // Glass-area ratios per building type (used only to estimate glass SF — no pricing)
   const PRICING = {
-    retail:      { psfBase: 58, psfSpread: 12, glassRatio: 0.15, label: 'Retail / Storefront' },
-    hospitality: { psfBase: 95, psfSpread: 25, glassRatio: 0.20, label: 'Hospitality / Restaurant' },
-    healthcare:  { psfBase: 78, psfSpread: 16, glassRatio: 0.12, label: 'Healthcare / Medical' },
-    office:      { psfBase: 65, psfSpread: 15, glassRatio: 0.18, label: 'Office / Commercial' },
-    multifamily: { psfBase: 52, psfSpread: 12, glassRatio: 0.10, label: 'Multifamily / Apartments' },
-    government:  { psfBase: 82, psfSpread: 18, glassRatio: 0.15, label: 'Government / Institutional' },
-    seniorliving:{ psfBase: 58, psfSpread: 14, glassRatio: 0.10, label: 'Senior Living / CCRC' },
-    industrial:  { psfBase: 42, psfSpread: 10, glassRatio: 0.05, label: 'Industrial / Warehouse' }
+    retail:      { glassRatio: 0.15, label: 'Retail / Storefront' },
+    hospitality: { glassRatio: 0.20, label: 'Hospitality / Restaurant' },
+    healthcare:  { glassRatio: 0.12, label: 'Healthcare / Medical' },
+    office:      { glassRatio: 0.18, label: 'Office / Commercial' },
+    multifamily: { glassRatio: 0.10, label: 'Multifamily / Apartments' },
+    government:  { glassRatio: 0.15, label: 'Government / Institutional' },
+    seniorliving:{ glassRatio: 0.10, label: 'Senior Living / CCRC' },
+    industrial:  { glassRatio: 0.05, label: 'Industrial / Warehouse' }
   };
 
   // ---- SYSTEM RECOMMENDATIONS ----
@@ -2931,8 +2928,9 @@
     // Calculate scope now
     calculateScope();
 
-    document.getElementById('form-scope-low').value = state.scopeLow || '';
-    document.getElementById('form-scope-high').value = state.scopeHigh || '';
+    // Pricing is not estimated client-side; submit glass area only.
+    document.getElementById('form-scope-low').value = '';
+    document.getElementById('form-scope-high').value = (state.computedGlassSF || '') + ' SF glass (est.)';
 
     // Show analyzing overlay
     runAnalysis();
@@ -2946,44 +2944,14 @@
     const type = state.buildingType || 'office';
     const pricing = PRICING[type] || PRICING.office;
 
-    // Determine glass SF
+    // Estimate glass area only — no pricing is computed or displayed.
+    // ACG returns an itemized bid after reviewing plans.
     let glassSF = state.glassSF;
     if (!glassSF && state.buildingSF) {
       glassSF = Math.round(state.buildingSF * pricing.glassRatio);
     }
     if (!glassSF) glassSF = 2500;
     state.computedGlassSF = glassSF;
-
-    // Start with base PSF
-    let basePSF = pricing.psfBase;
-    let spread = pricing.psfSpread;
-
-    // Requirement adjustments (tighten range based on known requirements)
-    const reqs = (state.requirements || '').toLowerCase();
-    let reqMult = 1.0;
-    if (reqs.includes('impact'))    reqMult += 0.32;  // impact glass adds ~32%
-    if (reqs.includes('fire'))      reqMult += 0.28;  // fire-rated adds ~28%
-    if (reqs.includes('sound'))     reqMult += 0.18;  // STC rated adds ~18%
-    if (reqs.includes('energy'))    reqMult += 0.12;  // energy code upgrades ~12%
-    if (reqs.includes('blast'))     reqMult += 0.45;  // blast-resistant adds ~45%
-
-    basePSF = Math.round(basePSF * reqMult);
-
-    // Floor adjustment (+3% per floor above 1 for access equipment)
-    const floors = parseInt(state.floors) || 1;
-    const floorMult = 1 + (Math.max(0, floors - 1) * 0.03);
-
-    // Renovation premium (+10% for demo, phasing, protection)
-    const renvoPremium = state.constructionType === 'renovation' ? 1.10 : 1;
-
-    // Final PSF range: base ± spread (tight ~20% margin)
-    const psfLow  = Math.round(basePSF * floorMult * renvoPremium);
-    const psfHigh = Math.round((basePSF + spread) * floorMult * renvoPremium);
-
-    state.psfLow = psfLow;
-    state.psfHigh = psfHigh;
-    state.scopeLow  = Math.round(glassSF * psfLow  / 500) * 500;
-    state.scopeHigh = Math.round(glassSF * psfHigh / 500) * 500;
   }
 
   // ====================
@@ -3067,11 +3035,8 @@
     const pricing = PRICING[type] || PRICING.office;
     const system = SYSTEMS[type] || SYSTEMS.office;
 
-    // Scope range
-    document.getElementById('cost-low').textContent  = '$' + (state.scopeLow  || 0).toLocaleString();
-    document.getElementById('cost-high').textContent = '$' + (state.scopeHigh || 0).toLocaleString();
+    // Scope summary (no pricing displayed — itemized bid returned by ACG)
     document.getElementById('res-glass-sf').textContent = (state.computedGlassSF || '—').toLocaleString();
-    document.getElementById('res-psf').innerHTML = `$${state.psfLow || pricing.psfBase}–$${state.psfHigh || (pricing.psfBase + pricing.psfSpread)}/SF`;
 
     // Labels
     document.getElementById('res-type-label').textContent = state.buildingTypeLabel || '';
@@ -3114,7 +3079,7 @@
       gtag('event', 'bid_submitted', {
         event_category: 'BidEngine',
         event_label: state.buildingTypeLabel,
-        value: Math.round((state.scopeLow + state.scopeHigh) / 2)
+        value: state.computedGlassSF || 0
       });
     }
 
@@ -3187,8 +3152,7 @@
       ['Estimated Glass SF', state.computedGlassSF ? state.computedGlassSF.toLocaleString() + ' SF' : '—'],
       ['Floors', state.floors || '1'],
       ['Construction Type', state.constructionType === 'renovation' ? 'Renovation' : 'New Construction'],
-      ['Special Requirements', state.requirements || 'Standard'],
-    ];
+      ['Special Requirements', state.requirements || 'Standard']];
 
     fields.forEach(([label, value]) => {
       doc.setFont('helvetica', 'bold');
@@ -3213,17 +3177,16 @@
     doc.setFontSize(9);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(...gray);
-    doc.text('ESTIMATED GLAZING SCOPE VALUE', margin + cw / 2, y, { align: 'center' });
+    doc.text('GLAZING SCOPE SUMMARY', margin + cw / 2, y, { align: 'center' });
     y += 10;
-    doc.setFontSize(24);
+    doc.setFontSize(15);
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(...dark);
-    const scopeText = '$' + (state.scopeLow || 0).toLocaleString() + '  \u2014  $' + (state.scopeHigh || 0).toLocaleString();
-    doc.text(scopeText, margin + cw / 2, y, { align: 'center' });
+    doc.text('Send plans for an itemized bid', margin + cw / 2, y, { align: 'center' });
     y += 8;
     doc.setFontSize(8);
     doc.setTextColor(...gray);
-    doc.text('Based on ' + (state.computedGlassSF || 0).toLocaleString() + ' SF glass \u00b7 $' + (state.psfLow || 0) + '\u2013$' + (state.psfHigh || 0) + '/SF installed', margin + cw / 2, y, { align: 'center' });
+    doc.text('Estimated glass area: ' + (state.computedGlassSF || 0).toLocaleString() + ' SF \u00b7 ACG returns line-item pricing within 48 hours', margin + cw / 2, y, { align: 'center' });
 
     y += 18;
 
