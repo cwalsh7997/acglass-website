@@ -3109,22 +3109,34 @@ textarea:focus-visible,
   overflow:hidden;
 }
 .hp-cap-tile{
-  display:block;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
   background:#fff;
   padding:clamp(28px,3vw,40px);
   transition:background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.hp-cap-tile svg{
+  width:32px;
+  height:32px;
+  flex-shrink:0;
+  color:var(--hp-red,#e11320);
+  margin-bottom:4px;
 }
 .hp-cap-tile h3{
   font-size:1.2rem;
   font-weight:700;
   color:var(--hp-ink);
-  margin:0 0 12px;
+  margin:0 0 8px;
+  line-height:1.25;
 }
 .hp-cap-tile p{
   font-size:0.92rem;
   line-height:1.55;
   color:#5a6678;
-  margin:0 0 18px;
+  margin:0 0 8px;
+  flex-grow:1;
 }
 .hp-cap-link{
   font-size:0.82rem;
@@ -3303,12 +3315,13 @@ textarea:focus-visible,
 }
 .hp-video-frame{
   position:relative;
+  aspect-ratio:16/9;
   border-radius:10px;
   overflow:hidden;
   box-shadow:0 30px 80px rgba(0,0,0,0.45);
-  background:#000;
+  background:#0a1428 url('/videos/waxins-naples-poster.jpg') center/cover no-repeat;
 }
-.hp-video-frame video{ width:100%; display:block; }
+.hp-video-frame video{ width:100%; height:100%; object-fit:cover; display:block; }
 .hp-video-badge{
   display:inline-flex;
   align-items:center;
