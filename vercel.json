@@ -296,36 +296,6 @@
       "permanent": true
     },
     {
-      "source": "/case-study-ocean-prime-fort-lauderdale.html",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
-      "source": "/case-study-ocean-prime.html",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
-      "source": "/ocean-prime-fort-lauderdale/",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
-      "source": "/ocean-prime-fort-lauderdale",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
-      "source": "/ocean-prime-ft-lauderdale.html",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog/ocean-prime-ft-lauderdale-glazing.html",
-      "destination": "/portfolio.html",
-      "permanent": true
-    },
-    {
       "source": "/commercial-glass-cost-data.html",
       "destination": "/capabilities.html",
       "permanent": true
