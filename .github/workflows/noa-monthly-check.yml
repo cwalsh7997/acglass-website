@@ -1,0 +1,44 @@
+name: NOA Monthly Status Check
+
+on:
+  schedule:
+    # 1st of every month at 13:00 UTC (09:00 EDT / 08:00 EST)
+    - cron: '0 13 1 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  noa-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run NOA status check
+        id: status
+        run: |
+          set +e
+          python3 scripts/noa-status-check.py | tee /tmp/noa-status.txt
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Open issue if stale
+        if: steps.status.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('/tmp/noa-status.txt', 'utf8');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `NOA hub: pending entries >90 days — ${new Date().toISOString().slice(0,10)}`,
+              body: '```\n' + body + '\n```\n\nUpdate `/noa/data.json` by hand after cross-referencing the source portals, then run `python3 scripts/noa-hub-build.py` and commit.',
+              labels: ['noa', 'verification']
+            });

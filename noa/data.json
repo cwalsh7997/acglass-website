@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "schema_version": 1,
+    "last_full_pass_attempt": "2026-06-11",
+    "policy": "Zero fabrication. Cells marked 'pending verification' when the Florida Product Approval portal (floridabuilding.org) or Miami-Dade NOA portal (miamidade.gov/building) could not be reached from automated tooling. Owner must verify against the linked source URL before any bid submission.",
+    "sources": {
+      "florida_product_approval": "https://www.floridabuilding.org/pr/pr_app_lst.aspx",
+      "miami_dade_noa": "https://www.miamidade.gov/building/pc-search.asp"
+    }
+  },
+  "partners": {
+    "eswindows": {
+      "label": "ESWindows",
+      "manufacturer_url": "https://www.eswindows.com",
+      "systems": [
+        {"series": "ES-50 Storefront", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
+        {"series": "ES-7000 Curtainwall", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
+        {"series": "ES-8000 Curtainwall", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
+        {"series": "ES Casement Window", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+      ]
+    },
+    "euro-wall": {
+      "label": "Euro-Wall",
+      "manufacturer_url": "https://www.euro-wall.com",
+      "systems": [
+        {"series": "DirectSet Storefront", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
+        {"series": "Multi-Slide System", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
+        {"series": "Vistafold Bi-Fold", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+      ]
+    },
+    "pgt": {
+      "label": "PGT",
+      "manufacturer_url": "https://www.pgtwindows.com",
+      "systems": [
+        {"series": "WinGuard Aluminum Impact", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+      ]
+    },
+    "tgp": {
+      "label": "TGP (Technical Glass Products)",
+      "manufacturer_url": "https://www.tgpamerica.com",
+      "systems": [
+        {"series": "Pilkington Pyrostop", "fl_pa": "pending verification", "miami_dade_noa": "n/a (fire-rated)", "expiration": "pending verification", "design_pressure": "n/a", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
+        {"series": "FireLite Plus", "fl_pa": "pending verification", "miami_dade_noa": "n/a (fire-rated)", "expiration": "pending verification", "design_pressure": "n/a", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+      ]
+    },
+    "aldora": {
+      "label": "Aldora",
+      "manufacturer_url": "https://www.aldoraap.com",
+      "systems": [
+        {"series": "Architectural Glass — Impact Laminated", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+      ]
+    },
+    "slimpact": {
+      "label": "Slimpact",
+      "manufacturer_url": "https://www.slimpact.com",
+      "systems": [
+        {"series": "Steel Framing System", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+      ]
+    }
+  }
+}
