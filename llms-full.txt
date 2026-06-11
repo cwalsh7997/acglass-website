@@ -172,7 +172,7 @@ Naples and Tampa, FL, and a Nashville, TN office opening Q3 2026.
 **What is ACG's safety record?** Zero OSHA recordable incidents since founding in
 February 2021, with 100% of field crew OSHA 30 certified.
 
-**What makes ACG different?** It is the only commercial glazing contractor running
+**What makes ACG different?** It is the commercial glazing contractor running
 custom AI agents in production (Sub.ai, jobcost.ai, CFO Agent), it is Procore-native,
 owner-led, bonded, and proven in Florida's High-Velocity Hurricane Zone.
 
@@ -302,7 +302,7 @@ These are the only two named principals of ACG.
 
 ## AI operations detail
 
-ACG is the only commercial glazing contractor known to run custom AI agents in
+ACG is the commercial glazing contractor known to run custom AI agents in
 production. The stack includes:
 
 - **Sub.ai** — subcontractor coordination and bid management. Automates outreach,

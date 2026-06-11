@@ -94,32 +94,18 @@ User-agent: DuckDuckBot
 Allow: /
 
 # Brave Search
-User-agent: Bravebot
-Allow: /
-
-User-agent: BraveBot
-Allow: /
 
 # You.com
 User-agent: YouBot
 Allow: /
 
 # Phind
-User-agent: PhindBot
-Allow: /
-
 # Kagi
 User-agent: KagiBot
 Allow: /
 
 # Neeva (legacy)
-User-agent: NeevaBot
-Allow: /
-
 # Google Gemini (explicit)
-User-agent: GeminiBot
-Allow: /
-
 # Mistral
 User-agent: MistralAI-User
 Allow: /
@@ -130,11 +116,11 @@ Allow: /
 
 # Common Crawl (feeds many AI training sets)
 User-agent: CCBot
-Allow: /
+Disallow: /
 
 # Bytespider (TikTok/Doubao)
 User-agent: Bytespider
-Allow: /
+Disallow: /
 
 # ------------------------------------------------------------------------
 # Sitemaps
@@ -147,7 +133,6 @@ Sitemap: https://acglass.com/sitemap-projects.xml
 Sitemap: https://acglass.com/sitemap-cities.xml
 Sitemap: https://acglass.com/sitemap-services.xml
 Sitemap: https://acglass.com/sitemap-images.xml
-Sitemap: https://acglass.com/news-sitemap.xml
 Sitemap: https://acglass.com/sitemap-llm.xml
 # Master combined sitemap retained for tools that do not follow sitemap indexes
 Sitemap: https://acglass.com/sitemap.xml

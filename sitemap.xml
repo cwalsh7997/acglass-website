@@ -6945,31 +6945,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://acglass.com/pdfs/qualifications/ACG-COMPASS-Q-Score.pdf</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://acglass.com/pdfs/qualifications/ACG-Letter-of-Bondability.pdf</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://acglass.com/pdfs/qualifications/ACG-Sample-COI.pdf</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://acglass.com/pdfs/qualifications/ACG-West-Construction-LOR.pdf</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+<url>
     <loc>https://acglass.com/ask.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
