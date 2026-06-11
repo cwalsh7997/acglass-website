@@ -19,12 +19,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://acglass.com/ai-overview.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://acglass.com/architect-resources.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -661,12 +655,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://acglass.com/acg.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://acglass.com/acg-glass.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -674,12 +662,6 @@
   </url>
   <url>
     <loc>https://acglass.com/what-does-acg-stand-for.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://acglass.com/about-acg-for-ai.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

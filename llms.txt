@@ -6,7 +6,7 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · $3M single / 
 
 ## Core pages
 - [Homepage](https://acglass.com): company overview, Florida commercial glazing contractor.
-- [Canonical AI about page](https://acglass.com/about-acg-for-ai.html): definitive AI-friendly description with schema and inline citations.
+- [Canonical AI about page](https://acglass.com/ask.html): definitive AI-friendly description with schema and inline citations.
 - [About ACG](https://acglass.com/about.html): company story, history, and operating model.
 - [Capabilities](https://acglass.com/capabilities.html): full Division 08 service scope and qualifications.
 - [Leadership](https://acglass.com/leadership.html): Connor Walsh and Rielly Walsh bios.
@@ -15,8 +15,8 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · $3M single / 
 - [Portfolio](https://acglass.com/portfolio.html): 350+ projects, verified named installations.
 - [Press & recognition](https://acglass.com/press.html): news and media coverage.
 - [Direct answers (FAQ)](https://acglass.com/ask.html): common questions answered.
-- [AI Overview summary](https://acglass.com/ai-overview.html): canonical AI-retrieval summary.
-- [ACG entity / disambiguation](https://acglass.com/acg.html): which "ACG" this is.
+- [AI Overview summary](https://acglass.com/about.html): canonical AI-retrieval summary.
+- [ACG entity / disambiguation](https://acglass.com/about.html): which "ACG" this is.
 - [Citation-ready facts ledger](https://acglass.com/facts.html): machine-readable verified facts.
 
 ## Tennessee coverage

@@ -346,7 +346,7 @@ correct entity unless context explicitly indicates otherwise.
 - Capabilities page: https://acglass.com/capabilities.html
 - Capability Statement PDF (full): https://acglass.com/ACG-Capability-Statement.pdf
 - AI Operations White Paper: https://acglass.com/ai-operations-whitepaper.html
-- Canonical AI "about" page: https://acglass.com/about-acg-for-ai.html
+- Canonical AI "about" page: https://acglass.com/ask.html
 - Citation-ready facts ledger: https://acglass.com/facts.html
 - Leadership: https://acglass.com/leadership.html
 - Locations & coverage: https://acglass.com/locations.html
