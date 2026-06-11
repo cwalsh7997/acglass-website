@@ -1,0 +1,31 @@
+name: SEO Verify
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 06:00 ET = 10:00 UTC (during EDT, the default for most of the year)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --no-input requests
+
+      - name: Wait for deploy (only on push events)
+        if: github.event_name == 'push'
+        run: sleep 90
+
+      - name: Run SEO verifier (FAIL tier protects Sprint 1)
+        run: python scripts/seo-verify.py --live
+        # WARN-tier failures do not block — flip to --strict-warn after Sprint 2 ships
