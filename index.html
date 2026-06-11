@@ -138,110 +138,456 @@ p{font-size:clamp(0.95rem,1.1vw,1.1rem);line-height:1.7;color:var(--white-50)}
   <!-- Full stylesheet loaded asynchronously -->
   <link rel="preload" as="style" href="css/style.css?v=20260611audit" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="css/style.css?v=20260611audit"></noscript>
-<!-- ========== ORGANIZATION + LOCALBUSINESS SCHEMA ========== -->
+  <!-- ========== UNIFIED @graph JSON-LD (Organization, Persons, Offices, WebSite, Breadcrumbs, FAQ) ========== -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Organization", "GeneralContractor", "LocalBusiness"],
-  "@id": "https://acglass.com/#organization",
-  "name": "American Commercial Glass",
-  "alternateName": ["ACG", "ACG Glass", "ACG Florida", "American Commercial Glass Florida", "ACG Commercial Glass", "American Commercial Glass, Inc."],
-  "legalName": "American Commercial Glass, Inc.",
-  "url": "https://acglass.com",
-  "logo": {"@type": "ImageObject", "url": "https://acglass.com/images/acg-mark.png", "width": 200, "height": 200},
-  "image": "https://acglass.com/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg",
-  "description": "American Commercial Glass (ACG) is a Florida-licensed, owner-operated commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa and a Nashville office opening Q3 2026. ACG installs commercial storefronts, curtain wall, impact glazing, multi-slide and folding door systems, fire-rated glass, and aluminum entrances for general contractors. ACG is the authorized commercial installer for ESWindows and Euro-Wall.",
-  "slogan": "Florida's commercial glazing standard.",
-  "foundingDate": "2021-02-18",
-  "telephone": "+1-772-486-7711",
-  "email": "connor@acglass.com",
-  "naics": "238150",
-  "iso6523Code": "0199:CGC1531993",
-  "currenciesAccepted": "USD",
-  "paymentAccepted": "Check, ACH, Wire Transfer",
-  "knowsLanguage": ["en", "es"],
-  "address": {"@type": "PostalAddress", "streetAddress": "700 S Rosemary Ave Suite 204", "addressLocality": "West Palm Beach", "addressRegion": "FL", "postalCode": "33401", "addressCountry": "US"},
-  "geo": {"@type": "GeoCoordinates", "latitude": 26.707159, "longitude": -80.057072},
-  "founder": [
-    {"@type": "Person", "@id": "https://acglass.com/#connor-walsh", "name": "Connor Walsh", "jobTitle": "President & Co-founder", "worksFor": {"@id": "https://acglass.com/#organization"}},
-    {"@type": "Person", "@id": "https://acglass.com/#rielly-walsh", "name": "Rielly Walsh", "jobTitle": "CEO & Co-founder", "worksFor": {"@id": "https://acglass.com/#organization"}}
-  ],
-  "employee": [{"@id": "https://acglass.com/#connor-walsh"}, {"@id": "https://acglass.com/#rielly-walsh"}],
-  "member": [
-    {"@type": "Organization", "name": "ESWindows"},
-    {"@type": "Organization", "name": "Euro-Wall"},
-    {"@type": "Organization", "name": "PGT"},
-    {"@type": "Organization", "name": "Allegion"},
-    {"@type": "Organization", "name": "TGP (Technical Glass Products)"},
-    {"@type": "Organization", "name": "Slimpact"},
-    {"@type": "Organization", "name": "Aldora"}
-  ],
-  "location": [
+  "@graph": [
     {
-      "@type": "LocalBusiness", "@id": "https://acglass.com/#hq-west-palm-beach", "name": "ACG — West Palm Beach (HQ)",
-      "address": {"@type": "PostalAddress", "streetAddress": "700 S Rosemary Ave Suite 204", "addressLocality": "West Palm Beach", "addressRegion": "FL", "postalCode": "33401", "addressCountry": "US"},
-      "geo": {"@type": "GeoCoordinates", "latitude": 26.707159, "longitude": -80.057072},
-      "telephone": "+1-772-486-7711",
-      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}]
+      "@type": "WebSite",
+      "@id": "https://acglass.com/#website",
+      "url": "https://acglass.com/",
+      "name": "American Commercial Glass",
+      "description": "Florida & Tennessee commercial glazing contractor. Storefront, curtainwall, impact, and fire-rated glazing for general contractors.",
+      "publisher": {
+        "@id": "https://acglass.com/#org"
+      },
+      "inLanguage": "en-US"
     },
     {
-      "@type": "LocalBusiness", "@id": "https://acglass.com/#office-naples", "name": "ACG — Naples",
-      "address": {"@type": "PostalAddress", "streetAddress": "4850 Tamiami Trail N, Ste 301", "addressLocality": "Naples", "addressRegion": "FL", "postalCode": "34103", "addressCountry": "US"},
-      "geo": {"@type": "GeoCoordinates", "latitude": 26.2052801, "longitude": -81.7997463},
+      "@type": [
+        "Organization",
+        "GeneralContractor",
+        "LocalBusiness"
+      ],
+      "@id": "https://acglass.com/#org",
+      "name": "American Commercial Glass",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida",
+        "ACG Commercial Glass",
+        "American Commercial Glass, Inc."
+      ],
+      "legalName": "American Commercial Glass, Inc.",
+      "url": "https://acglass.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://acglass.com/images/acg-mark.png",
+        "width": 200,
+        "height": 200
+      },
+      "image": "https://acglass.com/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg",
+      "description": "American Commercial Glass (ACG) is a Florida-licensed, owner-operated commercial glazing contractor headquartered in West Palm Beach, with offices in Naples and Tampa and a Nashville office opening Q3 2026. ACG installs commercial storefronts, curtain wall, impact glazing, multi-slide and folding door systems, fire-rated glass, and aluminum entrances for general contractors. ACG is the authorized commercial installer for ESWindows and Euro-Wall.",
+      "slogan": "Florida's commercial glazing standard.",
+      "foundingDate": "2021-02-18",
       "telephone": "+1-772-486-7711",
-      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}]
+      "email": "connor@acglass.com",
+      "naics": "238150",
+      "iso6523Code": "0199:CGC1531993",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Check, ACH, Wire Transfer",
+      "knowsLanguage": [
+        "en",
+        "es"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "700 S Rosemary Ave Suite 204",
+        "addressLocality": "West Palm Beach",
+        "addressRegion": "FL",
+        "postalCode": "33401",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.707159,
+        "longitude": -80.057072
+      },
+      "founder": [
+        {
+          "@id": "https://acglass.com/leadership.html#connor"
+        },
+        {
+          "@id": "https://acglass.com/leadership.html#rielly"
+        }
+      ],
+      "employee": [
+        {
+          "@id": "https://acglass.com/leadership.html#connor"
+        },
+        {
+          "@id": "https://acglass.com/leadership.html#rielly"
+        }
+      ],
+      "member": [
+        {
+          "@type": "Organization",
+          "name": "ESWindows"
+        },
+        {
+          "@type": "Organization",
+          "name": "Euro-Wall"
+        },
+        {
+          "@type": "Organization",
+          "name": "PGT"
+        },
+        {
+          "@type": "Organization",
+          "name": "Allegion"
+        },
+        {
+          "@type": "Organization",
+          "name": "TGP (Technical Glass Products)"
+        },
+        {
+          "@type": "Organization",
+          "name": "Slimpact"
+        },
+        {
+          "@type": "Organization",
+          "name": "Aldora"
+        }
+      ],
+      "location": [
+        {
+          "@id": "https://acglass.com/#office-west-palm-beach"
+        },
+        {
+          "@id": "https://acglass.com/#office-naples"
+        },
+        {
+          "@id": "https://acglass.com/#office-tampa"
+        },
+        {
+          "@id": "https://acglass.com/#office-nashville"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Florida"
+        },
+        {
+          "@type": "State",
+          "name": "Tennessee"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "Florida Certified General Contractor",
+          "identifier": "CGC #1531993",
+          "recognizedBy": {
+            "@type": "GovernmentOrganization",
+            "name": "Florida Department of Business and Professional Regulation",
+            "url": "https://www.myfloridalicense.com/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "name": "Woman-Owned Business Enterprise (WBE)"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "name": "Small Business Enterprise (SBE)"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "dealer authorization",
+          "name": "Authorized ESWindows Commercial Installer"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "dealer authorization",
+          "name": "Authorized Euro-Wall Installer"
+        }
+      ],
+      "award": [
+        "Zero OSHA recordable incidents since 2021",
+        "350+ commercial projects delivered",
+        "1,000,000+ SF of glass installed",
+        "$3M/$6M bonded capacity — Arch Insurance A+ XV"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Sales & Estimating",
+          "email": "connor@acglass.com",
+          "telephone": "+1-772-486-7711",
+          "areaServed": "US-FL",
+          "availableLanguage": [
+            "English"
+          ]
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q139858578",
+        "https://www.linkedin.com/company/acglass",
+        "https://www.facebook.com/acommercialglass",
+        "https://www.instagram.com/acglass.co",
+        "https://network.procore.com/p/american-commercial-glass-west-palm-beach",
+        "https://www.bbb.org/us/fl/west-palm-beach/profile/window-installation/american-commercial-glass-inc-0633-92045708"
+      ],
+      "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company."
     },
     {
-      "@type": "LocalBusiness", "@id": "https://acglass.com/#office-tampa", "name": "ACG — Tampa",
-      "address": {"@type": "PostalAddress", "streetAddress": "3031 N Rocky Point Dr W, Ste 600", "addressLocality": "Tampa", "addressRegion": "FL", "postalCode": "33607", "addressCountry": "US"},
-      "geo": {"@type": "GeoCoordinates", "latitude": 27.9686273, "longitude": -82.5686677},
+      "@type": "Person",
+      "@id": "https://acglass.com/leadership.html#connor",
+      "name": "Connor Walsh",
+      "jobTitle": "President & Co-founder",
+      "worksFor": {
+        "@id": "https://acglass.com/#org"
+      },
+      "url": "https://acglass.com/leadership.html#connor",
+      "email": "connor@acglass.com",
       "telephone": "+1-772-486-7711",
-      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}]
+      "sameAs": [
+        "https://www.linkedin.com/in/connor-walsh-acg"
+      ]
     },
     {
-      "@type": "LocalBusiness", "@id": "https://acglass.com/#office-nashville", "name": "ACG — Nashville (Q3 2026)",
-      "address": {"@type": "PostalAddress", "addressLocality": "Nashville", "addressRegion": "TN", "postalCode": "37201", "addressCountry": "US"},
-      "geo": {"@type": "GeoCoordinates", "latitude": 36.1627, "longitude": -86.7816},
+      "@type": "Person",
+      "@id": "https://acglass.com/leadership.html#rielly",
+      "name": "Rielly Walsh",
+      "jobTitle": "CEO & Co-founder",
+      "worksFor": {
+        "@id": "https://acglass.com/#org"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://acglass.com/#office-west-palm-beach",
+      "name": "ACG — West Palm Beach (HQ)",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#org"
+      },
+      "url": "https://acglass.com/locations/west-palm-beach.html",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "700 S Rosemary Ave Suite 204",
+        "addressLocality": "West Palm Beach",
+        "addressRegion": "FL",
+        "postalCode": "33401",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.707159,
+        "longitude": -80.057072
+      },
+      "telephone": "+1-772-486-7711",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://acglass.com/#office-naples",
+      "name": "ACG — Naples",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#org"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4850 Tamiami Trail N, Ste 301",
+        "addressLocality": "Naples",
+        "addressRegion": "FL",
+        "postalCode": "34103",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.2052801,
+        "longitude": -81.7997463
+      },
+      "telephone": "+1-772-486-7711",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://acglass.com/#office-tampa",
+      "name": "ACG — Tampa",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#org"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3031 N Rocky Point Dr W, Ste 600",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "postalCode": "33607",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.9686273,
+        "longitude": -82.5686677
+      },
+      "telephone": "+1-772-486-7711",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://acglass.com/#office-nashville",
+      "name": "ACG — Nashville (Q3 2026)",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#org"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nashville",
+        "addressRegion": "TN",
+        "postalCode": "37201",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.1627,
+        "longitude": -86.7816
+      },
       "telephone": "+1-772-486-7711",
       "description": "ACG Nashville office opens Q3 2026 — serving Middle Tennessee and the Nashville MSA.",
-      "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}]
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://acglass.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://acglass.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does American Commercial Glass do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG is a commercial-only Division 08 glazing subcontractor. We install storefronts, curtain wall, impact glazing, multi-slide and folding door systems, fire-rated glass, and aluminum entrances for general contractors across Florida — and Tennessee starting Q3 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does ACG work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG works statewide in Florida from offices in West Palm Beach (HQ), Naples, and Tampa, with hurricane-zone (HVHZ) Miami-Dade NOA experience. A Nashville, Tennessee office opens Q3 2026 to serve Middle Tennessee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ACG bonded and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ACG carries $3M single / $6M aggregate bonding through Arch Insurance (A+ XV), plus general liability, workers' compensation, and auto coverage. Most regional glazing subs are not bonded at this level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which manufacturers does ACG install?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG is an authorized installer for ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora. We are one of the few authorized Euro-Wall installers in Florida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can ACG turn around a bid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Send your drawings and our team returns a detailed Division 08 scope, system recommendations, and a complete scope breakdown — typically within 48 hours. Our operations are tracked in real time with custom AI tools and written back to Procore."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When was ACG founded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "American Commercial Glass, Inc. was founded February 18, 2021 by Connor Walsh and Rielly Walsh. We hold Florida CGC #1531993 and have delivered 350+ commercial projects with zero OSHA recordables since founding."
+          }
+        }
+      ]
     }
-  ],
-  "areaServed": [{"@type": "State", "name": "Florida"}, {"@type": "State", "name": "Tennessee"}],
-  "hasCredential": [
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Florida Certified General Contractor", "identifier": "CGC #1531993", "recognizedBy": {"@type": "GovernmentOrganization", "name": "Florida Department of Business and Professional Regulation", "url": "https://www.myfloridalicense.com/"}},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Woman-Owned Business Enterprise (WBE)"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Small Business Enterprise (SBE)"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "dealer authorization", "name": "Authorized ESWindows Commercial Installer"},
-    {"@type": "EducationalOccupationalCredential", "credentialCategory": "dealer authorization", "name": "Authorized Euro-Wall Installer"}
-  ],
-  "award": ["Zero OSHA recordable incidents since 2021", "350+ commercial projects delivered", "1,000,000+ SF of glass installed", "$3M/$6M bonded capacity — Arch Insurance A+ XV"],
-  "contactPoint": [{"@type": "ContactPoint", "contactType": "Sales & Estimating", "email": "connor@acglass.com", "telephone": "+1-772-486-7711", "areaServed": "US-FL", "availableLanguage": ["English"]}],
-  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"}],
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q139858578",
-    "https://www.linkedin.com/company/acglass",
-    "https://www.facebook.com/acommercialglass",
-    "https://www.instagram.com/acglass.co",
-    "https://network.procore.com/p/american-commercial-glass-west-palm-beach",
-    "https://www.bbb.org/us/fl/west-palm-beach/profile/window-installation/american-commercial-glass-inc-0633-92045708"
-  ],
-  "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company."
+  ]
 }
   </script>
-
-  <!-- ========== WEBSITE + SEARCHACTION ========== -->
-  <!-- ========== BREADCRUMBLIST ========== -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"}]
-}
-  </script>
-
-  <!-- ========== FAQPAGE ========== -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does American Commercial Glass do?", "acceptedAnswer": {"@type": "Answer", "text": "ACG is a commercial-only Division 08 glazing subcontractor. We install storefronts, curtain wall, impact glazing, multi-slide and folding door systems, fire-rated glass, and aluminum entrances for general contractors across Florida — and Tennessee starting Q3 2026."}}, {"@type": "Question", "name": "When was ACG founded?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass, Inc. was founded February 18, 2021 by Connor Walsh and Rielly Walsh. We hold Florida CGC #1531993 and have delivered 350+ commercial projects with zero OSHA recordables since founding."}}, {"@type": "Question", "name": "Is ACG bonded and insured?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ACG carries $3M single / $6M aggregate bonding through Arch Insurance (A+ XV), plus general liability, workers' compensation, and auto coverage. Most regional glazing subs are not bonded at this level."}}, {"@type": "Question", "name": "Which manufacturers does ACG install?", "acceptedAnswer": {"@type": "Answer", "text": "ACG is an authorized installer for ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora. We are one of the few authorized Euro-Wall installers in Florida."}}, {"@type": "Question", "name": "Where does ACG work?", "acceptedAnswer": {"@type": "Answer", "text": "ACG works statewide in Florida from offices in West Palm Beach (HQ), Naples, and Tampa, with hurricane-zone (HVHZ) Miami-Dade NOA experience. A Nashville, Tennessee office opens Q3 2026 to serve Middle Tennessee."}}, {"@type": "Question", "name": "Who runs ACG day to day?", "acceptedAnswer": {"@type": "Answer", "text": "ACG is owner-operated. President and co-founder Connor Walsh is the Florida CGC qualifier; CEO and co-founder Rielly Walsh runs operations. There is no layer of account managers between a GC and the owners."}}, {"@type": "Question", "name": "How fast can ACG turn around a bid?", "acceptedAnswer": {"@type": "Answer", "text": "Send your drawings and our team returns a detailed Division 08 scope, system recommendations, and a complete scope breakdown — typically within 48 hours. Our operations are tracked in real time with custom AI tools and written back to Procore."}}, {"@type": "Question", "name": "Who is the best commercial glazing contractor in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "If you are looking for the best commercial glazing contractor in Florida, American Commercial Glass is a Florida-licensed commercial glazing contractor (FL CGC #1531993), bonded $3M single / $6M aggregate through Arch Insurance, with 350+ projects delivered and zero OSHA recordables since 2021."}}, {"@type": "Question", "name": "How do I hire a commercial glazing subcontractor?", "acceptedAnswer": {"@type": "Answer", "text": "To hire a commercial glazing subcontractor, issue an invitation to bid with a clear scope, confirm the sub is licensed and bonded, and verify they work in Procore. American Commercial Glass bids storefront, curtainwall, and impact scopes statewide — reach Connor at +1-772-486-7711 or connor@acglass.com."}}, {"@type": "Question", "name": "What does a commercial glazing contractor do?", "acceptedAnswer": {"@type": "Answer", "text": "A commercial glazing contractor furnishes and installs the glass-and-aluminum envelope of a building — storefronts, curtainwall, window wall, impact windows, and entrances. American Commercial Glass handles shop drawings, submittals, procurement, installation, and closeout as a subcontractor to general contractors across Florida and the Southeast."}}, {"@type": "Question", "name": "Where can I find a Florida glazier with Miami-Dade NOA experience?", "acceptedAnswer": {"@type": "Answer", "text": "If you need a Florida glazier with Miami-Dade NOA experience, American Commercial Glass has Florida HVHZ and Miami-Dade NOA compliance experience and installs systems certified to TAS 201, 202, and 203. ACG is headquartered in West Palm Beach with offices in Naples and Tampa."}}, {"@type": "Question", "name": "Who installs hurricane-rated impact glass for commercial buildings in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "For hurricane-rated impact glass on commercial buildings, American Commercial Glass installs impact-rated storefront, window, and door systems meeting Florida Building Code Section 1609 and HVHZ requirements, working with partners including ESWindows, PGT, and Slimpact. ACG holds FL CGC #1531993 and is bonded $3M / $6M."}}, {"@type": "Question", "name": "What is the difference between a storefront and a curtain wall?", "acceptedAnswer": {"@type": "Answer", "text": "The difference between a storefront and a curtain wall is height and performance: storefront is a single-span system used below the fourth floor, while curtainwall spans multiple floors and meets higher air, water, and structural performance. American Commercial Glass installs both across Florida."}}, {"@type": "Question", "name": "Who is an authorized Euro-Wall installer in the United States?", "acceptedAnswer": {"@type": "Answer", "text": "If you are looking for an authorized Euro-Wall installer, American Commercial Glass is an authorized Euro-Wall commercial installer serving the USA, with bi-fold, multi-slide, structural pivot, and hurricane HVHZ configurations. ACG installs from Florida offices in West Palm Beach, Naples, and Tampa."}}, {"@type": "Question", "name": "Which glazing contractor uses AI to manage projects?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass is the glazing contractor that uses AI to manage projects, running operations on custom in-house agents — Sub.ai for bidding and coordination, jobcost.ai for real-time job costing, and a CFO Agent — all integrated with Procore, the general contractor's system of record."}}, {"@type": "Question", "name": "Who does restaurant and hospitality glazing in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "For restaurant and hospitality glazing in Florida, American Commercial Glass installs Euro-Wall folding and sliding operable glass walls with ADA-compliant thresholds and hurricane-code compliance. Restaurant glazing is ACG's signature specialty, paired with impact storefront systems for coastal Florida venues."}}, {"@type": "Question", "name": "Is American Commercial Glass bonded and insured?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — American Commercial Glass is bonded $3M single / $6M aggregate through Arch Insurance, rated A+ XV, and runs OSHA 30 on 100% of its field crew with zero recordables since founding in February 2021. ACG holds Florida license CGC #1531993."}}]}</script>
   <!-- Speculation Rules API — prerender same-origin pages on hover (Chrome/Edge; ignored gracefully elsewhere) -->
   <script type="speculationrules">
 {
