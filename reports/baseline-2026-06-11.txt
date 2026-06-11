@@ -1,0 +1,81 @@
+Note: --live not set; this verifier expects HTTP. Running anyway against https://acglass.com
+
+seo-verify against https://acglass.com
+
+  [✓] FAIL  H1 integrity /  — h1="Florida's commercial glazing standard."
+  [✓] FAIL  H1 integrity /services.html  — h1='Every System. One Sub.'
+  [✓] FAIL  H1 integrity /storefront-glazier-palm-harbor-florida/  — h1='Storefront Glazier in Palm Harbor, Florida.'
+  [✓] FAIL  H1 integrity /blog/florida-building-codes-commercial-glazing-2026.html  — h1='Florida Building Codes for Commercial Glazing.'
+  [✓] FAIL  Homepage clean of Bing placeholder
+  [✓] FAIL  Homepage clean of Yandex placeholder
+  [✓] FAIL  Homepage clean of Deprecated SearchAction
+  [✓] FAIL  Homepage clean of Speakable on homepage
+  [✓] FAIL  robots.txt CCBot Disallow:/
+  [✓] FAIL  robots.txt Bytespider Disallow:/
+  [✓] FAIL  robots.txt no news-sitemap ref
+  [✓] FAIL  robots.txt no GeminiBot (fictional UA)
+  [✓] FAIL  robots.txt no NeevaBot (fictional UA)
+  [✓] FAIL  robots.txt no Bravebot (fictional UA)
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-index.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-index.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-pages.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-pages.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-blog.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-blog.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-projects.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-projects.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-cities.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-cities.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-services.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-services.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-images.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-images.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap-llm.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap-llm.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  sitemap reachable https://acglass.com/sitemap.xml  — status=200
+  [✓] FAIL  https://acglass.com/sitemap.xml no /pdfs/qualifications/ refs
+  [✓] FAIL  Stub integrity /eurowall-installer-florida.html  — refresh=True, canonical='https://acglass.com/euro-wall-installer-florida.html', robots='noindex, follow'
+  [✓] FAIL  Stub integrity /contact/  — refresh=True, canonical='https://acglass.com/contact.html', robots='noindex, follow'
+  [✓] FAIL  Canonical protocol /  — canonical='https://acglass.com/'
+  [✓] FAIL  Canonical protocol /services.html  — canonical='https://acglass.com/services.html'
+  [✓] FAIL  Canonical protocol /about.html  — canonical='https://acglass.com/about.html'
+  [✓] FAIL  Canonical protocol /portfolio.html  — canonical='https://acglass.com/portfolio.html'
+  [✓] FAIL  Canonical protocol /capabilities.html  — canonical='https://acglass.com/capabilities.html'
+  [✓] FAIL  JSON-LD parses /  — 1 blocks, 0 errors
+  [✓] FAIL  JSON-LD parses /services.html  — 6 blocks, 0 errors
+  [✓] FAIL  JSON-LD parses /about.html  — 5 blocks, 0 errors
+  [✓] FAIL  JSON-LD parses /portfolio.html  — 3 blocks, 0 errors
+  [✓] FAIL  JSON-LD parses /capabilities.html  — 4 blocks, 0 errors
+  [✓] WARN  Homepage one Organization #org  — #org count=1, ids=['https://acglass.com/#org']
+  [✓] WARN  Homepage FAQPage has 6 Questions  — count=6
+  [✓] WARN  Titles ≤60 chars (sample of sitemap-pages)  — overlong=0, longest=('', 0)
+  [✓] WARN  Meta desc ≤158 chars (sample)  — overlong=0, longest=('', 0)
+  [✓] WARN  Retired URL /ai-overview.html is a valid stub  — refresh=True, canonical='https://acglass.com/about.html', robots='noindex, follow'
+  [✓] WARN  Retired URL /acg.html is a valid stub  — refresh=True, canonical='https://acglass.com/about.html', robots='noindex, follow'
+  [✓] WARN  Retired URL /about-acg-for-ai.html is a valid stub  — refresh=True, canonical='https://acglass.com/ask.html', robots='noindex, follow'
+  [✓] WARN  https://acglass.com/sitemap-index.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-index.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-index.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap-pages.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-pages.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-pages.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap-projects.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-projects.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-projects.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap-cities.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-cities.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-cities.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap-services.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-services.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-services.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap-images.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-images.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-images.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap-llm.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap-llm.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap-llm.xml absent of /about-acg-for-ai.html
+  [✓] WARN  https://acglass.com/sitemap.xml absent of /ai-overview.html
+  [✓] WARN  https://acglass.com/sitemap.xml absent of /acg.html
+  [✓] WARN  https://acglass.com/sitemap.xml absent of /about-acg-for-ai.html
+
+Summary: FAIL miss=0, WARN miss=0, total checks=75, 45.3s

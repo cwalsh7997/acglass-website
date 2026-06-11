@@ -1,0 +1,203 @@
+# Phase 0 inventory — 2026-06-11
+
+## Sitemap-pages.xml: 255 URLs
+
+## /commercial-glazier-* pages (0)
+
+## /storefront-glazier-* pages (0)
+
+## Locality directories (84)
+  https://acglass.com/acg-glass-florida/
+  https://acglass.com/acg-nashville-office-opening/
+  https://acglass.com/ada-storefront-door-requirements-florida/
+  https://acglass.com/after-hours-commercial-glazing-installation-florida/
+  https://acglass.com/after-hours-storefront-installation-miami/
+  https://acglass.com/aluminum-extrusion-grades-commercial-glazing/
+  https://acglass.com/aluminum-vs-vinyl-windows-commercial/
+  https://acglass.com/approvals/
+  https://acglass.com/architect-resources/
+  https://acglass.com/architect-specs/
+  https://acglass.com/author/connor-walsh/
+  https://acglass.com/author/rielly-walsh/
+  https://acglass.com/best-glass-for-restaurant-storefronts-florida/
+  https://acglass.com/best-glaziers-south-florida/
+  https://acglass.com/can-acg-handle-healthcare-glazing-occupied-facility/
+  https://acglass.com/can-i-finance-commercial-glazing-florida/
+  https://acglass.com/can-you-install-glass-on-occupied-buildings/
+  https://acglass.com/case-studies/
+  https://acglass.com/commercial-aluminum-finishes-pvdf-anodize-powder/
+  https://acglass.com/commercial-glass-board-up-emergency-florida/
+  https://acglass.com/commercial-glass-cleaning-maintenance/
+  https://acglass.com/commercial-glass-condensation-troubleshooting/
+  https://acglass.com/commercial-glass-installation-timeline/
+  https://acglass.com/commercial-glass-warranty-explained/
+  https://acglass.com/does-acg-do-tennessee-commercial-glazing/
+  https://acglass.com/does-tennessee-require-impact-rated-glass/
+  https://acglass.com/doral/downtown-doral/
+  https://acglass.com/efco-installer-florida/
+  https://acglass.com/energy-code-compliance-florida-commercial-glass/
+  https://acglass.com/florida-building-code-glass-requirements/
+  https://acglass.com/florida-commercial-glaziers-compared/
+  https://acglass.com/florida-commercial-glazing-complete-guide/
+  https://acglass.com/florida-counties/
+  https://acglass.com/florida-glazing-faq/
+  https://acglass.com/florida-glazing-permit-timeline-by-county/
+  https://acglass.com/florida-product-approval-search-guide/
+  https://acglass.com/florida-product-approval-vs-noa/
+  https://acglass.com/for-general-contractors/
+  https://acglass.com/glazier-cost-by-city-florida/
+  https://acglass.com/glossary/
+  https://acglass.com/gym-fitness-commercial-glazing-florida/
+  https://acglass.com/healthcare-commercial-glazing-florida/
+  https://acglass.com/hotel-glazing-nashville/
+  https://acglass.com/how-far-does-acg-travel-for-projects/
+  https://acglass.com/how-long-does-commercial-glazing-take-to-install/
+  https://acglass.com/how-much-does-commercial-storefront-cost-florida/
+  https://acglass.com/how-to-hire-commercial-glazier-florida/
+  https://acglass.com/industries/
+  https://acglass.com/leed-points-from-glass-florida-commercial/
+  https://acglass.com/miami-dade-noa-explained/
+  https://acglass.com/multifamily-commercial-glazing-florida/
+  https://acglass.com/news/
+  https://acglass.com/noa/
+  https://acglass.com/occupied-building-glazing-installation-florida/
+  https://acglass.com/pilkington-installer-florida/
+  https://acglass.com/press/
+  https://acglass.com/pvb-vs-sgp-interlayer-comparison/
+  https://acglass.com/resources/
+  https://acglass.com/restaurant-glazing-nashville/
+  https://acglass.com/reviews/
+  https://acglass.com/sentryglas-plus-installer-florida/
+  https://acglass.com/service-areas-map/
+  https://acglass.com/shop-drawings-glazing-explained/
+  https://acglass.com/solarban-installer-florida/
+  https://acglass.com/tennessee-commercial-glazier-license-requirements/
+  https://acglass.com/tennessee-commercial-glazing/
+  https://acglass.com/tools/
+  https://acglass.com/tools/glass-weight-calculator/
+  https://acglass.com/tools/glazing-spec-checklist/
+  https://acglass.com/tools/hvhz-zone-lookup/
+  https://acglass.com/tools/wind-pressure-calculator/
+  https://acglass.com/vinyl-vs-aluminum-storefront/
+  https://acglass.com/viracon-installer-florida/
+  https://acglass.com/what-glazing-permit-is-required-in-florida/
+  https://acglass.com/what-is-a-good-bid-acknowledgment-time/
+  https://acglass.com/what-is-hvhz-rated-glass/
+  https://acglass.com/what-is-iru-insulating-glass-unit/
+  https://acglass.com/what-is-noa-renewal-process/
+  https://acglass.com/what-is-pvb-vs-sgp-interlayer/
+  https://acglass.com/what-is-the-best-aluminum-storefront-system/
+  https://acglass.com/what-is-the-warranty-on-commercial-glass/
+  https://acglass.com/what-makes-acg-different-florida-glazier/
+  https://acglass.com/what-to-look-for-in-commercial-glazing-warranty/
+  https://acglass.com/when-to-replace-commercial-glass-vs-repair/
+
+## sitemap.xml inventory
+Total: 1430
+  /commercial-glazier-* : 19
+  /storefront-glazier-* : 80
+  locality directories  : 811
+
+
+## /commercial-glazier-* pages (19)
+  https://acglass.com/blog/commercial-glazier-hourly-rate-florida-2026.html
+  https://acglass.com/commercial-glazier-bid-process-florida/
+  https://acglass.com/commercial-glazier-boca-raton/
+  https://acglass.com/commercial-glazier-coral-springs/
+  https://acglass.com/commercial-glazier-delray-beach/
+  https://acglass.com/commercial-glazier-doral-fl/
+  https://acglass.com/commercial-glazier-hialeah/
+  https://acglass.com/commercial-glazier-hollywood-fl/
+  https://acglass.com/commercial-glazier-jupiter/
+  https://acglass.com/commercial-glazier-lakeland/
+  https://acglass.com/commercial-glazier-near-me-miami/
+  https://acglass.com/commercial-glazier-near-me-tampa/
+  https://acglass.com/commercial-glazier-near-me-west-palm-beach/
+  https://acglass.com/commercial-glazier-pembroke-pines/
+  https://acglass.com/commercial-glazier-pinecrest/
+  https://acglass.com/commercial-glazier-questions-to-ask-before-hiring/
+  https://acglass.com/commercial-glazier-sba-set-aside-florida/
+  https://acglass.com/commercial-glazier-vero-beach/
+  https://acglass.com/commercial-glazier-wellington/
+
+## /storefront-glazier-* pages (80)
+  https://acglass.com/storefront-glazier-aventura-florida/
+  https://acglass.com/storefront-glazier-bal-harbour-florida/
+  https://acglass.com/storefront-glazier-bay-harbor-islands-florida/
+  https://acglass.com/storefront-glazier-boca-raton-florida/
+  https://acglass.com/storefront-glazier-bonita-springs-florida/
+  https://acglass.com/storefront-glazier-boynton-beach-florida/
+  https://acglass.com/storefront-glazier-bradenton-florida/
+  https://acglass.com/storefront-glazier-cape-coral-florida/
+  https://acglass.com/storefront-glazier-clearwater-florida/
+  https://acglass.com/storefront-glazier-coral-gables-florida/
+  https://acglass.com/storefront-glazier-cutler-bay-florida/
+  https://acglass.com/storefront-glazier-dania-beach-florida/
+  https://acglass.com/storefront-glazier-davie-florida/
+  https://acglass.com/storefront-glazier-deerfield-beach-florida/
+  https://acglass.com/storefront-glazier-delray-beach-florida/
+  https://acglass.com/storefront-glazier-englewood-florida/
+  https://acglass.com/storefront-glazier-estero-florida/
+  https://acglass.com/storefront-glazier-florida/
+  https://acglass.com/storefront-glazier-fort-lauderdale-florida/
+  https://acglass.com/storefront-glazier-fort-myers-beach-florida/
+  https://acglass.com/storefront-glazier-fort-myers-florida/
+  https://acglass.com/storefront-glazier-fort-pierce-florida/
+  https://acglass.com/storefront-glazier-golden-beach-florida/
+  https://acglass.com/storefront-glazier-gulf-stream-florida/
+  https://acglass.com/storefront-glazier-hallandale-beach-florida/
+  https://acglass.com/storefront-glazier-highland-beach-florida/
+  https://acglass.com/storefront-glazier-hillsboro-beach-florida/
+  https://acglass.com/storefront-glazier-hobe-sound-florida/
+  https://acglass.com/storefront-glazier-hollywood-florida/
+  https://acglass.com/storefront-glazier-islamorada-florida/
+  https://acglass.com/storefront-glazier-jensen-beach-florida/
+  https://acglass.com/storefront-glazier-juno-beach-florida/
+  https://acglass.com/storefront-glazier-jupiter-florida/
+  https://acglass.com/storefront-glazier-key-biscayne-florida/
+  https://acglass.com/storefront-glazier-key-largo-florida/
+  https://acglass.com/storefront-glazier-key-west-florida/
+  https://acglass.com/storefront-glazier-kissimmee-florida/
+  https://acglass.com/storefront-glazier-lakeland-florida/
+  https://acglass.com/storefront-glazier-lantana-florida/
+  https://acglass.com/storefront-glazier-lauderdale-by-the-sea-florida/
+  https://acglass.com/storefront-glazier-lighthouse-point-florida/
+  https://acglass.com/storefront-glazier-marathon-florida/
+  https://acglass.com/storefront-glazier-marco-island-florida/
+  https://acglass.com/storefront-glazier-miami-beach-florida/
+  https://acglass.com/storefront-glazier-miami-florida/
+  https://acglass.com/storefront-glazier-miami-shores-florida/
+  https://acglass.com/storefront-glazier-naples-florida/
+  https://acglass.com/storefront-glazier-north-bay-village-florida/
+  https://acglass.com/storefront-glazier-north-miami-beach-florida/
+  https://acglass.com/storefront-glazier-north-palm-beach-florida/
+  https://acglass.com/storefront-glazier-oakland-park-florida/
+  https://acglass.com/storefront-glazier-orlando-florida/
+  https://acglass.com/storefront-glazier-palm-bay-florida/
+  https://acglass.com/storefront-glazier-palm-beach-florida/
+  https://acglass.com/storefront-glazier-palm-beach-gardens-florida/
+  https://acglass.com/storefront-glazier-palm-city-florida/
+  https://acglass.com/storefront-glazier-palm-harbor-florida/
+  https://acglass.com/storefront-glazier-palmetto-bay-florida/
+  https://acglass.com/storefront-glazier-parkland-florida/
+  https://acglass.com/storefront-glazier-pinecrest-florida/
+  https://acglass.com/storefront-glazier-pompano-beach-florida/
+  https://acglass.com/storefront-glazier-port-saint-lucie-florida/
+  https://acglass.com/storefront-glazier-riviera-beach-florida/
+  https://acglass.com/storefront-glazier-royal-palm-beach-florida/
+  https://acglass.com/storefront-glazier-saint-petersburg-florida/
+  https://acglass.com/storefront-glazier-sarasota-florida/
+  https://acglass.com/storefront-glazier-sebastian-florida/
+  https://acglass.com/storefront-glazier-south-miami-florida/
+  https://acglass.com/storefront-glazier-stuart-florida/
+  https://acglass.com/storefront-glazier-sunny-isles-beach-florida/
+  https://acglass.com/storefront-glazier-surfside-florida/
+  https://acglass.com/storefront-glazier-tampa-florida/
+  https://acglass.com/storefront-glazier-tequesta-florida/
+  https://acglass.com/storefront-glazier-venice-florida/
+  https://acglass.com/storefront-glazier-vero-beach-florida/
+  https://acglass.com/storefront-glazier-virginia-gardens-florida/
+  https://acglass.com/storefront-glazier-wellington-florida/
+  https://acglass.com/storefront-glazier-west-palm-beach-florida/
+  https://acglass.com/storefront-glazier-weston-florida/
+  https://acglass.com/storefront-glazier-winter-haven-florida/
