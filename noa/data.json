@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "schema_version": 1,
+    "schema_version": 2,
     "last_full_pass_attempt": "2026-06-11",
-    "policy": "Zero fabrication. Cells marked 'pending verification' when the Florida Product Approval portal (floridabuilding.org) or Miami-Dade NOA portal (miamidade.gov/building) could not be reached from automated tooling. Owner must verify against the linked source URL before any bid submission.",
+    "policy": "Zero fabrication. The Florida Product Approval portal (floridabuilding.org) publishes FL# (approval number), Type (New/Revision), Category/Subcategory, Manufacturer, Validated By, and Status. It does NOT publish expiration date, system/series name, or design pressure on its public results or detail pages — those values appear only inside the individual approval PDFs. Miami-Dade NOA data sourced separately from miamidade.gov/building. Cells marked 'pending verification' have not yet been hand-confirmed against the source. Cells marked 'not in public portal — see source PDF' are not displayed in the public-facing FPA search results.",
     "sources": {
       "florida_product_approval": "https://www.floridabuilding.org/pr/pr_app_lst.aspx",
       "miami_dade_noa": "https://www.miamidade.gov/building/pc-search.asp"
@@ -10,52 +10,1125 @@
   },
   "partners": {
     "eswindows": {
-      "label": "ESWindows",
+      "label": "ESWindows (Tecnoglass)",
       "manufacturer_url": "https://www.eswindows.com",
+      "portal_manufacturer_query": "Tecnoglass LLC.",
       "systems": [
-        {"series": "ES-50 Storefront", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
-        {"series": "ES-7000 Curtainwall", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
-        {"series": "ES-8000 Curtainwall", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
-        {"series": "ES Casement Window", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+        {
+          "fl_pa": "FL22046-R3",
+          "type": "Revision",
+          "category": "Windows / Projected",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtTVu%2f0HfH9OpZXWXvWJbeZKgqv%2fB6FokJmrn1WXpLAKw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL27598-R4",
+          "type": "Revision",
+          "category": "Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt682jx0XXki8oGpUjk8z4bbzFhOgEgBcqcg4YZCwPdSw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL27914-R4",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvNL6Whvr42wgyr8LDWzHFHjDp9%2f4uXI8NgU0Mq%2fZSxWw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL28670-R2",
+          "type": "Revision",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqs%2bYQ6%2fEgpc3tUXNw2oaPqeAe06R560VEfNSlMayz91Zw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL28879-R7",
+          "type": "Revision",
+          "category": "Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvESe3tvieUJ8nz5jMS%2fl6lmAYHMxidlRZv4KGAeVTQTQ%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL30338-R5",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvH%2bffZfjpUCZpuvBn6phqgiyf%2fpuuNSHRDoo%2fy4ZBjDA%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL32032-R2",
+          "type": "Revision",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtdGm6vrqJqxt4X32oyOcyRUjdyM%2f7AeWXBfk%2fR612pnQ%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL36963-R3",
+          "type": "Revision",
+          "category": "Windows / Horizontal Slider",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsji1xY3FEvdOuFe7hwpSXUcSHNN1GiF23%2baRT4bFU3gw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL44212-R1",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvOD9NtK1XkvKrP7P9Ld2HKra7xSBtVhOsmh3mT%2fjj3qg%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46130",
+          "type": "New",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtqtNdreiWNwuLBrRNBzxYfATuOC6uCB7Roat%2bXdVU1iw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46587-R1",
+          "type": "Revision",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvhmyGg%2b%2bs2AaIhygBfvct4gfqJAaDSw7K949G%2fEmmhVA%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47086",
+          "type": "New",
+          "category": "Windows / Horizontal Slider",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8Oz21KYPIvyAlg7axStrsKDRgXm%2fanEUJw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47137",
+          "type": "New",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF4T%2fYu0X%2bdfC%2b2%2fCq4LmwmhhkkG0ZkQl0A%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47226-R1",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquLhfsS50xASGhs5jGMwc1%2bXIr5s7cZJcVULXtRzekNGg%3d%3d",
+          "last_verified": "2026-06-11"
+        }
       ]
     },
     "euro-wall": {
       "label": "Euro-Wall",
       "manufacturer_url": "https://www.euro-wall.com",
+      "portal_manufacturer_query": "Euro-Wall, LLC",
       "systems": [
-        {"series": "DirectSet Storefront", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
-        {"series": "Multi-Slide System", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
-        {"series": "Vistafold Bi-Fold", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+        {
+          "fl_pa": "FL17432-R8",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtCUGgvjQiz6Nn3skOkZ4ggnmrEK1unf7abUhjiTKxY3w%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL17838-R10",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt2ZOX6B2Y1Us1nROgVASh0YoHmwEodob5C5%2bTITabamg%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL22410-R8",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvL7WPh33iXNLXzf50zD9rIF0vwqMIDq7zYdWYLzGdCjQ%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL26891-R4",
+          "type": "Revision",
+          "category": "Windows / Mullions",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqv8gh4TcSO3PN6E7ryxFqSlQZO6ZuJSFy5JJjJbGvNpXQ%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL27023-R6",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvp%2fcIlPzH4zss3GTPFXcwqe6Q9zzJNIT7qn0as%2bESWbw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL31965-R6",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqs%2bxL1bWtJKVE3BEK5vCJ4iL8ARg8sUG7bZ9G0CgdedbA%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL34003-R12",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt6zon2yZAyNUV6tXWhnXUehmlq20abOC1wLqmXX%2fG%2f9g%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL34003-R13",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding",
+          "status": "Pending FBC Approval",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt6zon2yZAyNUV6tXWhnXUehmlq20abOC0eEe46zCXjOA%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46965-R1",
+          "type": "Revision",
+          "category": "Panel Walls / Storefronts",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquRQeeNyKB1%2fPc8ZL8hwsw0pXc3RrO9iXaRjGmR8A9hMw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47061",
+          "type": "New",
+          "category": "Exterior Doors / Sliding",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8FyAx0onASLN8VONB0HPnUeqc%2bo370Zagg%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47078",
+          "type": "New",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8HL1%2b%2bkLefsylH7mej1OeU6fuTzxS6ZVSw%3d%3d",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47174-R1",
+          "type": "Revision",
+          "category": "Panel Walls / Storefronts",
+          "status": "Approved",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF1m1%2fSMl0pSi7uVtYOwXmvJ7ogll143SdA%3d%3d",
+          "last_verified": "2026-06-11"
+        }
       ]
     },
     "pgt": {
       "label": "PGT",
       "manufacturer_url": "https://www.pgtwindows.com",
+      "portal_manufacturer_query": "PGT",
       "systems": [
-        {"series": "WinGuard Aluminum Impact", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+        {
+          "fl_pa": "FL239-R30",
+          "type": "Revision",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquS1Bu8CAEmBE7OC3IVX3PGePnjp8RQ1zE%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL242-R35",
+          "type": "Revision",
+          "category": "Windows / Horizontal Slider",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquUsDrhuM3DGCgL7x9PPaiMluqAOJ75iuI%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL243-R30",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqu3mwFvZ35VD3jztncI%2fPhNx1v5soUdMEI%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL245-R17",
+          "type": "Revision",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsT04p5WuWRUcCOjC%2fu31NPXts1M6sMjfA%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL251-R42",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsEt2PTaRd5bm5ECcrlFWoGVBdMvBJDTHc%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL253-R26",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvweIwRFXRvHDB0ZJMHBHYQH6qR6AgCnKs%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL261-R15",
+          "type": "Revision",
+          "category": "Windows / Mullions",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquaucoIwmuGtbIFAQLKHcHzFp1dVnd8Ozo%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL330-R25",
+          "type": "Revision",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvkttk4btoKhrsKPnItEiieHwWGlEy2iG0%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL331-R27",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtsZzB6Yv%2bqnWdjpdNKCrtSouLJ0oec%2fcs%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL1435-R28",
+          "type": "Revision",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsbCUITKel20DuttTaLxE3%2bP2orrho7GcmCxhsVqi6yHA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL1844-R30",
+          "type": "Revision",
+          "category": "Windows / Horizontal Slider",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsGsvRHsb6W7CihkBPFyPwC6npWNSwRQNzD7MaMQvEuSw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL2329-R18",
+          "type": "Revision",
+          "category": "Windows / Awning",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtFhPptbxssUkV%2fHymBZehQrDR84rZAv5zUvdnMIipJeQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL2766-R19",
+          "type": "Revision",
+          "category": "Windows / Projected",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqu4R7qbqsCvyWXyHKrCo6QJWlliNyQyDEa1onDDG2BZ8w%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL5012-R28",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtU0E2x88XL%2bYy9RfBuGnzYuUH0ggOioDyWUUGRK8M0mQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL7058-R23",
+          "type": "Revision",
+          "category": "Windows / Double Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsKvwgL58IIh%2fhdkUsNyWtkPd0nw%2fzRMdvFhX%2ffnFYNRg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL14705-R9",
+          "type": "Revision",
+          "category": "Windows / Double Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqueufsxW4GVzd2DpSQYW5R12m%2fZzxHVXvEjEmsuewyGzw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL17519-R10",
+          "type": "Revision",
+          "category": "Windows / Mullions",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvYdq2pQ%2fXXJlv984GaIGRKLAZmOd1YCMs%2bpLrXqA%2bMbw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL21179-R8",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqu2dzE0w0ntq4eWoFs7gqcXZqT5MCFgQu8GmT6nV6%2bibw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29698-R7",
+          "type": "Revision",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsJwwM3n%2b4Th36EVqVqxAMeqhMyHCGUcJEeePmMwtHC7A%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29699-R9",
+          "type": "Revision",
+          "category": "Windows / Horizontal Slider",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsJwwM3n%2b4Th5antAq6ufASEkvhlHW1ErZaipJPQoMzsg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29700-R5",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvbYOtbzx20lauWZb3dsgN26LfnieSDM0zg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29701-R3",
+          "type": "Revision",
+          "category": "Windows / Awning",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvc28Xt6FNiF%2b3gXL0Gd0tXYi6aq%2fc58jbA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29702-R3",
+          "type": "Revision",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvf%2bRb4GoaKZ7DIwlM9ENNn6zfghSSPebUA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29704-R3",
+          "type": "Revision",
+          "category": "Windows / Double Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvelyjmacXFA4k0TI%2f9UeswD1nVwtrmmodw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL30739-R3",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtihODErVZoFhCSHHrJpMCaavrRMTPiaYF%2btCuRoQ4OVw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL33106-R18",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsWTeUTdU%2bgOMqiamYrD8fjbVOXmlvptMmUf%2bgHu1%2b0Cw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46559",
+          "type": "New",
+          "category": "Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquCBMSfpRHCVKdua5LfTwaGyVtN%2bkP7%2fx6SywMbnhZigA%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        }
       ]
     },
     "tgp": {
       "label": "TGP (Technical Glass Products)",
       "manufacturer_url": "https://www.tgpamerica.com",
-      "systems": [
-        {"series": "Pilkington Pyrostop", "fl_pa": "pending verification", "miami_dade_noa": "n/a (fire-rated)", "expiration": "pending verification", "design_pressure": "n/a", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"},
-        {"series": "FireLite Plus", "fl_pa": "pending verification", "miami_dade_noa": "n/a (fire-rated)", "expiration": "pending verification", "design_pressure": "n/a", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
-      ]
+      "portal_manufacturer_query": "Technical Glass Products",
+      "systems": [],
+      "portal_note": "Technical Glass Products is not listed in the Florida Product Approval portal under that name. TGP fire-rated glazing is regulated by IBC/NFPA test methods (UL 9, UL 10B, UL 263, NFPA 252, NFPA 257) rather than the Florida wind-load product-approval system. ACG verifies TGP listings against UL Online Certifications Directory and Intertek Directory of Listed Products for each project."
     },
     "aldora": {
       "label": "Aldora",
       "manufacturer_url": "https://www.aldoraap.com",
+      "portal_manufacturer_query": "Aldora",
       "systems": [
-        {"series": "Architectural Glass — Impact Laminated", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
+        {
+          "fl_pa": "FL17655-R7",
+          "type": "Affirmation",
+          "category": "Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvFGYZsjrZFR5Qk%2f2UHfa54sux9j8FbdiWd3WyKTp9d6A%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL17682-R12",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvFGYZsjrZFR1%2fdWIBzReqNAr%2bqF3WYpCrHWD0Y9SpVuQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL17811-R6",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt2ZOX6B2Y1UhhjjtTforJg8q5ONDwd1wQP5AiZV3pgfg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL19613-R5",
+          "type": "Affirmation",
+          "category": "Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtA%2fGGFsMxvHCOORwjzucGfCeJMZ4KK2zTcejODllsfBg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL19973-R10",
+          "type": "Revision",
+          "category": "Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvKboN0elVMsvSvKuyl4Tki14QhOMkcGGRplI%2fxWgkt7A%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL25948-R3",
+          "type": "Revision",
+          "category": "Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvWkD0hxVvR09faPrgv2Cc92%2fadkQf%2bJ3ux92fhQJ6CQQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL27051-R7",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvp%2fcIlPzH4zq8M9CChLH0H7knXYYM4UOvhZ4nDqLRbww%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL27984-R2",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvNL6Whvr42wv7JPjsSchR6DAdn%2bEVY7uzlW8v70BV6Lg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL35263-R2",
+          "type": "Revision",
+          "category": "Windows / Fixed",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvKtLTRtHFybukLWgzP1PNre0KI374oPvLpPmmgKSF%2b4g%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL39161-R2",
+          "type": "Revision",
+          "category": "Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvlNI6FNDekSPT78gcBFlNBltYxgsb8iWNeYq5EJ%2br8%2bA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL41125-R7",
+          "type": "Revision",
+          "category": "Exterior Doors / Sliding Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsWTeUTdU%2bgOMqiamYrD8fjbVOXmlvptMmUf%2bgHu1%2b0Cw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL41347-R5",
+          "type": "Revision",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt4x6SzwHEelvOKaU3udJLU1siBiHpepASrhBuSfi0Uqw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47181",
+          "type": "New",
+          "category": "Windows / Mullions",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF6xPEOiGjFjAMMrm9ixuIraMI05Z3%2bxKBA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47195-R2",
+          "type": "Revision",
+          "category": "Windows / Single Hung",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF675hjhEeyeE2pk53u6PQcQTmQVDtRmVUw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47343",
+          "type": "New",
+          "category": "Windows / Casement",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsmsknuTz%2bG1NPmqPb8RyRB6mdfWu2oScdD9a9DiUd5NQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47344",
+          "type": "New",
+          "category": "Windows / Awning",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsmsknuTz%2bG1EY7Wa8CTdDmyyp7IlfW6oKh4fmT4%2fnLEQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47571",
+          "type": "New",
+          "category": "Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqshKirHIodCbJbM5BjK410FDwUviSqMS9aWyznhnMcOjA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL48101",
+          "type": "New",
+          "category": "Windows / Horizontal Slider",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquCBMSfpRHCVKdua5LfTwaGyVtN%2bkP7%2fx6SywMbnhZigA%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        }
       ]
     },
     "slimpact": {
       "label": "Slimpact",
       "manufacturer_url": "https://www.slimpact.com",
+      "portal_manufacturer_query": "Slimpact",
       "systems": [
-        {"series": "Steel Framing System", "fl_pa": "pending verification", "miami_dade_noa": "pending verification", "expiration": "pending verification", "design_pressure": "pending verification", "source_url": "https://www.floridabuilding.org/pr/pr_app_lst.aspx", "last_verified": null, "last_attempted": "2026-06-11"}
-      ]
+        {
+          "fl_pa": "FL17616-R3",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvFGYZsjrZFR6s2lw11bPOcTRSsMwb%2bSKbaEen1jg9YrQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL17881-R3",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt2ZOX6B2Y1UqKVIYW9w6wOp%2fsZVgi06Vk4aQ8MbppUNg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL17962-R4",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquTIuhTqK2%2bdz%2f0Bey0hPbZJ5%2bmHg%2bMdijIACkpOwnlYg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL21892-R3",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqufj9QzTt6YQlNMRBjJVRefb67qWEnRsx8WswK%2fsDmTvA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL25679-R2",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsKQFEnckB10zikk3PAvPlWEvl0b24bP0L0KuAFIyQG%2bg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL26944-R2",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsejA7AarRF%2bx1C%2bWK459llJbiyhlD13SSbWm1%2b8V9x5w%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL29081-R3",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqugvQUWv761qloxUWG8GlTG3OvMC3%2bqidZgaz2Qya2TYQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL31651-R2",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvveRF2JcHYOZrfY%2bsaHaWQBviq2dqtYyNbACNBXbJCnQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL40704-R1",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvqhjfzDlLbM89b8%2bh%2bjVzSfceANsPS2QVRLVNCPw4q3Q%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL42495",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqssvK6hGqrLmvoTcvJqkjPmkiodfl5mpT%2f7b%2fmvn53MLA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL42671-R2",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvh08wfeKp9WVorET1of2RTJtE5GPUsyj7TOtEQG24xOg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL43106",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtknjHmksstZa27W5QIoJYwlYc121%2b8uz6BKf53gTQtXg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL43785",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsaCeD9DZoP1k0iCU%2bXwrPS1CR4O5mG%2bb1Oq9c3xfTHAw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL44610",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt7JLV6LpgGUd1el6uWvMNm0zC9HZFmHt%2booXU7P%2fivrQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL44611",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt7JLV6LpgGUT85y%2bO1pc4CZhSgNIUvQH8TiZ7lAJzbEQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL45204-R2",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvjCiiNa3lFkNzDRAqKTDEpdQ4l0xv%2bLweuBdkTzp6KBA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL45460-R1",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquDOkDZgXqqa20duGtpoaQXlSdAOLOg2PuCTrU9FTwlzA%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46132-R1",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtqtNdreiWNwqPHaw204f5UPUduhpAYGB6bq5%2fGttwxtg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46133-R2",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtqtNdreiWNwrkCuaSwH9hQ2kYgRP8OuN1MOwobx1MRSw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46552-R1",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvhmyGg%2b%2bs2ASd1QrHEet%2fGfMzVc6gje0pR62QS22aAnQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46714",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Storefronts",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtmvukm5%2fiEWdiK8bGO5RU4RdWkUoFNMmF6ZBKpukLRIg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46721",
+          "type": "New",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtmvukm5%2fiEWQjrgGR48Uf4nq7lYyOak7L6Gerw6qja3g%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL46722",
+          "type": "New",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtmvukm5%2fiEWamF1KfqIw5Y30XKpwtpBU5zLgcuxHGrow%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47083",
+          "type": "New",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8LIlez9hJjImbuUBfAUXhwGaaDbvlESH0g%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47297-R1",
+          "type": "Revision",
+          "category": "[Trulite parent listing] Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquLhfsS50xASKfN15JcK4Lmx8QHZfZvSdDNT3qkSSu3Aw%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47489",
+          "type": "New",
+          "category": "[Trulite parent listing] Panel Walls / Curtain Walls",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtA%2bep9b5tjsmXDeNhFTGSCzhUiwwK1SroKFPq%2bxI3PHQ%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        },
+        {
+          "fl_pa": "FL47727",
+          "type": "New",
+          "category": "[Trulite parent listing] Exterior Doors / Swinging Exterior Door Assemblies",
+          "status": "Approved",
+          "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvijwrK4oKmNyOdQ6t3X%2bKcL7RE7MmDOTeO9n3Fifrssg%3d%3d",
+          "miami_dade_noa": "pending verification",
+          "expiration": "not in public portal — see source PDF",
+          "design_pressure": "not in public portal — see source PDF",
+          "last_verified": "2026-06-11"
+        }
+      ],
+      "portal_note": "Slimpact is a brand name that is not listed independently in the Florida Product Approval portal. Approvals for Slimpact steel framing assemblies appear under the parent company Trulite Glass & Aluminum Solutions (27 records). The Trulite parent listings are shown below, marked with [Trulite parent listing]. ACG confirms which specific Trulite approval covers a given Slimpact configuration during bid review."
     }
   }
 }

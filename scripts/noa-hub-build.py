@@ -175,8 +175,15 @@ def build_partner_page(key, partner):
     
     rows_html = []
     for s in partner["systems"]:
+        # Support both schema v1 (series-based) and v2 (category-based)
+        primary = s.get('category') or s.get('series') or '—'
+        type_col = s.get('type', '')
+        status_col = s.get('status', '')
+        primary_html = f'<strong>{primary}</strong>'
+        if type_col:
+            primary_html += f'<br><span style="font-size:11px;color:rgba(255,255,255,0.5);">{type_col} &middot; {status_col}</span>'
         rows_html.append(f'''        <tr>
-          <td><strong>{s['series']}</strong></td>
+          <td>{primary_html}</td>
           <td>{cell_html(s['fl_pa'])}</td>
           <td>{cell_html(s['miami_dade_noa'])}</td>
           <td>{cell_html(s['expiration'])}</td>
@@ -185,7 +192,12 @@ def build_partner_page(key, partner):
           <td>{s.get('last_verified') or '<span class="noa-na">not yet</span>'}</td>
           <td>{s.get('last_attempted') or '<span class="noa-na">—</span>'}</td>
         </tr>''')
+    if not rows_html:
+        rows_html = ['<tr><td colspan="8" style="text-align:center;color:rgba(255,255,255,0.5);padding:32px;">No verified Florida Product Approvals on file for this manufacturer yet. Use the portal links below to search and report findings to specs@acglass.com.</td></tr>']
     
+    portal_note_html = ''
+    if partner.get('portal_note'):
+        portal_note_html = f'<div class="noa-callout" style="background:rgba(255,193,7,0.08);border-left-color:#ffc107;"><strong style="color:#ffc107;">Portal note.</strong> {partner["portal_note"]}</div>'
     body = f'''{page_head(title, description, canonical)}  <script type="application/ld+json">
 {dataset_jsonld}
   </script>
@@ -197,6 +209,7 @@ def build_partner_page(key, partner):
       <div class="noa-eyebrow">NOA Reference</div>
       <h1>{partner['label']} — Florida Product Approvals & Miami-Dade NOAs</h1>
       <p class="lead">Reference table of {partner['label']} commercial glazing systems that ACG is authorized to install. Cells marked &lsquo;pending verification&rsquo; have not been hand-confirmed against the manufacturer&rsquo;s current portal listing &mdash; ACG verifies every approval on every project bid.</p>
+      {portal_note_html}
     </section>
 
     <section class="noa-content">
@@ -208,7 +221,7 @@ def build_partner_page(key, partner):
         <table class="noa-table">
           <thead>
             <tr>
-              <th>System / Series</th>
+              <th>Category / Subcategory</th>
               <th>FL PA #</th>
               <th>Miami-Dade NOA #</th>
               <th>Expiration</th>
@@ -254,9 +267,15 @@ def build_index_page():
     
     partner_cards = []
     for key, p in data["partners"].items():
+        n = len(p['systems'])
+        if n == 0:
+            count_str = '<span style="color:rgba(255,193,7,0.85);">pending portal pull</span>'
+        else:
+            verified = sum(1 for s in p['systems'] if s.get('last_verified'))
+            count_str = f"{n} FL approval{'s' if n != 1 else ''} on file &middot; {verified} verified"
         partner_cards.append(f'''        <a href="/noa/{key}.html" class="noa-partner-card">
           <h3>{p['label']}</h3>
-          <div class="count">{len(p['systems'])} system{'s' if len(p['systems']) != 1 else ''}</div>
+          <div class="count">{count_str}</div>
         </a>''')
     
     last_full = data["_meta"]["last_full_pass_attempt"]
