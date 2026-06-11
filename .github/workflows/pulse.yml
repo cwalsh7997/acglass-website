@@ -1,0 +1,37 @@
+name: SEO Pulse (nightly)
+
+on:
+  schedule:
+    # 06:00 ET year-round target. Cron in UTC: 10:00 UTC (winter EST) / 11:00 UTC (summer EDT).
+    # Using 11:00 UTC = 06:00 EST / 07:00 EDT; workflow_dispatch covers exact-hour runs if needed.
+    - cron: '0 11 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-httplib2
+
+      - name: Run SEO pulse
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          BING_API_KEY: ${{ secrets.BING_API_KEY }}
+          SHEETS_SA_JSON: ${{ secrets.SHEETS_SA_JSON }}
+          SHEETS_ID: ${{ secrets.SHEETS_ID }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: |
+          python3 scripts/seo-pulse.py
