@@ -1,0 +1,47 @@
+name: Lead-Time Ingest (monthly PR)
+
+on:
+  schedule:
+    # 10th of every month at 12:00 UTC — gives the owner the first week to drop the CSV
+    - cron: '0 12 10 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run lead-time ingest
+        run: |
+          python3 scripts/leadtime-ingest.py
+
+      - name: Open PR if /resources/lead-times.html changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "seo: refresh resources/lead-times.html from monthly PO export"
+          branch: leadtime-refresh-${{ github.run_id }}
+          delete-branch: true
+          title: "Lead-time refresh — monthly PO export"
+          body: |
+            Auto-generated PR from `scripts/leadtime-ingest.py`.
+            
+            **Owner review required.** Auto-merge is intentionally NOT enabled. Verify:
+            1. The PO sample size per manufacturer looks correct.
+            2. The min/median/max ranges pass the smell test against your operational knowledge.
+            3. Any manufacturer that should have appeared but did not — check that their POs are in the CSV.
+            
+            If the page rebuild looks wrong, close the PR and re-run after fixing `/data/po-export.csv`. The script honors a `data/po-export.csv` that the owner drops into the repo manually each month.
+          labels:
+            - lead-times
+            - monthly-refresh
+            - owner-review

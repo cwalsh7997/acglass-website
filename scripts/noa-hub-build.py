@@ -198,6 +198,41 @@ def build_partner_page(key, partner):
     portal_note_html = ''
     if partner.get('portal_note'):
         portal_note_html = f'<div class="noa-callout" style="background:rgba(255,193,7,0.08);border-left-color:#ffc107;"><strong style="color:#ffc107;">Portal note.</strong> {partner["portal_note"]}</div>'
+    
+    # Build Miami-Dade table
+    md_section_html = ''
+    md_systems = partner.get('miami_dade_systems') or []
+    md_note = partner.get('miami_dade_note', '')
+    if md_systems:
+        md_rows = []
+        for s in md_systems:
+            md_rows.append(f'''        <tr>
+          <td style="font-family:monospace;"><a href="{s["source_url"]}" target="_blank" rel="noopener" style="color:#E11320;">{s["miami_dade_noa"]}</a></td>
+          <td>{s.get("applicant", "")}</td>
+          <td>{s.get("category", "")}</td>
+          <td>{s.get("description", "")}</td>
+          <td style="font-size:11px;">{s.get("impact_rating", "")}</td>
+          <td style="font-family:monospace;font-size:12px;">{s.get("design_pressure", "")}</td>
+          <td>{s.get("expiration", "")}</td>
+          <td>{s.get("last_verified", "")}</td>
+        </tr>''')
+        note_html = f'<div class="noa-callout" style="margin-bottom:16px;"><strong>Note.</strong> {md_note}</div>' if md_note else ''
+        md_section_html = f'''      <h2 style="margin-top:48px;">Miami-Dade Notices of Acceptance (HVHZ)</h2>
+      <p>Hand-verified against the official <a href="https://www.miamidade.gov/building/pc-search_app.asp" target="_blank" rel="noopener">Miami-Dade Product Control portal</a> on 2026-06-11. Each NOA number links to the source result page.</p>
+      {note_html}
+      <div class="noa-table-wrap">
+        <table class="noa-table">
+          <thead>
+            <tr><th>NOA #</th><th>Applicant</th><th>Category</th><th>Description</th><th>Impact</th><th>Design Pressure (psf)</th><th>Expires</th><th>Last Verified</th></tr>
+          </thead>
+          <tbody>
+{chr(10).join(md_rows)}
+          </tbody>
+        </table>
+      </div>'''
+    elif md_note:
+        md_section_html = f'''      <h2 style="margin-top:48px;">Miami-Dade Notices of Acceptance (HVHZ)</h2>
+      <div class="noa-callout"><strong>Note.</strong> {md_note}</div>'''
     body = f'''{page_head(title, description, canonical)}  <script type="application/ld+json">
 {dataset_jsonld}
   </script>
@@ -248,6 +283,8 @@ def build_partner_page(key, partner):
       <h2>Need a project-specific approval verification?</h2>
       <p>Email <a href="mailto:specs@acglass.com">specs@acglass.com</a> with the system, framing, glass make-up, and design pressure required. ACG will confirm approval coverage and submit a sealed bid.</p>
 
+      {md_section_html}
+
       <p style="margin-top:32px;"><a href="/noa/">&larr; Back to NOA hub</a></p>
     </section>
   </main>
@@ -268,11 +305,11 @@ def build_index_page():
     partner_cards = []
     for key, p in data["partners"].items():
         n = len(p['systems'])
-        if n == 0:
+        md_n = len(p.get('miami_dade_systems') or [])
+        if n == 0 and md_n == 0:
             count_str = '<span style="color:rgba(255,193,7,0.85);">pending portal pull</span>'
         else:
-            verified = sum(1 for s in p['systems'] if s.get('last_verified'))
-            count_str = f"{n} FL approval{'s' if n != 1 else ''} on file &middot; {verified} verified"
+            count_str = f"{n} FL PA &middot; {md_n} Miami-Dade NOA"
         partner_cards.append(f'''        <a href="/noa/{key}.html" class="noa-partner-card">
           <h3>{p['label']}</h3>
           <div class="count">{count_str}</div>

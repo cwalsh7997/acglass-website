@@ -1,0 +1,56 @@
+name: NOA Reverify (monthly)
+
+on:
+  schedule:
+    # 5th of every month at 13:00 UTC
+    - cron: '0 13 5 * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  reverify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Reverify every source URL in /noa/data.json
+        id: reverify
+        run: |
+          set +e
+          python3 scripts/noa-reverify.py | tee /tmp/reverify.txt
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Open issue on any failure
+        if: steps.reverify.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/reverify.txt', 'utf8');
+            const today = new Date().toISOString().slice(0, 10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `NOA reverify failures — ${today}`,
+              body: '## Monthly NOA reverification report\n\n' +
+                    'The scheduled NOA reverification detected one or more issues. Investigate against the source portal and update `/noa/data.json` by hand.\n\n' +
+                    '```\n' + report + '\n```\n\n' +
+                    'After updating data.json, run `python3 scripts/noa-hub-build.py` to rebuild the hub pages.',
+              labels: ['noa', 'verification', 'monthly-check']
+            });
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: noa-reverify-${{ github.run_id }}
+          path: /tmp/reverify.txt
+          retention-days: 90
