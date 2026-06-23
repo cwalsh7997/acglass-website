@@ -696,15 +696,15 @@ p{font-size:clamp(0.95rem,1.1vw,1.1rem);line-height:1.7;color:var(--white-50)}
     <div class="container">
       <div class="hp-metrics-grid">
         <div class="hp-metric">
-          <div class="hp-metric-num" data-count="350" data-suffix="+">0</div>
+          <div class="hp-metric-num" data-count="350" data-suffix="+">350+</div>
           <div class="hp-metric-cap">Commercial projects delivered</div>
         </div>
         <div class="hp-metric">
-          <div class="hp-metric-num" data-count="1" data-suffix="M+">0</div>
+          <div class="hp-metric-num" data-count="1" data-suffix="M+">1M+</div>
           <div class="hp-metric-cap">Square feet installed</div>
         </div>
         <div class="hp-metric">
-          <div class="hp-metric-num" data-count="4" data-suffix="">0</div>
+          <div class="hp-metric-num" data-count="4" data-suffix="">4</div>
           <div class="hp-metric-cap">Offices · Florida + Tennessee</div>
         </div>
         <div class="hp-metric">
@@ -1168,21 +1168,23 @@ p{font-size:clamp(0.95rem,1.1vw,1.1rem);line-height:1.7;color:var(--white-50)}
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ playing=false; clearInterval(timer); }
   })();
 
-  // Animated count-up on scroll-in
+  // Animated count-up on scroll-in (progressive enhancement; final values are baked into the HTML).
+  // P0.1 fix: static HTML now ships with the real values so crawlers (GPTBot, ClaudeBot,
+  // PerplexityBot) read 350+, 1M+, 4, 0 — not 0 across the board.
   (function(){
     var nums = document.querySelectorAll('.hp-metric-num[data-count]');
-    if (!nums.length || !('IntersectionObserver' in window)) {
-      nums.forEach(function(n){ n.textContent = (n.dataset.count==='1'?'1':n.dataset.count) + (n.dataset.suffix||''); });
-      return;
-    }
+    if (!nums.length || !('IntersectionObserver' in window)) return; // already static-correct
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return; // honor prefers-reduced-motion: keep the static final value
     var obs = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if (!e.isIntersecting) return;
         var el = e.target, target = parseInt(el.dataset.count,10), suffix = el.dataset.suffix||'';
         obs.unobserve(el);
-        if (reduce || target === 0){ el.textContent = target + suffix; return; }
+        if (target === 0){ return; } // 'OSHA recordables: 0' — no animation needed
         var dur = 1400, start = null;
+        // Reset to 0 only at the moment animation begins (post-render, post-crawl)
+        el.textContent = '0' + suffix;
         function step(ts){
           if (!start) start = ts;
           var p = Math.min((ts-start)/dur, 1);
