@@ -44,7 +44,18 @@ I did **not** touch these this sprint — deleting/rewriting whole pages is a bi
 
 ---
 
-## Q4 — Unverified manufacturer + WBE/SBE claims live in schema across ~1,000+ pages (HIGH — liability)
+## Q4b — WBE/SBE: are you actually certified, or woman-owned-but-not-yet-certified? (HIGH — only you know)
+**This is now the main open factual question.** In Sprint 002 I removed the unverified **manufacturer** "authorized installer" claims (see Q4 below — done) and neutralized the **WBE/SBE certification** assertions in machine-read schema. But "WBE/SBE" still appears in **visible prose on ~1,484 pages**, and one press release says ACG is "certified as a WBE." I did **not** mass-edit that prose because [[acg-people-and-structure]] notes Rielly Walsh holds 51% on a WBE basis — so "woman-owned" may be literally true even if a formal **certification** isn't held yet.
+**I need one answer:** Is ACG **formally WBE-certified and SBE-certified** (by which body — WBENC / state / SBA WOSB), or **majority woman-owned but not yet certified**?
+- If certified → I restore the certification wording (and you send me the cert for the file).
+- If not yet → I sweep "WBE/SBE certified" → "woman-owned" (truthful, Rielly 51%) across the ~1,484 pages.
+**Recommended:** Tell me the status; I'll run the matching sweep.
+
+## Q7 — AI positioning + "best…" superlative are templated across MANY pages (HIGH — newly found)
+Sprint 001 only de-AI'd the homepage + About. Sprint 002 found the **same killed AI FAQ** ("Which glazing contractor uses AI to manage projects?" / "runs operations on custom AI agents — Sub.ai, jobcost.ai, CFO Agent") **and** the banned superlative FAQ ("Who is the best commercial glazing contractor in Florida?") duplicated across many pages via a shared FAQ-schema block, plus the 4 still-indexable AI pages (ai-operations-whitepaper.html + 2 AI blog posts). 
+**Recommended:** Next sprint I retire the indexable AI pages (redirect stubs) and run a site-wide sweep replacing the AI/superlative FAQ entries with the same Ledger-only versions I used on the homepage. No new claims — pure removal. Flagging only because it touches many pages at once (§2.6). Say "go" or I'll proceed under the standing authorization.
+
+## Q4 — Unverified manufacturer "authorized installer" claims (DONE in Sprint 002) + WBE/SBE schema (DONE)
 Per the operator Ledger, these are **not** verified, but Computer's June schema work baked them site-wide:
 - "Authorized installer" for **TGP, Allegion, PGT, Slimpact** (Org `hasOfferCatalog` / homepage Organization nodes)
 - **WBE** and **SBE** credentials in Org `hasCredential[]`

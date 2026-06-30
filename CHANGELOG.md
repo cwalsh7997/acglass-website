@@ -4,6 +4,32 @@ Per-sprint log. Newest first. Evidence + scorecard delta + next item per the ope
 
 ---
 
+## Sprint 002 — Unverified manufacturer + WBE/SBE claims (Q4) — 2026-06-30
+Branch: `sprint-002-unverified-claims` (from `sprint-001` tip). Connor authorized full autonomous decisions; governance = downgrade/remove unverified claims, never fabricate.
+
+### Context
+Investigation (read-only subagent) found the prior "Computer" agent had baked **"authorized installer for ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora"** (note Aldora — not even in the Ledger) into the homepage Org schema and hundreds of pages, in ~30 distinct phrasings across prose, JSON-LD, `<title>`, og/meta, FAQ schema, and capability badges. Per the Ledger only **Euro-Wall + ESWindows/Tecnoglass** are verified authorized-installer relationships.
+
+### Shipped — `scripts/fix-unverified-installer-claims.py` (deterministic, idempotent, dry-run default), 5 rounds
+- **~290 file-changes** downgrading every unverified-brand "authorized installer/installation/dealer/partner" claim → plain "installer of / installs" (a permitted "we install it" claim). Euro-Wall + ESWindows keep their verified "authorized" status; the compliant "authorized commercial installer for ESWindows and Euro-Wall" construction (87 files) was preserved untouched.
+- Fixed: homepage Org schema line, full-list prose (all comma/“+”/“and Aldora” variants), impact short-list, og:title/og:description/meta-description on the 5 dedicated brand pages, per-brand `<title>` ("PGT/Slimpact/TGP/Allegion Authorized…Installer" → "…Installer"), per-brand FAQ-schema Q&A ("Is ACG an authorized PGT/TGP/Allegion/Slimpact installer?" → "Does ACG install…?"; answers → "installs"), "seven manufacturer authorizations" marketing phrasings, reference-table "authorized to install", capability badges, and the crisp schema name entries ("Authorized PGT/Allegion/Slimpact Installer — Florida" → "…Installer — Florida").
+- **WBE/SBE schema:** neutralized the `EducationalOccupationalCredential` certification *names* (e.g. "Woman-Owned Business Enterprise (WBE)" → "Woman-owned business (majority owner Rielly Walsh)") so the machine-read schema no longer asserts a held WBE/SBE certification. Verified CGC + Euro-Wall/ESWindows dealer credentials untouched.
+
+### Evidence
+- Final scan: **0** crisp ACG-specific "authorized for [PGT/Allegion/TGP/Slimpact/Aldora]" claims remain. Remaining `authorized`+brand co-occurrences are all compliant (verified Euro-Wall/ESWindows dealer entries), "ACG installs…" lists, or neutral industry-explainer text.
+- JSON-LD re-validated on homepage + all 3 fixed brand pages (4/4 blocks valid each).
+- Method = exact-string replacement only: can MISS but never corrupt; every dry-run reviewed; compliant copy verified preserved.
+
+### NOT done (deliberately — routed to Connor or next sprint)
+- **WBE/SBE in visible prose (~1,484 files)** — NOT mass-edited. "Woman-owned" may be literally true (Rielly Walsh 51%, Connor-sourced) even if "WBE-certified" isn't. Needs Connor's certification-status answer (QUEUE Q4b). One press release asserts "certified as a WBE" — flagged.
+- **Q3 — retire the AI pages** (ai-operations-whitepaper.html + 2 AI blog posts are still indexable) — not done this sprint.
+- **NEW finding: AI positioning + "best commercial glazing contractor" superlative are duplicated across MANY pages via a templated FAQ-schema block** (Sprint 001 only fixed homepage/About). Site-wide sweep queued (QUEUE Q7).
+
+### Next item
+Sprint 003: retire the indexable AI pages (Q3) + site-wide AI/superlative templated-FAQ sweep (Q7). Then await Connor's Q4b (WBE certification status).
+
+---
+
 ## Sprint 001 — Phase 1: Stop the Bleeding — 2026-06-30
 Branch: `sprint-001-phase-1-bleeding` (from `origin/main`). PR to `main` for Connor's preview-then-merge.
 
