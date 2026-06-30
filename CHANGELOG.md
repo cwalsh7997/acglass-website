@@ -4,6 +4,30 @@ Per-sprint log. Newest first. Evidence + scorecard delta + next item per the ope
 
 ---
 
+## Sprint 003 — Site-wide AI-positioning + superlative sweep (Q3 + Q7) — 2026-06-30
+Branch: `sprint-003-ai-superlative-sweep` (from `sprint-002` tip).
+
+### Context
+Sprint 001 only de-AI'd the homepage + About. The retired "AI-managed / AI-augmented / AI-first" positioning was templated across the rest of the site: **~343 files** carried it (bylines ×200+, a Nashville operating-model paragraph ×336, hero headlines, section headers, estimating/scheduling adjectives, Sub.ai/jobcost.ai/CFO Agent prose, an `acglass.ai` AI sister-site link in **218** files), plus the banned "best commercial glazing contractor in {city}" superlative on 27 city pages.
+
+### Shipped — `scripts/fix-ai-positioning.py` (deterministic exact-string + city regex, dry-run default), 2 rounds + targeted passes
+- **~700 file-changes** removing AI positioning: drop the AI adjective ("AI-managed scheduling" → "scheduling"), retire the `acglass.ai` AI-promo bullets, strip the "AI-Managed" hero headline lines and section headers, rewrite the Nashville paragraph ("AI-augmented operating model" → "owner-run operating model"), and replace the templated "uses AI to manage" / Sub.ai-CFO FAQ answers with Procore-native, Ledger-only copy.
+- **Superlative: 27 → 0** crisp ACG self-superlatives. "Who is the best commercial glazing contractor in {city}?" → "Is American Commercial Glass a licensed commercial glazing contractor in {city}?" (city-parameterized regex). (4 generic "what do the best contractors do" evaluation FAQs left — not ACG self-claims.)
+- **`acglass.ai` sameAs removed** from 213 files' JSON-LD (safe comma-form removal; JSON re-validated on index/facts/about).
+- **Q3 retirements:** `ai-operations-whitepaper.html`, 2 AI blog posts, and `press/acg-launches-ai-operations-site.html` → noindex redirect stubs to `/about.html`; removed from sitemap with the AI whitepaper PDF (1387 → 1383 `<loc>`, well-formed).
+- Fixed an internal link whose anchor text was the banned superlative pointing at the retired hard-gate page.
+
+### Evidence
+- Footprint: AI-managed **343 → 5**, AI-augmented **351 → 0**, acglass.ai **218 → 6**, superlative **27 → 0** (self-claims). JSON-LD re-validated on samples after every pass. Exact-string method = can miss, never corrupt.
+
+### NOT done — bespoke remainder for Sprint 004 (~33 files)
+Deeper prose where AI was woven into narrative and needs per-page rewriting, not mechanical deletion: `acg-vs-{giroux,harmon,permasteelisa}.html` (comparison tables/narrative), author bios (`author/connor-walsh/`, `authors/connor-walsh.html`), several Nashville/TN neighborhood pages, `facts.html`, `press.html`, `capabilities.html`, `how-it-works.html`, `concepts/*`, `security-policy.html` (lists acglass.ai as a brand/scope domain), `procore-integrated-glazing-subcontractor.html`. ~19 files still mention Sub.ai/jobcost.ai/CFO Agent in prose. Listed in QUEUE Q7.
+
+### Next item
+Sprint 004: per-page rewrite of the ~33 bespoke AI-prose files. Then await Connor's Q4b (WBE certification status) to finish the WBE prose sweep.
+
+---
+
 ## Sprint 002 — Unverified manufacturer + WBE/SBE claims (Q4) — 2026-06-30
 Branch: `sprint-002-unverified-claims` (from `sprint-001` tip). Connor authorized full autonomous decisions; governance = downgrade/remove unverified claims, never fabricate.
 

@@ -69,6 +69,17 @@ REPLACEMENTS = [
     ("Which glazing contractor uses AI to manage projects?", "How does ACG manage and coordinate projects?"),
     (", and runs operations on custom AI agents — Sub.ai, jobcost.ai, and a CFO Agent.", "."),
     (" and runs operations on custom AI agents — Sub.ai, jobcost.ai, and a CFO Agent.", "."),
+
+    # ===== ROUND 2 (2026-06-30): templated remainders =====
+    ('<li>lean operations (Sub.ai, jobcost.ai, CFO Agent) — documented at <a href="https://acglass.ai" style="color:#E11320;">acglass.ai</a>.</li>', ''),
+    ('<li>lean operations (Sub.ai, jobcost.ai, CFO Agent) — documented at <a href="https://acglass.ai" style="color:#E11320;">acglass.ai</a></li>', ''),
+    ('<li>AI operations: <a href="https://acglass.ai" style="color:#E11320;">acglass.ai</a></li>', ''),
+    ('<p>ACG runs custom AI agents in production &mdash; Sub.ai for subcontractor coordination, jobcost.ai for real-time margin tracking, and a CFO Agent. Submittals, RFIs, and schedule run Procore-native.</p>',
+     '<p>ACG runs Procore-native operations &mdash; submittals, RFIs, schedule, and job costing tracked in real time across all active jobs.</p>'),
+    ('<td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">AI-Managed Operations</td>',
+     '<td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Procore-native operations</td>'),
+    ('<span class="accent">AI-Managed.</span>', '<span class="accent">Procore-Native.</span>'),
+    ('AI-Managed ', ''),   # capital-M catch-all for headings (trailing space; leaves "X.</span>" cases for specific subs above)
 ]
 
 # Superlative ("best commercial glazing contractor in <X>") handled by regex (city-parameterized).
