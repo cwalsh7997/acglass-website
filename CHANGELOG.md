@@ -4,6 +4,28 @@ Per-sprint log. Newest first. Evidence + scorecard delta + next item per the ope
 
 ---
 
+## Sprint 004 — Bespoke AI-prose rewrite + artifact cleanup (finishes Q7) — 2026-06-30
+Branch: `sprint-004-ai-prose-rewrite` (from `sprint-003` tip).
+
+### Shipped
+- `scripts/fix-ai-prose-sprint004.py` (deterministic exact-string, dry-run default): rewrote the ~34 bespoke pages where AI was woven into narrative — `acg-vs-*` comparison pages, Connor + Rielly author bios, Nashville/TN neighborhood pages, `facts.html`, `capabilities.html`, `how-it-works.html`, `procore-integrated-*`, `ask.html`, `how-to-hire-*`, etc. Every Sub.ai/jobcost.ai/CFO Agent/"custom AI agents"/acglass.ai reference replaced with the real, Ledger-verifiable substance (Procore-native operations, owner-led delivery, real-time job costing, custom in-house software). No new claims.
+- Removed the 2 retired-AI-post cards from `blog/index.html` and neutralized their ItemList schema refs (value-swaps; JSON re-validated).
+- Repointed internal links from the retired `ai-managed-glazing-contractor.html` → `/about.html`.
+- Cleaned grammatical **artifacts** left by Sprint 003's AI-adjective stripping (". .", "scope. operations.", "uses operations to", orphan double-spaces) in meta/schema on the previously-AI pages.
+- Neutralized AI labels on the 3 `concepts/*` internal mockups (noindex,nofollow).
+
+### Evidence
+- **TRUE FINAL residual = 0** across the public site (excl. retired-stub comments): Sub.ai, jobcost.ai, CFO Agent, AI-managed, AI-augmented, AI-first, custom AI, AI agents, acglass.ai, "best commercial glazing contractor in {city}" — all **0**.
+- JSON-LD re-validated on every schema-edited page (blog/index, national, glazing-subcontractor, southeast, author bios — all valid).
+
+### Result — AI positioning + banned superlatives are now fully removed from the public site
+The retired AI-managed/AI-first/AI-augmented positioning (operator Ledger 2.3) and the banned "best commercial glazing" superlative are gone site-wide. Remaining low-severity item: schema-only ItemList refs left pointing to the retired blog URLs were redirected to /about.html (not deleted).
+
+### Still open
+**Q4b** (needs Connor): WBE/SBE certification status → unlocks the WBE-prose sweep (~1,484 files). That is the last major factual-integrity item.
+
+---
+
 ## Sprint 003 — Site-wide AI-positioning + superlative sweep (Q3 + Q7) — 2026-06-30
 Branch: `sprint-003-ai-superlative-sweep` (from `sprint-002` tip).
 
