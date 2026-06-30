@@ -9,7 +9,8 @@ This file is read automatically by Claude Code and by Connor's Perplexity Comput
 **American Commercial Glass, Inc.** — commercial glazing contractor, FL CGC #1531993.
 HQ 700 S Rosemary Ave Suite 204, West Palm Beach FL 33401 · (772) 486-7711 · connor@acglass.com.
 350+ projects · 1M+ SF installed · $3M/$6M bonded · zero OSHA recordables since 2021.
-**Authorized installer:** ESWindows, Euro-Wall, TGP, Allegion, PGT, Slimpact.
+**Authorized installer (VERIFIED — Connor, operator Ledger 2026-06-22):** Euro-Wall, ESWindows / Tecnoglass. These are the only two confirmed authorized-installer relationships.
+**Manufacturer relationships UNVERIFIED — do NOT claim "authorized installer" for:** TGP, Allegion, PGT, Slimpact. ACG installs these products, but authorized-installer/dealer status is not confirmed. "We install [brand] systems" is OK; "Authorized installer for [brand]" is NOT until Connor confirms. (Disposition queued in QUEUE-FOR-CONNOR.md.)
 **NOT installers of:** Kawneer, YKK, Tubelite. Do not mention these brands anywhere on the site.
 
 Nashville TN expansion launches Q3 2026 (page `/commercial-glazing-nashville-tn.html` is live; don't add TN to ad targeting until then).
@@ -43,10 +44,11 @@ There is **no build step** — every `.html` file in the repo is served verbatim
 | Accent red | `#e11320` (hover `#c10f1c`) |
 | Body font | Inter (Google Fonts), weights 400–900 |
 | Mono font | JetBrains Mono, used for technical/metadata callouts |
-| Tagline | "Precision glazing. AI-managed. Delivered." |
+| Tagline | OLD "Precision glazing. AI-managed. Delivered." **RETIRED 2026-06-23** by Connor — the in-house-automation ("AI-managed") positioning is killed. Do NOT use "AI-managed", "AI-augmented", "AI-first", Sub.ai, jobcost.ai, or "CFO Agent" anywhere on the site or in agent output. Interim factual descriptor: "Precision glazing. Owner-run. Delivered." Final tagline pending Connor. |
 | Aesthetic target | National-tier — Skanska, Lendlease, Apple-grade editorial. NOT homebuilder/contractor template |
 
-**Banned words anywhere on the site or in any agent output:** delve, leverage (verb), synergy, ecosystem, world-class, best-in-class, cheap, game-changing, elevate, cutting-edge, state-of-the-art, revolutionize, competitive pricing, affordable, low cost.
+**Banned words anywhere on the site or in any agent output:** delve, leverage (verb), synergy, ecosystem, world-class, best-in-class, cheap, game-changing, elevate, cutting-edge, state-of-the-art, revolutionize, competitive pricing, affordable, low cost, premier, industry-leading, the leading, the largest, number one, "best commercial glazing", trusted by hundreds.
+**Banned positioning (RETIRED 2026-06-23):** AI-managed, AI managed, AI-augmented, AI-first, "uses AI to manage", Sub.ai, jobcost.ai, CFO Agent. The AI-operations positioning was discontinued by Connor — do not reintroduce it in copy, schema, FAQ, meta, or new pages.
 
 **Banned brand mentions:** Kawneer, YKK, YKK AP, Tubelite, Vistawall. (Site was purged of these May 26, 2026 — 293 files. Do not reintroduce.)
 
