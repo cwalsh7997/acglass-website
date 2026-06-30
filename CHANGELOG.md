@@ -4,6 +4,39 @@ Per-sprint log. Newest first. Evidence + scorecard delta + next item per the ope
 
 ---
 
+## Sprint 005 — True-zero banned-phrase residual cleanup — 2026-06-30
+Branch: `sprint-005-banned-phrase-residuals` (from `sprint-004` tip).
+
+### Context
+Sprint 004 reported "TRUE FINAL residual = 0" but the scan regex only covered AI-positioning + the `best commercial glazing in {city}` superlative — not the full Connor banned-phrase list. A fresh scan covering every term in the directive found **141 files** with one or more of: `the leading`, `the largest`, `premier`, `best commercial glazing`, `ecosystem`, `cheap`, `affordable`, `elevate`, plus a single verb-form `leverage`. Hard-gate violation.
+
+### Shipped — `scripts/fix-banned-residuals-sprint005.py` + 10 surgical fixes
+- Stock city template `from the leading manufacturers` rewritten across 75 hurricane-impact city pages.
+- SEO page identity rewrites (URL unchanged, no 301s needed):
+  - `blog/commercial-glazing-contractors-tampa-fl.html`: title/H1/meta/og/JSON-LD `Best Commercial Glazing Contractors in Tampa FL (2026 Guide)` → `Choosing a Commercial Glazing Contractor in Tampa FL (2026 Guide)`. All 14 in-page references aligned.
+  - `best-glazing-subcontractor-florida.html`: `Best Glazing Subcontractor in Florida` → `Florida Commercial Glazing Subcontractor`.
+  - `best-storefront-contractor-florida.html`: `Best Storefront Contractor in Florida` → `Florida Commercial Storefront Contractor`.
+- Third-party descriptors neutralized contextually: Harmon, ESWindows testing facility, Texas Medical Center, PGT, Hurricane Michael reconstruction, Tampa Water Street, Panther National private club, Gulf Harbour Country Club, Eau Palm Beach, etc.
+- `ecosystem` → `network` / `cluster` / `platform` / `workflow` (6 instances).
+- `cheap` → `low-cost` / `inexpensive` (2 instances).
+- `affordable` → `cost-controlled` (1 instance; remaining match is inside an external Georgia gov URL slug).
+- `elevate` (verb) → `raise` (1 instance, technical wind-pressure context).
+- `leverage` (verb) → `route through` (1 instance — Connor's list bans the verb only; noun usage retained).
+- Removed `press/acg-launches-ai-operations-site.html` from `sitemap.xml` (already noindex+redirect, but still in sitemap). 1383 → 1382 well-formed `<loc>`.
+
+### Evidence
+- Full banned-phrase scan against the complete Connor list (24 terms) returns **0 hits** on live content. Only exclusions: retired noindex stubs (acceptable per Sprint 003) and one external link URL slug to a Georgia state government page (cannot rewrite a third-party URL).
+- JSON-LD re-validated on: `index.html`, `about.html`, `pgt-installer-florida.html`, `blog/index.html`, `commercial-glazing-nashville-tn.html`, `acg-vs-giroux-glass.html`, `blog/commercial-glazing-contractors-tampa-fl.html` — all blocks parse.
+- `sitemap.xml` validates as well-formed XML, 1382 URLs.
+- 149 files changed, 197 insertions / 198 deletions.
+
+### Result — site is now true-zero against the full banned-phrase directive.
+
+### Still open
+**Q4b** (Connor): WBE/SBE certification status — unblocks ~1,484-file WBE-prose sweep. Does NOT block this deploy.
+
+---
+
 ## Sprint 004 — Bespoke AI-prose rewrite + artifact cleanup (finishes Q7) — 2026-06-30
 Branch: `sprint-004-ai-prose-rewrite` (from `sprint-003` tip).
 
