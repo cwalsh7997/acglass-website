@@ -51,9 +51,9 @@ I did **not** touch these this sprint — deleting/rewriting whole pages is a bi
 - If not yet → I sweep "WBE/SBE certified" → "woman-owned" (truthful, Rielly 51%) across the ~1,484 pages.
 **Recommended:** Tell me the status; I'll run the matching sweep.
 
-## Q7 — AI positioning + "best…" superlative are templated across MANY pages (HIGH — newly found)
-Sprint 001 only de-AI'd the homepage + About. Sprint 002 found the **same killed AI FAQ** ("Which glazing contractor uses AI to manage projects?" / "runs operations on custom AI agents — Sub.ai, jobcost.ai, CFO Agent") **and** the banned superlative FAQ ("Who is the best commercial glazing contractor in Florida?") duplicated across many pages via a shared FAQ-schema block, plus the 4 still-indexable AI pages (ai-operations-whitepaper.html + 2 AI blog posts). 
-**Recommended:** Next sprint I retire the indexable AI pages (redirect stubs) and run a site-wide sweep replacing the AI/superlative FAQ entries with the same Ledger-only versions I used on the homepage. No new claims — pure removal. Flagging only because it touches many pages at once (§2.6). Say "go" or I'll proceed under the standing authorization.
+## Q7 — Site-wide AI/superlative sweep (DONE in Sprint 003; ~33 bespoke files remain for Sprint 004)
+Sprint 003 swept the templated AI positioning site-wide (~700 file-changes): AI-managed **343 → 5**, AI-augmented **351 → 0**, acglass.ai sameAs removed from 213 files, superlative self-claims **27 → 0**, and retired 4 AI pages (whitepaper + 2 blog posts + acglass.ai-launch press release) to noindex redirect stubs.
+**Still open (Sprint 004 — no decision needed, just per-page rewrite work):** ~33 pages where AI was woven into narrative and needs rewriting rather than deletion — the `acg-vs-{giroux,harmon,permasteelisa}.html` comparison pages, Connor's author-bio pages, several Nashville/TN neighborhood pages, `facts.html`, `press.html`, `capabilities.html`, `how-it-works.html`, `procore-integrated-glazing-subcontractor.html`, `concepts/*`, and `security-policy.html`. ~19 still name Sub.ai/jobcost.ai/CFO Agent in prose. I'll handle these as careful per-page edits next.
 
 ## Q4 — Unverified manufacturer "authorized installer" claims (DONE in Sprint 002) + WBE/SBE schema (DONE)
 Per the operator Ledger, these are **not** verified, but Computer's June schema work baked them site-wide:
