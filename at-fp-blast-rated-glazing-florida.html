@@ -78,7 +78,15 @@
     .cta-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 28px; margin: 50px 0; border-radius: 8px; }
     .cta-box a { color: var(--accent); font-weight: 700; text-decoration: none; }
     .source-note { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-style: italic; margin-top: 12px; }
-  </style>
+  
+    /* Sprint 009b — polish: remove inherited 100vh min-height + space FAQ items */
+    .hero { min-height: unset !important; padding: clamp(48px,7vw,96px) 28px clamp(40px,5vw,64px) !important; }
+    .paa-faq h2 { margin-bottom: 32px; }
+    .paa-item { margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .paa-item:last-child { border-bottom: none; }
+    .paa-item h3 { font-size: 1.15rem; margin: 0 0 10px; color: #fff; }
+    .paa-item p { color: rgba(255,255,255,0.82); line-height: 1.65; margin: 0; }
+</style>
 </head>
 <body>
 
