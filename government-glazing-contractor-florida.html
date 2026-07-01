@@ -84,6 +84,33 @@
   }
 }
   </script>
+  <style>
+    .hero { padding: 100px 0 40px; max-width: 1080px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+    .hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent, #E11320); margin-bottom: 14px; font-weight: 700; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.6rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 22px; }
+    .hero .lead { font-size: 1.06rem; line-height: 1.65; color: rgba(255,255,255,0.84); max-width: 780px; }
+    .byline { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 18px; }
+    #answer-box { background: rgba(225,19,32,0.06); border-left: 3px solid var(--accent, #E11320); padding: 22px 26px; max-width: 1024px; margin: 40px auto; border-radius: 6px; }
+    #answer-box h2 { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; font-weight: 700; }
+    #answer-box p { font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.92); margin: 0; }
+    main.content { max-width: 1024px; margin: 60px auto 100px; padding: 0 28px; }
+    main.content h2 { font-size: 1.7rem; letter-spacing: -0.01em; margin: 50px 0 18px; }
+    main.content h3 { font-size: 1.2rem; margin: 32px 0 12px; color: rgba(255,255,255,0.95); }
+    main.content p { color: rgba(255,255,255,0.85); line-height: 1.75; font-size: 1.02rem; margin-bottom: 18px; }
+    main.content ul { color: rgba(255,255,255,0.85); line-height: 1.85; padding-left: 24px; }
+    main.content table { width: 100%; border-collapse: collapse; margin: 22px 0 32px; font-size: 0.94rem; }
+    main.content th { text-align: left; padding: 14px 14px; border-bottom: 1px solid rgba(255,255,255,0.18); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+    main.content td { padding: 14px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.88); vertical-align: top; }
+    main.content td:first-child { color: #fff; font-weight: 600; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin: 30px 0; }
+    .stat-card { padding: 22px; background: rgba(0,0,0,0.25); border: 1px solid rgba(225,19,32,0.2); border-radius: 10px; }
+    .stat-card .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 8px; }
+    .stat-card .value { font-size: 22px; font-weight: 800; color: #fff; line-height: 1.15; }
+    .stat-card .note { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+    .cta-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 28px; margin: 50px 0; border-radius: 8px; }
+    .cta-box a { color: var(--accent); font-weight: 700; text-decoration: none; }
+    .source-note { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-style: italic; margin-top: 12px; }
+  </style>
 </head>
 <body>
 
