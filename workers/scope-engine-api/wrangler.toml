@@ -1,0 +1,32 @@
+#:schema node_modules/wrangler/config-schema.json
+# ACG Scope Engine API — Cloudflare Worker config
+#
+# One-time deploy:
+#   cd workers/scope-engine-api
+#   npm install -g wrangler
+#   wrangler login
+#   wrangler secret put RESEND_API_KEY      # paste your key from resend.com
+#   wrangler deploy
+#
+# After deploy, wrangler prints a URL like:
+#   https://acg-scope-engine-api.<your-subdomain>.workers.dev
+# Put that URL into scope-engine.html -> ACG_CONFIG.endpoint (see README.md).
+#
+# Local dev:
+#   wrangler dev            # then POST test payloads at http://localhost:8787
+
+name = "acg-scope-engine-api"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+
+# ---- Public env vars (non-secret) ----
+[vars]
+ALLOWED_ORIGIN = "https://acglass.com"
+NOTIFY_EMAIL   = "connor@acglass.com"
+# RESEND_FROM must be an address on a domain you've verified in Resend.
+# acglass.com DNS is on Cloudflare, so verifying is a few DNS records.
+RESEND_FROM    = "ACG Scope Engine <noreply@acglass.com>"
+
+# ---- Secrets (set via `wrangler secret put`) ----
+# RESEND_API_KEY — required. From resend.com. Enables email + PDF attachments.
