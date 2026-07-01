@@ -2062,7 +2062,7 @@ function buildLeadPayload() {
 
   // formsubmit metadata
   data.append('_subject', `${ACG_CONFIG.subject_prefix} New scope-engine lead — ${state.projectType} · ${ACG_CONFIG.location[state.location].label.split('(')[0].trim()}`);
-  data.append('_template', 'table');
+  data.append('_template', 'basic');
   data.append('_captcha', 'false');
 
   // Contact (required)
@@ -2135,10 +2135,9 @@ ${fmtSF(state.computedSystemSF)} SF system area · ${ACG_CONFIG.glassMakeup[c.ma
 Recommended system: ${ACG_CONFIG.systems[state.recommendedSystem].name}
 Schedule: ${state.timeline.totalLow}–${state.timeline.totalHigh} weeks from award to punch.
 
-A branded PDF of the full report is attached to this email AND was
-downloaded to your device when you submitted the form. Look for
-ACG-Scope-Report-*.pdf either in this thread or in your Downloads
-folder. If you can't find it, reply and we'll resend.
+A branded PDF of the full report downloaded to your device when you
+submitted the form — look for ACG-Scope-Report-*.pdf in your Downloads
+folder. If you can't find it, reply and we'll resend it.
 
 For a real bid on plans, reply to this email or call (772) 486-7711.
 For faster turnaround, send drawings via: ${ACG_CONFIG.page_url.replace('/scope-engine.html','/send-plans.html')}
@@ -2157,28 +2156,33 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   const status = document.getElementById('lf-status');
   const submit = document.getElementById('lf-submit');
 
+  // Shared failure handler: re-enable the button, keep inputs, tell the visitor how to reach us.
+  // Their numbers are never lost — they can just resend.
+  const FALLBACK = '⚠ We couldn\'t deliver that automatically. Please email '
+    + '<a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a> '
+    + 'or call (772) 486-7711 — your details are safe, just resend.';
+  const fail = (msg) => {
+    status.className = 'se-form-status err';
+    status.innerHTML = msg;
+    submit.disabled = false;
+    submit.style.opacity = '1';
+  };
+
   // Validate required fields
   const required = ['lf-name','lf-email','lf-company','lf-role'];
   for (const id of required) {
     const el = document.getElementById(id);
-    if (!el.value || !el.value.trim()) {
-      status.className = 'se-form-status err';
-      status.textContent = '⚠ Please complete all required fields.';
-      el.focus();
-      return;
-    }
+    if (!el.value || !el.value.trim()) { fail('⚠ Please complete all required fields.'); el.focus(); return; }
   }
   // TCPA required (per spec)
   if (!document.getElementById('lf-tcpa').checked) {
-    status.className = 'se-form-status err';
-    status.textContent = '⚠ Please check the consent box so we can reply to you.';
+    fail('⚠ Please check the consent box so we can reply to you.');
     return;
   }
   // Email sanity
   const emailVal = document.getElementById('lf-email').value.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
-    status.className = 'se-form-status err';
-    status.textContent = '⚠ That email looks off — double-check it?';
+    fail('⚠ That email looks off — double-check it?');
     document.getElementById('lf-email').focus();
     return;
   }
@@ -2186,10 +2190,12 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   submit.disabled = true;
   submit.style.opacity = '.6';
   status.className = 'se-form-status';
-  status.textContent = 'Generating PDF…';
+  status.textContent = 'Sending…';
 
-  // 1. Generate the branded PDF as a Blob so we can attach it to the form POST
-  //    This way formsubmit emails Connor with the PDF attached — not just data fields.
+  // Build the branded PDF for the visitor's download (best-effort — never blocks the lead).
+  // NOTE: the formsubmit /ajax/ endpoint silently strips file attachments, so ACG's copy of
+  // the PDF is NOT emailed. The visitor still gets it via the download below. To email ACG the
+  // PDF automatically, move to the Cloudflare Worker backend (see SCOPE-ENGINE-README.md §4).
   let pdfBlob = null;
   let pdfFilename = null;
   try {
@@ -2203,20 +2209,28 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
     ga('scope_pdf_failed', { error: String(e).slice(0, 100) });
   }
 
-  status.textContent = 'Sending…';
-  const payload = buildLeadPayload();
-  // Attach the PDF — formsubmit accepts file attachments via multipart/form-data
-  if (pdfBlob && pdfFilename) {
-    payload.append('attachment', pdfBlob, pdfFilename);
-  }
+  // 15s network guard so a hung request recovers instead of spinning on "Sending…".
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15000);
 
   try {
+    // buildLeadPayload() dereferences ACG_CONFIG/state — keep it INSIDE the try so a bad
+    // state shows the fallback instead of a silent uncaught throw that freezes the UI.
+    const payload = buildLeadPayload();
+
     const r = await fetch(ACG_CONFIG.endpoint, {
       method: 'POST',
       body: payload,
-      headers: { 'Accept': 'application/json' }});
-    if (r.ok) {
-      // ONLY fire generate_lead on confirmed success (matches site-wide pattern fixed yesterday)
+      headers: { 'Accept': 'application/json' },
+      signal: controller.signal });
+    clearTimeout(timer);
+
+    // formsubmit ALWAYS returns HTTP 200 — the real result is in the JSON body's `success`.
+    let data = {};
+    try { data = await r.json(); } catch (_) {}
+
+    if (r.ok && String(data.success) === 'true') {
+      // ONLY fire generate_lead on confirmed delivery (matches site-wide pattern)
       ga('scope_lead_captured', {
         project_type: state.projectType, height: state.height, location: state.location,
         system: state.recommendedSystem, system_sf: state.computedSystemSF});
@@ -2225,8 +2239,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         currency: 'USD', value: 1000});
       status.className = 'se-form-status ok';
 
-      // Trigger the browser download too — so the visitor has the file immediately
-      // AND we already sent it as an email attachment to ACG.
+      // Deliver the PDF to the visitor via download (ACG gets the scope data, not the attachment).
       if (pdfBlob && pdfFilename) {
         const a = document.createElement('a');
         const url = URL.createObjectURL(pdfBlob);
@@ -2234,7 +2247,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         document.body.appendChild(a); a.click();
         setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
         ga('scope_pdf_generated', { filename: pdfFilename });
-        status.innerHTML = '✓ Got it. Your branded PDF report was just emailed to you AND downloaded to this device as <strong>' + pdfFilename + '</strong>. Our estimating team has a copy too — we will reach out within 48 hours.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
+        status.innerHTML = '✓ Got it — our estimating team has your scope and will reach out within 48 hours. Your branded PDF just downloaded as <strong>' + pdfFilename + '</strong>.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
         setTimeout(() => {
           const rb = document.getElementById('redownload-pdf-btn');
           if (rb) rb.addEventListener('click', () => {
@@ -2251,7 +2264,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         }, 50);
       } else {
         // PDF generation failed earlier — graceful fallback to browser print
-        status.innerHTML = '✓ Got it. A copy is in your inbox + with our estimating team. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print this report (save as PDF)</button>';
+        status.innerHTML = '✓ Got it — our estimating team has your scope and will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
         setTimeout(() => {
           const pb = document.getElementById('print-pdf-btn');
           if (pb) pb.addEventListener('click', () => { ga('scope_pdf_print'); window.print(); });
@@ -2260,18 +2273,13 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
       // Disable inputs
       document.getElementById('lead-form').querySelectorAll('input, select').forEach(el => el.disabled = true);
     } else {
-      ga('form_submission_failed', { form_id: 'scope-engine', http_status: r.status });
-      status.className = 'se-form-status err';
-      status.innerHTML = '⚠ Couldn\'t deliver via the form. Please email <a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a> or call (772) 486-7711.';
-      submit.disabled = false;
-      submit.style.opacity = '1';
+      ga('form_submission_failed', { form_id: 'scope-engine', http_status: r.status, reason: String(data.message || '').slice(0, 120) });
+      fail(FALLBACK);
     }
   } catch (err) {
-    ga('form_submission_failed', { form_id: 'scope-engine', error_type: 'network' });
-    status.className = 'se-form-status err';
-    status.innerHTML = '⚠ Network hiccup. Please email <a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a> or call (772) 486-7711.';
-    submit.disabled = false;
-    submit.style.opacity = '1';
+    clearTimeout(timer);
+    ga('form_submission_failed', { form_id: 'scope-engine', error_type: err.name === 'AbortError' ? 'timeout' : 'network' });
+    fail(FALLBACK);
   }
 });
 
