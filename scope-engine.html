@@ -852,7 +852,7 @@
    each factor's real-world basis. Everything downstream reads from here.
    ============================================================================ */
 const ACG_CONFIG = {
-  endpoint: 'https://formsubmit.co/ajax/connor@acglass.com',
+  endpoint: 'https://acg-scope-engine-api.connor-727.workers.dev',
   subject_prefix: '[ACG LEAD]',
   page_url: 'https://acglass.com/scope-engine.html',
 
@@ -2135,9 +2135,9 @@ ${fmtSF(state.computedSystemSF)} SF system area · ${ACG_CONFIG.glassMakeup[c.ma
 Recommended system: ${ACG_CONFIG.systems[state.recommendedSystem].name}
 Schedule: ${state.timeline.totalLow}–${state.timeline.totalHigh} weeks from award to punch.
 
-A branded PDF of the full report downloaded to your device when you
-submitted the form — look for ACG-Scope-Report-*.pdf in your Downloads
-folder. If you can't find it, reply and we'll resend it.
+A branded PDF of the full report is attached to this email, and it also
+downloaded to your device when you submitted the form. If you can't find
+it, just reply and we'll resend it.
 
 For a real bid on plans, reply to this email or call (772) 486-7711.
 For faster turnaround, send drawings via: ${ACG_CONFIG.page_url.replace('/scope-engine.html','/send-plans.html')}
@@ -2192,10 +2192,9 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   status.className = 'se-form-status';
   status.textContent = 'Sending…';
 
-  // Build the branded PDF for the visitor's download (best-effort — never blocks the lead).
-  // NOTE: the formsubmit /ajax/ endpoint silently strips file attachments, so ACG's copy of
-  // the PDF is NOT emailed. The visitor still gets it via the download below. To email ACG the
-  // PDF automatically, move to the Cloudflare Worker backend (see SCOPE-ENGINE-README.md §4).
+  // Build the branded PDF (best-effort — never blocks the lead). It's attached to the POST,
+  // and the ACG scope-engine Worker emails it to both ACG and the visitor (Resend). We also
+  // trigger a local download below so the visitor has the file immediately.
   let pdfBlob = null;
   let pdfFilename = null;
   try {
@@ -2247,7 +2246,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         document.body.appendChild(a); a.click();
         setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
         ga('scope_pdf_generated', { filename: pdfFilename });
-        status.innerHTML = '✓ Got it — our estimating team has your scope and will reach out within 48 hours. Your branded PDF just downloaded as <strong>' + pdfFilename + '</strong>.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
+        status.innerHTML = '✓ Got it — your branded report was just emailed to you AND downloaded here as <strong>' + pdfFilename + '</strong>. Our estimating team has your scope + PDF too, and will reach out within 48 hours.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
         setTimeout(() => {
           const rb = document.getElementById('redownload-pdf-btn');
           if (rb) rb.addEventListener('click', () => {
@@ -2264,7 +2263,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         }, 50);
       } else {
         // PDF generation failed earlier — graceful fallback to browser print
-        status.innerHTML = '✓ Got it — our estimating team has your scope and will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
+        status.innerHTML = '✓ Got it — your report is on its way to your inbox, and our estimating team has your scope. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
         setTimeout(() => {
           const pb = document.getElementById('print-pdf-btn');
           if (pb) pb.addEventListener('click', () => { ga('scope_pdf_print'); window.print(); });
