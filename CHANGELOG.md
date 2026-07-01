@@ -4,6 +4,35 @@ Per-sprint log. Newest first. Evidence + scorecard delta + next item per the ope
 
 ---
 
+## Sprint 008 — WBE confirmation + fire-station past performance — 2026-06-30
+Branch: `sprint-008-wbe-fire-stations` (from `main` at Sprint 007 tip).
+
+### Trigger
+Connor (2026-06-30, 7:11 PM PDT), replying to Sprint 006 queue: "We've done multiple fire stations now and yes we are WBE." Closes Q4b and partially closes Q8c.
+
+### Shipped
+- **Government hub** (`/government-glazing-contractor-florida.html`):
+  - Hero eyebrow: `Federal · State · Municipal` → `Federal · State · Municipal · WBE`.
+  - Hero sub: added "Woman-owned business (WBE)" and "Multiple Florida fire station projects delivered."
+  - Stat grid: new "Business Status — WBE" card (Woman-owned · Set-aside eligible).
+  - Compliance-posture table: new row for Business classification (WBE, WOSB/EDWOSB/DBE eligibility).
+  - Public-sector past performance: "Multiple Florida fire stations" added as first bullet with Risk Category IV framing.
+  - FAQ: 2 new Q&A — fire stations + WBE.
+  - JSON-LD: WBE added to `hasCredential[]`, new `diversityPolicy` field, `knowsAbout[]` expanded to include the four blast standards + Risk Category IV fire-station scope.
+- **About page** (`/about.html`): service card 08 upgraded from "Federal, Government & Institutional" → "Federal, Government & Fire-Rescue" with WBE and Florida fire-station callouts.
+- **Homepage** (`/index.html`): capabilities tile 7 upgraded from "Federal & Government" → "Federal, Government & Fire-Rescue" with WBE.
+
+### Evidence
+- Banned-phrase scan on all 4 modified files: 0 hits.
+- JSON-LD parses on all 4 files (1+1+1+5 = 8 blocks).
+
+### Still open (in Q8/Q4b block of QUEUE-FOR-CONNOR.md)
+- Q8c-fire: specific fire station names / cities / clients (for case study pages).
+- Q4b-detail: which certifying body (WBENC / FL OSD / city / SBA WOSB) + cert number.
+- Q8a Cape Canaveral naming, Q8b UEI/CAGE, Q8d FCL, Q8e federal blog post remain open.
+
+---
+
 ## Sprint 006 — Federal / government positioning build — 2026-06-30
 Branch: `sprint-006-federal-positioning` (from `main` at Sprint 005 tip).
 

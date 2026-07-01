@@ -6,6 +6,24 @@ _Opened 2026-06-30 (Sprint 001, Phase 1 — "Stop the Bleeding"). Ordered by imp
 
 ---
 
+## Q8/Q4b partial answer received 2026-06-30 (7:11 PM PDT) — acted on in Sprint 008
+
+Connor: "We've done multiple fire stations now and yes we are WBE."
+
+**Executed in Sprint 008:**
+- WBE claim restored to Organization schema (`hasCredential` + `diversityPolicy` on the federal hub JSON-LD).
+- Government hub: hero eyebrow updated to "Federal · State · Municipal · WBE"; "Woman-owned business (WBE)" added to hero sub; new "Business Status — WBE" stat card added to the stat grid; new row in the compliance-posture table for Business classification; two new FAQ entries (fire stations + WBE).
+- "Multiple Florida fire stations" added as the first bullet of Public-sector past performance.
+- About page service card 08 upgraded to "Federal, Government &amp; Fire-Rescue" with WBE and fire-station callouts.
+- Homepage capabilities tile 7 upgraded to "Federal, Government &amp; Fire-Rescue" with WBE.
+
+**Still open (send these when you can, I'll act on next sprint):**
+- **Q8c-fire.** Which specific fire stations? Send city / county / department + rough scope + prime contractor for each. I'll build individual case-study pages once I have specifics.
+- **Q4b-detail.** Which body certified the WBE? WBENC (national), Florida Office of Supplier Diversity, city / county / school-board level, or SBA WOSB? Cert number if you have it. This upgrades the schema from `credentialCategory: certification` to a named `recognizedBy` — which materially raises trust for federal procurement officers.
+- **Q8a, Q8b, Q8d, Q8e** below remain open.
+
+---
+
 ## Q8 — Federal / government positioning — blocking items (NEW, Sprint 006 build — HIGH)
 
 **Context.** You said (2026-06-30, 6:19 PM PDT): "we are doing some projects out at cape canaverals space force... whatever we have to do". I built out the federal positioning shell tonight — two new pages: `/government-glazing-contractor-florida.html` (hub) and `/at-fp-blast-rated-glazing-florida.html` (technical). Homepage capabilities tile added. About page government-services card upgraded. Sitemap updated.
