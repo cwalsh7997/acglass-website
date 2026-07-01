@@ -6,6 +6,23 @@ _Opened 2026-06-30 (Sprint 001, Phase 1 — "Stop the Bleeding"). Ordered by imp
 
 ---
 
+## Q8 — Federal / government positioning — blocking items (NEW, Sprint 006 build — HIGH)
+
+**Context.** You said (2026-06-30, 6:19 PM PDT): "we are doing some projects out at cape canaverals space force... whatever we have to do". I built out the federal positioning shell tonight — two new pages: `/government-glazing-contractor-florida.html` (hub) and `/at-fp-blast-rated-glazing-florida.html` (technical). Homepage capabilities tile added. About page government-services card upgraded. Sitemap updated.
+
+**What I intentionally did NOT publish, because I need your call:**
+
+- **Q8a. Cape Canaveral Space Force Station — public naming authorization.** I did not name Cape Canaveral SFS anywhere on the site. Federal projects often carry prime-contractor OpSec restrictions and named-facility marketing bans; publishing without prime approval can burn the relationship. **Reply with:** which project(s), prime contractor(s), and whether we're authorized to name the facility publicly. If yes, I add it to the government hub as a case study reference. If no, I keep the current "additional active federal and defense-installation glazing scope — details withheld per site security policy" line — which is honestly stronger positioning to specifiers.
+- **Q8b. SAM.gov UEI + CAGE code.** Federal buyers look for these. I currently have the site say "details furnished on request or on award" which is legitimate. If we already have UEI/CAGE, send them and I add to the hub + JSON-LD + footer.
+- **Q8c. Additional federal / DoD past performance.** I named only Haines City EOC (municipal, non-classified) and Martin County Fire Training (county). Any other federal, state, county, or municipal work I should add? Send: project name + client (or prime) + scope + rough dollar range.
+- **Q8d. FCL (Facility Security Clearance) — do we have one?** If yes, I add "cleared personnel available under prime-contractor sponsorship" (or the specific level). If not, we don't mention it — and that is fine, most glazing subs don't hold FCL.
+- **Q8e. Federal blog post — authorized?** Sprint 007 candidate: trade-press-grade blog post "AT/FP glazing on Florida federal facilities — what specifiers need to know" (mirrors the technical page for indexation + external syndication). Green-light and I ship it.
+- **Q8f. Q4b interaction.** WBE certification is a *material* federal set-aside advantage. If ACG is actually WBE-certified (through WBENC, city, county, or state body) I can add the certification narrative and set-aside eligibility to the federal hub. **Please answer Q4b so I can act on it.**
+
+**Recommended sequencing:** Reply with a quick note on Q8a (Cape Canaveral naming) and Q4b (WBE) tonight or tomorrow. Everything else can trickle in.
+
+---
+
 ## Q1 — The two operating docs conflict. Which wins? (HIGH — coordination hazard)
 There are **two** CLAUDE.md files driving this repo and they now contradict each other:
 

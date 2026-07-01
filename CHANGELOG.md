@@ -4,6 +4,36 @@ Per-sprint log. Newest first. Evidence + scorecard delta + next item per the ope
 
 ---
 
+## Sprint 006 — Federal / government positioning build — 2026-06-30
+Branch: `sprint-006-federal-positioning` (from `main` at Sprint 005 tip).
+
+### Trigger
+Connor (2026-06-30, 6:19 PM PDT): "we are doing some projects out at cape canaverals space force, so whatever we need to do to the website to come across as a trusted government contractor that would be amazing! WHATEVER WE HAVE TO DO".
+
+### Shipped
+- **New page** `/government-glazing-contractor-florida.html` — federal contractor hub. Real credentials only. Bonding ($3M/$6M Arch A+ XV), FL CGC #1531993, TAA compliance narrative (Euro-Wall US + ESWindows Colombia = TAA-designated), Davis-Bacon capability, EM 385-1-1 posture, zero OSHA recordables, federal codes table (UFC 4-010-01, UFC 3-301-01, UFC 3-600-01, ASTM F1642/F2248/F2912/E1300, ANSI Z97.1, Buy American, Davis-Bacon), compliance-posture table with NAICS 238150/236220 primary/secondary, public-sector past performance (Haines City EOC, Martin County Fire Training), 7-step federal-sub workflow, 7 FAQ entries, JSON-LD Service + Provider (LocalBusiness + GeneralContractor) + hasCredential + areaServed.
+- **New page** `/at-fp-blast-rated-glazing-florida.html` — deep technical reference. Specifier-audience content on UFC 4-010-01, the three ASTM references (F1642 test method, F2248 equivalent-3-second-load method, F2912 specification), standoff distance impact on design load, interlayer selection (standard PVB / structural PVB / ionoplast), frame anchorage failure modes, field QC / closeout, common Div 08 spec traps to RFI. JSON-LD TechArticle schema with about[] pointing to the four standards.
+- **Homepage** — added Federal & Government capabilities tile to `/index.html` (7th tile in `.hp-caps-grid`) linking to the government hub.
+- **About page** — upgraded service-card #08 to "Federal, Government & Institutional" with bonding, TAA, Davis-Bacon, and zero-OSHA callouts and CTA to the government hub.
+- **Sitemap** — both new URLs added with monthly changefreq, priority 0.9 and 0.85. Total URLs 1382 -> 1384. XML validates.
+
+### Intentional restraint (queued for Connor, not published)
+- Cape Canaveral SFS is NOT named on any page pending prime-contractor publication authorization. The hub currently says "additional active federal and defense-installation glazing scope — details withheld per prime-contractor and site security policy." Queued as Q8a in QUEUE-FOR-CONNOR.md.
+- SAM.gov UEI + CAGE code NOT asserted (Q8b).
+- No claim of Facility Security Clearance (Q8d).
+- WBE-certification narrative NOT added — Q4b still open (Q8f depends on Q4b).
+- Federal-topic blog post drafted mentally but NOT shipped — Sprint 007 candidate (Q8e).
+
+### Evidence
+- Banned-phrase scan on all 4 modified files (2 new + index.html + about.html): 0 hits.
+- JSON-LD parses on all 4 files (1+1+1+5 = 8 blocks).
+- sitemap.xml validates as well-formed XML, 1384 URLs.
+
+### Next
+Merge to main once verified live. Wait on Q8a/Q4b for follow-up detail sprint.
+
+---
+
 ## Sprint 005 — True-zero banned-phrase residual cleanup — 2026-06-30
 Branch: `sprint-005-banned-phrase-residuals` (from `sprint-004` tip).
 
