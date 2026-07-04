@@ -2,3 +2,7 @@
 
 __pycache__/
 *.pyc
+
+# internal ops/build files — never deploy
+_internal/
+__pycache__/

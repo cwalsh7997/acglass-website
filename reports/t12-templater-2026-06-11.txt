@@ -1,9 +1,0 @@
-T1.2 templater run — 2026-06-11
-
-OK:      480
-Skipped: 0
-Failed:  0
-Longest title written: 60
-Longest desc written:  155
-
-Failures:
