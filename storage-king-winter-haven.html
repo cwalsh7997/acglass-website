@@ -33,7 +33,7 @@
   <meta name="twitter:title" content="Storage King USA Winter Haven — Commercial Storefront Glazing | ACG">
   <meta name="twitter:image" content="https://acglass.com/images/projects/storage-king-winter-haven/hero-storefront.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -83,348 +83,6 @@
   "keywords": "commercial storefront glazing Florida, ESWindows commercial glazing, storage facility glazing contractor, self-storage building storefront, Winter Haven commercial glass"
 }
   </script>
-  <style>
-    /* ── PROJECT HERO ── */
-    .project-hero {
-      position: relative;
-      height: 100vh;
-      min-height: 640px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 50%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(5,10,18,0.08) 0%,
-        rgba(5,10,18,0.18) 40%,
-        rgba(5,10,18,0.75) 75%,
-        rgba(5,10,18,0.92) 100%
-      );
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(48px, 9vw, 110px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .project-hero-content h1 {
-      font-size: clamp(36px, 5.5vw, 80px);
-      font-weight: 900;
-      line-height: 1.03;
-      margin-top: 18px;
-      letter-spacing: -0.02em;
-    }
-    .project-hero-content .subtitle {
-      font-size: clamp(15px, 1.4vw, 20px);
-      color: rgba(255,255,255,0.65);
-      margin-top: 14px;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-
-    /* ── META GRID ── */
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 52px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .meta-value {
-      font-size: clamp(14px, 1.1vw, 16px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-
-    /* ── STORY TEXT ── */
-    .story-text p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.85;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 24px;
-    }
-    .story-text p:last-child { margin-bottom: 0; }
-    .story-text h3 {
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 800;
-      color: white;
-      margin-bottom: 18px;
-      margin-top: 52px;
-      letter-spacing: -0.01em;
-    }
-    .story-text h3:first-child { margin-top: 0; }
-    .story-text strong {
-      color: rgba(255,255,255,0.9);
-      font-weight: 600;
-    }
-
-    /* ── SCOPE LIST ── */
-    .scope-list {
-      list-style: none;
-      padding: 0;
-      margin: 28px 0 0 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .scope-list li {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px 24px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      transition: border-color 0.2s, background 0.2s;
-      flex-wrap: wrap;
-    }
-    .scope-img {
-      width: 100%;
-      margin-top: 14px;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .scope-img img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      display: block;
-      cursor: pointer;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-    }
-    .scope-img img:hover {
-      transform: scale(1.02);
-    }
-    /* ── LIGHTBOX ── */
-    .lightbox-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(5,10,18,0.95);
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-      padding: 40px;
-    }
-    .lightbox-overlay.active {
-      display: flex;
-    }
-    .lightbox-overlay img {
-      max-width: 90vw;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    }
-    .lightbox-close {
-      position: fixed;
-      top: 24px;
-      right: 28px;
-      z-index: 10000;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.6);
-      font-size: 32px;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-    .lightbox-close:hover { color: white; }
-    .scope-list li:hover {
-      border-color: rgba(226,27,44,0.3);
-      background: rgba(226,27,44,0.04);
-    }
-    .scope-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      min-width: 28px;
-      padding-top: 3px;
-    }
-    .scope-body strong {
-      display: block;
-      font-size: 15px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 5px;
-    }
-    .scope-body span {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-    }
-
-    /* ── PULL QUOTE ── */
-    .pull-quote {
-      margin: 48px 0;
-      padding: 36px 40px;
-      border-left: 3px solid var(--accent);
-      background: rgba(226,27,44,0.05);
-      border-radius: 0 8px 8px 0;
-    }
-    .pull-quote p {
-      font-size: clamp(18px, 1.8vw, 24px) !important;
-      font-weight: 600 !important;
-      color: rgba(255,255,255,0.92) !important;
-      line-height: 1.55 !important;
-      font-style: italic;
-      margin-bottom: 0 !important;
-    }
-
-    /* ── PHOTO GALLERY ── */
-    .gallery-full {
-      width: 100%;
-      margin-bottom: 12px;
-    }
-    .gallery-full img {
-      width: 100%;
-      height: clamp(360px, 40vw, 600px);
-      object-fit: cover;
-      border-radius: var(--radius, 8px);
-      display: block;
-    }
-    .gallery-2up {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .gallery-2up img {
-      width: 100%;
-      height: clamp(220px, 22vw, 380px);
-      object-fit: cover;
-      border-radius: var(--radius, 8px);
-      display: block;
-    }
-    @media (max-width: 640px) {
-      .gallery-2up {
-        grid-template-columns: 1fr;
-      }
-      .gallery-2up img {
-        height: 260px;
-      }
-    }
-
-    /* ── PARTNER BADGES ── */
-    .partner-badge {
-      display: inline-flex;
-      flex-direction: column;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 16px;
-      margin-right: 12px;
-    }
-    .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-
-    /* ── COMMERCIAL TYPE BADGE ── */
-    .commercial-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(226,27,44,0.08);
-      border: 1px solid rgba(226,27,44,0.22);
-      border-radius: 6px;
-      padding: 10px 18px;
-      margin-bottom: 20px;
-    }
-    .commercial-badge .badge-icon {
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-    .commercial-badge span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* ── INTERNAL LINKS SECTION ── */
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .related-link-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      text-decoration: none;
-      color: rgba(255,255,255,0.75);
-      font-size: 13px;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-    .related-link-card:hover {
-      color: white;
-      border-color: rgba(226,27,44,0.35);
-      background: rgba(226,27,44,0.05);
-    }
-    .related-link-card svg { color: var(--accent); flex-shrink: 0; }
-
-    /* ── NAV DROPDOWN ── */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-
-    /* ── STORY LAYOUT ── */
-    @media (max-width: 900px) {
-      .story-layout {
-        grid-template-columns: 1fr !important;
-      }
-    }
-  </style>
 
 <script type="application/ld+json">
 {
@@ -621,338 +279,251 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- ═══════════════════════════════════════════ HERO ═══ -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/hero-storefront.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/hero-storefront.jpg" alt="Storage King USA Winter Haven — two-story office entry building with floor-to-ceiling ESWindows glass storefront, yellow awnings, American flag" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="commercial-badge">
-          <span class="badge-icon">&#9632;</span>
-          <span>Commercial Storage Facility</span>
-        </div>
-        <h1>Storage King USA <br> Winter Haven</h1>
-        <p class="subtitle">Commercial Storefront Glazing &nbsp;·&nbsp; Winter Haven, FL</p>
-      </div>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Commercial</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Rycon Construction</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Winter Haven, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- ═══════════════════════════════════════ META GRID ═══ -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Commercial</span><a href="portfolio.html?mfg=eswindows" class="project-tag">ESWindows</a><a href="portfolio.html?gc=rycon" class="project-tag">Rycon Construction</a><span class="project-tag">Winter Haven, FL</span><span class="project-tag">self storage glass</span><span class="project-tag">Winter Haven commercial</span><span class="project-tag">storefront glazing</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Winter Haven, FL</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Commercial / Storage Facility</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">Rycon Construction</div></div>
-        <div><div class="meta-label">Manufacturer</div><div class="meta-value">ESWindows</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">Commercial Storefront Glazing</div></div>
-        <div><div class="meta-label">Market</div><div class="meta-value">Central Florida</div></div>
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Storage King USA</span></nav>
+      <h1>Storage King USA <em>Winter Haven</em></h1>
+      <p class="p-sub">The full commercial storefront package for the two-story office and customer entry building at Storage King USA&rsquo;s Winter Haven facility — delivered under Rycon Construction in ESWindows systems.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Winter Haven, FL</span>
+        <span class="m"><b>Sector</b> Commercial · Self-storage</span>
+        <span class="m"><b>GC</b> Rycon Construction</span>
+        <span class="m"><b>Systems</b> ESWindows</span>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════ STORY ═══ -->
-  <section class="section">
-    <div class="container">
-      <div class="story-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-
-        <!-- LEFT: STORY TEXT -->
-        <div class="story-text">
-
-          <h3>The Project</h3>
-          <p>Storage King USA operates self-storage facilities across the country. The Winter Haven location features a two-story office and customer entry building at the front of the property — the first thing customers see when they pull in. That building needed a glazing scope that matched the brand standard: clean, professional, transparent, and durable in the Central Florida climate.</p>
-          <p>ACG was brought in by <strong>Rycon Construction</strong> to deliver the full commercial storefront glazing package for the office building. The product of choice was <strong>ESWindows</strong> — the aluminum-framed commercial storefront system used across ACG's commercial portfolio for its clean sight lines, structural performance, and proven Florida track record.</p>
-
-          <h3>Scope of Work</h3>
-          <p>The glazing scope covered the entire office and entry building — ground floor to upper level — with three distinct elements, each matched in framing and finish for visual continuity across the facade.</p>
-
-          <ul class="scope-list">
-            <li>
-              <div class="scope-num">01</div>
-              <div class="scope-body">
-                <strong>Ground-Floor Storefront System</strong>
-                <span>Full-height ESWindows commercial storefront glass wrapping the ground-floor office and customer lobby. Clear glass panels with aluminum framing provide a welcoming, transparent entry for customers. Includes automatic entrance doors at center — the primary point of entry for every customer visiting the facility.</span>
-                <div class="scope-img"><picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/hero-storefront.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/hero-storefront.jpg" alt="Storage King USA ground floor ESWindows storefront — floor-to-ceiling clear glass with automatic entry doors" class="lightbox-trigger" loading="lazy" decoding="async"></picture></div>
-              </div>
-            </li>
-            <li>
-              <div class="scope-num">02</div>
-              <div class="scope-body">
-                <strong>Upper-Level Window Band</strong>
-                <span>A continuous row of tinted windows across the second story, positioned above the yellow awning band. The tinted glass reduces solar heat gain in a facility that sees high Florida sun exposure while maintaining the building's clean commercial aesthetic and delivering natural light to the upper-level office space.</span>
-              </div>
-            </li>
-            <li>
-              <div class="scope-num">03</div>
-              <div class="scope-body">
-                <strong>Side Facade Entry</strong>
-                <span>Secondary glass storefront entrance on the side of the facility, connecting the office building to the storage building access area. Matching ESWindows aluminum framing throughout ensures visual continuity across all faces of the property.</span>
-                <div class="scope-img"><picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/wide-facility.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/wide-facility.jpg" alt="Storage King USA Winter Haven — wide view of full facility with office building and storage buildings" class="lightbox-trigger" loading="lazy" decoding="async"></picture></div>
-              </div>
-            </li>
-          </ul>
-
-          <div class="pull-quote">
-            <p>"A self-storage facility's office building is its storefront — it sets the tone for the entire customer experience from the moment they pull in."</p>
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-101 · Project</span></div>
+          <h2 id="proj-h">The office building is the storefront.</h2>
+          <div class="prose">
+            <p>Storage King USA operates self-storage facilities across the country. The Winter Haven location leads with a two-story office and customer entry building at the front of the property — the first thing customers see when they pull in. That building needed a glazing scope that matched the brand standard: clean, professional, transparent, and durable in the Central Florida climate.</p>
+            <p>ACG was brought in by Rycon Construction to deliver the full commercial storefront glazing package for the office building. The product was ESWindows — the aluminum-framed commercial storefront system ACG runs across its commercial portfolio for its clean sight lines, structural performance, and Florida track record.</p>
+            <p>The scope covered the entire office and entry building, ground floor to upper level, with three distinct elements — each matched in framing and finish for visual continuity across the facade, from grade to parapet.</p>
           </div>
-
-          <h3>ESWindows on Commercial</h3>
-          <p>Storage King Winter Haven is a demonstration of what ESWindows commercial storefront systems do well: clean aluminum framing, structural integrity, and consistent performance across Florida's heat, humidity, and UV exposure. The system delivers the transparency and professional appearance a customer-facing entry building requires without sacrificing durability.</p>
-          <p>ACG spec'd and installed ESWindows across all three glazing elements of the office building, ensuring a matched system from grade to parapet. The result is a facade that presents as intentional and professional — the kind of entry that tells customers the facility is well-run and well-maintained.</p>
-
-          <div style="margin-top:40px;">
-            <div class="partner-badge"><div class="pb-label">General Contractor</div><div class="pb-name">Rycon Construction</div></div>
-            <div class="partner-badge"><div class="pb-label">Manufacturer</div><div class="pb-name">ESWindows</div></div>
-            <div class="partner-badge"><div class="pb-label">License</div><div class="pb-name">CGC1531993</div></div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Winter Haven, FL</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Commercial · Self-storage</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Commercial storefront glazing</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">ESWindows</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">Rycon Construction</span></div>
           </div>
         </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/storage-king-winter-haven/hero-storefront.avif" type="image/avif">
+            <source srcset="images/projects/storage-king-winter-haven/hero-storefront.webp" type="image/webp">
+            <img src="images/projects/storage-king-winter-haven/hero-storefront.jpg" alt="Storage King USA Winter Haven — two-story entry building with ESWindows floor-to-ceiling glass storefront, yellow awnings, Storage King USA signage, American flag" width="828" height="538" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Storage King USA · Winter Haven, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- RIGHT: SIDEBAR IMAGES -->
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/hero-storefront.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/hero-storefront.jpg"
-            alt="Storage King USA Winter Haven — close-up of two-story ESWindows glass storefront entry with yellow awnings and signage"
-            style="width:100%;border-radius:var(--radius,8px);margin-bottom:12px;display:block;cursor:zoom-in;"
-            class="lightbox-trigger" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/wide-facility.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/wide-facility.jpg"
-            alt="Storage King USA Winter Haven — wide-angle view of full storage facility with office building and storage buildings"
-            style="width:100%;border-radius:var(--radius,8px);display:block;cursor:zoom-in;"
-            class="lightbox-trigger" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Sheet A-201 · Photo record</span></div>
+          <h2 id="gal-h">Grade to parapet.</h2>
         </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/storage-king-winter-haven/wide-facility.webp" type="image/webp">
+            <img src="images/projects/storage-king-winter-haven/wide-facility.jpg" alt="Storage King USA Winter Haven — wide view of full facility with office building and storage buildings" width="828" height="538" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Full facility</span><span class="s">Office building + storage buildings</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/storage-king-winter-haven/storage-king-exterior-entrance.avif" type="image/avif">
+            <source srcset="images/projects/storage-king-winter-haven/storage-king-exterior-entrance.webp" type="image/webp">
+            <img src="images/projects/storage-king-winter-haven/storage-king-exterior-entrance.jpg" alt="Storage King USA — close-up of ESWindows commercial storefront glass at the ground-floor lobby and automatic entry doors" width="1600" height="1040" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Primary entrance</span><span class="s">Automatic entry doors</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/storage-king-winter-haven/storage-king-aerial.webp" type="image/webp">
+            <img src="images/projects/storage-king-winter-haven/storage-king-aerial.jpg" alt="Aerial view of the complete Storage King USA Winter Haven facility" width="828" height="538" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Aerial</span><span class="s">Complete facility</span></div>
+        </div>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/storage-king-winter-haven/storage-king-signage.webp" type="image/webp">
+            <img src="images/projects/storage-king-winter-haven/storage-king-signage.jpg" alt="Storage King USA site signage and secondary elevation" width="828" height="538" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Site signage</span><span class="s">Secondary elevation</span></div>
+        </div>
+      </div>
+      <p class="k-index rv" style="margin-top:18px">Imagery via Storage King USA</p>
+    </div>
+  </section>
 
+  <!-- ========== Scope notes ========== -->
+  <section class="sec pillars gnotes" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-301 · Scope notes</span></div>
+          <h2 id="scope-h">Three elements. One matched system.</h2>
+        </div>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>Ground-floor storefront</h3>
+          <p>Full-height ESWindows commercial storefront wrapping the ground-floor office and customer lobby — clear glass panels in aluminum framing, with automatic entrance doors at center as the primary point of entry for every customer.</p>
+        </div>
+        <div class="gnote">
+          <h3>Upper-level window band</h3>
+          <p>A continuous row of tinted windows across the second story, above the yellow awning band — cutting solar heat gain under high Florida sun exposure while delivering natural light to the upper-level office.</p>
+        </div>
+        <div class="gnote">
+          <h3>Side facade entry</h3>
+          <p>A secondary glass storefront entrance on the side of the facility, connecting the office building to the storage building access area — in matching ESWindows aluminum framing.</p>
+        </div>
+        <div class="gnote">
+          <h3>One system throughout</h3>
+          <p>ACG specified and installed ESWindows across all three glazing elements, keeping a matched system from grade to parapet — a facade that presents as intentional and professional.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ PHOTO GALLERY ═══ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:24px;"><span class="line"></span> Gallery</div>
-
-      <!-- Full width hero in content -->
-      <div class="gallery-full" style="margin-bottom:12px;">
-        <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/hero-storefront.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/hero-storefront.jpg"
-          alt="Storage King USA Winter Haven — two-story entry building with ESWindows floor-to-ceiling glass storefront, yellow awnings, Storage King USA signage, American flag" loading="lazy" decoding="async"></picture>
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More from the portfolio.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
-
-      <!-- 2-up row -->
-      <div class="gallery-2up">
-        <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/hero-storefront.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/hero-storefront.jpg"
-          alt="Storage King USA — close-up of ESWindows commercial storefront glass at the ground-floor lobby and automatic entry doors" loading="lazy" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/wide-facility.webp"><img height="538" width="828" src="images/projects/storage-king-winter-haven/wide-facility.jpg"
-          alt="Storage King USA Winter Haven — wide view showing office entry building with glass storefront and storage buildings extending behind" loading="lazy" decoding="async"></picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════ RELATED LINKS ═══ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:20px;"><span class="line"></span> Related</div>
-      <div class="related-links">
-        <a href="portfolio.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          View All Projects
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="cubesmart-davie.html">
+          <picture>
+            <source srcset="images/projects/cubesmart-davie/hero.avif" type="image/avif">
+            <source srcset="images/projects/cubesmart-davie/hero.webp" type="image/webp">
+            <img src="images/projects/cubesmart-davie/hero.jpg" alt="CubeSmart self-storage facility in Davie, Florida — commercial glazing by ACG" width="1257" height="898" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">CubeSmart Davie</span><span class="s">Self-storage · Davie</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="/storefront-glazier-orlando-florida/" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Commercial Glazing Orlando
+        <a class="proj" href="sroa-vero-beach.html">
+          <picture>
+            <source srcset="images/projects/sroa-vero-beach/hero-entrance.avif" type="image/avif">
+            <source srcset="images/projects/sroa-vero-beach/hero-entrance.webp" type="image/webp">
+            <img src="images/projects/sroa-vero-beach/hero-entrance.jpg" alt="SROA Storage entrance in Vero Beach, Florida — storefront glazing by ACG" width="1800" height="1013" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">SROA Storage Vero Beach</span><span class="s">Self-storage · Vero Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="manufacturers.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          ESWindows &amp; Our Partners
-        </a>
-        <a href="services.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Storefront Glazing Services
-        </a>
-        <a href="about.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          About ACG
+        <a class="proj" href="shoppes-westlake-point.html">
+          <picture>
+            <source srcset="images/projects/shoppes-westlake-point.avif" type="image/avif">
+            <source srcset="images/projects/shoppes-westlake-point.webp" type="image/webp">
+            <img src="images/projects/shoppes-westlake-point.jpg" alt="Shoppes at Westlake Point retail center in Westlake, Florida — storefront glazing by ACG" width="800" height="391" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Shoppes at Westlake Point</span><span class="s">Retail · Westlake</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ CTA ═══ -->
-  
-  <!-- ========== ADDITIONAL PROJECT PHOTOGRAPHY (auto-added 2026-04-22) ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,36px);">
-        <div class="label"><span class="line"></span> Additional Photography</div>
-        <h2>Project <span class="accent">Gallery</span></h2>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Upload drawings and bid-date info — a scoped proposal or budget direction comes back in 48 hours.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(12px,1.5vw,20px);">
-        <figure style="margin:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;">
-          <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/storage-king-exterior-entrance.webp">
-            <img height="1040" width="1600" src="images/projects/storage-king-winter-haven/storage-king-exterior-entrance.jpg" alt="Storage King USA - primary entrance" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;" decoding="async"></picture>
-          <figcaption style="padding:10px 14px;font-size:13px;color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;">Storage King USA &mdash; primary entrance</figcaption>
-        </figure>
-        <figure style="margin:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;">
-          <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/storage-king-aerial.webp">
-            <img height="538" width="828" src="images/projects/storage-king-winter-haven/storage-king-aerial.jpg" alt="Aerial view of the complete facility" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;" decoding="async"></picture>
-          <figcaption style="padding:10px 14px;font-size:13px;color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;">Aerial view of the complete facility</figcaption>
-        </figure>
-        <figure style="margin:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;">
-          <picture><source type="image/webp" srcset="images/projects/storage-king-winter-haven/storage-king-signage.webp">
-            <img height="538" width="828" src="images/projects/storage-king-winter-haven/storage-king-signage.jpg" alt="Site signage and secondary elevation" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;" decoding="async"></picture>
-          <figcaption style="padding:10px 14px;font-size:13px;color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;">Site signage and secondary elevation</figcaption>
-        </figure>
-      </div>
-      <div style="margin-top:clamp(20px,2.5vw,28px);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);">
-        Credit: <a href="https://www.storagekingusa.com" target="_blank" rel="noopener nofollow" style="color:rgba(255,255,255,.6);text-decoration:underline;">Imagery via Storage King USA</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Commercial Project<br>Could Be <span class="accent">Next.</span></h2>
-      <p>ACG delivers the commercial storefront glazing scope for facilities, office buildings, retail, and mixed-use projects across Florida. Working with a GC or going direct — <a href="send-plans.html" style="color:var(--accent);">send us plans.</a></p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════ FOOTER ═══ -->
+  </main>
 
-  <!-- RELATED ARTICLES -->
-  <section style="padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(255,255,255,0.06);">
-    <div class="container" data-reveal-fade>
-      <div style="text-align:center;margin-bottom:24px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#E11320);font-weight:600;">Related Articles</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-        <a href="blog/how-much-does-commercial-storefront-glass-cost-florida.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Commercial Storefront Glass Cost in Florida</div>
-        </a>
-        <a href="blog/what-does-a-glazing-subcontractor-do.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">What Does a Glazing Subcontractor Do?</div>
-        </a>
-        <a href="blog/automatic-entrance-systems-commercial-buildings-florida.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Automatic Entrance Systems for Commercial Buildings</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-    <footer class="ft">
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -961,54 +532,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox-overlay" id="lightbox">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img src="" alt="" id="lightbox-img" loading="lazy" decoding="async">
-  </div>
-
-  <script defer src="js/main.js"></script>
-  <script>
-    // Lightbox functionality
-    (function(){
-      var overlay = document.getElementById('lightbox');
-      var lbImg = document.getElementById('lightbox-img');
-      var triggers = document.querySelectorAll('.lightbox-trigger, .gallery-full img, .gallery-2up img');
-      triggers.forEach(function(img){
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function(){
-          lbImg.src = this.src;
-          lbImg.alt = this.alt;
-          overlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-      overlay.addEventListener('click', function(){
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape' && overlay.classList.contains('active')){
-          overlay.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    })();
-  </script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

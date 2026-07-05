@@ -29,21 +29,7 @@
   <meta property="og:image:alt" content="American Commercial Glass — Florida's commercial glazing specialists">
   <meta property="og:url" content="https://acglass.com/klus-lighting-vero-beach.html">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero { position: relative; height: 88vh; min-height: 560px; overflow: hidden; }
-    .project-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
-    .project-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,10,18,0) 0%, rgba(5,10,18,0.05) 50%, rgba(5,10,18,0.78) 100%); }
-    .project-hero-content { position: absolute; bottom: clamp(40px,8vw,100px); left: 0; right: 0; z-index: 2; }
-    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 32px; padding: clamp(32px,5vw,48px) 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .meta-label { font-family: 'JetBrains Mono',monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
-    .meta-value { font-size: clamp(15px,1.2vw,17px); color: rgba(255,255,255,0.85); line-height: 1.5; }
-    .story-text p { font-size: clamp(16px,1.3vw,18px); line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .story-text h3 { font-size: clamp(20px,2vw,26px); color: white; margin-bottom: 16px; margin-top: 48px; }
-    .partner-badge { display: inline-flex; flex-direction: column; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px 20px; margin-top: 16px; margin-right: 12px; }
-    .pb-label { font-family: 'JetBrains Mono',monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 4px; }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-  </style>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -190,26 +176,6 @@
   "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},{"@type":"ListItem","position":3,"name":"KLUS Lighting","item":"https://acglass.com/klus-lighting-vero-beach.html"}]
 }
 </script>
-<style>
-.nav-dropdown{position:relative}
-.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-.nav-dropdown-trigger:hover{color:#fff}
-.nav-dropdown-trigger svg{transition:transform .2s}
-.nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-@media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-</style>
 
 <script type="application/ld+json">
 {
@@ -298,418 +264,341 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high"></a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/klus-lighting/hero-front-wide.webp"><img height="1236" width="2200" src="images/projects/klus-lighting/hero-front-wide.jpg" alt="KLUS Lighting Vero Beach completed facility — wide aerial view of the front elevation with the KLUS Inspiring Solutions entry tower, palm landscaping, and the full ESWindows commercial storefront and window package by ACG, Proctor Construction GC" loading="eager" decoding="async" fetchpriority="high"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="label"><span class="line"></span> Commercial Showroom &middot; Vero Beach</div>
-        <h1 style="font-size:clamp(32px,4.5vw,68px);font-weight:900;line-height:1.05;margin-top:16px;">KLUS Lighting <br> Showroom</h1>
-      </div>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Commercial</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Proctor Construction</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Vero Beach, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Commercial</span><a href="portfolio.html?mfg=eswindows" class="project-tag">ESWindows</a><a href="portfolio.html?gc=proctor" class="project-tag">Proctor Construction</a><span class="project-tag">Vero Beach, FL</span><span class="project-tag">commercial showroom</span><span class="project-tag">LED lighting showroom</span><span class="project-tag">Vero Beach commercial</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Vero Beach, FL</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Commercial Showroom</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">Proctor Construction</div></div>
-        <div><div class="meta-label">Product</div><div class="meta-value">ESWindows</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">Storefront Glazing Package</div></div>
-        <div><div class="meta-label">Market</div><div class="meta-value">Treasure Coast / Indian River</div></div>
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">KLUS Lighting</span></nav>
+      <h1>KLUS Lighting <em>Showroom</em></h1>
+      <p class="p-sub">The Vero Beach showroom of a global LED lighting manufacturer — a two-story ESWindows storefront entrance and the complete glazing package, delivered for Proctor Construction.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Vero Beach, FL</span>
+        <span class="m"><b>Sector</b> Commercial showroom</span>
+        <span class="m"><b>GC</b> Proctor Construction</span>
+        <span class="m"><b>Product</b> ESWindows</span>
+        <span class="m"><b>Market</b> Treasure Coast / Indian River</span>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div class="story-text">
-          <h3>The Project</h3>
-          <p>KLUS is a global manufacturer of LED lighting profiles and systems. Their Vero Beach showroom is where architects, designers, and lighting specifiers come to see product in person. For a company whose entire brand is built on how things look under light, the building itself had to set the tone — and the entrance is the first thing visitors see.</p>
-          <p>The two-story storefront entrance is the signature element of the facade. Floor-to-ceiling glass framed in dark aluminum, flanked by palm trees, with KLUS's sculptural lighting fixtures visible through the glass from the parking lot. The glazing doesn't just let light in. It puts the product on display before anyone walks through the door.</p>
-
-          <h3>The Scope</h3>
-          <p>ACG delivered the complete <a href="commercial-storefront-installer-florida.html">storefront glazing package</a> for the KLUS showroom — the full-height entrance system, storefront framing, entrance doors, and all associated glass. ESWindows product was spec'd for this project, delivering clean sightlines and the structural performance needed for a two-story storefront span on the Treasure Coast.</p>
-          <p>A showroom entrance has to be flawless. No visible gaskets out of alignment, no mismatched framing finishes, no hardware that fights the design intent. ACG installed the system to the standard you'd expect when the client's entire business is about visual precision.</p>
-
-          <h3>The Team</h3>
-          <p>Built for <strong style="color:white;">Proctor Construction</strong> — a Treasure Coast general contractor. ACG's headquarters in <a href="/storefront-glazier-west-palm-beach-florida/">West Palm Beach</a> is 70 miles south, putting the Vero Beach market within direct reach of ACG's core operations. The KLUS project is one of multiple commercial builds ACG has completed in Indian River County.</p>
-
-          <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;">
-            <div class="partner-badge"><div class="pb-label">General Contractor</div><div class="pb-name">Proctor Construction</div></div>
-            <div class="partner-badge"><div class="pb-label">Glazing Product</div><div class="pb-name">ESWindows</div></div>
+  <!-- ========== Project ========== -->
+  <section class="sec feat" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/klus-lighting/hero-front-wide.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/hero-front-wide.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/hero-front-wide.jpg" alt="KLUS Lighting Vero Beach completed facility — wide aerial of the front elevation with the entry tower and full ESWindows storefront and window package by ACG" width="1600" height="898" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">KLUS Lighting · Vero Beach, FL</span>
+        </div>
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">The project</span></div>
+          <h2 id="proj-h">The product is light. The glass had to keep up.</h2>
+          <div class="prose">
+            <p>KLUS is a global manufacturer of LED lighting profiles and systems. Their Vero Beach showroom is where architects, designers and lighting specifiers come to see product in person. For a company whose entire brand is built on how things look under light, the building itself had to set the tone — and the entrance is the first thing visitors see.</p>
+            <p>The two-story storefront entrance is the signature element of the facade: floor-to-ceiling glass framed in dark aluminum, flanked by palm trees, with KLUS's sculptural lighting fixtures visible through the glass from the parking lot. The glazing doesn't just let light in — it puts the product on display before anyone walks through the door.</p>
+            <p>ACG delivered the complete storefront glazing package — the full-height entrance system, storefront framing, entrance doors and all associated glass. ESWindows product was spec'd for the clean sightlines and the structural performance a two-story storefront span on the Treasure Coast requires. Built for Proctor Construction, a Treasure Coast general contractor, 70 miles north of ACG's West Palm Beach headquarters.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Vero Beach, FL</span></div>
+            <div class="row"><span class="k">Type</span><span class="d">Commercial showroom</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">Proctor Construction</span></div>
+            <div class="row"><span class="k">Product</span><span class="d">ESWindows</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Storefront glazing package</span></div>
+            <div class="row"><span class="k">Market</span><span class="d">Treasure Coast / Indian River</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Photo gallery ========== -->
+  <section class="sec gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/klus-lighting/entry-detail-tower.webp"><img height="1235" width="2200" src="images/projects/klus-lighting/entry-detail-tower.jpg" alt="KLUS Lighting Vero Beach entrance tower — close view of the two-story ESWindows storefront with KLUS Inspiring Solutions signage above, framed by palms" style="width:100%;border-radius:var(--radius);" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Photo gallery</span></div>
+          <h2 id="gal-h">Aerials, field work, finished showroom.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/klus-lighting/entry-detail-tower.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/entry-detail-tower.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/entry-detail-tower.jpg" alt="KLUS Lighting Vero Beach entry tower — head-on view of the two-story ESWindows storefront entrance with signage above" width="2200" height="1235" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entry tower</span><span class="s">ESWindows storefront</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/entrance-storefront-installed.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/entrance-storefront-installed.jpg" alt="KLUS Lighting two-story entrance storefront — ESWindows aluminum framing with impact glass installed, dark anodized finish, paired entry doors" width="810" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entrance storefront</span><span class="s">Dark anodized ESWindows</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/side-facade-windows.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/side-facade-windows.jpg" alt="KLUS Lighting Vero Beach — side facade with punched commercial windows installed across both stories" width="810" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Side facade</span><span class="s">Punched windows</span></div>
+        </div>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/klus-lighting/aerial-front-three-quarter.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/aerial-front-three-quarter.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/aerial-front-three-quarter.jpg" alt="KLUS Lighting Vero Beach — aerial three-quarter view showing the entry tower and punched window facade" width="1600" height="897" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Front three-quarter</span><span class="s">Aerial</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/entry-side-elevation.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/entry-side-elevation.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/entry-side-elevation.jpg" alt="KLUS Lighting Vero Beach — entry tower from a side angle with the warehouse mass behind" width="1600" height="897" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entry side elevation</span><span class="s">Aerial</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/aerial-front-side.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/aerial-front-side.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/aerial-front-side.jpg" alt="KLUS Lighting Vero Beach — aerial of the front and side elevations together" width="1600" height="897" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Front &amp; side</span><span class="s">Aerial</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/aerial-back-corner.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/aerial-back-corner.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/aerial-back-corner.jpg" alt="KLUS Lighting Vero Beach — aerial from the back corner showing the warehouse roof line" width="1600" height="898" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Rear corner</span><span class="s">Aerial</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/aerial-side-context.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/aerial-side-context.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/aerial-side-context.jpg" alt="KLUS Lighting Vero Beach — aerial side context view with punched windows and the loading area" width="1600" height="898" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Side context</span><span class="s">Aerial</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/entry-elevation-with-sign.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/entry-elevation-with-sign.jpg" alt="KLUS Lighting during construction — full entry elevation with signage installed above the two-story storefront, boom lift on site" width="1080" height="810" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Sign installed</span><span class="s">During construction</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/construction-facade.avif" type="image/avif">
+            <source srcset="images/projects/klus-lighting/construction-facade.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/construction-facade.jpg" alt="KLUS Lighting earlier in construction — CMU facade with window openings framed, crew preparing for storefront installation" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Openings framed</span><span class="s">During construction</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/interior-curtainwall-view.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/interior-curtainwall-view.jpg" alt="KLUS Lighting interior — view from inside the showroom looking out through the two-story entry storefront" width="810" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Through the glass</span><span class="s">Interior view</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/finished-lobby-chandelier.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/finished-lobby-chandelier.jpg" alt="KLUS Lighting finished lobby — sculptural LED chandelier in the double-height entry, looking out through the storefront ACG installed" width="395" height="535" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Finished lobby</span><span class="s">Through the storefront</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/finished-break-room.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/finished-break-room.jpg" alt="KLUS Lighting break room — sculptural triangular LED ceiling fixtures" width="394" height="535" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Break room</span><span class="s">Sculptural LED</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/finished-illuminated-staircase.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/finished-illuminated-staircase.jpg" alt="KLUS Lighting illuminated staircase — LED strips under each tread, glass railing" width="394" height="535" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Staircase</span><span class="s">Tread-edge LED</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/finished-conference-room-pendant.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/finished-conference-room-pendant.jpg" alt="KLUS Lighting conference room — coffered ceiling with circular pendant LED fixtures" width="394" height="535" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Conference room</span><span class="s">Coffered LED</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/klus-lighting/finished-conference-room-wide.webp" type="image/webp">
+            <img src="images/projects/klus-lighting/finished-conference-room-wide.jpg" alt="KLUS Lighting conference room wide angle — LED pendants and punched windows along the side wall" width="394" height="535" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Conference room</span><span class="s">Wide</span></div>
+        </div>
+      </div>
+      <p class="k-index rv" style="margin-top:18px">Aerial photography by <a href="https://www.cookshellcontractors.com/vero-beach-fl-commercial-shell-contractors-klus-lighting-warehouse" target="_blank" rel="noopener" style="color:var(--navy);border-bottom:1px solid var(--hairline-2)">Cook Shell Contractors</a> · Interior photography courtesy of <a href="https://www.klusdesign.com/" target="_blank" rel="noopener" style="color:var(--navy);border-bottom:1px solid var(--hairline-2)">KLUS Design USA</a></p>
+    </div>
+  </section>
+
+  <!-- ========== Scope notes ========== -->
+  <section class="sec lead" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Scope notes</span></div>
+          <h2 id="scope-h">Showroom-grade tolerance.</h2>
+        </div>
+      </div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <h3>A two-story signature entrance</h3>
+          <p>The full-height entry system carries the facade — engineered for the structural performance a two-story storefront span on the Treasure Coast requires.</p>
+        </div>
+        <div class="card">
+          <h3>Flawless is the spec</h3>
+          <p>No visible gaskets out of alignment, no mismatched framing finishes, no hardware that fights the design intent. When the client's entire business is visual precision, the installation standard follows.</p>
+        </div>
+        <div class="card">
+          <h3>The full window package</h3>
+          <p>Beyond the entrance: punched commercial windows across both stories of the facade — ESWindows aluminum framing and impact glass throughout.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== FROM ABOVE — FINISHED AERIAL GALLERY ========== -->
-  <section class="section" style="padding:clamp(60px,7vw,90px) 0;">
-    <div class="container">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> From Above</div>
-        <h2 style="margin-top:14px;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.015em;">The completed <span class="accent">facility.</span></h2>
-        <p style="max-width:760px;color:rgba(255,255,255,.78);margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">Aerial photography of the finished KLUS Lighting Vero Beach showroom &mdash; the entry tower with the KLUS Inspiring Solutions signage, the two-story ESWindows storefront, and the punched window pattern wrapping the building.</p>
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <span class="bignum" aria-hidden="true">04</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More Treasure Coast commercial work.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
-
-      <!-- Entry detail — the money shot -->
-      <figure data-reveal data-delay="100" style="margin:0 0 18px;border-radius:14px;overflow:hidden;position:relative;background:#000;">
-        <picture>
-          <source type="image/webp" srcset="images/projects/klus-lighting/entry-detail-tower.webp">
-          <img height="1235" width="2200" src="images/projects/klus-lighting/entry-detail-tower.jpg"
-               alt="KLUS Lighting Vero Beach entry tower — head-on view of the two-story ESWindows storefront entrance with KLUS Inspiring Solutions signage above, framed by palm landscaping"
-               style="width:100%;height:auto;display:block;"
-               loading="lazy" decoding="async">
-        </picture>
-        <figcaption style="position:absolute;left:18px;bottom:18px;">
-          <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:7px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Entry Tower &middot; ESWindows Storefront</div>
-        </figcaption>
-      </figure>
-
-      <!-- Two-up: front three-quarter + entry side -->
-      <div data-reveal data-delay="180" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:18px;margin-bottom:18px;">
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:16/9;">
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="hulett-environmental-port-st-lucie.html">
           <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/aerial-front-three-quarter.webp">
-            <img height="1235" width="2200" src="images/projects/klus-lighting/aerial-front-three-quarter.jpg"
-                 alt="KLUS Lighting Vero Beach — aerial three-quarter view showing the entry tower, the punched window facade running along the side, and the rear roof line"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
+            <source srcset="images/projects/hulett-environmental/hero-sunset-front.avif" type="image/avif">
+            <source srcset="images/projects/hulett-environmental/hero-sunset-front.webp" type="image/webp">
+            <img src="images/projects/hulett-environmental/hero-sunset-front.jpg" alt="Hulett Environmental Services headquarters, Port St. Lucie" width="2200" height="1236" loading="lazy" decoding="async">
           </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Aerial &middot; Front Three-Quarter</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:16/9;">
+          <div class="proj-cap"><span class="t">Hulett Environmental Services</span><span class="s">Office HQ · Port St. Lucie</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="bobcat-treasure-coast.html">
           <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/entry-side-elevation.webp">
-            <img height="1235" width="2200" src="images/projects/klus-lighting/entry-side-elevation.jpg"
-                 alt="KLUS Lighting Vero Beach — entry tower from a side angle with the larger warehouse mass extending behind, ESWindows storefront fully glazed"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
+            <source srcset="images/projects/bobcat-treasure-coast/aerial-exterior.avif" type="image/avif">
+            <source srcset="images/projects/bobcat-treasure-coast/aerial-exterior.webp" type="image/webp">
+            <img src="images/projects/bobcat-treasure-coast/aerial-exterior.jpg" alt="Bobcat of the Treasure Coast dealership, Fort Pierce" width="1622" height="1080" loading="lazy" decoding="async">
           </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Entry &middot; Side Elevation</div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <!-- Three-up daytime aerials -->
-      <div data-reveal data-delay="260" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/3;">
+          <div class="proj-cap"><span class="t">Bobcat of the Treasure Coast</span><span class="s">Dealership · Fort Pierce</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="sroa-vero-beach.html">
           <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/aerial-front-side.webp">
-            <img height="1235" width="2200" src="images/projects/klus-lighting/aerial-front-side.jpg"
-                 alt="KLUS Lighting Vero Beach — aerial of the front and side elevations together, showing the relationship between the entry tower and the larger warehouse mass"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
+            <source srcset="images/projects/sroa-vero-beach/hero-entrance.avif" type="image/avif">
+            <source srcset="images/projects/sroa-vero-beach/hero-entrance.webp" type="image/webp">
+            <img src="images/projects/sroa-vero-beach/hero-entrance.jpg" alt="SROA Storage, Vero Beach" width="1800" height="1013" loading="lazy" decoding="async">
           </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Front &amp; Side</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/3;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/aerial-back-corner.webp">
-            <img height="1236" width="2200" src="images/projects/klus-lighting/aerial-back-corner.jpg"
-                 alt="KLUS Lighting Vero Beach — aerial from the back corner showing the warehouse roof line, the surrounding industrial neighborhood, and the punched window facade"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Rear Corner</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/3;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/aerial-side-context.webp">
-            <img height="1236" width="2200" src="images/projects/klus-lighting/aerial-side-context.jpg"
-                 alt="KLUS Lighting Vero Beach — aerial side context view showing the side elevation with punched windows and the loading area, full Indian River County setting"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Side Context</div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <p style="text-align:center;margin-top:clamp(20px,2.5vw,28px);font-size:13px;color:rgba(255,255,255,.55);">Aerial photography by <a href="https://www.cookshellcontractors.com/vero-beach-fl-commercial-shell-contractors-klus-lighting-warehouse" target="_blank" rel="noopener" style="color:rgba(255,255,255,.85);text-decoration:underline;">Cook Shell Contractors</a></p>
-    </div>
-  </section>
-
-  <!-- ========== IN PROGRESS — CONSTRUCTION GALLERY ========== -->
-  <section class="section" style="padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(48px,6vw,80px);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> In Progress</div>
-        <h2 style="margin-top:14px;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.015em;">The envelope <span class="accent">going up.</span></h2>
-        <p style="max-width:760px;color:rgba(255,255,255,.78);margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">Field documentation from the KLUS Lighting Vero Beach build with Proctor Construction. The two-story signature entrance storefront, the punched window facade running along the building's flank, and the interior view from inside the entry &mdash; all ESWindows aluminum framing and impact glass, installed by ACG.</p>
-      </div>
-
-      <!-- Hero shot — entry elevation with KLUS sign -->
-      <figure data-reveal data-delay="100" style="margin:0 0 18px;border-radius:14px;overflow:hidden;position:relative;background:#000;">
-        <picture>
-          <source type="image/webp" srcset="images/projects/klus-lighting/entry-elevation-with-sign.webp">
-          <img height="810" width="1080" src="images/projects/klus-lighting/entry-elevation-with-sign.jpg"
-               alt="KLUS Lighting Vero Beach during construction — the full entry elevation with KLUS Inspiring Solutions signage installed above the two-story ESWindows storefront entrance, boom lift on site, Proctor Construction GC"
-               style="width:100%;height:auto;display:block;"
-               loading="lazy" decoding="async">
-        </picture>
-        <figcaption style="position:absolute;left:18px;bottom:18px;">
-          <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:7px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">KLUS Sign Installed &middot; Entry Elevation</div>
-        </figcaption>
-      </figure>
-
-      <!-- Two-up: storefront detail + side facade -->
-      <div data-reveal data-delay="180" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:18px;">
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:3/4;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/entrance-storefront-installed.webp">
-            <img height="1080" width="810" src="images/projects/klus-lighting/entrance-storefront-installed.jpg"
-                 alt="KLUS Lighting two-story entrance storefront — ESWindows aluminum framing with impact glass installed, dark anodized finish, paired entry doors, protective film still on lites prior to handover"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Entrance Storefront &middot; ESWindows</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:3/4;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/side-facade-windows.webp">
-            <img height="1080" width="810" src="images/projects/klus-lighting/side-facade-windows.jpg"
-                 alt="KLUS Lighting Vero Beach — side facade with punched commercial windows installed across both stories, white tilt-up panels with grey banding, ESWindows impact-rated framing"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Side Facade &middot; Punched Windows</div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <!-- Two-up: interior view + early structure photo -->
-      <div data-reveal data-delay="260" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;">
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/3;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/interior-curtainwall-view.webp">
-            <img height="1080" width="810" src="images/projects/klus-lighting/interior-curtainwall-view.jpg"
-                 alt="KLUS Lighting interior — view from inside the showroom looking out through the freshly installed two-story entry storefront, parking lot and ACG service vehicles visible beyond the glass"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Interior View &middot; Through the Storefront</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/3;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/construction-facade.webp">
-            <img height="1080" width="1440" src="images/projects/klus-lighting/construction-facade.jpg"
-                 alt="KLUS Lighting Vero Beach earlier in construction — CMU block facade with commercial window openings framed and crew on parapet preparing for ESWindows storefront installation, Proctor Construction"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Earlier &middot; Openings Framed</div>
-          </figcaption>
-        </figure>
+          <div class="proj-cap"><span class="t">SROA Storage</span><span class="s">Commercial · Vero Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== FINISHED INTERIOR — KLUS SHOWCASE ========== -->
-  <section class="section" style="padding:clamp(60px,7vw,90px) 0;">
-    <div class="container">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> Built to Showcase</div>
-        <h2 style="margin-top:14px;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.015em;">A living exhibition <span class="accent">of LED light.</span></h2>
-        <p style="max-width:760px;color:rgba(255,255,255,.78);margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">From <a href="https://www.instagram.com/p/DWCPnVuD58S/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.92);text-decoration:underline;">@klusdesignusa</a> &mdash; the finished interior of the new facility, built as a working showroom for KLUS LED fixtures. The lobby looks out through the same two-story ESWindows storefront ACG installed; sculptural pendants and illuminated stair lighting fill every line of sight.</p>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Showrooms, offices, retail — ACG delivers commercial glass installation across Florida. Send your plans and get a complete scope in 48 hours.</p>
       </div>
-
-      <!-- Hero — lobby with chandelier and storefront beyond -->
-      <figure data-reveal data-delay="100" style="margin:0 0 18px;border-radius:14px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/5;max-width:780px;margin-left:auto;margin-right:auto;margin-bottom:18px;">
-        <picture>
-          <source type="image/webp" srcset="images/projects/klus-lighting/finished-lobby-chandelier.webp">
-          <img height="535" width="395" src="images/projects/klus-lighting/finished-lobby-chandelier.jpg"
-               alt="KLUS Lighting Vero Beach finished lobby — dramatic circular sculptural KLUS LED chandelier suspended in a double-height entry, looking out through the two-story ESWindows storefront installed by ACG, reception desk in foreground"
-               style="width:100%;height:100%;object-fit:cover;display:block;"
-               loading="lazy" decoding="async">
-        </picture>
-        <figcaption style="position:absolute;left:18px;bottom:18px;right:18px;">
-          <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:7px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Lobby &middot; Through the Storefront ACG Installed</div>
-        </figcaption>
-      </figure>
-
-      <!-- Two-up: break room + staircase -->
-      <div data-reveal data-delay="180" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:18px;">
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/5;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/finished-break-room.webp">
-            <img height="535" width="394" src="images/projects/klus-lighting/finished-break-room.jpg"
-                 alt="KLUS Lighting Vero Beach break room — KLUS sculptural triangular LED ceiling fixtures over dining tables with teal chairs, exposed structural ceiling, kitchen casework along the back wall"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Break Room &middot; Sculptural LED</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/5;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/finished-illuminated-staircase.webp">
-            <img height="535" width="394" src="images/projects/klus-lighting/finished-illuminated-staircase.jpg"
-                 alt="KLUS Lighting Vero Beach illuminated staircase — LED strip lighting under each tread, glass railing on stainless posts, custom wavy LED accent feature on the wall above"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Stair &middot; Tread-Edge LED</div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <!-- Two-up: conference rooms -->
-      <div data-reveal data-delay="260" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;">
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/5;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/finished-conference-room-pendant.webp">
-            <img height="535" width="394" src="images/projects/klus-lighting/finished-conference-room-pendant.jpg"
-                 alt="KLUS Lighting Vero Beach conference room — grid-coffered black ceiling with circular pendant LED fixtures over a long conference table, KLUS Inspiring Solutions branded display on the wall"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Conference Room &middot; Coffered LED</div>
-          </figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:12px;overflow:hidden;position:relative;background:#000;aspect-ratio:4/5;">
-          <picture>
-            <source type="image/webp" srcset="images/projects/klus-lighting/finished-conference-room-wide.webp">
-            <img height="535" width="394" src="images/projects/klus-lighting/finished-conference-room-wide.jpg"
-                 alt="KLUS Lighting Vero Beach conference room wide angle — full length of the conference table with LED ceiling pendants, punched windows along the side wall, KLUS Inspiring Solutions branded display"
-                 style="width:100%;height:100%;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
-          </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;">
-            <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px 11px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Conference Room &middot; Wide</div>
-          </figcaption>
-        </figure>
-      </div>
-
-      <p style="text-align:center;margin-top:clamp(20px,2.5vw,28px);font-size:13px;color:rgba(255,255,255,.55);">Interior photography courtesy of <a href="https://www.klusdesign.com/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.8);text-decoration:underline;">KLUS Design USA</a> &middot; <a href="https://www.instagram.com/klusdesignusa/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.8);text-decoration:underline;">@klusdesignusa</a></p>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Showrooms, offices, retail — ACG delivers <a href="commercial-glass-installation-florida.html" style="color:var(--accent);">commercial glass installation</a> across Florida. Send your plans and get a complete scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </section>
+  </main>
 
-    <footer class="ft">
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -718,18 +607,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
-  <script defer src="js/main.js"></script>
-<script>(function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();</script>
+
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

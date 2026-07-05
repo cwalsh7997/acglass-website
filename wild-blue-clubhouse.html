@@ -33,7 +33,7 @@
   <meta name="twitter:title" content="Wild Blue at Waterside Clubhouse — Resort Glazing In Progress | ACG">
   <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -136,475 +136,6 @@
   ]
 }
 </script>
-  <style>
-    /* ── PROJECT HERO ── */
-    .project-hero {
-      position: relative;
-      height: 100vh;
-      min-height: 640px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 50%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(5,10,18,0.08) 0%,
-        rgba(5,10,18,0.18) 40%,
-        rgba(5,10,18,0.75) 75%,
-        rgba(5,10,18,0.92) 100%
-      );
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(48px, 9vw, 110px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .project-hero-content h1 {
-      font-size: clamp(36px, 5.5vw, 80px);
-      font-weight: 900;
-      line-height: 1.03;
-      margin-top: 18px;
-      letter-spacing: -0.02em;
-    }
-    .project-hero-content .subtitle {
-      font-size: clamp(15px, 1.4vw, 20px);
-      color: rgba(255,255,255,0.65);
-      margin-top: 14px;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-
-    /* ── STATUS BADGE ── */
-    .status-badge-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(225,19,32,0.15);
-      border: 1px solid var(--accent);
-      border-radius: 5px;
-      padding: 8px 16px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-    .status-badge-hero .pulse-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pfPulse 1.5s ease-in-out infinite;
-    }
-    @keyframes pfPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* ── META GRID ── */
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 52px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .meta-value {
-      font-size: clamp(14px, 1.1vw, 16px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-
-    /* ── STORY TEXT ── */
-    .story-text p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.85;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 24px;
-    }
-    .story-text p:last-child { margin-bottom: 0; }
-    .story-text h3 {
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 800;
-      color: white;
-      margin-bottom: 18px;
-      margin-top: 52px;
-      letter-spacing: -0.01em;
-    }
-    .story-text h3:first-child { margin-top: 0; }
-    .story-text strong {
-      color: rgba(255,255,255,0.9);
-      font-weight: 600;
-    }
-
-    /* ── SCOPE LIST ── */
-    .scope-list {
-      list-style: none;
-      padding: 0;
-      margin: 28px 0 0 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .scope-list li {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px 24px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      transition: border-color 0.2s, background 0.2s;
-      flex-wrap: wrap;
-    }
-    .scope-list li:hover {
-      border-color: rgba(225,19,32,0.3);
-      background: rgba(225,19,32,0.04);
-    }
-    .scope-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      min-width: 28px;
-      padding-top: 3px;
-    }
-    .scope-body strong {
-      display: block;
-      font-size: 15px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 5px;
-    }
-    .scope-body span {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-    }
-
-    /* ── TIMELINE / STATUS BLOCK ── */
-    .timeline-block {
-      margin: 40px 0;
-      padding: 32px 36px;
-      background: rgba(225,19,32,0.05);
-      border: 1px solid rgba(225,19,32,0.18);
-      border-radius: 10px;
-    }
-    .timeline-block-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .timeline-block-header .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pfPulse 1.5s ease-in-out infinite;
-    }
-    .timeline-block-header span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .timeline-block p {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.65);
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    /* ── PARTNER BADGES ── */
-    .partner-badge {
-      display: inline-flex;
-      flex-direction: column;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 16px;
-      margin-right: 12px;
-    }
-    .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-
-    /* ── PROJECT TYPE BADGE ── */
-    .project-type-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(225,19,32,0.10);
-      border: 1px solid rgba(225,19,32,0.25);
-      border-radius: 6px;
-      padding: 10px 18px;
-      margin-bottom: 20px;
-    }
-    .project-type-badge svg { color: var(--accent); }
-    .project-type-badge span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(225,19,32,0.9);
-      font-weight: 600;
-    }
-
-    /* ── INTERNAL LINKS SECTION ── */
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .related-link-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      text-decoration: none;
-      color: rgba(255,255,255,0.75);
-      font-size: 13px;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-    .related-link-card:hover {
-      color: white;
-      border-color: rgba(225,19,32,0.35);
-      background: rgba(225,19,32,0.05);
-    }
-    .related-link-card svg { color: var(--accent); flex-shrink: 0; }
-
-    /* ── NAV DROPDOWN ── */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-
-    /* ── PROGRESS GALLERY ── */
-    .progress-gallery-section {
-      padding: clamp(64px, 8vw, 100px) 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .progress-gallery-header {
-      margin-bottom: clamp(32px, 4vw, 52px);
-    }
-    .progress-gallery-header h2 {
-      font-size: clamp(28px, 3.5vw, 48px);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      color: white;
-      margin-bottom: 10px;
-    }
-    .progress-gallery-header .gallery-subtitle {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .pg-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .pg-card {
-      position: relative;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-    }
-    .pg-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(225,19,32,0.3), 0 8px 32px rgba(225,19,32,0.12);
-      transform: scale(1.015);
-    }
-    .pg-card img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.35s;
-    }
-    .pg-card:hover img {
-      transform: scale(1.04);
-    }
-    .pg-caption {
-      padding: 12px 16px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.55);
-      font-weight: 500;
-    }
-
-    /* ── LIGHTBOX ── */
-    #lb-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(5,10,18,0.96);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-    }
-    #lb-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-    #lb-overlay img {
-      max-width: 100%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 6px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
-    }
-    #lb-close {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: rgba(255,255,255,0.7);
-      transition: background 0.2s, color 0.2s;
-      font-size: 20px;
-      line-height: 1;
-    }
-    #lb-close:hover {
-      background: var(--accent);
-      color: white;
-    }
-    #lb-caption-text {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.45);
-      white-space: nowrap;
-    }
-
-    /* ── FINAL VISION ── */
-    .final-vision-section {
-      padding: clamp(64px, 8vw, 100px) 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .final-vision-section h2 {
-      font-size: clamp(24px, 3vw, 40px);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      color: white;
-      margin-bottom: 10px;
-    }
-    .final-vision-section .fv-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.4);
-      font-weight: 500;
-      margin-bottom: 28px;
-    }
-    .final-vision-section p {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.65);
-      line-height: 1.8;
-      max-width: 640px;
-      margin-top: 20px;
-    }
-    .fv-image-wrap {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      margin-top: 36px;
-    }
-    .fv-image-wrap img {
-      width: 100%;
-      display: block;
-    }
-    .fv-render-badge {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      background: rgba(5,10,18,0.82);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px;
-      padding: 6px 12px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.5);
-    }
-  </style>
 
 <script type="application/ld+json">
 {
@@ -809,346 +340,286 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- ═══════════════════════════════════════════ HERO ═══ -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/wild-blue-clubhouse-hero.webp"><img height="900" width="1600" src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside Clubhouse — resort clubhouse rendering, Neal Communities" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="status-badge-hero">
-          <span class="pulse-dot"></span>
-          In Progress
-        </div>
-        <div class="project-type-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Hospitality / Resort Amenity &mdash; Lakewood Ranch, FL</span>
-        </div>
-        <h1>Wild Blue at Waterside Clubhouse</h1>
-        <p class="subtitle">Glazing Installation Underway &mdash; March 2026 &nbsp;&middot;&nbsp; Lakewood Ranch, FL</p>
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Wild Blue at Waterside</span></nav>
+      <h1>Wild Blue at Waterside <em>Clubhouse</em></h1>
+      <p class="p-sub">The full Division 08 package — storefront, curtainwall, and entry systems — for the resort-style centerpiece amenity of Neal Communities&rsquo; Wild Blue at Waterside in Lakewood Ranch. Installation underway, March 2026.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Lakewood Ranch, FL</span>
+        <span class="m"><b>Sector</b> Hospitality · Resort amenity</span>
+        <span class="m"><b>Developer</b> Neal Communities</span>
+        <span class="m"><b>Status</b> Installation underway — March 2026</span>
       </div>
     </div>
   </section>
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Hospitality</div>
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-101 · Project</span></div>
+          <h2 id="proj-h">The clubhouse dissolves into the landscape. The glazing is how.</h2>
+          <div class="prose">
+            <p>ACG is the Division 08 glazing subcontractor for the Wild Blue at Waterside Clubhouse — the centerpiece amenity of Neal Communities&rsquo; newest luxury master-planned community in Lakewood Ranch, one of the Sarasota area&rsquo;s most anticipated new residential communities.</p>
+            <p>The clubhouse is the social and recreational heart of the community — a resort-style facility designed to connect residents to Sarasota&rsquo;s year-round outdoor lifestyle. Expansive glazing plays a defining role in that architecture: bringing light deep into the building, framing views of the surrounding landscape, and dissolving the boundary between indoor amenity spaces and outdoor living areas.</p>
+            <p>ACG&rsquo;s scope covers the full Division 08 glazing package — the storefront that establishes the building&rsquo;s visual character at ground level, curtainwall sections where the architecture calls for uninterrupted glass expanses, and all-glass and framed entry systems at primary and secondary access points. Glazing installation is actively underway as of March 2026.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Lakewood Ranch, FL · Sarasota County</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Hospitality · Resort amenity</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Storefront · curtainwall · entry systems</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">ESWindows + Euro-Wall</span></div>
+            <div class="row"><span class="k">Developer</span><span class="d">Neal Communities</span></div>
+            <div class="row"><span class="k">Community</span><span class="d">Wild Blue at Waterside</span></div>
+          </div>
         </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Curran Young Construction</div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/wild-blue-clubhouse-hero.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue-clubhouse-hero.webp" type="image/webp">
+            <img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside Clubhouse — resort clubhouse rendering, Neal Communities" width="1600" height="900" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Rendering · Wild Blue at Waterside</span>
         </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows + Euro-Wall</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Lakewood Ranch, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- ═══════════════════════════════════════ META GRID ═══ -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-      <div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;">
-        <span class="project-tag">Hospitality</span>
-        <span class="project-tag">Resort Amenity</span>
-        <span class="project-tag">Lakewood Ranch, FL</span>
-        <span class="project-tag">Sarasota County</span>
-        <span class="project-tag">Neal Communities</span>
-        <span class="project-tag">clubhouse glazing</span>
-        <span class="project-tag">curtainwall</span>
-        <span class="project-tag">storefront</span>
-      </div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Lakewood Ranch, FL</div></div>
-        <div><div class="meta-label">County</div><div class="meta-value">Sarasota County</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Hospitality / Resort Amenity</div></div>
-        <div><div class="meta-label">Developer</div><div class="meta-value">Neal Communities</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">TBD / Not Disclosed</div></div>
-        <div><div class="meta-label">Status</div><div class="meta-value" style="display:flex;align-items:center;gap:6px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pfPulse 1.5s ease-in-out infinite;display:inline-block;"></span>Glazing Installation Underway &mdash; March 2026</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">Storefront, Curtainwall, Entry Systems</div></div>
-        <div><div class="meta-label">Community</div><div class="meta-value">Wild Blue at Waterside</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════ STORY ═══ -->
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-
-        <!-- LEFT: STORY TEXT -->
-        <div class="story-text">
-
-          <h3>The Project</h3>
-          <p>ACG is the Division 08 glazing subcontractor for the Wild Blue at Waterside Clubhouse — the centerpiece amenity of Neal Communities' newest luxury master-planned community in Lakewood Ranch. Wild Blue at Waterside is one of the Sarasota area's most anticipated new residential communities, positioned to serve the demand for resort-caliber living in one of Florida's fastest-growing submarkets.</p>
-          <p>The clubhouse is the social and recreational heart of the community — a resort-style facility designed to connect residents to Sarasota's year-round outdoor lifestyle. Expansive glazing plays a defining role in that architecture: bringing light deep into the building, framing views of the surrounding landscape, and dissolving the boundary between indoor amenity spaces and outdoor living areas.</p>
-
-          <h3>ACG Scope</h3>
-          <p>ACG's scope covers the full Division 08 glazing package for the clubhouse — the systems that define the building's envelope, entry experience, and interior-to-exterior connection.</p>
-
-          <ul class="scope-list">
-            <li>
-              <div class="scope-num">01</div>
-              <div class="scope-body">
-                <strong>Storefront Systems</strong>
-                <span>Commercial storefront glazing throughout the clubhouse, including primary public-facing elevations. The storefront package establishes the building's visual character at ground level — large vision glass panels, clean aluminum framing, and systems selected for durability in Florida's high-humidity, high-UV coastal environment.</span>
-              </div>
-            </li>
-            <li>
-              <div class="scope-num">02</div>
-              <div class="scope-body">
-                <strong>Curtainwall</strong>
-                <span>Curtainwall sections where the architecture calls for uninterrupted glass expanses — connecting interior amenity spaces to pool decks, outdoor terraces, and landscape views. Curtainwall at a resort clubhouse is as much about the visual experience as structural performance: the system has to disappear and let the view do the work.</span>
-              </div>
-            </li>
-            <li>
-              <div class="scope-num">03</div>
-              <div class="scope-body">
-                <strong>Entry Systems</strong>
-                <span>All-glass and framed entry systems for primary and secondary access points. Entry glazing at a luxury clubhouse sets the first impression for every resident — the hardware, glass selection, and frame finish have to match the resort standard of the overall facility.</span>
-              </div>
-            </li>
-          </ul>
-
-          <div class="timeline-block">
-            <div class="timeline-block-header">
-              <span class="pulse-dot"></span>
-              <span>Project Status — Glazing Installation Underway</span>
-            </div>
-            <p>Glazing installation is actively underway as of March 2026. Progress photography from the field is documented below — storefront wall installation, dormer windows, entry doors, and interior ribbon window bays.</p>
-          </div>
-
-          <div style="margin-top:40px;">
-            <div class="partner-badge"><div class="pb-label">Developer</div><div class="pb-name">Neal Communities</div></div>
-            <div class="partner-badge"><div class="pb-label">Community</div><div class="pb-name">Wild Blue at Waterside</div></div>
-            <div class="partner-badge"><div class="pb-label">Market</div><div class="pb-name">Sarasota County, FL</div></div>
-            <div class="partner-badge"><div class="pb-label">Location</div><div class="pb-name">Lakewood Ranch, FL</div></div>
-          </div>
-        </div>
-
-        <!-- RIGHT: PROGRESS PHOTO -->
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-storefront-progress.webp"><img height="1920" width="1440" src="images/projects/wild-blue/wild-blue-storefront-progress.jpg"
-            alt="Wild Blue Clubhouse — main storefront wall glazing installation, March 2026"
-            style="width:100%;border-radius:var(--radius,8px);display:block;cursor:pointer;"
-            onclick="openLightbox('images/projects/wild-blue/wild-blue-storefront-progress.jpg','Main Storefront Wall — March 2026')" loading="lazy" decoding="async"></picture>
-          <p style="margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.35);text-align:center;letter-spacing:0.05em;text-transform:uppercase;">Main Storefront Wall &mdash; ACG Installation &mdash; March 2026</p>
+          <div class="k-wrap"><span class="k-label">Sheet A-201 · Photo record</span></div>
+          <h2 id="gal-h">March 2026 — installation underway.</h2>
         </div>
-
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-front-elevation.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-front-elevation.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-front-elevation.jpg" alt="Wild Blue Clubhouse — front elevation progress" width="1920" height="1440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Front elevation</span><span class="s">Progress</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-storefront-progress.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-storefront-progress.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-storefront-progress.jpg" alt="Wild Blue Clubhouse — main storefront wall glazing installation, March 2026" width="1440" height="1920" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Main storefront wall</span><span class="s">Installation</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-dormer-progress.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-dormer-progress.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-dormer-progress.jpg" alt="Wild Blue Clubhouse — upper dormer windows" width="1920" height="1440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Upper dormer windows</span><span class="s">Installation</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-architectural-detail.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-architectural-detail.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-architectural-detail.jpg" alt="Wild Blue Clubhouse — two-story architectural detail" width="1920" height="1440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Two-story detail</span><span class="s">Architectural glazing</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-entry-doors.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-entry-doors.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-entry-doors.jpg" alt="Wild Blue Clubhouse — French entry doors installed" width="1200" height="1600" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">French entry doors</span><span class="s">Installed</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-interior-view.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-interior-view.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-interior-view.jpg" alt="Wild Blue Clubhouse — interior ribbon window bay view" width="1920" height="1440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Interior</span><span class="s">Ribbon window bay</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-exterior-progress.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-exterior-progress.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-exterior-progress.jpg" alt="Wild Blue Clubhouse — exterior progress, west elevation" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">West elevation</span><span class="s">Exterior progress</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-rear-elevation.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-rear-elevation.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-rear-elevation.jpg" alt="Wild Blue Clubhouse — rear elevation with multiple windows" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Rear elevation</span><span class="s">Progress</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════ PROGRESS GALLERY ═══ -->
-  <section class="progress-gallery-section">
-    <div class="container" data-reveal>
-      <div class="progress-gallery-header">
-        <div class="gallery-subtitle">Progress Gallery</div>
-        <h2>March 2026 — Glazing Installation Underway</h2>
+  <!-- ========== Scope notes ========== -->
+  <section class="sec pillars gnotes" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-301 · Scope notes</span></div>
+          <h2 id="scope-h">The full Division 08 package.</h2>
+        </div>
       </div>
-      <div class="pg-grid">
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-storefront-progress.jpg','Main Storefront Wall')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-storefront-progress.webp"><img height="1920" width="1440" src="images/projects/wild-blue/wild-blue-storefront-progress.jpg" alt="Wild Blue Clubhouse — main storefront wall glazing" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Main Storefront Wall</div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>Storefront systems</h3>
+          <p>Commercial storefront throughout the clubhouse, including the primary public-facing elevations — large vision glass panels and clean aluminum framing, selected for durability in Florida&rsquo;s high-humidity, high-UV coastal environment.</p>
         </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-dormer-progress.jpg','Upper Dormer Windows')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-dormer-progress.webp"><img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-dormer-progress.jpg" alt="Wild Blue Clubhouse — upper dormer windows" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Upper Dormer Windows</div>
+        <div class="gnote">
+          <h3>Curtainwall</h3>
+          <p>Curtainwall sections where the architecture calls for uninterrupted glass — connecting interior amenity spaces to pool decks, outdoor terraces, and landscape views. The system has to disappear and let the view do the work.</p>
         </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-architectural-detail.jpg','Two-Story Architectural Detail')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-architectural-detail.webp"><img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-architectural-detail.jpg" alt="Wild Blue Clubhouse — two-story architectural detail" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Two-Story Architectural Detail</div>
+        <div class="gnote">
+          <h3>Entry systems</h3>
+          <p>All-glass and framed entry systems at primary and secondary access points — hardware, glass selection, and frame finish matched to the resort standard of the facility.</p>
         </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-entry-doors.jpg','French Entry Door Installation')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-entry-doors.webp"><img height="1920" width="1440" src="images/projects/wild-blue/wild-blue-entry-doors.jpg" alt="Wild Blue Clubhouse — French entry doors installed" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">French Entry Door Installation</div>
+        <div class="gnote">
+          <h3>Status — March 2026</h3>
+          <p>Glazing installation is actively underway: storefront wall installation, dormer windows, entry doors, and interior ribbon window bays documented in the photo record above.</p>
         </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-interior-view.jpg','Interior — Ribbon Window Bay')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-interior-view.webp"><img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-interior-view.jpg" alt="Wild Blue Clubhouse — interior ribbon window bay view" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Interior &mdash; Ribbon Window Bay</div>
-        </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-exterior-progress.jpg','Exterior Progress — West Elevation')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-exterior-progress.webp"><img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-exterior-progress.jpg" alt="Wild Blue Clubhouse — exterior progress west elevation" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Exterior Progress &mdash; West Elevation</div>
-        </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-rear-elevation.jpg','Rear Elevation')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-rear-elevation.webp"><img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-rear-elevation.jpg" alt="Wild Blue Clubhouse — rear elevation with multiple windows" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Rear Elevation</div>
-        </div>
-
-        <div class="pg-card" onclick="openLightbox('images/projects/wild-blue/wild-blue-front-elevation.jpg','Front Elevation')">
-          <picture><source type="image/webp" srcset="images/projects/wild-blue/wild-blue-front-elevation.webp"><img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-front-elevation.jpg" alt="Wild Blue Clubhouse — front elevation progress" loading="lazy" decoding="async"></picture>
-          <div class="pg-caption">Front Elevation</div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ RELATED LINKS ═══ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:20px;"><span class="line"></span> Related</div>
-      <div class="related-links">
-        <a href="portfolio.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Project Portfolio
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More from the portfolio.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="panther-national-clubhouse.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Panther National Clubhouse
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="panther-national-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/panther-national/aerial-golf-course.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/aerial-golf-course.webp" type="image/webp">
+            <img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National golf community, Palm Beach Gardens" width="1080" height="811" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Panther National</span><span class="s">Private club · Palm Beach Gardens</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="/storefront-glazier-sarasota-florida/" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Commercial Glazing Sarasota
+        <a class="proj" href="tradewinds-hobe-sound.html">
+          <picture>
+            <source srcset="images/projects/tradewinds-hobe-sound/aerial-community.avif" type="image/avif">
+            <source srcset="images/projects/tradewinds-hobe-sound/aerial-community.webp" type="image/webp">
+            <img src="images/projects/tradewinds-hobe-sound/aerial-community.jpg" alt="Tradewinds multifamily community aerial view, Hobe Sound" width="1000" height="665" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Tradewinds</span><span class="s">Multifamily · Hobe Sound</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="contact.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Start Your Project
+        <a class="proj" href="villa-lonz-riviera-beach.html">
+          <picture>
+            <source srcset="images/projects/villa-lonz/facade-detail.avif" type="image/avif">
+            <source srcset="images/projects/villa-lonz/facade-detail.webp" type="image/webp">
+            <img src="images/projects/villa-lonz/facade-detail.jpg" alt="Villa L'Onz townhomes in Riviera Beach — ES Windows impact glazing by ACG" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Villa L&rsquo;Onz</span><span class="s">Townhomes · Riviera Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ CTA ═══ -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Resort or Clubhouse Project<br>Could Be <span class="accent">Next.</span></h2>
-      <p>ACG handles the full Division 08 glazing scope for resort amenities, private clubs, hospitality, and commercial projects across Florida. If you're building in Sarasota, Lakewood Ranch, or anywhere in the state, <a href="send-plans.html" style="color:var(--accent);">send us plans</a>.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Upload drawings and bid-date info — a scoped proposal or budget direction comes back in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════ FOOTER ═══ -->
+  </main>
 
-  <!-- RELATED ARTICLES -->
-  <section style="padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(255,255,255,0.06);">
-    <div class="container" data-reveal-fade>
-      <div style="text-align:center;margin-bottom:24px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#E11320);font-weight:600;">Related Articles</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-        <a href="blog/storefront-vs-curtainwall.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Storefront vs. Curtainwall: When to Specify Each System</div>
-        </a>
-        <a href="blog/hvhz-glazing-requirements-florida.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">HVHZ Glazing Requirements in Florida</div>
-        </a>
-        <a href="blog/how-to-choose-glazing-contractor.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">How to Choose a Commercial Glazing Contractor</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-    <footer class="ft">
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -1157,55 +628,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Photo lightbox" onclick="closeLightbox(event)">
-    <button id="lb-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-    <img id="lb-img" src="" alt="" loading="lazy" decoding="async">
-    <span id="lb-caption-text"></span>
-  </div>
-
-  <script defer src="js/main.js"></script>
-  <script>
-    function openLightbox(src, caption) {
-      var lb = document.getElementById('lb-overlay');
-      var img = document.getElementById('lb-img');
-      var cap = document.getElementById('lb-caption-text');
-      img.src = src;
-      img.alt = caption || '';
-      cap.textContent = caption || '';
-      lb.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox(e) {
-      if (e && e.target !== document.getElementById('lb-overlay') && e.target !== document.getElementById('lb-close')) return;
-      var lb = document.getElementById('lb-overlay');
-      lb.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        var lb = document.getElementById('lb-overlay');
-        if (lb.classList.contains('active')) {
-          lb.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      }
-    });
-  </script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

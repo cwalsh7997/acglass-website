@@ -29,21 +29,7 @@
   <meta property="og:image:alt" content="American Commercial Glass — Florida's commercial glazing specialists">
   <meta property="og:url" content="https://acglass.com/shoppes-westlake-point.html">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero { position: relative; height: 88vh; min-height: 560px; overflow: hidden; }
-    .project-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
-    .project-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,10,18,0.1) 0%, rgba(5,10,18,0.72) 100%); }
-    .project-hero-content { position: absolute; bottom: clamp(40px,8vw,100px); left: 0; right: 0; z-index: 2; }
-    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 32px; padding: clamp(32px,5vw,48px) 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .meta-label { font-family: 'JetBrains Mono',monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
-    .meta-value { font-size: clamp(15px,1.2vw,17px); color: rgba(255,255,255,0.85); line-height: 1.5; }
-    .story-text p { font-size: clamp(16px,1.3vw,18px); line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .story-text h3 { font-size: clamp(20px,2vw,26px); color: white; margin-bottom: 16px; margin-top: 48px; }
-    .partner-badge { display: inline-flex; flex-direction: column; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px 20px; margin-top: 16px; margin-right: 12px; }
-    .pb-label { font-family: 'JetBrains Mono',monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 4px; }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-  </style>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -190,26 +176,6 @@
   "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},{"@type":"ListItem","position":3,"name":"Shoppes at Westlake Point","item":"https://acglass.com/shoppes-westlake-point.html"}]
 }
 </script>
-<style>
-.nav-dropdown{position:relative}
-.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-.nav-dropdown-trigger:hover{color:#fff}
-.nav-dropdown-trigger svg{transition:transform .2s}
-.nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-@media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-</style>
 
 <script type="application/ld+json">
 {
@@ -298,267 +264,207 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high"></a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/shoppes-westlake-point.webp"><img height="391" width="800" src="images/projects/shoppes-westlake-point.jpg" alt="Shoppes at Westlake Point — multi-tenant retail storefront glazing, Palm Beach County FL" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="label"><span class="line"></span> Retail</div>
-        <h1 style="font-size:clamp(28px,4vw,62px);font-weight:900;line-height:1.05;margin-top:16px;">Shoppes at <br> Westlake Point</h1>
-      </div>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Retail</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Sisca Construction</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Westlake, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Retail</span><a href="portfolio.html?mfg=eswindows" class="project-tag">ESWindows</a><a href="portfolio.html?gc=sisca" class="project-tag">Sisca Construction</a><span class="project-tag">Westlake, FL</span><span class="project-tag">retail storefront</span><span class="project-tag">Westlake FL</span><span class="project-tag">new construction retail</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Westlake, FL</div></div>
-        <div><div class="meta-label">Community</div><div class="meta-value">Westlake Master Plan</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Multi-Tenant Retail Strip</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">Sisca Construction</div></div>
-        <div><div class="meta-label">Product</div><div class="meta-value">ESWindows</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">Complete Storefront Glazing Package</div></div>
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Shoppes at Westlake Point</span></nav>
+      <h1>Shoppes at <em>Westlake Point</em></h1>
+      <p class="p-sub">A new multi-tenant retail center in Westlake — one of Palm Beach County's fastest-growing master-planned communities. ACG delivered the complete ESWindows storefront glazing package for Sisca Construction.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Westlake, FL</span>
+        <span class="m"><b>GC</b> Sisca Construction</span>
+        <span class="m"><b>Systems</b> ESWindows storefront</span>
+        <span class="m"><b>Completed</b> 2025</span>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div class="story-text">
-          <h3>The Project</h3>
-          <p>Shoppes at Westlake Point is a new multi-tenant retail center in Westlake — one of Palm Beach County's fastest-growing master-planned communities near Wellington and Loxahatchee. The center brings service, dining, and retail tenants to a rapidly expanding residential population that's been waiting for walkable commercial space.</p>
-          <p>Every bay in a retail strip tells the same story through the glass: come in. The <a href="commercial-storefront-installer-florida.html">storefront systems</a> have to be clean, consistent across every tenant space, and built to handle South Florida's sun and storm exposure without showing their age a year later.</p>
-
-          <h3>The Scope</h3>
-          <p>ACG delivered the complete storefront glazing package for the Shoppes at Westlake Point — ESWindows <a href="commercial-glass-installation-florida.html">storefront framing, entrance doors, and all glass</a> across every tenant bay. Multi-tenant retail means every opening has to match the next one while accommodating different tenant configurations — some with full-height glass, others with awning overhangs and outdoor seating areas.</p>
-          <p>ESWindows was spec'd for this project. Their storefront system delivers the clean aluminum sightlines and impact performance that retail developers in <a href="commercial-glazing-palm-beach-county.html">Palm Beach County</a> expect. ACG managed the full scope from submittals through punch list.</p>
-
-          <h3>The Team</h3>
-          <p>Built for <strong style="color:white;">Sisca Construction</strong> — a commercial general contractor with a strong portfolio of retail, restaurant, and mixed-use projects across South Florida. Sisca builds at the pace that retail developers need, and ACG matched that schedule with the <a href="gc.html">48-hour scope turnaround</a> and no-excuses delivery that GCs count on.</p>
-          <p>The Shoppes at Westlake Point joins <a href="baron-shoppes-tradition.html">Baron Shoppes of Tradition</a> in ACG's growing portfolio of retail strip and multi-tenant storefront projects — proving that ACG's operations model scales from single-tenant buildouts to full-center glazing packages.</p>
-
-          <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;">
-            <div class="partner-badge"><div class="pb-label">General Contractor</div><div class="pb-name">Sisca Construction</div></div>
-            <div class="partner-badge"><div class="pb-label">Glazing Product</div><div class="pb-name">ESWindows</div></div>
+  <!-- ========== The project ========== -->
+  <section class="sec" aria-labelledby="project-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-011 · The project</span></div>
+          <h2 id="project-h">Every bay says the same thing: come in.</h2>
+          <div class="prose">
+            <p>Shoppes at Westlake Point brings service, dining, and retail tenants to a rapidly expanding residential population near Wellington and Loxahatchee that's been waiting for walkable commercial space. Every bay in a retail strip tells the same story through the glass — and the storefront systems have to be clean, consistent across every tenant space, and built to handle South Florida's sun and storm exposure without showing their age a year later.</p>
+            <p>ACG delivered the complete storefront glazing package — ESWindows storefront framing, entrance doors, and all glass across every tenant bay. Multi-tenant retail means every opening has to match the next one while accommodating different tenant configurations: some with full-height glass, others with awning overhangs and outdoor seating areas. ESWindows storefront delivers the clean aluminum sightlines and impact performance retail developers in Palm Beach County expect, and ACG managed the full scope from submittals through punch list.</p>
+            <p>Built for Sisca Construction — a commercial general contractor with a strong portfolio of retail, restaurant, and mixed-use projects across South Florida. Sisca builds at the pace retail developers need, and ACG matched that schedule. The project joins Baron Shoppes of Tradition in ACG's growing portfolio of retail strip and multi-tenant storefront work — from single-tenant buildouts to full-center glazing packages.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Westlake, FL — Westlake master plan</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Retail · Multi-tenant strip</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Complete storefront glazing package</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">ESWindows storefront</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">Sisca Construction</span></div>
           </div>
         </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/shoppes-westlake-point.avif" type="image/avif">
+            <source srcset="images/projects/shoppes-westlake-point.webp" type="image/webp">
+            <img src="images/projects/shoppes-westlake-point.jpg" alt="Shoppes at Westlake Point — multi-tenant retail storefront glazing, Westlake, Palm Beach County FL" width="800" height="391" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="tag">Westlake Point · Westlake, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Scope notes ========== -->
+  <section class="sec svc" aria-labelledby="notes-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/shoppes-westlake-point.webp"><img height="391" width="800" src="images/projects/shoppes-westlake-point.jpg" alt="Shoppes at Westlake Point — ESWindows retail storefront glazing, Westlake FL" style="width:100%;border-radius:var(--radius);" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Sheet A-021 · Scope notes</span></div>
+          <h2 id="notes-h">How the scope ran.</h2>
+        </div>
+      </div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3>Completed 2025 · Palm Beach County</h3>
+          <p>Sequenced to Sisca's field schedule with weekly coordination meetings, RFI turnaround inside 24 hours, and submittals tracked against the critical path. Supervision ran out of ACG's West Palm Beach office.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3>Tenant-to-tenant consistency</h3>
+          <p>Every opening matches the next while accommodating different tenant configurations — full-height glass in some bays, awning overhangs and outdoor seating in others.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3>Built for exposure</h3>
+          <p>ESWindows storefront brings the clean aluminum sightlines and impact performance a Palm Beach County retail center needs to look right on day one and year five.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- ACG-ENRICHED-START -->
 
-  <!-- ACG-ENRICHED: System detail -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="related-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <div class="label" style="margin-bottom:18px;"><span class="line"></span> The System</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">ESWindows</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
-            <div class="partner-badge"><div class="pb-label">Scope</div><div class="pb-name">Retail center</div></div>
-            <div class="partner-badge"><div class="pb-label">Completion</div><div class="pb-name">2025</div></div>
-          </div>
+          <div class="k-wrap"><span class="k-label">Sheet A-031 · Related projects</span></div>
+          <h2 id="related-h">More from the portfolio.</h2>
         </div>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.65;color:rgba(255,255,255,0.78);">
-          <p>The glazing package on Shoppes at Westlake Point included retail center. ACG specified, supplied, and installed ESWindows — manufactured by ACG's seven approved partner lines: ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora.</p><p>The scope was sequenced to SISCA's field schedule, with weekly coordination meetings, RFI turn-around inside 24 hours, and submittals tracked against the construction critical path. ACG's three-office Florida footprint (West Palm Beach HQ, Naples, Tampa) keeps a project supervisor within driving distance of every active job site, and the Westlake location pulled supervision out of our West Palm Beach office.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Jurisdiction -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div style="max-width:880px;" data-reveal>
-        <div class="label" style="margin-bottom:18px;"><span class="line"></span> Palm Beach County · Jurisdiction</div>
-        <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">Why Westlake.</h2>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.7;color:rgba(255,255,255,0.78);">
-          <p>Why this matters for the Westlake market. Shoppes at Westlake Point is not just another envelope. Westlake mixed-use community retail. Subcontractors who deliver here build a body of evidence GCs and developers can verify — first-pass inspection clearance, on-time turnover, accurate submittals, no callback claims. Those four metrics are how a glazing sub gets called back, and they are the entire reason ACG was selected for this scope.</p><p>For developers and GCs evaluating subcontractors for similar work in Westlake or surrounding Palm Beach County, Shoppes at Westlake Point is on our portfolio precisely because it represents the standard of execution we hold across every project, regardless of size.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Related projects -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:20px;">
-        <div>
-          <div class="label" style="margin-bottom:14px;"><span class="line"></span> Related Work</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1;letter-spacing:-0.02em;">Similar projects from our portfolio.</h2>
-        </div>
-        <a href="portfolio.html" style="font-size:14px;font-weight:600;color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;white-space:nowrap;">View All →</a>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2vw,32px);">
-        
-        <a href="lake-park-innovation-center.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Lake Park · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">Lake Park Innovation Center</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Innovation center envelope</div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="1172-s-harbor.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            <picture>
-              <source type="image/webp" srcset="images/projects/1172-s-harbor/hero-twilight.webp">
-              <img src="images/projects/1172-s-harbor/hero-twilight.jpg" alt="1172 S Harbor project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-            </picture>
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Boca Raton · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">1172 S Harbor</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Luxury residential envelope</div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="baron-shoppes-tradition.html">
+          <picture>
+            <source srcset="images/projects/baron-shoppes-tradition.avif" type="image/avif">
+            <source srcset="images/projects/baron-shoppes-tradition.webp" type="image/webp">
+            <img src="images/projects/baron-shoppes-tradition.jpg" alt="Baron Shoppes at Tradition — retail center storefront, Port St. Lucie" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Baron Shoppes at Tradition</span><span class="s">Retail · Port St. Lucie</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="2143-carib-circle.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Singer Island · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">2143 Carib Circle</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Luxury residential envelope</div>
+        <a class="proj" href="lake-park-innovation-center.html">
+          <picture>
+            <source srcset="images/projects/lake-park-innovation/aerial-top.avif" type="image/avif">
+            <source srcset="images/projects/lake-park-innovation/aerial-top.webp" type="image/webp">
+            <img src="images/projects/lake-park-innovation/aerial-top.jpg" alt="Lake Park Innovation Center — commercial envelope, aerial view" width="1440" height="1079" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Lake Park Innovation Center</span><span class="s">Lake Park · Palm Beach County</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="imperial-crossings-bonita-springs.html">
+          <picture>
+            <source srcset="images/projects/imperial-crossings/building-lake.avif" type="image/avif">
+            <source srcset="images/projects/imperial-crossings/building-lake.webp" type="image/webp">
+            <img src="images/projects/imperial-crossings/building-lake.jpg" alt="Imperial Crossings Bonita Springs — retail center storefront across the lake" width="1620" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Imperial Crossings</span><span class="s">Retail · Bonita Springs</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
       </div>
     </div>
   </section>
 
-
-  <!-- ACG-ENRICHED: Related reading -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div style="max-width:760px;margin-bottom:36px;">
-        <div class="label" style="margin-bottom:14px;"><span class="line"></span> More Context</div>
-        <h2 style="font-size:clamp(24px,2.6vw,40px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;">Related reading from the ACG knowledge base.</h2>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Your project could be next.</h2>
+        <p>Retail strips, multi-tenant centers, outparcels — ACG delivers complete storefront glazing packages across Florida. Send your plans and get a scope in 48 hours.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);">
-        
-        <a href="blog/shoppes-westlake-point-glazing.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Project Brief</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Shoppes at Westlake Point — Glazing by ACG | Westlake, FL</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG delivered the glazing envelope at Shoppes at Westlake Point in Westlake, FL under SISCA. ESWindows. Westlake mixed-use communi</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
-        </a>
-        <a href="eswindows-installer-florida.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">ESWindows Installer Florida | Commercial Aluminum Windows</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG is an authorized ESWindows installer for commercial projects across Florida. ES8000 storefront, ES50 windows, curtainwall syst</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
-        </a>
-      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </section>
 
-  <!-- ACG-ENRICHED-END -->
+  </main>
 
-
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Retail strips, multi-tenant centers, outparcels — ACG delivers <a href="commercial-storefront-installer-florida.html" style="color:var(--accent);">complete storefront glazing packages</a> across Florida. Send your plans and get a scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </section>
-
-    <footer class="ft">
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -567,18 +473,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
-  <script defer src="js/main.js"></script>
-<script>(function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();</script>
+
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

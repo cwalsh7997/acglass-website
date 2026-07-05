@@ -34,21 +34,7 @@
   <meta name="twitter:description" content="Clubhouse storefront + amenity glazing on Tradewinds Hobe Sound, delivered by ACG with ESWindows.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/tradewinds-hobe-sound/aerial-community.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero { position: relative; height: 80vh; min-height: 500px; overflow: hidden; }
-    .project-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
-    .project-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,10,18,0.15) 0%, rgba(5,10,18,0.78) 100%); }
-    .project-hero-content { position: absolute; bottom: clamp(40px, 8vw, 100px); left: 0; right: 0; z-index: 2; }
-    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 32px; padding: clamp(32px, 5vw, 48px) 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .meta-label { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
-    .meta-value { font-size: clamp(15px, 1.2vw, 17px); color: rgba(255,255,255,0.85); line-height: 1.5; }
-    .story-text p { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .story-text h3 { font-size: clamp(20px, 2vw, 26px); color: white; margin-bottom: 16px; margin-top: 48px; }
-    .partner-badge { display: inline-flex; flex-direction: column; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px 20px; margin-top: 16px; margin-right: 12px; }
-    .pb-label { font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 4px; }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-  </style>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -93,26 +79,6 @@
   "image": "https://acglass.com/images/projects/tradewinds-hobe-sound/aerial-community.jpg"
 }
   </script>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
 <script type="application/ld+json">
 {
@@ -335,223 +301,249 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high"></a>
-      <div class="nav-links">
-        <a href="index.html">Home</a><a href="portfolio.html" class="active">Portfolio</a><a href="services.html">Services</a><div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div><a href="manufacturers.html">Partners</a><a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/tradewinds-hobe-sound/aerial-community.webp"><img height="665" width="1000" src="images/projects/tradewinds-hobe-sound/aerial-community.jpg" alt="Tradewinds Hobe Sound aerial view — multifamily community with clubhouse and pool, ESWindows storefront by ACG" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="label"><span class="line"></span> Multifamily &mdash; Hobe Sound</div>
-        <h1 style="font-size:clamp(32px,4.5vw,68px);font-weight:900;line-height:1.05;margin-top:16px;">Tradewinds <br> Hobe Sound</h1>
-      </div>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Multifamily</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">—</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Hobe Sound, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-      <div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;">
-        <span class="project-tag">Multifamily</span>
-        <a href="portfolio.html?mfg=eswindows" class="project-tag">ESWindows</a>
-        <span class="project-tag">Hobe Sound, FL</span>
-        <span class="project-tag">Martin County</span>
-        <span class="project-tag">Clubhouse storefront</span>
-        <span class="project-tag">Amenity glazing</span>
-      </div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Hobe Sound, FL</div></div>
-        <div><div class="meta-label">County</div><div class="meta-value">Martin County</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Multifamily Community</div></div>
-        <div><div class="meta-label">ACG Scope</div><div class="meta-value">Clubhouse Storefront</div></div>
-        <div><div class="meta-label">Product Partner</div><div class="meta-value">ESWindows</div></div>
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Tradewinds</span></nav>
+      <h1>Tradewinds <em>Hobe Sound</em></h1>
+      <p class="p-sub">The clubhouse storefront package for a new multifamily community in coastal Martin County — front-of-house entries, garden-room glazing, and window openings in ESWindows impact-rated systems.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Hobe Sound, FL</span>
+        <span class="m"><b>Sector</b> Multifamily</span>
+        <span class="m"><b>Scope</b> Clubhouse storefront</span>
+        <span class="m"><b>Systems</b> ESWindows</span>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div class="story-text">
-          <h3>The Project</h3>
-          <p>Tradewinds is a new multifamily community in Hobe Sound &mdash; a coastal Martin County submarket between Stuart and Jupiter. The community combines three-story residential buildings with a standalone amenity campus anchored by a clubhouse, pool, and pavilion structures.</p>
-          <p>The clubhouse is the visual centerpiece of the property. Double-height ceilings, a wrap of floor-to-ceiling glass on the garden-room side, and a pair of frameless all-glass storefront entries define the amenity experience residents see every day.</p>
-
-          <h3>The Scope</h3>
-          <p>ACG delivered the clubhouse storefront package partnering with ESWindows on the glazing products. The scope included the front-of-house storefront entries, the garden-room glazing, and the clubhouse window openings &mdash; specified to match the clean, modern aesthetic the developer set for the amenity buildings.</p>
-          <p>Hobe Sound falls within Martin County&apos;s coastal wind zone. ESWindows impact-rated systems carry the Florida Building Code approvals and NOA documentation required for this exposure, and the product finish and framing details were specified to hold up against coastal salt air over the life of the building.</p>
-
-          <h3>The Execution</h3>
-          <p>Multifamily amenity packages live or die on schedule coordination with the residential side of the project. The clubhouse typically certifies as the project is nearing lease-up, and every trade is compressed into the final weeks. ACG sequenced shop drawings, material staging, and install crews to land the clubhouse scope without holding up TCO on the amenity building.</p>
-
-          <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;">
-            <div class="partner-badge"><div class="pb-label">Product Partner</div><div class="pb-name">ESWindows</div></div>
-            <div class="partner-badge"><div class="pb-label">Scope</div><div class="pb-name">Clubhouse Storefront</div></div>
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-101 · Project</span></div>
+          <h2 id="proj-h">The clubhouse is the centerpiece. The glass defines it.</h2>
+          <div class="prose">
+            <p>Tradewinds is a new multifamily community in Hobe Sound — a coastal Martin County submarket between Stuart and Jupiter. Three-story residential buildings surround a standalone amenity campus anchored by a clubhouse, pool, and pavilion structures.</p>
+            <p>The clubhouse is the visual centerpiece of the property. Double-height ceilings, a wrap of floor-to-ceiling glass on the garden-room side, and a pair of frameless all-glass storefront entries define the amenity experience residents see every day.</p>
+            <p>ACG delivered the clubhouse storefront package, partnering with ESWindows on the glazing products — the front-of-house storefront entries, the garden-room glazing, and the clubhouse window openings, specified to match the clean, modern aesthetic the developer set for the amenity buildings.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Hobe Sound, FL · Martin County</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Multifamily</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Clubhouse storefront · amenity glazing</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">ESWindows</span></div>
           </div>
         </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/tradewinds-hobe-sound/aerial-community.avif" type="image/avif">
+            <source srcset="images/projects/tradewinds-hobe-sound/aerial-community.webp" type="image/webp">
+            <img src="images/projects/tradewinds-hobe-sound/aerial-community.jpg" alt="Tradewinds Hobe Sound aerial view — multifamily community with clubhouse and pool, ESWindows storefront by ACG" width="1000" height="665" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Tradewinds · Hobe Sound, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/tradewinds-hobe-sound/clubhouse-entry-glass.webp"><img height="499" width="750" src="images/projects/tradewinds-hobe-sound/clubhouse-entry-glass.jpg" alt="Tradewinds Hobe Sound clubhouse interior entry with frameless all-glass storefront doors and sidelites" style="width:100%;border-radius:var(--radius);" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Sheet A-201 · Photo record</span></div>
+          <h2 id="gal-h">Community, clubhouse, delivered.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/tradewinds-hobe-sound/clubhouse-interior.webp" type="image/webp">
+            <img src="images/projects/tradewinds-hobe-sound/clubhouse-interior.jpg" alt="Tradewinds Hobe Sound clubhouse interior with double-height ceiling, chandelier, and floor-to-ceiling storefront windows" width="750" height="499" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Clubhouse interior</span><span class="s">Garden-room glazing</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/tradewinds-hobe-sound/clubhouse-entry-glass.webp" type="image/webp">
+            <img src="images/projects/tradewinds-hobe-sound/clubhouse-entry-glass.jpg" alt="Tradewinds Hobe Sound clubhouse entry with frameless all-glass storefront doors and sidelites" width="750" height="499" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entry</span><span class="s">All-glass storefront doors</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/tradewinds-clubhouse/tradewinds-amenity-pool.webp" type="image/webp">
+            <img src="images/projects/tradewinds-clubhouse/tradewinds-amenity-pool.jpg" alt="Tradewinds pool deck and multifamily facade" width="1000" height="665" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Pool deck</span><span class="s">Amenity campus</span></div>
+        </div>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/tradewinds-clubhouse/tradewinds-fitness-center.webp" type="image/webp">
+            <img src="images/projects/tradewinds-clubhouse/tradewinds-fitness-center.jpg" alt="Tradewinds amenity fitness center with daylight storefront" width="1000" height="665" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Fitness center</span><span class="s">Daylight storefront</span></div>
+        </div>
+      </div>
+      <p class="k-index rv" style="margin-top:18px">Imagery courtesy Feinberg &amp; Associates and RED M Solutions</p>
+    </div>
+  </section>
+
+  <!-- ========== Scope notes ========== -->
+  <section class="sec pillars gnotes" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-301 · Scope notes</span></div>
+          <h2 id="scope-h">Coastal glazing, sequenced for TCO.</h2>
+        </div>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>Coastal wind zone</h3>
+          <p>Hobe Sound falls within Martin County&rsquo;s coastal wind zone. ESWindows impact-rated systems carry the Florida Building Code approvals and NOA documentation this exposure requires.</p>
+        </div>
+        <div class="gnote">
+          <h3>Built for salt air</h3>
+          <p>Product finish and framing details were specified to hold up against coastal salt air over the life of the building — not just through the warranty period.</p>
+        </div>
+        <div class="gnote">
+          <h3>Frameless entries</h3>
+          <p>A pair of frameless all-glass storefront entries sets the front-of-house arrival, matched to the double-height garden-room glazing beyond.</p>
+        </div>
+        <div class="gnote">
+          <h3>Sequenced for TCO</h3>
+          <p>Amenity packages live or die on schedule coordination — the clubhouse certifies as the project nears lease-up, with every trade compressed into the final weeks. ACG sequenced shop drawings, material staging, and install crews to land the scope without holding up TCO.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:24px;"><span class="line"></span> Project Gallery</div>
-      <h2 style="font-size:clamp(28px,3.5vw,44px);font-weight:800;line-height:1.1;margin-bottom:48px;max-width:800px;">Community, clubhouse, delivered.</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(16px,2vw,24px);">
-        <figure style="margin:0;">
-          <picture><source type="image/webp" srcset="images/projects/tradewinds-hobe-sound/aerial-community.webp"><img height="665" width="1000" src="images/projects/tradewinds-hobe-sound/aerial-community.jpg" alt="Tradewinds Hobe Sound aerial view showing multifamily buildings, pool, and clubhouse amenity campus" style="width:100%;height:auto;border-radius:var(--radius);display:block;" loading="lazy" decoding="async"></picture>
-          <figcaption style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin-top:12px;">Aerial &mdash; Community + amenity campus</figcaption>
-        </figure>
-        <figure style="margin:0;">
-          <picture><source type="image/webp" srcset="images/projects/tradewinds-hobe-sound/clubhouse-interior.webp"><img height="499" width="750" src="images/projects/tradewinds-hobe-sound/clubhouse-interior.jpg" alt="Tradewinds Hobe Sound clubhouse interior with double-height ceiling, chandelier, and floor-to-ceiling storefront windows" style="width:100%;height:auto;border-radius:var(--radius);display:block;" loading="lazy" decoding="async"></picture>
-          <figcaption style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin-top:12px;">Clubhouse interior &mdash; Garden-room glazing</figcaption>
-        </figure>
-        <figure style="margin:0;">
-          <picture><source type="image/webp" srcset="images/projects/tradewinds-hobe-sound/clubhouse-entry-glass.webp"><img height="499" width="750" src="images/projects/tradewinds-hobe-sound/clubhouse-entry-glass.jpg" alt="Tradewinds Hobe Sound clubhouse entry with frameless all-glass storefront doors" style="width:100%;height:auto;border-radius:var(--radius);display:block;" loading="lazy" decoding="async"></picture>
-          <figcaption style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.55);margin-top:12px;">Entry &mdash; All-glass storefront doors</figcaption>
-        </figure>
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More from the portfolio.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="gulfside-twelve.html">
+          <picture>
+            <source srcset="images/projects/gulfside-twelve.avif" type="image/avif">
+            <source srcset="images/projects/gulfside-twelve.webp" type="image/webp">
+            <img src="images/projects/gulfside-twelve.jpg" alt="Gulfside Twelve condominiums on Fort Myers Beach — glazing by ACG" width="1920" height="1071" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Gulfside Twelve</span><span class="s">Condominiums · Fort Myers Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="pointe-palm-bay.html">
+          <picture>
+            <source srcset="images/projects/pointe-palm-bay/hero-clubhouse.webp" type="image/webp">
+            <img src="images/projects/pointe-palm-bay/hero-clubhouse.jpg" alt="The Pointe at Palm Bay clubhouse — multifamily glazing by ACG" width="680" height="453" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Pointe at Palm Bay</span><span class="s">Multifamily · Palm Bay</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="wild-blue-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/wild-blue-clubhouse-hero.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue-clubhouse-hero.webp" type="image/webp">
+            <img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue at Waterside Clubhouse in Lakewood Ranch, Florida" width="1600" height="900" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Wild Blue at Waterside</span><span class="s">Clubhouse · Lakewood Ranch</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
       </div>
     </div>
   </section>
 
-  
-  <!-- ========== ADDITIONAL PROJECT PHOTOGRAPHY (auto-added 2026-04-22) ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,36px);">
-        <div class="label"><span class="line"></span> Additional Photography</div>
-        <h2>Project <span class="accent">Gallery</span></h2>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Upload drawings and bid-date info — a scoped proposal or budget direction comes back in 48 hours.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(12px,1.5vw,20px);">
-        <figure style="margin:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;">
-          <picture><source type="image/webp" srcset="images/projects/tradewinds-clubhouse/tradewinds-amenity-pool.webp">
-            <img height="665" width="1000" src="images/projects/tradewinds-clubhouse/tradewinds-amenity-pool.jpg" alt="Pool deck and multifamily facade" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;" decoding="async"></picture>
-          <figcaption style="padding:10px 14px;font-size:13px;color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;">Pool deck and multifamily facade</figcaption>
-        </figure>
-        <figure style="margin:0;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;">
-          <picture><source type="image/webp" srcset="images/projects/tradewinds-clubhouse/tradewinds-fitness-center.webp">
-            <img height="665" width="1000" src="images/projects/tradewinds-clubhouse/tradewinds-fitness-center.jpg" alt="Amenity fitness center with daylight storefront" loading="lazy" style="width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover;" decoding="async"></picture>
-          <figcaption style="padding:10px 14px;font-size:13px;color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;">Amenity fitness center with daylight storefront</figcaption>
-        </figure>
-      </div>
-      <div style="margin-top:clamp(20px,2.5vw,28px);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);">
-        Credit: <a href="https://www.feinbergassociates.com" target="_blank" rel="noopener nofollow" style="color:rgba(255,255,255,.6);text-decoration:underline;">Imagery courtesy Feinberg &amp; Associates and RED M Solutions</a>
-      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Multifamily amenity packages, clubhouse storefronts, and the coastal Florida glazing scope &mdash; ACG delivers to spec, on schedule, with product-partner depth behind the bid. Send plans and get a scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </section>
+  </main>
 
-    <footer class="ft">
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -560,21 +552,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

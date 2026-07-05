@@ -33,176 +33,8 @@
   <meta name="twitter:description" content="Window wall and storefront at Atlantic Fields Golf House, Hobe Sound FL. Commercial glazing by ACG.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/atlantic-fields-golf-house/og-social.jpg">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero {
-      position: relative;
-      height: 88vh;
-      min-height: 560px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(5,10,18,0.05) 0%, rgba(5,10,18,0.7) 100%);
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(40px, 8vw, 100px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 48px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .meta-value {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-    .story-text p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 24px;
-    }
-    .story-text h3 {
-      font-size: clamp(20px, 2vw, 26px);
-      color: white;
-      margin-bottom: 16px;
-      margin-top: 48px;
-    }
-    /* Full-width open wall showcase */
-    .open-wall-section {
-      position: relative;
-      overflow: hidden;
-      margin: 0;
-    }
-    .open-wall-section img {
-      width: 100%;
-      max-height: 680px;
-      object-fit: cover;
-      object-position: center 50%;
-      display: block;
-    }
-    .open-wall-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: clamp(20px, 3vw, 40px) clamp(24px, 6vw, 96px);
-      background: linear-gradient(transparent, rgba(5,10,18,0.85));
-    }
-    .open-wall-caption p {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-      letter-spacing: 0.05em;
-      max-width: 600px;
-    }
-    /* Gallery grids */
-    .gallery-2up {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(8px, 1.2vw, 14px);
-    }
-    .gallery-2up img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border-radius: var(--radius);
-      display: block;
-    }
-    .gallery-3up {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: clamp(8px, 1.2vw, 14px);
-    }
-    .gallery-3up img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border-radius: var(--radius);
-      display: block;
-    }
-    .gallery-asymmetric {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: clamp(8px, 1.2vw, 14px);
-    }
-    .gallery-asymmetric img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
-      display: block;
-    }
-    .gallery-asymmetric .tall { aspect-ratio: 16/10; }
-    .gallery-asymmetric .sq { aspect-ratio: 1/1; }
-    .partner-badge {
-      display: inline-flex;
-      flex-direction: column;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 16px;
-      margin-right: 12px;
-    }
-    .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-    @media (max-width: 768px) {
-      .gallery-2up, .gallery-3up, .gallery-asymmetric { grid-template-columns: 1fr; }
-      .gallery-asymmetric .tall, .gallery-asymmetric .sq { aspect-ratio: 4/3; height: auto; }
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
-
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -221,7 +53,6 @@
   }
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -304,7 +135,6 @@
   "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://acglass.com/portfolio.html"},{"@type":"ListItem","position":3,"name":"Atlantic Fields","item":"https://acglass.com/atlantic-fields.html"},{"@type":"ListItem","position":4,"name":"Atlantic Fields Golf House","item":"https://acglass.com/atlantic-fields-golf-house.html"}]
 }
 </script>
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -394,341 +224,7 @@
   ]
 }
 </script>
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-        <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
-        <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-
-  <!-- HERO — Full elevation from the fairway -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/hero-golden-hour.webp"><img height="1028" width="1564" src="images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" alt="Atlantic Fields Golf House — golden hour exterior view from the fairway, Hobe Sound FL" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <a href="atlantic-fields.html" style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(5,10,18,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#fff;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(255,255,255,.18)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Atlantic Fields Development</a>
-        <div class="label"><span class="line"></span> Hospitality &amp; Private Club</div>
-        <h1 style="font-size:clamp(28px,4vw,64px);font-weight:900;line-height:1.05;margin-top:16px;">Atlantic Fields <br> Golf House</h1>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Hospitality</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Proctor Construction</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">Euro-Wall SGD2020</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Hobe Sound, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- META -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Hospitality</span><a href="portfolio.html?mfg=eurowall" class="project-tag">Euro-Wall</a><a href="portfolio.html?gc=proctor" class="project-tag">Proctor Construction</a><span class="project-tag">Hobe Sound, FL</span><span class="project-tag">golf house glazing</span><span class="project-tag">window wall</span><span class="project-tag">bi-fold glass</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Hobe Sound, FL</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Private Golf Club — Hospitality</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">Proctor Construction</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">Window Wall, Operable Lift Systems, Storefront, Pro Shop</div></div>
-        <div><div class="meta-label">Campus</div><div class="meta-value">Atlantic Fields by Toll Brothers</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY + SIDE IMAGES -->
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div class="story-text">
-          <h3>The Project</h3>
-          <p>Atlantic Fields Golf House is the social and dining centerpiece of the Atlantic Fields private golf community in Hobe Sound, FL — a Toll Brothers development set around a championship course. The building is a two-structure complex: the main Golf House with its signature window wall dining room, and a separate pro shop. Both designed to open completely to the Florida landscape.</p>
-          <p>Built by Proctor Construction, this project required ACG to execute across multiple glazing systems — a feat of coordination that most glazing subs aren't equipped for. Window wall. Operable lift-and-slide panels. Storefront entrances. Interior glazing. We handled all of it.</p>
-
-          <h3>The Window Wall</h3>
-          <p>The main dining room features a full slab-to-slab window wall along the golf course elevation. The lower panels are a custom operable lift system — each glass panel rises vertically on a chain-and-sprocket mechanism, operated by hand crank, and locks in the fully open position to convert the dining room into an open-air pavilion overlooking the fairway.</p>
-          <p>When open, there is no boundary between the dining room and the terrace. The golf course is the fourth wall. That's what this system does when it's specified, coordinated, and installed correctly.</p>
-
-          <h3>The Pro Shop</h3>
-          <p>The pro shop features a large pivot-and-fold entry system — a wood-clad panel that swings open to create a wide-open retail entry connecting the shop directly to the exterior terrace and practice area. The surrounding storefronts are full-height glass with clean white aluminum framing consistent with the main building's architectural language.</p>
-
-          <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;">
-            <div class="partner-badge"><div class="pb-label">General Contractor</div><div class="pb-name">Proctor Construction</div></div>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:clamp(12px,1.8vw,18px);">
-          <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/connor-facade.webp"><img height="1080" width="1660" src="images/projects/atlantic-fields-golf-house/connor-facade.jpg" alt="Atlantic Fields Golf House — completed window wall facade" style="width:100%;border-radius:var(--radius);" loading="lazy" decoding="async"></picture>
-          <div class="gallery-2up">
-            <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/entry-path.webp"><img height="1600" width="1067" src="images/projects/atlantic-fields-golf-house/entry-path.jpg" alt="Palm-lined entry path toward the glass doors" loading="lazy" decoding="async"></picture>
-            <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/sliding-doors.webp"><img height="1620" width="1080" src="images/projects/atlantic-fields-golf-house/sliding-doors.jpg" alt="Glass sliding doors with wood accent wall" loading="lazy" decoding="async"></picture>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE OPEN WALL — Full width showcase -->
-  <section class="open-wall-section" data-reveal>
-    <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/hero-open-wall.webp"><img height="1080" width="1620" src="images/projects/atlantic-fields-golf-house/hero-open-wall.jpg" alt="Atlantic Fields Golf House — window wall panels fully open, dining room open to the terrace" loading="lazy" decoding="async"></picture>
-    <div class="open-wall-caption">
-      <p>The window wall panels fully raised — the dining room opens completely to the terrace and the fairway beyond. This is the system operating as designed.</p>
-    </div>
-  </section>
-
-  <!-- OPERABLE SYSTEM DETAIL -->
-  <section class="section">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:16px;"><span class="line"></span> System Detail</div>
-      <h2 style="font-size:clamp(26px,3vw,44px);margin-bottom:clamp(24px,3vw,40px);">The Lift Mechanism</h2>
-      <div class="gallery-asymmetric">
-        <div class="tall" style="overflow:hidden;">
-          <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/open-panel-view.webp"><img height="1620" width="1080" src="images/projects/atlantic-fields-golf-house/open-panel-view.jpg" alt="Open glass panel with chain-and-sprocket lift mechanism looking out to the fairway" loading="lazy" decoding="async"></picture>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:clamp(8px,1.2vw,14px);">
-          <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/lift-mechanism.webp"><img height="1620" width="1080" src="images/projects/atlantic-fields-golf-house/lift-mechanism.jpg" alt="Connor operating the hand-crank lift mechanism on the Golf House window wall" style="aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);width:100%;display:block;" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/interior-lounge.webp"><img height="1080" width="1620" src="images/projects/atlantic-fields-golf-house/interior-lounge.jpg" alt="Interior lounge with slab-to-slab glass wall open to the golf course" style="aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);width:100%;display:block;" loading="lazy" decoding="async"></picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERIOR + PRO SHOP -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:16px;"><span class="line"></span> Interior &amp; Pro Shop</div>
-      <h2 style="font-size:clamp(26px,3vw,44px);margin-bottom:clamp(24px,3vw,40px);">Every Opening. One Sub.</h2>
-      <div class="gallery-3up">
-        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/dining-interior.webp"><img height="1662" width="1080" src="images/projects/atlantic-fields-golf-house/dining-interior.jpg" alt="Atlantic Fields Golf House dining room interior with full glass wall surround" loading="lazy" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/interior-glass-wall.webp"><img height="1620" width="1080" src="images/projects/atlantic-fields-golf-house/interior-glass-wall.jpg" alt="Interior view of the Golf House window wall open to the golf course" loading="lazy" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/pro-shop.webp"><img height="1521" width="1080" src="images/projects/atlantic-fields-golf-house/pro-shop.jpg" alt="Atlantic Fields pro shop with pivot-fold glass entry system" loading="lazy" decoding="async"></picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENTRANCE GALLERY -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="gallery-2up">
-        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/entrance-walkway.webp"><img height="1080" width="1543" src="images/projects/atlantic-fields-golf-house/entrance-walkway.jpg" alt="Palm-lined entrance walkway to the Atlantic Fields Golf House" loading="lazy" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="images/projects/atlantic-fields-golf-house/interior-lounge.webp"><img height="1080" width="1620" src="images/projects/atlantic-fields-golf-house/interior-lounge.jpg" alt="Golf House lounge area with slab-to-slab glazing" loading="lazy" decoding="async"></picture>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- ========== CASE STUDY BLOCK ========== -->
-  <section class="case-study-section" data-reveal>
-    <div class="container">
-      <div class="case-study-header">
-        <div class="label"><span class="line"></span> Case Study &middot; Private Club / Discovery Land Amenity</div>
-        <h2 style="margin-top:14px;">How ACG <span class="accent">delivered it.</span></h2>
-      </div>
-
-      <div class="case-study-grid">
-        <!-- Challenge -->
-        <div class="case-study-col">
-          <div class="cs-col-label">The Challenge</div>
-          <div class="cs-col-body">
-            <p>Atlantic Fields is Discovery Land’s new Florida club — a Hobe Sound development where the finish standard on amenity buildings is set at the same tolerance as millwork, not construction.</p>
-<p>The Golf House design called for a wall that opens completely to the first tee. Any visible frame, any off-spec threshold transition, any gap in the lift-and-slide track would be unacceptable on a Discovery project, full stop.</p>
-          </div>
-        </div>
-
-        <!-- Solution -->
-        <div class="case-study-col">
-          <div class="cs-col-label">ACG Solution</div>
-          <div class="cs-col-body">
-            <p>ACG installed the full lift-and-slide door package along the course-side elevation, coordinating directly with Discovery Land’s owner-rep team on threshold detail, reveal tolerances, and aluminum finish samples before the first track shipped.</p>
-<p>Impact storefront frames the balance of the envelope, and every sill-to-slab transition was detailed as a finished architectural seam, not a caulk line. The clubhouse opens onto the course without visual interruption and seals against Florida weather when it closes.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Systems -->
-      <div class="case-study-systems">
-        <div class="cs-col-label">Systems Used</div>
-        <div class="cs-system-row">
-          <a href="euro-wall.html" class="cs-system-badge">Euro-Wall Lift-and-Slide</a>
-<a href="eswindows-installer-florida.html" class="cs-system-badge">ESWindows Impact Storefront</a>
-<a href="division-08-scope.html" class="cs-system-badge">Full Division 08 Scope</a>
-        </div>
-      </div>
-
-      <!-- Outcome + Credits -->
-      <div class="case-study-outcome">
-        <div class="cs-outcome-stat">
-          <div class="cs-outcome-num">100%</div>
-          <div class="cs-outcome-label">Of glazing package delivered to millwork tolerance</div>
-          <div class="cs-outcome-detail">Opened as Discovery Land’s 2025 marketing amenity</div>
-        </div>
-        <div class="cs-credits">
-          <div class="cs-credit"><span class="cs-credit-label">Architect</span><span class="cs-credit-value">Discovery Land Company Design Team</span></div>
-<div class="cs-credit"><span class="cs-credit-label">GC</span><span class="cs-credit-value">Proctor Construction</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Hospitality, private clubs, mixed-use — ACG coordinates every glazing system under one contract. Send your plans and get a complete scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-
-  <!-- RELATED ARTICLES -->
-  <section style="padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(255,255,255,0.06);">
-    <div class="container" data-reveal-fade>
-      <div style="text-align:center;margin-bottom:24px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#E11320);font-weight:600;">Related Articles</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-        <a href="blog/storefront-vs-curtainwall-vs-window-wall-difference.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Storefront vs Curtainwall vs Window Wall</div>
-        </a>
-        <a href="blog/bi-fold-glass-walls-restaurants-hospitality.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Bi-Fold Glass Walls for Restaurants & Hospitality</div>
-        </a>
-        <a href="blog/how-long-does-commercial-glass-installation-take.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">How Long Does Commercial Glass Installation Take?</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-    <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
-
-  <script defer src="js/main.js"></script>
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -760,8 +256,360 @@
   }
 }
 </script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><a href="atlantic-fields.html">Atlantic Fields</a><span aria-hidden="true">/</span><span aria-current="page">Golf House</span></nav>
+      <h1>Atlantic Fields <em>Golf House</em></h1>
+      <p class="p-sub">The social and dining centerpiece of the Atlantic Fields private golf community — a slab-to-slab window wall dining room whose operable panels convert it into an open-air pavilion over the fairway.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Hobe Sound, FL</span>
+        <span class="m"><b>Sector</b> Hospitality · Private golf club</span>
+        <span class="m"><b>GC</b> Proctor Construction</span>
+        <span class="m"><b>System</b> Euro-Wall SGD2020</span>
+        <span class="m"><b>Scope</b> Window wall · Lift systems · Storefront · Pro shop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== The project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/hero-golden-hour.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/hero-golden-hour.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" alt="Atlantic Fields Golf House — golden hour exterior view from the fairway, Hobe Sound FL" width="1564" height="1028" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Golf House · Hobe Sound, FL</span>
+        </div>
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">The project</span></div>
+          <h2 id="proj-h">Every opening. One sub.</h2>
+          <p>The Golf House is a two-structure complex — the main building with its signature window-wall dining room, and a separate pro shop — both designed to open completely to the Florida landscape. Built by Proctor Construction, the project required ACG to execute across multiple glazing systems on one subcontract: window wall, operable lift-and-slide panels, storefront entrances, and interior glazing.</p>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Hobe Sound, FL — <a href="atlantic-fields.html" style="border-bottom:1px solid var(--hairline-2)">Atlantic Fields</a></span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Hospitality · Private golf club amenity</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Window wall · Operable lift systems · Storefront · Pro shop</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">Euro-Wall SGD2020 lift-and-slide · ESWindows impact storefront</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">Proctor Construction</span></div>
+            <div class="row"><span class="k">Architect</span><span class="d">Discovery Land Company Design Team</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Photo record</span></div>
+          <h2 id="gal-h">The wall that opens to the first tee.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/hero-open-wall.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/hero-open-wall.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/hero-open-wall.jpg" alt="Atlantic Fields Golf House — window wall panels fully open, dining room open to the terrace" width="1620" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Panels fully raised</span><span class="s">The system operating as designed</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/connor-facade.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/connor-facade.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/connor-facade.jpg" alt="Atlantic Fields Golf House — completed window wall facade" width="1660" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Window wall facade</span><span class="s">Course elevation</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/hero-elevation.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/hero-elevation.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/hero-elevation.jpg" alt="Atlantic Fields Golf House full elevation from the fairway" width="1655" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Full elevation</span><span class="s">From the fairway</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/open-panel-view.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/open-panel-view.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/open-panel-view.jpg" alt="Open glass panel with chain-and-sprocket lift mechanism looking out to the fairway" width="1080" height="1620" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Open panel</span><span class="s">Looking out to the fairway</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/lift-mechanism.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/lift-mechanism.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/lift-mechanism.jpg" alt="Connor operating the hand-crank lift mechanism on the Golf House window wall" width="1080" height="1620" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Lift mechanism</span><span class="s">Hand-crank operation</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/interior-lounge.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/interior-lounge.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/interior-lounge.jpg" alt="Interior lounge with slab-to-slab glass wall open to the golf course" width="1620" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Interior lounge</span><span class="s">Slab-to-slab glazing</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/dining-interior.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/dining-interior.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/dining-interior.jpg" alt="Atlantic Fields Golf House dining room interior with full glass wall surround" width="1080" height="1662" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Dining room</span><span class="s">Full glass surround</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/interior-dining.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/interior-dining.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/interior-dining.jpg" alt="Golf House dining interior with window wall to the course" width="1080" height="1662" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Dining interior</span><span class="s">Window wall to the course</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/interior-glass-wall.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/interior-glass-wall.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/interior-glass-wall.jpg" alt="Interior view of the Golf House window wall open to the golf course" width="1080" height="1620" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Interior glass wall</span><span class="s">Open to the course</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/pro-shop.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/pro-shop.jpg" alt="Atlantic Fields pro shop with pivot-fold glass entry system" width="1080" height="1521" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Pro shop</span><span class="s">Pivot-and-fold entry</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/sliding-doors.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/sliding-doors.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/sliding-doors.jpg" alt="Glass sliding doors with wood accent wall" width="1080" height="1620" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Sliding doors</span><span class="s">Wood accent wall</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/entrance-walkway.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/entrance-walkway.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/entrance-walkway.jpg" alt="Palm-lined entrance walkway to the Atlantic Fields Golf House" width="1600" height="1120" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entrance walkway</span><span class="s">Palm-lined approach</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-golf-house/entry-path.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/entry-path.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/entry-path.jpg" alt="Palm-lined entry path toward the glass doors" width="1067" height="1600" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entry path</span><span class="s">Toward the glass doors</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Scope notes ========== -->
+  <section class="sec" aria-labelledby="notes-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Scope notes</span></div>
+          <h2 id="notes-h">How ACG delivered it.</h2>
+        </div>
+      </div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3>The window wall</h3>
+          <p>The main dining room runs full slab-to-slab window wall along the golf course elevation. The lower panels are a custom operable lift system — each glass panel rises vertically on a chain-and-sprocket mechanism, operated by hand crank, and locks in the fully open position, converting the dining room into an open-air pavilion over the fairway.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3>The pro shop</h3>
+          <p>A large pivot-and-fold entry system — a wood-clad panel that swings open to connect the shop directly to the exterior terrace and practice area. Surrounding storefronts are full-height glass with clean white aluminum framing matched to the main building's architectural language.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3>The finish standard</h3>
+          <p>Discovery Land sets amenity-building tolerances at millwork level, not construction level. ACG coordinated threshold details, reveal tolerances, and aluminum finish samples directly with the owner-rep team before the first track shipped.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">04</span>
+          <h3>Systems used</h3>
+          <p><a href="euro-wall.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">Euro-Wall lift-and-slide</a> on the course-side elevation, <a href="eswindows-installer-florida.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">ESWindows impact storefront</a> on the balance of the envelope — a <a href="division-08-scope.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">full Division 08 scope</a> on one subcontract.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">05</span>
+          <h3>The detailing</h3>
+          <p>Every sill-to-slab transition was detailed as a finished architectural seam, not a caulk line. The clubhouse opens onto the course without visual interruption and seals against Florida weather when it closes.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">06</span>
+          <h3>The outcome</h3>
+          <p>The full glazing package was delivered to millwork tolerance, and the building opened as Discovery Land's 2025 marketing amenity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Related projects ========== -->
+  <section class="sec svc" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More work at Atlantic Fields.</h2>
+        </div>
+        <a class="sec-link" href="atlantic-fields.html">The development
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="atlantic-fields-sales-center.html">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-sales-center/hero-pavilion-glow.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-sales-center/hero-pavilion-glow.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-sales-center/hero-pavilion-glow.jpg" alt="Atlantic Fields Sales Center — glass pavilion at dusk" width="1080" height="608" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Sales Center</span><span class="s">Atlantic Fields · Hobe Sound</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="atlantic-fields-performance-center.html">
+          <picture>
+            <source srcset="images/projects/atlantic-fields-performance/recovery-terrace.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-performance/recovery-terrace.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-performance/recovery-terrace.jpg" alt="Atlantic Fields Discovery Performance Center recovery terrace" width="1200" height="1600" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Discovery Performance Center</span><span class="s">Atlantic Fields · Hobe Sound</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="tradewinds-hobe-sound.html">
+          <picture>
+            <source srcset="images/projects/tradewinds-hobe-sound/aerial-community.avif" type="image/avif">
+            <source srcset="images/projects/tradewinds-hobe-sound/aerial-community.webp" type="image/webp">
+            <img src="images/projects/tradewinds-hobe-sound/aerial-community.jpg" alt="Tradewinds community aerial — Hobe Sound, FL" width="1000" height="665" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Tradewinds</span><span class="s">Clubhouse · Hobe Sound</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Hospitality, private clubs, mixed-use — ACG coordinates every glazing system under one contract. A scoped proposal comes back in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
+      </div>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

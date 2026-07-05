@@ -29,120 +29,7 @@
   <meta property="og:image:alt" content="American Commercial Glass — Florida's commercial glazing specialists">
   <meta property="og:url" content="https://acglass.com/waxins-west-palm-beach.html">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero {
-      position: relative;
-      height: 88vh;
-      min-height: 560px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(5,10,18,0.1) 0%, rgba(5,10,18,0.72) 100%);
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(40px, 8vw, 100px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 48px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .meta-value {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-    .story-text p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 24px;
-    }
-    .story-text h3 {
-      font-size: clamp(20px, 2vw, 26px);
-      color: white;
-      margin-bottom: 16px;
-      margin-top: 48px;
-    }
-    .partner-badge {
-      display: inline-flex;
-      flex-direction: column;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 16px;
-      margin-right: 12px;
-    }
-    .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 12px;
-    }
-    .gallery-grid .gallery-main {
-      grid-row: 1 / 3;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
-      display: block;
-    }
-    .gallery-grid .gallery-main img {
-      height: 560px;
-    }
-    .gallery-grid .gallery-side img {
-      height: 272px;
-    }
-    @media (max-width: 768px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-      .gallery-grid .gallery-main {
-        grid-row: auto;
-      }
-      .gallery-grid .gallery-main img,
-      .gallery-grid .gallery-side img {
-        height: 280px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -191,26 +78,6 @@
   }
 }
   </script>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
 <script type="application/ld+json">
 {
@@ -396,216 +263,236 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Waxin&rsquo;s</span></nav>
+      <h1>Waxin&rsquo;s <em>West Palm Beach</em></h1>
+      <p class="p-sub">Fixed storefront on both frontages and a Euro-Wall lift-and-slide system that opens the corner of Clematis and Olive completely — installed owner-direct for Waxin&rsquo;s third and most ambitious location.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> 230 Clematis St, WPB</span>
+        <span class="m"><b>Sector</b> Restaurant &amp; hospitality</span>
+        <span class="m"><b>Client</b> Waxin&rsquo;s ownership group</span>
+        <span class="m"><b>Systems</b> Euro-Wall</span>
+        <span class="m"><b>Opened</b> Nov 21, 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-101 · Project</span></div>
+          <h2 id="proj-h">When the glass is the centerpiece, the installer has to be perfect.</h2>
+          <div class="prose">
+            <p>Waxin&rsquo;s is a Swedish-American restaurant concept with roots in Palm Beach Gardens. Their third location — and their most ambitious — landed at 230 Clematis St in downtown West Palm Beach, on the corner of Clematis Street and Olive Avenue: the city&rsquo;s main dining and entertainment corridor.</p>
+            <p>The Palm Beach Post noted the restaurant&rsquo;s &ldquo;expansive floor-to-ceiling windows that open completely along Clematis Street.&rdquo; That&rsquo;s not an accident of architecture. It&rsquo;s a deliberate product choice — Euro-Wall — and an installation executed without margin for error.</p>
+            <p>ACG worked directly with the Waxin&rsquo;s ownership group — no general contractor layer — brought in early, before the glass was a line item on a bid list, and staying through installation and close-out. The scope covered two systems: fixed storefront glazing along both the Clematis Street and Olive Avenue frontages, and the Euro-Wall lift-and-slide opening system at the corner.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">230 Clematis St, West Palm Beach, FL</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Restaurant &amp; hospitality</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Fixed storefront + opening glass wall</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">Euro-Wall — ACG is an authorized installer</span></div>
+            <div class="row"><span class="k">Delivery</span><span class="d">Owner-direct — Waxin&rsquo;s ownership group</span></div>
           </div>
         </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/waxins-wpb-corner.webp"><img height="610" width="503" src="images/projects/waxins-wpb-corner.jpg" alt="Waxin's West Palm Beach — Euro-Wall corner opening glass system on Clematis Street, 230 visible" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="label"><span class="line"></span> Restaurant &amp; Hospitality</div>
-        <h1 style="font-size:clamp(32px,4.5vw,68px);font-weight:900;line-height:1.05;margin-top:16px;">Waxin's <br> West Palm Beach</h1>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/waxins-wpb-corner.avif" type="image/avif">
+            <source srcset="images/projects/waxins-wpb-corner.webp" type="image/webp">
+            <img src="images/projects/waxins-wpb-corner.jpg" alt="Waxin's West Palm Beach — Euro-Wall corner opening glass system open at 230 Clematis Street" width="503" height="610" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Waxin&rsquo;s · 230 Clematis St</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Commercial</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Owner-Direct</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">Euro-Wall</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">230 Clematis St, WPB</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- META GRID -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Restaurant</span><a href="portfolio.html?mfg=eurowall" class="project-tag">Euro-Wall</a><span class="project-tag">West Palm Beach, FL</span><span class="project-tag">restaurant glass</span><span class="project-tag">Clematis Street</span><span class="project-tag">opening glass wall</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">West Palm Beach, FL</div></div>
-        <div><div class="meta-label">Address</div><div class="meta-value">230 Clematis St, WPB 33401</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Restaurant &amp; Bar</div></div>
-        <div><div class="meta-label">Client</div><div class="meta-value">Waxin's Ownership Group</div></div>
-        <div><div class="meta-label">Product</div><div class="meta-value">Euro-Wall Opening Glass System</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">Storefront + Euro-Wall Opening System</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY + SIDEBAR IMAGE -->
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div class="story-text">
-
-          <h3>The Project</h3>
-          <p>Waxin's is a Swedish-American restaurant concept with roots in Palm Beach Gardens. Their third location — and their most ambitious — landed at 230 Clematis St in downtown West Palm Beach, occupying the corner of Clematis Street and Olive Avenue.</p>
-          <p>The address is about as visible as it gets in <a href="/storefront-glazier-west-palm-beach-florida/">West Palm Beach commercial glazing</a>. Clematis Street is the city's main dining and entertainment corridor. The corner of Clematis and Olive is where you go to be seen. And Waxin's ownership group understood exactly what that meant for the glass: the building's exterior had to perform as much as the menu inside.</p>
-          <p>The Palm Beach Post noted the restaurant's "expansive floor-to-ceiling windows that open completely along Clematis Street." That's not an accident of architecture. It's the result of a deliberate product choice — Euro-Wall — and an installation that had to be executed without margin for error. When the glass <em>is</em> the design centerpiece, the glazing contractor has to be perfect.</p>
-
-          <h3>The Scope</h3>
-          <p>ACG worked directly with the Waxin's ownership group. No general contractor layer. That means the owners brought us in on the conversation early — before the glass was just a line item on a bid list — and we stayed through the full installation and close-out.</p>
-          <p>The scope covered two distinct systems: fixed storefront glazing along both Clematis Street and Olive Avenue frontages, and the Euro-Wall lift-and-slide opening system at the corner. The fixed storefront is the frame — the full-height glass that wraps the building and draws the eye from half a block away. The Euro-Wall is the centerpiece.</p>
-          <p>The corner configuration required precise engineering. Two wall sections meeting at 90 degrees, both capable of folding completely open. The panels had to track on their hardware with zero binding, seal tight against Florida weather when closed, and lock securely at end of service. Every panel custom-fabricated to the opening, every frame aligned to a fraction of an inch. This is not a standard storefront installation — it's a performance system that happens to be made of glass.</p>
-          <p>Explore more <a href="commercial-storefront-installer-florida.html">storefront installation</a> work across Florida, or <a href="hospitality-glazing-florida.html">hospitality glazing</a> projects where ACG has delivered similar high-visibility scopes.</p>
-
-          <h3>Euro-Wall — European Engineering for American Restaurants</h3>
-          <p>Euro-Wall is a European-origin lift-and-slide door system designed for large-format glass panels. The mechanics are different from a standard sliding door: the panel first lifts slightly off its bottom track, then glides laterally on precision roller hardware. The result is a system that can handle panel sizes and weights that would be impossible with a conventional slide, with the minimal frame profiles that high-end architecture demands.</p>
-          <p>For a restaurant, the Euro-Wall value proposition is specific. You get an entire wall — or in Waxin's case, an entire corner — that disappears on a good weather evening. The indoor-outdoor divide ceases to exist. Guests at the window tables are effectively on the sidewalk. The energy of Clematis Street comes in. The restaurant spills out. That atmosphere is worth a lot to a hospitality brand, and it's only possible with a system engineered to open at that scale.</p>
-          <p>The same system is going into the <a href="panther-national-clubhouse.html">Panther National Clubhouse</a> — a private golf club project where the indoor-outdoor design language is equally central to the brief. ACG is one of a small number of glazing contractors in Florida with hands-on Euro-Wall installation experience. Find the full product line through our <a href="manufacturers.html">manufacturer partners</a> page.</p>
-
-          <h3>Downtown WPB — Home Market, Highest Visibility</h3>
-          <p>ACG's headquarters is in West Palm Beach. When we install glass on Clematis Street, we're installing it in our own backyard — on one of the most-walked blocks in the city, visible to every GC, architect, developer, and property owner who walks or drives through downtown.</p>
-          <p>Waxin's WPB opened November 21, 2025. Every dinner service since has been a live demonstration of what Euro-Wall looks like in the real world, installed right. Any decision-maker evaluating a similar system for a restaurant, retail, or hospitality project in South Florida can walk 230 Clematis Street and see the installation firsthand.</p>
-          <p>For contractors building in Palm Beach County, ACG handles the complete glazing scope — from plan review through punch list. <a href="gc.html">Send us your plans</a> and we'll have a complete scope back to you in 48 hours.</p>
-
-          <div style="margin-top:40px;">
-            <div class="partner-badge"><div class="pb-label">Client</div><div class="pb-name">Waxin's Ownership Group</div></div>
-            <div class="partner-badge"><div class="pb-label">Product</div><div class="pb-name">Euro-Wall</div></div>
-          </div>
-        </div>
-
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/waxins-wpb-interior.webp"><img height="610" width="600" src="images/projects/waxins-wpb-interior.jpg" alt="Waxin's West Palm Beach interior — packed dining room with ambient lighting and bar" style="width:100%;border-radius:var(--radius);margin-bottom:12px;" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/webp" srcset="images/projects/waxins-wpb-exterior.webp"><img height="440" width="700" src="images/projects/waxins-wpb-exterior.jpg" alt="Waxin's West Palm Beach — wide street corner view from across the intersection" style="width:100%;border-radius:var(--radius);" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Sheet A-201 · Photo record</span></div>
+          <h2 id="gal-h">The corner that disappears.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/waxins-wpb-exterior.webp" type="image/webp">
+            <img src="images/projects/waxins-wpb-exterior.jpg" alt="Waxin's West Palm Beach — wide street corner view from across the Clematis and Olive intersection" width="700" height="440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Clematis &amp; Olive</span><span class="s">Corner frontage</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/waxins-wpb-interior.webp" type="image/webp">
+            <img src="images/projects/waxins-wpb-interior.jpg" alt="Waxin's West Palm Beach interior — packed dining room with ambient lighting and bar" width="600" height="610" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Dining room</span><span class="s">Interior at service</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div class="label" style="margin-bottom:24px;" data-reveal><span class="line"></span> Gallery</div>
-      <div class="gallery-grid" data-reveal>
-        <div class="gallery-main">
-          <picture><source type="image/webp" srcset="images/projects/waxins-wpb-corner.webp"><img height="610" width="503" src="images/projects/waxins-wpb-corner.jpg" alt="Waxin's West Palm Beach — Euro-Wall corner system open, interior visible, 230 Clematis" loading="lazy" decoding="async"></picture>
+  <!-- ========== Scope notes ========== -->
+  <section class="sec pillars gnotes" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-301 · Scope notes</span></div>
+          <h2 id="scope-h">A performance system made of glass.</h2>
         </div>
-        <div class="gallery-side">
-          <picture><source type="image/webp" srcset="images/projects/waxins-wpb-exterior.webp"><img height="440" width="700" src="images/projects/waxins-wpb-exterior.jpg" alt="Waxin's West Palm Beach exterior from across Clematis and Olive intersection" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>A corner that opens completely</h3>
+          <p>Two wall sections meeting at 90 degrees, both capable of folding fully open — panels tracking on their hardware with zero binding, sealing tight against Florida weather when closed, locking securely at end of service. Every panel custom-fabricated to the opening.</p>
         </div>
-        <div class="gallery-side">
-          <picture><source type="image/webp" srcset="images/projects/waxins-wpb-interior.webp"><img height="610" width="600" src="images/projects/waxins-wpb-interior.jpg" alt="Waxin's West Palm Beach interior dining room packed with guests" loading="lazy" decoding="async"></picture>
+        <div class="gnote">
+          <h3>Lift-and-slide engineering</h3>
+          <p>Euro-Wall panels first lift slightly off the bottom track, then glide laterally on precision roller hardware — handling panel sizes and weights a conventional slider can&rsquo;t, with the minimal frame profiles high-end architecture demands.</p>
+        </div>
+        <div class="gnote">
+          <h3>Owner-direct</h3>
+          <p>No GC layer. The ownership group brought ACG into the conversation early, and the same team stayed through full installation and close-out.</p>
+        </div>
+        <div class="gnote">
+          <h3>Home market, highest visibility</h3>
+          <p>ACG&rsquo;s headquarters is in West Palm Beach. Waxin&rsquo;s opened November 21, 2025, and every dinner service since is a live demonstration of Euro-Wall installed right — walkable from anywhere downtown.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Restaurants, hospitality, retail — ACG delivers the glazing scope on time and on brand. Euro-Wall, storefront, curtainwall. <a href="gc.html" style="color:var(--accent);">Send us your plans</a> and get a complete scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More from the portfolio.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="panther-national-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/panther-national/aerial-golf-course.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/aerial-golf-course.webp" type="image/webp">
+            <img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National golf community, Palm Beach Gardens" width="1080" height="811" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Panther National</span><span class="s">Private club · Palm Beach Gardens</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="ocean-prime-ft-lauderdale.html">
+          <picture>
+            <source srcset="images/projects/ocean-prime-ft-lauderdale.avif" type="image/avif">
+            <source srcset="images/projects/ocean-prime-ft-lauderdale.webp" type="image/webp">
+            <img src="images/projects/ocean-prime-ft-lauderdale.jpg" alt="Ocean Prime restaurant at Pier Sixty-Six, Fort Lauderdale" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Ocean Prime — Pier Sixty-Six</span><span class="s">Restaurant · Fort Lauderdale</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="wave-food-hall-cocoa-beach.html">
+          <picture>
+            <source srcset="images/projects/wave-food-hall/hero-corner-exterior.avif" type="image/avif">
+            <source srcset="images/projects/wave-food-hall/hero-corner-exterior.webp" type="image/webp">
+            <img src="images/projects/wave-food-hall/hero-corner-exterior.jpg" alt="Wave Food Hall two-story corner glass on Atlantic Ave, Cocoa Beach" width="960" height="540" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Wave Food Hall</span><span class="s">Hospitality · Cocoa Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Upload drawings and bid-date info — a scoped proposal or budget direction comes back in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-    <footer class="ft">
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -614,21 +501,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

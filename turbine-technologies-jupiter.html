@@ -35,139 +35,7 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/turbine-technologies/aerial-wide.jpg">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero {
-      position: relative;
-      height: 80vh;
-      min-height: 500px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(5,10,18,0.25) 0%, rgba(5,10,18,0.75) 100%);
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(40px, 8vw, 100px);
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
-    .project-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 48px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .project-meta-item .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .project-meta-item .meta-value {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-    .project-story {
-      max-width: 720px;
-    }
-    .project-story p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 24px;
-    }
-    .project-story h3 {
-      font-size: clamp(20px, 2vw, 26px);
-      color: white;
-      margin-bottom: 16px;
-      margin-top: 48px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(12px, 2vw, 20px);
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
-      display: block;
-    }
-    .gallery-grid .tall {
-      grid-row: span 2;
-    }
-    .gallery-grid .img-wrap {
-      overflow: hidden;
-      border-radius: var(--radius);
-    }
-    .gallery-grid .img-wrap.tall { grid-row: span 2; }
-    .gallery-grid .img-wrap img { aspect-ratio: 4/3; }
-    .gallery-grid .img-wrap.tall img { aspect-ratio: unset; height: 100%; }
-    .partner-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 32px;
-    }
-    .partner-badge .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-    }
-    .partner-badge .pb-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: white;
-    }
-    @media (max-width: 768px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-grid .img-wrap.tall { grid-row: span 1; }
-      .gallery-grid .img-wrap.tall img { aspect-ratio: 4/3; height: auto; }
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
 
 <script type="application/ld+json">
 {
@@ -353,336 +221,246 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu">
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/turbine-technologies/aerial-wide.webp"><img height="1080" width="1440" src="images/projects/turbine-technologies/aerial-wide.jpg" alt="Turbine Technologies Jupiter FL — commercial storefront and windows" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="label"><span class="line"></span> Commercial / Industrial</div>
-        <h1 style="font-size: clamp(36px, 5vw, 72px); font-weight: 900; line-height: 1.05; margin-top: 16px;">Turbine Technologies</h1>
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Turbine Technologies</span></nav>
+      <h1>Turbine Technologies <em>Jupiter</em></h1>
+      <p class="p-sub">The complete glass and glazing package for a multi-unit commercial and light-industrial complex in Jupiter — uniform storefronts across every tenant bay, supplied in partnership with PGT Glass &amp; Aluminum.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Jupiter, FL</span>
+        <span class="m"><b>Sector</b> Commercial · Industrial</span>
+        <span class="m"><b>Delivery</b> Owner-direct</span>
+        <span class="m"><b>Systems</b> PGT</span>
+        <span class="m"><b>Completed</b> 2024</span>
       </div>
     </div>
   </section>
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Commercial</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Turbine Technologies (Owner)</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">PGT</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Jupiter, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- META -->
-  <section class="section" style="padding-top: clamp(48px, 6vw, 80px);">
-    <div class="container">
-      <div class="project-meta-grid" data-reveal>
-        <div class="project-meta-item">
-          <div class="meta-label">Location</div>
-          <div class="meta-value">Jupiter, FL</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Type</div>
-          <div class="meta-value">Commercial / Industrial</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Scope</div>
-          <div class="meta-value">Storefront Systems & Commercial Windows</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Supply Partner</div>
-          <div class="meta-value">PGT Glass & Aluminum</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Delivery</div>
-          <div class="meta-value">On Time. In Spec.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY + SIDE IMAGE -->
-  <section class="section">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 8vw, 120px); align-items: start;" data-reveal>
-
-        <div class="project-story">
-          <h3>The Project</h3>
-          <p>Turbine Technologies is a multi-unit commercial and light-industrial complex at 15837 in Jupiter, FL — a clean, modern build designed with a strong exterior presence. Blue accent facades, uniform storefronts across multiple tenant bays, and commercial windows throughout the second floor.</p>
-          <p>ACG was brought in to supply and install the complete glass and glazing package for the project, working in partnership with PGT Glass & Aluminum as the system supplier.</p>
-
-          <h3>The Scope</h3>
-          <p>ACG executed the full storefront package across every tenant bay — aluminum framing, commercial glazed entrance doors, fixed lite windows, and the second-floor window units on both the front and rear elevations.</p>
-          <p>With multiple identical bays requiring consistent framing, alignment, and sealant work, precision across the run was non-negotiable. Every unit matches. Every door swings correctly. Every window sits true to frame.</p>
-
-          <h3>The Partnership</h3>
-          <p>This project was completed in partnership with <strong style="color:white;">PGT Glass & Aluminum</strong> — among the most extensive glass and aluminum distributors in the country. The PGT-ACG relationship ensures competitive material pricing, reliable supply chain, and system expertise that smaller shops can't match.</p>
-
-          <div class="partner-badge">
-            <div>
-              <div class="pb-label">Supply Partner</div>
-              <div class="pb-name">PGT Glass & Aluminum</div>
-            </div>
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-101 · Project</span></div>
+          <h2 id="proj-h">Multiple identical bays. Zero tolerance for drift.</h2>
+          <div class="prose">
+            <p>Turbine Technologies is a multi-unit commercial and light-industrial complex in Jupiter, FL — a clean, modern build with a strong exterior presence: blue accent facades, uniform storefronts across multiple tenant bays, and commercial windows across the second floor.</p>
+            <p>ACG was brought in directly by ownership to supply and install the complete glass and glazing package, working in partnership with PGT Glass &amp; Aluminum as the system supplier.</p>
+            <p>The scope ran the full storefront package across every tenant bay — aluminum framing, commercial glazed entrance doors, fixed-lite windows, and the second-floor window units on both the front and rear elevations. With multiple identical bays requiring consistent framing, alignment, and sealant work, precision across the run was non-negotiable: every unit matches, every door swings correctly, every window sits true to frame.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Jupiter, FL · Palm Beach County</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Commercial · Light industrial</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Storefront systems · commercial windows</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">PGT</span></div>
+            <div class="row"><span class="k">Delivery</span><span class="d">Owner-direct — Turbine Technologies</span></div>
+            <div class="row"><span class="k">Completed</span><span class="d">2024</span></div>
           </div>
         </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/turbine-technologies/aerial-wide.avif" type="image/avif">
+            <source srcset="images/projects/turbine-technologies/aerial-wide.webp" type="image/webp">
+            <img src="images/projects/turbine-technologies/aerial-wide.jpg" alt="Turbine Technologies Jupiter FL — commercial storefront and windows across multiple tenant bays" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Turbine Technologies · Jupiter, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/turbine-technologies/entrance.webp"><img height="1080" width="1440" src="images/projects/turbine-technologies/entrance.jpg" alt="Turbine Technologies entrance storefront — Jupiter FL" style="width:100%; border-radius: var(--radius); margin-bottom: clamp(16px, 2vw, 20px);" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/webp" srcset="images/projects/turbine-technologies/facade-close.webp"><img height="1080" width="1440" src="images/projects/turbine-technologies/facade-close.jpg" alt="Turbine Technologies facade close-up with storefronts" style="width:100%; border-radius: var(--radius);" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Sheet A-201 · Photo record</span></div>
+          <h2 id="gal-h">Every unit matches.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/turbine-technologies/facade-close.avif" type="image/avif">
+            <source srcset="images/projects/turbine-technologies/facade-close.webp" type="image/webp">
+            <img src="images/projects/turbine-technologies/facade-close.jpg" alt="Turbine Technologies facade close-up with uniform storefronts across tenant bays" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Facade</span><span class="s">Uniform storefront run</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/turbine-technologies/entrance.avif" type="image/avif">
+            <source srcset="images/projects/turbine-technologies/entrance.webp" type="image/webp">
+            <img src="images/projects/turbine-technologies/entrance.jpg" alt="Turbine Technologies main entrance storefront doors" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Entrance</span><span class="s">Glazed entrance doors</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/turbine-technologies/aerial-top.avif" type="image/avif">
+            <source srcset="images/projects/turbine-technologies/aerial-top.webp" type="image/webp">
+            <img src="images/projects/turbine-technologies/aerial-top.jpg" alt="Turbine Technologies aerial top-down view of the complex" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Aerial</span><span class="s">Multi-unit complex</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="gallery-grid" data-reveal>
-        <div class="img-wrap tall">
-          <picture><source type="image/webp" srcset="images/projects/turbine-technologies/facade-close.webp"><img height="1080" width="1440" src="images/projects/turbine-technologies/facade-close.jpg" alt="Turbine Technologies Jupiter FL facade drone shot" loading="lazy" decoding="async"></picture>
-        </div>
-        <div class="img-wrap">
-          <picture><source type="image/webp" srcset="images/projects/turbine-technologies/entrance.webp"><img height="1080" width="1440" src="images/projects/turbine-technologies/entrance.jpg" alt="Turbine Technologies main entrance storefront doors" loading="lazy" decoding="async"></picture>
-        </div>
-        <div class="img-wrap">
-          <picture><source type="image/webp" srcset="images/projects/turbine-technologies/aerial-top.webp"><img height="1080" width="1440" src="images/projects/turbine-technologies/aerial-top.jpg" alt="Turbine Technologies aerial top-down view" loading="lazy" decoding="async"></picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <!-- ACG-ENRICHED-START -->
-
-  <!-- ACG-ENRICHED: System detail -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
+  <!-- ========== Scope notes ========== -->
+  <section class="sec pillars gnotes" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <div class="label" style="margin-bottom:18px;"><span class="line"></span> The System</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">ESWindows</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
-            <div class="partner-badge"><div class="pb-label">Scope</div><div class="pb-name">Industrial facility storefront</div></div>
-            <div class="partner-badge"><div class="pb-label">Completion</div><div class="pb-name">2024</div></div>
-          </div>
+          <div class="k-wrap"><span class="k-label">Sheet A-301 · Scope notes</span></div>
+          <h2 id="scope-h">Owner-direct, run like a subcontract.</h2>
         </div>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.65;color:rgba(255,255,255,0.78);">
-          <p>The glazing package on Turbine Technologies Jupiter included industrial facility storefront. ACG specified, supplied, and installed ESWindows — manufactured by ACG's seven approved partner lines: ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora.</p><p>The scope was sequenced to ownership's field schedule, with weekly coordination meetings, RFI turn-around inside 24 hours, and submittals tracked against the construction critical path. ACG's three-office Florida footprint (West Palm Beach HQ, Naples, Tampa) keeps a project supervisor within driving distance of every active job site, and the Jupiter location pulled supervision out of our West Palm Beach office.</p>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>Owner-direct delivery</h3>
+          <p>ACG contracted directly with ownership and ran the scope to the field schedule — weekly coordination meetings, RFI turnaround inside 24 hours, and submittals tracked against the construction critical path.</p>
+        </div>
+        <div class="gnote">
+          <h3>Repetition demands precision</h3>
+          <p>Multiple identical tenant bays meant framing, alignment, and sealant work had to hold consistent across the entire run — the standard a drive-by inspection can verify from the street.</p>
+        </div>
+        <div class="gnote">
+          <h3>Supplied by PGT Glass &amp; Aluminum</h3>
+          <p>The project was completed in partnership with PGT Glass &amp; Aluminum as the system supplier, with the supply chain and system depth to keep material ahead of the installation sequence.</p>
+        </div>
+        <div class="gnote">
+          <h3>Supervised from West Palm Beach</h3>
+          <p>The Jupiter site pulled supervision out of ACG&rsquo;s West Palm Beach headquarters — a project supervisor within driving distance for the duration of the job.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ACG-ENRICHED: Jurisdiction -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div style="max-width:880px;" data-reveal>
-        <div class="label" style="margin-bottom:18px;"><span class="line"></span> Palm Beach County · Jurisdiction</div>
-        <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">Why Jupiter.</h2>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.7;color:rgba(255,255,255,0.78);">
-          <p>Why this matters for the Jupiter market. Turbine Technologies Jupiter is not just another envelope. Aerospace turbine company. Subcontractors who deliver here build a body of evidence GCs and developers can verify — first-pass inspection clearance, on-time turnover, accurate submittals, no callback claims. Those four metrics are how a glazing sub gets called back, and they are the entire reason ACG was selected for this scope.</p><p>For developers and GCs evaluating subcontractors for similar work in Jupiter or surrounding Palm Beach County, Turbine Technologies Jupiter is on our portfolio precisely because it represents the standard of execution we hold across every project, regardless of size.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Related projects -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:20px;">
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <div class="label" style="margin-bottom:14px;"><span class="line"></span> Related Work</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1;letter-spacing:-0.02em;">Similar projects from our portfolio.</h2>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More from the portfolio.</h2>
         </div>
-        <a href="portfolio.html" style="font-size:14px;font-weight:600;color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;white-space:nowrap;">View All →</a>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2vw,32px);">
-        
-        <a href="compass-alton-town-center.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Boca Raton · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">Compass at Alton Town Center</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Multifamily storefront and balcony glazing</div>
-        </a>
-        <a href="el-car-wash-northlake.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            <picture>
-              <source type="image/webp" srcset="images/projects/el-car-wash-northlake/hero.webp">
-              <img src="images/projects/el-car-wash-northlake/hero.jpg" alt="El Car Wash Northlake project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-            </picture>
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Lake Park · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">El Car Wash Northlake</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Storefront and tunnel glazing</div>
-        </a>
-        <a href="waxins-west-palm-beach.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">West Palm Beach · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">Waxin&#x27;s West Palm Beach</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Storefront opening glass</div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Related reading -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div style="max-width:760px;margin-bottom:36px;">
-        <div class="label" style="margin-bottom:14px;"><span class="line"></span> More Context</div>
-        <h2 style="font-size:clamp(24px,2.6vw,40px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;">Related reading from the ACG knowledge base.</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);">
-        
-        <a href="blog/turbine-technologies-jupiter-glazing.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Project Brief</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Turbine Technologies Jupiter — Glazing by ACG | Jupiter, FL</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG delivered the glazing envelope at Turbine Technologies Jupiter in Jupiter, FL — direct with ownership. ESWindows. Aerospace tu</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="el-car-wash-northlake.html">
+          <picture>
+            <source srcset="images/projects/el-car-wash-northlake/hero.webp" type="image/webp">
+            <img src="images/projects/el-car-wash-northlake/hero.jpg" alt="El Car Wash Northlake in West Palm Beach — storefront and tunnel glazing by ACG" width="400" height="300" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">El Car Wash Northlake</span><span class="s">Commercial · West Palm Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="commercial-storefront-systems.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Commercial Storefront Systems Florida | Impact Storefront</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Florida commercial storefront contractor. ESWindows ES-8000/9000, impact storefront, entrances, door hardware coordination, NOA-ap</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
+        <a class="proj" href="waxins-west-palm-beach.html">
+          <picture>
+            <source srcset="images/projects/waxins-wpb-corner.avif" type="image/avif">
+            <source srcset="images/projects/waxins-wpb-corner.webp" type="image/webp">
+            <img src="images/projects/waxins-wpb-corner.jpg" alt="Waxin's West Palm Beach — Euro-Wall corner opening glass system on Clematis Street" width="503" height="610" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Waxin&rsquo;s West Palm Beach</span><span class="s">Restaurant · Clematis Street</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="eswindows-installer-florida.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">ESWindows Installer Florida | Commercial Aluminum Windows</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG is an authorized ESWindows installer for commercial projects across Florida. ES8000 storefront, ES50 windows, curtainwall syst</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
+        <a class="proj" href="storage-king-winter-haven.html">
+          <picture>
+            <source srcset="images/projects/storage-king-winter-haven/hero-storefront.avif" type="image/avif">
+            <source srcset="images/projects/storage-king-winter-haven/hero-storefront.webp" type="image/webp">
+            <img src="images/projects/storage-king-winter-haven/hero-storefront.jpg" alt="Storage King USA Winter Haven — ESWindows glass storefront entry building" width="828" height="538" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Storage King USA</span><span class="s">Self-storage · Winter Haven</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ACG-ENRICHED-END -->
-
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Commercial, industrial, multifamily, residential — ACG brings the same discipline to every scope. Send your drawings and get a detailed scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Upload drawings and bid-date info — a scoped proposal or budget direction comes back in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-    <footer class="ft">
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -691,54 +469,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Turbine Technologies — Commercial Storefront Installation, Jupiter FL",
-  "description": "Commercial storefront and window installation at Turbine Technologies in Jupiter, FL by American Commercial Glass, in partnership with PGT Glass & Aluminum.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "American Commercial Glass",
-    "url": "https://acglass.com",
-    "alternateName": [
-      "ACG",
-      "ACG Glass",
-      "ACG Florida",
-      "American Commercial Glass Florida",
-      "ACG Commercial Glass"
-    ],
-    "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-    "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
-  },
-  "datePublished": "2024-01-01",
-  "dateModified": "2025-01-01",
-  "author": {
-    "@type": "Person",
-    "@id": "https://acglass.com/#connor-walsh",
-    "name": "Connor Walsh",
-    "jobTitle": "Co-Founder & Operations Director",
-    "url": "https://acglass.com/author/connor-walsh/"
-  }
-}
-</script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

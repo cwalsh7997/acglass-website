@@ -34,133 +34,8 @@
   <meta name="twitter:description" content="ACG completed the Aspen Dental Plaza project in Edgewater, FL using ESWindows products. Healthcare commercial glazing — storefronts, curtainwall, impact glass..">
   <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero {
-      position: relative;
-      height: 82vh;
-      min-height: 500px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(5,10,18,0.2) 0%, rgba(5,10,18,0.75) 100%);
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(40px, 8vw, 100px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .project-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 48px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .project-meta-item .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .project-meta-item .meta-value {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-    .project-story p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 24px;
-    }
-    .project-story h3 {
-      font-size: clamp(20px, 2vw, 26px);
-      color: white;
-      margin-bottom: 16px;
-      margin-top: 48px;
-    }
-    .gallery-3 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: clamp(12px, 2vw, 20px);
-    }
-    .gallery-3 img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      border-radius: var(--radius);
-    }
-    .gallery-3 .hero-img {
-      grid-column: 1 / -1;
-      aspect-ratio: 16/7;
-    }
-    .gallery-3 .corner-img { aspect-ratio: 4/3; }
-    .gallery-3 .detail-img { aspect-ratio: 4/3; }
-    .partner-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 16px;
-      margin-right: 12px;
-    }
-    .partner-badge .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .partner-badge .pb-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: white;
-    }
-    @media (max-width: 768px) {
-      .gallery-3 { grid-template-columns: 1fr; }
-      .gallery-3 .hero-img { grid-column: 1; aspect-ratio: 4/3; }
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
 
 <script type="application/ld+json">
 {
@@ -342,366 +217,7 @@
   ]
 }
 </script>
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-        <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
-        <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/aspen-dental-edgewater/hero-front.webp"><img height="1080" width="1440" src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental retail plaza Edgewater FL — ESWindows storefront glazing" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="label"><span class="line"></span> Retail / Healthcare</div>
-        <h1 style="font-size: clamp(32px, 4.5vw, 68px); font-weight: 900; line-height: 1.05; margin-top: 16px;">Aspen Dental <br> Retail Plaza</h1>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Retail</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">MEC</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Edgewater, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- META -->
-  <section class="section" style="padding-top: clamp(48px, 6vw, 80px);">
-    <div class="container">
-      <div class="project-meta-grid" data-reveal>
-        <div class="project-meta-item">
-          <div class="meta-label">Location</div>
-          <div class="meta-value">Edgewater, FL</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Type</div>
-          <div class="meta-value">Retail / Healthcare</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">General Contractor</div>
-          <div class="meta-value">MEC Contractors</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Systems</div>
-          <div class="meta-value">ESWindows Commercial Storefront</div>
-        </div>
-        <div class="project-meta-item">
-          <div class="meta-label">Scope</div>
-          <div class="meta-value">Multi-Tenant Storefront &amp; Windows</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STORY + IMAGES -->
-  <section class="section">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 8vw, 120px); align-items: start;" data-reveal>
-
-        <div class="project-story">
-          <h3>The Project</h3>
-          <p>A new multi-tenant retail plaza anchored by Aspen Dental in Edgewater, FL — built by MEC Contractors on a tight schedule with a mix of healthcare and retail tenants requiring different storefront configurations across the same building facade.</p>
-          <p>ACG supplied and installed the complete ESWindows commercial glazing package: storefront entrance systems for each tenant bay, fixed commercial windows set into the brick masonry facade, and the full-height storefront glazing on the anchor tenant unit.</p>
-
-          <h3>The Scope</h3>
-          <p>The project required consistent aluminum framing profiles across multiple tenant bays while accommodating different opening sizes and configurations — from the narrow fixed windows on the Aspen Dental side to the full-height glass storefront on the AT&T end unit.</p>
-          <p>ESWindows aluminum systems were specified for their performance, lead time reliability, and Florida code compliance. Every frame was installed plumb, every door swings clean, and the finished product looks exactly like the architect drew it.</p>
-
-          <h3>The Team</h3>
-          <p>Completed for <strong style="color:white;">MEC Contractors</strong> — a general contractor who runs a tight ship and expects the same from every sub on their sites. ACG delivered the glazing scope on schedule with no change orders and no punchlist issues at TCO.</p>
-
-          <div style="margin-top: 32px;">
-            <div class="partner-badge">
-              <div>
-                <div class="pb-label">General Contractor</div>
-                <div class="pb-name">MEC Contractors</div>
-              </div>
-            </div>
-            <div class="partner-badge">
-              <div>
-                <div class="pb-label">Glazing Systems</div>
-                <div class="pb-name">ESWindows</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: clamp(16px, 2vw, 20px);">
-          <picture><source type="image/webp" srcset="images/projects/aspen-dental-edgewater/corner.webp"><img height="1080" width="1440" src="images/projects/aspen-dental-edgewater/corner.jpg" alt="Aspen Dental plaza corner — ESWindows storefront" style="width:100%; border-radius: var(--radius);" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/webp" srcset="images/projects/aspen-dental-edgewater/window-detail.webp"><img height="1440" width="1080" src="images/projects/aspen-dental-edgewater/window-detail.jpg" alt="ESWindows commercial windows detail in brick facade" style="width:100%; border-radius: var(--radius);" loading="lazy" decoding="async"></picture>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FULL-WIDTH IMAGE -->
-  <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div style="border-radius: var(--radius); overflow: hidden;" data-reveal>
-        <picture><source type="image/webp" srcset="images/projects/aspen-dental-edgewater/hero-front.webp"><img height="1080" width="1440" src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental Edgewater FL retail plaza full facade" style="width:100%; display:block; max-height:520px; object-fit:cover; object-position: center 40%;" loading="lazy" decoding="async"></picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <!-- ACG-ENRICHED-START -->
-
-  <!-- ACG-ENRICHED: System detail -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div>
-          <div class="label" style="margin-bottom:18px;"><span class="line"></span> The System</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">ESWindows</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
-            <div class="partner-badge"><div class="pb-label">Scope</div><div class="pb-name">Healthcare retail storefront</div></div>
-            <div class="partner-badge"><div class="pb-label">Completion</div><div class="pb-name">2024</div></div>
-          </div>
-        </div>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.65;color:rgba(255,255,255,0.78);">
-          <p>The glazing package on Aspen Dental Edgewater included healthcare retail storefront. ACG specified, supplied, and installed ESWindows — manufactured by ACG's seven approved partner lines: ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora.</p><p>The scope was sequenced to ownership's field schedule, with weekly coordination meetings, RFI turn-around inside 24 hours, and submittals tracked against the construction critical path. ACG's three-office Florida footprint (West Palm Beach HQ, Naples, Tampa) keeps a project supervisor within driving distance of every active job site, and the Edgewater location pulled supervision out of our West Palm Beach office.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Jurisdiction -->
-  <section class="section" style="padding-top:0;">
-    <div class="container">
-      <div style="max-width:880px;" data-reveal>
-        <div class="label" style="margin-bottom:18px;"><span class="line"></span> Volusia County · Jurisdiction</div>
-        <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">Why Edgewater.</h2>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.7;color:rgba(255,255,255,0.78);">
-          <p>Why this matters for the Edgewater market. Aspen Dental Edgewater is not just another envelope. Aspen Dental Edgewater. Subcontractors who deliver here build a body of evidence GCs and developers can verify — first-pass inspection clearance, on-time turnover, accurate submittals, no callback claims. Those four metrics are how a glazing sub gets called back, and they are the entire reason ACG was selected for this scope.</p><p>For developers and GCs evaluating subcontractors for similar work in Edgewater or surrounding Volusia County, Aspen Dental Edgewater is on our portfolio precisely because it represents the standard of execution we hold across every project, regardless of size.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Related projects -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:20px;">
-        <div>
-          <div class="label" style="margin-bottom:14px;"><span class="line"></span> Related Work</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1;letter-spacing:-0.02em;">Similar projects from our portfolio.</h2>
-        </div>
-        <a href="portfolio.html" style="font-size:14px;font-weight:600;color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;white-space:nowrap;">View All →</a>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2vw,32px);">
-        
-        <a href="bradley-daytona.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            <picture>
-              <source type="image/webp" srcset="images/projects/bradley-daytona.webp">
-              <img src="images/projects/bradley-daytona.jpg" alt="The Bradley Daytona project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-            </picture>
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Daytona · Volusia County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">The Bradley Daytona</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Multifamily complex glazing</div>
-        </a>
-        <a href="baron-shoppes-tradition.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            <picture>
-              <source type="image/webp" srcset="images/projects/baron-shoppes-tradition.webp">
-              <img src="images/projects/baron-shoppes-tradition.jpg" alt="Baron Shoppes at Tradition project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
-            </picture>
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Port St. Lucie · St. Lucie County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">Baron Shoppes at Tradition</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Retail center storefront</div>
-        </a>
-        <a href="dale-mabry-retail-tampa.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
-            
-          </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Tampa · Hillsborough County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">Dale Mabry Retail Tampa</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Retail storefront</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ACG-ENRICHED: Related reading -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div style="max-width:760px;margin-bottom:36px;">
-        <div class="label" style="margin-bottom:14px;"><span class="line"></span> More Context</div>
-        <h2 style="font-size:clamp(24px,2.6vw,40px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;">Related reading from the ACG knowledge base.</h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);">
-        
-        <a href="blog/aspen-dental-edgewater-glazing.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Project Brief</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Aspen Dental Edgewater — Glazing by ACG | Edgewater, FL</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG delivered the glazing envelope at Aspen Dental Edgewater in Edgewater, FL — direct with ownership. ESWindows. Aspen Dental Edg</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
-        </a>
-        <a href="commercial-storefront-systems.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Commercial Storefront Systems Florida | Impact Storefront</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Florida commercial storefront contractor. ESWindows ES-8000/9000, impact storefront, entrances, door hardware coordination, NOA-ap</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
-        </a>
-        <a href="eswindows-installer-florida.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">ESWindows Installer Florida | Commercial Aluminum Windows</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG is an authorized ESWindows installer for commercial projects across Florida. ES8000 storefront, ES50 windows, curtainwall syst</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACG-ENRICHED-END -->
-
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
-      <p>Retail plazas, healthcare facilities, commercial new construction — ACG delivers the glazing scope on schedule, in spec, every time. Send your plans and get a scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-    <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
-
-  <script defer src="js/main.js"></script>
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -733,8 +249,266 @@
   }
 }
 </script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Aspen Dental Plaza</span></nav>
+      <h1>Aspen Dental Retail Plaza</h1>
+      <p class="p-sub">A new multi-tenant retail plaza anchored by Aspen Dental in Edgewater, FL — the complete ESWindows storefront and window package, delivered for MEC Contractors on a tight schedule.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Edgewater, FL</span>
+        <span class="m"><b>Sector</b> Retail / Healthcare</span>
+        <span class="m"><b>GC</b> MEC Contractors</span>
+        <span class="m"><b>Scope</b> Multi-tenant storefront &amp; windows</span>
+        <span class="m"><b>System</b> ESWindows</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/aspen-dental-edgewater/hero-front.avif" type="image/avif">
+            <source srcset="images/projects/aspen-dental-edgewater/hero-front.webp" type="image/webp">
+            <img src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental retail plaza in Edgewater, FL — ESWindows storefront glazing across the multi-tenant facade" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Edgewater, FL · Volusia County</span>
+        </div>
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">The project</span></div>
+          <h2 id="proj-h">One facade, every tenant configuration.</h2>
+          <p>A mix of healthcare and retail tenants required different storefront configurations across the same building facade. ACG supplied and installed the complete ESWindows commercial glazing package: storefront entrance systems for each tenant bay, fixed commercial windows set into the brick masonry facade, and the full-height storefront glazing on the anchor tenant unit.</p>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Edgewater, FL</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Retail / Healthcare</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Multi-tenant storefront &amp; windows</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">ESWindows commercial storefront</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">MEC Contractors</span></div>
+            <div class="row"><span class="k">Completed</span><span class="d">2024</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">As built</span></div>
+          <h2 id="gal-h">On the facade.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/aspen-dental-edgewater/hero-front.avif" type="image/avif">
+            <source srcset="images/projects/aspen-dental-edgewater/hero-front.webp" type="image/webp">
+            <img src="images/projects/aspen-dental-edgewater/hero-front.jpg" alt="Aspen Dental Edgewater retail plaza — full front facade with ESWindows storefront glazing" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Front elevation</span><span class="s">ESWindows storefront · anchor bay</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/aspen-dental-edgewater/corner.avif" type="image/avif">
+            <source srcset="images/projects/aspen-dental-edgewater/corner.webp" type="image/webp">
+            <img src="images/projects/aspen-dental-edgewater/corner.jpg" alt="Aspen Dental plaza corner — ESWindows storefront meeting the brick masonry facade" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Corner condition</span><span class="s">Storefront · brick facade</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/aspen-dental-edgewater/window-detail.avif" type="image/avif">
+            <source srcset="images/projects/aspen-dental-edgewater/window-detail.webp" type="image/webp">
+            <img src="images/projects/aspen-dental-edgewater/window-detail.jpg" alt="ESWindows commercial fixed windows set into the brick facade at Aspen Dental Edgewater" width="1080" height="1440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Window detail</span><span class="s">Fixed commercial windows</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Scope notes ========== -->
+  <section class="sec" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Scope notes</span></div>
+          <h2 id="scope-h">Consistent profiles, different openings.</h2>
+        </div>
+      </div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3>One framing language</h3>
+          <p>Consistent aluminum framing profiles across multiple tenant bays while accommodating different opening sizes and configurations — from the narrow fixed windows on the Aspen Dental side to the full-height glass storefront on the AT&amp;T end unit.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3>ESWindows spec</h3>
+          <p>ESWindows aluminum systems were specified for performance, lead-time reliability, and Florida code compliance. Every frame installed plumb, every door swinging clean — built the way the architect drew it.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3>Clean closeout</h3>
+          <p>Completed for MEC Contractors — a GC that runs a tight ship and expects the same from every sub. ACG delivered the glazing scope on schedule with no change orders and no punchlist issues at TCO.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Related projects ========== -->
+  <section class="sec svc" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related work</span></div>
+          <h2 id="rel-h">More retail &amp; commercial projects.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="baron-shoppes-tradition.html">
+          <picture>
+            <source srcset="images/projects/baron-shoppes-tradition.avif" type="image/avif">
+            <source srcset="images/projects/baron-shoppes-tradition.webp" type="image/webp">
+            <img src="images/projects/baron-shoppes-tradition.jpg" alt="Baron Shoppes of Tradition retail storefront glazing at dusk, Port St. Lucie" width="1920" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Baron Shoppes of Tradition</span><span class="s">Retail · Port St. Lucie</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="bradley-daytona.html">
+          <picture>
+            <source srcset="images/projects/bradley-daytona.avif" type="image/avif">
+            <source srcset="images/projects/bradley-daytona.webp" type="image/webp">
+            <img src="images/projects/bradley-daytona.jpg" alt="The Bradley Daytona multifamily glazing, Daytona Beach" width="650" height="433" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">The Bradley Daytona</span><span class="s">Multifamily · Volusia County</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="dale-mabry-retail-tampa.html">
+          <picture>
+            <source srcset="images/projects/dale-mabry-retail/hero-entry.avif" type="image/avif">
+            <source srcset="images/projects/dale-mabry-retail/hero-entry.webp" type="image/webp">
+            <img src="images/projects/dale-mabry-retail/hero-entry.jpg" alt="Dale Mabry retail storefront entry, Tampa" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Dale Mabry Retail</span><span class="s">Retail · Tampa</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Retail plazas, healthcare facilities, commercial new construction — send drawings and a scoped proposal comes back in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
+      </div>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

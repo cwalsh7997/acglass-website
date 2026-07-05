@@ -33,7 +33,7 @@
   <meta name="twitter:title" content="Wave Food Hall — Destination Downtown Cocoa Beach | ACG">
   <meta name="twitter:image" content="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -135,338 +135,6 @@
   ]
 }
 </script>
-  <style>
-    /* ── PROJECT HERO ── */
-    .project-hero {
-      position: relative;
-      height: 100vh;
-      min-height: 640px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 50%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(5,10,18,0.08) 0%,
-        rgba(5,10,18,0.18) 40%,
-        rgba(5,10,18,0.75) 75%,
-        rgba(5,10,18,0.92) 100%
-      );
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(48px, 9vw, 110px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .project-hero-content h1 {
-      font-size: clamp(36px, 5.5vw, 80px);
-      font-weight: 900;
-      line-height: 1.03;
-      margin-top: 18px;
-      letter-spacing: -0.02em;
-    }
-    .project-hero-content .subtitle {
-      font-size: clamp(15px, 1.4vw, 20px);
-      color: rgba(255,255,255,0.65);
-      margin-top: 14px;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-
-    /* ── META GRID ── */
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 52px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .meta-value {
-      font-size: clamp(14px, 1.1vw, 16px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-
-    /* ── STORY TEXT ── */
-    .story-text p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.85;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 24px;
-    }
-    .story-text p:last-child { margin-bottom: 0; }
-    .story-text h3 {
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 800;
-      color: white;
-      margin-bottom: 18px;
-      margin-top: 52px;
-      letter-spacing: -0.01em;
-    }
-    .story-text h3:first-child { margin-top: 0; }
-    .story-text strong {
-      color: rgba(255,255,255,0.9);
-      font-weight: 600;
-    }
-
-    /* ── SCOPE LIST ── */
-    .scope-list {
-      list-style: none;
-      padding: 0;
-      margin: 28px 0 0 0;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .scope-list li {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px 24px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      transition: border-color 0.2s, background 0.2s;
-      flex-wrap: wrap;
-    }
-    .scope-img {
-      width: 100%;
-      margin-top: 14px;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .scope-img img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      display: block;
-      cursor: pointer;
-      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-    }
-    .scope-img img:hover {
-      transform: scale(1.02);
-    }
-    /* ── LIGHTBOX ── */
-    .lightbox-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(5,10,18,0.95);
-      z-index: 9999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-      padding: 40px;
-    }
-    .lightbox-overlay.active {
-      display: flex;
-    }
-    .lightbox-overlay img {
-      max-width: 90vw;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    }
-    .lightbox-close {
-      position: fixed;
-      top: 24px;
-      right: 28px;
-      z-index: 10000;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.6);
-      font-size: 32px;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-    .lightbox-close:hover { color: white; }
-    .scope-list li:hover {
-      border-color: rgba(225,19,32,0.3);
-      background: rgba(225,19,32,0.04);
-    }
-    .scope-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      min-width: 28px;
-      padding-top: 3px;
-    }
-    .scope-body strong {
-      display: block;
-      font-size: 15px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 5px;
-    }
-    .scope-body span {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-    }
-
-    /* ── PULL QUOTE ── */
-    .pull-quote {
-      margin: 48px 0;
-      padding: 36px 40px;
-      border-left: 3px solid var(--accent);
-      background: rgba(225,19,32,0.05);
-      border-radius: 0 8px 8px 0;
-    }
-    .pull-quote p {
-      font-size: clamp(18px, 1.8vw, 24px) !important;
-      font-weight: 600 !important;
-      color: rgba(255,255,255,0.92) !important;
-      line-height: 1.55 !important;
-      font-style: italic;
-      margin-bottom: 0 !important;
-    }
-
-    /* ── PHOTO GALLERY ── */
-    .gallery-full {
-      width: 100%;
-      margin-bottom: 12px;
-    }
-    .gallery-full img {
-      width: 100%;
-      height: clamp(360px, 40vw, 600px);
-      object-fit: cover;
-      border-radius: var(--radius, 8px);
-      display: block;
-    }
-    .gallery-2up {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .gallery-2up img {
-      width: 100%;
-      height: clamp(220px, 22vw, 380px);
-      object-fit: cover;
-      border-radius: var(--radius, 8px);
-      display: block;
-    }
-    @media (max-width: 640px) {
-      .gallery-2up {
-        grid-template-columns: 1fr;
-      }
-      .gallery-2up img {
-        height: 260px;
-      }
-    }
-
-    /* ── PARTNER BADGES ── */
-    .partner-badge {
-      display: inline-flex;
-      flex-direction: column;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 14px 20px;
-      margin-top: 16px;
-      margin-right: 12px;
-    }
-    .pb-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 4px;
-    }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-
-    /* ── KITCHEN BADGE ── */
-    .kitchen-tag-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(2,136,209,0.10);
-      border: 1px solid rgba(2,136,209,0.25);
-      border-radius: 6px;
-      padding: 10px 18px;
-      margin-bottom: 20px;
-    }
-    .kitchen-tag-badge svg { color: #0288D1; }
-    .kitchen-tag-badge span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(2,136,209,0.9);
-      font-weight: 600;
-    }
-
-    /* ── INTERNAL LINKS SECTION ── */
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .related-link-card {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 8px;
-      text-decoration: none;
-      color: rgba(255,255,255,0.75);
-      font-size: 13px;
-      font-weight: 500;
-      transition: all 0.2s;
-    }
-    .related-link-card:hover {
-      color: white;
-      border-color: rgba(225,19,32,0.35);
-      background: rgba(225,19,32,0.05);
-    }
-    .related-link-card svg { color: var(--accent); flex-shrink: 0; }
-
-    /* ── NAV DROPDOWN ── */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
 <script type="application/ld+json">
 {
@@ -650,316 +318,253 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- ═══════════════════════════════════════════ HERO ═══ -->
-  <section class="project-hero" id="main-content">
-    <picture><source type="image/webp" srcset="images/projects/wave-food-hall/hero-corner-exterior.webp"><img height="540" width="960" src="images/projects/wave-food-hall/hero-corner-exterior.jpg" alt="Wave Food Hall corner exterior — two-story floor-to-ceiling glass wrapping the blue building on Atlantic Ave, Cocoa Beach" loading="lazy" decoding="async"></picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="kitchen-tag-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>7-Kitchen Food Hall &mdash; Cocoa Beach, FL</span>
-        </div>
-        <h1>Wave Food Hall <br> <span style="color:rgba(255,255,255,0.6);font-weight:500;font-size:0.6em;letter-spacing:0.01em;">Destination Downtown</span></h1>
-        <p class="subtitle">Commercial Storefront Glazing &nbsp;&middot;&nbsp; Atlantic Ave, Downtown Cocoa Beach, FL</p>
-      </div>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Hospitality</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Certified General Contractors</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">ESWindows</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Cocoa Beach, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- ═══════════════════════════════════════ META GRID ═══ -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Restaurant</span><a href="portfolio.html?mfg=eswindows" class="project-tag">ESWindows</a><a href="portfolio.html?gc=certified-general-contractors" class="project-tag">Certified General Contractors</a><span class="project-tag">Cocoa Beach, FL</span><span class="project-tag">food hall glazing</span><span class="project-tag">Cocoa Beach restaurant</span><span class="project-tag">storefront glass</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Cocoa Beach, FL</div></div>
-        <div><div class="meta-label">Address</div><div class="meta-value">Atlantic Ave, Downtown Cocoa Beach</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Restaurant / Food Hall</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">Certified General Contractors</div></div>
-        <div><div class="meta-label">Manufacturer</div><div class="meta-value">ESWindows</div></div>
-        <div><div class="meta-label">Scope</div><div class="meta-value">3 Areas — Corner, Interior, Side Facade</div></div>
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Wave Food Hall</span></nav>
+      <h1>Wave Food Hall <em>Cocoa Beach</em></h1>
+      <p class="p-sub">Two-story corner glass, interior storefront walls, and side facade glazing for Cocoa Beach&rsquo;s seven-kitchen food hall on Atlantic Ave — delivered under Certified General Contractors in ESWindows systems.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Cocoa Beach, FL</span>
+        <span class="m"><b>Sector</b> Hospitality · Food hall</span>
+        <span class="m"><b>GC</b> Certified General Contractors</span>
+        <span class="m"><b>Systems</b> ESWindows</span>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════ STORY ═══ -->
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-
-        <!-- LEFT: STORY TEXT -->
-        <div class="story-text">
-
-          <h3>The Project</h3>
-          <p>Wave Food Hall — operating as <a href="https://www.destinationfoodhall.com/" target="_blank" rel="noopener" style="color:var(--accent);">Destination Downtown Food Hall</a> — is Cocoa Beach's answer to a communal dining destination. Anchored on Atlantic Ave in the heart of downtown, it brings together seven restaurant concepts under one roof: a multi-kitchen food hall with a central bar, live entertainment, and a covered outdoor dining patio facing the street.</p>
-          <p>The building is immediately recognizable. The bold blue facade, the two-story corner glass wall, the palm trees framing the entrance — it has become a landmark on Atlantic Ave. The glass is central to that identity. Without the floor-to-ceiling storefront wrapping the corner, the building reads as a box. With it, the food hall opens up to the street, inviting passersby in and letting the energy of the interior spill outward.</p>
-          <p>The seven kitchen concepts — Fowl Mouth, BBrads Coastal BBQ, Troy Anatolian Kitchen, Mimi's Mimosas, Fruits Wave, and Bengy Sushi &amp; Poke — each occupy their own dedicated kitchen. Guests order from any concept and gather at communal tables, the central bar, or the covered outdoor patio. It's a format built for the kind of casual, high-energy dining that Cocoa Beach's beachside downtown crowd demands.</p>
-
-          <h3>ACG Scope</h3>
-          <p>ACG was brought in to deliver the commercial storefront glazing package for the project, working under General Contractor Certified General Contractors with an ESWindows commercial storefront system. The scope covered three distinct areas of the building:</p>
-
-          <ul class="scope-list">
-            <li>
-              <div class="scope-num">01</div>
-              <div class="scope-body">
-                <strong>Corner Storefront System</strong>
-                <span>Two-story floor-to-ceiling glass wrapping the corner entry of the building. ESWindows commercial storefront with automatic entrance doors. The building's signature blue facade frames massive glass panels that give the corner a landmark presence on Atlantic Ave — visible from the intersection, drawing guests in from the street.</span>
-                <div class="scope-img"><picture><source type="image/webp" srcset="images/projects/wave-food-hall/hero-corner-exterior.webp"><img height="540" width="960" src="images/projects/wave-food-hall/hero-corner-exterior.jpg" alt="Wave Food Hall two-story corner storefront — floor-to-ceiling ESWindows commercial glass on Atlantic Ave, Cocoa Beach" class="lightbox-trigger" loading="lazy" decoding="async"></picture></div>
-              </div>
-            </li>
-            <li>
-              <div class="scope-num">02</div>
-              <div class="scope-body">
-                <strong>Interior Storefront Glass</strong>
-                <span>Full-height glass walls along the dining room creating an indoor-outdoor connection. Natural light floods the interior, showcasing the polished blue concrete floors and making the food hall feel open and inviting — more street-level marketplace than enclosed restaurant.</span>
-                <div class="scope-img"><picture><source type="image/webp" srcset="images/projects/wave-food-hall/interior-food-hall.webp"><img height="467" width="700" src="images/projects/wave-food-hall/interior-food-hall.jpg" alt="Wave Food Hall interior — polished blue epoxy floors, communal seating, globe pendant lights, floor-to-ceiling storefront glass" class="lightbox-trigger" loading="lazy" decoding="async"></picture></div>
-              </div>
-            </li>
-            <li>
-              <div class="scope-num">03</div>
-              <div class="scope-body">
-                <strong>Side Facade Glazing</strong>
-                <span>Extended storefront glass along the side of the building connecting to the covered outdoor dining area. The glass creates visual continuity between interior and exterior dining spaces — unifying the indoor food hall with the turf-and-bar patio that hosts live entertainment and overflow dining.</span>
-                <div class="scope-img"><picture><source type="image/webp" srcset="images/projects/wave-food-hall/street-view-atlantic-ave.webp"><img height="1080" width="1620" src="images/projects/wave-food-hall/street-view-atlantic-ave.jpg" alt="Wave Food Hall street view from Atlantic Ave — full building facade, outdoor patio, and side storefront glazing" class="lightbox-trigger" loading="lazy" decoding="async"></picture></div>
-              </div>
-            </li>
-          </ul>
-
-          <div class="pull-quote">
-            <p>"A food hall lives and dies by its street presence. The corner glass is what stops someone on Atlantic Ave and makes them walk in — it's the most important architectural decision on the building."</p>
+  <!-- ========== Project ========== -->
+  <section class="sec" aria-labelledby="proj-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-101 · Project</span></div>
+          <h2 id="proj-h">Without the glass, it&rsquo;s a box. With it, it&rsquo;s a landmark.</h2>
+          <div class="prose">
+            <p>Wave Food Hall — operating as Destination Downtown Food Hall — is Cocoa Beach&rsquo;s communal dining destination on Atlantic Ave: seven restaurant concepts under one roof, with a central bar, live entertainment, and a covered outdoor dining patio facing the street.</p>
+            <p>The building is immediately recognizable — the bold blue facade, the two-story corner glass wall, the palm trees framing the entrance. The glass is central to that identity. The floor-to-ceiling storefront wrapping the corner opens the food hall to the street, inviting passersby in and letting the energy of the interior spill outward.</p>
+            <p>ACG delivered the commercial storefront glazing package, working under general contractor Certified General Contractors with an ESWindows commercial storefront system. The scope covered three distinct areas of the building: the corner storefront, the interior storefront glass, and the side facade glazing.</p>
           </div>
-
-          <h3>Glass as Architecture</h3>
-          <p>Food halls are a format where <a href="portfolio.html" style="color:var(--accent);">the glazing scope</a> carries more weight than in almost any other restaurant typology. The concept only works if the building communicates openness and energy from the outside. Guests decide whether to walk in based on what they can see through the glass — the activity inside, the light, the communal tables, the bar. Close that off with opaque walls and you've killed the format.</p>
-          <p>At Wave Food Hall, the decision to run floor-to-ceiling glass around the corner entry was the right call. The two-story height makes the corner feel monumental — a gesture toward the street that says this is a destination, not just another restaurant. The ESWindows commercial storefront system handles the structural demands of that scale while maintaining clean sightlines and a tight, modern profile.</p>
-          <p>The interior glazing extends that logic inward. Once guests are inside, the full-height glass walls between the dining room and the exterior keep the space from feeling enclosed. The polished blue concrete floors, the globe pendants, the open kitchen fronts — all of it reads better in natural light, and the glass delivers that from multiple directions throughout the day.</p>
-
-          <h3>ESWindows Commercial Storefront</h3>
-          <p>ACG specified ESWindows for this project — a manufacturer we work with consistently on commercial restaurant and retail storefront applications across Florida. The ESWindows commercial storefront system provides the structural performance and coastal durability that Brevard County's climate demands, while giving the architect the clean sightlines and minimal framing profile the design required.</p>
-          <p>For a food hall on the Space Coast, coastal performance matters. Brevard County sits in a high-wind-load zone, and any storefront system on a building this exposed needs to meet those structural requirements without bulking up the frame. ESWindows delivers that without compromise.</p>
-
-          <div style="margin-top:40px;">
-            <div class="partner-badge"><div class="pb-label">GC</div><div class="pb-name">Certified General Contractors</div></div>
-            <div class="partner-badge"><div class="pb-label">Manufacturer</div><div class="pb-name">ESWindows</div></div>
-            <div class="partner-badge"><div class="pb-label">Market</div><div class="pb-name">Brevard County, FL</div></div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Atlantic Ave, Cocoa Beach, FL</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Hospitality · Food hall</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Storefront glazing — corner, interior, side facade</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">ESWindows</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">Certified General Contractors</span></div>
           </div>
         </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/wave-food-hall/hero-corner-exterior.avif" type="image/avif">
+            <source srcset="images/projects/wave-food-hall/hero-corner-exterior.webp" type="image/webp">
+            <img src="images/projects/wave-food-hall/hero-corner-exterior.jpg" alt="Wave Food Hall corner exterior — two-story floor-to-ceiling glass wrapping the blue building on Atlantic Ave, Cocoa Beach" width="960" height="540" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Wave Food Hall · Cocoa Beach, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- RIGHT: SIDEBAR IMAGES -->
+  <!-- ========== Gallery ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gal-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/wave-food-hall/street-view-atlantic-ave.webp"><img height="1080" width="1620" src="images/projects/wave-food-hall/street-view-atlantic-ave.jpg"
-            alt="Wave Food Hall street view from Atlantic Ave — full building exterior with outdoor patio seating and storefront glazing"
-            style="width:100%;border-radius:var(--radius,8px);margin-bottom:12px;display:block;" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/webp" srcset="images/projects/wave-food-hall/outdoor-patio.webp"><img height="1080" width="1620" src="images/projects/wave-food-hall/outdoor-patio.jpg"
-            alt="Wave Food Hall covered outdoor patio — turf, bar seating, TVs, and side facade glazing"
-            style="width:100%;border-radius:var(--radius,8px);display:block;" loading="lazy" decoding="async"></picture>
+          <div class="k-wrap"><span class="k-label">Sheet A-201 · Photo record</span></div>
+          <h2 id="gal-h">Street presence, inside and out.</h2>
         </div>
-
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/wave-food-hall/street-view-atlantic-ave.avif" type="image/avif">
+            <source srcset="images/projects/wave-food-hall/street-view-atlantic-ave.webp" type="image/webp">
+            <img src="images/projects/wave-food-hall/street-view-atlantic-ave.jpg" alt="Wave Food Hall street view from Atlantic Ave — full building facade, outdoor patio, and side storefront glazing" width="1620" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Atlantic Ave frontage</span><span class="s">Full facade + patio</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wave-food-hall/interior-food-hall.avif" type="image/avif">
+            <source srcset="images/projects/wave-food-hall/interior-food-hall.webp" type="image/webp">
+            <img src="images/projects/wave-food-hall/interior-food-hall.jpg" alt="Wave Food Hall interior — polished blue epoxy floors, communal seating, globe pendant lights, floor-to-ceiling storefront glass" width="700" height="467" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Interior</span><span class="s">Communal dining hall</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/wave-food-hall/outdoor-patio.avif" type="image/avif">
+            <source srcset="images/projects/wave-food-hall/outdoor-patio.webp" type="image/webp">
+            <img src="images/projects/wave-food-hall/outdoor-patio.jpg" alt="Wave Food Hall covered outdoor patio — turf, bar seating, TVs, and side facade glazing" width="1620" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Outdoor patio</span><span class="s">Side facade glazing</span></div>
+        </div>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/wave-food-hall/hero-corner-exterior.avif" type="image/avif">
+            <source srcset="images/projects/wave-food-hall/hero-corner-exterior.webp" type="image/webp">
+            <img src="images/projects/wave-food-hall/hero-corner-exterior.jpg" alt="Wave Food Hall corner entry close-up — automatic entrance doors, ESWindows commercial storefront system" width="960" height="540" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Corner entry</span><span class="s">Automatic entrance doors</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ PHOTO GALLERY ═══ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:24px;"><span class="line"></span> Gallery</div>
-
-      <!-- Full width hero in content -->
-      <div class="gallery-full" style="margin-bottom:12px;">
-        <picture><source type="image/webp" srcset="images/projects/wave-food-hall/hero-corner-exterior.webp"><img height="540" width="960" src="images/projects/wave-food-hall/hero-corner-exterior.jpg"
-          alt="Wave Food Hall corner exterior — two-story floor-to-ceiling glass, blue building, palm trees, Atlantic Ave Cocoa Beach" loading="lazy" decoding="async"></picture>
+  <!-- ========== Scope notes ========== -->
+  <section class="sec pillars gnotes" aria-labelledby="scope-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-301 · Scope notes</span></div>
+          <h2 id="scope-h">Three areas. One system.</h2>
+        </div>
       </div>
-
-      <!-- 2-up row 1 -->
-      <div class="gallery-2up">
-        <picture><source type="image/webp" srcset="images/projects/wave-food-hall/street-view-atlantic-ave.webp"><img height="1080" width="1620" src="images/projects/wave-food-hall/street-view-atlantic-ave.jpg"
-          alt="Wave Food Hall street view — full Atlantic Ave frontage, outdoor patio, storefront glazing" loading="lazy" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="images/projects/wave-food-hall/interior-food-hall.webp"><img height="467" width="700" src="images/projects/wave-food-hall/interior-food-hall.jpg"
-          alt="Wave Food Hall interior — blue epoxy floors, communal dining, globe pendants, floor-to-ceiling glass" loading="lazy" decoding="async"></picture>
-      </div>
-
-      <!-- 2-up row 2 -->
-      <div class="gallery-2up">
-        <picture><source type="image/webp" srcset="images/projects/wave-food-hall/outdoor-patio.webp"><img height="1080" width="1620" src="images/projects/wave-food-hall/outdoor-patio.jpg"
-          alt="Wave Food Hall covered outdoor patio — turf, bar seating, TVs, side facade glass" loading="lazy" decoding="async"></picture>
-        <picture><source type="image/webp" srcset="images/projects/wave-food-hall/hero-corner-exterior.webp"><img height="540" width="960" src="images/projects/wave-food-hall/hero-corner-exterior.jpg"
-          alt="Wave Food Hall corner entry close-up — automatic entrance doors, ESWindows commercial storefront system" loading="lazy" decoding="async"></picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════ RELATED LINKS ═══ -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label" style="margin-bottom:20px;"><span class="line"></span> Related</div>
-      <div class="related-links">
-        <a href="portfolio.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Project Portfolio
-        </a>
-        <a href="/storefront-glazier-orlando-florida/" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Commercial Glazing Orlando
-        </a>
-        <a href="scope-engine.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Scope Engine
-        </a>
-        <a href="contact.html" class="related-link-card">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Start Your Project
-        </a>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>Corner storefront system</h3>
+          <p>Two-story floor-to-ceiling glass wrapping the corner entry, with automatic entrance doors — a landmark presence on Atlantic Ave, visible from the intersection and drawing guests in from the street.</p>
+        </div>
+        <div class="gnote">
+          <h3>Interior storefront glass</h3>
+          <p>Full-height glass walls along the dining room create the indoor-outdoor connection — natural light floods the interior and the food hall reads as a street-level marketplace, not an enclosed restaurant.</p>
+        </div>
+        <div class="gnote">
+          <h3>Side facade glazing</h3>
+          <p>Extended storefront glass connecting to the covered outdoor dining area — visual continuity between the indoor hall and the turf-and-bar patio that hosts live entertainment and overflow dining.</p>
+        </div>
+        <div class="gnote">
+          <h3>Coastal performance</h3>
+          <p>Brevard County sits in a high-wind-load zone. The ESWindows commercial storefront system meets those structural requirements while holding the clean sightlines and minimal framing profile the design demanded.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════ CTA ═══ -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Your Restaurant or<br>Food Hall Could Be <span class="accent">Next.</span></h2>
-      <p>ACG delivers the glazing scope for restaurants, food halls, and retail across Florida — storefront systems, interior glass walls, and automatic entrance doors. If you're building in Brevard County or anywhere in the state, <a href="send-plans.html" style="color:var(--accent);">send us plans</a>.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="rel-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Related projects</span></div>
+          <h2 id="rel-h">More from the portfolio.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="wave-haven-cocoa-beach.html">
+          <picture>
+            <source srcset="images/projects/wave-haven/hero-commercial.avif" type="image/avif">
+            <source srcset="images/projects/wave-haven/hero-commercial.webp" type="image/webp">
+            <img src="images/projects/wave-haven/hero-commercial.jpg" alt="Wave Haven mixed-use commercial building in Cocoa Beach — ESWindows dark storefront" width="1619" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Wave Haven</span><span class="s">Mixed-use · Cocoa Beach</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="waxins-west-palm-beach.html">
+          <picture>
+            <source srcset="images/projects/waxins-wpb-corner.avif" type="image/avif">
+            <source srcset="images/projects/waxins-wpb-corner.webp" type="image/webp">
+            <img src="images/projects/waxins-wpb-corner.jpg" alt="Waxin's West Palm Beach — Euro-Wall corner opening glass system on Clematis Street" width="503" height="610" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Waxin&rsquo;s West Palm Beach</span><span class="s">Restaurant · Clematis Street</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="ocean-prime-ft-lauderdale.html">
+          <picture>
+            <source srcset="images/projects/ocean-prime-ft-lauderdale.avif" type="image/avif">
+            <source srcset="images/projects/ocean-prime-ft-lauderdale.webp" type="image/webp">
+            <img src="images/projects/ocean-prime-ft-lauderdale.jpg" alt="Ocean Prime restaurant at Pier Sixty-Six, Fort Lauderdale" width="1600" height="1200" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Ocean Prime — Pier Sixty-Six</span><span class="s">Restaurant · Fort Lauderdale</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Have plans? Send them to Connor directly.</h2>
+        <p>Upload drawings and bid-date info — a scoped proposal or budget direction comes back in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════ FOOTER ═══ -->
+  </main>
 
-  <!-- RELATED ARTICLES -->
-  <section style="padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(255,255,255,0.06);">
-    <div class="container" data-reveal-fade>
-      <div style="text-align:center;margin-bottom:24px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#E11320);font-weight:600;">Related Articles</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-        <a href="blog/bi-fold-glass-walls-restaurants-hospitality.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Bi-Fold Glass Walls for Restaurants & Hospitality</div>
-        </a>
-        <a href="blog/automatic-entrance-systems-commercial-buildings-florida.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Automatic Entrance Systems for Commercial Buildings</div>
-        </a>
-        <a href="blog/how-much-does-commercial-storefront-glass-cost-florida.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Commercial Storefront Glass Cost in Florida</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-    <footer class="ft">
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -968,54 +573,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox-overlay" id="lightbox">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img src="" alt="" id="lightbox-img" loading="lazy" decoding="async">
-  </div>
-
-  <script defer src="js/main.js"></script>
-  <script>
-    // Lightbox functionality
-    (function(){
-      var overlay = document.getElementById('lightbox');
-      var lbImg = document.getElementById('lightbox-img');
-      var triggers = document.querySelectorAll('.lightbox-trigger, .gallery-full img, .gallery-2up img');
-      triggers.forEach(function(img){
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function(){
-          lbImg.src = this.src;
-          lbImg.alt = this.alt;
-          overlay.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-      overlay.addEventListener('click', function(){
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape' && overlay.classList.contains('active')){
-          overlay.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    })();
-  </script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

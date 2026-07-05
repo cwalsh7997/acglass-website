@@ -32,7 +32,29 @@
   <meta name="twitter:description" content="ACG is an authorized ESWindows installer for commercial projects across Florida. ES8000, ES50, curtainwall. Miami-Dade NOA. CGC #1531993.">
   <meta name="twitter:image" content="https://acglass.com/images/partners/eswindows/product-es8000.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
+  <style>
+    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
+    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
+    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
+    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
+    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
+    /* spec tables + FAQ details, light system */
+    .spec-scroll{overflow-x:auto}
+    .spec-table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:680px}
+    .spec-table th{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);text-align:left;padding:12px 14px;border-bottom:2px solid var(--navy);white-space:nowrap}
+    .spec-table td{padding:13px 14px;border-bottom:1px solid var(--hairline);color:var(--body);vertical-align:top;line-height:1.55}
+    .spec-table td:first-child{color:var(--ink);font-weight:650}
+    .spec-note{margin-top:14px;font-size:.85rem;color:var(--muted);font-style:italic;max-width:80ch}
+    .faq-d{background:var(--paper);border:1px solid var(--hairline);border-radius:var(--radius);padding:18px 22px}
+    .faq-d summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+    .faq-d summary::-webkit-details-marker{display:none}
+    .faq-d summary::after{content:"+";color:var(--red);font-size:1.25rem;font-weight:400;flex-shrink:0;line-height:1}
+    .faq-d[open] summary::after{content:"−"}
+    .faq-d p{margin-top:10px;line-height:1.65;font-size:.95rem}
+  </style>
 
   <!-- Service Schema -->
   <script type="application/ld+json">
@@ -176,267 +198,9 @@
   }
   </script>
 
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
-  <style id="a11y-skip-style">
-.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
-.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
-*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
-</style>
 
-  <style id="a11y-contrast-tweak">
-.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
-</style>
 
-  <style>
-    /* One-line answer block */
-    .answer-block {
-      background: rgba(226,27,44,0.07);
-      border-left: 3px solid var(--accent, #E21B2C);
-      border-radius: 0 var(--radius,8px) var(--radius,8px) 0;
-      padding: clamp(20px,2.5vw,32px) clamp(20px,3vw,40px);
-    }
-    .answer-block p {
-      font-size: clamp(15px,1.05vw,17px);
-      color: rgba(255,255,255,.88);
-      line-height: 1.75;
-      margin: 0;
-    }
-    /* Product card grid */
-    .product-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius,8px);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-    .product-card-body {
-      padding: clamp(20px,2vw,28px);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .product-card-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent, #E21B2C);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .product-card-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #fff;
-      margin: 0 0 10px;
-    }
-    .product-card-desc {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,.65);
-      line-height: 1.65;
-      margin: 0 0 14px;
-      flex: 1;
-    }
-    .product-card-spec {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,.4);
-      line-height: 1.7;
-    }
-    /* Why bullets */
-    .why-bullet {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: clamp(18px,2vw,24px);
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: var(--radius,8px);
-    }
-    .why-bullet-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(226,27,44,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .why-bullet h5 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 6px;
-    }
-    .why-bullet p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,.6);
-      line-height: 1.65;
-      margin: 0;
-    }
-    /* HVHZ compliance pills */
-    .hvhz-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 999px;
-      padding: 8px 18px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: rgba(255,255,255,.8);
-      white-space: nowrap;
-    }
-    .hvhz-pill::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent, #E21B2C);
-      flex-shrink: 0;
-    }
-    /* Project cards */
-    .project-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: var(--radius,8px);
-      overflow: hidden;
-    }
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-    .project-card-body {
-      padding: 18px 20px 20px;
-    }
-    .project-card-type {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent, #E21B2C);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .project-card-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 6px;
-    }
-    .project-card-detail {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,.55);
-      line-height: 1.55;
-      margin: 0;
-    }
-    /* FAQ accordion */
-    .faq-item {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius,8px);
-      overflow: hidden;
-    }
-    .faq-item summary {
-      cursor: pointer;
-      font-weight: 700;
-      font-size: clamp(14px,1vw,16px);
-      color: #fff;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 24px;
-      gap: 16px;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary .faq-icon {
-      color: var(--accent, #E21B2C);
-      font-size: 1.3rem;
-      font-weight: 400;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .faq-item[open] summary .faq-icon::before { content: '−'; }
-    .faq-item:not([open]) summary .faq-icon::before { content: '+'; }
-    .faq-item p {
-      color: rgba(255,255,255,.75);
-      line-height: 1.7;
-      margin: 0;
-      font-size: clamp(14px,.95vw,15px);
-      padding: 0 24px 20px;
-    }
-    /* Compliance block */
-    .compliance-block {
-      background: rgba(255,255,255,.025);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: var(--radius,8px);
-      padding: clamp(24px,3vw,40px);
-    }
-    .compliance-block h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 10px;
-    }
-    .compliance-block p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,.65);
-      line-height: 1.7;
-      margin: 0;
-    }
-    .noa-tag {
-      display: inline-block;
-      background: rgba(226,27,44,0.1);
-      border: 1px solid rgba(226,27,44,0.25);
-      border-radius: 4px;
-      padding: 3px 8px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent, #E21B2C);
-      font-weight: 600;
-      margin-right: 6px;
-      margin-bottom: 4px;
-    }
-    @media (max-width: 768px) {
-      .products-grid { grid-template-columns: 1fr !important; }
-      .why-grid { grid-template-columns: 1fr !important; }
-      .projects-grid { grid-template-columns: 1fr !important; }
-      .compliance-grid { grid-template-columns: 1fr !important; }
-    }
-  </style>
 <script type="application/ld+json">
 {
   "@type": "Service",
@@ -762,662 +526,427 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
 
-<!-- NAVIGATION -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
+      <nav class="hd-nav" aria-label="Primary">
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-
-      <button class="nav-toggle" aria-label="Menu">
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- ========== SECTION 1: HERO ========== -->
-  <section class="hero" style="min-height:55vh;justify-content:center;padding-bottom:60px;background-image:url('images/partners/eswindows/product-es8000.jpg');background-size:cover;background-position:center;" id="main-content">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;"><span class="line"></span> ESWindows — Authorized Florida Installer</div>
-        <h1>ESWindows Installer <br> <span class="accent">Florida</span></h1>
-        <p class="hero-sub" style="max-width:720px;">Authorized commercial installer for ES8000, ES50, and ES Curtainwall systems. Miami-Dade NOA approval covered. FL CGC #1531993.</p>
-        <div style="margin-top:clamp(28px,3vw,40px);display:flex;gap:14px;flex-wrap:wrap;">
-          <a href="send-plans.html" class="btn btn-primary">Send Plans for Bid</a>
-          <a href="portfolio.html" class="btn btn-ghost">See Project Examples</a>
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="services.html">Services</a><span aria-hidden="true">/</span><span aria-current="page">ESWindows Installer Florida</span></nav>
+      <h1>ESWindows installer for <em>Florida.</em></h1>
+      <p class="p-sub">ACG is an authorized ESWindows installer for commercial projects statewide — ES8000 storefront, ES50 window line, and ES Curtainwall systems, with Miami-Dade NOA documentation handled on every HVHZ package. FL CGC #1531993.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Relationship</b> Authorized installer</span>
+        <span class="m"><b>Approvals</b> Miami-Dade NOA · FBC FL Product Approval</span>
+        <span class="m"><b>License</b> FL CGC #1531993</span>
+        <span class="m"><b>Offices</b> WPB · Naples · Tampa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Direct answer ========== -->
+  <section class="sec" aria-labelledby="ans-h" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="prose rv" style="border-left:2px solid var(--red);padding-left:clamp(18px,3vw,32px)">
+        <span class="k-label">Direct answer</span>
+        <h2 id="ans-h" style="font-size:1.3rem;margin:10px 0 12px">Who installs ESWindows in Florida?</h2>
+        <p>American Commercial Glass (ACG) is a Florida-based authorized installer of ESWindows commercial systems, including the ES8000 storefront, ES50 high-performance window line, and ES Curtainwall. ACG carries Miami-Dade Notice of Acceptance (NOA) documentation for High-Velocity Hurricane Zone (HVHZ) projects in Miami-Dade and Broward counties. License: FL CGC #1531993.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== System schedule ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="sys-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet ES-101 · System schedule</span></div>
+          <h2 id="sys-h">The ESWindows commercial line ACG installs.</h2>
+        </div>
+        <a class="sec-link" href="manufacturers.html">All manufacturer partners
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Mark</div><div>System</div><div>Specification</div><div></div></div>
+        <a class="sched-row" href="commercial-storefront-systems.html">
+          <div class="mk">ES-8000</div><div class="sy">ES8000 Storefront</div>
+          <div class="sp">DirectSet aluminum storefront for ground-floor and 2-story commercial. Pre-glazed screw-spline construction, integral ES-9000 door adaptor. DP +130/-130 psf, LMI-rated, NOA 24-0321.07.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="impact-windows-doors.html">
+          <div class="mk">ES-50</div><div class="sy">ES50 Window Line</div>
+          <div class="sp">Wide-stile commercial swing door and window line for hospitality and multifamily — 5-inch stile width, LMI + SMI impact ratings, coordinates with ES8000 storefront as the entrance component.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="curtainwall-systems.html">
+          <div class="mk">ES-CW</div><div class="sy">ES Curtainwall</div>
+          <div class="sp">Stick-built ES-7525 (LMI + SMI + blast, GSA Condition 2) and unitized GW-7000 (Miami-Dade certified, DP +100/-140 psf) for mid- to high-rise office, hospitality and government envelopes.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="window-wall-systems.html">
+          <div class="mk">ES-7000</div><div class="sy">ES-7000 / 7100 Window Wall</div>
+          <div class="sp">Pre-glazed window wall at DP +125/-150 psf — LMI (ES-7000) and SMI (ES-7100) configurations for mid- and high-rise residential and commercial towers.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Why ESWindows ========== -->
+  <section class="sec" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Why ESWindows on Florida commercial projects</span></div>
+          <h2 id="why-h">What makes ESWindows the right specification.</h2>
+        </div>
+      </div>
+      <div class="cards cards-4 rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3 style="margin-top:10px">Miami-Dade NOA + FBC product approvals</h3>
+          <p>Active NOA numbers across storefront, window wall and curtainwall. ACG manages the NOA submittal process and product-approval documentation for HVHZ-permitted projects in Miami-Dade and Broward.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3 style="margin-top:10px">Thermal + impact in one system</h3>
+          <p>The ES8000T thermal storefront (NOA 21-0914.03) and GW-7000 unitized curtainwall satisfy concurrent thermal and hurricane-impact requirements — energy-code-governed and LEED-targeted builds included.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3 style="margin-top:10px">Single-manufacturer envelope</h3>
+          <p>Storefront, window wall and curtainwall from one engineering team — aligned mullion profiles, thermal-break geometry and finish programs. Fewer RFIs, a simpler submittals package.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">04</span>
+          <h3 style="margin-top:10px">Direct commercial relationship</h3>
+          <p>Authorized-installer standing means pricing, lead-time coordination and technical support flow through a direct channel — not a distributor layer. On critical-path glazing procurement, that matters.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED-SNIPPET DIRECT ANSWER (Agent IFS) -->
-  <section class="direct-answer-band" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(24px,3vw,36px) 0;">
-    <div class="container" style="max-width:880px;">
-      <div class="direct-answer" itemscope itemtype="https://schema.org/Question">
-        <p itemprop="name" hidden>Who is an ESWindows installer in Florida?</p>
-        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#fff;margin:0;"><strong>ESWindows installation in Florida is handled by American Commercial Glass, the authorized commercial ESWindows installer. ACG installs ESWindows impact windows, doors, and facade systems for general contractors statewide through its manufacturer-integrated dealer portal, holding Florida license CGC #1531993 with HVHZ Miami-Dade NOA compliance experience.</strong></p>
+  <!-- ========== HVHZ compliance ========== -->
+  <section class="sec pillars slant gnotes" aria-labelledby="hvhz-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet ES-301 · Florida code &amp; HVHZ compliance</span></div>
+          <h2 id="hvhz-h">HVHZ, wind load, and NOA — what it actually means.</h2>
+        </div>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>HVHZ counties &amp; wind load</h3>
+          <p>Miami-Dade and Broward require fenestration tested and listed under an active Miami-Dade NOA. Design criteria typically exceed 170 mph (Exposure D per ASCE 7); glazing DPs commonly run -60 to -130 psf by height and wall zone. ES8000 is rated to DP +130/-130 psf LMI.</p>
+        </div>
+        <div class="gnote">
+          <h3>ASTM E1996 / E1886 impact testing</h3>
+          <p>Large Missile Impact (floors 1–3): a 9-lb 2x4 at 50 ft/s. Small Missile Impact (floor 4+): ten steel balls at 130 ft/s. ES8000, ES-7525 and GW-7000 all carry LMI ratings. ACG coordinates the test documentation for HVHZ permit submittals.</p>
+        </div>
+        <div class="gnote">
+          <h3>Active ESWindows NOAs on ACG projects</h3>
+          <p>NOA 24-0321.07 — ES8000 storefront, LMI, exp. Apr 2028. NOA 21-0914.03 — ES8000T thermal, LMI, exp. Aug 2031. NOA 23-0724.09 — ES-7000 window wall, LMI, exp. Jul 2028. GW-7000 — unitized curtainwall, Miami-Dade certified, LMI + SMI.</p>
+        </div>
+        <div class="gnote">
+          <h3>ACG handles the NOA submittal</h3>
+          <p>ACG prepares the product-approval package — the applicable NOA, glazing specs, and installation drawings stamped to Miami-Dade HVHZ permit requirements — so the glazing scope never holds up permit review. Three Florida offices, statewide coverage.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
-    <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
-      <a href="index.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Home</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <a href="services.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Services</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <span style="color:var(--accent);">ESWindows Installer Florida</span>
-    </div>
-  </section>
-
-  <!-- ========== SECTION 2: ONE-LINE ANSWER BLOCK ========== -->
-  <section style="padding:clamp(32px,4vw,56px) 0;">
-    <div class="container" style="max-width:980px;">
-      <div class="answer-block" data-reveal>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px;">Direct Answer</div>
-        <p>American Commercial Glass (ACG) is a Florida-based authorized installer of ESWindows commercial systems, including the ES8000 storefront, ES50 high-performance window line, and ES Curtainwall. ACG carries Miami-Dade Notice of Acceptance (NOA) approvals for High-Velocity Hurricane Zone (HVHZ) projects in Miami-Dade and Broward counties. License: FL CGC #1531993.</p>
+  <!-- ========== Verified product data ========== -->
+  <section class="sec" aria-labelledby="data-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet ES-201 · Verified product data · ESWindows commercial line</span></div>
+          <h2 id="data-h">The specs we install to.</h2>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ========== SECTION 3: ESWINDOWS COMMERCIAL PRODUCT LINE ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> ESWindows Commercial Product Line</div>
-        <h2 style="margin-top:14px;">Three core systems. <span class="accent">One authorized installer.</span></h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:760px;">ESWindows manufactures a full commercial aluminum envelope. ACG installs the three systems that appear most often on Florida commercial specifications: the ES8000 storefront, the ES50 commercial window line, and the ES Curtainwall.</p>
-      </div>
-      <div class="products-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" data-reveal data-delay="120">
-
-        <!-- ES8000 Storefront -->
-        <div class="product-card">
-          <img height="1100" width="1100" src="images/partners/eswindows/product-es8000.jpg" alt="ESWindows ES8000 DirectSet aluminum storefront system" loading="lazy" decoding="async">
-          <div class="product-card-body">
-            <div class="product-card-label">Storefront System</div>
-            <h3 class="product-card-title">ES8000 Storefront</h3>
-            <p class="product-card-desc">The ES8000 is ESWindows' primary DirectSet aluminum storefront for ground-floor and 2-story commercial construction. Pre-glazed with screw-spline construction, it accepts an integral ES-9000 door adaptor and carries active Miami-Dade NOA for Large Missile Impact applications. Standard in retail, medical, office, and institutional envelopes across Florida.</p>
-            <div class="product-card-spec">
-              DP +130/&#8209;130 psf &bull; LMI-rated &bull; 5&#x22; frame depth<br>
-              NOA 24-0321.07 (exp. Apr 2028)<br>
-              Anodized / painted / wood grain finish
-            </div>
-          </div>
-        </div>
-
-        <!-- ES50 Window Line -->
-        <div class="product-card">
-          <img height="1100" width="1100" src="images/partners/eswindows/product-es8000.jpg" alt="ESWindows ES50 commercial window line" loading="lazy" style="filter:brightness(.85);" decoding="async">
-          <div class="product-card-body">
-            <div class="product-card-label">Commercial Window</div>
-            <h3 class="product-card-title">ES50 Window Line</h3>
-            <p class="product-card-desc">The ES50 is a wide-stile commercial swing door and window line used on hospitality and multifamily projects where a heavier frame profile is specified. With a 5-inch stile width and LMI + SMI impact ratings, the ES50 handles the structural and impact demands of Florida's coastal commercial market. Coordinates with ES8000 storefront systems as the entrance component.</p>
-            <div class="product-card-spec">
-              LMI + SMI impact-rated &bull; 5&#x22; stile width<br>
-              Compatible with ES8000 storefront<br>
-              Anodized / painted finish
-            </div>
-          </div>
-        </div>
-
-        <!-- ES Curtainwall -->
-        <div class="product-card">
-          <img height="1100" width="1100" src="images/partners/eswindows/product-es8000.jpg" alt="ESWindows ES Curtainwall stick-built and unitized system" loading="lazy" style="filter:brightness(.75) hue-rotate(5deg);" decoding="async">
-          <div class="product-card-body">
-            <div class="product-card-label">Curtainwall System</div>
-            <h3 class="product-card-title">ES Curtainwall</h3>
-            <p class="product-card-desc">ESWindows produces both stick-built and unitized curtainwall systems rated for mid- to high-rise commercial use. The ES-7525 stick curtainwall carries LMI + SMI impact ratings plus blast resistance (GSA Condition 2). The GW-7000 unitized curtainwall is Miami-Dade certified for LMI + SMI at DP +100/&#8209;140 psf. ACG installs both systems on office, hospitality, and government envelopes.</p>
-            <div class="product-card-spec">
-              ES-7525: DP +100/&#8209;100 psf, LMI + SMI + Blast<br>
-              GW-7000: DP +100/&#8209;140 psf, Miami-Dade certified<br>
-              Stick-built and unitized configurations
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SECTION 4: WHY ESWINDOWS ON FLORIDA COMMERCIAL PROJECTS ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> Why ESWindows on Florida Commercial Projects</div>
-        <h2 style="margin-top:14px;">What makes ESWindows the <span class="accent">right specification.</span></h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:760px;">Florida commercial projects carry compliance obligations that eliminate systems without the right approvals. ESWindows and ACG together cover those requirements without piecemeal sourcing.</p>
-      </div>
-      <div class="why-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" data-reveal data-delay="120">
-
-        <div class="why-bullet">
-          <div class="why-bullet-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#E21B2C)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <h5>Miami-Dade NOA + FBC Product Approvals</h5>
-            <p>ESWindows products carry active Miami-Dade Notice of Acceptance (NOA) numbers across the storefront, window wall, and curtainwall lines. ACG manages the NOA submittal process and coordinates the product approval documentation required under the Florida Building Code for HVHZ-permitted projects in Miami-Dade and Broward counties.</p>
-          </div>
-        </div>
-
-        <div class="why-bullet">
-          <div class="why-bullet-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#E21B2C)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div>
-            <h5>Thermal Performance and Impact Ratings for HVHZ</h5>
-            <p>The ES8000T thermally broken storefront (NOA 21-0914.03, exp. Aug 2031) and the GW-7000 unitized curtainwall both satisfy the concurrent thermal and hurricane-impact requirements that apply to Florida commercial projects — particularly ENERGY STAR-governed occupancies and LEED-targeted hotel and multifamily builds.</p>
-          </div>
-        </div>
-
-        <div class="why-bullet">
-          <div class="why-bullet-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#E21B2C)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h6"/></svg>
-          </div>
-          <div>
-            <h5>Single-Manufacturer Envelope vs. Piecemeal Scope</h5>
-            <p>Specifying ESWindows for storefront, window wall, and curtainwall across a single project produces system-to-system coordination from one manufacturer's engineering team. Mullion profiles, thermal break geometry, and finish programs align across product categories, which reduces RFI exposure and simplifies the submittals package.</p>
-          </div>
-        </div>
-
-        <div class="why-bullet">
-          <div class="why-bullet-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent,#E21B2C)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div>
-            <h5>ACG's Direct ESWindows Commercial Relationship</h5>
-            <p>ACG's standing as an authorized ESWindows installer means project pricing, lead-time coordination, and technical support flow through a direct channel — not a distributor layer. For Florida commercial schedules where glazing procurement lead time is on the critical path, this direct relationship matters.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SECTION 5: FLORIDA CODE AND HVHZ COMPLIANCE ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> Florida Code &amp; HVHZ Compliance</div>
-        <h2 style="margin-top:14px;">HVHZ, wind load, and NOA<span class="accent"> — what it actually means.</span></h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:760px;">The High-Velocity Hurricane Zone (HVHZ) designation applies to Miami-Dade and Broward counties under the Florida Building Code. Every glazing system installed in HVHZ must carry a Miami-Dade Notice of Acceptance or Florida Product Approval with verified impact test results. ACG handles the submittal and coordination process for ESWindows systems on HVHZ projects.</p>
-      </div>
-      <div class="compliance-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" data-reveal data-delay="120">
-
-        <div class="compliance-block">
-          <h4>HVHZ Counties and Wind Load Requirements</h4>
-          <p>Miami-Dade and Broward counties require that fenestration products be tested and listed under an active Miami-Dade NOA. Wind speed design criteria in HVHZ typically exceeds 170 mph (Exposure D per ASCE 7). Design pressures for glazing in HVHZ commercial projects commonly range from &#8209;60 psf to &#8209;130 psf depending on building height, roof zone, and wall zone classification. ESWindows ES8000 is rated to DP +130/&#8209;130 psf LMI.</p>
-          <div style="margin-top:14px;">
-            <span class="noa-tag">Miami-Dade NOA</span>
-            <span class="noa-tag">HVHZ Compliant</span>
-            <span class="noa-tag">FBC Chapter 17</span>
-          </div>
-        </div>
-
-        <div class="compliance-block">
-          <h4>Impact Testing: ASTM E1996 and ASTM E1886</h4>
-          <p>Products in HVHZ must pass ASTM E1886 (impact test method) and ASTM E1996 (performance specification for missile impact). Large Missile Impact (LMI) applies to floors 1–3 and uses a 9-pound 2x4 lumber missile at 50 ft/s. Small Missile Impact (SMI) applies at floor 4 and above, using 10 steel ball bearings at 130 ft/s. ESWindows ES8000, ES-7525, and GW-7000 all carry LMI ratings. ACG coordinates the impact test documentation required for permit submittals in HVHZ jurisdictions.</p>
-          <div style="margin-top:14px;">
-            <span class="noa-tag">ASTM E1996</span>
-            <span class="noa-tag">ASTM E1886</span>
-            <span class="noa-tag">LMI / SMI Rated</span>
-          </div>
-        </div>
-
-        <div class="compliance-block">
-          <h4>Active ESWindows NOA Numbers (ACG Projects)</h4>
-          <p>ACG submits the applicable NOA documentation with each HVHZ permit package. Key ESWindows NOAs in ACG's active project portfolio:</p>
-          <ul style="margin:12px 0 0;padding-left:18px;color:rgba(255,255,255,.65);font-size:0.875rem;line-height:1.9;">
-            <li><strong style="color:rgba(255,255,255,.85);">NOA 24-0321.07</strong> — ES8000 Storefront, LMI, exp. Apr 2028</li>
-            <li><strong style="color:rgba(255,255,255,.85);">NOA 21-0914.03</strong> — ES8000T Thermal Storefront, LMI, exp. Aug 2031</li>
-            <li><strong style="color:rgba(255,255,255,.85);">NOA 23-0724.09</strong> — ES-7000 Window Wall, LMI, exp. Jul 2028</li>
-            <li><strong style="color:rgba(255,255,255,.85);">GW-7000</strong> — Unitized Curtainwall, Miami-Dade certified, LMI + SMI</li>
-          </ul>
-        </div>
-
-        <div class="compliance-block">
-          <h4>ACG Handles the NOA Submittal Process</h4>
-          <p>For HVHZ projects, ACG prepares the product approval package including the applicable ESWindows NOA, glazing specs, and installation drawings stamped to meet Miami-Dade HVHZ permit requirements. This removes the burden from the GC's project manager and reduces the risk of a glazing hold-up during permit review. ACG's three Florida offices (West Palm Beach, Naples, Tampa) maintain active relationships with the applicable building departments across the state.</p>
-          <div style="margin-top:14px;">
-            <span class="noa-tag">Submittal Prep</span>
-            <span class="noa-tag">Permit Coordination</span>
-            <span class="noa-tag">3 FL Offices</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Compliance pills -->
-      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;" data-reveal data-delay="200">
-        <div class="hvhz-pill">Florida Building Code</div>
-        <div class="hvhz-pill">HVHZ Miami-Dade NOA</div>
-        <div class="hvhz-pill">ASTM E330 Structural</div>
-        <div class="hvhz-pill">ASTM E547 Water Resistance</div>
-        <div class="hvhz-pill">ASTM E1996 Missile Impact</div>
-        <div class="hvhz-pill">ASTM E1886 Impact Test Method</div>
-        <div class="hvhz-pill">Manufacturer-Authorized Install</div>
-        <div class="hvhz-pill">OSHA 30 Trained Field Crews</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SECTION 6: WHERE ACG HAS INSTALLED ESWINDOWS ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> Where ACG Has Installed ESWindows</div>
-        <h2 style="margin-top:14px;">Already built. <span class="accent">Already delivered.</span></h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:760px;">ACG has installed ESWindows commercial systems on projects across Florida spanning hospitality, luxury residential, country club, medical, and commercial office scopes.</p>
-      </div>
-      <div class="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;" data-reveal data-delay="120">
-
-        <!-- Eau Palm Beach Resort -->
-        <div class="project-card">
-          <img height="721" width="1080" src="images/projects/eau-palm-beach/entrance-dusk.jpg" alt="Eau Palm Beach Resort entrance — ACG ESWindows and Euro-Wall installation" loading="lazy" decoding="async">
-          <div class="project-card-body">
-            <div class="project-card-type">Forbes Five-Star Resort / Manalapan, FL</div>
-            <p class="project-card-name">Eau Palm Beach Resort &amp; Spa</p>
-            <p class="project-card-detail">Multi-phase glazing renovation combining Euro-Wall bi-fold systems at Polpo restaurant with impact-rated ESWindows storefront and curtainwall across the resort's seven renovation phases. Custom arched ESWindows openings throughout.</p>
-          </div>
-        </div>
-
-        <!-- Gulf Harbour Country Club -->
-        <div class="project-card">
-          <img height="1080" width="1080" src="images/projects/gulf-harbour-renovation.jpg" alt="Gulf Harbour Country Club glazing renovation — ACG ESWindows storefront" loading="lazy" decoding="async">
-          <div class="project-card-body">
-            <div class="project-card-type">Country Club / Fort Myers, FL</div>
-            <p class="project-card-name">Gulf Harbour Country Club</p>
-            <p class="project-card-detail">Commercial glazing package for the Gulf Harbour amenity facilities renovation. ESWindows ES8000 storefront systems and entrance assemblies throughout the clubhouse and amenity buildings. Southwest Florida coastal impact requirements.</p>
-          </div>
-        </div>
-
-        <!-- FAA MCO -->
-        <div class="project-card">
-          <img height="720" width="1080" src="images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.jpg" alt="Florida government commercial project — ACG ESWindows window wall" loading="lazy" decoding="async">
-          <div class="project-card-body">
-            <div class="project-card-type">Government / Commercial Office</div>
-            <p class="project-card-name">FAA MCO — Window Wall Scope</p>
-            <p class="project-card-detail">ESWindows ES-7000 window wall system installation on a government commercial office project. Pre-glazed window wall at DP +150/&#8209;150 psf LMI + SMI. One of ACG's documented ESWindows window wall references.</p>
-          </div>
-        </div>
-
-        <!-- Gulfside Twelve -->
-        <div class="project-card">
-          <img height="1071" width="1920" src="images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve luxury multifamily — ACG ESWindows commercial glazing" loading="lazy" decoding="async">
-          <div class="project-card-body">
-            <div class="project-card-type">Luxury Multifamily / Southwest FL</div>
-            <p class="project-card-name">Gulfside Twelve</p>
-            <p class="project-card-detail">Beachfront luxury residential project on the Gulf Coast. ESWindows commercial systems on lobby storefront and corridor glazing. Full HVHZ compliance package for coastal Lee County.</p>
-          </div>
-        </div>
-
-        <!-- Causeway Building -->
-        <div class="project-card">
-          <img height="588" width="882" src="images/projects/causeway-building/hero.jpg" alt="Causeway Building commercial office — ACG ESWindows storefront" loading="lazy" decoding="async">
-          <div class="project-card-body">
-            <div class="project-card-type">Commercial Office</div>
-            <p class="project-card-name">Causeway Building</p>
-            <p class="project-card-detail">Commercial office envelope featuring ESWindows storefront systems with ES-9000 entrance doors. Florida Product Approval-listed systems throughout. ACG self-performed scope.</p>
-          </div>
-        </div>
-
-      </div>
-      <div style="margin-top:28px;" data-reveal data-delay="180">
-        <a href="portfolio.html" class="btn btn-ghost">View Full Portfolio</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SECTION 7: FAQ ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container" style="max-width:880px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);text-align:center;">
-        <div class="label" style="justify-content:center;"><span class="line"></span> FAQ <span class="line"></span></div>
-        <h2 style="margin-top:14px;">Questions specifiers ask <span class="accent">before they bid.</span></h2>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:10px;" data-reveal data-delay="120">
-
-        <details class="faq-item">
-          <summary>Who is an authorized ESWindows installer in Florida?<span class="faq-icon"></span></summary>
-          <p>American Commercial Glass (ACG) is an authorized ESWindows installer operating across Florida from offices in West Palm Beach, Naples, and Tampa. ACG installs ESWindows commercial systems — including the ES8000 storefront, ES50 window line, and ES Curtainwall — on commercial projects statewide. License: FL CGC #1531993.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What ESWindows products does ACG install on commercial projects?<span class="faq-icon"></span></summary>
-          <p>ACG installs the ES8000 DirectSet aluminum storefront (DP +130/&#8209;130 psf, LMI-rated, NOA 24-0321.07), the ES8000T thermally broken storefront (NOA 21-0914.03), the ES50 commercial window line, and ES Curtainwall systems including the ES-7525 stick curtainwall (impact and blast rated) and the GW-7000 unitized curtainwall (Miami-Dade certified, LMI + SMI at DP +100/&#8209;140 psf). ACG also installs the ES-7000/7100 window wall (DP +150/&#8209;150 psf) on projects requiring pre-glazed window wall systems.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Does ESWindows have Miami-Dade NOA approval?<span class="faq-icon"></span></summary>
-          <p>Yes. Multiple ESWindows products carry active Miami-Dade Notice of Acceptance (NOA) approvals for High-Velocity Hurricane Zone (HVHZ) use. The ES8000 storefront holds NOA 24-0321.07 (LMI, exp. April 2028). The ES8000T thermal storefront holds NOA 21-0914.03 (LMI, exp. August 2031). The GW-7000 unitized curtainwall is Miami-Dade certified for LMI and SMI. ACG handles NOA submittal documentation for applicable Florida projects in Miami-Dade and Broward counties.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is ACG a certified ESWindows commercial installer?<span class="faq-icon"></span></summary>
-          <p>ACG is an authorized ESWindows installer for commercial projects. ACG does not claim a higher certification tier than "authorized installer" — that is the manufacturer relationship designation that authorizes ACG to install ESWindows systems with factory technical support.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What is the lead time for ESWindows on a Florida commercial project?<span class="faq-icon"></span></summary>
-          <p>Lead times depend on product type, finish, and glass specification. Standard ESWindows storefront systems (ES8000 series) typically run 8–14 weeks from approved shop drawings. Curtainwall and unitized systems require longer fabrication windows. Custom finishes and glass specifications add to lead time. ACG initiates the submittal and approval process early in the project schedule to protect the glazing lead time from becoming a schedule driver. Send plans early for a lead-time estimate specific to your project's product mix.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Where is ACG's coverage area for ESWindows installation?<span class="faq-icon"></span></summary>
-          <p>ACG operates from three Florida offices — West Palm Beach, Naples, and Tampa — and covers commercial projects statewide. Regular ESWindows project coverage includes Miami-Dade, Broward, Palm Beach, Martin, St. Lucie, Indian River, Okeechobee, Lee, Collier, Charlotte, Sarasota, Manatee, Hillsborough, Pasco, Pinellas, Orange, Osceola, Seminole, Brevard, Volusia, and Duval counties. HVHZ projects in Miami-Dade and Broward are a regular part of ACG's commercial scope.</p>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== VERIFIED PRODUCT SPECS ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container">
-      <div data-reveal style="margin-bottom:28px;">
-        <div class="label"><span class="line"></span> Verified Product Data &middot; ESWindows commercial line</div>
-        <h2 style="margin-top:14px;">The specs we install to.</h2>
-        <p style="color:rgba(255,255,255,0.72);max-width:780px;margin-top:12px;">Every number below is sourced from ESWindows&rsquo; official technical datasheets and the Miami-Dade NOA database. We do not substitute glass or framing outside the tested configuration. Where a number is not published, we say so.</p>
-      </div>
-      <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:0.93rem;color:rgba(255,255,255,0.88);">
+      <p class="rv" style="margin-bottom:22px;max-width:78ch">Every number below is sourced from ESWindows' official technical datasheets and the Miami-Dade NOA database. We do not substitute glass or framing outside the tested configuration. Where a number is not published, we say so.</p>
+      <div class="spec-scroll rv">
+      <table class="spec-table">
         <thead>
-          <tr style="border-bottom:1px solid rgba(225,19,32,0.4);">
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Series</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Design Pressure</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Miami-Dade NOA</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Max Assembly</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Use</th>
-          </tr>
+          <tr><th>Series</th><th>Design Pressure</th><th>Miami-Dade NOA</th><th>Max Assembly</th><th>Use</th></tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">ES-7000 (LMI)</td>
-            <td style="padding:14px 12px;">+125 / &minus;150 PSF</td>
-            <td style="padding:14px 12px;">23-0724.09 (exp 2028)</td>
-            <td style="padding:14px 12px;">60&Prime; &times; 120&Prime;</td>
-            <td style="padding:14px 12px;">Pre-glazed window wall, mid- &amp; high-rise commercial</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">ES-7100 (SMI)</td>
-            <td style="padding:14px 12px;">+125 / &minus;150 PSF</td>
-            <td style="padding:14px 12px;">23-0724.10 (exp 2028)</td>
-            <td style="padding:14px 12px;">60&Prime; &times; 120&Prime;</td>
-            <td style="padding:14px 12px;">Small-missile impact window wall</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">ES-8000T (Thermal)</td>
-            <td style="padding:14px 12px;">+90 / &minus;120 PSF</td>
-            <td style="padding:14px 12px;">21-0914.03 (exp 2031)</td>
-            <td style="padding:14px 12px;">FPA FL17897.5</td>
-            <td style="padding:14px 12px;">Thermal storefront, energy-targeted envelopes</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">ES-6500</td>
-            <td style="padding:14px 12px;">+120 / &minus;135 PSF</td>
-            <td style="padding:14px 12px;">23-0918.05 LMI / .04 SMI</td>
-            <td style="padding:14px 12px;">Project-engineered</td>
-            <td style="padding:14px 12px;">Heavy-commercial sliding door</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">ES-9000</td>
-            <td style="padding:14px 12px;">+130 / &minus;130 PSF (single)</td>
-            <td style="padding:14px 12px;">23-0724.12 (exp 2028)</td>
-            <td style="padding:14px 12px;">Per NOA</td>
-            <td style="padding:14px 12px;">Commercial entry door</td>
-          </tr>
-          <tr>
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">ES-21 / 35 / 50</td>
-            <td style="padding:14px 12px;">+50 to +70 / &minus;50 to &minus;70 PSF</td>
-            <td style="padding:14px 12px;">Per series</td>
-            <td style="padding:14px 12px;">Per NOA</td>
-            <td style="padding:14px 12px;">Light-commercial &amp; multifamily entry</td>
-          </tr>
+          <tr><td>ES-7000 (LMI)</td><td>+125 / &minus;150 PSF</td><td>23-0724.09 (exp 2028)</td><td>60&Prime; &times; 120&Prime;</td><td>Pre-glazed window wall, mid- &amp; high-rise commercial</td></tr>
+          <tr><td>ES-7100 (SMI)</td><td>+125 / &minus;150 PSF</td><td>23-0724.10 (exp 2028)</td><td>60&Prime; &times; 120&Prime;</td><td>Small-missile impact window wall</td></tr>
+          <tr><td>ES-8000T (Thermal)</td><td>+90 / &minus;120 PSF</td><td>21-0914.03 (exp 2031)</td><td>FPA FL17897.5</td><td>Thermal storefront, energy-targeted envelopes</td></tr>
+          <tr><td>ES-6500</td><td>+120 / &minus;135 PSF</td><td>23-0918.05 LMI / .04 SMI</td><td>Project-engineered</td><td>Heavy-commercial sliding door</td></tr>
+          <tr><td>ES-9000</td><td>+130 / &minus;130 PSF (single)</td><td>23-0724.12 (exp 2028)</td><td>Per NOA</td><td>Commercial entry door</td></tr>
+          <tr><td>ES-21 / 35 / 50</td><td>+50 to +70 / &minus;50 to &minus;70 PSF</td><td>Per series</td><td>Per NOA</td><td>Light-commercial &amp; multifamily entry</td></tr>
         </tbody>
       </table>
       </div>
-      <p style="margin-top:18px;font-size:0.85rem;color:rgba(255,255,255,0.55);font-style:italic;">Source: <a href="https://eswindows.com" rel="nofollow" style="color:rgba(255,255,255,0.7);">ESWindows official technical datasheets</a> and the <a href="https://www.miamidade.gov/economy/product-control.asp" rel="nofollow" style="color:rgba(255,255,255,0.7);">Miami-Dade Product Control NOA database</a>. The ES-8000 (non-thermal) standard configuration shows a published-document discrepancy and is not listed above; ACG confirms the controlling NOA configuration with the manufacturer on each project.</p>
-      <p style="margin-top:24px;"><a href="send-plans.html" style="color:#E11320;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(225,19,32,0.4);padding-bottom:2px;">Request the ESWindows commercial specification packet &rarr;</a></p>
+      <p class="spec-note rv">Source: <a href="https://eswindows.com" rel="nofollow" style="color:var(--navy)">ESWindows official technical datasheets</a> and the <a href="https://www.miamidade.gov/economy/product-control.asp" rel="nofollow" style="color:var(--navy)">Miami-Dade Product Control NOA database</a>. The ES-8000 (non-thermal) standard configuration shows a published-document discrepancy and is not listed above; ACG confirms the controlling NOA configuration with the manufacturer on each project.</p>
+      <p class="rv" style="margin-top:20px"><a href="send-plans.html" style="color:var(--navy);font-weight:650;border-bottom:1px solid var(--hairline-2)">Request the ESWindows commercial specification packet →</a></p>
     </div>
   </section>
 
-  <!-- ========== SECTION 8: CTA ========== -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>SPECIFY</div>
-      <h2>ESWindows, installed right<br><span class="accent">the first time.</span></h2>
-      <p>Authorized installer. Miami-Dade NOA. FL CGC #1531993. Three offices across Florida. Send drawings for a scoped proposal.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-        <a href="send-plans.html" class="btn btn-primary btn-lg">Send Plans</a>
-        <a href="qualifications.html" class="btn btn-ghost btn-lg">View Qualifications</a>
+  <!-- ========== Field work ========== -->
+  <section class="sec svc" aria-labelledby="work-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet ES-401 · Impact projects</span></div>
+          <h2 id="work-h">Already built. Already delivered.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj wide" href="gulfside-twelve.html">
+          <picture>
+            <source srcset="images/projects/gulfside-twelve/hero-twilight-beachfront.avif" type="image/avif">
+            <source srcset="images/projects/gulfside-twelve/hero-twilight-beachfront.webp" type="image/webp">
+            <img src="images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve beachfront luxury residences at twilight, Fort Myers Beach FL" width="1920" height="1071" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Gulfside Twelve</span><span class="s">Luxury multifamily · Fort Myers Beach, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="cudjoe-key-fire-station.html">
+          <picture>
+            <source srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-exterior.avif" type="image/avif">
+            <source srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-exterior.webp" type="image/webp">
+            <img src="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-exterior.jpg" alt="Cudjoe Key fire station impact glazing, Florida Keys" width="1600" height="980" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Cudjoe Key Fire Station</span><span class="s">Public sector · Florida Keys</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="cudjoe-key-fire-station.html">
+          <picture>
+            <source srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif" type="image/avif">
+            <source srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.webp" type="image/webp">
+            <img src="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.jpg" alt="Cudjoe Key fire station at twilight — impact-rated openings" width="2000" height="1500" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Cudjoe Key Fire Station</span><span class="s">Impact glazing · Monroe County, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="gulfside-twelve.html">
+          <picture>
+            <source srcset="images/projects/gulfside-twelve/living-room-glass-doors.avif" type="image/avif">
+            <source srcset="images/projects/gulfside-twelve/living-room-glass-doors.webp" type="image/webp">
+            <img src="images/projects/gulfside-twelve/living-room-glass-doors.jpg" alt="Floor-to-ceiling glass doors in a Gulfside Twelve residence" width="1621" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Gulfside Twelve</span><span class="s">Residence glazing · Gulf Coast</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="gulfside-twelve.html">
+          <picture>
+            <source srcset="images/projects/gulfside-twelve/balcony-sunset-gulf.avif" type="image/avif">
+            <source srcset="images/projects/gulfside-twelve/balcony-sunset-gulf.webp" type="image/webp">
+            <img src="images/projects/gulfside-twelve/balcony-sunset-gulf.jpg" alt="Balcony glazing over the Gulf at sunset, Gulfside Twelve" width="1620" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Gulfside Twelve</span><span class="s">Balcony glazing · Gulf Coast</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj wide" href="cudjoe-key-fire-station.html">
+          <picture>
+            <source srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-side.avif" type="image/avif">
+            <source srcset="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-side.webp" type="image/webp">
+            <img src="images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-side.jpg" alt="Side elevation of the Cudjoe Key fire station showing impact-rated glazing" width="1920" height="1281" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Cudjoe Key Fire Station</span><span class="s">Essential facility · Florida Keys</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="gulfside-twelve.html">
+          <picture>
+            <source srcset="images/projects/gulfside-twelve/exterior-daylight-beach.avif" type="image/avif">
+            <source srcset="images/projects/gulfside-twelve/exterior-daylight-beach.webp" type="image/webp">
+            <img src="images/projects/gulfside-twelve/exterior-daylight-beach.jpg" alt="Gulfside Twelve exterior in daylight from the beach" width="1920" height="1071" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Gulfside Twelve</span><span class="s">Coastal HVHZ package · Lee County, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Related articles — internal linking -->
-  <section class="section" style="padding-top:0;">
-    <div class="container" data-reveal>
-      <div class="label"><span class="line"></span> Related from the ACG library</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:24px;">
-        <a href="commercial-storefront-systems.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Service</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Commercial Storefront Systems</div>
+  <!-- ========== Featured case studies ========== -->
+  <section class="sec" aria-labelledby="cases-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Named references</span></div>
+          <h2 id="cases-h">Featured ACG projects using ESWindows.</h2>
+        </div>
+      </div>
+      <div class="cards rv" data-stagger>
+        <a class="card" href="case-study-panther-national.html">
+          <span class="k-index">CS-01</span>
+          <h3 style="margin-top:10px">Panther National</h3>
+          <p>Private golf community — ESWindows curtainwall, Palm Beach County.</p>
         </a>
-        <a href="curtainwall-systems.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Service</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Curtainwall Systems</div>
+        <a class="card" href="case-study-atlantic-fields.html">
+          <span class="k-index">CS-02</span>
+          <h3 style="margin-top:10px">Atlantic Fields</h3>
+          <p>Private golf club main package — ESWindows, Hobe Sound.</p>
         </a>
-        <a href="manufacturers.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Partners</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">ESWindows &amp; ACG's Manufacturer Partners</div>
+        <a class="card" href="case-study-atlantic-fields-golf-house.html">
+          <span class="k-index">CS-03</span>
+          <h3 style="margin-top:10px">Atlantic Fields Golf House</h3>
+          <p>Golf house glazing — ESWindows.</p>
+        </a>
+        <a class="card" href="case-study-wild-blue-clubhouse.html">
+          <span class="k-index">CS-04</span>
+          <h3 style="margin-top:10px">Wild Blue Clubhouse</h3>
+          <p>Private club clubhouse — ESWindows, Estero.</p>
+        </a>
+        <a class="card" href="case-study-illumia-fort-myers.html">
+          <span class="k-index">CS-05</span>
+          <h3 style="margin-top:10px">Illumia Fort Myers</h3>
+          <p>Mid-rise commercial — ESWindows curtainwall.</p>
+        </a>
+        <a class="card" href="case-study-causeway-building-bonita-springs.html">
+          <span class="k-index">CS-06</span>
+          <h3 style="margin-top:10px">Causeway Building Bonita Springs</h3>
+          <p>Class A office — ESWindows.</p>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1" style="background:#f5f1ea;padding:72px 24px;">
-  <div style="max-width:980px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e11320;margin-bottom:14px;font-weight:600;">Full Commercial Glass Scope</div>
-    <h2 style="font-size:clamp(28px,3.6vw,40px);letter-spacing:-.022em;line-height:1.08;color:#0e284f;margin:0 0 18px;">Not just impact glass. Every commercial glass system.</h2>
-    <p style="font-size:17px;line-height:1.65;color:#3a4a5e;margin:0 0 36px;max-width:760px;">ACG installs the full CSI Division 08 (Openings) scope across the state — hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px;font-size:15px;line-height:1.55;">
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Storefront systems</strong><span style="color:#6a7484;">ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Curtain wall</strong><span style="color:#6a7484;">Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Impact windows &amp; doors</strong><span style="color:#6a7484;">HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Sliding &amp; folding doors</strong><span style="color:#6a7484;">Euro-Wall folding, multi-slide, arched storefront.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Interior glass</strong><span style="color:#6a7484;">Office partitions, conference walls, demountable systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Glass railings</strong><span style="color:#6a7484;">Frameless, channel-mounted, terrace and stair installations.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Mirrors</strong><span style="color:#6a7484;">Gym, retail, salon, commercial restroom, lobby walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Fire-rated glazing</strong><span style="color:#6a7484;">TGP systems, 20 to 180 minute fire ratings.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Automatic entrances</strong><span style="color:#6a7484;">Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Decorative + specialty</strong><span style="color:#6a7484;">Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Skylights + roof glazing</strong><span style="color:#6a7484;">Sloped, atrium, structural silicone systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Service + retrofit</strong><span style="color:#6a7484;">Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
-    </ul>
-  </div>
-</section>
-
-<section aria-label="Nashville expansion" data-acg-block="nashville-q3-2026-v1" style="background:#0e284f;color:#fff;padding:72px 24px;">
-  <div style="max-width:980px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;font-weight:600;">ACG is expanding</div>
-    <h2 style="font-size:clamp(28px,3.6vw,40px);letter-spacing:-.022em;line-height:1.08;color:#fff;margin:0 0 18px;">Florida-built. Tennessee next. Nashville office opening Q3 2026.</h2>
-    <p style="font-size:17px;line-height:1.65;color:rgba(255,255,255,.85);margin:0 0 28px;max-width:760px;">After five years of commercial glazing work across Florida, ACG opens its Nashville office in the third quarter of 2026. The same owner-run operating model, the same Division 08 single-source scope, brought to the Tennessee commercial construction market &mdash; office, multifamily, retail, hospitality, healthcare.</p>
-    <a href="/commercial-glazing-nashville-tn.html" style="display:inline-flex;align-items:center;gap:10px;background:#e11320;color:#fff;text-decoration:none;padding:14px 24px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;">Nashville early-bid list <span aria-hidden="true">&rarr;</span></a>
-  </div>
-</section>
-
-    
-  <!-- RELATED SCOPES — contextual internal links (Agent IFS) -->
-  <section class="related-scopes-ifs" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);padding:clamp(28px,3vw,44px) 0;">
-    <div class="container" style="max-width:1100px;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 14px;">Related ACG capabilities</p>
-      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 32px;font-size:15px;line-height:1.6;">
-        <li style="padding:6px 0;"><a href="/aluminum-vs-vinyl-windows-commercial/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">aluminum vs vinyl windows for commercial buildings</a></li>
-        <li style="padding:6px 0;"><a href="/euro-wall-installer-national.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">Euro-Wall folding glass door installation</a></li>
-      </ul>
+  <!-- ========== FAQ ========== -->
+  <section class="sec svc" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">FAQ</span></div>
+          <h2 id="faq-h">Questions specifiers ask before they bid.</h2>
+        </div>
+      </div>
+      <div class="rv" data-stagger style="display:grid;gap:10px;max-width:880px">
+        <details class="faq-d">
+          <summary>Who is an authorized ESWindows installer in Florida?</summary>
+          <p>American Commercial Glass (ACG) is an authorized ESWindows installer operating across Florida from offices in West Palm Beach, Naples, and Tampa. ACG installs ESWindows commercial systems — including the ES8000 storefront, ES50 window line, and ES Curtainwall — on commercial projects statewide. License: FL CGC #1531993.</p>
+        </details>
+        <details class="faq-d">
+          <summary>What ESWindows products does ACG install on commercial projects?</summary>
+          <p>ACG installs the ES8000 DirectSet aluminum storefront (DP +130/&#8209;130 psf, LMI-rated, NOA 24-0321.07), the ES8000T thermally broken storefront (NOA 21-0914.03), the ES50 commercial window line, and ES Curtainwall systems including the ES-7525 stick curtainwall (impact and blast rated) and the GW-7000 unitized curtainwall (Miami-Dade certified, LMI + SMI at DP +100/&#8209;140 psf). ACG also installs the ES-7000/7100 window wall (DP +125/&#8209;150 psf) on projects requiring pre-glazed window wall systems.</p>
+        </details>
+        <details class="faq-d">
+          <summary>Does ESWindows have Miami-Dade NOA approval?</summary>
+          <p>Yes. Multiple ESWindows products carry active Miami-Dade Notice of Acceptance (NOA) approvals for High-Velocity Hurricane Zone (HVHZ) use. The ES8000 storefront holds NOA 24-0321.07 (LMI, exp. April 2028). The ES8000T thermal storefront holds NOA 21-0914.03 (LMI, exp. August 2031). The GW-7000 unitized curtainwall is Miami-Dade certified for LMI and SMI. ACG handles NOA submittal documentation for applicable Florida projects in Miami-Dade and Broward counties.</p>
+        </details>
+        <details class="faq-d">
+          <summary>Is ACG a certified ESWindows commercial installer?</summary>
+          <p>ACG is an authorized ESWindows installer for commercial projects. ACG does not claim a higher certification tier than "authorized installer" — that is the manufacturer relationship designation that authorizes ACG to install ESWindows systems with factory technical support.</p>
+        </details>
+        <details class="faq-d">
+          <summary>What is the lead time for ESWindows on a Florida commercial project?</summary>
+          <p>Lead times depend on product type, finish, and glass specification. Standard ESWindows storefront systems (ES8000 series) typically run 8–14 weeks from approved shop drawings. Curtainwall and unitized systems require longer fabrication windows. Custom finishes and glass specifications add to lead time. ACG initiates the submittal and approval process early in the project schedule to protect the glazing lead time from becoming a schedule driver. Send plans early for a lead-time estimate specific to your project's product mix.</p>
+        </details>
+        <details class="faq-d">
+          <summary>Where is ACG's coverage area for ESWindows installation?</summary>
+          <p>ACG operates from three Florida offices — West Palm Beach, Naples, and Tampa — and covers commercial projects statewide. Regular ESWindows project coverage includes Miami-Dade, Broward, Palm Beach, Martin, St. Lucie, Indian River, Okeechobee, Lee, Collier, Charlotte, Sarasota, Manatee, Hillsborough, Pasco, Pinellas, Orange, Osceola, Seminole, Brevard, Volusia, and Duval counties. HVHZ projects in Miami-Dade and Broward are a regular part of ACG's commercial scope.</p>
+        </details>
+      </div>
     </div>
   </section>
 
-    <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices; Nashville, TN opening Q3 2026. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/ai-operations-whitepaper.html">AI White Paper</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/west-palm-beach-commercial-glazing.html">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/tampa-commercial-glazing.html">Tampa</a>
-            <a href="/commercial-glazing-nashville-tn.html">Nashville, TN (Q3 2026)</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              connor@acglass.com
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">ESWindows, installed right the first time.</h2>
+        <p>Authorized installer. Miami-Dade NOA documentation handled. Three offices across Florida — send drawings for a scoped proposal.</p>
       </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
 
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/american-commercial-glass-inc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578 &nbsp;·&nbsp; WBE &nbsp;·&nbsp; SBE</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
-
-<!-- BEGIN Featured projects (added 2026-05-13) -->
-<section style="padding:44px 0;border-top:1px solid rgba(255,255,255,0.06);background:rgba(225,19,32,0.02)">
-  <div style="max-width:1080px;margin:0 auto;padding:0 24px">
-    <h2 style="font-size:24px;color:#fff;margin:0 0 16px;letter-spacing:-.01em">Featured ACG projects using ESWindows</h2>
-    <p style="color:#E6EAF2;font-size:15.5px;margin:0 0 18px;max-width:880px">A short selection of named ACG installations using ESWindows systems. Each project page includes scope, glass make-up, code references, and an FAQ block.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
-<a href="/case-study-panther-national.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Panther National</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Private golf community — ESWindows curtainwall, Palm Beach County</span></a>
-<a href="/case-study-atlantic-fields.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Atlantic Fields</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Private golf club main package — ESWindows, Hobe Sound</span></a>
-<a href="/case-study-atlantic-fields-golf-house.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Atlantic Fields Golf House</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Golf house glazing — ESWindows</span></a>
-<a href="/case-study-wild-blue-clubhouse.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Wild Blue Clubhouse</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Private club clubhouse — ESWindows, Estero</span></a>
-<a href="/case-study-illumia-fort-myers.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Illumia Fort Myers</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Mid-rise commercial — ESWindows curtainwall</span></a>
-<a href="/case-study-causeway-building-bonita-springs.html" style="display:block;background:#0C141F;border:1px solid #1B2433;padding:18px;color:#E6EAF2;text-decoration:none;border-radius:6px"><b style="display:block;color:#fff;font-size:16px;margin-bottom:6px">Causeway Building Bonita Springs</b><span style="color:#8893A4;font-size:13px;line-height:1.5">Class A office — ESWindows</span></a>
-    </div>
-  </div>
-</section>
-<!-- END Featured projects -->
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

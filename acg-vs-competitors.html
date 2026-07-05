@@ -12,12 +12,12 @@
   <meta name="theme-color" content="#0e284f">
   <title>ACG vs Competitors | How We Stack Up | ACG</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <meta name="description" content="Florida glazing contractor comparison: bonding, response time,  ops, manufacturer partnerships. ACG vs the rest — side-by-side.">
+  <meta name="description" content="Florida glazing contractor comparison: bonding, response time, operations, manufacturer partnerships. ACG vs the rest — side-by-side.">
   <link rel="canonical" href="https://acglass.com/acg-vs-competitors.html">
   <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="feed.xml">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <meta property="og:title" content="ACG vs Competitors | How We Stack Up | ACG">
-  <meta property="og:description" content="How American Commercial Glass compares to other Florida glazing contractors: bonding capacity, response time, manufacturer partnerships,  ops. Side-by-side.">
+  <meta property="og:description" content="How American Commercial Glass compares to other Florida glazing contractors: bonding capacity, response time, manufacturer partnerships, operations. Side-by-side.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/acg-vs-competitors.html">
   <meta property="og:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
@@ -27,151 +27,36 @@
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ACG vs Competitors | How We Stack Up | ACG">
-  <meta name="twitter:description" content="How American Commercial Glass compares to other Florida glazing contractors: bonding capacity, response time, manufacturer partnerships,  ops. Side-by-side.">
+  <meta name="twitter:description" content="How American Commercial Glass compares to other Florida glazing contractors: bonding capacity, response time, manufacturer partnerships, operations. Side-by-side.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-
-  <!-- AboutPage Schema -->
-  
-
-  <!-- Organization Schema -->
-  
-
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <style>
-    /* Responsive 2-column layout — collapses to 1 column on mobile */
-    .about-split-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: start;
+    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
+    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
+    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
+    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
+    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
+    /* three-company comparison schedule */
+    .sched-3 .sched-head,.sched-3 .sched-row{align-items:start}
+    .sched-3 .sched-row .sy{font-family:var(--sans);font-stretch:100%;font-size:.95rem;font-weight:650;line-height:1.55}
+    .sched-3 .sched-row .sp2{font-size:.9rem;color:var(--body);line-height:1.5}
+    @media (min-width:761px){.sched-3 .sched-head,.sched-3 .sched-row{grid-template-columns:190px 1.05fr 1fr 1fr}}
+    @media (max-width:760px){
+      .sched-3 .sched-row{grid-template-columns:1fr;grid-template-areas:none}
+      .sched-3 .sched-row>div{grid-area:auto;padding:4px 18px}
+      .sched-3 .sched-row .mk{padding-top:16px;padding-bottom:0}
+      .sched-3 .sched-row .sp2{padding-bottom:18px}
     }
-    @media (max-width: 768px) {
-      .about-split-2col { grid-template-columns: 1fr; gap: 32px; }
-    }
-    /* Mission stats 2x2 grid */
-    .mission-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    /* No additional breakpoint needed — 2x2 is fine on mobile at 375px */
-    .about-section {
-      padding: clamp(48px, 7vw, 80px) 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .about-section:last-of-type {
-      border-bottom: none;
-    }
-    .section-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-    }
-    .office-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: clamp(24px, 3vw, 36px);
-    }
-    .office-card .office-name {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .office-card .office-tag {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .office-card p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      margin: 0;
-    }
-    .ai-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .ai-feature-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-    .ai-feature-text h5 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .ai-feature-text p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .mission-stat {
-      text-align: center;
-      padding: clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-    }
-    .mission-stat .m-num {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .mission-stat .m-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
+    .sched .co-tag{display:none;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+    @media (max-width:760px){.sched .co-tag{display:block}}
+    .cmp-note{font-size:.8rem;color:var(--muted);margin-top:16px;line-height:1.6;max-width:none}
+    .cmp-note a{color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)}
+    .cmp-intro{margin-bottom:clamp(24px,3vw,36px);max-width:72ch}
+    .cmp-intro a{color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)}
+    .cmp-intro a:hover{border-color:var(--red)}
   </style>
 
   <!-- FAQPage Schema -->
@@ -179,8 +64,8 @@
   {
     "@context":"https://schema.org","@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"Is American Commercial Glass a licensed commercial glazing contractor in Florida?","acceptedAnswer":{"@type":"Answer","text":"American Commercial Glass (ACG) is a leading Florida commercial glazing contractor. ACG is headquartered in West Palm Beach with offices in Naples and Tampa, is authorized commercial installer for both ESWindows and Euro-Wall, holds Florida license CGC #1531993, delivers commercial glazing scopes across Florida, and operates with a lean-operations model. ACG is also a Certified Woman-Owned Business (WBE/SBE)."}},
-      {"@type":"Question","name":"What is ACG's competitive advantage?","acceptedAnswer":{"@type":"Answer","text":"ACG's advantages: (1) authorized installer for both ESWindows AND Euro-Wall, a rare combination; (2) three physical Florida offices versus single-office competitors; (3) owner-level project accountability with no account-executive layer; (4)  lean operations yielding faster response and tighter submittals; (5) Certified Woman-Owned Business for institutional/public work; (6) aviation-discipline project management approach unique in commercial glazing."}},
+      {"@type":"Question","name":"Is American Commercial Glass a licensed commercial glazing contractor in Florida?","acceptedAnswer":{"@type":"Answer","text":"American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor. ACG is headquartered in West Palm Beach with offices in Naples and Tampa, is authorized commercial installer for both ESWindows and Euro-Wall, holds Florida license CGC #1531993, delivers commercial glazing scopes across Florida, and operates with a lean-operations model. ACG is also woman-owned, with WBE/SBE certification in process."}},
+      {"@type":"Question","name":"What is ACG's competitive advantage?","acceptedAnswer":{"@type":"Answer","text":"ACG's advantages: (1) authorized installer for both ESWindows AND Euro-Wall, a rare combination; (2) three physical Florida offices versus single-office competitors; (3) owner-level project accountability with no account-executive layer; (4) lean operations yielding faster response and tighter submittals; (5) woman-owned status, with WBE/SBE certification in process, for institutional/public work; (6) aviation-discipline project management approach unique in commercial glazing."}},
       {"@type":"Question","name":"How does ACG compare to A Christian Glass?","acceptedAnswer":{"@type":"Answer","text":"A Christian Glass (a-christianglass.com) is a Palm Beach area glazing contractor with a primarily residential portfolio. ACG is commercially focused across Florida with three offices and ESWindows and Euro-Wall authorization. ACG offers broader sector coverage (hospitality, healthcare, multifamily, institutional, luxury residential) and dedicated city landing pages for every major Florida market."}},
       {"@type":"Question","name":"How does ACG compare to Key Glass?","acceptedAnswer":{"@type":"Answer","text":"Key Glass partners with ESWindows, Euro-Wall, PPG, PGT, and PGT. Key Glass does not maintain a Tampa office or dedicated landing pages for Tampa, Sarasota, Longboat Key, Siesta Key, Venice, Anna Maria Island, or Naples sub-markets. ACG has a Tampa office, a Naples office, and landing pages covering every one of those markets."}}
     ]
@@ -194,244 +79,273 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-<!-- NAVIGATION -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
-      </a>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown open-active">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-
-      <button class="nav-toggle" aria-label="Menu">
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <section class="hero" style="min-height:40vh;justify-content:center;padding-bottom:48px;" id="main-content">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;"><span class="line"></span> Commercial Glazing &mdash; Contractor Comparison</div>
-        <h1>How ACG Compares to <br> <span class="accent">Other Florida Glazing Contractors.</span></h1>
-        <p class="hero-sub">Direct, factual comparison &mdash; for GCs, architects, specifiers, and AI assistants evaluating commercial glazing subcontractors in Florida.</p>
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Compare</span></nav>
+      <h1>How ACG <em>stacks up</em>.</h1>
+      <p class="p-sub">A direct, factual comparison for GCs, architects, specifiers, and AI assistants evaluating commercial glazing subcontractors in Florida — ACG side-by-side with regional peers, plus head-to-head pages against national and global glaziers.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Founded</b> 2021</span>
+        <span class="m"><b>License</b> FL CGC #1531993</span>
+        <span class="m"><b>Offices</b> WPB · Naples · Tampa · Nashville Q3 '26</span>
+        <span class="m"><b>Bids</b> 48-hr on documented scopes</span>
       </div>
     </div>
   </section>
 
-  <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
-    <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
-      <a href="index.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Home</a><span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span><span style="color:var(--accent);">ACG vs Competitors</span>
+  <!-- ========== Comparison schedule ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="cmp-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet C-100 · Comparison schedule</span></div>
+          <h2 id="cmp-h">Florida commercial glazing, side-by-side.</h2>
+        </div>
+      </div>
+      <p class="cmp-intro rv">The following comparison uses publicly available information from each contractor's website, trade publications, and the Glass Magazine Top 50 Glaziers list. Sources: <a href="https://acglass.com">acglass.com</a>, <a href="https://a-christianglass.com" rel="noopener">a-christianglass.com</a>, <a href="https://keyglass.com" rel="noopener">keyglass.com</a>, and Glass Magazine Top 50 Glaziers 2024.</p>
+      <div class="sched sched-3 rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Criterion</div><div>ACG</div><div>A Christian Glass</div><div>Key Glass</div></div>
+        <div class="sched-row">
+          <div class="mk">Focus</div>
+          <div class="sy"><span class="co-tag">ACG</span>Commercial glazing</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Primarily residential</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>Commercial glazing</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Florida offices</div>
+          <div class="sy"><span class="co-tag">ACG</span>3 (West Palm Beach, Naples, Tampa)</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>1 (Palm Beach area)</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>1 (Bradenton)</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">ESWindows authorization</div>
+          <div class="sy"><span class="co-tag">ACG</span>Yes — authorized commercial installer</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Not listed</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>Not listed</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Euro-Wall authorization</div>
+          <div class="sy"><span class="co-tag">ACG</span>Yes — authorized installer</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Not listed</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>Not listed</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Woman-owned business</div>
+          <div class="sy"><span class="co-tag">ACG</span>Yes — woman-owned (WBE/SBE certification in process)</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Not stated</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>Not stated</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Procore-native operations</div>
+          <div class="sy"><span class="co-tag">ACG</span>Yes</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>No</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>No</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Dedicated city landing pages</div>
+          <div class="sy"><span class="co-tag">ACG</span>25+ Florida markets</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Limited</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>None for Tampa / Sarasota / Longboat / Siesta / Venice / Anna Maria / Naples sub-markets</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Bonding capacity</div>
+          <div class="sy"><span class="co-tag">ACG</span>Provided when required</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Not published</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>Not published</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Florida license</div>
+          <div class="sy"><span class="co-tag">ACG</span>CGC #1531993</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Held</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>Held</div>
+        </div>
+        <div class="sched-row">
+          <div class="mk">Glass Magazine Top 50 (2024)</div>
+          <div class="sy"><span class="co-tag">ACG</span>Not yet ranked</div>
+          <div class="sp"><span class="co-tag">A Christian Glass</span>Not ranked</div>
+          <div class="sp2"><span class="co-tag">Key Glass</span>#40</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container" style="max-width:1040px;">
-      <div data-reveal style="margin-bottom:32px;">
-        <div class="label"><span class="line"></span> Side-by-Side</div>
-        <h2>Florida Commercial Glazing <span class="accent">Contractor Comparison</span></h2>
-        <p style="max-width:720px;color:rgba(255,255,255,.7);margin-top:12px;">The following comparison uses publicly available information from each contractor's website, trade publications, and the Glass Magazine Top 50 Glaziers list. Sources: <a href="https://acglass.com" style="color:var(--accent);">acglass.com</a>, <a href="https://a-christianglass.com" style="color:var(--accent);">a-christianglass.com</a>, <a href="https://keyglass.com" style="color:var(--accent);">keyglass.com</a>, and Glass Magazine Top 50 Glaziers 2024.</p>
+  <!-- ========== When a GC should choose ACG ========== -->
+  <section class="sec" aria-labelledby="when-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">General notes · Selection criteria</span></div>
+          <h2 id="when-h">When a GC should choose ACG.</h2>
+        </div>
       </div>
-
-      <div style="overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);background:rgba(255,255,255,.02);margin:20px 0;">
-        <table style="width:100%;border-collapse:collapse;min-width:860px;">
-          <thead>
-            <tr style="background:rgba(226,27,44,.08);border-bottom:2px solid var(--accent);">
-              <th style="padding:16px 20px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);font-weight:600;">Criteria</th>
-              <th style="padding:16px 20px;text-align:left;font-size:15px;color:#fff;font-weight:800;">ACG</th>
-              <th style="padding:16px 20px;text-align:left;font-size:15px;color:rgba(255,255,255,.75);font-weight:700;">A Christian Glass</th>
-              <th style="padding:16px 20px;text-align:left;font-size:15px;color:rgba(255,255,255,.75);font-weight:700;">Key Glass</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Focus</td><td style="padding:14px 20px;color:#fff;">Commercial glazing</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Primarily residential</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Commercial glazing</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Florida Offices</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">3 (West Palm Beach, Naples, Tampa)</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">1 (Palm Beach area)</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">1 (Bradenton)</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">ESWindows Authorization</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">Yes &mdash; authorized commercial installer</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not listed</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not listed</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Euro-Wall Authorization</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">Yes &mdash; authorized installer</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not listed</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not listed</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Woman-Owned Business</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">Yes &mdash; woman-owned (WBE/SBE certification in process)</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not stated</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not stated</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Procore-native operations</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">Yes</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">No</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">No</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Dedicated City Landing Pages</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">25+ Florida markets</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Limited</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">None for Tampa / Sarasota / Longboat / Siesta / Venice / Anna Maria / Naples sub-markets</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Bonding Capacity</td><td style="padding:14px 20px;color:var(--accent);font-weight:700;">Provided when required</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Not published</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Not published</td></tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Florida License</td><td style="padding:14px 20px;color:#fff;">CGC #1531993</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Held</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">Held</td></tr>
-            <tr><td style="padding:14px 20px;font-weight:600;color:rgba(255,255,255,.75);font-size:13px;">Glass Magazine Top 50 (2024)</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not yet ranked</td><td style="padding:14px 20px;color:rgba(255,255,255,.6);">Not ranked</td><td style="padding:14px 20px;color:rgba(255,255,255,.8);">#40</td></tr>
-          </tbody>
-        </table>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3>The spec calls ESWindows or Euro-Wall</h3>
+          <p>Few Florida subs are authorized installers for both. ACG is — a rare combination on one subcontract.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3>You need statewide coverage</h3>
+          <p>West Palm Beach, Naples, and Tampa offices cover Florida without coordinating multiple single-office subs.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3>You need a woman-owned partner</h3>
+          <p>For public-sector, institutional, or diversity-spend requirements — ACG is woman-owned, with WBE/SBE certification in process.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">04</span>
+          <h3>You want owner-level accountability</h3>
+          <p>ACG's principals — Connor and Rielly Walsh — are directly on every project. No account-executive layer.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">05</span>
+          <h3>You're working in the HVHZ</h3>
+          <p>Miami-Dade NOA-compliant systems are ACG's core, installed week in and week out across South Florida.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">06</span>
+          <h3>Your timeline is tight</h3>
+          <p>48-hour scoped estimates on documented plans and early-stage submittal discipline keep the glazing scope off your critical path.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div style="margin-top:36px;">
-        <h2 style="font-size:26px;font-weight:800;margin:0 0 16px;">When a GC Should Choose ACG</h2>
-        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
-          <li style="padding:14px 18px;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:4px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);"><strong>Your project specifies ESWindows or Euro-Wall</strong> &mdash; few Florida subs are authorized for both.</li>
-          <li style="padding:14px 18px;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:4px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);"><strong>You need statewide coverage</strong> across West Palm Beach, Naples, and Tampa without coordinating multiple single-office subs.</li>
-          <li style="padding:14px 18px;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:4px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);"><strong>You need a Woman-Owned Business partner</strong> for public-sector, institutional, or diversity-spend requirements.</li>
-          <li style="padding:14px 18px;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:4px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);"><strong>You want owner-level accountability</strong> &mdash; ACG's principals (Connor, Rielly) are directly on every project.</li>
-          <li style="padding:14px 18px;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:4px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);"><strong>You're working on HVHZ</strong> &mdash; Miami-Dade NOA-compliant systems are ACG's core, with dedicated ESWindows installer pages for Miami and Fort Lauderdale.</li>
-          <li style="padding:14px 18px;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:4px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);"><strong>Your timeline is tight</strong> &mdash; ACG's  ops deliver 48-hour scoped estimates and early-stage submittal discipline.</li>
+  <!-- ========== Head-to-head comparisons ========== -->
+  <section class="sec svc" aria-labelledby="h2h-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet index · Head-to-head</span></div>
+          <h2 id="h2h-h">Compare ACG against the majors.</h2>
+        </div>
+      </div>
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Sheet</div><div>Comparison</div><div>Summary</div><div></div></div>
+        <a class="sched-row" href="acg-vs-harmon.html">
+          <div class="mk">C-102</div><div class="sy">ACG vs Harmon</div>
+          <div class="sp">Apogee's national curtain wall subcontractor, founded 1949 — national high-rise scale vs owner-led Florida speed.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="acg-vs-permasteelisa.html">
+          <div class="mk">C-103</div><div class="sy">ACG vs Permasteelisa</div>
+          <div class="sp">The global Italian facade group, founded 1973 — bespoke landmark towers vs Florida mid-rise focus.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="acg-vs-giroux-glass.html">
+          <div class="mk">C-104</div><div class="sy">ACG vs Giroux Glass</div>
+          <div class="sp">California's employee-owned glazing contractor, founded 1946 — the American West vs the Southeast.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+      </div>
+      <p class="cmp-note rv">Each comparison keeps to publicly available information and states where a value is not disclosed rather than estimating it. Different scale, different fit — the goal is the right sub for the job, not a winner.</p>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Make the informed call.</h2>
+        <p>Send plans and bid-date info — a scoped proposal or budget direction comes back in 48 hours. No account executives, no layers.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
+      </div>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>COMPARE</div>
-      <h2>Make the <span class="accent">Informed Call.</span></h2>
-      <p>ACG ships a scoped estimate within 48 hours of receiving plans. No account executives. No layers. Just the decision-makers.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-        <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="portfolio.html" class="btn btn-ghost btn-lg">View 52 Projects</a>
-      </div>
-    </div>
-  </section>
-
-<section aria-label="Related resources" style="background:#0e284f;color:#fff;padding:48px 24px;margin:64px 0 0;">
-  <div style="max-width:980px;margin:0 auto;">
-    <h2 style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 24px;font-weight:600;">Related Resources</h2>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px;">
-        <li><a href="/portfolio.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">PROJECTS</span>Project Portfolio <span aria-hidden="true">→</span></a></li>
-        <li><a href="/acg-glass-florida/" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">BRAND</span>About ACG Glass Florida <span aria-hidden="true">→</span></a></li>
-        <li><a href="/division-08-subcontractor-florida.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">PRODUCT</span>Division 08 Capabilities <span aria-hidden="true">→</span></a></li>
-        <li><a href="/about.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">BRAND</span>Commercial Glazing Contractor <span aria-hidden="true">→</span></a></li>
-    </ul>
-  </div>
-</section>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices; Nashville, TN opening Q3 2026. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/ai-operations-whitepaper.html">AI White Paper</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/west-palm-beach-commercial-glazing.html">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/tampa-commercial-glazing.html">Tampa</a>
-            <a href="/commercial-glazing-nashville-tn.html">Nashville, TN (Q3 2026)</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              connor@acglass.com
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/american-commercial-glass-inc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-      </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578 &nbsp;·&nbsp; WBE &nbsp;·&nbsp; SBE</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
-
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

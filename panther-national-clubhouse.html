@@ -35,70 +35,7 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/panther-national/clubhouse-rendering-2026-04.jpg">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <style>
-    .project-hero {
-      position: relative;
-      height: 92vh;
-      min-height: 600px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(5,10,18,0.05) 0%, rgba(5,10,18,0.65) 100%);
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(48px, 8vw, 110px);
-      left: 0; right: 0;
-      z-index: 2;
-    }
-    .in-progress-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(225, 19, 32, 0.15);
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      padding: 8px 16px;
-      margin-bottom: 20px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .in-progress-badge::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 1.5s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 32px; padding: clamp(32px, 5vw, 48px) 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .meta-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
-    .meta-value { font-size: clamp(15px, 1.2vw, 17px); color: rgba(255,255,255,0.85); line-height: 1.5; }
-    .story-text p { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.8; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .story-text h3 { font-size: clamp(20px, 2vw, 26px); color: white; margin-bottom: 16px; margin-top: 48px; }
-    .partner-badge { display: inline-flex; flex-direction: column; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 14px 20px; margin-top: 16px; margin-right: 12px; }
-    .pb-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 4px; }
-    .pb-name { font-size: 15px; font-weight: 700; color: white; }
-    .rendering-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 12px; }
-  </style>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -142,26 +79,6 @@
   "dateModified": "2026-04-08"
 }
   </script>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
 <script type="application/ld+json">
 {
@@ -432,288 +349,323 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
 
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo"><img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high"></a>
-      <div class="nav-links">
-        <a href="index.html">Home</a><a href="portfolio.html" class="active">Portfolio</a><a href="services.html">Services</a><div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div><a href="manufacturers.html">Partners</a><a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-
-      </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- HERO (STATIC RENDERING — PROVIDED BY PANTHER NATIONAL BRAND TEAM) -->
-  <section class="project-hero" id="main-content">
-    <picture>
-      <img height="622" width="1080" src="images/projects/panther-national/clubhouse-rendering-2026-04.jpg"
-           alt="Panther National Clubhouse — architectural rendering of the 60,000 sq ft modern clubhouse, designed by Max Strang of STRANG with Peacock + Lewis Architects"
-           style="width:100%;height:100%;object-fit:cover;display:block;"
-           fetchpriority="high" decoding="async" loading="eager">
-    </picture>
-    <div class="project-hero-content">
-      <div class="container">
-        <div class="in-progress-badge">Currently Under Construction</div>
-        <div class="label" style="margin-top:0;"><span class="line"></span> Hospitality &mdash; Private Golf Club</div>
-        <h1 style="font-size:clamp(28px,4.5vw,70px);font-weight:900;line-height:1.02;margin-top:16px;">Panther National <br> Clubhouse</h1>
-        <p class="rendering-note">Architectural rendering courtesy of Panther National</p>
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="portfolio.html">Portfolio</a><span aria-hidden="true">/</span><span aria-current="page">Panther National Clubhouse</span></nav>
+      <h1>Panther National <em>Clubhouse</em></h1>
+      <p class="p-sub">The 60,000+ SF centerpiece of the first new private gated golf community in Palm Beach County in nearly two decades. ACG is executing the complete Euro-Wall envelope for Verdex Construction — every opening on the building.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Location</b> Palm Beach Gardens, FL</span>
+        <span class="m"><b>Status</b> Under construction</span>
+        <span class="m"><b>GC</b> Verdex Construction</span>
+        <span class="m"><b>Systems</b> All Euro-Wall</span>
       </div>
     </div>
   </section>
 
-  <!-- ========== PROJECT METADATA STRIP (PROJECT_META_STRIP) ========== -->
-  <section class="project-meta-strip" aria-label="Project details">
-    <div class="pm-inner">
-        <div class="pm-cell">
-          <div class="pm-label">Sector</div>
-          <div class="pm-value">Hospitality</div>
+  <!-- ========== The project ========== -->
+  <section class="sec" aria-labelledby="project-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet A-011 · The project</span></div>
+          <h2 id="project-h">Every opening on this building is Euro-Wall.</h2>
+          <div class="prose">
+            <p>Panther National is the first new private gated golf community to open in Palm Beach County in nearly two decades. The 400-acre community is centered around an 18-hole championship course co-designed by Jack Nicklaus and Justin Thomas, with the clubhouse serving as the highly anticipated centerpiece still to come.</p>
+            <p>The 60,000+ square foot, two-story clubhouse was designed by Miami-based architect STRANG in partnership with Peacock + Lewis Architects, with Verdex Construction as the general contractor. Per Max Strang's brief, the clubhouse is meant to &ldquo;blur the line between indoors and out&rdquo; with full-height windows, organic materials, and a soft, neutral palette.</p>
+            <p>ACG is supplying and installing the complete Euro-Wall package across the entire clubhouse envelope — not a piecemeal scope. DirectSet storefront wraps the fixed glazed elevations, multi-slide doors open the dining and lounge spaces to the course, Vistafold folding doors dissolve the indoor/outdoor transitions, and pivot doors handle the architectural entry moments. A single-manufacturer envelope — all Euro-Wall — is what makes the architect's promise real.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Location</span><span class="d">Palm Beach Gardens, FL</span></div>
+            <div class="row"><span class="k">Sector</span><span class="d">Hospitality · Private golf club</span></div>
+            <div class="row"><span class="k">Scope</span><span class="d">Complete Euro-Wall clubhouse envelope</span></div>
+            <div class="row"><span class="k">Systems</span><span class="d">Euro-Wall DirectSet · Multi-Slide · Vistafold · Pivot</span></div>
+            <div class="row"><span class="k">GC</span><span class="d">Verdex Construction</span></div>
+            <div class="row"><span class="k">Architect</span><span class="d">STRANG · Peacock + Lewis Architects</span></div>
+          </div>
         </div>
-        <div class="pm-cell">
-          <div class="pm-label">General Contractor</div>
-          <div class="pm-value">Verdex Construction</div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/panther-national/clubhouse-rendering-2026-04.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/clubhouse-rendering-2026-04.webp" type="image/webp">
+            <img src="images/projects/panther-national/clubhouse-rendering-2026-04.jpg" alt="Panther National Clubhouse — architectural rendering of the 60,000 sq ft modern clubhouse, designed by Max Strang of STRANG with Peacock + Lewis Architects" width="1080" height="622" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="tag">Rendering courtesy Panther National</span>
         </div>
-        <div class="pm-cell">
-          <div class="pm-label">Glazing System</div>
-          <div class="pm-value">Euro-Wall SGD2020 + Storefront</div>
-        </div>
-        <div class="pm-cell">
-          <div class="pm-label">Location</div>
-          <div class="pm-value">Palm Beach Gardens, FL</div>
-        </div>
-    </div>
-  </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
-
-
-  <!-- META -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);">
-    <div class="container">
-<div class="project-tags" style="display:flex;flex-wrap:wrap;gap:8px;padding:16px clamp(24px,5vw,80px);justify-content:center;"><span class="project-tag">Hospitality</span><a href="portfolio.html?mfg=eurowall" class="project-tag">Euro-Wall</a><a href="portfolio.html?gc=verdex" class="project-tag">Verdex Construction</a><span class="project-tag">Palm Beach Gardens, FL</span><span class="project-tag">golf clubhouse glazing</span><span class="project-tag">DirectSet Storefront</span><span class="project-tag">Multi-Slide</span><span class="project-tag">Vistafold</span><span class="project-tag">Pivot Door</span></div>
-      <div class="meta-grid" data-reveal>
-        <div><div class="meta-label">Location</div><div class="meta-value">Palm Beach Gardens, FL</div></div>
-        <div><div class="meta-label">Status</div><div class="meta-value" style="color:var(--accent);font-weight:600;">Under Construction</div></div>
-        <div><div class="meta-label">Type</div><div class="meta-value">Private Golf Club</div></div>
-        <div><div class="meta-label">General Contractor</div><div class="meta-value">Verdex Construction</div></div>
-        <div><div class="meta-label">Systems</div><div class="meta-value">All Euro-Wall &mdash; DirectSet Storefront, Multi-Slide, Vistafold, Pivot Doors</div></div>
       </div>
     </div>
   </section>
 
-  <!-- STORY -->
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
-        <div class="story-text">
-          <h3>The Project</h3>
-          <p>Panther National is the first new private gated golf community to open in Palm Beach County in nearly two decades. The 400-acre community is centered around an 18-hole championship course co-designed by <a href="https://nicklausdesign.com/course/panther-national/" target="_blank" rel="noopener">Jack Nicklaus and Justin Thomas</a>, with the clubhouse serving as the highly anticipated centerpiece still to come.</p>
-          <p>The 60,000+ square foot, two-story clubhouse was designed by Miami-based architect <strong>STRANG</strong> in partnership with <a href="https://verdex.com/panther-national-clubhouse/" target="_blank" rel="noopener">Peacock + Lewis Architects</a>, with <strong>Verdex Construction</strong> as the general contractor. ACG is executing the complete Euro-Wall envelope across the entire clubhouse, including DirectSet storefront, multi-slide doors, Vistafold folding doors, and pivot doors.</p>
-
-          <h3>The Glazing Scope</h3>
-          <p>ACG is supplying and installing the <strong>complete Euro-Wall package</strong> across the entire clubhouse envelope &mdash; not a piecemeal scope. Every opening on this building is Euro-Wall: <strong>DirectSet storefront</strong> wraps the fixed glazed elevations, <strong>multi-slide doors</strong> open the dining and lounge spaces to the course, <strong>Vistafold folding doors</strong> dissolve the indoor/outdoor transitions, and <strong>pivot doors</strong> handle the architectural entry moments. Per Max Strang's brief, the clubhouse is meant to &ldquo;blur the line between indoors and out&rdquo; with full-height windows, organic materials, and a soft, neutral palette. A single-manufacturer envelope &mdash; all Euro-Wall &mdash; is what makes that promise real.</p>
-
-          <h3>Why This Matters</h3>
-          <p>Private golf-club construction in South Florida is one of the most visible and most demanding markets in commercial glazing. When Verdex Construction needed a Division 08 sub for Panther National &mdash; the first private gated golf community in Palm Beach County in 20 years, co-designed by the greatest golfer of all time &mdash; they called ACG. The scope, the client profile, and the visibility of the project set a new benchmark for what our team delivers.</p>
-
-          <div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;">
-            <div class="partner-badge"><div class="pb-label">General Contractor</div><div class="pb-name">Verdex Construction</div></div>
-            <div class="partner-badge"><div class="pb-label">Storefront</div><div class="pb-name">Euro-Wall DirectSet</div></div>
-            <div class="partner-badge"><div class="pb-label">Multi-Slide</div><div class="pb-name">Euro-Wall</div></div>
-            <div class="partner-badge"><div class="pb-label">Folding Doors</div><div class="pb-name">Euro-Wall Vistafold</div></div>
-            <div class="partner-badge"><div class="pb-label">Pivot Doors</div><div class="pb-name">Euro-Wall</div></div>
-          </div>
-        </div>
-
+  <!-- ========== Photo record ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="gallery-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <picture><source type="image/webp" srcset="images/projects/panther-national/interior-framing.webp"><img height="810" width="1080" src="images/projects/panther-national/interior-framing.jpg" alt="Panther National Clubhouse — interior steel framing looking out to golf course, glazing openings ready for Euro-Wall systems" style="width:100%;border-radius:var(--radius);" loading="lazy" decoding="async"></picture>
-          <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <picture><source type="image/webp" srcset="images/projects/panther-national/exterior-scaffolding.webp"><img height="810" width="1080" src="images/projects/panther-national/exterior-scaffolding.jpg" alt="Panther National Clubhouse exterior — two-story structure with scaffolding" style="width:100%;border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;" loading="lazy" decoding="async"></picture>
-            <picture><source type="image/webp" srcset="images/projects/panther-national/exterior-construction.webp"><img height="810" width="1080" src="images/projects/panther-national/exterior-construction.jpg" alt="Panther National Clubhouse construction progress" style="width:100%;border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;" loading="lazy" decoding="async"></picture>
-          </div>
-          <picture><source type="image/webp" srcset="images/projects/panther-national/interior-glass-staging.webp"><img height="810" width="1080" src="images/projects/panther-national/interior-glass-staging.jpg" alt="Panther National Clubhouse interior — glass panels staged for installation" style="width:100%;border-radius:var(--radius);margin-top:12px;" loading="lazy" decoding="async"></picture>
-          
+          <div class="k-wrap"><span class="k-label">Sheet A-021 · Photo record</span></div>
+          <h2 id="gallery-h">In progress on the course.</h2>
+        </div>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/panther-national/construction-aerial-clubhouse-overview.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/construction-aerial-clubhouse-overview.webp" type="image/webp">
+            <img src="images/projects/panther-national/construction-aerial-clubhouse-overview.jpg" alt="Panther National Clubhouse construction — aerial view of the two-story structure with deck-level slab poured and glazing openings ready for Euro-Wall DirectSet, multi-slide, Vistafold, and pivot installation" width="1080" height="608" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Structure topped out</span><span class="s">Aerial · envelope openings ready</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/construction-aerial-flag-day.webp" type="image/webp">
+            <img src="images/projects/panther-national/construction-aerial-flag-day.jpg" alt="Panther National Clubhouse — aerial view with American flag mounted on the structure during construction, ACG service fleet on site" width="1080" height="608" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">ACG fleet on site</span><span class="s">Construction aerial</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/construction-aerial-golf-course-view.webp" type="image/webp">
+            <img src="images/projects/panther-national/construction-aerial-golf-course-view.jpg" alt="Panther National Clubhouse — aerial view from golf course side showing long glazing elevation facing the course and water hazards" width="1080" height="608" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Course elevation</span><span class="s">Long glazing elevation</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/exterior-scaffolding.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/exterior-scaffolding.webp" type="image/webp">
+            <img src="images/projects/panther-national/exterior-scaffolding.jpg" alt="Panther National Clubhouse exterior — two-story structure with scaffolding" width="1080" height="810" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Exterior progress</span><span class="s">Two-story structure</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/exterior-construction.webp" type="image/webp">
+            <img src="images/projects/panther-national/exterior-construction.jpg" alt="Panther National Clubhouse construction progress — exterior view" width="1080" height="810" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Envelope progress</span><span class="s">Exterior construction</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/interior-framing.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/interior-framing.webp" type="image/webp">
+            <img src="images/projects/panther-national/interior-framing.jpg" alt="Panther National Clubhouse — interior steel framing looking out to golf course, glazing openings ready for Euro-Wall systems" width="1080" height="810" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Interior framing</span><span class="s">Openings ready for Euro-Wall</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/interior-glass-staging.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/interior-glass-staging.webp" type="image/webp">
+            <img src="images/projects/panther-national/interior-glass-staging.jpg" alt="Panther National Clubhouse interior — glass panels staged for installation" width="1080" height="810" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Glass staged</span><span class="s">Panels ready for install</span></div>
+        </div>
+        <div class="proj wide">
+          <picture>
+            <source srcset="images/projects/panther-national/rielly-walkthrough.webp" type="image/webp">
+            <img src="images/projects/panther-national/rielly-walkthrough.jpg" alt="Rielly Walsh, CEO of American Commercial Glass, on site at the Panther National clubhouse with the Verdex Construction team during a structural walkthrough" width="810" height="540" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Owner-level site presence</span><span class="s">Rielly Walsh · walkthrough with Verdex</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/aerial-golf-course.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/aerial-golf-course.webp" type="image/webp">
+            <img src="images/projects/panther-national/aerial-golf-course.jpg" alt="Panther National — aerial over the Jack Nicklaus and Justin Thomas championship golf course, Palm Beach Gardens" width="1080" height="811" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">The course</span><span class="s">Nicklaus · Thomas co-design</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/brochure-clubhouse-hero.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/brochure-clubhouse-hero.webp" type="image/webp">
+            <img src="images/projects/panther-national/brochure-clubhouse-hero.jpg" alt="Panther National Clubhouse — rendering of the clubhouse exterior at dusk" width="1800" height="1390" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Clubhouse at dusk</span><span class="s">Rendering courtesy Panther National</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/brochure-clubhouse-glazing.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/brochure-clubhouse-glazing.webp" type="image/webp">
+            <img src="images/projects/panther-national/brochure-clubhouse-glazing.jpg" alt="Panther National Clubhouse — rendering of the full-height clubhouse glazing" width="1800" height="1558" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Full-height glazing</span><span class="s">Rendering courtesy Panther National</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/brochure-interior.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/brochure-interior.webp" type="image/webp">
+            <img src="images/projects/panther-national/brochure-interior.jpg" alt="Panther National Clubhouse — rendering of the interior with full-height windows and neutral palette" width="1800" height="1558" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Interior concept</span><span class="s">Rendering courtesy Panther National</span></div>
+        </div>
+        <div class="proj">
+          <picture>
+            <source srcset="images/projects/panther-national/brochure-pool.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/brochure-pool.webp" type="image/webp">
+            <img src="images/projects/panther-national/brochure-pool.jpg" alt="Panther National Clubhouse — rendering of the pool terrace with glazed elevations behind" width="1800" height="1558" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Pool terrace</span><span class="s">Rendering courtesy Panther National</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONSTRUCTION PROGRESS — AERIAL GALLERY ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,72px);padding-bottom:clamp(48px,6vw,72px);background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container">
-      <div data-reveal style="margin-bottom:clamp(28px,4vw,44px);">
-        <div class="label"><span class="line"></span> Construction Progress</div>
-        <h2 style="margin-top:14px;">In progress <span class="accent">on the course.</span></h2>
-        <p style="max-width:720px;color:rgba(255,255,255,.7);margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">Aerial documentation from the Panther National clubhouse build. Structure topped out, envelope openings ready for the complete Euro-Wall package &mdash; DirectSet storefront, multi-slide, Vistafold, and pivot &mdash; with the golf course already taking shape around it.</p>
+  <!-- ========== Scope notes ========== -->
+  <section class="sec" aria-labelledby="notes-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-031 · Scope notes</span></div>
+          <h2 id="notes-h">Why this project matters.</h2>
+        </div>
       </div>
-
-      <!-- Hero aerial -->
-      <div data-reveal data-delay="100" style="margin-bottom:18px;border-radius:var(--radius);overflow:hidden;">
-        <picture>
-          <source type="image/webp" srcset="images/projects/panther-national/construction-aerial-clubhouse-overview.webp">
-          <img height="608" width="1080" src="images/projects/panther-national/construction-aerial-clubhouse-overview.jpg"
-               alt="Panther National Clubhouse construction — aerial view of the two-story structure with deck-level slab poured and glazing openings ready for Euro-Wall DirectSet, multi-slide, Vistafold, and pivot installation"
-               style="width:100%;height:auto;display:block;"
-               loading="lazy" decoding="async">
-        </picture>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3>Single-manufacturer envelope</h3>
+          <p>Every opening on the clubhouse is Euro-Wall — DirectSet storefront, multi-slide, Vistafold, and pivot doors — one system family, one sub, one accountable installation.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3>Owner-level site presence</h3>
+          <p>ACG CEO Rielly Walsh walks the structure with the Verdex Construction team, reviewing the envelope sequence for the Euro-Wall package. Her concrete-and-stone background means she reads the structure the way the GC does.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3>A benchmark scope</h3>
+          <p>Private golf-club construction in South Florida is one of the most visible and most demanding markets in commercial glazing. The scope, the client profile, and the visibility of Panther National set a new benchmark for what ACG delivers.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Two-up aerials -->
-      <div data-reveal data-delay="180" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:18px;">
-        <figure style="margin:0;border-radius:var(--radius);overflow:hidden;position:relative;">
+  <!-- ========== Related projects ========== -->
+  <section class="sec" aria-labelledby="related-h">
+    <span class="bignum" aria-hidden="true">04</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet A-041 · Related projects</span></div>
+          <h2 id="related-h">More from the portfolio.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj" href="atlantic-fields-golf-house.html">
           <picture>
-            <source type="image/webp" srcset="images/projects/panther-national/construction-aerial-flag-day.webp">
-            <img height="608" width="1080" src="images/projects/panther-national/construction-aerial-flag-day.jpg"
-                 alt="Panther National Clubhouse — aerial view with American flag mounted on the structure during construction, ACG service fleet on site"
-                 style="width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
+            <source srcset="images/projects/atlantic-fields-golf-house/card-golden-hour.avif" type="image/avif">
+            <source srcset="images/projects/atlantic-fields-golf-house/card-golden-hour.webp" type="image/webp">
+            <img src="images/projects/atlantic-fields-golf-house/card-golden-hour.jpg" alt="Atlantic Fields Golf House at golden hour, Hobe Sound" width="1200" height="789" loading="lazy" decoding="async">
           </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.7);padding:6px 10px;border-radius:4px;backdrop-filter:blur(8px);">ACG fleet on site</figcaption>
-        </figure>
-        <figure style="margin:0;border-radius:var(--radius);overflow:hidden;position:relative;">
+          <div class="proj-cap"><span class="t">Atlantic Fields Golf House</span><span class="s">Golf clubhouse · Hobe Sound</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="wild-blue-clubhouse.html">
           <picture>
-            <source type="image/webp" srcset="images/projects/panther-national/construction-aerial-golf-course-view.webp">
-            <img height="608" width="1080" src="images/projects/panther-national/construction-aerial-golf-course-view.jpg"
-                 alt="Panther National Clubhouse — aerial view from golf course side showing long glazing elevation facing the course and water hazards"
-                 style="width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;display:block;"
-                 loading="lazy" decoding="async">
+            <source srcset="images/projects/wild-blue-clubhouse-hero.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue-clubhouse-hero.webp" type="image/webp">
+            <img src="images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue Clubhouse glass walls, Estero" width="1600" height="900" loading="lazy" decoding="async">
           </picture>
-          <figcaption style="position:absolute;left:14px;bottom:14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.7);padding:6px 10px;border-radius:4px;backdrop-filter:blur(8px);">Course elevation</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========== BOOTS ON THE GROUND — RIELLY ON SITE ========== -->
-  <section aria-label="ACG leadership on site at Panther National" style="padding:clamp(60px,7vw,90px) 0;">
-    <div class="container" style="max-width:1300px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
-        <div class="label"><span class="line"></span> Boots on the Ground</div>
-        <h2 style="margin-top:14px;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.015em;">Owner-level <span class="accent">site presence.</span></h2>
-        <p style="max-width:760px;color:rgba(255,255,255,.78);margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">ACG CEO Rielly Walsh on the Panther National clubhouse floor with the Verdex Construction team &mdash; walking the structure, reviewing the envelope sequence for the Euro-Wall package. Every ACG project at this caliber gets owner-level attention from the field, not from a desk.</p>
-      </div>
-
-      <figure data-reveal data-delay="100" style="margin:0;border-radius:14px;overflow:hidden;position:relative;background:#000;">
-        <picture>
-          <source type="image/webp" srcset="images/projects/panther-national/rielly-walkthrough.webp">
-          <img height="540" width="810" src="images/projects/panther-national/rielly-walkthrough.jpg"
-               alt="Rielly Walsh, CEO of American Commercial Glass, on site at the Panther National clubhouse with the Verdex Construction team during a structural walkthrough"
-               style="width:100%;height:auto;display:block;"
-               loading="lazy" decoding="async">
-        </picture>
-        <figcaption style="position:absolute;left:18px;bottom:18px;right:18px;">
-          <div style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(5,10,18,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:7px 14px;border-radius:4px;border:1px solid rgba(255,255,255,.08);font-weight:700;">Rielly Walsh, CEO &middot; Site Walkthrough with Verdex</div>
-        </figcaption>
-      </figure>
-
-      <p style="text-align:center;margin-top:clamp(20px,2.5vw,28px);font-size:13px;color:rgba(255,255,255,.55);">Rielly leads ACG's strategy and operations; her concrete-and-stone background means she reads the structure the way the GC does. <a href="leadership.html#rielly" style="color:rgba(255,255,255,.8);text-decoration:underline;">Meet the leadership team</a></p>
-    </div>
-  </section>
-
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
-      <h2>Working on Something<br><span class="accent">This Ambitious?</span></h2>
-      <p>Luxury private clubs, <a href="hospitality-glazing-florida.html">high-profile hospitality</a>, demanding curtainwall scopes — ACG has the systems, the partnerships, and the track record to get it done. <a href="scope-engine.html">Send your plans</a> and get a scope in 48 hours.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </section>
-
-
-  <!-- RELATED ARTICLES -->
-  <section style="padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(255,255,255,0.06);">
-    <div class="container" data-reveal-fade>
-      <div style="text-align:center;margin-bottom:24px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent,#E11320);font-weight:600;">Related Articles</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
-        <a href="blog/curtainwall-systems-explained-commercial-construction.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Curtainwall Systems Explained</div>
+          <div class="proj-cap"><span class="t">Wild Blue Clubhouse</span><span class="s">Clubhouse · Estero</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
-        <a href="blog/storefront-vs-curtainwall-vs-window-wall-difference.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">Storefront vs Curtainwall vs Window Wall</div>
-        </a>
-        <a href="blog/how-to-evaluate-glazing-subcontractor-bid.html" style="display:block;padding:20px 24px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;text-decoration:none;transition:all .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,0.3)';this.style.background='rgba(225,19,32,0.04)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.background='rgba(255,255,255,0.03)'">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:8px;">ACG Blog</div>
-          <div style="color:white;font-weight:600;font-size:15px;line-height:1.4;">How to Evaluate a Glazing Subcontractor Bid</div>
+        <a class="proj" href="eau-palm-beach-resort.html">
+          <picture>
+            <source srcset="images/projects/eau-palm-beach/entrance-dusk.avif" type="image/avif">
+            <source srcset="images/projects/eau-palm-beach/entrance-dusk.webp" type="image/webp">
+            <img src="images/projects/eau-palm-beach/entrance-dusk.jpg" alt="Eau Palm Beach Resort entrance at dusk — impact glazing and arched entrance systems" width="1080" height="721" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Eau Palm Beach Resort</span><span class="s">Hospitality · Manalapan</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         </a>
       </div>
     </div>
   </section>
 
-    <footer class="ft">
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Working on something this ambitious?</h2>
+        <p>Luxury private clubs, high-profile hospitality, demanding envelope scopes — ACG has the systems, the partnerships, and the track record. Send your plans and get a scope in 48 hours.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
         <h4>Company</h4>
         <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
         </ul>
       </nav>
       <nav aria-label="Services">
         <h4>Services</h4>
         <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
         </ul>
       </nav>
       <div>
@@ -722,21 +674,18 @@
           <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
+          <li><a href="locations.html">All service areas →</a></li>
         </ul>
       </div>
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

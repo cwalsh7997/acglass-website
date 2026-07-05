@@ -32,10 +32,30 @@
   <meta name="twitter:description" content="A showcase of Euro-Wall Systems, ACG's leading manufacturer partnership. Engineered in North Port, Florida for Florida's most demanding commercial glazing projects.">
   <meta name="twitter:image" content="https://acglass.com/images/partners/eurowall/project-hero-multislide.jpg">
 
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,900&f[]=instrument-serif@400&display=swap" rel="stylesheet">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
+  <style>
+    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
+    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
+    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
+    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
+    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
+    /* spec tables + FAQ details, light system */
+    .spec-scroll{overflow-x:auto}
+    .spec-table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:680px}
+    .spec-table th{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);text-align:left;padding:12px 14px;border-bottom:2px solid var(--navy);white-space:nowrap}
+    .spec-table td{padding:13px 14px;border-bottom:1px solid var(--hairline);color:var(--body);vertical-align:top;line-height:1.55}
+    .spec-table td:first-child{color:var(--ink);font-weight:650}
+    .spec-note{margin-top:14px;font-size:.85rem;color:var(--muted);font-style:italic;max-width:80ch}
+    .faq-d{background:var(--paper);border:1px solid var(--hairline);border-radius:var(--radius);padding:18px 22px}
+    .faq-d summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+    .faq-d summary::-webkit-details-marker{display:none}
+    .faq-d summary::after{content:"+";color:var(--red);font-size:1.25rem;font-weight:400;flex-shrink:0;line-height:1}
+    .faq-d[open] summary::after{content:"−"}
+    .faq-d p{margin-top:10px;line-height:1.65;font-size:.95rem}
+  </style>
 
   <script type="application/ld+json">
 {
@@ -168,972 +188,6 @@
 }
 </script>
 
-  <style>
-    /* ═══════════════════════════════════════════════════════
-       EURO-WALL SHOWCASE — EDITORIAL STYLES
-       ═══════════════════════════════════════════════════════ */
-
-    :root {
-      --ew-ink: #050A12;
-      --ew-ink-soft: #0A121E;
-      --ew-paper: #F5F0E8;
-      --ew-paper-soft: #EDE6D9;
-      --ew-accent: #E11320;
-      --ew-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
-      --ew-sans: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --ew-mono: 'JetBrains Mono', 'SF Mono', monospace;
-    }
-
-    body.ew-body {
-      font-family: var(--ew-sans);
-      background: var(--ew-ink);
-      color: rgba(255,255,255,0.82);
-      line-height: 1.6;
-    }
-
-    /* ── REVEAL SYSTEM (lightweight, editorial) ── */
-    [data-ew-reveal] {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1);
-      will-change: opacity, transform;
-    }
-    [data-ew-reveal].revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    [data-ew-reveal-fade] {
-      opacity: 0;
-      transition: opacity 1.4s ease-out;
-    }
-    [data-ew-reveal-fade].revealed { opacity: 1; }
-
-    /* ── OVERLINE ── */
-    .ew-overline {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ew-accent);
-    }
-    .ew-overline-dim {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 1 — CINEMATIC HERO
-       ═══════════════════════════════════════════════════════ */
-    .ew-hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(120px, 16vh, 200px) clamp(24px, 6vw, 96px) clamp(80px, 10vh, 140px);
-      background:
-        radial-gradient(ellipse at 20% 10%, rgba(225,19,32,0.08) 0%, transparent 55%),
-        radial-gradient(ellipse at 90% 90%, rgba(19,43,74,0.35) 0%, transparent 60%),
-        linear-gradient(180deg, #05080F 0%, #050A12 50%, #080F1C 100%);
-      overflow: hidden;
-    }
-    .ew-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      opacity: 0.04;
-      mix-blend-mode: overlay;
-      pointer-events: none;
-    }
-    .ew-hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .ew-hero-overline {
-      margin-bottom: clamp(40px, 6vw, 72px);
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .ew-hero-overline .ew-line {
-      width: 40px; height: 1px;
-      background: var(--ew-accent);
-    }
-    .ew-hero-display {
-      font-size: clamp(56px, 11vw, 168px);
-      font-weight: 900;
-      line-height: 0.92;
-      letter-spacing: -0.035em;
-      color: #fff;
-      margin: 0;
-      max-width: 18ch;
-    }
-    .ew-hero-display em {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: -0.015em;
-      color: var(--ew-paper);
-      display: inline-block;
-    }
-    p.ew-hero-sub,
-    .ew-hero-sub {
-      margin-top: clamp(32px, 4vw, 52px);
-      font-size: clamp(17px, 1.6vw, 22px);
-      line-height: 1.5;
-      color: rgba(255,255,255,0.55);
-      max-width: 52ch;
-      font-weight: 400;
-    }
-    .ew-hero-divider {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      margin-top: clamp(48px, 7vw, 80px);
-      flex-wrap: wrap;
-    }
-    .ew-hero-divider .ew-red-line {
-      width: 80px; height: 2px;
-      background: var(--ew-accent);
-      flex-shrink: 0;
-    }
-    .ew-hero-divider img {
-      height: 38px;
-      width: auto;
-      filter: brightness(1.1);
-      opacity: 0.9;
-    }
-    .ew-scroll-cue {
-      position: absolute;
-      bottom: clamp(24px, 4vh, 48px);
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--ew-mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      z-index: 3;
-    }
-    .ew-scroll-cue .ew-scroll-track {
-      width: 1px;
-      height: 44px;
-      background: rgba(255,255,255,0.15);
-      position: relative;
-      overflow: hidden;
-    }
-    .ew-scroll-cue .ew-scroll-track::after {
-      content: '';
-      position: absolute;
-      top: -20px; left: 0;
-      width: 1px; height: 20px;
-      background: var(--ew-accent);
-      animation: ewScroll 2.4s cubic-bezier(0.6,0,0.4,1) infinite;
-    }
-    @keyframes ewScroll {
-      0% { top: -20px; opacity: 0; }
-      40% { opacity: 1; }
-      100% { top: 44px; opacity: 0; }
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 2 — FULL-BLEED IMPRESSION
-       ═══════════════════════════════════════════════════════ */
-    .ew-impression {
-      position: relative;
-      width: 100%;
-      height: clamp(500px, 90vh, 900px);
-      overflow: hidden;
-      background: #000;
-    }
-    .ew-impression-img {
-      position: absolute;
-      inset: -8%;
-      width: 116%;
-      height: 116%;
-      object-fit: cover;
-      object-position: center;
-      will-change: transform;
-      transform: translate3d(0, 0, 0) scale(1);
-      transition: transform 0.1s linear;
-    }
-    .ew-impression-tag {
-      position: absolute;
-      bottom: clamp(24px, 4vw, 48px);
-      left: clamp(24px, 4vw, 64px);
-      z-index: 2;
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #fff;
-      mix-blend-mode: difference;
-      background: rgba(5,10,18,0.45);
-      padding: 10px 16px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-left: 2px solid var(--ew-accent);
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 3 — FOUNDING PRINCIPLE
-       ═══════════════════════════════════════════════════════ */
-    .ew-principle {
-      padding: clamp(100px, 14vw, 200px) clamp(24px, 6vw, 96px);
-      background: var(--ew-paper);
-      color: #12171F;
-    }
-    .ew-principle-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(48px, 7vw, 120px);
-      align-items: start;
-    }
-    .ew-principle-left .ew-overline {
-      color: var(--ew-accent);
-      margin-bottom: 32px;
-      display: block;
-    }
-    .ew-pullquote {
-      font-family: var(--ew-serif);
-      font-style: italic;
-      font-size: clamp(32px, 4.2vw, 60px);
-      line-height: 1.12;
-      letter-spacing: -0.015em;
-      color: #12171F;
-      margin: 0;
-      font-weight: 400;
-    }
-    .ew-pullquote::before {
-      content: '"';
-      color: var(--ew-accent);
-      font-size: 1em;
-      line-height: 0;
-      margin-right: 0.05em;
-    }
-    .ew-pullquote-attr {
-      display: block;
-      margin-top: 32px;
-      font-family: var(--ew-mono);
-      font-style: normal;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(18,23,31,0.5);
-    }
-    .ew-principle-right p {
-      font-size: clamp(16px, 1.25vw, 19px);
-      line-height: 1.72;
-      color: rgba(18,23,31,0.78);
-      margin-bottom: 28px;
-    }
-    .ew-principle-right p:last-child { margin-bottom: 0; }
-    .ew-principle-right p:first-child {
-      font-size: clamp(18px, 1.45vw, 22px);
-      color: #12171F;
-      line-height: 1.55;
-      font-weight: 500;
-    }
-    .ew-principle-right strong {
-      color: #12171F;
-      font-weight: 600;
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 4 — THE SYSTEMS
-       ═══════════════════════════════════════════════════════ */
-    .ew-systems {
-      padding: clamp(100px, 14vw, 200px) 0 clamp(60px, 9vw, 120px);
-      background: var(--ew-ink);
-    }
-    .ew-systems-head {
-      max-width: 1400px;
-      margin: 0 auto clamp(64px, 8vw, 120px);
-      padding: 0 clamp(24px, 6vw, 96px);
-    }
-    .ew-systems-head .ew-overline { display: block; margin-bottom: 24px; }
-    .ew-systems-head h2 {
-      font-family: var(--ew-sans);
-      font-weight: 900;
-      font-size: clamp(44px, 7vw, 96px);
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      color: #fff;
-      margin: 0;
-      max-width: 14ch;
-    }
-    .ew-systems-head h2 em {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ew-paper);
-    }
-
-    .ew-system {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 96px);
-      align-items: center;
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: clamp(60px, 10vw, 140px) clamp(24px, 6vw, 96px);
-    }
-    .ew-system.reverse .ew-system-img { order: 2; }
-    .ew-system-img {
-      position: relative;
-      overflow: hidden;
-      background: #0A121E;
-      aspect-ratio: 4/5;
-    }
-    .ew-system-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
-    }
-    .ew-system-img:hover img { transform: scale(1.04); }
-    .ew-system-body .ew-kicker {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ew-accent);
-      margin-bottom: 22px;
-    }
-    .ew-system-body h3 {
-      font-family: var(--ew-sans);
-      font-weight: 900;
-      font-size: clamp(36px, 4.8vw, 68px);
-      line-height: 1.02;
-      letter-spacing: -0.025em;
-      color: #fff;
-      margin: 0 0 28px 0;
-    }
-    .ew-system-body h3 em {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ew-paper);
-    }
-    p.ew-system-desc,
-    .ew-system-desc {
-      font-size: clamp(17px, 1.35vw, 21px);
-      line-height: 1.55;
-      color: rgba(255,255,255,0.72);
-      margin: 0 0 36px 0;
-      max-width: 38ch;
-    }
-    .ew-system-specs {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 22px;
-      margin-bottom: 28px;
-      font-family: var(--ew-mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.9;
-      text-transform: uppercase;
-    }
-    .ew-system-specs strong {
-      color: rgba(255,255,255,0.85);
-      font-weight: 600;
-      margin-right: 6px;
-    }
-    .ew-system-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #fff;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.25);
-      transition: color 0.25s, border-color 0.25s, gap 0.25s;
-    }
-    .ew-system-cta:hover {
-      color: var(--ew-accent);
-      border-bottom-color: var(--ew-accent);
-      gap: 16px;
-    }
-    .ew-system-cta svg {
-      width: 12px; height: 12px;
-      transition: transform 0.25s;
-    }
-    .ew-system-cta:hover svg { transform: translateX(3px); }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 5 — THE PEOPLE
-       ═══════════════════════════════════════════════════════ */
-    .ew-people {
-      padding: clamp(100px, 14vw, 200px) clamp(24px, 6vw, 96px);
-      background: linear-gradient(180deg, #050A12 0%, #0A1220 50%, #050A12 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .ew-people::before {
-      content: '';
-      position: absolute;
-      top: 10%; right: -5%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(225,19,32,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .ew-people-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .ew-people-head {
-      display: grid;
-      grid-template-columns: 1.1fr 1.4fr;
-      gap: clamp(32px, 6vw, 96px);
-      margin-bottom: clamp(64px, 9vw, 120px);
-      align-items: end;
-    }
-    .ew-people-head .ew-overline { display: block; margin-bottom: 20px; }
-    .ew-people-head h2 {
-      font-family: var(--ew-sans);
-      font-weight: 900;
-      font-size: clamp(38px, 5.2vw, 74px);
-      line-height: 0.98;
-      letter-spacing: -0.028em;
-      color: #fff;
-      margin: 0;
-      hyphens: none;
-      word-break: normal;
-      overflow-wrap: normal;
-    }
-    .ew-people-head h2 em {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ew-paper);
-    }
-    p.ew-people-body,
-    .ew-people-body {
-      font-size: clamp(17px, 1.35vw, 21px);
-      line-height: 1.62;
-      color: rgba(255,255,255,0.7);
-      max-width: 54ch;
-    }
-    .ew-people-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(20px, 3vw, 40px);
-    }
-    .ew-person-card {
-      background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: clamp(32px, 4vw, 56px) clamp(28px, 3.5vw, 44px);
-      position: relative;
-      transition: border-color 0.3s, background 0.3s, transform 0.3s;
-    }
-    .ew-person-card:hover {
-      border-color: rgba(225,19,32,0.35);
-      background: linear-gradient(160deg, rgba(225,19,32,0.04) 0%, rgba(255,255,255,0.01) 100%);
-      transform: translateY(-3px);
-    }
-    .ew-person-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 32px; height: 2px;
-      background: var(--ew-accent);
-    }
-    .ew-person-num {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 40px;
-    }
-    .ew-person-name {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-size: clamp(30px, 3vw, 44px);
-      line-height: 1.02;
-      color: #fff;
-      letter-spacing: -0.01em;
-      margin: 0 0 12px 0;
-    }
-    .ew-person-role {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--ew-accent);
-      margin-bottom: 24px;
-    }
-    p.ew-person-desc,
-    .ew-person-desc {
-      font-size: 15px;
-      line-height: 1.65;
-      color: rgba(255,255,255,0.7);
-      margin: 0;
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 6 — MAGAZINE GALLERY
-       ═══════════════════════════════════════════════════════ */
-    .ew-gallery-section {
-      padding: clamp(100px, 14vw, 200px) clamp(24px, 6vw, 96px);
-      background: var(--ew-paper);
-      color: #12171F;
-    }
-    .ew-gallery-head {
-      max-width: 1400px;
-      margin: 0 auto clamp(48px, 7vw, 96px);
-    }
-    .ew-gallery-head .ew-overline {
-      color: var(--ew-accent);
-      display: block;
-      margin-bottom: 24px;
-    }
-    .ew-gallery-head h2 {
-      font-family: var(--ew-sans);
-      font-weight: 900;
-      font-size: clamp(40px, 5.6vw, 80px);
-      line-height: 1;
-      letter-spacing: -0.028em;
-      color: #12171F;
-      margin: 0 0 24px 0;
-      max-width: 18ch;
-    }
-    .ew-gallery-head h2 em {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-    }
-    p.ew-gallery-disclaimer,
-    .ew-gallery-disclaimer {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(18,23,31,0.5);
-      max-width: 70ch;
-      line-height: 1.7;
-    }
-
-    .ew-mag-grid {
-      max-width: 1500px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: clamp(120px, 14vw, 200px);
-      gap: clamp(12px, 1.6vw, 24px);
-    }
-    .ew-mag-item {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: #0A121E;
-    }
-    .ew-mag-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 1.6s cubic-bezier(0.16,1,0.3,1);
-    }
-    .ew-mag-item:hover img { transform: scale(1.06); }
-    .ew-mag-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55) 100%);
-      opacity: 0;
-      transition: opacity 0.35s;
-    }
-    .ew-mag-item:hover::after { opacity: 1; }
-    .ew-mag-caption {
-      position: absolute;
-      bottom: 20px; left: 20px; right: 20px;
-      font-family: var(--ew-mono);
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #fff;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.35s, transform 0.35s;
-      z-index: 2;
-      line-height: 1.4;
-    }
-    .ew-mag-item:hover .ew-mag-caption {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Magazine-style asymmetric grid (6 cols × auto rows)
-       Layout:
-       Row 1-3: [feature 3x3]  [tall 3x2]
-       Row 3:                   [wide 3x1]
-       Row 4-5: [half 2x2] [square 2x2] [square 2x2]
-       Row 6:   [strip 6x1]                              */
-    .ew-mag-feature { grid-column: span 3; grid-row: span 3; }
-    .ew-mag-tall    { grid-column: span 3; grid-row: span 2; }
-    .ew-mag-wide    { grid-column: span 3; grid-row: span 1; }
-    .ew-mag-half    { grid-column: span 2; grid-row: span 2; }
-    .ew-mag-square  { grid-column: span 2; grid-row: span 2; }
-    .ew-mag-strip   { grid-column: span 6; grid-row: span 1; }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 7 — SPECS THAT MATTER
-       ═══════════════════════════════════════════════════════ */
-    .ew-specs {
-      padding: clamp(120px, 16vw, 220px) clamp(24px, 6vw, 96px);
-      background: var(--ew-ink);
-    }
-    .ew-specs-inner {
-      max-width: 1500px;
-      margin: 0 auto;
-    }
-    .ew-specs-overline {
-      text-align: center;
-      margin-bottom: clamp(64px, 9vw, 120px);
-    }
-    .ew-specs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(32px, 5vw, 80px);
-    }
-    .ew-spec-item {
-      text-align: left;
-      position: relative;
-    }
-    .ew-spec-item::before {
-      content: '';
-      position: absolute;
-      top: -28px; left: 0;
-      width: 32px; height: 2px;
-      background: var(--ew-accent);
-    }
-    .ew-spec-num {
-      font-family: var(--ew-sans);
-      font-weight: 900;
-      font-size: clamp(56px, 8vw, 120px);
-      line-height: 0.9;
-      letter-spacing: -0.04em;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .ew-spec-num .ew-red { color: var(--ew-accent); }
-    .ew-spec-label {
-      font-family: var(--ew-sans);
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    p.ew-spec-note,
-    .ew-spec-note {
-      font-family: var(--ew-serif);
-      font-style: italic;
-      font-size: clamp(18px, 1.4vw, 22px);
-      line-height: 1.4;
-      color: rgba(255,255,255,0.62);
-      margin: 0;
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 8 — A NOTE FROM ACG
-       ═══════════════════════════════════════════════════════ */
-    .ew-letter {
-      padding: clamp(100px, 14vw, 200px) clamp(24px, 6vw, 96px);
-      background: var(--ew-paper);
-      color: #12171F;
-    }
-    .ew-letter-inner {
-      max-width: 780px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .ew-letter-overline {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .ew-letter-overline .ew-overline {
-      color: var(--ew-accent);
-    }
-    .ew-letter h2 {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-      font-size: clamp(40px, 5vw, 68px);
-      line-height: 1.05;
-      letter-spacing: -0.015em;
-      color: #12171F;
-      margin: 0 0 48px 0;
-      text-align: center;
-    }
-    .ew-letter-body {
-      font-family: var(--ew-sans);
-      font-size: clamp(17px, 1.35vw, 20px);
-      line-height: 1.78;
-      color: #2A2F38;
-    }
-    .ew-letter-body p {
-      margin: 0 0 24px 0;
-      color: #2A2F38;
-      font-size: clamp(17px, 1.35vw, 20px);
-      line-height: 1.78;
-    }
-    .ew-letter-body p:first-of-type::first-letter {
-      font-family: var(--ew-serif);
-      font-style: italic;
-      font-size: 4.2em;
-      float: left;
-      line-height: 0.82;
-      margin: 6px 12px 0 0;
-      color: var(--ew-accent);
-    }
-    .ew-letter-sig {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(18,23,31,0.12);
-      font-family: var(--ew-serif);
-      font-style: italic;
-      font-size: clamp(18px, 1.4vw, 22px);
-      color: #12171F;
-    }
-    .ew-letter-sig span {
-      font-family: var(--ew-mono);
-      font-style: normal;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(18,23,31,0.55);
-      display: block;
-      margin-top: 6px;
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       SECTION 9 — CTA + CONNECT
-       ═══════════════════════════════════════════════════════ */
-    .ew-cta {
-      padding: clamp(100px, 13vw, 180px) clamp(24px, 6vw, 96px);
-      background: var(--ew-ink);
-      text-align: center;
-    }
-    .ew-cta-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .ew-cta h2 {
-      font-family: var(--ew-sans);
-      font-weight: 900;
-      font-size: clamp(32px, 4.5vw, 58px);
-      line-height: 1.08;
-      letter-spacing: -0.025em;
-      color: #fff;
-      margin: 0 0 48px 0;
-    }
-    .ew-cta h2 em {
-      font-family: var(--ew-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ew-paper);
-    }
-    .ew-cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
-    }
-    .ew-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 18px 32px;
-      font-family: var(--ew-sans);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      border-radius: 3px;
-      transition: all 0.25s;
-      cursor: pointer;
-    }
-    .ew-btn-primary {
-      background: var(--ew-accent);
-      color: #fff;
-    }
-    .ew-btn-primary:hover {
-      background: #C50E1B;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(225,19,32,0.3);
-    }
-    .ew-btn-secondary {
-      background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .ew-btn-secondary:hover {
-      border-color: rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.04);
-    }
-    .ew-btn svg {
-      width: 14px; height: 14px;
-    }
-    .ew-social {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      align-items: center;
-    }
-    .ew-social-label {
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-right: 12px;
-    }
-    .ew-social a {
-      width: 36px; height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      color: rgba(255,255,255,0.6);
-      transition: all 0.25s;
-    }
-    .ew-social a:hover {
-      border-color: var(--ew-accent);
-      color: var(--ew-accent);
-      transform: translateY(-2px);
-    }
-    .ew-social svg { width: 15px; height: 15px; }
-
-    /* ═══════════════════════════════════════════════════════
-       LIGHTBOX
-       ═══════════════════════════════════════════════════════ */
-    #lb-overlay {
-      position: fixed; inset: 0;
-      z-index: 9999;
-      background: rgba(5,10,18,0.96);
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-    }
-    #lb-overlay.active { opacity: 1; pointer-events: all; }
-    #lb-overlay img {
-      max-width: 100%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 4px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
-    }
-    #lb-close {
-      position: absolute;
-      top: 20px; right: 24px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 50%;
-      width: 40px; height: 40px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      color: rgba(255,255,255,0.7);
-      transition: background 0.2s, color 0.2s;
-      font-size: 20px;
-      line-height: 1;
-    }
-    #lb-close:hover { background: var(--ew-accent); color: white; }
-    #lb-caption-text {
-      position: absolute;
-      bottom: 24px; left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--ew-mono);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      max-width: 80%;
-    }
-
-    /* ═══════════════════════════════════════════════════════
-       RESPONSIVE
-       ═══════════════════════════════════════════════════════ */
-    @media (max-width: 900px) {
-      .ew-principle-inner { grid-template-columns: 1fr; gap: 48px; }
-      .ew-system { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
-      .ew-system.reverse .ew-system-img { order: 0; }
-      .ew-system-img { aspect-ratio: 4/3; }
-      .ew-people-head { grid-template-columns: 1fr; }
-      .ew-people-cards { grid-template-columns: 1fr; }
-      .ew-specs-grid { grid-template-columns: 1fr; gap: 64px; }
-      .ew-spec-item::before { top: -20px; }
-      .ew-mag-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: clamp(140px, 32vw, 220px);
-      }
-      .ew-mag-feature { grid-column: span 2; grid-row: span 2; }
-      .ew-mag-tall    { grid-column: span 2; grid-row: span 1; }
-      .ew-mag-wide    { grid-column: span 2; grid-row: span 1; }
-      .ew-mag-half    { grid-column: span 1; grid-row: span 1; }
-      .ew-mag-square  { grid-column: span 1; grid-row: span 1; }
-      .ew-mag-strip   { grid-column: span 2; grid-row: span 1; }
-      .ew-hero { padding: 96px 24px 64px; }
-    }
-    @media (max-width: 600px) {
-      .ew-hero-display { font-size: clamp(44px, 13vw, 72px); }
-      .ew-pullquote { font-size: clamp(28px, 7vw, 42px); }
-      .ew-letter-body p:first-of-type::first-letter {
-        font-size: 3.4em;
-      }
-    }
-
-    /* Nav dropdown (copy from wild-blue) */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media (max-width: 900px) {
-      .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 0 16px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-      .nav-dropdown.open .nav-dropdown-menu{max-height:500px;transform:none}
-      .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
-    }
-  </style>
-<style>@media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7) !important}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff !important}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static !important;transform:none !important;min-width:unset !important;background:transparent !important;border:none !important;padding:0 0 8px 20px !important;box-shadow:none !important;opacity:1 !important;visibility:visible !important;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px !important;transform:none !important}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block !important;border-radius:0 !important}
-.nav-dropdown-menu a:hover{color:#fff !important;background:transparent !important}
-}</style>
 
 <script type="application/ld+json">
 {
@@ -1545,645 +599,386 @@
 }
 </script>
 </head>
-
-<body class="ew-body">
+<body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <!-- ════════════════════════════════════════════ NAV ═══ -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
+      <nav class="hd-nav" aria-label="Primary">
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
+        <a href="manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="manufacturers.html">Partners</a><span aria-hidden="true">/</span><span aria-current="page">Euro-Wall</span></nav>
+      <h1>Euro-Wall. <em>Authorized</em> dealer &amp; installer.</h1>
+      <p class="p-sub">Euro-Wall engineers impact-rated folding, sliding, pivot and window wall systems in North Port, Florida — built for the hardest wind code in the country. ACG is an authorized Euro-Wall dealer and installer for commercial projects across Florida.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Relationship</b> Authorized dealer &amp; installer</span>
+        <span class="m"><b>Manufacturer HQ</b> North Port, FL</span>
+        <span class="m"><b>Certification</b> Miami-Dade HVHZ</span>
+        <span class="m"><b>Finish</b> AAMA 2605 Kynar standard</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== The manufacturer ========== -->
+  <section class="sec" aria-labelledby="mfr-h">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">The manufacturer</span></div>
+          <h2 id="mfr-h">Superior by design isn't a slogan. It's the premise.</h2>
+          <div class="prose">
+            <p>Euro-Wall engineers and manufactures impact-rated folding, sliding, pivot, casement and fixed glass wall systems in the United States, headquartered in North Port, Florida. The company was founded on a conviction that still drives it: South Florida demands more than anywhere else — and the products built to live here should set the standard everywhere else.</p>
+            <p>Every Euro-Wall product meets <strong>Miami-Dade County HVHZ</strong> — the most rigorous impact certification in the country. <strong>Kynar AAMA 2605 finishes</strong> come standard, not upsold. The <strong>10-year warranty</strong> triples industry norms. The profiles are the thinnest available; the sightlines are the cleanest.</p>
+            <p>ACG supplies, installs and services the full Euro-Wall commercial line — see <a href="multi-slide-bifold-doors.html">multi-slide &amp; folding door systems</a> or the <a href="manufacturers.html">full manufacturer roster</a>.</p>
+          </div>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Warranty</span><span class="d">10 years — more than triple the industry standard</span></div>
+            <div class="row"><span class="k">Finish</span><span class="d">AAMA 2605 Kynar, included — not an upsell</span></div>
+            <div class="row"><span class="k">Approval</span><span class="d">Miami-Dade HVHZ · FBC Florida Product Approval</span></div>
           </div>
         </div>
-        <a href="manufacturers.html" class="active">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/partners/eurowall/project-hero-multislide.avif" type="image/avif">
+            <source srcset="images/partners/eurowall/project-hero-multislide.webp" type="image/webp">
+            <img src="images/partners/eurowall/project-hero-multislide.jpg" alt="Euro-Wall multi-slide impact-rated door system — luxury Florida oceanfront installation" width="2400" height="1339" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Multi-Slide · Oceanfront Florida</span>
         </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
       </div>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-
-  <!-- ════════════════════════════════════ SECTION 1 — HERO ═══ -->
-  <section class="ew-hero" id="main-content">
-    <div class="ew-hero-inner">
-      <div class="ew-hero-overline" data-ew-reveal-fade>
-        <span class="ew-line"></span>
-        <span class="ew-overline">ACG Presents &mdash; Partner Feature No. 01</span>
-      </div>
-
-      <h1 class="ew-hero-display" data-ew-reveal>
-        The <em>Architecture</em> <br> of Glass.
-      </h1>
-
-      <p class="ew-hero-sub" data-ew-reveal>
-        A study in craft, engineering, and what it means to partner with the best.
-      </p>
-
-      <div class="ew-hero-divider" data-ew-reveal>
-        <span class="ew-red-line"></span>
-        <img height="81" width="170" src="images/partners/eurowall/logo-white.png" alt="Euro-Wall Systems" loading="lazy" decoding="async">
-      </div>
-    </div>
-
-    <div class="ew-scroll-cue" aria-hidden="true">
-      <span>Scroll</span>
-      <span class="ew-scroll-track"></span>
     </div>
   </section>
 
-  <!-- ══════════════════════════ SECTION 2 — FULL-BLEED IMPRESSION ═══ -->
-  <section class="ew-impression" data-ew-reveal-fade>
-    <picture><source type="image/webp" srcset="images/partners/eurowall/project-hero-multislide.webp"><img height="1339" width="2400" class="ew-impression-img" id="ewImpressionImg"
-      src="images/partners/eurowall/project-hero-multislide.jpg"
-      alt="Euro-Wall multi-slide impact-rated door system — luxury Florida oceanfront installation" loading="eager" fetchpriority="high" decoding="async"></picture>
-    <div class="ew-impression-tag">Multi-Slide &middot; Oceanfront Florida</div>
-  </section>
-
-  <!-- ════════════════════════════ SECTION 3 — FOUNDING PRINCIPLE ═══ -->
-  <section class="ew-principle">
-    <div class="ew-principle-inner">
-
-      <div class="ew-principle-left" data-ew-reveal>
-        <span class="ew-overline">Founding Principle</span>
-        <blockquote class="ew-pullquote">
-          Superior by design isn&rsquo;t a slogan. It&rsquo;s the premise every Euro-Wall system begins with.
-          <span class="ew-pullquote-attr">&mdash; The Euro-Wall Design Standard</span>
-        </blockquote>
-      </div>
-
-      <div class="ew-principle-right" data-ew-reveal>
-        <p>Euro-Wall engineers and manufactures the finest impact-rated folding, sliding, pivot, casement, and fixed glass wall systems in the United States. Headquartered in North Port, Florida, the company was founded on a conviction that still drives it: South Florida demands more than anywhere else &mdash; and the products built to live here should set the standard for everywhere else.</p>
-        <p>Every Euro-Wall product meets <strong>Miami-Dade County HVHZ</strong> &mdash; the most rigorous impact certification in the country. <strong>Kynar AAMA 2605 finishes</strong> come standard, not upsold. The <strong>10-year warranty</strong> triples industry norms. The profiles are the thinnest available. The sightlines are the cleanest.</p>
-        <p>This is what it looks like when a manufacturer chooses excellence as an operating principle rather than a marketing claim.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════ SECTION 4 — THE SYSTEMS ═══ -->
-  <section class="ew-systems">
-
-    <div class="ew-systems-head" data-ew-reveal>
-      <span class="ew-overline">The Systems</span>
-      <h2>Four product families. <em>One</em> standard of excellence.</h2>
-    </div>
-
-    <!-- System 01 -->
-    <article class="ew-system" data-ew-reveal>
-      <a class="ew-system-img" href="javascript:void(0)" onclick="openLightbox('images/partners/eurowall/product-multislide.jpg','Vista Multi Slide — Impact-rated sliding glass wall system')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/product-multislide.webp"><img height="1082" width="1228" src="images/partners/eurowall/product-multislide.jpg" alt="Vista Multi Slide — impact-rated sliding glass wall system" loading="lazy" decoding="async"></picture>
-      </a>
-      <div class="ew-system-body">
-        <div class="ew-kicker">System 01 / 04</div>
-        <h3>Vista <em>Multi Slide</em></h3>
-        <p class="ew-system-desc">Glass walls that disappear. When the spec calls for a 30-foot opening and zero compromise on sightlines, this is what gets specified.</p>
-        <div class="ew-system-specs">
-          <div><strong>Height</strong> Up to 12 feet tall</div>
-          <div><strong>Certification</strong> Miami-Dade HVHZ</div>
-          <div><strong>Finish</strong> AAMA 2605 Kynar standard</div>
-        </div>
-        <a class="ew-system-cta" href="https://euro-wall.com/products/sliding-door-systems/vista-multi-slide/" target="_blank" rel="noopener">
-          Explore Vista Multi Slide
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-      </div>
-    </article>
-
-    <!-- System 02 -->
-    <article class="ew-system reverse" data-ew-reveal>
-      <a class="ew-system-img" href="javascript:void(0)" onclick="openLightbox('images/partners/eurowall/product-folding.jpg','Vista Fold — Impact-rated folding door system')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/product-folding.webp"><img height="1082" width="1228" src="images/partners/eurowall/product-folding.jpg" alt="Vista Fold — impact-rated folding door system" loading="lazy" decoding="async"></picture>
-      </a>
-      <div class="ew-system-body">
-        <div class="ew-kicker">System 02 / 04</div>
-        <h3>Vista <em>Fold</em></h3>
-        <p class="ew-system-desc">Entire walls open to the outside. Industry-thinnest profiles, Miami-Dade rated, engineered for Florida.</p>
-        <div class="ew-system-specs">
-          <div><strong>Configuration</strong> 7-panel and up</div>
-          <div><strong>Glazing</strong> Edge-to-edge</div>
-          <div><strong>Certification</strong> Miami-Dade HVHZ</div>
-        </div>
-        <a class="ew-system-cta" href="https://euro-wall.com/products/folding-door-systems/vista-fold-impact-rated/" target="_blank" rel="noopener">
-          Explore Vista Fold
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-      </div>
-    </article>
-
-    <!-- System 03 -->
-    <article class="ew-system" data-ew-reveal>
-      <a class="ew-system-img" href="javascript:void(0)" onclick="openLightbox('images/partners/eurowall/product-pivot.jpg','Vista Pivot — Statement impact-rated pivot door')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/product-pivot.webp"><img height="1082" width="1228" src="images/partners/eurowall/product-pivot.jpg" alt="Vista Pivot — statement impact-rated pivot door" loading="lazy" decoding="async"></picture>
-      </a>
-      <div class="ew-system-body">
-        <div class="ew-kicker">System 03 / 04</div>
-        <h3>Vista <em>Pivot</em></h3>
-        <p class="ew-system-desc">A statement door that commands the entry. 10+ feet of impact-rated glass moving effortlessly on a single hinge point.</p>
-        <div class="ew-system-specs">
-          <div><strong>Height</strong> Up to 10 feet tall</div>
-          <div><strong>Certification</strong> Miami-Dade HVHZ</div>
-          <div><strong>Hardware</strong> Commercial-grade</div>
-        </div>
-        <a class="ew-system-cta" href="https://euro-wall.com/products/vista-pivot/" target="_blank" rel="noopener">
-          Explore Vista Pivot
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-      </div>
-    </article>
-
-    <!-- System 04 -->
-    <article class="ew-system reverse" data-ew-reveal>
-      <a class="ew-system-img" href="javascript:void(0)" onclick="openLightbox('images/partners/eurowall/product-windows.jpg','Vista Windows — Thin-line casement and direct-set window systems')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/product-windows.webp"><img height="1400" width="1400" src="images/partners/eurowall/product-windows.jpg" alt="Vista Windows — thin-line casement and direct-set windows" loading="lazy" decoding="async"></picture>
-      </a>
-      <div class="ew-system-body">
-        <div class="ew-kicker">System 04 / 04</div>
-        <h3>Vista <em>Windows</em></h3>
-        <p class="ew-system-desc">Thin-line, casement, and direct-set windows with the same precision and finish standard as the door systems.</p>
-        <div class="ew-system-specs">
-          <div><strong>Finish</strong> AAMA 2605</div>
-          <div><strong>Compliance</strong> Title 24</div>
-          <div><strong>Testing</strong> ASTM rated</div>
-        </div>
-        <a class="ew-system-cta" href="https://euro-wall.com/products/window-systems/vista-tl/" target="_blank" rel="noopener">
-          Explore Vista Windows
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-      </div>
-    </article>
-
-  </section>
-
-  <!-- ══════════════════════════════════ SECTION 5 — THE PEOPLE ═══ -->
-  <section class="ew-people">
-    <div class="ew-people-inner">
-
-      <div class="ew-people-head" data-ew-reveal>
+  <!-- ========== System schedule ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="sys-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <span class="ew-overline">The People</span>
-          <h2>The <em>partnership</em><br>behind the product.</h2>
+          <div class="k-wrap"><span class="k-label">Sheet EW-101 · System schedule</span></div>
+          <h2 id="sys-h">Five product families. One standard.</h2>
         </div>
-        <p class="ew-people-body">A manufacturer is only as good as the team you can pick up the phone and reach. Euro-Wall&rsquo;s leadership and the FOR YOU Crew are the reason ACG has delivered some of Florida&rsquo;s most demanding glazing scopes on time, in spec, and without the phone calls that sink projects.</p>
+        <a class="sec-link" href="multi-slide-bifold-doors.html">Multi-slide &amp; folding service
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
-
-      <div class="ew-people-cards">
-
-        <div class="ew-person-card" data-ew-reveal>
-          <div class="ew-person-num">01</div>
-          <h3 class="ew-person-name">Toby Bostwick</h3>
-          <div class="ew-person-role">Chief Executive Officer</div>
-          <p class="ew-person-desc">Leads Euro-Wall with a commitment to engineering excellence and dealer-first culture.</p>
-        </div>
-
-        <div class="ew-person-card" data-ew-reveal>
-          <div class="ew-person-num">02</div>
-          <h3 class="ew-person-name">Wade Mammon</h3>
-          <div class="ew-person-role">Director of Sales &mdash; East Region</div>
-          <p class="ew-person-desc">Champion of the dealer network. Promoted in 2025 to lead East Region sales and GC engagement.</p>
-        </div>
-
-        <div class="ew-person-card" data-ew-reveal>
-          <div class="ew-person-num">03</div>
-          <h3 class="ew-person-name">FOR YOU Crew&trade;</h3>
-          <div class="ew-person-role">Specialist Support Team</div>
-          <p class="ew-person-desc">Live-reach specialists who stay on every project from specification through installation. The kind of support most manufacturers only promise.</p>
-        </div>
-
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Mark</div><div>System</div><div>Specification</div><div></div></div>
+        <a class="sched-row" href="https://euro-wall.com/products/sliding-door-systems/vista-multi-slide/" target="_blank" rel="noopener">
+          <div class="mk">EW-01</div><div class="sy">Vista Multi Slide</div>
+          <div class="sp">Impact-rated multi-slide pocketing glass walls — up to 12 ft panel heights and 30-ft-plus clear openings. Miami-Dade HVHZ, AAMA 2605 Kynar finish standard.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="https://euro-wall.com/products/folding-door-systems/vista-fold-impact-rated/" target="_blank" rel="noopener">
+          <div class="mk">EW-02</div><div class="sy">Vista Fold</div>
+          <div class="sp">Impact-rated folding glass wall with the industry's thinnest profiles — 7-panel-and-up configurations, edge-to-edge glazing, Miami-Dade HVHZ.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="https://euro-wall.com/products/vista-pivot/" target="_blank" rel="noopener">
+          <div class="mk">EW-03</div><div class="sy">Vista Pivot</div>
+          <div class="sp">Statement pivot doors up to 10 ft tall on a single hinge point — impact-rated glass with commercial-grade hardware.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="https://euro-wall.com/products/window-systems/vista-tl/" target="_blank" rel="noopener">
+          <div class="mk">EW-04</div><div class="sy">Vista Windows</div>
+          <div class="sp">Thin-line, casement and direct-set window line — AAMA 2605 finish, ASTM-rated, the same precision standard as the door systems.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="https://euro-wall.com/" target="_blank" rel="noopener">
+          <div class="mk">EW-05</div><div class="sy">DirectSet Storefront</div>
+          <div class="sp">Fixed impact-rated glazing for commercial storefronts and walls — 12 ft mullion-to-mullion, FBC Florida Product Approval, HVHZ-capable.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
       </div>
-
     </div>
   </section>
 
-  <!-- ════════════════════════════════ SECTION 6 — MAGAZINE GALLERY ═══ -->
-  <section class="ew-gallery-section">
-
-    <div class="ew-gallery-head" data-ew-reveal>
-      <span class="ew-overline">The Work</span>
-      <h2>What it looks like when the right <em>system</em> meets the right installer.</h2>
-      <p class="ew-gallery-disclaimer">The projects pictured represent Euro-Wall installations showcasing system capabilities. ACG specifies Euro-Wall on qualifying Florida commercial projects.</p>
-    </div>
-
-    <div class="ew-mag-grid" data-ew-reveal>
-
-      <div class="ew-mag-item ew-mag-feature" onclick="openLightbox('images/partners/eurowall/project-american-harvest.jpg','American Harvest &mdash; Miami')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-american-harvest.webp"><img height="1339" width="2400" src="images/partners/eurowall/project-american-harvest.jpg" alt="American Harvest, Miami — Euro-Wall installation" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">American Harvest &middot; Miami</div>
-      </div>
-
-      <div class="ew-mag-item ew-mag-tall" onclick="openLightbox('images/partners/eurowall/project-alkai-estates.jpg','Alkai Estates &mdash; Luxury multi-slide installation')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-alkai-estates.webp"><img height="1400" width="1597" src="images/partners/eurowall/project-alkai-estates.jpg" alt="Alkai Estates — Euro-Wall multi-slide installation" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">Alkai Estates</div>
-      </div>
-
-      <div class="ew-mag-item ew-mag-wide" onclick="openLightbox('images/partners/eurowall/project-oilnutbay.jpg','Oil Nut Bay &mdash; Virgin Gorda')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-oilnutbay.webp"><img height="1200" width="1600" src="images/partners/eurowall/project-oilnutbay.jpg" alt="Oil Nut Bay, Virgin Gorda — Euro-Wall installation" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">Oil Nut Bay &middot; Virgin Gorda</div>
-      </div>
-
-      <div class="ew-mag-item ew-mag-half" onclick="openLightbox('images/partners/eurowall/project-andco.jpg','ANDCO &mdash; Commercial folding installation')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-andco.webp"><img height="1200" width="1600" src="images/partners/eurowall/project-andco.jpg" alt="ANDCO — Euro-Wall commercial folding installation" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">ANDCO</div>
-      </div>
-
-      <div class="ew-mag-item ew-mag-square" onclick="openLightbox('images/partners/eurowall/project-yeti.jpg','YETI Headquarters &mdash; Commercial installation')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-yeti.webp"><img height="1200" width="1600" src="images/partners/eurowall/project-yeti.jpg" alt="YETI Headquarters — Euro-Wall installation" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">YETI Headquarters</div>
-      </div>
-
-      <div class="ew-mag-item ew-mag-square" onclick="openLightbox('images/partners/eurowall/project-allen-residence.jpg','Allen Residence &mdash; Folding door system')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-allen-residence.webp"><img height="1067" width="1600" src="images/partners/eurowall/project-allen-residence.jpg" alt="Allen Residence — Euro-Wall folding door system" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">Allen Residence</div>
-      </div>
-
-      <div class="ew-mag-item ew-mag-strip" onclick="openLightbox('images/partners/eurowall/project-lemoyne-interior.jpg','52 LeMoyne &mdash; Interior folding glass wall')">
-        <picture><source type="image/webp" srcset="images/partners/eurowall/project-lemoyne-interior.webp"><img height="1067" width="1600" src="images/partners/eurowall/project-lemoyne-interior.jpg" alt="52 LeMoyne — Euro-Wall interior folding glass wall" loading="lazy" decoding="async"></picture>
-        <div class="ew-mag-caption">52 LeMoyne &middot; Interior</div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ══════════════════════════════ SECTION 7 — SPECS THAT MATTER ═══ -->
-  <section class="ew-specs">
-    <div class="ew-specs-inner">
-
-      <div class="ew-specs-overline" data-ew-reveal>
-        <span class="ew-overline">The Specs That Matter</span>
-      </div>
-
-      <div class="ew-specs-grid">
-
-        <div class="ew-spec-item" data-ew-reveal>
-          <div class="ew-spec-num"><span class="ew-red">10</span>-Year</div>
-          <div class="ew-spec-label">Warranty</div>
-          <p class="ew-spec-note">More than triple the industry standard.</p>
+  <!-- ========== Verified product data ========== -->
+  <section class="sec" aria-labelledby="data-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet EW-201 · Verified product data · FBC 8th Edition 2026</span></div>
+          <h2 id="data-h">The numbers we install to.</h2>
         </div>
-
-        <div class="ew-spec-item" data-ew-reveal>
-          <div class="ew-spec-num">AAMA <span class="ew-red">2605</span></div>
-          <div class="ew-spec-label">Kynar Finish Standard</div>
-          <p class="ew-spec-note">Not an upsell. Included.</p>
-        </div>
-
-        <div class="ew-spec-item" data-ew-reveal>
-          <div class="ew-spec-num"><span class="ew-red">HVHZ</span></div>
-          <div class="ew-spec-label">Miami-Dade Approved</div>
-          <p class="ew-spec-note">The most demanding impact certification in the country.</p>
-        </div>
-
       </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════ SECTION 7B — VERIFIED PRODUCT DATA ═══ -->
-  <section class="ew-specs" style="padding-top:0;">
-    <div class="ew-specs-inner">
-      <div class="ew-specs-overline" data-ew-reveal>
-        <span class="ew-overline">Verified Product Data &middot; FBC 8th Edition 2026</span>
-      </div>
-      <h2 style="font-family:var(--ew-display,'Inter',sans-serif);font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;margin:18px 0 28px;letter-spacing:-0.02em;">Euro-Wall commercial product specs &mdash; the numbers we install to.</h2>
-      <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem;color:rgba(255,255,255,0.88);">
+      <div class="spec-scroll rv">
+      <table class="spec-table">
         <thead>
-          <tr style="border-bottom:1px solid rgba(225,19,32,0.4);">
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Product</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Design Pressure</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Max Panel</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Approval</th>
-            <th style="text-align:left;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:#E11320;font-weight:700;">Use Case</th>
-          </tr>
+          <tr><th>Product</th><th>Design Pressure</th><th>Max Panel</th><th>Approval</th><th>Use Case</th></tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">Vista Multi Slide</td>
-            <td style="padding:14px 12px;">+80 / -90 PSF</td>
-            <td style="padding:14px 12px;">12 ft tall &times; 60 ft wide</td>
-            <td style="padding:14px 12px;">Miami-Dade NOA &middot; FBC FL Approval</td>
-            <td style="padding:14px 12px;">Hospitality, residential luxury, clubhouse</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">Vista Fold (bifold)</td>
-            <td style="padding:14px 12px;">+75 / -85 PSF</td>
-            <td style="padding:14px 12px;">10 ft tall &middot; up to 10 panels</td>
-            <td style="padding:14px 12px;">Miami-Dade NOA &middot; FBC FL Approval</td>
-            <td style="padding:14px 12px;">Restaurant front, golf clubhouse, lanai</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">Vista Pivot</td>
-            <td style="padding:14px 12px;">+70 / -75 PSF</td>
-            <td style="padding:14px 12px;">10 ft tall &times; 5 ft wide single leaf</td>
-            <td style="padding:14px 12px;">Miami-Dade NOA &middot; FBC FL Approval</td>
-            <td style="padding:14px 12px;">Architectural entrance, signature lobby</td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">Vista Windows</td>
-            <td style="padding:14px 12px;">+85 / -95 PSF</td>
-            <td style="padding:14px 12px;">Project-engineered</td>
-            <td style="padding:14px 12px;">Miami-Dade NOA &middot; FBC FL Approval</td>
-            <td style="padding:14px 12px;">Punched openings, fixed window walls</td>
-          </tr>
-          <tr>
-            <td style="padding:14px 12px;color:#fff;font-weight:700;">DirectSet Storefront</td>
-            <td style="padding:14px 12px;">+90 / -100 PSF</td>
-            <td style="padding:14px 12px;">12 ft tall mullion-to-mullion</td>
-            <td style="padding:14px 12px;">FBC FL Approval &middot; HVHZ-capable</td>
-            <td style="padding:14px 12px;">Commercial storefront, retail, restaurant</td>
-          </tr>
+          <tr><td>Vista Multi Slide</td><td>+80 / -90 PSF</td><td>12 ft tall &times; 60 ft wide</td><td>Miami-Dade NOA · FBC FL Approval</td><td>Hospitality, residential luxury, clubhouse</td></tr>
+          <tr><td>Vista Fold (bifold)</td><td>+75 / -85 PSF</td><td>10 ft tall · up to 10 panels</td><td>Miami-Dade NOA · FBC FL Approval</td><td>Restaurant front, golf clubhouse, lanai</td></tr>
+          <tr><td>Vista Pivot</td><td>+70 / -75 PSF</td><td>10 ft tall &times; 5 ft wide single leaf</td><td>Miami-Dade NOA · FBC FL Approval</td><td>Architectural entrance, signature lobby</td></tr>
+          <tr><td>Vista Windows</td><td>+85 / -95 PSF</td><td>Project-engineered</td><td>Miami-Dade NOA · FBC FL Approval</td><td>Punched openings, fixed window walls</td></tr>
+          <tr><td>DirectSet Storefront</td><td>+90 / -100 PSF</td><td>12 ft tall mullion-to-mullion</td><td>FBC FL Approval · HVHZ-capable</td><td>Commercial storefront, retail, restaurant</td></tr>
         </tbody>
       </table>
       </div>
-      <p style="margin-top:18px;font-size:0.85rem;color:rgba(255,255,255,0.55);font-style:italic;">Design pressures are tested-assembly maximums per Florida Building Code 8th Edition (2026). Actual project DPs depend on glass make-up, anchor spacing, and assembly configuration. Send drawings for project-specific NOA verification.</p>
-      <p style="margin-top:24px;"><a href="send-plans.html" style="color:#E11320;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(225,19,32,0.4);padding-bottom:2px;">Request the Euro-Wall commercial specification packet &rarr;</a></p>
+      <p class="spec-note rv">Design pressures are tested-assembly maximums per Florida Building Code 8th Edition (2026). Actual project DPs depend on glass make-up, anchor spacing, and assembly configuration. Send drawings for project-specific NOA verification.</p>
+      <p class="rv" style="margin-top:20px"><a href="send-plans.html" style="color:var(--navy);font-weight:650;border-bottom:1px solid var(--hairline-2)">Request the Euro-Wall commercial specification packet →</a></p>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════ SECTION 8 — LETTER ═══ -->
-  <section class="ew-letter">
-    <div class="ew-letter-inner">
-
-      <div class="ew-letter-overline" data-ew-reveal>
-        <span class="ew-overline">A Note From ACG</span>
-      </div>
-
-      <h2 data-ew-reveal>Why we chose Euro&#8209;Wall.</h2>
-
-      <div class="ew-letter-body" data-ew-reveal>
-        <p>We&rsquo;ve worked with a lot of manufacturers. Some were good. A few were great.</p>
-        <p>Euro-Wall is different. It isn&rsquo;t just that the product is the best &mdash; though it is. It&rsquo;s that Toby, Wade, and their team operate the way we try to operate at ACG. They pick up the phone. They sweat the details. They stand behind what they build. They treat their dealers like partners, not accounts.</p>
-        <p>When a commercial GC asks us what impact-rated folding or sliding system we recommend for their project, the answer is easy. Euro-Wall. Not because of a volume commitment or a co-marketing deal. Because when we install their systems, the GC gets what the architect drew &mdash; and nobody calls us during punch list.</p>
-        <p>That&rsquo;s what a partnership should look like. That&rsquo;s what we&rsquo;ve found in Euro-Wall.</p>
-
-        <div class="ew-letter-sig">
-          &mdash; Connor Walsh
-          <span>American Commercial Glass</span>
+  <!-- ========== General notes ========== -->
+  <section class="sec pillars slant gnotes" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet EW-301 · General notes</span></div>
+          <h2 id="why-h">The specs that matter.</h2>
         </div>
       </div>
-
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>10-year warranty</h3>
+          <p>More than triple the industry standard — a manufacturer that stands behind what it builds, long after punch list.</p>
+        </div>
+        <div class="gnote">
+          <h3>AAMA 2605 Kynar standard</h3>
+          <p>The highest-performing architectural finish spec comes standard on every system. Not an upsell. Included.</p>
+        </div>
+        <div class="gnote">
+          <h3>Miami-Dade HVHZ</h3>
+          <p>Every product line carries the most demanding impact certification in the country — tested assemblies, active NOAs, FBC Florida Product Approval.</p>
+        </div>
+        <div class="gnote">
+          <h3>FOR YOU Crew&trade; support</h3>
+          <p>Live-reach factory specialists stay on every project from specification through installation — the kind of support most manufacturers only promise.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════ SECTION 9 — CTA ═══ -->
-  <section class="ew-cta">
-    <div class="ew-cta-inner">
-
-      <h2 data-ew-reveal>Specify Euro&#8209;Wall on your next project &mdash; <em>let ACG coordinate the scope.</em></h2>
-
-      <div class="ew-cta-buttons" data-ew-reveal>
-        <a href="send-plans.html" class="ew-btn ew-btn-primary">
-          Send Us Plans
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://euro-wall.com" target="_blank" rel="noopener" class="ew-btn ew-btn-secondary">
-          Visit Euro-Wall
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+  <!-- ========== The people ========== -->
+  <section class="sec" aria-labelledby="people-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">The people</span></div>
+          <h2 id="people-h">The partnership behind the product.</h2>
+        </div>
       </div>
-
-      <div class="ew-social" data-ew-reveal-fade>
-        <span class="ew-social-label">Follow Euro-Wall</span>
-        <a href="https://www.instagram.com/eurowall/" target="_blank" rel="noopener" aria-label="Euro-Wall on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/euro-wall-systems/" target="_blank" rel="noopener" aria-label="Euro-Wall on LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://www.facebook.com/eurowallsystems/" target="_blank" rel="noopener" aria-label="Euro-Wall on Facebook">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-index">01</span>
+          <h3 style="margin-top:10px">Toby Bostwick</h3>
+          <span class="k-label k-label--navy">Chief Executive Officer</span>
+          <p style="margin-top:10px">Leads Euro-Wall with a commitment to engineering excellence and a dealer-first culture.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">02</span>
+          <h3 style="margin-top:10px">Wade Mammon</h3>
+          <span class="k-label k-label--navy">Director of Sales — East Region</span>
+          <p style="margin-top:10px">Champion of the dealer network. Promoted in 2025 to lead East Region sales and GC engagement.</p>
+        </div>
+        <div class="card">
+          <span class="k-index">03</span>
+          <h3 style="margin-top:10px">FOR YOU Crew&trade;</h3>
+          <span class="k-label k-label--navy">Specialist Support Team</span>
+          <p style="margin-top:10px">Live-reach specialists who stay on every project from specification through installation.</p>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════ FOOTER ═══ -->
-    
-  <!-- RELATED SCOPES — contextual internal links (Agent IFS) -->
-  <section class="related-scopes-ifs" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);padding:clamp(28px,3vw,44px) 0;">
-    <div class="container" style="max-width:1100px;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 14px;">Related ACG capabilities</p>
-      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 32px;font-size:15px;line-height:1.6;">
-        <li style="padding:6px 0;"><a href="/euro-wall-installer-national.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">Euro-Wall folding glass door installation</a></li>
-        <li style="padding:6px 0;"><a href="/restaurant-glazing-contractor.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">restaurant glazing contractor services</a></li>
-      </ul>
+  <!-- ========== Field work ========== -->
+  <section class="sec svc" aria-labelledby="work-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet EW-401 · Field photography</span></div>
+          <h2 id="work-h">ACG project work.</h2>
+        </div>
+        <a class="sec-link" href="portfolio.html">Full portfolio
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="proj-grid rv" data-stagger>
+        <a class="proj wide" href="eau-palm-beach-resort.html">
+          <picture>
+            <source srcset="images/projects/eau-palm-beach/polpo-construction-arches.avif" type="image/avif">
+            <source srcset="images/projects/eau-palm-beach/polpo-construction-arches.webp" type="image/webp">
+            <img src="images/projects/eau-palm-beach/polpo-construction-arches.jpg" alt="Arched glazing openings under construction at Polpo, Eau Palm Beach Resort, Manalapan FL" width="1440" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Polpo at Eau Palm Beach</span><span class="s">Euro-Wall bi-folds · Manalapan, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="eau-palm-beach-resort.html">
+          <picture>
+            <source srcset="images/projects/eau-palm-beach/polpo-exterior-ocean.avif" type="image/avif">
+            <source srcset="images/projects/eau-palm-beach/polpo-exterior-ocean.webp" type="image/webp">
+            <img src="images/projects/eau-palm-beach/polpo-exterior-ocean.jpg" alt="Polpo restaurant oceanfront exterior at Eau Palm Beach Resort" width="1080" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Eau Palm Beach Resort</span><span class="s">Oceanfront hospitality · Manalapan, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="eau-palm-beach-resort.html">
+          <picture>
+            <source srcset="images/projects/eau-palm-beach/polpo-arched-window.webp" type="image/webp">
+            <img src="images/projects/eau-palm-beach/polpo-arched-window.jpg" alt="Arched window opening at Polpo, Eau Palm Beach Resort" width="810" height="1080" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Polpo · Arched openings</span><span class="s">Hospitality · Manalapan, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="wild-blue-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-entry-doors.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-entry-doors.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-entry-doors.jpg" alt="Entry doors at the Wild Blue Clubhouse, Estero FL" width="1200" height="1600" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Wild Blue Clubhouse</span><span class="s">Entry doors · Estero, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="panther-national-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/panther-national/interior-glass-staging.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/interior-glass-staging.webp" type="image/webp">
+            <img src="images/projects/panther-national/interior-glass-staging.jpg" alt="Glass staged for installation inside the Panther National clubhouse" width="1080" height="810" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Panther National</span><span class="s">Glass staging · Palm Beach Gardens, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj wide" href="wild-blue-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-front-elevation.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-front-elevation.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-front-elevation.jpg" alt="Front elevation glazing progress at the Wild Blue Clubhouse, Estero FL" width="1920" height="1440" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Wild Blue Clubhouse</span><span class="s">Front elevation · Estero, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="proj" href="panther-national-clubhouse.html">
+          <picture>
+            <source srcset="images/projects/panther-national/brochure-clubhouse-hero.avif" type="image/avif">
+            <source srcset="images/projects/panther-national/brochure-clubhouse-hero.webp" type="image/webp">
+            <img src="images/projects/panther-national/brochure-clubhouse-hero.jpg" alt="Panther National clubhouse, Palm Beach Gardens FL" width="1800" height="1390" loading="lazy" decoding="async">
+          </picture>
+          <div class="proj-cap"><span class="t">Panther National</span><span class="s">Private club · Palm Beach Gardens, FL</span>
+            <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+      </div>
+      <p class="spec-note rv" style="margin-top:16px">Field photography from ACG commercial projects across Florida. Euro-Wall systems are specified on qualifying ACG scopes — including the bi-fold package at Polpo, Eau Palm Beach Resort.</p>
     </div>
   </section>
 
-    <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices; Nashville, TN opening Q3 2026. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
+  <!-- ========== A note from ACG ========== -->
+  <section class="sec" aria-labelledby="letter-h">
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/ai-operations-whitepaper.html">AI White Paper</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/west-palm-beach-commercial-glazing.html">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/tampa-commercial-glazing.html">Tampa</a>
-            <a href="/commercial-glazing-nashville-tn.html">Nashville, TN (Q3 2026)</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              connor@acglass.com
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
+          <div class="k-wrap"><span class="k-label">A note from ACG</span></div>
+          <h2 id="letter-h">Why we chose Euro-Wall.</h2>
         </div>
       </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/american-commercial-glass-inc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
+      <div class="prose rv">
+        <p>We've worked with a lot of manufacturers. Some were good. A few were great.</p>
+        <p>Euro-Wall is different. It isn't just that the product is the best — though it is. It's that Toby, Wade, and their team operate the way we try to operate at ACG. They pick up the phone. They sweat the details. They stand behind what they build. They treat their dealers like partners, not accounts.</p>
+        <p>When a commercial GC asks us what impact-rated folding or sliding system we recommend for their project, the answer is easy. Euro-Wall. Not because of a volume commitment or a co-marketing deal. Because when we install their systems, the GC gets what the architect drew — and nobody calls us during punch list.</p>
+        <p>That's what a partnership should look like. That's what we've found in Euro-Wall.</p>
+        <p style="margin-top:1.6em"><strong>— Connor Walsh</strong><br><span class="k-index">American Commercial Glass</span></p>
       </div>
+    </div>
+  </section>
 
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578 &nbsp;·&nbsp; WBE &nbsp;·&nbsp; SBE</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Specify Euro-Wall on your next project.</h2>
+        <p>Send drawings and bid-date info — ACG coordinates the scope, the NOA package and the install. Manufacturer detail at <a href="https://euro-wall.com" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">euro-wall.com</a>.</p>
+      </div>
+      <a href="send-plans.html" class="btn">Send us plans
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
+      </div>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Photo lightbox" onclick="closeLightbox(event)">
-    <button id="lb-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-    <img id="lb-img" src="" alt="" loading="lazy" decoding="async">
-    <span id="lb-caption-text"></span>
-  </div>
-
-  <script defer src="js/main.js"></script>
-
-  <script>
-    // Lightweight IntersectionObserver-based reveal
-    (function(){
-      var els = document.querySelectorAll('[data-ew-reveal], [data-ew-reveal-fade]');
-      if (!('IntersectionObserver' in window)) {
-        els.forEach(function(el){ el.classList.add('revealed'); });
-        return;
-      }
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function(el){ io.observe(el); });
-    })();
-
-    // Slow parallax Ken Burns on impression image
-    (function(){
-      var img = document.getElementById('ewImpressionImg');
-      if (!img) return;
-      var section = img.parentElement;
-      var ticking = false;
-      function onScroll(){
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(function(){
-          var rect = section.getBoundingClientRect();
-          var vh = window.innerHeight || document.documentElement.clientHeight;
-          // progress from -1 (above) to 0 (centered) to 1 (below)
-          var progress = (rect.top + rect.height / 2 - vh / 2) / (vh / 2 + rect.height / 2);
-          progress = Math.max(-1, Math.min(1, progress));
-          var translate = progress * -40; // px
-          var scale = 1.04 + Math.abs(progress) * 0.01;
-          img.style.transform = 'translate3d(0,' + translate + 'px,0) scale(' + scale + ')';
-          ticking = false;
-        });
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
-
-    // Lightbox
-    function openLightbox(src, caption) {
-      var lb = document.getElementById('lb-overlay');
-      var img = document.getElementById('lb-img');
-      var cap = document.getElementById('lb-caption-text');
-      img.src = src;
-      img.alt = caption || '';
-      cap.innerHTML = caption || '';
-      lb.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox(e) {
-      if (e && e.target !== document.getElementById('lb-overlay') && e.target !== document.getElementById('lb-close')) return;
-      var lb = document.getElementById('lb-overlay');
-      lb.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        var lb = document.getElementById('lb-overlay');
-        if (lb.classList.contains('active')) {
-          lb.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      }
-    });
-  </script>
-
-  <script>
-    // Nav dropdown (same pattern as other pages)
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>

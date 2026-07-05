@@ -26,167 +26,11 @@
   <meta property="og:image:alt" content="American Commercial Glass — Florida's commercial glazing specialists">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Reviews | ACG Commercial Glazing Contractor | Florida GC and Architect Feedback">
-  <meta name="twitter:description" content="Client reviews and testimonials for American Commercial Glass (ACG). General contractor and architect feedback on ACG's Division 08 scope delivery, submittals, HVHZ compliance, and project execution across Florida.">
+  <meta name="twitter:title" content="ACG Qualifications | Licensing, Bonding, Insurance">
+  <meta name="twitter:description" content="ACG qualifications: FL CGC #1531993, bonded and insured, COMPASS Q Score, OSHA 30 trained field crews. Pre-qualification documents downloadable.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-
-  <!-- AboutPage Schema -->
-  
-
-  <!-- Organization Schema -->
-  
-
-  <style>
-    /* Responsive 2-column layout — collapses to 1 column on mobile */
-    .about-split-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .about-split-2col { grid-template-columns: 1fr; gap: 32px; }
-    }
-    /* Mission stats 2x2 grid */
-    .mission-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    /* No additional breakpoint needed — 2x2 is fine on mobile at 375px */
-    .about-section {
-      padding: clamp(48px, 7vw, 80px) 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .about-section:last-of-type {
-      border-bottom: none;
-    }
-    .section-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-    }
-    .office-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: clamp(24px, 3vw, 36px);
-    }
-    .office-card .office-name {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .office-card .office-tag {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .office-card p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      margin: 0;
-    }
-    .ai-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .ai-feature-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-    .ai-feature-text h5 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .ai-feature-text p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .mission-stat {
-      text-align: center;
-      padding: clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-    }
-    .mission-stat .m-num {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .mission-stat .m-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
-
-<style id="a11y-skip-style">
-.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
-.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
-*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
-</style>
-
-<style id="a11y-contrast-tweak">
-/* Lift low-contrast muted text to meet WCAG AA body copy threshold */
-.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
-/* Focus-visible outline already handled in skip-style */
-/* Ensure form inputs and buttons show focus */
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
-</style>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Qualifications","item":"https://acglass.com/qualifications.html"}]}</script>
   <script type="application/ld+json">
@@ -197,715 +41,433 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 </script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a commercial glazing contractor licensed and insured?", "acceptedAnswer": {"@type": "Answer", "text": "A qualified commercial glazing contractor holds a state license and carries liability, workers' comp, and bonding. American Commercial Glass is licensed as FL CGC #1531993, insured, and fields OSHA 30 trained crews."}}, {"@type": "Question", "name": "Is American Commercial Glass bonded?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass provides performance and payment bonds on projects that require them, with bond capacity letters available during prequalification for larger commercial scopes across Florida and the Southeast."}}, {"@type": "Question", "name": "What is American Commercial Glass's license number?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass holds Florida Certified Glazing Contractor license CGC #1531993. The company is registered on Sunbiz as P21000018259, classified under NAICS 238150."}}, {"@type": "Question", "name": "Is ACG woman-owned (WBE/SBE certification in process)?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass is WBE (Women's Business Enterprise) and SBE (Small Business Enterprise) certified, supporting participation goals on public and government projects. ACG holds FL CGC #1531993 and is fully insured."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a commercial glazing contractor licensed and insured?", "acceptedAnswer": {"@type": "Answer", "text": "A qualified commercial glazing contractor holds a state license and carries liability, workers' comp, and bonding. American Commercial Glass is licensed as FL CGC #1531993, insured, and fields OSHA 30 trained crews."}}, {"@type": "Question", "name": "Is American Commercial Glass bonded?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass provides performance and payment bonds on projects that require them, with bond capacity letters available during prequalification for larger commercial scopes across Florida and the Southeast."}}, {"@type": "Question", "name": "What is American Commercial Glass's license number?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass holds Florida Certified Glazing Contractor license CGC #1531993. The company is registered on Sunbiz as P21000018259, classified under NAICS 238150."}}, {"@type": "Question", "name": "Is ACG woman-owned (WBE/SBE certification in process)?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass is woman-owned — Rielly Walsh, CEO and co-founder, is the 51% majority owner. WBE (Women's Business Enterprise) and SBE (Small Business Enterprise) certifications are in process. ACG holds FL CGC #1531993 and is fully insured."}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
-  <div class="grain"></div>
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-<!-- NAVIGATION -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
-      </a>
 
-      <div class="nav-links">
-        <a href="index.html">Home</a>
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown open-active">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-
-      <button class="nav-toggle" aria-label="Menu">
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
   <main id="main-content">
 
-  <!-- ========== HERO ========== -->
-  <section class="hero" style="min-height:55vh;justify-content:center;padding-bottom:60px;">
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;"><span class="line"></span> Pre-Qualification</div>
-        <h1>ACG <br> <span class="accent">Qualifications.</span></h1>
-        <p class="hero-sub" style="max-width:720px;">Licensed, bonded, insured, and built for institutional glazing work. Everything your pre-qualification team needs, in one place.</p>
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="about.html">About</a><span aria-hidden="true">/</span><span aria-current="page">Qualifications</span></nav>
+      <h1>Pre-qualification, on <em>one sheet</em>.</h1>
+      <p class="p-sub">Licensing, insurance, bonding, safety, and code compliance — everything a GC pre-qualification team needs to clear ACG, with the documents downloadable below.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>License</b> FL CGC #1531993</span>
+        <span class="m"><b>GL</b> $1M / $2M</span>
+        <span class="m"><b>Safety</b> OSHA 30-trained crews</span>
+        <span class="m"><b>COI</b> 24-hr turnaround</span>
       </div>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
-    <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
-      <a href="index.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Home</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <a href="about.html" style="color:rgba(255,255,255,.5);text-decoration:none;">About</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <span style="color:var(--accent);">Qualifications</span>
-    </div>
-  </section>
-
-  <!-- ========== LICENSING ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(32px,4vw,48px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Licensing &amp; Registrations</div>
-        <h2 style="margin-top:14px;">Licensed to <span class="accent">build in Florida.</span></h2>
+  <!-- ========== Licensing & registrations ========== -->
+  <section class="sec gridpaper" aria-labelledby="lic-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-101 · Licensing &amp; registrations</span></div>
+          <h2 id="lic-h">Licensed to build in Florida.</h2>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;" data-reveal data-delay="100">
-        <div class="qual-card">
-          <div class="qual-card-label">Certified General Contractor</div>
-          <div class="qual-card-value">CGC #1531993</div>
-          <div class="qual-card-detail">State of Florida &middot; Active &middot; Good Standing</div>
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Mark</div><div>Credential</div><div>Detail</div><div></div></div>
+        <div class="sched-row">
+          <div class="mk">LIC-01</div><div class="sy">CGC #1531993</div>
+          <div class="sp">Florida Certified General Contractor · State of Florida DBPR · active and in good standing. Qualifier: Connor Walsh, President.</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Business Entity</div>
-          <div class="qual-card-value">FL Corporation</div>
-          <div class="qual-card-detail">American Commercial Glass, Inc. &middot; FEIN on request</div>
+        <div class="sched-row">
+          <div class="mk">LIC-02</div><div class="sy">FL Corporation</div>
+          <div class="sp">American Commercial Glass, Inc. · Sunbiz P21000018259 · NAICS 238150 (Glass and Glazing Contractors) · FEIN on request.</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Federal Contractor</div>
-          <div class="qual-card-value">SAM.gov Registered</div>
-          <div class="qual-card-detail">Eligible for federal and institutional work</div>
+        <div class="sched-row">
+          <div class="mk">LIC-03</div><div class="sy">SAM.gov</div>
+          <div class="sp">Federal registration in process — positioning for federal and institutional glazing scopes.</div>
+          <div class="ar"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== BONDING & FINANCIAL ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Bonding &amp; Financial</div>
-        <h2 style="margin-top:14px;">Bondable on <span class="accent">every bid we submit.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">ACG maintains an active surety relationship and is bondable for single and aggregate jobs at the scale of our Florida commercial work. Current bonding letter and financial statements available to pre-qualifying GCs and owners upon request.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;" data-reveal data-delay="100">
-        <div class="qual-card">
-          <div class="qual-card-label">Performance &amp; Payment Bonds</div>
-          <div class="qual-card-value">Provided</div>
-          <div class="qual-card-detail">On projects that require them</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Bond Capacity Letter</div>
-          <div class="qual-card-value">On Request</div>
-          <div class="qual-card-detail">Available during prequalification</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Bonding Rate</div>
-          <div class="qual-card-value">2.5%</div>
-          <div class="qual-card-detail">Flat rate &middot; Agent: Acrisure / Jarrett Merlucci</div>
+  <!-- ========== Insurance ========== -->
+  <section class="sec svc" aria-labelledby="ins-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-201 · Insurance schedule</span></div>
+          <h2 id="ins-h">Coverage that clears GC subcontract requirements.</h2>
         </div>
       </div>
-      <p style="margin-top:24px;font-size:13px;color:rgba(255,255,255,.55);">To receive ACG's current bonding letter, financial statements, or W-9, email <a href="mailto:connor@acglass.com" style="color:var(--accent);text-decoration:none;">connor@acglass.com</a> or submit a pre-qualification request.</p>
-    </div>
-  </section>
-
-  <!-- ========== INSURANCE ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Insurance</div>
-        <h2 style="margin-top:14px;">Coverage that meets <span class="accent">any GC&rsquo;s requirements.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">ACG maintains commercial general liability, automobile, workers&rsquo; compensation, and professional liability coverage at limits that exceed standard Florida GC subcontract requirements. COI issued to project-specific additional insureds within 24 hours of award.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;" data-reveal data-delay="100">
-        <div class="qual-card">
-          <div class="qual-card-label">General Liability</div>
-          <div class="qual-card-value">$1M / $2M</div>
-          <div class="qual-card-detail">Per occurrence / General aggregate &middot; $2M Prod-Comp/Op Agg</div>
+      <p class="rv" style="margin:-18px 0 32px;font-size:.95rem;color:var(--body);max-width:72ch">ACG maintains commercial general liability, automobile, workers&rsquo; compensation, and umbrella coverage. Certificates of insurance are issued to project-specific additional insureds within 24 hours of award.</p>
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Mark</div><div>Coverage</div><div>Limits &amp; detail</div><div></div></div>
+        <div class="sched-row">
+          <div class="mk">INS-01</div><div class="sy">General Liability — $1M / $2M</div>
+          <div class="sp">Per occurrence / general aggregate · $2M products-completed operations aggregate.</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Automobile Liability</div>
-          <div class="qual-card-value">$1M CSL</div>
-          <div class="qual-card-detail">Combined single limit &middot; Any auto</div>
+        <div class="sched-row">
+          <div class="mk">INS-02</div><div class="sy">Automobile — $1M CSL</div>
+          <div class="sp">Combined single limit · any auto.</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Workers&rsquo; Compensation</div>
-          <div class="qual-card-value">$1M / $1M</div>
-          <div class="qual-card-detail">Each accident / Disease limit &middot; Statutory FL</div>
+        <div class="sched-row">
+          <div class="mk">INS-03</div><div class="sy">Workers&rsquo; Comp — $1M / $1M</div>
+          <div class="sp">Each accident / disease limit · statutory Florida coverage.</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Umbrella / Excess</div>
-          <div class="qual-card-value">Carried</div>
-          <div class="qual-card-detail">Limits shown on COI &middot; available on request</div>
+        <div class="sched-row">
+          <div class="mk">INS-04</div><div class="sy">Umbrella / Excess</div>
+          <div class="sp">Carried · limits shown on the COI and available on request.</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Insurance Carriers</div>
-          <div class="qual-card-value" style="font-size:clamp(15px,1.2vw,18px);line-height:1.3;">Southern-Owners<br>Progressive &middot; Sirius</div>
-          <div class="qual-card-detail">A-rated &middot; Broker: Patriot Growth (Alexis Serrano)</div>
+        <div class="sched-row">
+          <div class="mk">INS-05</div><div class="sy">Carriers</div>
+          <div class="sp">Southern-Owners · Progressive · Sirius — A-rated carriers. Broker: Patriot Growth (Alexis Serrano).</div>
+          <div class="ar"></div>
         </div>
-        <div class="qual-card">
-          <div class="qual-card-label">COI Turnaround</div>
-          <div class="qual-card-value">24 Hours</div>
-          <div class="qual-card-detail">Project-specific additional insureds</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SAFETY ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Safety</div>
-        <h2 style="margin-top:14px;">Safety is <span class="accent">a precondition, not a bonus.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">Every ACG field crew runs an OSHA-compliant safety program with weekly toolbox talks, documented job hazard analyses, and site-specific fall-protection plans. Our safety record reflects that discipline.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;" data-reveal data-delay="100">
-        <div class="qual-card" style="background:linear-gradient(140deg,rgba(74,222,128,.08),rgba(255,255,255,.02));border-color:rgba(74,222,128,.25);">
-          <div class="qual-card-label" style="color:#4ADE80;">COMPASS Health &amp; Safety</div>
-          <div class="qual-card-value" style="color:#fff;">Strong</div>
-          <div class="qual-card-detail">Q 2.6 overall score &middot; Bespoke Metrics</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">OSHA Training</div>
-          <div class="qual-card-value">OSHA 30</div>
-          <div class="qual-card-detail">Trained field crews &middot; documented records</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Safety Program</div>
-          <div class="qual-card-value">Written</div>
-          <div class="qual-card-detail">Site-specific JHAs &middot; Weekly toolbox talks</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Lost-Time Incidents</div>
-          <div class="qual-card-value" style="color:#4ADE80;">0</div>
-          <div class="qual-card-detail">Trailing 3 years &middot; No lost-time injuries</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">GC Safety Recognition</div>
-          <div class="qual-card-value" style="font-size:clamp(14px,1.1vw,17px);">&ldquo;Met &amp; exceeded our safety program&rdquo;</div>
-          <div class="qual-card-detail">West Construction (Eau Palm Beach SPM)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== THIRD-PARTY VALIDATION ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Third-Party Validation</div>
-        <h2 style="margin-top:14px;">Scored. <span class="accent">Vetted. Recognized.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">ACG is actively pre-qualified on COMPASS (the GC pre-qualification standard used across Florida and national commercial construction) and carries the 2025 Select Top Subcontractor designation.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;" data-reveal data-delay="100">
-        <div class="qual-card" style="background:linear-gradient(140deg,rgba(74,222,128,.08),rgba(255,255,255,.02));border-color:rgba(74,222,128,.25);">
-          <div class="qual-card-label" style="color:#4ADE80;">COMPASS Q Score</div>
-          <div class="qual-card-value" style="color:#fff;">Q 2.6 &middot; <span style="color:#4ADE80;">Strong</span></div>
-          <div class="qual-card-detail">All three pillars rated strong: Business &middot; Finance &middot; Health &amp; Safety</div>
-        </div>
-        <div class="qual-card" style="background:linear-gradient(140deg,rgba(225,19,32,.06),rgba(255,255,255,.02));border-color:rgba(225,19,32,.3);">
-          <div class="qual-card-label">2025 Recognition</div>
-          <div class="qual-card-value" style="font-size:clamp(18px,1.5vw,22px);">Select Top Subcontractor</div>
-          <div class="qual-card-detail">COMPASS by Bespoke Metrics &middot; 2025 designation</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">GC-Attested Reference</div>
-          <div class="qual-card-value" style="font-size:clamp(14px,1.1vw,17px);line-height:1.35;">&ldquo;Attention to detail, quality, and safety&rdquo;</div>
-          <div class="qual-card-detail">RD Britton, SPM &middot; West Construction (Eau Palm Beach)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CAPACITY & EXPERIENCE ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Capacity &amp; Experience</div>
-        <h2 style="margin-top:14px;">The track record. <span class="accent">Verified.</span></h2>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;" data-reveal data-delay="100">
-        <div class="qual-card">
-          <div class="qual-card-label">Founded</div>
-          <div class="qual-card-value">2021</div>
-          <div class="qual-card-detail">February 18, 2021 &middot; West Palm Beach</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Scope</div>
-          <div class="qual-card-value">Division 08</div>
-          <div class="qual-card-detail">Impact-rated &amp; non-impact glazing</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Florida Offices</div>
-          <div class="qual-card-value">3</div>
-          <div class="qual-card-detail">West Palm Beach &middot; Naples &middot; Tampa</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Florida Counties Served</div>
-          <div class="qual-card-value">25+</div>
-          <div class="qual-card-detail">Including all HVHZ jurisdictions</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Team Size</div>
-          <div class="qual-card-value">12 <span style="font-size:.55em;color:rgba(255,255,255,.55);font-weight:600;">EMPLOYEES</span></div>
-          <div class="qual-card-detail">Full-time W-2 &middot; No 1099 labor on ACG projects</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Field Crews</div>
-          <div class="qual-card-value">4</div>
-          <div class="qual-card-detail">Dedicated glazing crews &middot; Simultaneous project capacity</div>
-        </div>
-        <div class="qual-card">
-          <div class="qual-card-label">Standard Bid Turnaround</div>
-          <div class="qual-card-value" style="color:var(--accent);">48 Hrs</div>
-          <div class="qual-card-detail">Budget &amp; scoped commercial bids</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CODE & COMPLIANCE ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Code &amp; Compliance</div>
-        <h2 style="margin-top:14px;">Florida Building Code. <span class="accent">Product approvals. NOA.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">Every ACG-installed opening is engineered, submitted, and inspected against the governing Florida Building Code, including High-Velocity Hurricane Zone (HVHZ) requirements in Miami-Dade and Broward. Current product approvals and NOAs available on request for every manufacturer partner.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;" data-reveal data-delay="100">
-        <div class="qual-pill">Florida Building Code (FBC)</div>
-        <div class="qual-pill">HVHZ &mdash; Miami-Dade NOA</div>
-        <div class="qual-pill">HVHZ &mdash; Broward County</div>
-        <div class="qual-pill">Florida Product Approval</div>
-        <div class="qual-pill">DP Ratings &mdash; +/- Verified</div>
-        <div class="qual-pill">ASTM E330 / E283 / E547</div>
-        <div class="qual-pill">AAMA 501.4 Seismic</div>
-        <div class="qual-pill">ADA Compliance &mdash; ICC A117.1</div>
-        <div class="qual-pill">UL Fire-Rated Assemblies</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== MANUFACTURER RELATIONSHIPS ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Manufacturer Partnerships</div>
-        <h2 style="margin-top:14px;">Authorized on <span class="accent">the systems that matter.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">ACG only installs systems from manufacturers we carry as authorized partners. That means the system engineers, the ACG installers, and the product support are aligned. We do not substitute, and we do not install brands we cannot stand behind.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;" data-reveal data-delay="100">
-        <a href="eswindows-installer-florida.html" class="qual-partner">
-          <div class="qual-partner-name">ESWindows</div>
-          <div class="qual-partner-role">Impact storefronts &middot; window wall</div>
-        </a>
-        <a href="euro-wall.html" class="qual-partner">
-          <div class="qual-partner-name">Euro-Wall</div>
-          <div class="qual-partner-role">Multi-slide &middot; folding &middot; pivot</div>
-        </a>
-        <a href="partners.html#pgt" class="qual-partner">
-          <div class="qual-partner-name">PGT</div>
-          <div class="qual-partner-role">Impact windows &amp; doors</div>
-        </a>
-        <a href="partners.html#tgp" class="qual-partner">
-          <div class="qual-partner-name">TGP</div>
-          <div class="qual-partner-role">Fire-rated glass &amp; framing</div>
-        </a>
-        <a href="partners.html#allegion" class="qual-partner">
-          <div class="qual-partner-name">Allegion</div>
-          <div class="qual-partner-role">Door hardware &amp; access</div>
-        </a>
-        <a href="partners.html#slimpact" class="qual-partner">
-          <div class="qual-partner-name">Slimpact</div>
-          <div class="qual-partner-role">Ultra-slim impact sliders</div>
+        <a class="sched-row" href="pdfs/qualifications/ACG-Sample-COI.pdf" target="_blank" rel="noopener">
+          <div class="mk">INS-06</div><div class="sy">Sample COI — 24-hr turnaround</div>
+          <div class="sp">Download the sample certificate of insurance (PDF). Project-specific additional insureds within 24 hours of award.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== DOWNLOADABLE PRE-QUAL DOCS ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
-        <div class="label"><span class="line"></span> Downloadable Documents</div>
-        <h2 style="margin-top:14px;">Pre-qualification docs. <span class="accent">Ready to download.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:14px;font-size:clamp(15px,1.1vw,17px);line-height:1.7;">A sample certificate of insurance, our current letter of bondability, the COMPASS Q Score report, and a GC letter of recommendation &mdash; available for immediate download. Project-specific COIs issued within 24 hours of award.</p>
+  <!-- ========== Bonding ========== -->
+  <section class="sec" aria-labelledby="bond-h">
+    <span class="bignum" aria-hidden="true">03</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-301 · Bonding</span></div>
+          <h2 id="bond-h">Bondable on the projects that require it.</h2>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;" data-reveal data-delay="100">
-        <a href="pdfs/qualifications/ACG-Sample-COI.pdf" target="_blank" rel="noopener" class="qual-card" style="text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="qual-card-label" style="margin:0;">Certificate of Insurance</div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-label k-label--navy">Performance &amp; payment</span>
+          <h3 style="margin-top:10px">Bonds provided</h3>
+          <p>ACG maintains an active surety relationship and provides performance and payment bonds on projects that require them.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">Prequalification</span>
+          <h3 style="margin-top:10px">Capacity letter on request</h3>
+          <p>Current bond capacity letters and financial statements are available to pre-qualifying GCs and owners during prequalification.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">Download</span>
+          <h3 style="margin-top:10px"><a href="pdfs/qualifications/ACG-Letter-of-Bondability.pdf" target="_blank" rel="noopener" style="color:var(--navy);border-bottom:1px solid var(--hairline-2)">Letter of Bondability (PDF)</a></h3>
+          <p>The current letter from ACG&rsquo;s surety agent, downloadable now. For financials or a W-9, email <a href="mailto:connor@acglass.com" style="color:var(--navy);font-weight:600">connor@acglass.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Safety ========== -->
+  <section class="sec pillars slant gnotes" aria-labelledby="safety-h">
+    <span class="bignum" aria-hidden="true">04</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-401 · Safety general notes</span></div>
+          <h2 id="safety-h">Safety is a precondition, not a bonus.</h2>
+        </div>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>OSHA 30-trained crews</h3>
+          <p>ACG fields OSHA 30-trained field crews with documented training records. EMR available on request.</p>
+        </div>
+        <div class="gnote">
+          <h3>Written program</h3>
+          <p>Every crew runs an OSHA-compliant written safety program: site-specific job hazard analyses, fall-protection plans, and weekly toolbox talks.</p>
+        </div>
+        <div class="gnote">
+          <h3>GC-attested performance</h3>
+          <p>&ldquo;Met and exceeded our safety program&rdquo; — RD Britton, Senior Project Manager, West Construction (Eau Palm Beach Resort). Full letter downloadable below.</p>
+        </div>
+        <div class="gnote">
+          <h3>Documented, not claimed</h3>
+          <p>Safety records, training documentation, and OSHA logs are produced during prequalification — ask for what your risk team needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Third-party validation ========== -->
+  <section class="sec" aria-labelledby="tpv-h">
+    <span class="bignum" aria-hidden="true">05</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-501 · Third-party validation</span></div>
+          <h2 id="tpv-h">Scored. Vetted. On the record.</h2>
+        </div>
+      </div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-label k-label--navy">COMPASS by Bespoke Metrics</span>
+          <h3 style="margin-top:10px">Q Score 2.6 — Strong</h3>
+          <p>Pre-qualified on COMPASS, the GC prequalification standard used across Florida commercial construction. All three pillars — Business, Finance, Health &amp; Safety — rated strong. <a href="pdfs/qualifications/ACG-COMPASS-Q-Score.pdf" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">Report (PDF) →</a></p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">2025 recognition</span>
+          <h3 style="margin-top:10px">Select Top Subcontractor</h3>
+          <p>2025 Select Top Subcontractor designation from COMPASS by Bespoke Metrics.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">GC reference</span>
+          <h3 style="margin-top:10px">West Construction letter</h3>
+          <p>&ldquo;Attention to detail, quality, and safety&rdquo; — RD Britton, SPM, West Construction, on the Eau Palm Beach Resort scope. <a href="pdfs/qualifications/ACG-West-Construction-LOR.pdf" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">Letter (PDF) →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Ownership & company ========== -->
+  <section class="sec svc" aria-labelledby="own-h">
+    <span class="bignum" aria-hidden="true">06</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-601 · Ownership &amp; company</span></div>
+          <h2 id="own-h">Owner-operated. Woman-owned.</h2>
+        </div>
+        <a class="sec-link" href="leadership.html">Leadership
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="cards cards-4 rv" data-stagger>
+        <div class="card">
+          <span class="k-label k-label--navy">Ownership</span>
+          <h3 style="margin-top:10px">Woman-owned</h3>
+          <p>Rielly Walsh, CEO and co-founder, is the 51% majority owner. WBE and SBE certifications are in process.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">Qualifier</span>
+          <h3 style="margin-top:10px">Connor Walsh</h3>
+          <p>President and co-founder — the CGC #1531993 license qualifier, and the person who prices and runs your bid.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">Founded</span>
+          <h3 style="margin-top:10px">February 18, 2021</h3>
+          <p>Florida corporation founded in West Palm Beach. Offices in WPB, Naples, and Tampa — Nashville, TN opens Q3 2026.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">Bids</span>
+          <h3 style="margin-top:10px">48-hour turnaround</h3>
+          <p>Documented scopes get a detailed proposal or budget direction back within 48 hours — with an exclusions list, not surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Code & compliance ========== -->
+  <section class="sec" aria-labelledby="code-h">
+    <span class="bignum" aria-hidden="true">07</span>
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Sheet Q-701 · Code &amp; compliance</span></div>
+          <h2 id="code-h">Florida Building Code. Product approvals. NOA.</h2>
+          <p>Every ACG-installed opening is engineered, submitted, and inspected against the governing Florida Building Code, including High-Velocity Hurricane Zone requirements in Miami-Dade and Broward. Current product approvals and NOAs available on request for every manufacturer we install.</p>
+          <div class="feat-specs">
+            <div class="row"><span class="k">Code</span><span class="d">Florida Building Code (FBC) · HVHZ Miami-Dade NOA · Broward County</span></div>
+            <div class="row"><span class="k">Approvals</span><span class="d">Florida Product Approval · DP ratings verified +/-</span></div>
+            <div class="row"><span class="k">Testing</span><span class="d">ASTM E330 / E283 / E547 · AAMA 501.4</span></div>
+            <div class="row"><span class="k">Life safety</span><span class="d">UL fire-rated assemblies · ADA — ICC A117.1</span></div>
           </div>
-          <div class="qual-card-value" style="font-size:clamp(17px,1.4vw,20px);">Sample COI (PDF)</div>
-          <div class="qual-card-detail">GL / Auto / WC / Umbrella &middot; Southern-Owners + carriers</div>
-          <div style="margin-top:12px;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Download &rarr;</div>
-        </a>
-        <a href="pdfs/qualifications/ACG-Letter-of-Bondability.pdf" target="_blank" rel="noopener" class="qual-card" style="text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="qual-card-label" style="margin:0;">Bonding</div>
-          </div>
-          <div class="qual-card-value" style="font-size:clamp(17px,1.4vw,20px);">Letter of Bondability (PDF)</div>
-          <div class="qual-card-detail">Available during prequalification</div>
-          <div style="margin-top:12px;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Download &rarr;</div>
-        </a>
-        <a href="pdfs/qualifications/ACG-COMPASS-Q-Score.pdf" target="_blank" rel="noopener" class="qual-card" style="text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(74,222,128,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="qual-card-label" style="margin:0;color:#4ADE80;">Third-Party Score</div>
-          </div>
-          <div class="qual-card-value" style="font-size:clamp(17px,1.4vw,20px);">COMPASS Q Score Report (PDF)</div>
-          <div class="qual-card-detail">Q 2.6 strong &middot; Business / Finance / Health &amp; Safety</div>
-          <div style="margin-top:12px;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Download &rarr;</div>
-        </a>
-        <a href="pdfs/qualifications/ACG-West-Construction-LOR.pdf" target="_blank" rel="noopener" class="qual-card" style="text-decoration:none;display:block;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11320" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div class="qual-card-label" style="margin:0;">GC Reference</div>
-          </div>
-          <div class="qual-card-value" style="font-size:clamp(17px,1.4vw,20px);">Letter of Recommendation (PDF)</div>
-          <div class="qual-card-detail">West Construction &middot; Eau Palm Beach Resort &middot; RD Britton, SPM</div>
-          <div style="margin-top:12px;font-size:12px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:600;">Download &rarr;</div>
-        </a>
+        </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.avif" type="image/avif">
+            <source srcset="images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.webp" type="image/webp">
+            <img src="images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg" alt="Impact-rated storefront band on the Haines City Public Safety Complex and EOC facade, installed by ACG" width="1800" height="1011" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Haines City Public Safety &amp; EOC · Risk Category IV</span>
+        </div>
       </div>
-      <p style="margin-top:28px;font-size:13px;color:rgba(255,255,255,.55);">Need something not listed &mdash; W-9, audited financials, OSHA 300 logs, or additional references? Email <a href="mailto:connor@acglass.com" style="color:var(--accent);text-decoration:none;">connor@acglass.com</a> &middot; response within one business day.</p>
     </div>
   </section>
 
-  <!-- ========== PRE-QUAL REQUEST CTA ========== -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>PRE-QUAL</div>
-      <h2>Need the full packet?<br><span class="accent">Ask for it direct.</span></h2>
-      <p>Current bonding letter, W-9, COI samples, financial statements, and a named-reference list available to qualifying GCs and owners. Response within one business day.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
-        <a href="pdfs/ACG-Capabilities-Statement.pdf" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Capabilities PDF
+  <!-- ========== Manufacturer relationships ========== -->
+  <section class="sec svc" aria-labelledby="mfr-h">
+    <span class="bignum" aria-hidden="true">08</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-801 · Manufacturer relationships</span></div>
+          <h2 id="mfr-h">Authorized on two lines. Fluent in seven.</h2>
+        </div>
+        <a class="sec-link" href="manufacturers.html">All manufacturer partners
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="mailto:connor@acglass.com?subject=ACG%20Pre-Qualification%20Packet%20Request" class="btn btn-ghost btn-lg">Request Full Pre-Qual Packet</a>
-        <a href="send-plans.html" class="btn btn-ghost btn-lg">Send Plans for Bid</a>
       </div>
+      <div class="cards rv" data-stagger>
+        <div class="card">
+          <span class="k-label">Authorized installer</span>
+          <h3 style="margin-top:10px"><a href="eswindows-installer-florida.html" style="color:var(--ink)">ESWindows (Tecnoglass)</a></h3>
+          <p>Authorized commercial installer — impact storefronts, window wall, and curtain wall from the NYSE-listed Tecnoglass factory.</p>
+        </div>
+        <div class="card">
+          <span class="k-label">Authorized installer</span>
+          <h3 style="margin-top:10px"><a href="euro-wall.html" style="color:var(--ink)">Euro-Wall</a></h3>
+          <p>Authorized installer for impact folding, multi-slide, and pivot glass wall systems — factory certified.</p>
+        </div>
+        <div class="card">
+          <span class="k-label k-label--navy">Systems we install</span>
+          <h3 style="margin-top:10px">PGT · Allegion · TGP · Slimpact · Aldora</h3>
+          <p>Installed and coordinated to each project&rsquo;s spec — <a href="tgp-fire-rated-glass-installer.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">TGP fire-rated glazing</a>, <a href="allegion-installer-florida.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">Allegion hardware</a>, PGT and Slimpact impact systems, and Aldora institutional framing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Downloads ========== -->
+  <section class="sec" aria-labelledby="docs-h">
+    <span class="bignum" aria-hidden="true">09</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet Q-901 · Pre-qualification documents</span></div>
+          <h2 id="docs-h">The packet, ready to download.</h2>
+        </div>
+      </div>
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Mark</div><div>Document</div><div>Contents</div><div></div></div>
+        <a class="sched-row" href="pdfs/qualifications/ACG-Sample-COI.pdf" target="_blank" rel="noopener">
+          <div class="mk">DOC-01</div><div class="sy">Sample COI</div>
+          <div class="sp">Certificate of insurance — GL, auto, WC, umbrella. Project-specific COIs within 24 hours of award.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="pdfs/qualifications/ACG-Letter-of-Bondability.pdf" target="_blank" rel="noopener">
+          <div class="mk">DOC-02</div><div class="sy">Letter of Bondability</div>
+          <div class="sp">Current surety letter — available in full during prequalification.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="pdfs/qualifications/ACG-COMPASS-Q-Score.pdf" target="_blank" rel="noopener">
+          <div class="mk">DOC-03</div><div class="sy">COMPASS Q Score report</div>
+          <div class="sp">Q 2.6 · strong across Business, Finance, and Health &amp; Safety — Bespoke Metrics.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="pdfs/qualifications/ACG-West-Construction-LOR.pdf" target="_blank" rel="noopener">
+          <div class="mk">DOC-04</div><div class="sy">GC letter of recommendation</div>
+          <div class="sp">West Construction · Eau Palm Beach Resort · RD Britton, Senior Project Manager.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="pdfs/ACG-Capabilities-Statement.pdf" target="_blank" rel="noopener">
+          <div class="mk">DOC-05</div><div class="sy">Capabilities statement</div>
+          <div class="sp">Company overview, scope list, credentials, and contacts in one PDF.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+      </div>
+      <p class="rv" style="margin-top:26px;font-size:.88rem;color:var(--muted)">Need something not listed — W-9, financial statements, OSHA logs, or additional references? Email <a href="mailto:connor@acglass.com" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">connor@acglass.com</a> · response within one business day.</p>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Need the full pre-qual packet?</h2>
+        <p>Bonding letter, W-9, COI samples, financials, and named references — available to qualifying GCs and owners within one business day.</p>
+      </div>
+      <a href="mailto:connor@acglass.com?subject=ACG%20Pre-Qualification%20Packet%20Request" class="btn">Request the packet
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </section>
 
   </main>
 
-  <!-- FOOTER -->
-  
-<!-- ========== ALL SERVICES & INDUSTRIES (SEO internal linking) ========== -->
-<section class="section" style="padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px);">
-  <div class="container" style="max-width:1200px;">
-    <div data-reveal style="margin-bottom:clamp(28px,3vw,40px);">
-      <div class="label"><span class="line"></span> Services & Industries</div>
-      <h2 style="margin-top:12px;font-size:clamp(28px,3vw,40px);">Every ACG scope <span class="accent">in one place.</span></h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;" data-reveal data-delay="100">
-      <a href="impact-windows-doors.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Impact Windows & Doors</a>
-      <a href="commercial-storefront-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Storefront Systems</a>
-      <a href="window-wall-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Window Wall</a>
-      <a href="curtainwall-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Curtainwall</a>
-      <a href="multi-slide-bifold-doors.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Multi-Slide & Bifold</a>
-      <a href="fire-rated-glass-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fire-Rated Glass</a>
-      <a href="automatic-entrance-systems.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Automatic Entrances</a>
-      <a href="interior-glass-partitions.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Interior Glass Partitions</a>
-      <a href="custom-specialty-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Custom/Specialty Glazing</a>
-      <a href="new-construction-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">New Construction Glazing</a>
-      <a href="multifamily-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Multifamily</a>
-      <a href="hospitality-hotel-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hospitality/Hotel</a>
-      <a href="retail-storefront-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Retail Storefront</a>
-      <a href="office-commercial-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Office/Commercial</a>
-      <a href="industrial-warehouse-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Industrial/Warehouse</a>
-      <a href="mixed-use-development-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Mixed-Use</a>
-      <a href="educational-institutional-glazing.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Educational/Institutional</a>
-      <a href="senior-living-glazing-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Senior Living</a>
-      <a href="healthcare-glazing-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Healthcare</a>
-      <a href="eswindows-installer-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">ESWindows Installer</a>
-      <a href="eurowall-installer-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Euro-Wall Installer</a>
-      <a href="commercial-storefront-installer-florida.html" style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:14px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Storefront Installer</a>
-    </div>
-  </div>
-</section>
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
 
-  
-<!-- ========== FLORIDA MARKETS STRIP (SEO internal linking) ========== -->
-<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px);">
-  <div class="container" style="max-width:1200px;">
-    <div data-reveal style="margin-bottom:clamp(28px,3vw,40px);">
-      <div class="label"><span class="line"></span> Florida Markets</div>
-      <h2 style="margin-top:12px;font-size:clamp(28px,3vw,40px);">Commercial glazing across <span class="accent">Florida.</span></h2>
-      <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:12px;font-size:clamp(14px,1vw,16px);line-height:1.7;">ACG serves general contractors and owners statewide with three offices: West Palm Beach, Naples, and Tampa. Below are the markets we actively bid and install in.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;" data-reveal data-delay="100">
-      <a href="commercial-glazing-alabama.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Alabama</a>
-      <a href="/storefront-glazier-aventura-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Aventura</a>
-      <a href="/storefront-glazier-boca-raton-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Boca Raton</a>
-      <a href="/storefront-glazier-bonita-springs-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Bonita Springs</a>
-      <a href="/storefront-glazier-boynton-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Boynton Beach</a>
-      <a href="/storefront-glazier-bradenton-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Bradenton</a>
-      <a href="commercial-glazing-brandon-riverview.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Brandon Riverview</a>
-      <a href="commercial-glazing-brickell.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Brickell</a>
-      <a href="/storefront-glazier-cape-coral-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Cape Coral</a>
-      <a href="commercial-glazing-central-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Central FL</a>
-      <a href="/storefront-glazier-clearwater-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Clearwater</a>
-      <a href="/storefront-glazier-coral-gables-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Coral Gables</a>
-      <a href="/storefront-glazier-davie-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Davie</a>
-      <a href="commercial-glazing-daytona-beach.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Daytona Beach</a>
-      <a href="/storefront-glazier-deerfield-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Deerfield Beach</a>
-      <a href="/storefront-glazier-delray-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Delray Beach</a>
-      <a href="commercial-glazing-doral.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Doral</a>
-      <a href="/storefront-glazier-estero-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Estero</a>
-      <a href="/storefront-glazier-fort-lauderdale-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fort Lauderdale</a>
-      <a href="/storefront-glazier-fort-myers-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fort Myers</a>
-      <a href="commercial-glazing-gainesville.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Gainesville</a>
-      <a href="commercial-glazing-georgia.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Georgia</a>
-      <a href="commercial-glazing-hialeah.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hialeah</a>
-      <a href="/storefront-glazier-hobe-sound-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hobe Sound</a>
-      <a href="commercial-glazing-hollywood-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hollywood</a>
-      <a href="commercial-glazing-jacksonville.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Jacksonville</a>
-      <a href="/storefront-glazier-juno-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Juno Beach</a>
-      <a href="/storefront-glazier-jupiter-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Jupiter</a>
-      <a href="/storefront-glazier-kissimmee-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Kissimmee</a>
-      <a href="/storefront-glazier-lakeland-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Lakeland</a>
-      <a href="commercial-glazing-lakewood-ranch.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Lakewood Ranch</a>
-      <a href="commercial-glazing-louisiana.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Louisiana</a>
-      <a href="/storefront-glazier-marco-island-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Marco Island</a>
-      <a href="commercial-glazing-melbourne-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Melbourne</a>
-      <a href="/storefront-glazier-miami-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Miami Beach</a>
-      <a href="/storefront-glazier-miami-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Miami</a>
-      <a href="/storefront-glazier-naples-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Naples</a>
-      <a href="commercial-glazing-near-me-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Florida</a>
-      <a href="commercial-glazing-north-carolina.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">North Carolina</a>
-      <a href="/storefront-glazier-north-palm-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">North Palm Beach</a>
-      <a href="commercial-glazing-ocala.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Ocala</a>
-      <a href="/storefront-glazier-orlando-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Orlando</a>
-      <a href="commercial-glazing-palm-beach-county.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach County</a>
-      <a href="/storefront-glazier-palm-beach-gardens-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach Gardens</a>
-      <a href="/storefront-glazier-palm-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach</a>
-      <a href="/storefront-glazier-panama-city-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Panama City</a>
-      <a href="commercial-glazing-parkland-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Parkland</a>
-      <a href="commercial-glazing-pembroke-pines.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pembroke Pines</a>
-      <a href="/storefront-glazier-pensacola-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pensacola</a>
-      <a href="commercial-glazing-plantation-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Plantation</a>
-      <a href="/storefront-glazier-pompano-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pompano Beach</a>
-      <a href="commercial-glazing-port-st-lucie.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Port St Lucie</a>
-      <a href="/storefront-glazier-sarasota-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Sarasota</a>
-      <a href="commercial-glazing-south-carolina.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South Carolina</a>
-      <a href="commercial-glazing-south-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South FL</a>
-      <a href="commercial-glazing-south-tampa.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South Tampa</a>
-      <a href="commercial-glazing-southeast.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Southeast</a>
-      <a href="commercial-glazing-southwest-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Southwest FL</a>
-      <a href="commercial-glazing-st-petersburg.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">St Petersburg</a>
-      <a href="/storefront-glazier-stuart-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Stuart</a>
-      <a href="/storefront-glazier-tallahassee-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tallahassee</a>
-      <a href="/storefront-glazier-tampa-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tampa</a>
-      <a href="commercial-glazing-tennessee.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tennessee</a>
-      <a href="/storefront-glazier-tequesta-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tequesta</a>
-      <a href="commercial-glazing-texas.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Texas</a>
-      <a href="commercial-glazing-treasure-coast.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Treasure Coast</a>
-      <a href="/storefront-glazier-vero-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Vero Beach</a>
-      <a href="/storefront-glazier-wellington-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Wellington</a>
-      <a href="commercial-glazing-wesley-chapel.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Wesley Chapel</a>
-      <a href="/storefront-glazier-west-palm-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">West Palm Beach</a>
-      <a href="/storefront-glazier-weston-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Weston</a>
-      <a href="commercial-glazing-windermere.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Windermere</a>
-      <a href="commercial-glazing-winter-park.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Winter Park</a>
-    </div>
-  </div>
-</section>
-
-  
-  <!-- ═══════════════════════════════════ RELATED RESOURCES ═══ -->
-  <section style="padding:clamp(40px,5vw,72px) 0;border-top:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.015);">
-    <div class="container">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e11320;font-weight:600;margin-bottom:12px;">RELATED RESOURCES</div>
-      <p style="font-size:17px;line-height:1.65;color:rgba(232,236,242,.85);margin:0 0 28px;max-width:780px;">ACG = American Commercial Glass. Our brand identity page documents every official identifier and the verification path.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;">
-        <a href="/storefront-glazier-west-palm-beach-florida/" style="display:block;text-decoration:none;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:24px 28px;transition:all .25s;color:inherit;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#e11320;font-weight:600;margin-bottom:8px;">PALM BEACH COUNTY · LANDING PAGE</div>
-          <div style="font-size:19px;font-weight:700;color:#fff;letter-spacing:-.01em;margin-bottom:6px;">Storefront Glazier in West Palm Beach, Florida</div>
-          <div style="font-size:14px;color:rgba(232,236,242,.7);line-height:1.55;">Licensed Division 08 storefront contractor. System selection, code path, pricing ranges, recent portfolio.</div>
-        </a>
-        <a href="/acg-glass-florida/" style="display:block;text-decoration:none;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:24px 28px;transition:all .25s;color:inherit;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#e11320;font-weight:600;margin-bottom:8px;">BRAND IDENTITY · VERIFIED ENTITY</div>
-          <div style="font-size:19px;font-weight:700;color:#fff;letter-spacing:-.01em;margin-bottom:6px;">ACG Glass = American Commercial Glass</div>
-          <div style="font-size:14px;color:rgba(232,236,242,.7);line-height:1.55;">Official identifiers, third-party verification, license lookup, brand reference. FL CGC #1531993.</div>
-        </a>
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
+      </div>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
+        </ul>
       </div>
     </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════ SERVICE AREAS ═══ -->
-  <section style="padding:clamp(40px,5vw,72px) 0;border-top:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.012);">
-    <div class="container">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e11320;font-weight:600;margin-bottom:12px;">FLORIDA SERVICE AREAS</div>
-      <p style="font-size:15px;line-height:1.6;color:rgba(232,236,242,.78);margin:0 0 20px;max-width:780px;">ACG serves commercial storefront scope across all of Florida. Most-requested markets below; full city directory in the link.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <a href="/storefront-glazier-west-palm-beach-florida/" style="display:inline-flex;align-items:center;padding:8px 14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:4px;font-size:13px;font-weight:500;color:rgba(232,236,242,.9);text-decoration:none;">West Palm Beach</a>
-        <a href="/storefront-glazier-miami-florida/" style="display:inline-flex;align-items:center;padding:8px 14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:4px;font-size:13px;font-weight:500;color:rgba(232,236,242,.9);text-decoration:none;">Miami</a>
-        <a href="/storefront-glazier-fort-lauderdale-florida/" style="display:inline-flex;align-items:center;padding:8px 14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:4px;font-size:13px;font-weight:500;color:rgba(232,236,242,.9);text-decoration:none;">Fort Lauderdale</a>
-        <a href="/storefront-glazier-tampa-florida/" style="display:inline-flex;align-items:center;padding:8px 14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:4px;font-size:13px;font-weight:500;color:rgba(232,236,242,.9);text-decoration:none;">Tampa</a>
-        <a href="/storefront-glazier-naples-florida/" style="display:inline-flex;align-items:center;padding:8px 14px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:4px;font-size:13px;font-weight:500;color:rgba(232,236,242,.9);text-decoration:none;">Naples</a>
-        <a href="/storefront-glazier-florida/" style="display:inline-flex;align-items:center;padding:8px 14px;background:rgba(225,19,32,.08);border:1px solid rgba(225,19,32,.3);border-radius:4px;font-size:13px;font-weight:600;color:rgba(232,236,242,.9);text-decoration:none;">All 79 Florida Cities</a>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- PAA: People Also Ask Q&A (Agent X2) -->
-  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) 24px;">
-    <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:800;margin:0 0 28px;">Related questions</h2>
-    <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-      <h3 itemprop="name">Is a commercial glazing contractor licensed and insured?</h3>
-      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <p itemprop="text">A qualified commercial glazing contractor holds a state license and carries liability, workers' comp, and bonding. American Commercial Glass is licensed as FL CGC #1531993, insured, and fields OSHA 30 trained crews.</p>
-      </div>
-    </div>
-    <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-      <h3 itemprop="name">Is American Commercial Glass bonded?</h3>
-      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <p itemprop="text">Yes. American Commercial Glass provides performance and payment bonds on projects that require them, with bond capacity letters available during prequalification for larger commercial scopes across Florida and the Southeast.</p>
-      </div>
-    </div>
-    <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-      <h3 itemprop="name">What is American Commercial Glass's license number?</h3>
-      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <p itemprop="text">American Commercial Glass holds Florida Certified Glazing Contractor license CGC #1531993. The company is registered on Sunbiz as P21000018259, classified under NAICS 238150.</p>
-      </div>
-    </div>
-    <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-      <h3 itemprop="name">Is ACG woman-owned (WBE/SBE certification in process)?</h3>
-      <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-        <p itemprop="text">Yes. American Commercial Glass is WBE (Women's Business Enterprise) and SBE (Small Business Enterprise) certified, supporting participation goals on public and government projects. ACG holds FL CGC #1531993 and is fully insured.</p>
-      </div>
-    </div>
-  </section>
-<footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices; Nashville, TN opening Q3 2026. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/ai-operations-whitepaper.html">AI White Paper</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/west-palm-beach-commercial-glazing.html">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/tampa-commercial-glazing.html">Tampa</a>
-            <a href="/commercial-glazing-nashville-tn.html">Nashville, TN (Q3 2026)</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              connor@acglass.com
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/american-commercial-glass-inc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-      </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578 &nbsp;·&nbsp; WBE &nbsp;·&nbsp; SBE</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>
