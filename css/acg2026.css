@@ -412,3 +412,111 @@ p{max-width:68ch}
 /* Giant footer wordmark */
 .ft-word{overflow:hidden;padding:clamp(30px,4vw,56px) 0 0;user-select:none;pointer-events:none}
 .ft-word span{display:block;font-family:'Archivo',var(--sans);font-stretch:125%;font-weight:900;font-size:clamp(1.5rem,4.4vw,4.1rem);line-height:.9;letter-spacing:0;text-transform:uppercase;white-space:nowrap;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.17)}
+
+/* ============================================================
+   V3 — "THE DRAWING SET"
+   The site as a living shop-drawing package: annotations,
+   sheet index rail, glazing schedule, general notes.
+   ============================================================ */
+
+/* --- Sheet index rail (fixed left, desktop) --- */
+.rail{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:2px}
+.rail a{display:flex;align-items:center;gap:10px;padding:7px 6px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--muted);transition:color var(--dur-1)}
+.rail a .ln{width:18px;height:1px;background:currentColor;transition:width var(--dur-2) var(--ease)}
+.rail a .tx{opacity:0;transform:translateX(-6px);transition:opacity var(--dur-2),transform var(--dur-2) var(--ease);text-transform:uppercase;white-space:nowrap}
+.rail:hover a .tx{opacity:1;transform:none}
+.rail a.act .tx{opacity:0}
+.rail:hover a.act .tx{opacity:1}
+.rail a.act{color:var(--red)}
+.rail a.act .ln{width:30px}
+.rail.on-dark a{color:rgba(255,255,255,.55)}
+.rail.on-dark a.act{color:var(--red)}
+@media (max-width:1180px){.rail{display:none}}
+
+/* --- Shop-drawing annotations over photos --- */
+.anno{position:absolute;z-index:5;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;pointer-events:none}
+.anno .dot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(225,19,32,.28)}
+.anno .ldr{position:absolute;background:rgba(255,255,255,.75);height:1px;transform-origin:left center}
+.anno .lbl{position:absolute;white-space:nowrap;background:rgba(8,20,40,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:7px 11px;border-left:2px solid var(--red);line-height:1.35}
+.anno .lbl small{display:block;color:rgba(255,255,255,.6);font-size:.58rem;letter-spacing:.1em}
+.js .anno{opacity:0;transition:opacity .8s var(--ease)}
+.js .anno.in{opacity:1}
+@media (max-width:900px){.anno{display:none}}
+
+/* --- Title block (drawing sheet corner) --- */
+.tblock{display:inline-grid;grid-template-columns:auto auto;border:1px solid rgba(255,255,255,.35);font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:rgba(8,20,40,.45)}
+.tblock div{padding:7px 12px;border-top:1px solid rgba(255,255,255,.22)}
+.tblock div:nth-child(-n+2){border-top:0}
+.tblock div:nth-child(odd){border-right:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.55)}
+.tblock b{font-weight:650;color:#fff}
+
+/* --- Corner registration marks on hero --- */
+.regmark{position:absolute;width:22px;height:22px;z-index:4;opacity:.5;pointer-events:none}
+.regmark::before,.regmark::after{content:"";position:absolute;background:#fff}
+.regmark::before{left:50%;top:0;width:1px;height:100%}
+.regmark::after{top:50%;left:0;height:1px;width:100%}
+
+/* --- Glazing schedule (services as a drawing schedule) --- */
+.sched{border:1px solid var(--hairline-2);background:var(--paper)}
+.sched-head,.sched-row{display:grid;grid-template-columns:110px 1.1fr 1.6fr 44px;align-items:center}
+.sched-head{background:var(--navy);color:#fff;font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase}
+.sched-head>div{padding:12px 18px}
+.sched-row{border-top:1px solid var(--hairline);text-decoration:none;position:relative;transition:background var(--dur-1)}
+.sched-row>div{padding:22px 18px}
+.sched-row .mk{font-family:var(--mono);font-size:.78rem;font-weight:650;color:var(--red);letter-spacing:.06em}
+.sched-row .sy{font-family:'Archivo',var(--sans);font-stretch:112%;font-weight:750;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--ink);letter-spacing:-.01em}
+.sched-row .sp{font-size:.9rem;color:var(--body);line-height:1.5}
+.sched-row .ar{color:var(--muted);transition:transform var(--dur-2) var(--ease),color var(--dur-1)}
+.sched-row:hover{background:var(--paper-2)}
+.sched-row:hover .ar{transform:translateX(5px);color:var(--red)}
+.sched-row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);transform:scaleY(0);transition:transform var(--dur-2) var(--ease)}
+.sched-row:hover::before{transform:scaleY(1)}
+@media (max-width:760px){
+  .sched-head{display:none}
+  .sched-row{grid-template-columns:1fr 44px;grid-template-areas:"mk ar" "sy ar" "sp ar"}
+  .sched-row .mk{grid-area:mk;padding-bottom:0}
+  .sched-row .sy{grid-area:sy;padding:6px 18px}
+  .sched-row .sp{grid-area:sp;padding-top:0}
+  .sched-row .ar{grid-area:ar}
+}
+
+/* --- General notes (pillars as drawing notes) --- */
+.gnotes{counter-reset:gn}
+.gnotes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid rgba(255,255,255,.16)}
+.gnote{counter-increment:gn;padding:34px 34px 38px;border:0 solid rgba(255,255,255,.16);position:relative;transition:background var(--dur-2)}
+.gnote:nth-child(odd){border-right-width:1px}
+.gnote:nth-child(n+3){border-top-width:1px}
+.gnote:hover{background:rgba(255,255,255,.045)}
+.gnote::before{content:counter(gn,decimal-leading-zero) ".";font-family:var(--mono);font-size:.8rem;color:var(--red);font-weight:650;letter-spacing:.1em}
+.gnote h3{margin-top:12px;font-family:'Archivo',var(--sans);font-stretch:115%;font-weight:800;color:#fff;font-size:clamp(1.15rem,1.9vw,1.55rem);text-transform:uppercase;letter-spacing:.01em}
+.gnote p{margin-top:10px;font-size:.92rem;line-height:1.65;color:rgba(255,255,255,.72)}
+@media (max-width:760px){.gnotes-grid{grid-template-columns:1fr}.gnote:nth-child(odd){border-right-width:0}.gnote:nth-child(n+2){border-top-width:1px}}
+
+/* --- Oversized section numerals --- */
+.bignum{position:absolute;right:-.06em;top:-.14em;font-family:'Archivo',var(--sans);font-stretch:125%;font-weight:900;font-size:clamp(7rem,18vw,17rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--hairline-2);z-index:0;pointer-events:none;user-select:none}
+.pillars .bignum,.on-dark .bignum{-webkit-text-stroke-color:rgba(255,255,255,.12)}
+.sec{position:relative;overflow:clip}
+.sec .wrap{position:relative;z-index:1}
+
+/* --- Horizontal project strip --- */
+.strip-wrap{position:relative}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 26px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab}
+.strip::-webkit-scrollbar{display:none}
+.strip.dragging{cursor:grabbing;scroll-snap-type:none}
+.strip .proj{flex:0 0 min(560px,78vw);scroll-snap-align:start;grid-column:unset}
+.strip .proj img{aspect-ratio:16/11}
+.strip .idx{position:absolute;left:20px;top:16px;z-index:3;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:rgba(255,255,255,.85)}
+.strip-nav{display:flex;gap:10px}
+.strip-btn{width:48px;height:48px;border:1px solid var(--hairline-2);border-radius:50%;display:grid;place-items:center;color:var(--navy);transition:all var(--dur-2) var(--ease);cursor:pointer}
+.strip-btn:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.strip-progress{height:2px;background:var(--hairline);margin:2px var(--gutter) 0;position:relative}
+.strip-progress i{position:absolute;left:0;top:0;bottom:0;background:var(--red);width:0%;transition:width .25s var(--ease)}
+
+/* --- Sticky split section --- */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.split .sticky{position:sticky;top:110px}
+.split .sticky h2{font-size:clamp(2rem,3.8vw,3.4rem)}
+@media (max-width:900px){.split{grid-template-columns:1fr}.split .sticky{position:static}}
+
+/* dim grid paper background for light sections */
+.gridpaper{background-image:linear-gradient(var(--paper-3) 1px,transparent 1px),linear-gradient(90deg,var(--paper-3) 1px,transparent 1px);background-size:56px 56px}

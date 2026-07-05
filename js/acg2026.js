@@ -74,3 +74,67 @@
     });
   });
 })();
+
+/* V3 — sheet-index rail active state, horizontal strip drag/nav/progress */
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    /* Rail */
+    var rail = document.querySelector('.rail');
+    if (rail && 'IntersectionObserver' in window) {
+      var links = rail.querySelectorAll('a[href^="#"]');
+      var map = {};
+      links.forEach(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        var el = id === 'top' ? document.querySelector('.hero') : document.getElementById(id);
+        if (el) map[id] = { a: a, el: el.closest('section') || el };
+      });
+      var secIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          links.forEach(function (l) { l.classList.remove('act'); });
+          Object.keys(map).forEach(function (id) {
+            if (map[id].el === en.target) map[id].a.classList.add('act');
+          });
+          rail.classList.toggle('on-dark', en.target.classList.contains('pillars') || en.target.classList.contains('hero'));
+        });
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      Object.keys(map).forEach(function (id) { secIO.observe(map[id].el); });
+    }
+
+    /* Strip */
+    var strip = document.querySelector('.strip');
+    if (strip) {
+      var prog = document.querySelector('.strip-progress i');
+      function upd() {
+        if (!prog) return;
+        var max = strip.scrollWidth - strip.clientWidth;
+        prog.style.width = (max > 0 ? (strip.scrollLeft / max) * 100 : 0) + '%';
+      }
+      strip.addEventListener('scroll', upd, { passive: true });
+      upd();
+      document.querySelectorAll('.strip-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          strip.scrollBy({ left: parseInt(btn.dataset.dir, 10) * (strip.clientWidth * 0.72), behavior: 'smooth' });
+        });
+      });
+      var down = false, startX = 0, startL = 0;
+      strip.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        down = true; startX = e.clientX; startL = strip.scrollLeft;
+        strip.classList.add('dragging');
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        strip.scrollLeft = startL - (e.clientX - startX);
+        if (Math.abs(e.clientX - startX) > 6) strip.dataset.dragged = '1';
+      });
+      window.addEventListener('pointerup', function () {
+        down = false; strip.classList.remove('dragging');
+        setTimeout(function () { delete strip.dataset.dragged; }, 50);
+      });
+      strip.addEventListener('click', function (e) {
+        if (strip.dataset.dragged) { e.preventDefault(); e.stopPropagation(); }
+      }, true);
+    }
+  });
+})();
