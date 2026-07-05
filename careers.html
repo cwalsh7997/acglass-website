@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260704">
   <meta name="description" content="Careers at American Commercial Glass — glazing project managers, foremen, estimators, and installers for our West Palm Beach, Naples, and Tampa offices.">
   <link rel="canonical" href="https://acglass.com/careers.html">
   <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="feed.xml">
@@ -32,24 +32,13 @@
   <meta name="twitter:description" content="Careers at American Commercial Glass — glazing project managers, foremen, estimators, and installers for our West Palm Beach, Naples, and Tampa offices.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
   <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
+    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
+    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
+    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
+    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
+    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
+    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
   </style>
 
 <script type="application/ld+json">
@@ -75,282 +64,241 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- GRAIN OVERLAY -->
-  <div class="grain"></div>
-
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
-
-  <!-- ========== NAVIGATION ========== -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" decoding="async" fetchpriority="high">
+  <!-- ========== Header ========== -->
+  <header class="hd hd-solid">
+    <div class="hd-in">
+      <a href="index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
       </a>
-
-      <div class="nav-links">
-        <a href="index.html">Home</a>
+      <nav class="hd-nav" aria-label="Primary">
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="about.html">Our Story</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="about.html">ACG Overview</a>
-            <a href="capabilities.html">Capabilities</a>
-            <a href="manufacturers.html">Manufacturer Partners</a>
-            <a href="careers.html">Careers</a>
-            <a href="portfolio.html">Portfolio</a>
-          </div>
-        </div>
+        <a href="locations.html">Locations</a>
+        <a href="about.html">About</a>
         <a href="manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-        <a href="send-plans.html" class="nav-cta">Send Us Plans</a>
-      </div>
-
-      <button class="nav-toggle" aria-label="Menu">
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="about.html">About</a>
+      <a href="manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
-  <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero" id="main-content">
-    <div class="container">
-      <div class="label" data-reveal><span class="line"></span> Careers at ACG</div>
-      <h1 data-reveal data-delay="100">Build With the Best <br> Glazing Team in <span class="accent">Florida.</span></h1>
-      <p data-reveal data-delay="200">ACG is growing — and we hire people who execute. If you want to work with a team that takes quality and schedule seriously, we want to hear from you.</p>
+  <main id="main-content">
+
+  <!-- ========== Interior hero ========== -->
+  <section class="p-hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Careers</span></nav>
+      <h1>Build with the <em>owners</em>.</h1>
+      <p class="p-sub">ACG is a growing, owner-operated commercial glazing subcontractor. No six layers of management — the people who run the company are on the license, in the estimates, and on the job. If you take quality and schedule seriously, we want to hear from you.</p>
+      <div class="p-hero-foot">
+        <span class="m"><b>Offices</b> WPB · Naples · Tampa · Nashville Q3 '26</span>
+        <span class="m"><b>Open roles</b> 6</span>
+        <span class="m"><b>Apply</b> connor@acglass.com</span>
+        <span class="m"><b>License</b> FL CGC #1531993</span>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 100px); align-items: start; margin-bottom: clamp(60px, 8vw, 100px);" data-reveal>
+  <!-- ========== Why ACG ========== -->
+  <section class="sec" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div class="feat-copy rv">
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">Why ACG</span></div>
+          <h2 id="why-h">A glazing company that actually performs.</h2>
+          <div class="prose">
+            <p>ACG exists because the glazing industry needed a contractor who actually performs. We built an operation around accountability, communication, and technical discipline — and we hire people who share those values.</p>
+            <p>We're growing. We're winning the projects that matter — complex commercial builds, high-profile developments, demanding GCs who know the difference between a reliable sub and a problem. And we're looking for people who want to grow with us.</p>
+            <p>You'll work directly with Rielly and Connor Walsh — the owners who founded the company in 2021 and still price, plan, and close out every project. Offices in West Palm Beach, Naples, and Tampa, operating throughout Florida, with Nashville, TN opening Q3 2026.</p>
+          </div>
+        </div>
+        <div class="feat-media rv-l">
+          <picture>
+            <source srcset="images/projects/wild-blue/wild-blue-storefront-progress.avif" type="image/avif">
+            <source srcset="images/projects/wild-blue/wild-blue-storefront-progress.webp" type="image/webp">
+            <img src="images/projects/wild-blue/wild-blue-storefront-progress.jpg" alt="ACG storefront installation in progress at the Wild Blue Clubhouse in Fort Myers, Florida" width="1440" height="1920" loading="lazy" decoding="async">
+          </picture>
+          <span class="tag">Wild Blue Clubhouse · Fort Myers, FL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Open positions ========== -->
+  <section class="sec svc gridpaper" aria-labelledby="roles-h">
+    <span class="bignum" aria-hidden="true">01</span>
+    <div class="wrap">
+      <div class="sec-head rv">
         <div>
-          <div class="label"><span class="line"></span> Why ACG</div>
-          <h2>A Glazing Company<br>Built Around <span class="accent">Excellence.</span></h2>
-          <div class="divider"></div>
-          <p class="text-lg" style="margin-bottom: 20px;">ACG exists because the glazing industry needed a contractor who actually performs. We built an operation around accountability, communication, and technical excellence — and we hire people who share those values.</p>
-          <p class="text-lg" style="margin-bottom: 20px;">We're growing. We're winning the projects that matter — complex commercial builds, high-profile developments, demanding GCs who know the difference between a reliable sub and a problem. And we're looking for people who want to grow with us.</p>
-          <p class="text-lg">Offices in West Palm Beach, Naples, and Tampa. Operating throughout Florida.</p>
+          <div class="k-wrap"><span class="k-label">Sheet HR-101 · Open positions</span></div>
+          <h2 id="roles-h">Current openings at ACG.</h2>
         </div>
-        <div>
-          <div class="label"><span class="line"></span> What We Offer</div>
-          <h2>Built for People<br>Who <span class="accent">Perform.</span></h2>
-          <div class="divider"></div>
-          <div class="value-block">
-            <div class="value-num">01</div>
-            <div>
-              <h4>Competitive Compensation</h4>
-              <p>Market-rate base compensation plus performance incentives tied to project outcomes and company growth.</p>
-            </div>
-          </div>
-          <div class="value-block">
-            <div class="value-num">02</div>
-            <div>
-              <h4>Real Responsibility</h4>
-              <p>We don't have six layers of management between you and decisions. If you're good, you'll be trusted with real project ownership quickly.</p>
-            </div>
-          </div>
-          <div class="value-block">
-            <div class="value-num">03</div>
-            <div>
-              <h4>Growth Trajectory</h4>
-              <p>ACG is growing consistently. Career advancement here is real — we promote from within and invest in people who perform.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  <section class="section">
-    <div class="container">
-      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
-        <div class="label"><span class="line"></span> Open Positions</div>
-        <h2>Current Openings at ACG.</h2>
-      </div>
-      <div class="grid grid-4">
-        <div class="service-card" data-reveal data-delay="0">
-          <div class="service-number">01</div>
-          <h4>Project Manager</h4>
-          <p>Lead glazing scope management from buyout through closeout. Commercial construction experience required. West Palm Beach, Naples, or Tampa based.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="100">
-          <div class="service-number">02</div>
-          <h4>Glazing Foreman</h4>
-          <p>Lead field installation crews on commercial projects throughout Florida. 5+ years glazing installation experience required.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="200">
-          <div class="service-number">03</div>
-          <h4>Estimator</h4>
-          <p>Prepare competitive takeoffs and scopes for commercial glazing projects. Construction estimating experience required.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="300">
-          <div class="service-number">04</div>
-          <h4>Shop Drawing Technician</h4>
-          <p>Prepare glazing shop drawings using AutoCAD. Commercial glazing or construction drafting experience preferred.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="400">
-          <div class="service-number">05</div>
-          <h4>Glazer / Installer</h4>
-          <p>Commercial glazing installation experience preferred. Training available for candidates with strong construction background.</p>
-        </div>
-        <div class="service-card" data-reveal data-delay="500">
-          <div class="service-number">06</div>
-          <h4>Project Coordinator</h4>
-          <p>Support project managers with submittal tracking, scheduling, and material procurement coordination. Construction office experience preferred.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div style="max-width: 680px;" data-reveal>
-        <div class="label"><span class="line"></span> Apply Now</div>
-        <h2>Send Us Your<br>Resume. <span class="accent">Direct.</span></h2>
-        <div class="divider"></div>
-        <p class="text-lg" style="margin-bottom: 24px;">We don't have a lengthy application portal. Send your resume and a brief note about the position you're interested in directly to our team. We respond to every qualified candidate.</p>
-        <a href="mailto:connor@acglass.com?subject=Career Inquiry — ACG" class="btn btn-primary btn-lg">
-          Email Your Resume
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <a class="sec-link" href="mailto:connor@acglass.com?subject=Career Inquiry — ACG">Email your resume
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">Send to: <a href="mailto:connor@acglass.com" style="color: var(--accent);">connor@acglass.com</a> &bull; Subject: Career Inquiry — [Position]</p>
+      </div>
+      <div class="sched rv" data-stagger>
+        <div class="sched-head" aria-hidden="true"><div>Ref</div><div>Role</div><div>Scope</div><div></div></div>
+        <a class="sched-row" href="mailto:connor@acglass.com?subject=Career%20Inquiry%20%E2%80%94%20Project%20Manager">
+          <div class="mk">ACG-01</div><div class="sy">Project Manager</div>
+          <div class="sp">Lead glazing scope management from buyout through closeout. Commercial construction experience required. West Palm Beach, Naples, or Tampa based.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="mailto:connor@acglass.com?subject=Career%20Inquiry%20%E2%80%94%20Glazing%20Foreman">
+          <div class="mk">ACG-02</div><div class="sy">Glazing Foreman</div>
+          <div class="sp">Lead field installation crews on commercial projects throughout Florida. 5+ years glazing installation experience required.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="mailto:connor@acglass.com?subject=Career%20Inquiry%20%E2%80%94%20Estimator">
+          <div class="mk">ACG-03</div><div class="sy">Estimator</div>
+          <div class="sp">Prepare competitive takeoffs and scopes for commercial glazing projects. Construction estimating experience required.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="mailto:connor@acglass.com?subject=Career%20Inquiry%20%E2%80%94%20Shop%20Drawing%20Technician">
+          <div class="mk">ACG-04</div><div class="sy">Shop Drawing Technician</div>
+          <div class="sp">Prepare glazing shop drawings using AutoCAD. Commercial glazing or construction drafting experience preferred.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="mailto:connor@acglass.com?subject=Career%20Inquiry%20%E2%80%94%20Glazer%20%2F%20Installer">
+          <div class="mk">ACG-05</div><div class="sy">Glazer / Installer</div>
+          <div class="sp">Commercial glazing installation experience preferred. Training available for candidates with strong construction background.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
+        <a class="sched-row" href="mailto:connor@acglass.com?subject=Career%20Inquiry%20%E2%80%94%20Project%20Coordinator">
+          <div class="mk">ACG-06</div><div class="sy">Project Coordinator</div>
+          <div class="sp">Support project managers with submittal tracking, scheduling, and material procurement coordination. Construction office experience preferred.</div>
+          <div class="ar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== CTA ========== -->
-  <section class="cta-section">
-    <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
-      <h2>Have Plans?<br>We'll Have a Scope in <span class="accent">48 Hours.</span></h2>
-      <p>No chasing. No ghosting. Send your drawings and our team delivers a detailed scope, system recommendations, and a complete Division 08 scope breakdown — fast.</p>
-      <a href="send-plans.html" class="btn btn-primary btn-lg">
-        Send Us Plans
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ========== What we offer ========== -->
+  <section class="sec pillars slant gnotes" aria-labelledby="offer-h">
+    <span class="bignum" aria-hidden="true">02</span>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet HR-201 · What we offer</span></div>
+          <h2 id="offer-h">Built for people who perform.</h2>
+        </div>
+      </div>
+      <div class="gnotes-grid rv" data-stagger>
+        <div class="gnote">
+          <h3>Competitive compensation</h3>
+          <p>Market-rate base compensation plus performance incentives tied to project outcomes and company growth.</p>
+        </div>
+        <div class="gnote">
+          <h3>Real responsibility</h3>
+          <p>We don't have six layers of management between you and decisions. If you're good, you'll be trusted with real project ownership quickly.</p>
+        </div>
+        <div class="gnote">
+          <h3>Growth trajectory</h3>
+          <p>ACG is growing consistently. Career advancement here is real — we promote from within and invest in people who perform.</p>
+        </div>
+        <div class="gnote">
+          <h3>Direct line to the owners</h3>
+          <p>Rielly and Connor Walsh run the company day to day. Your work is seen by the people who own the outcome — not filtered through a regional office.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== How to apply ========== -->
+  <section class="sec" aria-labelledby="apply-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Apply now</span></div>
+          <h2 id="apply-h">Send us your resume. Direct.</h2>
+        </div>
+      </div>
+      <div class="prose rv">
+        <p>We don't have a lengthy application portal. Send your resume and a brief note about the position you're interested in directly to our team. We respond to every qualified candidate.</p>
+        <p style="margin-top:1.1em"><a href="mailto:connor@acglass.com?subject=Career Inquiry — ACG" class="btn btn-navy" style="border-bottom:0">Email your resume
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+        <p style="margin-top:16px;color:var(--muted);font-size:.9rem">Send to: <a href="mailto:connor@acglass.com">connor@acglass.com</a> · Subject: Career Inquiry — [Position]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA band ========== -->
+  <section class="cta-band slant-x" aria-labelledby="cta-h">
+    <div class="cta-in">
+      <div class="rv-l">
+        <h2 id="cta-h">Ready to build with the owners?</h2>
+        <p>Email your resume and the role you're after — you'll hear back from the people who make the hiring decision.</p>
+      </div>
+      <a href="mailto:connor@acglass.com?subject=Career Inquiry — ACG" class="btn">Email your resume
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-    <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/index.html" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices; Nashville, TN opening Q3 2026. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
+  </main>
 
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/ai-operations-whitepaper.html">AI White Paper</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
+  <!-- ========== Footer ========== -->
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
 
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/west-palm-beach-commercial-glazing.html">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/tampa-commercial-glazing.html">Tampa</a>
-            <a href="/commercial-glazing-nashville-tn.html">Nashville, TN (Q3 2026)</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              connor@acglass.com
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/american-commercial-glass-inc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="qualifications.html">Qualifications</a></li>
+          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="locations.html">All service areas →</a></li>
+        </ul>
       </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578 &nbsp;·&nbsp; WBE &nbsp;·&nbsp; SBE</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
+    </div>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js"></script>
-  <script>
-    (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
-  </script>
+  <script src="js/acg2026.js?v=20260704" defer></script>
 </body>
 </html>
