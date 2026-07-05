@@ -57,3 +57,20 @@
     }
   });
 })();
+
+/* Magnetic CTAs — subtle pull toward cursor (desktop, fine pointers only) */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.btn-red, .btn-navy, .hd-cta, .cta-in .btn').forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = (e.clientX - r.left - r.width / 2) / r.width;
+        var y = (e.clientY - r.top - r.height / 2) / r.height;
+        btn.style.transform = 'translate(' + (x * 6) + 'px,' + (y * 5) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    });
+  });
+})();
