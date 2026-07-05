@@ -60,7 +60,7 @@
   --border: rgba(255,255,255,0.06);
   --border-hover: rgba(255,255,255,0.12);
 
-  --red: #E21B2C;
+  --red: #E11320;
   --red-glow: rgba(226, 27, 44, 0.4);
   --red-soft: rgba(226, 27, 44, 0.12);
 
@@ -3434,3 +3434,28 @@ textarea:focus-visible,
   .hp-trust-seal{ position:static; display:inline-block; margin-top:24px; }
   .hp-portfolio-grid{ grid-template-columns:1fr 1fr; }
 }
+
+/* ============================================================
+   2026 HARMONY LAYER — ties legacy long-tail pages to the
+   Drawing Set system (typography, brand tokens, new footer)
+   ============================================================ */
+@font-face{font-family:'Archivo';src:url('../fonts/archivo-variable.woff2') format('woff2');font-weight:100 900;font-stretch:62% 125%;font-display:swap;font-style:normal}
+:root{--red:#E11320}
+h1,h2{font-family:'Archivo','Inter',-apple-system,sans-serif;font-stretch:115%;font-weight:800;letter-spacing:-.015em}
+h3{font-family:'Archivo','Inter',-apple-system,sans-serif;font-stretch:110%;font-weight:750}
+
+/* Drawing Set footer (swapped in sitewide) */
+.ft{background:#081A36;color:rgba(255,255,255,.78);font-size:.92rem;font-family:'Inter',-apple-system,sans-serif}
+.ft a{color:inherit;text-decoration:none;transition:color .18s}
+.ft a:hover{color:#fff}
+.ft-word{overflow:hidden;padding:clamp(30px,4vw,56px) 0 0;user-select:none;pointer-events:none}
+.ft-word span{display:block;font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(1.5rem,4.4vw,4.1rem);line-height:.9;letter-spacing:0;text-transform:uppercase;white-space:nowrap;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.17)}
+.ft-main{max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px) 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.ft-brand img{height:30px;width:auto;margin-bottom:18px}
+.ft-brand p{font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.6);max-width:34ch}
+.ft h4{color:#fff;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:650;margin-bottom:16px}
+.ft ul{list-style:none;display:grid;gap:10px;margin:0;padding:0}
+.ft-legal{border-top:1px solid rgba(255,255,255,.12)}
+.ft-legal-in{max-width:1280px;margin:0 auto;padding:20px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.08em;color:rgba(255,255,255,.5)}
+@media (max-width:900px){.ft-main{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.ft-main{grid-template-columns:1fr}}
