@@ -228,6 +228,66 @@
     </div>
   </section>
 
+  <!-- ========== Storefront vs curtainwall diagram ========== -->
+  <section class="sec" aria-labelledby="line-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <div class="k-wrap"><span class="k-label">Sheet 08 41 13 · Where the line is</span></div>
+          <h2 id="line-h">Storefront stops where curtain wall starts.</h2>
+        </div>
+      </div>
+      <figure class="rv" style="margin:clamp(20px,3vw,36px) 0 0" role="img" aria-label="Building elevation showing that storefront glazing (spec 08 41 13) occupies the ground floor, sits on the slab, spans a single story, and carries wind load down through its sill; curtain wall (spec 08 44 13) occupies the floors above, hangs off the slab edges, and spans multiple floors.">
+<svg viewBox="0 0 1200 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <style>
+    .sf-mono{font-family:'JetBrains Mono',monospace;letter-spacing:.13em;text-transform:uppercase}
+    .sf-big{font-family:'Archivo','Inter',sans-serif;font-weight:800}
+    .sf-body{font-family:'Inter',sans-serif}
+  </style>
+  <!-- building elevation -->
+  <!-- curtain wall zone (upper floors) -->
+  <rect x="80" y="56" width="230" height="260" fill="rgba(14,40,79,.06)" stroke="#0E284F" stroke-width="1.5"/>
+  <g stroke="rgba(14,40,79,.28)" stroke-width="1">
+    <line x1="80" y1="121" x2="310" y2="121"/><line x1="80" y1="186" x2="310" y2="186"/><line x1="80" y1="251" x2="310" y2="251"/>
+    <line x1="157" y1="56" x2="157" y2="316"/><line x1="233" y1="56" x2="233" y2="316"/>
+  </g>
+  <!-- storefront zone (ground floor) -->
+  <rect x="80" y="316" width="230" height="64" fill="rgba(225,19,32,.12)" stroke="#E11320" stroke-width="2"/>
+  <g stroke="rgba(225,19,32,.4)" stroke-width="1"><line x1="157" y1="316" x2="157" y2="380"/><line x1="233" y1="316" x2="233" y2="380"/></g>
+  <!-- ground line + hatch -->
+  <line x1="50" y1="380" x2="340" y2="380" stroke="#111E33" stroke-width="2.5"/>
+  <g stroke="#66748C" stroke-width="1">
+    <line x1="70" y1="380" x2="58" y2="394"/><line x1="110" y1="380" x2="98" y2="394"/><line x1="150" y1="380" x2="138" y2="394"/><line x1="190" y1="380" x2="178" y2="394"/><line x1="230" y1="380" x2="218" y2="394"/><line x1="270" y1="380" x2="258" y2="394"/><line x1="310" y1="380" x2="298" y2="394"/>
+  </g>
+  <!-- load-down arrow in storefront -->
+  <g stroke="#E11320" stroke-width="1.5" fill="none"><path d="M195 328 v40"/><path d="M189 361 l6 8 6-8"/></g>
+  <!-- leader lines -->
+  <line x1="310" y1="150" x2="470" y2="120" stroke="#0E284F" stroke-width="1"/>
+  <line x1="310" y1="348" x2="470" y2="300" stroke="#E11320" stroke-width="1"/>
+  <!-- curtain wall callout -->
+  <g>
+    <text x="470" y="96" class="sf-mono" font-size="12" fill="#0E284F">08 44 13</text>
+    <text x="470" y="126" class="sf-big" font-size="26" fill="#111E33">Curtain wall</text>
+    <text x="470" y="156" class="sf-body" font-size="15" fill="#3A465C">Hangs off the slab edges. Spans multiple</text>
+    <text x="470" y="178" class="sf-body" font-size="15" fill="#3A465C">floors as one continuous skin. Mid- and high-rise.</text>
+  </g>
+  <!-- storefront callout -->
+  <g>
+    <text x="470" y="276" class="sf-mono" font-size="12" fill="#E11320">08 41 13</text>
+    <text x="470" y="306" class="sf-big" font-size="26" fill="#111E33">Storefront</text>
+    <text x="470" y="336" class="sf-body" font-size="15" fill="#3A465C">Sits on the slab. Single story. Wind load runs</text>
+    <text x="470" y="358" class="sf-body" font-size="15" fill="#3A465C">down through the sill, which also weeps. ~10–14 ft.</text>
+  </g>
+  <!-- title block -->
+  <g class="sf-mono" font-size="11" fill="#66748C">
+    <rect x="80" y="410" width="360" height="26" fill="none" stroke="#DFE5EE"/>
+    <text x="94" y="427">FIG. 01 — STOREFRONT vs CURTAIN WALL, BY HEIGHT</text>
+  </g>
+</svg>
+      </figure>
+    </div>
+  </section>
+
   <!-- ========== Variant schedule ========== -->
   <section class="sec svc gridpaper" aria-labelledby="var-h">
     <span class="bignum" aria-hidden="true">02</span>
