@@ -228,6 +228,45 @@
     </div>
   </section>
 
+  <!-- ========== Protective vs resistive diagram ========== -->
+  <section class="sec" aria-labelledby="cat-h">
+    <div class="wrap">
+      <div class="sec-head rv"><div>
+        <div class="k-wrap"><span class="k-label">Sheet 08 88 00 · The distinction that drives the spec</span></div>
+        <h2 id="cat-h">One blocks heat. One doesn't.</h2>
+      </div></div>
+      <figure class="rv" style="margin:clamp(20px,3vw,36px) 0 0" role="img" aria-label="Fire-protective glazing blocks flames and smoke but transmits radiant heat, is rated 20 to 45 minutes, and covers doors, vision lites and transoms. Fire-resistive glazing blocks flames, smoke and radiant heat, is rated 60 to 120 minutes and tested to ASTM E119, counts as a wall assembly, and is used at stairwells and area separations.">
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+  <style>.fr-mono{font-family:'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase}.fr-big{font-family:'Archivo','Inter',sans-serif;font-weight:800}.fr-body{font-family:'Inter',sans-serif}</style>
+  <!-- protective -->
+  <rect x="60" y="56" width="520" height="272" rx="4" fill="rgba(14,40,79,.04)" stroke="#DFE5EE"/>
+  <rect x="150" y="96" width="16" height="150" fill="rgba(14,40,79,.12)" stroke="#0E284F"/>
+  <text x="96" y="264" class="fr-mono" font-size="11" fill="#E11320">flame + smoke blocked</text>
+  <!-- heat passes through -->
+  <g stroke="#E11320" stroke-width="2" fill="none"><path d="M96 300 h120"/><path d="M210 294 l8 6 -8 6"/></g>
+  <text x="228" y="305" class="fr-mono" font-size="11" fill="#E11320">heat passes through</text>
+  <text x="300" y="120" class="fr-mono" font-size="12" fill="#66748C">Fire-protective</text>
+  <text x="300" y="150" class="fr-big" font-size="24" fill="#111E33">20 – 45 min</text>
+  <text x="300" y="182" class="fr-body" font-size="14" fill="#3A465C">Doors, vision lites, transoms,</text>
+  <text x="300" y="202" class="fr-body" font-size="14" fill="#3A465C">small corridor openings.</text>
+  <!-- resistive -->
+  <rect x="620" y="56" width="520" height="272" rx="4" fill="rgba(14,40,79,.04)" stroke="#DFE5EE"/>
+  <rect x="710" y="96" width="22" height="150" fill="rgba(225,19,32,.1)" stroke="#E11320" stroke-width="1.6"/>
+  <text x="656" y="264" class="fr-mono" font-size="11" fill="#E11320">flame + smoke + heat blocked</text>
+  <!-- heat blocked -->
+  <g stroke="#E11320" stroke-width="2" fill="none"><path d="M656 300 h58"/></g>
+  <line x1="720" y1="292" x2="734" y2="308" stroke="#E11320" stroke-width="2.5"/><line x1="734" y1="292" x2="720" y2="308" stroke="#E11320" stroke-width="2.5"/>
+  <text x="748" y="305" class="fr-mono" font-size="11" fill="#66748C">radiant heat stopped</text>
+  <text x="860" y="120" class="fr-mono" font-size="12" fill="#66748C">Fire-resistive · ASTM E119</text>
+  <text x="860" y="150" class="fr-big" font-size="24" fill="#111E33">60 / 90 / 120 min</text>
+  <text x="860" y="182" class="fr-body" font-size="14" fill="#3A465C">Counts as a wall assembly:</text>
+  <text x="860" y="202" class="fr-body" font-size="14" fill="#3A465C">stairwells, area separations.</text>
+  <g class="fr-mono" font-size="11" fill="#66748C"><rect x="60" y="360" width="360" height="26" fill="none" stroke="#DFE5EE"/><text x="74" y="377">FIG. 01 — FIRE-PROTECTIVE vs FIRE-RESISTIVE</text></g>
+</svg>
+      </figure>
+    </div>
+  </section>
+
   <!-- ========== Assembly schedule ========== -->
   <section class="sec svc gridpaper" aria-labelledby="sys-h">
     <span class="bignum" aria-hidden="true">02</span>
