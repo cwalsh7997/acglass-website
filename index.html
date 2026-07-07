@@ -600,6 +600,27 @@
     </div>
   </div>
 
+  <!-- ========== Proof stats ========== -->
+  <style>
+    .proofband{border-bottom:1px solid var(--line);background:var(--void-2)}
+    .proofband-in{max-width:var(--w-max);margin:0 auto;padding:clamp(30px,4.2vw,54px) var(--gutter);display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .proofband .pstat{position:relative;padding-left:20px}
+    .proofband .pstat::before{content:"";position:absolute;left:0;top:4px;bottom:6px;width:1px;background:var(--line-2)}
+    .proofband .pv{font-family:var(--disp);font-weight:800;font-size:clamp(1.35rem,3.2vw,2.6rem);color:#fff;letter-spacing:-.012em;line-height:1;white-space:nowrap}
+    .proofband .pu{color:var(--red-2)}
+    .proofband .psep{color:var(--faint);font-weight:400;margin:0 2px}
+    .proofband .pl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:13px;line-height:1.35}
+    @media(max-width:680px){.proofband-in{grid-template-columns:1fr 1fr;gap:26px 20px}}
+  </style>
+  <section class="proofband" aria-label="ACG track record">
+    <div class="proofband-in">
+      <div class="pstat"><div class="pv">350<span class="pu">+</span></div><div class="pl">Commercial projects delivered</div></div>
+      <div class="pstat"><div class="pv">1,000,000<span class="pu">+</span></div><div class="pl">SF of glass installed</div></div>
+      <div class="pstat"><div class="pv">$3M<span class="psep">/</span>$6M</div><div class="pl">Bonded · Arch A+ XV</div></div>
+      <div class="pstat"><div class="pv">Div 08</div><div class="pl">Single-source, self-performed</div></div>
+    </div>
+  </section>
+
   <!-- ========== Manufacturer rail ========== -->
   <section class="partners" aria-label="Manufacturer relationships">
     <div class="partners-in">
