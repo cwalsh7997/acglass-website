@@ -37,6 +37,7 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css?v=20260705">
+  <link rel="stylesheet" href="/css/acg-chrome.css">
 
 <script type="application/ld+json">
 {
@@ -406,18 +407,32 @@
 </head>
 <body>
 
-<nav class="wpb-nav">
-  <div class="wpb-nav-inner">
-    <a href="/" class="wpb-nav-logo"><img src="/images/acg-logo-nav@2x.png" alt="American Commercial Glass" width="338" height="72" loading="lazy" decoding="async"></a>
-    <div class="wpb-nav-links">
+<header class="hd">
+    <div class="hd-in">
+      <a href="/index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/bid.html" class="hd-cta" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'nav_get_bid',source_page:'/'});">Get a 48-Hour Bid</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
       <a href="/portfolio.html">Portfolio</a>
       <a href="/services.html">Services</a>
-      <a href="/storefront-glazier-west-palm-beach-florida/">All Cities</a>
+      <a href="/locations.html">Locations</a>
       <a href="/about.html">About</a>
-      <a href="/send-plans.html" class="wpb-nav-cta">Send Us Plans</a>
-    </div>
-  </div>
-</nav>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/bid.html" class="hd-mobile-cta" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'nav_get_bid_mobile',source_page:'/'});">Get a 48-Hour Bid</a>
+    </nav>
+  </header>
 
 <header class="wpb-hero">
   <div class="wpb-hero-bg">
@@ -783,5 +798,6 @@
     </div>
   </footer>
 
+  <script src="/js/acg-chrome.js" defer></script>
 </body>
 </html>
