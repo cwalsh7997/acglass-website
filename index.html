@@ -634,6 +634,32 @@
     </div>
   </section>
 
+  <!-- ========== Reach: install + distribute ========== -->
+  <style>
+    .reachband{border-bottom:1px solid var(--line);background:var(--void-2)}
+    .reachband-in{max-width:var(--w-max);margin:0 auto;padding:clamp(30px,4vw,50px) var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px)}
+    .reachcol{position:relative;padding-left:22px}
+    .reachcol::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--red)}
+    .reachcol .rk{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--day)}
+    .reachcol .rv{font-family:var(--disp);font-weight:800;font-size:clamp(1.35rem,2.6vw,2rem);color:#fff;letter-spacing:-.01em;margin-top:10px;line-height:1.05}
+    .reachcol .rl{font-family:var(--sans);font-size:.92rem;line-height:1.6;color:var(--muted);margin-top:12px;max-width:42ch}
+    @media(max-width:680px){.reachband-in{grid-template-columns:1fr;gap:26px}}
+  </style>
+  <section class="reachband" aria-label="Where ACG installs and distributes">
+    <div class="reachband-in">
+      <div class="reachcol">
+        <span class="rk">We install</span>
+        <div class="rv">Florida, statewide</div>
+        <div class="rl">West Palm Beach HQ, Naples, and Tampa, with a Nashville, TN office opening Q3 2026. Licensed Division 08 glazing on the ground, self-performed.</div>
+      </div>
+      <div class="reachcol">
+        <span class="rk">We supply &amp; distribute</span>
+        <div class="rv">Across the Southeast</div>
+        <div class="rl">ESWindows / Tecnoglass and Euro-Wall glazing systems, moved to general contractors and dealers well beyond our own install footprint.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== Services / Glazing schedule ========== -->
   <section class="sec svc gridpaper" aria-labelledby="svc-h">
     <span class="bignum" aria-hidden="true">01</span>
