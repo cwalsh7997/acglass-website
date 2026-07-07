@@ -800,27 +800,39 @@
       .hero-eyebrow .pulse { animation: none; }
     }
   </style>
+  <link rel="stylesheet" href="/css/acg-chrome.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- ============ NAV ============ -->
-  <nav class="lp-nav">
-    <div class="lp-nav-inner">
-      <a class="lp-logo" href="index.html">
-        <img height="72" width="338" src="images/acg-logo-nav@2x.png" alt="ACG" loading="eager" fetchpriority="high" decoding="async">
-        <span class="lp-logo-text">American Commercial Glass</span>
+  <header class="hd">
+    <div class="hd-in">
+      <a href="/index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
       </a>
-      <div class="lp-nav-links">
-        <a href="#proof">Proof</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a class="lp-nav-cta" href="#contact">Send Plans →</a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/services.html">Services</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
   <main id="main">
   <!-- ============ HERO ============ -->
@@ -1208,5 +1220,6 @@
     // Numbers are visually static — no need to animate ints.
     // Keep this for any future numeric stats with data-count attribute.
   </script>
+  <script src="/js/acg-chrome.js" defer></script>
 </body>
 </html>
