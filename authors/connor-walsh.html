@@ -25,6 +25,7 @@
   <link rel="icon" type="image/png" href="/images/favicon-32.png">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css?v=20260705">
+  <link rel="stylesheet" href="/css/acg-chrome.css">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -128,16 +129,32 @@
 </head>
 <body>
 
-<nav class="nav scrolled"><div class="nav-inner">
-  <a href="/" class="nav-logo"><img src="/images/acg-logo-nav@2x.png" alt="ACG — American Commercial Glass" width="338" height="72" fetchpriority="high" decoding="async" loading="eager" style="height:36px;width:auto;"></a>
-  <div class="nav-links">
-    <a href="/portfolio.html">Portfolio</a>
-    <a href="/services.html">Services</a>
-    <a href="/blog/">Blog</a>
-    <a href="/about.html">About</a>
-    <a href="/send-plans.html" class="nav-cta" style="background:#e11320;color:#fff;padding:10px 18px;border-radius:6px;font-weight:600;">Send Plans</a>
-  </div>
-</div></nav>
+<header class="hd">
+    <div class="hd-in">
+      <a href="/index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/services.html">Services</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
 <header class="author-hero">
   <div class="author-hero-inner">
@@ -242,5 +259,6 @@
     </div>
   </footer>
 
+  <script src="/js/acg-chrome.js" defer></script>
 </body>
 </html>

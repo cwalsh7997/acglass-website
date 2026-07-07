@@ -10,23 +10,39 @@
   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="../fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20260705">
+  <link rel="stylesheet" href="/css/acg-chrome.css">
   <link rel="stylesheet" href="dealer.css?v=1">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="grain"></div>
 
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <img src="../images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async" width="338" height="72">
+  <header class="hd">
+    <div class="hd-in">
+      <a href="/index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
       </a>
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../become-a-dealer.html">Become a Dealer</a>
-      </div>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/services.html">Services</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
   <main id="main-content" class="admin-shell">
     <div style="margin-bottom:24px;">
@@ -390,5 +406,6 @@
       </div>
     </div>
   </footer>
+  <script src="/js/acg-chrome.js" defer></script>
 </body>
 </html>

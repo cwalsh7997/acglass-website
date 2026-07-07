@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://acglass.com/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css?v=20260705">
+  <link rel="stylesheet" href="/css/acg-chrome.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,14 +73,32 @@
 }
 </script>
 </head>
-<body><nav class="nav scrolled"><div class="nav-inner">
-<a href="/index.html" class="nav-logo"><img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG" class="logo-img" loading="lazy" decoding="async"></a>
-<div class="nav-links">
-<a href="/index.html">Home</a><a href="/case-studies/">Case Studies</a><a href="/tools/">Tools</a>
-<a href="/resources/">Resources</a>
-<a href="/send-plans.html" class="nav-cta">Send Us Plans</a>
-</div>
-</div></nav><section style="background:linear-gradient(180deg,#050A12 0%,#0e284f 100%);padding:100px 0 60px;">
+<body><header class="hd">
+    <div class="hd-in">
+      <a href="/index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/services.html">Services</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header><section style="background:linear-gradient(180deg,#050A12 0%,#0e284f 100%);padding:100px 0 60px;">
 <div class="container">
 <div class="eyebrow" style="color:#E11320;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;">Service Areas &middot; FL + TN</div>
 <h1 style="color:#fff;font-size:clamp(36px,5vw,56px);margin:0 0 20px;">ACG Service Areas Map</h1>
@@ -221,5 +240,6 @@
         <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
-  </footer></body>
+  </footer>  <script src="/js/acg-chrome.js" defer></script>
+</body>
 </html>

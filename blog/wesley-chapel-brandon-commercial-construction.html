@@ -23,6 +23,7 @@
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20260705">
+  <link rel="stylesheet" href="/css/acg-chrome.css">
   <meta name="description" content="Wesley Chapel and Brandon — two of Florida's fastest-growing commercial construction markets. Glazing trends and 2026 outlook from ACG.">
   <meta name="author" content="Connor Walsh, ACG">
   <link rel="canonical" href="https://acglass.com/blog/wesley-chapel-brandon-commercial-construction.html">
@@ -204,42 +205,32 @@
   <div class="cursor-ring"></div>
 
   <!-- ========== NAVIGATION ========== -->
-  <nav class="nav scrolled">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <img height="72" width="338" src="../images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="eager" fetchpriority="high" decoding="async">
+  <header class="hd">
+    <div class="hd-in">
+      <a href="/index.html" class="hd-logo" aria-label="ACG — American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
       </a>
-
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../portfolio.html">Portfolio</a>
-        <a href="../services.html">Services</a>
-        <a href="../about.html">About</a>
-        <a href="../manufacturers.html">Partners</a>
-        <div class="nav-dropdown">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="nav-dropdown-menu">
-            <a href="/storefront-glazier-palm-beach-florida/">Palm Beach</a>
-            <a href="/storefront-glazier-miami-florida/">Miami</a>
-            <a href="/storefront-glazier-fort-lauderdale-florida/">Fort Lauderdale</a>
-            <a href="/storefront-glazier-boca-raton-florida/">Boca Raton</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/storefront-glazier-orlando-florida/">Orlando</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-fort-myers-florida/">Fort Myers</a>
-            <a href="/storefront-glazier-sarasota-florida/">Sarasota</a>
-            <a href="../commercial-glazing-jacksonville.html">Jacksonville</a>
-          </div>
-        </div>
-
-        <a href="../contact.html" class="nav-cta">Send Us Plans</a>
-      </div>
-
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/send-plans.html" class="hd-cta">Send Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/services.html">Services</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/send-plans.html" class="hd-mobile-cta">Send Plans</a>
+    </nav>
+  </header>
 
   <!-- ========== PAGE HERO ========== -->
   <section class="page-hero">
@@ -468,5 +459,6 @@
   <script>
     (function(){var d=document.querySelector('.nav-dropdown'),t=d&&d.querySelector('.nav-dropdown-trigger');if(t&&d){t.addEventListener('click',function(e){e.stopPropagation();d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});document.addEventListener('click',function(e){if(!d.contains(e.target)){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){d.classList.remove('open');t.setAttribute('aria-expanded','false')}});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})}})();
   </script>
+  <script src="/js/acg-chrome.js" defer></script>
 </body>
 </html>
