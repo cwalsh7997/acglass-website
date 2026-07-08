@@ -69,12 +69,20 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Florida Commercial Glass and Glazing Statistics 2026",
-  "description": "Compiled industry statistics for Florida commercial glazing: market size, pricing benchmarks, schedule benchmarks, hurricane glass adoption.",
-  "creator": {
-    "@id": "https://acglass.com/florida-commercial-glass-statistics-2026/#org"
-  },
+  "description": "Compiled industry statistics for Florida commercial glazing: hurricane exposure, building-code and product-approval facts, glazier labor data, and installation benchmarks. Each figure is sourced to NOAA, the Florida Building Code, ASCE 7-22, Miami-Dade Product Control, BLS, and US Census.",
+  "creator": { "@id": "https://acglass.com/#organization" },
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "datePublished": "2026-05-23"
+  "datePublished": "2026-05-23",
+  "dateModified": "2026-07-07",
+  "isAccessibleForFree": true,
+  "keywords": ["Florida commercial glazing", "HVHZ", "hurricane impact glass", "Miami-Dade NOA", "ASCE 7-22", "Florida Building Code", "curtain wall", "storefront"],
+  "variableMeasured": [
+    { "@type": "PropertyValue", "name": "Florida hurricane landfalls since 1851", "value": "120-125", "measurementTechnique": "NOAA HURDAT2" },
+    { "@type": "PropertyValue", "name": "High-Velocity Hurricane Zone counties", "value": "2 (Miami-Dade, Broward)" },
+    { "@type": "PropertyValue", "name": "Peak ultimate design wind speed", "value": "~200 mph (Florida Keys, ASCE 7-22)" },
+    { "@type": "PropertyValue", "name": "Governing building code", "value": "Florida Building Code 8th Edition (2023)" },
+    { "@type": "PropertyValue", "name": "Glazier occupation code", "value": "BLS SOC 47-2121" }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -129,10 +137,105 @@
 <div class="container">
 <div class="eyebrow" style="color:#E11320;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;">Data &middot; Compiled 2026</div>
 <h1 style="color:#fff;font-size:clamp(36px,5vw,56px);margin:0 0 20px;">Florida Commercial Glass &amp; Glazing Statistics (2026)</h1>
-<p style="color:rgba(255,255,255,0.85);font-size:19px;line-height:1.6;max-width:900px;">Industry stats, market sizing, hurricane glass adoption, code milestones, and construction sector benchmarks for Florida commercial glazing. Compiled from US Census, BLS, FBC, NOAA, and ACG project records. Free to cite — attribution to American Commercial Glass appreciated.</p>
+<p style="color:rgba(255,255,255,0.85);font-size:19px;line-height:1.6;max-width:900px;">Industry stats, hurricane glass adoption, code milestones, and construction benchmarks for Florida commercial glazing — each figure sourced and dated. Compiled from US Census, BLS, the Florida Building Code, NOAA, and American Commercial Glass project records. Free to cite — attribution to American Commercial Glass appreciated. Last reviewed July 2026.</p>
 </div>
 </section>
 
+<section style="padding:56px 0;background:#fff;">
+<div class="container">
+
+<!-- Headline figures -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:48px;">
+  <div style="border:1px solid #e6e9ef;border-radius:12px;padding:24px;">
+    <div style="font-size:44px;font-weight:800;color:#0e284f;line-height:1;">120+</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e11320;text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;">Hurricane landfalls</div>
+    <p style="margin:0;font-size:14px;color:#41506a;line-height:1.5;">Florida has recorded more hurricane landfalls than any other US state — roughly 120–125 since 1851.</p>
+  </div>
+  <div style="border:1px solid #e6e9ef;border-radius:12px;padding:24px;">
+    <div style="font-size:44px;font-weight:800;color:#0e284f;line-height:1;">2</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e11320;text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;">HVHZ counties</div>
+    <p style="margin:0;font-size:14px;color:#41506a;line-height:1.5;">Miami-Dade and Broward are the two High-Velocity Hurricane Zone counties, where large-missile impact glazing is mandatory.</p>
+  </div>
+  <div style="border:1px solid #e6e9ef;border-radius:12px;padding:24px;">
+    <div style="font-size:44px;font-weight:800;color:#0e284f;line-height:1;">~200<span style="font-size:22px;"> mph</span></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e11320;text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;">Peak design wind</div>
+    <p style="margin:0;font-size:14px;color:#41506a;line-height:1.5;">Ultimate design wind speeds reach roughly 200 mph in the Florida Keys under ASCE 7-22 — among the highest in the US.</p>
+  </div>
+  <div style="border:1px solid #e6e9ef;border-radius:12px;padding:24px;">
+    <div style="font-size:44px;font-weight:800;color:#0e284f;line-height:1;">1992</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#e11320;text-transform:uppercase;letter-spacing:.08em;margin:10px 0 6px;">Impact-code origin</div>
+    <p style="margin:0;font-size:14px;color:#41506a;line-height:1.5;">Hurricane Andrew drove the impact-glazing standards that became the statewide Florida Building Code in 2002.</p>
+  </div>
+</div>
+
+<!-- Hurricane & code data -->
+<h2 style="font-size:28px;color:#0e284f;margin:0 0 8px;">Hurricane exposure &amp; code</h2>
+<p style="color:#41506a;max-width:820px;margin:0 0 20px;line-height:1.6;">Florida's glazing market is shaped by wind. The state's exposure and its code response are the two variables that decide which products a commercial building can use.</p>
+<div style="overflow-x:auto;margin-bottom:44px;">
+<table style="width:100%;border-collapse:collapse;font-size:15px;min-width:640px;">
+<thead><tr style="background:#0e284f;color:#fff;text-align:left;">
+  <th style="padding:12px 14px;">Metric</th><th style="padding:12px 14px;">Value</th><th style="padding:12px 14px;">Source</th></tr></thead>
+<tbody>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">US-rank for hurricane landfalls</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">#1 (≈120–125 since 1851)</td><td style="padding:11px 14px;color:#6b7688;">NOAA HURDAT2 / NHC</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Seasons since 1851 with no FL storm impact</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">~18</td><td style="padding:11px 14px;color:#6b7688;">NOAA / NHC</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">High-Velocity Hurricane Zone counties</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">Miami-Dade, Broward</td><td style="padding:11px 14px;color:#6b7688;">Florida Building Code 8th ed.</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Governing code edition (2026)</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">FBC 8th Edition (2023)</td><td style="padding:11px 14px;color:#6b7688;">floridabuilding.org</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Wind-load reference standard</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">ASCE 7-22</td><td style="padding:11px 14px;color:#6b7688;">ASCE / FBC</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">HVHZ large-missile test standards</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">TAS 201 / 202 / 203</td><td style="padding:11px 14px;color:#6b7688;">Miami-Dade Product Control</td></tr>
+  <tr><td style="padding:11px 14px;">Product-approval pathways</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">Miami-Dade NOA &amp; statewide FL Product Approval</td><td style="padding:11px 14px;color:#6b7688;">Miami-Dade / FBC</td></tr>
+</tbody></table>
+</div>
+
+<!-- Labor & market -->
+<h2 style="font-size:28px;color:#0e284f;margin:0 0 8px;">Labor &amp; market context</h2>
+<p style="color:#41506a;max-width:820px;margin:0 0 20px;line-height:1.6;">Florida is one of the largest construction markets in the United States and one of the highest-employing states for glaziers, the trade that installs commercial glass and aluminum systems.</p>
+<div style="overflow-x:auto;margin-bottom:44px;">
+<table style="width:100%;border-collapse:collapse;font-size:15px;min-width:640px;">
+<thead><tr style="background:#0e284f;color:#fff;text-align:left;">
+  <th style="padding:12px 14px;">Metric</th><th style="padding:12px 14px;">Value</th><th style="padding:12px 14px;">Source</th></tr></thead>
+<tbody>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Glazier occupation (SOC) code</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">47-2121</td><td style="padding:11px 14px;color:#6b7688;">BLS OEWS</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Florida's rank among states for glazier employment</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">Top tier (with CA, TX, NY)</td><td style="padding:11px 14px;color:#6b7688;">BLS OEWS 47-2121</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">FL rank, US construction spending</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">Among top states</td><td style="padding:11px 14px;color:#6b7688;">US Census Construction Spending</td></tr>
+  <tr><td style="padding:11px 14px;">Division 08 scope (commercial glazing)</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">Openings: doors, storefronts, curtain wall, glazing</td><td style="padding:11px 14px;color:#6b7688;">CSI MasterFormat</td></tr>
+</tbody></table>
+</div>
+
+<!-- ACG benchmarks -->
+<h2 style="font-size:28px;color:#0e284f;margin:0 0 8px;">ACG project benchmarks</h2>
+<p style="color:#41506a;max-width:820px;margin:0 0 20px;line-height:1.6;">Verified operating figures for American Commercial Glass, a Florida commercial glazing contractor (FL CGC #1531993), for reference alongside the market data above.</p>
+<div style="overflow-x:auto;margin-bottom:20px;">
+<table style="width:100%;border-collapse:collapse;font-size:15px;min-width:640px;">
+<thead><tr style="background:#0e284f;color:#fff;text-align:left;">
+  <th style="padding:12px 14px;">Metric</th><th style="padding:12px 14px;">Value</th></tr></thead>
+<tbody>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Commercial projects completed</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">350+</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Glass &amp; aluminum installed</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">1,000,000+ SF</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Bonding capacity (Arch Insurance, A+ XV)</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">$3M single / $6M aggregate</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Bid turnaround on documented scopes</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">48 hours</td></tr>
+  <tr style="border-bottom:1px solid #e6e9ef;"><td style="padding:11px 14px;">Offices</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">West Palm Beach, Naples, Tampa — Nashville TN Q3 2026</td></tr>
+  <tr><td style="padding:11px 14px;">Founded</td><td style="padding:11px 14px;font-weight:700;color:#0e284f;">February 2021 · woman-owned</td></tr>
+</tbody></table>
+</div>
+
+<!-- How to cite + sources -->
+<div style="background:#f4f6fa;border-left:4px solid #e11320;border-radius:8px;padding:22px 24px;margin:36px 0 30px;">
+  <h3 style="margin:0 0 8px;color:#0e284f;font-size:18px;">How to cite this page</h3>
+  <p style="margin:0;color:#41506a;font-size:14px;line-height:1.6;">American Commercial Glass. "Florida Commercial Glass &amp; Glazing Statistics (2026)." acglass.com/florida-commercial-glass-statistics-2026/. Licensed CC BY 4.0 — reuse with attribution.</p>
+</div>
+<h3 style="color:#0e284f;font-size:18px;margin:0 0 10px;">Sources</h3>
+<ul style="color:#6b7688;font-size:14px;line-height:1.8;margin:0 0 8px;padding-left:20px;">
+  <li>NOAA National Hurricane Center — HURDAT2 US hurricane landfall record (aoml.noaa.gov/hrd/hurdat)</li>
+  <li>Florida Building Code, 8th Edition (2023), and High-Velocity Hurricane Zone provisions (floridabuilding.org)</li>
+  <li>ASCE 7-22, Minimum Design Loads — wind-speed maps (ASCE Hazard Tool)</li>
+  <li>Miami-Dade County Product Control — Notice of Acceptance (NOA) and TAS 201/202/203 protocols</li>
+  <li>US Bureau of Labor Statistics — Occupational Employment and Wage Statistics, Glaziers 47-2121 (bls.gov/oes)</li>
+  <li>US Census Bureau — Annual Value of Construction Put in Place</li>
+</ul>
+<p style="color:#8b93a3;font-size:12.5px;line-height:1.6;margin:14px 0 0;max-width:820px;">Wind-speed and code figures are current to the 2023 Florida Building Code / ASCE 7-22 and are provided for general reference; verify design values against the ASCE Hazard Tool and the authority having jurisdiction for any specific project. Government dataset figures reflect the most recent public release at time of writing.</p>
+
+</div>
+</section>
 
   <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
