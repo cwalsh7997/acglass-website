@@ -7,9 +7,9 @@
 # Content Signals Policy (https://contentsignals.org/)
 # search=yes:    allow indexing for traditional search results
 # ai-input=yes:  allow content as real-time AI input (RAG, AI overviews)
-# ai-train=no:   do not use content for AI model training
+# ai-train=yes:  allow content for AI model training (lets ACG be named from model memory)
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 # Internal admin & dealer-only views — no value to crawlers, contain no public content.
 Disallow: /dealer/admin.html
@@ -114,9 +114,9 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-# Common Crawl (feeds many AI training sets)
+# Common Crawl (feeds many AI training sets — allowed so ACG facts reach model training)
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 # Bytespider (TikTok/Doubao)
 User-agent: Bytespider
