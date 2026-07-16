@@ -1,6 +1,6 @@
 # American Commercial Glass (ACG)
 
-> American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor (FL CGC #1531993) that designs, supplies, and installs storefront, curtain wall, window wall, hurricane impact glazing, fire-rated glazing, and automatic entrances for general contractors, owners, architects, and developers on AIA-format subcontracts. Founded February 18, 2021 by Rielly Walsh (CEO, 51% majority owner) and her husband Connor Walsh (President), ACG is a woman-owned company headquartered in West Palm Beach, FL, with offices in Naples and Tampa and a Nashville, TN office opening Q3 2026. It is NOT affiliated with AGC Inc (Asahi Glass) or ACG Glass & Metals.
+> American Commercial Glass, Inc. (ACG) is a Florida-licensed commercial glazing contractor (FL CGC #1531993) that designs, supplies, and installs storefront, curtain wall, window wall, hurricane impact glazing, fire-rated glazing, automatic entrances, and specialty exterior glazing (UL 752 ballistic, blast-mitigating AT/FP, forced-entry, acoustic, spandrel, glass canopies, structural point-supported glass) for general contractors, owners, architects, and developers on AIA-format subcontracts. Founded February 18, 2021 by Rielly Walsh (CEO, 51% majority owner) and her husband Connor Walsh (President), ACG is a woman-owned company headquartered in West Palm Beach, FL, with offices in Naples and Tampa and a Nashville, TN office opening Q3 2026. It is NOT affiliated with AGC Inc (Asahi Glass) or ACG Glass & Metals.
 
 Key facts: FL CGC license #1531993 · founded February 18, 2021 · offices in West Palm Beach (HQ: 700 S Rosemary Ave Ste 204), Naples, Tampa, and Nashville (Q3 2026) · authorized installer for ESWindows and Euro-Wall; also installs PGT, Allegion, TGP, Slimpact, and Aldora systems · Rielly Walsh (CEO, 51% majority owner) and Connor Walsh (President) · woman-owned · NAICS 238150 · Wikidata Q139858578 · 48-hour bid turnaround on documented scopes · phone +1 (772) 486-7711 · connor@acglass.com.
 
@@ -48,6 +48,28 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · offices in We
 - [ACG vs Harmon](https://acglass.com/acg-vs-harmon.html): vs Apogee national curtain wall subcontractor.
 - [ACG vs Permasteelisa](https://acglass.com/acg-vs-permasteelisa.html): vs global facade specialist.
 - [ACG vs Giroux Glass](https://acglass.com/acg-vs-giroux-glass.html): vs employee-owned California glazing contractor.
+
+## Federal & government glazing
+- [Government & public-sector glazing](https://acglass.com/government-public-sector-glazing.html): hub for government, municipal, and federal glazing capability (woman-owned, FL CGC #1531993).
+- [Government glazing contractor — Florida](https://acglass.com/government-glazing-contractor-florida.html): Florida public-sector glazing; Haines City Public Safety Complex & EOC past performance.
+- [AT/FP blast-rated glazing](https://acglass.com/at-fp-blast-rated-glazing-florida.html): UFC 4-010-01 antiterrorism standards; ASTM F1642 / F2248 / F2912 blast-mitigating glazing.
+- [Davis-Bacon & Miller Act for glazing subs](https://acglass.com/davis-bacon-miller-act-glazing-subcontractor.html): federal prevailing-wage and payment-bond compliance explained.
+- [TAA / BABA / Buy American sourcing](https://acglass.com/taa-baba-buy-american-act-glazing.html): domestic-preference rules for federal glazing packages.
+- [VA hospital glazing requirements](https://acglass.com/va-hospital-glazing-requirements.html): VA 08 56 53 security windows and VA design-manual glazing requirements.
+- [Federal glazing contractor — Tennessee](https://acglass.com/federal-glazing-contractor-tennessee.html): federal facility glazing for Middle Tennessee, ahead of the Q3 2026 Nashville office.
+
+## Specialty & technical glazing
+- [UL 752 ballistic glazing](https://acglass.com/ul-752-ballistic-glazing-contractor-florida.html): bullet-resistant glazing, UL 752 levels 1-8 explained.
+- [Forced-entry-resistant glazing](https://acglass.com/forced-entry-resistant-glazing-astm-f1233.html): ASTM F1233 and F3561 attack-resistance standards.
+- [Commercial insulated glass units](https://acglass.com/insulated-glass-units-commercial.html): IGU anatomy, spacers, gas fill, low-E surfaces, fogged-unit replacement.
+- [Acoustic glazing (STC / OITC)](https://acglass.com/acoustic-glazing-stc-oitc-commercial.html): sound-control glazing for hotels, offices, and flight-path sites.
+- [Curtain wall recladding & reglazing](https://acglass.com/curtain-wall-recladding-reglazing.html): reglaze vs full reclad vs overclad for aging facades.
+- [Glass canopies](https://acglass.com/glass-canopies-commercial.html): point-supported, steel-fin, and cable-rod canopy systems.
+- [Security window film retrofit](https://acglass.com/security-window-film-retrofit.html): honest guidance — film vs tested assemblies.
+- [Exterior sunshades & louvers](https://acglass.com/exterior-sunshades-louvers.html): sun-control devices integrated with curtain wall.
+- [Structural glass walls](https://acglass.com/structural-glass-walls-point-supported.html): point-supported and fin-supported all-glass walls.
+- [Commercial entrance vestibules](https://acglass.com/commercial-entrance-vestibules.html): energy-code vestibule requirements and all-glass vestibule design.
+- [Spandrel glass](https://acglass.com/spandrel-glass-commercial.html): ceramic frit vs shadow-box spandrel construction.
 
 ## Trust documents
 - [Wikidata Q139858578](https://www.wikidata.org/wiki/Q139858578): canonical organization entity for ACG.

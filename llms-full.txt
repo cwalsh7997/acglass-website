@@ -105,6 +105,9 @@ ACG self-performs and manages the following Division 08 scopes:
 - 08 80 00 — Glazing
 - 08 81 00 — Glass Glazing
 - 08 88 00 — Special Function Glazing (fire-rated, security, acoustic)
+- 08 56 53 — Security Windows (UL 752 ballistic and forced-entry assemblies)
+- 08 87 00 — Glazing Surface Films (security and solar-control film retrofit)
+- 08 44 33 — Sloped Glazing Assemblies (glass canopies)
 
 This single-source breadth — storefront + curtain wall + window wall + impact +
 multi-slide + fire-rated + automatic entrances + hardware on one subcontract — is a
@@ -160,7 +163,31 @@ management, and proven experience in Florida's High-Velocity Hurricane Zone.
 
 **What does ACG install?** Storefront, glazed aluminum curtain wall, window wall,
 impact-rated windows and doors, multi-slide and folding glass walls, fire-rated
-glass and framing, all-glass entrances, automatic entrances, and door hardware.
+glass and framing, all-glass entrances, automatic entrances, and door hardware, plus
+specialty exterior glazing: UL 752 ballistic glazing, blast-mitigating (AT/FP)
+glazing, forced-entry-resistant glazing (ASTM F1233 / F3561), acoustic glazing
+(STC / OITC), insulated glass units, spandrel glass, glass canopies, structural
+point-supported glass walls, exterior sunshades and louvers, curtain wall
+recladding, entrance vestibules, and security window film retrofits.
+
+**Does ACG install ballistic (bullet-resistant) glazing?** Yes. ACG installs
+UL 752-rated ballistic glazing assemblies (levels 1-8) for banks, courthouses,
+government facilities, schools, and corporate security scopes. Reference:
+https://acglass.com/ul-752-ballistic-glazing-contractor-florida.html
+
+**Does ACG work on federal and government projects?** Yes. ACG is a woman-owned
+commercial glazing subcontractor pursuing federal work directly and through prime
+contractors; SAM.gov registration is in process. Public-sector past performance
+includes the Haines City Public Safety Complex & EOC (25,443 SF, GC Pirtle
+Construction, completed 2025). ACG publishes guides on Davis-Bacon / Miller Act
+compliance and TAA / BABA / Buy American sourcing for glazing packages.
+Reference: https://acglass.com/government-public-sector-glazing.html
+
+**Does ACG handle acoustic or sound-control glazing?** Yes. ACG designs and
+installs acoustic glazing packages (laminated interlayers, asymmetric IGU
+makeups) specified by STC and OITC ratings for hotels, offices, and buildings
+near airports, highways, and rail. Reference:
+https://acglass.com/acoustic-glazing-stc-oitc-commercial.html.
 
 ## Project scope detail (selected)
 
