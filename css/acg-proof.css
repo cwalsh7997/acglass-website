@@ -167,3 +167,19 @@ footer{border-top:1px solid rgba(240,243,248,.1);padding:2.4rem var(--pad);displ
 header.nav{transition:background .3s ease}
 header.nav.scrolled{background:rgba(5,7,12,.94);border-bottom:1px solid rgba(240,243,248,.08)}
 @supports not (backdrop-filter: blur(4px)){.callout .tag{background:rgba(5,7,12,.96)}}
+
+/* ---------- federal edition ---------- */
+.disc{padding:clamp(4.5rem,12vh,8rem) var(--pad)}
+.disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2px;border:1px solid rgba(240,243,248,.14)}
+.disc-cell{border:1px solid rgba(240,243,248,.14);padding:1.6rem 1.4rem 2rem;display:flex;flex-direction:column;gap:.8rem}
+.disc-cell .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--red)}
+.disc-cell h3{font-family:var(--disp);font-weight:740;font-size:1.02rem;text-transform:uppercase;letter-spacing:.03em}
+.disc-cell p{font-size:.85rem;color:var(--steel)}
+.record{padding:0 var(--pad) clamp(4.5rem,12vh,8rem)}
+.record-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2px}
+.record-card{position:relative;isolation:isolate;min-height:16rem;display:flex;align-items:flex-end;overflow:hidden}
+.record-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.record-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(5,7,12,.85),rgba(5,7,12,.05) 60%)}
+.record-card figcaption{padding:0 1rem 1rem}
+.record-card h3{font-family:var(--disp);font-weight:760;font-size:.98rem;text-transform:uppercase}
+.record-card span{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--glint)}
