@@ -450,7 +450,7 @@
   <a class="wordmark" href="#top">American Commercial Glass<b>.</b></a>
   <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
   <nav class="links" id="menu" aria-label="Main">
-    <a href="#capability">Capability</a><a href="#discipline">Discipline</a><a href="#record">Record</a><a href="#prequal">Prequal</a><a href="#contact">Contact</a>
+    <a href="#capability">Capability</a><a href="#discipline">Discipline</a><a href="/past-performance.html">Past Performance</a><a href="#prequal">Prequal</a><a href="#contact">Contact</a>
     <a class="btn-plans" href="/scope-engine.html">Send plans</a>
   </nav>
 </header>
@@ -506,6 +506,8 @@
       <div class="disc-cell"><span class="n">03</span><h3>Submittal rigor</h3><p>RFIs asked early, substitutions documented, every revision logged — a clean paper trail from award to closeout.</p></div>
       <div class="disc-cell"><span class="n">04</span><h3>Bonded &amp; insured</h3><p>$3M single / $6M aggregate bonding, $1M/$2M general liability, $1M workers' comp — documentation on request.</p></div>
     </div>
+
+  <figure class="rv" style="margin:2rem auto 0;max-width:1180px"><img src="/images/infographics/federal/submittal-pipeline.svg" alt="Six-stage documentation pipeline: award, shop drawings, product approvals, fabrication, installation, closeout" loading="lazy" style="width:100%"></figure>
   </section>
 
   <section class="quote rv">
@@ -516,7 +518,7 @@
   <section class="record" id="record">
     <div class="work-head" style="padding-left:0;padding-right:0">
       <h2>The record<br>behind the work</h2>
-      <p class="mono">350+ projects · 1,000,000+ SF installed · Florida</p>
+      <p class="mono"><a href="/past-performance.html" style="color:var(--glint)">350+ projects · 1,000,000+ SF · View past performance →</a></p>
     </div>
     <div class="record-strip rv">
       <figure class="record-card">
@@ -544,7 +546,152 @@
         <figcaption><span>Fort Myers Beach</span><h3>Gulfside Twelve</h3></figcaption>
       </figure>
     </div>
+
+    <figure class="rv" style="margin:3rem auto 0;max-width:900px"><img src="/images/infographics/federal/florida-project-map.svg" alt="Key plan of selected ACG work across Florida" loading="lazy" style="width:100%"></figure>
   </section>
+
+<section class="sysstrip" aria-labelledby="sysstrip-heading">
+  <style>
+    .sysstrip{
+      --sysstrip-bg:#05070C;
+      --sysstrip-paper:#F0F3F8;
+      --sysstrip-soft:rgba(240,243,248,.62);
+      --sysstrip-faint:rgba(240,243,248,.38);
+      --sysstrip-line:rgba(240,243,248,.14);
+      --sysstrip-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+      --sysstrip-disp:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+      background:var(--sysstrip-bg);
+      color:var(--sysstrip-paper);
+      padding:clamp(48px,7vw,88px) clamp(20px,4.4vw,64px);
+      border-top:1px solid var(--sysstrip-line);
+      border-bottom:1px solid var(--sysstrip-line);
+      box-sizing:border-box;
+    }
+    .sysstrip *{box-sizing:border-box}
+    .sysstrip-inner{max-width:1180px;margin:0 auto}
+    .sysstrip-eyebrow{
+      font-family:var(--sysstrip-mono);
+      font-size:.68rem;
+      font-weight:600;
+      letter-spacing:.26em;
+      text-transform:uppercase;
+      color:var(--sysstrip-soft);
+      margin:0 0 14px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .sysstrip-eyebrow::before{
+      content:'';
+      width:28px;
+      height:1px;
+      background:var(--sysstrip-faint);
+      display:inline-block;
+    }
+    .sysstrip-h{
+      font-family:var(--sysstrip-disp);
+      font-weight:600;
+      font-size:clamp(1.5rem,2.6vw,2.1rem);
+      letter-spacing:-.01em;
+      color:var(--sysstrip-paper);
+      margin:0 0 10px;
+      line-height:1.1;
+    }
+    .sysstrip-sub{
+      font-family:var(--sysstrip-mono);
+      font-size:.78rem;
+      letter-spacing:.04em;
+      color:var(--sysstrip-faint);
+      margin:0 0 clamp(32px,5vw,52px);
+      max-width:60ch;
+    }
+    .sysstrip-row{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:clamp(28px,5vw,56px);
+      padding-top:clamp(28px,4vw,40px);
+      border-top:1px solid var(--sysstrip-line);
+    }
+    .sysstrip-item{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:10px;
+    }
+    .sysstrip-mark{
+      display:inline-flex;
+      align-items:center;
+      height:56px;
+    }
+    .sysstrip-mark img{
+      display:block;
+      max-height:56px;
+      width:auto;
+      height:auto;
+      opacity:.78;
+      filter:grayscale(1) brightness(1.35) contrast(.92);
+      transition:opacity .25s ease, filter .25s ease;
+    }
+    /* Applied when the source logo only renders correctly on a light
+       background (color wordmark, dark/gray tagline text, etc.) — forces
+       it to a clean white silhouette so it holds up on the obsidian bg. */
+    .sysstrip-mark--invert img{
+      filter:grayscale(1) brightness(0) invert(1);
+      opacity:.72;
+    }
+    .sysstrip-item:hover .sysstrip-mark img{
+      opacity:1;
+    }
+    .sysstrip-item:hover .sysstrip-mark--invert img{
+      opacity:.92;
+    }
+    .sysstrip-cap{
+      font-family:var(--sysstrip-mono);
+      font-size:.62rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--sysstrip-faint);
+    }
+    @media (prefers-reduced-motion:reduce){
+      .sysstrip-mark img{transition:none}
+    }
+  </style>
+
+  <div class="sysstrip-inner">
+    <p class="sysstrip-eyebrow">Manufacturer Systems</p>
+    <h2 class="sysstrip-h" id="sysstrip-heading">Systems we install</h2>
+    <p class="sysstrip-sub">Manufacturer systems furnished and installed by ACG</p>
+
+    <div class="sysstrip-row">
+      <div class="sysstrip-item">
+        <span class="sysstrip-mark sysstrip-mark--invert">
+          <img
+            src="/images/partners/eswindows/logo-tag.png"
+            alt="ESWindows systems installed by ACG"
+            width="150"
+            height="130"
+            loading="lazy"
+            decoding="async">
+        </span>
+        <span class="sysstrip-cap">Impact storefront &middot; curtainwall</span>
+      </div>
+    
+      <div class="sysstrip-item">
+        <span class="sysstrip-mark">
+          <img
+            src="/images/partners/eurowall/logo-white.png"
+            alt="Euro-Wall systems installed by ACG"
+            width="170"
+            height="81"
+            loading="lazy"
+            decoding="async">
+        </span>
+        <span class="sysstrip-cap">Folding &amp; sliding glass walls</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="prequal rv" id="prequal">
     <div>

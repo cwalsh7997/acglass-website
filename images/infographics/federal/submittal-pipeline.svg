@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-labelledby="sp-title sp-desc">
+<title id="sp-title">ACG Submittal Pipeline — Six-Stage Documentation Process</title>
+<desc id="sp-desc">Horizontal process diagram showing six stages: Award, Shop Drawings, Product Approvals, Fabrication, Installation, Closeout, with Shop Drawings highlighted as ACG's differentiator.</desc>
+<defs>
+  <style>
+    .mono{font-family:'JetBrains Mono',monospace;}
+    .head{font-family:'Archivo',sans-serif;}
+    .paper{fill:#F0F3F8;}
+    .steel{fill:#8FA3BF;}
+    .accent{fill:#E11320;}
+    .ls{stroke:#8FA3BF;}
+    .lp{stroke:#F0F3F8;}
+    .la{stroke:#E11320;}
+  </style>
+  <marker id="sp-arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L8,4 L0,8 Z" fill="#8FA3BF"/>
+  </marker>
+</defs>
+
+<!-- header -->
+<text x="40" y="36" class="head paper" font-size="24" font-weight="700" letter-spacing="0.5">SUBMITTAL PIPELINE</text>
+<text x="40" y="58" class="mono steel" font-size="13" letter-spacing="0.3">Documentation discipline &#8212; every stage logged.</text>
+
+<!-- connectors -->
+<g class="ls" stroke-width="1.25">
+  <line x1="190" y1="165" x2="228" y2="165" marker-end="url(#sp-arrow)"/>
+  <line x1="384" y1="165" x2="422" y2="165" marker-end="url(#sp-arrow)"/>
+  <line x1="578" y1="165" x2="616" y2="165" marker-end="url(#sp-arrow)"/>
+  <line x1="772" y1="165" x2="810" y2="165" marker-end="url(#sp-arrow)"/>
+  <line x1="966" y1="165" x2="1004" y2="165" marker-end="url(#sp-arrow)"/>
+</g>
+
+<!-- ============== STAGE 01 : AWARD ============== -->
+<g>
+  <rect x="40" y="90" width="150" height="150" fill="#0B0F17" fill-opacity="0.5" class="ls" stroke-width="1.5"/>
+  <text x="56" y="136" class="mono paper" font-size="32" font-weight="700">01</text>
+  <line x1="56" y1="152" x2="174" y2="152" class="ls" stroke-width="1"/>
+  <text x="115" y="196" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">AWARD</text>
+</g>
+
+<!-- ============== STAGE 02 : SHOP DRAWINGS (accent) ============== -->
+<g>
+  <rect x="234" y="90" width="150" height="150" fill="#0B0F17" fill-opacity="0.5" class="la" stroke-width="2.25"/>
+  <text x="250" y="136" class="mono accent" font-size="32" font-weight="700">02</text>
+  <line x1="250" y1="152" x2="368" y2="152" class="la" stroke-width="1"/>
+  <text x="309" y="184" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">SHOP</text>
+  <text x="309" y="204" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">DRAWINGS</text>
+</g>
+
+<!-- ============== STAGE 03 : PRODUCT APPROVALS ============== -->
+<g>
+  <rect x="428" y="90" width="150" height="150" fill="#0B0F17" fill-opacity="0.5" class="ls" stroke-width="1.5"/>
+  <text x="444" y="136" class="mono paper" font-size="32" font-weight="700">03</text>
+  <line x1="444" y1="152" x2="562" y2="152" class="ls" stroke-width="1"/>
+  <text x="503" y="184" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">PRODUCT</text>
+  <text x="503" y="204" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">APPROVALS</text>
+</g>
+
+<!-- ============== STAGE 04 : FABRICATION ============== -->
+<g>
+  <rect x="622" y="90" width="150" height="150" fill="#0B0F17" fill-opacity="0.5" class="ls" stroke-width="1.5"/>
+  <text x="638" y="136" class="mono paper" font-size="32" font-weight="700">04</text>
+  <line x1="638" y1="152" x2="756" y2="152" class="ls" stroke-width="1"/>
+  <text x="697" y="196" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">FABRICATION</text>
+</g>
+
+<!-- ============== STAGE 05 : INSTALLATION ============== -->
+<g>
+  <rect x="816" y="90" width="150" height="150" fill="#0B0F17" fill-opacity="0.5" class="ls" stroke-width="1.5"/>
+  <text x="832" y="136" class="mono paper" font-size="32" font-weight="700">05</text>
+  <line x1="832" y1="152" x2="950" y2="152" class="ls" stroke-width="1"/>
+  <text x="891" y="196" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">INSTALLATION</text>
+</g>
+
+<!-- ============== STAGE 06 : CLOSEOUT ============== -->
+<g>
+  <rect x="1010" y="90" width="150" height="150" fill="#0B0F17" fill-opacity="0.5" class="ls" stroke-width="1.5"/>
+  <text x="1026" y="136" class="mono paper" font-size="32" font-weight="700">06</text>
+  <line x1="1026" y1="152" x2="1144" y2="152" class="ls" stroke-width="1"/>
+  <text x="1085" y="196" text-anchor="middle" class="head paper" font-size="15" letter-spacing="1">CLOSEOUT</text>
+</g>
+
+<!-- baseline rule -->
+<line x1="40" y1="270" x2="1160" y2="270" class="ls" stroke-width="1" opacity="0.5"/>
+<text x="1160" y="290" text-anchor="end" class="mono steel" font-size="10.5" letter-spacing="0.6" opacity="0.85">PROCESS &#183; 6 STAGES &#183; NO GAP HANDOFF</text>
+
+</svg>

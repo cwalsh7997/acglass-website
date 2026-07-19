@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 920" width="640" height="920" role="img" aria-labelledby="fpm-title fpm-desc">
+<title id="fpm-title">Key Plan — ACG Selected Project Locations, Florida</title>
+<desc id="fpm-desc">Schematic angular outline of Florida with labeled pins for West Palm Beach headquarters, Fort Lauderdale, Hobe Sound, Manalapan, Fort Myers Beach, and Cudjoe Key.</desc>
+<defs>
+<style>
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .head{font-family:'Archivo',sans-serif;}
+  .paper{fill:#F0F3F8;}
+  .steel{fill:#8FA3BF;}
+  .accent{fill:#E11320;}
+  .ls{stroke:#8FA3BF;}
+  .lp{stroke:#F0F3F8;}
+  .la{stroke:#E11320;}
+</style>
+</defs>
+
+<!-- corner registration ticks -->
+<g class="ls" stroke-width="1" opacity="0.5">
+  <path d="M12,12 L28,12 M12,12 L12,28" fill="none"/>
+  <path d="M628,12 L612,12 M628,12 L628,28" fill="none"/>
+  <path d="M12,908 L28,908 M12,908 L12,892" fill="none"/>
+  <path d="M628,908 L612,908 M628,908 L628,892" fill="none"/>
+</g>
+
+<!-- mainland -->
+<path d="M20,130 L20,160 L120,150 L180,175 L220,160 L270,190 L300,230 L340,270 L310,330 L350,365 L320,380 L345,420 L300,470 L290,540 L320,600 L360,660 L400,710 L430,750 L460,700 L445,640 L465,590 L450,540 L470,490 L455,430 L430,370 L405,310 L385,250 L365,190 L340,150 L300,120 L180,100 L60,110 L20,100 Z"
+  fill="#0B0F17" fill-opacity="0.6" stroke="#8FA3BF" stroke-width="2.5" stroke-linejoin="miter"/>
+
+<!-- keys chain -->
+<path d="M430,750 L390,772 L345,790 L295,803 L245,813 L200,820 L160,825" fill="none" class="ls" stroke-width="2" stroke-linejoin="miter"/>
+<g class="steel">
+  <circle cx="390" cy="772" r="2"/>
+  <circle cx="345" cy="790" r="2"/>
+  <circle cx="295" cy="803" r="2"/>
+  <circle cx="245" cy="813" r="2"/>
+  <circle cx="160" cy="825" r="2"/>
+</g>
+
+<!-- compass -->
+<g class="mono">
+  <path d="M52,72 L52,40 M52,40 L46,50 M52,40 L58,50" fill="none" class="lp" stroke-width="1.5"/>
+  <text x="52" y="34" text-anchor="middle" font-size="12" class="paper">N</text>
+</g>
+
+<!-- title block, top-right -->
+<g>
+  <rect x="450" y="30" width="168" height="66" fill="#0B0F17" fill-opacity="0.7" class="ls" stroke-width="1.25"/>
+  <path d="M618,30 L598,30 L618,50 Z" class="accent" fill="#E11320"/>
+  <line x1="450" y1="56" x2="618" y2="56" class="ls" stroke-width="1"/>
+  <text x="460" y="49" class="head paper" font-size="15" font-weight="600" letter-spacing="0.5">KEY PLAN</text>
+  <text x="460" y="72" class="mono steel" font-size="10" letter-spacing="0.4">SELECTED WORK &#183; FLORIDA</text>
+  <text x="460" y="88" class="mono steel" font-size="8.5" letter-spacing="0.4" opacity="0.8">NOT TO SCALE</text>
+</g>
+
+<!-- ================= PINS ================= -->
+
+<!-- Hobe Sound -->
+<g>
+  <circle cx="448" cy="410" r="4" fill="#05070C" class="lp" stroke-width="1.5"/>
+  <path d="M448,410 L520,410" fill="none" class="ls" stroke-width="1"/>
+  <circle cx="520" cy="410" r="1.6" class="steel"/>
+  <text x="526" y="414" class="mono paper" font-size="13" letter-spacing="0.3">HOBE SOUND</text>
+</g>
+
+<!-- West Palm Beach — HQ -->
+<g>
+  <circle cx="460" cy="468" r="9" fill="none" class="lp" stroke-width="1.25"/>
+  <rect x="460" y="468" width="9" height="9" fill="#E11320" stroke="#F0F3F8" stroke-width="1" transform="rotate(45 460 468)"/>
+  <path d="M460,468 L520,468" fill="none" class="ls" stroke-width="1.25"/>
+  <circle cx="520" cy="468" r="1.6" class="steel"/>
+  <text x="526" y="466" class="mono paper" font-size="14" font-weight="700" letter-spacing="0.3">WEST PALM BEACH</text>
+  <text x="526" y="481" class="mono accent" font-size="11.5" letter-spacing="1">&#183; HEADQUARTERS</text>
+</g>
+
+<!-- Manalapan -->
+<g>
+  <circle cx="455" cy="513" r="4" fill="#05070C" class="lp" stroke-width="1.5"/>
+  <path d="M455,513 L520,513" fill="none" class="ls" stroke-width="1"/>
+  <circle cx="520" cy="513" r="1.6" class="steel"/>
+  <text x="526" y="517" class="mono paper" font-size="13" letter-spacing="0.3">MANALAPAN</text>
+</g>
+
+<!-- Fort Lauderdale -->
+<g>
+  <circle cx="462" cy="563" r="4" fill="#05070C" class="lp" stroke-width="1.5"/>
+  <path d="M462,563 L520,563" fill="none" class="ls" stroke-width="1"/>
+  <circle cx="520" cy="563" r="1.6" class="steel"/>
+  <text x="526" y="567" class="mono paper" font-size="13" letter-spacing="0.3">FORT LAUDERDALE</text>
+</g>
+
+<!-- Fort Myers Beach -->
+<g>
+  <circle cx="295" cy="545" r="4" fill="#05070C" class="lp" stroke-width="1.5"/>
+  <path d="M295,545 L220,545" fill="none" class="ls" stroke-width="1"/>
+  <circle cx="220" cy="545" r="1.6" class="steel"/>
+  <text x="214" y="549" text-anchor="end" class="mono paper" font-size="13" letter-spacing="0.3">FORT MYERS BEACH</text>
+</g>
+
+<!-- Cudjoe Key -->
+<g>
+  <circle cx="200" cy="820" r="4" fill="#05070C" class="lp" stroke-width="1.5"/>
+  <path d="M200,820 L200,858" fill="none" class="ls" stroke-width="1"/>
+  <circle cx="200" cy="858" r="1.6" class="steel"/>
+  <text x="200" y="874" text-anchor="middle" class="mono paper" font-size="13" letter-spacing="0.3">CUDJOE KEY</text>
+</g>
+
+</svg>
