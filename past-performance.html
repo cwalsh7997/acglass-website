@@ -45,31 +45,42 @@
 .pp-group{padding:clamp(4.5rem,12vh,7.5rem) 0 0}
 .pp-group:first-of-type{padding-top:clamp(3.5rem,9vh,6rem)}
 .pp-group-head{padding:0 var(--pad) 2.2rem;display:flex;align-items:baseline;gap:1.1rem;flex-wrap:wrap}
-.pp-group-head .idx{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--red)}
+.pp-group-head .idx{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:#ED2833}
 .pp-group-head h2{font-family:var(--disp);font-weight:840;font-size:clamp(1.7rem,4.4vw,3.2rem);text-transform:uppercase;letter-spacing:-.02em;line-height:.98}
 .pp-group-head p{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-left:auto}
 
-.pp-plate{position:relative;margin:0 auto;max-width:1500px;padding:0 var(--pad)}
-.pp-plate + .pp-plate{margin-top:clamp(2.6rem,7vh,4.2rem)}
-.pp-frame{position:relative;overflow:hidden;background:#0A0E16;display:block}
-.pp-frame img{width:100%;height:min(88svh,900px);object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.6,.2,1)}
-.pp-frame:hover img{transform:scale(1.035)}
-.pp-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,.92) 0%,rgba(5,7,12,.08) 42%,rgba(5,7,12,0) 68%)}
-.pp-frame-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:clamp(1.3rem,3.6vw,2.6rem)}
-.pp-frame-copy .where{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--glint)}
-.pp-frame-copy h3{margin-top:.5rem;font-family:var(--disp);font-weight:800;font-size:clamp(1.4rem,3.6vw,2.6rem);text-transform:uppercase;letter-spacing:-.015em;line-height:1.02;max-width:22ch}
-.pp-tags{margin-top:.9rem;display:flex;gap:.5rem;flex-wrap:wrap}
-.pp-tags span{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(240,243,248,.28);border-left:2px solid var(--red);padding:.32rem .55rem;color:#C6CFDD;background:rgba(5,7,12,.5)}
-.pp-note{margin-top:.85rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
-.pp-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.1rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);border-bottom:1px solid rgba(240,243,248,.4);padding-bottom:.15rem}
-.pp-link:hover{color:var(--glint);border-color:var(--glint)}
-.pp-link svg{width:11px;height:11px;transition:transform .2s ease}
-.pp-link:hover svg{transform:translate(3px,-3px)}
-a.pp-frame:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
-
-@media(max-width:820px){
-  .pp-frame img{height:62svh}
-  .pp-plate + .pp-plate{margin-top:2.4rem}
+/* full-bleed mosaic — the collage wall */
+.pp-mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(230px,30vh,400px);grid-auto-flow:dense;gap:2px;padding:0 2px}
+.pt{position:relative;overflow:hidden;grid-column:span 4;background:#0A0E16;display:block}
+.pt.s5{grid-column:span 5}
+.pt.s7{grid-column:span 7}
+.pt.s8{grid-column:span 8}
+.pt.r2{grid-row:span 2}
+.pt picture{display:block;height:100%}
+.pt img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.6,.2,1)}
+.pt:hover img{transform:scale(1.045)}
+.pt::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,.9) 0%,rgba(5,7,12,.06) 46%,rgba(5,7,12,0) 64%)}
+.pt-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.3rem}
+.pt-cap .where{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--glint)}
+.pt-cap h3{font-family:var(--disp);font-weight:780;font-size:clamp(1rem,1.5vw,1.3rem);text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
+.pt .go{position:absolute;z-index:2;top:.9rem;right:.9rem;width:2.1rem;height:2.1rem;display:grid;place-items:center;border:1px solid rgba(240,243,248,.45);background:rgba(5,7,12,.55);opacity:0;transform:translateY(-4px);transition:opacity .35s,transform .35s}
+.pt:hover .go,a.pt:focus-visible .go{opacity:1;transform:none}
+.pt .go svg{width:.8rem;height:.8rem}
+a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
+@media(max-width:980px){
+  .pp-mosaic{grid-auto-rows:clamp(190px,26vh,300px)}
+  .pt,.pt.s5,.pt.s7{grid-column:span 6}
+  .pt.s8{grid-column:span 12}
+}
+@media(max-width:640px){
+  .pp-mosaic{grid-auto-rows:34vw}
+  .pt,.pt.s5{grid-column:span 6}
+  .pt.s7,.pt.s8{grid-column:span 12}
+  .pt.m12{grid-column:span 12}
+  .pt-cap{padding:.65rem .7rem;gap:.2rem}
+  .pt-cap h3{font-size:.8rem}
+  .pt-cap .where{font-size:.5rem;letter-spacing:.1em}
+  .pt .go{display:none}
 }
 
 /* proof band before footer */
@@ -128,50 +139,64 @@ a.pp-frame:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">Essential facilities · Risk Category IV</p>
     </div>
 
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/cudjoe-key-fire-station.html" aria-label="Cudjoe Key Fire Station 11 — view case study">
+    <div class="pp-mosaic rv">
+      <a class="pt s8 r2" href="/cudjoe-key-fire-station.html" aria-label="Cudjoe Key Fire Station 11 — view case study">
         <picture>
           <source srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-side.avif" type="image/avif">
           <source srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-side.webp" type="image/webp">
           <img src="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-side.jpg" alt="Cudjoe Key Fire Station 11 — side elevation and apparatus access, Monroe County Florida Keys" width="1920" height="1281" loading="eager" fetchpriority="high" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Cudjoe Key, FL · Monroe County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Cudjoe Key, FL · Monroe County Fire Rescue · ESWindows impact</span>
           <h3>Cudjoe Key Fire Station 11</h3>
-          <div class="pp-tags"><span>Government</span><span>Monroe County Fire Rescue</span><span>ESWindows</span><span>Impact-Rated</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/city-of-haines-emergency.html" aria-label="Haines City Public Safety Complex and Emergency Operations Center — view case study">
+      <a class="pt" href="/city-of-haines-emergency.html" aria-label="Haines City Public Safety Complex and EOC — view case study">
         <picture>
           <source srcset="/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.avif" type="image/avif">
           <source srcset="/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.webp" type="image/webp">
           <img src="/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg" alt="Haines City Public Safety Complex and Emergency Operations Center — horizontal impact-rated aluminum storefront band" width="1800" height="1011" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Haines City, FL · Polk County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Haines City, FL · Pirtle Construction</span>
           <h3>Public Safety Complex &amp; EOC</h3>
-          <div class="pp-tags"><span>Government · Fire Station #3 / Police / EOC</span><span>Pirtle Construction, GC</span><span>Aldora glass</span><span>Impact Storefront</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/indiantown-high-school.html" aria-label="Indiantown High School — view case study">
+      <a class="pt" href="/city-of-haines-emergency.html" aria-label="Haines City Public Safety Complex at twilight — view case study">
+        <picture>
+          <source srcset="/images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.avif" type="image/avif">
+          <source srcset="/images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.webp" type="image/webp">
+          <img src="/images/projects/haines-city-eoc/haines-city-eoc-twilight-exterior.jpg" alt="Haines City Public Safety Complex — twilight exterior with illuminated impact storefront" width="1080" height="720" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Haines City, FL · Impact storefront</span>
+          <h3>EOC at twilight</h3>
+        </div>
+      </a>
+      <a class="pt s7" href="/indiantown-high-school.html" aria-label="Indiantown High School — view case study">
         <picture>
           <source srcset="/images/projects/indiantown-high-school/interior.avif" type="image/avif">
           <source srcset="/images/projects/indiantown-high-school/interior.webp" type="image/webp">
           <img src="/images/projects/indiantown-high-school/interior.jpg" alt="Indiantown High School commons — interior glass partitions and storefront systems" width="1500" height="1000" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Indiantown, FL · Martin County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Indiantown, FL · Core Construction</span>
           <h3>Indiantown High School</h3>
-          <div class="pp-tags"><span>Public Education</span><span>Core Construction, GC</span><span>Interior Glass</span><span>Storefront</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        </div>
+      </a>
+      <a class="pt s5 m12" href="/indiantown-high-school.html" aria-label="Indiantown High School entrance — view case study">
+        <picture>
+          <source srcset="/images/projects/indiantown-high-school/indiantown-high-school-branding.webp" type="image/webp">
+          <img src="/images/projects/indiantown-high-school/indiantown-high-school-branding.jpg" alt="Indiantown High School — signed main entrance, storefront glazing under the angular canopy" width="1320" height="743" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Indiantown, FL · Storefront entrance</span>
+          <h3>Main entrance</h3>
         </div>
       </a>
     </div>
@@ -185,67 +210,89 @@ a.pp-frame:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">Private clubs · amenity centers</p>
     </div>
 
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/atlantic-fields-golf-house.html" aria-label="Atlantic Fields Golf House — view case study">
-        <picture>
-          <source srcset="/images/projects/atlantic-fields-golf-house/hero-golden-hour.avif" type="image/avif">
-          <source srcset="/images/projects/atlantic-fields-golf-house/hero-golden-hour.webp" type="image/webp">
-          <img src="/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" alt="Atlantic Fields Golf House — golden hour exterior view from the fairway, Hobe Sound FL" width="1564" height="1028" loading="lazy" decoding="async">
-        </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Hobe Sound, FL · Martin County</div>
-          <h3>Atlantic Fields Golf House</h3>
-          <div class="pp-tags"><span>Discovery Land Company</span><span>Proctor Construction, GC</span><span>Euro-Wall</span><span>Operable Window Wall</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-        </div>
-      </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/savannas-ridge-clubhouse.html" aria-label="Savannas Ridge Clubhouse — view case study">
+    <div class="pp-mosaic rv">
+      <a class="pt s5" href="/savannas-ridge-clubhouse.html" aria-label="Savannas Ridge Clubhouse — view case study">
         <picture>
           <source srcset="/images/projects/savannas-ridge-clubhouse/hero-exterior.avif" type="image/avif">
           <source srcset="/images/projects/savannas-ridge-clubhouse/hero-exterior.webp" type="image/webp">
           <img src="/images/projects/savannas-ridge-clubhouse/hero-exterior.jpg" alt="Savannas Ridge Clubhouse, Fort Pierce — ESWindows storefront and window wall exterior elevation" width="1536" height="1025" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Fort Pierce, FL · St. Lucie County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Pierce, FL · ESWindows storefront</span>
           <h3>Savannas Ridge Clubhouse</h3>
-          <div class="pp-tags"><span>Amenity Center</span><span>ESWindows</span><span>Storefront</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/wild-blue-clubhouse.html" aria-label="Wild Blue at Waterside Clubhouse — view case study">
+      <a class="pt s7 r2" href="/atlantic-fields-golf-house.html" aria-label="Atlantic Fields Golf House — view case study">
+        <picture>
+          <source srcset="/images/projects/atlantic-fields-golf-house/hero-golden-hour.avif" type="image/avif">
+          <source srcset="/images/projects/atlantic-fields-golf-house/hero-golden-hour.webp" type="image/webp">
+          <img src="/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" alt="Atlantic Fields Golf House — golden hour exterior view from the fairway, Hobe Sound FL" width="1564" height="1028" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Hobe Sound, FL · Discovery Land Company · Proctor Construction</span>
+          <h3>Atlantic Fields Golf House</h3>
+        </div>
+      </a>
+      <a class="pt s5" href="/wild-blue-clubhouse.html" aria-label="Wild Blue at Waterside Clubhouse — view case study">
         <picture>
           <source srcset="/images/projects/wild-blue/wild-blue-front-elevation.avif" type="image/avif">
           <source srcset="/images/projects/wild-blue/wild-blue-front-elevation.webp" type="image/webp">
           <img src="/images/projects/wild-blue/wild-blue-front-elevation.jpg" alt="Wild Blue at Waterside Clubhouse — front elevation, glazing installation in progress, Lakewood Ranch FL" width="1920" height="1440" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Lakewood Ranch, FL · Sarasota County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Lakewood Ranch, FL · Neal Communities · Installation underway</span>
           <h3>Wild Blue at Waterside</h3>
-          <div class="pp-tags"><span>Neal Communities</span><span>ESWindows + Euro-Wall</span><span>Curtainwall &amp; Entries</span></div>
-          <div class="pp-note">Installation underway</div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/tradewinds-hobe-sound.html" aria-label="Tradewinds Hobe Sound — view case study">
+      <a class="pt" href="/tradewinds-hobe-sound.html" aria-label="Tradewinds Hobe Sound — view case study">
         <picture>
           <source srcset="/images/projects/tradewinds-hobe-sound/aerial-community.avif" type="image/avif">
           <source srcset="/images/projects/tradewinds-hobe-sound/aerial-community.webp" type="image/webp">
           <img src="/images/projects/tradewinds-hobe-sound/aerial-community.jpg" alt="Tradewinds Hobe Sound aerial view — multifamily community with clubhouse and pool" width="1000" height="665" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Hobe Sound, FL · Martin County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Hobe Sound, FL · ESWindows</span>
           <h3>Tradewinds Hobe Sound</h3>
-          <div class="pp-tags"><span>Multifamily Clubhouse</span><span>ESWindows</span><span>Storefront</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        </div>
+      </a>
+      <a class="pt s8" href="/atlantic-fields-golf-house.html" aria-label="Atlantic Fields Golf House operable wall — view case study">
+        <picture>
+          <source srcset="/images/projects/atlantic-fields-golf-house/hero-open-wall.avif" type="image/avif">
+          <source srcset="/images/projects/atlantic-fields-golf-house/hero-open-wall.webp" type="image/webp">
+          <img src="/images/projects/atlantic-fields-golf-house/hero-open-wall.jpg" alt="Atlantic Fields Golf House — Euro-Wall operable window wall fully open to the fairway" width="1620" height="1080" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Hobe Sound, FL · Euro-Wall operable wall</span>
+          <h3>Golf House, wall open</h3>
+        </div>
+      </a>
+      <a class="pt s7" href="/savannas-ridge-clubhouse.html" aria-label="Savannas Ridge dining sliders — view case study">
+        <picture>
+          <source srcset="/images/projects/savannas-ridge-clubhouse/dining-sliders.avif" type="image/avif">
+          <source srcset="/images/projects/savannas-ridge-clubhouse/dining-sliders.webp" type="image/webp">
+          <img src="/images/projects/savannas-ridge-clubhouse/dining-sliders.jpg" alt="Savannas Ridge Clubhouse — dining room sliding glass door wall" width="1536" height="1025" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Pierce, FL · Sliding glass walls</span>
+          <h3>Dining room sliders</h3>
+        </div>
+      </a>
+      <a class="pt s5" href="/wild-blue-clubhouse.html" aria-label="Wild Blue interior glazing — view case study">
+        <picture>
+          <source srcset="/images/projects/wild-blue/wild-blue-interior-view.avif" type="image/avif">
+          <source srcset="/images/projects/wild-blue/wild-blue-interior-view.webp" type="image/webp">
+          <img src="/images/projects/wild-blue/wild-blue-interior-view.jpg" alt="Wild Blue at Waterside Clubhouse — interior view through new glazing during installation" width="1920" height="1440" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Lakewood Ranch, FL · ESWindows + Euro-Wall</span>
+          <h3>Interior, mid-install</h3>
         </div>
       </a>
     </div>
@@ -259,34 +306,53 @@ a.pp-frame:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">Restaurants · food halls</p>
     </div>
 
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/ocean-prime-ft-lauderdale.html" aria-label="Ocean Prime Fort Lauderdale — view case study">
+    <div class="pp-mosaic rv">
+      <a class="pt s7" href="/ocean-prime-ft-lauderdale.html" aria-label="Ocean Prime Fort Lauderdale — view case study">
         <picture>
           <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.avif" type="image/avif">
           <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp" type="image/webp">
           <img src="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime at Pier Sixty-Six, Fort Lauderdale — waterfront restaurant glazing at dusk" width="1600" height="1197" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Fort Lauderdale, FL · Pier Sixty-Six / Las Olas Marina</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Lauderdale, FL · Pier Sixty-Six · Euro-Wall folding impact</span>
           <h3>Ocean Prime Fort Lauderdale</h3>
-          <div class="pp-tags"><span>Fine Dining</span><span>Euro-Wall</span><span>Folding / Sliding Impact</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/wave-food-hall-cocoa-beach.html" aria-label="Wave Food Hall — view case study">
+      <a class="pt s5" href="/wave-food-hall-cocoa-beach.html" aria-label="Wave Food Hall — view case study">
         <picture>
           <source srcset="/images/projects/wave-food-hall/street-view-atlantic-ave.avif" type="image/avif">
           <source srcset="/images/projects/wave-food-hall/street-view-atlantic-ave.webp" type="image/webp">
           <img src="/images/projects/wave-food-hall/street-view-atlantic-ave.jpg" alt="Wave Food Hall — street view from Atlantic Ave, full building facade and storefront glazing, Cocoa Beach" width="1620" height="1080" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Cocoa Beach, FL · Brevard County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Cocoa Beach, FL · Certified General Contractors</span>
           <h3>Wave Food Hall</h3>
-          <div class="pp-tags"><span>Certified General Contractors, GC</span><span>ESWindows</span><span>Storefront</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        </div>
+      </a>
+      <a class="pt" href="/wave-food-hall-cocoa-beach.html" aria-label="Wave Food Hall interior — view case study">
+        <picture>
+          <source srcset="/images/projects/wave-food-hall/interior-food-hall.avif" type="image/avif">
+          <source srcset="/images/projects/wave-food-hall/interior-food-hall.webp" type="image/webp">
+          <img src="/images/projects/wave-food-hall/interior-food-hall.jpg" alt="Wave Food Hall interior — daylight through storefront glazing, Cocoa Beach" width="700" height="467" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Cocoa Beach, FL · ESWindows storefront</span>
+          <h3>Food hall interior</h3>
+        </div>
+      </a>
+      <a class="pt s8" href="/ocean-prime-ft-lauderdale.html" aria-label="Ocean Prime marina aerial — view case study">
+        <picture>
+          <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-marina-aerial.avif" type="image/avif">
+          <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-marina-aerial.webp" type="image/webp">
+          <img src="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-marina-aerial.jpg" alt="Ocean Prime at Pier Sixty-Six — aerial over Las Olas Marina and the restaurant's waterfront glass line" width="1600" height="1197" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Lauderdale, FL · Las Olas Marina</span>
+          <h3>The marina line</h3>
         </div>
       </a>
     </div>
@@ -300,66 +366,89 @@ a.pp-frame:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">Impact glazing · retail · office</p>
     </div>
 
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/gulfside-twelve.html" aria-label="Gulfside Twelve — view case study">
+    <div class="pp-mosaic rv">
+      <a class="pt s8 r2" href="/gulfside-twelve.html" aria-label="Gulfside Twelve — view case study">
         <picture>
           <source srcset="/images/projects/gulfside-twelve/hero-twilight-beachfront.avif" type="image/avif">
           <source srcset="/images/projects/gulfside-twelve/hero-twilight-beachfront.webp" type="image/webp">
           <img src="/images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve — beachfront condominiums on Fort Myers Beach at twilight, PGT impact windows" width="1920" height="1071" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Fort Myers Beach, FL · Lee County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Myers Beach, FL · PGT impact · WBDR</span>
           <h3>Gulfside Twelve</h3>
-          <div class="pp-tags"><span>Multifamily Condominium</span><span>PGT Impact Windows</span><span>WBDR</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/harbour-cay-fort-pierce.html" aria-label="Harbour Cay II — view case study">
+      <a class="pt" href="/harbour-cay-fort-pierce.html" aria-label="Harbour Cay II — view case study">
         <picture>
           <source srcset="/images/projects/harbour-cay/dunkin-corner.avif" type="image/avif">
           <source srcset="/images/projects/harbour-cay/dunkin-corner.webp" type="image/webp">
           <img src="/images/projects/harbour-cay/dunkin-corner.jpg" alt="Harbour Cay II coastal retail center, Fort Pierce — storefront glazing" width="1500" height="1125" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Fort Pierce, FL · St. Lucie County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Pierce, FL · Mason Development</span>
           <h3>Harbour Cay II</h3>
-          <div class="pp-tags"><span>Mason Development &amp; Construction, GC</span><span>ESWindows</span><span>Coastal Retail</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/wave-haven-cocoa-beach.html" aria-label="Wave Haven — view case study">
+      <a class="pt" href="/wave-haven-cocoa-beach.html" aria-label="Wave Haven — view case study">
         <picture>
           <source srcset="/images/projects/wave-haven/hero-commercial.avif" type="image/avif">
           <source srcset="/images/projects/wave-haven/hero-commercial.webp" type="image/webp">
           <img src="/images/projects/wave-haven/hero-commercial.jpg" alt="Wave Haven, Cocoa Beach — mixed-use commercial building with ESWindows dark storefront" width="1619" height="1080" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Cocoa Beach, FL · Brevard County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Cocoa Beach, FL · ESWindows impact</span>
           <h3>Wave Haven</h3>
-          <div class="pp-tags"><span>Mixed-Use</span><span>Certified General Contractors, GC</span><span>ESWindows Impact</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
         </div>
       </a>
-    </div>
-
-    <div class="pp-plate rv">
-      <a class="pp-frame" href="/hulett-environmental-port-st-lucie.html" aria-label="Hulett Environmental Services headquarters — view case study">
+      <a class="pt s7" href="/hulett-environmental-port-st-lucie.html" aria-label="Hulett Environmental Services headquarters — view case study">
         <picture>
           <source srcset="/images/projects/hulett-environmental/hero-sunset-front.avif" type="image/avif">
           <source srcset="/images/projects/hulett-environmental/hero-sunset-front.webp" type="image/webp">
           <img src="/images/projects/hulett-environmental/hero-sunset-front.jpg" alt="Hulett Environmental Services headquarters at sunset, Port St. Lucie — ESWindows storefront and window package" width="2200" height="1236" loading="lazy" decoding="async">
         </picture>
-        <div class="pp-frame-copy">
-          <div class="where">Port St. Lucie, FL · St. Lucie County</div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Port St. Lucie, FL · Hooks Construction</span>
           <h3>Hulett Environmental HQ</h3>
-          <div class="pp-tags"><span>Commercial Office</span><span>Hooks Construction, GC</span><span>ESWindows</span></div>
-          <div class="pp-link">View case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+        </div>
+      </a>
+      <a class="pt s5" href="/harbour-cay-fort-pierce.html" aria-label="Harbour Cay II aerial — view case study">
+        <picture>
+          <source srcset="/images/projects/harbour-cay/full-center-aerial.avif" type="image/avif">
+          <source srcset="/images/projects/harbour-cay/full-center-aerial.webp" type="image/webp">
+          <img src="/images/projects/harbour-cay/full-center-aerial.jpg" alt="Harbour Cay II — aerial over the full coastal retail center, Fort Pierce" width="1500" height="1125" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Pierce, FL · Coastal retail</span>
+          <h3>The full center</h3>
+        </div>
+      </a>
+      <a class="pt s5" href="/gulfside-twelve.html" aria-label="Gulfside Twelve pool deck aerial — view case study">
+        <picture>
+          <source srcset="/images/projects/gulfside-twelve/aerial-pool-gulf.avif" type="image/avif">
+          <source srcset="/images/projects/gulfside-twelve/aerial-pool-gulf.webp" type="image/webp">
+          <img src="/images/projects/gulfside-twelve/aerial-pool-gulf.jpg" alt="Gulfside Twelve — aerial over the pool deck toward the Gulf, Fort Myers Beach" width="1600" height="900" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Fort Myers Beach, FL · Gulf side</span>
+          <h3>Pool deck, Gulf side</h3>
+        </div>
+      </a>
+      <a class="pt s7" href="/hulett-environmental-port-st-lucie.html" aria-label="Hulett Environmental aerial — view case study">
+        <picture>
+          <source srcset="/images/projects/hulett-environmental/aerial-front-entrance.avif" type="image/avif">
+          <source srcset="/images/projects/hulett-environmental/aerial-front-entrance.webp" type="image/webp">
+          <img src="/images/projects/hulett-environmental/aerial-front-entrance.jpg" alt="Hulett Environmental HQ — aerial over the front entrance storefront, Port St. Lucie" width="1600" height="898" loading="lazy" decoding="async">
+        </picture>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <div class="pt-cap">
+          <span class="where">Port St. Lucie, FL · ESWindows package</span>
+          <h3>Front entrance, from above</h3>
         </div>
       </a>
     </div>
