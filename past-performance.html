@@ -91,6 +91,11 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
 .pp-proof-row{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap}
 .pp-proof-row p{max-width:44ch;color:#C6CFDD;font-size:.95rem}
 .pp-proof-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+
+/* bridge to the full portfolio */
+.pp-more{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;
+  margin:clamp(3rem,8vh,5rem) var(--pad) 0;padding-top:1.6rem;border-top:1px solid rgba(191,212,239,.22)}
+.pp-more p{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 </style>
 </head>
 <body>
@@ -99,7 +104,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
   <a class="wordmark" href="/">American Commercial Glass<b>.</b></a>
   <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
   <nav class="links" id="menu" aria-label="Main">
-    <a href="/#capability">Capability</a><a href="/#discipline">Discipline</a><a href="#groups">Record</a><a href="/#prequal">Prequal</a><a href="/#contact">Contact</a>
+    <a href="/#capability">Capability</a><a href="/#discipline">Discipline</a><a href="#groups">Record</a><a href="/portfolio.html">Portfolio</a><a href="/#prequal">Prequal</a><a href="/#contact">Contact</a>
     <a class="btn-plans" href="/scope-engine.html">Send plans</a>
   </nav>
 </header>
@@ -453,6 +458,11 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       </a>
     </div>
   </section>
+
+  <div class="pp-more rv" id="full-portfolio">
+    <p>Selected work — 350+ projects on the record</p>
+    <a class="btn btn-ghost" href="/portfolio.html">View the full portfolio</a>
+  </div>
 
 </div>
 </main>
