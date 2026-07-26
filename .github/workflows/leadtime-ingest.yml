@@ -41,7 +41,9 @@ jobs:
             3. Any manufacturer that should have appeared but did not — check that their POs are in the CSV.
             
             If the page rebuild looks wrong, close the PR and re-run after fixing `/data/po-export.csv`. The script honors a `data/po-export.csv` that the owner drops into the repo manually each month.
-          labels:
-            - lead-times
-            - monthly-refresh
-            - owner-review
+          # Action inputs are strings, not YAML sequences. A list here made the
+          # whole file unparseable, so this workflow never ran once.
+          labels: |
+            lead-times
+            monthly-refresh
+            owner-review
