@@ -27,5 +27,5 @@ jobs:
         run: sleep 90
 
       - name: Run SEO verifier (FAIL tier protects Sprint 1)
-        run: python scripts/seo-verify.py --live
+        run: python .github/scripts/seo-verify.py --live
         # WARN-tier failures do not block — flip to --strict-warn after Sprint 2 ships

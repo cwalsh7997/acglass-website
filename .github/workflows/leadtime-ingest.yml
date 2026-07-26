@@ -23,7 +23,7 @@ jobs:
 
       - name: Run lead-time ingest
         run: |
-          python3 scripts/leadtime-ingest.py
+          python3 .github/scripts/leadtime-ingest.py
 
       - name: Open PR if /resources/lead-times.html changed
         uses: peter-evans/create-pull-request@v6

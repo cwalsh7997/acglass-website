@@ -34,4 +34,4 @@ jobs:
           SHEETS_ID: ${{ secrets.SHEETS_ID }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         run: |
-          python3 scripts/seo-pulse.py
+          python3 .github/scripts/seo-pulse.py
