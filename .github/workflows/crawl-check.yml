@@ -1,0 +1,26 @@
+name: Crawl Check
+
+# Offline counterpart to SEO Verify: no network, so it can gate a PR before the
+# change is ever deployed.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  crawl-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run crawl/asset/sitemap checker
+        run: python .github/scripts/crawl-check.py
+        # WARN tier is pinned to pre-existing internal-linking debt and does not
+        # block; flip to --strict-warn once those targets are published.
