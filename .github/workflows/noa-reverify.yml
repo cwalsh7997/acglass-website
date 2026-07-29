@@ -25,7 +25,8 @@ jobs:
         id: reverify
         run: |
           set +e
-          python3 scripts/noa-reverify.py | tee /tmp/reverify.txt
+          set -o pipefail
+          python3 .github/scripts/noa-reverify.py | tee /tmp/reverify.txt
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Open issue on any failure

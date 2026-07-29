@@ -25,7 +25,8 @@ jobs:
         id: status
         run: |
           set +e
-          python3 scripts/noa-status-check.py | tee /tmp/noa-status.txt
+          set -o pipefail
+          python3 .github/scripts/noa-status-check.py | tee /tmp/noa-status.txt
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Open issue if stale
