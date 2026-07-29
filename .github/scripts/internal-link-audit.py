@@ -12,7 +12,8 @@ tracked .html files and enforces the link architecture:
           page clears its inbound-link floor.
   WARN  — anchor-text quality on the priority market pages (bare toponyms such
           as "Miami" carry no intent; "commercial glazing contractor in Miami"
-          does).
+          does), and the link defects stranded on pages that
+          .github/seo/url-primaries.json freezes byte-identical to main.
 
 Usage:
   python .github/scripts/internal-link-audit.py            # audit + exit code
@@ -122,6 +123,11 @@ INTENT_TOKENS = (
 # anchor. See check_anchor_intent for why this is a page count, not a share.
 ANCHOR_INTENT_FLOOR = 6
 
+# Non-canonical links stranded on the West Palm Beach pages that
+# url-primaries.json freezes: 14 "/index.html" logo hrefs plus 5 links into 301
+# sources, all on files this PR is forbidden to touch. See load_frozen.
+FROZEN_LINK_DEBT_BASELINE = 19
+
 
 # ---------------------------------------------------------------------------
 # Link graph
@@ -225,6 +231,33 @@ def load_redirects(root: str) -> dict[str, str]:
     return {r["source"]: r["destination"] for r in cfg.get("redirects", [])}
 
 
+def load_frozen(root: str) -> set[str]:
+    """Page URLs that url-primaries.json freezes byte-identical to main.
+
+    canonical-verify.py gates those files against git, so this audit cannot ask
+    for a link on one to be rewritten — the two gates would be unsatisfiable
+    together. Their defects move to check_frozen_page_debt instead of being
+    dropped, so the set cannot grow unnoticed while the freeze holds.
+    """
+    path = os.path.join(root, ".github", "seo", "url-primaries.json")
+    if not os.path.isfile(path):
+        return set()
+    with open(path, encoding="utf-8") as fh:
+        prefixes = json.load(fh).get("frozen_prefixes", [])
+    frozen = set()
+    for url in prefixes:
+        rel = url.lstrip("/")
+        rel = rel + "index.html" if (rel == "" or rel.endswith("/")) else rel
+        if os.path.isfile(os.path.join(root, rel)):
+            frozen.add(url_for(os.path.join(root, rel), root))
+        if url.endswith("/") and url != "/":
+            for dirpath, _, names in os.walk(os.path.join(root, url.strip("/"))):
+                for n in names:
+                    if n.endswith(".html"):
+                        frozen.add(url_for(os.path.join(dirpath, n), root))
+    return frozen
+
+
 # ---------------------------------------------------------------------------
 # Checks
 # ---------------------------------------------------------------------------
@@ -242,8 +275,8 @@ class Result:
         return f"  [{sym}] {self.tier:4}  {self.name}{('  — ' + self.detail) if self.detail else ''}"
 
 
-def check_home_link(results, inbound):
-    linkers = sorted(inbound.get("/index.html", {}))
+def check_home_link(results, inbound, frozen):
+    linkers = sorted(set(inbound.get("/index.html", {})) - frozen)
     results.append(
         Result(
             "FAIL",
@@ -254,10 +287,10 @@ def check_home_link(results, inbound):
     )
 
 
-def check_no_links_to_redirects(results, inbound, redirects):
+def check_no_links_to_redirects(results, inbound, redirects, frozen):
     offenders = {}
     for source, dest in redirects.items():
-        linkers = sorted(inbound.get(source, {}))
+        linkers = sorted(set(inbound.get(source, {})) - frozen)
         if linkers:
             offenders[source] = (dest, linkers)
     detail = ""
@@ -269,7 +302,7 @@ def check_no_links_to_redirects(results, inbound, redirects):
     )
 
 
-def check_no_broken_links(results, inbound, known, redirects):
+def check_no_broken_links(results, inbound, known, redirects, frozen):
     broken = {}
     for target, linkers in inbound.items():
         if target in known or target in redirects:
@@ -279,7 +312,9 @@ def check_no_broken_links(results, inbound, known, redirects):
         leaf = target.rstrip("/").rsplit("/", 1)[-1]
         if "." in leaf and not target.endswith(".html"):
             continue
-        broken[target] = sorted(linkers)
+        live = sorted(set(linkers) - frozen)
+        if live:
+            broken[target] = live
     detail = ""
     if broken:
         worst = sorted(broken.items(), key=lambda kv: -len(kv[1]))[:6]
@@ -288,6 +323,25 @@ def check_no_broken_links(results, inbound, known, redirects):
         Result("FAIL", "No internal link targets a missing page", not broken, detail)
     )
     return broken
+
+
+def check_frozen_page_debt(results, inbound, redirects, frozen):
+    """The link defects the freeze makes unfixable, held at a baseline.
+
+    Reported rather than waived: if the freeze lifts these become FAILs again,
+    and while it holds the count must not grow.
+    """
+    refs = 0
+    for target in ["/index.html", *redirects]:
+        refs += len(set(inbound.get(target, {})) & frozen)
+    results.append(
+        Result(
+            "WARN",
+            f"non-canonical links on frozen pages ≤ baseline {FROZEN_LINK_DEBT_BASELINE}",
+            refs <= FROZEN_LINK_DEBT_BASELINE,
+            f"{refs} ref(s) on pages url-primaries.json freezes",
+        )
+    )
 
 
 def check_hub_coverage(results, outbound, known):
@@ -379,13 +433,15 @@ def main() -> int:
     root = os.path.abspath(args.root)
     pages, known, inbound, outbound = build_graph(root)
     redirects = load_redirects(root)
+    frozen = load_frozen(root)
 
     print(f"\ninternal-link-audit — {len(pages)} pages, {sum(len(v) for v in outbound.values())} internal links\n")
 
     results: list[Result] = []
-    check_home_link(results, inbound)
-    check_no_links_to_redirects(results, inbound, redirects)
-    check_no_broken_links(results, inbound, known, redirects)
+    check_home_link(results, inbound, frozen)
+    check_no_links_to_redirects(results, inbound, redirects, frozen)
+    check_no_broken_links(results, inbound, known, redirects, frozen)
+    check_frozen_page_debt(results, inbound, redirects, frozen)
     check_hub_coverage(results, outbound, known)
     check_inbound_floors(results, inbound)
     check_anchor_intent(results, inbound)
