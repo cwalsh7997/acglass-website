@@ -1,0 +1,36 @@
+{
+  "$schema_version": 1,
+  "source": "gsc-api:sc-domain:acglass.com",
+  "dimensions": ["query", "page"],
+  "period": {
+    "label": "current",
+    "start": "2026-07-20",
+    "end": "2026-07-26"
+  },
+  "rows": [
+    {
+      "query": "commercial glazing contractor west palm beach",
+      "page": "https://acglass.com/west-palm-beach/",
+      "clicks": 26,
+      "impressions": 520,
+      "ctr": 0.05,
+      "position": 4.0
+    },
+    {
+      "query": "commercial glazing contractor west palm beach",
+      "page": "https://acglass.com/commercial-glazing-west-palm-beach.html",
+      "clicks": 11,
+      "impressions": 430,
+      "ctr": 0.025581,
+      "position": 6.8
+    },
+    {
+      "query": "eswindows installer florida",
+      "page": "https://acglass.com/eswindows-installer-florida.html",
+      "clicks": 22,
+      "impressions": 540,
+      "ctr": 0.040741,
+      "position": 8.2
+    }
+  ]
+}

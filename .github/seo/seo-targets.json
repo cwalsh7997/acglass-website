@@ -1,0 +1,359 @@
+{
+  "$schema_version": 1,
+  "_about": [
+    "Priority target definitions for the ACG SEO measurement layer.",
+    "Read by .github/scripts/seo_measure/. Contains NO secrets and NO metric values -",
+    "only the target set and the thresholds used to score it. Metric values arrive at",
+    "runtime from GSC CSV exports / API snapshots (.github/seo/data/) and from",
+    "manual-metrics.json for sources with no API.",
+    "Edit this file to change what the weekly report tracks. Runbook: .github/scripts/seo_measure/README.md"
+  ],
+  "property": {
+    "gsc_property": "sc-domain:acglass.com"
+  },
+  "thresholds": {
+    "_about": "Position bands follow the 10-results-per-page convention used throughout the strategy docs.",
+    "page1_max_position": 10.0,
+    "page2_max_position": 20.0,
+    "page3_max_position": 30.0,
+    "striking_distance": {
+      "_about": "Page 2-3. Queries here are the cheapest page-1 wins and drive the weekly action list.",
+      "min_position": 10.0,
+      "max_position": 30.0
+    },
+    "movement": {
+      "_about": "A query must clear min_impressions in at least one period before a position delta is reported, so low-sample noise stays out of the summary.",
+      "min_impressions": 10,
+      "material_position_delta": 1.0
+    },
+    "cannibalization": {
+      "_about": [
+        "A query is flagged when 2+ ACG URLs both draw real impression volume for it.",
+        "Definition per strategy doc: two or more ACG URLs competing for the same intent.",
+        "Requires a query+page dimensioned dataset; query-only exports cannot detect this."
+      ],
+      "min_urls": 2,
+      "min_impressions_per_url": 5,
+      "min_impression_share_per_url": 0.1,
+      "high_severity_page1_urls": 2,
+      "high_severity_min_share": 0.3
+    }
+  },
+  "query_groups": [
+    {
+      "id": "brand",
+      "label": "Brand / navigational",
+      "queries": [
+        "american commercial glass",
+        "acg glass contractor",
+        "american commercial glass florida",
+        "who is american commercial glass"
+      ]
+    },
+    {
+      "id": "service-geo",
+      "label": "Service + location (core commercial intent)",
+      "queries": [
+        {
+          "query": "commercial glazing contractor florida",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "commercial glazing contractor west palm beach",
+          "market": "west-palm-beach"
+        },
+        {
+          "query": "commercial glass contractor south florida",
+          "market": "south-florida"
+        },
+        {
+          "query": "commercial glazing contractor miami",
+          "market": "miami"
+        },
+        {
+          "query": "commercial glazing contractor nashville",
+          "market": "nashville"
+        },
+        {
+          "query": "storefront glazing contractor florida",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "storefront installer nashville",
+          "market": "nashville"
+        },
+        {
+          "query": "best glaziers south florida",
+          "market": "south-florida"
+        }
+      ]
+    },
+    {
+      "id": "manufacturer",
+      "label": "Manufacturer / ecosystem",
+      "queries": [
+        "eswindows installer florida",
+        "eswindows authorized dealer",
+        "euro-wall dealer locator",
+        "euro-wall folding door installer florida",
+        "euro-wall restaurant installer florida",
+        "pgt installer florida",
+        "allegion installer florida"
+      ]
+    },
+    {
+      "id": "compliance",
+      "label": "Compliance / regulatory",
+      "queries": [
+        "florida noa explained",
+        "florida building code glass requirements",
+        "miami-dade noa glazing",
+        "florida product approval search",
+        "florida hvhz glazing requirements",
+        "tennessee building code glazing"
+      ]
+    },
+    {
+      "id": "vertical",
+      "label": "Vertical / sector",
+      "queries": [
+        "multifamily commercial glazing florida",
+        "healthcare glazing florida",
+        "hospitality hotel glazing florida",
+        "government municipal glazing florida",
+        "office building glazier florida",
+        "restaurant glazier florida",
+        "retail storefront glazing"
+      ]
+    },
+    {
+      "id": "comparison",
+      "label": "Competitor comparison",
+      "queries": [
+        "acg vs giroux glass",
+        "acg vs harmon",
+        "acg vs permasteelisa",
+        "eswindows vs pgt impact windows"
+      ]
+    },
+    {
+      "id": "educational",
+      "label": "Educational / how-to",
+      "queries": [
+        "how to hire commercial glazier florida",
+        "how much does commercial glazing cost",
+        "commercial glazing bid process",
+        "glass types comparison commercial"
+      ]
+    },
+    {
+      "id": "nashville-launch",
+      "label": "Nashville launch (Q3 2026)",
+      "queries": [
+        {
+          "query": "commercial glazing tennessee",
+          "market": "nashville"
+        },
+        {
+          "query": "healthcare glazing nashville",
+          "market": "nashville"
+        },
+        {
+          "query": "restaurant glazing nashville",
+          "market": "nashville"
+        },
+        {
+          "query": "multifamily glazing nashville",
+          "market": "nashville"
+        },
+        {
+          "query": "commercial glazing clarksville tn",
+          "market": "nashville"
+        },
+        {
+          "query": "commercial glazing murfreesboro tn",
+          "market": "nashville"
+        },
+        {
+          "query": "commercial glazing franklin tn",
+          "market": "nashville"
+        },
+        {
+          "query": "commercial glazing spring hill tn",
+          "market": "nashville"
+        }
+      ]
+    }
+  ],
+  "markets": [
+    {
+      "id": "west-palm-beach",
+      "label": "West Palm Beach, FL"
+    },
+    {
+      "id": "miami",
+      "label": "Miami / Miami-Dade County, FL"
+    },
+    {
+      "id": "fort-lauderdale",
+      "label": "Fort Lauderdale, FL"
+    },
+    {
+      "id": "naples",
+      "label": "Naples, FL"
+    },
+    {
+      "id": "south-florida",
+      "label": "South Florida (regional)"
+    },
+    {
+      "id": "tampa",
+      "label": "Tampa, FL"
+    },
+    {
+      "id": "orlando",
+      "label": "Orlando, FL"
+    },
+    {
+      "id": "sarasota",
+      "label": "Sarasota, FL"
+    },
+    {
+      "id": "jacksonville",
+      "label": "Jacksonville, FL"
+    },
+    {
+      "id": "florida-statewide",
+      "label": "Florida (statewide)"
+    },
+    {
+      "id": "nashville",
+      "label": "Nashville / Davidson County, TN"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "label": "Homepage",
+      "role": "root-authority"
+    },
+    {
+      "path": "/glazing-contractor-florida.html",
+      "label": "Glazing contractor Florida",
+      "role": "statewide-hub",
+      "market": "florida-statewide"
+    },
+    {
+      "path": "/commercial-glass-installation-florida.html",
+      "label": "Commercial glass installation Florida",
+      "role": "statewide-hub",
+      "market": "florida-statewide"
+    },
+    {
+      "path": "/storefront-glazier-florida/",
+      "label": "Storefront glazier Florida",
+      "role": "statewide-hub",
+      "market": "florida-statewide"
+    },
+    {
+      "path": "/commercial-glazing-south-florida.html",
+      "label": "Commercial glazing South Florida",
+      "role": "regional-hub",
+      "market": "south-florida"
+    },
+    {
+      "path": "/west-palm-beach/",
+      "label": "West Palm Beach (canonical)",
+      "role": "market-page",
+      "market": "west-palm-beach"
+    },
+    {
+      "path": "/commercial-glazing-west-palm-beach.html",
+      "label": "Commercial glazing WPB (duplicate of /west-palm-beach/)",
+      "role": "market-page",
+      "market": "west-palm-beach"
+    },
+    {
+      "path": "/storefront-glazier-west-palm-beach-florida/",
+      "label": "Storefront glazier WPB",
+      "role": "market-page",
+      "market": "west-palm-beach"
+    },
+    {
+      "path": "/storefront-glazier-miami-florida/",
+      "label": "Storefront glazier Miami",
+      "role": "market-page",
+      "market": "miami"
+    },
+    {
+      "path": "/miami-hvhz-glazing-contractor.html",
+      "label": "Miami HVHZ glazing contractor",
+      "role": "market-page",
+      "market": "miami"
+    },
+    {
+      "path": "/miami/commercial-storefronts/",
+      "label": "Miami commercial storefronts",
+      "role": "market-page",
+      "market": "miami"
+    },
+    {
+      "path": "/commercial-glazing-nashville-tn.html",
+      "label": "Commercial glazing Nashville TN",
+      "role": "market-page",
+      "market": "nashville"
+    },
+    {
+      "path": "/nashville/",
+      "label": "Nashville hub",
+      "role": "market-page",
+      "market": "nashville"
+    },
+    {
+      "path": "/storefront-installer-nashville.html",
+      "label": "Storefront installer Nashville",
+      "role": "market-page",
+      "market": "nashville"
+    },
+    {
+      "path": "/eswindows-installer-florida.html",
+      "label": "ESWindows installer Florida",
+      "role": "manufacturer-hub"
+    },
+    {
+      "path": "/euro-wall-installer-florida.html",
+      "label": "Euro-Wall installer Florida",
+      "role": "manufacturer-hub"
+    },
+    {
+      "path": "/euro-wall-restaurant-installer-florida.html",
+      "label": "Euro-Wall restaurant installer Florida",
+      "role": "manufacturer-hub"
+    },
+    {
+      "path": "/pgt-installer-florida.html",
+      "label": "PGT installer Florida",
+      "role": "manufacturer-hub"
+    },
+    {
+      "path": "/allegion-installer-florida.html",
+      "label": "Allegion installer Florida",
+      "role": "manufacturer-hub"
+    },
+    {
+      "path": "/architect-specs/",
+      "label": "Architect specs (CSI Section 08)",
+      "role": "spec-authority"
+    },
+    {
+      "path": "/acg-vs-competitors.html",
+      "label": "ACG vs competitors",
+      "role": "comparison"
+    }
+  ],
+  "report": {
+    "top_n_movers": 10,
+    "top_n_pages": 20,
+    "output_dir": ".github/seo/reports"
+  }
+}

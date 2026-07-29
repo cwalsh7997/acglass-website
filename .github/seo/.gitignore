@@ -1,0 +1,4 @@
+# Working data and generated output. These are business metrics, and the repo
+# root is the public deploy root - keep them out of git entirely.
+data/
+reports/

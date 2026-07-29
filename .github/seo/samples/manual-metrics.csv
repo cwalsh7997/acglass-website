@@ -1,0 +1,19 @@
+section,metric,scope,value,unit,input_method,supplied
+Local / Map pack (Google Business Profile),Map impressions,west-palm-beach,1840,count,manual-export,yes
+Local / Map pack (Google Business Profile),Direction requests,west-palm-beach,37,count,manual-export,yes
+Local / Map pack (Google Business Profile),Call clicks,west-palm-beach,22,count,manual-export,yes
+Local / Map pack (Google Business Profile),Total reviews,west-palm-beach,14,count,manual-export,yes
+Local / Map pack (Google Business Profile),Average rating,west-palm-beach,4.9,stars,manual-export,yes
+Local / Map pack (Google Business Profile),Map impressions,naples,,count,manual-export,no
+Map-pack rank on core query,Map-pack rank,west-palm-beach,1,rank,manual-export,yes
+Map-pack rank on core query,Map-pack rank,miami,,rank,manual-export,no
+Map-pack rank on core query,Map-pack rank,nashville,,rank,manual-export,no
+AI assistant visibility,Prompts citing ACG - Perplexity,perplexity,0.3,ratio,connector,yes
+AI assistant visibility,Prompts citing ACG - Gemini,gemini,0.2,ratio,connector,yes
+AI assistant visibility,Prompts citing ACG - OpenAI,openai,,ratio,connector,no
+AI assistant visibility,GA4 AI Assistants sessions,all,,count,connector,no
+Bing Webmaster Tools,Impressions (web + chat),,4120,count,connector,yes
+Bing Webmaster Tools,Clicks,,61,count,connector,yes
+Bing Webmaster Tools,Indexed pages,,,count,connector,no
+Bing Webmaster Tools,AI Performance - total citations,,,count,unavailable-no-api,no
+Google AI surfaces,Generative-AI impressions,,,count,unavailable-no-api,no
