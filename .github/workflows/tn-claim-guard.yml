@@ -1,0 +1,25 @@
+name: TN Claim Guard
+
+# Offline counterpart to SEO Verify. seo-verify.py only sees what is already
+# live, so it cannot stop a regression from shipping. This one reads the repo
+# and runs on pull requests, before the Pages deploy.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tn-claims:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Guard Tennessee pages against Florida leakage and unsupported office claims
+        run: python .github/scripts/tn-claim-guard.py
