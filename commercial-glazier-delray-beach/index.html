@@ -20,15 +20,18 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://acglass.com/#organization",
+    "@type": [
+      "LocalBusiness",
+      "HomeAndConstructionBusiness"
+    ],
+    "@id": "https://acglass.com/#localbusiness-west-palm-beach",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "telephone": "+1-772-486-7711",
     "email": "info@acglass.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "700 S Rosemary Ave Ste 204",
+      "streetAddress": "700 S Rosemary Ave Suite 204",
       "addressLocality": "West Palm Beach",
       "addressRegion": "FL",
       "postalCode": "33401",
@@ -36,8 +39,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 26.7153,
-      "longitude": -80.0534
+      "latitude": 26.70716,
+      "longitude": -80.05707
     },
     "areaServed": [
       {
@@ -48,16 +51,20 @@
         "@type": "State",
         "name": "Tennessee"
       }
-    ]
+    ],
+    "parentOrganization": {
+      "@id": "https://acglass.com/#organization"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Commercial Glazing in Delray Beach, FL",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       "name": "American Commercial Glass",
-      "@id": "https://acglass.com/#org"
+      "@id": "https://acglass.com/#organization",
+      "url": "https://acglass.com/"
     },
     "areaServed": {
       "@type": "City",

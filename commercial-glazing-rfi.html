@@ -45,7 +45,9 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-15",
   "dateModified": "2026-05-15",
@@ -56,35 +58,86 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Bid & Procurement Hub", "item": "https://acglass.com/bid-hub.html"},
-      {"@type": "ListItem", "position": 3, "name": "RFI Process", "item": "https://acglass.com/commercial-glazing-rfi.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bid & Procurement Hub",
+      "item": "https://acglass.com/bid-hub.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "RFI Process",
+      "item": "https://acglass.com/commercial-glazing-rfi.html"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What is a standard RFI response time for commercial glazing?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG targets a 7-business-day response for standard Division 08 RFIs. RFIs involving structural anchor conditions, NOA compliance questions, or substitution requests that require manufacturer engineering review may require 10–14 days. We flag expected response time when the RFI is submitted."}},
-      {"@type": "Question", "name": "Who initiates RFIs on a glazing project?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG initiates RFIs directed to the GC, who routes them to the architect or EOR as appropriate. The GC is the contractual conduit — ACG does not contact the architect directly unless specifically authorized in the subcontract. On design-build projects, ACG may communicate directly with the design team."}},
-      {"@type": "Question", "name": "What are the most common Division 08 RFI types?",
-       "acceptedAnswer": {"@type": "Answer", "text": "The five most common glazing RFIs are: (1) missing or conflicting sill/head/jamb conditions, (2) anchor condition not shown at slab edge or structural steel, (3) product substitution requests when specified product is unavailable, (4) code clarification for HVHZ vs FPA compliance, (5) glass type conflict between spec and schedule."}},
-      {"@type": "Question", "name": "How does ACG number RFIs?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG uses sequential RFI numbers with a project prefix — e.g., ACG-RFI-001 through ACG-RFI-XXX — tracked in Procore. Each RFI includes the date submitted, required response date, specification section reference, drawing reference, and the specific question. We maintain a complete RFI log as part of project documentation."}},
-      {"@type": "Question", "name": "Does ACG use Procore for RFI tracking?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Yes. ACG manages RFIs through Procore on every project where the GC operates in Procore. For GCs using other platforms (Buildertrend, CMiC, Autodesk Build), ACG will parallel-track in our own Procore instance and maintain documentation for the project record."}},
-      {"@type": "Question", "name": "What is an RFI substitution request in glazing?",
-       "acceptedAnswer": {"@type": "Answer", "text": "A substitution RFI requests approval to use a different manufacturer or product than what the spec names. For glazing, this is common when specified NOA assemblies are discontinued or have unacceptable lead times. ACG documents substitution RFIs with full technical comparisons — frame depth, glass bite, thermal performance, NOA coverage — for the architect's review."}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a standard RFI response time for commercial glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG targets a 7-business-day response for standard Division 08 RFIs. RFIs involving structural anchor conditions, NOA compliance questions, or substitution requests that require manufacturer engineering review may require 10–14 days. We flag expected response time when the RFI is submitted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who initiates RFIs on a glazing project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG initiates RFIs directed to the GC, who routes them to the architect or EOR as appropriate. The GC is the contractual conduit — ACG does not contact the architect directly unless specifically authorized in the subcontract. On design-build projects, ACG may communicate directly with the design team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common Division 08 RFI types?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The five most common glazing RFIs are: (1) missing or conflicting sill/head/jamb conditions, (2) anchor condition not shown at slab edge or structural steel, (3) product substitution requests when specified product is unavailable, (4) code clarification for HVHZ vs FPA compliance, (5) glass type conflict between spec and schedule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does ACG number RFIs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG uses sequential RFI numbers with a project prefix — e.g., ACG-RFI-001 through ACG-RFI-XXX — tracked in Procore. Each RFI includes the date submitted, required response date, specification section reference, drawing reference, and the specific question. We maintain a complete RFI log as part of project documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ACG use Procore for RFI tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ACG manages RFIs through Procore on every project where the GC operates in Procore. For GCs using other platforms (Buildertrend, CMiC, Autodesk Build), ACG will parallel-track in our own Procore instance and maintain documentation for the project record."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an RFI substitution request in glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A substitution RFI requests approval to use a different manufacturer or product than what the spec names. For glazing, this is common when specified NOA assemblies are discontinued or have unacceptable lead times. ACG documents substitution RFIs with full technical comparisons — frame depth, glass bite, thermal performance, NOA coverage — for the architect's review."
+      }
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
@@ -95,7 +148,7 @@
   "provider": {
     "@type": "Organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "alternateName": [
       "ACG",
       "ACG Glass",
@@ -105,7 +158,8 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization"
   },
   "serviceType": "Commercial Glazing Construction Management",
   "description": "ACG manages Division 08 RFIs through Procore with 7-day response standard, structured documentation, and PCO tracking for scope changes."

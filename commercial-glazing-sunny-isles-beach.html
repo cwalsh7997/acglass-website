@@ -21,56 +21,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "WebPage",
-    "LocalBusiness"
-  ],
-  "@id": "https://acglass.com/commercial-glazing-sunny-isles-beach.html#localbusiness",
-  "url": "https://acglass.com/commercial-glazing-sunny-isles-beach.html",
-  "name": "American Commercial Glass \u2014 Sunny Isles Beach, FL",
-  "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Sunny Isles Beach, FL (Miami-Dade County). Florida CGC #1531993. 48-hour bid.",
-  "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
-  "telephone": "+1-772-486-7711",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sunny Isles Beach",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Sunny Isles Beach"
+      "@type": "WebPage",
+      "@id": "https://acglass.com/commercial-glazing-sunny-isles-beach.html#webpage",
+      "url": "https://acglass.com/commercial-glazing-sunny-isles-beach.html",
+      "name": "American Commercial Glass — Sunny Isles Beach, FL",
+      "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Sunny Isles Beach, FL (Miami-Dade County). Florida CGC #1531993. 48-hour bid.",
+      "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
-      "@type": "AdministrativeArea",
-      "name": "Miami-Dade County"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 25.9468,
-    "longitude": -80.1228
-  },
-  "parentOrganization": {
-    "@id": "https://acglass.com/#organization"
-  },
-  "isPartOf": {
-    "@id": "https://acglass.com/#website"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "Service",
+      "@id": "https://acglass.com/commercial-glazing-sunny-isles-beach.html#service",
+      "name": "American Commercial Glass — Sunny Isles Beach, FL",
+      "serviceType": "Commercial Glazing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Sunny Isles Beach"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Miami-Dade County"
+        }
       ],
-      "opens": "07:00",
-      "closes": "18:00"
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      }
     }
   ]
 }

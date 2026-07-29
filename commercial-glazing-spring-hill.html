@@ -21,56 +21,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "WebPage",
-    "LocalBusiness"
-  ],
-  "@id": "https://acglass.com/commercial-glazing-spring-hill.html#localbusiness",
-  "url": "https://acglass.com/commercial-glazing-spring-hill.html",
-  "name": "American Commercial Glass \u2014 Spring Hill, FL",
-  "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Spring Hill, FL (Hernando County). Florida CGC #1531993. 48-hour bid.",
-  "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
-  "telephone": "+1-772-486-7711",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Spring Hill",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Spring Hill"
+      "@type": "WebPage",
+      "@id": "https://acglass.com/commercial-glazing-spring-hill.html#webpage",
+      "url": "https://acglass.com/commercial-glazing-spring-hill.html",
+      "name": "American Commercial Glass — Spring Hill, FL",
+      "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Spring Hill, FL (Hernando County). Florida CGC #1531993. 48-hour bid.",
+      "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
-      "@type": "AdministrativeArea",
-      "name": "Hernando County"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 28.4769,
-    "longitude": -82.5232
-  },
-  "parentOrganization": {
-    "@id": "https://acglass.com/#organization"
-  },
-  "isPartOf": {
-    "@id": "https://acglass.com/#website"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "Service",
+      "@id": "https://acglass.com/commercial-glazing-spring-hill.html#service",
+      "name": "American Commercial Glass — Spring Hill, FL",
+      "serviceType": "Commercial Glazing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Spring Hill"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hernando County"
+        }
       ],
-      "opens": "07:00",
-      "closes": "18:00"
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      }
     }
   ]
 }

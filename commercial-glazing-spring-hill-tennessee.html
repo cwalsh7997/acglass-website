@@ -21,58 +21,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "WebPage",
-    "LocalBusiness"
-  ],
-  "@id": "https://acglass.com/commercial-glazing-spring-hill-tennessee.html#localbusiness",
-  "url": "https://acglass.com/commercial-glazing-spring-hill-tennessee.html",
-  "name": "American Commercial Glass \u2014 Spring Hill, TN",
-  "description": "American Commercial Glass bids commercial storefront, curtain wall, and Euro-Wall folding door systems in Spring Hill, TN (Maury / Williamson Counties). Nashville office opens Q3 2026. Florida CGC #1531993. 48-hour bid.",
-  "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
-  "telephone": "+1-772-486-7711",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "700 S Rosemary Ave Suite 204",
-    "addressLocality": "West Palm Beach",
-    "addressRegion": "FL",
-    "postalCode": "33401",
-    "addressCountry": "US"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Spring Hill, TN"
+      "@type": "WebPage",
+      "@id": "https://acglass.com/commercial-glazing-spring-hill-tennessee.html#webpage",
+      "url": "https://acglass.com/commercial-glazing-spring-hill-tennessee.html",
+      "name": "American Commercial Glass — Spring Hill, TN, FL",
+      "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Spring Hill, TN, FL (Maury / Williamson Counties). Florida CGC #1531993. 48-hour bid.",
+      "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
-      "@type": "AdministrativeArea",
-      "name": "Maury / Williamson Counties"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 26.707159,
-    "longitude": -80.057072
-  },
-  "parentOrganization": {
-    "@id": "https://acglass.com/#organization"
-  },
-  "isPartOf": {
-    "@id": "https://acglass.com/#website"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "Service",
+      "@id": "https://acglass.com/commercial-glazing-spring-hill-tennessee.html#service",
+      "name": "American Commercial Glass — Spring Hill, TN, FL",
+      "serviceType": "Commercial Glazing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Spring Hill, TN"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Maury / Williamson Counties"
+        }
       ],
-      "opens": "07:00",
-      "closes": "18:00"
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      }
     }
   ]
 }

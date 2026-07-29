@@ -21,56 +21,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "WebPage",
-    "LocalBusiness"
-  ],
-  "@id": "https://acglass.com/commercial-glazing-pinellas-park.html#localbusiness",
-  "url": "https://acglass.com/commercial-glazing-pinellas-park.html",
-  "name": "American Commercial Glass \u2014 Pinellas Park, FL",
-  "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Pinellas Park, FL (Pinellas County). Florida CGC #1531993. 48-hour bid.",
-  "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
-  "telephone": "+1-772-486-7711",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Pinellas Park",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Pinellas Park"
+      "@type": "WebPage",
+      "@id": "https://acglass.com/commercial-glazing-pinellas-park.html#webpage",
+      "url": "https://acglass.com/commercial-glazing-pinellas-park.html",
+      "name": "American Commercial Glass — Pinellas Park, FL",
+      "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Pinellas Park, FL (Pinellas County). Florida CGC #1531993. 48-hour bid.",
+      "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
-      "@type": "AdministrativeArea",
-      "name": "Pinellas County"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 27.8428,
-    "longitude": -82.6995
-  },
-  "parentOrganization": {
-    "@id": "https://acglass.com/#organization"
-  },
-  "isPartOf": {
-    "@id": "https://acglass.com/#website"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "Service",
+      "@id": "https://acglass.com/commercial-glazing-pinellas-park.html#service",
+      "name": "American Commercial Glass — Pinellas Park, FL",
+      "serviceType": "Commercial Glazing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Pinellas Park"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pinellas County"
+        }
       ],
-      "opens": "07:00",
-      "closes": "18:00"
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      }
     }
   ]
 }
