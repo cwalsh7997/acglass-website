@@ -13,6 +13,8 @@ on:
       - '.github/scripts/seo-gsc-export.py'
       - '.github/scripts/tests/**'
       - '.github/seo/**'
+      # test_nav_opacity.py asserts on this stylesheet.
+      - 'css/acg-proof.css'
   pull_request:
     paths:
       - '.github/scripts/seo_measure/**'
@@ -20,6 +22,8 @@ on:
       - '.github/scripts/seo-gsc-export.py'
       - '.github/scripts/tests/**'
       - '.github/seo/**'
+      # test_nav_opacity.py asserts on this stylesheet.
+      - 'css/acg-proof.css'
   workflow_dispatch: {}
 
 permissions:
