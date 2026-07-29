@@ -36,10 +36,14 @@ nav.links a:hover{opacity:1}
 .btn-plans:hover{background:#c60f1c}
 .menu-btn{display:none;background:none;border:1px solid rgba(240,243,248,.3);color:var(--paper);padding:.5rem .8rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 @media(max-width:820px){
-  nav.links{position:fixed;inset:0;background:rgba(5,7,12,.97);flex-direction:column;justify-content:center;gap:2.2rem;display:none}
+  /* Opaque: this overlay covers the whole viewport, so any alpha lets page
+     copy ghost through behind the menu links. */
+  nav.links{position:fixed;inset:0;background:var(--obsidian);flex-direction:column;justify-content:center;gap:2.2rem;display:none}
   nav.links.open{display:flex}
   nav.links a{font-size:1rem}
   .menu-btn{display:block;position:relative;z-index:61}
+  /* Same layer as .menu-btn so the wordmark stays above the opaque overlay. */
+  .wordmark{position:relative;z-index:61}
 }
 
 /* ---------- hero: manifesto resolves onto the film ---------- */
@@ -174,6 +178,10 @@ footer a:hover,footer a:focus-visible{color:var(--paper)}
 .skip:focus{left:0}
 header.nav{transition:background .3s ease}
 header.nav.scrolled{background:rgba(5,7,12,.94);border-bottom:1px solid rgba(240,243,248,.08)}
+/* At 390px the scrolled bar sits directly over display-weight headings and .94
+   let them ghost through behind the wordmark and menu button. Desktop keeps its
+   designed alpha. */
+@media(max-width:820px){header.nav.scrolled{background:var(--obsidian)}}
 @supports not (backdrop-filter: blur(4px)){.callout .tag{background:rgba(5,7,12,.96)}}
 
 /* ---------- federal edition ---------- */
