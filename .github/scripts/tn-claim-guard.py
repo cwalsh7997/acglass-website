@@ -15,6 +15,13 @@ generated from the Florida templates:
      implies a Tennessee office that does not exist yet.
   3. Structured data asserting a Tennessee street address, Tennessee
      coordinates, or a Tennessee LocalBusiness node.
+  4. Delivery-complete Tennessee claims *anywhere on the site*, not just on TN
+     pages — an office count of four, an "Offices FL + TN" label, or a delivery
+     verb applied to "Florida and Tennessee" as one present-tense territory.
+     ACG has three Florida offices; Nashville opens Q3 2026. The claim is only a
+     violation when no planned-market qualifier sits near it, so
+     "Four offices … Nashville office opens Q3 2026" passes and a bare
+     "serves … projects across Florida and Tennessee" does not.
 
 What it deliberately does NOT flag:
   - The West Palm Beach NAP in the footer of every page. That address is real
@@ -91,6 +98,46 @@ HQ_LANGUAGE = re.compile(
 # Tennessee bounding box, padded. West Palm Beach (26.71, -80.06) is outside it.
 TN_LAT = (34.6, 37.0)
 TN_LON = (-90.8, -81.3)
+
+# --- delivery-complete Tennessee claims (site-wide) ------------------------
+#
+# Scanned on every page, not just the TN ones: the claim leaked into
+# industries.html, capabilities.html and llms.txt, none of which is TN-scoped,
+# so the TN_PATH/TN_TITLE discovery pass never saw them.
+
+OFFICE_COUNT = re.compile(
+    r"\b(?:four|4)\s+offices\b"
+    r"|\bOffices?\b(?:\s|&middot;|&nbsp;|·|\|){0,4}(?:FL|Florida)\s*(?:\+|and|&amp;|&)\s*(?:TN|Tennessee)\b",
+    re.IGNORECASE,
+)
+
+# A verb that puts ACG in both states *now*, close in front of the pair.
+DELIVERY_PAIR = re.compile(
+    r"\b(?:serves?|serving|installs?|installing|installation|delivers?|delivering"
+    r"|operates?|operating|covers?|covering|services|active)\b"
+    r"[^.!?]{0,140}?"
+    r"\bFlorida\s*(?:and|&amp;|&|/)\s*Tennessee\b",
+    re.IGNORECASE,
+)
+
+# The planned-market qualifier that makes the claim truthful. Searched in a
+# window around the match rather than the same sentence, because the honest
+# form is usually a heading plus the paragraph or list under it.
+TN_QUALIFIER = re.compile(
+    r"Q3\s*(?:'|’)?\s*(?:20)?26|opens?\b|opening\b|launch(?:ing|es)?\b"
+    r"|planned\b|pending\b|will\s+open",
+    re.IGNORECASE,
+)
+QUALIFIER_BEFORE = 200
+QUALIFIER_AFTER = 460
+
+# Titles are excluded: their length budget cannot carry the qualifier, and
+# retitling is a separate ranking decision.
+TITLE_TAGS = re.compile(
+    r"<title>.*?</title>"
+    r"|<meta[^>]+(?:name|property)\s*=\s*\"(?:og:title|twitter:title)\"[^>]*>",
+    re.DOTALL | re.IGNORECASE,
+)
 
 
 def iter_html_files():
@@ -209,6 +256,35 @@ def check_structured_data(rel: str, html: str, fail):
                 fail(rel, "JSON-LD declares a #office-nashville location node")
 
 
+def mask_titles(text: str) -> str:
+    """Blank out title tags, preserving offsets so context windows stay honest."""
+    return TITLE_TAGS.sub(lambda m: " " * len(m.group(0)), text)
+
+
+def check_delivery_claims(rel: str, text: str, fail):
+    body = mask_titles(text)
+    for label, rx in (("office-count", OFFICE_COUNT), ("combined-state delivery", DELIVERY_PAIR)):
+        for m in rx.finditer(body):
+            window = body[max(0, m.start() - QUALIFIER_BEFORE) : m.end() + QUALIFIER_AFTER]
+            if TN_QUALIFIER.search(window):
+                continue
+            snippet = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", m.group(0))).strip()
+            fail(
+                rel,
+                f"unqualified {label} claim {snippet!r} — ACG has three Florida "
+                "offices; add the Nashville Q3 2026 qualifier or drop the claim",
+            )
+
+
+def iter_claim_files():
+    for rel, full in iter_html_files():
+        yield rel, full
+    for name in ("llms.txt", "llms-full.txt", "ai.txt"):
+        full = os.path.join(REPO_ROOT, name)
+        if os.path.exists(full):
+            yield name, full
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", action="store_true", help="print discovered TN pages and exit")
@@ -220,15 +296,22 @@ def main() -> int:
         violations.append((rel, msg))
 
     tn_pages = []
-    for rel, full in sorted(iter_html_files()):
+    scanned = 0
+    for rel, full in sorted(iter_claim_files()):
         with open(full, encoding="utf-8") as fh:
             html = fh.read()
+        scanned += 1
 
         # #office-nashville must not exist anywhere, TN page or not.
         if "#office-nashville" in html and not args.list:
             fail(rel, "references a #office-nashville location node")
 
-        if not is_tn_page(rel, html):
+        # Delivery-complete claims are site-wide: they leaked onto pages that
+        # are not Tennessee-scoped and so are invisible to the discovery pass.
+        if not args.list:
+            check_delivery_claims(rel, html, fail)
+
+        if not rel.endswith(".html") or not is_tn_page(rel, html):
             continue
         tn_pages.append(rel)
 
@@ -245,9 +328,12 @@ def main() -> int:
         print(f"\n{len(tn_pages)} Tennessee pages discovered")
         return 0
 
-    print(f"tn-claim-guard: scanned {len(tn_pages)} Tennessee pages\n")
+    print(
+        f"tn-claim-guard: {len(tn_pages)} Tennessee pages checked for leakage; "
+        f"{scanned} files checked for delivery-complete claims\n"
+    )
     if not violations:
-        print("  [✓] no Florida leakage, no unsupported Tennessee office claims")
+        print("  [✓] no Florida leakage, no unsupported Tennessee office or delivery claims")
         return 0
 
     by_file: dict[str, list[str]] = {}
