@@ -45,25 +45,29 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#organization",
-      "name": "ACG — ESWindows Installer Naples",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-naples",
+      "name": "American Commercial Glass",
       "image": "https://acglass.com/images/acg-logo-nav@2x.png",
-      "url": "https://acglass.com/eswindows-installer-naples.html",
+      "url": "https://acglass.com/",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "4850 Tamiami Trail N Ste 301",
         "addressLocality": "Naples",
         "addressRegion": "FL",
-        "postalCode": "34102",
+        "postalCode": "34103",
         "addressCountry": "US"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 26.142,
-        "longitude": -81.7948
+        "latitude": 26.20528,
+        "longitude": -81.79975
       },
       "areaServed": [
         {
@@ -115,7 +119,10 @@
           "name": "Ave Maria"
         }
       ],
-      "serviceType": "Authorized ESWindows Installer"
+      "serviceType": "Authorized ESWindows Installer",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
       "@type": "Service",
@@ -199,7 +206,8 @@
             "@type": "Answer",
             "text": "Yes. Collier and Lee Counties are in Florida's wind-borne debris region. The Florida Building Code 8th Edition requires impact-rated glazing or approved protection systems on all commercial openings. Hurricane Ian (2022) made a direct landfall on Lee County, and the post-Ian inspection and code enforcement environment has reinforced impact glazing requirements across Southwest Florida. Gulf-facing sites in Exposure D require the highest design pressures outside HVHZ."
           }
-        }]
+        }
+      ]
     }
   ]
 }
@@ -251,12 +259,8 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization",
-  "@type": [
-    "Organization",
-    "LocalBusiness",
-    "HomeAndConstructionBusiness"
-  ],
-  "name": "American Commercial Glass, Inc.",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
     "ACG Glass",
@@ -265,31 +269,7 @@
     "ACG Commercial Glass"
   ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {
-    "@id": "https://acglass.com/#organization",
-    "alternateName": [
-      "ACG",
-      "ACG Glass",
-      "ACG Florida",
-      "American Commercial Glass Florida",
-      "ACG Commercial Glass"
-    ],
-    "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q139858578",
-      "https://www.linkedin.com/company/acglass",
-      "https://www.facebook.com/acommercialglass",
-      "https://www.instagram.com/acglass.co",
-      "https://network.procore.com/p/american-commercial-glass-west-palm-beach",
-      "https://www.bbb.org/us/fl/west-palm-beach/profile/window-installation/american-commercial-glass-inc-0633-92045708",
-      "https://downtobid.com/company/american-commercial-glass",
-      "https://www.yelp.com/biz/american-commercial-glass-west-palm-beach",
-      "https://www.buildzoom.com/contractor/american-commercial-glass-inc",
-      "https://www.openstreetmap.org/changeset/182929898"
-    ],
-    "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
-  },
+  "mainEntityOfPage": "https://acglass.com/eswindows-installer-naples.html",
   "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
@@ -304,10 +284,11 @@
   "description": "American Commercial Glass is the authorized ESWindows installer for commercial projects across Florida and the Southeast. We supply, install, and service the full ESWindows commercial product line.",
   "provider": {
     "@type": [
-      "LocalBusiness"
+      "LocalBusiness",
+      "HomeAndConstructionBusiness"
     ],
-    "@id": "https://acglass.com/#organization",
-    "name": "American Commercial Glass, Inc.",
+    "@id": "https://acglass.com/#localbusiness-west-palm-beach",
+    "name": "American Commercial Glass",
     "alternateName": [
       "ACG",
       "ACG Glass",
@@ -315,13 +296,13 @@
       "American Commercial Glass Florida",
       "ACG Commercial Glass"
     ],
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
     "telephone": "+1-772-486-7711",
     "email": "info@acglass.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "West Palm Beach HQ",
+      "streetAddress": "700 S Rosemary Ave Suite 204",
       "addressLocality": "West Palm Beach",
       "addressRegion": "FL",
       "postalCode": "33401",
@@ -370,7 +351,10 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "parentOrganization": {
+      "@id": "https://acglass.com/#organization"
+    }
   },
   "brand": {
     "@type": "Brand",

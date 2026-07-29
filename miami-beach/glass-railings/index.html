@@ -33,14 +33,17 @@
   "@graph": [
     {
       "@type": "Service",
-      "name": "Glass Railings \u2014 Miami Beach, FL",
+      "name": "Glass Railings — Miami Beach, FL",
       "description": "ACG installs glass railings for commercial projects in Miami Beach, Miami-Dade County. Florida-licensed CGC #1531993, licensed and insured.",
       "provider": {
-        "@type": "LocalBusiness",
-        "@id": "https://acglass.com/miami-beach/glass-railings/#provider",
+        "@type": [
+          "LocalBusiness",
+          "HomeAndConstructionBusiness"
+        ],
+        "@id": "https://acglass.com/#localbusiness-west-palm-beach",
         "name": "American Commercial Glass",
         "telephone": "+17724867711",
-        "url": "https://acglass.com",
+        "url": "https://acglass.com/",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "700 S Rosemary Ave Suite 204",
@@ -60,7 +63,10 @@
           "https://www.yelp.com/biz/american-commercial-glass-west-palm-beach",
           "https://www.buildzoom.com/contractor/american-commercial-glass-inc",
           "https://www.esourcebook.net/west-palm-beach/glass-industry-supplier/american-commercial-glass"
-        ]
+        ],
+        "parentOrganization": {
+          "@id": "https://acglass.com/#organization"
+        }
       },
       "serviceType": "Glass Railing Installation",
       "areaServed": {

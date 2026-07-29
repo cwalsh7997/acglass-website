@@ -43,11 +43,14 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#organization",
-      "name": "ACG — Euro-Wall Restaurant Installer Florida",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-west-palm-beach",
+      "name": "American Commercial Glass",
       "image": "https://acglass.com/images/acg-logo-nav@2x.png",
-      "url": "https://acglass.com/euro-wall-restaurant-installer-florida.html",
+      "url": "https://acglass.com/",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "priceRange": "$$$",
@@ -61,8 +64,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 26.7153,
-        "longitude": -80.0534
+        "latitude": 26.70716,
+        "longitude": -80.05707
       },
       "areaServed": [
         {
@@ -110,7 +113,10 @@
           "name": "Key West"
         }
       ],
-      "serviceType": "Authorized Euro-Wall Installer for Restaurants"
+      "serviceType": "Authorized Euro-Wall Installer for Restaurants",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
       "@type": "Service",
@@ -251,12 +257,8 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization",
-  "@type": [
-    "Organization",
-    "LocalBusiness",
-    "HomeAndConstructionBusiness"
-  ],
-  "name": "American Commercial Glass, Inc.",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
     "ACG Glass",

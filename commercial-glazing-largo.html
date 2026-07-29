@@ -21,56 +21,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "WebPage",
-    "LocalBusiness"
-  ],
-  "@id": "https://acglass.com/commercial-glazing-largo.html#localbusiness",
-  "url": "https://acglass.com/commercial-glazing-largo.html",
-  "name": "American Commercial Glass \u2014 Largo, FL",
-  "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Largo, FL (Pinellas County). Florida CGC #1531993. 48-hour bid.",
-  "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
-  "telephone": "+1-772-486-7711",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Largo",
-    "addressRegion": "FL",
-    "addressCountry": "US"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Largo"
+      "@type": "WebPage",
+      "@id": "https://acglass.com/commercial-glazing-largo.html#webpage",
+      "url": "https://acglass.com/commercial-glazing-largo.html",
+      "name": "American Commercial Glass — Largo, FL",
+      "description": "American Commercial Glass installs commercial storefront, curtain wall, impact windows, and Euro-Wall folding door systems in Largo, FL (Pinellas County). Florida CGC #1531993. 48-hour bid.",
+      "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
-      "@type": "AdministrativeArea",
-      "name": "Pinellas County"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 27.9095,
-    "longitude": -82.7873
-  },
-  "parentOrganization": {
-    "@id": "https://acglass.com/#organization"
-  },
-  "isPartOf": {
-    "@id": "https://acglass.com/#website"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "Service",
+      "@id": "https://acglass.com/commercial-glazing-largo.html#service",
+      "name": "American Commercial Glass — Largo, FL",
+      "serviceType": "Commercial Glazing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Largo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pinellas County"
+        }
       ],
-      "opens": "07:00",
-      "closes": "18:00"
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      }
     }
   ]
 }

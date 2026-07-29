@@ -20,15 +20,18 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://acglass.com/#organization",
+    "@type": [
+      "LocalBusiness",
+      "HomeAndConstructionBusiness"
+    ],
+    "@id": "https://acglass.com/#localbusiness-west-palm-beach",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "telephone": "+1-772-486-7711",
     "email": "info@acglass.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "700 S Rosemary Ave Ste 204",
+      "streetAddress": "700 S Rosemary Ave Suite 204",
       "addressLocality": "West Palm Beach",
       "addressRegion": "FL",
       "postalCode": "33401",
@@ -36,8 +39,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 26.7153,
-      "longitude": -80.0534
+      "latitude": 26.70716,
+      "longitude": -80.05707
     },
     "areaServed": [
       {
@@ -48,7 +51,10 @@
         "@type": "State",
         "name": "Tennessee"
       }
-    ]
+    ],
+    "parentOrganization": {
+      "@id": "https://acglass.com/#organization"
+    }
   },
   {
     "@context": "https://schema.org",
@@ -67,7 +73,9 @@
       "logo": {
         "@type": "ImageObject",
         "url": "https://acglass.com/images/acg-logo-nav@2x.png"
-      }
+      },
+      "@id": "https://acglass.com/#organization",
+      "url": "https://acglass.com/"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -95,36 +103,6 @@
         "position": 3,
         "name": "What General Contractors Actually Look For in a Commercial Glazier (Beyond Price)",
         "item": "https://acglass.com/blog-2026/what-general-contractors-look-for-in-commercial-glaziers/"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does a commercial glazier have to return a GC bid request to be competitive?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "48 hours is fast and wins more bids. 7 business days is the Florida market average and lands you in the middle of the pile. Longer than 10 days and most GCs have already selected from earlier bidders."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why don't GCs always pick the lowest bidder on commercial glazing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Because the lowest bidder often has the worst submittal package, the longest material lead time, the spottiest crew discipline, and the slowest warranty response. GCs have been burned by lowest bidders before."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the single biggest reason a commercial glazier gets dropped from a GC's bid list?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Going dark mid-project. Not responding to RFIs for a week. Not showing up to coordination meetings. Not turning around shop drawings on schedule. Once a glazier costs a GC two weeks of schedule on a project, they don't get invited back."
-        }
       }
     ]
   }

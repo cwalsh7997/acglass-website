@@ -24,17 +24,17 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": ["Organization"],
+    "@type": "Organization",
     "@id": "https://acglass.com/#organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
     "telephone": "+1-772-486-7711",
     "email": "connor@acglass.com",
     "foundingDate": "2021-02-18",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "700 S Rosemary Ave Ste 204",
+      "streetAddress": "700 S Rosemary Ave Suite 204",
       "addressLocality": "West Palm Beach",
       "addressRegion": "FL",
       "postalCode": "33401",
@@ -45,8 +45,14 @@
       "https://www.linkedin.com/company/american-commercial-glass-inc"
     ],
     "areaServed": [
-      { "@type": "State", "name": "Florida" },
-      { "@type": "State", "name": "Tennessee" }
+      {
+        "@type": "State",
+        "name": "Florida"
+      },
+      {
+        "@type": "State",
+        "name": "Tennessee"
+      }
     ]
   },
   {
@@ -54,15 +60,30 @@
     "@type": "Service",
     "name": "Tennessee Commercial Glazing",
     "serviceType": "Commercial Glazing",
-    "areaServed": { "@type": "State", "name": "Tennessee" },
-    "provider": { "@id": "https://acglass.com/#organization" }
+    "areaServed": {
+      "@type": "State",
+      "name": "Tennessee"
+    },
+    "provider": {
+      "@id": "https://acglass.com/#organization"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Tennessee Commercial Glazing", "item": "https://acglass.com/tennessee-commercial-glazing/" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://acglass.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tennessee Commercial Glazing",
+        "item": "https://acglass.com/tennessee-commercial-glazing/"
+      }
     ]
   },
   {
@@ -78,32 +99,50 @@
       {
         "@type": "Question",
         "name": "Is ACG licensed to do commercial glazing in Tennessee?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG holds Florida CGC #1531993. Tennessee requires a state contractor license tied to the project. ACG secures the Tennessee license required for each scope on award, before any work begins. First Tennessee scopes start when the Nashville office opens Q3 2026." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG holds Florida CGC #1531993. Tennessee requires a state contractor license tied to the project. ACG secures the Tennessee license required for each scope on award, before any work begins. First Tennessee scopes start when the Nashville office opens Q3 2026."
+        }
       },
       {
         "@type": "Question",
         "name": "When does ACG open its Nashville, Tennessee office?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The Nashville office launches Q3 2026. ACG is bidding now and accepting select Tennessee project bids ahead of opening, with bid coordination and submittals running from the Florida headquarters until the office is staffed." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Nashville office launches Q3 2026. ACG is bidding now and accepting select Tennessee project bids ahead of opening, with bid coordination and submittals running from the Florida headquarters until the office is staffed."
+        }
       },
       {
         "@type": "Question",
         "name": "What Tennessee counties will ACG serve from Nashville?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG covers Davidson, Williamson, Rutherford, Wilson, Sumner, Maury, and Montgomery counties, and bids commercial scopes statewide across Knoxville, Chattanooga, Memphis, and the Tri-Cities. The Nashville office opens Q3 2026." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG covers Davidson, Williamson, Rutherford, Wilson, Sumner, Maury, and Montgomery counties, and bids commercial scopes statewide across Knoxville, Chattanooga, Memphis, and the Tri-Cities. The Nashville office opens Q3 2026."
+        }
       },
       {
         "@type": "Question",
         "name": "How does Tennessee building code differ from Florida for glazing?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Tennessee uses IBC 2018 with state amendments, IECC Climate Zone 4A energy targets, and ASCE 7-16 wind design with a 115 mph base wind speed for most commercial work. There is no High-Velocity Hurricane Zone and no Florida-style impact-assembly mandate, though tornado resilience matters for schools and healthcare." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tennessee uses IBC 2018 with state amendments, IECC Climate Zone 4A energy targets, and ASCE 7-16 wind design with a 115 mph base wind speed for most commercial work. There is no High-Velocity Hurricane Zone and no Florida-style impact-assembly mandate, though tornado resilience matters for schools and healthcare."
+        }
       },
       {
         "@type": "Question",
         "name": "Has ACG completed projects in Tennessee yet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Not yet. ACG's completed project record is in Florida. First Tennessee scopes start Q3 2026. ACG never lists projects it has not built." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not yet. ACG's completed project record is in Florida. First Tennessee scopes start Q3 2026. ACG never lists projects it has not built."
+        }
       },
       {
         "@type": "Question",
         "name": "What bonding capacity does ACG carry for Tennessee work?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG provides performance and payment bonds on projects that require them, with capacity letters available during prequalification. That coverage extends to Tennessee commercial scopes once the project-specific state license is secured." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG provides performance and payment bonds on projects that require them, with capacity letters available during prequalification. That coverage extends to Tennessee commercial scopes once the project-specific state license is secured."
+        }
       }
     ]
   }

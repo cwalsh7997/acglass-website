@@ -41,99 +41,35 @@
   <!-- LocalBusiness Schema — All 3 offices -->
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://acglass.com/#organization",
-  "name": "American Commercial Glass",
-  "alternateName": [
-    "ACG",
-    "ACG Glass",
-    "ACG Florida",
-    "American Commercial Glass Florida",
-    "ACG Commercial Glass"
-  ],
-  "url": "https://acglass.com",
-  "telephone": "(772) 486-7711",
-  "email": "connor@acglass.com",
-  "description": "Commercial glazing contractor with three Florida offices — West Palm Beach, Naples, and Tampa — providing storefront, curtainwall, window wall, and impact glazing statewide.",
-  "location": [
-    {
-      "@type": "LocalBusiness",
-      "name": "ACG — West Palm Beach",
-      "telephone": "(772) 486-7711",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "West Palm Beach",
-        "addressRegion": "FL",
-        "postalCode": "33401",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.7153,
-        "longitude": -80.0534
-      },
-      "areaServed": [
-        "Palm Beach County",
-        "Martin County",
-        "St. Lucie County",
-        "Indian River County",
-        "Broward County",
-        "Miami-Dade County"
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "ACG — Naples",
-      "telephone": "(772) 486-7711",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Naples",
-        "addressRegion": "FL",
-        "postalCode": "34102",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.142,
-        "longitude": -81.7948
-      },
-      "areaServed": [
-        "Collier County",
-        "Lee County",
-        "Charlotte County",
-        "Hendry County",
-        "Sarasota County"
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "name": "ACG — Tampa",
-      "telephone": "(772) 486-7711",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tampa",
-        "addressRegion": "FL",
-        "postalCode": "33601",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 27.9506,
-        "longitude": -82.4572
-      },
-      "areaServed": [
-        "Hillsborough County",
-        "Pasco County",
-        "Pinellas County",
-        "Polk County",
-        "Manatee County"
-      ]
-    }
-  ],
-  "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-  "naics": "238150",
-  "iso6523Code": "0199:CGC1531993"
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "@id": "https://acglass.com/#organization",
+ "name": "American Commercial Glass",
+ "alternateName": [
+  "ACG",
+  "ACG Glass",
+  "ACG Florida",
+  "American Commercial Glass Florida",
+  "ACG Commercial Glass"
+ ],
+ "url": "https://acglass.com/",
+ "telephone": "(772) 486-7711",
+ "email": "connor@acglass.com",
+ "description": "Commercial glazing contractor with three Florida offices — West Palm Beach, Naples, and Tampa — providing storefront, curtainwall, window wall, and impact glazing statewide.",
+ "location": [
+  {
+   "@id": "https://acglass.com/#localbusiness-west-palm-beach"
+  },
+  {
+   "@id": "https://acglass.com/#localbusiness-naples"
+  },
+  {
+   "@id": "https://acglass.com/#localbusiness-tampa"
+  }
+ ],
+ "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
+ "naics": "238150",
+ "iso6523Code": "0199:CGC1531993"
 }
 </script>
 
@@ -194,7 +130,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Commercial Glazing Near Me Florida",
+      "name": "Commercial Glazing Florida",
       "item": "https://acglass.com/commercial-glazing-near-me-florida.html"
     }
   ]
@@ -237,8 +173,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://acglass.com/#organization",
+  "@type": [
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+  ],
+  "@id": "https://acglass.com/#localbusiness-west-palm-beach",
   "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
@@ -247,7 +186,7 @@
     "American Commercial Glass Florida",
     "ACG Commercial Glass"
   ],
-  "url": "https://acglass.com/commercial-glazing-near-me-florida.html",
+  "url": "https://acglass.com/",
   "telephone": "(772) 486-7711",
   "email": "connor@acglass.com",
   "description": "Licensed commercial glazing contractor serving Florida, FL. Storefronts, curtainwall, impact glazing, automatic entrances. CGC #1531993.",
@@ -263,7 +202,7 @@
   "priceRange": "$$$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "700 S Rosemary Ave #204",
+    "streetAddress": "700 S Rosemary Ave Suite 204",
     "addressLocality": "West Palm Beach",
     "addressRegion": "FL",
     "postalCode": "33401",
@@ -271,7 +210,10 @@
   },
   "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
   "naics": "238150",
-  "iso6523Code": "0199:CGC1531993"
+  "iso6523Code": "0199:CGC1531993",
+  "parentOrganization": {
+    "@id": "https://acglass.com/#organization"
+  }
 }
 </script>
 
@@ -279,12 +221,8 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization",
-  "@type": [
-    "Organization",
-    "LocalBusiness",
-    "HomeAndConstructionBusiness"
-  ],
-  "name": "American Commercial Glass, Inc.",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
     "ACG Glass",
@@ -293,62 +231,10 @@
     "ACG Commercial Glass"
   ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {
-    "@id": "https://acglass.com/#organization",
-    "alternateName": [
-      "ACG",
-      "ACG Glass",
-      "ACG Florida",
-      "American Commercial Glass Florida",
-      "ACG Commercial Glass"
-    ],
-    "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-    "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
-  },
+  "mainEntityOfPage": "https://acglass.com/commercial-glazing-near-me-florida.html",
   "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is American Commercial Glass a licensed commercial glazing contractor in Near Me Florida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor (FL CGC #1531993) serving Near Me Florida. The firm is licensed, insured, and fields OSHA 30 trained crews. ACG is an installer for ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora, with local crews operating from offices in West Palm Beach, Naples, and Tampa."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a commercial window permit take in Near Me Florida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "4 to 8 weeks for a standard commercial permit; 6 to 12 weeks in Miami-Dade and Broward counties where HVHZ review applies. ACG handles Florida Product Approval verification, Miami-Dade NOA documentation where applicable, and signed/sealed engineering calculations as part of the bid-to-submittal process."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need impact windows for a Near Me Florida commercial building?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If your Near Me Florida commercial project is in a wind-borne debris region (WBDR) or High-Velocity Hurricane Zone (HVHZ — Miami-Dade and Broward counties), impact-rated glazing or code-equivalent shutters are required by the Florida Building Code 8th Edition (2026). Most modern commercial buildings in Near Me Florida specify impact glazing to reduce insurance, speed post-storm reopening, and avoid shutter logistics."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What manufacturers does ACG install in Near Me Florida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ACG installs ESWindows (impact storefront and curtainwall — ES-50, ES-7000, ES-8000), Euro-Wall (multi-slide, bi-fold Vistafold, pivot, DirectSet), PGT (impact-resistant residential and light commercial), Allegion (commercial hardware, LCN automatic operators), TGP (fire-rated glazing — UL 9, UL 10B, UL 263), and Slimpact (impact-rated steel framing). ACG does not substitute in unauthorized manufacturers or off-spec systems."
-      }
-    }
-  ]
 }
 </script>
 </head>

@@ -24,40 +24,77 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": ["Organization"],
+    "@type": "Organization",
     "@id": "https://acglass.com/#organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "telephone": "+1-772-486-7711",
     "email": "connor@acglass.com",
     "foundingDate": "2021-02-18",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "700 S Rosemary Ave Ste 204",
+      "streetAddress": "700 S Rosemary Ave Suite 204",
       "addressLocality": "West Palm Beach",
       "addressRegion": "FL",
       "postalCode": "33401",
       "addressCountry": "US"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 26.7153, "longitude": -80.0534 },
-    "areaServed": [ { "@type": "State", "name": "Florida" }, { "@type": "State", "name": "Tennessee" } ]
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Florida"
+      },
+      {
+        "@type": "State",
+        "name": "Tennessee"
+      }
+    ]
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Healthcare Commercial Glazing in Nashville, TN",
-    "provider": { "@id": "https://acglass.com/#organization" },
-    "areaServed": { "@type": "City", "name": "Nashville", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+    "provider": {
+      "@id": "https://acglass.com/#organization"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Nashville",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Tennessee"
+      }
+    },
     "serviceType": "Healthcare Commercial Glazing"
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Tennessee", "item": "https://acglass.com/tennessee-commercial-glazing/" },
-      { "@type": "ListItem", "position": 3, "name": "Nashville", "item": "https://acglass.com/commercial-glazing-nashville-tn.html" },
-      { "@type": "ListItem", "position": 4, "name": "Healthcare Glazing", "item": "https://acglass.com/healthcare-glazing-nashville/" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://acglass.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tennessee",
+        "item": "https://acglass.com/tennessee-commercial-glazing/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Nashville",
+        "item": "https://acglass.com/nashville/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Healthcare Glazing",
+        "item": "https://acglass.com/healthcare-glazing-nashville/"
+      }
     ]
   },
   {
@@ -73,32 +110,50 @@
       {
         "@type": "Question",
         "name": "What building codes govern healthcare glazing in Tennessee?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Tennessee healthcare facilities follow IBC 2018 institutional occupancy provisions with state amendments, the NFPA 101 Life Safety Code, and NFPA 99 for healthcare facilities. Energy compliance is IECC Climate Zone 4A. Fire-rated corridor and barrier glazing, safety glazing, and life-safety egress requirements all apply." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tennessee healthcare facilities follow IBC 2018 institutional occupancy provisions with state amendments, the NFPA 101 Life Safety Code, and NFPA 99 for healthcare facilities. Energy compliance is IECC Climate Zone 4A. Fire-rated corridor and barrier glazing, safety glazing, and life-safety egress requirements all apply."
+        }
       },
       {
         "@type": "Question",
         "name": "Can ACG install glazing in an occupied hospital?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. ACG sequences work on occupied healthcare facilities with infection-control risk assessment (ICRA) protocols, phased install, containment, and off-hours scheduling to protect patient care areas. The approach mirrors how ACG has handled occupied medical-office and institutional work in Florida." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ACG sequences work on occupied healthcare facilities with infection-control risk assessment (ICRA) protocols, phased install, containment, and off-hours scheduling to protect patient care areas. The approach mirrors how ACG has handled occupied medical-office and institutional work in Florida."
+        }
       },
       {
         "@type": "Question",
         "name": "What glazing does ACG provide for infection control?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG specifies cleanable, smooth-profile frames and flush glazing details that resist contamination and hold up to repeated disinfection, along with sealed assemblies that limit gaps where pathogens collect. These choices support a healthcare facility's infection-prevention requirements." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG specifies cleanable, smooth-profile frames and flush glazing details that resist contamination and hold up to repeated disinfection, along with sealed assemblies that limit gaps where pathogens collect. These choices support a healthcare facility's infection-prevention requirements."
+        }
       },
       {
         "@type": "Question",
         "name": "Does ACG provide radiation-shielded glass for imaging suites?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. For imaging and radiology suites, ACG supplies and installs leaded (radiation-shielded) glass in control windows and viewing panels, coordinated with the facility's physicist and the lead-shielding specification for the room." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. For imaging and radiology suites, ACG supplies and installs leaded (radiation-shielded) glass in control windows and viewing panels, coordinated with the facility's physicist and the lead-shielding specification for the room."
+        }
       },
       {
         "@type": "Question",
         "name": "How does ACG handle acoustic privacy for HIPAA compliance?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sound transmission matters where patient conversations must stay private. ACG specifies acoustic laminated glass and sound-rated assemblies for consult rooms, exam rooms, and offices, selecting the STC rating the design requires to support HIPAA privacy goals." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sound transmission matters where patient conversations must stay private. ACG specifies acoustic laminated glass and sound-rated assemblies for consult rooms, exam rooms, and offices, selecting the STC rating the design requires to support HIPAA privacy goals."
+        }
       },
       {
         "@type": "Question",
         "name": "What is ACG's schedule for a Nashville hospital glazing scope?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG returns a bid in 48 hours on a complete package. Hospital schedules are driven by phasing and occupied-building constraints; ACG plans the glazing scope around the GC's milestones and the facility's operations. The Nashville office launches Q3 2026, and ACG is bidding now." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG returns a bid in 48 hours on a complete package. Hospital schedules are driven by phasing and occupied-building constraints; ACG plans the glazing scope around the GC's milestones and the facility's operations. The Nashville office launches Q3 2026, and ACG is bidding now."
+        }
       }
     ]
   }
