@@ -39,8 +39,25 @@ VERCEL = os.path.join(ROOT, "vercel.json")
 
 CANONICAL_RE = re.compile(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', re.I)
 ANCHOR_RE = re.compile(r'<a\b[^>]*?\bhref="([^"]+)"', re.I)
+ANCHOR_PAIR_RE = re.compile(r'<a\b([^>]*)>(.*?)</a>', re.I | re.S)
 SCHEMA_ITEM_RE = re.compile(r'"item"\s*:\s*"([^"]+)"')
 LOC_RE = re.compile(r"<loc>\s*([^<\s]+)\s*</loc>")
+
+META_TAG_RE = re.compile(r"<meta\b[^>]*>", re.I)
+LINK_TAG_RE = re.compile(r"<link\b[^>]*>", re.I)
+ATTR_RE = re.compile(r"""([\w:.\-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')""")
+TITLE_RE = re.compile(r"<title[^>]*>(.*?)</title>", re.I | re.S)
+H1_RE = re.compile(r"<h1\b[^>]*>(.*?)</h1>", re.I | re.S)
+LD_JSON_RE = re.compile(
+    r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', re.I | re.S)
+DROP_RE = re.compile(r"<(script|style)\b[^>]*>.*?</\1>", re.I | re.S)
+WPB_RE = re.compile(r"West\s+Palm\s+Beach", re.I)
+SEGMENT_RE = re.compile(r"[·|\n]|(?<=\.)\s+")
+
+# The entity identity the map pack resolves against.
+SCHEMA_IDENTITY_TYPES = {"Organization", "LocalBusiness", "HomeAndConstructionBusiness", "WebSite"}
+SCHEMA_IDENTITY_KEYS = ("@type", "name", "legalName", "url", "telephone",
+                        "address", "geo", "sameAs", "areaServed", "logo")
 
 VALID_STATUS = {"ratified", "frozen", "gsc-gated", "blocked-no-primary", "owned-elsewhere"}
 NON_HTML_ASSETS = ("llms.txt", "llms-full.txt", "ai.txt", "search-index.json")
@@ -200,15 +217,182 @@ def check_consolidations(rep: Report, reg: dict, sitemap_locs: dict[str, set[str
             "; ".join(still_listed[:4]))
 
 
+def _attrs(tag: str) -> dict[str, str]:
+    out = {}
+    for m in ATTR_RE.finditer(tag):
+        out[m.group(1).lower()] = m.group(2) if m.group(2) is not None else m.group(3)
+    return out
+
+
+def _tag_content(text: str, tag_re: re.Pattern, key: str, value: str, want: str) -> str | None:
+    """First <meta>/<link> whose `key` equals `value`, returning attribute `want`.
+
+    Attribute-order independent; a regex keyed on source order would miss
+    `content="..." name="robots"`.
+    """
+    for tag in tag_re.findall(text):
+        a = _attrs(tag)
+        if a.get(key, "").strip().lower() == value:
+            return a.get(want)
+    return None
+
+
+def _text_of(html: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
+
+
+def _visible_text(html: str) -> str:
+    return _text_of(DROP_RE.sub(" ", html))
+
+
+def _ld_nodes(data):
+    if isinstance(data, list):
+        for item in data:
+            yield from _ld_nodes(item)
+    elif isinstance(data, dict):
+        if "@graph" in data:
+            yield from _ld_nodes(data["@graph"])
+        yield data
+
+
+def _schema_identity(html: str) -> dict[str, str]:
+    """@id -> canonical JSON of the identity fields, for identity-bearing nodes."""
+    out: dict[str, str] = {}
+    for i, m in enumerate(LD_JSON_RE.finditer(html)):
+        try:
+            data = json.loads(m.group(1))
+        except json.JSONDecodeError as exc:
+            out[f"_unparseable_block_{i}"] = str(exc)
+            continue
+        for node in _ld_nodes(data):
+            types = node.get("@type")
+            types = types if isinstance(types, list) else [types]
+            if not {t for t in types if isinstance(t, str)} & SCHEMA_IDENTITY_TYPES:
+                continue
+            key = node.get("@id") or f"{sorted(str(t) for t in types)}:{node.get('name', '')}"
+            out[key] = json.dumps({k: node[k] for k in SCHEMA_IDENTITY_KEYS if k in node},
+                                  sort_keys=True)
+    return out
+
+
+def _wpb_links(html: str, frozen_urls: set[str]) -> set[str]:
+    """(href, anchor text) pairs whose target is a byte-frozen WPB URL."""
+    found = set()
+    for m in ANCHOR_PAIR_RE.finditer(html):
+        href = _attrs(m.group(1)).get("href")
+        if not href:
+            continue
+        target = href.split("#")[0].split("?")[0]
+        if not target:
+            continue
+        if not (target.startswith("/") or target.startswith(BASE)):
+            target = "/" + target.lstrip("./")
+        if norm(target) in frozen_urls:
+            found.add(f"{href} :: {_text_of(m.group(2))}")
+    return found
+
+
+def _json_strings(data):
+    if isinstance(data, dict):
+        for value in data.values():
+            yield from _json_strings(value)
+    elif isinstance(data, list):
+        for item in data:
+            yield from _json_strings(item)
+    elif isinstance(data, str):
+        yield data
+
+
+def _wpb_text(html: str) -> set[str]:
+    """Every West Palm Beach mention, in visible copy and in JSON-LD prose alike.
+
+    The two strongest WPB associations on the root are inside JSON-LD
+    `description` values, which visible-text extraction strips. Reading the
+    parsed strings rather than the raw block keeps this insensitive to JSON
+    reformatting while leaving no hole to reword through.
+    """
+    sources = [_visible_text(html)]
+    for m in LD_JSON_RE.finditer(html):
+        try:
+            data = json.loads(m.group(1))
+        except json.JSONDecodeError:
+            continue  # a broken block is already a schema-identity failure
+        sources.extend(_json_strings(data))
+    return {s.strip() for src in sources for s in SEGMENT_RE.split(src)
+            if WPB_RE.search(s)}
+
+
+def semantic_freeze_diff(base: str, new: str,
+                         frozen_urls: set[str]) -> tuple[dict[str, str], set[str]]:
+    """Compare the protected fields of one page across two versions.
+
+    Returns (field -> failure detail) for fields that changed, plus any newly
+    added links into a byte-frozen WPB URL. A field absent from both versions
+    compares equal: for meta-robots, absence is the protected value.
+    """
+    scalars = {
+        "title": lambda t: (TITLE_RE.search(t).group(1).strip() if TITLE_RE.search(t) else None),
+        "meta-description": lambda t: _tag_content(t, META_TAG_RE, "name", "description", "content"),
+        "canonical": lambda t: _tag_content(t, LINK_TAG_RE, "rel", "canonical", "href"),
+        "meta-robots": lambda t: _tag_content(t, META_TAG_RE, "name", "robots", "content"),
+        "og:title": lambda t: _tag_content(t, META_TAG_RE, "property", "og:title", "content"),
+        "og:url": lambda t: _tag_content(t, META_TAG_RE, "property", "og:url", "content"),
+        "h1": lambda t: " ¦ ".join(_text_of(x) for x in H1_RE.findall(t)),
+    }
+    failures: dict[str, str] = {}
+    for field, extract in scalars.items():
+        was, now = extract(base), extract(new)
+        if was != now:
+            failures[field] = f"was {was!r}, now {now!r}"
+
+    was_id, now_id = _schema_identity(base), _schema_identity(new)
+    if was_id != now_id:
+        detail = []
+        for key in sorted(set(was_id) | set(now_id)):
+            if was_id.get(key) != now_id.get(key):
+                if key not in now_id:
+                    detail.append(f"{key} removed")
+                elif key not in was_id:
+                    detail.append(f"{key} added")
+                else:
+                    detail.append(f"{key} altered")
+        failures["schema-identity"] = "; ".join(detail[:4])
+
+    was_links, now_links = _wpb_links(base, frozen_urls), _wpb_links(new, frozen_urls)
+    lost = sorted(was_links - now_links)
+    if lost:
+        failures["wpb-links"] = f"{len(lost)} removed or reworded: " + "; ".join(lost[:3])
+
+    lost_text = sorted(_wpb_text(base) - _wpb_text(new))
+    if lost_text:
+        failures["wpb-text"] = f"{len(lost_text)} removed or reworded: " + "; ".join(
+            repr(s[:70]) for s in lost_text[:3])
+
+    return failures, now_links - was_links
+
+
 def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
     """WPB and the site root must not change in this workstream.
 
-    Enforced against git, not against content heuristics: any tracked file that
-    serves a frozen URL must be byte-identical to base_ref.
+    Two modes, both measured against base_ref rather than against content
+    heuristics:
+
+    * Byte freeze — the dedicated WPB pages. Any tracked file serving one of
+      these URLs must be byte-identical. They are the contested candidates for
+      the organic #1 and the ranking URL among them is unknown, so body copy is
+      as frozen as the head.
+    * Semantic freeze — the site root. It is the WPB Google Business Profile
+      landing page, so its identity and ranking signals are frozen field by
+      field, but its body is open. A byte freeze here would block ordinary
+      internal-linking work for as long as the WPB freeze lasts, which is
+      until a GSC baseline exists.
     """
-    frozen = reg["frozen_prefixes"]
+    semantic = reg.get("semantic_freeze", {})
+    byte_urls = [u for u in reg["frozen_prefixes"] if u not in semantic and not u.startswith("_")]
+    frozen_norm = {norm(u) for u in byte_urls}
+
     frozen_files = set()
-    for url in frozen:
+    for url in byte_urls:
         rel = file_for(url)
         if rel:
             frozen_files.add(rel)
@@ -232,8 +416,34 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
 
     changed = {line.strip() for line in out.splitlines() if line.strip()}
     violations = sorted(changed & frozen_files)
-    rep.add("FAIL", f"no frozen path modified since {base_ref}", not violations,
-            f"{len(violations)}: " + ", ".join(violations[:4]))
+    rep.add("FAIL", f"no byte-frozen WPB path modified since {base_ref}", not violations,
+            f"{len(violations)} of {len(frozen_files)}: " + ", ".join(violations[:4]))
+
+    for url, spec in sorted(semantic.items()):
+        if url.startswith("_"):
+            continue
+        rel = spec["file"]
+        try:
+            base_text = subprocess.run(
+                ["git", "show", f"{base_ref}:{rel}"],
+                cwd=ROOT, capture_output=True, text=True, check=True,
+            ).stdout
+        except (subprocess.CalledProcessError, FileNotFoundError) as exc:
+            rep.add("WARN", f"semantic freeze of {url} could not read {base_ref}:{rel}",
+                    True, str(exc)[:120])
+            continue
+
+        failures, added = semantic_freeze_diff(base_text, read(rel), frozen_norm)
+        for field in spec["protected_fields"]:
+            detail = failures.get(field, "")
+            rep.add("FAIL", f"{url} semantic freeze: {field} unchanged since {base_ref}",
+                    not detail, detail)
+        unexpected = sorted(set(failures) - set(spec["protected_fields"]))
+        rep.add("FAIL", f"{url} semantic freeze declares every field it enforces",
+                not unexpected, ", ".join(unexpected))
+        rep.add("WARN", f"{url} adds no new link into a byte-frozen WPB URL", not added,
+                f"{len(added)} added, nudging one contested candidate: "
+                + "; ".join(sorted(added)[:3]))
 
 
 def check_no_canonical_into_redirect(rep: Report, redirects: dict[str, str], sitemap_locs) -> None:
