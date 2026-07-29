@@ -1,0 +1,23 @@
+name: Internal Link Audit
+
+# Static analysis of the tracked .html files, so unlike SEO Verify this needs
+# no deploy and can gate a pull request before anything ships.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run internal link audit
+        run: python .github/scripts/internal-link-audit.py --report --strict-warn
