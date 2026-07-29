@@ -1,0 +1,163 @@
+{
+  "_comment": [
+    "Canonical registry for the head commercial-glazing intent in each priority market.",
+    "One 'primary' URL per market owns the head term. Every other URL in the cluster must",
+    "either 301 to it ('redirect') or rel=canonical to it ('canonicalize') — never both, and",
+    "never self-canonical. 'distinct' pages serve a different intent and MUST stay",
+    "self-canonical and sitemap-listed.",
+    "Enforced by .github/scripts/canonical-verify.py (runs on every push/PR)."
+  ],
+  "base": "https://acglass.com",
+  "markets": {
+    "west-palm-beach": {
+      "label": "West Palm Beach",
+      "primary": "/storefront-glazier-west-palm-beach-florida/",
+      "redirect": {
+        "/commercial-glazing-west-palm-beach.html": "/storefront-glazier-west-palm-beach-florida/",
+        "/commercial-glazier-near-me-west-palm-beach/": "/storefront-glazier-west-palm-beach-florida/"
+      },
+      "canonicalize": [
+        "/west-palm-beach/",
+        "/west-palm-beach-commercial-glazing.html"
+      ],
+      "distinct": [
+        "/storefront-installer-west-palm-beach.html"
+      ]
+    },
+    "miami": {
+      "label": "Miami",
+      "primary": "/storefront-glazier-miami-florida/",
+      "redirect": {
+        "/commercial-glazing-miami.html": "/storefront-glazier-miami-florida/",
+        "/commercial-glazier-near-me-miami/": "/storefront-glazier-miami-florida/"
+      },
+      "canonicalize": [
+        "/miami/"
+      ],
+      "distinct": [
+        "/storefront-installer-miami.html",
+        "/miami-hvhz-glazing-contractor.html"
+      ]
+    },
+    "jacksonville": {
+      "label": "Jacksonville",
+      "primary": "/commercial-glazing-jacksonville.html",
+      "redirect": {},
+      "canonicalize": [
+        "/jacksonville/"
+      ],
+      "distinct": [
+        "/storefront-installer-jacksonville.html"
+      ]
+    },
+    "tampa": {
+      "label": "Tampa",
+      "primary": "/storefront-glazier-tampa-florida/",
+      "redirect": {
+        "/commercial-glazing-tampa.html": "/storefront-glazier-tampa-florida/",
+        "/commercial-glazier-near-me-tampa/": "/storefront-glazier-tampa-florida/"
+      },
+      "canonicalize": [
+        "/tampa/",
+        "/tampa-commercial-glazing.html"
+      ],
+      "distinct": [
+        "/storefront-installer-tampa.html",
+        "/commercial-glazing-south-tampa.html"
+      ]
+    },
+    "orlando": {
+      "label": "Orlando",
+      "primary": "/storefront-glazier-orlando-florida/",
+      "redirect": {
+        "/commercial-glazing-orlando.html": "/storefront-glazier-orlando-florida/"
+      },
+      "canonicalize": [
+        "/orlando/"
+      ],
+      "distinct": [
+        "/storefront-installer-orlando.html"
+      ]
+    },
+    "naples": {
+      "label": "Naples",
+      "primary": "/storefront-glazier-naples-florida/",
+      "redirect": {
+        "/commercial-glazing-naples.html": "/storefront-glazier-naples-florida/"
+      },
+      "canonicalize": [
+        "/naples/"
+      ],
+      "distinct": [
+        "/storefront-installer-naples.html"
+      ]
+    },
+    "fort-lauderdale": {
+      "label": "Fort Lauderdale",
+      "primary": "/storefront-glazier-fort-lauderdale-florida/",
+      "redirect": {
+        "/commercial-glazing-fort-lauderdale.html": "/storefront-glazier-fort-lauderdale-florida/"
+      },
+      "canonicalize": [
+        "/fort-lauderdale/"
+      ],
+      "distinct": [
+        "/storefront-installer-fort-lauderdale.html"
+      ]
+    },
+    "boca-raton": {
+      "label": "Boca Raton",
+      "primary": "/storefront-glazier-boca-raton-florida/",
+      "redirect": {
+        "/commercial-glazing-boca-raton.html": "/storefront-glazier-boca-raton-florida/",
+        "/commercial-glazier-boca-raton/": "/storefront-glazier-boca-raton-florida/"
+      },
+      "canonicalize": [
+        "/boca-raton/"
+      ],
+      "distinct": []
+    },
+    "south-florida": {
+      "label": "South Florida",
+      "primary": "/commercial-glazing-south-florida.html",
+      "redirect": {},
+      "canonicalize": [],
+      "distinct": [
+        "/best-glaziers-south-florida/"
+      ]
+    },
+    "florida": {
+      "label": "Florida statewide",
+      "primary": "/commercial-glazing-near-me-florida.html",
+      "redirect": {
+        "/commercial-glazing-florida.html": "/commercial-glazing-near-me-florida.html"
+      },
+      "canonicalize": [],
+      "distinct": [
+        "/glazing-contractor-florida.html",
+        "/licensed-glazing-contractor-florida.html",
+        "/commercial-glass-installation-florida.html",
+        "/commercial-storefront-installer-florida.html",
+        "/division-08-subcontractor-florida.html",
+        "/curtainwall-contractor-florida.html",
+        "/florida-commercial-glazing-complete-guide/"
+      ]
+    },
+    "nashville": {
+      "label": "Nashville",
+      "primary": "/commercial-glazing-nashville-tn.html",
+      "redirect": {
+        "/commercial-glazing-nashville.html": "/commercial-glazing-nashville-tn.html",
+        "/tennessee/": "/tennessee-commercial-glazing/"
+      },
+      "canonicalize": [
+        "/nashville/"
+      ],
+      "distinct": [
+        "/storefront-installer-nashville.html",
+        "/tennessee-commercial-glazing/",
+        "/commercial-glazing-tn.html"
+      ]
+    }
+  }
+}
