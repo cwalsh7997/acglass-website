@@ -45,7 +45,9 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-15",
   "dateModified": "2026-05-15",
@@ -56,37 +58,94 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Bid & Procurement Hub", "item": "https://acglass.com/bid-hub.html"},
-      {"@type": "ListItem", "position": 3, "name": "AIA G702 / G703 Glazing", "item": "https://acglass.com/aia-g702-g703-glazing.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bid & Procurement Hub",
+      "item": "https://acglass.com/bid-hub.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AIA G702 / G703 Glazing",
+      "item": "https://acglass.com/aia-g702-g703-glazing.html"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What is the AIA G702 form used for in glazing?",
-       "acceptedAnswer": {"@type": "Answer", "text": "The AIA G702 is the Application and Certificate for Payment. The glazing subcontractor (ACG) submits it monthly to the GC showing the schedule of values, work completed to date, stored materials, retention withheld, and net amount due. The GC reviews and certifies it before passing it up to the owner or owner's representative."}},
-      {"@type": "Question", "name": "What is the AIA G703 Continuation Sheet in glazing?",
-       "acceptedAnswer": {"@type": "Answer", "text": "The G703 is the line-item breakdown of the G702 — the Schedule of Values continuation sheet. Each line item in the Division 08 scope appears on the G703 with its scheduled value, work completed to date (%), and materials stored. ACG breaks the Division 08 scope into discrete billing line items (fabrication, glass procurement, hardware, installation labor, PM, mobilization, etc.) so the GC can verify completion percentage for each component."}},
-      {"@type": "Question", "name": "What is a typical Division 08 schedule of values breakdown?",
-       "acceptedAnswer": {"@type": "Answer", "text": "A typical ACG Division 08 schedule of values includes: mobilization (3–5%), frame fabrication (20–30%), glass procurement (20–25%), hardware procurement (5–10%), installation labor (30–40%), project management/engineering (5–8%), field testing/mockup (2–5%), demobilization/punchlist (2–3%). Actual percentages vary by project type and system."}},
-      {"@type": "Question", "name": "How does retention work on glazing subcontracts in Florida?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Florida Statute 715.12 governs retainage on construction contracts. Standard retainage is 10% until 50% completion, then reduces to 5% for the remaining scope on public projects. Private projects vary by subcontract. ACG tracks retention balance on every pay application. Under FL Stat 715.12, retainage must be released within 30 days of final completion and acceptance."}},
-      {"@type": "Question", "name": "Can stored materials be billed on a glazing pay app?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Yes. The G702/G703 allows billing for stored materials (materials fabricated or procured but not yet installed). For glazing, this is common for custom-fabricated curtainwall frames and glass orders that are complete but waiting for the building to be ready for installation. Stored materials billing typically requires documentation: paid invoices or lien waivers from the supplier, and confirmation that materials are insured and secured."}},
-      {"@type": "Question", "name": "When must ACG submit pay applications under a standard subcontract?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG submits pay applications monthly, typically on the 25th–30th of the month for the prior month's work. The GC reviews and certifies within the contractually specified period (usually 7–14 days) before forwarding to the owner. Under Florida Statute 715.12, the GC must pay ACG within 7 days of receiving owner payment for the work billed."}},
-      {"@type": "Question", "name": "What is front-loading the schedule of values?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Front-loading means allocating disproportionately high values to early-project line items (mobilization, material procurement) compared to installation labor. It generates cash flow earlier in the project."}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the AIA G702 form used for in glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AIA G702 is the Application and Certificate for Payment. The glazing subcontractor (ACG) submits it monthly to the GC showing the schedule of values, work completed to date, stored materials, retention withheld, and net amount due. The GC reviews and certifies it before passing it up to the owner or owner's representative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the AIA G703 Continuation Sheet in glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The G703 is the line-item breakdown of the G702 — the Schedule of Values continuation sheet. Each line item in the Division 08 scope appears on the G703 with its scheduled value, work completed to date (%), and materials stored. ACG breaks the Division 08 scope into discrete billing line items (fabrication, glass procurement, hardware, installation labor, PM, mobilization, etc.) so the GC can verify completion percentage for each component."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a typical Division 08 schedule of values breakdown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical ACG Division 08 schedule of values includes: mobilization (3–5%), frame fabrication (20–30%), glass procurement (20–25%), hardware procurement (5–10%), installation labor (30–40%), project management/engineering (5–8%), field testing/mockup (2–5%), demobilization/punchlist (2–3%). Actual percentages vary by project type and system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does retention work on glazing subcontracts in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Florida Statute 715.12 governs retainage on construction contracts. Standard retainage is 10% until 50% completion, then reduces to 5% for the remaining scope on public projects. Private projects vary by subcontract. ACG tracks retention balance on every pay application. Under FL Stat 715.12, retainage must be released within 30 days of final completion and acceptance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can stored materials be billed on a glazing pay app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The G702/G703 allows billing for stored materials (materials fabricated or procured but not yet installed). For glazing, this is common for custom-fabricated curtainwall frames and glass orders that are complete but waiting for the building to be ready for installation. Stored materials billing typically requires documentation: paid invoices or lien waivers from the supplier, and confirmation that materials are insured and secured."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When must ACG submit pay applications under a standard subcontract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG submits pay applications monthly, typically on the 25th–30th of the month for the prior month's work. The GC reviews and certifies within the contractually specified period (usually 7–14 days) before forwarding to the owner. Under Florida Statute 715.12, the GC must pay ACG within 7 days of receiving owner payment for the work billed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is front-loading the schedule of values?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Front-loading means allocating disproportionately high values to early-project line items (mobilization, material procurement) compared to installation labor. It generates cash flow earlier in the project."
+      }
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
@@ -97,7 +156,7 @@
   "provider": {
     "@type": "Organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "alternateName": [
       "ACG",
       "ACG Glass",
@@ -107,7 +166,8 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization"
   },
   "serviceType": "Commercial Glazing Financial Management",
   "description": "ACG submits monthly AIA G702/G703 pay applications with itemized Division 08 schedule of values, stored materials documentation, and retention tracking."
@@ -324,7 +384,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

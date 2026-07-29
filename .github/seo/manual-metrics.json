@@ -1,0 +1,100 @@
+{
+  "$schema_version": 1,
+  "_about": [
+    "Metrics for surfaces that have no usable API, or whose API is not wired up yet.",
+    "The weekly report renders every metric listed here. A null value renders as",
+    "'not supplied' and is counted in the report's Data Gaps section - it is never",
+    "estimated, interpolated, or filled in from another source.",
+    "Update 'as_of' whenever you refresh values. Stale values are flagged by the report",
+    "once they are older than the period being reported on."
+  ],
+
+  "input_method_vocabulary": {
+    "manual-export": "A human downloads a CSV/screenshot from the vendor UI and types the number in here.",
+    "connector": "An automated job writes this value. 'connector_id' names the script that owns it.",
+    "unavailable-no-api": "Vendor exposes the metric in their UI only and publishes no API. Manual entry is the only option; do not build a scraper for it."
+  },
+
+  "as_of": null,
+
+  "sections": [
+    {
+      "id": "local_map",
+      "label": "Local / Map pack (Google Business Profile)",
+      "source": "GBP Performance API getDailyMetricsTimeSeries, or GBP UI > Performance export",
+      "input_method": "manual-export",
+      "connector_id": null,
+      "runbook": "GBP UI > Performance > select location > date range > Download. One row per location. See README 'Local / map inputs'.",
+      "metrics": [
+        { "id": "gbp_maps_impressions", "label": "Map impressions (desktop + mobile)", "market": "west-palm-beach", "unit": "count", "value": null },
+        { "id": "gbp_search_impressions", "label": "Search impressions (desktop + mobile)", "market": "west-palm-beach", "unit": "count", "value": null },
+        { "id": "gbp_direction_requests", "label": "Direction requests", "market": "west-palm-beach", "unit": "count", "value": null },
+        { "id": "gbp_call_clicks", "label": "Call clicks", "market": "west-palm-beach", "unit": "count", "value": null },
+        { "id": "gbp_website_clicks", "label": "Website clicks", "market": "west-palm-beach", "unit": "count", "value": null },
+        { "id": "gbp_review_count", "label": "Total reviews", "market": "west-palm-beach", "unit": "count", "value": null, "target": "+2 to +4 new text reviews per month per staffed location" },
+        { "id": "gbp_avg_rating", "label": "Average rating", "market": "west-palm-beach", "unit": "stars", "value": null, "target": ">= 4.8" },
+        { "id": "gbp_reviews_unanswered", "label": "Reviews unanswered > 72h", "market": "west-palm-beach", "unit": "count", "value": null, "target": "0" },
+        { "id": "gbp_maps_impressions", "label": "Map impressions (desktop + mobile)", "market": "naples", "unit": "count", "value": null },
+        { "id": "gbp_review_count", "label": "Total reviews", "market": "naples", "unit": "count", "value": null },
+        { "id": "gbp_avg_rating", "label": "Average rating", "market": "naples", "unit": "stars", "value": null, "target": ">= 4.8" }
+      ]
+    },
+    {
+      "id": "map_rank",
+      "label": "Map-pack rank on core query",
+      "source": "Third-party geo-grid scan (e.g. Local Falcon). Quarterly cadence.",
+      "input_method": "manual-export",
+      "connector_id": null,
+      "runbook": "Record the map-pack position for 'commercial glazing contractor <market>'. Do not query Google directly from CI - use the licensed geo-grid vendor's export.",
+      "metrics": [
+        { "id": "map_pack_rank", "label": "Map-pack rank, 'commercial glazing contractor'", "market": "west-palm-beach", "unit": "rank", "value": null, "target": "1" },
+        { "id": "map_pack_rank", "label": "Map-pack rank, 'commercial glazing contractor'", "market": "miami", "unit": "rank", "value": null },
+        { "id": "map_pack_rank", "label": "Map-pack rank, 'commercial glazing contractor'", "market": "naples", "unit": "rank", "value": null },
+        { "id": "map_pack_rank", "label": "Map-pack rank, 'commercial glazing contractor'", "market": "nashville", "unit": "rank", "value": null },
+        { "id": "solv", "label": "Share of Local Voice", "market": "west-palm-beach", "unit": "percent", "value": null }
+      ]
+    },
+    {
+      "id": "ai_visibility",
+      "label": "AI assistant visibility",
+      "source": ".github/scripts/ai-visibility.py (monthly workflow) writes the AI-Citations sheet tab; transcribe the monthly rate here.",
+      "input_method": "connector",
+      "connector_id": "ai-visibility.py",
+      "runbook": "Run the 'AI Visibility (monthly)' workflow, then copy the per-engine cite rate from its Slack summary. No first-party citation reporting exists for these engines - the prompt panel in ai-visibility.py is the measurement.",
+      "metrics": [
+        { "id": "ai_cite_rate", "label": "Prompts citing ACG - Perplexity", "engine": "perplexity", "unit": "ratio", "value": null },
+        { "id": "ai_cite_rate", "label": "Prompts citing ACG - Gemini", "engine": "gemini", "unit": "ratio", "value": null },
+        { "id": "ai_cite_rate", "label": "Prompts citing ACG - OpenAI", "engine": "openai", "unit": "ratio", "value": null },
+        { "id": "ga4_ai_assistants_sessions", "label": "GA4 'AI Assistants' channel sessions", "engine": "all", "unit": "count", "value": null, "source_override": "GA4 default channel group" }
+      ]
+    },
+    {
+      "id": "bing",
+      "label": "Bing Webmaster Tools",
+      "source": "BWT Search Performance (API available) + BWT AI Performance (preview, no API)",
+      "input_method": "manual-export",
+      "connector_id": null,
+      "runbook": "Search Performance figures can be automated via the BWT API key already used by seo-pulse.py. AI Performance has no API - export it by hand from the BWT UI monthly.",
+      "metrics": [
+        { "id": "bing_impressions", "label": "Impressions (web + chat)", "unit": "count", "value": null, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_clicks", "label": "Clicks", "unit": "count", "value": null, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_avg_position", "label": "Average position", "unit": "position", "value": null, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_indexed_pages", "label": "Indexed pages", "unit": "count", "value": null, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_crawl_errors", "label": "Crawl errors", "unit": "count", "value": null, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_ai_total_citations", "label": "AI Performance - total citations", "unit": "count", "value": null, "input_method": "unavailable-no-api" },
+        { "id": "bing_ai_cited_pages", "label": "AI Performance - average cited pages", "unit": "count", "value": null, "input_method": "unavailable-no-api" }
+      ]
+    },
+    {
+      "id": "google_ai_surfaces",
+      "label": "Google AI surfaces",
+      "source": "GSC Search Console gen-AI performance report",
+      "input_method": "manual-export",
+      "connector_id": null,
+      "runbook": "GSC > Performance > Search results > Search Appearance. The gen-AI report is impressions-only, capped at 1,000 rows, and is not exposed by the Search Analytics API - export by hand monthly.",
+      "metrics": [
+        { "id": "gsc_genai_impressions", "label": "Generative-AI impressions", "unit": "count", "value": null, "input_method": "unavailable-no-api" }
+      ]
+    }
+  ]
+}

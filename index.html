@@ -21,6 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="/images/hero/tower-360.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="/css/acg-proof.css">
   <script type="application/ld+json">
 {
@@ -33,16 +34,13 @@
       "name": "American Commercial Glass",
       "description": "Florida & Tennessee commercial glazing contractor. Storefront, curtainwall, impact, and fire-rated glazing for general contractors.",
       "publisher": {
-        "@id": "https://acglass.com/#org"
+        "@id": "https://acglass.com/#organization"
       },
       "inLanguage": "en-US"
     },
     {
-      "@type": [
-        "Organization",
-        "LocalBusiness"
-      ],
-      "@id": "https://acglass.com/#org",
+      "@type": "Organization",
+      "@id": "https://acglass.com/#organization",
       "name": "American Commercial Glass",
       "alternateName": [
         "ACG",
@@ -53,7 +51,7 @@
         "American Commercial Glass, Inc."
       ],
       "legalName": "American Commercial Glass, Inc.",
-      "url": "https://acglass.com",
+      "url": "https://acglass.com/",
       "logo": {
         "@type": "ImageObject",
         "url": "https://acglass.com/images/acg-mark.png",
@@ -68,8 +66,6 @@
       "email": "connor@acglass.com",
       "naics": "238150",
       "iso6523Code": "0199:CGC1531993",
-      "currenciesAccepted": "USD",
-      "paymentAccepted": "Check, ACH, Wire Transfer",
       "knowsLanguage": [
         "en",
         "es"
@@ -81,11 +77,6 @@
         "addressRegion": "FL",
         "postalCode": "33401",
         "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.707159,
-        "longitude": -80.057072
       },
       "founder": [
         {
@@ -135,16 +126,13 @@
       ],
       "location": [
         {
-          "@id": "https://acglass.com/#office-west-palm-beach"
+          "@id": "https://acglass.com/#localbusiness-west-palm-beach"
         },
         {
-          "@id": "https://acglass.com/#office-naples"
+          "@id": "https://acglass.com/#localbusiness-naples"
         },
         {
-          "@id": "https://acglass.com/#office-tampa"
-        },
-        {
-          "@id": "https://acglass.com/#office-nashville"
+          "@id": "https://acglass.com/#localbusiness-tampa"
         }
       ],
       "areaServed": [
@@ -182,20 +170,6 @@
           ]
         }
       ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "07:00",
-          "closes": "18:00"
-        }
-      ],
       "sameAs": [
         "https://www.wikidata.org/wiki/Q139858578",
         "https://www.linkedin.com/company/acglass",
@@ -212,7 +186,7 @@
       "name": "Connor Walsh",
       "jobTitle": "President & Co-founder",
       "worksFor": {
-        "@id": "https://acglass.com/#org"
+        "@id": "https://acglass.com/#organization"
       },
       "url": "https://acglass.com/leadership.html#connor",
       "email": "connor@acglass.com",
@@ -227,17 +201,20 @@
       "name": "Rielly Walsh",
       "jobTitle": "CEO & Co-founder",
       "worksFor": {
-        "@id": "https://acglass.com/#org"
+        "@id": "https://acglass.com/#organization"
       }
     },
     {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#office-west-palm-beach",
-      "name": "ACG — West Palm Beach (HQ)",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-west-palm-beach",
+      "name": "American Commercial Glass",
       "parentOrganization": {
-        "@id": "https://acglass.com/#org"
+        "@id": "https://acglass.com/#organization"
       },
-      "url": "https://acglass.com/locations/west-palm-beach.html",
+      "url": "https://acglass.com/",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "700 S Rosemary Ave Suite 204",
@@ -248,8 +225,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 26.707159,
-        "longitude": -80.057072
+        "latitude": 26.70716,
+        "longitude": -80.05707
       },
       "telephone": "+1-772-486-7711",
       "openingHoursSpecification": [
@@ -268,15 +245,18 @@
       ]
     },
     {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#office-naples",
-      "name": "ACG — Naples",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-naples",
+      "name": "American Commercial Glass",
       "parentOrganization": {
-        "@id": "https://acglass.com/#org"
+        "@id": "https://acglass.com/#organization"
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "4850 Tamiami Trail N, Ste 301",
+        "streetAddress": "4850 Tamiami Trail N Ste 301",
         "addressLocality": "Naples",
         "addressRegion": "FL",
         "postalCode": "34103",
@@ -284,8 +264,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 26.2052801,
-        "longitude": -81.7997463
+        "latitude": 26.20528,
+        "longitude": -81.79975
       },
       "telephone": "+1-772-486-7711",
       "openingHoursSpecification": [
@@ -301,18 +281,22 @@
           "opens": "07:00",
           "closes": "18:00"
         }
-      ]
+      ],
+      "url": "https://acglass.com/"
     },
     {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#office-tampa",
-      "name": "ACG — Tampa",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-tampa",
+      "name": "American Commercial Glass",
       "parentOrganization": {
-        "@id": "https://acglass.com/#org"
+        "@id": "https://acglass.com/#organization"
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "3031 N Rocky Point Dr W, Ste 600",
+        "streetAddress": "3031 N Rocky Point Dr W Ste 600",
         "addressLocality": "Tampa",
         "addressRegion": "FL",
         "postalCode": "33607",
@@ -320,8 +304,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 27.9686273,
-        "longitude": -82.5686677
+        "latitude": 27.96863,
+        "longitude": -82.56867
       },
       "telephone": "+1-772-486-7711",
       "openingHoursSpecification": [
@@ -337,43 +321,8 @@
           "opens": "07:00",
           "closes": "18:00"
         }
-      ]
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#office-nashville",
-      "name": "ACG — Nashville (Q3 2026)",
-      "parentOrganization": {
-        "@id": "https://acglass.com/#org"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Nashville",
-        "addressRegion": "TN",
-        "postalCode": "37201",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 36.1627,
-        "longitude": -86.7816
-      },
-      "telephone": "+1-772-486-7711",
-      "description": "ACG Nashville office opens Q3 2026 — serving Middle Tennessee and the Nashville MSA.",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "07:00",
-          "closes": "18:00"
-        }
-      ]
+      ],
+      "url": "https://acglass.com/"
     },
     {
       "@type": "BreadcrumbList",
@@ -384,60 +333,6 @@
           "position": 1,
           "name": "Home",
           "item": "https://acglass.com/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://acglass.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does American Commercial Glass do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ACG is a commercial-only Division 08 glazing subcontractor. We install storefronts, curtain wall, impact glazing, multi-slide and folding door systems, fire-rated glass, and aluminum entrances for general contractors across Florida — and Tennessee starting Q3 2026."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where does ACG work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ACG works statewide in Florida from offices in West Palm Beach (HQ), Naples, and Tampa, with hurricane-zone (HVHZ) Miami-Dade NOA experience. A Nashville, Tennessee office opens Q3 2026 to serve Middle Tennessee."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is ACG bonded and insured?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Bonded."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which manufacturers does ACG install?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ACG is an installer for ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora. We are one of the few authorized Euro-Wall installers in Florida."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How fast can ACG turn around a bid?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Send your drawings and our team returns a detailed Division 08 scope, system recommendations, and a complete scope breakdown — typically within 48 hours. Our operations are tracked in real time in Procore-native software."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "When was ACG founded?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "American Commercial Glass, Inc. was founded February 18, 2021 by Rielly Walsh (CEO, 51% majority owner) and Connor Walsh (President). We hold Florida CGC #1531993 and deliver commercial glazing scopes across Florida."
-          }
         }
       ]
     }
@@ -458,8 +353,11 @@
 
 <section class="hero" id="top">
   <div class="film" id="film">
-    <img src="/images/hero/tower-360.jpg" alt="" aria-hidden="true" fetchpriority="high">
-    <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.jpg" aria-label="Slow aerial orbit of a glass tower at dusk"></video>
+    <picture>
+      <source type="image/webp" srcset="/images/hero/tower-360.webp">
+      <img src="/images/hero/tower-360.jpg" alt="" aria-hidden="true" fetchpriority="high" width="2000" height="1116" decoding="async">
+    </picture>
+    <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.webp" aria-label="Slow aerial orbit of a glass tower at dusk"></video>
   </div>
   <div class="hero-copy">
     <h1>
@@ -476,7 +374,7 @@
       <div class="stat"><b>FL CGC</b><span>1531993</span></div>
     </div>
     <div class="proof-cta">
-      <a class="btn btn-red" href="mailto:connor@acglass.com?subject=Capability%20statement%20request">Request capability statement</a>
+      <!--email_off--><a class="btn btn-red" href="mailto:connor@acglass.com?subject=Capability%20statement%20request">Request capability statement</a><!--/email_off-->
       <a class="btn btn-ghost" href="/scope-engine.html">Send plans</a>
     </div>
   </div>
@@ -508,7 +406,7 @@
       <div class="disc-cell"><span class="n">04</span><h3>Bonded &amp; insured</h3><p>$3M single / $6M aggregate bonding, $1M/$2M general liability, $1M workers' comp — documentation on request.</p></div>
     </div>
 
-  <figure class="rv" style="margin:2rem auto 0;max-width:1180px"><img src="/images/infographics/federal/submittal-pipeline.svg" alt="Six-stage documentation pipeline: award, shop drawings, product approvals, fabrication, installation, closeout" loading="lazy" style="width:100%"></figure>
+  <figure class="rv" style="margin:2rem auto 0;max-width:1180px"><img src="/images/infographics/federal/submittal-pipeline.svg" alt="Six-stage documentation pipeline: award, shop drawings, product approvals, fabrication, installation, closeout" loading="lazy" decoding="async" width="1200" height="320" style="width:100%;height:auto"></figure>
   </section>
 
   <section class="quote rv">
@@ -526,7 +424,7 @@
         <picture>
           <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.avif" type="image/avif">
           <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.webp" type="image/webp">
-          <img src="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale — full-height glazing and operable walls" loading="lazy">
+          <img src="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg" alt="Ocean Prime Fort Lauderdale — full-height glazing and operable walls" loading="lazy" decoding="async" width="1600" height="1197">
         </picture>
         <figcaption><span>Fort Lauderdale</span><h3>Ocean Prime</h3></figcaption>
       </figure>
@@ -534,7 +432,7 @@
         <picture>
           <source srcset="/images/projects/atlantic-fields-golf-house/hero-golden-hour.avif" type="image/avif">
           <source srcset="/images/projects/atlantic-fields-golf-house/hero-golden-hour.webp" type="image/webp">
-          <img src="/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" alt="Atlantic Fields Golf House — full-height clubhouse glazing" loading="lazy">
+          <img src="/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" alt="Atlantic Fields Golf House — full-height clubhouse glazing" loading="lazy" decoding="async" width="1564" height="1028">
         </picture>
         <figcaption><span>Hobe Sound</span><h3>Atlantic Fields</h3></figcaption>
       </figure>
@@ -542,13 +440,13 @@
         <picture>
           <source srcset="/images/projects/gulfside-twelve/hero-twilight-beachfront.avif" type="image/avif">
           <source srcset="/images/projects/gulfside-twelve/hero-twilight-beachfront.webp" type="image/webp">
-          <img src="/images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve — hurricane-impact glazing on the Gulf" loading="lazy">
+          <img src="/images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve — hurricane-impact glazing on the Gulf" loading="lazy" decoding="async" width="1920" height="1071">
         </picture>
         <figcaption><span>Fort Myers Beach</span><h3>Gulfside Twelve</h3></figcaption>
       </figure>
     </div>
 
-    <figure class="rv" style="margin:3rem auto 0;max-width:900px"><img src="/images/infographics/federal/florida-project-map.svg" alt="Key plan of selected ACG work across Florida" loading="lazy" style="width:100%"></figure>
+    <figure class="rv" style="margin:3rem auto 0;max-width:900px"><img src="/images/infographics/federal/florida-project-map.svg" alt="Key plan of selected ACG work across Florida" loading="lazy" decoding="async" width="640" height="920" style="width:100%;height:auto"></figure>
   </section>
 
 <section class="sysstrip" aria-labelledby="sysstrip-heading">
@@ -715,8 +613,8 @@
         <div><b>Workers' comp</b><span>$1M</span></div>
       </div>
       <div>
-        <p class="pq-person"><b>Connor Walsh · President</b>(772) 486-7711 · connor@acglass.com</p>
-        <a class="btn btn-red" style="margin-top:1.1rem" href="mailto:connor@acglass.com?subject=Prequalification%20packet%20request">Request the packet</a>
+        <p class="pq-person"><b>Connor Walsh · President</b>(772) 486-7711 · <!--email_off-->connor@acglass.com<!--/email_off--></p>
+        <!--email_off--><a class="btn btn-red" style="margin-top:1.1rem" href="mailto:connor@acglass.com?subject=Prequalification%20packet%20request">Request the packet</a><!--/email_off-->
       </div>
     </div>
   </section>
@@ -769,7 +667,7 @@
       <a href="/scope-engine.html">Scope engine</a>
       <a href="/contact.html">Contact</a>
       <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="mailto:connor@acglass.com">connor@acglass.com</a>
+      <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->
     </div>
   </nav>
   <div>

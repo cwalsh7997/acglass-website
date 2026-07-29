@@ -37,9 +37,13 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://acglass.com/#org-acg",
-      "name": "American Commercial Glass, Inc.",
-      "alternateName": ["ACG", "ACG Glass", "American Commercial Glass"],
+      "@id": "https://acglass.com/#organization",
+      "name": "American Commercial Glass",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "American Commercial Glass"
+      ],
       "url": "https://acglass.com/",
       "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
       "telephone": "+17724867711",
@@ -52,12 +56,17 @@
       ]
     },
     {
-      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-      "@id": "https://acglass.com/temple-terrace/#localbusiness",
-      "name": "American Commercial Glass &mdash; Temple Terrace",
-      "parentOrganization": { "@id": "https://acglass.com/#org-acg" },
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-tampa",
+      "name": "American Commercial Glass",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#organization"
+      },
       "image": "https://acglass.com/images/acg-logo-nav@2x.png",
-      "url": "https://acglass.com/temple-terrace/",
+      "url": "https://acglass.com/",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "priceRange": "$$$",
@@ -69,10 +78,20 @@
         "postalCode": "33607",
         "addressCountry": "US"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 28.0353, "longitude": -82.3892 },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.96863,
+        "longitude": -82.56867
+      },
       "areaServed": [
-        { "@type": "City", "name": "Temple Terrace" },
-        { "@type": "AdministrativeArea", "name": "Hillsborough County" }
+        {
+          "@type": "City",
+          "name": "Temple Terrace"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hillsborough County"
+        }
       ],
       "serviceType": "Commercial Glazing Contractor"
     },
@@ -80,16 +99,36 @@
       "@type": "Service",
       "@id": "https://acglass.com/temple-terrace/#service",
       "serviceType": "Commercial glazing, storefront, curtain wall, and impact glass installation",
-      "provider": { "@id": "https://acglass.com/#org-acg" },
-      "areaServed": { "@type": "City", "name": "Temple Terrace, Florida" },
+      "provider": {
+        "@id": "https://acglass.com/#org-acg"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Temple Terrace, Florida"
+      },
       "description": "Commercial storefront, curtain wall, window wall, impact-rated glazing, and entrance systems for retail, multifamily, and mixed-use buildings in Temple Terrace, Florida."
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://acglass.com/service-areas.html" },
-        { "@type": "ListItem", "position": 3, "name": "Temple Terrace", "item": "https://acglass.com/temple-terrace/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Service Areas",
+          "item": "https://acglass.com/service-areas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Temple Terrace",
+          "item": "https://acglass.com/temple-terrace/"
+        }
       ]
     }
   ]
@@ -323,7 +362,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

@@ -39,7 +39,9 @@
     "logo": {
       "@type": "ImageObject",
       "url": "https://acglass.com/images/acg-logo-nav@2x.png"
-    }
+    },
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-13",
   "dateModified": "2026-05-13",
@@ -64,64 +66,79 @@
   <!-- ======= SCHEMA: FAQPage ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What does ASTM E1300 cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ASTM E1300 is the Standard Practice for Determining Load Resistance of Glass in Buildings. It provides charts, tables, and calculation procedures that engineers use to determine the minimum glass thickness required for a given glass type, panel dimensions, and design load (design pressure in PSF). It covers annealed, heat-strengthened, fully tempered, and laminated glass types, and accounts for load duration through the load duration factor."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is glass thickness calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Glass thickness for a given application is determined by entering the design load (PSF), panel dimensions (width x height), and glass type into the ASTM E1300 load resistance charts. The charts give the maximum area a specific glass type and thickness can resist at a given load with acceptable probability of breakage (8 lites per 1,000 is the standard criterion). If the panel area exceeds the chart value for a given thickness, a thicker glass or stronger glass type is required."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is load duration factor in ASTM E1300?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Load duration factor accounts for glass fatigue under sustained loads. Glass is weaker under long-term constant load than under a short-duration wind load. ASTM E1300 applies different factors depending on load type: wind loads use a duration factor based on 3-second gusts; snow, dead, and live loads use different factors reflecting longer load durations. Using the wrong load duration factor when sizing glass for snow or structural loads is a common error in mixed-climate specs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does ASTM E1300 matter for HVHZ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ASTM E1300 determines the structural glass thickness — but it does not by itself certify impact resistance or cyclic pressure performance. In HVHZ, glass must also pass TAS 201 large missile impact testing and TAS 203 cyclic pressure testing as part of an NOA assembly. A glass thickness that meets E1300 at a given design pressure may not be the same glass configuration that appears in the NOA's approved glass list. Always verify the NOA glass list separately from the E1300 calculation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between ASTM E1300 and ASTM E2190?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ASTM E1300 covers structural design of glass under loads — it determines thickness and type for structural adequacy. ASTM E2190 covers the specification for insulating glass unit (IGU) performance — specifically edge seal performance, thermal cycling, humidity, and fogging resistance. They address different aspects of glass performance and are both cited in commercial glazing specifications. E1300 governs structural sizing; E2190 governs IGU durability."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does ASTM E1300 cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASTM E1300 is the Standard Practice for Determining Load Resistance of Glass in Buildings. It provides charts, tables, and calculation procedures that engineers use to determine the minimum glass thickness required for a given glass type, panel dimensions, and design load (design pressure in PSF). It covers annealed, heat-strengthened, fully tempered, and laminated glass types, and accounts for load duration through the load duration factor."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How is glass thickness calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Glass thickness for a given application is determined by entering the design load (PSF), panel dimensions (width x height), and glass type into the ASTM E1300 load resistance charts. The charts give the maximum area a specific glass type and thickness can resist at a given load with acceptable probability of breakage (8 lites per 1,000 is the standard criterion). If the panel area exceeds the chart value for a given thickness, a thicker glass or stronger glass type is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is load duration factor in ASTM E1300?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Load duration factor accounts for glass fatigue under sustained loads. Glass is weaker under long-term constant load than under a short-duration wind load. ASTM E1300 applies different factors depending on load type: wind loads use a duration factor based on 3-second gusts; snow, dead, and live loads use different factors reflecting longer load durations. Using the wrong load duration factor when sizing glass for snow or structural loads is a common error in mixed-climate specs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does ASTM E1300 matter for HVHZ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASTM E1300 determines the structural glass thickness — but it does not by itself certify impact resistance or cyclic pressure performance. In HVHZ, glass must also pass TAS 201 large missile impact testing and TAS 203 cyclic pressure testing as part of an NOA assembly. A glass thickness that meets E1300 at a given design pressure may not be the same glass configuration that appears in the NOA's approved glass list. Always verify the NOA glass list separately from the E1300 calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between ASTM E1300 and ASTM E2190?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASTM E1300 covers structural design of glass under loads — it determines thickness and type for structural adequacy. ASTM E2190 covers the specification for insulating glass unit (IGU) performance — specifically edge seal performance, thermal cycling, humidity, and fogging resistance. They address different aspects of glass performance and are both cited in commercial glazing specifications. E1300 governs structural sizing; E2190 governs IGU durability."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- ======= SCHEMA: BreadcrumbList ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/ask.html"},
-      {"@type": "ListItem", "position": 3, "name": "ASTM E1300 Explained", "item": "https://acglass.com/astm-e1300-explained.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://acglass.com/ask.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ASTM E1300 Explained",
+      "item": "https://acglass.com/astm-e1300-explained.html"
+    }
+  ]
+}
   </script>
 
   <style>
@@ -429,7 +446,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

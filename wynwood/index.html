@@ -37,9 +37,13 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://acglass.com/#org-acg",
-      "name": "American Commercial Glass, Inc.",
-      "alternateName": ["ACG", "ACG Glass", "American Commercial Glass"],
+      "@id": "https://acglass.com/#organization",
+      "name": "American Commercial Glass",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "American Commercial Glass"
+      ],
       "url": "https://acglass.com/",
       "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
       "telephone": "+17724867711",
@@ -52,27 +56,42 @@
       ]
     },
     {
-      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-      "@id": "https://acglass.com/wynwood/#localbusiness",
-      "name": "American Commercial Glass &mdash; Wynwood",
-      "parentOrganization": { "@id": "https://acglass.com/#org-acg" },
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-west-palm-beach",
+      "name": "American Commercial Glass",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#organization"
+      },
       "image": "https://acglass.com/images/acg-logo-nav@2x.png",
-      "url": "https://acglass.com/wynwood/",
+      "url": "https://acglass.com/",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "700 S Rosemary Ave Ste 204",
+        "streetAddress": "700 S Rosemary Ave Suite 204",
         "addressLocality": "West Palm Beach",
         "addressRegion": "FL",
         "postalCode": "33401",
         "addressCountry": "US"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 25.801, "longitude": -80.199 },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.70716,
+        "longitude": -80.05707
+      },
       "areaServed": [
-        { "@type": "City", "name": "Wynwood" },
-        { "@type": "AdministrativeArea", "name": "Miami-Dade County" }
+        {
+          "@type": "City",
+          "name": "Wynwood"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Miami-Dade County"
+        }
       ],
       "serviceType": "Commercial Glazing Contractor"
     },
@@ -80,16 +99,36 @@
       "@type": "Service",
       "@id": "https://acglass.com/wynwood/#service",
       "serviceType": "Commercial glazing, storefront, curtain wall, and impact glass installation",
-      "provider": { "@id": "https://acglass.com/#org-acg" },
-      "areaServed": { "@type": "City", "name": "Wynwood, Florida" },
+      "provider": {
+        "@id": "https://acglass.com/#org-acg"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Wynwood, Florida"
+      },
       "description": "Restaurant and retail commercial storefront, folding glass walls, impact-rated glazing, and entrance systems for the Wynwood Arts District in Miami-Dade County, Florida."
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://acglass.com/service-areas.html" },
-        { "@type": "ListItem", "position": 3, "name": "Wynwood", "item": "https://acglass.com/wynwood/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Service Areas",
+          "item": "https://acglass.com/service-areas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wynwood",
+          "item": "https://acglass.com/wynwood/"
+        }
       ]
     }
   ]
@@ -323,7 +362,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

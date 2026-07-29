@@ -39,7 +39,9 @@
     "logo": {
       "@type": "ImageObject",
       "url": "https://acglass.com/images/acg-logo-nav@2x.png"
-    }
+    },
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-13",
   "dateModified": "2026-05-13",
@@ -59,64 +61,79 @@
   <!-- ======= SCHEMA: FAQPage ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is AAMA 501?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AAMA 501 is the American Architectural Manufacturers Association umbrella standard for methods of testing water penetration of windows, curtain walls, and doors. It contains four sub-standards: AAMA 501.1 (laboratory water penetration test), AAMA 501.2 (field water spray test using a nozzle and hose), AAMA 501.4 (post-installation field testing), and AAMA 501.5 (thermal cycling). Each sub-standard specifies a different test methodology for different phases of a project. AAMA 501 is frequently cited in architectural specifications and product approval documents."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between AAMA 501.1 and 501.2?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AAMA 501.1 is a laboratory test: the assembly is mounted in a test chamber and subjected to a uniform water spray at specified pressure differentials under controlled conditions. It is used to establish a product's water resistance rating for performance specifications and product certification. AAMA 501.2 is a field test: a calibrated nozzle and hose delivers water to the installed assembly at a specified flow rate without a pressure differential chamber. It is used on installed fenestration to check for leaks in specific areas of concern — around sealant joints, at corners, or at areas where water entry is suspected."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When is AAMA 501.4 required?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AAMA 501.4 is the post-installation field test method. It is used after installation is complete to verify that the installed assembly performs to its rated water-resistance level. Unlike AAMA 501.2, which uses a nozzle and hose, AAMA 501.4 uses a calibrated spray rack and a pressure differential — making it a more rigorous field test that replicates laboratory conditions in the field. It is commonly specified on large commercial projects, curtainwall installations, and on projects where the owner's representative or architect wants systematic post-installation performance verification beyond a visual inspection."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is AAMA 501 lab or field testing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AAMA 501 covers both. AAMA 501.1 is laboratory testing — performed at an accredited test facility on a representative specimen before installation. AAMA 501.2 is a simplified field method. AAMA 501.4 is a more rigorous field method with a pressure differential. AAMA 501.5 is a thermal cycling test conducted in a laboratory. The sub-standard number tells you which phase and method applies."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is AAMA 501.5?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AAMA 501.5 is a thermal cycling test conducted in a laboratory setting. The fenestration assembly is subjected to cyclic temperature changes — heating and cooling — while under simultaneous water spray, to evaluate whether thermal movement at joints and corners causes water infiltration. This test is relevant for curtainwall systems and large-format assemblies where differential thermal expansion between aluminum framing and glass can open or stress joint sealants over time. It is less commonly required than 501.1 or 501.2 but may appear in high-performance facade specifications."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is AAMA 501?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAMA 501 is the American Architectural Manufacturers Association umbrella standard for methods of testing water penetration of windows, curtain walls, and doors. It contains four sub-standards: AAMA 501.1 (laboratory water penetration test), AAMA 501.2 (field water spray test using a nozzle and hose), AAMA 501.4 (post-installation field testing), and AAMA 501.5 (thermal cycling). Each sub-standard specifies a different test methodology for different phases of a project. AAMA 501 is frequently cited in architectural specifications and product approval documents."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between AAMA 501.1 and 501.2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAMA 501.1 is a laboratory test: the assembly is mounted in a test chamber and subjected to a uniform water spray at specified pressure differentials under controlled conditions. It is used to establish a product's water resistance rating for performance specifications and product certification. AAMA 501.2 is a field test: a calibrated nozzle and hose delivers water to the installed assembly at a specified flow rate without a pressure differential chamber. It is used on installed fenestration to check for leaks in specific areas of concern — around sealant joints, at corners, or at areas where water entry is suspected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is AAMA 501.4 required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAMA 501.4 is the post-installation field test method. It is used after installation is complete to verify that the installed assembly performs to its rated water-resistance level. Unlike AAMA 501.2, which uses a nozzle and hose, AAMA 501.4 uses a calibrated spray rack and a pressure differential — making it a more rigorous field test that replicates laboratory conditions in the field. It is commonly specified on large commercial projects, curtainwall installations, and on projects where the owner's representative or architect wants systematic post-installation performance verification beyond a visual inspection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is AAMA 501 lab or field testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAMA 501 covers both. AAMA 501.1 is laboratory testing — performed at an accredited test facility on a representative specimen before installation. AAMA 501.2 is a simplified field method. AAMA 501.4 is a more rigorous field method with a pressure differential. AAMA 501.5 is a thermal cycling test conducted in a laboratory. The sub-standard number tells you which phase and method applies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AAMA 501.5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AAMA 501.5 is a thermal cycling test conducted in a laboratory setting. The fenestration assembly is subjected to cyclic temperature changes — heating and cooling — while under simultaneous water spray, to evaluate whether thermal movement at joints and corners causes water infiltration. This test is relevant for curtainwall systems and large-format assemblies where differential thermal expansion between aluminum framing and glass can open or stress joint sealants over time. It is less commonly required than 501.1 or 501.2 but may appear in high-performance facade specifications."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- ======= SCHEMA: BreadcrumbList ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/ask.html"},
-      {"@type": "ListItem", "position": 3, "name": "AAMA 501 Explained", "item": "https://acglass.com/aama-501-explained.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://acglass.com/ask.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AAMA 501 Explained",
+      "item": "https://acglass.com/aama-501-explained.html"
+    }
+  ]
+}
   </script>
 
   <style>
@@ -408,7 +425,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

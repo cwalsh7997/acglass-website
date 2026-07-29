@@ -26,74 +26,80 @@
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
- {
- "@type": "LocalBusiness",
- "additionalType": "https://schema.org/Glazier",
- "@id": "https://acglass.com/santa-rosa-county/#organization",
- "name": "American Commercial Glass \u2014 Commercial Glazier, Santa Rosa County",
- "alternateName": [
- "ACG",
- "ACG Glass"
- ],
- "description": "Florida-licensed commercial storefront glazier serving Santa Rosa County and the Florida Panhandle. CGC #1531993. Florida-licensed and insured.",
- "url": "https://acglass.com/santa-rosa-county/",
- "telephone": "+17724867711",
- "email": "connor@acglass.com",
- "priceRange": "$$$",
- "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
- "address": {
- "@type": "PostalAddress",
- "streetAddress": "700 S Rosemary Ave #204",
- "addressLocality": "West Palm Beach",
- "addressRegion": "FL",
- "postalCode": "33401",
- "addressCountry": "US"
- },
- "geo": {
- "@type": "GeoCoordinates",
- "latitude": 30.65,
- "longitude": -87.1
- },
- "areaServed": [
- {
- "@type": "AdministrativeArea",
- "name": "Santa Rosa County"
- },
- {
- "@type": "AdministrativeArea",
- "name": "Florida Panhandle"
- }
- ]
- },
- {
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": "https://acglass.com/"
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Florida Service Area",
- "item": "https://acglass.com/service-area-florida/"
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Florida Panhandle",
- "item": "https://acglass.com/florida-panhandle/"
- },
- {
- "@type": "ListItem",
- "position": 4,
- "name": "Santa Rosa County",
- "item": "https://acglass.com/santa-rosa-county/"
- }
- ]
- }
+  {
+   "@type": [
+    "LocalBusiness",
+    "HomeAndConstructionBusiness"
+   ],
+   "additionalType": "https://schema.org/Glazier",
+   "@id": "https://acglass.com/#localbusiness-west-palm-beach",
+   "name": "American Commercial Glass",
+   "alternateName": [
+    "ACG",
+    "ACG Glass"
+   ],
+   "description": "Florida-licensed commercial storefront glazier serving Santa Rosa County and the Florida Panhandle. CGC #1531993. Florida-licensed and insured.",
+   "url": "https://acglass.com/",
+   "telephone": "+17724867711",
+   "email": "connor@acglass.com",
+   "priceRange": "$$$",
+   "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "700 S Rosemary Ave Suite 204",
+    "addressLocality": "West Palm Beach",
+    "addressRegion": "FL",
+    "postalCode": "33401",
+    "addressCountry": "US"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 26.70716,
+    "longitude": -80.05707
+   },
+   "areaServed": [
+    {
+     "@type": "AdministrativeArea",
+     "name": "Santa Rosa County"
+    },
+    {
+     "@type": "AdministrativeArea",
+     "name": "Florida Panhandle"
+    }
+   ],
+   "parentOrganization": {
+    "@id": "https://acglass.com/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://acglass.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Florida Service Area",
+     "item": "https://acglass.com/service-area-florida/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Florida Panhandle",
+     "item": "https://acglass.com/florida-panhandle/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Santa Rosa County",
+     "item": "https://acglass.com/santa-rosa-county/"
+    }
+   ]
+  }
  ]
 }</script>
 </head>
@@ -180,7 +186,7 @@
 
 <section class="cta-bottom">
  <h2>Need a Santa Rosa County commercial glazing bid?</h2>
- <p>Send drawings to <a href="mailto:connor@acglass.com">connor@acglass.com</a> or use the form below. Bid letter back in 48 hours.</p>
+ <p>Send drawings to <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> or use the form below. Bid letter back in 48 hours.</p>
  <div class="cta-row">
  <a href="/contact/" class="btn btn-primary">Request Bid</a>
  <a href="tel:+17724867711" class="btn btn-secondary">(772) 486-7711</a>
@@ -222,7 +228,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

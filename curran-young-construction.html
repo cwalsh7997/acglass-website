@@ -185,7 +185,7 @@
     "@type": "Organization",
     "@id": "https://acglass.com/#organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "alternateName": [
       "ACG",
       "ACG Glass",
@@ -211,36 +211,68 @@
   </script>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "name":"ACG Projects Delivered with Curran Young Construction",
-    "itemListElement":[
-    {"@type":"ListItem","position":1,"item":{"@type":"Place","name":"Wild Blue at Waterside Clubhouse","url":"https://acglass.com/wild-blue-clubhouse.html","address":{"@type":"PostalAddress","addressLocality":"Lakewood Ranch","addressRegion":"FL","addressCountry":"US"}}},
-    {"@type":"ListItem","position":2,"item":{"@type":"Place","name":"Gulf Harbour Country Club","url":"https://acglass.com/gulf-harbour-country-club.html","address":{"@type":"PostalAddress","addressLocality":"Fort Myers","addressRegion":"FL","addressCountry":"US"}}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "ACG Projects Delivered with Curran Young Construction",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Place",
+        "name": "Wild Blue at Waterside Clubhouse",
+        "url": "https://acglass.com/wild-blue-clubhouse.html",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lakewood Ranch",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Place",
+        "name": "Gulf Harbour Country Club",
+        "url": "https://acglass.com/gulf-harbour-country-club.html",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Fort Myers",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        }
+      }
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},
-      {"@type":"ListItem","position":2,"name":"GC Partners","item":"https://acglass.com/portfolio.html"},
-      {"@type":"ListItem","position":3,"name":"Curran Young Construction","item":"https://acglass.com/curran-young-construction.html"}
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Is ACG an approved glazing subcontractor for Curran Young Construction?","acceptedAnswer":{"@type":"Answer","text":"Yes. American Commercial Glass (ACG) is a repeat commercial glazing subcontractor for Curran Young Construction. ACG has delivered multiple projects for Curran Young Construction across Florida, including Wild Blue at Waterside Clubhouse and Gulf Harbour Country Club. ACG holds Florida CGC #1531993 and is the authorized commercial installer for ESWindows and Euro-Wall."}},
-      {"@type":"Question","name":"What glazing scope does ACG provide on Curran Young Construction projects?","acceptedAnswer":{"@type":"Answer","text":"ACG delivers Division 08 glazing scope including commercial storefront, curtain wall, sliding glass door systems, impact windows, and aluminum entrances. Curran Young projects demand Euro-Wall large-format sliding systems and ESWindows commercial storefront at the standards of Gulf-front luxury. ACG runs the envelope from submittal through punch — including the specialty arched, multi-slide, and pocket-door openings that define these clubhouses."}},
-      {"@type":"Question","name":"How do I get ACG on an upcoming Curran Young Construction project?","acceptedAnswer":{"@type":"Answer","text":"Contact Connor Walsh, President: connor@acglass.com or (772) 486-7711. ACG provides a 48-hour scoped estimate with line-item pricing, lead times, and product recommendations."}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "GC Partners",
+      "item": "https://acglass.com/portfolio.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Curran Young Construction",
+      "item": "https://acglass.com/curran-young-construction.html"
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -397,10 +429,10 @@
       <h2>Next <span class="accent">Curran Young Construction</span> Project?</h2>
       <p>Send plans to Connor Walsh direct. Scoped estimate with line-item pricing, lead times, and product recommendations within 48 hours.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
-        <a href="mailto:connor@acglass.com?subject=Curran%20Young%20Construction%20-%20ACG%20Glazing%20Estimate" class="btn btn-primary btn-lg">
+        <!--email_off--><a href="mailto:connor@acglass.com?subject=Curran%20Young%20Construction%20-%20ACG%20Glazing%20Estimate" class="btn btn-primary btn-lg">
           Email Connor Direct
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        </a><!--/email_off-->
         <a href="tel:+17724867711" class="btn btn-ghost btn-lg">(772) 486-7711</a>
       </div>
       <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:20px;">Connor Walsh &middot; President</p>
@@ -439,7 +471,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

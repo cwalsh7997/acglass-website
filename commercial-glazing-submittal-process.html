@@ -45,7 +45,9 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-15",
   "dateModified": "2026-05-15",
@@ -56,39 +58,102 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Bid & Procurement Hub", "item": "https://acglass.com/bid-hub.html"},
-      {"@type": "ListItem", "position": 3, "name": "Submittal Process", "item": "https://acglass.com/commercial-glazing-submittal-process.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bid & Procurement Hub",
+      "item": "https://acglass.com/bid-hub.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Submittal Process",
+      "item": "https://acglass.com/commercial-glazing-submittal-process.html"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What does a commercial glazing submittal package include?",
-       "acceptedAnswer": {"@type": "Answer", "text": "A complete Division 08 submittal package includes: shop drawings (frame, anchor, glazing details), product data sheets for all specified materials, a glazing schedule, signed-and-sealed engineering (PE stamp for anchor calculations and frame engineering), NOA cover sheets for HVHZ projects, and mockup specifications if required by the spec or AHJ."}},
-      {"@type": "Question", "name": "How long does the glazing submittal review process take?",
-       "acceptedAnswer": {"@type": "Answer", "text": "First review typically takes 10–21 days from GC submission to architect. Add 5–10 days for structural engineer review if anchor calcs are included. A second review cycle (for resubmit) adds another 10–14 days. HVHZ projects may require additional NOA confirmation review by the building department before approval. Total: 4–8 weeks from ACG submittal to approved drawings."}},
-      {"@type": "Question", "name": "What is the difference between FBC and HVHZ submittal requirements?",
-       "acceptedAnswer": {"@type": "Answer", "text": "FBC (non-HVHZ) projects require Florida Product Approval (FPA) documentation — manufacturer's state approval listings and product data. HVHZ projects (Miami-Dade, Broward) require Miami-Dade Notice of Acceptance (NOA) cover sheets and full NOA packets for every assembly. HVHZ submittals are more extensive, require NOA-compliant assemblies, and may require HVHZ inspector third-party verification."}},
-      {"@type": "Question", "name": "Does ACG provide signed-sealed engineering with submittals?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Yes. For curtainwall and complex glazing systems, ACG includes PE-stamped anchor calculations and, where required, PE-stamped frame engineering reports. Structural anchor calcs are signed and sealed by a licensed Florida PE. This is required for HVHZ NOA compliance and typically required for curtainwall systems on any Florida project."}},
-      {"@type": "Question", "name": "What is a glazing schedule and why is it part of the submittal?",
-       "acceptedAnswer": {"@type": "Answer", "text": "A glazing schedule is a tabular document listing every opening: mark number, rough opening size, frame type, glass type (make-up, coating, thickness), hardware, and any special conditions. It cross-references the shop drawings and allows the architect to verify every opening against the specification. ACG prepares the glazing schedule as part of the submittal package."}},
-      {"@type": "Question", "name": "What happens if the submittal is rejected?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG responds to every comment in the review set with a response matrix. If the reviewer marks 'Revise and Resubmit,' ACG addresses each comment and resubmits with a revision cloud on changed areas. We do not release material to fabrication until we have a 'Reviewed' or 'Approved as Noted' stamp on shop drawings."}},
-      {"@type": "Question", "name": "When is a mockup required for a glazing project?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Mockups are required when the specification calls for one (common on curtainwall over $1M), when AAMA 502 field testing is required, or when the AHJ or owner requires proof of performance. HVHZ projects may require a field water test per TAS 202 as a condition of the permit. ACG builds and tests mockups as part of our scope on applicable projects."}},
-      {"@type": "Question", "name": "How does ACG track submittal status?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG tracks all submittals in Procore with submittal number, revision, date submitted, required return date, reviewer, and disposition. We maintain a submittal log that is available to the GC at any time. Overdue reviews are escalated to the GC for follow-up with the architect."}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a commercial glazing submittal package include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A complete Division 08 submittal package includes: shop drawings (frame, anchor, glazing details), product data sheets for all specified materials, a glazing schedule, signed-and-sealed engineering (PE stamp for anchor calculations and frame engineering), NOA cover sheets for HVHZ projects, and mockup specifications if required by the spec or AHJ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the glazing submittal review process take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First review typically takes 10–21 days from GC submission to architect. Add 5–10 days for structural engineer review if anchor calcs are included. A second review cycle (for resubmit) adds another 10–14 days. HVHZ projects may require additional NOA confirmation review by the building department before approval. Total: 4–8 weeks from ACG submittal to approved drawings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between FBC and HVHZ submittal requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FBC (non-HVHZ) projects require Florida Product Approval (FPA) documentation — manufacturer's state approval listings and product data. HVHZ projects (Miami-Dade, Broward) require Miami-Dade Notice of Acceptance (NOA) cover sheets and full NOA packets for every assembly. HVHZ submittals are more extensive, require NOA-compliant assemblies, and may require HVHZ inspector third-party verification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does ACG provide signed-sealed engineering with submittals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. For curtainwall and complex glazing systems, ACG includes PE-stamped anchor calculations and, where required, PE-stamped frame engineering reports. Structural anchor calcs are signed and sealed by a licensed Florida PE. This is required for HVHZ NOA compliance and typically required for curtainwall systems on any Florida project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a glazing schedule and why is it part of the submittal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A glazing schedule is a tabular document listing every opening: mark number, rough opening size, frame type, glass type (make-up, coating, thickness), hardware, and any special conditions. It cross-references the shop drawings and allows the architect to verify every opening against the specification. ACG prepares the glazing schedule as part of the submittal package."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the submittal is rejected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG responds to every comment in the review set with a response matrix. If the reviewer marks 'Revise and Resubmit,' ACG addresses each comment and resubmits with a revision cloud on changed areas. We do not release material to fabrication until we have a 'Reviewed' or 'Approved as Noted' stamp on shop drawings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is a mockup required for a glazing project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mockups are required when the specification calls for one (common on curtainwall over $1M), when AAMA 502 field testing is required, or when the AHJ or owner requires proof of performance. HVHZ projects may require a field water test per TAS 202 as a condition of the permit. ACG builds and tests mockups as part of our scope on applicable projects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does ACG track submittal status?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG tracks all submittals in Procore with submittal number, revision, date submitted, required return date, reviewer, and disposition. We maintain a submittal log that is available to the GC at any time. Overdue reviews are escalated to the GC for follow-up with the architect."
+      }
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
@@ -99,7 +164,7 @@
   "provider": {
     "@type": "Organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "alternateName": [
       "ACG",
       "ACG Glass",
@@ -109,7 +174,8 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization"
   },
   "serviceType": "Commercial Glazing Submittals",
   "description": "ACG prepares complete Division 08 submittal packages including shop drawings, PE-stamped engineering, NOA documentation, glazing schedules, and mockup specifications."
@@ -351,7 +417,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

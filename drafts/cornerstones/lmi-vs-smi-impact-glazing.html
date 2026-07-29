@@ -39,7 +39,9 @@
     "logo": {
       "@type": "ImageObject",
       "url": "https://acglass.com/images/acg-logo-nav@2x.png"
-    }
+    },
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-13",
   "dateModified": "2026-05-13",
@@ -64,72 +66,87 @@
   <!-- ======= SCHEMA: FAQPage ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Large Missile Impact (LMI)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Large Missile Impact (LMI) is the more demanding of the two missile impact classifications. Under ASTM E1996 and Florida TAS 201, the test projectile is a 9-pound 2x4 timber stud fired at the assembly at 50 feet per second (34 mph). The assembly must resist penetration and then pass cyclic pressure testing. LMI is required for all fenestration within 30 feet of the ground in wind-borne debris regions and HVHZ."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Small Missile Impact (SMI)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Small Missile Impact (SMI) simulates the threat of wind-blown gravel, roof ballast, and smaller debris at elevation. Under ASTM E1996 and Florida TAS 202, 30 steel balls (each 2 grams) are fired at the assembly at 130 feet per second (approximately 89 mph). The rationale is that at heights above 30 feet, large lumber-sized debris is less likely to become airborne and reach the building face at damaging velocity. SMI is required at and above 30 feet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When do I need LMI vs SMI?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The primary driver is elevation measured from the ground floor finished floor to the sill of the opening. Below 30 feet: LMI required. At 30 feet and above: SMI permitted. In HVHZ (Miami-Dade and Broward), both thresholds are enforced under Florida TAS 201 and TAS 202. Outside HVHZ but inside a wind-borne debris region, the threshold is the same under ASTM E1996 — confirm with the engineer of record and AHJ for your specific wind speed zone."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I substitute LMI-rated glazing where SMI is required?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. A product that has passed LMI testing has by definition demonstrated a higher level of protection than SMI alone, so LMI-rated assemblies are acceptable where SMI is the minimum requirement. The reverse is not true: an SMI-only assembly cannot be substituted where LMI is required. Some manufacturers carry a single NOA line that covers both classifications — verify on the NOA cover sheet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is missile impact testing actually performed?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Testing is conducted at accredited laboratories under Florida TAS 201 (LMI) and TAS 202 (SMI) or the ASTM E1996 equivalent. For LMI, the 9-pound 2x4 is fired end-on at two points on the specimen at the specified velocity. The assembly must show no penetration or opening. It then undergoes 9,000 positive and negative pressure cycles (TAS 203 / ASTM E1886). The full system — frame, glass, interlayer, anchors, sealant — is tested as a complete assembly. Subcomponent substitution invalidates the approval."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where does the LMI/SMI designation appear on the NOA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "On a Miami-Dade NOA, the missile classification appears on the cover sheet and in the scope section. Look for language stating 'Large Missile Impact per TAS 201' or 'Small Missile Impact per TAS 202.' Some NOAs cover both classifications in a single document with a table indicating which frame/glass combinations are rated to which level. Always verify the specific combination you are specifying — not just the overall NOA status."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Large Missile Impact (LMI)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Large Missile Impact (LMI) is the more demanding of the two missile impact classifications. Under ASTM E1996 and Florida TAS 201, the test projectile is a 9-pound 2x4 timber stud fired at the assembly at 50 feet per second (34 mph). The assembly must resist penetration and then pass cyclic pressure testing. LMI is required for all fenestration within 30 feet of the ground in wind-borne debris regions and HVHZ."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Small Missile Impact (SMI)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Small Missile Impact (SMI) simulates the threat of wind-blown gravel, roof ballast, and smaller debris at elevation. Under ASTM E1996 and Florida TAS 202, 30 steel balls (each 2 grams) are fired at the assembly at 130 feet per second (approximately 89 mph). The rationale is that at heights above 30 feet, large lumber-sized debris is less likely to become airborne and reach the building face at damaging velocity. SMI is required at and above 30 feet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do I need LMI vs SMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The primary driver is elevation measured from the ground floor finished floor to the sill of the opening. Below 30 feet: LMI required. At 30 feet and above: SMI permitted. In HVHZ (Miami-Dade and Broward), both thresholds are enforced under Florida TAS 201 and TAS 202. Outside HVHZ but inside a wind-borne debris region, the threshold is the same under ASTM E1996 — confirm with the engineer of record and AHJ for your specific wind speed zone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I substitute LMI-rated glazing where SMI is required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A product that has passed LMI testing has by definition demonstrated a higher level of protection than SMI alone, so LMI-rated assemblies are acceptable where SMI is the minimum requirement. The reverse is not true: an SMI-only assembly cannot be substituted where LMI is required. Some manufacturers carry a single NOA line that covers both classifications — verify on the NOA cover sheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is missile impact testing actually performed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Testing is conducted at accredited laboratories under Florida TAS 201 (LMI) and TAS 202 (SMI) or the ASTM E1996 equivalent. For LMI, the 9-pound 2x4 is fired end-on at two points on the specimen at the specified velocity. The assembly must show no penetration or opening. It then undergoes 9,000 positive and negative pressure cycles (TAS 203 / ASTM E1886). The full system — frame, glass, interlayer, anchors, sealant — is tested as a complete assembly. Subcomponent substitution invalidates the approval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the LMI/SMI designation appear on the NOA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On a Miami-Dade NOA, the missile classification appears on the cover sheet and in the scope section. Look for language stating 'Large Missile Impact per TAS 201' or 'Small Missile Impact per TAS 202.' Some NOAs cover both classifications in a single document with a table indicating which frame/glass combinations are rated to which level. Always verify the specific combination you are specifying — not just the overall NOA status."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- ======= SCHEMA: BreadcrumbList ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/ask.html"},
-      {"@type": "ListItem", "position": 3, "name": "LMI vs SMI Impact Glazing", "item": "https://acglass.com/lmi-vs-smi-impact-glazing.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://acglass.com/ask.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "LMI vs SMI Impact Glazing",
+      "item": "https://acglass.com/lmi-vs-smi-impact-glazing.html"
+    }
+  ]
+}
   </script>
 
   <style>
@@ -434,7 +451,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

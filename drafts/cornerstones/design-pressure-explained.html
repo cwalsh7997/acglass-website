@@ -39,7 +39,9 @@
     "logo": {
       "@type": "ImageObject",
       "url": "https://acglass.com/images/acg-logo-nav@2x.png"
-    }
+    },
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-13",
   "dateModified": "2026-05-13",
@@ -64,64 +66,79 @@
   <!-- ======= SCHEMA: FAQPage ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is design pressure in commercial glazing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Design pressure (DP) is the PSF (pounds per square foot) load rating — positive and negative — that a glazing assembly must structurally resist. Positive DP represents inward wind load pushing against the exterior face of the building. Negative DP represents outward suction pulling the assembly away from the building. Both values must be specified and verified against the assembly's rated DP."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is design pressure calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Design pressure is calculated by the structural engineer from the design wind speed (from the ASCE 7 wind speed maps or the Florida Building Code maps), adjusted for building height, exposure category (A through D based on surrounding terrain), directionality factor, topographic factor, and building enclosure classification. The calculation follows ASCE 7 Chapters 26 through 30. The engineer produces component and cladding (C&C) pressures for each zone of the building — interior zones, edge zones, and corner zones. Verify current ASCE 7 edition for specific factors and equations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is L/175 vs L/240 deflection limit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "L/175 and L/240 are deflection limits for glazing framing members. L/175 means the maximum midspan deflection of a framing member under design load must not exceed the member's length (span) divided by 175. L/240 means the deflection must not exceed span divided by 240 — a stricter limit, meaning less deflection is allowed. Storefront framing is typically designed to L/175; curtainwall framing is typically designed to L/240 or better. More restrictive deflection limits reduce the risk of glass breakage from frame bow and improve water resistance performance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What design pressure do I need in West Palm Beach?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "West Palm Beach is not in HVHZ — it is in Palm Beach County, which requires Florida Product Approval (FPA) for exterior fenestration. Typical DP requirements for West Palm Beach commercial glazing: low-rise coastal buildings approximately +60 to +80 PSF positive, –70 to –90 PSF negative; mid-rise may exceed +80/–100 PSF. Actual values depend on building height, exposure category, and specific location — coastal vs. inland. The project EOR must calculate project-specific DPs per ASCE 7. These are indicative ranges only; see ASCE 7 and the Florida Building Code for current values."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why are negative design pressures higher than positive?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Negative design pressures (suction) are typically higher than positive pressures because of how wind flows around a building. On the windward face, wind creates positive pressure directly against the wall. On the leeward face and especially at corners and edges, wind acceleration creates suction zones with intensified negative pressures. ASCE 7 wind pressure coefficients for corners and edges are higher in magnitude than for interior wall zones, and negative pressure coefficients for the building envelope are typically larger than positive pressure coefficients."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is design pressure in commercial glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Design pressure (DP) is the PSF (pounds per square foot) load rating — positive and negative — that a glazing assembly must structurally resist. Positive DP represents inward wind load pushing against the exterior face of the building. Negative DP represents outward suction pulling the assembly away from the building. Both values must be specified and verified against the assembly's rated DP."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How is design pressure calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Design pressure is calculated by the structural engineer from the design wind speed (from the ASCE 7 wind speed maps or the Florida Building Code maps), adjusted for building height, exposure category (A through D based on surrounding terrain), directionality factor, topographic factor, and building enclosure classification. The calculation follows ASCE 7 Chapters 26 through 30. The engineer produces component and cladding (C&C) pressures for each zone of the building — interior zones, edge zones, and corner zones. Verify current ASCE 7 edition for specific factors and equations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is L/175 vs L/240 deflection limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L/175 and L/240 are deflection limits for glazing framing members. L/175 means the maximum midspan deflection of a framing member under design load must not exceed the member's length (span) divided by 175. L/240 means the deflection must not exceed span divided by 240 — a stricter limit, meaning less deflection is allowed. Storefront framing is typically designed to L/175; curtainwall framing is typically designed to L/240 or better. More restrictive deflection limits reduce the risk of glass breakage from frame bow and improve water resistance performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What design pressure do I need in West Palm Beach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "West Palm Beach is not in HVHZ — it is in Palm Beach County, which requires Florida Product Approval (FPA) for exterior fenestration. Typical DP requirements for West Palm Beach commercial glazing: low-rise coastal buildings approximately +60 to +80 PSF positive, –70 to –90 PSF negative; mid-rise may exceed +80/–100 PSF. Actual values depend on building height, exposure category, and specific location — coastal vs. inland. The project EOR must calculate project-specific DPs per ASCE 7. These are indicative ranges only; see ASCE 7 and the Florida Building Code for current values."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are negative design pressures higher than positive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Negative design pressures (suction) are typically higher than positive pressures because of how wind flows around a building. On the windward face, wind creates positive pressure directly against the wall. On the leeward face and especially at corners and edges, wind acceleration creates suction zones with intensified negative pressures. ASCE 7 wind pressure coefficients for corners and edges are higher in magnitude than for interior wall zones, and negative pressure coefficients for the building envelope are typically larger than positive pressure coefficients."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- ======= SCHEMA: BreadcrumbList ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/ask.html"},
-      {"@type": "ListItem", "position": 3, "name": "Design Pressure Explained", "item": "https://acglass.com/design-pressure-explained.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://acglass.com/ask.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Design Pressure Explained",
+      "item": "https://acglass.com/design-pressure-explained.html"
+    }
+  ]
+}
   </script>
 
   <style>
@@ -454,7 +471,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

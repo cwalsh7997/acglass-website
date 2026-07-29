@@ -36,37 +36,19 @@
   "@type": "Service",
   "serviceType": "Commercial Glazing Subcontractor",
   "provider": {
-    "@type": "LocalBusiness",
+    "@type": "Organization",
     "name": "American Commercial Glass",
     "url": "https://acglass.com/",
     "telephone": "+1-772-486-7711",
     "email": "contact@acglass.com",
-    "address": [
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "700 S Rosemary Ave Ste 204",
-        "addressLocality": "West Palm Beach",
-        "addressRegion": "FL",
-        "postalCode": "33401",
-        "addressCountry": "US"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "4850 Tamiami Trail N, Ste 301",
-        "addressLocality": "Naples",
-        "addressRegion": "FL",
-        "postalCode": "34103",
-        "addressCountry": "US"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "3031 N Rocky Point Dr W, Ste 600",
-        "addressLocality": "Tampa",
-        "addressRegion": "FL",
-        "postalCode": "33607",
-        "addressCountry": "US"
-      }
-    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "700 S Rosemary Ave Suite 204",
+      "addressLocality": "West Palm Beach",
+      "addressRegion": "FL",
+      "postalCode": "33401",
+      "addressCountry": "US"
+    },
     "knowsAbout": [
       "Commercial Glazing",
       "ESWindows",
@@ -88,7 +70,8 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization"
   },
   "areaServed": {
     "@type": "State",
@@ -1134,7 +1117,7 @@
           <textarea id="lp-msg" name="message" placeholder="Drop a link to the plan set, or describe the scope and we'll request a share."></textarea>
         </div>
         <button class="form-submit" type="submit">Submit Plans →</button>
-        <div class="form-foot">Or email <a href="mailto:connor@acglass.com" style="color:var(--accent);">contact@acglass.com</a> &nbsp;·&nbsp; <a href="tel:+17724867711" style="color:var(--text-muted);">(772) 486-7711</a></div>
+        <div class="form-foot">Or email <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--accent);">contact@acglass.com</a><!--/email_off--> &nbsp;·&nbsp; <a href="tel:+17724867711" style="color:var(--text-muted);">(772) 486-7711</a></div>
       </form>
     </div>
   </section>
@@ -1173,7 +1156,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

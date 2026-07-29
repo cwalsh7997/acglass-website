@@ -1,0 +1,35 @@
+bucket,query,group,prior_band,current_band,prior_position,current_position,position_gain,impressions,clicks_delta
+entered_page1,eswindows installer florida,manufacturer,page2,page1,13.5,8.2,5.3,540,11
+left_page1,euro-wall dealer locator,manufacturer,page1,page2,8.9,14.7,-5.8,320,-9
+striking_distance,commercial glazing contractor miami,service-geo,page2,page2,15.21,13.64,1.56,940,3
+striking_distance,commercial glazing contractor nashville,service-geo,page3,page3,28.15,25.46,2.69,515,1
+striking_distance,commercial glass contractor south florida,service-geo,page2,page2,10.4,11.8,-1.4,410,-1
+striking_distance,florida building code glass requirements,compliance,page2,page2,11.4,10.6,0.8,380,1
+striking_distance,euro-wall dealer locator,manufacturer,page1,page2,8.9,14.7,-5.8,320,-9
+striking_distance,how much does commercial glazing cost,educational,page2,page2,19.5,18.2,1.3,290,1
+striking_distance,multifamily commercial glazing florida,vertical,page2,page2,13.4,12.9,0.5,230,1
+striking_distance,pgt installer florida,manufacturer,page2,page2,16.1,16.5,-0.4,210,0
+striking_distance,retail storefront glazing,vertical,page2,page2,17.1,17.6,-0.5,205,0
+striking_distance,eswindows authorized dealer,manufacturer,page2,page2,12.1,11.4,0.7,190,1
+striking_distance,best glaziers south florida,service-geo,page2,page2,14.8,13.2,1.6,180,1
+striking_distance,restaurant glazier florida,vertical,page2,page2,11.3,10.2,1.1,175,1
+striking_distance,healthcare glazing florida,vertical,page2,page2,15.9,15.3,0.6,140,0
+striking_distance,eswindows vs pgt impact windows,comparison,page2,page2,14.2,13.8,0.4,130,1
+striking_distance,storefront installer nashville,service-geo,page3,page2,22.6,19.8,2.8,120,1
+striking_distance,commercial glazing tennessee,nashville-launch,page3,page3,29.2,27.8,1.4,95,0
+striking_distance,office building glazier florida,vertical,page2,page2,19.1,19.4,-0.3,95,0
+striking_distance,allegion installer florida,manufacturer,page3,page3,20.9,21.7,-0.8,85,0
+striking_distance,commercial glazing bid process,educational,page3,page3,24.1,23.5,0.6,85,0
+striking_distance,florida product approval search,compliance,page3,page3,23.8,24.2,-0.4,60,0
+improved,eswindows installer florida,manufacturer,page2,page1,13.5,8.2,5.3,540,11
+improved,storefront installer nashville,service-geo,page3,page2,22.6,19.8,2.8,120,1
+improved,commercial glazing contractor nashville,service-geo,page3,page3,28.15,25.46,2.69,515,1
+improved,commercial glazing franklin tn,nashville-launch,beyond,beyond,35.4,33.1,2.3,12,0
+improved,best glaziers south florida,service-geo,page2,page2,14.8,13.2,1.6,180,1
+improved,commercial glazing contractor miami,service-geo,page2,page2,15.21,13.64,1.56,940,3
+improved,commercial glazing tennessee,nashville-launch,page3,page3,29.2,27.8,1.4,95,0
+improved,how much does commercial glazing cost,educational,page2,page2,19.5,18.2,1.3,290,1
+improved,florida noa explained,compliance,page1,page1,7.2,5.9,1.3,620,3
+improved,restaurant glazier florida,vertical,page2,page2,11.3,10.2,1.1,175,1
+declined,euro-wall dealer locator,manufacturer,page1,page2,8.9,14.7,-5.8,320,-9
+declined,commercial glass contractor south florida,service-geo,page2,page2,10.4,11.8,-1.4,410,-1

@@ -1,0 +1,119 @@
+name: SEO Report (weekly)
+
+on:
+  schedule:
+    # Mondays 12:00 UTC (07:00 EST / 08:00 EDT). Search Console finalizes on a
+    # 2-3 day lag, so Monday reports the week ending the previous Thursday.
+    - cron: '0 12 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - '.github/scripts/seo_measure/**'
+      - '.github/scripts/seo-report.py'
+      - '.github/scripts/seo-gsc-export.py'
+      - '.github/scripts/tests/**'
+      - '.github/seo/**'
+  pull_request:
+    paths:
+      - '.github/scripts/seo_measure/**'
+      - '.github/scripts/seo-report.py'
+      - '.github/scripts/seo-gsc-export.py'
+      - '.github/scripts/tests/**'
+      - '.github/seo/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Stdlib only: no pip install step, no network.
+      - name: Run measurement-layer tests
+        run: python3 -m unittest discover -s .github/scripts/tests -t .github/scripts/tests -v
+
+      - name: Validate the committed target config
+        run: |
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0, '.github/scripts')
+          from seo_measure.config import load_config
+          cfg = load_config()
+          print(f"{len(cfg.queries)} queries, {len(cfg.pages)} pages, {len(cfg.markets)} markets")
+          PY
+
+  report:
+    name: Weekly report
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: test
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Google API client
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-httplib2
+
+      # Skips rather than fails: this workflow ships before the service account
+      # is granted Search Console access, and a weekly red X would train people
+      # to ignore it. The skip writes its reason to the job summary so a run that
+      # produced nothing does not look the same as a run that produced a report.
+      # Flip to a hard failure once GSC_SA_JSON is set.
+      - name: Export Search Console snapshots
+        id: export
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+        run: |
+          if [ -z "${GSC_SA_JSON}" ]; then
+            echo "::warning::GSC_SA_JSON is not set - no report was generated."
+            {
+              echo "## No SEO report generated"
+              echo
+              echo "\`GSC_SA_JSON\` is not set, so Search Console could not be read."
+              echo
+              echo "To fix: add the secret under **Settings > Secrets and variables >"
+              echo "Actions**, or generate the report locally from a CSV export -"
+              echo "see \`.github/scripts/seo_measure/README.md\`."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 .github/scripts/seo-gsc-export.py --weekly --out-dir .github/seo/data
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - name: Generate report
+        if: steps.export.outputs.ready == 'true'
+        run: |
+          python3 .github/scripts/seo-report.py \
+            --current .github/seo/data/current.json \
+            --prior   .github/seo/data/prior.json \
+            --out-dir .github/seo/reports
+
+      - name: Summarize in the run log
+        if: steps.export.outputs.ready == 'true'
+        run: cat .github/seo/reports/*.md >> "$GITHUB_STEP_SUMMARY"
+
+      # Reports are business metrics and the repo root is the public deploy
+      # root, so they are uploaded as a private artifact and never committed.
+      - name: Upload report
+        if: steps.export.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-report
+          path: .github/seo/reports/
+          retention-days: 90

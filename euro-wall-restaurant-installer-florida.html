@@ -43,11 +43,14 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://acglass.com/#organization",
-      "name": "ACG — Euro-Wall Restaurant Installer Florida",
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness"
+      ],
+      "@id": "https://acglass.com/#localbusiness-west-palm-beach",
+      "name": "American Commercial Glass",
       "image": "https://acglass.com/images/acg-logo-nav@2x.png",
-      "url": "https://acglass.com/euro-wall-restaurant-installer-florida.html",
+      "url": "https://acglass.com/",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "priceRange": "$$$",
@@ -61,8 +64,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 26.7153,
-        "longitude": -80.0534
+        "latitude": 26.70716,
+        "longitude": -80.05707
       },
       "areaServed": [
         {
@@ -110,7 +113,10 @@
           "name": "Key West"
         }
       ],
-      "serviceType": "Authorized Euro-Wall Installer for Restaurants"
+      "serviceType": "Authorized Euro-Wall Installer for Restaurants",
+      "parentOrganization": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
       "@type": "Service",
@@ -251,12 +257,8 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization",
-  "@type": [
-    "Organization",
-    "LocalBusiness",
-    "HomeAndConstructionBusiness"
-  ],
-  "name": "American Commercial Glass, Inc.",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
     "ACG Glass",
@@ -525,7 +527,7 @@
         </div>
         <div style="margin-bottom:28px;">
           <h4 style="font-size:18px;font-weight:700;margin-bottom:10px;">How fast can ACG turn a Euro-Wall bid for a restaurant project?</h4>
-          <p class="body-p">48 hours. Send plans, a BuildingConnected invitation, or a restaurant scope description to connor@acglass.com or (772) 486-7711. The bid response includes system selection, NOA reference, lead time, install plan, and price. Restaurant operator lease commencement deadlines drive the response timeline.</p>
+          <p class="body-p">48 hours. Send plans, a BuildingConnected invitation, or a restaurant scope description to <!--email_off-->connor@acglass.com<!--/email_off--> or (772) 486-7711. The bid response includes system selection, NOA reference, lead time, install plan, and price. Restaurant operator lease commencement deadlines drive the response timeline.</p>
         </div>
       </div>
     </div>
@@ -597,7 +599,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

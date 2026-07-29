@@ -1,0 +1,71 @@
+{
+  "$schema_version": 1,
+  "_about": "SYNTHETIC test fixture. Numbers are invented to exercise the renderer and are not ACG performance data.",
+  "as_of": "2026-07-26",
+  "sections": [
+    {
+      "id": "local_map",
+      "label": "Local / Map pack (Google Business Profile)",
+      "source": "GBP UI > Performance export",
+      "input_method": "manual-export",
+      "runbook": "GBP UI > Performance > select location > date range > Download.",
+      "metrics": [
+        { "id": "gbp_maps_impressions", "label": "Map impressions", "market": "west-palm-beach", "unit": "count", "value": 1840 },
+        { "id": "gbp_direction_requests", "label": "Direction requests", "market": "west-palm-beach", "unit": "count", "value": 37 },
+        { "id": "gbp_call_clicks", "label": "Call clicks", "market": "west-palm-beach", "unit": "count", "value": 22 },
+        { "id": "gbp_review_count", "label": "Total reviews", "market": "west-palm-beach", "unit": "count", "value": 14, "target": "+2 to +4 per month" },
+        { "id": "gbp_avg_rating", "label": "Average rating", "market": "west-palm-beach", "unit": "stars", "value": 4.9, "target": ">= 4.8" },
+        { "id": "gbp_maps_impressions", "label": "Map impressions", "market": "naples", "unit": "count", "value": null }
+      ]
+    },
+    {
+      "id": "map_rank",
+      "label": "Map-pack rank on core query",
+      "source": "Licensed geo-grid vendor export",
+      "input_method": "manual-export",
+      "runbook": "Record map-pack position for 'commercial glazing contractor <market>'.",
+      "metrics": [
+        { "id": "map_pack_rank", "label": "Map-pack rank", "market": "west-palm-beach", "unit": "rank", "value": 1, "target": "1" },
+        { "id": "map_pack_rank", "label": "Map-pack rank", "market": "miami", "unit": "rank", "value": null },
+        { "id": "map_pack_rank", "label": "Map-pack rank", "market": "nashville", "unit": "rank", "value": null }
+      ]
+    },
+    {
+      "id": "ai_visibility",
+      "label": "AI assistant visibility",
+      "source": ".github/scripts/ai-visibility.py monthly run",
+      "input_method": "connector",
+      "connector_id": "ai-visibility.py",
+      "runbook": "Run the AI Visibility workflow and copy the per-engine cite rate.",
+      "metrics": [
+        { "id": "ai_cite_rate", "label": "Prompts citing ACG - Perplexity", "engine": "perplexity", "unit": "ratio", "value": 0.3 },
+        { "id": "ai_cite_rate", "label": "Prompts citing ACG - Gemini", "engine": "gemini", "unit": "ratio", "value": 0.2 },
+        { "id": "ai_cite_rate", "label": "Prompts citing ACG - OpenAI", "engine": "openai", "unit": "ratio", "value": null },
+        { "id": "ga4_ai_assistants_sessions", "label": "GA4 AI Assistants sessions", "engine": "all", "unit": "count", "value": null }
+      ]
+    },
+    {
+      "id": "bing",
+      "label": "Bing Webmaster Tools",
+      "source": "BWT Search Performance + AI Performance (preview)",
+      "input_method": "manual-export",
+      "runbook": "Search Performance can be automated; AI Performance has no API.",
+      "metrics": [
+        { "id": "bing_impressions", "label": "Impressions (web + chat)", "unit": "count", "value": 4120, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_clicks", "label": "Clicks", "unit": "count", "value": 61, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_indexed_pages", "label": "Indexed pages", "unit": "count", "value": null, "input_method": "connector", "connector_id": "seo-pulse.py" },
+        { "id": "bing_ai_total_citations", "label": "AI Performance - total citations", "unit": "count", "value": null, "input_method": "unavailable-no-api" }
+      ]
+    },
+    {
+      "id": "google_ai_surfaces",
+      "label": "Google AI surfaces",
+      "source": "GSC generative-AI performance report",
+      "input_method": "manual-export",
+      "runbook": "GSC > Performance > Search Appearance. Impressions only, no API.",
+      "metrics": [
+        { "id": "gsc_genai_impressions", "label": "Generative-AI impressions", "unit": "count", "value": null, "input_method": "unavailable-no-api" }
+      ]
+    }
+  ]
+}

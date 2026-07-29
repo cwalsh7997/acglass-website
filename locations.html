@@ -35,7 +35,7 @@
   "@type": "Organization",
   "@id": "https://acglass.com/#organization",
   "name": "American Commercial Glass",
-  "url": "https://acglass.com",
+  "url": "https://acglass.com/",
   "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
   "description": "Commercial glazing contractor serving all of Florida with offices in West Palm Beach, Naples, and Tampa.",
   "areaServed": [
@@ -162,12 +162,8 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization",
-  "@type": [
-    "Organization",
-    "LocalBusiness",
-    "HomeAndConstructionBusiness"
-  ],
-  "name": "American Commercial Glass, Inc.",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
     "ACG Glass",
@@ -176,19 +172,7 @@
     "ACG Commercial Glass"
   ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {
-    "@id": "https://acglass.com/#organization",
-    "alternateName": [
-      "ACG",
-      "ACG Glass",
-      "ACG Florida",
-      "American Commercial Glass Florida",
-      "ACG Commercial Glass"
-    ],
-    "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-    "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
-  },
+  "mainEntityOfPage": "https://acglass.com/locations.html",
   "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
@@ -201,10 +185,11 @@
   "@id": "https://acglass.com/locations.html#webpage",
   "url": "https://acglass.com/locations.html",
   "name": "ACG Office Locations — Commercial Glazing Across the Southeast",
-  "about": {"@id": "https://acglass.com/#organization"}
+  "about": {
+    "@id": "https://acglass.com/#organization"
+  }
 }
 </script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is American Commercial Glass located?", "acceptedAnswer": {"@type": "Answer", "text": "American Commercial Glass is headquartered at 700 S Rosemary Ave Ste 204, West Palm Beach, FL 33401, with active offices in Naples (4850 Tamiami Trail N) and Tampa (3031 N Rocky Point Dr W), plus a Nashville, Tennessee office opening Q3 2026. Reach the company at +1-772-486-7711."}}, {"@type": "Question", "name": "Does American Commercial Glass serve all of Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass serves commercial glazing projects across all of Florida from offices in West Palm Beach, Naples, and Tampa, with a Nashville, Tennessee office opening in Q3 2026 to extend coverage across the Southeast. Reach the company at +1-772-486-7711 or connor@acglass.com."}}, {"@type": "Question", "name": "Is there a commercial glazier in West Palm Beach?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass is headquartered in West Palm Beach at 700 S Rosemary Ave Ste 204 and serves commercial glazing projects throughout South Florida. ACG is licensed as FL CGC #1531993."}}, {"@type": "Question", "name": "Is there a commercial glazier in Tampa?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass operates a Tampa office at 3031 N Rocky Point Dr W Ste 600 and installs commercial storefront, curtainwall, impact, and specialty glass systems across the Tampa Bay region. ACG is FL CGC #1531993."}}, {"@type": "Question", "name": "Is there a commercial glazier in Naples?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. American Commercial Glass operates a Naples office at 4850 Tamiami Trail N Ste 301 and installs commercial glazing across Southwest Florida, including completed work at Siena Lakes senior living in Naples. ACG is FL CGC #1531993."}}]}</script>
   <style>
     .office-grid{grid-template-columns:repeat(4,1fr)}
     @media (max-width:1080px){.office-grid{grid-template-columns:1fr 1fr}}
@@ -328,7 +313,7 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
-      <p class="rv" style="max-width:68ch;margin-top:-18px">Florida statewide from three offices. Middle Tennessee from Nashville starting Q3 2026 — we are accepting Tennessee bids now. Select Southeast markets are bid project-by-project alongside a GC partner, with licensure secured per state on award.</p>
+      <p class="rv" style="max-width:68ch;margin-top:-18px">Florida statewide from three offices. Middle Tennessee from Nashville starting Q3 2026 — we are accepting Tennessee bids now. Select Southeast markets are bid project-by-project. ACG holds Florida CGC #1531993; Florida licensure does not transfer to other states.</p>
 
       <div class="cov-region rv">
         <h3>Southeast Florida</h3>
@@ -554,7 +539,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="locations.html">All service areas →</a></li>

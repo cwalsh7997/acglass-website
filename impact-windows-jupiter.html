@@ -43,25 +43,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
       "@id": "https://acglass.com/#organization",
-      "name": "ACG &mdash; Jupiter Commercial Glazing",
+      "name": "American Commercial Glass",
       "image": "https://acglass.com/images/acg-logo-nav@2x.png",
-      "url": "https://acglass.com/impact-windows-jupiter.html",
+      "url": "https://acglass.com/",
       "telephone": "+17724867711",
       "email": "connor@acglass.com",
-      "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Jupiter",
+        "streetAddress": "700 S Rosemary Ave Suite 204",
+        "addressLocality": "West Palm Beach",
         "addressRegion": "FL",
-        "postalCode": "33458",
+        "postalCode": "33401",
         "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.9342,
-        "longitude": -80.0942
       },
       "areaServed": [
         {
@@ -244,12 +239,8 @@
 {
   "@context": "https://schema.org",
   "@id": "https://acglass.com/#organization",
-  "@type": [
-    "Organization",
-    "LocalBusiness",
-    "HomeAndConstructionBusiness"
-  ],
-  "name": "American Commercial Glass, Inc.",
+  "@type": "Organization",
+  "name": "American Commercial Glass",
   "alternateName": [
     "ACG",
     "ACG Glass",
@@ -258,19 +249,7 @@
     "ACG Commercial Glass"
   ],
   "url": "https://acglass.com/",
-  "mainEntityOfPage": {
-    "@id": "https://acglass.com/#organization",
-    "alternateName": [
-      "ACG",
-      "ACG Glass",
-      "ACG Florida",
-      "American Commercial Glass Florida",
-      "ACG Commercial Glass"
-    ],
-    "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
-    "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
-  },
+  "mainEntityOfPage": "https://acglass.com/impact-windows-jupiter.html",
   "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
   "naics": "238150",
   "iso6523Code": "0199:CGC1531993"
@@ -562,7 +541,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

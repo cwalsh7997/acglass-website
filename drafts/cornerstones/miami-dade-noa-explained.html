@@ -39,7 +39,9 @@
     "logo": {
       "@type": "ImageObject",
       "url": "https://acglass.com/images/acg-logo-nav@2x.png"
-    }
+    },
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-13",
   "dateModified": "2026-05-13",
@@ -59,72 +61,87 @@
   <!-- ======= SCHEMA: FAQPage ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a Miami-Dade NOA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A Miami-Dade Notice of Acceptance (NOA) is an official approval document issued by the Miami-Dade County Product Control Division. It certifies that a specific product assembly — frame, glass, interlayer, anchorage — has been tested to Miami-Dade's TAS standards and is approved for installation in the High-Velocity Hurricane Zone (HVHZ). An NOA is required for every exterior fenestration assembly in Miami-Dade and Broward counties."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I look up a Miami-Dade NOA?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Search the Miami-Dade Product Control database at miamidade.gov/building/pc-search.asp. You can search by manufacturer name, product name, or NOA number. The database is public and free. Always download the PDF directly from the Miami-Dade site — do not rely on a manufacturer-provided copy for permit submissions, as the official database version is authoritative."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When does a Miami-Dade NOA expire?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Miami-Dade NOAs have a five-year term, with renewal cycles managed by the manufacturer. An NOA's expiration date appears on the cover sheet. Once expired, an NOA is no longer valid for new permit submissions. Manufacturers must submit renewal applications with updated testing or certification of continued compliance before expiration. Always verify the expiration date on the current PDF from miamidade.gov — do not use a saved PDF from a previous project without confirming it is still current."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I substitute glass on an NOA-listed assembly?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No — not without EOR certification. An NOA is tested as a complete assembly: specific frame, specific glass type, specific glass thickness, specific interlayer, specific anchorage pattern. Substituting glass type, thickness, or interlayer without EOR certification voids the NOA coverage for that installation. If a glass substitution is needed, the engineer of record must review the NOA documentation and provide a signed/sealed equivalency letter to the AHJ."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between an NOA and a Florida Product Approval?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An NOA is issued by Miami-Dade County and is required for HVHZ (Miami-Dade and Broward). A Florida Product Approval (FPA) is issued by the Florida Building Commission and is used statewide outside HVHZ. NOAs require Miami-Dade-specific TAS testing; FPAs use ASTM and AAMA test standards. A product can have both an NOA and an FPA, but the NOA is the controlling document in HVHZ."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What information appears on an NOA cover sheet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The NOA cover sheet shows: the NOA number and issue date, the expiration date, the manufacturer name and product name, the approved use (exterior, HVHZ), the test standards passed, the approved configurations (frame series, glass thickness range, design pressure rating), and the Miami-Dade Product Control signature. Subsequent pages contain installation drawings, approved glass lists, and anchorage tables."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Miami-Dade NOA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Miami-Dade Notice of Acceptance (NOA) is an official approval document issued by the Miami-Dade County Product Control Division. It certifies that a specific product assembly — frame, glass, interlayer, anchorage — has been tested to Miami-Dade's TAS standards and is approved for installation in the High-Velocity Hurricane Zone (HVHZ). An NOA is required for every exterior fenestration assembly in Miami-Dade and Broward counties."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I look up a Miami-Dade NOA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Search the Miami-Dade Product Control database at miamidade.gov/building/pc-search.asp. You can search by manufacturer name, product name, or NOA number. The database is public and free. Always download the PDF directly from the Miami-Dade site — do not rely on a manufacturer-provided copy for permit submissions, as the official database version is authoritative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does a Miami-Dade NOA expire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Miami-Dade NOAs have a five-year term, with renewal cycles managed by the manufacturer. An NOA's expiration date appears on the cover sheet. Once expired, an NOA is no longer valid for new permit submissions. Manufacturers must submit renewal applications with updated testing or certification of continued compliance before expiration. Always verify the expiration date on the current PDF from miamidade.gov — do not use a saved PDF from a previous project without confirming it is still current."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I substitute glass on an NOA-listed assembly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — not without EOR certification. An NOA is tested as a complete assembly: specific frame, specific glass type, specific glass thickness, specific interlayer, specific anchorage pattern. Substituting glass type, thickness, or interlayer without EOR certification voids the NOA coverage for that installation. If a glass substitution is needed, the engineer of record must review the NOA documentation and provide a signed/sealed equivalency letter to the AHJ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between an NOA and a Florida Product Approval?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An NOA is issued by Miami-Dade County and is required for HVHZ (Miami-Dade and Broward). A Florida Product Approval (FPA) is issued by the Florida Building Commission and is used statewide outside HVHZ. NOAs require Miami-Dade-specific TAS testing; FPAs use ASTM and AAMA test standards. A product can have both an NOA and an FPA, but the NOA is the controlling document in HVHZ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What information appears on an NOA cover sheet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The NOA cover sheet shows: the NOA number and issue date, the expiration date, the manufacturer name and product name, the approved use (exterior, HVHZ), the test standards passed, the approved configurations (frame series, glass thickness range, design pressure rating), and the Miami-Dade Product Control signature. Subsequent pages contain installation drawings, approved glass lists, and anchorage tables."
+      }
+    }
+  ]
+}
   </script>
 
   <!-- ======= SCHEMA: BreadcrumbList ======= -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/ask.html"},
-      {"@type": "ListItem", "position": 3, "name": "Miami-Dade NOA Explained", "item": "https://acglass.com/miami-dade-noa-explained.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://acglass.com/ask.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Miami-Dade NOA Explained",
+      "item": "https://acglass.com/miami-dade-noa-explained.html"
+    }
+  ]
+}
   </script>
 
   <style>
@@ -453,7 +470,7 @@
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>

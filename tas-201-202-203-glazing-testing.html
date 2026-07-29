@@ -67,8 +67,12 @@ footer{padding:36px 0 70px;color:var(--mute);font-size:12px;font-family:var(--mo
       "@id": "https://acglass.com/tas-201-202-203-glazing-testing.html#webpage",
       "url": "https://acglass.com/tas-201-202-203-glazing-testing.html",
       "name": "TAS 201 202 203 Florida HVHZ Glazing Testing Protocols | ACG | American Commercial Glass",
-      "isPartOf": {"@id": "https://acglass.com/#website"},
-      "about": {"@id": "https://acglass.com/#organization"},
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      },
       "datePublished": "2026-05-13",
       "dateModified": "2026-05-13",
       "inLanguage": "en-US"
@@ -76,12 +80,21 @@ footer{padding:36px 0 70px;color:var(--mute);font-size:12px;font-family:var(--mo
     {
       "@type": "Article",
       "@id": "https://acglass.com/tas-201-202-203-glazing-testing.html#article",
-      "isPartOf": {"@id": "https://acglass.com/tas-201-202-203-glazing-testing.html#webpage"},
+      "isPartOf": {
+        "@id": "https://acglass.com/tas-201-202-203-glazing-testing.html#webpage"
+      },
       "headline": "TAS 201, 202, 203 — Florida HVHZ glazing testing protocols",
       "datePublished": "2026-05-13",
       "dateModified": "2026-05-13",
-      "author": {"@type": "Organization", "@id": "https://acglass.com/#organization"},
-      "publisher": {"@id": "https://acglass.com/#organization"},
+      "author": {
+        "@type": "Organization",
+        "@id": "https://acglass.com/#organization",
+        "name": "American Commercial Glass",
+        "url": "https://acglass.com/"
+      },
+      "publisher": {
+        "@id": "https://acglass.com/#organization"
+      },
       "image": "https://acglass.com/images/og/acg-default.png",
       "articleSection": "Florida Building Code",
       "keywords": "TAS 201, TAS 202, TAS 203, HVHZ glazing testing, Miami-Dade NOA, Florida Building Code, impact glazing, Testing Application Standard"
@@ -90,26 +103,54 @@ footer{padding:36px 0 70px;color:var(--mute);font-size:12px;font-family:var(--mo
       "@type": "BreadcrumbList",
       "@id": "https://acglass.com/tas-201-202-203-glazing-testing.html#breadcrumb",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://acglass.com/resources.html"},
-        {"@type": "ListItem", "position": 3, "name": "TAS 201 202 203 Glazing Testing", "item": "https://acglass.com/tas-201-202-203-glazing-testing.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resources",
+          "item": "https://acglass.com/resources.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "TAS 201 202 203 Glazing Testing",
+          "item": "https://acglass.com/tas-201-202-203-glazing-testing.html"
+        }
       ]
     },
     {
-      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+      "@type": "Organization",
       "@id": "https://acglass.com/#organization",
       "name": "American Commercial Glass",
-      "alternateName": ["ACG", "ACG Glass", "ACG Florida", "American Commercial Glass Florida"],
-      "url": "https://acglass.com",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida",
+        "American Commercial Glass Florida"
+      ],
+      "url": "https://acglass.com/",
       "telephone": "+1-772-486-7711",
       "email": "connor@acglass.com",
       "naics": "238150",
       "disambiguatingDescription": "Not affiliated with AGC Inc (Asahi Glass) or ACG Glass & Metals (acrystalglass.com).",
-      "identifier": [{"@type": "PropertyValue", "propertyID": "FL CGC", "value": "1531993"}],
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "FL CGC",
+          "value": "1531993"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "700 S Rosemary Ave Suite 204",
         "addressLocality": "West Palm Beach",
         "addressRegion": "FL",
+        "postalCode": "33401",
         "addressCountry": "US"
       },
       "sameAs": [
@@ -665,7 +706,7 @@ footer{padding:36px 0 70px;color:var(--mute);font-size:12px;font-family:var(--mo
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:connor@acglass.com">connor@acglass.com</a></li>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
           <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
           <li><a href="/locations.html">All service areas →</a></li>
