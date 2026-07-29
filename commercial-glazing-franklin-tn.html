@@ -21,56 +21,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "WebPage",
-    "LocalBusiness"
-  ],
-  "@id": "https://acglass.com/commercial-glazing-franklin-tn.html#localbusiness",
-  "url": "https://acglass.com/commercial-glazing-franklin-tn.html",
-  "name": "American Commercial Glass \u2014 Franklin, TN",
-  "description": "American Commercial Glass installs commercial storefront, curtain wall, thermal-broken aluminum window wall, and Euro-Wall folding door systems in Franklin, TN. Nashville office opens Q3 2026. IBC 2018 (TN), IECC Zone 4A. FL CGC #1531993. 48-hour bid.",
-  "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
-  "telephone": "+1-772-486-7711",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Franklin",
-    "addressRegion": "TN",
-    "addressCountry": "US"
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "City",
-      "name": "Franklin"
+      "@type": "WebPage",
+      "@id": "https://acglass.com/commercial-glazing-franklin-tn.html#webpage",
+      "url": "https://acglass.com/commercial-glazing-franklin-tn.html",
+      "name": "American Commercial Glass — Franklin, TN",
+      "description": "American Commercial Glass installs commercial storefront, curtain wall, thermal-broken aluminum window wall, and Euro-Wall folding door systems in Franklin, TN. Nashville office opens Q3 2026. IBC 2018 (TN), IECC Zone 4A. FL CGC #1531993. 48-hour bid.",
+      "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg",
+      "isPartOf": {
+        "@id": "https://acglass.com/#website"
+      },
+      "about": {
+        "@id": "https://acglass.com/#organization"
+      }
     },
     {
-      "@type": "AdministrativeArea",
-      "name": "Williamson County"
-    }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 35.9251,
-    "longitude": -86.8689
-  },
-  "parentOrganization": {
-    "@id": "https://acglass.com/#organization"
-  },
-  "isPartOf": {
-    "@id": "https://acglass.com/#website"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
+      "@type": "Service",
+      "@id": "https://acglass.com/commercial-glazing-franklin-tn.html#service",
+      "name": "American Commercial Glass — Franklin, TN",
+      "serviceType": "Commercial Glazing",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Franklin"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Williamson County"
+        }
       ],
-      "opens": "07:00",
-      "closes": "18:00"
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      }
     }
   ]
 }

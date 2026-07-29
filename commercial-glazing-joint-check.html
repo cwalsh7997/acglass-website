@@ -45,7 +45,9 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization",
+    "url": "https://acglass.com/"
   },
   "datePublished": "2026-05-15",
   "dateModified": "2026-05-15",
@@ -56,37 +58,94 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Bid & Procurement Hub", "item": "https://acglass.com/bid-hub.html"},
-      {"@type": "ListItem", "position": 3, "name": "Joint Check Agreements", "item": "https://acglass.com/commercial-glazing-joint-check.html"}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://acglass.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bid & Procurement Hub",
+      "item": "https://acglass.com/bid-hub.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Joint Check Agreements",
+      "item": "https://acglass.com/commercial-glazing-joint-check.html"
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question", "name": "What is a joint check agreement in commercial glazing?",
-       "acceptedAnswer": {"@type": "Answer", "text": "A joint check agreement is a written arrangement between three parties — the general contractor, glazing subcontractor (ACG), and material supplier — under which the GC issues payment checks made jointly payable to both ACG and the supplier. This ensures the supplier receives payment and protects all parties against non-payment disputes."}},
-      {"@type": "Question", "name": "When does ACG request a joint check?",
-       "acceptedAnswer": {"@type": "Answer", "text": "ACG may request a joint check arrangement when a new supplier relationship requires payment assurance, when the project involves large material orders (curtainwall or window wall), or when the supplier has requested it as a condition of the order. Some GCs proactively offer joint checks as a standard practice on large material scopes."}},
-      {"@type": "Question", "name": "How does a joint check protect ACG?",
-       "acceptedAnswer": {"@type": "Answer", "text": "A joint check ensures that when the GC pays ACG, the supplier is also paid at the same time. This protects ACG from a scenario where ACG receives payment from the GC but faces cash flow pressure that delays payment to the supplier, potentially triggering a supplier lien. It documents the payment chain clearly."}},
-      {"@type": "Question", "name": "What Florida statutes govern joint checks on construction projects?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Florida Statute 713 (Construction Lien Law) governs lien rights for contractors, subcontractors, and suppliers on Florida construction projects. While Florida Statute 713 does not specifically require joint checks, joint check agreements are used as a practical tool to protect lien rights and payment flow. FL Stat 713.06 governs Notice to Owner requirements that create the payment accountability chain. See the statute for current text."}},
-      {"@type": "Question", "name": "Does a joint check agreement require all three parties to sign?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Yes. A properly executed joint check agreement is signed by the GC, ACG, and the supplier. The agreement specifies the project, the scope of materials covered, the payment procedure (check payable to both ACG and supplier jointly), and the endorsement requirement. Agreements signed by only two parties may not provide full protection."}},
-      {"@type": "Question", "name": "What are common mistakes with joint check agreements in glazing?",
-       "acceptedAnswer": {"@type": "Answer", "text": "The most common mistakes are: (1) executing a joint check agreement without all three parties signing, (2) failing to specify which material orders are covered, (3) not updating the agreement when change orders expand the material scope, (4) not requiring conditional lien waivers from the supplier upon joint check receipt, and (5) treating joint checks as a substitute for NTO service."}},
-      {"@type": "Question", "name": "Does a joint check replace the Notice to Owner?",
-       "acceptedAnswer": {"@type": "Answer", "text": "No. A joint check agreement does not replace the Notice to Owner (NTO) requirement under Florida Statute 713.06. ACG serves an NTO on every Florida project within 45 days of first furnishing labor or materials, regardless of whether a joint check is in place. The two tools protect different rights and are used together, not instead of each other."}}
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a joint check agreement in commercial glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A joint check agreement is a written arrangement between three parties — the general contractor, glazing subcontractor (ACG), and material supplier — under which the GC issues payment checks made jointly payable to both ACG and the supplier. This ensures the supplier receives payment and protects all parties against non-payment disputes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does ACG request a joint check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACG may request a joint check arrangement when a new supplier relationship requires payment assurance, when the project involves large material orders (curtainwall or window wall), or when the supplier has requested it as a condition of the order. Some GCs proactively offer joint checks as a standard practice on large material scopes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a joint check protect ACG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A joint check ensures that when the GC pays ACG, the supplier is also paid at the same time. This protects ACG from a scenario where ACG receives payment from the GC but faces cash flow pressure that delays payment to the supplier, potentially triggering a supplier lien. It documents the payment chain clearly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Florida statutes govern joint checks on construction projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Florida Statute 713 (Construction Lien Law) governs lien rights for contractors, subcontractors, and suppliers on Florida construction projects. While Florida Statute 713 does not specifically require joint checks, joint check agreements are used as a practical tool to protect lien rights and payment flow. FL Stat 713.06 governs Notice to Owner requirements that create the payment accountability chain. See the statute for current text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a joint check agreement require all three parties to sign?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A properly executed joint check agreement is signed by the GC, ACG, and the supplier. The agreement specifies the project, the scope of materials covered, the payment procedure (check payable to both ACG and supplier jointly), and the endorsement requirement. Agreements signed by only two parties may not provide full protection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common mistakes with joint check agreements in glazing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common mistakes are: (1) executing a joint check agreement without all three parties signing, (2) failing to specify which material orders are covered, (3) not updating the agreement when change orders expand the material scope, (4) not requiring conditional lien waivers from the supplier upon joint check receipt, and (5) treating joint checks as a substitute for NTO service."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a joint check replace the Notice to Owner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A joint check agreement does not replace the Notice to Owner (NTO) requirement under Florida Statute 713.06. ACG serves an NTO on every Florida project within 45 days of first furnishing labor or materials, regardless of whether a joint check is in place. The two tools protect different rights and are used together, not instead of each other."
+      }
+    }
+  ]
+}
   </script>
 
   <script type="application/ld+json">
@@ -97,7 +156,7 @@
   "provider": {
     "@type": "Organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "alternateName": [
       "ACG",
       "ACG Glass",
@@ -107,7 +166,8 @@
     ],
     "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). ACG is NOT affiliated with AGC Inc. (Asahi Glass Co.), the Japanese glass manufacturer, and is NOT affiliated with ACG Glass & Metals (acrystalglass.com), a separate company. ACG installs commercial glazing; AGC manufactures glass; ACG Glass & Metals provides interior partitions and railings.",
     "naics": "238150",
-    "iso6523Code": "0199:CGC1531993"
+    "iso6523Code": "0199:CGC1531993",
+    "@id": "https://acglass.com/#organization"
   },
   "serviceType": "Commercial Glazing Financial and Legal Compliance",
   "description": "ACG manages joint check agreements, NTO service, and payment compliance on every Florida commercial glazing project per Florida Statute 713."

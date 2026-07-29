@@ -107,44 +107,207 @@ footer{padding:36px 0 70px;color:var(--mute);font-size:12px;font-family:var(--mo
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"WebPage","@id":"https://acglass.com/service-areas.html#webpage","url":"https://acglass.com/service-areas.html","name":"Service Areas \u2014 Florida Commercial Glazing Coverage","datePublished":"2026-05-19","dateModified":"2026-05-19","inLanguage":"en-US"},
-    {"@type":"Service","@id":"https://acglass.com/service-areas.html#service","name":"Commercial Glazing Subcontracting \u2014 Florida Statewide","provider":{"@id":"https://acglass.com/#organization"},"serviceType":"Division 08 Commercial Glazing Subcontracting","areaServed":[
-      {"@type":"State","name":"Florida"},
-      {"@type":"AdministrativeArea","name":"Miami-Dade County"},
-      {"@type":"AdministrativeArea","name":"Broward County"},
-      {"@type":"AdministrativeArea","name":"Palm Beach County"},
-      {"@type":"AdministrativeArea","name":"Martin County"},
-      {"@type":"AdministrativeArea","name":"St. Lucie County"},
-      {"@type":"AdministrativeArea","name":"Indian River County"},
-      {"@type":"AdministrativeArea","name":"Brevard County"},
-      {"@type":"AdministrativeArea","name":"Collier County"},
-      {"@type":"AdministrativeArea","name":"Lee County"},
-      {"@type":"AdministrativeArea","name":"Charlotte County"},
-      {"@type":"AdministrativeArea","name":"Sarasota County"},
-      {"@type":"AdministrativeArea","name":"Manatee County"},
-      {"@type":"AdministrativeArea","name":"Hillsborough County"},
-      {"@type":"AdministrativeArea","name":"Pinellas County"},
-      {"@type":"AdministrativeArea","name":"Pasco County"},
-      {"@type":"AdministrativeArea","name":"Polk County"},
-      {"@type":"AdministrativeArea","name":"Orange County"},
-      {"@type":"AdministrativeArea","name":"Osceola County"},
-      {"@type":"AdministrativeArea","name":"Seminole County"},
-      {"@type":"AdministrativeArea","name":"Volusia County"},
-      {"@type":"AdministrativeArea","name":"Duval County"},
-      {"@type":"AdministrativeArea","name":"Monroe County"}
-    ]},
-    {"@type":"FAQPage","@id":"https://acglass.com/service-areas.html#faq","mainEntity":[
-      {"@type":"Question","name":"What is ACG's primary service area?","acceptedAnswer":{"@type":"Answer","text":"Florida statewide. ACG operates three Florida offices \u2014 West Palm Beach (HQ), Naples, and Tampa \u2014 covering the entire state with named project managers and a Florida-licensed field crew. A Nashville office opens Q3 2026 to extend Southeast coverage."}},
-      {"@type":"Question","name":"Do you serve my city?","acceptedAnswer":{"@type":"Answer","text":"If your project is in Florida, almost certainly yes. ACG covers 80+ Florida cities across 14 counties and four major regions \u2014 South Florida, Treasure Coast, Southwest Florida, and Tampa Bay / Central Florida. If your city isn't listed by name, send the drawings; the service-area list is a guide, not an exhaustive registry."}},
-      {"@type":"Question","name":"What's ACG's travel radius?","acceptedAnswer":{"@type":"Answer","text":"Within Florida, no practical limit. With offices in West Palm Beach, Naples, and Tampa, no project site is more than two hours from a named PM and field crew. The Keys (Monroe County), the Panhandle (Pensacola, Panama City), Jacksonville, and Gainesville are all served \u2014 mobilization economics simply vary by drive time."}},
-      {"@type":"Question","name":"Do you take projects outside Florida?","acceptedAnswer":{"@type":"Answer","text":"Yes, selectively. ACG has delivered work in coastal Alabama (Mobile), Georgia, the Carolinas, and the Caribbean. Out-of-state work is project-specific and best evaluated on the drawings. A Nashville, Tennessee office opens in Q3 2026 to anchor permanent coverage across Tennessee, Kentucky, northern Alabama, northern Georgia, and the broader Southeast \u2014 with the appropriate IBC / IECC / ASHRAE 90.1 spec language, not Florida HVHZ."}},
-      {"@type":"Question","name":"How do I find out if ACG has worked in my city before?","acceptedAnswer":{"@type":"Answer","text":"Each city listed below with a named link goes to a dedicated page that includes example projects, local code/AHJ notes, and ACG's coverage approach for that specific market. For cities without a dedicated page, project references for the surrounding county or region are available on request during prequalification."}},
-      {"@type":"Question","name":"Do you do residential work in these areas?","acceptedAnswer":{"@type":"Answer","text":"ACG is a commercial glazing contractor only \u2014 Division 08 scope on commercial new construction and commercial renovation. Owner-direct restaurant glazing and multifamily projects qualify. Residential glass repair, single-family window replacement, and shower-door installation are not part of ACG's scope."}}
-    ]},
-    {"@type":["Organization","LocalBusiness","ProfessionalService"],"@id":"https://acglass.com/#organization","name":"American Commercial Glass","alternateName":["ACG","ACG Glass","ACG Florida"],"url":"https://acglass.com","telephone":"+1-772-486-7711","email":"connor@acglass.com","naics":"238150","disambiguatingDescription":"American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). Not affiliated with AGC Inc (Asahi Glass) or ACG Glass & Metals (acrystalglass.com)."},
-    {"@type":"BreadcrumbList","@id":"https://acglass.com/service-areas.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Service Areas","item":"https://acglass.com/service-areas.html"}]}
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://acglass.com/service-areas.html#webpage",
+      "url": "https://acglass.com/service-areas.html",
+      "name": "Service Areas — Florida Commercial Glazing Coverage",
+      "datePublished": "2026-05-19",
+      "dateModified": "2026-05-19",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://acglass.com/service-areas.html#service",
+      "name": "Commercial Glazing Subcontracting — Florida Statewide",
+      "provider": {
+        "@id": "https://acglass.com/#organization"
+      },
+      "serviceType": "Division 08 Commercial Glazing Subcontracting",
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Miami-Dade County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Broward County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Palm Beach County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Martin County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "St. Lucie County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Indian River County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Brevard County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Collier County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Lee County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Charlotte County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Sarasota County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Manatee County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hillsborough County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pinellas County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Pasco County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Polk County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Orange County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Osceola County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Seminole County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Volusia County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Duval County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Monroe County"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://acglass.com/service-areas.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is ACG's primary service area?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Florida statewide. ACG operates three Florida offices — West Palm Beach (HQ), Naples, and Tampa — covering the entire state with named project managers and a Florida-licensed field crew. A Nashville office opens Q3 2026 to extend Southeast coverage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you serve my city?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your project is in Florida, almost certainly yes. ACG covers 80+ Florida cities across 14 counties and four major regions — South Florida, Treasure Coast, Southwest Florida, and Tampa Bay / Central Florida. If your city isn't listed by name, send the drawings; the service-area list is a guide, not an exhaustive registry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's ACG's travel radius?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Within Florida, no practical limit. With offices in West Palm Beach, Naples, and Tampa, no project site is more than two hours from a named PM and field crew. The Keys (Monroe County), the Panhandle (Pensacola, Panama City), Jacksonville, and Gainesville are all served — mobilization economics simply vary by drive time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you take projects outside Florida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, selectively. ACG has delivered work in coastal Alabama (Mobile), Georgia, the Carolinas, and the Caribbean. Out-of-state work is project-specific and best evaluated on the drawings. A Nashville, Tennessee office opens in Q3 2026 to anchor permanent coverage across Tennessee, Kentucky, northern Alabama, northern Georgia, and the broader Southeast — with the appropriate IBC / IECC / ASHRAE 90.1 spec language, not Florida HVHZ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find out if ACG has worked in my city before?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each city listed below with a named link goes to a dedicated page that includes example projects, local code/AHJ notes, and ACG's coverage approach for that specific market. For cities without a dedicated page, project references for the surrounding county or region are available on request during prequalification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you do residential work in these areas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ACG is a commercial glazing contractor only — Division 08 scope on commercial new construction and commercial renovation. Owner-direct restaurant glazing and multifamily projects qualify. Residential glass repair, single-family window replacement, and shower-door installation are not part of ACG's scope."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://acglass.com/#organization",
+      "name": "American Commercial Glass",
+      "alternateName": [
+        "ACG",
+        "ACG Glass",
+        "ACG Florida"
+      ],
+      "url": "https://acglass.com/",
+      "telephone": "+1-772-486-7711",
+      "email": "connor@acglass.com",
+      "naics": "238150",
+      "disambiguatingDescription": "American Commercial Glass (ACG) is a Florida-licensed commercial glazing contractor headquartered in West Palm Beach (acglass.com). Not affiliated with AGC Inc (Asahi Glass) or ACG Glass & Metals (acrystalglass.com)."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://acglass.com/service-areas.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Service Areas",
+          "item": "https://acglass.com/service-areas.html"
+        }
+      ]
+    }
   ]
 }
 </script>

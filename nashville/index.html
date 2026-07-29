@@ -24,20 +24,21 @@
 [
   {
     "@context": "https://schema.org",
-    "@type": ["Organization","LocalBusiness"],
+    "@type": "Organization",
     "@id": "https://acglass.com/#organization",
     "name": "American Commercial Glass",
-    "url": "https://acglass.com",
+    "url": "https://acglass.com/",
     "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
     "telephone": "+1-772-486-7711",
     "email": "connor@acglass.com",
     "foundingDate": "2021-02-18",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Nashville",
-      "addressRegion": "TN",
-      "addressCountry": "US",
-      "description": "Tennessee office launching Q3 2026"
+      "streetAddress": "700 S Rosemary Ave Suite 204",
+      "addressLocality": "West Palm Beach",
+      "addressRegion": "FL",
+      "postalCode": "33401",
+      "addressCountry": "US"
     },
     "sameAs": [
       "https://www.wikidata.org/wiki/Q139858578",
@@ -46,7 +47,11 @@
     "areaServed": {
       "@type": "Place",
       "name": "Nashville, Davidson County, TN",
-      "geo": { "@type": "GeoCoordinates", "latitude": 36.1627, "longitude": -86.7816 }
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.1627,
+        "longitude": -86.7816
+      }
     }
   },
   {
@@ -55,15 +60,32 @@
     "name": "Commercial Glazing — Nashville",
     "serviceType": "Commercial Glazing",
     "areaServed": "Nashville, Davidson County, TN",
-    "provider": { "@id": "https://acglass.com/#organization" }
+    "provider": {
+      "@id": "https://acglass.com/#organization"
+    }
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Tennessee", "item": "https://acglass.com/tennessee-commercial-glazing/" },
-      { "@type": "ListItem", "position": 3, "name": "Nashville", "item": "https://acglass.com/nashville/" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://acglass.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tennessee",
+        "item": "https://acglass.com/tennessee-commercial-glazing/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Nashville",
+        "item": "https://acglass.com/nashville/"
+      }
     ]
   },
   {
@@ -79,32 +101,50 @@
       {
         "@type": "Question",
         "name": "Is ACG licensed to do commercial glazing in Nashville?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG holds Florida CGC #1531993, and Tennessee licensure is in process ahead of the Nashville launch. The Nashville office opens Q3 2026; first Tennessee scopes start then, once the required Tennessee licensing is in place." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG holds Florida CGC #1531993, and Tennessee licensure is in process ahead of the Nashville launch. The Nashville office opens Q3 2026; first Tennessee scopes start then, once the required Tennessee licensing is in place."
+        }
       },
       {
         "@type": "Question",
         "name": "When is ACG's Nashville office opening?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The Nashville office launches Q3 2026. ACG is bidding now and accepting select project bids ahead of opening, with bid coordination and submittals running from the Florida headquarters until the local team is in place." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Nashville office launches Q3 2026. ACG is bidding now and accepting select project bids ahead of opening, with bid coordination and submittals running from the Florida headquarters until the local team is in place."
+        }
       },
       {
         "@type": "Question",
         "name": "How does Nashville building code differ from Florida?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Nashville follows IBC 2018 with Tennessee amendments and IECC Climate Zone 4A energy targets. Wind design uses ASCE 7-16 with a 115 mph base. There is no High-Velocity Hurricane Zone, but tornado resilience matters for schools and healthcare, and thermal performance is stringent." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nashville follows IBC 2018 with Tennessee amendments and IECC Climate Zone 4A energy targets. Wind design uses ASCE 7-16 with a 115 mph base. There is no High-Velocity Hurricane Zone, but tornado resilience matters for schools and healthcare, and thermal performance is stringent."
+        }
       },
       {
         "@type": "Question",
         "name": "What Nashville-area counties does ACG serve?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG serves Davidson County (Nashville), Williamson (Brentwood, Franklin, Nolensville), Rutherford (Murfreesboro, Smyrna), and Wilson (Mt. Juliet, Lebanon), plus Sumner, Maury, and Montgomery counties from the Nashville HQ." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG serves Davidson County (Nashville), Williamson (Brentwood, Franklin, Nolensville), Rutherford (Murfreesboro, Smyrna), and Wilson (Mt. Juliet, Lebanon), plus Sumner, Maury, and Montgomery counties from the Nashville HQ."
+        }
       },
       {
         "@type": "Question",
         "name": "What are ACG's lead times for Nashville commercial glazing?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ACG turns complete bid packages in 48 hours. Material lead time depends on the system, but direct authorized-partner relationships with manufacturers like ESWindows, Euro-Wall, and PGT shorten procurement versus open-market ordering. Install dates are available Q3 2026 onward." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ACG turns complete bid packages in 48 hours. Material lead time depends on the system, but direct authorized-partner relationships with manufacturers like ESWindows, Euro-Wall, and PGT shorten procurement versus open-market ordering. Install dates are available Q3 2026 onward."
+        }
       },
       {
         "@type": "Question",
         "name": "Can ACG provide GC references?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. ACG's references are from Florida, where the company has worked since 2021. Florida GC references and certificates of insurance are available on request. ACG's first Tennessee scopes start Q3 2026." }
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ACG's references are from Florida, where the company has worked since 2021. Florida GC references and certificates of insurance are available on request. ACG's first Tennessee scopes start Q3 2026."
+        }
       }
     ]
   }

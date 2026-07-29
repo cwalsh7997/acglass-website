@@ -319,7 +319,9 @@ def check_homepage_org(results: list[Result]) -> None:
     if status != 200:
         return
     parsed = [obj for tier, obj in parse_jsonld(html) if tier == "ok"]
-    # Find Organization nodes with @id ending in #org
+    # The parent Organization lives at #organization. The short #org alias was
+    # retired in the Workstream 4 entity cleanup because it was also being used
+    # for LocalBusiness nodes, which split the graph.
     org_ids: list[str] = []
 
     def walk(o):
@@ -329,7 +331,7 @@ def check_homepage_org(results: list[Result]) -> None:
             if (
                 (t == "Organization" or (isinstance(t, list) and "Organization" in t))
                 and isinstance(i, str)
-                and i.endswith("#org")
+                and i.endswith(("#org", "#organization"))
             ):
                 org_ids.append(i)
             for v in o.values():
@@ -341,9 +343,9 @@ def check_homepage_org(results: list[Result]) -> None:
     for obj in parsed:
         walk(obj)
 
-    ok = len(org_ids) == 1 and org_ids[0] == "https://acglass.com/#org"
-    detail = f"#org count={len(org_ids)}, ids={org_ids}"
-    results.append(Result("WARN", "Homepage one Organization #org", ok, detail))
+    ok = org_ids == ["https://acglass.com/#organization"]
+    detail = f"count={len(org_ids)}, ids={org_ids}"
+    results.append(Result("WARN", "Homepage one Organization #organization", ok, detail))
 
 
 def check_homepage_faq6(results: list[Result]) -> None:
@@ -371,8 +373,24 @@ def check_homepage_faq6(results: list[Result]) -> None:
 
     for obj in parsed:
         walk(obj)
-    ok = q_count == 6
-    results.append(Result("WARN", "Homepage FAQPage has 6 Questions", ok, f"count={q_count}"))
+    # The homepage renders no FAQ section, so its 6-question FAQPage was markup
+    # with no on-page counterpart — a Google structured-data policy violation.
+    # It was removed in Workstream 4. Restoring the markup without also
+    # rendering the answers would reintroduce the violation, so the expectation
+    # is inverted: either zero questions, or six that are actually on the page.
+    if q_count == 0:
+        results.append(Result("WARN", "Homepage FAQPage absent (no FAQ section rendered)", True))
+    else:
+        body = re.sub(r"<script.*?</script>", " ", html, flags=re.S | re.I)
+        body = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)).lower()
+        results.append(
+            Result(
+                "WARN",
+                "Homepage FAQPage questions appear in visible text",
+                "frequently asked" in body,
+                f"count={q_count}, faq_heading_in_body={'frequently asked' in body}",
+            )
+        )
 
 
 def check_title_meta_lengths(results: list[Result], sample_limit: int = 50) -> None:
