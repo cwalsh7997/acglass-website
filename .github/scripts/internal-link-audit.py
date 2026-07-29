@@ -1,0 +1,412 @@
+#!/usr/bin/env python3
+"""
+internal-link-audit.py — Internal link architecture audit for acglass.com
+
+Static analysis of the repository (no HTTP), so it runs on a pull request
+before anything is deployed. It builds the site's internal link graph from the
+tracked .html files and enforces the link architecture:
+
+  FAIL  — the home link resolves to "/", no internal link is aimed at a URL
+          vercel.json already 301s, no internal link is broken, the homepage
+          reaches every priority market and service hub, and every priority
+          page clears its inbound-link floor.
+  WARN  — anchor-text quality on the priority market pages (bare toponyms such
+          as "Miami" carry no intent; "commercial glazing contractor in Miami"
+          does).
+
+Usage:
+  python .github/scripts/internal-link-audit.py            # audit + exit code
+  python .github/scripts/internal-link-audit.py --report   # inbound-link table
+  python .github/scripts/internal-link-audit.py --strict-warn
+
+Stdlib only.
+"""
+
+from __future__ import annotations
+
+import argparse
+import html as htmllib
+import json
+import os
+import re
+import sys
+from collections import defaultdict
+from posixpath import normpath
+
+REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+SITE = "https://acglass.com"
+
+# Directories that are not part of the served page graph. "drafts" is a staging
+# area whose pages cross-link at the root URLs they will occupy once published,
+# so its outbound links are forward references, not breakage.
+SKIP_DIRS = {
+    ".git",
+    ".github",
+    "_internal",
+    "node_modules",
+    "images",
+    "fonts",
+    "videos",
+    "drafts",
+}
+
+# Pages that are fragments/previews rather than real documents. They are not
+# crawled for outbound links and never count as an inbound linker.
+NON_PAGES = {
+    "/location-template-snippet.html",
+    "/services-schema-block.html",
+    "/redesign-preview.html",
+    "/index-proof.html",
+}
+
+A_TAG = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.IGNORECASE | re.DOTALL)
+HREF = re.compile(r"""href\s*=\s*["']([^"']*)["']""", re.IGNORECASE)
+TAG = re.compile(r"<[^>]+>")
+
+
+# ---------------------------------------------------------------------------
+# Priority architecture — what this audit exists to protect
+# ---------------------------------------------------------------------------
+
+# Market hub → (label, minimum distinct inbound linking pages)
+PRIORITY_MARKETS = {
+    "/glazing-contractor-florida.html": ("Florida", 12),
+    "/commercial-glazing-south-florida.html": ("South Florida", 10),
+    "/storefront-glazier-west-palm-beach-florida/": ("West Palm Beach", 10),
+    "/storefront-glazier-miami-florida/": ("Miami", 10),
+    "/commercial-glazing-jacksonville.html": ("Jacksonville", 8),
+    "/storefront-glazier-tampa-florida/": ("Tampa", 10),
+    "/storefront-glazier-orlando-florida/": ("Orlando", 8),
+    "/storefront-glazier-naples-florida/": ("Naples", 8),
+    "/storefront-glazier-fort-lauderdale-florida/": ("Fort Lauderdale", 8),
+    "/storefront-glazier-boca-raton-florida/": ("Boca Raton", 6),
+    "/commercial-glazing-nashville-tn.html": ("Nashville", 10),
+}
+
+# Service hub → (label, minimum distinct inbound linking pages)
+PRIORITY_SERVICES = {
+    "/commercial-storefront-installer-florida.html": ("Storefront glazing", 10),
+    "/curtainwall-contractor-florida.html": ("Curtain wall", 10),
+    "/impact-windows-doors-florida.html": ("Commercial impact windows", 8),
+    "/division-08-subcontractor-florida.html": ("Division 08 / preconstruction", 10),
+    "/government-public-sector-glazing.html": ("Federal & security glazing", 8),
+    "/portfolio.html": ("Case studies", 10),
+    "/florida-commercial-glazing-complete-guide/": ("Florida pillar guide", 8),
+    "/commercial-glazing-tn.html": ("Tennessee state page", 6),
+}
+
+PRIORITY = {**PRIORITY_MARKETS, **PRIORITY_SERVICES}
+
+# Pages that must link to every priority hub. The homepage is the site's
+# strongest page; service-areas is the browseable geographic index.
+MUST_LINK_ALL_MARKETS = ["/", "/service-areas.html"]
+MUST_LINK_ALL_SERVICES = ["/", "/services.html"]
+
+# A market anchor is "vague" when it is only the place name. Anchors are
+# compared after lowercasing and stripping punctuation.
+INTENT_TOKENS = (
+    "glazing",
+    "glazier",
+    "storefront",
+    "curtain wall",
+    "curtainwall",
+    "impact window",
+    "glass",
+    "contractor",
+    "subcontractor",
+    "installer",
+    "division 08",
+)
+
+# How many distinct pages must describe a market hub with an intent-bearing
+# anchor. See check_anchor_intent for why this is a page count, not a share.
+ANCHOR_INTENT_FLOOR = 6
+
+
+# ---------------------------------------------------------------------------
+# Link graph
+# ---------------------------------------------------------------------------
+
+
+def iter_html_files(root: str):
+    for dirpath, dirnames, filenames in os.walk(root):
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS and not d.startswith(".")]
+        for fn in filenames:
+            if fn.endswith(".html"):
+                yield os.path.join(dirpath, fn)
+
+
+def url_for(path: str, root: str) -> str:
+    """Repo file path → the canonical served URL path."""
+    rel = os.path.relpath(path, root).replace(os.sep, "/")
+    if rel == "index.html":
+        return "/"
+    if rel.endswith("/index.html"):
+        return "/" + rel[: -len("index.html")]
+    return "/" + rel
+
+
+def anchor_text(inner: str) -> str:
+    return re.sub(r"\s+", " ", htmllib.unescape(TAG.sub(" ", inner))).strip()
+
+
+def normalize(href: str, from_url: str, known: set[str]) -> str | None:
+    """Resolve an href to a site-internal URL path, or None if not internal.
+
+    The returned path is the *served* form: directory URLs keep their trailing
+    slash, extension URLs keep ".html". "/index.html" is deliberately NOT
+    folded into "/" — routing every page's home link through a non-canonical
+    duplicate is one of the things this audit checks for.
+    """
+    href = href.strip()
+    if not href or href.startswith(("#", "mailto:", "tel:", "javascript:", "data:")):
+        return None
+    if href.startswith("//"):
+        return None
+    if href.startswith("http://") or href.startswith("https://"):
+        if not href.startswith(SITE):
+            return None
+        href = href[len(SITE) :] or "/"
+    href = href.split("#", 1)[0].split("?", 1)[0]
+    if not href:
+        return None
+    if not href.startswith("/"):
+        base = from_url if from_url.endswith("/") else from_url.rsplit("/", 1)[0] + "/"
+        href = base + href
+    trailing = href.endswith("/")
+    href = normpath(href)
+    if trailing and not href.endswith("/"):
+        href += "/"
+    if not href.startswith("/"):
+        return None
+    # Extensionless hrefs: the site serves them with cleanUrls/trailingSlash,
+    # so resolve to whichever form actually exists in the repo.
+    if not href.endswith("/") and "." not in href.rsplit("/", 1)[-1]:
+        if href + "/" in known:
+            return href + "/"
+        if href + ".html" in known:
+            return href + ".html"
+    return href
+
+
+def build_graph(root: str):
+    files = sorted(iter_html_files(root))
+    pages = {}
+    for f in files:
+        u = url_for(f, root)
+        if u in NON_PAGES:
+            continue
+        pages[u] = f
+    known = set(pages)
+
+    # url -> {source_url -> [anchor, ...]}
+    inbound: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+    outbound: dict[str, set[str]] = defaultdict(set)
+
+    for u, f in pages.items():
+        with open(f, encoding="utf-8", errors="replace") as fh:
+            doc = fh.read()
+        for attrs, inner in A_TAG.findall(doc):
+            m = HREF.search(attrs)
+            if not m:
+                continue
+            target = normalize(m.group(1), u, known)
+            if target is None or target == u:
+                continue
+            inbound[target][u].append(anchor_text(inner))
+            outbound[u].add(target)
+
+    return pages, known, inbound, outbound
+
+
+def load_redirects(root: str) -> dict[str, str]:
+    with open(os.path.join(root, "vercel.json"), encoding="utf-8") as fh:
+        cfg = json.load(fh)
+    return {r["source"]: r["destination"] for r in cfg.get("redirects", [])}
+
+
+# ---------------------------------------------------------------------------
+# Checks
+# ---------------------------------------------------------------------------
+
+
+class Result:
+    def __init__(self, tier: str, name: str, ok: bool, detail: str = ""):
+        self.tier = tier
+        self.name = name
+        self.ok = ok
+        self.detail = detail
+
+    def fmt(self) -> str:
+        sym = "✓" if self.ok else "✗"
+        return f"  [{sym}] {self.tier:4}  {self.name}{('  — ' + self.detail) if self.detail else ''}"
+
+
+def check_home_link(results, inbound):
+    linkers = sorted(inbound.get("/index.html", {}))
+    results.append(
+        Result(
+            "FAIL",
+            "No internal link targets /index.html (use /)",
+            not linkers,
+            f"{len(linkers)} page(s), e.g. {linkers[:5]}" if linkers else "",
+        )
+    )
+
+
+def check_no_links_to_redirects(results, inbound, redirects):
+    offenders = {}
+    for source, dest in redirects.items():
+        linkers = sorted(inbound.get(source, {}))
+        if linkers:
+            offenders[source] = (dest, linkers)
+    detail = ""
+    if offenders:
+        worst = sorted(offenders.items(), key=lambda kv: -len(kv[1][1]))[:5]
+        detail = "; ".join(f"{s} ({len(l)} linkers) → {d}" for s, (d, l) in worst)
+    results.append(
+        Result("FAIL", "No internal link targets a 301 source", not offenders, detail)
+    )
+
+
+def check_no_broken_links(results, inbound, known, redirects):
+    broken = {}
+    for target, linkers in inbound.items():
+        if target in known or target in redirects:
+            continue
+        # Non-HTML assets and directory URLs served by other means are out of
+        # scope; only flag things that look like pages.
+        leaf = target.rstrip("/").rsplit("/", 1)[-1]
+        if "." in leaf and not target.endswith(".html"):
+            continue
+        broken[target] = sorted(linkers)
+    detail = ""
+    if broken:
+        worst = sorted(broken.items(), key=lambda kv: -len(kv[1]))[:6]
+        detail = "; ".join(f"{t} ({len(l)})" for t, l in worst)
+    results.append(
+        Result("FAIL", "No internal link targets a missing page", not broken, detail)
+    )
+    return broken
+
+
+def check_hub_coverage(results, outbound, known):
+    for hub in MUST_LINK_ALL_MARKETS:
+        if hub not in known:
+            continue
+        missing = [t for t in PRIORITY_MARKETS if t not in outbound.get(hub, ())]
+        results.append(
+            Result(
+                "FAIL",
+                f"{hub} links to all {len(PRIORITY_MARKETS)} priority markets",
+                not missing,
+                f"missing={missing}" if missing else "",
+            )
+        )
+    for hub in MUST_LINK_ALL_SERVICES:
+        if hub not in known:
+            continue
+        missing = [t for t in PRIORITY_SERVICES if t not in outbound.get(hub, ())]
+        results.append(
+            Result(
+                "FAIL",
+                f"{hub} links to all {len(PRIORITY_SERVICES)} priority service hubs",
+                not missing,
+                f"missing={missing}" if missing else "",
+            )
+        )
+
+
+def check_inbound_floors(results, inbound):
+    for target, (label, floor) in PRIORITY.items():
+        n = len(inbound.get(target, {}))
+        results.append(
+            Result(
+                "FAIL",
+                f"{label} ≥{floor} inbound",
+                n >= floor,
+                f"{target} has {n}",
+            )
+        )
+
+
+def check_anchor_intent(results, inbound):
+    """Count *pages* that link with an intent-bearing anchor, not the share.
+
+    A share metric is the wrong instrument here. A pre-existing "Other Markets"
+    grid of bare toponyms sits on ~160 pages, so any percentage is pinned near
+    zero and can only be raised by rewriting 160 templated anchors at once —
+    which is the keyword stuffing this audit is supposed to discourage. What
+    actually matters is that a real number of pages describe the target with
+    intent, so that is what is measured.
+    """
+    for target, (label, _floor) in PRIORITY_MARKETS.items():
+        linkers = inbound.get(target, {})
+        intentful = sorted(
+            src
+            for src, anchors in linkers.items()
+            if any(t in a.lower() for a in anchors for t in INTENT_TOKENS)
+        )
+        results.append(
+            Result(
+                "WARN",
+                f"{label}: ≥{ANCHOR_INTENT_FLOOR} pages link with an intent-bearing anchor",
+                len(intentful) >= ANCHOR_INTENT_FLOOR,
+                f"{len(intentful)}/{len(linkers)} linking pages",
+            )
+        )
+
+
+def report(inbound, outbound):
+    print(f"\n{'PRIORITY PAGE':<52}{'INBOUND':>8}  ANCHORS (top 3)")
+    print("-" * 110)
+    for target, (label, floor) in PRIORITY.items():
+        linkers = inbound.get(target, {})
+        anchors = [a for lst in linkers.values() for a in lst if a]
+        top = sorted({a: anchors.count(a) for a in anchors}.items(), key=lambda kv: -kv[1])[:3]
+        top_s = ", ".join(f"{a!r}×{c}" for a, c in top)
+        flag = " " if len(linkers) >= floor else "!"
+        print(f"{flag}{target:<51}{len(linkers):>8}  {top_s[:60]}")
+    print(f"\nhomepage outbound internal links: {len(outbound.get('/', ()))}")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--root", default=REPO)
+    ap.add_argument("--report", action="store_true", help="print the inbound-link table")
+    ap.add_argument("--strict-warn", action="store_true")
+    args = ap.parse_args()
+
+    root = os.path.abspath(args.root)
+    pages, known, inbound, outbound = build_graph(root)
+    redirects = load_redirects(root)
+
+    print(f"\ninternal-link-audit — {len(pages)} pages, {sum(len(v) for v in outbound.values())} internal links\n")
+
+    results: list[Result] = []
+    check_home_link(results, inbound)
+    check_no_links_to_redirects(results, inbound, redirects)
+    check_no_broken_links(results, inbound, known, redirects)
+    check_hub_coverage(results, outbound, known)
+    check_inbound_floors(results, inbound)
+    check_anchor_intent(results, inbound)
+
+    for r in results:
+        print(r.fmt())
+
+    if args.report:
+        report(inbound, outbound)
+
+    fails = sum(1 for r in results if r.tier == "FAIL" and not r.ok)
+    warns = sum(1 for r in results if r.tier == "WARN" and not r.ok)
+    print(f"\nSummary: FAIL miss={fails}, WARN miss={warns}, total checks={len(results)}")
+
+    if fails:
+        return 1
+    if args.strict_warn and warns:
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
