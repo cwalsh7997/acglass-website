@@ -69,8 +69,58 @@
     "unknown and the guidance conflicts, no WPB URL is touched.",
     "",
     "'/' is frozen for the same reason: the WPB Google Business Profile website field",
-    "points at the site root, so the root IS the #1 map result's landing page."
+    "points at the site root, so the root IS the #1 map result's landing page.",
+    "",
+    "Two freeze MODES. Every prefix above is byte-frozen -- must be byte-identical to",
+    "the base ref -- EXCEPT the ones listed in semantic_freeze below, which are frozen",
+    "field by field instead. See semantic_freeze._about for why the root differs."
   ],
+  "semantic_freeze": {
+    "_about": [
+      "A byte freeze on '/' protects the ranking signals, but it also forbids every",
+      "harmless body addition, because it cannot tell a repointed canonical from a new",
+      "paragraph. The root is the site's main hub; freezing it byte-for-byte blocks",
+      "ordinary internal-linking work for the whole duration of the WPB freeze, and the",
+      "WPB freeze has no end date -- it lifts when a GSC baseline exists.",
+      "",
+      "The freeze's actual purpose is that the root must keep ranking #1 in the map pack",
+      "for the WPB Google Business Profile. What carries that is a specific, listable set",
+      "of fields. So the root is frozen on those fields and open elsewhere: body-only",
+      "additions of truthful contextual service and market navigation are permitted, and",
+      "every protected field must be identical to the base ref.",
+      "",
+      "The dedicated WPB pages stay BYTE-frozen. They are the four contested candidates",
+      "for the organic #1 plus their support pages; the ranking URL among them is",
+      "unknown, so nothing about them may move, including body copy."
+    ],
+    "/": {
+      "file": "index.html",
+      "reason": "Root is the WPB Google Business Profile landing page (#1 map pack). Its identity and ranking signals are frozen; its body is not.",
+      "protected_fields": {
+        "title": "<title> text, exact.",
+        "meta-description": "meta[name=description] content, exact.",
+        "canonical": "link[rel=canonical] href, exact.",
+        "meta-robots": "meta[name=robots] content, exact. ABSENT is a protected value -- adding any robots directive fails.",
+        "h1": "The ordered list of H1 texts, exact. The H1 is owner-settled.",
+        "og:title": "meta[property=og:title] content, exact.",
+        "og:url": "meta[property=og:url] content, exact.",
+        "schema-identity": "For every JSON-LD node typed Organization, LocalBusiness, HomeAndConstructionBusiness or WebSite: the @id set is fixed, and each node's @type, name, legalName, url, telephone, address, geo, sameAs, areaServed and logo are fixed. This is the NAP and entity identity the map pack resolves against, including the #localbusiness-west-palm-beach node.",
+        "wpb-links": "Every (href, anchor text) pair on the base version whose target is a byte-frozen WPB URL must still be present. Removal or rewording fails.",
+        "wpb-text": "Every visible-text segment on the base version that mentions West Palm Beach must still be present. Removal or rewording fails."
+      },
+      "permitted": [
+        "Body-only additions of truthful contextual service and market navigation.",
+        "New sections, new in-page anchors, new internal links, new nav entries.",
+        "Anything at all that leaves every protected field byte-identical."
+      ],
+      "warns_but_does_not_block": [
+        "Adding a NEW link from the root to a byte-frozen WPB URL. It removes nothing, so",
+        "it is permitted, but it does nudge one of the four contested candidates ahead of",
+        "the others -- which is the decision the freeze exists to defer. The gate lists",
+        "each one so a reviewer sees it rather than discovering it later."
+      ]
+    }
+  },
   "intents": [
     {
       "market": "west-palm-beach",
