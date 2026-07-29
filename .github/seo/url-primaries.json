@@ -1,0 +1,396 @@
+{
+  "$schema_version": "1",
+  "_about": [
+    "One primary URL per head intent for the 11 money markets.",
+    "",
+    "This file records INTENT ONLY. It is not a routing surface and nothing in this",
+    "repository consumes it at request time. vercel.json is likewise not a routing",
+    "surface: the site is served by GitHub Pages behind Cloudflare, GitHub Pages does",
+    "not read vercel.json, and every 301 observed on the live site is executed at the",
+    "Cloudflare edge. vercel.json is an accurate MIRROR of that edge configuration",
+    "(69/69 rules verified live on 2026-07-29, zero drift, zero live 301s absent from",
+    "the file) but editing it deploys nothing. Redirect changes must be applied",
+    "externally -- see .github/cloudflare/RUNBOOK.md.",
+    "",
+    "Two intents per market. 'commercial-glazing' (broad contractor intent) and",
+    "'storefront' (storefront installation intent) are SEPARATE head intents with",
+    "SEPARATE primaries. Collapsing them into one URL was the error in the superseded",
+    "plan on branch fix/canonical-cannibalization-money-markets.",
+    "",
+    "A 'storefront-glazier-{city}-florida/' page is a legitimate primary for the",
+    "storefront intent and must NEVER be the primary for the broad commercial-glazing",
+    "intent. Where the live edge currently routes a broad-intent slug into one, that",
+    "is recorded as a required external redirect, not fixed in-repo.",
+    "",
+    "No entry here is derived from Google Search Console. No GSC export exists in this",
+    "workspace and the measurement layer added by PR #20 has never run (it needs the",
+    "GSC_SA_JSON secret). Every entry is therefore marked 'ratified' only when two",
+    "independent in-workspace sources agree AND acting on it moves no URL that is",
+    "known to rank; everything else is 'gsc-gated' and must not be actioned until",
+    "the GSC baseline exists."
+  ],
+  "base": "https://acglass.com",
+  "generated": "2026-07-29",
+  "status_legend": {
+    "ratified": "Two independent workspace sources agree and no known-ranking URL moves. Safe to enforce.",
+    "frozen": "Must not change under any circumstances in this workstream. Enforced as a hard gate.",
+    "gsc-gated": "A defensible target exists but acting on it flips a primary. Blocked on a GSC baseline.",
+    "blocked-no-primary": "No page on disk can hold this intent. Blocked on content creation, not on routing.",
+    "owned-elsewhere": "Files are owned by another open PR. Out of scope here to avoid conflicting edits."
+  },
+  "sources": {
+    "topical": "acglass_topical_authority_research_20260728.md (workspace, read-only) SS4.2 C1 and SS4.3 per-city canonical map",
+    "serp": "acg_serp_reverse_engineering_july2026.md (workspace, read-only) Q2 and actions 3/4",
+    "maps": "acg_local_seo_maps_strategy_research_20260728.md (workspace, read-only) SS4.4, D5, Gate 5",
+    "council": "acg_council_review_anthropic_claude_20260728.md (workspace, read-only)",
+    "measurement": ".github/seo/seo-targets.json (in repo, from PR #20)",
+    "live": "HEAD probe of 612 URLs with redirects disabled, 2026-07-29: 200x542 301x69, server=cloudflare on every response"
+  },
+  "frozen_prefixes": [
+    "/west-palm-beach-commercial-glazing.html",
+    "/commercial-glazing-west-palm-beach.html",
+    "/west-palm-beach/",
+    "/storefront-glazier-west-palm-beach-florida/",
+    "/storefront-installer-west-palm-beach.html",
+    "/commercial-glazier-near-me-west-palm-beach/",
+    "/impact-windows-palm-beach.html",
+    "/eswindows-installer-west-palm-beach.html",
+    "/"
+  ],
+  "_frozen_note": [
+    "West Palm Beach holds #1 organic for 'commercial glazing contractor west palm beach'",
+    "and #1 in the map pack. Which of the four WPB URLs holds the organic #1 was NOT",
+    "measurable: acg_serp_reverse_engineering_july2026.md states plainly that live SERP",
+    "HTML could not be fetched and that the positions were taken as given. The two",
+    "workspace research documents also DISAGREE on which URL should be primary --",
+    "topical SS4.3 says keep /west-palm-beach-commercial-glazing.html and 301 the rest,",
+    "while maps SS3.3/Phase 2.1 says rebuild /west-palm-beach/ as the landing page and",
+    "301 /west-palm-beach-commercial-glazing.html into it. Because the ranking URL is",
+    "unknown and the guidance conflicts, no WPB URL is touched.",
+    "",
+    "'/' is frozen for the same reason: the WPB Google Business Profile website field",
+    "points at the site root, so the root IS the #1 map result's landing page."
+  ],
+  "intents": [
+    {
+      "market": "west-palm-beach",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor west palm beach"],
+      "primary": null,
+      "status": "frozen",
+      "live_position": "#1 organic (URL not attributable), #1 map pack via / as GBP landing page",
+      "evidence": ["serp:Q2", "maps:D5"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Four ACG URLs share this intent with identical or near-identical metadata. Resolving that is real work, but it cannot be done without knowing which URL ranks. Freeze until GSC attributes the #1."
+    },
+    {
+      "market": "west-palm-beach",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier west palm beach", "storefront installer west palm beach"],
+      "primary": null,
+      "status": "frozen",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "topical SS4.3 itself offers the choice 'or invert' between storefront-installer-west-palm-beach.html (2,436w) and storefront-glazier-west-palm-beach-florida/ (3,156w). Unresolved by design."
+    },
+    {
+      "market": "miami",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor miami", "commercial glass contractor miami"],
+      "primary": "/miami-hvhz-glazing-contractor.html",
+      "status": "ratified",
+      "evidence": ["topical:SS4.3", "measurement:pages[/miami-hvhz-glazing-contractor.html]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [
+        {
+          "source": "/commercial-glazing-miami.html",
+          "current_destination": "/miami/",
+          "required_destination": "/miami-hvhz-glazing-contractor.html",
+          "reason": "The current 301 lands on a page titled 'Storefront Glazier in Miami, FL - Service Area' which then rel=canonicals to /storefront-glazier-miami-florida/. A broad commercial-glazing slug therefore resolves to a storefront primary in two hops."
+        }
+      ],
+      "notes": "/miami/ is NOT repointed. Its title, H1 and meta are all storefront copy, so its canonical to /storefront-glazier-miami-florida/ is intent-correct. The defect is the edge redirect, not the canonical."
+    },
+    {
+      "market": "miami",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier miami", "storefront installer miami"],
+      "primary": "/storefront-glazier-miami-florida/",
+      "status": "gsc-gated",
+      "live_position": "#10 organic for the storefront query",
+      "evidence": ["serp:SS2", "measurement:pages[/storefront-glazier-miami-florida/]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "topical SS4.3 prefers storefront-installer-miami.html on query-pattern grounds, but /storefront-glazier-miami-florida/ is the URL that actually ranks and is the deepest page on the site (2,259w). Do not move a ranking URL on a naming argument. gsc-gated."
+    },
+    {
+      "market": "tampa",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor tampa", "commercial glazing contractors tampa fl"],
+      "primary": "/tampa-commercial-glazing.html",
+      "status": "ratified",
+      "evidence": ["topical:SS4.3", "measurement:markets[tampa]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [
+        {
+          "source": "/commercial-glazing-tampa.html",
+          "current_destination": "/tampa/",
+          "required_destination": "/tampa-commercial-glazing.html",
+          "reason": "Same two-hop as Miami: /tampa/ is storefront copy and canonicals to /storefront-glazier-tampa-florida/."
+        }
+      ],
+      "notes": "/tampa/ canonical left alone for the same reason as /miami/."
+    },
+    {
+      "market": "tampa",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier tampa", "storefront installer tampa"],
+      "primary": "/storefront-glazier-tampa-florida/",
+      "status": "gsc-gated",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Current self-canonical state retained. topical SS4.3 would invert to storefront-installer-tampa.html; that is a primary flip and needs GSC."
+    },
+    {
+      "market": "orlando",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor orlando"],
+      "primary": null,
+      "status": "blocked-no-primary",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "No /orlando-commercial-glazing.html exists. topical SS4.3 prescribes promoting blog/commercial-glazing-orlando-fl.html out of /blog/ and expanding it. Until that page exists there is no correct destination for /commercial-glazing-orlando.html, so its 301 to /orlando/ is left in place rather than flattened onto a storefront page."
+    },
+    {
+      "market": "orlando",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier orlando", "storefront installer orlando"],
+      "primary": "/storefront-glazier-orlando-florida/",
+      "status": "gsc-gated",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Current self-canonical state retained."
+    },
+    {
+      "market": "naples",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor naples"],
+      "primary": null,
+      "status": "blocked-no-primary",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "No /naples-commercial-glazing.html exists despite Naples being a staffed ACG office. Same treatment as Orlando."
+    },
+    {
+      "market": "naples",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier naples", "storefront installer naples"],
+      "primary": "/storefront-glazier-naples-florida/",
+      "status": "gsc-gated",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Current self-canonical state retained."
+    },
+    {
+      "market": "fort-lauderdale",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor fort lauderdale"],
+      "primary": null,
+      "status": "blocked-no-primary",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "No /fort-lauderdale-commercial-glazing.html exists. Same treatment as Orlando."
+    },
+    {
+      "market": "fort-lauderdale",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier fort lauderdale", "storefront installer fort lauderdale"],
+      "primary": "/storefront-glazier-fort-lauderdale-florida/",
+      "status": "gsc-gated",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Current self-canonical state retained."
+    },
+    {
+      "market": "boca-raton",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor boca raton"],
+      "primary": null,
+      "status": "blocked-no-primary",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "No /boca-raton-commercial-glazing.html exists. Same treatment as Orlando."
+    },
+    {
+      "market": "boca-raton",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier boca raton"],
+      "primary": "/storefront-glazier-boca-raton-florida/",
+      "status": "gsc-gated",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "No storefront-installer-boca-raton.html exists, so there is no competing URL and nothing to consolidate."
+    },
+    {
+      "market": "jacksonville",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor jacksonville"],
+      "primary": "/commercial-glazing-jacksonville.html",
+      "status": "owned-elsewhere",
+      "evidence": ["topical:SS4.3", "measurement:markets[jacksonville]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Already self-canonical and NOT an edge 301 source, so no defect to fix. jacksonville/index.html and commercial-glazing-jacksonville.html are both modified by open PR #15, which is itself blocked on a factual question about whether ACG has delivered a Duval County project. Out of scope to avoid conflicting edits."
+    },
+    {
+      "market": "jacksonville",
+      "intent": "storefront",
+      "head_terms": ["storefront installer jacksonville"],
+      "primary": "/storefront-installer-jacksonville.html",
+      "status": "ratified",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Already correct. No /storefront-glazier-jacksonville-florida/ exists, so there is no duplicate."
+    },
+    {
+      "market": "south-florida",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing south florida"],
+      "primary": "/commercial-glazing-south-florida.html",
+      "status": "ratified",
+      "evidence": ["topical:SS4.3", "measurement:pages[/commercial-glazing-south-florida.html] role=regional-hub"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Already self-canonical and already the sole regional URL for this intent. No change required."
+    },
+    {
+      "market": "south-florida",
+      "intent": "storefront",
+      "head_terms": [],
+      "primary": null,
+      "status": "blocked-no-primary",
+      "evidence": ["topical:SS4.3"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "topical SS4.3 marks all non-hub clusters n.a. for South Florida: the regional hub links down to Miami / Fort Lauderdale / WPB / Boca."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "commercial-glazing",
+      "head_terms": ["glazing contractor florida", "commercial glazing contractor florida"],
+      "primary": "/glazing-contractor-florida.html",
+      "status": "ratified",
+      "evidence": ["topical:SS4.2 C1", "measurement:pages[/glazing-contractor-florida.html] role=statewide-hub"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "This entry exists specifically to reverse the superseded plan, which named /commercial-glazing-near-me-florida.html as the statewide primary. That page is a near-me intent page, not the statewide hub, and there is no GSC support for promoting it. It stays self-canonical and is recorded below as its own intent. /commercial-glass-installation-florida.html is also labelled statewide-hub by seo-targets.json and is a genuine duplicate of this intent, but collapsing it is a primary flip and is gsc-gated."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "near-me",
+      "head_terms": ["commercial glazing near me florida"],
+      "primary": "/commercial-glazing-near-me-florida.html",
+      "status": "gsc-gated",
+      "evidence": ["live:self-canonical"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Recorded as a distinct intent so that it is never again promoted to statewide primary by accident. Whether it earns its own URL at all is a GSC question."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "storefront",
+      "head_terms": ["storefront glazier florida", "commercial storefront installer florida"],
+      "primary": "/storefront-glazier-florida/",
+      "status": "ratified",
+      "evidence": ["topical:SS4.15", "measurement:pages[/storefront-glazier-florida/] role=statewide-hub"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "topical action 15 keeps this page explicitly as the county/city internal-linking layer. storefront-installer-florida.html already rel=canonicals to /commercial-storefront-installer-florida.html, a pre-existing arrangement left untouched."
+    },
+    {
+      "market": "nashville",
+      "intent": "commercial-glazing",
+      "head_terms": ["commercial glazing contractor nashville", "commercial glazing nashville tn"],
+      "primary": "/commercial-glazing-nashville-tn.html",
+      "status": "ratified",
+      "live_position": "#16 organic, absent from the map pack",
+      "evidence": ["serp:action 3", "serp:action 4", "topical:SS4.3", "measurement:pages[/commercial-glazing-nashville-tn.html]"],
+      "consolidate_in_repo": [
+        {
+          "url": "/nashville/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-pages.xml"
+        }
+      ],
+      "requires_external_redirect": [],
+      "notes": "This is the one primary in the set that is both ratified and actionable in-repo. /commercial-glazing-nashville-tn.html is the URL Google already selected for this query (SERP action 4 identifies the #16 page by its H1, 'Nashville's Standard for Laminated Glass & High-Performance IGUs', which is on this file). Consolidating /nashville/ into it therefore removes a competitor for a ranking URL rather than moving one. /commercial-glazing-nashville.html already 301s here at the edge, so no redirect change is needed. REVERSAL TRIGGER: maps Gate 5 wants /nashville/ as the Google Business Profile landing page for the Q3 2026 office. That profile cannot exist yet -- ACG has no verified Tennessee address, and Safe Phase 1 removed the unsupported Tennessee premises claims. If a Nashville GBP is ever created, revisit this entry before pointing its website field at a canonicalised URL."
+    },
+    {
+      "market": "nashville",
+      "intent": "storefront",
+      "head_terms": ["storefront installer nashville", "commercial storefront glass nashville"],
+      "primary": "/storefront-installer-nashville.html",
+      "status": "ratified",
+      "evidence": ["serp:action 3", "measurement:pages[/storefront-installer-nashville.html]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Already self-canonical, 2,982w, and the only URL holding this intent in TN. No change required."
+    },
+    {
+      "market": "nashville",
+      "intent": "tennessee-statewide",
+      "head_terms": ["tennessee commercial glazing", "commercial glazing contractor tennessee"],
+      "primary": "/tennessee-commercial-glazing/",
+      "status": "ratified",
+      "evidence": ["live:self-canonical", "llms.txt lists it as the statewide TN hub"],
+      "consolidate_in_repo": [
+        {
+          "url": "/tennessee/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-pages.xml"
+        }
+      ],
+      "requires_external_redirect": [],
+      "notes": "/tennessee/ is 334 words against 1,774 for the hub, is not linked from llms.txt, and duplicates the hub's intent exactly. Consolidating it moves nothing that ranks."
+    }
+  ],
+  "seo_targets_reconciliation": [
+    {
+      "finding": "seo-targets.json labels /west-palm-beach/ 'West Palm Beach (canonical)' but that page rel=canonicals to /storefront-glazier-west-palm-beach-florida/.",
+      "severity": "warn",
+      "action": "Left as-is. WPB is frozen and seo-targets.json is a measurement label, not a routing surface. Correct the label when the WPB freeze lifts."
+    },
+    {
+      "finding": "seo-targets.json lists /commercial-glazing-west-palm-beach.html as a market page, but it is a live 301 source at the edge and is never served.",
+      "severity": "warn",
+      "action": "Left as-is for the same reason. It will report zero impressions, which is the honest signal."
+    },
+    {
+      "finding": "seo-targets.json does not list /west-palm-beach-commercial-glazing.html at all, even though topical SS4.3 names it the WPB city hub.",
+      "severity": "warn",
+      "action": "Left as-is. Adding it would imply a WPB decision this workstream is forbidden from making."
+    },
+    {
+      "finding": "seo-targets.json labels both /glazing-contractor-florida.html and /commercial-glass-installation-florida.html role=statewide-hub. Two statewide hubs for one intent is the cannibalization pattern.",
+      "severity": "warn",
+      "action": "Recorded as gsc-gated on the florida-statewide/commercial-glazing entry above. Not resolved here."
+    },
+    {
+      "finding": "seo-targets.json includes a sarasota market that is not one of the 11 money markets in this workstream.",
+      "severity": "info",
+      "action": "No action. Different scope, not a conflict."
+    }
+  ]
+}

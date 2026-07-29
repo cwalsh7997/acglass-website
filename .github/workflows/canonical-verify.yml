@@ -1,0 +1,43 @@
+name: Canonical Verify
+
+# Verifies the one-primary-per-intent map in .github/seo/url-primaries.json.
+#
+# Static only: this job checks declared INTENT against files on disk. It cannot
+# check deployed routing, because redirects execute at the Cloudflare edge and
+# GitHub Pages never reads vercel.json. The --live mode that does check the edge
+# is deliberately NOT wired in here — it needs network access and it would fail
+# on edge changes unrelated to the commit under test. Run it by hand from the
+# Cloudflare runbook instead.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  canonical-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The frozen-path guard diffs against the base ref, so it needs history.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Resolve base ref for the frozen-path guard
+        id: base
+        run: |
+          if [ -n "${{ github.base_ref }}" ]; then
+            git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+            echo "ref=origin/${{ github.base_ref }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "ref=HEAD^" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify primaries, consolidations and the West Palm Beach freeze
+        run: python .github/scripts/canonical-verify.py --base-ref "${{ steps.base.outputs.ref }}"

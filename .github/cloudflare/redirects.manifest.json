@@ -1,0 +1,128 @@
+{
+  "$schema_version": "1",
+  "activated": false,
+  "_about": [
+    "Exact redirect changes required at the Cloudflare edge to give each money-market",
+    "head intent a single primary URL with no 301 -> rel=canonical two-hop.",
+    "",
+    "NOTHING IN THIS FILE IS DEPLOYED. It is a deployment request, reviewed in git and",
+    "applied by hand in the Cloudflare dashboard per RUNBOOK.md. This repository has no",
+    "mechanism that can change edge routing: GitHub Pages serves the tree and does not",
+    "read vercel.json, and .github/ is not served at all.",
+    "",
+    "Set activated to true only after RUNBOOK.md step 7 confirms the edge matches. The",
+    "canonical-verify gate FAILS if activated is true, on purpose: flipping it is a",
+    "deliberate, reviewable act that must accompany the runbook's verification output."
+  ],
+  "target": {
+    "provider": "cloudflare",
+    "zone": "acglass.com",
+    "mechanism": "Bulk Redirects (Rules > Redirect Rules > Bulk Redirects)",
+    "status_code": 301,
+    "preserve_query_string": true,
+    "subpath_matching": false
+  },
+  "mirror": {
+    "file": "vercel.json",
+    "rule_count": 69,
+    "verified": "2026-07-29",
+    "method": "HEAD probe of 612 URLs with redirects disabled",
+    "result": "69/69 rules matched the edge exactly; 0 live 301s absent from the file; server=cloudflare on every response",
+    "note": "vercel.json is an observed mirror only. After applying these rules, update vercel.json in a follow-up commit so the mirror stays accurate. Updating it is bookkeeping, not deployment."
+  },
+  "rules": [
+    {
+      "id": "cg-miami",
+      "source": "/commercial-glazing-miami.html",
+      "current_destination": "/miami/",
+      "required_destination": "/miami-hvhz-glazing-contractor.html",
+      "market": "miami",
+      "intent": "commercial-glazing",
+      "status_code": 301,
+      "defect": "Broad commercial-glazing slug resolves to a storefront primary in two hops: 301 to /miami/ (title 'Storefront Glazier in Miami, FL - Service Area'), which rel=canonicals to /storefront-glazier-miami-florida/.",
+      "after": "One hop, landing on the ratified commercial-glazing primary, which is self-canonical.",
+      "moves_a_ranking_url": false,
+      "rollback": "Restore destination to /miami/."
+    },
+    {
+      "id": "cg-tampa",
+      "source": "/commercial-glazing-tampa.html",
+      "current_destination": "/tampa/",
+      "required_destination": "/tampa-commercial-glazing.html",
+      "market": "tampa",
+      "intent": "commercial-glazing",
+      "status_code": 301,
+      "defect": "Same two-hop as Miami: 301 to /tampa/ (storefront copy), which rel=canonicals to /storefront-glazier-tampa-florida/.",
+      "after": "One hop, landing on the ratified commercial-glazing primary, which is self-canonical.",
+      "moves_a_ranking_url": false,
+      "rollback": "Restore destination to /tampa/."
+    }
+  ],
+  "deliberately_not_requested": [
+    {
+      "source": "/commercial-glazing-west-palm-beach.html",
+      "current_destination": "/west-palm-beach/",
+      "reason": "frozen",
+      "detail": "West Palm Beach holds #1 organic and #1 map. Which of the four WPB URLs holds the organic #1 is not measurable from this workspace, and the two research documents disagree on which should be primary. No WPB routing change is requested."
+    },
+    {
+      "source": "/commercial-glazing-orlando.html",
+      "current_destination": "/orlando/",
+      "reason": "blocked-no-primary",
+      "detail": "No /orlando-commercial-glazing.html exists. Flattening this onto /storefront-glazier-orlando-florida/ would be exactly the storefront-as-broad-primary error this workstream is reversing. Unblocked by creating the Orlando commercial-glazing hub, not by a redirect."
+    },
+    {
+      "source": "/commercial-glazing-naples.html",
+      "current_destination": "/naples/",
+      "reason": "blocked-no-primary",
+      "detail": "No /naples-commercial-glazing.html exists. Same as Orlando."
+    },
+    {
+      "source": "/commercial-glazing-fort-lauderdale.html",
+      "current_destination": "/fort-lauderdale/",
+      "reason": "blocked-no-primary",
+      "detail": "No /fort-lauderdale-commercial-glazing.html exists. Same as Orlando."
+    },
+    {
+      "source": "/commercial-glazing-boca-raton.html",
+      "current_destination": "/boca-raton/",
+      "reason": "blocked-no-primary",
+      "detail": "No /boca-raton-commercial-glazing.html exists. Same as Orlando."
+    },
+    {
+      "source": "/nashville/",
+      "current_destination": null,
+      "reason": "not-required",
+      "detail": "Consolidated in-repo by rel=canonical to /commercial-glazing-nashville-tn.html plus sitemap removal. A 301 would also work but is strictly worse here: acg_local_seo_maps_strategy_research_20260728.md Gate 5 wants /nashville/ available as a Google Business Profile landing page once the Q3 2026 office is real. A canonical keeps that option; a 301 destroys it."
+    },
+    {
+      "source": "/tennessee/",
+      "current_destination": null,
+      "reason": "not-required",
+      "detail": "Consolidated in-repo by rel=canonical to /tennessee-commercial-glazing/ plus sitemap removal."
+    },
+    {
+      "source": "/commercial-glazing-near-me-florida.html",
+      "current_destination": null,
+      "reason": "gsc-gated",
+      "detail": "Recorded as its own near-me intent. Folding it into /glazing-contractor-florida.html is a primary decision that needs a GSC baseline first. The superseded plan promoted it to statewide primary; that is reversed."
+    },
+    {
+      "source": "/commercial-glass-installation-florida.html",
+      "current_destination": null,
+      "reason": "gsc-gated",
+      "detail": "seo-targets.json labels this a second statewide-hub alongside /glazing-contractor-florida.html. Genuinely duplicative, but collapsing it flips a primary. Needs GSC."
+    },
+    {
+      "source": "/commercial-glazing-{27 other cities}.html",
+      "current_destination": "/{city}/",
+      "reason": "out-of-scope",
+      "detail": "Roughly 27 non-money-market cities carry the identical two-hop (Aventura, Boynton Beach, Coral Gables, Delray Beach, Fort Myers, Sarasota, St Petersburg, Stuart, Jupiter and others). The same objection applies: their /{city}/ pages are all storefront copy and no commercial-glazing hub exists for any of them. Out of scope for the 11 money markets; the fix is the same and should follow the same rule."
+    }
+  ],
+  "gate": {
+    "script": ".github/scripts/canonical-verify.py",
+    "static": "Asserts this file exists, is not activated, covers exactly the registry's required redirects, and that current_destination still matches the vercel.json mirror.",
+    "live": "canonical-verify.py --live HEAD-probes all 69 mirror rules and fails on any divergence between the edge and vercel.json. Run this before and after applying the rules below."
+  }
+}
