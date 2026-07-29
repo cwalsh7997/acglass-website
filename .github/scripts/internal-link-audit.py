@@ -333,12 +333,11 @@ def check_inbound_floors(results, inbound):
 def check_anchor_intent(results, inbound):
     """Count *pages* that link with an intent-bearing anchor, not the share.
 
-    A share metric is the wrong instrument here. A pre-existing "Other Markets"
-    grid of bare toponyms sits on ~160 pages, so any percentage is pinned near
-    zero and can only be raised by rewriting 160 templated anchors at once —
-    which is the keyword stuffing this audit is supposed to discourage. What
-    actually matters is that a real number of pages describe the target with
-    intent, so that is what is measured.
+    A share metric would penalise the city directories and county pages, where a
+    bare toponym is the correct anchor for a list entry. Raising a percentage
+    means rewriting those list anchors into keyword phrases, which is the
+    stuffing this audit exists to discourage. What matters is that a real number
+    of pages describe the target with intent, so that is what is measured.
     """
     for target, (label, _floor) in PRIORITY_MARKETS.items():
         linkers = inbound.get(target, {})
