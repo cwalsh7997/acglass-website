@@ -179,12 +179,10 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
   margin:clamp(3rem,8vh,5rem) var(--pad) 0;padding-top:1.6rem;border-top:1px solid rgba(191,212,239,.22)}
 .pp-more p{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 
-/* full-record wall */
-.pp-mosaic.wall{grid-auto-rows:clamp(200px,24vh,300px)}
-.pt.u{grid-column:span 4}
-@media(max-width:980px){.pt.u{grid-column:span 6}}
-@media(max-width:640px){.pt.u{grid-column:span 6}}
-.wall-head p.note{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+/* full-record wall — widescreen collage, same grammar as the featured mosaic */
+.pp-mosaic.wall{grid-auto-rows:clamp(250px,34vh,440px)}
+.pt.s12{grid-column:1/-1}
+@media(max-width:640px){.pp-mosaic.wall{grid-auto-rows:38vw}}
 </style>
 </head>
 <body>
@@ -555,7 +553,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">The full record</p>
     </div>
     <div class="pp-mosaic wall rv">
-      <a class="pt u" href="/ocean-prime-ft-lauderdale.html" aria-label="Ocean Prime at Pier Sixty-Six — view case study">
+      <a class="pt s8 r2" href="/ocean-prime-ft-lauderdale.html" aria-label="Ocean Prime at Pier Sixty-Six — view case study">
         <picture>
             <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-marina-aerial.avif" type="image/avif">
             <source srcset="/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-marina-aerial.webp" type="image/webp">
@@ -567,7 +565,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Ocean Prime at Pier Sixty-Six</h3>
         </div>
       </a>
-      <a class="pt u" href="/wave-food-hall-cocoa-beach.html" aria-label="Wave Food Hall — view case study">
+      <a class="pt" href="/wave-food-hall-cocoa-beach.html" aria-label="Wave Food Hall — view case study">
         <picture>
             <source srcset="/images/projects/wave-food-hall/hero-corner-exterior.avif" type="image/avif">
             <source srcset="/images/projects/wave-food-hall/hero-corner-exterior.webp" type="image/webp">
@@ -579,7 +577,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Wave Food Hall</h3>
         </div>
       </a>
-      <a class="pt u" href="/panther-national-clubhouse.html" aria-label="Panther National Clubhouse — view case study">
+      <a class="pt" href="/panther-national-clubhouse.html" aria-label="Panther National Clubhouse — view case study">
         <picture>
             <source srcset="/images/projects/panther-national/rendering.avif" type="image/avif">
             <source srcset="/images/projects/panther-national/rendering.webp" type="image/webp">
@@ -591,7 +589,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Panther National Clubhouse</h3>
         </div>
       </a>
-      <a class="pt u" href="/gulf-harbour-country-club.html" aria-label="Gulf Harbour Country Club — view case study">
+      <a class="pt s7" href="/gulf-harbour-country-club.html" aria-label="Gulf Harbour Country Club — view case study">
         <picture>
             <source srcset="/images/projects/gulf-harbour-renovation.avif" type="image/avif">
             <source srcset="/images/projects/gulf-harbour-renovation.webp" type="image/webp">
@@ -603,7 +601,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Gulf Harbour Country Club</h3>
         </div>
       </a>
-      <a class="pt u" href="/eau-palm-beach-resort.html" aria-label="Eau Palm Beach Resort   Spa — view case study">
+      <a class="pt s5" href="/eau-palm-beach-resort.html" aria-label="Eau Palm Beach Resort   Spa — view case study">
         <picture>
             <source srcset="/images/projects/eau-palm-beach/polpo-exterior-ocean.avif" type="image/avif">
             <source srcset="/images/projects/eau-palm-beach/polpo-exterior-ocean.webp" type="image/webp">
@@ -615,7 +613,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Eau Palm Beach Resort &amp; Spa</h3>
         </div>
       </a>
-      <a class="pt u" href="/waxins-west-palm-beach.html" aria-label="Waxin s West Palm Beach — view case study">
+      <a class="pt" href="/waxins-west-palm-beach.html" aria-label="Waxin s West Palm Beach — view case study">
         <picture>
             <source srcset="/images/projects/waxins-wpb-corner.avif" type="image/avif">
             <source srcset="/images/projects/waxins-wpb-corner.webp" type="image/webp">
@@ -627,7 +625,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Waxin&rsquo;s West Palm Beach</h3>
         </div>
       </a>
-      <a class="pt u" href="/atlantic-fields.html" aria-label="Atlantic Fields — view case study">
+      <a class="pt" href="/atlantic-fields.html" aria-label="Atlantic Fields — view case study">
         <picture>
             <source srcset="/images/projects/atlantic-fields/development/portfolio-hero.avif" type="image/avif">
             <source srcset="/images/projects/atlantic-fields/development/portfolio-hero.webp" type="image/webp">
@@ -639,7 +637,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Atlantic Fields</h3>
         </div>
       </a>
-      <a class="pt u" href="/atlantic-fields-golf-house.html" aria-label="Atlantic Fields Golf House — view case study">
+      <a class="pt" href="/atlantic-fields-golf-house.html" aria-label="Atlantic Fields Golf House — view case study">
         <picture>
             <source srcset="/images/projects/atlantic-fields-golf-house/card-golden-hour.avif" type="image/avif">
             <source srcset="/images/projects/atlantic-fields-golf-house/card-golden-hour.webp" type="image/webp">
@@ -651,7 +649,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Atlantic Fields Golf House</h3>
         </div>
       </a>
-      <a class="pt u" href="/atlantic-fields-performance-center.html" aria-label="Atlantic Fields Performance Center — view case study">
+      <a class="pt s8" href="/atlantic-fields-performance-center.html" aria-label="Atlantic Fields Performance Center — view case study">
         <picture>
             <source srcset="/images/projects/atlantic-fields-performance/card.avif" type="image/avif">
             <source srcset="/images/projects/atlantic-fields-performance/card.webp" type="image/webp">
@@ -663,7 +661,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Atlantic Fields Performance Center</h3>
         </div>
       </a>
-      <a class="pt u" href="/wild-blue-clubhouse.html" aria-label="Wild Blue at Waterside — view case study">
+      <a class="pt" href="/wild-blue-clubhouse.html" aria-label="Wild Blue at Waterside — view case study">
         <picture>
             <source srcset="/images/projects/wild-blue-clubhouse-hero.avif" type="image/avif">
             <source srcset="/images/projects/wild-blue-clubhouse-hero.webp" type="image/webp">
@@ -675,7 +673,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Wild Blue at Waterside</h3>
         </div>
       </a>
-      <a class="pt u" href="/savannas-ridge-clubhouse.html" aria-label="Savannas Ridge Clubhouse — view case study">
+      <a class="pt s5" href="/savannas-ridge-clubhouse.html" aria-label="Savannas Ridge Clubhouse — view case study">
         <picture>
             <source srcset="/images/projects/savannas-ridge-clubhouse/foyer-interior.avif" type="image/avif">
             <source srcset="/images/projects/savannas-ridge-clubhouse/foyer-interior.webp" type="image/webp">
@@ -687,7 +685,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Savannas Ridge Clubhouse</h3>
         </div>
       </a>
-      <a class="pt u" href="/stayapt-suites-lafayette.html" aria-label="StayApt Suites Lafayette — view case study">
+      <a class="pt s7" href="/stayapt-suites-lafayette.html" aria-label="StayApt Suites Lafayette — view case study">
         <picture>
             <source srcset="/images/projects/stayapt-lafayette/hero.avif" type="image/avif">
             <source srcset="/images/projects/stayapt-lafayette/hero.webp" type="image/webp">
@@ -709,7 +707,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">The full record</p>
     </div>
     <div class="pp-mosaic wall rv">
-      <a class="pt u" href="/bobcat-treasure-coast.html" aria-label="Bobcat of the Treasure Coast — view case study">
+      <a class="pt s8 r2" href="/bobcat-treasure-coast.html" aria-label="Bobcat of the Treasure Coast — view case study">
         <picture>
             <source srcset="/images/projects/bobcat-treasure-coast/aerial-exterior.avif" type="image/avif">
             <source srcset="/images/projects/bobcat-treasure-coast/aerial-exterior.webp" type="image/webp">
@@ -721,7 +719,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Bobcat of the Treasure Coast</h3>
         </div>
       </a>
-      <a class="pt u" href="/klus-lighting-vero-beach.html" aria-label="KLUS Lighting Showroom — view case study">
+      <a class="pt" href="/klus-lighting-vero-beach.html" aria-label="KLUS Lighting Showroom — view case study">
         <picture>
             <source srcset="/images/projects/klus-lighting/hero-front-wide.avif?v=2" type="image/avif">
             <source srcset="/images/projects/klus-lighting/hero-front-wide.webp?v=2" type="image/webp">
@@ -733,7 +731,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>KLUS Lighting Showroom</h3>
         </div>
       </a>
-      <a class="pt u" href="/compass-alton-town-center.html" aria-label="Compass at Alton Town Center — view case study">
+      <a class="pt" href="/compass-alton-town-center.html" aria-label="Compass at Alton Town Center — view case study">
         <picture>
             <source srcset="/images/projects/compass-alton/storefront.avif" type="image/avif">
             <source srcset="/images/projects/compass-alton/storefront.webp" type="image/webp">
@@ -745,7 +743,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Compass at Alton Town Center</h3>
         </div>
       </a>
-      <a class="pt u" href="/lake-park-innovation-center.html" aria-label="Lake Park Innovation Center — view case study">
+      <a class="pt s7" href="/lake-park-innovation-center.html" aria-label="Lake Park Innovation Center — view case study">
         <picture>
             <source srcset="/images/projects/lake-park-innovation/hero.avif" type="image/avif">
             <source srcset="/images/projects/lake-park-innovation/hero.webp" type="image/webp">
@@ -757,7 +755,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Lake Park Innovation Center</h3>
         </div>
       </a>
-      <a class="pt u" href="/hulett-environmental-port-st-lucie.html" aria-label="Hulett Environmental — view case study">
+      <a class="pt s5" href="/hulett-environmental-port-st-lucie.html" aria-label="Hulett Environmental — view case study">
         <picture>
             <source srcset="/images/projects/hulett-environmental/hero-sunset-front.avif?v=2" type="image/avif">
             <source srcset="/images/projects/hulett-environmental/hero-sunset-front.webp?v=2" type="image/webp">
@@ -769,7 +767,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Hulett Environmental</h3>
         </div>
       </a>
-      <a class="pt u" href="/sroa-vero-beach.html" aria-label="Storage Rentals of America — view case study">
+      <a class="pt" href="/sroa-vero-beach.html" aria-label="Storage Rentals of America — view case study">
         <picture>
             <source srcset="/images/projects/sroa-vero-beach/hero-entrance.avif" type="image/avif">
             <source srcset="/images/projects/sroa-vero-beach/hero-entrance.webp" type="image/webp">
@@ -781,7 +779,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Storage Rentals of America</h3>
         </div>
       </a>
-      <a class="pt u" href="/storage-king-winter-haven.html" aria-label="Storage King USA — view case study">
+      <a class="pt" href="/storage-king-winter-haven.html" aria-label="Storage King USA — view case study">
         <picture>
             <source srcset="/images/projects/storage-king-winter-haven/hero-storefront.avif" type="image/avif">
             <source srcset="/images/projects/storage-king-winter-haven/hero-storefront.webp" type="image/webp">
@@ -793,7 +791,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Storage King USA</h3>
         </div>
       </a>
-      <a class="pt u" href="/cubesmart-davie.html" aria-label="CubeSmart Self Storage — view case study">
+      <a class="pt" href="/cubesmart-davie.html" aria-label="CubeSmart Self Storage — view case study">
         <picture>
             <source srcset="/images/projects/cubesmart-davie/hero.avif" type="image/avif">
             <source srcset="/images/projects/cubesmart-davie/hero.webp" type="image/webp">
@@ -805,7 +803,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>CubeSmart Self Storage</h3>
         </div>
       </a>
-      <a class="pt u" href="/turbine-technologies-jupiter.html" aria-label="Turbine Technologies — view case study">
+      <a class="pt s8" href="/turbine-technologies-jupiter.html" aria-label="Turbine Technologies — view case study">
         <picture>
             <source srcset="/images/projects/turbine-technologies/entrance.avif" type="image/avif">
             <source srcset="/images/projects/turbine-technologies/entrance.webp" type="image/webp">
@@ -817,7 +815,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Turbine Technologies</h3>
         </div>
       </a>
-      <a class="pt u" href="/medley-business-park.html" aria-label="Medley Business Park — view case study">
+      <a class="pt" href="/medley-business-park.html" aria-label="Medley Business Park — view case study">
         <picture>
             <source srcset="/images/projects/medley-business-park/street-view.avif" type="image/avif">
             <source srcset="/images/projects/medley-business-park/street-view.webp" type="image/webp">
@@ -829,7 +827,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Medley Business Park</h3>
         </div>
       </a>
-      <a class="pt u" href="/prestige-marble-bonita-springs.html" aria-label="Prestige Marble   Designs — view case study">
+      <a class="pt s5" href="/prestige-marble-bonita-springs.html" aria-label="Prestige Marble   Designs — view case study">
         <picture>
             <source srcset="/images/projects/prestige-marble/hero.avif" type="image/avif">
             <source srcset="/images/projects/prestige-marble/hero.webp" type="image/webp">
@@ -841,7 +839,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Prestige Marble &amp; Designs</h3>
         </div>
       </a>
-      <a class="pt u" href="/wave-haven-cocoa-beach.html" aria-label="Wave Haven — view case study">
+      <a class="pt s7" href="/wave-haven-cocoa-beach.html" aria-label="Wave Haven — view case study">
         <picture>
             <source srcset="/images/projects/wave-haven/hero-commercial.avif" type="image/avif">
             <source srcset="/images/projects/wave-haven/hero-commercial.webp" type="image/webp">
@@ -853,7 +851,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Wave Haven</h3>
         </div>
       </a>
-      <a class="pt u" href="/project-lift-hobe-sound.html" aria-label="Project LIFT — view case study">
+      <a class="pt s7" href="/project-lift-hobe-sound.html" aria-label="Project LIFT — view case study">
         <picture>
             <source srcset="/images/projects/project-lift/hero-front.avif" type="image/avif">
             <source srcset="/images/projects/project-lift/hero-front.webp" type="image/webp">
@@ -865,7 +863,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Project LIFT</h3>
         </div>
       </a>
-      <a class="pt u" href="/ifly-miami.html" aria-label="iFLY Miami Indoor Skydiving — view case study">
+      <a class="pt s5" href="/ifly-miami.html" aria-label="iFLY Miami Indoor Skydiving — view case study">
         <picture><img src="/images/projects/ifly-miami-exterior.jpg" alt="iFLY Miami Indoor Skydiving — exterior glazing and wind tunnel" width="407" height="274" loading="lazy" decoding="async"></picture>
         <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         <div class="pt-cap">
@@ -883,7 +881,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">The full record</p>
     </div>
     <div class="pp-mosaic wall rv">
-      <a class="pt u" href="/hardy-world-melbourne.html" aria-label="Hardy World 4.0 — view case study">
+      <a class="pt s8 r2" href="/hardy-world-melbourne.html" aria-label="Hardy World 4.0 — view case study">
         <picture>
             <source srcset="/images/projects/hardy-world/hero-twilight.avif" type="image/avif">
             <source srcset="/images/projects/hardy-world/hero-twilight.webp" type="image/webp">
@@ -895,7 +893,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Hardy World 4.0</h3>
         </div>
       </a>
-      <a class="pt u" href="/dale-mabry-retail-tampa.html" aria-label="Dale Mabry Retail — view case study">
+      <a class="pt" href="/dale-mabry-retail-tampa.html" aria-label="Dale Mabry Retail — view case study">
         <picture>
             <source srcset="/images/projects/dale-mabry-retail/hero-entry.avif" type="image/avif">
             <source srcset="/images/projects/dale-mabry-retail/hero-entry.webp" type="image/webp">
@@ -907,7 +905,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Dale Mabry Retail</h3>
         </div>
       </a>
-      <a class="pt u" href="/baron-shoppes-tradition.html" aria-label="Baron Shoppes of Tradition — view case study">
+      <a class="pt" href="/baron-shoppes-tradition.html" aria-label="Baron Shoppes of Tradition — view case study">
         <picture>
             <source srcset="/images/projects/baron-shoppes-tradition.avif" type="image/avif">
             <source srcset="/images/projects/baron-shoppes-tradition.webp" type="image/webp">
@@ -919,7 +917,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Baron Shoppes of Tradition</h3>
         </div>
       </a>
-      <a class="pt u" href="/harbour-cay-fort-pierce.html" aria-label="Harbour Cay II — view case study">
+      <a class="pt s7" href="/harbour-cay-fort-pierce.html" aria-label="Harbour Cay II — view case study">
         <picture>
             <source srcset="/images/projects/harbour-cay/dunkin-corner.avif" type="image/avif">
             <source srcset="/images/projects/harbour-cay/dunkin-corner.webp" type="image/webp">
@@ -931,7 +929,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Harbour Cay II</h3>
         </div>
       </a>
-      <a class="pt u" href="/shoppes-westlake-point.html" aria-label="Shoppes at Westlake Point — view case study">
+      <a class="pt s5" href="/shoppes-westlake-point.html" aria-label="Shoppes at Westlake Point — view case study">
         <picture>
             <source srcset="/images/projects/shoppes-westlake-point.avif" type="image/avif">
             <source srcset="/images/projects/shoppes-westlake-point.webp" type="image/webp">
@@ -943,7 +941,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Shoppes at Westlake Point</h3>
         </div>
       </a>
-      <a class="pt u" href="/aspen-dental-edgewater.html" aria-label="Aspen Dental Plaza — view case study">
+      <a class="pt" href="/aspen-dental-edgewater.html" aria-label="Aspen Dental Plaza — view case study">
         <picture>
             <source srcset="/images/projects/aspen-dental-edgewater/hero-front.avif" type="image/avif">
             <source srcset="/images/projects/aspen-dental-edgewater/hero-front.webp" type="image/webp">
@@ -955,7 +953,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Aspen Dental Plaza</h3>
         </div>
       </a>
-      <a class="pt u" href="/el-car-wash-northlake.html" aria-label="El Car Wash Northlake — view case study">
+      <a class="pt" href="/el-car-wash-northlake.html" aria-label="El Car Wash Northlake — view case study">
         <picture>
             <source srcset="/images/projects/el-car-wash-northlake/exterior-day.avif" type="image/avif">
             <source srcset="/images/projects/el-car-wash-northlake/exterior-day.webp" type="image/webp">
@@ -967,7 +965,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>El Car Wash Northlake</h3>
         </div>
       </a>
-      <a class="pt u" href="/westlake-hialeah-retrofit.html" aria-label="Westlake Shopping Center — view case study">
+      <a class="pt" href="/westlake-hialeah-retrofit.html" aria-label="Westlake Shopping Center — view case study">
         <picture>
             <source srcset="/images/projects/westlake-hialeah/storefront-detail.avif" type="image/avif">
             <source srcset="/images/projects/westlake-hialeah/storefront-detail.webp" type="image/webp">
@@ -979,7 +977,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Westlake Shopping Center</h3>
         </div>
       </a>
-      <a class="pt u" href="/causeway-building-bonita-springs.html" aria-label="Causeway Building — view case study">
+      <a class="pt s12" href="/causeway-building-bonita-springs.html" aria-label="Causeway Building — view case study">
         <picture>
             <source srcset="/images/projects/causeway-building/hero.avif" type="image/avif">
             <source srcset="/images/projects/causeway-building/hero.webp" type="image/webp">
@@ -1001,7 +999,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">The full record</p>
     </div>
     <div class="pp-mosaic wall rv">
-      <a class="pt u" href="/gulfside-twelve.html" aria-label="Gulfside Twelve — view case study">
+      <a class="pt s8 r2" href="/gulfside-twelve.html" aria-label="Gulfside Twelve — view case study">
         <picture>
             <source srcset="/images/projects/gulfside-twelve/hero-twilight-beachfront.avif" type="image/avif">
             <source srcset="/images/projects/gulfside-twelve/hero-twilight-beachfront.webp" type="image/webp">
@@ -1013,7 +1011,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Gulfside Twelve</h3>
         </div>
       </a>
-      <a class="pt u" href="/bradley-daytona.html" aria-label="The Bradley Daytona — view case study">
+      <a class="pt" href="/bradley-daytona.html" aria-label="The Bradley Daytona — view case study">
         <picture>
             <source srcset="/images/projects/bradley-daytona.avif" type="image/avif">
             <source srcset="/images/projects/bradley-daytona.webp" type="image/webp">
@@ -1025,7 +1023,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>The Bradley Daytona</h3>
         </div>
       </a>
-      <a class="pt u" href="/villa-lonz-riviera-beach.html" aria-label="Villa L Onz — view case study">
+      <a class="pt" href="/villa-lonz-riviera-beach.html" aria-label="Villa L Onz — view case study">
         <picture>
             <source srcset="/images/projects/villa-lonz/rendering-hero.avif" type="image/avif">
             <source srcset="/images/projects/villa-lonz/rendering-hero.webp" type="image/webp">
@@ -1037,7 +1035,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Villa L&rsquo;Onz</h3>
         </div>
       </a>
-      <a class="pt u" href="/tradewinds-hobe-sound.html" aria-label="Tradewinds Hobe Sound — view case study">
+      <a class="pt s5" href="/tradewinds-hobe-sound.html" aria-label="Tradewinds Hobe Sound — view case study">
         <picture>
             <source srcset="/images/projects/tradewinds-hobe-sound/aerial-community.avif" type="image/avif">
             <source srcset="/images/projects/tradewinds-hobe-sound/aerial-community.webp" type="image/webp">
@@ -1049,7 +1047,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Tradewinds Hobe Sound</h3>
         </div>
       </a>
-      <a class="pt u" href="/pointe-palm-bay.html" aria-label="The Pointe at Palm Bay — view case study">
+      <a class="pt s7" href="/pointe-palm-bay.html" aria-label="The Pointe at Palm Bay — view case study">
         <picture>
             <source srcset="/images/projects/pointe-palm-bay/aerial-campus.avif" type="image/avif">
             <source srcset="/images/projects/pointe-palm-bay/aerial-campus.webp" type="image/webp">
@@ -1061,7 +1059,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>The Pointe at Palm Bay</h3>
         </div>
       </a>
-      <a class="pt u" href="/estero-vista-fort-myers.html" aria-label="Estero Vista Apartments — view case study">
+      <a class="pt s7" href="/estero-vista-fort-myers.html" aria-label="Estero Vista Apartments — view case study">
         <picture>
             <source srcset="/images/projects/estero-vista/hero-building.avif" type="image/avif">
             <source srcset="/images/projects/estero-vista/hero-building.webp" type="image/webp">
@@ -1073,7 +1071,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Estero Vista Apartments</h3>
         </div>
       </a>
-      <a class="pt u" href="/illumina-fort-myers.html" aria-label="Ilumina at GCTC — view case study">
+      <a class="pt s5" href="/illumina-fort-myers.html" aria-label="Ilumina at GCTC — view case study">
         <picture>
             <source srcset="/images/projects/illumina-fort-myers/hero.avif" type="image/avif">
             <source srcset="/images/projects/illumina-fort-myers/hero.webp" type="image/webp">
@@ -1085,7 +1083,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Ilumina at GCTC</h3>
         </div>
       </a>
-      <a class="pt u" href="/imperial-crossings-bonita-springs.html" aria-label="Imperial Crossings — view case study">
+      <a class="pt" href="/imperial-crossings-bonita-springs.html" aria-label="Imperial Crossings — view case study">
         <picture>
             <source srcset="/images/projects/imperial-crossings/hero.avif" type="image/avif">
             <source srcset="/images/projects/imperial-crossings/hero.webp" type="image/webp">
@@ -1097,7 +1095,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Imperial Crossings</h3>
         </div>
       </a>
-      <a class="pt u" href="/siena-lakes-naples.html" aria-label="Siena Lakes Naples — view case study">
+      <a class="pt" href="/siena-lakes-naples.html" aria-label="Siena Lakes Naples — view case study">
         <picture>
             <source srcset="/images/projects/siena-lakes-naples.avif" type="image/avif">
             <source srcset="/images/projects/siena-lakes-naples.webp" type="image/webp">
@@ -1109,7 +1107,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Siena Lakes Naples</h3>
         </div>
       </a>
-      <a class="pt u" href="/lucie-at-tradition.html" aria-label="Lucie at Tradition — view case study">
+      <a class="pt" href="/lucie-at-tradition.html" aria-label="Lucie at Tradition — view case study">
         <picture>
             <source srcset="/images/projects/lucie-at-tradition-clubhouse.avif" type="image/avif">
             <source srcset="/images/projects/lucie-at-tradition-clubhouse.webp" type="image/webp">
@@ -1131,7 +1129,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
       <p class="mono">The full record</p>
     </div>
     <div class="pp-mosaic wall rv">
-      <a class="pt u" href="/cudjoe-key-fire-station.html" aria-label="Cudjoe Key Fire Station 11 — view case study">
+      <a class="pt s8 r2" href="/cudjoe-key-fire-station.html" aria-label="Cudjoe Key Fire Station 11 — view case study">
         <picture>
             <source srcset="/images/projects/cudjoe-key-fire-station.avif" type="image/avif">
             <source srcset="/images/projects/cudjoe-key-fire-station.webp" type="image/webp">
@@ -1143,7 +1141,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Cudjoe Key Fire Station 11</h3>
         </div>
       </a>
-      <a class="pt u" href="/city-of-haines-emergency.html" aria-label="Haines City EOC — view case study">
+      <a class="pt" href="/city-of-haines-emergency.html" aria-label="Haines City EOC — view case study">
         <picture>
             <source srcset="/images/projects/haines-city-eoc.avif" type="image/avif">
             <source srcset="/images/projects/haines-city-eoc.webp" type="image/webp">
@@ -1155,7 +1153,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Haines City EOC</h3>
         </div>
       </a>
-      <a class="pt u" href="/indiantown-high-school.html" aria-label="Indiantown High School — view case study">
+      <a class="pt" href="/indiantown-high-school.html" aria-label="Indiantown High School — view case study">
         <picture>
             <source srcset="/images/projects/indiantown-high-school/interior.avif" type="image/avif">
             <source srcset="/images/projects/indiantown-high-school/interior.webp" type="image/webp">
@@ -1167,7 +1165,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>Indiantown High School</h3>
         </div>
       </a>
-      <a class="pt u" href="/hca-cape-coral-emergency.html" aria-label="HCA Cape Coral Emergency — view case study">
+      <a class="pt s7" href="/hca-cape-coral-emergency.html" aria-label="HCA Cape Coral Emergency — view case study">
         <picture>
             <source srcset="/images/projects/hca-cape-coral/hero.avif" type="image/avif">
             <source srcset="/images/projects/hca-cape-coral/hero.webp" type="image/webp">
@@ -1179,7 +1177,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
           <h3>HCA Cape Coral Emergency</h3>
         </div>
       </a>
-      <a class="pt u" href="/ginsberg-eye-center.html" aria-label="Ginsberg Eye Center — view case study">
+      <a class="pt s5" href="/ginsberg-eye-center.html" aria-label="Ginsberg Eye Center — view case study">
         <picture>
             <source srcset="/images/projects/ginsberg-eye-center/hero-entry.avif" type="image/avif">
             <source srcset="/images/projects/ginsberg-eye-center/hero-entry.webp" type="image/webp">
