@@ -132,7 +132,7 @@
     .cform .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width:560px){.cform .form-grid{grid-template-columns:1fr}}
     .cform .form-group{margin-bottom:18px}
-    .cform label{display:block;font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+    .cform label{display:block;font-family:var(--mono);font-size:0.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
     .cform input:not([name="_honey"]),.cform select,.cform textarea{width:100%;min-height:48px;padding:12px 14px;font:inherit;font-size:.95rem;color:var(--ink);background:var(--paper);border:1px solid var(--hairline-2);border-radius:var(--radius);transition:border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
     .cform textarea{min-height:150px;resize:vertical}
     .cform input::placeholder,.cform textarea::placeholder{color:var(--muted)}
@@ -148,11 +148,11 @@
     .dc-card h2{font-size:1.3rem;margin-bottom:6px}
     .dc-rows{margin-top:18px;border-top:1px solid var(--hairline)}
     .dc-rows .row{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--hairline);font-size:.94rem}
-    .dc-rows .row .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
-    .dc-rows .row .d{color:var(--ink);font-weight:550;line-height:1.55}
+    .dc-rows .row .k{font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+    .dc-rows .row .d{color:var(--ink);font-weight:600;line-height:1.55}
     .dc-rows .row .d a{color:var(--navy);border-bottom:1px solid var(--hairline-2);transition:border-color var(--dur-1)}
     .dc-rows .row .d a:hover{border-color:var(--red)}
-    .dc-rows .row .d .sub{display:block;font-weight:450;color:var(--body);font-size:.86rem;margin-top:3px}
+    .dc-rows .row .d .sub{display:block;font-weight:400;color:var(--body);font-size:.86rem;margin-top:3px}
   </style>
 </head>
 <body>
@@ -333,7 +333,7 @@
                     });
                   }
                   status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
-                  status.style.color = '#FBBF24';
+                  status.style.color = '#B45309';
                 }
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
               })
@@ -346,7 +346,7 @@
                   });
                 }
                 status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
-                status.style.color = '#FBBF24';
+                status.style.color = '#B45309';
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
               });
 
