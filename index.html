@@ -773,14 +773,36 @@
   var nav=document.getElementById('siteNav');
   addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
   var film=document.getElementById('film');
+  // Reveal is decoupled from motion preference: reduced-motion users still
+  // need the content, just without the animation. The fade only runs when
+  // motion is allowed.
+  var revealTargets=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){
+    // Show everything immediately for reduced-motion users and legacy browsers
+    revealTargets.forEach(function(el){el.classList.add('in')});
+  } else {
+    // Pass 1: any .rv already in the viewport at page load reveals immediately
+    // (this fixes above-the-fold sections that never crossed a threshold).
+    revealTargets.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom > 0){ el.classList.add('in'); }
+    });
+    // Pass 2: observe the rest and reveal on scroll into view.
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+    revealTargets.forEach(function(el){if(!el.classList.contains('in'))io.observe(el)});
+    // Pass 3 (safety net): after 2s any still-hidden .rv is revealed. Prevents
+    // permanently-blank sections if IO callbacks are dropped or the user never
+    // scrolls past a reveal threshold.
+    setTimeout(function(){
+      revealTargets.forEach(function(el){if(!el.classList.contains('in'))el.classList.add('in')});
+    },2000);
+  }
   if(!reduce){
     var v=document.getElementById('heroVideo');
     var s=document.createElement('source'); s.src='/videos/hero-360-720.mp4'; s.type='video/mp4';
     v.appendChild(s); v.load();
     v.addEventListener('canplay',function(){ v.play().catch(function(){}); });
     requestAnimationFrame(function(){ setTimeout(function(){ film.classList.add('lit'); },300); });
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
   } else {
     film.classList.add('lit');
   }
