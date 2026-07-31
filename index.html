@@ -799,7 +799,7 @@
   }
   if(!reduce){
     var v=document.getElementById('heroVideo');
-    var s=document.createElement('source'); s.src='/videos/hero-360-720.mp4'; s.type='video/mp4';
+    var s=document.createElement('source'); s.src='/videos/hero-360-720-loop.mp4'; s.type='video/mp4';
     v.appendChild(s); v.load();
     v.addEventListener('canplay',function(){ v.play().catch(function(){}); });
     requestAnimationFrame(function(){ setTimeout(function(){ film.classList.add('lit'); },300); });
