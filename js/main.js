@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       mouseY = e.clientY;
       dot.style.left = mouseX + 'px';
       dot.style.top = mouseY + 'px';
-    });
+    }, { passive: true });
 
     function animateRing() {
       ringX += (mouseX - ringX) * 0.15;
@@ -44,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
 
   window.addEventListener('scroll', () => {
+    // Sprint 011 (round 2): guard against pages using the newer `.hd-nav`
+    // header markup, where `.nav` doesn't exist and `nav` is null. Those
+    // pages' scroll-driven header state is handled by js/acg-chrome.js;
+    // this listener only needs to run on legacy `.nav` pages.
+    if (!nav) return;
     if (window.pageYOffset > 80) {
       nav.classList.add('scrolled');
     } else {
@@ -52,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.remove('scrolled');
       }
     }
-  });
+  }, { passive: true });
 
   if (navToggle) {
     navToggle.addEventListener('click', () => {
@@ -158,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.addEventListener('scroll', () => {
         const scrollPercentage = container.scrollLeft / (container.scrollWidth - container.clientWidth);
         progressBar.style.transform = `translateX(${scrollPercentage * (200 - progressBar.offsetWidth)}px)`;
-      });
+      }, { passive: true });
     }
   });
 
@@ -236,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (scrolled < window.innerHeight) {
         heroVisual.style.transform = `translateY(${scrolled * 0.3}px)`;
       }
-    });
+    }, { passive: true });
   }
 
 });
