@@ -523,3 +523,35 @@ p{max-width:68ch}
 
 /* Sprint 011: unified tabular-nums for stat/metric numbers (P1 typography) */
 .stat-num, [class*="-stat-num"], [class*="-metric-num"] { font-variant-numeric: tabular-nums; }
+
+/* Sprint 011 (round 2): minimal shim for send-plans.html after removing its
+   dual-load of css/style.css. Covers classes used only by that page's
+   legacy footer/CTA/label markup that have no acg2026.css equivalent.
+   Mirrors style.css's rules, re-tokenized to acg2026.css variables. */
+.container{width:100%;max-width:1400px;margin:0 auto;padding:0 clamp(20px,5vw,60px)}
+.section{padding:clamp(48px,7vw,96px) 0;position:relative}
+.label{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.label .line{width:40px;height:1px;background:var(--red)}
+.accent{color:var(--red)}
+.btn-primary{background:var(--red);color:#fff}
+.btn-primary:hover{background:var(--red-press,#c01019);transform:translateY(-2px);box-shadow:0 8px 24px rgba(225,19,32,.32)}
+.btn-lg{padding:20px 48px;font-size:1rem}
+.cta-section{padding:clamp(80px,12vw,160px) 0;text-align:center;position:relative;overflow:hidden}
+.cta-section .container{position:relative;z-index:2}
+.text-massive{font-size:clamp(4rem,12vw,14rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:rgba(255,255,255,.04);user-select:none}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:.025}
+.cursor-dot,.cursor-ring{display:none!important}
+.footer{padding:clamp(60px,8vw,100px) 0 30px;border-top:1px solid rgba(255,255,255,.12);background:var(--navy-deep);color:rgba(255,255,255,.78)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:60px}
+.footer-brand .logo-img{height:32px;width:auto}
+.footer-brand p{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.65);margin-top:20px;max-width:300px}
+.footer-links{display:grid;gap:2px}
+.footer-links a{display:block;padding:6px 0;font-size:.85rem;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none}
+.footer-links a:hover{color:#fff}
+.footer-contact p{font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.footer-contact svg{width:14px;height:14px;flex-shrink:0;color:var(--red)}
+.footer-bottom{padding-top:30px;border-top:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.nav-logo img,.nav-logo .logo-img{height:38px;width:auto}
+@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr!important;gap:32px}.footer-bottom{flex-direction:column;text-align:center;gap:8px}.cta-section .text-massive{font-size:clamp(3rem,15vw,6rem);overflow:hidden;max-width:100%}}

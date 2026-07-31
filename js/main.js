@@ -44,6 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
 
   window.addEventListener('scroll', () => {
+    // Sprint 011 (round 2): guard against pages using the newer `.hd-nav`
+    // header markup, where `.nav` doesn't exist and `nav` is null. Those
+    // pages' scroll-driven header state is handled by js/acg-chrome.js;
+    // this listener only needs to run on legacy `.nav` pages.
+    if (!nav) return;
     if (window.pageYOffset > 80) {
       nav.classList.add('scrolled');
     } else {

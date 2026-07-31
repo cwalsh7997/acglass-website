@@ -33,3 +33,8 @@
 
 /* Sprint 011: unified tabular-nums for stat/metric numbers (P1 typography) */
 .stat-num, [class*="-stat-num"], [class*="-metric-num"] { font-variant-numeric: tabular-nums; }
+
+/* Sprint 011 (round 2): canonical "locked" hero gradient, made available as an
+   opt-in utility rather than forced onto pages with different hero treatments.
+   Apply class="hero-bg-navy" to any hero/section element that should use it. */
+.hero-bg-navy{background:linear-gradient(180deg,#050a12,#0e284f)}
