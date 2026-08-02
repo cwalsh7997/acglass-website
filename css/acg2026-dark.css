@@ -1,0 +1,73 @@
+/* ============================================================
+   ACG 2026 — DARK THEME LAYER for case-study pages
+   Loads AFTER acg2026.css. Flips the light "Spec Sheet" tokens
+   to the portfolio dark system (acg-proof family): #0A0E16 ground,
+   white ink, red accent. Content markup untouched.
+   ============================================================ */
+
+:root{
+  --paper:#0A0E16;
+  --paper-2:#0E1524;
+  --paper-3:#121C30;
+  --ink:#FFFFFF;
+  --body:#B8C4D6;
+  --muted:#8FA0B8;
+  --hairline:rgba(255,255,255,.10);
+  --hairline-2:rgba(255,255,255,.24);
+  --shadow-1:0 1px 2px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.35);
+  --shadow-2:0 2px 6px rgba(0,0,0,.55),0 16px 40px rgba(0,0,0,.45);
+}
+
+/* ---------- header chrome: dark glass, white logo always ---------- */
+.hd.scrolled{background:rgba(7,11,18,.92);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.hd.scrolled .hd-logo .logo-light{display:block}
+.hd.scrolled .hd-logo .logo-dark{display:none}
+.hd.scrolled .hd-nav>a,.hd.scrolled .hd-phone{color:#fff}
+.hd.hd-solid:not(.scrolled){background:rgba(7,11,18,.92)}
+.hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:block}
+.hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:none}
+.hd.hd-solid:not(.scrolled) .hd-nav>a,
+.hd.hd-solid:not(.scrolled) .hd-phone{color:#fff!important}
+.hd-nav>a:hover,.hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:#fff;opacity:.75}
+.hd-burger span{background:#fff}
+.hd-mobile{background:rgba(7,11,18,.98)}
+.hd-mobile a{color:#fff}
+
+/* ---------- navy-as-text remaps (navy is invisible on dark) ---------- */
+.k-label--navy,.sec-link,.partners-list span,.svc-cell .go,.lead-badge,.prose a{color:#fff}
+.btn-line{color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-line:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.06)}
+.strip-btn{color:#fff;border-color:rgba(255,255,255,.4)}
+.strip-btn:hover{color:#fff;border-color:#fff}
+.sec-link:hover{color:#fff;opacity:.8}
+.prose a{text-decoration-color:var(--red)}
+
+/* ---------- buttons ---------- */
+.btn-navy{background:#fff;color:#0E284F}
+.btn-navy:hover{background:#E8EDF5;color:#081A36}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+
+/* ---------- surfaces that assumed paper ---------- */
+.card{background:var(--paper-2);border-color:var(--hairline)}
+.card:hover{box-shadow:var(--shadow-1);border-color:var(--hairline-2)}
+table{color:var(--body)}
+thead{background:var(--paper-3)}
+tbody tr{border-color:var(--hairline)}
+
+/* watermark numerals & paper textures — gridpaper/grain are SECTION modifiers,
+   never dim the section itself; kill the paper texture on dark instead */
+.gridpaper{background-image:none}
+.grain::after{opacity:.04}
+.bignum{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.10)}
+
+/* images sit on dark ground */
+img{background:#05070C}
+.hero-media img{background:none}
+
+/* selection */
+::selection{background:#E11320;color:#fff}
+
+/* v2 patches */
+.hd-phone{color:#B8C4D6!important}
+.hd:not(.scrolled) .hd-phone,.hd.hd-solid:not(.scrolled) .hd-phone{color:#fff!important}

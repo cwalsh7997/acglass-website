@@ -555,3 +555,11 @@ p{max-width:68ch}
 .nav-logo img,.nav-logo .logo-img{height:38px;width:auto}
 @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media (max-width:560px){.footer-grid{grid-template-columns:1fr!important;gap:32px}.footer-bottom{flex-direction:column;text-align:center;gap:8px}.cta-section .text-massive{font-size:clamp(3rem,15vw,6rem);overflow:hidden;max-width:100%}}
+
+/* Bugfix 2026-08-02: closed mobile menu bled its bottom 31px (red CTA) into the
+   viewport top on every page — translateY(-110%) undershoots a fixed panel that
+   starts at 76px. Hide it fully when closed; keep the slide animation. */
+@media (max-width:1080px){
+  .hd-mobile{visibility:hidden;transition:transform var(--dur-2) var(--ease),visibility 0s linear var(--dur-2)}
+  .hd-mobile.open{visibility:visible;transition:transform var(--dur-2) var(--ease),visibility 0s}
+}
