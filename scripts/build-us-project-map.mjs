@@ -88,18 +88,13 @@ runMapshaper([
 
 const us = svgBody(usSvg);
 const florida = svgBody(flSvg);
-const totals = projects.reduce((acc, project) => {
-  acc[project.state] = (acc[project.state] || 0) + 1;
-  return acc;
-}, {});
-
 const output = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" role="img" aria-labelledby="us-map-title us-map-desc">
   <title id="us-map-title">American Commercial Glass project locations across the United States</title>
-  <desc id="us-map-desc">${projects.length} verified ACG project records: ${totals.FL} in Florida, ${totals.LA} in Louisiana, and ${totals.TN} in Tennessee. White markers identify glazing projects and red markers identify supply-only material orders. The Florida inset separates projects sharing the same metro area.</desc>
+  <desc id="us-map-desc">Verified ACG work across Florida, Louisiana, and Tennessee. White markers identify glazing projects and red markers identify supply-only material orders. The Florida inset separates projects sharing the same metro area.</desc>
   <metadata>State boundaries simplified from the U.S. Census Bureau 2025 TIGER/Line state boundary. Markers are plotted at city level and fanned slightly when multiple projects share one city.</metadata>
   <rect width="1000" height="680" fill="#080D16"/>
   <text x="30" y="36" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="2.2">PROJECT FOOTPRINT</text>
-  <text x="970" y="36" text-anchor="end" fill="#8FA3BF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="1.8">${projects.length} VERIFIED RECORDS</text>
+  <text x="970" y="36" text-anchor="end" fill="#8FA3BF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="1.8">FLORIDA + BEYOND</text>
   <line x1="30" y1="54" x2="970" y2="54" stroke="#526273" stroke-width="1"/>
   <svg x="22" y="72" width="700" height="440" viewBox="${us.viewBox}" preserveAspectRatio="xMidYMid meet">
     ${us.body}
@@ -113,7 +108,7 @@ const output = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" w
     <text x="644" y="282" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.2">MIDWAY, TN</text>
   </g>
   <rect x="596" y="306" width="380" height="346" rx="3" fill="#0A111C" stroke="#526273"/>
-  <text x="618" y="334" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.6">FLORIDA / ${totals.FL} RECORDS</text>
+  <text x="618" y="334" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.6">FLORIDA</text>
   <line x1="618" y1="348" x2="954" y2="348" stroke="#526273" stroke-width="1"/>
   <svg x="614" y="360" width="344" height="276" viewBox="${florida.viewBox}" preserveAspectRatio="xMidYMid meet">
     ${florida.body}
