@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e284f">
-  <title>ACG Project Map — Florida Commercial Glazing Projects</title>
-  <meta name="description" content="Interactive map of American Commercial Glass projects across Florida. Click any pin to see project details, scope, systems installed, and completion year.">
+  <title>ACG Project Map — Verified Commercial Glazing Projects</title>
+  <meta name="description" content="Interactive map of 75 source-backed American Commercial Glass project records across Florida, Louisiana, and Tennessee, including executed supply-only orders.">
   <link rel="canonical" href="https://acglass.com/project-map.html">
-  <meta property="og:title" content="ACG Project Map — Florida Commercial Glazing">
-  <meta property="og:description" content="Interactive map of ACG's Florida commercial glazing projects.">
+  <meta property="og:title" content="ACG Project Map — Verified Commercial Glazing Work">
+  <meta property="og:description" content="75 source-backed project records across Florida, Louisiana, and Tennessee.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/project-map.html">
   <meta property="og:image" content="https://acglass.com/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg">
@@ -20,7 +20,7 @@
 
   <style>
     .pmap-hero { padding: 100px 0 30px; max-width: 1180px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
-    .pmap-hero .eyebrow { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent, #E11320); margin-bottom: 14px; font-weight: 700; }
+    .pmap-hero .eyebrow { font-family: var(--mono, monospace); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: #ff646d; margin-bottom: 14px; font-weight: 700; }
     .pmap-hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.04; letter-spacing: -0.025em; margin: 0 0 22px; }
     .pmap-hero .lead { font-size: 1.04rem; line-height: 1.65; color: rgba(255,255,255,0.84); max-width: 720px; }
 
@@ -42,7 +42,7 @@
       "@type": "WebPage",
       "@id": "https://acglass.com/project-map.html#webpage",
       "name": "ACG Commercial Glazing Project Map",
-      "description": "Interactive map of commercial glazing projects installed by American Commercial Glass across Florida and the Southeast — storefront, curtainwall, hospitality, healthcare, multifamily, and federal.",
+      "description": "Interactive map of 75 source-backed American Commercial Glass project records across Florida, Louisiana, and Tennessee, including two executed supply-only orders.",
       "url": "https://acglass.com/project-map.html",
       "publisher": {
         "@id": "https://acglass.com/#organization",
@@ -124,8 +124,8 @@
   <main>
     <section class="pmap-hero">
       <div class="eyebrow">Project Map</div>
-      <h1>48+ projects across Florida.</h1>
-      <p class="lead">Every pin is a real ACG installation — hospitality, multifamily, healthcare, retail, Class-A office, and critical-facility glazing across Florida's three biggest commercial markets. Click any pin for project details and links to full case studies.</p>
+      <h1><span id="project-count">75</span> source-backed project records.</h1>
+      <p class="lead">Completed work, awarded/current projects, and executed material orders across Florida, Louisiana, and Tennessee. White pins are glazing projects; red pins are supply-only orders. Locations are plotted at city level.</p>
     </section>
 
     <div id="project-map"></div>
@@ -139,7 +139,7 @@
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa — Nashville, TN opening Q3 2026.</p>
       </div>
       <nav aria-label="Company">
-        <h4>Company</h4>
+        <div class="ft-h">Company</div>
         <ul>
           <li><a href="/about.html">About</a></li>
           <li><a href="/leadership.html">Leadership</a></li>
@@ -150,7 +150,7 @@
         </ul>
       </nav>
       <nav aria-label="Services">
-        <h4>Services</h4>
+        <div class="ft-h">Services</div>
         <ul>
           <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
           <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
@@ -161,7 +161,7 @@
         </ul>
       </nav>
       <div>
-        <h4>Contact</h4>
+        <div class="ft-h">Contact</div>
         <ul>
           <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
           <li><a href="tel:+17724867711">(772) 486-7711</a></li>
@@ -179,8 +179,7 @@
   </footer>
 
   <script>
-    const projects = [{"slug": "1172-s-harbor", "name": "1172 S Harbor", "city": "Boca Raton", "county": "Palm Beach", "scope": "Luxury residential envelope", "systems": "Euro-Wall multi-slide, PGT impact", "completion": "2024", "lat": 26.3683, "lng": -80.1289, "has_page": true}, {"slug": "736-lagoon-dr", "name": "736 Lagoon Drive", "city": "North Palm Beach", "county": "Palm Beach", "scope": "Waterfront luxury envelope", "systems": "Euro-Wall multi-slide, PGT impact", "completion": "2024", "lat": 26.8175, "lng": -80.0828, "has_page": true}, {"slug": "atlantic-fields", "name": "Atlantic Fields", "city": "Hobe Sound", "county": "Martin", "scope": "Multi-phase development glazing; Sales Center, Golf House, Performance Center", "systems": "Euro-Wall, ESWindows", "completion": "2025-2026", "lat": 27.0639, "lng": -80.1378, "has_page": true}, {"slug": "atlantic-fields-golf-house", "name": "Atlantic Fields Golf House", "city": "Hobe Sound", "county": "Martin", "scope": "Golf House clubhouse glazing", "systems": "Euro-Wall multi-slide and storefront", "completion": "2025", "lat": 27.0639, "lng": -80.1378, "has_page": true}, {"slug": "atlantic-fields-performance-center", "name": "Atlantic Fields Performance Center", "city": "Hobe Sound", "county": "Martin", "scope": "Wellness/performance facility envelope", "systems": "Euro-Wall, ESWindows storefront", "completion": "2025", "lat": 27.0639, "lng": -80.1378, "has_page": true}, {"slug": "baron-shoppes-tradition", "name": "Baron Shoppes at Tradition", "city": "Port St. Lucie", "county": "St. Lucie", "scope": "Retail center storefront", "systems": "ESWindows storefront", "completion": "2025", "lat": 27.273, "lng": -80.3582, "has_page": true}, {"slug": "bobcat-treasure-coast", "name": "Bobcat of the Treasure Coast", "city": "Fort Pierce", "county": "St. Lucie", "scope": "11,067 SF commercial dealership", "systems": "ESWindows storefront", "completion": "2025", "lat": 27.4467, "lng": -80.3256, "has_page": true}, {"slug": "causeway-building-bonita-springs", "name": "Causeway Building Bonita Springs", "city": "Bonita Springs", "county": "Lee", "scope": "Office building envelope", "systems": "ESWindows storefront", "completion": "2024", "lat": 26.3398, "lng": -81.7787, "has_page": true}, {"slug": "city-of-haines-emergency", "name": "City of Haines Emergency Operations Center", "city": "Haines City", "county": "Polk", "scope": "EOC envelope", "systems": "ESWindows impact, TGP fire-rated", "completion": "2024", "lat": 28.1144, "lng": -81.6203, "has_page": true}, {"slug": "compass-alton-town-center", "name": "Compass at Alton Town Center", "city": "Boca Raton", "county": "Palm Beach", "scope": "Multifamily storefront and balcony glazing", "systems": "ESWindows storefront, PGT impact", "completion": "2025-2026", "lat": 26.3683, "lng": -80.1289, "has_page": true}, {"slug": "cubesmart-davie", "name": "CubeSmart Davie", "city": "Davie", "county": "Broward", "scope": "Storefront entry", "systems": "ESWindows", "completion": "2024", "lat": 26.0628, "lng": -80.2331, "has_page": true}, {"slug": "cudjoe-key-fire-station", "name": "Cudjoe Key Fire Station", "city": "Cudjoe Key", "county": "Monroe", "scope": "Fire station envelope", "systems": "ESWindows impact, fire-rated TGP", "completion": "2024", "lat": 24.6744, "lng": -81.5039, "has_page": true}, {"slug": "dale-mabry-retail-tampa", "name": "Dale Mabry Retail Tampa", "city": "Tampa", "county": "Hillsborough", "scope": "Retail storefront", "systems": "ESWindows storefront", "completion": "2024", "lat": 27.9506, "lng": -82.4572, "has_page": true}, {"slug": "el-car-wash-northlake", "name": "El Car Wash Northlake", "city": "Lake Park", "county": "Palm Beach", "scope": "Storefront and tunnel glazing", "systems": "ESWindows", "completion": "2024", "lat": 26.8006, "lng": -80.0678, "has_page": true}, {"slug": "estero-vista-fort-myers", "name": "Estero Vista", "city": "Estero", "county": "Lee", "scope": "Community center envelope", "systems": "ESWindows, Euro-Wall", "completion": "2024", "lat": 26.4384, "lng": -81.8067, "has_page": true}, {"slug": "ginsberg-eye-center", "name": "Ginsberg Eye Center", "city": "Stuart", "county": "Martin", "scope": "Healthcare entry storefront", "systems": "ESWindows, fire-rated TGP", "completion": "2024", "lat": 27.1972, "lng": -80.2528, "has_page": true}, {"slug": "gulf-harbour-country-club", "name": "Gulf Harbour Country Club", "city": "Estero", "county": "Lee", "scope": "Clubhouse glazing renovation", "systems": "ESWindows storefront, Euro-Wall", "completion": "2025", "lat": 26.4384, "lng": -81.8067, "has_page": true}, {"slug": "gulfside-twelve", "name": "Gulfside Twelve", "city": "Naples", "county": "Collier", "scope": "Beachfront luxury envelope", "systems": "Euro-Wall multi-slide, PGT impact", "completion": "2025", "lat": 26.142, "lng": -81.7948, "has_page": true}, {"slug": "harbour-cay-fort-pierce", "name": "Harbour Cay Fort Pierce", "city": "Fort Pierce", "county": "St. Lucie", "scope": "Multifamily glazing", "systems": "PGT impact, ESWindows", "completion": "2025", "lat": 27.4467, "lng": -80.3256, "has_page": true}, {"slug": "hardy-world-melbourne", "name": "Hardy World 4.0", "city": "Melbourne", "county": "Brevard", "scope": "Retail storefront", "systems": "ESWindows", "completion": "2024", "lat": 28.0836, "lng": -80.6081, "has_page": true}, {"slug": "hca-cape-coral-emergency", "name": "HCA Cape Coral Emergency Center", "city": "Cape Coral", "county": "Lee", "scope": "Healthcare emergency center storefront", "systems": "ESWindows storefront, fire-rated TGP", "completion": "2025", "lat": 26.5629, "lng": -81.9495, "has_page": true}, {"slug": "hulett-environmental-port-st-lucie", "name": "Hulett Environmental Services Headquarters", "city": "Port St. Lucie", "county": "St. Lucie", "scope": "Two-story office headquarters envelope", "systems": "ESWindows storefront and full window package", "completion": "2026", "lat": 27.273, "lng": -80.3582, "has_page": true}, {"slug": "ifly-miami", "name": "iFLY Miami Indoor Skydiving", "city": "Miami", "county": "Miami-Dade", "scope": "Exterior storefront + wind tunnel viewing glass", "systems": "ESWindows, custom impact", "completion": "2024", "lat": 25.7617, "lng": -80.1918, "has_page": true}, {"slug": "illumina-fort-myers", "name": "Illumina Fort Myers", "city": "Fort Myers", "county": "Lee", "scope": "Multifamily impact window package", "systems": "PGT impact, ESWindows storefront", "completion": "2025", "lat": 26.6406, "lng": -81.8723, "has_page": true}, {"slug": "imperial-crossings-bonita-springs", "name": "Imperial Crossings", "city": "Bonita Springs", "county": "Lee", "scope": "Retail center storefront", "systems": "ESWindows storefront", "completion": "2024", "lat": 26.3398, "lng": -81.7787, "has_page": true}, {"slug": "indiantown-high-school", "name": "Indiantown High School", "city": "Indiantown", "county": "Martin", "scope": "School envelope", "systems": "ESWindows impact, TGP fire-rated", "completion": "2025", "lat": 27.0317, "lng": -80.4806, "has_page": true}, {"slug": "klus-lighting-vero-beach", "name": "KLUS Lighting Showroom", "city": "Vero Beach", "county": "Indian River", "scope": "Two-story entry storefront, side facade punched windows, full envelope", "systems": "ESWindows ES-9000 storefront, ESWindows impact-rated punched windows", "completion": "2026", "lat": 27.6386, "lng": -80.3973, "has_page": true}, {"slug": "lake-park-innovation-center", "name": "Lake Park Innovation Center", "city": "Lake Park", "county": "Palm Beach", "scope": "Innovation center envelope", "systems": "ESWindows, Euro-Wall", "completion": "2024", "lat": 26.8006, "lng": -80.0678, "has_page": true}, {"slug": "lucie-at-tradition", "name": "Lucie at Tradition Clubhouse", "city": "Port St. Lucie", "county": "St. Lucie", "scope": "Community clubhouse envelope", "systems": "ESWindows, Euro-Wall", "completion": "2026", "lat": 27.273, "lng": -80.3582, "has_page": true}, {"slug": "medley-business-park", "name": "Medley Business Park", "city": "Medley", "county": "Miami-Dade", "scope": "Industrial storefront", "systems": "ESWindows storefront", "completion": "2024", "lat": 25.8851, "lng": -80.3356, "has_page": true}, {"slug": "pointe-palm-bay", "name": "The Pointe at Palm Bay", "city": "Palm Bay", "county": "Brevard", "scope": "Multifamily glazing", "systems": "PGT impact", "completion": "2025", "lat": 27.9897, "lng": -80.6686, "has_page": true}, {"slug": "prestige-marble-bonita-springs", "name": "Prestige Marble Bonita Springs", "city": "Bonita Springs", "county": "Lee", "scope": "Showroom storefront", "systems": "ESWindows storefront", "completion": "2024", "lat": 26.3398, "lng": -81.7787, "has_page": true}, {"slug": "project-lift-hobe-sound", "name": "Project LIFT Hobe Sound", "city": "Hobe Sound", "county": "Martin", "scope": "Youth campus envelope", "systems": "ESWindows", "completion": "2024", "lat": 27.0639, "lng": -80.1378, "has_page": true}, {"slug": "savannas-ridge-clubhouse", "name": "Savannas Ridge Clubhouse", "city": "Port St. Lucie", "county": "St. Lucie", "scope": "Clubhouse envelope", "systems": "ESWindows, Euro-Wall", "completion": "2024", "lat": 27.273, "lng": -80.3582, "has_page": true}, {"slug": "shoppes-westlake-point", "name": "Shoppes at Westlake Point", "city": "Westlake", "county": "Palm Beach", "scope": "Retail center", "systems": "ESWindows", "completion": "2025", "lat": 26.7503, "lng": -80.3664, "has_page": true}, {"slug": "siena-lakes-naples", "name": "Siena Lakes", "city": "Naples", "county": "Collier", "scope": "Multi-building senior living glazing package", "systems": "ESWindows storefront, impact windows", "completion": "2024-2026", "lat": 26.142, "lng": -81.7948, "has_page": true}, {"slug": "sroa-vero-beach", "name": "Storage Rentals of America Vero Beach", "city": "Vero Beach", "county": "Indian River", "scope": "Storefront entry", "systems": "PGT impact", "completion": "2024", "lat": 27.6386, "lng": -80.3973, "has_page": true}, {"slug": "stayapt-suites-lafayette", "name": "StayAPT Suites Lafayette", "city": "Lafayette", "county": "Lafayette LA", "scope": "Hotel storefront and window package", "systems": "ESWindows", "completion": "2024", "lat": 30.2241, "lng": -92.0198, "has_page": true}, {"slug": "storage-king-winter-haven", "name": "Storage King USA Winter Haven", "city": "Winter Haven", "county": "Polk", "scope": "Storefront", "systems": "ESWindows storefront", "completion": "2024", "lat": 28.0222, "lng": -81.7328, "has_page": true}, {"slug": "tradewinds-hobe-sound", "name": "Tradewinds Hobe Sound", "city": "Hobe Sound", "county": "Martin", "scope": "Multifamily glazing", "systems": "ESWindows impact windows", "completion": "2025", "lat": 27.0639, "lng": -80.1378, "has_page": true}, {"slug": "turbine-technologies-jupiter", "name": "Turbine Technologies Jupiter", "city": "Jupiter", "county": "Palm Beach", "scope": "Industrial facility storefront", "systems": "ESWindows", "completion": "2024", "lat": 26.9342, "lng": -80.0942, "has_page": true}, {"slug": "villa-lonz-riviera-beach", "name": "Villa L'Onz", "city": "Riviera Beach", "county": "Palm Beach", "scope": "In-progress envelope", "systems": "ESWindows, Euro-Wall", "completion": "2026", "lat": 26.7753, "lng": -80.0581, "has_page": true}, {"slug": "wave-food-hall-cocoa-beach", "name": "Wave Food Hall", "city": "Cocoa Beach", "county": "Brevard", "scope": "Storefront and curtainwall envelope", "systems": "ESWindows storefront", "completion": "2025", "lat": 28.3201, "lng": -80.6076, "has_page": true}, {"slug": "wave-haven-cocoa-beach", "name": "Wave Haven Cocoa Beach", "city": "Cocoa Beach", "county": "Brevard", "scope": "Hospitality storefront", "systems": "ESWindows", "completion": "2025", "lat": 28.3201, "lng": -80.6076, "has_page": true}, {"slug": "waxins-west-palm-beach", "name": "Waxin's West Palm Beach", "city": "West Palm Beach", "county": "Palm Beach", "scope": "Storefront opening glass", "systems": "Euro-Wall opening system", "completion": "2025", "lat": 26.7153, "lng": -80.0534, "has_page": true}, {"slug": "westlake-hialeah-retrofit", "name": "Westlake Hialeah Retrofit", "city": "Hialeah", "county": "Miami-Dade", "scope": "Window retrofit", "systems": "PGT impact retrofit", "completion": "2024", "lat": 25.8576, "lng": -80.2781, "has_page": true}, {"slug": "wild-blue-clubhouse", "name": "Wild Blue Clubhouse", "city": "Estero", "county": "Lee", "scope": "Clubhouse storefront and pool deck doors", "systems": "ESWindows storefront, Euro-Wall multi-slide", "completion": "2025", "lat": 26.4384, "lng": -81.8067, "has_page": true}];
-    const map = L.map('project-map', { scrollWheelZoom: false, zoomControl: true }).setView([27.7, -82.0], 7);
+    const map = L.map('project-map', { scrollWheelZoom: false, zoomControl: true }).setView([29.0, -86.0], 5);
     L.control.scale({ imperial: true, metric: false }).addTo(map);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -191,29 +190,54 @@
 
     const redIcon = L.divIcon({
       className: 'acg-pin',
-      html: '<div style="width:14px;height:14px;background:#E11320;border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 3px rgba(225,19,32,0.3);"></div>',
-      iconSize: [20, 20],
-      iconAnchor: [10, 10]
+      html: '<div style="display:grid;place-items:center;width:44px;height:44px;"><span style="width:14px;height:14px;background:#E11320;border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 3px rgba(225,19,32,0.3);"></span></div>',
+      iconSize: [44, 44],
+      iconAnchor: [22, 22]
     });
 
-    projects.forEach(p => {
-      const m = L.marker([p.lat, p.lng], { icon: redIcon }).addTo(map);
-      const link = p.has_page
-        ? '<a href="' + p.slug + '.html">View project &rarr;</a>'
-        : '<span style="color:rgba(255,255,255,0.5);font-size:0.78rem;">Case study coming soon</span>';
-      const html =
-        '<div class="pop-name">' + p.name + '</div>' +
-        '<div class="pop-meta">' + p.city + (p.county ? ' &middot; ' + p.county + ' County' : '') + (p.completion ? ' &middot; ' + p.completion : '') + '</div>' +
-        '<div class="pop-scope">' + p.scope + '</div>' +
-        (p.systems ? '<div class="pop-scope" style="font-size:0.82rem;color:rgba(255,255,255,0.65);"><strong style="color:rgba(255,255,255,0.85);">Systems:</strong> ' + p.systems + '</div>' : '') +
-        '<div style="margin-top:10px;">' + link + '</div>';
-      m.bindPopup(html);
+    const whiteIcon = L.divIcon({
+      className: 'acg-pin',
+      html: '<div style="display:grid;place-items:center;width:44px;height:44px;"><span style="width:12px;height:12px;background:#F0F3F8;border:2px solid #080D16;border-radius:50%;box-shadow:0 0 0 2px rgba(240,243,248,0.3);"></span></div>',
+      iconSize: [44, 44],
+      iconAnchor: [22, 22]
     });
 
-    if (projects.length) {
-      const group = L.featureGroup(projects.map(p => L.marker([p.lat, p.lng])));
-      map.fitBounds(group.getBounds().pad(0.15));
+    function renderProjects(items) {
+      items.forEach(p => {
+        const icon = p.type === 'supply' ? redIcon : whiteIcon;
+        const kind = p.type === 'supply' ? 'Supply-only order' : 'Glazing project';
+        const label = p.name + ', ' + p.city + ', ' + p.state + '. ' + kind;
+        const m = L.marker([p.lat, p.lng], { icon, title: label, alt: label }).addTo(map);
+        const link = p.page
+          ? '<a href="' + p.page + '">View project &rarr;</a>'
+          : '<span style="color:rgba(255,255,255,0.5);font-size:0.78rem;">Source-backed project record</span>';
+        m.bindPopup(
+          '<div class="pop-name">' + p.name + '</div>' +
+          '<div class="pop-meta">' + p.city + ', ' + p.state + '</div>' +
+          '<div class="pop-scope">' + kind + '</div>' +
+          '<div style="margin-top:10px;">' + link + '</div>'
+        );
+        const markerElement = m.getElement();
+        if (markerElement) markerElement.setAttribute('aria-label', label);
+      });
+
+      document.getElementById('project-count').textContent = items.length;
+      const group = L.featureGroup(items.map(p => L.marker([p.lat, p.lng])));
+      map.fitBounds(group.getBounds().pad(0.12));
     }
+
+    fetch('/data/project-locations.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Project data could not be loaded.');
+        return response.json();
+      })
+      .then(renderProjects)
+      .catch(error => {
+        console.error(error);
+        map.remove();
+        document.getElementById('project-map').innerHTML =
+          '<p style="padding:2rem;color:#F0F3F8;">The verified project map could not be loaded. Please refresh the page.</p>';
+      });
   </script>
 </body>
 </html>
