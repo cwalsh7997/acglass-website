@@ -51,22 +51,25 @@ nav.links a:hover{opacity:1}
 .film img,.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .film::after{content:"";position:absolute;inset:0;background:
   linear-gradient(to top,rgba(5,7,12,.96) 6%,rgba(5,7,12,.55) 45%,rgba(5,7,12,.72) 100%)}
-@media(prefers-reduced-motion:no-preference){
-  .film{opacity:0;transition:opacity 2.2s ease .9s}
-  .film.lit{opacity:1}
-}
 .hero-copy{position:relative;z-index:2;padding:clamp(6rem,16vh,9rem) var(--pad) 0}
 .hero h1{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2.75rem,5.5vw,4.5rem)}
 .hero h1 .l1{display:block;color:var(--steel)}
 .hero h1 .l2{display:block}
 .hero h1 .l2 em{font-style:normal;color:var(--red)}
-.hero-sub{margin-top:1.3rem;max-width:46ch;color:#C6CFDD;font-size:clamp(.95rem,1.3vw,1.08rem)}
+.hero-sub{margin-top:1.15rem;max-width:52ch;color:#C6CFDD;font-size:clamp(.95rem,1.3vw,1.08rem)}
+.motion-toggle{position:absolute;z-index:3;top:5.6rem;right:var(--pad);min-width:44px;min-height:44px;padding:.65rem .85rem;border:1px solid rgba(240,243,248,.28);background:rgba(5,7,12,.68);color:var(--paper);font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.motion-toggle:hover{border-color:var(--glint);background:rgba(5,7,12,.88)}
 @media(prefers-reduced-motion:no-preference){
-  .hero h1 span{opacity:0;transform:translateY(.3em);animation:rise .8s cubic-bezier(.2,.6,.2,1) forwards}
-  .hero h1 .l2{animation-delay:.22s}
-  .hero-sub{opacity:0;animation:fade 1s ease .8s forwards}
+  .hero h1 span{opacity:0;transform:translateY(.24em);animation:rise .55s cubic-bezier(.2,.6,.2,1) forwards}
+  .hero h1 .l2{animation-delay:.08s}
+  .hero-sub{opacity:0;animation:fade .65s ease .2s forwards}
   @keyframes rise{to{opacity:1;transform:none}}
   @keyframes fade{to{opacity:1}}
+}
+@media(prefers-reduced-motion:reduce){.motion-toggle{display:none}}
+@media(max-width:620px){
+  .hero h1{font-size:clamp(2.35rem,12vw,3.2rem)}
+  .motion-toggle{top:4.8rem}
 }
 /* proof seated in the hero */
 .proofbar{position:relative;z-index:2;margin:2.2rem var(--pad) 0;border-top:1px solid rgba(240,243,248,.2);

@@ -362,14 +362,15 @@
       <source type="image/webp" srcset="/images/hero/tower-360.webp">
       <img src="/images/hero/tower-360.jpg" alt="" aria-hidden="true" fetchpriority="high" width="2000" height="1116" decoding="async">
     </picture>
-    <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.webp" aria-label="Slow aerial orbit of a glass tower at dusk"></video>
+    <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.webp" aria-hidden="true" tabindex="-1"></video>
   </div>
+  <button class="motion-toggle" id="motionToggle" type="button" aria-controls="heroVideo" aria-pressed="false">Pause film</button>
   <div class="hero-copy">
     <h1>
-      <span class="l1">Most subs sell glass.</span>
-      <span class="l2">We sell <em>certainty.</em></span>
+      <span class="l1">Commercial glazing.</span>
+      <span class="l2">That shows its <em>work.</em></span>
     </h1>
-    <p class="hero-sub">Commercial glazing for government and federal facilities — AT/FP systems, hurricane-impact glazing, sealed shop drawings, and the documentation discipline federal work demands. Based in Florida.</p>
+    <p class="hero-sub">Government and federal glazing in Florida. AT/FP systems, hurricane-impact openings, sealed shop drawings, and documentation from submittal through closeout.</p>
   </div>
   <div class="proofbar">
     <div class="proof-stats">
@@ -379,8 +380,8 @@
       <div class="stat"><b>FL CGC</b><span>1531993</span></div>
     </div>
     <div class="proof-cta">
-      <!--email_off--><a class="btn btn-red" href="mailto:connor@acglass.com?subject=Capability%20statement%20request">Request capability statement</a><!--/email_off-->
-      <a class="btn btn-ghost" href="/scope-engine.html">Send plans</a>
+      <a class="btn btn-red" href="/scope-engine.html">Send plans</a>
+      <!--email_off--><a class="btn btn-ghost" href="mailto:connor@acglass.com?subject=Capability%20statement%20request">Request capability statement</a><!--/email_off-->
     </div>
   </div>
 </section>
@@ -772,7 +773,6 @@
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu'})});
   var nav=document.getElementById('siteNav');
   addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
-  var film=document.getElementById('film');
   // Reveal is decoupled from motion preference: reduced-motion users still
   // need the content, just without the animation. The fade only runs when
   // motion is allowed.
@@ -799,12 +799,35 @@
   }
   if(!reduce){
     var v=document.getElementById('heroVideo');
+    var hero=document.getElementById('top');
+    var motionToggle=document.getElementById('motionToggle');
+    var userPaused=false;
+    var heroVisible=true;
+    function safePlay(){
+      if(!userPaused&&heroVisible&&!document.hidden){v.play().catch(function(){})}
+    }
+    function setMotionState(paused){
+      motionToggle.setAttribute('aria-pressed',paused?'true':'false');
+      motionToggle.textContent=paused?'Play film':'Pause film';
+    }
     var s=document.createElement('source'); s.src='/videos/hero-360-720-loop.mp4'; s.type='video/mp4';
     v.appendChild(s); v.load();
-    v.addEventListener('canplay',function(){ v.play().catch(function(){}); });
-    requestAnimationFrame(function(){ setTimeout(function(){ film.classList.add('lit'); },300); });
-  } else {
-    film.classList.add('lit');
+    v.addEventListener('canplay',safePlay);
+    motionToggle.addEventListener('click',function(){
+      userPaused=!v.paused;
+      if(userPaused){v.pause()}else{safePlay()}
+      setMotionState(userPaused);
+    });
+    if('IntersectionObserver' in window){
+      var heroObserver=new IntersectionObserver(function(entries){
+        heroVisible=entries[0].isIntersecting;
+        if(heroVisible){safePlay()}else{v.pause()}
+      },{threshold:.08});
+      heroObserver.observe(hero);
+    }
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden){v.pause()}else{safePlay()}
+    });
   }
 })();
 </script>
