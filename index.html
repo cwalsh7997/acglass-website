@@ -27,7 +27,7 @@
 <meta name="twitter:image" content="https://acglass.com/images/hero/tower-360.jpg">
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="/images/hero/tower-360.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="/css/acg-proof.css">
+<link rel="stylesheet" href="/css/acg-proof.css?v=20260802-hero">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -364,7 +364,7 @@
     </picture>
     <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.webp" aria-hidden="true" tabindex="-1"></video>
   </div>
-  <button class="motion-toggle" id="motionToggle" type="button" aria-controls="heroVideo" aria-pressed="false">Pause film</button>
+  <button class="motion-toggle" id="motionToggle" type="button" aria-controls="heroVideo" aria-label="Pause background motion" aria-pressed="false"></button>
   <div class="hero-copy">
     <h1>
       <span class="l1">Commercial glazing.</span>
@@ -808,7 +808,8 @@
     }
     function setMotionState(paused){
       motionToggle.setAttribute('aria-pressed',paused?'true':'false');
-      motionToggle.textContent=paused?'Play film':'Pause film';
+      motionToggle.setAttribute('aria-label',paused?'Play background motion':'Pause background motion');
+      motionToggle.classList.toggle('is-paused',paused);
     }
     var s=document.createElement('source'); s.src='/videos/hero-360-720-loop.mp4'; s.type='video/mp4';
     v.appendChild(s); v.load();
