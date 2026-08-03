@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e284f">
   <title>ACG Project Map — Verified Commercial Glazing Projects</title>
-  <meta name="description" content="Interactive map of 75 source-backed American Commercial Glass project records across Florida, Louisiana, and Tennessee, including executed supply-only orders.">
+  <meta name="description" content="Interactive map of 75 verified American Commercial Glass project records across Florida, Louisiana, and Tennessee, including executed supply-only orders.">
   <link rel="canonical" href="https://acglass.com/project-map.html">
   <meta property="og:title" content="ACG Project Map — Verified Commercial Glazing Work">
-  <meta property="og:description" content="75 source-backed project records across Florida, Louisiana, and Tennessee.">
+  <meta property="og:description" content="75 verified project records across Florida, Louisiana, and Tennessee.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://acglass.com/project-map.html">
   <meta property="og:image" content="https://acglass.com/images/projects/haines-city-eoc/haines-eoc-facade-storefront-band.jpg">
@@ -24,7 +24,19 @@
     .pmap-hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.04; letter-spacing: -0.025em; margin: 0 0 22px; }
     .pmap-hero .lead { font-size: 1.04rem; line-height: 1.65; color: rgba(255,255,255,0.84); max-width: 720px; }
 
-    #project-map { height: 620px; max-width: 1180px; margin: 0 auto 60px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; }
+    #project-map { height: 620px; max-width: 1180px; margin: 0 auto 60px; border: 1px solid rgba(255,255,255,0.16); border-radius: 10px; overflow: hidden; background:#080D16; }
+    .acg-pin { background: transparent !important; border: 0 !important; }
+    .acg-pin-target { display:grid; place-items:center; width:44px; height:44px; }
+    .acg-pin-dot { display:block; width:7px; height:7px; border-radius:50%; background:#F0F3F8; box-shadow:0 0 0 1px #080D16; transition:transform 180ms cubic-bezier(.22,1,.36,1),box-shadow 180ms cubic-bezier(.22,1,.36,1); }
+    .acg-pin-dot.supply { width:9px; height:9px; background:#E11320; box-shadow:0 0 0 1px #fff,0 0 0 2px rgba(225,19,32,.16); }
+    .acg-pin:hover .acg-pin-dot,.acg-pin:focus-visible .acg-pin-dot { transform:scale(1.45); box-shadow:0 0 0 2px #080D16,0 0 0 4px rgba(240,243,248,.28); }
+    .acg-pin:hover .acg-pin-dot.supply,.acg-pin:focus-visible .acg-pin-dot.supply { box-shadow:0 0 0 2px #fff,0 0 0 5px rgba(225,19,32,.24); }
+    .acg-map-key { padding:11px 13px; background:rgba(8,13,22,.94); border:1px solid rgba(240,243,248,.2); border-radius:6px; color:#F0F3F8; font-family:var(--mono,monospace); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; line-height:1.8; }
+    .acg-map-key span { display:flex; align-items:center; gap:8px; white-space:nowrap; }
+    .acg-map-key i { width:7px; height:7px; border-radius:50%; background:#F0F3F8; display:inline-block; }
+    .acg-map-key i.supply { width:9px; height:9px; background:#E11320; }
+    .acg-map-tooltip { background:#080D16 !important; border:1px solid rgba(240,243,248,.22) !important; border-radius:5px !important; box-shadow:0 4px 8px rgba(0,0,0,.28) !important; color:#F0F3F8 !important; font-family:var(--mono,monospace) !important; font-size:.7rem !important; letter-spacing:.04em; padding:7px 9px !important; }
+    .acg-map-tooltip::before { border-top-color:#080D16 !important; }
     .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #0c121e !important; color: #fff !important; }
     .leaflet-popup-content { font-family: inherit !important; margin: 14px 16px !important; line-height: 1.5; min-width: 200px; }
     .leaflet-popup-content .pop-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; color: #fff; }
@@ -42,7 +54,7 @@
       "@type": "WebPage",
       "@id": "https://acglass.com/project-map.html#webpage",
       "name": "ACG Commercial Glazing Project Map",
-      "description": "Interactive map of 75 source-backed American Commercial Glass project records across Florida, Louisiana, and Tennessee, including two executed supply-only orders.",
+      "description": "Interactive map of 75 verified American Commercial Glass project records across Florida, Louisiana, and Tennessee, including two executed supply-only orders.",
       "url": "https://acglass.com/project-map.html",
       "publisher": {
         "@id": "https://acglass.com/#organization",
@@ -124,8 +136,8 @@
   <main>
     <section class="pmap-hero">
       <div class="eyebrow">Project Map</div>
-      <h1><span id="project-count">75</span> source-backed project records.</h1>
-      <p class="lead">Completed work, awarded/current projects, and executed material orders across Florida, Louisiana, and Tennessee. White pins are glazing projects; red pins are supply-only orders. Locations are plotted at city level.</p>
+      <h1><span id="project-count">75</span> verified project records.</h1>
+      <p class="lead">Completed and active work across Florida, Louisiana, and Tennessee, plus two executed supply-only orders. White marks glazing work. Red marks supply-only orders. Locations are shown at city level.</p>
     </section>
 
     <div id="project-map"></div>
@@ -190,41 +202,87 @@
 
     const redIcon = L.divIcon({
       className: 'acg-pin',
-      html: '<div style="display:grid;place-items:center;width:44px;height:44px;"><span style="width:14px;height:14px;background:#E11320;border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 3px rgba(225,19,32,0.3);"></span></div>',
+      html: '<span class="acg-pin-target"><span class="acg-pin-dot supply"></span></span>',
       iconSize: [44, 44],
       iconAnchor: [22, 22]
     });
 
     const whiteIcon = L.divIcon({
       className: 'acg-pin',
-      html: '<div style="display:grid;place-items:center;width:44px;height:44px;"><span style="width:12px;height:12px;background:#F0F3F8;border:2px solid #080D16;border-radius:50%;box-shadow:0 0 0 2px rgba(240,243,248,0.3);"></span></div>',
+      html: '<span class="acg-pin-target"><span class="acg-pin-dot"></span></span>',
       iconSize: [44, 44],
       iconAnchor: [22, 22]
     });
 
-    function renderProjects(items) {
-      items.forEach(p => {
+    const markerLayer = L.layerGroup().addTo(map);
+    let projectData = [];
+
+    function spreadCoincidentPoints(items) {
+      const groups = new Map();
+      items.forEach(item => {
+        const key = item.lat + '|' + item.lng;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(item);
+      });
+
+      return [...groups.values()].flatMap(group => {
+        if (group.length === 1) return [{ ...group[0], displayLat: group[0].lat, displayLng: group[0].lng }];
+        const center = map.latLngToLayerPoint([group[0].lat, group[0].lng]);
+        const radius = group.length > 8 ? 28 : group.length > 4 ? 23 : 18;
+        return group.map((item, index) => {
+          const angle = -Math.PI / 2 + (Math.PI * 2 * index / group.length);
+          const point = L.point(center.x + Math.cos(angle) * radius, center.y + Math.sin(angle) * radius);
+          const latLng = map.layerPointToLatLng(point);
+          return { ...item, displayLat: latLng.lat, displayLng: latLng.lng };
+        });
+      });
+    }
+
+    function drawMarkers() {
+      markerLayer.clearLayers();
+      spreadCoincidentPoints(projectData).forEach(p => {
         const icon = p.type === 'supply' ? redIcon : whiteIcon;
         const kind = p.type === 'supply' ? 'Supply-only order' : 'Glazing project';
         const label = p.name + ', ' + p.city + ', ' + p.state + '. ' + kind;
-        const m = L.marker([p.lat, p.lng], { icon, title: label, alt: label }).addTo(map);
+        const m = L.marker([p.displayLat, p.displayLng], { icon, title: label, alt: label }).addTo(markerLayer);
         const link = p.page
           ? '<a href="' + p.page + '">View project &rarr;</a>'
-          : '<span style="color:rgba(255,255,255,0.5);font-size:0.78rem;">Source-backed project record</span>';
+          : '<span style="color:rgba(255,255,255,0.5);font-size:0.78rem;">Verified project record</span>';
         m.bindPopup(
           '<div class="pop-name">' + p.name + '</div>' +
           '<div class="pop-meta">' + p.city + ', ' + p.state + '</div>' +
           '<div class="pop-scope">' + kind + '</div>' +
           '<div style="margin-top:10px;">' + link + '</div>'
         );
+        m.bindTooltip(p.name + ' · ' + p.city + ', ' + p.state, {
+          direction: 'top',
+          offset: [0, -12],
+          className: 'acg-map-tooltip'
+        });
+        m.on('click', () => m.closeTooltip());
         const markerElement = m.getElement();
         if (markerElement) markerElement.setAttribute('aria-label', label);
       });
+    }
 
+    function renderProjects(items) {
+      projectData = items;
       document.getElementById('project-count').textContent = items.length;
       const group = L.featureGroup(items.map(p => L.marker([p.lat, p.lng])));
-      map.fitBounds(group.getBounds().pad(0.12));
+      map.fitBounds(group.getBounds().pad(0.1), { padding: [24, 24] });
+      drawMarkers();
     }
+
+    map.on('zoomend', drawMarkers);
+
+    const mapKey = L.control({ position: 'topright' });
+    mapKey.onAdd = function () {
+      const key = L.DomUtil.create('div', 'acg-map-key');
+      key.innerHTML = '<span><i></i>Glazing</span><span><i class="supply"></i>Supply-only</span>';
+      L.DomEvent.disableClickPropagation(key);
+      return key;
+    };
+    mapKey.addTo(map);
 
     fetch('/data/project-locations.json')
       .then(response => {

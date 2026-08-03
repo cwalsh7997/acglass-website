@@ -93,28 +93,38 @@ const totals = projects.reduce((acc, project) => {
   return acc;
 }, {});
 
-const output = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720" role="img" aria-labelledby="us-map-title us-map-desc">
+const output = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" role="img" aria-labelledby="us-map-title us-map-desc">
   <title id="us-map-title">American Commercial Glass project locations across the United States</title>
-  <desc id="us-map-desc">${projects.length} source-backed ACG project records: ${totals.FL} in Florida, ${totals.LA} in Louisiana, and ${totals.TN} in Tennessee. White markers identify glazing projects and red markers identify supply-only material orders. The Florida inset separates projects sharing the same metro area.</desc>
+  <desc id="us-map-desc">${projects.length} verified ACG project records: ${totals.FL} in Florida, ${totals.LA} in Louisiana, and ${totals.TN} in Tennessee. White markers identify glazing projects and red markers identify supply-only material orders. The Florida inset separates projects sharing the same metro area.</desc>
   <metadata>State boundaries simplified from the U.S. Census Bureau 2025 TIGER/Line state boundary. Markers are plotted at city level and fanned slightly when multiple projects share one city.</metadata>
-  <rect width="1000" height="720" fill="#080D16"/>
-  <text x="30" y="38" fill="#8FA3BF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="2">VERIFIED PROJECT GEOGRAPHY / ${projects.length} RECORDS</text>
-  <svg x="24" y="62" width="690" height="435" viewBox="${us.viewBox}" preserveAspectRatio="xMidYMid meet">
+  <rect width="1000" height="680" fill="#080D16"/>
+  <text x="30" y="36" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="2.2">PROJECT FOOTPRINT</text>
+  <text x="970" y="36" text-anchor="end" fill="#8FA3BF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="1.8">${projects.length} VERIFIED RECORDS</text>
+  <line x1="30" y1="54" x2="970" y2="54" stroke="#526273" stroke-width="1"/>
+  <svg x="22" y="72" width="700" height="440" viewBox="${us.viewBox}" preserveAspectRatio="xMidYMid meet">
     ${us.body}
   </svg>
-  <path d="M704 415 C760 430 765 476 748 505" fill="none" stroke="#526273" stroke-width="1.5" stroke-dasharray="5 7"/>
-  <rect x="604" y="310" width="372" height="382" rx="4" fill="#0A111C" stroke="#526273"/>
-  <text x="626" y="340" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2">FLORIDA INSET / ${totals.FL}</text>
-  <svg x="620" y="355" width="340" height="315" viewBox="${florida.viewBox}" preserveAspectRatio="xMidYMid meet">
+  <g aria-label="Lafayette, Louisiana glazing project">
+    <path d="M436 419 L398 390 L345 390" fill="none" stroke="#8FA3BF" stroke-width="1"/>
+    <text x="342" y="386" text-anchor="end" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.2">LAFAYETTE, LA</text>
+  </g>
+  <g aria-label="Midway, Tennessee supply-only order">
+    <path d="M550 309 L580 278 L640 278" fill="none" stroke="#E11320" stroke-width="1.2"/>
+    <text x="644" y="282" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.2">MIDWAY, TN</text>
+  </g>
+  <rect x="596" y="306" width="380" height="346" rx="3" fill="#0A111C" stroke="#526273"/>
+  <text x="618" y="334" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.6">FLORIDA / ${totals.FL} RECORDS</text>
+  <line x1="618" y1="348" x2="954" y2="348" stroke="#526273" stroke-width="1"/>
+  <svg x="614" y="360" width="344" height="276" viewBox="${florida.viewBox}" preserveAspectRatio="xMidYMid meet">
     ${florida.body}
   </svg>
-  <g transform="translate(34 640)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1.1">
-    <circle cx="5" cy="-4" r="4" fill="#F0F3F8" stroke="#080D16"/>
-    <text x="18" y="0" fill="#8FA3BF">GLAZING PROJECT</text>
-    <circle cx="198" cy="-4" r="5" fill="#E11320" stroke="#080D16"/>
-    <text x="213" y="0" fill="#8FA3BF">SUPPLY-ONLY ORDER</text>
+  <g transform="translate(34 612)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.1">
+    <circle cx="5" cy="-4" r="4" fill="#F0F3F8"/>
+    <text x="18" y="0" fill="#8FA3BF">GLAZING</text>
+    <circle cx="128" cy="-4" r="5" fill="#E11320"/>
+    <text x="142" y="0" fill="#8FA3BF">SUPPLY-ONLY</text>
   </g>
-  <text x="34" y="683" fill="#526273" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1">CITY-LEVEL LOCATIONS / COINCIDENT PROJECTS FANNED FOR VISIBILITY</text>
+  <text x="34" y="645" fill="#526273" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1">CITY-LEVEL LOCATIONS / COINCIDENT RECORDS SEPARATED FOR VISIBILITY</text>
 </svg>
 `;
 

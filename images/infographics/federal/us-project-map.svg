@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720" role="img" aria-labelledby="us-map-title us-map-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="1000" height="680" role="img" aria-labelledby="us-map-title us-map-desc">
   <title id="us-map-title">American Commercial Glass project locations across the United States</title>
-  <desc id="us-map-desc">75 source-backed ACG project records: 73 in Florida, 1 in Louisiana, and 1 in Tennessee. White markers identify glazing projects and red markers identify supply-only material orders. The Florida inset separates projects sharing the same metro area.</desc>
+  <desc id="us-map-desc">75 verified ACG project records: 73 in Florida, 1 in Louisiana, and 1 in Tennessee. White markers identify glazing projects and red markers identify supply-only material orders. The Florida inset separates projects sharing the same metro area.</desc>
   <metadata>State boundaries simplified from the U.S. Census Bureau 2025 TIGER/Line state boundary. Markers are plotted at city level and fanned slightly when multiple projects share one city.</metadata>
-  <rect width="1000" height="720" fill="#080D16"/>
-  <text x="30" y="38" fill="#8FA3BF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="2">VERIFIED PROJECT GEOGRAPHY / 75 RECORDS</text>
-  <svg x="24" y="62" width="690" height="435" viewBox="0 0 800 502" preserveAspectRatio="xMidYMid meet">
+  <rect width="1000" height="680" fill="#080D16"/>
+  <text x="30" y="36" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="2.2">PROJECT FOOTPRINT</text>
+  <text x="970" y="36" text-anchor="end" fill="#8FA3BF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="1.8">75 VERIFIED RECORDS</text>
+  <line x1="30" y1="54" x2="970" y2="54" stroke="#526273" stroke-width="1"/>
+  <svg x="22" y="72" width="700" height="440" viewBox="0 0 800 502" preserveAspectRatio="xMidYMid meet">
     <g id="tl_2025_us_state">
 <path d="M 714.85 90.17 717.95 108.44 726.17 132.1 726.28 145.83 729.49 166.8 751.53 154.29 753.72 156.11 753.92 159.5 736.04 173.13 727.69 176.42 725.24 166.89 712.62 162.71 700.72 152.73 639.65 164.74 637.96 154.95 647.51 147.63 642.56 135.92 648.91 131.18 674.84 126.24 677.59 116.57 693.5 95.7 714.85 90.17 Z" fill="#101923" stroke="#526273"/>
 <path d="M 116.36 151.53 157.64 160.26 139.37 254.65 136.53 269.92 125.45 269.85 123.2 290.67 61.04 197.58 75.47 141.76 116.36 151.53 Z" fill="#101923" stroke="#526273"/>
@@ -136,10 +138,18 @@
 <circle cx="634.49" cy="437.99" r="3.2" fill="#F0F3F8" stroke="#080D16"/>
 </g>
   </svg>
-  <path d="M704 415 C760 430 765 476 748 505" fill="none" stroke="#526273" stroke-width="1.5" stroke-dasharray="5 7"/>
-  <rect x="604" y="310" width="372" height="382" rx="4" fill="#0A111C" stroke="#526273"/>
-  <text x="626" y="340" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2">FLORIDA INSET / 73</text>
-  <svg x="620" y="355" width="340" height="315" viewBox="0 0 800 780" preserveAspectRatio="xMidYMid meet">
+  <g aria-label="Lafayette, Louisiana glazing project">
+    <path d="M436 419 L398 390 L345 390" fill="none" stroke="#8FA3BF" stroke-width="1"/>
+    <text x="342" y="386" text-anchor="end" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.2">LAFAYETTE, LA</text>
+  </g>
+  <g aria-label="Midway, Tennessee supply-only order">
+    <path d="M550 309 L580 278 L640 278" fill="none" stroke="#E11320" stroke-width="1.2"/>
+    <text x="644" y="282" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.2">MIDWAY, TN</text>
+  </g>
+  <rect x="596" y="306" width="380" height="346" rx="3" fill="#0A111C" stroke="#526273"/>
+  <text x="618" y="334" fill="#F0F3F8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.6">FLORIDA / 73 RECORDS</text>
+  <line x1="618" y1="348" x2="954" y2="348" stroke="#526273" stroke-width="1"/>
+  <svg x="614" y="360" width="344" height="276" viewBox="0 0 800 780" preserveAspectRatio="xMidYMid meet">
     <g id="tl_2025_us_state">
 <path d="M 9.43 94.4 22.53 46.33 1 1.39 272.96 1 287.4 36.11 564.99 53.43 583.31 31.77 655.87 36 670.73 143.4 701.98 224.54 742.19 288.39 739.99 328.34 792.88 474.36 799 525.07 784.91 649.46 749.48 713.86 687.23 750.98 593.08 778.56 598.55 736.83 663.1 701.79 651.92 652.45 601.02 614.02 586.9 561.26 555.66 550.7 542.27 508.66 490.61 415.47 481.77 328.7 499.57 292.38 488.43 246.11 459.82 239.78 400.93 147.29 371.17 129.26 301.83 176.69 261.42 188.49 228.04 179.07 211.46 141.58 167.9 109.28 101.38 92.37 9.43 94.4 Z" fill="#0E284F" stroke="#8FA3BF"/>
 </g>
@@ -219,11 +229,11 @@
 <circle cx="503.66" cy="364.4" r="3.6" fill="#F0F3F8" stroke="#080D16"/>
 </g>
   </svg>
-  <g transform="translate(34 640)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1.1">
-    <circle cx="5" cy="-4" r="4" fill="#F0F3F8" stroke="#080D16"/>
-    <text x="18" y="0" fill="#8FA3BF">GLAZING PROJECT</text>
-    <circle cx="198" cy="-4" r="5" fill="#E11320" stroke="#080D16"/>
-    <text x="213" y="0" fill="#8FA3BF">SUPPLY-ONLY ORDER</text>
+  <g transform="translate(34 612)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1.1">
+    <circle cx="5" cy="-4" r="4" fill="#F0F3F8"/>
+    <text x="18" y="0" fill="#8FA3BF">GLAZING</text>
+    <circle cx="128" cy="-4" r="5" fill="#E11320"/>
+    <text x="142" y="0" fill="#8FA3BF">SUPPLY-ONLY</text>
   </g>
-  <text x="34" y="683" fill="#526273" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1">CITY-LEVEL LOCATIONS / COINCIDENT PROJECTS FANNED FOR VISIBILITY</text>
+  <text x="34" y="645" fill="#526273" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="1">CITY-LEVEL LOCATIONS / COINCIDENT RECORDS SEPARATED FOR VISIBILITY</text>
 </svg>
