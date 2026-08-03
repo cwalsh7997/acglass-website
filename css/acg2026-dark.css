@@ -20,12 +20,12 @@
 
 /* ---------- header chrome: dark glass, white logo always ---------- */
 .hd.scrolled{background:rgba(7,11,18,.92);box-shadow:0 1px 0 rgba(255,255,255,.08)}
-.hd.scrolled .hd-logo .logo-light{display:block}
-.hd.scrolled .hd-logo .logo-dark{display:none}
+.hd.scrolled .hd-logo .logo-light{display:block!important}
+.hd.scrolled .hd-logo .logo-dark{display:none!important}
 .hd.scrolled .hd-nav>a,.hd.scrolled .hd-phone{color:#fff}
 .hd.hd-solid:not(.scrolled){background:rgba(7,11,18,.92)}
-.hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:block}
-.hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:none}
+.hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:block!important}
+.hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:none!important}
 .hd.hd-solid:not(.scrolled) .hd-nav>a,
 .hd.hd-solid:not(.scrolled) .hd-phone{color:#fff!important}
 .hd-nav>a:hover,.hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:#fff;opacity:.75}
@@ -35,6 +35,9 @@
 
 /* ---------- navy-as-text remaps (navy is invisible on dark) ---------- */
 .k-label--navy,.sec-link,.partners-list span,.svc-cell .go,.lead-badge,.prose a{color:#fff}
+/* Some legacy spec-sheet pages carry navy link colors inline. The dark
+   companion must win that specificity so those links stay readable. */
+[style*="color:var(--navy)"],[style*="color: var(--navy)"]{color:#fff!important}
 .btn-line{color:#fff;border-color:rgba(255,255,255,.4)}
 .btn-line:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.06)}
 .strip-btn{color:#fff;border-color:rgba(255,255,255,.4)}
@@ -64,6 +67,7 @@ tbody tr{border-color:var(--hairline)}
 /* images sit on dark ground */
 img{background:#05070C}
 .hero-media img{background:none}
+.ft-word span{-webkit-text-stroke-color:rgba(255,255,255,.35)}
 
 /* selection */
 ::selection{background:#E11320;color:#fff}

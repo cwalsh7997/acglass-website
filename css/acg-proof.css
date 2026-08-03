@@ -26,8 +26,8 @@ a{color:inherit;text-decoration:none}
 /* ---------- nav (with real mobile menu) ---------- */
 header.nav{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;justify-content:space-between;
   padding:1.2rem var(--pad);background:linear-gradient(to bottom,rgba(5,7,12,.85),rgba(5,7,12,0))}
-.wordmark{font-family:var(--mono);font-size:0.75rem;letter-spacing:.16em;text-transform:uppercase}
-.wordmark b{color:var(--red)}
+.wordmark{display:flex;align-items:center;flex-shrink:0}
+.nav-logo{width:169px;height:36px;object-fit:contain;background:transparent}
 nav.links{display:flex;gap:1.9rem;align-items:center}
 nav.links a{font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
 nav.links a:hover{opacity:1}
@@ -43,6 +43,7 @@ nav.links a:hover{opacity:1}
   .menu-btn{display:block;position:relative;z-index:61}
   /* Same layer as .menu-btn so the wordmark stays above the opaque overlay. */
   .wordmark{position:relative;z-index:61}
+  .nav-logo{width:148px;height:auto}
 }
 
 /* ---------- hero: manifesto resolves onto the film ---------- */
@@ -167,6 +168,7 @@ nav.links a:hover{opacity:1}
 .cta-row{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
 footer{border-top:1px solid rgba(240,243,248,.1);padding:2.4rem var(--pad);display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;font-size:.78rem;color:var(--dim)}
+.footer-logo{width:169px;height:auto;margin-bottom:.85rem;background:transparent}
 .fmap{flex:1 1 100%;min-width:0;max-width:100%;display:flex;flex-wrap:wrap;gap:1.7rem 1.4rem;padding-bottom:2.2rem;margin-bottom:.4rem;border-bottom:1px solid rgba(240,243,248,.08)}
 .fmap>div{flex:1 1 150px;min-width:0}
 .fmap p.mono{margin-bottom:.85rem;color:var(--steel);letter-spacing:.13em}
@@ -197,7 +199,7 @@ header.nav.scrolled{background:rgba(5,7,12,.94);border-bottom:1px solid rgba(240
 .disc{padding:clamp(4.5rem,12vh,8rem) var(--pad)}
 .disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:2px;border:1px solid rgba(240,243,248,.14)}
 .disc-cell{border:1px solid rgba(240,243,248,.14);padding:1.6rem 1.4rem 2rem;display:flex;flex-direction:column;gap:.8rem}
-.disc-cell .n{font-family:var(--mono);font-size:0.75rem;letter-spacing:.2em;color:var(--red)}
+.disc-cell .n{font-family:var(--mono);font-size:0.75rem;letter-spacing:.2em;color:#ED2833}
 .disc-cell h3{font-family:var(--disp);font-weight:800;font-size:1.02rem;text-transform:uppercase;letter-spacing:.16em}
 .disc-cell p{font-size:.85rem;color:var(--steel)}
 .record{padding:0 var(--pad) clamp(4.5rem,12vh,8rem)}
