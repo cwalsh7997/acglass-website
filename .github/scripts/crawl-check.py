@@ -48,7 +48,6 @@ TARGET_MARKET_HUBS = [
     "fort-lauderdale",
     "boca-raton",
     "jacksonville",
-    "nashville",
 ]
 
 # Paths whose parent directory must serve an index (the /author/ 404 class).
