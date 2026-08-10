@@ -81,7 +81,6 @@ PRIORITY_MARKETS = {
     "/storefront-glazier-naples-florida/": ("Naples", 8),
     "/storefront-glazier-fort-lauderdale-florida/": ("Fort Lauderdale", 8),
     "/storefront-glazier-boca-raton-florida/": ("Boca Raton", 6),
-    "/commercial-glazing-nashville-tn.html": ("Nashville", 10),
 }
 
 # Service hub → (label, minimum distinct inbound linking pages)
@@ -93,7 +92,6 @@ PRIORITY_SERVICES = {
     "/government-public-sector-glazing.html": ("Federal & security glazing", 8),
     "/portfolio.html": ("Case studies", 10),
     "/florida-commercial-glazing-complete-guide/": ("Florida pillar guide", 8),
-    "/commercial-glazing-tn.html": ("Tennessee state page", 6),
 }
 
 PRIORITY = {**PRIORITY_MARKETS, **PRIORITY_SERVICES}
