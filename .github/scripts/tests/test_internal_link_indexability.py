@@ -7,6 +7,7 @@ import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 SCRIPTS_DIR = Path(__file__).resolve().parents[1]
 
@@ -53,15 +54,27 @@ class IndexableLinkTargetTests(unittest.TestCase):
         path.write_text(f"<html><head>{head}</head><body></body></html>", encoding="utf-8")
         return path
 
-    def run_gate(self, pages, inbound, redirects=None, frozen=None):
+    def run_gate(
+        self,
+        pages,
+        inbound,
+        redirects=None,
+        frozen=None,
+        held_edges=None,
+    ):
         results = []
-        audit.check_indexable_link_targets(
-            results,
-            inbound,
-            pages,
-            redirects or {},
-            frozen or set(),
-        )
+        with mock.patch.object(
+            audit,
+            "HELD_INDEXABILITY_EDGE_HASHES",
+            held_edges or {},
+        ):
+            audit.check_indexable_link_targets(
+                results,
+                inbound,
+                pages,
+                redirects or {},
+                frozen or set(),
+            )
         return {result.name: result for result in results}
 
     def test_blocks_noindex_refresh_and_known_redirect_targets(self):
@@ -164,9 +177,14 @@ class IndexableLinkTargetTests(unittest.TestCase):
             ),
         }
 
+        held_anchors = ["Nashville, TN (Q3 2026)"]
+        held_map = {
+            (held_source, held_target): audit.edge_fingerprint(held_anchors)
+        }
         held_only = self.run_gate(
             pages,
-            {held_target: {held_source: ["Held destination"]}},
+            {held_target: {held_source: held_anchors}},
+            held_edges=held_map,
         )
         self.assertTrue(all(result.ok for result in held_only.values()))
 
@@ -174,16 +192,42 @@ class IndexableLinkTargetTests(unittest.TestCase):
             pages,
             {
                 held_target: {
-                    held_source: ["Held destination"],
+                    held_source: held_anchors,
                     new_source: ["New destination"],
                 }
             },
+            held_edges=held_map,
         )
         result = with_new_source[
             "Indexable pages do not link to noindex pages"
         ]
         self.assertFalse(result.ok)
         self.assertIn(new_source, result.detail)
+
+    def test_changed_held_anchor_is_not_allowed(self):
+        held_source = "/scope-engine.html"
+        held_target = "/commercial-glazing-nashville-tn.html"
+        pages = {
+            held_source: self.page(held_source),
+            held_target: self.page(
+                held_target, '<meta name="robots" content="noindex">'
+            ),
+        }
+        held_map = {
+            (held_source, held_target): audit.edge_fingerprint(
+                ["Nashville, TN (Q3 2026)"]
+            )
+        }
+        results = self.run_gate(
+            pages,
+            {held_target: {held_source: ["Changed anchor"]}},
+            held_edges=held_map,
+        )
+        self.assertFalse(
+            results[
+                "held indexability edges match exact anchor and count fingerprints"
+            ].ok
+        )
 
 
 if __name__ == "__main__":

@@ -96,6 +96,113 @@ class DuplicateIdPropertyTests(unittest.TestCase):
         ]
         self.assertEqual([], validator.conflicting_id_properties(parsed))
 
+    def test_changed_held_fingerprint_is_not_accepted(self):
+        path = "held.html"
+        node_id = "https://example.com/#org"
+        prop = "name"
+        markup = """<html><head>
+<script type="application/ld+json">
+{"@id":"https://example.com/#org","name":"First"}
+</script>
+<script type="application/ld+json">
+{"@id":"https://example.com/#org","name":"Changed"}
+</script>
+</head></html>"""
+        with tempfile.TemporaryDirectory() as tempdir:
+            page = Path(tempdir) / path
+            page.write_text(markup, encoding="utf-8")
+            report = validator.Report()
+            original = validator.HELD_ID_PROPERTY_CONFLICTS
+            validator.HELD_ID_PROPERTY_CONFLICTS = {
+                (str(page), node_id, prop): "not-the-current-fingerprint"
+            }
+            try:
+                validator.check_file(str(page), report)
+            finally:
+                validator.HELD_ID_PROPERTY_CONFLICTS = original
+        self.assertIn("id_property_conflict", report.failures)
+        self.assertEqual(set(), report.held_id_property_conflict_keys)
+
+    def test_unobserved_held_exception_is_stale(self):
+        original = validator.HELD_ID_PROPERTY_CONFLICTS
+        key = ("held.html", "https://example.com/#org", "name")
+        validator.HELD_ID_PROPERTY_CONFLICTS = {key: "fingerprint"}
+        try:
+            self.assertEqual([key], validator.stale_held_conflicts(set()))
+            self.assertEqual([], validator.stale_held_conflicts({key}))
+        finally:
+            validator.HELD_ID_PROPERTY_CONFLICTS = original
+
+    def test_new_place_geo_is_rejected(self):
+        markup = """<html><head>
+<script type="application/ld+json">
+{"@type":"Place","name":"Example","geo":{"latitude":1,"longitude":2}}
+</script>
+</head></html>"""
+        with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8") as page:
+            page.write(markup)
+            page.flush()
+            report = validator.Report()
+            validator.check_file(page.name, report)
+        self.assertIn("unsourced_place_geo", report.failures)
+
+    def test_changed_held_place_geo_is_rejected(self):
+        markup = """<html><head>
+<script type="application/ld+json">
+{"@type":"Place","name":"Changed","geo":{"latitude":1,"longitude":2}}
+</script>
+</head></html>"""
+        with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8") as page:
+            page.write(markup)
+            page.flush()
+            report = validator.Report()
+            original = validator.HELD_PLACE_GEO_HASHES
+            validator.HELD_PLACE_GEO_HASHES = {
+                page.name: ("not-the-current-fingerprint",)
+            }
+            try:
+                validator.check_file(page.name, report)
+            finally:
+                validator.HELD_PLACE_GEO_HASHES = original
+        self.assertIn("unsourced_place_geo", report.failures)
+        self.assertEqual(set(), report.held_place_geo_paths)
+
+    def test_exact_held_place_geo_is_accepted(self):
+        markup = """<html><head>
+<script type="application/ld+json">
+{"@type":"Place","name":"Held","geo":{"latitude":1,"longitude":2}}
+</script>
+</head></html>"""
+        with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8") as page:
+            page.write(markup)
+            page.flush()
+            report = validator.Report()
+            parsed = [{
+                "@type": "Place",
+                "name": "Held",
+                "geo": {"latitude": 1, "longitude": 2},
+            }]
+            fingerprint = validator.place_geo_fingerprints(parsed)
+            original = validator.HELD_PLACE_GEO_HASHES
+            validator.HELD_PLACE_GEO_HASHES = {page.name: fingerprint}
+            try:
+                validator.check_file(page.name, report)
+            finally:
+                validator.HELD_PLACE_GEO_HASHES = original
+        self.assertNotIn("unsourced_place_geo", report.failures)
+        self.assertEqual({page.name}, report.held_place_geo_paths)
+
+    def test_unobserved_held_place_geo_is_stale(self):
+        original = validator.HELD_PLACE_GEO_HASHES
+        validator.HELD_PLACE_GEO_HASHES = {"held.html": ("fingerprint",)}
+        try:
+            self.assertEqual(
+                ["held.html"], validator.stale_held_place_geo(set()))
+            self.assertEqual(
+                [], validator.stale_held_place_geo({"held.html"}))
+        finally:
+            validator.HELD_PLACE_GEO_HASHES = original
+
 
 if __name__ == "__main__":
     unittest.main()

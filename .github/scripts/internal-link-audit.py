@@ -27,6 +27,7 @@ Stdlib only.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html as htmllib
 import json
 import os
@@ -70,28 +71,31 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
 # These exact source-target pairs are held behind approval gates. The exception
 # is edge-specific, so any new indexable page linking to the same targets still
 # fails the audit.
-HELD_INDEXABILITY_EDGES = {
+HELD_INDEXABILITY_EDGE_HASHES = {
     (
         "/government-glazing-contractor-florida.html",
         "/federal-glazing-contractor-tennessee.html",
-    ),
+    ): "c4d3657ed68cc160642c23db052e924ab3056b3554f35b8e5aa8d16cb8f3f8f3",
     (
         "/government-public-sector-glazing.html",
         "/federal-glazing-contractor-tennessee.html",
-    ),
+    ): "c4d3657ed68cc160642c23db052e924ab3056b3554f35b8e5aa8d16cb8f3f8f3",
     (
         "/government-glazing-contractor-florida.html",
         "/wbe-sbe-procurement.html",
-    ),
+    ): "a27662a84b12946fdcbca76e78aa733e66cb58fbc555ffb024fe0f95a5d293a7",
     (
         "/government-public-sector-glazing.html",
         "/wbe-sbe-procurement.html",
-    ),
-    ("/scope-engine.html", "/commercial-glazing-nashville-tn.html"),
+    ): "ec11f1072b94998b39fcd47378aed5acb5ca874626221190d3856ef29ea6c497",
+    (
+        "/scope-engine.html",
+        "/commercial-glazing-nashville-tn.html",
+    ): "56d53a3423a0f149726ca6defe5809c4256c2828902950d85c70fbce3d8a4bdc",
     (
         "/blog/ocean-prime-ft-lauderdale-glazing.html",
         "/author-connor-walsh.html",
-    ),
+    ): "4851026cd8413cbe3492ad886acb4f030df4e1a341be229b1872c9e16bdab560",
 }
 
 A_TAG = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.IGNORECASE | re.DOTALL)
@@ -418,6 +422,11 @@ def _offender_detail(offenders: dict[str, list[str]]) -> str:
     )
 
 
+def edge_fingerprint(anchors: list[str]) -> str:
+    payload = json.dumps(tuple(anchors), ensure_ascii=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
 def check_indexable_link_targets(results, inbound, pages, redirects, frozen):
     """Block indexable pages from linking into crawl and routing dead ends.
 
@@ -429,6 +438,14 @@ def check_indexable_link_targets(results, inbound, pages, redirects, frozen):
     noindex, meta_refresh = classify_pages(pages)
     redirect_sources = set(redirects)
     indexable_sources = set(pages) - noindex - meta_refresh - redirect_sources
+    blocked_any = noindex | meta_refresh | redirect_sources
+    exact_held_edges = {
+        (source, target)
+        for (source, target), fingerprint in HELD_INDEXABILITY_EDGE_HASHES.items()
+        if source in indexable_sources
+        and target in blocked_any
+        and edge_fingerprint(inbound.get(target, {}).get(source, [])) == fingerprint
+    }
 
     checks = (
         (
@@ -446,13 +463,24 @@ def check_indexable_link_targets(results, inbound, pages, redirects, frozen):
                 for source in (
                     (set(inbound.get(target, {})) & indexable_sources) - frozen
                 )
-                if (source, target) not in HELD_INDEXABILITY_EDGES
+                if (source, target) not in exact_held_edges
             )
             if linkers:
                 offenders[target] = linkers
         results.append(
             Result("FAIL", name, not offenders, _offender_detail(offenders))
         )
+    missing_or_changed = sorted(
+        set(HELD_INDEXABILITY_EDGE_HASHES) - exact_held_edges
+    )
+    results.append(
+        Result(
+            "FAIL",
+            "held indexability edges match exact anchor and count fingerprints",
+            not missing_or_changed,
+            f"changed or stale: {missing_or_changed[:3]}" if missing_or_changed else "",
+        )
+    )
 
 
 def check_frozen_page_debt(results, inbound, redirects, frozen):
