@@ -102,6 +102,9 @@ HELD_PLACE_GEO_HASHES = {
         "7a7110dfa87efbe1f05fb0040a1c2ff069045beacd30ffb1bdfe84f0ede529b4",
         "a906bcbae144a79dcc0c2f0eca71401a923d886f854338e68827eb28900e4e7d",
     ),
+    "eau-palm-beach-resort.html": (
+        "8e894e208c29eac363882504a098cb7fcaf234f89cf9569affda662b66f5daed",
+    ),
     "franklin-tn/cool-springs-franklin/index.html": (
         "e2314f9b246b1a0841bfe2d8f5bf719ff7070f091bc1a2bd6d9392548cf93bf0",
     ),
