@@ -64,6 +64,9 @@ JS_ARTIFACT = re.compile(r"\$\{|\+\s*[A-Za-z_$]|['\"]\s*\+")
 BASELINE_MISSING_ASSET_REFS = 2
 BASELINE_MISSING_LINK_TARGETS = 9
 BASELINE_MISSING_LINK_REFS = 70
+TITLE_MAX = 60
+DESC_MIN = 80
+DESC_MAX = 155
 
 
 class Result:
@@ -148,6 +151,18 @@ def refs_in(html: str) -> list[str]:
             if cand:
                 out.append(cand[0])
     return out
+
+
+META_TAG = re.compile(r"<meta\b[^>]*>", re.I)
+META_ATTR = re.compile(r"([:\w-]+)\s*=\s*(['\"])(.*?)\2", re.S)
+
+
+def meta_content(html: str, name: str) -> str:
+    for tag in META_TAG.findall(html):
+        attrs = {key.lower(): value for key, _, value in META_ATTR.findall(tag)}
+        if attrs.get("name", "").lower() == name.lower():
+            return attrs.get("content", "").strip()
+    return ""
 
 
 # ============================================================
@@ -239,6 +254,40 @@ def check_hero(results: list[Result]) -> None:
             "homepage <img> all have width+height",
             not nodim,
             f"{len(nodim)}/{len(imgs)} missing",
+        )
+    )
+
+
+def check_metadata_limits(results: list[Result], scan: Scan) -> None:
+    """Every real indexable page must satisfy the binding metadata limits."""
+    short: list[str] = []
+    long: list[str] = []
+    for f in scan.files:
+        html = read(f)
+        if not re.search(r"<html\b", html, re.I):
+            continue
+        if "noindex" in meta_content(html, "robots").lower():
+            continue
+        desc = meta_content(html, "description")
+        if len(desc) < DESC_MIN:
+            short.append(f)
+        elif len(desc) > DESC_MAX:
+            long.append(f)
+
+    results.append(
+        Result(
+            "FAIL",
+            f"indexable descriptions are at least {DESC_MIN} chars",
+            not short,
+            f"{len(short)} page(s): {', '.join(short[:3])}",
+        )
+    )
+    results.append(
+        Result(
+            "FAIL",
+            f"indexable descriptions are at most {DESC_MAX} chars",
+            not long,
+            f"{len(long)} page(s): {', '.join(long[:3])}",
         )
     )
 
@@ -510,6 +559,7 @@ def main() -> int:
     results: list[Result] = []
 
     check_hero(results)
+    check_metadata_limits(results, scan)
     check_email_obfuscation(results, scan)
     check_sitemaps(results)
     check_parent_paths(results, scan)

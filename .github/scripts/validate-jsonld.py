@@ -21,6 +21,7 @@ import json
 import os
 import re
 import sys
+from pathlib import Path
 
 SCRIPT_RE = re.compile(
     r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', re.S | re.I)
@@ -152,8 +153,36 @@ def iter_nodes(obj):
             yield from iter_nodes(v)
 
 
+def conflicting_id_properties(parsed: list) -> list[tuple[str, str]]:
+    """Return properties that assert different values for the same @id.
+
+    A second node with only @id, or with @id and @type, is a reference and is
+    intentionally ignored. Separate definitions with disjoint properties are
+    complementary. Only repeated properties with different JSON values are
+    collisions.
+    """
+    values: dict[str, dict[str, set[str]]] = collections.defaultdict(
+        lambda: collections.defaultdict(set))
+    for data in parsed:
+        for node in iter_nodes(data):
+            nid = node.get("@id")
+            if not isinstance(nid, str):
+                continue
+            for prop, value in node.items():
+                if prop in {"@context", "@id", "@type"}:
+                    continue
+                values[nid][prop].add(
+                    json.dumps(value, sort_keys=True, separators=(",", ":")))
+    return sorted(
+        (nid, prop)
+        for nid, properties in values.items()
+        for prop, asserted in properties.items()
+        if len(asserted) > 1
+    )
+
+
 def check_file(path: str, rep: Report) -> None:
-    src = open(path, encoding="utf-8").read()
+    src = Path(path).read_text(encoding="utf-8")
     blocks = SCRIPT_RE.findall(src)
     if not blocks:
         return
@@ -236,6 +265,9 @@ def check_file(path: str, rep: Report) -> None:
     for nid, tsets in id_types.items():
         if len(tsets) > 1:
             rep.fail("id_type_conflict", f"{path}: {nid} {sorted(tsets)}")
+
+    for nid, prop in conflicting_id_properties(parsed):
+        rep.fail("id_property_conflict", f"{path}: {nid} [{prop}]")
 
     # Google requires structured data to match visible page text. Questions the
     # user cannot see on the page are an AI-features policy violation.

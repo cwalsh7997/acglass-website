@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-internal-link-audit.py — Internal link architecture audit for acglass.com
+internal-link-audit.py: Internal link architecture audit for acglass.com
 
 Static analysis of the repository (no HTTP), so it runs on a pull request
 before anything is deployed. It builds the site's internal link graph from the
 tracked .html files and enforces the link architecture:
 
-  FAIL  — the home link resolves to "/", no internal link is aimed at a URL
+  FAIL: the home link resolves to "/", no internal link is aimed at a URL
           vercel.json already 301s, no internal link is broken, the homepage
           reaches every priority market and service hub, and every priority
-          page clears its inbound-link floor.
-  WARN  — anchor-text quality on the priority market pages (bare toponyms such
+          page clears its inbound-link floor. Indexable pages must not link to
+          noindex pages, meta-refresh stubs, or known redirect sources.
+  WARN: anchor-text quality on the priority market pages (bare toponyms such
           as "Miami" carry no intent; "commercial glazing contractor in Miami"
           does), and the link defects stranded on pages that
           .github/seo/url-primaries.json freezes byte-identical to main.
@@ -60,13 +61,24 @@ NON_PAGES = {
     "/index-proof.html",
 }
 
+# Authentication destinations are intentionally noindex but remain valid
+# navigation targets for users who need to sign in.
+ALLOWED_NOINDEX_LINK_TARGETS = {
+    "/dealer/login.html",
+}
+
 A_TAG = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.IGNORECASE | re.DOTALL)
 HREF = re.compile(r"""href\s*=\s*["']([^"']*)["']""", re.IGNORECASE)
 TAG = re.compile(r"<[^>]+>")
+META_TAG = re.compile(r"<meta\b[^>]*>", re.IGNORECASE | re.DOTALL)
+HTML_ATTR = re.compile(
+    r"""([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))""",
+    re.DOTALL,
+)
 
 
 # ---------------------------------------------------------------------------
-# Priority architecture — what this audit exists to protect
+# Priority architecture: what this audit exists to protect
 # ---------------------------------------------------------------------------
 
 # Market hub → (label, minimum distinct inbound linking pages)
@@ -154,12 +166,58 @@ def anchor_text(inner: str) -> str:
     return re.sub(r"\s+", " ", htmllib.unescape(TAG.sub(" ", inner))).strip()
 
 
+def meta_attributes(tag: str) -> dict[str, str]:
+    """Return case-normalized attributes from one meta tag."""
+    attrs = {}
+    for match in HTML_ATTR.finditer(tag):
+        value = next(v for v in match.groups()[1:] if v is not None)
+        attrs[match.group(1).lower()] = htmllib.unescape(value).strip()
+    return attrs
+
+
+def page_indexing_flags(doc: str) -> tuple[bool, bool]:
+    """Return (noindex, meta_refresh) for an HTML document.
+
+    A robots or googlebot directive of ``none`` is equivalent to noindex plus
+    nofollow. Attribute order, quoting style, and case are intentionally
+    ignored so a harmless markup reformat cannot bypass the gate.
+    """
+    noindex = False
+    meta_refresh = False
+    for tag in META_TAG.findall(doc):
+        attrs = meta_attributes(tag)
+        name = attrs.get("name", "").lower()
+        if name in {"robots", "googlebot"}:
+            directives = {
+                token
+                for token in re.split(r"[\s,]+", attrs.get("content", "").lower())
+                if token
+            }
+            noindex = noindex or bool(directives & {"noindex", "none"})
+        meta_refresh = meta_refresh or attrs.get("http-equiv", "").lower() == "refresh"
+    return noindex, meta_refresh
+
+
+def classify_pages(pages: dict[str, str]) -> tuple[set[str], set[str]]:
+    """Return the noindex and meta-refresh URL sets for the served page map."""
+    noindex = set()
+    meta_refresh = set()
+    for url, path in pages.items():
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            flags = page_indexing_flags(fh.read())
+        if flags[0]:
+            noindex.add(url)
+        if flags[1]:
+            meta_refresh.add(url)
+    return noindex, meta_refresh
+
+
 def normalize(href: str, from_url: str, known: set[str]) -> str | None:
     """Resolve an href to a site-internal URL path, or None if not internal.
 
     The returned path is the *served* form: directory URLs keep their trailing
     slash, extension URLs keep ".html". "/index.html" is deliberately NOT
-    folded into "/" — routing every page's home link through a non-canonical
+    folded into "/". Routing every page's home link through a non-canonical
     duplicate is one of the things this audit checks for.
     """
     href = href.strip()
@@ -233,7 +291,7 @@ def load_frozen(root: str) -> set[str]:
     """Page URLs that url-primaries.json freezes byte-identical to main.
 
     canonical-verify.py gates those files against git, so this audit cannot ask
-    for a link on one to be rewritten — the two gates would be unsatisfiable
+    for a link on one to be rewritten. The two gates would be unsatisfiable
     together. Their defects move to check_frozen_page_debt instead of being
     dropped, so the set cannot grow unnoticed while the freeze holds.
     """
@@ -270,7 +328,7 @@ class Result:
 
     def fmt(self) -> str:
         sym = "✓" if self.ok else "✗"
-        return f"  [{sym}] {self.tier:4}  {self.name}{('  — ' + self.detail) if self.detail else ''}"
+        return f"  [{sym}] {self.tier:4}  {self.name}{(': ' + self.detail) if self.detail else ''}"
 
 
 def check_home_link(results, inbound, frozen):
@@ -321,6 +379,49 @@ def check_no_broken_links(results, inbound, known, redirects, frozen):
         Result("FAIL", "No internal link targets a missing page", not broken, detail)
     )
     return broken
+
+
+def _offender_detail(offenders: dict[str, list[str]]) -> str:
+    if not offenders:
+        return ""
+    worst = sorted(offenders.items(), key=lambda item: (-len(item[1]), item[0]))[:5]
+    return "; ".join(
+        f"{target} ({len(linkers)} indexable linker(s), e.g. {linkers[:3]})"
+        for target, linkers in worst
+    )
+
+
+def check_indexable_link_targets(results, inbound, pages, redirects, frozen):
+    """Block indexable pages from linking into crawl and routing dead ends.
+
+    A noindex or meta-refresh source is not an indexable linker, and an edge
+    redirect source is not a served page. Frozen source pages stay excluded in
+    the same way as the existing redirect and broken-link checks. Their known
+    non-canonical debt remains governed by ``check_frozen_page_debt``.
+    """
+    noindex, meta_refresh = classify_pages(pages)
+    redirect_sources = set(redirects)
+    indexable_sources = set(pages) - noindex - meta_refresh - redirect_sources
+
+    checks = (
+        (
+            "Indexable pages do not link to noindex pages",
+            noindex - ALLOWED_NOINDEX_LINK_TARGETS,
+        ),
+        ("Indexable pages do not link to meta-refresh stubs", meta_refresh),
+        ("Indexable pages do not link to known redirect sources", redirect_sources),
+    )
+    for name, blocked_targets in checks:
+        offenders = {}
+        for target in blocked_targets:
+            linkers = sorted(
+                (set(inbound.get(target, {})) & indexable_sources) - frozen
+            )
+            if linkers:
+                offenders[target] = linkers
+        results.append(
+            Result("FAIL", name, not offenders, _offender_detail(offenders))
+        )
 
 
 def check_frozen_page_debt(results, inbound, redirects, frozen):
@@ -433,12 +534,13 @@ def main() -> int:
     redirects = load_redirects(root)
     frozen = load_frozen(root)
 
-    print(f"\ninternal-link-audit — {len(pages)} pages, {sum(len(v) for v in outbound.values())} internal links\n")
+    print(f"\ninternal-link-audit: {len(pages)} pages, {sum(len(v) for v in outbound.values())} internal links\n")
 
     results: list[Result] = []
     check_home_link(results, inbound, frozen)
     check_no_links_to_redirects(results, inbound, redirects, frozen)
     check_no_broken_links(results, inbound, known, redirects, frozen)
+    check_indexable_link_targets(results, inbound, pages, redirects, frozen)
     check_frozen_page_debt(results, inbound, redirects, frozen)
     check_hub_coverage(results, outbound, known)
     check_inbound_floors(results, inbound)
