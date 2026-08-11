@@ -24,6 +24,8 @@ Exit 1 on any FAIL. WARN never fails the build.
 from __future__ import annotations
 
 import argparse
+import hashlib
+import html as htmllib
 import json
 import os
 import re
@@ -61,6 +63,35 @@ SCHEMA_IDENTITY_KEYS = ("@type", "name", "legalName", "url", "telephone",
 
 VALID_STATUS = {"ratified", "frozen", "gsc-gated", "blocked-no-primary", "owned-elsewhere"}
 NON_HTML_ASSETS = ("llms.txt", "llms-full.txt", "ai.txt", "search-index.json")
+SKIP_SERVED_DIRS = {".git", ".github", "_internal", "node_modules", "drafts"}
+
+# Exact debt that this workstream is not allowed to edit. The fingerprint covers
+# href value, visible anchor text and occurrence count. A changed or missing
+# edge fails, and a new source cannot inherit the exception.
+HELD_CROSS_CANONICAL_EDGE_HASHES = {
+    ("west-palm-beach/index.html", "/boca-raton"):
+        "eec767cc5127c3963fa07deb9741b8685fd09e02cfb61ada4ce2e86d4d3dcdae",
+    ("medical-office-glazier-fort-lauderdale/index.html", "/fort-lauderdale"):
+        "2406e8fb96ec2a68083ad6c5dff229c1f8362979b7eac38ceb98ad6da3137fd0",
+    ("naples/all-glass-entrances/index.html", "/naples"):
+        "a7de172450c4b96a3fddd963da72e5b38458ca1c8c32b66699358fac3c9331ae",
+    ("nashville/belle-meade-nashville/index.html", "/nashville"):
+        "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
+    ("nashville/bellevue-nashville/index.html", "/nashville"):
+        "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
+    ("nashville/berry-hill-nashville/index.html", "/nashville"):
+        "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
+    ("nashville/downtown-nashville/index.html", "/nashville"):
+        "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
+    ("nashville/east-nashville/index.html", "/nashville"):
+        "4b1824e64f7bee664049e299815644693f16b234540d920a7a14f2d69daed6ae",
+    ("nashville/green-hills-nashville/index.html", "/nashville"):
+        "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
+    ("nashville/sobro-nashville/index.html", "/nashville"):
+        "4b1824e64f7bee664049e299815644693f16b234540d920a7a14f2d69daed6ae",
+    ("nashville/the-gulch-nashville/index.html", "/nashville"):
+        "4b1824e64f7bee664049e299815644693f16b234540d920a7a14f2d69daed6ae",
+}
 
 
 def read(rel: str) -> str:
@@ -239,6 +270,191 @@ def _tag_content(text: str, tag_re: re.Pattern, key: str, value: str, want: str)
 
 def _text_of(html: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
+
+
+def _anchor_text_of(html: str) -> str:
+    return htmllib.unescape(_text_of(html))
+
+
+def _served_html_files():
+    for dirpath, dirnames, names in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in SKIP_SERVED_DIRS]
+        for name in names:
+            if name.endswith(".html"):
+                yield os.path.relpath(os.path.join(dirpath, name), ROOT)
+
+
+def _served_url(rel: str) -> str:
+    rel = rel.replace(os.sep, "/")
+    if rel == "index.html":
+        return "/"
+    if rel.endswith("/index.html"):
+        return "/" + rel[: -len("index.html")]
+    return "/" + rel
+
+
+def _resolve_internal_href(raw: str, source_rel: str) -> str | None:
+    href = raw.strip()
+    if not href or href.startswith(("#", "mailto:", "tel:", "javascript:", "data:")):
+        return None
+    if href.startswith("//"):
+        return None
+    if href.startswith(("http://", "https://")):
+        if not href.startswith(BASE):
+            return None
+        href = href[len(BASE):] or "/"
+    href = href.split("#", 1)[0].split("?", 1)[0]
+    if not href:
+        return None
+    if not href.startswith("/"):
+        href = "/" + os.path.normpath(
+            os.path.join(os.path.dirname(source_rel), href)
+        )
+    return norm(href)
+
+
+def _source_is_indexable(html: str, own: str, redirects: dict[str, str]) -> bool:
+    if own in redirects:
+        return False
+    for tag in META_TAG_RE.findall(html):
+        attrs = _attrs(tag)
+        if attrs.get("http-equiv", "").strip().lower() == "refresh":
+            return False
+        if attrs.get("name", "").strip().lower() not in {"robots", "googlebot"}:
+            continue
+        directives = {
+            token for token in re.split(r"[\s,]+", attrs.get("content", "").lower())
+            if token
+        }
+        if directives & {"noindex", "none"}:
+            return False
+    return True
+
+
+def _frozen_files(reg: dict) -> set[str]:
+    frozen = set()
+    for url in reg.get("frozen_prefixes", []):
+        rel = file_for(url)
+        if rel:
+            frozen.add(rel)
+        if url.endswith("/") and url != "/":
+            directory = os.path.join(ROOT, url.strip("/"))
+            for dirpath, _, names in os.walk(directory):
+                for name in names:
+                    if name.endswith(".html"):
+                        frozen.add(os.path.relpath(os.path.join(dirpath, name), ROOT))
+    return frozen
+
+
+def declared_primary_aliases(reg: dict) -> dict[str, str]:
+    """Return normalized alias URL to declared primary URL."""
+    primaries = {
+        norm(intent["primary"]): intent["primary"]
+        for intent in reg["intents"] if intent.get("primary")
+    }
+    aliases = {}
+    for rel in _served_html_files():
+        html = read(rel)
+        match = CANONICAL_RE.search(html)
+        if not match:
+            continue
+        own = norm(_served_url(rel))
+        target = norm(match.group(1))
+        if target in primaries and target != own:
+            aliases[own] = primaries[target]
+    return aliases
+
+
+def cross_canonical_edge_fingerprint(entries: list[str]) -> str:
+    payload = json.dumps(sorted(entries), ensure_ascii=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode()).hexdigest()
+
+
+def cross_canonical_inventory(reg: dict, redirects: dict[str, str]):
+    """Collect href edges into aliases whose primary is declared by the registry."""
+    aliases = declared_primary_aliases(reg)
+    edges: dict[tuple[str, str], list[str]] = {}
+    indexable_files = set()
+    for rel in _served_html_files():
+        html = read(rel)
+        own = norm(_served_url(rel))
+        if _source_is_indexable(html, own, redirects):
+            indexable_files.add(rel)
+        for match in ANCHOR_PAIR_RE.finditer(html):
+            raw = _attrs(match.group(1)).get("href")
+            if not raw:
+                continue
+            target = _resolve_internal_href(raw, rel)
+            if target not in aliases:
+                continue
+            edges.setdefault((rel, target), []).append(
+                f"{raw} :: {_anchor_text_of(match.group(2))}"
+            )
+    return aliases, edges, indexable_files, _frozen_files(reg)
+
+
+def classify_cross_canonical_edges(
+    edges: dict[tuple[str, str], list[str]],
+    indexable_files: set[str],
+    frozen_files: set[str],
+    held_hashes: dict[tuple[str, str], str],
+):
+    offenders = []
+    unpinned_frozen = []
+    matched_holds = set()
+    for edge, entries in sorted(edges.items()):
+        fingerprint = cross_canonical_edge_fingerprint(entries)
+        if held_hashes.get(edge) == fingerprint:
+            matched_holds.add(edge)
+            continue
+        rel, target = edge
+        detail = f"{rel} -> {target} ({len(entries)} href(s))"
+        if rel in frozen_files:
+            unpinned_frozen.append(detail)
+        elif rel in indexable_files:
+            offenders.append(detail)
+    stale_or_changed = sorted(set(held_hashes) - matched_holds)
+    return offenders, unpinned_frozen, matched_holds, stale_or_changed
+
+
+def check_cross_canonical_links(rep: Report, reg: dict, redirects: dict[str, str]) -> None:
+    aliases, edges, indexable_files, frozen_files = cross_canonical_inventory(
+        reg, redirects
+    )
+    offenders, unpinned_frozen, matched_holds, stale_or_changed = (
+        classify_cross_canonical_edges(
+            edges,
+            indexable_files,
+            frozen_files,
+            HELD_CROSS_CANONICAL_EDGE_HASHES,
+        )
+    )
+    rep.add(
+        "FAIL",
+        "indexable safe pages link to declared primaries, not cross-canonical aliases",
+        not offenders,
+        f"{len(offenders)}: " + "; ".join(offenders[:4]),
+    )
+    rep.add(
+        "FAIL",
+        "frozen cross-canonical debt has an exact pinned edge",
+        not unpinned_frozen,
+        f"{len(unpinned_frozen)}: " + "; ".join(unpinned_frozen[:4]),
+    )
+    rep.add(
+        "FAIL",
+        "held cross-canonical edge fingerprints remain exact",
+        not stale_or_changed,
+        f"{len(matched_holds)} exact of {len(HELD_CROSS_CANONICAL_EDGE_HASHES)}; "
+        f"changed or stale: {stale_or_changed[:3]}",
+    )
+    rep.add(
+        "WARN",
+        "cross-canonical aliases remain contained to declared primaries",
+        True,
+        f"{len(aliases)} aliases, {len(edges)} source-target edge(s), "
+        f"{len(matched_holds)} exact held edge(s)",
+    )
 
 
 def _visible_text(html: str) -> str:
@@ -682,6 +898,7 @@ def main() -> int:
     check_frozen(rep, reg, args.base_ref)
     check_no_canonical_into_redirect(rep, redirects, sitemap_locs)
     check_internal_references(rep, reg, redirects)
+    check_cross_canonical_links(rep, reg, redirects)
     check_manifest(rep, reg, redirects)
     check_seo_targets(rep, reg)
     if args.live:
