@@ -97,26 +97,31 @@ MUTATIONS = {
     "title": lambda t: sub(t, f"<title>{title_of(t)}</title>",
                            "<title>Glass Company Near Me | ACG</title>"),
     "meta-description": lambda t: sub(
-        t, 'name="description" content="Commercial glazing',
-        'name="description" content="Rewritten. Commercial glazing'),
+        t, 'name="description" content="Florida\'s commercial glazing',
+        'name="description" content="Rewritten. Florida\'s commercial glazing'),
     "canonical": lambda t: sub(t, '<link rel="canonical" href="https://acglass.com/"',
                                '<link rel="canonical" href="https://acglass.com/index.html"'),
-    # Absence is the protected value: the root carries no robots directive and
-    # must not acquire one.
-    "meta-robots": lambda t: sub(t, "</head>", '<meta name="robots" content="noindex"></head>'),
+    "meta-robots": lambda t: sub(
+        t,
+        'name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"',
+        'name="robots" content="noindex,follow,max-image-preview:large,max-snippet:-1"',
+    ),
     # The H1 is split across spans, so the mutation targets the source markup
     # rather than the normalized text the extractor produces.
-    "h1": lambda t: sub(t, '<span class="l1">Most subs sell glass.</span>',
+    "h1": lambda t: sub(t, '<span class="l1">Commercial glazing.</span>',
                         '<span class="l1">Florida\'s best glass company.</span>'),
-    "og:title": lambda t: sub(t, 'property="og:title" content="Federal',
-                              'property="og:title" content="Rewritten Federal'),
+    "og:title": lambda t: sub(t, 'property="og:title" content="Commercial',
+                              'property="og:title" content="Rewritten Commercial'),
     "og:url": lambda t: sub(t, 'property="og:url" content="https://acglass.com/"',
                             'property="og:url" content="https://acglass.com/index.html"'),
     # Location identity: the geo of the #localbusiness-west-palm-beach node the
     # map pack resolves against.
     "schema-identity": lambda t: sub(t, '"latitude": 26.70716', '"latitude": 26.9'),
-    "wpb-text": lambda t: sub(t, "headquartered in West Palm Beach, with offices",
-                              "headquartered in Palm Beach, with offices"),
+    "wpb-text": lambda t: sub(
+        t,
+        "headquartered in West Palm Beach. ACG installs",
+        "headquartered in Palm Beach. ACG installs",
+    ),
 }
 
 # wpb-links has no base case to remove: the root links no frozen WPB URL today.

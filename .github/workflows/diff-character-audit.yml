@@ -1,0 +1,29 @@
+name: Prohibited character audit
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  character-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run focused tests
+        run: python3 .github/scripts/tests/test_diff_character_audit.py -v
+      - name: Audit pull request additions
+        if: github.event_name == 'pull_request'
+        run: python3 .github/scripts/diff-character-audit.py --base "${{ github.event.pull_request.base.sha }}"
+      - name: Audit pushed additions
+        if: github.event_name == 'push'
+        run: python3 .github/scripts/diff-character-audit.py --base "${{ github.event.before }}"
+      - name: Audit manual run
+        if: github.event_name == 'workflow_dispatch'
+        run: python3 .github/scripts/diff-character-audit.py

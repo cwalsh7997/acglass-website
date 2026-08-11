@@ -20,6 +20,7 @@ Stdlib only.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
 import re
 import sys
@@ -64,6 +65,46 @@ JS_ARTIFACT = re.compile(r"\$\{|\+\s*[A-Za-z_$]|['\"]\s*\+")
 BASELINE_MISSING_ASSET_REFS = 2
 BASELINE_MISSING_LINK_TARGETS = 9
 BASELINE_MISSING_LINK_REFS = 70
+TITLE_MAX = 60
+DESC_MIN = 80
+DESC_MAX = 155
+
+# Copy on these pages intersects approval-gated claims. Keep the exception
+# path-specific so another overlength description still fails immediately.
+HELD_LONG_DESCRIPTION_HASHES = {
+    "acg-vs-permasteelisa.html":
+        "f7d6bce7b355941dc09884db6e57cc8ccaa2889404fc5b9347f0639ede8b966b",
+    "buildingconnected-basisboard-glazing.html":
+        "e38dc9a71c1fd8a0cc393e0a4c935f59cfe319aaa479710121f4daa8632d2595",
+    "cutler-bay/glass-railings/index.html":
+        "0c86f76046f53a3d40b0ea51aba340729b2038a2887b9c2f58ccb406ec181518",
+    "euro-wall-folding-door-installer-miami/index.html":
+        "8972f744591146a6835690a57a04f7daa006f1e554bb2fa0272e998802cce015",
+    "government-glazing-contractor-florida.html":
+        "14e42dc9f97497b11966c304f67aa42117518a41a9eeaec1f57a713835bb01e8",
+    "government-public-sector-glazing.html":
+        "0aaccbf017b3ea6e35b8deca848cbadd88e6a1a7a2507bd94f8479d9c40f24bc",
+    "hobe-sound/glass-railings/index.html":
+        "0c5e4b94771f7f0d3eda2bcd2a2a47033475ed88fb463e35b0a571fbd11fd1da",
+    "index.html":
+        "546c0ce1bb58a1a54f6c03579ee68edcb419613e8c338de19b604c48a9fb0fa1",
+    "islamorada/glass-railings/index.html":
+        "95515d5962f97f2158660f43f71a25ce2cfaaad5d855f7e738d10b2e56460f62",
+    "lantana/all-glass-entrances/index.html":
+        "af2f13b3fb504e00319de5efef9d23cb243727112b4c619739a5e9f903f40496",
+    "medical-office-glazier-fort-lauderdale/index.html":
+        "24f61f20b31bf1a5288eee6ad75d0f717d6484800127864cf8757b3800733258",
+    "medical-office-glazier-west-palm-beach/index.html":
+        "d010eaf6cf8bdae4b767b8138b42ef614761d3b4e749f64392a1aadefa3a1aef",
+    "multifamily-glazing-orlando/index.html":
+        "4363eba089f06ff70f05c98a8cdadf528d3a66aa320826cb3d43bd1497f15621",
+    "naples/all-glass-entrances/index.html":
+        "2852b3a0e030ab4a68a6b764710a9b1007ffaab028973fc7821addf7513235a4",
+    "palm-harbor/glass-railings/index.html":
+        "149fa8284f8b8bcc05803cdf6817a6daa02e9c50f4acaef5d5a585d537a0578d",
+    "st-petersburg/downtown-st-pete/index.html":
+        "498546b64486b386beaa334a0e15080a8a0b34fd8235d6c60d03e717bbfa4c8d",
+}
 
 
 class Result:
@@ -148,6 +189,23 @@ def refs_in(html: str) -> list[str]:
             if cand:
                 out.append(cand[0])
     return out
+
+
+META_TAG = re.compile(r"<meta\b[^>]*>", re.I)
+META_ATTR = re.compile(r"([:\w-]+)\s*=\s*(['\"])(.*?)\2", re.S)
+
+
+def meta_content(html: str, name: str) -> str:
+    for tag in META_TAG.findall(html):
+        attrs = {key.lower(): value for key, _, value in META_ATTR.findall(tag)}
+        if attrs.get("name", "").lower() == name.lower():
+            return attrs.get("content", "").strip()
+    return ""
+
+
+def held_long_description_matches(rel: str, description: str) -> bool:
+    fingerprint = hashlib.sha256(description.encode()).hexdigest()
+    return HELD_LONG_DESCRIPTION_HASHES.get(rel) == fingerprint
 
 
 # ============================================================
@@ -239,6 +297,60 @@ def check_hero(results: list[Result]) -> None:
             "homepage <img> all have width+height",
             not nodim,
             f"{len(nodim)}/{len(imgs)} missing",
+        )
+    )
+
+
+def check_metadata_limits(results: list[Result], scan: Scan) -> None:
+    """Every real indexable page must satisfy the binding metadata limits."""
+    short: list[str] = []
+    long: list[str] = []
+    held_long: list[str] = []
+    changed_held: list[str] = []
+    for f in scan.files:
+        html = read(f)
+        if not re.search(r"<html\b", html, re.I):
+            continue
+        if "noindex" in meta_content(html, "robots").lower():
+            continue
+        desc = meta_content(html, "description")
+        if len(desc) < DESC_MIN:
+            short.append(f)
+        elif len(desc) > DESC_MAX:
+            if held_long_description_matches(f, desc):
+                held_long.append(f)
+            else:
+                long.append(f)
+                if f in HELD_LONG_DESCRIPTION_HASHES:
+                    changed_held.append(f)
+
+    stale_held = sorted(set(HELD_LONG_DESCRIPTION_HASHES) - set(held_long))
+
+    results.append(
+        Result(
+            "FAIL",
+            f"indexable descriptions are at least {DESC_MIN} chars",
+            not short,
+            f"{len(short)} page(s): {', '.join(short[:3])}",
+        )
+    )
+    results.append(
+        Result(
+            "FAIL",
+            f"indexable descriptions are at most {DESC_MAX} chars",
+            not long,
+            f"{len(long)} page(s): {', '.join(long[:3])}",
+        )
+    )
+    results.append(
+        Result(
+            "FAIL",
+            "held long descriptions match exact content fingerprints",
+            not changed_held and not stale_held,
+            (
+                f"{len(held_long)} exact held page(s); changed: "
+                f"{', '.join(changed_held)}; stale: {', '.join(stale_held)}"
+            ),
         )
     )
 
@@ -510,6 +622,7 @@ def main() -> int:
     results: list[Result] = []
 
     check_hero(results)
+    check_metadata_limits(results, scan)
     check_email_obfuscation(results, scan)
     check_sitemaps(results)
     check_parent_paths(results, scan)

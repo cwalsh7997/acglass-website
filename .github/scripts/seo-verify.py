@@ -412,7 +412,7 @@ def check_title_meta_lengths(results: list[Result], sample_limit: int = 50) -> N
             too_long_title += 1
             if len(t) > longest_title[1]:
                 longest_title = (u, len(t))
-        if len(d) > 158:
+        if len(d) > 155:
             too_long_desc += 1
             if len(d) > longest_desc[1]:
                 longest_desc = (u, len(d))
@@ -427,7 +427,7 @@ def check_title_meta_lengths(results: list[Result], sample_limit: int = 50) -> N
     results.append(
         Result(
             "WARN",
-            "Meta desc ≤158 chars (sample)",
+            "Meta desc ≤155 chars (sample)",
             too_long_desc == 0,
             f"overlong={too_long_desc}, longest={longest_desc}",
         )
