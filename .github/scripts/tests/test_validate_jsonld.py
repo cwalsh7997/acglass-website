@@ -23,6 +23,49 @@ validator = _load_validator()
 
 
 class DuplicateIdPropertyTests(unittest.TestCase):
+    def test_parent_company_cannot_be_localbusiness(self):
+        markup = """<html><head>
+<script type="application/ld+json">
+{"@id":"https://acglass.com/#organization","@type":["Organization","LocalBusiness"],"name":"American Commercial Glass"}
+</script>
+</head></html>"""
+        with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8") as page:
+            page.write(markup)
+            page.flush()
+            report = validator.Report()
+            validator.check_file(page.name, report)
+        self.assertIn("org_wrong_type", report.failures)
+
+    def test_verified_office_localbusiness_is_allowed(self):
+        markup = """<html><head>
+<script type="application/ld+json">
+{
+  "@id":"https://acglass.com/#localbusiness-west-palm-beach",
+  "@type":"LocalBusiness",
+  "name":"American Commercial Glass",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"700 S Rosemary Ave Suite 204",
+    "addressLocality":"West Palm Beach",
+    "addressRegion":"FL",
+    "postalCode":"33401",
+    "addressCountry":"US"
+  },
+  "parentOrganization":{"@id":"https://acglass.com/#organization"}
+}
+</script>
+</head></html>"""
+        with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8") as page:
+            page.write(markup)
+            page.flush()
+            report = validator.Report()
+            validator.check_file(page.name, report)
+        self.assertNotIn("org_wrong_type", report.failures)
+        self.assertNotIn("unverified_localbusiness", report.failures)
+        self.assertNotIn("localbusiness_no_street", report.failures)
+        self.assertNotIn("localbusiness_wrong_city", report.failures)
+        self.assertNotIn("localbusiness_orphan", report.failures)
+
     def test_check_file_reports_property_collision(self):
         markup = """<html><head>
 <script type="application/ld+json">

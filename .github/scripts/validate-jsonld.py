@@ -401,6 +401,9 @@ def check_file(path: str, rep: Report) -> None:
 
             acg = is_acg(node)
 
+            if nid == ORG_ID and types and types != ["Organization"]:
+                rep.fail("org_wrong_type", f"{path}: {types}")
+
             if acg and any(p in node for p in RATING_PROPS):
                 found = [p for p in RATING_PROPS if p in node]
                 rep.fail("self_rating", f"{path}: {nid or node.get('name')} {found}")
