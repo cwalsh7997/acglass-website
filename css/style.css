@@ -1800,6 +1800,14 @@ p {
   transform: scale(1);
 }
 
+/* Above-fold headings and controls must paint without waiting for JavaScript. */
+.page-hero [data-reveal],
+.cap-hero [data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 /* ========== MOBILE POLISH (Top 1% Sprint) ========== */
 @media (max-width: 768px) {
   /* Fix hero stats bleeding to edge */

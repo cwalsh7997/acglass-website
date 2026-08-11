@@ -79,11 +79,11 @@
       });
     });
 
-    // Form submissions — the most important conversion on the site, and the one
-    // event main.js never had. Reports the form's id/name, never field values.
+    // A submit event records intent, not confirmed delivery. Success events must
+    // come from the form's delivery handler after the receiving service responds.
     document.querySelectorAll('form').forEach(function (f) {
       f.addEventListener('submit', function () {
-        trackEvent('form_submit', {
+        trackEvent('form_submit_attempt', {
           form_id: f.getAttribute('id') || f.getAttribute('name') || 'unnamed',
           form_action: f.getAttribute('action') || '',
           page_location: path
