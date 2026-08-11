@@ -152,6 +152,39 @@ class IndexableLinkTargetTests(unittest.TestCase):
 
         self.assertTrue(all(result.ok for result in results.values()))
 
+    def test_exact_held_edge_is_allowed_but_new_source_is_blocked(self):
+        held_source = "/scope-engine.html"
+        new_source = "/new-source.html"
+        held_target = "/commercial-glazing-nashville-tn.html"
+        pages = {
+            held_source: self.page(held_source),
+            new_source: self.page(new_source),
+            held_target: self.page(
+                held_target, '<meta name="robots" content="noindex">'
+            ),
+        }
+
+        held_only = self.run_gate(
+            pages,
+            {held_target: {held_source: ["Held destination"]}},
+        )
+        self.assertTrue(all(result.ok for result in held_only.values()))
+
+        with_new_source = self.run_gate(
+            pages,
+            {
+                held_target: {
+                    held_source: ["Held destination"],
+                    new_source: ["New destination"],
+                }
+            },
+        )
+        result = with_new_source[
+            "Indexable pages do not link to noindex pages"
+        ]
+        self.assertFalse(result.ok)
+        self.assertIn(new_source, result.detail)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -67,6 +67,33 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/dealer/login.html",
 }
 
+# These exact source-target pairs are held behind approval gates. The exception
+# is edge-specific, so any new indexable page linking to the same targets still
+# fails the audit.
+HELD_INDEXABILITY_EDGES = {
+    (
+        "/government-glazing-contractor-florida.html",
+        "/federal-glazing-contractor-tennessee.html",
+    ),
+    (
+        "/government-public-sector-glazing.html",
+        "/federal-glazing-contractor-tennessee.html",
+    ),
+    (
+        "/government-glazing-contractor-florida.html",
+        "/wbe-sbe-procurement.html",
+    ),
+    (
+        "/government-public-sector-glazing.html",
+        "/wbe-sbe-procurement.html",
+    ),
+    ("/scope-engine.html", "/commercial-glazing-nashville-tn.html"),
+    (
+        "/blog/ocean-prime-ft-lauderdale-glazing.html",
+        "/author-connor-walsh.html",
+    ),
+}
+
 A_TAG = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.IGNORECASE | re.DOTALL)
 HREF = re.compile(r"""href\s*=\s*["']([^"']*)["']""", re.IGNORECASE)
 TAG = re.compile(r"<[^>]+>")
@@ -415,7 +442,11 @@ def check_indexable_link_targets(results, inbound, pages, redirects, frozen):
         offenders = {}
         for target in blocked_targets:
             linkers = sorted(
-                (set(inbound.get(target, {})) & indexable_sources) - frozen
+                source
+                for source in (
+                    (set(inbound.get(target, {})) & indexable_sources) - frozen
+                )
+                if (source, target) not in HELD_INDEXABILITY_EDGES
             )
             if linkers:
                 offenders[target] = linkers

@@ -52,6 +52,22 @@ class DuplicateIdPropertyTests(unittest.TestCase):
             validator.conflicting_id_properties(parsed),
         )
 
+    def test_conflict_value_set_is_stable_and_sorted(self):
+        parsed = [
+            {"@id": "https://example.com/#org", "name": "Second"},
+            {"@id": "https://example.com/#org", "name": "First"},
+        ]
+        self.assertEqual(
+            [
+                (
+                    "https://example.com/#org",
+                    "name",
+                    ('"First"', '"Second"'),
+                )
+            ],
+            validator.conflicting_id_property_values(parsed),
+        )
+
     def test_identical_repeated_values_are_not_a_collision(self):
         parsed = [
             {"@id": "https://example.com/#org", "name": "Same"},
