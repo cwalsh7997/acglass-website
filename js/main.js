@@ -59,19 +59,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  if (navToggle) {
+  if (navToggle && navLinks) {
+    const mobileNavQuery = window.matchMedia('(max-width: 900px)');
+
+    const setMenuState = (open, returnFocus = false) => {
+      navToggle.classList.toggle('active', open);
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+
+      if (mobileNavQuery.matches && !open) {
+        navLinks.setAttribute('inert', '');
+      } else {
+        navLinks.removeAttribute('inert');
+      }
+
+      if (returnFocus) navToggle.focus();
+    };
+
+    const syncMenuForViewport = () => {
+      if (!mobileNavQuery.matches) {
+        setMenuState(false);
+        return;
+      }
+      setMenuState(navLinks.classList.contains('open'));
+    };
+
+    syncMenuForViewport();
+
+    if (typeof mobileNavQuery.addEventListener === 'function') {
+      mobileNavQuery.addEventListener('change', syncMenuForViewport);
+    } else {
+      mobileNavQuery.addListener(syncMenuForViewport);
+    }
+
     navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
-      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+      setMenuState(!navLinks.classList.contains('open'));
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('open');
-        document.body.style.overflow = '';
+        setMenuState(false);
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        setMenuState(false, true);
+      }
     });
   }
 
@@ -331,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         <span>Email</span>
       </a>
-      <a href="send-plans.html" class="mcb-btn mcb-plans" aria-label="Send us plans">
+      <a href="/send-plans.html" class="mcb-btn mcb-plans" aria-label="Send us plans">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11zM8 14h8v2H8zm0 4h8v2H8zm0-8h4v2H8z"/></svg>
         <span>Send Plans</span>
       </a>

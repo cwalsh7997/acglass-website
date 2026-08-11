@@ -14,20 +14,30 @@
   var burger = document.querySelector('.hd-burger');
   var mobile = document.querySelector('.hd-mobile');
   if (burger && mobile) {
-    burger.addEventListener('click', function () {
-      var open = mobile.classList.toggle('open');
+    var setMenuState = function (open, returnFocus) {
+      mobile.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        mobile.removeAttribute('inert');
+      } else {
+        mobile.setAttribute('inert', '');
+      }
+      if (returnFocus) burger.focus();
+    };
+
+    setMenuState(false, false);
+
+    burger.addEventListener('click', function () {
+      setMenuState(!mobile.classList.contains('open'), false);
     });
     mobile.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
-        mobile.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
+        setMenuState(false, false);
       });
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && mobile.classList.contains('open')) {
-        mobile.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
+        setMenuState(false, true);
       }
     });
   }
