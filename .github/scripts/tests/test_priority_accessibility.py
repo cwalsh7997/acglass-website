@@ -50,6 +50,50 @@ class PriorityAccessibilityTests(unittest.TestCase):
                 for previous, current in zip(levels, levels[1:]):
                     self.assertLessEqual(current, previous + 1)
 
+    def test_smooth_scroll_excludes_skip_links(self):
+        source = (REPO_ROOT / "js/main.js").read_text(encoding="utf-8")
+        self.assertIn(
+            'document.querySelectorAll(\'.skip-link[href^="#"]\')',
+            source,
+        )
+        self.assertIn(
+            "window.setTimeout(() => target.focus({ preventScroll: true }), 0);",
+            source,
+        )
+        self.assertIn(
+            'document.querySelectorAll(\'a[href^="#"]:not(.skip-link)\')',
+            source,
+        )
+        self.assertNotIn(
+            'document.querySelectorAll(\'a[href^="#"]\')',
+            source,
+        )
+
+    def test_general_contractor_skip_link_is_visible_above_fixed_header(self):
+        source = (REPO_ROOT / "for-general-contractors.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertRegex(
+            source,
+            r"\.skip-link\{[^}]*position:fixed;[^}]*top:-100px;"
+            r"[^}]*z-index:10000;",
+        )
+        self.assertIn(".skip-link:focus{top:0;", source)
+
+    def test_service_worker_cache_version_releases_updated_shared_script(self):
+        source = (REPO_ROOT / "sw.js").read_text(encoding="utf-8")
+        self.assertIn("const CACHE = 'acg-v5-2026-08-11';", source)
+        self.assertNotIn("const CACHE = 'acg-v1-2026-06-06';", source)
+
+    def test_priority_pages_request_current_shared_script(self):
+        for rel in ("capabilities.html", "gc.html"):
+            with self.subTest(rel=rel):
+                source = (REPO_ROOT / rel).read_text(encoding="utf-8")
+                self.assertEqual(
+                    1,
+                    source.count('src="js/main.js?v=20260811d"'),
+                )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

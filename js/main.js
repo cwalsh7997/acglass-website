@@ -228,10 +228,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---------- SMOOTH ANCHOR SCROLL ----------
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+  // ---------- SKIP LINK FOCUS ----------
+  document.querySelectorAll('.skip-link[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function() {
       const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.setTimeout(() => target.focus({ preventScroll: true }), 0);
+      }
+    });
+  });
+
+  // ---------- SMOOTH ANCHOR SCROLL ----------
+  document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });

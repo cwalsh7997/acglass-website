@@ -1,4 +1,4 @@
-const CACHE = 'acg-v1-2026-06-06';
+const CACHE = 'acg-v5-2026-08-11';
 const SHELL = [
   '/',
   '/css/style.css',
