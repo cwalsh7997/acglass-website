@@ -2116,13 +2116,6 @@
         }
       ]
     },
-    "tgp": {
-      "label": "TGP (Technical Glass Products)",
-      "manufacturer_url": "https://www.tgpamerica.com",
-      "portal_manufacturer_query": "Technical Glass Products",
-      "systems": [],
-      "portal_note": "Technical Glass Products is not listed in the Florida Product Approval portal under that name. TGP fire-rated glazing is regulated by IBC/NFPA test methods (UL 9, UL 10B, UL 263, NFPA 252, NFPA 257) rather than the Florida wind-load product-approval system. ACG verifies TGP listings against UL Online Certifications Directory and Intertek Directory of Listed Products for each project."
-    },
     "aldora": {
       "label": "Aldora",
       "manufacturer_url": "https://www.aldoraap.com",
@@ -2701,6 +2694,14 @@
           "last_verified": "2026-06-11"
         }
       ]
+    }
+  },
+  "non_noa_partners": {
+    "tgp": {
+      "label": "TGP (Technical Glass Products)",
+      "manufacturer_url": "https://www.tgpamerica.com",
+      "portal_manufacturer_query": "Technical Glass Products",
+      "portal_note": "Technical Glass Products is not listed in the Florida Product Approval portal under that name. TGP fire-rated glazing is regulated by IBC/NFPA test methods (UL 9, UL 10B, UL 263, NFPA 252, NFPA 257) rather than the Florida wind-load product-approval system. ACG verifies TGP listings against UL Online Certifications Directory and Intertek Directory of Listed Products for each project."
     }
   }
 }

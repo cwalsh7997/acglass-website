@@ -1,4 +1,4 @@
-name: NOA Reverify (monthly)
+name: NOA Source Review Due
 
 on:
   schedule:
@@ -11,7 +11,7 @@ permissions:
   issues: write
 
 jobs:
-  reverify:
+  source-review:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,12 +21,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Reverify every source URL in /noa/data.json
+      - name: Check source review age without external requests
         id: reverify
         run: |
           set +e
-          python3 scripts/noa-reverify.py | tee /tmp/reverify.txt
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          set -o pipefail
+          python3 .github/scripts/noa-status-check.py --max-age-days 35 2>&1 | tee /tmp/reverify.txt
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
 
       - name: Open issue on any failure
         if: steps.reverify.outputs.exit_code != '0'
@@ -39,11 +41,11 @@ jobs:
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `NOA reverify failures — ${today}`,
-              body: '## Monthly NOA reverification report\n\n' +
-                    'The scheduled NOA reverification detected one or more issues. Investigate against the source portal and update `/noa/data.json` by hand.\n\n' +
+              title: `NOA source review due: ${today}`,
+              body: '## Monthly NOA source review report\n\n' +
+                    'The local source ledger has one or more entries due for manual review. No government portal was contacted by this workflow.\n\n' +
                     '```\n' + report + '\n```\n\n' +
-                    'After updating data.json, run `python3 scripts/noa-hub-build.py` to rebuild the hub pages.',
+                    'Review the cited sources manually. Update `/noa/data.json` only through the governed NOA publishing workflow.',
               labels: ['noa', 'verification', 'monthly-check']
             });
 

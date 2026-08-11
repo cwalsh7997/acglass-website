@@ -25,8 +25,10 @@ jobs:
         id: status
         run: |
           set +e
-          python3 scripts/noa-status-check.py | tee /tmp/noa-status.txt
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          set -o pipefail
+          python3 .github/scripts/noa-status-check.py --max-age-days 90 2>&1 | tee /tmp/noa-status.txt
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
 
       - name: Open issue if stale
         if: steps.status.outputs.exit_code != '0'
@@ -38,7 +40,7 @@ jobs:
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `NOA hub: pending entries >90 days — ${new Date().toISOString().slice(0,10)}`,
-              body: '```\n' + body + '\n```\n\nUpdate `/noa/data.json` by hand after cross-referencing the source portals, then run `python3 scripts/noa-hub-build.py` and commit.',
+              title: `NOA hub source review due: ${new Date().toISOString().slice(0,10)}`,
+              body: '```\n' + body + '\n```\n\nReview the cited sources manually. Update `/noa/data.json` only through the governed NOA publishing workflow.',
               labels: ['noa', 'verification']
             });

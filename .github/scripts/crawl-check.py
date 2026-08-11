@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html as htmllib
 import os
 import re
 import sys
@@ -65,9 +66,15 @@ JS_ARTIFACT = re.compile(r"\$\{|\+\s*[A-Za-z_$]|['\"]\s*\+")
 BASELINE_MISSING_ASSET_REFS = 2
 BASELINE_MISSING_LINK_TARGETS = 9
 BASELINE_MISSING_LINK_REFS = 70
+TITLE_MIN = 30
 TITLE_MAX = 60
 DESC_MIN = 80
 DESC_MAX = 155
+
+HELD_LONG_TITLE_HASHES = {
+    "west-palm-beach/index.html":
+        "3c31b0d69e86986dc1f4ef6c056f33a30dad1926838327f0c950f649f5f65e2f",
+}
 
 # Copy on these pages intersects approval-gated claims. Keep the exception
 # path-specific so another overlength description still fails immediately.
@@ -208,6 +215,18 @@ def held_long_description_matches(rel: str, description: str) -> bool:
     return HELD_LONG_DESCRIPTION_HASHES.get(rel) == fingerprint
 
 
+def title_content(html: str) -> str:
+    match = re.search(r"<title\b[^>]*>(.*?)</title>", html, re.I | re.S)
+    if not match:
+        return ""
+    return htmllib.unescape(re.sub(r"\s+", " ", match.group(1)).strip())
+
+
+def held_long_title_matches(rel: str, title: str) -> bool:
+    fingerprint = hashlib.sha256(title.encode()).hexdigest()
+    return HELD_LONG_TITLE_HASHES.get(rel) == fingerprint
+
+
 # ============================================================
 # Scan (single pass, shared by several checks)
 # ============================================================
@@ -303,6 +322,10 @@ def check_hero(results: list[Result]) -> None:
 
 def check_metadata_limits(results: list[Result], scan: Scan) -> None:
     """Every real indexable page must satisfy the binding metadata limits."""
+    short_titles: list[str] = []
+    long_titles: list[str] = []
+    held_long_titles: list[str] = []
+    changed_held_titles: list[str] = []
     short: list[str] = []
     long: list[str] = []
     held_long: list[str] = []
@@ -313,6 +336,16 @@ def check_metadata_limits(results: list[Result], scan: Scan) -> None:
             continue
         if "noindex" in meta_content(html, "robots").lower():
             continue
+        title = title_content(html)
+        if len(title) < TITLE_MIN:
+            short_titles.append(f)
+        elif len(title) > TITLE_MAX:
+            if held_long_title_matches(f, title):
+                held_long_titles.append(f)
+            else:
+                long_titles.append(f)
+                if f in HELD_LONG_TITLE_HASHES:
+                    changed_held_titles.append(f)
         desc = meta_content(html, "description")
         if len(desc) < DESC_MIN:
             short.append(f)
@@ -326,6 +359,38 @@ def check_metadata_limits(results: list[Result], scan: Scan) -> None:
 
     stale_held = sorted(set(HELD_LONG_DESCRIPTION_HASHES) - set(held_long))
 
+    stale_held_titles = sorted(
+        set(HELD_LONG_TITLE_HASHES) - set(held_long_titles)
+    )
+
+    results.append(
+        Result(
+            "FAIL",
+            f"indexable titles are at least {TITLE_MIN} chars",
+            not short_titles,
+            f"{len(short_titles)} page(s): {', '.join(short_titles[:3])}",
+        )
+    )
+    results.append(
+        Result(
+            "FAIL",
+            f"indexable titles are at most {TITLE_MAX} chars",
+            not long_titles,
+            f"{len(long_titles)} page(s): {', '.join(long_titles[:3])}",
+        )
+    )
+    results.append(
+        Result(
+            "FAIL",
+            "held long titles match exact content fingerprints",
+            not changed_held_titles and not stale_held_titles,
+            (
+                f"{len(held_long_titles)} exact held page(s); changed: "
+                f"{', '.join(changed_held_titles)}; stale: "
+                f"{', '.join(stale_held_titles)}"
+            ),
+        )
+    )
     results.append(
         Result(
             "FAIL",
