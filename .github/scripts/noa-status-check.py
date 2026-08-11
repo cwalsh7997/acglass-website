@@ -42,12 +42,17 @@ def audit(data: dict, today: date, max_age_days: int) -> tuple[int, list[Finding
     partners = data.get("partners")
     if not isinstance(partners, dict):
         return 0, [Finding("data.json", "partners", "missing partner map")]
+    if not partners:
+        return 0, [Finding("data.json", "partners", "partner map is empty")]
 
     for partner in partners.values():
         label = str(partner.get("label", "unlabeled partner"))
         systems = partner.get("systems")
         if not isinstance(systems, list):
             findings.append(Finding(label, "systems", "missing system list"))
+            continue
+        if not systems:
+            findings.append(Finding(label, "systems", "system list is empty"))
             continue
         for row in systems:
             total += 1
@@ -73,6 +78,8 @@ def audit(data: dict, today: date, max_age_days: int) -> tuple[int, list[Finding
                 findings.append(
                     Finding(label, system, f"source review is {age} days old")
                 )
+    if total == 0:
+        findings.append(Finding("data.json", "systems", "no systems tracked"))
     return total, findings
 
 

@@ -89,6 +89,32 @@ class NoaStatusTests(unittest.TestCase):
         self.assertEqual(0, total)
         self.assertEqual("missing partner map", findings[0].reason)
 
+    def test_empty_partner_map_fails_closed(self):
+        total, findings = checker.audit(
+            {"partners": {}}, date(2026, 8, 11), 35
+        )
+        self.assertEqual(0, total)
+        self.assertEqual(["partner map is empty"], [item.reason for item in findings])
+
+    def test_empty_system_list_fails_closed_and_tracks_nothing(self):
+        total, findings = checker.audit(
+            {
+                "partners": {
+                    "sample": {
+                        "label": "Sample",
+                        "systems": [],
+                    }
+                }
+            },
+            date(2026, 8, 11),
+            35,
+        )
+        self.assertEqual(0, total)
+        self.assertEqual(
+            ["system list is empty", "no systems tracked"],
+            [item.reason for item in findings],
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
