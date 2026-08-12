@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import html
 import re
 import unittest
 from pathlib import Path
@@ -14,6 +16,58 @@ PAGES = (
     "gc.html",
     "for-general-contractors.html",
 )
+LANDMARK_ONLY_PAGES = (
+    "impact-windows-doors.html",
+    "multi-slide-bifold-doors.html",
+)
+LANDMARK_ONLY_FINGERPRINTS = {
+    "impact-windows-doors.html": {
+        "head": "0c050792c18e22e7b8adf31d15075d1739f99e74069530bcf787b4d81be38ccc",
+        "jsonld": "cbe03bce400f4b8693960a5c82e327a79a509253738e0218f0219f219254ebd3",
+        "scripts": "886fe08506e6b1884d31e50b169bca1d5735995f83cd3e9e4d7ac7766499e7a4",
+        "hrefs": "7e30d5e0bb79f0616da02b9a99147904c583c8aa00d7595335dae51520775736",
+        "visible": "083eb903cf8bc489bb794499f368d7f758bfe6bf390c43a60419a57d9505c76e",
+    },
+    "multi-slide-bifold-doors.html": {
+        "head": "98b48b78f60afbe1fd2f17c8c527c2fb4e7b495eb4a6e148f9879b8b6e531050",
+        "jsonld": "432be9b17b3f18a2713c074fde86eae96827e65c4dff3f95cfbe837a6f5ef697",
+        "scripts": "2feebda52a455b15084cd36667e638052049110598326beeff6f47e28efd2e25",
+        "hrefs": "ae423c9f86df0ebc059db4bfaf61f167b9fda64651a1a3eb0f28e0209f46006e",
+        "visible": "7756822ce2c4f3e5bc517240ea6c3e1010424dd3fa14a2bcde9d4d9c242d17c7",
+    },
+}
+
+
+def _sha256(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def _fingerprints(source: str) -> dict[str, str]:
+    head = re.search(r"<head\b[^>]*>.*?</head>", source, re.I | re.S)
+    body = re.search(r"<body\b[^>]*>(.*?)</body>", source, re.I | re.S)
+    assert head is not None
+    assert body is not None
+    jsonld = re.findall(
+        r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>.*?</script>',
+        source,
+        re.I | re.S,
+    )
+    scripts = re.findall(r"<script\b[^>]*>.*?</script>", source, re.I | re.S)
+    hrefs = re.findall(r'<a\b[^>]*\bhref=["\']([^"\']*)["\']', source, re.I)
+    visible = re.sub(
+        r"<(?:script|style)\b[^>]*>.*?</(?:script|style)>",
+        " ",
+        body.group(1),
+        flags=re.I | re.S,
+    )
+    visible = " ".join(html.unescape(re.sub(r"<[^>]+>", " ", visible)).split())
+    return {
+        "head": _sha256(head.group(0)),
+        "jsonld": _sha256("\n".join(jsonld)),
+        "scripts": _sha256("\n".join(scripts)),
+        "hrefs": _sha256("\n".join(hrefs)),
+        "visible": _sha256(visible),
+    }
 
 
 class PriorityAccessibilityTests(unittest.TestCase):
@@ -35,6 +89,30 @@ class PriorityAccessibilityTests(unittest.TestCase):
                 self.assertLess(source.index("<main"), source.index("<h1"))
                 self.assertLess(source.index("</header>"), source.index("<main"))
                 self.assertLess(source.index("</main>"), source.index("<footer"))
+
+    def test_primary_service_hubs_have_one_main_without_content_drift(self):
+        for rel in LANDMARK_ONLY_PAGES:
+            with self.subTest(rel=rel):
+                source = (REPO_ROOT / rel).read_text(encoding="utf-8")
+                self.assertEqual(
+                    1,
+                    source.count('<main id="main-content" tabindex="-1">'),
+                )
+                self.assertEqual(1, source.count("</main>"))
+                self.assertEqual(1, source.count('id="main-content"'))
+                self.assertEqual(
+                    1,
+                    source.count('<a class="skip-link" href="#main-content">'),
+                )
+                self.assertLess(source.index("</header>"), source.index("<main"))
+                self.assertLess(source.index("<main"), source.index("<h1"))
+                self.assertLess(source.index("<h1"), source.index("</main>"))
+                self.assertLess(source.index("</main>"), source.index("<footer"))
+                self.assertEqual(0, len(re.findall(r"<form\b", source, re.I)))
+                self.assertEqual(
+                    LANDMARK_ONLY_FINGERPRINTS[rel],
+                    _fingerprints(source),
+                )
 
     def test_main_content_heading_levels_do_not_skip(self):
         for rel in PAGES:
