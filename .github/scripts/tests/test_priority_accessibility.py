@@ -176,7 +176,7 @@ class PriorityAccessibilityTests(unittest.TestCase):
 
     def test_service_worker_cache_version_releases_updated_shared_script(self):
         source = (REPO_ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("const CACHE = 'acg-v5-2026-08-11';", source)
+        self.assertIn("const CACHE = 'acg-navigation-v1-2026-08-12';", source)
         self.assertNotIn("const CACHE = 'acg-v1-2026-06-06';", source)
 
     def test_priority_pages_request_current_shared_script(self):
