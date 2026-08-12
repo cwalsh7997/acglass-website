@@ -19,6 +19,8 @@ PAGES = (
 LANDMARK_ONLY_PAGES = (
     "impact-windows-doors.html",
     "multi-slide-bifold-doors.html",
+    "privacy-policy.html",
+    "terms-of-use.html",
 )
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
@@ -34,6 +36,20 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "scripts": "2feebda52a455b15084cd36667e638052049110598326beeff6f47e28efd2e25",
         "hrefs": "ae423c9f86df0ebc059db4bfaf61f167b9fda64651a1a3eb0f28e0209f46006e",
         "visible": "7756822ce2c4f3e5bc517240ea6c3e1010424dd3fa14a2bcde9d4d9c242d17c7",
+    },
+    "privacy-policy.html": {
+        "head": "6724051cd3c3b52e4d7356ff3c4634ce8667b9eb3c9b4ea7d17f2e22f84fff32",
+        "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
+        "scripts": "602b81cc175a16c0d7104e55d880b415e295f6aa24f13dbb41c6d89507861945",
+        "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
+        "visible": "7cb3ed5eab55c71154c0470413e93de7f73e838fb03aac48a85de0e3705bb864",
+    },
+    "terms-of-use.html": {
+        "head": "2034c36628ed34fbea85e0234d7a3fa9005bda35aaa3df6826eaa7d354112426",
+        "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
+        "scripts": "31c1c638780ee6d016e87b4cc4d6d823c4a41abbfd14225a58d6f5504555f3f4",
+        "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
+        "visible": "5389bac37fb7c2ef77bebc3f7f2029fde8ef26552da17143ec085cbbe6f2ac00",
     },
 }
 
