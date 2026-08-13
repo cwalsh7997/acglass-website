@@ -7,6 +7,7 @@ Run:  python3 -m unittest discover -s .github/scripts/tests -v
 from __future__ import annotations
 
 import importlib.util
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -220,6 +221,14 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
             with self.subTest(rel=rel):
                 text = (root / rel).read_text(encoding="utf-8")
                 self.assertEqual(self.scoped_violations(rel, text), [])
+
+    def test_ask_question_count_matches_rendered_questions(self):
+        root = SCRIPTS_DIR.parents[1]
+        text = (root / "ask.html").read_text(encoding="utf-8")
+        rendered_count = len(re.findall(r'class="qa-item"', text))
+        stated = re.search(r'<b>Questions</b>\s+(\d+)', text)
+        self.assertIsNotNone(stated)
+        self.assertEqual(int(stated.group(1)), rendered_count)
 
 
 if __name__ == "__main__":
