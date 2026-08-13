@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 CSS_PATH = ROOT / "css" / "acg-chrome.css"
 SCOPE_MARKER = 'data-acg-block="full-scope-v1"'
+EXPECTED_SCOPE_PAGE_COUNT = 336
 CHROME_LINK = re.compile(
     r'<link[^>]+href=["\'][^"\']*css/acg-chrome\.css(?:\?[^"\']*)?["\']',
     re.IGNORECASE,
@@ -72,7 +73,7 @@ class SharedContrastContractTests(unittest.TestCase):
             pages.append(path)
             if not CHROME_LINK.search(source):
                 missing.append(path.relative_to(ROOT).as_posix())
-        self.assertGreater(len(pages), 0)
+        self.assertEqual(EXPECTED_SCOPE_PAGE_COUNT, len(pages))
         self.assertEqual([], missing)
 
 
