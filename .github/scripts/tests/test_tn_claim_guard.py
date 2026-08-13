@@ -163,6 +163,9 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
         examples = (
             "Nashville office opening in 2026",
             "Tennessee coverage",
+            "ACG is opening a TN office in 2027.",
+            "ACG is bidding TN commercial glazing projects.",
+            "ACG works across Florida and the Southeast.",
             "Middle TN projects",
             "Q3 2026 launch",
         )
@@ -174,6 +177,10 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
     def test_neutral_education_reference_is_preserved(self):
         text = "Concrete Industry Management graduate, Middle Tennessee State University."
         self.assertEqual(self.scoped_violations("facts.html", text), [])
+
+    def test_university_name_is_not_a_blanket_claim_exception(self):
+        text = "ACG serves Middle Tennessee State University projects."
+        self.assertTrue(self.scoped_violations("facts.html", text))
 
     def test_current_governed_pages_have_no_stale_operating_language(self):
         root = SCRIPTS_DIR.parents[1]

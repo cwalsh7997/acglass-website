@@ -59,11 +59,13 @@ STALE_OPERATING_CLAIM_PAGES = (
 )
 
 ALLOWED_NEUTRAL_TN_REFERENCES = {
-    "facts.html": ("Middle Tennessee State University",),
+    "facts.html": (
+        "Concrete Industry Management graduate, Middle Tennessee State University.",
+    ),
 }
 
 STALE_OPERATING_LANGUAGE = re.compile(
-    r"\bNashville\b|\bTennessee\b|\bstatewide\s+TN\b|\bMiddle\s+TN\b|\bQ3\s+2026\b",
+    r"\bNashville\b|\bTennessee\b|\bTN\b|\bSoutheast(?:ern)?\b|\bQ3\s+2026\b",
     re.IGNORECASE,
 )
 
