@@ -1,0 +1,80 @@
+import re
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[3]
+CSS_PATH = ROOT / "css" / "acg-chrome.css"
+SCOPE_MARKER = 'data-acg-block="full-scope-v1"'
+CHROME_LINK = re.compile(
+    r'<link[^>]+href=["\'][^"\']*css/acg-chrome\.css(?:\?[^"\']*)?["\']',
+    re.IGNORECASE,
+)
+
+
+def relative_luminance(hex_color: str) -> float:
+    channels = [int(hex_color[index:index + 2], 16) / 255 for index in (1, 3, 5)]
+    linear = [
+        value / 12.92 if value <= 0.04045 else ((value + 0.055) / 1.055) ** 2.4
+        for value in channels
+    ]
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+
+
+def contrast_ratio(foreground: str, background: str) -> float:
+    light, dark = sorted(
+        (relative_luminance(foreground), relative_luminance(background)),
+        reverse=True,
+    )
+    return (light + 0.05) / (dark + 0.05)
+
+
+class SharedContrastContractTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.css = CSS_PATH.read_text(encoding="utf-8")
+
+    def test_shared_scope_colors_meet_normal_text_contrast(self):
+        self.assertGreaterEqual(contrast_ratio("#d8101e", "#f5f1ea"), 4.5)
+        self.assertGreaterEqual(contrast_ratio("#626c7c", "#f5f1ea"), 4.5)
+
+    def test_footer_wordmark_meets_large_text_contrast(self):
+        navy = "#0e284f"
+        white = "#ffffff"
+        alpha = 0.35
+        blended = "#" + "".join(
+            f"{round(int(white[index:index + 2], 16) * alpha + int(navy[index:index + 2], 16) * (1 - alpha)):02x}"
+            for index in (1, 3, 5)
+        )
+        self.assertGreaterEqual(contrast_ratio(blended, navy), 3.0)
+
+    def test_shared_stylesheet_contains_exact_overrides(self):
+        self.assertIn(
+            '[data-acg-block="full-scope-v1"]>div>div:first-child{color:#d8101e!important}',
+            self.css,
+        )
+        self.assertIn(
+            '[data-acg-block="full-scope-v1"] li>span{color:#626c7c!important}',
+            self.css,
+        )
+        self.assertIn(
+            '.ft-word span{-webkit-text-stroke-color:rgba(255,255,255,.35)!important}',
+            self.css,
+        )
+
+    def test_every_full_scope_page_loads_shared_chrome(self):
+        pages = []
+        missing = []
+        for path in ROOT.rglob("*.html"):
+            source = path.read_text(encoding="utf-8", errors="ignore")
+            if SCOPE_MARKER not in source:
+                continue
+            pages.append(path)
+            if not CHROME_LINK.search(source):
+                missing.append(path.relative_to(ROOT).as_posix())
+        self.assertGreater(len(pages), 0)
+        self.assertEqual([], missing)
+
+
+if __name__ == "__main__":
+    unittest.main()

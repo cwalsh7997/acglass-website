@@ -38,3 +38,8 @@
    opt-in utility rather than forced onto pages with different hero treatments.
    Apply class="hero-bg-navy" to any hero/section element that should use it. */
 .hero-bg-navy{background:linear-gradient(180deg,#050a12,#0e284f)}
+
+/* Shared long-tail page contrast corrections. */
+[data-acg-block="full-scope-v1"]>div>div:first-child{color:#d8101e!important}
+[data-acg-block="full-scope-v1"] li>span{color:#626c7c!important}
+.ft-word span{-webkit-text-stroke-color:rgba(255,255,255,.35)!important}
