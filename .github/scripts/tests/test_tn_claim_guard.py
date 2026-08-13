@@ -33,6 +33,8 @@ class DeliveryClaimTests(unittest.TestCase):
         self.assertEqual(len(violations("<p>FL CGC #1531993. 4 offices FL + TN.</p>")), 1)
 
     def test_office_count_with_planned_market_qualifier_passes(self):
+        # This helper tests the legacy site-wide detector in isolation. The
+        # governed Florida-page check rejects the same expansion language.
         self.assertEqual(
             violations(
                 "<h1>Four offices. <em>One glazing standard.</em></h1>"
@@ -43,6 +45,7 @@ class DeliveryClaimTests(unittest.TestCase):
         )
 
     def test_qualifier_may_sit_below_a_heading_in_a_list(self):
+        # The scoped high-visibility page contract is intentionally stricter.
         self.assertEqual(
             violations(
                 "ACG operates four offices:\n\n"
@@ -130,6 +133,54 @@ class DiscoveryTests(unittest.TestCase):
         names = {rel for rel, _ in guard.iter_claim_files()}
         self.assertIn("industries.html", names)
         self.assertIn("llms.txt", names)
+
+
+class ScopedStaleOperatingClaimTests(unittest.TestCase):
+    def scoped_violations(self, rel: str, text: str) -> list[str]:
+        out: list[str] = []
+        guard.check_scoped_stale_operating_claims(
+            rel, text, lambda path, msg: out.append(msg)
+        )
+        return out
+
+    def test_exact_governed_page_set(self):
+        self.assertEqual(
+            guard.STALE_OPERATING_CLAIM_PAGES,
+            (
+                "ask.html",
+                "best-glazing-subcontractor-florida.html",
+                "best-storefront-contractor-florida.html",
+                "blog/florida-commercial-construction-2026-outlook.html",
+                "commercial-storefront-installer-florida.html",
+                "facts.html",
+                "glass-canopies-commercial.html",
+                "industries.html",
+                "miami-hvhz-glazing-contractor.html",
+            ),
+        )
+
+    def test_operating_language_fails_on_governed_pages(self):
+        examples = (
+            "Nashville office opening in 2026",
+            "Tennessee coverage",
+            "Middle TN projects",
+            "Q3 2026 launch",
+        )
+        for rel in guard.STALE_OPERATING_CLAIM_PAGES:
+            for text in examples:
+                with self.subTest(rel=rel, text=text):
+                    self.assertTrue(self.scoped_violations(rel, text))
+
+    def test_neutral_education_reference_is_preserved(self):
+        text = "Concrete Industry Management graduate, Middle Tennessee State University."
+        self.assertEqual(self.scoped_violations("facts.html", text), [])
+
+    def test_current_governed_pages_have_no_stale_operating_language(self):
+        root = SCRIPTS_DIR.parents[1]
+        for rel in guard.STALE_OPERATING_CLAIM_PAGES:
+            with self.subTest(rel=rel):
+                text = (root / rel).read_text(encoding="utf-8")
+                self.assertEqual(self.scoped_violations(rel, text), [])
 
 
 if __name__ == "__main__":

@@ -18,10 +18,8 @@ generated from the Florida templates:
   4. Delivery-complete Tennessee claims *anywhere on the site*, not just on TN
      pages — an office count of four, an "Offices FL + TN" label, or a delivery
      verb applied to "Florida and Tennessee" as one present-tense territory.
-     ACG has three Florida offices; Nashville opens Q3 2026. The claim is only a
-     violation when no planned-market qualifier sits near it, so
-     "Four offices … Nashville office opens Q3 2026" passes and a bare
-     "serves … projects across Florida and Tennessee" does not.
+     Planned-market language does not establish an operating footprint on the
+     nine high-visibility Florida pages governed below.
 
 What it deliberately does NOT flag:
   - The West Palm Beach NAP in the footer of every page. That address is real
@@ -47,6 +45,27 @@ import sys
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SKIP_DIRS = {".git", ".github", "_internal", "node_modules", "fonts", "images", "css", "js"}
+
+STALE_OPERATING_CLAIM_PAGES = (
+    "ask.html",
+    "best-glazing-subcontractor-florida.html",
+    "best-storefront-contractor-florida.html",
+    "blog/florida-commercial-construction-2026-outlook.html",
+    "commercial-storefront-installer-florida.html",
+    "facts.html",
+    "glass-canopies-commercial.html",
+    "industries.html",
+    "miami-hvhz-glazing-contractor.html",
+)
+
+ALLOWED_NEUTRAL_TN_REFERENCES = {
+    "facts.html": ("Middle Tennessee State University",),
+}
+
+STALE_OPERATING_LANGUAGE = re.compile(
+    r"\bNashville\b|\bTennessee\b|\bstatewide\s+TN\b|\bMiddle\s+TN\b|\bQ3\s+2026\b",
+    re.IGNORECASE,
+)
 
 TN_CITIES = (
     "nashville", "knoxville", "memphis", "chattanooga", "franklin", "brentwood",
@@ -271,9 +290,20 @@ def check_delivery_claims(rel: str, text: str, fail):
             snippet = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", m.group(0))).strip()
             fail(
                 rel,
-                f"unqualified {label} claim {snippet!r} — ACG has three Florida "
-                "offices; add the Nashville Q3 2026 qualifier or drop the claim",
+                f"unqualified {label} claim {snippet!r}. ACG has three Florida "
+                "offices; drop or independently govern the additional claim",
             )
+
+
+def check_scoped_stale_operating_claims(rel: str, text: str, fail):
+    """Keep stale expansion language off the governed Florida pages."""
+    if rel not in STALE_OPERATING_CLAIM_PAGES:
+        return
+    checked = text
+    for allowed in ALLOWED_NEUTRAL_TN_REFERENCES.get(rel, ()):
+        checked = checked.replace(allowed, "")
+    for match in STALE_OPERATING_LANGUAGE.finditer(checked):
+        fail(rel, f"stale Tennessee operating language {match.group(0)!r}")
 
 
 def iter_claim_files():
@@ -310,6 +340,7 @@ def main() -> int:
         # are not Tennessee-scoped and so are invisible to the discovery pass.
         if not args.list:
             check_delivery_claims(rel, html, fail)
+            check_scoped_stale_operating_claims(rel, html, fail)
 
         if not rel.endswith(".html") or not is_tn_page(rel, html):
             continue
