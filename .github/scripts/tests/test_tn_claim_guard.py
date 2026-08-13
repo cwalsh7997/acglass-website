@@ -163,10 +163,14 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
         examples = (
             "Nashville office opening in 2026",
             "Tennessee coverage",
+            "ACG has a Tennessee office.",
             "ACG is opening a TN office in 2027.",
             "ACG is bidding TN commercial glazing projects.",
+            "ACG serves Middle Tennessee.",
+            "ACG is expanding into Tennessee.",
             "ACG works across Florida and the Southeast.",
             "Middle TN projects",
+            "Nashville Q3 2026",
             "Q3 2026 launch",
         )
         for rel in guard.STALE_OPERATING_CLAIM_PAGES:
@@ -178,9 +182,37 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
         text = "Concrete Industry Management graduate, Middle Tennessee State University."
         self.assertEqual(self.scoped_violations("facts.html", text), [])
 
+    def test_neutral_education_reference_is_path_bound(self):
+        text = "Concrete Industry Management graduate, Middle Tennessee State University."
+        self.assertTrue(self.scoped_violations("ask.html", text))
+
     def test_university_name_is_not_a_blanket_claim_exception(self):
         text = "ACG serves Middle Tennessee State University projects."
         self.assertTrue(self.scoped_violations("facts.html", text))
+
+    def test_metadata_schema_and_visible_copy_all_fail_closed(self):
+        examples = (
+            '<meta name="description" content="ACG serves Tennessee projects.">',
+            '<script type="application/ld+json">'
+            '{"description":"ACG is opening a Nashville office."}'
+            "</script>",
+            "<p>ACG is bidding TN projects.</p>",
+        )
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertTrue(self.scoped_violations("industries.html", text))
+
+    def test_non_governed_neutral_references_remain_out_of_scope(self):
+        examples = (
+            "Tennessee adopted the 2018 IBC.",
+            "Florida and Tennessee code requirements differ.",
+            "Metro Nashville Codes office administers permits.",
+            "Nashville office construction is recovering.",
+            "Harmon operates a Nashville office.",
+        )
+        for text in examples:
+            with self.subTest(text=text):
+                self.assertEqual(self.scoped_violations("comparison.html", text), [])
 
     def test_current_governed_pages_have_no_stale_operating_language(self):
         root = SCRIPTS_DIR.parents[1]
