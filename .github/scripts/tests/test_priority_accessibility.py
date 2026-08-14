@@ -24,7 +24,7 @@ LANDMARK_ONLY_PAGES = (
 )
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
-        "head": "0c050792c18e22e7b8adf31d15075d1739f99e74069530bcf787b4d81be38ccc",
+        "head": "9a1dd7d2324c04abf49e33d6e06c3e6607246593ea6093d2bbcca14bbe633bdf",
         "jsonld": "cbe03bce400f4b8693960a5c82e327a79a509253738e0218f0219f219254ebd3",
         "scripts": "886fe08506e6b1884d31e50b169bca1d5735995f83cd3e9e4d7ac7766499e7a4",
         "hrefs": "7e30d5e0bb79f0616da02b9a99147904c583c8aa00d7595335dae51520775736",

@@ -7,8 +7,18 @@ ROOT = Path(__file__).resolve().parents[3]
 CSS_PATH = ROOT / "css" / "acg-chrome.css"
 SCOPE_MARKER = 'data-acg-block="full-scope-v1"'
 EXPECTED_SCOPE_PAGE_COUNT = 336
+CACHE_VERSION = "20260814-contrast"
+FROZEN_SCOPE_PATHS = {
+    "commercial-glazier-near-me-west-palm-beach/index.html",
+    "commercial-glazing-west-palm-beach.html",
+    "eswindows-installer-west-palm-beach.html",
+    "impact-windows-palm-beach.html",
+    "storefront-glazier-west-palm-beach-florida/index.html",
+    "storefront-installer-west-palm-beach.html",
+    "west-palm-beach/index.html",
+}
 CHROME_LINK = re.compile(
-    r'<link[^>]+href=["\'][^"\']*css/acg-chrome\.css(?:\?[^"\']*)?["\']',
+    r'<link[^>]+href=["\'](?P<href>[^"\']*css/acg-chrome\.css(?:\?[^"\']*)?)["\']',
     re.IGNORECASE,
 )
 
@@ -66,15 +76,28 @@ class SharedContrastContractTests(unittest.TestCase):
     def test_every_full_scope_page_loads_shared_chrome(self):
         pages = []
         missing = []
+        frozen = []
+        stale_cache_keys = []
         for path in ROOT.rglob("*.html"):
             source = path.read_text(encoding="utf-8", errors="ignore")
             if SCOPE_MARKER not in source:
                 continue
             pages.append(path)
-            if not CHROME_LINK.search(source):
-                missing.append(path.relative_to(ROOT).as_posix())
+            relative = path.relative_to(ROOT).as_posix()
+            match = CHROME_LINK.search(source)
+            if not match:
+                missing.append(relative)
+                continue
+            if relative in FROZEN_SCOPE_PATHS:
+                frozen.append(relative)
+                continue
+            expected = f"/css/acg-chrome.css?v={CACHE_VERSION}"
+            if match.group("href") != expected:
+                stale_cache_keys.append((relative, match.group("href")))
         self.assertEqual(EXPECTED_SCOPE_PAGE_COUNT, len(pages))
+        self.assertEqual(FROZEN_SCOPE_PATHS, set(frozen))
         self.assertEqual([], missing)
+        self.assertEqual([], stale_cache_keys)
 
 
 if __name__ == "__main__":
