@@ -380,7 +380,7 @@
               <h3>Project Discovery</h3>
               <div class="gsc-sec-sub">Scope, location, building type, occupancy &mdash; the inputs every later decision depends on.</div>
             </div>
-            <div class="gsc-sec-count" data-count="discovery"></div>
+            <div class="gsc-sec-count" data-section-count="discovery"></div>
           </div>
           <ul class="gsc-items" data-section="discovery">
             <li class="gsc-item"><input type="checkbox" id="d1"><label for="d1">Define the glazing scope boundary in writing &mdash; what is in the Division 08 package and what belongs to other trades (rough openings, sealant tie-ins, blocking, flashing, fire-stopping).</label></li>
@@ -411,7 +411,7 @@
               <h3>Wind + Impact Requirements</h3>
               <div class="gsc-sec-sub">HVHZ vs. non-HVHZ, design pressure, product approval, and the FBC compliance path.</div>
             </div>
-            <div class="gsc-sec-count" data-count="wind"></div>
+            <div class="gsc-sec-count" data-section-count="wind"></div>
           </div>
           <ul class="gsc-items" data-section="wind">
             <li class="gsc-item"><input type="checkbox" id="w1"><label for="w1">Determine whether the site is in the High-Velocity Hurricane Zone. In Florida the HVHZ is Miami-Dade and Broward counties, where the stricter HVHZ provisions of the FBC apply.</label></li>
@@ -446,7 +446,7 @@
               <h3>Glass Performance Specs</h3>
               <div class="gsc-sec-sub">Laminated, tempered, low-E, solar heat gain, U-factor, and acoustic targets.</div>
             </div>
-            <div class="gsc-sec-count" data-count="glass"></div>
+            <div class="gsc-sec-count" data-section-count="glass"></div>
           </div>
           <ul class="gsc-items" data-section="glass">
             <li class="gsc-item"><input type="checkbox" id="g1"><label for="g1">Specify laminated glass where impact resistance is required &mdash; define the interlayer type (PVB or the stiffer SentryGlas / SGP for higher loads) and thickness, since the interlayer governs the impact and structural performance.</label></li>
@@ -478,7 +478,7 @@
               <h3>Frame System Selection</h3>
               <div class="gsc-sec-sub">Storefront vs. curtain wall vs. window wall &mdash; matched to height and structure.</div>
             </div>
-            <div class="gsc-sec-count" data-count="frame"></div>
+            <div class="gsc-sec-count" data-section-count="frame"></div>
           </div>
           <ul class="gsc-items" data-section="frame">
             <li class="gsc-item"><input type="checkbox" id="f1"><label for="f1">Match the frame family to the application: storefront for grade-level, lower-rise punched and ribbon openings; curtain wall for taller, continuous, structurally spanning facades; window wall for floor-to-floor infill between slab edges, common in multifamily.</label></li>
@@ -513,7 +513,7 @@
               <h3>Hardware + Operability</h3>
               <div class="gsc-sec-sub">Door hardware, panic devices, automatic operators, and ADA operating force.</div>
             </div>
-            <div class="gsc-sec-count" data-count="hardware"></div>
+            <div class="gsc-sec-count" data-section-count="hardware"></div>
           </div>
           <ul class="gsc-items" data-section="hardware">
             <li class="gsc-item"><input type="checkbox" id="h1"><label for="h1">Specify the full door hardware set for each entrance &mdash; closers, pivots or continuous hinges, locks, thresholds, weatherstripping &mdash; and coordinate keying with the owner's hardware schedule.</label></li>
@@ -545,7 +545,7 @@
               <h3>Fire-Rated Requirements</h3>
               <div class="gsc-sec-sub">UL listings, time ratings, fire-protective vs. fire-resistive, and listed products.</div>
             </div>
-            <div class="gsc-sec-count" data-count="fire"></div>
+            <div class="gsc-sec-count" data-section-count="fire"></div>
           </div>
           <ul class="gsc-items" data-section="fire">
             <li class="gsc-item"><input type="checkbox" id="r1"><label for="r1">Identify every fire-rated opening from the architectural life-safety plan &mdash; stair and corridor enclosures, area separations, shaft walls &mdash; and the required time rating (20, 45, 60, 90, or 120 minutes).</label></li>
@@ -575,7 +575,7 @@
               <h3>Submittal Package</h3>
               <div class="gsc-sec-sub">Shop drawings, structural calcs, product approvals, manufacturer data, and samples.</div>
             </div>
-            <div class="gsc-sec-count" data-count="submittal"></div>
+            <div class="gsc-sec-count" data-section-count="submittal"></div>
           </div>
           <ul class="gsc-items" data-section="submittal">
             <li class="gsc-item"><input type="checkbox" id="s1"><label for="s1">Shop drawings showing elevations, plans, sections, details, anchor locations, glass types by opening, and dimensions reconciled to verified field conditions.</label></li>
@@ -607,7 +607,7 @@
               <h3>Schedule + Close-Out</h3>
               <div class="gsc-sec-sub">Lead times, install sequence, punch, and the warranty and close-out documents.</div>
             </div>
-            <div class="gsc-sec-count" data-count="closeout"></div>
+            <div class="gsc-sec-count" data-section-count="closeout"></div>
           </div>
           <ul class="gsc-items" data-section="closeout">
             <li class="gsc-item"><input type="checkbox" id="c1"><label for="c1">Get the fabrication lead time in writing from the manufacturer, measured from approved submittals &mdash; not from contract execution. Aluminum framing and impact-rated systems commonly run on the order of 8&ndash;16 weeks; specialty, custom, and fire-rated assemblies run longer. Confirm current lead times for your specific products.</label></li>
@@ -730,7 +730,7 @@
         var sec = ul.getAttribute('data-section');
         var secBoxes = ul.querySelectorAll('input[type="checkbox"]');
         var secDone = ul.querySelectorAll('input[type="checkbox"]:checked').length;
-        var label = document.querySelector('.gsc-sec-count[data-count="'+sec+'"]');
+        var label = document.querySelector('.gsc-sec-count[data-section-count="'+sec+'"]');
         if(label) label.textContent = secDone + ' / ' + secBoxes.length;
       });
     }
