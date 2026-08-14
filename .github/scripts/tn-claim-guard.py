@@ -58,6 +58,10 @@ STALE_OPERATING_CLAIM_PAGES = (
     "miami-hvhz-glazing-contractor.html",
 )
 
+STALE_OPERATING_CLAIM_ASSETS = (
+    "images/acg-coverage-map.svg",
+)
+
 ALLOWED_NEUTRAL_TN_REFERENCES = {
     "facts.html": (
         "Concrete Industry Management graduate, Middle Tennessee State University.",
@@ -299,7 +303,7 @@ def check_delivery_claims(rel: str, text: str, fail):
 
 def check_scoped_stale_operating_claims(rel: str, text: str, fail):
     """Keep stale expansion language off the governed Florida pages."""
-    if rel not in STALE_OPERATING_CLAIM_PAGES:
+    if rel not in STALE_OPERATING_CLAIM_PAGES + STALE_OPERATING_CLAIM_ASSETS:
         return
     checked = text
     for allowed in ALLOWED_NEUTRAL_TN_REFERENCES.get(rel, ()):
@@ -315,6 +319,8 @@ def iter_claim_files():
         full = os.path.join(REPO_ROOT, name)
         if os.path.exists(full):
             yield name, full
+    for name in STALE_OPERATING_CLAIM_ASSETS:
+        yield name, os.path.join(REPO_ROOT, name)
 
 
 def main() -> int:

@@ -160,6 +160,12 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
             ),
         )
 
+    def test_exact_governed_asset_set(self):
+        self.assertEqual(
+            guard.STALE_OPERATING_CLAIM_ASSETS,
+            ("images/acg-coverage-map.svg",),
+        )
+
     def test_operating_language_fails_on_governed_pages(self):
         examples = (
             "Nashville office opening in 2026",
@@ -218,6 +224,13 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
     def test_current_governed_pages_have_no_stale_operating_language(self):
         root = SCRIPTS_DIR.parents[1]
         for rel in guard.STALE_OPERATING_CLAIM_PAGES:
+            with self.subTest(rel=rel):
+                text = (root / rel).read_text(encoding="utf-8")
+                self.assertEqual(self.scoped_violations(rel, text), [])
+
+    def test_current_governed_assets_have_no_stale_operating_language(self):
+        root = SCRIPTS_DIR.parents[1]
+        for rel in guard.STALE_OPERATING_CLAIM_ASSETS:
             with self.subTest(rel=rel):
                 text = (root / rel).read_text(encoding="utf-8")
                 self.assertEqual(self.scoped_violations(rel, text), [])

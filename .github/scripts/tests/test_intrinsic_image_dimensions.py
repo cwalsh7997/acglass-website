@@ -1,6 +1,7 @@
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 from xml.etree import ElementTree
 
 
@@ -62,6 +63,10 @@ def parsed_images(path: Path) -> list[dict[str, str]]:
     return parser.images
 
 
+def images_by_asset_path(images: list[dict[str, str]]) -> dict[str, dict[str, str]]:
+    return {urlsplit(image["src"]).path: image for image in images}
+
+
 def jpeg_dimensions(path: Path) -> tuple[int, int]:
     with path.open("rb") as image:
         if image.read(2) != b"\xff\xd8":
@@ -108,7 +113,7 @@ class IntrinsicImageDimensionTests(unittest.TestCase):
     def test_added_dimensions_match_source_assets(self):
         for relative, expected_images in EXPECTED.items():
             images = parsed_images(ROOT / relative)
-            by_source = {image["src"]: image for image in images}
+            by_source = images_by_asset_path(images)
             for source, expected_dimensions in expected_images.items():
                 with self.subTest(page=relative, source=source):
                     image = by_source[source]
@@ -120,7 +125,7 @@ class IntrinsicImageDimensionTests(unittest.TestCase):
     def test_touched_alt_text_uses_permitted_punctuation(self):
         for relative, expected_images in EXPECTED.items():
             images = parsed_images(ROOT / relative)
-            by_source = {image["src"]: image for image in images}
+            by_source = images_by_asset_path(images)
             for source in expected_images:
                 with self.subTest(page=relative, source=source):
                     alt_text = by_source[source].get("alt", "")
