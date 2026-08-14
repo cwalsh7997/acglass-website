@@ -43,3 +43,13 @@
 [data-acg-block="full-scope-v1"]>div>div:first-child{color:#d8101e!important}
 [data-acg-block="full-scope-v1"] li>span{color:#626c7c!important}
 .ft-word span{-webkit-text-stroke-color:rgba(255,255,255,.35)!important}
+
+/* Dark template text uses the existing dark-system brighter red. */
+.wpb-section-eyebrow,
+.wpb-section .quick-answer-label,
+.system-card-tagline,
+.project-cat,
+.costs-table td.price,
+.author-title,
+.wpb-section a{color:#f5303c!important}
+.wpb-section a:hover{color:#fff!important}

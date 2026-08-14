@@ -6,8 +6,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 CSS_PATH = ROOT / "css" / "acg-chrome.css"
 SCOPE_MARKER = 'data-acg-block="full-scope-v1"'
+TEMPLATE_MARKER = ".wpb-section-eyebrow"
 EXPECTED_SCOPE_PAGE_COUNT = 336
 CACHE_VERSION = "20260814-contrast"
+TEMPLATE_CACHE_VERSION = "20260814-template-contrast"
 FROZEN_SCOPE_PATHS = {
     "commercial-glazier-near-me-west-palm-beach/index.html",
     "commercial-glazing-west-palm-beach.html",
@@ -91,7 +93,8 @@ class SharedContrastContractTests(unittest.TestCase):
             if relative in FROZEN_SCOPE_PATHS:
                 frozen.append(relative)
                 continue
-            expected = f"/css/acg-chrome.css?v={CACHE_VERSION}"
+            version = TEMPLATE_CACHE_VERSION if TEMPLATE_MARKER in source else CACHE_VERSION
+            expected = f"/css/acg-chrome.css?v={version}"
             if match.group("href") != expected:
                 stale_cache_keys.append((relative, match.group("href")))
         self.assertEqual(EXPECTED_SCOPE_PAGE_COUNT, len(pages))
