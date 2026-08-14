@@ -16,18 +16,16 @@ generated from the Florida templates:
   3. Structured data asserting a Tennessee street address, Tennessee
      coordinates, or a Tennessee LocalBusiness node.
   4. Delivery-complete Tennessee claims *anywhere on the site*, not just on TN
-     pages — an office count of four, an "Offices FL + TN" label, or a delivery
-     verb applied to "Florida and Tennessee" as one present-tense territory.
-     Planned-market language does not establish an operating footprint on the
-     nine high-visibility Florida pages governed below.
+     pages. This includes an office count of four, an "Offices FL + TN" label,
+     or a delivery verb applied to "Florida and Tennessee" as one present-tense
+     territory. Planned-market language is not a truth qualifier.
 
 What it deliberately does NOT flag:
   - The West Palm Beach NAP in the footer of every page. That address is real
     and belongs on TN pages.
-  - Body copy that contrasts Florida and Tennessee ("there is no HVHZ anywhere
-    in Tennessee", "Florida HVHZ engineering discipline transfers to TN").
-    Those statements are true and are the point of the pages, so only metadata
-    is scanned for the Florida regulatory terms.
+  - Body copy that contrasts Florida and Tennessee. This bounded guard does not
+    establish whether those statements are true. Technical and market claims
+    require independent primary-source review.
 
 Usage:
   python .github/scripts/tn-claim-guard.py            # exit 1 on any violation
@@ -37,16 +35,70 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
+import html as html_lib
 import json
 import os
 import re
 import sys
+from html.parser import HTMLParser
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SKIP_DIRS = {".git", ".github", "_internal", "node_modules", "fonts", "images", "css", "js"}
+CSS_SCAN_SKIP_DIRS = {".git", "_internal", "node_modules"}
+REFERENCE_INVENTORY_PATH = os.path.join(
+    REPO_ROOT, ".github", "tn-reference-inventory.json"
+)
+
+REFERENCE_GROUPS = (
+    "path_or_title_discovery",
+    "stale_operating_claim_hold",
+    "mixed_claim_review",
+    "biography_only",
+    "technical_or_market_review",
+    "license_disclaimer_link_review",
+    "source_controlled_project_claim",
+    "outside_edge_redirect_source",
+)
+
+REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
+    "path_or_title_discovery":
+        "f61df174a5b1d602577b0457f4a53ae0f8344dd12af0d23ec24b1ed2c6ff37ae",
+    "stale_operating_claim_hold":
+        "d91fa0f80ebfce49a9b873451434c1a2d9c21a237a11680d7ba9ea1d77b9a5f6",
+    "mixed_claim_review":
+        "875c20e4a22f237694248ad5101fada3ebd82d263f695f643435bd73e59d8798",
+    "biography_only":
+        "6d3e95e04f8be403007daf48ddae2078c3c3628277bf6875801cc90e70f818af",
+    "technical_or_market_review":
+        "e398c6c6583e0dbba6a3125480a233828b59b4d74cf38615eba8ffbfcf72deab",
+    "license_disclaimer_link_review":
+        "aefebeb2566e5501b8e12bb30fb8c8bc5a1e0027c1e69ccd362087260ded5fdd",
+    "source_controlled_project_claim":
+        "93adb24c5b616a2cb68ef72cf972f080b4180c009a76565266eae672e068617a",
+    "outside_edge_redirect_source":
+        "051074a1d5c5f5a1623e45f1e8b9c263b4fc5e99f41eb970b1ce4fadb3ed1fa9",
+}
+
+EXCLUDED_FRAGMENT_SURFACE_SHA256 = {
+    "services-schema-block.html":
+        "2f239fbdf98725113793686d7c7903c71937d0a95bf668f6ebcb3c5e6133613d",
+}
+
+TN_CONTENT_TOKEN = re.compile(
+    r"(?<![A-Za-z0-9])(?:Tennessee|Nashville|TN)(?![A-Za-z0-9])",
+    re.IGNORECASE,
+)
+HTML_DOCUMENT_MARKER = re.compile(
+    r"<!doctype\s+html|<html\b|<head\b|<body\b",
+    re.IGNORECASE,
+)
 
 STALE_OPERATING_CLAIM_PAGES = (
+    "acg-vs-giroux-glass.html",
+    "acg-vs-harmon.html",
+    "acg-vs-permasteelisa.html",
     "ask.html",
     "best-glazing-subcontractor-florida.html",
     "best-storefront-contractor-florida.html",
@@ -54,8 +106,13 @@ STALE_OPERATING_CLAIM_PAGES = (
     "commercial-storefront-installer-florida.html",
     "facts.html",
     "glass-canopies-commercial.html",
+    "glazing-subcontractor-vs-general-contractor.html",
     "industries.html",
+    "locations.html",
     "miami-hvhz-glazing-contractor.html",
+    "restaurant-glazing-contractor.html",
+    "security-window-film-retrofit.html",
+    "service-areas-map/index.html",
 )
 
 STALE_OPERATING_CLAIM_ASSETS = (
@@ -65,6 +122,9 @@ STALE_OPERATING_CLAIM_ASSETS = (
 ALLOWED_NEUTRAL_TN_REFERENCES = {
     "facts.html": (
         "Concrete Industry Management graduate, Middle Tennessee State University.",
+    ),
+    "locations.html": (
+        "Southeast Florida",
     ),
 }
 
@@ -132,6 +192,8 @@ TN_LON = (-90.8, -81.3)
 
 OFFICE_COUNT = re.compile(
     r"\b(?:four|4)\s+offices\b"
+    r"|\b(?:fourth|4th)\s+office\b"
+    r"|\boffice\s+(?:number\s+)?(?:four|4)\b"
     r"|\bOffices?\b(?:\s|&middot;|&nbsp;|·|\|){0,4}(?:FL|Florida)\s*(?:\+|and|&amp;|&)\s*(?:TN|Tennessee)\b",
     re.IGNORECASE,
 )
@@ -145,24 +207,24 @@ DELIVERY_PAIR = re.compile(
     re.IGNORECASE,
 )
 
-# The planned-market qualifier that makes the claim truthful. Searched in a
-# window around the match rather than the same sentence, because the honest
-# form is usually a heading plus the paragraph or list under it.
-TN_QUALIFIER = re.compile(
-    r"Q3\s*(?:'|’)?\s*(?:20)?26|opens?\b|opening\b|launch(?:ing|es)?\b"
-    r"|planned\b|pending\b|will\s+open",
-    re.IGNORECASE,
-)
 QUALIFIER_BEFORE = 200
 QUALIFIER_AFTER = 460
 
-# Titles are excluded: their length budget cannot carry the qualifier, and
-# retitling is a separate ranking decision.
+# The delivery regex masks titles. The separate reference inventory still
+# classifies and fingerprints every Tennessee title.
 TITLE_TAGS = re.compile(
     r"<title>.*?</title>"
     r"|<meta[^>]+(?:name|property)\s*=\s*\"(?:og:title|twitter:title)\"[^>]*>",
     re.DOTALL | re.IGNORECASE,
 )
+
+# One known claim is retained only because projects/index.html is inside the
+# staged IA and protected-content lane. The normalized context fingerprint
+# makes the exception exact. Planned or opening language is never a qualifier.
+HELD_DELIVERY_CLAIMS = {
+    ("projects/index.html", "office-count"):
+        "3b35ffbcfdf32d781ffb604811211a99ed2411f2c538586264e71dfdfbc14179",
+}
 
 
 def iter_html_files():
@@ -171,6 +233,15 @@ def iter_html_files():
         for fn in filenames:
             if fn.endswith(".html"):
                 full = os.path.join(dirpath, fn)
+                yield os.path.relpath(full, REPO_ROOT).replace(os.sep, "/"), full
+
+
+def iter_css_files():
+    for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
+        dirnames[:] = [d for d in dirnames if d not in CSS_SCAN_SKIP_DIRS]
+        for filename in filenames:
+            if filename.endswith(".css"):
+                full = os.path.join(dirpath, filename)
                 yield os.path.relpath(full, REPO_ROOT).replace(os.sep, "/"), full
 
 
@@ -208,6 +279,810 @@ def is_tn_page(rel: str, html: str) -> bool:
     if TN_PATH.search(rel):
         return True
     return bool(TN_TITLE.search(extract_title(html)))
+
+
+def javascript_string_literals(source: str):
+    literals = []
+    index = 0
+    while index < len(source):
+        if source[index] not in ("\"", "'", "`"):
+            index += 1
+            continue
+        quote = source[index]
+        start = index
+        index += 1
+        pieces = []
+        while index < len(source):
+            char = source[index]
+            if char == quote:
+                index += 1
+                break
+            if char == "\\" and index + 1 < len(source):
+                pieces.extend((char, source[index + 1]))
+                index += 2
+                continue
+            pieces.append(char)
+            index += 1
+        literals.append(
+            (
+                start,
+                index,
+                ReferenceSurfaceParser.decode_reference_text("".join(pieces)),
+                quote,
+            )
+        )
+    return literals
+
+
+def javascript_template_expression_end(value: str, start: int) -> int | None:
+    depth = 1
+    quote = None
+    escaped = False
+    for index in range(start, len(value)):
+        char = value[index]
+        if escaped:
+            escaped = False
+            continue
+        if char == "\\":
+            escaped = True
+            continue
+        if quote:
+            if char == quote:
+                quote = None
+            continue
+        if char in ("\"", "'", "`"):
+            quote = char
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return index
+    return None
+
+
+JS_STATIC_BINDING = re.compile(
+    r"(?<![\w.$])(?:(?:const|let|var)\s+)?"
+    r"([A-Za-z_$][A-Za-z0-9_$]*)\s*=\s*$"
+)
+
+
+def javascript_static_bindings(source: str, literals):
+    bindings = {}
+    for start, _, value, _ in literals:
+        match = JS_STATIC_BINDING.search(source[max(0, start - 256):start])
+        if match:
+            bindings.setdefault(match.group(1), []).append(value)
+    return bindings
+
+
+def javascript_template_reference_values(value: str, bindings=None):
+    bindings = bindings or {}
+    option_groups = []
+    position = 0
+    while position < len(value):
+        marker = value.find("${", position)
+        if marker < 0:
+            option_groups.append([value[position:]])
+            break
+        option_groups.append([value[position:marker]])
+        end = javascript_template_expression_end(value, marker + 2)
+        if end is None:
+            option_groups.append([value[marker:]])
+            break
+        expression = value[marker + 2:end]
+        options = list(bindings.get(expression.strip(), ()))
+        options.extend(javascript_reference_values(expression, bindings))
+        options = list(dict.fromkeys(options))
+        option_groups.append(options or [""])
+        position = end + 1
+
+    if not option_groups:
+        return
+    variants = [""]
+    for options in option_groups:
+        variants = [
+            prefix + option
+            for prefix in variants
+            for option in options
+        ]
+    yield from variants
+
+
+def javascript_reference_values(source: str, bindings=None):
+    literals = javascript_string_literals(source)
+    if bindings is None:
+        bindings = javascript_static_bindings(source, literals)
+    for _, _, value, quote in literals:
+        yield value
+        if quote == "`":
+            yield from javascript_template_reference_values(value, bindings)
+    atoms = [(start, end, value) for start, end, value, _ in literals]
+    for atom in javascript_character_code_atoms(source):
+        atoms.append(atom)
+        yield atom[2]
+    atoms.sort()
+    for position in range(len(atoms)):
+        combined = atoms[position][2]
+        for _, _, next_value in atoms[position + 1:position + 8]:
+            combined += next_value
+            if len(combined) > 64:
+                break
+            yield combined
+    for position, (_, end, value, _) in enumerate(literals[:-1]):
+        combined = value
+        current_end = end
+        joined = False
+        for next_start, next_end, next_value, _ in literals[position + 1:]:
+            if not re.fullmatch(r"\s*\+\s*", source[current_end:next_start]):
+                break
+            combined += next_value
+            current_end = next_end
+            joined = True
+        if joined:
+            yield combined
+
+
+JS_CHARACTER_CODE_CALL = re.compile(
+    r"(?:String\s*\.\s*)?from(?:CharCode|CodePoint)\s*\(([^()]*)\)"
+)
+JS_INTEGER_LITERAL = re.compile(r"(?:0[xX][0-9a-fA-F]+|[0-9]+)")
+
+
+def javascript_character_code_atoms(source: str):
+    for match in JS_CHARACTER_CODE_CALL.finditer(source):
+        parts = [part.strip() for part in match.group(1).split(",")]
+        if not parts or not all(JS_INTEGER_LITERAL.fullmatch(part) for part in parts):
+            continue
+        try:
+            value = "".join(chr(int(part, 0)) for part in parts)
+        except (ValueError, OverflowError):
+            continue
+        yield match.start(), match.end(), value
+
+
+class ReferenceSurfaceParser(HTMLParser):
+    BLOCK_TAGS = {
+        "address",
+        "article",
+        "aside",
+        "blockquote",
+        "br",
+        "div",
+        "dl",
+        "fieldset",
+        "figcaption",
+        "figure",
+        "footer",
+        "form",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "header",
+        "hr",
+        "li",
+        "main",
+        "nav",
+        "ol",
+        "p",
+        "pre",
+        "script",
+        "section",
+        "table",
+        "td",
+        "th",
+        "tr",
+        "ul",
+    }
+    SEMANTIC_ATTRIBUTES = {
+        "action",
+        "alt",
+        "aria-label",
+        "content",
+        "href",
+        "hreflang",
+        "http-equiv",
+        "name",
+        "placeholder",
+        "property",
+        "rel",
+        "role",
+        "src",
+        "title",
+        "type",
+        "value",
+    }
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.pieces = []
+        self.token_parts = []
+        self.style_depth = 0
+        self.script_depth = 0
+        self.css_sources = []
+        self.css_finalized = False
+        self.attribute_sets = []
+
+    @staticmethod
+    def decode_reference_text(value):
+        decoded = html_lib.unescape(value)
+        decoded = re.sub(
+            r"\\u([0-9a-fA-F]{4})",
+            lambda match: chr(int(match.group(1), 16)),
+            decoded,
+        )
+        return re.sub(
+            r"\\x([0-9a-fA-F]{2})",
+            lambda match: chr(int(match.group(1), 16)),
+            decoded,
+        )
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        if tag == "style":
+            self.style_depth += 1
+            return
+        if self.style_depth:
+            return
+        if tag == "script":
+            self.script_depth += 1
+        if tag in self.BLOCK_TAGS:
+            self.token_parts.append(" ")
+        element_attributes = {}
+        for name, value in attrs:
+            if value is None:
+                continue
+            lowered = name.lower()
+            element_attributes.setdefault(lowered, []).append(
+                self.decode_reference_text(value)
+            )
+            if lowered == "style":
+                self.add_css_content(value)
+            decoded_style = decode_css_text(value) if lowered == "style" else ""
+            if (
+                lowered in self.SEMANTIC_ATTRIBUTES
+                or lowered.startswith("aria-")
+                or lowered.startswith("data-")
+                or lowered.startswith("on")
+                or TN_CONTENT_TOKEN.search(value)
+                or TN_CONTENT_TOKEN.search(decoded_style)
+            ):
+                self.pieces.append(f"@{lowered}={value}")
+                self.token_parts.append(
+                    f" {self.decode_reference_text(value)} "
+                )
+                if lowered.startswith("on"):
+                    for script_value in javascript_reference_values(value):
+                        self.token_parts.append(f" {script_value} ")
+        if element_attributes:
+            self.attribute_sets.append(element_attributes)
+
+    def add_css_content(self, css):
+        self.css_sources.append(css)
+
+    def finalize_css_content(self):
+        if self.css_finalized:
+            return
+        self.css_finalized = True
+        css = "\n".join(self.css_sources)
+        seen = set()
+        attribute_names = css_content_attribute_names(css)
+        relevant_attribute_sets = [
+            attributes
+            for attributes in self.attribute_sets
+            if set(attributes) & attribute_names
+        ]
+        for attributes in ({}, *relevant_attribute_sets):
+            for value in css_reference_values(css, attributes):
+                if value in seen:
+                    continue
+                seen.add(value)
+                self.pieces.append(f"@css-content={value}")
+                self.token_parts.append(f" {value} ")
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if tag == "style" and self.style_depth:
+            self.style_depth -= 1
+            return
+        if tag == "script" and self.script_depth:
+            self.script_depth -= 1
+        if not self.style_depth and tag in self.BLOCK_TAGS:
+            self.token_parts.append(" ")
+
+    def handle_data(self, data):
+        if self.style_depth:
+            self.add_css_content(data)
+        elif data.strip():
+            self.pieces.append(data)
+            self.token_parts.append(self.decode_reference_text(data))
+            if self.script_depth:
+                for script_value in javascript_reference_values(data):
+                    self.token_parts.append(f" {script_value} ")
+
+    def token_text(self):
+        self.finalize_css_content()
+        return re.sub(r"\s+", " ", "".join(self.token_parts)).strip()
+
+
+CSS_CONTENT_START = re.compile(r"(?<![-\w])content\s*:", re.IGNORECASE)
+CSS_CUSTOM_PROPERTY_START = re.compile(
+    r"(?<![-\w])(--[A-Za-z0-9_-]+)\s*:"
+)
+CSS_VAR_START = re.compile(r"var\(\s*(--[A-Za-z0-9_-]+)", re.IGNORECASE)
+CSS_ATTR_START = re.compile(
+    r"attr\(\s*([A-Za-z_:][-A-Za-z0-9_:.]*)",
+    re.IGNORECASE,
+)
+CSS_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
+
+
+def decode_css_text(value: str) -> str:
+    decoded = html_lib.unescape(value)
+    decoded = re.sub(r"\\(?:\r\n|[\n\r\f])", "", decoded)
+    decoded = re.sub(
+        r"\\([0-9a-fA-F]{1,6})(?:[ \t\r\n\f])?",
+        lambda match: chr(int(match.group(1), 16)),
+        decoded,
+    )
+    return re.sub(r"\\([^\n\r\f])", r"\1", decoded)
+
+
+def css_declaration_value(source: str, start: int) -> str:
+    quote = None
+    escaped = False
+    paren_depth = 0
+    end = len(source)
+    for index in range(start, len(source)):
+        char = source[index]
+        if escaped:
+            escaped = False
+            continue
+        if char == "\\":
+            escaped = True
+            continue
+        if quote:
+            if char == quote:
+                quote = None
+            continue
+        if char in ("\"", "'"):
+            quote = char
+        elif char == "(":
+            paren_depth += 1
+        elif char == ")" and paren_depth:
+            paren_depth -= 1
+        elif not paren_depth and char in (";", "}"):
+            end = index
+            break
+    return source[start:end]
+
+
+def css_content_declarations(css: str):
+    source = CSS_COMMENT.sub("", css)
+    for match in CSS_CONTENT_START.finditer(source):
+        yield css_declaration_value(source, match.end())
+
+
+def css_custom_properties(css: str):
+    source = CSS_COMMENT.sub("", css)
+    properties = {}
+    for match in CSS_CUSTOM_PROPERTY_START.finditer(source):
+        properties.setdefault(match.group(1), []).append(
+            css_declaration_value(source, match.end())
+        )
+    return properties
+
+
+def css_string_values(value: str):
+    index = 0
+    while index < len(value):
+        if value[index] not in ("\"", "'"):
+            index += 1
+            continue
+        quote = value[index]
+        index += 1
+        pieces = []
+        while index < len(value):
+            char = value[index]
+            if char == quote:
+                index += 1
+                break
+            if char == "\\" and index + 1 < len(value):
+                pieces.extend((char, value[index + 1]))
+                index += 2
+                continue
+            pieces.append(char)
+            index += 1
+        yield decode_css_text("".join(pieces))
+
+
+def css_generated_variants(
+    value: str,
+    properties: dict,
+    seen=frozenset(),
+    attributes=None,
+):
+    option_groups = []
+    index = 0
+    while index < len(value):
+        if value[index] in ("\"", "'"):
+            quote = value[index]
+            index += 1
+            pieces = []
+            while index < len(value):
+                char = value[index]
+                if char == quote:
+                    index += 1
+                    break
+                if char == "\\" and index + 1 < len(value):
+                    pieces.extend((char, value[index + 1]))
+                    index += 2
+                    continue
+                pieces.append(char)
+                index += 1
+            option_groups.append([decode_css_text("".join(pieces))])
+            continue
+        match = CSS_VAR_START.match(value, index)
+        if match:
+            name = match.group(1)
+            options = []
+            if name not in seen:
+                for declaration in properties.get(name, ()):
+                    options.extend(
+                        css_generated_variants(
+                            declaration,
+                            properties,
+                            seen | {name},
+                            attributes,
+                        )
+                    )
+            if options:
+                option_groups.append(list(dict.fromkeys(options)))
+            index = match.end()
+            continue
+        match = CSS_ATTR_START.match(value, index)
+        if match:
+            options = (attributes or {}).get(match.group(1).lower(), ())
+            if options:
+                option_groups.append(list(dict.fromkeys(options)))
+            index = match.end()
+            continue
+        index += 1
+
+    if not option_groups:
+        return []
+    variants = [""]
+    for options in option_groups:
+        variants = [
+            prefix + option
+            for prefix in variants
+            for option in options
+        ]
+    return variants
+
+
+def css_generated_content_values(css: str, attributes=None):
+    properties = css_custom_properties(css)
+    for declaration in css_content_declarations(css):
+        yield from css_generated_variants(
+            declaration, properties, attributes=attributes
+        )
+
+
+def css_content_custom_property_names(css: str):
+    properties = css_custom_properties(css)
+    names = set()
+    for declaration in css_content_declarations(css):
+        names.update(
+            match.group(1) for match in CSS_VAR_START.finditer(declaration)
+        )
+    pending = list(names)
+    while pending:
+        name = pending.pop()
+        for declaration in properties.get(name, ()):
+            for match in CSS_VAR_START.finditer(declaration):
+                dependency = match.group(1)
+                if dependency not in names:
+                    names.add(dependency)
+                    pending.append(dependency)
+    return names
+
+
+def css_content_attribute_names(css: str):
+    properties = css_custom_properties(css)
+    declarations = list(css_content_declarations(css))
+    names = set()
+    followed_properties = set()
+    position = 0
+    while position < len(declarations):
+        declaration = declarations[position]
+        position += 1
+        names.update(
+            match.group(1).lower()
+            for match in CSS_ATTR_START.finditer(declaration)
+        )
+        for match in CSS_VAR_START.finditer(declaration):
+            property_name = match.group(1)
+            if property_name in followed_properties:
+                continue
+            followed_properties.add(property_name)
+            declarations.extend(properties.get(property_name, ()))
+    return names
+
+
+def css_reference_values(css: str, attributes=None):
+    seen = set()
+    for value in css_generated_content_values(css, attributes):
+        if value not in seen:
+            seen.add(value)
+            yield value
+    for declarations in css_custom_properties(css).values():
+        for declaration in declarations:
+            value = "".join(css_string_values(declaration))
+            if TN_CONTENT_TOKEN.search(value) and value not in seen:
+                seen.add(value)
+                yield value
+
+
+def external_css_generated_content_violations(sources: dict[str, str]):
+    errors = []
+    for rel, source in sorted(sources.items()):
+        for value in css_reference_values(source):
+            if TN_CONTENT_TOKEN.search(value):
+                errors.append((rel, f"generated Tennessee content {value!r}"))
+    if not errors:
+        combined = "\n".join(source for _, source in sorted(sources.items()))
+        for value in css_reference_values(combined):
+            if TN_CONTENT_TOKEN.search(value):
+                errors.append(
+                    (
+                        ".github/tn-reference-inventory.json",
+                        "cross-file generated Tennessee content",
+                    )
+                )
+                break
+    return errors
+
+
+def reference_token_text(source: str, external_css: str = "") -> str:
+    parser = ReferenceSurfaceParser()
+    parser.feed(source)
+    if external_css:
+        parser.css_sources.insert(0, external_css)
+    return parser.token_text()
+
+
+def has_tennessee_reference_token(source: str, external_css: str = "") -> bool:
+    return bool(
+        TN_CONTENT_TOKEN.search(reference_token_text(source, external_css))
+    )
+
+
+def reference_surface_digest(source: str) -> str:
+    parser = ReferenceSurfaceParser()
+    parser.feed(source)
+    parser.finalize_css_content()
+    normalized = "\n".join(
+        re.sub(r"\s+", " ", piece).strip()
+        for piece in parser.pieces
+        if piece.strip()
+    )
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def reference_inventory_violations(
+    sources: dict[str, str],
+    inventory: dict,
+    external_css_sources: dict[str, str] | None = None,
+):
+    errors = []
+    stats = {}
+
+    if inventory.get("schema_version") != 1:
+        errors.append("schema_version must be 1")
+
+    groups = inventory.get("reference_groups")
+    if not isinstance(groups, dict):
+        return ["reference_groups must be an object"], stats
+
+    if set(groups) != set(REFERENCE_GROUPS):
+        errors.append(
+            "reference group names differ from the exact governed classification set"
+        )
+
+    classified = []
+    for name in REFERENCE_GROUPS:
+        paths = groups.get(name)
+        if not isinstance(paths, list) or not all(isinstance(p, str) for p in paths):
+            errors.append(f"{name} must be a list of paths")
+            continue
+        if paths != sorted(paths):
+            errors.append(f"{name} paths must be sorted")
+        if len(paths) != len(set(paths)):
+            errors.append(f"{name} contains duplicate paths")
+        membership_digest = hashlib.sha256(
+            "\n".join(paths).encode("utf-8")
+        ).hexdigest()
+        if REFERENCE_GROUP_MEMBERSHIP_SHA256.get(name) != membership_digest:
+            errors.append(f"{name} membership differs from the governed baseline")
+        classified.extend(paths)
+
+    if len(classified) != len(set(classified)):
+        errors.append("a document source appears in more than one reference group")
+
+    fingerprints = inventory.get("reference_surface_sha256")
+    if not isinstance(fingerprints, dict) or not all(
+        isinstance(path, str) and isinstance(digest, str)
+        for path, digest in (fingerprints or {}).items()
+    ):
+        errors.append("reference_surface_sha256 must be a path to digest object")
+        fingerprints = {}
+    else:
+        if list(fingerprints) != sorted(fingerprints):
+            errors.append("reference_surface_sha256 paths must be sorted")
+
+    fragments = inventory.get("excluded_non_page_fragments")
+    if not isinstance(fragments, list) or not all(
+        isinstance(p, str) for p in fragments
+    ):
+        errors.append("excluded_non_page_fragments must be a list of paths")
+        fragments = []
+    elif fragments != sorted(set(fragments)):
+        errors.append("excluded_non_page_fragments must be sorted and unique")
+
+    edge_sources = inventory.get("known_edge_301_sources")
+    if not isinstance(edge_sources, list) or not all(
+        isinstance(p, str) for p in edge_sources
+    ):
+        errors.append("known_edge_301_sources must be a list of paths")
+        edge_sources = []
+    elif edge_sources != sorted(set(edge_sources)):
+        errors.append("known_edge_301_sources must be sorted and unique")
+
+    discovery = {rel for rel, source in sources.items() if is_tn_page(rel, source)}
+    external_css = "\n".join(
+        source for _, source in sorted((external_css_sources or {}).items())
+    )
+    external_content_vars = css_content_custom_property_names(external_css)
+    external_content_attrs = css_content_attribute_names(external_css)
+
+    def contextual_external_css(source):
+        source_custom_vars = {
+            match.group(1)
+            for match in CSS_CUSTOM_PROPERTY_START.finditer(source)
+        }
+        if source_custom_vars & external_content_vars:
+            return external_css
+        if any(
+            re.search(
+                rf"(?<![-\w]){re.escape(name)}\s*=",
+                source,
+                re.IGNORECASE,
+            )
+            for name in external_content_attrs
+        ):
+            return external_css
+        return ""
+
+    content_tokens = {
+        rel for rel, source in sources.items()
+        if has_tennessee_reference_token(
+            source, contextual_external_css(source)
+        )
+    }
+    fragment_set = set(fragments)
+    if fragment_set != set(EXCLUDED_FRAGMENT_SURFACE_SHA256):
+        errors.append("excluded fragment membership differs from the governed baseline")
+    document_sources = discovery | (content_tokens - fragment_set)
+    classified_set = set(classified)
+
+    for rel in sorted(fragment_set):
+        source = sources.get(rel)
+        if source is None:
+            errors.append(f"excluded fragment is missing: {rel}")
+            continue
+        if not has_tennessee_reference_token(source):
+            errors.append(f"excluded fragment has no Tennessee content token: {rel}")
+        if HTML_DOCUMENT_MARKER.search(source):
+            errors.append(f"excluded fragment looks like a standalone document: {rel}")
+        expected_digest = EXCLUDED_FRAGMENT_SURFACE_SHA256.get(rel)
+        actual_digest = reference_surface_digest(source)
+        if expected_digest != actual_digest:
+            errors.append(
+                f"excluded fragment surface changed for {rel}: "
+                f"expected {expected_digest}, computed {actual_digest}"
+            )
+
+    expected_discovery = set(groups.get("path_or_title_discovery", []))
+    for rel in sorted(discovery - expected_discovery):
+        errors.append(f"unclassified path or title discovery source: {rel}")
+    for rel in sorted(expected_discovery - discovery):
+        errors.append(f"stale path or title discovery classification: {rel}")
+
+    for rel in sorted(document_sources - classified_set):
+        errors.append(f"unclassified Tennessee reference document: {rel}")
+    for rel in sorted(classified_set - document_sources):
+        errors.append(f"stale Tennessee reference classification: {rel}")
+
+    fingerprint_paths = set(fingerprints)
+    for rel in sorted(classified_set - fingerprint_paths):
+        errors.append(f"missing Tennessee reference surface fingerprint: {rel}")
+    for rel in sorted(fingerprint_paths - classified_set):
+        errors.append(f"stale Tennessee reference surface fingerprint: {rel}")
+    for rel in sorted(classified_set & fingerprint_paths & set(sources)):
+        actual_digest = reference_surface_digest(sources[rel])
+        if fingerprints[rel] != actual_digest:
+            errors.append(
+                f"Tennessee reference surface changed for {rel}: "
+                f"expected {fingerprints[rel]}, computed {actual_digest}"
+            )
+
+    if not set(edge_sources).issubset(classified_set):
+        errors.append("known edge sources must be classified document sources")
+
+    counts = inventory.get("expected_counts")
+    if not isinstance(counts, dict):
+        errors.append("expected_counts must be an object")
+        counts = {}
+
+    actual_counts = {
+        "document_sources": len(document_sources),
+        "path_or_title_discovery": len(discovery),
+        "outside_discovery": len(document_sources - discovery),
+        "known_edge_301_sources": len(edge_sources),
+        "document_sources_excluding_recorded_edge_sources": len(document_sources)
+        - len(edge_sources),
+        "excluded_non_page_fragments": len(fragment_set),
+    }
+    for name, actual in actual_counts.items():
+        if counts.get(name) != actual:
+            errors.append(
+                f"expected_counts.{name} is {counts.get(name)!r}; computed {actual}"
+            )
+
+    stats.update(actual_counts)
+    return errors, stats
+
+
+def check_reference_inventory(fail):
+    try:
+        with open(REFERENCE_INVENTORY_PATH, encoding="utf-8") as fh:
+            inventory = json.load(fh)
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(".github/tn-reference-inventory.json", f"cannot load inventory: {exc}")
+        return {}
+
+    sources = {}
+    for rel, full in iter_html_files():
+        with open(full, encoding="utf-8") as fh:
+            sources[rel] = fh.read()
+
+    css_sources = {}
+    for rel, full in iter_css_files():
+        with open(full, encoding="utf-8") as fh:
+            css_sources[rel] = fh.read()
+
+    errors, stats = reference_inventory_violations(
+        sources, inventory, css_sources
+    )
+    for message in errors:
+        fail(".github/tn-reference-inventory.json", message)
+    return stats
+
+
+def check_external_css_generated_content(fail):
+    sources = {}
+    for rel, full in iter_css_files():
+        with open(full, encoding="utf-8") as fh:
+            sources[rel] = fh.read()
+    for rel, message in external_css_generated_content_violations(sources):
+        fail(rel, message)
 
 
 def walk_nodes(obj, under_area_served=False):
@@ -286,18 +1161,41 @@ def mask_titles(text: str) -> str:
     return TITLE_TAGS.sub(lambda m: " " * len(m.group(0)), text)
 
 
-def check_delivery_claims(rel: str, text: str, fail):
+def delivery_claim_context_fingerprint(body: str, match: re.Match[str]) -> str:
+    window = body[
+        max(0, match.start() - QUALIFIER_BEFORE) : match.end() + QUALIFIER_AFTER
+    ]
+    visible = html_lib.unescape(re.sub(r"<[^>]+>", " ", window))
+    normalized = re.sub(r"\s+", " ", visible).strip()
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def check_delivery_claims(rel: str, text: str, fail, held_observed=None):
     body = mask_titles(text)
     for label, rx in (("office-count", OFFICE_COUNT), ("combined-state delivery", DELIVERY_PAIR)):
         for m in rx.finditer(body):
-            window = body[max(0, m.start() - QUALIFIER_BEFORE) : m.end() + QUALIFIER_AFTER]
-            if TN_QUALIFIER.search(window):
+            fingerprint = delivery_claim_context_fingerprint(body, m)
+            held_key = (rel, label)
+            if HELD_DELIVERY_CLAIMS.get(held_key) == fingerprint:
+                if held_observed is not None:
+                    held_observed.add((rel, label, fingerprint))
                 continue
             snippet = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", m.group(0))).strip()
             fail(
                 rel,
                 f"unqualified {label} claim {snippet!r}. ACG has three Florida "
-                "offices; drop or independently govern the additional claim",
+                "offices; drop or independently govern the additional claim. "
+                f"Context fingerprint: {fingerprint}",
+            )
+
+
+def check_held_delivery_claims(held_observed, fail):
+    for (rel, label), fingerprint in HELD_DELIVERY_CLAIMS.items():
+        observed_key = (rel, label, fingerprint)
+        if observed_key not in held_observed:
+            fail(
+                rel,
+                f"exact held {label} fingerprint was not observed: {fingerprint}",
             )
 
 
@@ -335,6 +1233,7 @@ def main() -> int:
 
     tn_pages = []
     scanned = 0
+    held_observed = set()
     for rel, full in sorted(iter_claim_files()):
         with open(full, encoding="utf-8") as fh:
             html = fh.read()
@@ -347,7 +1246,7 @@ def main() -> int:
         # Delivery-complete claims are site-wide: they leaked onto pages that
         # are not Tennessee-scoped and so are invisible to the discovery pass.
         if not args.list:
-            check_delivery_claims(rel, html, fail)
+            check_delivery_claims(rel, html, fail, held_observed)
             check_scoped_stale_operating_claims(rel, html, fail)
 
         if not rel.endswith(".html") or not is_tn_page(rel, html):
@@ -361,6 +1260,13 @@ def main() -> int:
         check_hq_language(rel, html, fail)
         check_structured_data(rel, html, fail)
 
+    if not args.list:
+        check_held_delivery_claims(held_observed, fail)
+        reference_stats = check_reference_inventory(fail)
+        check_external_css_generated_content(fail)
+    else:
+        reference_stats = {}
+
     if args.list:
         for p in tn_pages:
             print(p)
@@ -372,7 +1278,13 @@ def main() -> int:
         f"{scanned} files checked for delivery-complete claims\n"
     )
     if not violations:
-        print("  [✓] no Florida leakage, no unsupported Tennessee office or delivery claims")
+        print("  [✓] governed route, site-wide delivery, and exact stale-page checks pass")
+        print(f"  [i] {len(HELD_DELIVERY_CLAIMS)} exact held claim fingerprint observed")
+        print(
+            "  [i] "
+            f"{reference_stats['document_sources']} classified Tennessee reference "
+            f"documents; {reference_stats['known_edge_301_sources']} recorded edge sources"
+        )
         return 0
 
     by_file: dict[str, list[str]] = {}
