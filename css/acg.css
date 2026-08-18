@@ -1,0 +1,83 @@
+/* ACG unified site chrome — self-contained dark header.
+   Loaded on legacy (style.css) pages to make navigation identical sitewide.
+   No dependency on page CSS variables — all values literal. */
+.hd{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(7,11,20,.94);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid rgba(154,184,230,.10);transition:background .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s cubic-bezier(.22,.61,.36,1)}
+.hd.scrolled{background:rgba(7,11,20,.98);box-shadow:0 1px 0 rgba(154,184,230,.12)}
+.hd-in{max-width:1300px;margin:0 auto;padding:0 clamp(20px,4.4vw,60px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.hd-logo{display:flex;align-items:center;flex-shrink:0}
+.hd-logo img{height:32px;width:auto;display:block}
+.hd-logo .logo-dark{display:none}
+.hd-nav{display:flex;align-items:center;gap:4px}
+.hd-nav>a{font-family:'Archivo','Inter',system-ui,-apple-system,sans-serif;padding:9px 13px;font-size:.9rem;font-weight:600;color:#C3CEE0;letter-spacing:.01em;border-radius:2px;position:relative;transition:color .18s ease;text-decoration:none}
+.hd-nav>a:not(.hd-cta):not(.hd-phone)::after{content:"";position:absolute;left:13px;right:13px;bottom:6px;height:1px;background:#7FA8DE;transform:scaleX(0);transform-origin:left;transition:transform .32s cubic-bezier(.22,.61,.36,1)}
+.hd-nav>a:hover{color:#fff}
+.hd-nav>a:not(.hd-cta):not(.hd-phone):hover::after{transform:scaleX(1)}
+.hd-phone{font-family:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace!important;font-size:.8rem!important;font-weight:600;color:#EAF0F8!important;white-space:nowrap}
+.hd-cta{margin-left:8px;background:#E11320;color:#fff!important;padding:11px 21px!important;font-family:'Archivo','Inter',sans-serif;font-size:.88rem;font-weight:600;border-radius:2px;box-shadow:0 8px 24px -8px rgba(225,19,32,.5);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;transition:background .18s ease,transform .18s ease}
+.hd-cta:hover{background:#F5303C;transform:translateY(-1px)}
+.hd-cta::after{display:none!important}
+.hd-burger{display:none;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:none;border:0;cursor:pointer;padding:0}
+.hd-burger span{display:block;width:22px;height:2px;background:#EAF0F8;transition:transform .32s cubic-bezier(.22,.61,.36,1),opacity .18s}
+.hd-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hd-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hd-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.hd-mobile{display:none}
+@media(max-width:900px){
+  .hd-nav{display:none}
+  .hd-burger{display:flex}
+  .hd-mobile{display:flex;flex-direction:column;position:fixed;inset:72px 0 auto 0;background:rgba(7,11,20,.98);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(154,184,230,.12);padding:12px clamp(20px,4.4vw,60px) 24px;gap:0;transform:translateY(-12px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .32s ease,transform .32s cubic-bezier(.22,.61,.36,1),visibility 0s linear .32s;z-index:999;max-height:calc(100dvh - 72px);overflow-y:auto}
+  .hd-mobile.open{transform:none;opacity:1;visibility:visible;pointer-events:auto;transition:opacity .32s ease,transform .32s cubic-bezier(.22,.61,.36,1),visibility 0s}
+  .hd-mobile a{font-family:'Archivo','Inter',sans-serif;font-weight:600;font-size:1.05rem;color:#C3CEE0;padding:15px 0;border-bottom:1px solid rgba(154,184,230,.10);text-decoration:none}
+  .hd-mobile .hd-mobile-cta{background:#E11320;color:#fff;text-align:center;margin-top:14px;border:0;border-radius:2px;padding:15px;font-weight:600}
+}
+
+/* Sprint 011: unified tabular-nums for stat/metric numbers (P1 typography) */
+.stat-num, [class*="-stat-num"], [class*="-metric-num"] { font-variant-numeric: tabular-nums; }
+
+/* Sprint 011 (round 2): canonical "locked" hero gradient, made available as an
+   opt-in utility rather than forced onto pages with different hero treatments.
+   Apply class="hero-bg-navy" to any hero/section element that should use it. */
+.hero-bg-navy{background:linear-gradient(180deg,#050a12,#0e284f)}
+
+/* Shared long-tail page contrast corrections. */
+[data-acg-block="full-scope-v1"]>div>div:first-child{color:#d8101e!important}
+[data-acg-block="full-scope-v1"] li>span{color:#626c7c!important}
+.ft-word span{-webkit-text-stroke-color:rgba(255,255,255,.35)!important}
+
+/* Dark template text uses the existing dark-system brighter red. */
+.wpb-section-eyebrow,
+.wpb-section .quick-answer-label,
+.system-card-tagline,
+.project-cat,
+.costs-table td.price,
+.author-title,
+.wpb-section a{color:#f5303c!important}
+.wpb-section a:hover{color:#fff!important}
+
+
+/* === National tokens from acg2026.css (deduped) === */
+:root{
+  --navy:#0E284F;
+  --navy-deep:#081A36;
+  --red:#E11320;
+  --red-press:#B90E19;
+  --paper:#FFFFFF;
+  --paper-2:#F6F8FB;
+  --paper-3:#EDF1F7;
+body{font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--body);background:var(--paper);overflow-x:hidden;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+::selection{background:var(--navy);color:#fff}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 18px;z-index:2000;font-size:14px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.k-label{font-family:var(--mono);font-size:0.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.k-label--navy{color:var(--navy)}
+.hd-nav>a::after{content:"";position:absolute;left:14px;right:14px;bottom:6px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-2) var(--ease)}
+.hd-nav>a:hover{color:var(--navy)}
+.hd-phone{font-family:var(--mono);font-size:.8rem!important;font-weight:600;color:var(--navy)!important;white-space:nowrap}
+.hd-cta{margin-left:8px;background:var(--red);color:#fff;padding:12px 22px;font-size:.9rem;font-weight:600;border-radius:var(--radius);display:inline-flex;align-items:center;gap:8px;transition:background var(--dur-1) var(--ease),transform var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease);white-space:nowrap}
+.hd-cta:hover{background:var(--red-press);transform:translateY(-1px);box-shadow:var(--shadow-1)}
+.hd-burger span{display:block;width:22px;height:2px;background:var(--navy);transition:transform var(--dur-2) var(--ease),opacity var(--dur-1)}
+/* National fix: literal hd-solid (prevents var(--navy) dependency that broke interior pages) */
+.hd.hd-solid:not(.scrolled) .hd-nav>a{color:#111E33}
+.hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:#0E284F;opacity:1}
+.hd.hd-solid:not(.scrolled) .hd-phone{color:#0E284F!important}
+.hd.hd-solid:not(.scrolled) .hd-burger span{background:#0E284F}
