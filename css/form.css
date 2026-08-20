@@ -1,0 +1,240 @@
+/* ============================================================
+   form.css - the bid intake sheet
+   A GC estimator lives inside transmittals and submittal forms, so this
+   page is set like one: ruled fields, mono field numbers, no floating
+   card, no rounded corners. Nothing here is decorative.
+   Depends on acg.css for tokens and doc.css for the .sh sheet header.
+   ============================================================ */
+
+.iq{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  gap:clamp(40px,5vw,88px);
+  align-items:start;
+  padding:0 var(--pad) clamp(48px,5.4vw,86px);
+  max-width:1560px;
+  margin:0 auto;
+}
+
+/* ---------- fieldsets ---------- */
+.iq__f{border:0;padding:0;margin:0 0 clamp(38px,4.4vw,62px)}
+.iq__lg{
+  display:flex;align-items:baseline;gap:14px;
+  width:100%;padding:0 0 12px;margin:0 0 clamp(24px,2.6vw,34px);
+  border-bottom:1px solid var(--ink);
+}
+.iq__lg i{
+  font-family:var(--mono);font-style:normal;font-size:11.5px;
+  color:var(--red);letter-spacing:.04em;
+}
+.iq__lg span{
+  font-family:var(--disp);font-weight:800;font-stretch:66%;
+  text-transform:uppercase;font-size:clamp(21px,2.5vw,30px);
+  line-height:1;letter-spacing:.005em;color:var(--ink);
+}
+.iq__lg em{
+  margin-left:auto;font-style:normal;font-family:var(--mono);
+  font-size:11px;letter-spacing:.06em;color:var(--ink-3);
+  text-transform:uppercase;
+}
+
+/* ---------- field rows ---------- */
+.iq__r{display:grid;gap:clamp(22px,2.4vw,30px);margin-bottom:clamp(22px,2.4vw,30px)}
+.iq__r--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.iq__r:last-child{margin-bottom:0}
+
+.fd{display:flex;flex-direction:column;min-width:0}
+.fd>label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:9px;
+}
+.fd>label b{font-weight:400;color:var(--red);margin-left:3px}
+
+.fd input[type=text],.fd input[type=email],.fd input[type=tel],
+.fd input[type=url],.fd input[type=date],.fd select,.fd textarea{
+  font-family:var(--body);font-size:17px;font-weight:400;color:var(--ink);
+  background:transparent;border:0;border-bottom:1px solid var(--line);
+  border-radius:0;padding:0 0 11px;width:100%;
+  -webkit-appearance:none;appearance:none;
+  transition:border-color .18s ease;
+}
+.fd textarea{
+  border:1px solid var(--line);padding:14px 15px;
+  min-height:132px;resize:vertical;line-height:1.55;
+}
+.fd input::placeholder,.fd textarea::placeholder{color:#9aa0a9}
+.fd input:hover,.fd select:hover,.fd textarea:hover{border-color:rgba(11,18,32,.34)}
+.fd input:focus,.fd select:focus,.fd textarea:focus{
+  outline:0;border-color:var(--red);border-bottom-width:2px;padding-bottom:10px;
+}
+.fd textarea:focus{border-width:2px;padding:13px 14px}
+.fd input:focus-visible,.fd select:focus-visible,.fd textarea:focus-visible{
+  outline:2px solid var(--red);outline-offset:4px;
+}
+/* the select needs its own caret because appearance is stripped */
+.fd--sel{position:relative}
+.fd--sel::after{
+  content:"";position:absolute;right:2px;bottom:17px;pointer-events:none;
+  width:8px;height:8px;border-right:1.5px solid var(--ink-2);
+  border-bottom:1.5px solid var(--ink-2);transform:rotate(45deg);
+}
+.fd select{cursor:pointer}
+.fd__h{
+  font-family:var(--mono);letter-spacing:.05em;
+  color:var(--ink-3);margin:9px 0 0;line-height:1.5;max-width:62ch;font-size:11px;
+}
+
+/* ---------- scope checkboxes ---------- */
+.iq__ck{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.ck{display:flex;align-items:center;gap:12px;background:var(--paper);
+  padding:15px 17px;cursor:pointer;transition:background .16s ease}
+.ck:hover{background:#eae7e0}
+.ck input{position:absolute;opacity:0;width:0;height:0}
+.ck__b{
+  flex:0 0 15px;width:15px;height:15px;border:1.5px solid var(--ink-2);
+  position:relative;transition:border-color .16s ease,background .16s ease;
+}
+.ck__b::after{
+  content:"";position:absolute;left:3px;top:.5px;width:6px;height:10px;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;
+  transform:rotate(42deg) scale(.4);opacity:0;transition:all .16s ease;
+}
+.ck input:checked+.ck__b{background:var(--red);border-color:var(--red)}
+.ck input:checked+.ck__b::after{opacity:1;transform:rotate(42deg) scale(1)}
+.ck input:focus-visible+.ck__b{outline:2px solid var(--red);outline-offset:3px}
+.ck__t{font-family:var(--body);font-size:14.5px;color:var(--ink);line-height:1.35}
+
+/* ---------- file field ---------- */
+.fu{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  border:1px solid var(--line);background:var(--paper-2);padding:17px 19px}
+.fu__b{
+  font-family:var(--disp);font-weight:700;font-stretch:100%;
+  text-transform:uppercase;font-size:12px;letter-spacing:.09em;
+  background:var(--ink);color:var(--paper);border:0;
+  padding:11px 19px;cursor:pointer;transition:background .16s ease;
+}
+.fu__b:hover{background:var(--red)}
+.fu__b:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.fu__n{font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+  color:var(--ink-3);min-width:0;overflow-wrap:anywhere}
+.fu__n[data-err]{color:var(--red)}
+.fu input[type=file]{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+
+/* ---------- submit ---------- */
+.iq__go{margin-top:clamp(34px,4vw,52px)}
+.iq__btn{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  width:100%;background:var(--navy);color:#fff;border:0;cursor:pointer;
+  padding:clamp(22px,2.4vw,30px) clamp(22px,2.6vw,34px);
+  font-family:var(--disp);font-weight:800;font-stretch:66%;
+  text-transform:uppercase;font-size:clamp(25px,3.2vw,40px);line-height:1;
+  letter-spacing:.005em;text-align:left;
+  transition:background .2s ease;
+}
+.iq__btn:hover{background:var(--red)}
+.iq__btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.iq__btn span:last-child{
+  font-family:var(--mono);font-weight:400;font-stretch:100%;
+  font-size:11px;letter-spacing:.1em;flex:0 0 auto;opacity:.85;
+}
+.iq__btn[disabled]{opacity:.55;cursor:progress}
+.iq__fine{font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+  color:var(--ink-3);margin:16px 0 0;line-height:1.6;max-width:62ch}
+.iq__err{
+  display:none;margin:0 0 18px;padding:15px 18px;
+  border-left:3px solid var(--red);background:#f7e9e9;
+  font-family:var(--body);font-size:14.5px;color:var(--ink);line-height:1.5;
+}
+.iq__err.on{display:block}
+.iq__hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* ---------- right rail ---------- */
+.rl{position:sticky;top:96px;display:grid;gap:clamp(28px,3vw,40px)}
+.rl__b{border-top:2px solid var(--ink);padding-top:15px}
+.rl__t{
+  font-family:var(--disp);font-weight:800;font-stretch:66%;
+  text-transform:uppercase;font-size:17px;line-height:1.05;
+  margin:0 0 14px;color:var(--ink);letter-spacing:.005em;
+}
+/* Desktop only: the first rail heading is turned inside out so its rule lands on
+   the same baseline as the 01 legend rule across the gutter. 30px legend cap
+   height + 12px padding = 42px; the 17px heading needs 24px to reach the same y. */
+@media(min-width:1081px){
+  .rl__b--top{border-top:0;padding-top:0}
+  .rl__b--top .rl__t{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:23px;margin-bottom:16px;
+  }
+}
+.rl__l{list-style:none;margin:0;padding:0}
+.rl__l li{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:9px 0;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  color:var(--ink-3);line-height:1.45;
+}
+.rl__l li:last-child{border-bottom:0}
+.rl__l b{font-weight:400;color:var(--ink);text-align:right;flex:0 0 auto}
+.rl__p{font-family:var(--body);font-size:14px;color:var(--ink-2);
+  line-height:1.6;margin:0 0 11px}
+.rl__p:last-child{margin-bottom:0}
+.rl__d{display:grid;gap:5px;margin:0}
+.rl__d a{
+  font-family:var(--disp);font-weight:700;font-stretch:88%;
+  font-size:17px;color:var(--ink);text-decoration:none;
+  border-bottom:1px solid var(--line);padding-bottom:3px;
+  overflow-wrap:anywhere;
+}
+.rl__d a:hover{color:var(--red);border-color:var(--red)}
+
+/* ---------- what happens next ---------- */
+.nx{border-top:1px solid var(--line);padding:clamp(52px,6vw,86px) var(--pad);
+  max-width:1560px;margin:0 auto}
+.nx__g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(28px,3.4vw,56px);margin-top:clamp(26px,3vw,40px)}
+.nx__c{border-top:2px solid var(--ink);padding-top:16px}
+.nx__n{font-family:var(--mono);font-size:11.5px;color:var(--red);
+  letter-spacing:.04em;margin:0 0 10px}
+.nx__h{font-family:var(--disp);font-weight:800;font-stretch:66%;
+  text-transform:uppercase;font-size:clamp(19px,2.1vw,25px);line-height:1.05;
+  margin:0 0 10px;color:var(--ink);letter-spacing:.005em}
+.nx__p{font-family:var(--body);font-size:15px;color:var(--ink-2);
+  line-height:1.62;margin:0;max-width:44ch}
+
+/* ---------- received state ---------- */
+.rc{padding:clamp(64px,9vw,140px) var(--pad) clamp(56px,7vw,110px);
+  max-width:1560px;margin:0 auto}
+.rc__h{font-size:clamp(56px,12vw,168px);line-height:.86;margin:0 0 clamp(24px,3vw,40px)}
+/* the receipt heading is focused programmatically so a screen reader announces the
+   state change, and a focus ring around 168px type is not a wanted side effect */
+.rc__h[tabindex="-1"]:focus{outline:0}
+.rc__h em{font-style:normal;color:var(--ink-3)}
+.rc__p{font-family:var(--body);font-size:clamp(17px,1.8vw,21px);
+  line-height:1.55;color:var(--ink-2);max-width:34ch;margin:0 0 clamp(26px,3vw,38px)}
+.rc__a{display:flex;gap:28px;flex-wrap:wrap}
+.rc__a a{font-family:var(--disp);font-weight:700;font-stretch:88%;font-size:17px;
+  color:var(--ink);text-decoration:none;border-bottom:2px solid var(--red);
+  padding-bottom:3px}
+.rc__a a:hover{color:var(--red)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1080px){
+  .iq{grid-template-columns:minmax(0,1fr);gap:clamp(48px,6vw,72px)}
+  .rl{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:780px){
+  .iq__r--2{grid-template-columns:minmax(0,1fr)}
+  .iq__r{gap:22px;margin-bottom:22px}
+  .ck{padding:13px 15px}
+  .sh__c{padding:15px 17px 17px}
+  .iq__ck{grid-template-columns:minmax(0,1fr)}
+  .nx__g{grid-template-columns:minmax(0,1fr);gap:32px}
+  .rl{grid-template-columns:minmax(0,1fr)}
+  .iq__btn{font-size:26px;flex-direction:column;align-items:flex-start;gap:12px}
+  .iq__lg em{flex-basis:100%;margin-left:0;order:3}
+  .iq__lg{flex-wrap:wrap;row-gap:8px}
+  /* 16px keeps iOS Safari from zooming the viewport on focus */
+  .fd input[type=text],.fd input[type=email],.fd input[type=tel],
+  .fd input[type=url],.fd input[type=date],.fd select,.fd textarea{font-size:16px}
+}

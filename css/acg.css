@@ -1,0 +1,419 @@
+@font-face{font-family:Archivo;src:url(../fonts/archivo-variable.woff2)format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:Inter;src:url(../fonts/inter-variable-latin.woff2)format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:JBMono;src:url(../fonts/jetbrains-mono-variable-latin.woff2)format("woff2");font-weight:100 800;font-display:swap}
+
+:root{
+  --paper:#f1efe9;
+  --paper-2:#e7e4dc;
+  --ink:#0b1220;
+  --ink-2:#4a5361;
+  --ink-3:#5e6674;
+  --navy:#0e284f;
+  --red:#e11320;
+  --line:rgba(11,18,32,.16);
+  --pad:clamp(20px,4.2vw,64px);
+  --disp:"Archivo",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
+  --mono:"JBMono",ui-monospace,monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+
+/* ---------- type primitives ---------- */
+.d{font-family:var(--disp);font-weight:800;font-stretch:66%;text-transform:uppercase;
+  line-height:.85;letter-spacing:-.005em;margin:0}
+.lab{font-family:var(--disp);font-weight:600;font-stretch:118%;text-transform:uppercase;
+  font-size:11px;letter-spacing:.2em;margin:0}
+.mono{font-family:var(--mono);font-weight:400;font-size:11.5px;letter-spacing:.04em;
+  text-transform:uppercase;margin:0}
+
+/* ---------- header ---------- */
+.hd{position:fixed;inset:0 0 auto 0;z-index:70;display:flex;align-items:center;gap:var(--pad);
+  padding:0 var(--pad);height:66px;color:#fff;mix-blend-mode:normal;
+  transition:background .35s ease,color .35s ease,border-color .35s ease;
+  border-bottom:1px solid transparent}
+.hd.solid{background:rgba(241,239,233,.94);backdrop-filter:blur(14px) saturate(1.4);
+  color:var(--ink);border-bottom-color:var(--line)}
+/* real ACG brand lockup: white over the glass, navy once the header goes solid.
+   The anchor is a real 44px tap target: 26px lockup plus 9px of padding top and
+   bottom, so the box is sized by the anchor itself and nothing overflows. */
+.hd__brand{position:relative;display:block;flex:none;height:44px;padding:9px 0;
+  width:calc(26px * 4.697)}
+.hd__lg{position:absolute;left:0;top:9px;width:100%;height:26px;display:block;
+  transition:opacity .35s ease}
+.hd__lg--n{opacity:0}
+.hd.solid .hd__lg--w{opacity:0}
+.hd.solid .hd__lg--n{opacity:1}
+.hd__nav{display:flex;gap:26px;margin-left:auto}
+.hd__nav a{position:relative;opacity:.82;transition:opacity .2s}
+.hd__nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;
+  background:currentColor;transition:right .3s cubic-bezier(.2,.8,.2,1)}
+.hd__nav a:hover{opacity:1}
+.hd__nav a:hover::after{right:0}
+/* the phone number is the most tapped element on a phone, so it gets the same
+   44px vertical target as the lockup */
+.hd__tel{flex:none;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+  display:inline-flex;align-items:center;min-height:44px}
+
+/* ---------- aperture hero ---------- */
+.ap{height:230vh;position:relative}
+.ap__stick{position:sticky;top:0;height:100svh;overflow:hidden;background:#080d16}
+.ap__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.06);transform-origin:center}
+.ap__leaf{position:absolute;top:0;bottom:0;width:50.4%;overflow:hidden;
+  background:linear-gradient(168deg,rgba(150,178,206,.40),rgba(198,214,230,.30) 46%,rgba(96,124,156,.40));
+  -webkit-backdrop-filter:blur(17px) saturate(.72) brightness(1.03) contrast(.95);
+  backdrop-filter:blur(17px) saturate(.72) brightness(1.03) contrast(.95);
+  will-change:transform}
+/* raking specular highlight: reads as glass, not fog */
+.ap__leaf::before{content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(101deg,transparent 12%,rgba(255,255,255,.34) 27%,transparent 40%),
+    linear-gradient(101deg,transparent 54%,rgba(255,255,255,.16) 63%,transparent 71%),
+    linear-gradient(178deg,rgba(226,236,246,.34),rgba(24,42,66,.30))}
+.ap__leaf--l{left:0;border-right:2px solid rgba(255,255,255,.5)}
+.ap__leaf--r{right:0;border-left:2px solid rgba(11,18,32,.28)}
+/* stiles + rails: reads as an aluminium frame */
+.ap__leaf::after{content:"";position:absolute;inset:0;
+  border:12px solid rgba(240,242,246,.34);
+  box-shadow:inset 0 0 0 1px rgba(11,18,32,.20),inset 0 0 40px rgba(11,18,32,.10)}
+
+/* top + bottom scrim above the leaves: keeps chrome and captions legible in every state */
+.ap__scrim{position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:
+    linear-gradient(to bottom,rgba(8,14,24,.62) 0,rgba(8,14,24,.22) 78px,rgba(8,14,24,0) 150px),
+    linear-gradient(to top,rgba(8,14,24,.78) 0,rgba(8,14,24,.34) 26%,rgba(8,14,24,.06) 48%,rgba(8,14,24,0) 62%)}
+
+.ap__type{position:absolute;inset:auto var(--pad) 0 var(--pad);padding-bottom:clamp(38px,7vh,86px);
+  z-index:4;color:#fff;text-shadow:0 2px 34px rgba(8,13,22,.62)}
+.ap__eye{display:flex;align-items:center;gap:12px;margin-bottom:clamp(14px,2.4vh,26px);opacity:.95}
+.ap__eye i{display:block;width:34px;height:2px;background:var(--red);flex:none}
+.ap__h{font-size:clamp(46px,11.4vw,178px);max-width:14em}
+.ap__h em{font-style:normal;color:#e9f0f8;-webkit-text-stroke:0;
+  text-shadow:0 2px 40px rgba(8,13,22,.75)}
+.ap__cap{position:absolute;left:var(--pad);bottom:clamp(14px,2.4vh,22px);z-index:4;
+  color:rgba(255,255,255,.70);font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase}
+/* system first, photography credit second: one line on a desktop, two deliberate
+   lines on a phone. The manufacturer-photography disclosure is never dropped. */
+.ap__cap span{display:inline}
+.ap__cap .ap__cap-b::before{content:"\00b7";margin:0 .62em}
+.ap__hint{position:absolute;right:var(--pad);bottom:clamp(14px,2.4vh,22px);z-index:4;
+  color:rgba(255,255,255,.62);font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.ap__hint b{display:block;width:1px;height:22px;background:currentColor;
+  animation:drop 2.1s ease-in-out infinite;transform-origin:top}
+@keyframes drop{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+
+/* ---------- interstitial statement ---------- */
+.st{padding:clamp(96px,20vh,220px) var(--pad);text-align:center}
+.st p{font-family:var(--disp);font-weight:700;font-stretch:72%;text-transform:uppercase;
+  font-size:clamp(26px,4.6vw,64px);line-height:.98;letter-spacing:-.004em;margin:0 auto;max-width:22em}
+.st p b{font-weight:800;color:var(--red)}
+.st p i{font-style:normal;color:var(--ink-3)}
+
+/* ---------- full-bleed project panel ---------- */
+.pn{position:relative;height:min(94svh,880px);overflow:hidden;background:#080d16}
+/* the panel image may be wrapped in <picture> for the webp sources, so both
+   forms have to be positioned, or the img falls into normal flow at its
+   intrinsic size and the panel shows an accidental top-left crop */
+.pn>img,.pn>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* the federal band is a statement, not a project plate: shorter, and framed
+   on the openings rather than the sky */
+.pn--fed{height:min(74svh,660px)}
+.pn--fed>picture>img{object-position:50% 38%}
+.pn::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(6,10,18,.82) 0%,rgba(6,10,18,.30) 34%,rgba(6,10,18,0) 62%)}
+/* this band carries five credential lines plus a link, and the photograph is
+   bright right where they sit, so the scrim runs deeper than a project plate's.
+   The roof and sky stay open; the lower two thirds go to ink. */
+.pn--fed::after{background:linear-gradient(to top,
+  rgba(4,8,16,.94) 0%,rgba(4,8,16,.86) 20%,rgba(4,8,16,.62) 42%,
+  rgba(4,8,16,.28) 62%,rgba(4,8,16,.05) 82%,rgba(4,8,16,0) 100%)}
+.pn__t{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:0 var(--pad) clamp(22px,4vh,44px);
+  color:#fff}
+.pn__n{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.88);
+  margin:0 0 11px;text-shadow:0 1px 18px rgba(6,10,18,.9)}
+.pn__h{font-size:clamp(38px,8.6vw,132px);margin-left:-.028em}
+.pn__m{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:14px;
+  border-top:1px solid rgba(255,255,255,.22);padding-top:13px}
+.pn__m span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+  color:rgba(255,255,255,.90);text-shadow:0 1px 16px rgba(6,10,18,.85)}
+.pn__m span::before{content:"";display:inline-block;width:4px;height:4px;background:var(--red);
+  margin-right:9px;vertical-align:2px}
+
+/* ---------- systems: typographic list, no cards ---------- */
+.sy{padding:clamp(80px,14vh,150px) var(--pad) clamp(70px,12vh,130px)}
+.sy__hd{display:flex;align-items:baseline;gap:18px;padding-bottom:22px;
+  border-bottom:1px solid var(--line);margin-bottom:clamp(20px,4vh,44px)}
+.sy__hd .lab{color:var(--ink-2);margin:0}
+h2.lab,h3.lab{font-weight:600;font-size:11px}
+.sy__hd i{flex:1;height:1px;background:var(--line);margin-bottom:4px}
+.sy__r{display:grid;grid-template-columns:5.2rem minmax(0,1.05fr) minmax(0,1fr);
+  gap:clamp(14px,3vw,44px);align-items:start;
+  padding:clamp(22px,3.6vh,38px) 0;border-bottom:1px solid var(--line);
+  text-decoration:none;color:inherit;transition:padding-left .4s cubic-bezier(.2,.8,.2,1)}
+.sy__r:hover{padding-left:14px}
+.sy__r>.mono{color:var(--ink-3);padding-top:.55em}
+.sy__r h3{font-family:var(--disp);font-weight:800;font-stretch:72%;text-transform:uppercase;
+  font-size:clamp(26px,4vw,50px);line-height:.9;letter-spacing:-.004em;margin:0}
+.sy__r p{margin:0;color:var(--ink-2);font-size:15px;max-width:34em}
+.sy__r:hover h3{color:var(--navy)}
+
+/* ---------- title block / spec ---------- */
+.tb{background:var(--navy);color:#fff;padding:clamp(60px,10vh,110px) var(--pad)}
+.tb__hd{display:flex;align-items:center;gap:16px;margin-bottom:clamp(26px,5vh,52px)}
+.tb__hd .lab{color:rgba(255,255,255,.62)}
+.tb__hd i{flex:1;height:1px;background:rgba(255,255,255,.24)}
+.tb__g{display:grid;overflow:hidden;grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid rgba(255,255,255,.20);border-left:1px solid rgba(255,255,255,.20)}
+.tb__c{padding:20px 22px 24px;border-right:1px solid rgba(255,255,255,.20);
+  border-bottom:1px solid rgba(255,255,255,.20);min-height:126px;
+  display:flex;flex-direction:column;justify-content:space-between}
+.tb__c dt{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);margin:0 0 9px}
+.tb__c dd{margin:0;font-family:var(--disp);font-weight:700;font-stretch:78%;font-size:clamp(17px,1.9vw,25px);
+  line-height:1.06;letter-spacing:-.002em}
+.tb__c dd small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;
+  letter-spacing:.05em;color:rgba(255,255,255,.62);margin-top:7px;text-transform:uppercase}
+
+/* ---------- reach ---------- */
+.rc{padding:clamp(80px,14vh,150px) var(--pad)}
+.rc__g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(28px,5vw,72px);
+  border-top:1px solid var(--line);padding-top:clamp(24px,4vh,42px)}
+.rc__i .mono{color:var(--red);margin-bottom:12px}
+.rc__i h3{font-family:var(--disp);font-weight:800;font-stretch:72%;text-transform:uppercase;
+  font-size:clamp(21px,2.6vw,32px);line-height:.94;margin:0 0 12px;letter-spacing:-.003em}
+.rc__i p{margin:0;color:var(--ink-2);font-size:15px}
+
+/* ---------- contact ---------- */
+.ct{padding:clamp(90px,16vh,180px) var(--pad) clamp(60px,9vh,100px);
+  border-top:1px solid var(--line)}
+.ct__h{font-size:clamp(52px,15vw,230px);line-height:.82;margin:0 0 clamp(26px,5vh,54px)}
+.ct__h a{display:inline-block;transition:color .3s}
+.ct__h a:hover{color:var(--red)}
+.ct__r{display:flex;flex-wrap:wrap;gap:14px 48px;align-items:baseline;
+  border-top:1px solid var(--line);padding-top:22px}
+.ct__r .mono{color:var(--ink-3)}
+.ct__r a.big{font-family:var(--disp);font-weight:700;font-stretch:82%;font-size:clamp(17px,2vw,24px);
+  letter-spacing:-.002em;border-bottom:1px solid var(--line);padding-bottom:2px}
+.ct__r a.big:hover{border-bottom-color:var(--red)}
+
+.ft{display:block;padding:clamp(28px,3vw,44px) var(--pad) clamp(34px,3.4vw,48px);
+  border-top:1px solid var(--line)}
+
+/* ---------- reveal (additive only) ---------- */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(.2,.8,.2,1),transform .85s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-d1{transition-delay:.09s}
+.js .rv-d2{transition-delay:.18s}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .js .rv{opacity:1;transform:none}
+  .ap{height:100svh}
+  .ap__leaf{display:none}
+  .ap__stick::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(6,10,18,.85),rgba(6,10,18,.25) 60%,rgba(6,10,18,.1))}
+}
+
+@media (max-width:1080px){
+  .tb__g{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .hd__nav{display:none}
+  .sy__r{grid-template-columns:1fr;gap:12px}
+  .sy__r>.mono{padding-top:0}
+}
+@media (max-width:640px){
+  .hd{height:58px}
+  .hd__brand{height:44px;padding:11px 0;width:calc(22px * 4.697)}
+  .hd__lg{top:11px;height:22px}
+  .hd__tel{font-size:11px;margin-left:auto}
+  .ap{height:200vh}
+  .ap__h{font-size:clamp(38px,13vw,64px)}
+  /* phone: the wall starts already cracked open so the room reads instantly */
+  .ap__leaf{width:43.5%;
+    -webkit-backdrop-filter:blur(11px) saturate(.76) brightness(1.03) contrast(.96);
+    backdrop-filter:blur(11px) saturate(.76) brightness(1.03) contrast(.96)}
+  .ap__leaf::after{border-width:8px}
+  /* the eyebrow has to hold "Glazing contractor / West Palm Beach, Florida" on one
+     line inside a 350px column, so the tracking tightens rather than the line
+     breaking or the place name clipping off the right edge */
+  .ap__eye{font-size:11px;letter-spacing:.02em;font-stretch:100%;margin-bottom:12px;
+    flex-wrap:nowrap;white-space:nowrap;gap:10px}
+  .ap__eye i{width:18px}
+  .ap__type{padding-bottom:74px}
+  .ap__cap{font-size:11px;letter-spacing:.06em;right:var(--pad);bottom:20px;
+    color:rgba(255,255,255,.62);line-height:1.5}
+  .ap__cap span{display:block}
+  .ap__cap .ap__cap-b::before{content:none;margin:0}
+  .ap__hint{display:none}
+  .pn{height:min(80svh,620px)}
+  .pn--fed{height:min(68svh,540px)}
+  .pn__m{gap:5px 14px}
+  .pn__m span{font-size:11px}
+  .tb__g{grid-template-columns:1fr 1fr}
+  .tb__c{min-height:104px;padding:14px 14px 16px}
+  .tb__c dt{font-size:11px;letter-spacing:.12em;margin-bottom:7px}
+  .tb__c dd{font-size:16px}
+  .tb__c .sub{font-size:11px;letter-spacing:.06em}
+  .tb__hd i,.tb__hd .lab:last-child,.sy__hd i,.sy__hd .lab:last-child{display:none}
+  .ct__r{gap:12px 24px}
+}
+@media (max-width:360px){
+  .tb__g{grid-template-columns:1fr}
+  .tb__c{min-height:0}
+}
+
+/* panel → project sheet link */
+.pn__go{display:inline-flex;align-items:center;gap:9px;margin-top:15px;
+  font-family:var(--disp);font-weight:700;font-stretch:82%;font-size:13px;
+  letter-spacing:.03em;text-transform:uppercase;color:#fff;
+  border-bottom:2px solid var(--red);padding-bottom:4px;transition:gap .25s}
+.pn__go:hover{gap:16px}
+.pn__go[aria-disabled]{opacity:.42;border-bottom-color:rgba(255,255,255,.3);pointer-events:none}
+
+/* systems row → reference sheet */
+.sy__ref{display:inline-block;margin-top:13px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
+  box-shadow:inset 0 -1px 0 var(--line);transition:color .2s,box-shadow .2s}
+.sy__ref:hover{color:var(--red);box-shadow:inset 0 -1px 0 var(--red)}
+
+/* ---- all-record link after homepage work panels ---- */
+.allrec{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:8px 24px;
+        padding:clamp(40px,5vw,66px) var(--pad);border-top:1px solid var(--line);
+        border-bottom:1px solid var(--line);text-decoration:none;color:inherit;
+        transition:background .25s,padding-left .25s}
+.allrec:hover{background:var(--paper-2);padding-left:calc(var(--pad) + 10px)}
+.allrec .lab{grid-column:1;color:var(--ink-3);margin-bottom:10px}
+.allrec__n{grid-column:1;grid-row:2;font-size:clamp(30px,4.6vw,60px);color:var(--ink);
+           line-height:.9;transition:color .2s}
+.allrec:hover .allrec__n{color:var(--navy)}
+.allrec__g{grid-column:2;grid-row:2;font-family:var(--mono);font-size:clamp(20px,2.4vw,30px);
+           color:var(--ink-3);line-height:1;transition:color .2s,transform .25s}
+.allrec:hover .allrec__g{color:var(--red);transform:translateX(6px)}
+
+/* ============================================================
+   POLISH PASS · skip link, mobile menu, footer, a11y
+   ============================================================ */
+
+/* --- skip link --- */
+.skip{position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--navy);color:#fff;font-family:var(--mono);font-size:12px;
+  letter-spacing:.06em;padding:12px 18px;text-decoration:none}
+.skip:focus{left:0}
+
+/* --- visible focus, keyboard only --- */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--red);outline-offset:3px;border-radius:1px}
+.hd a:focus-visible,.hd button:focus-visible{outline-color:#fff;outline-offset:4px}
+.hd.solid a:focus-visible,.hd.solid button:focus-visible{outline-color:var(--red)}
+
+/* --- mobile menu button --- */
+/* the drawn rule is 19x9, so the button carries padding to reach a 44px square
+   tap target without changing what is on screen */
+.hd__mb{display:none;flex:none;margin-left:8px;padding:0 10px;min-width:44px;min-height:44px;
+  background:none;border:0;justify-content:flex-end;
+  cursor:pointer;align-items:center;gap:8px;color:inherit;font:inherit}
+.hd__mb-l{position:relative;display:block;width:19px;height:9px}
+.hd__mb-l::before,.hd__mb-l::after{content:"";position:absolute;left:0;right:0;height:1.5px;
+  background:currentColor;transition:transform .26s cubic-bezier(.4,0,.2,1),opacity .18s}
+.hd__mb-l::before{top:0}
+.hd__mb-l::after{bottom:0}
+.hd__mb-t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;line-height:1}
+.hd.menu .hd__mb-l::before{transform:translateY(3.75px) rotate(45deg)}
+.hd.menu .hd__mb-l::after{transform:translateY(-3.75px) rotate(-45deg)}
+
+@media (max-width:900px){
+  .hd__mb{display:flex}
+  .hd__tel{margin-left:auto}
+  .hd__nav{position:fixed;left:0;right:0;top:56px;display:block;margin:0;
+    background:var(--paper);border-bottom:1px solid var(--line);
+    padding:6px var(--pad) 20px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .22s,transform .26s cubic-bezier(.4,0,.2,1),visibility .22s}
+  .hd.menu .hd__nav{opacity:1;visibility:visible;transform:none}
+  .hd__nav a{display:block;padding:15px 0;font-size:15px;letter-spacing:.02em;
+    text-transform:none;font-stretch:100%;color:var(--ink);opacity:1;
+    border-bottom:1px solid var(--line)}
+  .hd__nav a:last-child{border-bottom:0}
+  .hd__nav a::after{display:none}
+  .hd__nav a[aria-current="page"]{color:var(--red)}
+  /* the sheet is on paper, so the header has to be too while it is open */
+  .hd.menu{background:var(--paper)}
+  .hd.menu .hd__lg--w{opacity:0}
+  .hd.menu .hd__lg--n{opacity:1}
+  .hd.menu .hd__tel,.hd.menu .hd__mb{color:var(--ink)}
+}
+@media (max-width:640px){
+  .hd__nav{top:58px}
+  .hd__mb-t{display:none}
+  .hd__mb{margin-left:4px}
+}
+
+/* --- footer --- */
+.ft__in{display:flex;align-items:flex-end;justify-content:space-between;
+  gap:26px clamp(32px,5vw,90px);flex-wrap:wrap}
+/* footer lockup: same real 44px tap box, padding on the anchor only */
+.ft__brand{flex:none;display:flex;align-items:center;width:132px;
+  min-height:44px;padding:8px 0}
+.ft__brand img{display:block;width:100%;height:auto;opacity:.9}
+.ft__l{margin:0;font-size:11px;line-height:2;letter-spacing:.045em;
+  color:var(--ink-2);text-align:right;max-width:none;white-space:nowrap}
+.ft__l a{color:var(--ink-2);border-bottom:1px solid var(--line)}
+.ft__l a:hover{color:var(--red);border-bottom-color:var(--red)}
+@media (max-width:640px){
+  .ft__in{flex-direction:column;gap:20px}
+  .ft__brand{width:112px}
+  .ft__l{text-align:left;font-size:11px;line-height:1.95;white-space:normal}
+}
+
+/* --- reduced motion --- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1!important;transform:none!important}
+  .ap__leaf,.ap__img{transform:none!important}
+}
+
+.nw{white-space:nowrap}
+
+/* ============================================================
+   NO-JS FALLBACK
+   Without script the hamburger cannot toggle anything, so it is
+   hidden and the nav ships as a navy horizontally scrollable
+   strip under the header with every link reachable. Link case
+   matches the scripted nav: uppercase.
+   ============================================================ */
+html:not(.js) .hd__mb{display:none}
+html:not(.js) .ap{height:100svh}
+html:not(.js) .ap__leaf,html:not(.js) .ap__hint{display:none}
+@media (max-width:900px){
+  html:not(.js) .hd__nav{position:fixed;left:0;right:0;top:66px;
+    display:flex;flex-wrap:nowrap;gap:0;margin:0;padding:0 var(--pad);
+    background:var(--navy);border-bottom:1px solid rgba(255,255,255,.18);
+    opacity:1;visibility:visible;transform:none;
+    overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  html:not(.js) .hd__nav::-webkit-scrollbar{display:none}
+  html:not(.js) .hd__nav a{flex:0 0 auto;display:block;border-bottom:0;
+    margin-right:26px;padding:13px 0;color:#fff;opacity:1;white-space:nowrap;
+    text-transform:uppercase;font-stretch:118%;font-size:11px;letter-spacing:.18em}
+  html:not(.js) .hd__nav a:last-child{margin-right:0}
+  html:not(.js) .hd__nav a[aria-current]{color:#fff;box-shadow:inset 0 -2px 0 var(--red)}
+}
+@media (max-width:640px){
+  html:not(.js) .hd__nav{top:58px}
+}
+
+/* screen reader only: carries the word "required" without printing an asterisk twice */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
