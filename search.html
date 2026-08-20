@@ -128,12 +128,12 @@
     function score(item, q) {
       const lq = q.toLowerCase();
       let s = 0;
-      if (item.t.toLowerCase().includes(lq)) s += 10;
-      if (item.h.toLowerCase().includes(lq)) s += 6;
-      if (item.d.toLowerCase().includes(lq)) s += 3;
+      if ((item.t || '').toLowerCase().includes(lq)) s += 10;
+      if ((item.h || '').toLowerCase().includes(lq)) s += 6;
+      if ((item.d || '').toLowerCase().includes(lq)) s += 3;
       if (item.u.toLowerCase().includes(lq)) s += 4;
       // Bonus for exact-start match
-      if (item.t.toLowerCase().startsWith(lq)) s += 10;
+      if ((item.t || '').toLowerCase().startsWith(lq)) s += 10;
       return s;
     }
     function search(q) {

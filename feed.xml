@@ -2,2016 +2,415 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>American Commercial Glass — The ACG Field Notes</title>
-    <link>https://acglass.com/blog.html</link>
+    <link>https://acglass.com/blog/</link>
     <atom:link href="https://acglass.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Florida's commercial glazing specialists. Code, systems, projects, and field notes from ACG.</description>
+    <description>Commercial glazing field notes from American Commercial Glass: code, systems, and project write-ups.</description>
     <language>en-us</language>
     <copyright>© 2026 American Commercial Glass, Inc.</copyright>
-    <lastBuildDate>Mon, 27 Apr 2026 02:16:32 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 00:00:00 +0000</lastBuildDate>
     <managingEditor>connor@acglass.com (Connor Walsh)</managingEditor>
     <webMaster>connor@acglass.com (Connor Walsh)</webMaster>
     <category>Construction</category>
     <category>Commercial Glazing</category>
-    <category>Florida Building Code</category>
-    <image>
-      <url>https://acglass.com/images/acg-logo-nav@2x.png</url>
-      <title>American Commercial Glass</title>
-      <link>https://acglass.com/</link>
-    </image>
     <item>
-      <title>Bi-Fold Glass Walls for Restaurants &amp; Hospitality: Indoor-Outdoor Dining Done Right</title>
+      <title>Bi-Fold Glass Walls for Restaurants &amp; Hospitality</title>
       <link>https://acglass.com/blog/bi-fold-glass-walls-restaurants-hospitality.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/bi-fold-glass-walls-restaurants-hospitality.html</guid>
-      <description>Bi-fold glass walls for restaurants and hospitality venues in Florida — NanaWall and Eurowall systems, design considerations, wind load requirements, impact-rated options, and cost ranges.</description>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Bi-fold glass walls for restaurants and hospitality venues in Florida — NanaWall and Eurowall systems, design considerations, wind load requirements…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>5 Common Commercial Glazing Delays and How to Avoid Them</title>
       <link>https://acglass.com/blog/commercial-glazing-project-delays-how-to-avoid.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-project-delays-how-to-avoid.html</guid>
-      <description>The 5 most common glazing delays on commercial construction projects — late submittals, RFI loops, material lead times, trade coordination, and punch list scope creep — and how to prevent each.</description>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 -0000</pubDate>
+      <description>The 5 most common glazing delays on commercial construction projects — late submittals, RFI loops, material lead times, trade coordination, and punch list…</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>The Commercial Glazing Submittal Process: What GCs Need to Know</title>
+      <title>The Commercial Glazing Submittal Process: What GCs Need to</title>
       <link>https://acglass.com/blog/commercial-glazing-submittal-process-guide.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-submittal-process-guide.html</guid>
-      <description>A GC&#x27;s guide to the commercial glazing submittal process — what&#x27;s included, typical timelines, review cycles, common rejection reasons, and how to keep glazing submittals on schedule.</description>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 -0000</pubDate>
+      <description>A GC</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Curtainwall Systems Explained: How They Work &amp; When Your Building Needs One</title>
+      <title>Curtain Wall Systems Explained — Stick-Built vs Unitized</title>
       <link>https://acglass.com/blog/curtainwall-systems-explained-commercial-construction.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/curtainwall-systems-explained-commercial-construction.html</guid>
-      <description>What is a curtainwall system? Learn how curtainwall works, stick-built vs unitized types, when your building needs curtainwall vs storefront, and typical cost ranges in Florida.</description>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 -0000</pubDate>
+      <description>How curtain wall works — stick-built vs unitized types, when commercial buildings need curtain wall vs storefront, and what GCs should ask before bidding.</description>
       <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Energy-Efficient Commercial Glass in Florida: Meeting Code While Cutting Costs</title>
+      <title>Energy-Efficient Commercial Glass in Florida: Meeting Code</title>
       <link>https://acglass.com/blog/energy-efficient-commercial-glass-florida-code.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/energy-efficient-commercial-glass-florida-code.html</guid>
-      <description>How to meet Florida Building Code energy requirements for commercial glass — SHGC, U-value, Low-E coatings, insulated glass units, and how to balance energy code with hurricane code.</description>
-      <pubDate>Wed, 22 Jul 2026 00:00:00 -0000</pubDate>
+      <description>How to meet Florida Building Code energy requirements for commercial glass — SHGC, U-value, Low-E coatings, insulated glass units, and how to balance…</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Automatic Entrance Systems for Commercial Buildings: Types, Costs &amp;amp; ADA Requirements</title>
+      <title>Automatic Entrance Systems for Commercial Buildings: Types</title>
       <link>https://acglass.com/blog/automatic-entrance-systems-commercial-buildings-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/automatic-entrance-systems-commercial-buildings-florida.html</guid>
-      <description>Complete guide to automatic entrance systems for commercial buildings: sliding, swinging, revolving, and folding types, ADA compliance requirements, cost ranges, and manufacturer comparisons.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Complete guide to automatic entrance systems for commercial buildings: sliding, swinging, revolving, and folding types, ADA compliance requirements, cost…</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Commercial Glass Types: A Complete Guide for Florida Projects</title>
+      <title>Commercial Glass Types: A Complete Guide for Florida</title>
       <link>https://acglass.com/blog/commercial-glass-types-guide-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-types-guide-florida.html</guid>
-      <description>A complete guide to commercial glass types for Florida projects: tempered, laminated, IGU, Low-E, impact-rated, fire-rated, tinted, and reflective — with costs, uses, and Florida code compliance.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>A complete guide to commercial glass types for Florida projects: tempered, laminated, IGU, Low-E, impact-rated, fire-rated, tinted, and reflective — with…</description>
       <dc:creator>Connor Walsh &amp; ACG Estimating, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Fire-Rated Glass for Commercial Buildings: Requirements, Types &amp;amp; Installation</title>
+      <title>Fire-Rated Glass for Commercial Buildings: Requirements</title>
       <link>https://acglass.com/blog/fire-rated-glass-requirements-commercial-buildings.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/fire-rated-glass-requirements-commercial-buildings.html</guid>
-      <description>Where is fire-rated glass required in commercial buildings? Fire ratings (20, 45, 60, 90 min), glass types (wired, ceramic, intumescent), TGP products, cost premiums, and IBC code requirements.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Where is fire-rated glass required in commercial buildings? Fire ratings (20, 45, 60, 90 min), glass types (wired, ceramic, intumescent), TGP products…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Florida Building Code for Commercial Glazing: A Contractor&#x27;s Quick Reference</title>
+      <title>Florida Building Code for Commercial Glazing: A</title>
       <link>https://acglass.com/blog/florida-building-code-commercial-glazing-guide.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/florida-building-code-commercial-glazing-guide.html</guid>
-      <description>A practical contractor&#x27;s reference for Florida Building Code requirements for commercial glazing — FBC 8th Edition, energy code, wind load, HVHZ, and Florida Product Approval.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>A practical contractor</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Glass Partition Walls for Offices: Types, Costs &amp;amp; Design Guide</title>
+      <title>Office Glass Walls &amp; Partition Systems — Types, Cost (2026)</title>
       <link>https://acglass.com/blog/glass-partition-walls-office-commercial-guide.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/glass-partition-walls-office-commercial-guide.html</guid>
-      <description>Complete guide to glass partition walls for offices: frameless, framed, sliding, demountable, and fire-rated types. Cost ranges ($50–$150/SF), STC sound ratings, and design considerations.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Frameless, framed, sliding, demountable, fire-rated office glass walls — types compared, cost ranges, STC ratings, and Florida code requirements.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How Long Does Commercial Glass Installation Take? Project Timeline Guide</title>
+      <title>How Long Does Commercial Glass Installation Take? Project</title>
       <link>https://acglass.com/blog/how-long-does-commercial-glass-installation-take.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-long-does-commercial-glass-installation-take.html</guid>
-      <description>How long does commercial glass installation take? A realistic guide to glazing project timelines — submittals, shop drawings, fabrication, installation, and closeout.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>How long does commercial glass installation take? A realistic guide to glazing project timelines — submittals, shop drawings, fabrication, installation…</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How Much Does Commercial Storefront Glass Cost in Florida? (2026 Pricing Guide)</title>
+      <title>Commercial Storefront Glass Cost in Florida 2026</title>
       <link>https://acglass.com/blog/how-much-does-commercial-storefront-glass-cost-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-much-does-commercial-storefront-glass-cost-florida.html</guid>
-      <description>What does commercial storefront glass cost in Florida in 2026? Tempered, laminated, IGU, and impact glass pricing per SF — plus storefront vs curtainwall cost comparison.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>2026 commercial storefront glass cost in Florida — tempered, laminated, IGU, and impact glass pricing per SF. Plus when curtain wall is worth it.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Choose a Commercial Glass Contractor in Florida: The Complete Checklist</title>
+      <title>How to Choose a Commercial Glass Contractor in Florida: The</title>
       <link>https://acglass.com/blog/how-to-choose-commercial-glass-contractor-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-to-choose-commercial-glass-contractor-florida.html</guid>
-      <description>Hiring a commercial glazing subcontractor in Florida? This complete checklist covers licensing, insurance, portfolio review, manufacturer partnerships, bid evaluation, and more.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Hiring a commercial glazing subcontractor in Florida? This complete checklist covers licensing, insurance, portfolio review, manufacturer partnerships…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Evaluate a Glazing Subcontractor Bid: A GC&#x27;s Guide</title>
+      <title>How to Evaluate a Glazing Subcontractor Bid: A GC&apos;s Guide</title>
       <link>https://acglass.com/blog/how-to-evaluate-glazing-subcontractor-bid.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-to-evaluate-glazing-subcontractor-bid.html</guid>
-      <description>A GC&#x27;s practical guide to evaluating glazing subcontractor bids — what a complete Div 08 bid includes, red flags, how to compare bids fairly, and why lowest bid isn&#x27;t always best.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>A GC</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Hurricane Impact Windows vs Shutters for Commercial Buildings: Which Is Better?</title>
+      <title>Hurricane Impact Windows vs Shutters for Commercial</title>
       <link>https://acglass.com/blog/hurricane-impact-windows-vs-shutters-commercial.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/hurricane-impact-windows-vs-shutters-commercial.html</guid>
-      <description>Impact windows vs hurricane shutters for commercial buildings: cost comparison, insurance implications, FBC requirements, aesthetics, and maintenance. The clear winner for commercial properties.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Impact windows vs hurricane shutters for commercial buildings: cost comparison, insurance implications, FBC requirements, aesthetics, and maintenance.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Impact-Rated Glass Requirements in Florida: What You Need to Know in 2026</title>
+      <title>Impact-Rated Glass Requirements in Florida: What You Need</title>
       <link>https://acglass.com/blog/impact-rated-glass-requirements-florida-2026.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/impact-rated-glass-requirements-florida-2026.html</guid>
-      <description>Where is impact glass required in Florida in 2026? HVHZ, wind-borne debris regions, FBC 8th Edition, Miami-Dade NOA vs FL Product Approval, large vs small missile zones explained.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Where is impact glass required in Florida in 2026? HVHZ, wind-borne debris regions, FBC 8th Edition, Miami-Dade NOA vs FL Product Approval, large vs small…</description>
       <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>10 Questions to Ask a Glazing Subcontractor Before You Hire Them</title>
+      <title>10 Questions to Ask a Glazing Subcontractor Before You Hire</title>
       <link>https://acglass.com/blog/questions-to-ask-glazing-subcontractor-before-hiring.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/questions-to-ask-glazing-subcontractor-before-hiring.html</guid>
-      <description>Before you award a glazing scope, ask these 10 questions. A GC&#x27;s checklist for vetting glazing subcontractors — license, insurance, experience, submittals, and more.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Before you award a glazing scope, ask these 10 questions. A GC</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Storefront vs Curtainwall vs Window Wall: What&#x27;s the Difference?</title>
+      <title>Storefront vs Curtainwall vs Window Wall: What&apos;s the</title>
       <link>https://acglass.com/blog/storefront-vs-curtainwall-vs-window-wall-difference.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/storefront-vs-curtainwall-vs-window-wall-difference.html</guid>
-      <description>Storefront, curtainwall, and window wall — what&#x27;s the difference? Cost, performance, and when to use each system explained, with side-by-side comparison table.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Storefront, curtainwall, and window wall — what</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Does a Glazing Subcontractor Do? Scope, Role &amp;amp; What GCs Should Know</title>
+      <title>What Does a Glazing Subcontractor Do? Scope, Role &amp;</title>
       <link>https://acglass.com/blog/what-does-a-glazing-subcontractor-do.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-does-a-glazing-subcontractor-do.html</guid>
-      <description>What does a glazing subcontractor actually do on a commercial project? Scope, role, typical work items, when to involve them, trade coordination, and what separates a good sub from the rest.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>What does a glazing subcontractor actually do on a commercial project? Scope, role, typical work items, when to involve them, trade coordination, and what…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is Division 08 in Construction? A Complete Guide to Glazing Specifications</title>
+      <title>What Is Division 08 in Construction? A Complete Guide to</title>
       <link>https://acglass.com/blog/what-is-division-08-glazing-construction.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-division-08-glazing-construction.html</guid>
-      <description>What is Division 08 in construction? A complete GC&#x27;s guide to CSI MasterFormat Division 08 — openings, glazing, storefronts, curtainwall, doors, hardware, and fire-rated assemblies.</description>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 -0000</pubDate>
+      <description>What is Division 08 in construction? A complete GC</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Tampa Bay Commercial Glazing Market: What GCs Need to Know in 2026</title>
+      <title>Tampa Bay Commercial Glazing Market: What GCs Need to Know</title>
       <link>https://acglass.com/blog/commercial-glazing-tampa-bay-market-2026.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-tampa-bay-market-2026.html</guid>
-      <description>Tampa Bay&#x27;s commercial construction pipeline is massive in 2026. Here&#x27;s what GCs building in Hillsborough, Pinellas, and Pasco counties need to know about glazing.</description>
-      <pubDate>Fri, 10 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Tampa Bay</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Tampa&#x27;s Construction Boom: What It Means for Commercial Glazing</title>
+      <title>Tampa&apos;s Construction Boom: What It Means for Commercial</title>
       <link>https://acglass.com/blog/tampa-commercial-construction-boom-glazing.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/tampa-commercial-construction-boom-glazing.html</guid>
-      <description>Tampa&#x27;s construction pipeline in 2026 is one of the largest in Florida. Water Street Phase 2, Midtown Tampa, Tampa General expansion — here&#x27;s what the boom means for commercial glazing lead times, demand, and GC strategy.</description>
-      <pubDate>Fri, 10 Jul 2026 00:00:00 -0000</pubDate>
+      <description>Tampa</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Why American Commercial Glass Opened a Tampa Office</title>
       <link>https://acglass.com/blog/why-acg-opened-tampa-office.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/why-acg-opened-tampa-office.html</guid>
-      <description>ACG started on Florida&#x27;s Treasure Coast, expanded to Naples, and now serves Tampa Bay. Why we moved west — and what it means for GCs building in Hillsborough, Pinellas, and Pasco counties.</description>
-      <pubDate>Fri, 10 Jul 2026 00:00:00 -0000</pubDate>
+      <description>ACG started on Florida</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Best Commercial Storefront Systems for Florida (2026 Comparison)</title>
+      <title>Commercial Storefront Systems for Florida (2026 Comparison)</title>
       <link>https://acglass.com/blog/best-commercial-storefront-systems-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/best-commercial-storefront-systems-florida.html</guid>
-      <description>Best commercial storefront systems for Florida in 2026: ESWindows, ESWindows ES-8000, ESWindows ES-9500, Oldcastle FG 501T, and Arcadia AA3200 compared by frame depth, thermal performance, and Florida PA.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Florida commercial storefront systems compared — ESWindows ES-8000, ES-9500, ES-4518. Frame depth, glazing options, and HVHZ approval status.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Happens During a Commercial Glazing Inspection in Florida?</title>
+      <title>What Happens During a Commercial Glazing Inspection in</title>
       <link>https://acglass.com/blog/commercial-glazing-inspection-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-inspection-florida.html</guid>
-      <description>What inspectors check during a commercial glazing inspection in Florida: product approvals, labels, installation per manufacturer instructions, sealants, hardware, and common fail points.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>What inspectors check during a commercial glazing inspection in Florida: product approvals, labels, installation per manufacturer instructions, sealants…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Eurowall Sliding Glass Door System — What It Is and Where to Use It</title>
+      <title>Eurowall Sliding Glass Door System — What It Is and Where</title>
       <link>https://acglass.com/blog/eurowall-sliding-glass-door-system.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/eurowall-sliding-glass-door-system.html</guid>
-      <description>Eurowall sliding glass door systems use European lift-and-slide technology — massive panels up to 12ft tall, corner configurations, and full wall openings. Florida code compliance and cost range $200–$500/SF.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Eurowall sliding glass door systems use European lift-and-slide technology — massive panels up to 12ft tall, corner configurations, and full wall openings.</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Fire-Rated Glass Requirements in Florida — What You Need to Know</title>
+      <title>Fire-Rated Glass Requirements in Florida — What You Need to</title>
       <link>https://acglass.com/blog/fire-rated-glass-requirements-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/fire-rated-glass-requirements-florida.html</guid>
-      <description>Fire-rated glass requirements in Florida: when it&#x27;s required, rating levels (20/45/60/90 min), glass types, testing standards (UL 9, UL 10B/C, NFPA 252), and Florida Building Code references.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Fire-rated glass requirements in Florida: when it</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How Much Does Curtainwall Cost Per Square Foot? (2026 Guide)</title>
+      <title>Curtain Wall Cost Per Square Foot — 2026 Florida Pricing</title>
       <link>https://acglass.com/blog/how-much-does-curtainwall-cost-per-square-foot.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-much-does-curtainwall-cost-per-square-foot.html</guid>
-      <description>Curtainwall cost per square foot in 2026: $150–$350+ depending on system type, height, wind loads, and Florida HVHZ requirements. Stick-built vs unitized cost breakdown.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Florida curtain wall cost per square foot in 2026 — pricing by system type, glass makeup, and project size.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Spec a Commercial Storefront System (Architect&#x27;s Quick Guide)</title>
+      <title>How to Spec a Commercial Storefront System (Architect&apos;s</title>
       <link>https://acglass.com/blog/how-to-spec-commercial-storefront.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-to-spec-commercial-storefront.html</guid>
-      <description>How to spec a commercial storefront system for Florida projects: frame depth selection, thermal break options, glass selection, ADA compliance, wind loads, and finish options.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>How to spec a commercial storefront system for Florida projects: frame depth selection, thermal break options, glass selection, ADA compliance, wind…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is a Window Wall System? (And How It&#x27;s Different from Curtainwall)</title>
+      <title>What Is a Window Wall System? (And How It&apos;s Different from</title>
       <link>https://acglass.com/blog/what-is-a-window-wall-system.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-a-window-wall-system.html</guid>
-      <description>A window wall system sits between floor slabs — different from curtainwall which hangs in front of the structure. Learn the difference, costs, and when each is used in Florida.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>A window wall system sits between floor slabs — different from curtainwall, which hangs in front of the structure. Cost, code, and use cases.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is Division 08 in Construction? (The Complete Guide to Openings)</title>
+      <title>What Is Division 08 in Construction? (The Complete Guide to</title>
       <link>https://acglass.com/blog/what-is-division-08-construction.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-division-08-construction.html</guid>
-      <description>Division 08 in the CSI MasterFormat covers Openings — doors, windows, storefronts, curtainwall, and hardware. Complete guide to every sub-section from 08 11 through 08 88.</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Division 08 in the CSI MasterFormat covers Openings — doors, windows, storefronts, curtainwall, and hardware. Plain-language guide for GCs.</description>
       <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Commercial Glazing Lead Times in 2026 — What to Expect</title>
       <link>https://acglass.com/blog/commercial-glazing-lead-times-2026.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-lead-times-2026.html</guid>
       <description>Commercial glazing lead times in 2026 — current lead times by system type, what affects them, and how GCs can plan around them to protect their schedule.</description>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 -0000</pubDate>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Read a Door and Window Schedule (For People Who Aren&#x27;t Architects)</title>
+      <title>How to Read a Door and Window Schedule (For People Who</title>
       <link>https://acglass.com/blog/how-to-read-a-door-schedule.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/how-to-read-a-door-schedule.html</guid>
-      <description>How to read a door and window schedule in construction plans — what every column means, why it matters for glazing bids, and what to do when the schedule is missing.</description>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 -0000</pubDate>
+      <description>How to read a door and window schedule in construction plans — what every column means, why it matters for glazing bids, and what to do when the schedule…</description>
       <dc:creator>Connor Walsh &amp; ACG Estimating, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Impact Glass vs Hurricane Shutters for Commercial Buildings — Which Is Better?</title>
+      <title>Impact Glass vs Hurricane Shutters for Commercial Buildings</title>
       <link>https://acglass.com/blog/impact-glass-vs-shutters-commercial.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/impact-glass-vs-shutters-commercial.html</guid>
-      <description>Impact glass vs hurricane shutters for commercial buildings in Florida — a head-to-head comparison of cost, convenience, code compliance, and long-term value.</description>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Impact glass vs hurricane shutters for commercial buildings in Florida — a head-to-head comparison of cost, convenience, code compliance, and long-term…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is a Curtainwall System? (Simple Guide for Non-Engineers)</title>
+      <title>What Is a Curtainwall System? (Simple Guide for</title>
       <link>https://acglass.com/blog/what-is-a-curtainwall-system.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-a-curtainwall-system.html</guid>
-      <description>What is a curtainwall system? A plain-English guide for property owners, developers, and GCs — how curtainwall works, where it&#x27;s used, and how it differs from storefront.</description>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 -0000</pubDate>
+      <description>What is a curtainwall system? A plain-English guide for property owners, developers, and GCs — how curtainwall works, where it</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is a Florida Product Approval? (And Why Your Glazing Sub Needs One)</title>
+      <title>What Is a Florida Product Approval? (And Why Your Glazing</title>
       <link>https://acglass.com/blog/what-is-a-product-approval-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-a-product-approval-florida.html</guid>
-      <description>What is a Florida Product Approval for glazing? How FL PA differs from Miami-Dade NOA, how to verify approvals, and what happens when a glazing sub uses non-approved products.</description>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 -0000</pubDate>
+      <description>What is a Florida Product Approval for glazing? How FL PA differs from Miami-Dade NOA, how to verify approvals, and what happens when a glazing sub uses…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is Low-E Glass? (And Why Your Commercial Building Needs It)</title>
+      <title>What Is Low-E Glass? (And Why Your Commercial Building</title>
       <link>https://acglass.com/blog/what-is-low-e-glass-commercial.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-low-e-glass-commercial.html</guid>
-      <description>What is Low-E glass for commercial buildings? Plain-English explanation of the coating, SHGC, U-factor, Florida energy code requirements, and how it saves money on AC.</description>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 -0000</pubDate>
+      <description>What is Low-E glass for commercial buildings? Plain-English explanation of the coating, SHGC, U-factor, Florida energy code requirements, and how it saves…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Best Commercial Glazing Contractors in Tampa FL (2026 Guide)</title>
+      <title>Choosing a Commercial Glazing Contractor in Tampa, FL</title>
       <link>https://acglass.com/blog/commercial-glazing-contractors-tampa-fl.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-contractors-tampa-fl.html</guid>
-      <description>A GC&#x27;s guide to choosing a commercial glazing contractor in Tampa. What to look for, what questions to ask, and why ACG&#x27;s Tampa office is the right partner for your next project.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>A GC</description>
       <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Commercial Glazing in Orlando FL | Guide for GCs | ACG</title>
+      <title>Commercial Glazing in Orlando FL | Guide for GCs</title>
       <link>https://acglass.com/blog/commercial-glazing-orlando-fl.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-orlando-fl.html</guid>
-      <description>Everything Orlando-area GCs need to know about commercial glazing — systems, contractors, code requirements, and why ACG serves the Greater Orlando market from its Florida offices.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Everything Orlando-area GCs need to know about commercial glazing — systems, contractors, code requirements, and why ACG serves the Greater Orlando market…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Curtainwall vs. Storefront: Cost, Performance &amp; When to Use Each</title>
+      <title>Curtain Wall vs Storefront — Cost, Performance &amp; When to Use</title>
       <link>https://acglass.com/blog/curtainwall-vs-storefront-cost-guide.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/curtainwall-vs-storefront-cost-guide.html</guid>
-      <description>A GC&#x27;s guide to choosing between curtainwall and storefront systems — cost differences, performance comparison, and which system the architect spec actually calls for.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>A GC</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Choose a Commercial Impact Window Contractor in Florida</title>
+      <title>The Future of Commercial Glazing</title>
+      <link>https://acglass.com/blog/future-of-commercial-glazing.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/future-of-commercial-glazing.html</guid>
+      <description>Commercial glazing has been done the same way for 30 years. Here</description>
+      <dc:creator>Connor Walsh, President — American Commercial Glass</dc:creator>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Choose a Commercial Impact Window Contractor in</title>
       <link>https://acglass.com/blog/impact-window-contractor-commercial-florida.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/impact-window-contractor-commercial-florida.html</guid>
-      <description>Florida GCs and developers: what to look for in a commercial impact window contractor — HVHZ ratings, product approvals, Florida Building Code compliance, and installation experience.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Florida GCs and developers: what to look for in a commercial impact window contractor — HVHZ ratings, product approvals, Florida Building Code compliance…</description>
       <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Commercial Storefront Installation in Tampa FL | ACG Guide</title>
       <link>https://acglass.com/blog/storefront-glass-installation-tampa.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/storefront-glass-installation-tampa.html</guid>
-      <description>Everything a Tampa GC needs to know about commercial storefront glass installation — systems, permits, Hillsborough County code requirements, and timelines.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Everything a Tampa GC needs to know about commercial storefront glass installation — systems, permits, Hillsborough County code requirements, and…</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Commercial Construction Growth in Wesley Chapel &amp; Brandon FL | Glazing Guide</title>
+      <title>Commercial Construction Growth in Wesley Chapel &amp; Brandon</title>
       <link>https://acglass.com/blog/wesley-chapel-brandon-commercial-construction.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/wesley-chapel-brandon-commercial-construction.html</guid>
-      <description>Wesley Chapel and Brandon are Florida&#x27;s fastest-growing commercial construction markets. A guide for GCs on glazing requirements, permit processes, and finding the right glazing sub.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Wesley Chapel and Brandon — two of Florida</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>What Is a Glazing Subcontractor? A GC&#x27;s Complete Guide</title>
+      <title>What Is a Glazing Subcontractor? A GC&apos;s Complete Guide</title>
       <link>https://acglass.com/blog/what-is-a-glazing-subcontractor.html</link>
       <guid isPermaLink="true">https://acglass.com/blog/what-is-a-glazing-subcontractor.html</guid>
-      <description>Everything a general contractor needs to know about glazing subcontractors — what they do, what they&#x27;re responsible for, and what to look for when hiring one.</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 -0000</pubDate>
+      <description>Everything a general contractor needs to know about glazing subcontractors — what they do, what they</description>
       <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>How to Choose a Commercial Glazier in Tampa Bay: 2026 GC Buyer&#x27;s Guide | ACG</title>
-      <link>https://acglass.com/blog/how-to-choose-commercial-glazier-tampa-bay.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-to-choose-commercial-glazier-tampa-bay.html</guid>
-      <description>Choosing a commercial glazier for Tampa Bay? Complete GC buyer&#x27;s guide covering licensing, experience, local presence, products, and Florida code.</description>
-      <pubDate>Wed, 22 Apr 2026 14:30:00 -0000</pubDate>
+      <title>How to Budget for Commercial Glass Replacement in</title>
+      <link>https://acglass.com/blog/budget-commercial-glass-replacement-florida.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/budget-commercial-glass-replacement-florida.html</guid>
+      <description>Commercial glass replacement budget framework: scope size, glass package, finish, schedule.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/dale-mabry-retail/hero-entry.jpg" type="image/jpeg"/>
+      <pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Hurricane Impact Sliding Glass Doors for Commercial Florida: Cost, Specs &amp;amp; Options | ACG</title>
-      <link>https://acglass.com/blog/hurricane-impact-sliding-glass-doors-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-impact-sliding-glass-doors-commercial-florida.html</guid>
-      <description>Hurricane impact sliding glass doors for commercial Florida projects. Cost, FBC approvals, ESWindows SGD-2020, installation. Guide from ACG.</description>
-      <pubDate>Wed, 22 Apr 2026 14:00:00 -0000</pubDate>
+      <title>Can a Commercial Glazier Design Custom Storefronts?</title>
+      <link>https://acglass.com/blog/can-glazier-design-custom-storefronts.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/can-glazier-design-custom-storefronts.html</guid>
+      <description>Custom commercial storefronts in Florida: custom mullion profiles, oversize lites, premium PVDF finishes, integrated lighting.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wild-blue/wild-blue-entry-doors.jpg" type="image/jpeg"/>
+      <pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Cost of Impact Windows for Commercial Buildings in Florida (2026 Pricing) | ACG</title>
-      <link>https://acglass.com/blog/cost-of-impact-windows-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/cost-of-impact-windows-commercial-florida.html</guid>
-      <description>Cost of impact windows for commercial buildings in Florida. Real 2026 pricing per SF, project totals, HVHZ premiums, ESWindows rates. From ACG.</description>
-      <pubDate>Wed, 22 Apr 2026 13:30:00 -0000</pubDate>
+      <title>How Much Does Glass Replacement Cost for a Business</title>
+      <link>https://acglass.com/blog/commercial-glass-replacement-cost-business-florida.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-replacement-cost-business-florida.html</guid>
+      <description>Florida commercial glass replacement cost guide: storefront, curtainwall, impact glazing. ACG bid-line ranges,.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/villa-lonz/facade-detail.jpg" type="image/jpeg"/>
+      <pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Aluminum vs Vinyl Windows: Which is Right for Commercial Buildings in Florida? | ACG</title>
-      <link>https://acglass.com/blog/aluminum-vs-vinyl-windows-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/aluminum-vs-vinyl-windows-commercial-florida.html</guid>
-      <description>Aluminum vs vinyl windows for commercial buildings in Florida. Compare cost, strength, hurricane performance, lifespan. Commercial glazier&#x27;s guide from ACG.</description>
-      <pubDate>Wed, 22 Apr 2026 13:00:00 -0000</pubDate>
+      <title>Commercial Glazier Hourly Rate in Florida 2026 —</title>
+      <link>https://acglass.com/blog/commercial-glazier-hourly-rate-florida-2026.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazier-hourly-rate-florida-2026.html</guid>
+      <description>Why commercial glazing is bid by line item, not by the hour — how Florida glaziers price storefront and curtain wall installation work.</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
+      <pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>ADA Compliance for Commercial Glass Doors: A Specifier&#x27;s Checklist | ACG</title>
-      <link>https://acglass.com/blog/ada-compliance-commercial-glass-doors.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/ada-compliance-commercial-glass-doors.html</guid>
-      <description>Clear width, threshold, hardware height, operating force, and visibility marking requirements for ADA-compliant commercial glass doors in Florida.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
+      <title>Common Commercial Glass Installation Mistakes to Avoid</title>
+      <link>https://acglass.com/blog/common-commercial-glass-installation-mistakes-avoid.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/common-commercial-glass-installation-mistakes-avoid.html</guid>
+      <description>Eight common commercial glazing installation mistakes that cost owners money and schedule: spec drift, weep blockage, anchor under-design, sealant</description>
       <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>The Best Glass Options for Florida Storefronts in 2026 | ACG</title>
-      <link>https://acglass.com/blog/best-glass-options-florida-storefronts.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/best-glass-options-florida-storefronts.html</guid>
-      <description>Commercial storefront glass options for Florida — ES-8000, Euro-Wall, ESWindows systems. Impact ratings, framing, glazing selections for retail, restaurant, and hospitality.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/street-view-atlantic-ave.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>What Type of Glass Works Best for Florida&#x27;s Commercial Climate? | ACG</title>
-      <link>https://acglass.com/blog/best-glass-types-florida-commercial-climate.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/best-glass-types-florida-commercial-climate.html</guid>
-      <description>A technical guide to commercial glass for Florida heat, humidity, hurricanes, and UV. Laminated, tempered, low-E, and insulating glass explained for commercial applications.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>When Is the Best Time to Replace Commercial Windows in Florida? | ACG</title>
-      <link>https://acglass.com/blog/best-time-replace-commercial-windows-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/best-time-replace-commercial-windows-florida.html</guid>
-      <description>Timing a commercial window replacement in Florida depends on hurricane season, insurance renewal, budget cycle, and occupancy. Here&#x27;s how to pick the right window.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/villa-lonz/facade-detail.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Commercial Glass Upgrades Add Value to Florida Property | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-adds-property-value-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-adds-property-value-florida.html</guid>
-      <description>Impact glazing upgrades raise appraisal value, insurance ratings, cap rates, and tenant retention for Florida commercial real estate. Here&#x27;s the ROI math.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glass Cleaning and Maintenance in Florida | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-cleaning-maintenance-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-cleaning-maintenance-florida.html</guid>
-      <description>Florida-specific commercial glass cleaning: salt residue, mineral deposits, hurricane debris, proper solutions for tinted and low-E glass, and hard water stain removal.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Commercial Glass Can Be Customized for Your Business | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-customization-options-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-customization-options-florida.html</guid>
-      <description>Custom glass — frosted, patterned, tinted, graphic, curved, colored — for Florida commercial buildings. Fabrication options and practical limits.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/klus-lighting-vero-beach.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glass Insurance Claims in Florida: A GC and Owner Guide | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-insurance-claims-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-insurance-claims-florida.html</guid>
-      <description>How Florida commercial property owners and GCs file glass damage claims, document losses, work with adjusters, and match existing glazing under hurricane deductibles.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/haines-city-eoc.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Often Should Commercial Glass Be Maintained in Florida? | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-maintenance-schedule-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-maintenance-schedule-florida.html</guid>
-      <description>A preventive maintenance schedule for commercial glazing in Florida — cleaning, sealant inspection, hardware lubrication, and IGU condition checks.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glass Partition Systems for Offices: A Tenant Improvement Guide | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-partition-systems-offices.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-partition-systems-offices.html</guid>
-      <description>Demountable glass partitions, single and double-glazed acoustic systems, frameless options, sliding and pivot doors, and STC ratings for Florida TI work.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Commercial Glass Upgrades Increase Florida Property Value | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-property-value-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-property-value-florida.html</guid>
-      <description>Commercial glazing upgrades — impact, energy-efficient, tinted — measurably increase Florida property valuation, NOI, insurance credits, and tenant retention.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Much Do Commercial Glass Repairs Cost in Florida? (2026) | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-repair-costs-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-repair-costs-florida.html</guid>
-      <description>Broken IGU, cracked tempered, fogged glass, door hardware failure — 2026 commercial glass repair cost ranges for Florida in service-call, parts, and labor.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/dale-mabry-retail/corner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>What&#x27;s the Typical Turnaround Time for Commercial Glazing Projects? | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-project-turnaround-time-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-project-turnaround-time-florida.html</guid>
-      <description>From plans to install: realistic timelines for commercial glazing projects in Florida in 2026. Lead times, fabrication, shop drawings, and field install expectations.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/panther-national/exterior-construction.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glazing Safety Standards in Florida: ANSI, CPSC, and IBC 2406 | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-safety-standards-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-safety-standards-florida.html</guid>
-      <description>ANSI Z97.1, CPSC 16 CFR 1201 Category I and II, hazardous locations under IBC 2406, and how Florida Building Code enforces safety glazing on commercial projects.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/klus-lighting-vero-beach.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glazing Warranties in Florida: What&#x27;s Actually Covered | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-warranties-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-warranties-florida.html</guid>
-      <description>Commercial glass warranties vary dramatically by manufacturer and installer. Here&#x27;s what Florida GCs and owners need to verify before specifying a glazing system.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Security Glass Solutions for Florida Businesses | ACG</title>
-      <link>https://acglass.com/blog/commercial-security-glass-solutions-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-security-glass-solutions-florida.html</guid>
-      <description>Forced entry resistance, bullet resistance, attack-rated glazing for Florida commercial buildings. Technical specs, use cases, and how to spec it.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/bobcat-treasure-coast/aerial-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Skylights and Glass Ceilings in Florida: Design, Code, and Detailing | ACG</title>
-      <link>https://acglass.com/blog/commercial-skylights-glass-ceilings-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-skylights-glass-ceilings-florida.html</guid>
-      <description>Structural skylights, walkable glass, and curtain wall roof systems in Florida—hurricane ratings, condensation management, and leak prevention detailing.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Storm Proofing: Windows, Glazing, and Florida Building Protection | ACG</title>
-      <link>https://acglass.com/blog/commercial-storm-proofing-windows-florida-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-storm-proofing-windows-florida-guide.html</guid>
-      <description>Storm proofing commercial windows in Florida — impact glass, shutters, laminated systems, pre-season prep, and full property protection strategies from ACG.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/haines-city-eoc.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial vs Residential Glazing: What&#x27;s the Difference? | ACG</title>
-      <link>https://acglass.com/blog/commercial-vs-residential-glazing-what-is-the-difference.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-vs-residential-glazing-what-is-the-difference.html</guid>
-      <description>Commercial and residential glazing are different trades. Here&#x27;s what GCs, property owners, and developers need to know about specifying the right kind of glazing subcontractor.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Do You Need a Permit to Replace Commercial Windows in Florida? | ACG</title>
-      <link>https://acglass.com/blog/commercial-window-permits-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-window-permits-florida.html</guid>
-      <description>Florida commercial window replacement permit requirements — FBC, local AHJ rules, when permits are required, and the shop drawing / NOA documentation process.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/building-c.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Common Window Problems in Florida Commercial Buildings | ACG</title>
-      <link>https://acglass.com/blog/common-window-problems-florida-commercial-buildings.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/common-window-problems-florida-commercial-buildings.html</guid>
-      <description>The five most common commercial window issues in Florida — IGU fogging, sealant failure, frame corrosion, hardware wear, and water intrusion. What causes them and how to solve them.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/ifly-miami-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Decorative Glass Options for Florida Storefronts | ACG</title>
-      <link>https://acglass.com/blog/decorative-glass-storefront-options-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/decorative-glass-storefront-options-florida.html</guid>
-      <description>Frit patterns, laminated interlayers, switchable privacy glass, digital printing, back-painted, and etched finishes—when each makes sense on a Florida storefront.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Do Commercial Windows Block UV Rays? A Florida Commercial Building Guide | ACG</title>
-      <link>https://acglass.com/blog/do-windows-block-uv-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/do-windows-block-uv-commercial-florida.html</guid>
-      <description>Do commercial windows block UV rays? Florida guide covering low-E, laminated glass, tinting, and how commercial glazing protects interiors, inventory, and employees.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/atlantic-fields-golf-house/interior-dining.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Emergency Commercial Glass Replacement in Florida: What to Do First | ACG</title>
-      <link>https://acglass.com/blog/emergency-commercial-glass-replacement-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/emergency-commercial-glass-replacement-florida.html</guid>
-      <description>Broken commercial glass after hours? Board up, secure the opening, document damage for insurance, then call a licensed commercial glazier. Here&#x27;s the Florida emergency protocol.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/harbour-cay/dunkin-corner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>After-Hours Commercial Glass Emergency Services in Florida | ACG</title>
-      <link>https://acglass.com/blog/emergency-commercial-glazier-services-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/emergency-commercial-glazier-services-florida.html</guid>
-      <description>Storm damage, break-ins, accidents — when commercial glass fails at 2AM, here&#x27;s what a licensed commercial glazier should provide in emergency response.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/street-view-atlantic-ave.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Energy-Efficient Glass Options for Florida Businesses (2026 Guide) | ACG</title>
-      <link>https://acglass.com/blog/energy-efficient-glass-options-florida-businesses.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/energy-efficient-glass-options-florida-businesses.html</guid>
-      <description>A practical guide to energy-efficient glass for Florida commercial buildings — low-E coatings, IGU, laminated options, and tint-level selection for office, retail, and hospitality.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/panther-national/aerial-golf-course.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Florida Building Codes Affecting Commercial Glazing in 2026 | ACG</title>
-      <link>https://acglass.com/blog/florida-building-codes-commercial-glazing-2026.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/florida-building-codes-commercial-glazing-2026.html</guid>
-      <description>FBC 2023 eighth edition in 2024 enforcement, HVHZ and non-HVHZ wind zones, NOA requirements, TAS 201/202/203 testing, FBC Energy, and commercial permitting workflow.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/haines-city-eoc.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Frameless Glass Doors for Commercial Spaces: Design and Engineering | ACG</title>
-      <link>https://acglass.com/blog/frameless-glass-doors-commercial-spaces.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/frameless-glass-doors-commercial-spaces.html</guid>
-      <description>Frameless entry doors, pivot doors, and interior glass walls for offices, retail, and hospitality. Hardware, structural, and design considerations for Florida commercial.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/ocean-prime-ft-lauderdale.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glass Thickness: What Works Where (and Why) | ACG</title>
-      <link>https://acglass.com/blog/glass-thickness-commercial-pros-cons.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/glass-thickness-commercial-pros-cons.html</guid>
-      <description>1/4 inch, 9/16 inch, 1 1/16 inch — commercial glass thickness matters for impact rating, sound reduction, cost, and load. Here&#x27;s how to spec the right option.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Impact Windows Protect Your Florida Business | ACG</title>
-      <link>https://acglass.com/blog/how-impact-windows-protect-florida-business.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-impact-windows-protect-florida-business.html</guid>
-      <description>Florida commercial impact windows stop 9-lb missiles, save insurance premiums, and protect businesses through hurricane season. Here&#x27;s the engineering behind them.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/ifly-miami-exterior-2.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Long Do Commercial Windows Last in Florida? | ACG</title>
-      <link>https://acglass.com/blog/how-long-do-commercial-windows-last-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-long-do-commercial-windows-last-florida.html</guid>
-      <description>Florida&#x27;s heat, humidity, UV, and salt air reduce glass lifespan. Here&#x27;s what to expect from commercial storefront, curtainwall, impact windows, and frame finishes in 2026.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/atlantic-fields-performance/hero-gym-interior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Much Does Commercial Glazing Cost in Florida? (2026 Pricing Guide) | ACG</title>
-      <link>https://acglass.com/blog/how-much-does-commercial-glazing-cost-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-much-does-commercial-glazing-cost-florida.html</guid>
-      <description>Real pricing ranges for commercial glazing in Florida in 2026. Per-SF costs for storefront, curtainwall, impact windows, and doors from an active Florida glazing subcontractor.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Much Does Impact Glass Cost for Commercial Buildings in Florida? | ACG</title>
-      <link>https://acglass.com/blog/how-much-does-impact-glass-cost-commercial-buildings-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-much-does-impact-glass-cost-commercial-buildings-florida.html</guid>
-      <description>Commercial impact glass pricing for Florida in 2026 — per-unit and per-SF costs for storefront, curtainwall, windows, and doors with HVHZ and Miami-Dade NOA certification.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/ifly-miami-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Tinting Affects Commercial Glass Performance (It&#x27;s Not Just About Looks) | ACG</title>
-      <link>https://acglass.com/blog/how-tinting-affects-commercial-glass-performance.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-tinting-affects-commercial-glass-performance.html</guid>
-      <description>Tinted commercial glass — from light gray to reflective dark — affects energy, daylight, privacy, and code compliance. Here&#x27;s the technical breakdown.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Get a Real Commercial Window Replacement Quote in Florida | ACG</title>
-      <link>https://acglass.com/blog/how-to-get-quote-commercial-window-replacement-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-to-get-quote-commercial-window-replacement-florida.html</guid>
-      <description>Getting a commercial glazing quote shouldn&#x27;t take 2 weeks of phone tag. Here&#x27;s what to send, what to ask for, and what makes a bid accurate.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/gulf-harbour.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Hurricane Impact Windows for Commercial Buildings in Florida: The Complete 2026 Guide | ACG</title>
-      <link>https://acglass.com/blog/hurricane-impact-windows-complete-guide-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-impact-windows-complete-guide-commercial-florida.html</guid>
-      <description>The complete guide to hurricane impact windows for Florida commercial buildings. FBC code, HVHZ, DP ratings, testing, ESWindows systems, installation. From ACG.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wild-blue/wild-blue-rear-elevation.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Hurricane Preparation with Commercial Impact Glass: A Pre-Season Checklist | ACG</title>
-      <link>https://acglass.com/blog/hurricane-preparation-commercial-impact-glass.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-preparation-commercial-impact-glass.html</guid>
-      <description>Pre-season inspections, understanding FBC HVHZ vs non-HVHZ ratings, DP values, missile test levels, maintenance, and post-storm walkthroughs for commercial buildings.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/ocean-prime-ft-lauderdale.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Hurricane Proof Windows: Commercial Protection Standards for Florida | ACG</title>
-      <link>https://acglass.com/blog/hurricane-proof-windows-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-proof-windows-commercial-florida.html</guid>
-      <description>Are hurricane proof windows really proof? Commercial-grade hurricane protection windows for Florida businesses. Ratings, standards, and ACG installation.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/villa-lonz/rear-progress.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Hurricane Replacement Windows: When to Replace Commercial Glass in Florida | ACG</title>
-      <link>https://acglass.com/blog/hurricane-replacement-windows-commercial-timing-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-replacement-windows-commercial-timing-florida.html</guid>
-      <description>When should commercial buildings replace hurricane windows? Lifespan, warning signs, cost of hurricane replacement windows, and installation timing. From ACG.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wild-blue/wild-blue-exterior-progress.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Hire a Hurricane Window Installer for Commercial Florida Projects | ACG</title>
-      <link>https://acglass.com/blog/hurricane-window-installers-cost-hiring-florida-commercial.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-window-installers-cost-hiring-florida-commercial.html</guid>
-      <description>Hiring a hurricane window installer or impact window company for commercial Florida work? What to look for, cost, licensing, references, and common red flags.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/compass-alton/town-center-entry.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Impact Rated Windows: Commercial Specification Guide for Florida | ACG</title>
-      <link>https://acglass.com/blog/impact-rated-windows-commercial-specs-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/impact-rated-windows-commercial-specs-florida.html</guid>
-      <description>Impact rated windows spec guide for Florida commercial buildings. DP ratings, missile test levels, FBC approval, NOA, and how to spec correctly on Division 08.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/harbour-cay/street-view.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Impact Windows vs Hurricane Windows: Are They the Same Thing? | ACG</title>
-      <link>https://acglass.com/blog/impact-vs-hurricane-windows-difference-commercial.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/impact-vs-hurricane-windows-difference-commercial.html</guid>
-      <description>Impact windows vs hurricane windows — are they different? Commercial guide explaining the terminology, ratings, and what Florida businesses actually need.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/atlantic-fields-performance/hero-gym-interior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Noise-Reducing Glass for Florida Businesses: What Actually Works | ACG</title>
-      <link>https://acglass.com/blog/noise-reducing-glass-florida-businesses.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/noise-reducing-glass-florida-businesses.html</guid>
-      <description>Traffic noise, aircraft, nightlife — noise-reducing laminated IGU glass can drop interior decibels 10-15 dB. Here&#x27;s how to spec it for Florida commercial buildings.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/street-view-atlantic-ave.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>PGT vs ESWindows for Commercial Florida: Which Manufacturer Wins? | ACG</title>
-      <link>https://acglass.com/blog/pgt-vs-eswindows-commercial-comparison-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/pgt-vs-eswindows-commercial-comparison-florida.html</guid>
-      <description>PGT vs ESWindows comparison for Florida commercial impact windows and doors. Products, approvals, lead times, pricing, and which is right for your project.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Prepare Your Building for Commercial Glass Installation | ACG</title>
-      <link>https://acglass.com/blog/prepare-building-commercial-glass-installation.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/prepare-building-commercial-glass-installation.html</guid>
-      <description>Before the glazing crew arrives: openings, staging, utility access, tenant notice, and protection prep that make a commercial window install go smoothly.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/harbour-cay/dunkin-corner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Why Professional Installation Matters for Commercial Glazing | ACG</title>
-      <link>https://acglass.com/blog/professional-installation-commercial-glazing-important.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/professional-installation-commercial-glazing-important.html</guid>
-      <description>Most commercial window failures trace back to installation, not the glass itself. Here&#x27;s what separates a quality commercial glazing install from field improvisation.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/bobcat-treasure-coast/aerial-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>10 Questions to Ask Before Hiring a Commercial Glazing Contractor | ACG</title>
-      <link>https://acglass.com/blog/questions-to-ask-before-hiring-commercial-glazing-contractor.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/questions-to-ask-before-hiring-commercial-glazing-contractor.html</guid>
-      <description>The essential questions commercial GCs and owners should ask before awarding a Division 08 scope. License, insurance, manufacturers, references, schedule.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/atlantic-fields-golf-house/connor-facade.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Reduce Energy Costs with Better Commercial Glazing in Florida | ACG</title>
-      <link>https://acglass.com/blog/reduce-energy-costs-commercial-glazing-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/reduce-energy-costs-commercial-glazing-florida.html</guid>
-      <description>Florida commercial buildings lose 30% of HVAC energy through windows. Low-E, IGU, and low SHGC glazing can cut those losses dramatically. Here&#x27;s how to spec it.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/hero-corner-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Reduce Glare in Commercial Spaces with Glass Solutions | ACG</title>
-      <link>https://acglass.com/blog/reduce-glare-commercial-glass-solutions.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/reduce-glare-commercial-glass-solutions.html</guid>
-      <description>Screen glare, interior reflection, and parking-lot glare are solvable with the right glass spec. Here&#x27;s how to reduce glare without darkening your Florida building.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/dale-mabry-retail/hero-entry.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>What Makes a Commercial Glass Company Reliable in Florida? | ACG</title>
-      <link>https://acglass.com/blog/reliable-commercial-glass-company-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/reliable-commercial-glass-company-florida.html</guid>
-      <description>Reliability in commercial glazing shows up in schedule compliance, submittal quality, punch-list responsiveness, and manufacturer relationships. Here&#x27;s what GCs should look for.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/aerial-top.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Repair or Replace? How to Decide on Commercial Glass Damage | ACG</title>
-      <link>https://acglass.com/blog/repair-or-replace-commercial-glass.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/repair-or-replace-commercial-glass.html</guid>
-      <description>Commercial glass damage decision framework — when a repair makes sense, when full replacement is smarter, and how to evaluate cost, downtime, and warranty.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/gulf-harbour.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Single vs Double Glazing: Which Is Right for Your Florida Commercial Building? | ACG</title>
-      <link>https://acglass.com/blog/single-vs-double-glazing-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/single-vs-double-glazing-commercial-florida.html</guid>
-      <description>Single-pane, double-pane IGU, or triple-pane? A practical comparison for Florida commercial buildings — energy performance, cost, and when each makes sense.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/villa-lonz/rendering-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Smart Glass Technology for Commercial Buildings in Florida | ACG</title>
-      <link>https://acglass.com/blog/smart-glass-technology-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/smart-glass-technology-commercial-florida.html</guid>
-      <description>Electrochromic (SageGlass, View), SPD, PDLC, and thermochromic smart glass in Florida commercial projects—BMS integration, cost premium, and cooling-climate ROI.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lake-park-innovation/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>UV-Protective Glass for Florida Commercial Buildings | ACG</title>
-      <link>https://acglass.com/blog/uv-protective-glass-commercial-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/uv-protective-glass-commercial-florida.html</guid>
-      <description>UV-protective commercial glass prevents interior fading, protects merchandise, and reduces solar load. Here&#x27;s how low-E, laminated, and tinted options perform.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/klus-lighting-vero-beach.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Weatherproof Commercial Windows in Florida&#x27;s Climate | ACG</title>
-      <link>https://acglass.com/blog/weatherproof-commercial-windows-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/weatherproof-commercial-windows-florida.html</guid>
-      <description>Florida commercial buildings face humidity, wind-driven rain, salt air, and UV. Here&#x27;s how to spec flashing, sealants, and finish systems that actually hold up.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/harbour-cay/beach-side.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>What Are Impact Windows? A Complete Commercial Guide for Florida | ACG</title>
-      <link>https://acglass.com/blog/what-are-impact-windows-commercial-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/what-are-impact-windows-commercial-guide.html</guid>
-      <description>What are impact windows and how do impact resistant windows work in Florida commercial buildings? Complete guide covering FBC code, HVHZ, ESWindows systems.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/villa-lonz/facade-detail.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>What to Know Before Replacing Commercial Windows in Florida | ACG</title>
-      <link>https://acglass.com/blog/what-to-know-before-replacing-commercial-windows-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/what-to-know-before-replacing-commercial-windows-florida.html</guid>
-      <description>Planning a commercial window replacement in Florida? Permits, occupancy, timeline, tenant coordination, and cost factors to know before the project starts.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/hca-cape-coral/ambulance-bay.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Why Do Commercial Windows Crack? (And How to Prevent It) | ACG</title>
-      <link>https://acglass.com/blog/why-commercial-windows-crack-prevention-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/why-commercial-windows-crack-prevention-florida.html</guid>
-      <description>Commercial glass cracks from thermal stress, impact, installation error, or edge defects. Here&#x27;s how to diagnose the cause and prevent recurrence in Florida buildings.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/harbour-cay/dunkin-corner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Why Does Commercial Glass Fog Up? (And How to Actually Fix It) | ACG</title>
-      <link>https://acglass.com/blog/why-does-commercial-glass-fog-up-and-how-to-fix-it.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/why-does-commercial-glass-fog-up-and-how-to-fix-it.html</guid>
-      <description>Commercial glass fogging between panes means IGU seal failure. Here&#x27;s how to diagnose it, when to repair vs replace, and what Florida&#x27;s humidity does to insulated glass units.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/wave-food-hall/street-view-atlantic-ave.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Why You Should Only Hire a Licensed Commercial Glazier in Florida | ACG</title>
-      <link>https://acglass.com/blog/why-hire-licensed-commercial-glazier-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/why-hire-licensed-commercial-glazier-florida.html</guid>
-      <description>Florida requires a CGC license for commercial glazing — here&#x27;s what GCs, owners, and architects need to verify before awarding a Division 08 scope.</description>
-      <pubDate>Wed, 22 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/atlantic-fields-performance/hero-gym-interior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glazing in Tampa Bay — What GCs Need to Know in 2026 | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-tampa-bay-what-gcs-need-to-know.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-tampa-bay-what-gcs-need-to-know.html</guid>
-      <description>Tampa Bay&#x27;s commercial construction market is booming. Here&#x27;s what general contractors need to know about sourcing Division 08 glazing in Hillsborough, Pinellas, and Pasco.</description>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/dale-mabry-retail/hero-entry.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Choose a Commercial Glazing Contractor in West Palm Beach | ACG</title>
-      <link>https://acglass.com/blog/how-to-choose-commercial-glazing-contractor-west-palm-beach.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-to-choose-commercial-glazing-contractor-west-palm-beach.html</guid>
-      <description>Hiring a commercial glazing subcontractor in Palm Beach County? Here&#x27;s what GCs and developers need to verify before awarding a Division 08 scope.</description>
-      <pubDate>Tue, 21 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Glass Replacement in Florida: A Contractor&#x27;s Guide | ACG</title>
-      <link>https://acglass.com/blog/commercial-glass-replacement-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-replacement-florida.html</guid>
-      <description>Commercial glass replacement for Florida businesses — what&#x27;s involved, code requirements, insurance claims, and finding a qualified commercial glazing contractor.</description>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Glazing for Healthcare Facilities in Florida | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-healthcare-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-healthcare-florida.html</guid>
-      <description>Healthcare glazing in Florida — fire-rated glass, infection control, impact requirements, and what GCs building hospitals need from their glazing sub.</description>
-      <pubDate>Sat, 18 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Gulf Harbour Country Club — Glazing by ACG | Estero, FL</title>
-      <link>https://acglass.com/blog/gulf-harbour-country-club-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/gulf-harbour-country-club-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Gulf Harbour Country Club in Estero, FL under Waypoint. ESWindows storefront. Private gated golf community on Gulf Harb...</description>
-      <pubDate>Thu, 16 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How to Select a Curtainwall Contractor in Florida | ACG</title>
-      <link>https://acglass.com/blog/selecting-curtainwall-contractor-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/selecting-curtainwall-contractor-florida.html</guid>
-      <description>A GC&#x27;s guide to selecting a curtainwall contractor for Florida commercial projects — what to verify, what questions to ask, and what the spec requires.</description>
-      <pubDate>Thu, 16 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh &amp; ACG Estimating, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Glazing Cost in Florida: What GCs Actually Pay (2026) | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-cost-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-cost-florida.html</guid>
-      <description>Real cost ranges for commercial glazing scopes in Florida — storefront, curtainwall, window wall, and impact window packages. What drives cost and how to evaluate a glazing bid.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Glazing in Miami-Dade County: The Complete Code Guide | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-miami-dade-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-miami-dade-guide.html</guid>
-      <description>Miami-Dade County has the strictest glazing requirements in the US. A complete guide for GCs and developers on HVHZ requirements, NOA documentation, and finding a qualified glazing sub.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Glazing Contractors in Miami, FL: What GCs Need to Know | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-miami-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-miami-florida.html</guid>
-      <description>A GC&#x27;s guide to commercial glazing in Miami — HVHZ requirements, NOA documentation, finding a qualified sub, and what makes Miami the hardest glazing market in the US.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Glazing Project Timeline: What GCs Should Expect | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-project-timeline.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-project-timeline.html</guid>
-      <description>A realistic timeline for commercial glazing scopes — from bid award to final inspection. What takes time, what GCs can control, and what ACG does differently.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How to Hire a Commercial Glazing Subcontractor in Florida | ACG</title>
-      <link>https://acglass.com/blog/commercial-glazing-subcontractor-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glazing-subcontractor-florida.html</guid>
-      <description>A GC&#x27;s step-by-step guide to hiring a commercial glazing subcontractor in Florida — vetting, licensing, scope review, and what to look for in the field.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Florida Product Approval for Glazing: A GC&#x27;s Complete Guide | ACG</title>
-      <link>https://acglass.com/blog/florida-product-approval-glazing-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/florida-product-approval-glazing-guide.html</guid>
-      <description>Everything Florida GCs need to know about product approvals for commercial glazing — FL# numbers, NOA, what to verify before installation, and common failures.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How to Write (or Evaluate) a Glazing Subcontractor Scope Letter | ACG</title>
-      <link>https://acglass.com/blog/glazing-subcontractor-scope-letter-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/glazing-subcontractor-scope-letter-guide.html</guid>
-      <description>A GC&#x27;s guide to what a complete glazing subcontractor scope letter should include — and what exclusions and vague language to watch for before you sign the sub agreement.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How to Find an HVHZ-Certified Glazing Contractor in Florida | ACG</title>
-      <link>https://acglass.com/blog/hvhz-certified-glazing-contractor-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hvhz-certified-glazing-contractor-florida.html</guid>
-      <description>A GC&#x27;s guide to finding a glazing contractor certified for HVHZ work in Florida — Miami-Dade NOA requirements, what to verify before hiring, and what makes an HVHZ-qualified glazing sub.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Impact Glass vs. Laminated Glass: What Florida GCs Need to Know | ACG</title>
-      <link>https://acglass.com/blog/impact-glass-vs-laminated-glass-commercial.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/impact-glass-vs-laminated-glass-commercial.html</guid>
-      <description>The real difference between impact glass and laminated glass for commercial projects in Florida — code requirements, performance specs, and when each is appropriate.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Storefront Systems vs. Windows: What&#x27;s the Difference in Commercial Construction? | ACG</title>
-      <link>https://acglass.com/blog/storefronts-vs-windows-commercial-buildings.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/storefronts-vs-windows-commercial-buildings.html</guid>
-      <description>GC&#x27;s guide: what&#x27;s the difference between a commercial storefront system and commercial windows — and why it matters for your glazing scope and budget.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Window Wall Systems in Florida: A Complete Guide for GCs and Developers | ACG</title>
-      <link>https://acglass.com/blog/window-wall-systems-florida-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/window-wall-systems-florida-guide.html</guid>
-      <description>Everything you need to know about window wall systems for Florida commercial and multifamily projects — types, costs, Florida code requirements, and installation process.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Glass Types Explained — Tempered, Laminated, Insulated, Low-E</title>
-      <link>https://acglass.com/blog/commercial-glass-types-explained.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-glass-types-explained.html</guid>
-      <description>Commercial glass types explained simply: tempered, laminated, insulated (IGU), Low-E, and impact glass. What each type is, where it&#x27;s used, and when you need it in Florida.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Division 08 Specifications: A GC&#x27;s Guide to the Openings Spec | ACG</title>
-      <link>https://acglass.com/blog/division-08-specifications-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/division-08-specifications-guide.html</guid>
-      <description>What&#x27;s in Division 08 of a commercial construction specification? A GC&#x27;s guide to the openings spec — glass, glazing, hardware, and what to look for.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Florida Building Code for Commercial Windows — 2026 Guide</title>
-      <link>https://acglass.com/blog/florida-building-code-commercial-windows-2026.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/florida-building-code-commercial-windows-2026.html</guid>
-      <description>Florida Building Code for commercial windows in 2026 — wind zones, design pressures, HVHZ boundaries, energy code requirements (SHGC, U-factor), and when you need an NOA vs Florida Product Approval.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How Long Does Storefront Glass Installation Take?</title>
-      <link>https://acglass.com/blog/how-long-does-storefront-installation-take.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-long-does-storefront-installation-take.html</guid>
-      <description>How long does storefront glass installation take? Typical timeline is 8–11 weeks total: 2 weeks for submittals, 4–6 weeks fabrication, 1–3 weeks installation. Here&#x27;s what causes delays.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How Much Does Commercial Storefront Glass Cost? (2026 Pricing Guide)</title>
-      <link>https://acglass.com/blog/how-much-does-commercial-storefront-glass-cost.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-much-does-commercial-storefront-glass-cost.html</guid>
-      <description>How much does commercial storefront glass cost in 2026? Get real price ranges — $40–$100/SF for storefront, $150–$350+/SF for curtainwall — plus what drives cost up or down in Florida.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How to Get a Commercial Glazing Bid in Florida (Step by Step)</title>
-      <link>https://acglass.com/blog/how-to-get-a-glazing-bid-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-to-get-a-glazing-bid-florida.html</guid>
-      <description>How to get a commercial glazing bid in Florida — what to send, what to expect back, how to compare bids, and why ACG returns a complete scope in 48 hours.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Hurricane Impact Windows for Commercial Buildings in Florida — What You Need to Know</title>
-      <link>https://acglass.com/blog/hurricane-impact-windows-commercial-building-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-impact-windows-commercial-building-florida.html</guid>
-      <description>Hurricane impact windows for commercial buildings in Florida — HVHZ requirements, Large Missile Impact testing, Florida Product Approval vs Miami-Dade NOA, and wind zone map explained simply.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>When Should You Replace Commercial Storefront Glass?</title>
-      <link>https://acglass.com/blog/storefront-glass-replacement-when-to-replace.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/storefront-glass-replacement-when-to-replace.html</guid>
-      <description>When should you replace commercial storefront glass? Signs include foggy IGUs, cracked seals, water intrusion, failed hardware, and code violations. Here&#x27;s how to know when it&#x27;s time.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Storefront vs Curtainwall — When Do You Use Which?</title>
-      <link>https://acglass.com/blog/storefront-vs-curtainwall-when-to-use-which.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/storefront-vs-curtainwall-when-to-use-which.html</guid>
-      <description>Storefront vs curtainwall — when do you use which? Simple decision guide: under 15 feet = storefront ($40–$100/SF). Spanning floors = curtainwall ($150–$350+/SF). Cost differences explained.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>What Does a Glazing Contractor Do? (And Why You Need One)</title>
-      <link>https://acglass.com/blog/what-does-a-glazing-contractor-do.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/what-does-a-glazing-contractor-do.html</guid>
-      <description>What does a glazing contractor do? They install commercial glass systems — storefronts, curtainwall, windows, doors. Here&#x27;s the simple explanation of what they do and how they differ from window companies.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh &amp; ACG Estimating, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>What Is a Storefront Glazing System? (Simple Explanation)</title>
-      <link>https://acglass.com/blog/what-is-a-storefront-glazing-system.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/what-is-a-storefront-glazing-system.html</guid>
-      <description>What is a storefront glazing system? Simple explanation of aluminum frames, glass panels, and doors — what they are, where you see them, and why they matter for commercial buildings.</description>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Hurricane Impact vs. Non-Impact Glass for Commercial Buildings in Florida | ACG</title>
-      <link>https://acglass.com/blog/hurricane-impact-vs-non-impact-commercial.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hurricane-impact-vs-non-impact-commercial.html</guid>
-      <description>When does Florida Building Code require impact glass for commercial buildings? A GC&#x27;s guide to impact vs. non-impact glazing requirements by location.</description>
-      <pubDate>Sun, 12 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How AI-Managed Scheduling Is Changing Commercial Glazing | ACG</title>
-      <link>https://acglass.com/blog/ai-project-management-commercial-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/ai-project-management-commercial-glazing.html</guid>
-      <description>How AI-driven project management is transforming commercial glazing subcontractors — what it means for GCs, schedules, and fewer calls to the glazing sub.</description>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Commercial Storefront Installation: The Full Process Explained</title>
-      <link>https://acglass.com/blog/commercial-storefront-installation-process.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-storefront-installation-process.html</guid>
-      <description>The complete commercial storefront installation process explained — submittals, shop drawings, product approval, delivery, field install, caulking, and punch list. What can go wrong at each stage and how to prevent it.</description>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Curtainwall vs Storefront Systems: What Florida GCs Need to Know</title>
-      <link>https://acglass.com/blog/curtainwall-vs-storefront-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/curtainwall-vs-storefront-florida.html</guid>
-      <description>Curtainwall vs storefront systems in Florida — technical differences, cost ranges, structural requirements, hurricane ratings, NOAs, and when each system gets specified. For GCs and developers.</description>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Florida Commercial Glazing &amp; Hurricane Code: What Contractors Need to Know</title>
-      <link>https://acglass.com/blog/florida-commercial-glazing-hurricane-code.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/florida-commercial-glazing-hurricane-code.html</guid>
-      <description>Florida Building Code impact requirements for commercial glazing — HVHZ vs standard zones, NOA requirements, product approvals, Large Missile Impact testing, and what happens when glazing fails inspection.</description>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How to Choose a Glazing Subcontractor | What GCs Need to Know</title>
-      <link>https://acglass.com/blog/how-to-choose-glazing-subcontractor.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-to-choose-glazing-subcontractor.html</guid>
-      <description>A practical guide for general contractors on how to choose a glazing subcontractor — what to look for, what to avoid, and why the GC-glazing sub relationship matters on complex projects.</description>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Ocean Prime Fort Lauderdale — ACG Glazing | Fort Lauderdale</title>
-      <link>https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Ocean Prime Fort Lauderdale in Fort Lauderdale, FL — direct with ownership. Euro-Wall multi-slide doors only. Las Olas ...</description>
-      <pubDate>Fri, 03 Apr 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/ocean-prime-ft-lauderdale.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>1172 S Harbor — Glazing by ACG | Boca Raton, FL</title>
-      <link>https://acglass.com/blog/1172-s-harbor-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/1172-s-harbor-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at 1172 S Harbor in Boca Raton, FL — direct with ownership. Euro-Wall multi-slide. Boca Raton luxury residence</description>
-      <pubDate>Wed, 25 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/1172-s-harbor/foyer-wine-cellar.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Gulfside Twelve — Glazing by ACG | Naples, FL</title>
-      <link>https://acglass.com/blog/gulfside-twelve-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/gulfside-twelve-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Gulfside Twelve in Naples, FL — direct with ownership. Euro-Wall multi-slide. Gulf-front Naples residence</description>
-      <pubDate>Tue, 24 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/gulfside-twelve.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Tradewinds Hobe Sound — Glazing by ACG | Hobe Sound, FL</title>
-      <link>https://acglass.com/blog/tradewinds-hobe-sound-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/tradewinds-hobe-sound-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Tradewinds Hobe Sound in Hobe Sound, FL — direct with ownership. ESWindows impact windows. Hobe Sound multifamily commu...</description>
-      <pubDate>Tue, 24 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/tradewinds-hobe-sound/aerial-community.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>El Car Wash Northlake — Glazing by ACG | Lake Park, FL</title>
-      <link>https://acglass.com/blog/el-car-wash-northlake-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/el-car-wash-northlake-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at El Car Wash Northlake in Lake Park, FL — direct with ownership. ESWindows. El Car Wash Northlake Boulevard</description>
-      <pubDate>Mon, 23 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/el-car-wash-northlake/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Lucie at Tradition Clubhouse — Multifamily Glazing in Port St. Lucie | ACG</title>
-      <link>https://acglass.com/blog/lucie-at-tradition-clubhouse-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/lucie-at-tradition-clubhouse-glazing.html</guid>
-      <description>How ACG delivered the storefront glazing package for the Lucie at Tradition clubhouse in Port St. Lucie, FL. ESWindows product, coastal design, Treasure Coast multifamily.</description>
-      <pubDate>Thu, 19 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/lucie-at-tradition-clubhouse.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>StayAPT Suites Lafayette — Glazing by ACG | Lafayette, FL</title>
-      <link>https://acglass.com/blog/stayapt-suites-lafayette-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/stayapt-suites-lafayette-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at StayAPT Suites Lafayette in Lafayette, FL under Rycon Construction. ESWindows. Out-of-state hotel project (Lafayette, LA)</description>
-      <pubDate>Mon, 16 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Impact Windows vs Hurricane Shutters | Which is Right for Your Project? | ACG</title>
-      <link>https://acglass.com/blog/impact-windows-vs-hurricane-shutters.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/impact-windows-vs-hurricane-shutters.html</guid>
-      <description>Impact windows vs hurricane shutters for commercial construction — code requirements, cost tradeoffs, and why most Florida GCs are specifying impact glass for new construction.</description>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh &amp; ACG Estimating, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Storefront vs Curtainwall — Which System Does Your Project Need? | ACG</title>
-      <link>https://acglass.com/blog/storefront-vs-curtainwall.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/storefront-vs-curtainwall.html</guid>
-      <description>Storefront vs curtainwall for commercial construction — understand the structural, performance, and cost differences so you can advise your owners and architect on the right system.</description>
-      <pubDate>Sun, 08 Mar 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>City of Haines Emergency Operations Center | ACG Glazing</title>
-      <link>https://acglass.com/blog/city-of-haines-emergency-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/city-of-haines-emergency-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at City of Haines Emergency Operations Center in Haines City, FL — direct with ownership. ESWindows impact. Haines City em...</description>
-      <pubDate>Mon, 02 Mar 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Eau Palm Beach Resort &amp; Spa — Glazing by ACG | Manalapan, FL</title>
-      <link>https://acglass.com/blog/eau-palm-beach-resort-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/eau-palm-beach-resort-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Eau Palm Beach Resort &amp; Spa in Manalapan, FL — direct with ownership. Euro-Wall bi-fold ocean wall at Polpo. Forbes Fiv...</description>
-      <pubDate>Tue, 24 Feb 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>HVHZ Glazing Requirements Florida | Miami-Dade NOA Guide | ACG</title>
-      <link>https://acglass.com/blog/hvhz-glazing-requirements-florida.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hvhz-glazing-requirements-florida.html</guid>
-      <description>Complete guide to Florida High Velocity Hurricane Zone glazing requirements — Miami-Dade NOA, large missile impact testing, FBC Section 1609, and what GCs need to know to close out clean.</description>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Storage Rentals of America Vero Beach | ACG Glazing</title>
-      <link>https://acglass.com/blog/sroa-vero-beach-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/sroa-vero-beach-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Storage Rentals of America Vero Beach in Vero Beach, FL — direct with ownership. PGT impact. SROA self-storage facility</description>
-      <pubDate>Thu, 19 Feb 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/sroa-vero-beach/aerial-front.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Wave Food Hall — Glazing by ACG | Cocoa Beach, FL</title>
-      <link>https://acglass.com/blog/wave-food-hall-cocoa-beach-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/wave-food-hall-cocoa-beach-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Wave Food Hall in Cocoa Beach, FL under Certified General Contractors. ESWindows storefront. Destination Downtown Cocoa...</description>
-      <pubDate>Thu, 19 Feb 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Bobcat of the Treasure Coast — ACG Glazing | Fort Pierce</title>
-      <link>https://acglass.com/blog/bobcat-treasure-coast-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/bobcat-treasure-coast-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Bobcat of the Treasure Coast in Fort Pierce, FL under Ahrens Companies. ESWindows storefront. Bobcat heavy-equipment de...</description>
-      <pubDate>Tue, 17 Feb 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/bobcat-treasure-coast/aerial-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Hulett Environmental Services Headquarters | ACG Glazing</title>
-      <link>https://acglass.com/blog/hulett-environmental-port-st-lucie-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hulett-environmental-port-st-lucie-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Hulett Environmental Services Headquarters in Port St. Lucie, FL under Hooks Construction. ESWindows storefront and ful...</description>
-      <pubDate>Wed, 11 Feb 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Window Wall for Multifamily Construction: A GC&#x27;s Complete Guide | ACG</title>
-      <link>https://acglass.com/blog/window-wall-multifamily-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/window-wall-multifamily-guide.html</guid>
-      <description>Everything general contractors need to know about window wall systems for multifamily construction — system selection, coordination, tolerances, and HVHZ requirements for Florida projects.</description>
-      <pubDate>Tue, 10 Feb 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>How to Choose a Commercial Glazing Contractor | GC Guide | ACG</title>
-      <link>https://acglass.com/blog/how-to-choose-glazing-contractor.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/how-to-choose-glazing-contractor.html</guid>
-      <description>A practical guide for general contractors on how to evaluate and select a commercial glazing sub — what questions to ask, red flags to watch for, and what separates good subs from bad ones.</description>
-      <pubDate>Wed, 28 Jan 2026 00:00:00 -0000</pubDate>
-      <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>iFLY Miami Indoor Skydiving — Glazing by ACG | Miami, FL</title>
-      <link>https://acglass.com/blog/ifly-miami-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/ifly-miami-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at iFLY Miami Indoor Skydiving in Miami, FL under Parkway Construction. ESWindows. Indoor skydiving experience facility</description>
-      <pubDate>Sun, 25 Jan 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/ifly-miami-exterior.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Illumina Fort Myers — Glazing by ACG | Fort Myers, FL</title>
-      <link>https://acglass.com/blog/illumina-fort-myers-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/illumina-fort-myers-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Illumina Fort Myers in Fort Myers, FL — direct with ownership. PGT impact. Fort Myers multifamily post-Ian build</description>
-      <pubDate>Sun, 25 Jan 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/illumina-fort-myers/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Savannas Ridge Clubhouse — ACG Glazing | Port St. Lucie</title>
-      <link>https://acglass.com/blog/savannas-ridge-clubhouse-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/savannas-ridge-clubhouse-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Savannas Ridge Clubhouse in Port St. Lucie, FL — direct with ownership. ESWindows. Port St. Lucie clubhouse</description>
-      <pubDate>Thu, 22 Jan 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/savannas-ridge-clubhouse/dining-sliders.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Commercial Storefront Installation Guide for GCs | ACG</title>
-      <link>https://acglass.com/blog/commercial-storefront-installation-guide.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/commercial-storefront-installation-guide.html</guid>
-      <description>A practical guide for general contractors on commercial storefront installation — sequence, coordination requirements, common problems, and what to look for in your glazing sub&#x27;s installation.</description>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Fire-Rated Glass Code Compliance | IBC Requirements | ACG</title>
-      <link>https://acglass.com/blog/fire-rated-glass-code-compliance.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/fire-rated-glass-code-compliance.html</guid>
-      <description>Complete guide to fire-rated glass code requirements — IBC classifications, opening limitations, F vs T ratings, and what GCs need to know to specify and inspect fire-rated glazing correctly.</description>
-      <pubDate>Mon, 05 Jan 2026 00:00:00 -0000</pubDate>
-      <dc:creator>ACG Field Team, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Panther National Clubhouse | ACG Glazing</title>
-      <link>https://acglass.com/blog/panther-national-clubhouse-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/panther-national-clubhouse-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Panther National Clubhouse in Palm Beach Gardens, FL under Verdex Construction. Euro-Wall DirectSet storefront. Jack Ni...</description>
-      <pubDate>Sat, 03 Jan 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Project LIFT Hobe Sound — Glazing by ACG | Hobe Sound, FL</title>
-      <link>https://acglass.com/blog/project-lift-hobe-sound-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/project-lift-hobe-sound-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Project LIFT Hobe Sound in Hobe Sound, FL — direct with ownership. ESWindows. Hobe Sound youth nonprofit campus</description>
-      <pubDate>Thu, 01 Jan 2026 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Atlantic Fields Golf House — Glazing by ACG | Hobe Sound, FL</title>
-      <link>https://acglass.com/blog/atlantic-fields-golf-house-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/atlantic-fields-golf-house-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Atlantic Fields Golf House in Hobe Sound, FL under Proctor Construction. Euro-Wall multi-slide and storefront. Discover...</description>
-      <pubDate>Mon, 29 Dec 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Baron Shoppes at Tradition — ACG Glazing | Port St. Lucie</title>
-      <link>https://acglass.com/blog/baron-shoppes-tradition-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/baron-shoppes-tradition-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Baron Shoppes at Tradition in Port St. Lucie, FL under Hooks Construction. ESWindows storefront. Tradition mixed-use co...</description>
-      <pubDate>Tue, 23 Dec 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/baron-shoppes-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Lake Park Innovation Center — Glazing by ACG | Lake Park, FL</title>
-      <link>https://acglass.com/blog/lake-park-innovation-center-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/lake-park-innovation-center-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Lake Park Innovation Center in Lake Park, FL — direct with ownership. ESWindows. Lake Park innovation hub</description>
-      <pubDate>Sun, 21 Dec 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>South Florida Building Code Glazing Requirements | FBC Guide | ACG</title>
-      <link>https://acglass.com/blog/south-florida-building-code-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/south-florida-building-code-glazing.html</guid>
-      <description>Understanding South Florida building code glazing requirements — FBC amendments, Miami-Dade and Broward county-specific rules, wind design, and HVHZ compliance for GCs.</description>
-      <pubDate>Sat, 20 Dec 2025 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Villa L&#x27;Onz — Glazing by ACG | Riviera Beach, FL</title>
-      <link>https://acglass.com/blog/villa-lonz-riviera-beach-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/villa-lonz-riviera-beach-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Villa L&#x27;Onz in Riviera Beach, FL under Allsite Construction. ESWindows. Riviera Beach development</description>
-      <pubDate>Sat, 13 Dec 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Automatic Entrance ADA Compliance Guide | Commercial Doors | ACG</title>
-      <link>https://acglass.com/blog/automatic-entrance-ada-compliance.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/automatic-entrance-ada-compliance.html</guid>
-      <description>Complete guide to ADA requirements for automatic entrance systems — door width, approach clearances, operating force, timing, and what GCs need to know to close out accessible entrances correctly.</description>
-      <pubDate>Wed, 10 Dec 2025 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>736 Lagoon Drive — Glazing by ACG | North Palm Beach, FL</title>
-      <link>https://acglass.com/blog/736-lagoon-dr-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/736-lagoon-dr-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at 736 Lagoon Drive in North Palm Beach, FL — direct with ownership. Euro-Wall multi-slide. North Palm Beach waterfront re...</description>
-      <pubDate>Mon, 08 Dec 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Compass at Alton Town Center — ACG Glazing | Boca Raton</title>
-      <link>https://acglass.com/blog/compass-alton-town-center-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/compass-alton-town-center-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Compass at Alton Town Center in Boca Raton, FL under SISCA. ESWindows storefront. Alton Town Center mixed-use community</description>
-      <pubDate>Tue, 02 Dec 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Interior Glass Partitions: Office Design Trends for 2026 | ACG</title>
-      <link>https://acglass.com/blog/interior-glass-partitions-office-trends.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/interior-glass-partitions-office-trends.html</guid>
-      <description>How interior glass partition systems are evolving in modern office design — acoustic performance, switchable glass, frameless systems, and what GCs need to know for office fit-out projects.</description>
-      <pubDate>Sun, 30 Nov 2025 00:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-    </item>
-    <item>
-      <title>Cudjoe Key Fire Station — Glazing by ACG | Cudjoe Key, FL</title>
-      <link>https://acglass.com/blog/cudjoe-key-fire-station-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/cudjoe-key-fire-station-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Cudjoe Key Fire Station in Cudjoe Key, FL — direct with ownership. ESWindows impact. Florida Keys fire station post-Irm...</description>
-      <pubDate>Fri, 28 Nov 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/cudjoe-key-fire-station.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Prestige Marble Bonita Springs | ACG Glazing</title>
-      <link>https://acglass.com/blog/prestige-marble-bonita-springs-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/prestige-marble-bonita-springs-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Prestige Marble Bonita Springs in Bonita Springs, FL — direct with ownership. ESWindows storefront. Prestige Marble sho...</description>
-      <pubDate>Sun, 23 Nov 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Estero Vista — Glazing by ACG | Estero, FL</title>
-      <link>https://acglass.com/blog/estero-vista-fort-myers-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/estero-vista-fort-myers-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Estero Vista in Estero, FL — direct with ownership. ESWindows. Estero community center</description>
-      <pubDate>Thu, 13 Nov 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>KLUS Lighting Showroom — Glazing by ACG | Vero Beach, FL</title>
-      <link>https://acglass.com/blog/klus-lighting-vero-beach-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/klus-lighting-vero-beach-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at KLUS Lighting Showroom in Vero Beach, FL under Proctor Construction. ESWindows ES-9000 storefront. KLUS LED facility bu...</description>
-      <pubDate>Mon, 10 Nov 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/klus-lighting-vero-beach.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Ginsberg Eye Center — Glazing by ACG | Stuart, FL</title>
-      <link>https://acglass.com/blog/ginsberg-eye-center-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/ginsberg-eye-center-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Ginsberg Eye Center in Stuart, FL — direct with ownership. ESWindows. Treasure Coast eye care</description>
-      <pubDate>Sun, 02 Nov 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/ginsberg-eye-center/arrival-dusk.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Causeway Building Bonita Springs | ACG Glazing</title>
-      <link>https://acglass.com/blog/causeway-building-bonita-springs-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/causeway-building-bonita-springs-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Causeway Building Bonita Springs in Bonita Springs, FL — direct with ownership. ESWindows storefront. Bonita Springs co...</description>
-      <pubDate>Fri, 31 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>CubeSmart Davie — Glazing by ACG | Davie, FL</title>
-      <link>https://acglass.com/blog/cubesmart-davie-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/cubesmart-davie-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at CubeSmart Davie in Davie, FL — direct with ownership. ESWindows. CubeSmart Davie facility</description>
-      <pubDate>Fri, 31 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/cubesmart-davie/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>The Pointe at Palm Bay — Glazing by ACG | Palm Bay, FL</title>
-      <link>https://acglass.com/blog/pointe-palm-bay-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/pointe-palm-bay-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at The Pointe at Palm Bay in Palm Bay, FL under Olympus Construction. PGT impact. Palm Bay multifamily</description>
-      <pubDate>Fri, 31 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/pointe-palm-bay/aerial-campus.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Westlake Hialeah Retrofit — Glazing by ACG | Hialeah, FL</title>
-      <link>https://acglass.com/blog/westlake-hialeah-retrofit-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/westlake-hialeah-retrofit-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Westlake Hialeah Retrofit in Hialeah, FL under SISCA. PGT impact retrofit. Existing Hialeah multifamily impact retrofit</description>
-      <pubDate>Tue, 28 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Harbour Cay Fort Pierce — Glazing by ACG | Fort Pierce, FL</title>
-      <link>https://acglass.com/blog/harbour-cay-fort-pierce-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/harbour-cay-fort-pierce-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Harbour Cay Fort Pierce in Fort Pierce, FL under Mason Construction. PGT impact. Fort Pierce multifamily</description>
-      <pubDate>Mon, 27 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>2143 Carib Circle — Glazing by ACG | Singer Island, FL</title>
-      <link>https://acglass.com/blog/2143-carib-circle-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/2143-carib-circle-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at 2143 Carib Circle in Singer Island, FL — direct with ownership. Euro-Wall multi-slide. Singer Island luxury residence</description>
-      <pubDate>Sat, 25 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Hardy World 4.0 — Glazing by ACG | Melbourne, FL</title>
-      <link>https://acglass.com/blog/hardy-world-melbourne-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hardy-world-melbourne-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Hardy World 4.0 in Melbourne, FL — direct with ownership. ESWindows. Hardy World retail expansion 4.0</description>
-      <pubDate>Sat, 25 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>HCA Cape Coral Emergency Center — ACG Glazing | Cape Coral</title>
-      <link>https://acglass.com/blog/hca-cape-coral-emergency-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/hca-cape-coral-emergency-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at HCA Cape Coral Emergency Center in Cape Coral, FL — direct with ownership. ESWindows storefront. HCA Florida Healthcare...</description>
-      <pubDate>Sat, 25 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Lucie at Tradition Clubhouse — ACG Glazing | Port St. Lucie</title>
-      <link>https://acglass.com/blog/lucie-at-tradition-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/lucie-at-tradition-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Lucie at Tradition Clubhouse in Port St. Lucie, FL under Hooks Construction. ESWindows. Tradition community clubhouse</description>
-      <pubDate>Fri, 24 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/lucie-at-tradition.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Atlantic Fields Performance Center | ACG Glazing</title>
-      <link>https://acglass.com/blog/atlantic-fields-performance-center-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/atlantic-fields-performance-center-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Atlantic Fields Performance Center in Hobe Sound, FL under Proctor Construction. Euro-Wall. Performance/wellness amenit...</description>
-      <pubDate>Fri, 17 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Dale Mabry Retail Tampa — Glazing by ACG | Tampa, FL</title>
-      <link>https://acglass.com/blog/dale-mabry-retail-tampa-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/dale-mabry-retail-tampa-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Dale Mabry Retail Tampa in Tampa, FL under Wallace Construction. ESWindows storefront. N Dale Mabry Highway retail</description>
-      <pubDate>Fri, 17 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Wave Haven Cocoa Beach — Glazing by ACG | Cocoa Beach, FL</title>
-      <link>https://acglass.com/blog/wave-haven-cocoa-beach-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/wave-haven-cocoa-beach-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Wave Haven Cocoa Beach in Cocoa Beach, FL under Certified General Contractors. ESWindows. Cocoa Beach hospitality</description>
-      <pubDate>Fri, 17 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Shoppes at Westlake Point — Glazing by ACG | Westlake, FL</title>
-      <link>https://acglass.com/blog/shoppes-westlake-point-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/shoppes-westlake-point-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Shoppes at Westlake Point in Westlake, FL under SISCA. ESWindows. Westlake mixed-use community retail</description>
-      <pubDate>Sun, 12 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/shoppes-westlake-point.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>How Eurowall Glass Transformed Waxin&#x27;s on Clematis Street | ACG Blog</title>
-      <link>https://acglass.com/blog/waxins-eurowall-clematis-street.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/waxins-eurowall-clematis-street.html</guid>
-      <description>How ACG installed the Eurowall lift-and-slide glass system at Waxin&#x27;s on Clematis Street in West Palm Beach — and why opening glass systems are changing restaurant design in Florida.</description>
-      <pubDate>Fri, 10 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/waxins-wpb-corner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Nannette Walsh Wins Top Chef Martin County 2026 | ACG</title>
-      <link>https://acglass.com/blog/nannette-walsh-top-chef-martin-county-2026.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/nannette-walsh-top-chef-martin-county-2026.html</guid>
-      <description>ACG&#x27;s own Nannette Walsh took home both Top Chef and Top Dish at the 2026 Martin County Top Chef competition benefiting House of Hope. ACG was a proud Savory Sponsor.</description>
-      <pubDate>Sun, 05 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/blog/top-chef-2026/nannette-walsh-winner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Turbine Technologies Jupiter — Glazing by ACG | Jupiter, FL</title>
-      <link>https://acglass.com/blog/turbine-technologies-jupiter-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/turbine-technologies-jupiter-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Turbine Technologies Jupiter in Jupiter, FL — direct with ownership. ESWindows. Aerospace turbine company</description>
-      <pubDate>Thu, 02 Oct 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Storage King USA Winter Haven — ACG Glazing | Winter Haven</title>
-      <link>https://acglass.com/blog/storage-king-winter-haven-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/storage-king-winter-haven-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Storage King USA Winter Haven in Winter Haven, FL under Rycon Construction. ESWindows storefront. Storage King USA Wint...</description>
-      <pubDate>Tue, 30 Sep 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/storage-king-winter-haven/hero-storefront.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>The Bradley Daytona — Glazing by ACG | Daytona, FL</title>
-      <link>https://acglass.com/blog/bradley-daytona-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/bradley-daytona-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at The Bradley Daytona in Daytona, FL — direct with ownership. PGT impact windows. Multifamily Daytona Beach corridor</description>
-      <pubDate>Mon, 29 Sep 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/bradley-daytona.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>The Bradley Daytona — 300 Units of Glazing in Volusia County | ACG</title>
-      <link>https://acglass.com/blog/bradley-daytona-multifamily-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/bradley-daytona-multifamily-glazing.html</guid>
-      <description>What goes into glazing a 300-unit luxury apartment complex? ACG breaks down the scope, logistics, and coordination behind The Bradley Daytona in Daytona Beach, FL — multifamily windows, doors, and storefront for Waypoint Construction Group.</description>
-      <pubDate>Sat, 20 Sep 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Article</category>
-      <enclosure url="https://acglass.com/images/projects/bradley-daytona.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Imperial Crossings — Glazing by ACG | Bonita Springs, FL</title>
-      <link>https://acglass.com/blog/imperial-crossings-bonita-springs-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/imperial-crossings-bonita-springs-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Imperial Crossings in Bonita Springs, FL — direct with ownership. ESWindows storefront. Bonita Springs retail center</description>
-      <pubDate>Tue, 16 Sep 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Aspen Dental Edgewater — Glazing by ACG | Edgewater, FL</title>
-      <link>https://acglass.com/blog/aspen-dental-edgewater-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/aspen-dental-edgewater-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Aspen Dental Edgewater in Edgewater, FL — direct with ownership. ESWindows. Aspen Dental Edgewater</description>
-      <pubDate>Tue, 02 Sep 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/aspen-dental-edgewater/corner.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Indiantown High School — Glazing by ACG | Indiantown, FL</title>
-      <link>https://acglass.com/blog/indiantown-high-school-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/indiantown-high-school-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Indiantown High School in Indiantown, FL — direct with ownership. ESWindows impact. Martin County school district</description>
-      <pubDate>Mon, 01 Sep 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/indiantown-high-school/indiantown-high-school-branding.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Waxin&#x27;s West Palm Beach — ACG Glazing | West Palm Beach</title>
-      <link>https://acglass.com/blog/waxins-west-palm-beach-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/waxins-west-palm-beach-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Waxin&#x27;s West Palm Beach in West Palm Beach, FL — direct with ownership. Euro-Wall opening system. 230 Clematis Street, ...</description>
-      <pubDate>Sat, 30 Aug 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Medley Business Park — Glazing by ACG | Medley, FL</title>
-      <link>https://acglass.com/blog/medley-business-park-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/medley-business-park-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Medley Business Park in Medley, FL — direct with ownership. ESWindows storefront. Medley industrial corridor</description>
-      <pubDate>Fri, 29 Aug 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/medley-business-park/hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Atlantic Fields — Glazing by ACG | Hobe Sound, FL</title>
-      <link>https://acglass.com/blog/atlantic-fields-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/atlantic-fields-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Atlantic Fields in Hobe Sound, FL under Proctor Construction. Euro-Wall. 1,500-acre Discovery Land community; Tom Fazio...</description>
-      <pubDate>Thu, 28 Aug 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/atlantic-fields-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Wild Blue Clubhouse — Glazing by ACG | Estero, FL</title>
-      <link>https://acglass.com/blog/wild-blue-clubhouse-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/wild-blue-clubhouse-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Wild Blue Clubhouse in Estero, FL — direct with ownership. ESWindows storefront. Wild Blue golf and lakeside community ...</description>
-      <pubDate>Sun, 24 Aug 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Rielly Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Siena Lakes — Glazing by ACG | Naples, FL</title>
-      <link>https://acglass.com/blog/siena-lakes-naples-glazing.html</link>
-      <guid isPermaLink="true">https://acglass.com/blog/siena-lakes-naples-glazing.html</guid>
-      <description>ACG delivered the glazing envelope at Siena Lakes in Naples, FL — direct with ownership. ESWindows storefront. Erickson Senior Living continuing care communi...</description>
-      <pubDate>Tue, 19 Aug 2025 12:00:00 -0000</pubDate>
-      <dc:creator>Connor Walsh, ACG</dc:creator>
-      <category>Projects</category>
-      <enclosure url="https://acglass.com/images/projects/siena-lakes-naples.jpg" type="image/jpeg"/>
+      <pubDate>Sun, 24 May 2026 12:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
