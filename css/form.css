@@ -238,3 +238,7 @@
   .fd input[type=text],.fd input[type=email],.fd input[type=tel],
   .fd input[type=url],.fd input[type=date],.fd select,.fd textarea{font-size:16px}
 }
+
+/* inline link inside a reference-list paragraph (locations, hours block) */
+.rl__a{color:var(--ink-2);box-shadow:inset 0 -1px 0 var(--line);transition:color .18s,box-shadow .18s}
+.rl__a:hover{color:var(--red);box-shadow:inset 0 -1px 0 var(--red)}
