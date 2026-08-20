@@ -78,15 +78,17 @@ HELD_LONG_TITLE_HASHES = {
 
 # Copy on these pages intersects approval-gated claims. Keep the exception
 # path-specific so another overlength description still fails immediately.
-HELD_LONG_DESCRIPTION_HASHES = {
-    "buildingconnected-basisboard-glazing.html":
-        "e38dc9a71c1fd8a0cc393e0a4c935f59cfe319aaa479710121f4daa8632d2595",
-    "government-glazing-contractor-florida.html":
-        "14e42dc9f97497b11966c304f67aa42117518a41a9eeaec1f57a713835bb01e8",
-    "government-public-sector-glazing.html":
-        "0aaccbf017b3ea6e35b8deca848cbadd88e6a1a7a2507bd94f8479d9c40f24bc",
+HELD_LONG_DESCRIPTION_HASHES: dict[str, str] = {
+    # index.html is byte-frozen in .github/seo/url-primaries.json, so its
+    # overlength description cannot be shortened here. NOTE FOR OWNER: this copy
+    # still carries unverified project-count and bonding claims; fixing it
+    # requires lifting the homepage byte freeze first.
     "index.html":
         "546c0ce1bb58a1a54f6c03579ee68edcb419613e8c338de19b604c48a9fb0fa1",
+    # Emptied 2026-08-20: every formerly-held description now fits the 155-char
+    # limit with approval-gated claims removed (project counts, bonding language,
+    # multi-office counts, TN code references). No page needs an overlength
+    # exception, so any new long description fails immediately.
 }
 
 
