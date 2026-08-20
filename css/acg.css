@@ -374,6 +374,9 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
   .ft__in{flex-direction:column;gap:20px}
   .ft__brand{width:112px}
   .ft__l{text-align:left;font-size:11px;line-height:1.95;white-space:normal}
+  /* Footer legal and contact links sit shoulder to shoulder in the mono line.
+     Give each one a real touch box instead of an 11px text hit area. */
+  .ft__l a{display:inline-block;min-height:44px;line-height:44px}
 }
 
 /* --- reduced motion --- */
@@ -464,5 +467,8 @@ html:not(.js) .ap__leaf,html:not(.js) .ap__hint{display:none}
 @media (max-width:640px){
   .sx{padding-top:clamp(56px,9vh,90px)}
   .rg__g{grid-template-columns:1fr;gap:22px}
-  .rg__l a{grid-template-columns:2.9rem minmax(0,1fr);font-size:14px}
+  /* Register rows are dense adjacent links, which is exactly where a mis-tap
+     costs the visitor. Hold a 44px minimum touch height on touch layouts. */
+  .rg__l a{grid-template-columns:2.9rem minmax(0,1fr);font-size:14px;
+    min-height:44px;padding:11px 0;align-items:center}
 }

@@ -132,6 +132,11 @@ body.doc{background:var(--paper)}
     padding:30px var(--pad) 30px 0}
   .dc__idxin{position:static}
   .dc__idx ol{columns:2;column-gap:26px}
+  /* On touch layouts the section index becomes a dense stack of adjacent
+     anchors. Hold a 44px minimum touch height so a mis-tap does not jump the
+     reader to the wrong section. */
+  .dc__idx li{margin:0}
+  .dc__idx a{min-height:44px;align-items:center}
   .dc__body{padding:40px 0 clamp(48px,8vh,80px) 0}
   .dc__idx{padding-right:0}
   .stm__in{grid-template-columns:1fr;align-items:start}
@@ -193,4 +198,31 @@ body.doc{background:var(--paper)}
 @media (max-width:780px){
   .pl__f img{aspect-ratio:4/3;object-position:62% 50%}
   .pl__c{gap:6px 0;flex-direction:column;padding:13px var(--pad) 15px}
+}
+
+/* ---------- capability statement download ----------
+   A federal prime looks for the one-page sheet before they read anything else.
+   It sits in the title block, not buried at the bottom of the page. */
+.cap{display:inline-grid;grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;gap:16px;margin:30px 0 0;padding:14px 18px 14px 16px;
+  border:1px solid var(--navy);background:#fff;min-height:44px;
+  transition:background .18s,color .18s}
+.cap__i{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  color:#fff;background:var(--navy);padding:5px 7px 4px;transition:background .18s}
+.cap__t{display:block;min-width:0}
+.cap__t b{display:block;font-family:var(--disp);font-weight:700;font-stretch:80%;
+  font-size:15px;letter-spacing:.005em;color:var(--navy);line-height:1.2}
+.cap__t em{display:block;font-style:normal;font-size:12.5px;line-height:1.4;
+  color:var(--ink-2);margin-top:4px}
+.cap__a{font-family:var(--mono);font-size:15px;color:var(--red);flex:none}
+.cap:hover{background:var(--navy)}
+.cap:hover .cap__i{background:var(--red)}
+.cap:hover .cap__t b{color:#fff}
+.cap:hover .cap__t em{color:rgba(255,255,255,.72)}
+.cap:hover .cap__a{color:#fff}
+@media (max-width:520px){
+  .cap{display:grid;width:100%;grid-template-columns:auto minmax(0,1fr);
+    gap:12px;align-items:start}
+  .cap__i{align-self:start}
+  .cap__a{display:none}
 }
