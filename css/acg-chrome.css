@@ -53,3 +53,111 @@
 .author-title,
 .wpb-section a{color:#f5303c!important}
 .wpb-section a:hover{color:#fff!important}
+
+/* ============================================================
+   SPRINT 012 — sitewide design-system corrections
+   This file is the only stylesheet shared by the legacy pages
+   (1,441 of them), so it is the only place a correction can be
+   made once and land everywhere. Everything below is additive
+   and scoped to shared template chrome. No page's own layout,
+   type scale or hero treatment is overridden.
+   ============================================================ */
+
+/* ---------- 1. anchor targets clear the fixed header ----------
+   The header is fixed at 72px. Any in-page #anchor previously scrolled the
+   target underneath it, so the heading you clicked to read was hidden. */
+:target{scroll-margin-top:88px}
+[id]{scroll-margin-top:88px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+}
+
+/* ---------- 2. minimum legible type ----------
+   Card categories, dates, sector badges and magazine tags were set at 9-10px,
+   below the floor we hold on the new pages. Raised to 11px with the extra
+   letter-spacing that small uppercase type needs to stay readable there. */
+.blog-card-cat,.blog-card-date,
+.project-card-category,.project-cat,
+.card-sector-badge,.filter-label,.es-mag-tag,.co-tag,figcaption,
+.be-label,.be-step-heading,.be-step-label,.be-format-pill,.be-review-label,.be-result-label,
+.hero-img-caption,
+[class*="-card-category"],[class*="-card-cat"],[class*="-card-date"],
+[class*="-badge"],[class*="-tag"],[class*="-eyebrow"],[class*="-caption"]{
+  font-size:11px!important;letter-spacing:.06em}
+
+/* ---------- 3. touch targets on standalone navigation links ----------
+   Footer columns, footer legal, breadcrumbs and section links are standalone
+   navigation sitting shoulder to shoulder, which is where a mis-tap actually
+   costs the visitor. Inline links inside running prose are deliberately NOT
+   touched: WCAG 2.5.8 exempts inline text links, and padding them would break
+   paragraph leading on every page on the site. */
+@media (hover:none),(max-width:900px){
+  .ft-main nav ul li a,.ft-main>div ul li a{display:inline-block;min-height:44px;
+    line-height:44px;padding:0}
+  .ft-legal-in a{display:inline-block;min-height:44px;line-height:44px}
+  /* The crumb is a flex row whose separators and current-page label are plain
+     spans. Giving only the link a 44px box centred its text while the siblings
+     top-aligned, which knocked the trail 22px out of line. Centre the row. */
+  .crumb{align-items:center}
+  .crumb a{display:inline-flex;align-items:center;min-height:44px}
+  a.sec-link,a.tel,a.go{display:inline-flex;align-items:center;min-height:44px}
+  /* filter and pagination chips are standalone controls, not inline text */
+  button.chip,button.chip-btn,button.page-btn,.chip,.page-btn{min-height:44px}
+}
+
+/* ---------- 4. visible keyboard focus ----------
+   Legacy pages relied on the browser default, which several of the dark
+   templates suppressed. A keyboard user could not tell where they were. */
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid #E11320;outline-offset:2px;border-radius:1px}
+.hd a:focus-visible,.hd button:focus-visible,.hd-mobile a:focus-visible{
+  outline:2px solid #7FA8DE;outline-offset:3px}
+
+/* ---------- 5. brand-consistent selection and text rendering ---------- */
+::selection{background:#0e284f;color:#fff}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility}
+
+/* ---------- 6. never let an asset or table break the layout ----------
+   A defensive floor, not a redesign. Prevents a single oversized asset on any
+   one of 1,429 pages from introducing horizontal scroll on a phone.
+   The spec tables on the installer pages were 393px inside a 390px viewport,
+   which pushed the fixed header off-canvas and put a 3px horizontal scroll on
+   the whole document. A wide table now scrolls inside its own box instead of
+   dragging the page with it. */
+img,video,svg{max-width:100%}
+@media (max-width:900px){
+  table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+
+/* ---------- 7. second pass, measured clusters ----------
+   These are the specific shared components that still measured below the floor
+   after pass one, found by aggregating a 160-page stratified sample rather
+   than by guessing at selectors.
+
+   Deliberately NOT touched: <text> inside <svg>. Those are labels inside
+   technical diagrams and section details. They scale with the diagram viewBox,
+   so forcing a pixel size on them would break the drawing rather than improve
+   legibility. They are an exemption, not an outstanding defect. */
+.card-num,.submarket-meta,.tag,.quick-answer-label,
+.be-scope-label,.be-timeline-label,.be-next-label,.be-step-dot{
+  font-size:11px!important}
+/* max() cannot take `inherit`; that declaration was invalid and dropped.
+   A flat floor on table header cells, which measured 10.6px. */
+table th{font-size:11px}
+
+@media (hover:none),(max-width:900px){
+  /* coverage, city and county lists are standalone navigation stacks */
+  ul.cov-list li a,ul.city-grid li a,ul.city-grid-compact li a,
+  .county-block h3 a{display:inline-flex;align-items:center;min-height:44px}
+  /* third footer variant used by the long-tail city and service templates */
+  .footer-links a,.footer-bottom a{display:inline-flex;align-items:center;min-height:44px}
+  /* in-page nav rendered inside .container on the long-tail templates */
+  .container>nav a{display:inline-flex;align-items:center;min-height:44px}
+  /* source citations in tables and answer blocks */
+  td.noa-source a,.qa-source a{display:inline-flex;align-items:center;min-height:44px}
+}

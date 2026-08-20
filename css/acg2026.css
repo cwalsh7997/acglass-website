@@ -563,3 +563,55 @@ p{max-width:68ch}
   .hd-mobile{visibility:hidden;transition:transform var(--dur-2) var(--ease),visibility 0s linear var(--dur-2)}
   .hd-mobile.open{visibility:visible;transition:transform var(--dur-2) var(--ease),visibility 0s}
 }
+
+/* ============================================================
+   SPRINT 012 — design-system corrections, acg2026 template family
+   Mirrors the block added to css/acg-chrome.css. These 87 pages do
+   not load acg-chrome.css, so the same corrections have to be
+   stated here or they miss this family entirely.
+   Additive only. No page's layout or type scale is overridden.
+   ============================================================ */
+
+/* anchor targets clear the fixed header instead of landing under it */
+[id]{scroll-margin-top:96px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+}
+
+/* minimum legible type: badges and tags were set at 9-10px */
+.co-tag,.card-sector-badge,.filter-label,.es-mag-tag,
+.project-card-category,.project-cat,.hero-img-caption,
+.card-num,.submarket-meta,.tag,.quick-answer-label,
+figcaption{font-size:11px!important;letter-spacing:.05em}
+
+/* touch targets on standalone navigation. Inline links inside running prose
+   are deliberately excluded: WCAG 2.5.8 exempts them, and padding them would
+   break paragraph leading on every page in this family. */
+@media (hover:none),(max-width:900px){
+  .ft-main nav ul li a,.ft-main>div ul li a{display:inline-block;min-height:44px;line-height:44px}
+  .ft-legal-in a{display:inline-block;min-height:44px;line-height:44px}
+  .crumb,.breadcrumbs,.crumbs{align-items:center}
+  .p-hero .crumb a,.breadcrumbs a,.crumbs a{display:inline-flex;align-items:center;min-height:44px}
+  a.sec-link{display:inline-flex;align-items:center;min-height:44px}
+  ul.cov-list li a,ul.city-grid li a,ul.city-grid-compact li a,
+  .county-block h3 a,.footer-links a,.footer-bottom a,
+  .container>nav a,td.noa-source a,.qa-source a{
+    display:inline-flex;align-items:center;min-height:44px}
+}
+
+/* visible keyboard focus. This family suppressed the browser default, so a
+   keyboard user had no indication of where they were on the page. */
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid #E11320;outline-offset:2px;border-radius:1px}
+.hd a:focus-visible,.hd button:focus-visible,.hd-mobile a:focus-visible{
+  outline:2px solid #7FA8DE;outline-offset:3px}
+
+::selection{background:#0e284f;color:#fff}
+img,video,svg{max-width:100%}
+@media (max-width:900px){
+  table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
