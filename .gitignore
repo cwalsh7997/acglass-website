@@ -6,3 +6,4 @@ __pycache__/
 # internal ops/build files — never deploy
 _internal/
 __pycache__/
+qa/
