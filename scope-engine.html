@@ -2342,10 +2342,14 @@ document.getElementById('cta-call').addEventListener('click', () => {
    INIT
    ============================================================================ */
 (function init() {
-  // Fire scope_started once per session
-  if (!sessionStorage.getItem('acg_scope_started')) {
+  // Fire scope_started once per session (storage may be unavailable: private mode, sandboxed iframe)
+  try {
+    if (!sessionStorage.getItem('acg_scope_started')) {
+      ga('scope_started', { source_page: '/scope-engine.html' });
+      sessionStorage.setItem('acg_scope_started', '1');
+    }
+  } catch (e) {
     ga('scope_started', { source_page: '/scope-engine.html' });
-    sessionStorage.setItem('acg_scope_started', '1');
   }
   // Load any prior session state
   if (loadState()) {
