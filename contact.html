@@ -132,7 +132,7 @@
 
   <!-- ============ RECEIVED STATE (shown after a submission) ============ -->
   <section class="rc" id="received" hidden>
-    <h1 class="d rc__h">Got it.<br><em>48 hours.</em></h1>
+    <p class="d rc__h" role="heading" aria-level="1">Got it. <br><em>48 hours.</em></p>
     <p class="rc__p">Your invitation is in the bid desk inbox. If the set is complete
       you will have a scoped number within two business days. If something is
       missing we will tell you what, instead of guessing at it.</p>
@@ -406,8 +406,8 @@
     intake.hidden=true; got.hidden=false;
     document.title='Received \u00b7 American Commercial Glass';
     window.scrollTo(0,0);
-    got.querySelector('h1').setAttribute('tabindex','-1');
-    got.querySelector('h1').focus();
+    var gh = got.querySelector('.rc__h');
+    if (gh) { gh.setAttribute('tabindex','-1'); gh.focus(); }
   }
   if(/[?&]sent=1/.test(location.search)) show();
 

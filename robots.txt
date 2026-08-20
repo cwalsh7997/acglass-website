@@ -14,6 +14,10 @@ Allow: /
 # Internal admin & dealer-only views — no value to crawlers, contain no public content.
 Disallow: /dealer/admin.html
 Disallow: /dealer/thanks.html
+# Non-pages: a schema-only include fragment and the Search Console verification
+# file. Neither has a <h1> or any reader-facing content; excluded so they are
+# never crawled as thin pages.
+Disallow: /services-schema-block.html
 # Unpublished drafts: cross-link to pages that do not exist yet. Not in any
 # sitemap and not linked from live pages, but excluded explicitly so they are
 # never discovered and indexed as thin or broken content.
