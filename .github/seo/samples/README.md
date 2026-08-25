@@ -33,6 +33,6 @@ The synthetic-data banner at the top of the Markdown file is added by hand after
 generating; re-add it if you regenerate.
 
 The fixtures deliberately contain the cannibalization patterns the strategy
-research identified as real standing issues — the duplicate West Palm Beach
-pages and the three-way Nashville split — so the detector's output can be
+research identified as real standing issues - the duplicate West Palm Beach
+pages and the three-way Nashville split - so the detector's output can be
 sanity-checked against a known-shape input.

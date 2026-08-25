@@ -1,5 +1,5 @@
 /* ============================================================
-   ACG 2026 Design System — "Spec Sheet"
+   ACG 2026 Design System - "Spec Sheet"
    Light architectural system built on the official brand palette:
    navy #0E284F · red #E11320 · paper white
    Type: Inter (display + body) · JetBrains Mono (spec labels)
@@ -62,7 +62,7 @@ p{max-width:68ch}
 .rule{border:0;border-top:1px solid var(--hairline)}
 
 /* ============================================================
-   Reveal system — content is ALWAYS visible without JS.
+   Reveal system - content is ALWAYS visible without JS.
    .js body gates the initial hidden state.
    ============================================================ */
 .js .rv{opacity:0;transform:translateY(26px);transition:opacity var(--dur-3) var(--ease),transform var(--dur-3) var(--ease)}
@@ -350,12 +350,12 @@ p{max-width:68ch}
 @media (max-width:560px){.ft-main{grid-template-columns:1fr}}
 
 /* ============================================================
-   DRAMA PASS — display type, slash motif, tickers, slants,
+   DRAMA PASS - display type, slash motif, tickers, slants,
    parallax, giant footer wordmark
    ============================================================ */
 /* Archivo override removed (Sprint 011): display type now uses var(--sans)/Inter, brand-locked. */
 
-/* Display typography — signage-grade */
+/* Display typography - signage-grade */
 .hero h1,.p-hero h1,.sec-head h2,.feat-copy h2,.lead-copy h2,.cta-in h2,.proj-more .t2{
   font-family:var(--sans);font-weight:800;letter-spacing:-.015em}
 .hero h1{text-transform:uppercase}
@@ -377,7 +377,7 @@ p{max-width:68ch}
 .k-wrap::before{width:22px!important;height:10px!important;background:var(--red)!important;transform:skewX(-24deg)}
 .hero-label::before{width:22px;height:10px;transform:skewX(-24deg)}
 
-/* Ticker — thin marquee band */
+/* Ticker - thin marquee band */
 .ticker{background:var(--navy-deep);color:#fff;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);position:relative}
 .ticker-track{display:flex;width:max-content;animation:tick 46s linear infinite}
 .ticker:hover .ticker-track{animation-play-state:paused}
@@ -414,7 +414,7 @@ p{max-width:68ch}
 .ft-word span{display:block;font-family:var(--sans);font-weight:800;font-size:clamp(1.5rem,4.4vw,4.1rem);line-height:.9;letter-spacing:0;text-transform:uppercase;white-space:nowrap;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.17)}
 
 /* ============================================================
-   V3 — "THE DRAWING SET"
+   V3 - "THE DRAWING SET"
    The site as a living shop-drawing package: annotations,
    sheet index rail, glazing schedule, general notes.
    ============================================================ */
@@ -557,7 +557,7 @@ p{max-width:68ch}
 @media (max-width:560px){.footer-grid{grid-template-columns:1fr!important;gap:32px}.footer-bottom{flex-direction:column;text-align:center;gap:8px}.cta-section .text-massive{font-size:clamp(3rem,15vw,6rem);overflow:hidden;max-width:100%}}
 
 /* Bugfix 2026-08-02: closed mobile menu bled its bottom 31px (red CTA) into the
-   viewport top on every page — translateY(-110%) undershoots a fixed panel that
+   viewport top on every page - translateY(-110%) undershoots a fixed panel that
    starts at 76px. Hide it fully when closed; keep the slide animation. */
 @media (max-width:1080px){
   .hd-mobile{visibility:hidden;transition:transform var(--dur-2) var(--ease),visibility 0s linear var(--dur-2)}

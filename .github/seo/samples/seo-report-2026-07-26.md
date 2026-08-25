@@ -71,7 +71,7 @@ _Avg position is impression-weighted. A positive change means movement toward po
 | multifamily commercial glazing florida | Vertical / sector | Page 2 | Page 2 | 13.4 | 12.9 | +0.5 | 230 | +1 |
 | pgt installer florida | Manufacturer / ecosystem | Page 2 | Page 2 | 16.1 | 16.5 | -0.4 | 210 | +0 |
 | retail storefront glazing | Vertical / sector | Page 2 | Page 2 | 17.1 | 17.6 | -0.5 | 205 | +0 |
-| eswindows authorized dealer | Manufacturer / ecosystem | Page 2 | Page 2 | 12.1 | 11.4 | +0.7 | 190 | +1 |
+| eswindows distributor | Manufacturer / ecosystem | Page 2 | Page 2 | 12.1 | 11.4 | +0.7 | 190 | +1 |
 
 ### 2d. Largest declines
 

@@ -1,5 +1,5 @@
 /**
- * ACG Cloudflare 410 Worker — Returns "410 Gone" for old WordPress spam URLs
+ * ACG Cloudflare 410 Worker - Returns "410 Gone" for old WordPress spam URLs
  * 
  * DEPLOYMENT:
  * 1. Log into Cloudflare dashboard → acglass.com

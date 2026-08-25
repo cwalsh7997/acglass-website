@@ -1,4 +1,4 @@
-SECTION 08 44 13 — ALUMINUM-FRAMED CURTAINWALL
+SECTION 08 44 13 - ALUMINUM-FRAMED CURTAINWALL
 American Commercial Glass | acglass.com | FL CGC #1531993
 Last updated: 2026-05-09
 ======================================================================
@@ -9,9 +9,9 @@ PART 1 GENERAL
 A. Section includes aluminum-framed curtainwall, including unitized and stick-built systems, structural silicone glazing where specified, and HVHZ-rated assemblies.
 
 1.2 REFERENCES
-A. AAMA CW-DG-1 — Aluminum Curtain Wall Design Guide Manual.
-B. AAMA TIR-A8 — Structural Performance of Composite Thermal Barrier Framing Systems.
-C. ASTM C1184 — Standard Specification for Structural Silicone Sealants.
+A. AAMA CW-DG-1 - Aluminum Curtain Wall Design Guide Manual.
+B. AAMA TIR-A8 - Structural Performance of Composite Thermal Barrier Framing Systems.
+C. ASTM C1184 - Standard Specification for Structural Silicone Sealants.
 D. ASTM E283, E330, E331, E1105, E1886, E1996.
 E. ASCE 7-22.
 F. Florida Building Code 8th Edition (2026), HVHZ provisions where applicable.

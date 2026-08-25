@@ -1,4 +1,4 @@
-/* ACG Dealer Portal — client-side scripts
+/* ACG Dealer Portal - client-side scripts
  *
  * Phase 1 responsibility:
  *   - Handle the dealer-application form on /become-a-dealer.html.
@@ -57,7 +57,7 @@
   }
 
   function buildMailto(payload) {
-    var subject = 'ACG Dealer Application — ' + (payload.company || payload.contact_name || 'New');
+    var subject = 'ACG Dealer Application - ' + (payload.company || payload.contact_name || 'New');
     var lines = [
       'Company: ' + (payload.company || ''),
       'Contact: ' + (payload.contact_name || ''),
@@ -72,7 +72,7 @@
       'Notes:',
       payload.notes || '(none)',
       '',
-      '— Submitted from acglass.com/become-a-dealer.html'
+      '- Submitted from acglass.com/become-a-dealer.html'
     ];
     return 'mailto:' + FALLBACK_EMAIL + '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(lines.join('\n'));
@@ -100,7 +100,7 @@
       // Honeypot: if filled, silently "succeed" (don't tell the bot it failed).
       var honey = form.querySelector('input[name="company_url"]');
       if (honey && honey.value) {
-        setStatus(status, 'success', 'Thanks — we\'ll be in touch.');
+        setStatus(status, 'success', 'Thanks - we\'ll be in touch.');
         form.reset();
         return;
       }
@@ -113,7 +113,7 @@
         payload[key] = (typeof value === 'string') ? value.trim() : value;
       });
 
-      // Minimum required fields (defensive — HTML5 also enforces)
+      // Minimum required fields (defensive - HTML5 also enforces)
       var required = ['company', 'contact_name', 'email', 'phone', 'address', 'years_in_business', 'manufacturers', 'annual_volume'];
       var missing = required.filter(function (k) { return !payload[k]; });
       if (missing.length) {
@@ -167,7 +167,7 @@
           window.location.href = buildMailto(payload);
         });
       } else {
-        // No API configured — mailto fallback (matches existing contact form pattern)
+        // No API configured - mailto fallback (matches existing contact form pattern)
         setStatus(status, 'info',
           'Opening your email client. If nothing happens, please email ' + FALLBACK_EMAIL + ' directly.'
         );

@@ -15,11 +15,11 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 
 PROTECTED_HASHES = {
     "anchors": "555ddaef659d5c7e6a3727696117aed782500731bbf530e36e32dd81a53e1dd5",
-    "body": "4d23ad2b0306cd8ec51dbff710d97243492ea5878e57972439d311075c305713",
+    "body": "3a8e91eb130f2882cb97b51958b192b052e4b267c7e6be166b2574aa039c856d",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "images": "5bf9fc794b10fa427ac10ec313e89ff3f7a185007b64874043db8a7eb8d67fc5",
-    "jsonld": "1752de9911f5150f1b1cb3efebebff4f32edf3639cddd11b362f79113916bd96",
-    "metadata": "40e35e5e9b9924c961383c8de451c66d3e842158c3e7494462fa1acf0850f8ee",
+    "images": "7b9e50a4aa712fc774f975ac315135fe1ec1b90344faf8f8df685c82ef38e95b",
+    "jsonld": "d6078e92ff30d6acee2bf9656a6d145ee432c17149931707c3f752aa037e74a0",
+    "metadata": "8e8ce0ff76fb12b7b21ad2e349a8df43ac98cab962cb8a621d661bd42a3ff02a",
     "scripts": "59d80dfe70fb34b631f5af37c031aa15a9fb62d74c3f0c7f7ba40f348fd81567",
 }
 

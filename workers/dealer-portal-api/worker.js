@@ -1,26 +1,26 @@
 /**
- * ACG Dealer Portal API — Cloudflare Worker
+ * ACG Dealer Portal API - Cloudflare Worker
  *
  * Handles:
- *   POST   /api/applications        Public — submit a dealer application
- *   GET    /api/applications        Admin  — list applications (Bearer token)
- *   PATCH  /api/applications/:id    Admin  — update status (Bearer token)
- *   GET    /api/health              Public — liveness check
+ *   POST   /api/applications        Public - submit a dealer application
+ *   GET    /api/applications        Admin  - list applications (Bearer token)
+ *   PATCH  /api/applications/:id    Admin  - update status (Bearer token)
+ *   GET    /api/health              Public - liveness check
  *
  * Bindings (configured in wrangler.toml):
  *   - DB                    D1 database (see schema.sql)
- *   - ADMIN_TOKEN           secret  — bearer token for admin endpoints
- *   - NOTIFY_EMAIL          var     — email to notify on new applications
- *   - RESEND_API_KEY        secret  — optional, enables email via Resend
- *   - RESEND_FROM           var     — optional, "ACG <noreply@acglass.com>"
- *   - ALLOWED_ORIGIN        var     — e.g. "https://acglass.com" (CORS)
+ *   - ADMIN_TOKEN           secret  - bearer token for admin endpoints
+ *   - NOTIFY_EMAIL          var     - email to notify on new applications
+ *   - RESEND_API_KEY        secret  - optional, enables email via Resend
+ *   - RESEND_FROM           var     - optional, "ACG <noreply@acglass.com>"
+ *   - ALLOWED_ORIGIN        var     - e.g. "https://acglass.com" (CORS)
  *
  * This Worker is deployed independently from the existing
  * cloudflare-410-worker.js (which handles spam URL filtering on acglass.com/*).
  * The two Workers do not interact.
  */
 
-const MAX_BODY_BYTES = 16 * 1024; // 16 KB — applications never need more
+const MAX_BODY_BYTES = 16 * 1024; // 16 KB - applications never need more
 
 const REQUIRED_FIELDS = [
   'company',
@@ -129,7 +129,7 @@ async function handleCreateApplication(request, env, origin, ctx) {
   }
 
   if (!env.DB) {
-    console.error('D1 binding "DB" missing — application not saved.');
+    console.error('D1 binding "DB" missing - application not saved.');
     return jsonResponse(env, origin, 500, { error: 'Database unavailable' });
   }
 
@@ -267,7 +267,7 @@ function corsHeaders(env, origin) {
   // If a specific allowed origin is set, only echo it back when it matches.
   let headerValue = allow;
   if (allow !== '*' && origin && origin !== allow) {
-    headerValue = allow; // Still send the configured one — browser will block.
+    headerValue = allow; // Still send the configured one - browser will block.
   }
   return {
     'Access-Control-Allow-Origin': headerValue,
@@ -307,11 +307,11 @@ function methodNotAllowed(env, origin) {
 
 async function sendNewApplicationEmail(env, app) {
   if (!env.RESEND_API_KEY || !env.NOTIFY_EMAIL) {
-    console.log('[email] Skipping send — RESEND_API_KEY or NOTIFY_EMAIL not configured.');
+    console.log('[email] Skipping send - RESEND_API_KEY or NOTIFY_EMAIL not configured.');
     return;
   }
   const from = env.RESEND_FROM || 'ACG Dealer Portal <noreply@acglass.com>';
-  const subject = 'New ACG Dealer Application — ' + app.company;
+  const subject = 'New ACG Dealer Application - ' + app.company;
   const lines = [
     'A new dealer application was submitted via acglass.com.',
     '',
@@ -320,7 +320,7 @@ async function sendNewApplicationEmail(env, app) {
     'Email:             ' + app.email,
     'Phone:             ' + app.phone,
     'Address:           ' + app.address,
-    'License #:         ' + (app.license_number || '—'),
+    'License #:         ' + (app.license_number || '-'),
     'Years in Business: ' + app.years_in_business,
     'Manufacturers:     ' + app.manufacturers,
     'Annual Volume:     ' + app.annual_volume,
@@ -328,8 +328,8 @@ async function sendNewApplicationEmail(env, app) {
     'Notes:',
     app.notes || '(none)',
     '',
-    '— Application ID: ' + app.id,
-    '— Submitted: ' + app.created_at,
+    '- Application ID: ' + app.id,
+    '- Submitted: ' + app.created_at,
     '',
     'Review at: https://acglass.com/dealer/admin.html',
   ];

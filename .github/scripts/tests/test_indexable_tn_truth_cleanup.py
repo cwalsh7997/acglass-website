@@ -21,6 +21,7 @@ TARGETS = {
             "glazing service areas across Florida. Florida CGC #1531993."
         ),
         "canonical": "https://acglass.com/locations.html",
+        "robots": None,
     },
     "service-areas-map/index.html": {
         "title": "ACG Service Areas | Florida Commercial Glazing",
@@ -30,6 +31,10 @@ TARGETS = {
             "Florida."
         ),
         "canonical": "https://acglass.com/service-areas-map/",
+        # Deliberately noindex,follow as of main commit 70308a175 (index hygiene
+        # / cannibalization fix). The hub still passes link equity to every
+        # market page via follow, so it stays out of the index on purpose.
+        "robots": "noindex,follow",
     },
 }
 
@@ -55,20 +60,20 @@ PROTECTED_LINE_MARKERS = re.compile(
 
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
-        14,
-        "0df6239da88c58b668e5c0293cf88bfba52fbb8a3e5746ab294e8617b4cf3215",
+        15,
+        "13b3f36cf77690191070ad9b2648451458edaf385b89cbc9a8ed28ce56c69cc6",
     ),
     "acg-vs-harmon.html": (
-        14,
-        "7a8fc02b3f608928581f2af7595d68cc16598919fdf55f6f2da5110dbb6ff47a",
+        15,
+        "e1c717232aac88b761fdeb8166cbb573886c721c82eca335fdca5433d66f4425",
     ),
     "acg-vs-permasteelisa.html": (
-        10,
-        "44dbe3c2c4fb99c4170d5e737dae175b13ede2a63ab0e7954f593bebdd17adfe",
+        11,
+        "2f28fb827ab96ed2988fbdc3220adaae0a33b714ec2a06acad019931ef6529bd",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
-        6,
-        "dff2ada45f5d9cf621a26a16658402973c114bf5421781b8125619646ea502ce",
+        7,
+        "b79b2fdad620a40b648b1beb3a28cca6d313978d9c907c61bac6936d00a9d38a",
     ),
 }
 
@@ -154,10 +159,16 @@ class IndexableTennesseeTruthCleanupTests(unittest.TestCase):
                     expected["description"],
                 )
                 self.assertEqual(extract_canonical(source), expected["canonical"])
-                self.assertNotRegex(
-                    source,
-                    r'<meta[^>]+name="robots"[^>]+content="[^"]*noindex',
-                )
+                robots = extract_meta(source, "robots")
+                self.assertEqual(robots, expected["robots"])
+                if expected["robots"] is None:
+                    self.assertNotRegex(
+                        source,
+                        r'<meta[^>]+name="robots"[^>]+content="[^"]*noindex',
+                    )
+                else:
+                    # A held noindex must keep follow so link equity still flows.
+                    self.assertIn("follow", expected["robots"])
                 self.assertGreaterEqual(len(expected["description"]), 80)
                 self.assertLessEqual(len(expected["description"]), 155)
                 for pattern in PROHIBITED_CLAIMS:

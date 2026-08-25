@@ -2,7 +2,7 @@
   "_meta": {
     "schema_version": 2,
     "last_full_pass_attempt": "2026-06-11",
-    "policy": "Zero fabrication. Two source portals are used: (1) Florida Product Approval portal (floridabuilding.org) publishes statewide FL# approvals — FL#, Type, Category, Manufacturer, Status. (2) Miami-Dade Product Control (miamidade.gov/building) publishes HVHZ-only NOAs — NOA#, Category, Material, Description, Impact rating, design pressure (MDP+/-), and expiration date. The two systems are SEPARATE — a single physical product may have an FL approval, a Miami-Dade NOA, both, or neither. Each is tracked in its own list per manufacturer below. 'pending verification' means the cell has not been hand-confirmed yet.",
+    "policy": "Zero fabrication. Two source portals are used: (1) Florida Product Approval portal (floridabuilding.org) publishes statewide FL# approvals - FL#, Type, Category, Manufacturer, Status. (2) Miami-Dade Product Control (miamidade.gov/building) publishes HVHZ-only NOAs - NOA#, Category, Material, Description, Impact rating, design pressure (MDP+/-), and expiration date. The two systems are SEPARATE - a single physical product may have an FL approval, a Miami-Dade NOA, both, or neither. Each is tracked in its own list per manufacturer below. 'pending verification' means the cell has not been hand-confirmed yet.",
     "sources": {
       "florida_product_approval": "https://www.floridabuilding.org/pr/pr_app_lst.aspx",
       "miami_dade_noa": "https://www.miamidade.gov/building/pc-search.asp"
@@ -21,8 +21,8 @@
           "category": "Windows / Projected",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtTVu%2f0HfH9OpZXWXvWJbeZKgqv%2fB6FokJmrn1WXpLAKw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -32,8 +32,8 @@
           "category": "Panel Walls / Curtain Walls",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt682jx0XXki8oGpUjk8z4bbzFhOgEgBcqcg4YZCwPdSw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -43,8 +43,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvNL6Whvr42wgyr8LDWzHFHjDp9%2f4uXI8NgU0Mq%2fZSxWw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -54,8 +54,8 @@
           "category": "Windows / Casement",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqs%2bYQ6%2fEgpc3tUXNw2oaPqeAe06R560VEfNSlMayz91Zw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -65,8 +65,8 @@
           "category": "Panel Walls / Curtain Walls",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvESe3tvieUJ8nz5jMS%2fl6lmAYHMxidlRZv4KGAeVTQTQ%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -76,8 +76,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvH%2bffZfjpUCZpuvBn6phqgiyf%2fpuuNSHRDoo%2fy4ZBjDA%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -87,8 +87,8 @@
           "category": "Windows / Single Hung",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtdGm6vrqJqxt4X32oyOcyRUjdyM%2f7AeWXBfk%2fR612pnQ%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -98,8 +98,8 @@
           "category": "Windows / Horizontal Slider",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsji1xY3FEvdOuFe7hwpSXUcSHNN1GiF23%2baRT4bFU3gw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -109,8 +109,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvOD9NtK1XkvKrP7P9Ld2HKra7xSBtVhOsmh3mT%2fjj3qg%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -120,8 +120,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtqtNdreiWNwuLBrRNBzxYfATuOC6uCB7Roat%2bXdVU1iw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -131,8 +131,8 @@
           "category": "Windows / Single Hung",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvhmyGg%2b%2bs2AaIhygBfvct4gfqJAaDSw7K949G%2fEmmhVA%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -142,8 +142,8 @@
           "category": "Windows / Horizontal Slider",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8Oz21KYPIvyAlg7axStrsKDRgXm%2fanEUJw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -153,8 +153,8 @@
           "category": "Windows / Single Hung",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF4T%2fYu0X%2bdfC%2b2%2fCq4LmwmhhkkG0ZkQl0A%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -164,8 +164,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquLhfsS50xASGhs5jGMwc1%2bXIr5s7cZJcVULXtRzekNGg%3d%3d",
           "last_verified": "2026-06-11"
         }
@@ -1108,8 +1108,8 @@
           "category": "Windows / Fixed",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtCUGgvjQiz6Nn3skOkZ4ggnmrEK1unf7abUhjiTKxY3w%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1119,8 +1119,8 @@
           "category": "Exterior Doors / Swinging",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt2ZOX6B2Y1Us1nROgVASh0YoHmwEodob5C5%2bTITabamg%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1130,8 +1130,8 @@
           "category": "Exterior Doors / Swinging",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvL7WPh33iXNLXzf50zD9rIF0vwqMIDq7zYdWYLzGdCjQ%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1141,8 +1141,8 @@
           "category": "Windows / Mullions",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqv8gh4TcSO3PN6E7ryxFqSlQZO6ZuJSFy5JJjJbGvNpXQ%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1152,8 +1152,8 @@
           "category": "Exterior Doors / Swinging",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvp%2fcIlPzH4zss3GTPFXcwqe6Q9zzJNIT7qn0as%2bESWbw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1163,8 +1163,8 @@
           "category": "Windows / Fixed",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqs%2bxL1bWtJKVE3BEK5vCJ4iL8ARg8sUG7bZ9G0CgdedbA%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1174,8 +1174,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt6zon2yZAyNUV6tXWhnXUehmlq20abOC1wLqmXX%2fG%2f9g%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1185,8 +1185,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Pending FBC Approval",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt6zon2yZAyNUV6tXWhnXUehmlq20abOC0eEe46zCXjOA%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1196,8 +1196,8 @@
           "category": "Panel Walls / Storefronts",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquRQeeNyKB1%2fPc8ZL8hwsw0pXc3RrO9iXaRjGmR8A9hMw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1207,8 +1207,8 @@
           "category": "Exterior Doors / Sliding",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8FyAx0onASLN8VONB0HPnUeqc%2bo370Zagg%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1218,8 +1218,8 @@
           "category": "Windows / Casement",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8HL1%2b%2bkLefsylH7mej1OeU6fuTzxS6ZVSw%3d%3d",
           "last_verified": "2026-06-11"
         },
@@ -1229,8 +1229,8 @@
           "category": "Panel Walls / Storefronts",
           "status": "Approved",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF1m1%2fSMl0pSi7uVtYOwXmvJ7ogll143SdA%3d%3d",
           "last_verified": "2026-06-11"
         }
@@ -1250,8 +1250,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquS1Bu8CAEmBE7OC3IVX3PGePnjp8RQ1zE%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1261,8 +1261,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquUsDrhuM3DGCgL7x9PPaiMluqAOJ75iuI%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1272,8 +1272,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqu3mwFvZ35VD3jztncI%2fPhNx1v5soUdMEI%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1283,8 +1283,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsT04p5WuWRUcCOjC%2fu31NPXts1M6sMjfA%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1294,8 +1294,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsEt2PTaRd5bm5ECcrlFWoGVBdMvBJDTHc%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1305,8 +1305,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvweIwRFXRvHDB0ZJMHBHYQH6qR6AgCnKs%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1316,8 +1316,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquaucoIwmuGtbIFAQLKHcHzFp1dVnd8Ozo%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1327,8 +1327,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvkttk4btoKhrsKPnItEiieHwWGlEy2iG0%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1338,8 +1338,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtsZzB6Yv%2bqnWdjpdNKCrtSouLJ0oec%2fcs%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1349,8 +1349,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsbCUITKel20DuttTaLxE3%2bP2orrho7GcmCxhsVqi6yHA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1360,8 +1360,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsGsvRHsb6W7CihkBPFyPwC6npWNSwRQNzD7MaMQvEuSw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1371,8 +1371,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtFhPptbxssUkV%2fHymBZehQrDR84rZAv5zUvdnMIipJeQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1382,8 +1382,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqu4R7qbqsCvyWXyHKrCo6QJWlliNyQyDEa1onDDG2BZ8w%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1393,8 +1393,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtU0E2x88XL%2bYy9RfBuGnzYuUH0ggOioDyWUUGRK8M0mQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1404,8 +1404,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsKvwgL58IIh%2fhdkUsNyWtkPd0nw%2fzRMdvFhX%2ffnFYNRg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1415,8 +1415,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqueufsxW4GVzd2DpSQYW5R12m%2fZzxHVXvEjEmsuewyGzw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1426,8 +1426,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvYdq2pQ%2fXXJlv984GaIGRKLAZmOd1YCMs%2bpLrXqA%2bMbw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1437,8 +1437,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqu2dzE0w0ntq4eWoFs7gqcXZqT5MCFgQu8GmT6nV6%2bibw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1448,8 +1448,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsJwwM3n%2b4Th36EVqVqxAMeqhMyHCGUcJEeePmMwtHC7A%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1459,8 +1459,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsJwwM3n%2b4Th5antAq6ufASEkvhlHW1ErZaipJPQoMzsg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1470,8 +1470,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvbYOtbzx20lauWZb3dsgN26LfnieSDM0zg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1481,8 +1481,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvc28Xt6FNiF%2b3gXL0Gd0tXYi6aq%2fc58jbA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1492,8 +1492,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvf%2bRb4GoaKZ7DIwlM9ENNn6zfghSSPebUA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1503,8 +1503,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtzAOlNAXhYvelyjmacXFA4k0TI%2f9UeswD1nVwtrmmodw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1514,8 +1514,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtihODErVZoFhCSHHrJpMCaavrRMTPiaYF%2btCuRoQ4OVw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1525,8 +1525,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsWTeUTdU%2bgOMqiamYrD8fjbVOXmlvptMmUf%2bgHu1%2b0Cw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -1536,8 +1536,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquCBMSfpRHCVKdua5LfTwaGyVtN%2bkP7%2fx6SywMbnhZigA%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         }
       ],
@@ -2128,8 +2128,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvFGYZsjrZFR5Qk%2f2UHfa54sux9j8FbdiWd3WyKTp9d6A%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2139,8 +2139,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvFGYZsjrZFR1%2fdWIBzReqNAr%2bqF3WYpCrHWD0Y9SpVuQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2150,8 +2150,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt2ZOX6B2Y1UhhjjtTforJg8q5ONDwd1wQP5AiZV3pgfg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2161,8 +2161,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtA%2fGGFsMxvHCOORwjzucGfCeJMZ4KK2zTcejODllsfBg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2172,8 +2172,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvKboN0elVMsvSvKuyl4Tki14QhOMkcGGRplI%2fxWgkt7A%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2183,8 +2183,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvWkD0hxVvR09faPrgv2Cc92%2fadkQf%2bJ3ux92fhQJ6CQQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2194,8 +2194,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvp%2fcIlPzH4zq8M9CChLH0H7knXYYM4UOvhZ4nDqLRbww%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2205,8 +2205,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvNL6Whvr42wv7JPjsSchR6DAdn%2bEVY7uzlW8v70BV6Lg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2216,8 +2216,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvKtLTRtHFybukLWgzP1PNre0KI374oPvLpPmmgKSF%2b4g%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2227,8 +2227,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvlNI6FNDekSPT78gcBFlNBltYxgsb8iWNeYq5EJ%2br8%2bA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2238,8 +2238,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsWTeUTdU%2bgOMqiamYrD8fjbVOXmlvptMmUf%2bgHu1%2b0Cw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2249,8 +2249,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt4x6SzwHEelvOKaU3udJLU1siBiHpepASrhBuSfi0Uqw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2260,8 +2260,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF6xPEOiGjFjAMMrm9ixuIraMI05Z3%2bxKBA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2271,8 +2271,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsm5wQBSOBiF675hjhEeyeE2pk53u6PQcQTmQVDtRmVUw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2282,8 +2282,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsmsknuTz%2bG1NPmqPb8RyRB6mdfWu2oScdD9a9DiUd5NQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2293,8 +2293,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsmsknuTz%2bG1EY7Wa8CTdDmyyp7IlfW6oKh4fmT4%2fnLEQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2304,8 +2304,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqshKirHIodCbJbM5BjK410FDwUviSqMS9aWyznhnMcOjA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2315,8 +2315,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquCBMSfpRHCVKdua5LfTwaGyVtN%2bkP7%2fx6SywMbnhZigA%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         }
       ],
@@ -2335,8 +2335,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvFGYZsjrZFR6s2lw11bPOcTRSsMwb%2bSKbaEen1jg9YrQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2346,8 +2346,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt2ZOX6B2Y1UqKVIYW9w6wOp%2fsZVgi06Vk4aQ8MbppUNg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2357,8 +2357,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquTIuhTqK2%2bdz%2f0Bey0hPbZJ5%2bmHg%2bMdijIACkpOwnlYg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2368,8 +2368,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqufj9QzTt6YQlNMRBjJVRefb67qWEnRsx8WswK%2fsDmTvA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2379,8 +2379,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsKQFEnckB10zikk3PAvPlWEvl0b24bP0L0KuAFIyQG%2bg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2390,8 +2390,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsejA7AarRF%2bx1C%2bWK459llJbiyhlD13SSbWm1%2b8V9x5w%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2401,8 +2401,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqugvQUWv761qloxUWG8GlTG3OvMC3%2bqidZgaz2Qya2TYQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2412,8 +2412,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvveRF2JcHYOZrfY%2bsaHaWQBviq2dqtYyNbACNBXbJCnQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2423,8 +2423,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvqhjfzDlLbM89b8%2bh%2bjVzSfceANsPS2QVRLVNCPw4q3Q%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2434,8 +2434,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqssvK6hGqrLmvoTcvJqkjPmkiodfl5mpT%2f7b%2fmvn53MLA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2445,8 +2445,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvh08wfeKp9WVorET1of2RTJtE5GPUsyj7TOtEQG24xOg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2456,8 +2456,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtknjHmksstZa27W5QIoJYwlYc121%2b8uz6BKf53gTQtXg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2467,8 +2467,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqsaCeD9DZoP1k0iCU%2bXwrPS1CR4O5mG%2bb1Oq9c3xfTHAw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2478,8 +2478,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt7JLV6LpgGUd1el6uWvMNm0zC9HZFmHt%2booXU7P%2fivrQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2489,8 +2489,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqt7JLV6LpgGUT85y%2bO1pc4CZhSgNIUvQH8TiZ7lAJzbEQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2500,8 +2500,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvjCiiNa3lFkNzDRAqKTDEpdQ4l0xv%2bLweuBdkTzp6KBA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2511,8 +2511,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquDOkDZgXqqa20duGtpoaQXlSdAOLOg2PuCTrU9FTwlzA%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2522,8 +2522,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtqtNdreiWNwqPHaw204f5UPUduhpAYGB6bq5%2fGttwxtg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2533,8 +2533,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtqtNdreiWNwrkCuaSwH9hQ2kYgRP8OuN1MOwobx1MRSw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2544,8 +2544,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvhmyGg%2b%2bs2ASd1QrHEet%2fGfMzVc6gje0pR62QS22aAnQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2555,8 +2555,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtmvukm5%2fiEWdiK8bGO5RU4RdWkUoFNMmF6ZBKpukLRIg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2566,8 +2566,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtmvukm5%2fiEWQjrgGR48Uf4nq7lYyOak7L6Gerw6qja3g%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2577,8 +2577,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtmvukm5%2fiEWamF1KfqIw5Y30XKpwtpBU5zLgcuxHGrow%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2588,8 +2588,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquFoQ4Z2YZy8LIlez9hJjImbuUBfAUXhwGaaDbvlESH0g%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2599,8 +2599,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDquLhfsS50xASKfN15JcK4Lmx8QHZfZvSdDNT3qkSSu3Aw%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2610,8 +2610,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqtA%2bep9b5tjsmXDeNhFTGSCzhUiwwK1SroKFPq%2bxI3PHQ%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         },
         {
@@ -2621,8 +2621,8 @@
           "status": "Approved",
           "source_url": "https://www.floridabuilding.org/pr/pr_app_dtl.aspx?param=wGEVXQwtDqvijwrK4oKmNyOdQ6t3X%2bKcL7RE7MmDOTeO9n3Fifrssg%3d%3d",
           "miami_dade_noa": "pending verification",
-          "expiration": "not in public portal — see source PDF",
-          "design_pressure": "not in public portal — see source PDF",
+          "expiration": "not in public portal - see source PDF",
+          "design_pressure": "not in public portal - see source PDF",
           "last_verified": "2026-06-11"
         }
       ],

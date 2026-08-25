@@ -6,24 +6,24 @@
   No build step. All config in one object near top of <script>.
 
   CHANGELOG v2.0 (2026-06-04):
-  - Real lead capture (was discarding 100% of data before)
-  - Form posts to formsubmit.co/ajax/connor@acglass.com (proven backend)
-  - Full scope+contact+estimate payload delivered to ACG
-  - Carry-over via URL params + sessionStorage to send-plans.html
-  - Pricing model v2: HVHZ, coastal WBD, building height all affect cost
-  - Building height step added (drives system recommendation + cost)
-  - Fixed openings bug (per-type avg now actually used)
-  - Confidence band tightens with more inputs
-  - Rounded display ranges (no 7-digit false precision)
-  - Live assumptions list under the number
-  - Editable refinement chips on results
-  - All pricing constants in ACG_CONFIG (one place to calibrate)
-  - GA4 funnel events: scope_started, step_completed, result_generated,
+ - Real lead capture (was discarding 100% of data before)
+ - Form posts to formsubmit.co/ajax/connor@acglass.com (proven backend)
+ - Full scope+contact+estimate payload delivered to ACG
+ - Carry-over via URL params + sessionStorage to send-plans.html
+ - Pricing model v2: HVHZ, coastal WBD, building height all affect cost
+ - Building height step added (drives system recommendation + cost)
+ - Fixed openings bug (per-type avg now actually used)
+ - Confidence band tightens with more inputs
+ - Rounded display ranges (no 7-digit false precision)
+ - Live assumptions list under the number
+ - Editable refinement chips on results
+ - All pricing constants in ACG_CONFIG (one place to calibrate)
+ - GA4 funnel events: scope_started, step_completed, result_generated,
     lead_captured, cta_send_plans_click, cta_call_click
-  - sessionStorage persistence (refresh-safe)
-  - @media print rules for "Save as PDF"
-  - Keyboard nav + aria roles + reduced-motion respected
-  - Banned brands absent
+ - sessionStorage persistence (refresh-safe)
+ - @media print rules for "Save as PDF"
+ - Keyboard nav + aria roles + reduced-motion respected
+ - Banned brands absent
 
   TO CALIBRATE: scroll to ACG_CONFIG.basePsf and update from your last
   20-30 actual bid prices per system. Same for multipliers. See README.
@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://acglass.com/images/projects/panther-national/rendering.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="American Commercial Glass — Florida commercial glazing specialists">
+<meta property="og:image:alt" content="American Commercial Glass - Florida commercial glazing specialists">
 <meta property="og:site_name" content="American Commercial Glass">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Commercial Glass Scope Review for Florida GCs | ACG">
@@ -115,7 +115,7 @@
 
 <style>
   /* ============================================================
-     SCOPE ENGINE v2 — INLINE CSS
+     SCOPE ENGINE v2 - INLINE CSS
      ============================================================ */
   :root {
     --se-bg: #050A12;
@@ -168,7 +168,7 @@
   .se-step-title { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -.022em; color: #fff; margin: 0 0 14px; font-weight: 600; }
   .se-step-hint { font-size: 16px; line-height: 1.6; color: var(--se-text-muted); margin: 0 0 34px; max-width: 720px; }
 
-  /* CARDS GRID — for radio-style choices */
+  /* CARDS GRID - for radio-style choices */
   .se-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
   .se-card { background: var(--se-surface); border: 1px solid var(--se-border); border-radius: 8px; padding: 22px 20px; cursor: pointer; transition: all .18s; position: relative; }
   .se-card:hover { background: var(--se-surface-2); border-color: var(--se-border-strong); transform: translateY(-1px); }
@@ -341,8 +341,8 @@
 <!-- ============ NAV (matches site nav pattern) ============ -->
 <header class="hd">
     <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG — American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
       </a>
       <nav class="hd-nav" aria-label="Primary">
         <a href="/portfolio.html">Portfolio</a>
@@ -371,7 +371,7 @@
   <div class="se-container">
     <div class="se-hero-eyebrow"><span class="dot"></span>ACG Scope Intelligence Engine</div>
     <h1>Define your glazing scope. Two minutes. No phone call required.</h1>
-    <p>Answer a handful of questions about your commercial glazing scope. The engine returns the recommended system, code requirements, and a realistic install timeline &mdash; benchmarked against ACG's Florida project history and current building code. For pricing, request an itemized bid.</p>
+    <p>Answer a handful of questions about your commercial glazing scope. The engine returns the recommended system, code requirements, and a realistic install timeline - benchmarked against ACG's Florida project history and current building code. For pricing, request an itemized bid.</p>
     <div class="se-hero-chips">
       <span class="se-chip">Florida HVHZ &amp; statewide</span>
       <span class="se-chip">Storefront &middot; Curtainwall &middot; Impact &middot; Multi-slide</span>
@@ -448,15 +448,15 @@
     <p class="se-step-hint">Height drives both the recommended system and the install cost factor (high-rise needs unitized, cranes, and sequencing).</p>
     <div class="se-card-grid" role="radiogroup" aria-label="Building height">
       <div class="se-card" role="radio" tabindex="0" data-value="low_rise" aria-checked="false">
-        <div class="se-card-title">Low-rise &mdash; 1 to 2 stories</div>
+        <div class="se-card-title">Low-rise - 1 to 2 stories</div>
         <div class="se-card-sub">Standard storefront installations. Boom lift or ladder access. No height premium.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="mid_rise" aria-checked="false">
-        <div class="se-card-title">Mid-rise &mdash; 3 to 7 stories</div>
+        <div class="se-card-title">Mid-rise - 3 to 7 stories</div>
         <div class="se-card-sub">Window wall or stick-built curtainwall. Swing stages and hoisting add to the scope.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="high_rise" aria-checked="false">
-        <div class="se-card-title">High-rise &mdash; 8+ stories</div>
+        <div class="se-card-title">High-rise - 8+ stories</div>
         <div class="se-card-sub">Unitized curtainwall standard. Cranes, mast climbers, and sequencing add to the scope.</div>
       </div>
     </div>
@@ -471,7 +471,7 @@
   <section class="se-panel" id="step-3" data-step="3" aria-labelledby="step-3-title">
     <div class="se-step-label">Step 3 of 6</div>
     <h2 id="step-3-title" class="se-step-title">How big is the scope?</h2>
-    <p class="se-step-hint">Pick whichever you actually know. They all work &mdash; the engine converts to system area in the background.</p>
+    <p class="se-step-hint">Pick whichever you actually know. They all work - the engine converts to system area in the background.</p>
 
     <div class="se-tabs" role="tablist" aria-label="Size input method">
       <button class="se-tab active" role="tab" data-method="glass_sf">Glass area (SF)</button>
@@ -536,11 +536,11 @@
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="hvhz_keys" aria-checked="false">
         <div class="se-card-title">Florida Keys (HVHZ)</div>
-        <div class="se-card-sub">Monroe County. 190 mph design wind &mdash; the most stringent zone in the state. Miami-Dade NOA required.</div>
+        <div class="se-card-sub">Monroe County. 190 mph design wind - the most stringent zone in the state. Miami-Dade NOA required.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="palm_beach" aria-checked="false">
         <div class="se-card-title">Palm Beach + Treasure Coast</div>
-        <div class="se-card-sub">Palm Beach, Martin, St. Lucie. HVHZ-adjacent &mdash; impact rated glazing standard via broader-state product approvals.</div>
+        <div class="se-card-sub">Palm Beach, Martin, St. Lucie. HVHZ-adjacent - impact rated glazing standard via broader-state product approvals.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="sw_florida" aria-checked="false">
         <div class="se-card-title">SW Florida (coastal)</div>
@@ -616,7 +616,7 @@
   <section class="se-panel" id="step-6" data-step="6" aria-labelledby="step-6-title">
     <div class="se-step-label">Step 6 of 6 &middot; optional</div>
     <h2 id="step-6-title" class="se-step-title">Glass makeup tier?</h2>
-    <p class="se-step-hint">If you've talked to a designer about a specific tier, pick it. Otherwise leave the default &mdash; the engine picks per region and project type.</p>
+    <p class="se-step-hint">If you've talked to a designer about a specific tier, pick it. Otherwise leave the default - the engine picks per region and project type.</p>
     <div class="se-card-grid" role="radiogroup" aria-label="Glass makeup tier">
       <div class="se-card" role="radio" tabindex="0" data-value="auto" aria-checked="true">
         <div class="se-card-title">Let the engine pick</div>
@@ -652,8 +652,8 @@
     <div class="se-analyzing-sub">Cross-referencing FL code, system catalog, and ACG bid history.</div>
     <div class="se-analyzing-steps" aria-hidden="true">
       <div data-step="0">[ scope/inputs ] validated</div>
-      <div data-step="1">[ code/region ] applied &mdash; <span id="an-region">&mdash;</span></div>
-      <div data-step="2">[ system/match ] selected &mdash; <span id="an-system">&mdash;</span></div>
+      <div data-step="1">[ code/region ] applied - <span id="an-region"> - </span></div>
+      <div data-step="2">[ system/match ] selected - <span id="an-system"> - </span></div>
       <div data-step="3">[ pricing/range ] calculated</div>
       <div data-step="4">[ timeline/phases ] built</div>
       <div data-step="5">[ ready ] rendering report</div>
@@ -666,7 +666,7 @@
   <div class="se-container">
 
     <div class="se-print-header" aria-hidden="false">
-      <h2>ACG Scope Intelligence Engine &mdash; Scope Report</h2>
+      <h2>ACG Scope Intelligence Engine - Scope Report</h2>
       <div class="meta" id="print-meta"></div>
     </div>
 
@@ -677,9 +677,9 @@
     <!-- HEADLINE -->
     <div class="se-headline-card">
       <div class="se-headline-range" id="headline-range" style="font-size:clamp(26px,4vw,40px);">Recommended scope &amp; system</div>
-      <div class="se-headline-psf"><span id="headline-sf">&mdash;</span> SF system area (estimated)</div>
+      <div class="se-headline-psf"><span id="headline-sf"> - </span> SF system area (estimated)</div>
       <div class="se-confidence" id="confidence-badge" role="status">&nbsp;</div>
-      <div class="se-disclaimer-short">This engine returns a recommended system, glass make-up, code requirements, and a realistic timeline. It does not generate pricing. For an itemized bid, ACG reviews plans, elevations, and the scope &mdash; <a href="#capture" style="color:var(--se-accent);">request one below</a>.</div>
+      <div class="se-disclaimer-short">This engine returns a recommended system, glass make-up, code requirements, and a realistic timeline. It does not generate pricing. For an itemized bid, ACG reviews plans, elevations, and the scope - <a href="#capture" style="color:var(--se-accent);">request one below</a>.</div>
       <div class="se-refine" id="refine-chips" aria-label="Refine scope"></div>
     </div>
 
@@ -687,8 +687,8 @@
     <div class="se-section" aria-labelledby="rec-h">
       <h2 id="rec-h">Recommended system</h2>
       <div class="se-section-sub">What ACG would put on this scope based on what you told us.</div>
-      <div class="se-system-name" id="system-name">&mdash;</div>
-      <div class="se-why"><span class="se-why-label">Why this system</span><span id="system-why">&mdash;</span></div>
+      <div class="se-system-name" id="system-name"> - </div>
+      <div class="se-why"><span class="se-why-label">Why this system</span><span id="system-why"> - </span></div>
       <div class="se-spec-row" id="system-specs"></div>
     </div>
 
@@ -712,7 +712,7 @@
     <div class="se-capture" id="capture">
       <div class="se-capture-label">Get your branded PDF scope report</div>
       <h2>Email this full breakdown to your team.</h2>
-      <p class="se-capture-sub">We'll send you a printable PDF version + a copy lands with our estimating team for follow-up. No phone tag, no spam &mdash; just a clean record of what you scoped + a real human on standby.</p>
+      <p class="se-capture-sub">We'll send you a printable PDF version + a copy lands with our estimating team for follow-up. No phone tag, no spam - just a clean record of what you scoped + a real human on standby.</p>
 
       <form id="lead-form" novalidate>
         <!-- honeypot -->
@@ -758,7 +758,7 @@
       </form>
 
       <div style="margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);">
-        <div style="font-size:12px;color:var(--se-text-muted);letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:14px;">Or skip the form &mdash;</div>
+        <div style="font-size:12px;color:var(--se-text-muted);letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:14px;">Or skip the form - </div>
         <div class="se-cta-row">
           <a href="/send-plans.html" class="se-cta se-cta-ghost" id="cta-send-plans">Send us your plans &rarr;</a>
           <a href="tel:+17724867711" class="se-cta se-cta-ghost" id="cta-call">Call Connor &middot; (772) 486-7711</a>
@@ -769,13 +769,13 @@
     <!-- ASSUMPTIONS -->
     <div class="se-section" aria-labelledby="asm-h">
       <h2 id="asm-h">Assumptions behind this number</h2>
-      <div class="se-section-sub">What this estimate includes &mdash; and what it doesn't.</div>
+      <div class="se-section-sub">What this estimate includes - and what it doesn't.</div>
       <ul class="se-assumptions" id="assumptions-list"></ul>
     </div>
 
     <!-- LONG DISCLAIMER -->
     <div class="se-disclaimer">
-      <strong style="color:var(--se-text);">Full disclaimer.</strong> The ACG Scope Intelligence Engine returns a recommended system, glass make-up, code requirements, and a realistic timeline based on the inputs you provide, ACG's recent Florida project history, and current Florida Building Code. It does not generate pricing. It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter, and ACG returns line-item pricing on that basis. Multi-slide and folding-door systems are sized per unit or linear foot &mdash; send a real takeoff for that scope. Calibrated against ACG's project history as of 2026 and Florida Building Code 8th Edition (2023). Reach out at (772) 486-7711 or <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> for a bid.
+      <strong style="color:var(--se-text);">Full disclaimer.</strong> The ACG Scope Intelligence Engine returns a recommended system, glass make-up, code requirements, and a realistic timeline based on the inputs you provide, ACG's recent Florida project history, and current Florida Building Code. It does not generate pricing. It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter, and ACG returns line-item pricing on that basis. Multi-slide and folding-door systems are sized per unit or linear foot - send a real takeoff for that scope. Calibrated against ACG's project history as of 2026 and Florida Building Code 8th Edition (2023). Reach out at (772) 486-7711 or <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> for a bid.
     </div>
 
   </div>
@@ -872,6 +872,7 @@
       <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
       <div class="footer-bottom">
         <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578</span>
+        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
         <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
       </div>
     </div>
@@ -879,7 +880,7 @@
 
 <script>
 /* ============================================================================
-   ACG_CONFIG — SINGLE SOURCE OF TRUTH FOR PRICING.
+   ACG_CONFIG - SINGLE SOURCE OF TRUTH FOR PRICING.
    Update from your last 20-30 actual bids per system. Comments document
    each factor's real-world basis. Everything downstream reads from here.
    ============================================================================ */
@@ -888,7 +889,7 @@ const ACG_CONFIG = {
   subject_prefix: '[ACG LEAD]',
   page_url: 'https://acglass.com/scope-engine.html',
 
-  // -------- SYSTEM KEYS (pricing intentionally removed — ACG bids itemize cost) ----------
+  // -------- SYSTEM KEYS (pricing intentionally removed - ACG bids itemize cost) ----------
   basePsf: {
     interior:               { low: 0, high: 0 }, // partitions, demountable, mirror
     storefront:             { low: 0, high: 0 }, // low-rise thermally broken alum, impact-capable
@@ -910,12 +911,12 @@ const ACG_CONFIG = {
                         { key: 'ASCE 7', val: 'ASCE 7-22 wind-load methodology, V = 175 mph design' },
                         { key: 'FS 553.842', val: 'Florida Statewide Product Approval where NOA not used' }] },
     hvhz_keys:      { mult: { low: 1.18, high: 1.30 }, hvhz: true,  wbd: true,  designWind: '190 mph',
-                      label: 'Florida Keys (Monroe Co.) — HVHZ + highest wind',
+                      label: 'Florida Keys (Monroe Co.) - HVHZ + highest wind',
                       codes: [
                         { key: 'FBC 8th Ed', val: 'Florida Building Code (2023), HVHZ chapters' },
                         { key: 'TAS', val: 'TAS 201, 202, 203 with island-tier engineering' },
                         { key: 'NOA', val: 'Miami-Dade NOA required; some assemblies need wind upgrades' },
-                        { key: 'ASCE 7', val: 'ASCE 7-22, V = 190 mph design — strictest in FL' }] },
+                        { key: 'ASCE 7', val: 'ASCE 7-22, V = 190 mph design - strictest in FL' }] },
     palm_beach:     { mult: { low: 1.05, high: 1.12 }, hvhz: false, wbd: true,  designWind: '165-170 mph',
                       label: 'Palm Beach + Treasure Coast (HVHZ-adjacent)',
                       codes: [
@@ -953,10 +954,10 @@ const ACG_CONFIG = {
                         { key: 'Wind', val: 'ASCE 7-22, V = 140-160 mph. WBD region for coastal Panhandle.' },
                         { key: 'Approvals', val: 'FL Statewide Product Approval' }] },
     nashville_tn:   { mult: { low: 0.95, high: 1.05 }, hvhz: false, wbd: false, designWind: '115 mph',
-                      label: 'Nashville, TN — ACG office opens Q3 2026',
+                      label: 'Nashville, TN - ACG office opens Q3 2026',
                       codes: [
                         { key: 'IBC', val: 'International Building Code 2018 (TN amendments)' },
-                        { key: 'Energy', val: 'IECC Climate Zone 4A — moderate humid, freeze-thaw considerations' },
+                        { key: 'Energy', val: 'IECC Climate Zone 4A - moderate humid, freeze-thaw considerations' },
                         { key: 'Wind', val: 'ASCE 7-16, V = 115 mph basic design wind' }] }},
 
   // -------- REQUIREMENT MULTIPLIERS ---------
@@ -1015,7 +1016,7 @@ const ACG_CONFIG = {
     interior:     0.40, // floor SF here counts interior partition deployment
     industrial:   0.10},
 
-  // -------- AVG SF PER OPENING (used by 'openings' method — fixes the bug) ---------
+  // -------- AVG SF PER OPENING (used by 'openings' method - fixes the bug) ---------
   avgSfPerOpening: {
     storefront:   60,   // ~5x12 typical storefront opening
     office:       40,   // punched office window
@@ -1048,7 +1049,7 @@ const ACG_CONFIG = {
       uvalue: '0.40 - 0.55', shgc: '0.25 - 0.40',
       framing: 'Aluminum or vinyl impact-rated frames with NOA',
       glass: 'Laminated impact glass with SGP or PVB interlayer',
-      maxOpening: 'Per NOA — typically 6-8 ft wide depending on system'},
+      maxOpening: 'Per NOA - typically 6-8 ft wide depending on system'},
     window_wall: {
       name: 'Window wall (slab-to-slab framing)',
       manufacturers: 'ESWindows ES-7000 / GW-7000, custom-engineered thermally-broken aluminum systems.',
@@ -1069,7 +1070,7 @@ const ACG_CONFIG = {
       uvalue: '0.32 - 0.45', shgc: '0.18 - 0.32',
       framing: 'Shop-fabricated unitized panels, stack-joint design',
       glass: '1" laminated impact IGU (HVHZ), spandrel zones',
-      maxOpening: '8 stories and up — standard high-rise envelope'},
+      maxOpening: '8 stories and up - standard high-rise envelope'},
     multislide_eurowall: {
       name: 'Multi-slide / folding glass wall',
       manufacturers: 'Euro-Wall folding + multi-slide, NanaWall, Western Window Systems for large openings.',
@@ -1145,7 +1146,7 @@ function recommendSystem() {
   // Interior overrides everything
   if (pt === 'interior') return 'interior';
 
-  // Hospitality: storefront unless they signaled multi-slide via requirement (we don't currently capture that — keep storefront default)
+  // Hospitality: storefront unless they signaled multi-slide via requirement (we don't currently capture that - keep storefront default)
   if (pt === 'hospitality') return 'storefront';
 
   // High-rise: unitized curtainwall almost always
@@ -1551,7 +1552,7 @@ function renderResults() {
   const ptLabel = state.projectType.replace('_', ' ');
   document.getElementById('result-project-label').textContent = `${ptLabel} · ${ACG_CONFIG.height[state.height].label.toLowerCase()} · ${loc.label}`;
 
-  // Headline now shows scope/system summary only — no pricing.
+  // Headline now shows scope/system summary only - no pricing.
   document.getElementById('headline-sf').textContent = fmtSF(state.computedSystemSF);
 
   // Confidence badge intentionally left blank (pricing not shown).
@@ -1577,9 +1578,9 @@ function renderResults() {
     <div class="se-phase">
       <div class="se-phase-num">Phase ${i+1}</div>
       <div class="se-phase-name">${p.name}</div>
-      <div class="se-phase-weeks"><strong>${p.weeks[0]} – ${p.weeks[1]}</strong> weeks</div>
+      <div class="se-phase-weeks"><strong>${p.weeks[0]} - ${p.weeks[1]}</strong> weeks</div>
     </div>`).join('');
-  document.getElementById('timeline-total').innerHTML = `Total schedule: <strong>${t.totalLow} – ${t.totalHigh} weeks</strong> from contract award to final punch.`;
+  document.getElementById('timeline-total').innerHTML = `Total schedule: <strong>${t.totalLow} - ${t.totalHigh} weeks</strong> from contract award to final punch.`;
   if (t.riskNote) {
     const rn = document.getElementById('timeline-risk');
     rn.textContent = t.riskNote;
@@ -1630,7 +1631,7 @@ function renderAssumptions() {
     `${ACG_CONFIG.height[state.height].label} project conditions noted.`,
     `Scope basis: framing, glass, and sealants within the glazing scope, with a standard install approach.`,
     `Items outside this scope (GC overhead/profit, blocking/backer, perimeter sealants outside glazing, special inspection, accelerated schedule) are addressed in ACG's itemized bid.`,
-    state.recommendedSystem === 'multislide_eurowall' ? 'Multi-slide/folding doors are sized per unit or linear foot — send a real takeoff for this scope.' : '',
+    state.recommendedSystem === 'multislide_eurowall' ? 'Multi-slide/folding doors are sized per unit or linear foot - send a real takeoff for this scope.' : '',
     state.requirements.length ? `Selected requirements applied: ${state.requirements.map(r => ACG_CONFIG.requirements[r].label).join(', ')}.` : ''].filter(Boolean);
   document.getElementById('assumptions-list').innerHTML = items.map(i => `<li>${i}</li>`).join('');
 }
@@ -1659,7 +1660,7 @@ function renderRefineChips() {
   });
 }
 
-// Animate headline number from 0 to final low–high range
+// Animate headline number from 0 to final low-high range
 function animateHeadline(el, low, high, finalText) {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = finalText; return; }
   const start = performance.now();
@@ -1669,7 +1670,7 @@ function animateHeadline(el, low, high, finalText) {
     const ease = 1 - Math.pow(1 - t, 3);
     const a = Math.round(low * ease);
     const b = Math.round(high * ease);
-    el.textContent = fmtCost(a) + ' — ' + fmtCost(b);
+    el.textContent = fmtCost(a) + ' - ' + fmtCost(b);
     if (t < 1) requestAnimationFrame(step);
     else el.textContent = finalText;
   }
@@ -1679,15 +1680,15 @@ function animateHeadline(el, low, high, finalText) {
 
 
 /* ============================================================================
-   BRANDED PDF GENERATOR — jsPDF, runs in browser, no server needed.
+   BRANDED PDF GENERATOR - jsPDF, runs in browser, no server needed.
    Multi-page A4 portrait layout: Cover · System · Timeline + Code · Assumptions
    Triggered on successful lead form submit. Auto-downloads.
    ============================================================================ */
 
-// ACG mark — base64-encoded PNG (200x200, navy). Embedded to avoid network call.
+// ACG mark - base64-encoded PNG (200x200, navy). Embedded to avoid network call.
 const ACG_LOGO_B64 = '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';
 
-// returnAs: 'download' (default — triggers save) | 'blob' (returns the PDF Blob for attaching to FormData)
+// returnAs: 'download' (default - triggers save) | 'blob' (returns the PDF Blob for attaching to FormData)
 function generateBrandedPDF(returnAs) {
   if (!window.jspdf || !window.jspdf.jsPDF) {
     console.warn('jsPDF not loaded yet');
@@ -1700,7 +1701,7 @@ function generateBrandedPDF(returnAs) {
   const NAVY = [14, 40, 79];          // #0e284f
   const NAVY_DEEP = [5, 10, 18];      // #050A12
   const RED  = [225, 19, 32];          // #e11320
-  const SAND = [245, 241, 234];        // #f5f1ea  (NOT lifestyle wording — this is the brand cream from the site)
+  const SAND = [245, 241, 234];        // #f5f1ea  (NOT lifestyle wording - this is the brand cream from the site)
   const INK  = [17, 17, 17];           // body text
   const INK_MID = [86, 96, 110];       // muted text
   const WHITE = [255, 255, 255];
@@ -1755,7 +1756,7 @@ function generateBrandedPDF(returnAs) {
   }
 
   /* =====================================================================
-     PAGE 1 — COVER
+     PAGE 1 - COVER
      ===================================================================== */
   // Top half: navy block
   setFill(NAVY);
@@ -1827,7 +1828,7 @@ function generateBrandedPDF(returnAs) {
     }
   };
   drawMeta(0, 'Recommended system', sys.name.split(' ').slice(0,3).join(' '), sys.name.split(' ').slice(3).join(' '));
-  drawMeta(1, 'Schedule', `${t.totalLow}–${t.totalHigh} weeks`, 'contract → punch');
+  drawMeta(1, 'Schedule', `${t.totalLow}-${t.totalHigh} weeks`, 'contract → punch');
   drawMeta(2, 'Glass makeup', ACG_CONFIG.glassMakeup[c.makeupUsed].label, '');
 
   // Report ID bottom
@@ -1843,7 +1844,7 @@ function generateBrandedPDF(returnAs) {
   doc.text('(772) 486-7711   ·   connor@acglass.com   ·   acglass.com/send-plans', M, H - 18);
 
   /* =====================================================================
-     PAGE 2 — SYSTEM + SPEC
+     PAGE 2 - SYSTEM + SPEC
      ===================================================================== */
   doc.addPage();
   // Top eyebrow strip
@@ -1907,7 +1908,7 @@ function generateBrandedPDF(returnAs) {
   drawFooter(2, 4);
 
   /* =====================================================================
-     PAGE 3 — TIMELINE + CODE
+     PAGE 3 - TIMELINE + CODE
      ===================================================================== */
   doc.addPage();
   setFill(NAVY);
@@ -1921,7 +1922,7 @@ function generateBrandedPDF(returnAs) {
   y += 28;
   fH(20, 'bold');
   setText(NAVY);
-  doc.text(`${t.totalLow}–${t.totalHigh} weeks`, M, y);
+  doc.text(`${t.totalLow}-${t.totalHigh} weeks`, M, y);
   fH(11, 'normal');
   setText(INK_MID);
   doc.text('contract award to final punch', M + 130, y);
@@ -1940,7 +1941,7 @@ function generateBrandedPDF(returnAs) {
     doc.text(p.name, M + 70, y + 10);
     fJB(11, 'bold');
     setText(INK);
-    doc.text(`${p.weeks[0]}–${p.weeks[1]} wks`, W - M, y + 10, { align: 'right' });
+    doc.text(`${p.weeks[0]}-${p.weeks[1]} wks`, W - M, y + 10, { align: 'right' });
     y += 28;
   });
   setStroke(LINE);
@@ -1983,7 +1984,7 @@ function generateBrandedPDF(returnAs) {
   drawFooter(3, 4);
 
   /* =====================================================================
-     PAGE 4 — ASSUMPTIONS · DISCLAIMER · NEXT STEPS
+     PAGE 4 - ASSUMPTIONS · DISCLAIMER · NEXT STEPS
      ===================================================================== */
   doc.addPage();
   setFill(NAVY);
@@ -1997,7 +1998,7 @@ function generateBrandedPDF(returnAs) {
   y += 22;
   fH(13, 'normal');
   setText(INK_MID);
-  doc.text('What this estimate includes — and what it doesn\'t.', M, y);
+  doc.text('What this estimate includes - and what it doesn\'t.', M, y);
   y += 24;
 
   // Assumptions list
@@ -2009,7 +2010,7 @@ function generateBrandedPDF(returnAs) {
     'Installed price, system-SF basis. Includes framing, glass, sealants within scope, standard install.',
     'EXCLUDES: GC overhead/profit, blocking/backer, perimeter sealants outside glazing scope, special inspection fees, bonding above standard rate, off-hours / accelerated schedule premiums.'];
   if (state.recommendedSystem === 'multislide_eurowall') {
-    assumptions.push('Multi-slide/folding doors are normally priced per unit or linear foot — the SF-basis here is rough. Get a real takeoff for this scope.');
+    assumptions.push('Multi-slide/folding doors are normally priced per unit or linear foot - the SF-basis here is rough. Get a real takeoff for this scope.');
   }
   if (state.requirements.length) {
     assumptions.push('Selected requirements applied: ' + state.requirements.map(r => ACG_CONFIG.requirements[r].label).join(', ') + '.');
@@ -2050,7 +2051,7 @@ function generateBrandedPDF(returnAs) {
   doc.text('Convert this estimate to a real bid.', M + 14, y + 50);
   fH(10, 'normal');
   setText([200, 210, 225]);
-  doc.text('Send us your drawings — site walk + sealed scope letter back to you in 48 hours.', M + 14, y + 68, { maxWidth: W - M*2 - 28 });
+  doc.text('Send us your drawings - site walk + sealed scope letter back to you in 48 hours.', M + 14, y + 68, { maxWidth: W - M*2 - 28 });
   fJB(9, 'bold');
   setText(WHITE);
   doc.text('CALL  ', M + 14, y + 100, { charSpace: 0.8 });
@@ -2073,7 +2074,7 @@ function generateBrandedPDF(returnAs) {
 }
 
 /* ============================================================================
-   LEAD CAPTURE — SUBMIT TO formsubmit.co
+   LEAD CAPTURE - SUBMIT TO formsubmit.co
    ============================================================================ */
 function prefillLeadForm() {
   // Optional: pull from URL params if present (not common path here, but safe)
@@ -2093,7 +2094,7 @@ function buildLeadPayload() {
   const c = state.cost;
 
   // formsubmit metadata
-  data.append('_subject', `${ACG_CONFIG.subject_prefix} New scope-engine lead — ${state.projectType} · ${ACG_CONFIG.location[state.location].label.split('(')[0].trim()}`);
+  data.append('_subject', `${ACG_CONFIG.subject_prefix} New scope-engine lead - ${state.projectType} · ${ACG_CONFIG.location[state.location].label.split('(')[0].trim()}`);
   data.append('_template', 'basic');
   data.append('_captcha', 'false');
 
@@ -2146,7 +2147,7 @@ function buildLeadPayload() {
   // Honeypot pass-through
   data.append('_gotcha', document.querySelector('input[name="_gotcha"]').value);
 
-  // Autoresponse to visitor — formsubmit-compatible field
+  // Autoresponse to visitor - formsubmit-compatible field
   data.append('_autoresponse', buildAutoresponse(name));
 
   return data;
@@ -2165,7 +2166,7 @@ ${ACG_CONFIG.location[state.location].label}
 ${fmtSF(state.computedSystemSF)} SF system area · ${ACG_CONFIG.glassMakeup[c.makeupUsed].label}
 
 Recommended system: ${ACG_CONFIG.systems[state.recommendedSystem].name}
-Schedule: ${state.timeline.totalLow}–${state.timeline.totalHigh} weeks from award to punch.
+Schedule: ${state.timeline.totalLow}-${state.timeline.totalHigh} weeks from award to punch.
 
 A branded PDF of the full report is attached to this email, and it also
 downloaded to your device when you submitted the form. If you can't find
@@ -2174,7 +2175,7 @@ it, just reply and we'll resend it.
 For a real bid on plans, reply to this email or call (772) 486-7711.
 For faster turnaround, send drawings via: ${ACG_CONFIG.page_url.replace('/scope-engine.html','/send-plans.html')}
 
-— Connor Walsh, President
+- Connor Walsh, President
 American Commercial Glass | FL CGC #1531993`;
 }
 
@@ -2189,10 +2190,10 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   const submit = document.getElementById('lf-submit');
 
   // Shared failure handler: re-enable the button, keep inputs, tell the visitor how to reach us.
-  // Their numbers are never lost — they can just resend.
+  // Their numbers are never lost - they can just resend.
   const FALLBACK = '⚠ We couldn\'t deliver that automatically. Please email '
     + '<a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a> '
-    + 'or call (772) 486-7711 — your details are safe, just resend.';
+    + 'or call (772) 486-7711 - your details are safe, just resend.';
   const fail = (msg) => {
     status.className = 'se-form-status err';
     status.innerHTML = msg;
@@ -2214,7 +2215,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   // Email sanity
   const emailVal = document.getElementById('lf-email').value.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
-    fail('⚠ That email looks off — double-check it?');
+    fail('⚠ That email looks off - double-check it?');
     document.getElementById('lf-email').focus();
     return;
   }
@@ -2224,7 +2225,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   status.className = 'se-form-status';
   status.textContent = 'Sending…';
 
-  // Build the branded PDF (best-effort — never blocks the lead). It's attached to the POST,
+  // Build the branded PDF (best-effort - never blocks the lead). It's attached to the POST,
   // and the ACG scope-engine Worker emails it to both ACG and the visitor (Resend). We also
   // trigger a local download below so the visitor has the file immediately.
   let pdfBlob = null;
@@ -2245,7 +2246,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   const timer = setTimeout(() => controller.abort(), 15000);
 
   try {
-    // buildLeadPayload() dereferences ACG_CONFIG/state — keep it INSIDE the try so a bad
+    // buildLeadPayload() dereferences ACG_CONFIG/state - keep it INSIDE the try so a bad
     // state shows the fallback instead of a silent uncaught throw that freezes the UI.
     const payload = buildLeadPayload();
 
@@ -2256,7 +2257,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
       signal: controller.signal });
     clearTimeout(timer);
 
-    // formsubmit ALWAYS returns HTTP 200 — the real result is in the JSON body's `success`.
+    // formsubmit ALWAYS returns HTTP 200 - the real result is in the JSON body's `success`.
     let data = {};
     try { data = await r.json(); } catch (_) {}
 
@@ -2278,7 +2279,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         document.body.appendChild(a); a.click();
         setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
         ga('scope_pdf_generated', { filename: pdfFilename });
-        status.innerHTML = '✓ Got it — your branded report was just emailed to you AND downloaded here as <strong>' + pdfFilename + '</strong>. Our estimating team has your scope + PDF too, and will reach out within 48 hours.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
+        status.innerHTML = '✓ Got it - your branded report was just emailed to you AND downloaded here as <strong>' + pdfFilename + '</strong>. Our estimating team has your scope + PDF too, and will reach out within 48 hours.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
         setTimeout(() => {
           const rb = document.getElementById('redownload-pdf-btn');
           if (rb) rb.addEventListener('click', () => {
@@ -2294,8 +2295,8 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
           });
         }, 50);
       } else {
-        // PDF generation failed earlier — graceful fallback to browser print
-        status.innerHTML = '✓ Got it — your report is on its way to your inbox, and our estimating team has your scope. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
+        // PDF generation failed earlier - graceful fallback to browser print
+        status.innerHTML = '✓ Got it - your report is on its way to your inbox, and our estimating team has your scope. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
         setTimeout(() => {
           const pb = document.getElementById('print-pdf-btn');
           if (pb) pb.addEventListener('click', () => { ga('scope_pdf_print'); window.print(); });
@@ -2315,7 +2316,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
 });
 
 /* ============================================================================
-   SEND PLANS LINK — carry scope data via URL params
+   SEND PLANS LINK - carry scope data via URL params
    ============================================================================ */
 function buildSendPlansHref() {
   const c = state.cost || {};

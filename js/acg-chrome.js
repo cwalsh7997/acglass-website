@@ -1,4 +1,4 @@
-/* ACG unified header behavior — scroll state + mobile menu toggle.
+/* ACG unified header behavior - scroll state + mobile menu toggle.
    Self-contained; safe to load alongside legacy js/main.js. */
 (function () {
   var hd = document.querySelector('.hd');

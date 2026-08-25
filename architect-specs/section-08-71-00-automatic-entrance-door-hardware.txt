@@ -1,4 +1,4 @@
-SECTION 08 71 00 — AUTOMATIC ENTRANCE DOOR HARDWARE
+SECTION 08 71 00 - AUTOMATIC ENTRANCE DOOR HARDWARE
 American Commercial Glass | acglass.com | FL CGC #1531993
 Last updated: 2026-05-09
 ======================================================================
@@ -9,11 +9,11 @@ PART 1 GENERAL
 A. Section includes automatic operators, panic exit devices, locks, hinges, closers, and other commercial entrance hardware.
 
 1.2 REFERENCES
-A. ANSI / BHMA A156.4 — Door Closers.
-B. ANSI / BHMA A156.10 — Power Operated Pedestrian Doors.
-C. ANSI / BHMA A156.19 — Low-Energy Power Operated Doors.
-D. NFPA 80 — Standard for Fire Doors.
-E. NFPA 101 — Life Safety Code.
+A. ANSI / BHMA A156.4 - Door Closers.
+B. ANSI / BHMA A156.10 - Power Operated Pedestrian Doors.
+C. ANSI / BHMA A156.19 - Low-Energy Power Operated Doors.
+D. NFPA 80 - Standard for Fire Doors.
+E. NFPA 101 - Life Safety Code.
 F. ADA Standards for Accessible Design (2010 / FBC Accessibility Code).
 
 1.3 PERFORMANCE REQUIREMENTS
@@ -26,8 +26,8 @@ A. Hardware Schedule, Cut Sheets, Wiring Diagrams (where applicable), Keying Sch
 PART 2 PRODUCTS
 
 2.1 MANUFACTURERS
-A. Allegion (LCN closers, Von Duprin panic devices, Schlage locks) — basis of design.
-B. ASSA ABLOY (Sargent, Norton, Yale, Securitron) — equivalent.
+A. Allegion (LCN closers, Von Duprin panic devices, Schlage locks) - basis of design.
+B. ASSA ABLOY (Sargent, Norton, Yale, Securitron) - equivalent.
 C. Other manufacturers approved by Architect prior to bid.
 
 2.2 AUTOMATIC OPERATORS

@@ -1,10 +1,10 @@
-/* ACG conversion tracking — standalone, no UI side effects.
+/* ACG conversion tracking - standalone, no UI side effects.
  *
  * Why this file exists: js/main.js carries the GA4 conversion events AND the
  * custom cursor, nav-scroll, mobile nav and sticky CTA bar. Adding main.js to a
  * page that was not built for it changes how the page looks and behaves. As of
  * 2026-07-29, 731 of 1,504 indexable pages had no conversion tracking at all
- * because of that coupling — roughly half the site could not report a lead,
+ * because of that coupling - roughly half the site could not report a lead,
  * which is the site's north-star metric.
  *
  * This file is the tracking half only. It is safe on every page.
@@ -12,7 +12,7 @@
  * Loaded on pages that do NOT load main.js. The two sets are disjoint, so no
  * event double-fires; the guard below makes that true even if they ever overlap.
  *
- * Follow-up (not done here — it would touch 773 working pages for no
+ * Follow-up (not done here - it would touch 773 working pages for no
  * measurement gain): delete the GA4 block from main.js and load this file
  * everywhere, so the event definitions live in exactly one place.
  */

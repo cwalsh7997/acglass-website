@@ -102,16 +102,30 @@ class DeliveryClaimTests(unittest.TestCase):
             1,
         )
 
-    def test_exact_projects_claim_is_held_by_context_fingerprint(self):
+    def test_projects_page_is_clean_without_any_held_exception(self):
+        # The 2026-08 compliance scrub removed the Tennessee delivery claim from
+        # projects/index.html at source, so the page passes on its own merits and
+        # HELD_DELIVERY_CLAIMS is empty. This is strictly stronger than the old
+        # fingerprint hold it replaces: there is no exception left to drift.
         root = SCRIPTS_DIR.parents[1]
         source = (root / "projects/index.html").read_text(encoding="utf-8")
         self.assertEqual(violations(source, "projects/index.html"), [])
+        self.assertEqual(guard.HELD_DELIVERY_CLAIMS, {})
 
-    def test_held_projects_claim_fails_if_context_changes(self):
+    def test_reintroducing_the_projects_claim_is_a_violation(self):
+        # Regression lock: if anyone restores the retired operating claim, the
+        # guard must fail rather than fall back to a held exception.
         root = SCRIPTS_DIR.parents[1]
         source = (root / "projects/index.html").read_text(encoding="utf-8")
-        changed = source.replace("Tennessee from Q3 2026", "Tennessee from Q4 2026")
-        self.assertEqual(len(violations(changed, "projects/index.html")), 1)
+        self.assertNotIn("Tennessee from Q3 2026", source)
+        restored = source.replace(
+            "ACG operates three Florida offices",
+            "ACG operates four offices across two states - serving Florida now, "
+            "Tennessee from Q3 2026. ACG operates three Florida offices",
+            1,
+        )
+        self.assertNotEqual(restored, source)
+        self.assertEqual(len(violations(restored, "projects/index.html")), 1)
 
     def test_missing_held_fingerprint_is_reported(self):
         out = []

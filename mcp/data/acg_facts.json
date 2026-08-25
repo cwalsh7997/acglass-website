@@ -5,7 +5,7 @@
     "source_hierarchy": [
       "1. Connor Walsh explicit confirmation (audit brief 2026-06-22, session continuity)",
       "2. State of Florida public records (CGC license lookup, county property records)",
-      "3. Florida Building Code 8th Edition (2023) — public published code",
+      "3. Florida Building Code 8th Edition (2023) - public published code",
       "4. ASCE 7-22 wind speed maps (public engineering standard)"
     ],
     "verification_policy": "Every field in this file is sourced. Fields requiring Connor verification that have not been confirmed are omitted, not guessed."
@@ -15,7 +15,7 @@
     "dba": "ACG",
     "license_number": "CGC1531993",
     "license_type": "Certified General Contractor",
-    "license_jurisdiction": "Florida (statewide — all 67 counties)",
+    "license_jurisdiction": "Florida (statewide - all 67 counties)",
     "founded": "2021",
     "headquarters_address": "700 S Rosemary Ave, Suite 204, West Palm Beach, FL 33401",
     "primary_phone": "(772) 486-7711",
@@ -33,26 +33,26 @@
       "state": "FL",
       "zip": "33401",
       "phone": "(772) 486-7711",
-      "service_zone": "South Florida — Palm Beach, Broward, Miami-Dade, Martin, St. Lucie, Indian River counties"
+      "service_zone": "South Florida - Palm Beach, Broward, Miami-Dade, Martin, St. Lucie, Indian River counties"
     },
     {
       "label": "Naples",
       "city": "Naples",
       "state": "FL",
-      "service_zone": "Southwest Florida — Collier, Lee, Charlotte, Sarasota counties"
+      "service_zone": "Southwest Florida - Collier, Lee, Charlotte, Sarasota counties"
     },
     {
       "label": "Tampa",
       "address": "3031 N Rocky Point Dr W, Suite 600",
       "city": "Tampa",
       "state": "FL",
-      "service_zone": "Tampa Bay + Central Florida — Hillsborough, Pinellas, Pasco, Polk, Manatee, Hernando counties"
+      "service_zone": "Tampa Bay + Central Florida - Hillsborough, Pinellas, Pasco, Polk, Manatee, Hernando counties"
     },
     {
       "label": "Nashville (opening Q3 2026)",
       "city": "Nashville",
       "state": "TN",
-      "service_zone": "Middle Tennessee — Davidson, Williamson, Rutherford, Wilson, Sumner counties (Q3 2026 onward)",
+      "service_zone": "Middle Tennessee - Davidson, Williamson, Rutherford, Wilson, Sumner counties (Q3 2026 onward)",
       "status": "opening_q3_2026"
     }
   ],
@@ -132,11 +132,11 @@
     { "name": "Rome Collective", "location": "Tampa, FL", "page": "https://acglass.com/projects/rome-collective/" }
   ],
   "florida_county_code": {
-    "_source": "Florida Building Code 8th Edition (2023), Chapter 16 wind loads. Coastal designations per FBC 1609.1.2. HVHZ per FBC 1620 — only Miami-Dade and Broward counties qualify. WBDR per FBC 1609.2.",
+    "_source": "Florida Building Code 8th Edition (2023), Chapter 16 wind loads. Coastal designations per FBC 1609.1.2. HVHZ per FBC 1620 - only Miami-Dade and Broward counties qualify. WBDR per FBC 1609.2.",
     "_disclaimer": "Site-specific design wind speed depends on exposure category (B/C/D), building risk category, and proximity to coast. These are the typical Risk Category II values used for commercial bid estimating. Verify site-specific values with project engineer.",
     "counties": {
-      "Miami-Dade":  {"design_wind_mph_typical": 175, "wbdr": true, "hvhz": true,  "notes": "HVHZ — Miami-Dade and Broward only. Requires Miami-Dade NOA on all glazing."},
-      "Broward":     {"design_wind_mph_typical": 170, "wbdr": true, "hvhz": true,  "notes": "HVHZ — requires Miami-Dade NOA."},
+      "Miami-Dade":  {"design_wind_mph_typical": 175, "wbdr": true, "hvhz": true,  "notes": "HVHZ - Miami-Dade and Broward only. Requires Miami-Dade NOA on all glazing."},
+      "Broward":     {"design_wind_mph_typical": 170, "wbdr": true, "hvhz": true,  "notes": "HVHZ - requires Miami-Dade NOA."},
       "Palm Beach":  {"design_wind_mph_typical": 170, "wbdr": true, "hvhz": false, "notes": "WBDR; Florida Product Approval impact required on coastal exposure."},
       "Martin":      {"design_wind_mph_typical": 165, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
       "St. Lucie":   {"design_wind_mph_typical": 160, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
@@ -153,7 +153,7 @@
       "Charlotte":   {"design_wind_mph_typical": 155, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
       "Sarasota":    {"design_wind_mph_typical": 150, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
       "Manatee":     {"design_wind_mph_typical": 150, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
-      "Pinellas":    {"design_wind_mph_typical": 150, "wbdr": true, "hvhz": false, "notes": "WBDR coastal — high population density."},
+      "Pinellas":    {"design_wind_mph_typical": 150, "wbdr": true, "hvhz": false, "notes": "WBDR coastal - high population density."},
       "Hillsborough":{"design_wind_mph_typical": 145, "wbdr": true, "hvhz": false, "notes": "WBDR; mixed coastal/inland."},
       "Pasco":       {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
       "Hernando":    {"design_wind_mph_typical": 135, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
@@ -163,12 +163,12 @@
       "Taylor":      {"design_wind_mph_typical": 130, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
       "Wakulla":     {"design_wind_mph_typical": 135, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
       "Franklin":    {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal."},
-      "Gulf":        {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal — Hurricane Michael (2018) impact zone."},
-      "Bay":         {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal — Hurricane Michael (2018) Cat 5 landfall."},
-      "Walton":      {"design_wind_mph_typical": 135, "wbdr": true, "hvhz": false, "notes": "WBDR coastal — 30A corridor."},
+      "Gulf":        {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal - Hurricane Michael (2018) impact zone."},
+      "Bay":         {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal - Hurricane Michael (2018) Cat 5 landfall."},
+      "Walton":      {"design_wind_mph_typical": 135, "wbdr": true, "hvhz": false, "notes": "WBDR coastal - 30A corridor."},
       "Okaloosa":    {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal (Destin, Fort Walton Beach)."},
       "Santa Rosa":  {"design_wind_mph_typical": 140, "wbdr": true, "hvhz": false, "notes": "WBDR coastal (Navarre, Gulf Breeze)."},
-      "Escambia":    {"design_wind_mph_typical": 150, "wbdr": true, "hvhz": false, "notes": "WBDR coastal (Pensacola) — Hurricane Ivan (2004) impact zone."},
+      "Escambia":    {"design_wind_mph_typical": 150, "wbdr": true, "hvhz": false, "notes": "WBDR coastal (Pensacola) - Hurricane Ivan (2004) impact zone."},
       "Orange":      {"design_wind_mph_typical": 130, "wbdr": false,"hvhz": false, "notes": "Interior; impact glazing not code-required."},
       "Seminole":    {"design_wind_mph_typical": 130, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Osceola":     {"design_wind_mph_typical": 130, "wbdr": false,"hvhz": false, "notes": "Interior."},
@@ -181,7 +181,7 @@
       "DeSoto":      {"design_wind_mph_typical": 140, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Sumter":      {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Marion":      {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
-      "Alachua":     {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior — Gainesville."},
+      "Alachua":     {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior - Gainesville."},
       "Putnam":      {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Clay":        {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Baker":       {"design_wind_mph_typical": 120, "wbdr": false,"hvhz": false, "notes": "Interior."},
@@ -194,7 +194,7 @@
       "Gilchrist":   {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Madison":     {"design_wind_mph_typical": 120, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Jefferson":   {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
-      "Leon":        {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior — Tallahassee, state capitol."},
+      "Leon":        {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior - Tallahassee, state capitol."},
       "Gadsden":     {"design_wind_mph_typical": 120, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Liberty":     {"design_wind_mph_typical": 125, "wbdr": false,"hvhz": false, "notes": "Interior."},
       "Calhoun":     {"design_wind_mph_typical": 130, "wbdr": false,"hvhz": false, "notes": "Interior."},

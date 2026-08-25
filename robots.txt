@@ -11,12 +11,12 @@
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
-# Internal admin & dealer-only views — no value to crawlers, contain no public content.
+# Internal admin & dealer-only views - no value to crawlers, contain no public content.
 Disallow: /dealer/admin.html
 Disallow: /dealer/thanks.html
 
 # ------------------------------------------------------------------------
-# AI Answer Engine Crawlers — Explicitly Permitted
+# AI Answer Engine Crawlers - Explicitly Permitted
 # ACG content is intended to be discoverable and citable by AI engines.
 # ------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-# Common Crawl (feeds many AI training sets — allowed so ACG facts reach model training)
+# Common Crawl (feeds many AI training sets - allowed so ACG facts reach model training)
 User-agent: CCBot
 Allow: /
 

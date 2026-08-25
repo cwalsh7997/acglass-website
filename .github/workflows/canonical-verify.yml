@@ -5,7 +5,7 @@ name: Canonical Verify
 # Static only: this job checks declared INTENT against files on disk. It cannot
 # check deployed routing, because redirects execute at the Cloudflare edge and
 # GitHub Pages never reads vercel.json. The --live mode that does check the edge
-# is deliberately NOT wired in here — it needs network access and it would fail
+# is deliberately NOT wired in here - it needs network access and it would fail
 # on edge changes unrelated to the commit under test. Run it by hand from the
 # Cloudflare runbook instead.
 

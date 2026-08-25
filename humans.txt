@@ -17,7 +17,7 @@
   ESWindows · Euro-Wall · PGT · Allegion · TGP · Slimpact
 
 /* SITE */
-  Build: Static HTML / CSS / JS — hosted on GitHub Pages
+  Build: Static HTML / CSS / JS - hosted on GitHub Pages
   Last update: April 2026
   Standards: HTML5, CSS3, ES6, WCAG 2.1 AA
   Design: Editorial · Navy + Cream + Accent Red

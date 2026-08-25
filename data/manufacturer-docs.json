@@ -8,7 +8,7 @@
         "notes": "ESWindows designates this product as 'GW-5250' (not 'ES 5250'). The Series-5250 NOA documents on Miami-Dade use the original '5250' series name. No standalone GW-5250 datasheet PDF was found publicly on eswindows.com (product page is JS-rendered behind Cloudflare). NOA PDFs are hosted on Miami-Dade's server.",
         "documents": [
           {
-            "title": "NOA 18-0404.02 — Series 5250 Aluminum Curtain Wall System (LMI)",
+            "title": "NOA 18-0404.02 - Series 5250 Aluminum Curtain Wall System (LMI)",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/18040402.pdf",
             "year": "2018",
@@ -16,7 +16,7 @@
             "notes": "Miami-Dade NOA for Series 5250 LMI Curtain Wall System. Issued to E.S. Windows, LLC."
           },
           {
-            "title": "NOA 18-0404.03 — Series 5250 Aluminum Curtain Wall System (SMI)",
+            "title": "NOA 18-0404.03 - Series 5250 Aluminum Curtain Wall System (SMI)",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/18040403.pdf",
             "year": "2018",
@@ -24,7 +24,7 @@
             "notes": "Miami-Dade NOA for Series 5250 SMI Curtain Wall System."
           },
           {
-            "title": "NOA 21-0914.03 — ES-8000T Thermally Broken Aluminum Window Wall LMI (most current for 8000T)",
+            "title": "NOA 21-0914.03 - ES-8000T Thermally Broken Aluminum Window Wall LMI (most current for 8000T)",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/21091403.pdf",
             "year": "2021",
@@ -55,7 +55,7 @@
             "notes": "Full installation guide for the ES-7000 unitized window wall system."
           },
           {
-            "title": "NOA 23-0724.09 — ES-7000 Window Wall LMI",
+            "title": "NOA 23-0724.09 - ES-7000 Window Wall LMI",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072409.pdf",
             "year": "2023",
@@ -94,7 +94,7 @@
             "notes": "Full installation guide covering ES-8000 and ES-8000T storefront systems."
           },
           {
-            "title": "NOA 24-0321.07 — ES-8000 Aluminum Window Wall LMI",
+            "title": "NOA 24-0321.07 - ES-8000 Aluminum Window Wall LMI",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/24032107.pdf",
             "year": "2024",
@@ -102,7 +102,7 @@
             "notes": "Miami-Dade NOA for Series 'ES-8000' LMI Window Wall; DP +80/-130 psf; exp. Apr 2028."
           },
           {
-            "title": "NOA 20-1118.02 / REV-1 — ES-8000T Thermally Broken LMI + SMI",
+            "title": "NOA 20-1118.02 / REV-1 - ES-8000T Thermally Broken LMI + SMI",
             "type": "noa",
             "url": "https://eswindows.com/wp-content/uploads/2024/11/NOA_ES-8000T-LMI-SMI_20-1118.02-REV-1.pdf",
             "year": "2021",
@@ -149,7 +149,7 @@
             "notes": "Dedicated inswing installation guide for ES-9000."
           },
           {
-            "title": "NOA 23-0724.12 — ES-9000 French Door LMI (with/without Transom)",
+            "title": "NOA 23-0724.12 - ES-9000 French Door LMI (with/without Transom)",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072412.pdf",
             "year": "2023",
@@ -157,7 +157,7 @@
             "notes": "Miami-Dade NOA for Series '9000' French Door LMI; exp. Dec 2028."
           },
           {
-            "title": "NOA 23-0724.13 — ES-9100 Door SMI",
+            "title": "NOA 23-0724.13 - ES-9100 Door SMI",
             "type": "noa",
             "url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072413.pdf",
             "year": "2023",
@@ -168,8 +168,8 @@
       }
     ],
     "notes": {
-      "cad_revit": "ESWindows CAD/Revit files require a form request at https://residential.eswindows.com/solicitud-archivos-revit-cad-gi/ — not publicly downloadable.",
-      "product_resources_page": "https://eswindows.com/product-resources/ — page is behind Cloudflare bot protection and requires a browser; shows brochure thumbnails for Architectural Guide, Commercial Products, etc. but PDF URLs are dynamically loaded.",
+      "cad_revit": "ESWindows CAD/Revit files require a form request at https://residential.eswindows.com/solicitud-archivos-revit-cad-gi/ - not publicly downloadable.",
+      "product_resources_page": "https://eswindows.com/product-resources/ - page is behind Cloudflare bot protection and requires a browser; shows brochure thumbnails for Architectural Guide, Commercial Products, etc. but PDF URLs are dynamically loaded.",
       "fpa": "Florida Product Approval documents for ESWindows commercial systems are registered under the Florida Building Commission but direct PDF links were not found publicly on eswindows.com. Miami-Dade NOA PDFs (above) serve as the primary approval documents.",
       "commercial_brochure": "The 'Commercial Products' brochure shown on the product resources page is referenced but its direct PDF URL was not discoverable; it likely requires a JS-rendered page session."
     }
@@ -177,7 +177,7 @@
   "eurowall": {
     "systems": [
       {
-        "name": "Vista Fold (Impact Rated — C3)",
+        "name": "Vista Fold (Impact Rated - C3)",
         "category": "Folding Door System",
         "description": "Impact-rated aluminum folding door; HVHZ approved (Miami-Dade); panels up to 144\" tall, 53\" wide; DP up to 100 psf; LMI + SMI; ADA sill option; 10-year warranty; Florida Product Approval FL 27023.",
         "documents": [
@@ -230,7 +230,7 @@
             "notes": "Extrusion cross-section profile sheet for Vista Fold impact-rated series."
           },
           {
-            "title": "Vista Fold™ CSI 3-Part Spec — Folding Doors (08-35-13)",
+            "title": "Vista Fold™ CSI 3-Part Spec - Folding Doors (08-35-13)",
             "type": "spec",
             "url": "https://euro-wall.com/media/f5lpzus3/08-35-13-folding-doors-002.docx",
             "year": "2024",
@@ -246,7 +246,7 @@
             "notes": "Comparison chart showing Vista Fold features vs. competitors."
           },
           {
-            "title": "Muntin / SDL Profile Sheet — 9/16\" Glass",
+            "title": "Muntin / SDL Profile Sheet - 9/16\" Glass",
             "type": "datasheet",
             "url": "https://euro-wall.com/media/wc1jdyeh/muntin_sdl_profile_chart_9_16.pdf",
             "year": "2025",
@@ -254,7 +254,7 @@
             "notes": "Muntin/SDL profile chart for 9/16\" glass option on Vista Fold and related systems."
           },
           {
-            "title": "Muntin / SDL Profile Sheet — 1\" Glass",
+            "title": "Muntin / SDL Profile Sheet - 1\" Glass",
             "type": "datasheet",
             "url": "https://euro-wall.com/media/txvnlywv/muntin_sdl_profile_chart_1_in.pdf",
             "year": "2025",
@@ -273,7 +273,7 @@
       },
       {
         "name": "Vista Fold Thermally Broken (C5)",
-        "category": "Folding Door System — Thermally Broken",
+        "category": "Folding Door System - Thermally Broken",
         "description": "Thermally broken aluminum folding door; impact and non-impact rated; larger panel sizes than standard C3 (up to 168\" tall, 52\" wide); DP up to 100 psf; LMI rated; Florida Product Approval included.",
         "documents": [
           {
@@ -412,7 +412,7 @@
             "notes": "Muntin/SDL profile sheet specific to Vista Multi Slide glass configurations."
           },
           {
-            "title": "CSI 3-Part Spec — Sliding Aluminum Framed Glass Doors (08-32-13)",
+            "title": "CSI 3-Part Spec - Sliding Aluminum Framed Glass Doors (08-32-13)",
             "type": "spec",
             "url": "https://euro-wall.com/media/loyprczq/08-32-13-sliding-aluminum-framed-glass-doors.docx",
             "year": "2024",
@@ -491,7 +491,7 @@
             "notes": "Extrusion cross-section profiles for Vista Pivot components."
           },
           {
-            "title": "FPA — Euro-Pivot Inswing & Outswing Door (Non-HVHZ, Non-Impact)",
+            "title": "FPA - Euro-Pivot Inswing & Outswing Door (Non-HVHZ, Non-Impact)",
             "type": "fpa",
             "url": "https://euro-wall.com/media/zvjiecez/vista-pivot_fpa_non-impact_v1_7232025.pdf",
             "year": "2025",
@@ -499,7 +499,7 @@
             "notes": "Florida Product Approval document for non-impact Vista Pivot; FL#22410; engineering drawings by Hermes F. Norero, P.E."
           },
           {
-            "title": "CSI 3-Part Spec — Aluminum Doors (08-13-16)",
+            "title": "CSI 3-Part Spec - Aluminum Doors (08-13-16)",
             "type": "spec",
             "url": "https://euro-wall.com/media/epvnfq5x/08-13-16-aluminum-doors.docx",
             "year": "2024",
@@ -612,7 +612,7 @@
       },
       {
         "name": "Vista DS (Direct Set Fixed Window)",
-        "category": "Window System — Fixed",
+        "category": "Window System - Fixed",
         "description": "Impact-rated fixed window / direct-set glazing system; HVHZ approved; Florida Product Approval FL 46965; panels from 18\" to 108\" wide, 18\" to 168\" tall; complements all Euro-Wall door systems.",
         "documents": [
           {
@@ -664,7 +664,7 @@
             "notes": "Extrusion cross-section profiles for Vista DS components."
           },
           {
-            "title": "FPA — Vista DS Non-Impact (FL22410-type, Non-HVHZ)",
+            "title": "FPA - Vista DS Non-Impact (FL22410-type, Non-HVHZ)",
             "type": "fpa",
             "url": "https://euro-wall.com/media/pa3prvxm/vista-ds_fpa_non-impact_v1_7232025.pdf",
             "year": "2025",
@@ -672,7 +672,7 @@
             "notes": "Florida Product Approval engineering drawings for Vista DS non-impact version."
           },
           {
-            "title": "FPA — Vista DS Impact HVHZ (FL46965, EWS043)",
+            "title": "FPA - Vista DS Impact HVHZ (FL46965, EWS043)",
             "type": "fpa",
             "url": "https://euro-wall.com/media/mnrbzf14/fl46965_r0_ii_ews043-ss-2024-08-22.pdf",
             "year": "2024",
@@ -680,7 +680,7 @@
             "notes": "Florida Product Approval FL46965 approval document for Vista DS impact system (EWS043)."
           },
           {
-            "title": "FPA — Vista DS Impact HVHZ (FL46965, EWS042)",
+            "title": "FPA - Vista DS Impact HVHZ (FL46965, EWS042)",
             "type": "fpa",
             "url": "https://euro-wall.com/media/4ynjw0o3/fl46965_r0_ii_ews042-ss-2024-08-22.pdf",
             "year": "2024",

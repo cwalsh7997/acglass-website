@@ -1,4 +1,4 @@
-/* ACG 2026 — header, mobile nav, scroll reveals. No dependencies. */
+/* ACG 2026 - header, mobile nav, scroll reveals. No dependencies. */
 (function () {
   'use strict';
   document.documentElement.classList.add('js');
@@ -74,7 +74,7 @@
   });
 })();
 
-/* Magnetic CTAs — subtle pull toward cursor (desktop, fine pointers only) */
+/* Magnetic CTAs - subtle pull toward cursor (desktop, fine pointers only) */
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!window.matchMedia('(pointer: fine)').matches) return;
@@ -91,7 +91,7 @@
   });
 })();
 
-/* V3 — sheet-index rail active state, horizontal strip drag/nav/progress */
+/* V3 - sheet-index rail active state, horizontal strip drag/nav/progress */
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     /* Rail */
