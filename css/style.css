@@ -1,14 +1,14 @@
 /* ============================================
-   AMERICAN COMMERCIAL GLASS — V2 DESIGN SYSTEM
+   AMERICAN COMMERCIAL GLASS - V2 DESIGN SYSTEM
    Next-gen, cinematic, dark-dominant brand experience
    ============================================ */
 
 /* ---------- SELF-HOSTED VARIABLE FONTS (Latin subset, woff2 only) ----------
    Replaces fonts.googleapis.com link + fonts.gstatic.com woff2 fetches.
-   font-display: swap matches the prior Google Fonts behavior — fallback
+   font-display: swap matches the prior Google Fonts behavior - fallback
    text renders immediately, web font swaps in when downloaded. No FOIT.
-   Variable fonts cover all weights in a single file (Inter 100–900,
-   JetBrains Mono 100–800, Playfair Display 400–900 upright + italic).
+   Variable fonts cover all weights in a single file (Inter 100-900,
+   JetBrains Mono 100-800, Playfair Display 400-900 upright + italic).
    ─────────────────────────────────────────────────────────────────── */
 @font-face {
   font-family: 'Inter';
@@ -643,7 +643,7 @@ p {
   .hero-seal { animation: none; }
 }
 @media (max-width: 900px) {
-  /* Hide seal on small screens — hero is too tight; trust signals already in proof-bar below */
+  /* Hide seal on small screens - hero is too tight; trust signals already in proof-bar below */
   .hero-seal-wrap { display: none; }
 }
 
@@ -1498,7 +1498,7 @@ p {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE OVERHAUL — MAX 768px
+   MOBILE RESPONSIVE OVERHAUL - MAX 768px
    ============================================ */
 
 /* ---------- GLOBAL OVERFLOW FIX ---------- */
@@ -1516,7 +1516,7 @@ p {
   }
 
   /* ---------- MARQUEE / TICKER ---------- */
-  /* .marquee already has overflow:hidden — ensure section wrapper doesn't overflow */
+  /* .marquee already has overflow:hidden - ensure section wrapper doesn't overflow */
   .marquee {
     overflow: hidden;
     max-width: 100vw;
@@ -1584,7 +1584,7 @@ p {
     grid-template-columns: 1fr !important;
   }
 
-  /* ---------- BUTTONS — FULL WIDTH ON MOBILE ---------- */
+  /* ---------- BUTTONS - FULL WIDTH ON MOBILE ---------- */
   .hero-actions .btn,
   .cta-section .btn {
     width: 100%;
@@ -1655,7 +1655,7 @@ p {
 
 /* ---------- SMALL MOBILE (max 480px) ---------- */
 @media (max-width: 480px) {
-  /* ---------- STATS ROW — STACK FULLY ---------- */
+  /* ---------- STATS ROW - STACK FULLY ---------- */
   .stats-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -1682,7 +1682,7 @@ p {
 }
 
 /* ---------- NAV MOBILE (max 900px already handled in main nav section) ---------- */
-/* Ensure nav-toggle shows and nav-links work — already in main styles at 900px */
+/* Ensure nav-toggle shows and nav-links work - already in main styles at 900px */
 /* Add extra safety for 768px: */
 @media (max-width: 768px) {
   .nav-toggle {
@@ -2050,7 +2050,7 @@ a[href="eau-palm-beach-resort.html"]:hover img {
 }
 
 /* ============================================
-   PROOF BAR — Homepage credibility strip
+   PROOF BAR - Homepage credibility strip
    Sits between hero and marquee
    ============================================ */
 .proof-bar {
@@ -2271,7 +2271,7 @@ a[href="eau-palm-beach-resort.html"]:hover img {
 }
 
 /* ============================================
-   CASE STUDY BLOCK — Project pages
+   CASE STUDY BLOCK - Project pages
    ============================================ */
 .case-study-section {
   padding: clamp(56px, 7vw, 100px) 0;
@@ -2417,7 +2417,7 @@ a[href="eau-palm-beach-resort.html"]:hover img {
 }
 
 /* ============================================
-   ARCHITECT RESOURCES — Manufacturer Document Library
+   ARCHITECT RESOURCES - Manufacturer Document Library
    ============================================ */
 
 .doc-filter-bar {
@@ -2838,7 +2838,7 @@ a[href="eau-palm-beach-resort.html"]:hover img {
   .acg-quick-answer p{font-size:0.96rem;}
 }
 
-/* ===== Accessibility — WCAG 2.4.7 Focus Visible ===== */
+/* ===== Accessibility - WCAG 2.4.7 Focus Visible ===== */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -3402,7 +3402,7 @@ textarea:focus-visible,
 }
 
 /* ============================================================
-   RESPONSIVE — HOMEPAGE REBUILD
+   RESPONSIVE - HOMEPAGE REBUILD
    ============================================================ */
 @media (max-width:1024px){
   .hp-portfolio-grid{ grid-template-columns:repeat(2,1fr); }
@@ -3447,7 +3447,7 @@ textarea:focus-visible,
 }
 
 /* ============================================================
-   2026 HARMONY LAYER — ties legacy long-tail pages to the
+   2026 HARMONY LAYER - ties legacy long-tail pages to the
    Drawing Set system (typography, brand tokens, new footer)
    ============================================================ */
 :root{--red:#E11320}
@@ -3503,7 +3503,7 @@ textarea:focus-visible,
 /* Sprint 011 (round 2): consolidated from identical 3,500-byte inline <style>
    blocks duplicated verbatim on impact-windows-doors-florida.html and
    window-wall-systems.html (page hero/answer-box/table/stat-card/cta-box
-   styling) — moved here once so it's cacheable instead of re-downloaded
+   styling) - moved here once so it's cacheable instead of re-downloaded
    inline on every load of either page. */
 .hero { padding: 100px 0 40px; max-width: 1080px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
 .hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size:0.75rem; letter-spacing:0.16em; text-transform: uppercase; color: var(--accent, #E11320); margin-bottom: 14px; font-weight:800; }

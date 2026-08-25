@@ -1,4 +1,4 @@
-SECTION 08 87 13 — FIRE-RATED GLAZING
+SECTION 08 87 13 - FIRE-RATED GLAZING
 American Commercial Glass | acglass.com | FL CGC #1531993
 Last updated: 2026-05-09
 ======================================================================
@@ -9,9 +9,9 @@ PART 1 GENERAL
 A. Section includes fire-rated glazing assemblies for openings requiring 20-, 45-, 60-, 90-, or 120-minute fire ratings.
 
 1.2 REFERENCES
-A. UL 9 — Fire Tests of Window Assemblies.
-B. UL 10B / UL 10C — Fire Tests of Door Assemblies.
-C. UL 263 — Fire Tests of Building Construction and Materials.
+A. UL 9 - Fire Tests of Window Assemblies.
+B. UL 10B / UL 10C - Fire Tests of Door Assemblies.
+C. UL 263 - Fire Tests of Building Construction and Materials.
 D. NFPA 252, NFPA 257.
 E. ASTM E2010, E2074.
 F. ANSI Z97.1.
@@ -28,8 +28,8 @@ A. Product Data, UL Listing, Shop Drawings, Samples, Installer Certification.
 PART 2 PRODUCTS
 
 2.1 MANUFACTURERS
-A. Technical Glass Products (TGP) — basis of design (FireLite, Pilkington Pyrostop, FireFrames).
-B. Slimpact — impact-rated steel framing with fire glazing where impact + fire required.
+A. Technical Glass Products (TGP) - basis of design (FireLite, Pilkington Pyrostop, FireFrames).
+B. Slimpact - impact-rated steel framing with fire glazing where impact + fire required.
 C. Other manufacturers with current UL listing matching project requirements, approved prior to bid.
 
 2.2 GLAZING

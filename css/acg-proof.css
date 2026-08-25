@@ -1,4 +1,4 @@
-/* ============ VARIANT D — THE PROOF MONUMENT ============
+/* ============ VARIANT D - THE PROOF MONUMENT ============
    Fusion of A/B/C per 4-agent panel: manifesto resolves onto
    the 360° film; proof seated in the hero; spec-callout plates;
    one serif pull-quote; Prequal Room. Verified data only.     */
@@ -101,7 +101,7 @@ nav.links a:hover{opacity:1}
 .frame{position:relative;overflow:hidden;background:#426078}/* Sprint 011 (round 2): raised from #0A0E16 (was 1.04:1) to #426078 (3.05:1) vs --obsidian #05070C (WCAG 1.4.11 non-text) */
 .frame img{width:100%;height:min(84svh,860px);object-fit:cover}
 .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,.55) 0%,rgba(5,7,12,0) 38%)}
-/* callouts — the signature */
+/* callouts - the signature */
 .callout{position:absolute;z-index:3;font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase}
 .callout .dot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(225,19,32,.25)}
 .callout .tagline{position:absolute;height:1px;background:rgba(240,243,248,.7);transform-origin:left center}
@@ -152,7 +152,7 @@ nav.links a:hover{opacity:1}
 .prequal .lead{margin-top:1rem;color:#C6CFDD;max-width:48ch}
 .pq-list{margin-top:1.6rem;display:grid;gap:.55rem}
 .pq-list li{list-style:none;display:flex;gap:.7rem;align-items:baseline;font-size:.92rem;color:#C6CFDD}
-.pq-list li::before{content:"—";color:var(--red)}
+.pq-list li::before{content:"-";color:var(--red)}
 .pq-side{display:flex;flex-direction:column;justify-content:space-between;gap:1.6rem}
 .pq-cred{display:grid;gap:.7rem}
 .pq-cred div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(240,243,248,.14);padding-bottom:.6rem;font-size:.88rem}

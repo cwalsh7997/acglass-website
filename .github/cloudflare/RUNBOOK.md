@@ -1,4 +1,4 @@
-# Cloudflare redirect deployment runbook — money-market canonicalization
+# Cloudflare redirect deployment runbook - money-market canonicalization
 
 **Status: NOT ACTIVATED.** Nothing in this directory has been applied. Merging the
 pull request that adds it changes no routing. Applying it is a manual act in the
@@ -18,7 +18,7 @@ below.
 - `.github/` is not served by Pages (verified: `acglass.com/.github/workflows/pulse.yml`
   returns 404 while `/.gitignore` returns 200), so this runbook and its manifest
   are not public. They live here rather than in `_internal/` for the same reason
-  the CI scripts do — `_internal/` is git-ignored, so Actions cannot read it and
+  the CI scripts do - `_internal/` is git-ignored, so Actions cannot read it and
   nothing there can be reviewed in a pull request.
 
 `vercel.json` is therefore best understood as an **observed mirror** of the edge
@@ -36,7 +36,7 @@ a storefront page:
 
 ```
 /commercial-glazing-miami.html
-  --301 (Cloudflare)-->  /miami/                              <- title: "Storefront Glazier in Miami, FL — Service Area"
+  --301 (Cloudflare)-->  /miami/                              <- title: "Storefront Glazier in Miami, FL - Service Area"
   --rel=canonical-->     /storefront-glazier-miami-florida/   <- storefront primary
 ```
 
@@ -61,7 +61,7 @@ Both destinations already exist on disk, are self-canonical, and are named as th
 market's commercial-glazing primary by both
 `acglass_topical_authority_research_20260728.md` §4.3 and
 `.github/seo/seo-targets.json`. Neither destination is a URL that is known to
-rank, so neither rule moves a ranking URL — the sources are 301s today and are
+rank, so neither rule moves a ranking URL - the sources are 301s today and are
 already not indexable.
 
 Five further cities carry the identical two-hop and are **deliberately excluded**.
@@ -100,7 +100,7 @@ reasons, including roughly 27 non-money-market cities in the same state.
    Redirects**. Open the existing list that contains
    `/commercial-glazing-miami.html`.
 
-6. Edit the two rows in place — do **not** add new rows, or you will have two
+6. Edit the two rows in place - do **not** add new rows, or you will have two
    rules matching one source and the winner is order-dependent:
 
    | Source URL | Target URL | Status | Preserve query string | Subpath matching |
@@ -164,6 +164,6 @@ its own schedule.
   primary. `/glazing-contractor-florida.html` holds that intent.
 - It does not flatten the ~27 non-money-market city two-hops.
 - It does not act on any Search Console data, because no GSC export exists in
-  this workspace and the measurement layer merged in PR #20 has never run — it
+  this workspace and the measurement layer merged in PR #20 has never run - it
   needs the `GSC_SA_JSON` secret. Every "gsc-gated" entry in
   `.github/seo/url-primaries.json` is waiting on that.

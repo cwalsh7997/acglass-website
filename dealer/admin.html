@@ -21,8 +21,8 @@
 
   <header class="hd">
     <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG — American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
       </a>
       <nav class="hd-nav" aria-label="Primary">
         <a href="/portfolio.html">Portfolio</a>
@@ -48,7 +48,7 @@
 
   <main id="main-content" class="admin-shell">
     <div style="margin-bottom:24px;">
-      <div class="label"><span class="line"></span> Internal &mdash; ACG Dealer Admin</div>
+      <div class="label"><span class="line"></span> Internal  -  ACG Dealer Admin</div>
       <h1 style="margin-top:8px;font-size:clamp(1.75rem,3vw,2.25rem);">Dealer Applications</h1>
       <p style="color:rgba(255,255,255,.6);max-width:680px;font-size:.95rem;">Review incoming dealer applications from <a href="../become-a-dealer.html" style="color:var(--accent);">acglass.com/become-a-dealer</a>. Token is stored in this browser only.</p>
     </div>
@@ -214,7 +214,7 @@
             '<td>' + escapeHtml(fmtDate(app.created_at)) + '</td>' +
             '<td><span class="admin-status-pill s-' + status + '">' + status + '</span></td>' +
             '<td><strong>' + escapeHtml(app.company) + '</strong><br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">' + escapeHtml(app.address || '') + '</span></td>' +
-            '<td>' + escapeHtml(app.contact_name) + '<br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">Lic: ' + escapeHtml(app.license_number || '—') + ' / ' + escapeHtml(app.years_in_business || '—') + ' yrs</span></td>' +
+            '<td>' + escapeHtml(app.contact_name) + '<br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">Lic: ' + escapeHtml(app.license_number || '-') + ' / ' + escapeHtml(app.years_in_business || '-') + ' yrs</span></td>' +
             '<td><a href="mailto:' + escapeHtml(app.email) + '" style="color:var(--accent);">' + escapeHtml(app.email) + '</a><br><span style="color:rgba(255,255,255,.6);">' + escapeHtml(app.phone || '') + '</span></td>' +
             '<td>' + escapeHtml(app.annual_volume || '') + '<br><span style="color:rgba(255,255,255,.5);font-size:.8rem;">' + escapeHtml(app.manufacturers || '') + '</span></td>' +
             '<td class="col-notes">' + escapeHtml(app.notes || '') + '</td>' +
@@ -366,7 +366,7 @@
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
     <div class="ft-main">
       <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG — American Commercial Glass" loading="lazy">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
         <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
       </div>
       <nav aria-label="Company">
@@ -403,7 +403,8 @@
     </div>
     <div class="ft-legal">
       <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned</span>
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
         <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>

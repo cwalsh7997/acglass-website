@@ -5,7 +5,7 @@ Preferred-Languages: en
 Canonical: https://acglass.com/.well-known/security.txt
 Policy: https://acglass.com/security-policy.html
 
-# American Commercial Glass — Security Disclosure
+# American Commercial Glass - Security Disclosure
 # If you've discovered a security vulnerability on acglass.com,
 # please report it via email to connor@acglass.com.
 # We acknowledge reports within 48 business hours.

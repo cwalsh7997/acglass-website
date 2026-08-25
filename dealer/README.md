@@ -1,4 +1,4 @@
-# ACG Dealer Portal — Phase 1
+# ACG Dealer Portal - Phase 1
 
 This directory powers the public dealer-application flow on acglass.com.
 
@@ -8,7 +8,7 @@ This directory powers the public dealer-application flow on acglass.com.
 | --- | --- |
 | `../become-a-dealer.html` | Public-facing application form (in repo root so it's `acglass.com/become-a-dealer`) |
 | `dealer.css` | Supplemental styles layered on top of `/css/style.css` |
-| `dealer.js` | Form submit handler — posts to the Worker if configured, falls back to mailto |
+| `dealer.js` | Form submit handler - posts to the Worker if configured, falls back to mailto |
 | `thanks.html` | Confirmation page after a successful submission |
 | `login.html` | "Coming soon" stub for the Phase 2 dealer portal |
 | `admin.html` | Internal applications viewer (gated by an admin token in localStorage) |
@@ -36,7 +36,7 @@ Visitor                                  acglass.com (GitHub Pages, Cloudflare)
 ```
 
 If the Worker URL isn't configured on the page, `dealer.js` falls back to opening
-the visitor's email client with a prefilled mailto — so leads still reach Connor
+the visitor's email client with a prefilled mailto - so leads still reach Connor
 regardless of backend state. This is the same pattern as the existing
 `contact.html` and `send-plans.html` forms.
 
@@ -50,19 +50,19 @@ cd workers/dealer-portal-api
 npm install -g wrangler          # one-time
 wrangler login                   # browser-based OAuth into your Cloudflare account
 
-# Create the D1 database — copy the printed database_id into wrangler.toml.
+# Create the D1 database - copy the printed database_id into wrangler.toml.
 wrangler d1 create acg-dealer-portal
 
 # Apply the schema.
 wrangler d1 execute acg-dealer-portal --file=./schema.sql
 
-# Set the admin bearer token. Use any long random string — paste it into
+# Set the admin bearer token. Use any long random string - paste it into
 # /dealer/admin.html when prompted. It's stored in your browser's localStorage,
 # never in the repo.
 wrangler secret put ADMIN_TOKEN
 
 # (Optional) Enable email notifications via Resend (https://resend.com).
-# Without this, applications are still saved — you'll see them on the admin page.
+# Without this, applications are still saved - you'll see them on the admin page.
 wrangler secret put RESEND_API_KEY
 
 # Deploy.
@@ -141,14 +141,14 @@ Per `~/.claude/plans/i-am-a-distributor-moonlit-dawn.md`:
 - CSV → ACG-branded PDF generation (Phase 3).
 - Welcome / password-reset email templates (Phase 4).
 - Top-nav integration on the rest of acglass.com (Phase 4).
-- Cloudflare Turnstile on the public form (Phase 4) — Phase 1 ships with a
+- Cloudflare Turnstile on the public form (Phase 4) - Phase 1 ships with a
   honeypot only. If volume spam appears, add Turnstile before public traffic.
 
 ## Operational notes
 
 - **Two Workers, one site.** This deploys a new Worker (`acg-dealer-portal-api`)
   alongside the existing `cloudflare-410-worker.js` (which handles spam URL
-  filtering on `acglass.com/*`). They're independent. Don't merge them — the
+  filtering on `acglass.com/*`). They're independent. Don't merge them - the
   spam filter is on every page, this Worker only handles `/api/*`.
 - **Admin token lives in your browser only.** It's stored in localStorage on the
   device(s) you visit `dealer/admin.html` from. To revoke, run
@@ -157,7 +157,7 @@ Per `~/.claude/plans/i-am-a-distributor-moonlit-dawn.md`:
   one re-pasted.
 - **Free-tier headroom.** D1: 5 GB free. Workers: 100k req/day free. R2: 10 GB
   free. Resend: 3k emails/month free. Volume in Phase 1 is application
-  submissions only — comfortably under all caps.
+  submissions only - comfortably under all caps.
 - **Honeypot, not Turnstile.** Phase 1 uses a hidden `company_url` field. Bots
   that auto-fill all fields get silently dropped (we return 200). If real spam
   starts arriving, add Turnstile before promoting the page in marketing.

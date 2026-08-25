@@ -1,5 +1,5 @@
 /* ============================================
-   AMERICAN COMMERCIAL GLASS — V2 ENGINE
+   AMERICAN COMMERCIAL GLASS - V2 ENGINE
    Custom cursor, scroll reveals, drag scroll,
    counters, parallax, marquee
    ============================================ */
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const projectType = this.querySelector('[name="project-type"]')?.value || '';
       const message = this.querySelector('[name="message"]')?.value || '';
 
-      const subject = encodeURIComponent(`Project Inquiry from ${name} — ${company}`);
+      const subject = encodeURIComponent(`Project Inquiry from ${name} - ${company}`);
       const body = encodeURIComponent(
         `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nProject Type: ${projectType}\n\nMessage:\n${message}`
       );

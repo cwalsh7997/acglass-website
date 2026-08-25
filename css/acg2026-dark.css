@@ -1,5 +1,5 @@
 /* ============================================================
-   ACG 2026 — DARK THEME LAYER for case-study pages
+   ACG 2026 - DARK THEME LAYER for case-study pages
    Loads AFTER acg2026.css. Flips the light "Spec Sheet" tokens
    to the portfolio dark system (acg-proof family): #0A0E16 ground,
    white ink, red accent. Content markup untouched.
@@ -58,7 +58,7 @@ table{color:var(--body)}
 thead{background:var(--paper-3)}
 tbody tr{border-color:var(--hairline)}
 
-/* watermark numerals & paper textures — gridpaper/grain are SECTION modifiers,
+/* watermark numerals & paper textures - gridpaper/grain are SECTION modifiers,
    never dim the section itself; kill the paper texture on dark instead */
 .gridpaper{background-image:none}
 .grain::after{opacity:.04}

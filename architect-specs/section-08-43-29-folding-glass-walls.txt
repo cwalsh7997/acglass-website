@@ -1,4 +1,4 @@
-SECTION 08 43 29 — FOLDING (BI-FOLD) GLASS WALLS
+SECTION 08 43 29 - FOLDING (BI-FOLD) GLASS WALLS
 American Commercial Glass | acglass.com | FL CGC #1531993
 Last updated: 2026-05-09
 ======================================================================
@@ -9,7 +9,7 @@ PART 1 GENERAL
 A. Section includes bi-fold (folding) glass wall systems with 2-, 3-, 5-, 7-, and 8-panel configurations.
 
 1.2 REFERENCES
-A. AAMA 920 — Specification for Operating Cycle Performance for Side-Hinged Exterior Door Systems.
+A. AAMA 920 - Specification for Operating Cycle Performance for Side-Hinged Exterior Door Systems.
 B. ASTM E283, E330, E331, E1886, E1996.
 C. ANSI Z97.1.
 D. Florida Building Code 8th Edition; Miami-Dade NOA for HVHZ projects.

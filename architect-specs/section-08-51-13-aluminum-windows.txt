@@ -1,4 +1,4 @@
-SECTION 08 51 13 — ALUMINUM WINDOWS
+SECTION 08 51 13 - ALUMINUM WINDOWS
 American Commercial Glass | acglass.com | FL CGC #1531993
 Last updated: 2026-08-02
 ======================================================================
@@ -9,12 +9,12 @@ PART 1 GENERAL
 A. Section includes commercial aluminum windows: fixed, single-hung, horizontal slider, casement, awning, projected, and double-hung configurations for commercial occupancies in Florida.
 
 1.2 REFERENCES
-A. AAMA/WDMA/CSA 101/I.S.2/A440 — North American Fenestration Standard (NAFS).
-B. ASTM E283 — Standard Test Method for Determining Rate of Air Leakage.
-C. ASTM E330 — Standard Test Method for Structural Performance of Exterior Windows.
-D. ASTM E331 — Standard Test Method for Water Penetration of Exterior Windows.
-E. ASTM E1886 / E1996 — Impact Resistance (HVHZ).
-F. ANSI Z97.1 / 16 CFR 1201 — Safety Glazing.
+A. AAMA/WDMA/CSA 101/I.S.2/A440 - North American Fenestration Standard (NAFS).
+B. ASTM E283 - Standard Test Method for Determining Rate of Air Leakage.
+C. ASTM E330 - Standard Test Method for Structural Performance of Exterior Windows.
+D. ASTM E331 - Standard Test Method for Water Penetration of Exterior Windows.
+E. ASTM E1886 / E1996 - Impact Resistance (HVHZ).
+F. ANSI Z97.1 / 16 CFR 1201 - Safety Glazing.
 G. Florida Building Code 8th Edition; Miami-Dade NOA for HVHZ projects; Florida Building Code Energy Conservation (FBC-EC).
 
 1.3 PERFORMANCE REQUIREMENTS
@@ -27,15 +27,15 @@ F. Thermal Performance: U-factor and SHGC values per FBC-EC compliance method (p
 G. Cycle Performance (operable): 4,000-cycle minimum life test per AAMA 920 (or equivalent) for hinged/sliding operating sash.
 
 1.4 SUBMITTALS
-A. Product Data — manufacturer cut sheets for each window type, including profile dimensions, glass make-up, frame finish, and hardware.
-B. Shop Drawings — sealed by a Florida-licensed PE, showing window types, locations, glazing schedule, anchor patterns, and perimeter conditions.
-C. Florida Product Approval (FL PA) — current approval for each proposed window type and configuration.
-D. Miami-Dade NOA — for HVHZ projects, current Notice of Acceptance covering the specific tested configuration.
-E. Structural Calculations — project-specific anchor and member calculations sealed by a Florida-licensed PE.
-F. Thermal Performance Data — NFRC-certified U-factor, SHGC, VT, and condensation resistance.
-G. Glazing Schedule — full make-up by elevation including low-E coating type and surface position.
-H. Samples — frame corner section and operating hardware sample.
-I. Warranty — manufacturer's standard warranty plus installer warranty document.
+A. Product Data - manufacturer cut sheets for each window type, including profile dimensions, glass make-up, frame finish, and hardware.
+B. Shop Drawings - sealed by a Florida-licensed PE, showing window types, locations, glazing schedule, anchor patterns, and perimeter conditions.
+C. Florida Product Approval (FL PA) - current approval for each proposed window type and configuration.
+D. Miami-Dade NOA - for HVHZ projects, current Notice of Acceptance covering the specific tested configuration.
+E. Structural Calculations - project-specific anchor and member calculations sealed by a Florida-licensed PE.
+F. Thermal Performance Data - NFRC-certified U-factor, SHGC, VT, and condensation resistance.
+G. Glazing Schedule - full make-up by elevation including low-E coating type and surface position.
+H. Samples - frame corner section and operating hardware sample.
+I. Warranty - manufacturer's standard warranty plus installer warranty document.
 
 1.5 QUALITY ASSURANCE
 A. Manufacturer: Holding current Florida Product Approval for proposed windows.
@@ -46,9 +46,9 @@ PART 2 PRODUCTS
 
 2.1 MANUFACTURERS
 A. Acceptable Manufacturers (basis of design):
-1. ESWindows (Tecnoglass) — single-hung, horizontal slider, casement, projected, fixed.
-2. PGT Industries — WinGuard Aluminum impact line.
-3. Aldora Aluminum and Glass — architectural fixed, casement, awning, single-hung, mullions.
+1. ESWindows (Tecnoglass) - single-hung, horizontal slider, casement, projected, fixed.
+2. PGT Industries - WinGuard Aluminum impact line.
+3. Aldora Aluminum and Glass - architectural fixed, casement, awning, single-hung, mullions.
 B. Substitutions: Permitted only with prior approval; substituted product must carry current FL PA and (HVHZ) NOA documentation equivalent to basis of design.
 
 2.2 SYSTEM
@@ -76,7 +76,7 @@ D. Field-measure all openings prior to fabrication. Do not begin fabrication unt
 
 1.7 PROJECT CONDITIONS
 A. Field Measurements: Verify dimensions of structural openings and tolerances at perimeter conditions before fabrication.
-B. Existing Conditions: Coordinate with adjacent trades — concrete, masonry, framing, sheathing, water-resistive barriers, flashings.
+B. Existing Conditions: Coordinate with adjacent trades - concrete, masonry, framing, sheathing, water-resistive barriers, flashings.
 C. Coordination: Verify that openings, anchors, embeds, sealant joints, and water-resistive barrier terminations are installed and inspected before window installation begins.
 
 3.4 EXAMINATION

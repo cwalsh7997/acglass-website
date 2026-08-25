@@ -1,7 +1,7 @@
 /* ============================================================
-   ACG 2026 — "GLASS AT DUSK"
+   ACG 2026 - "GLASS AT DUSK"
    A commercial-glazing site that behaves like the product:
-   a curtain wall at dusk — dark canvas, frosted panels,
+   a curtain wall at dusk - dark canvas, frosted panels,
    daylight refracting across a mullion grid.
    Palette: void ink #070B14 · daylight #BFD4EF · heritage red #E11320
    Type: Playfair Display (editorial serif, the thesis)
@@ -25,7 +25,7 @@
   --panel-2:rgba(150,182,232,.075);
   --line:rgba(154,184,230,.13);     /* hairline mullion */
   --line-2:rgba(154,184,230,.24);
-  --paper:#EAF0F8;         /* primary text — cool white */
+  --paper:#EAF0F8;         /* primary text - cool white */
   --soft:#C3CEE0;
   --muted:#9AA8C2;         /* secondary */
   --faint:#5E6C89;
@@ -64,7 +64,7 @@ p{max-width:66ch}
 .skip-link:focus{left:0}
 
 /* ============================================================
-   SIGNATURE — the mullion grid.
+   SIGNATURE - the mullion grid.
    A faint curtain-wall grid drawn behind everything, so the
    whole page reads as glazing divided by mullions.
    ============================================================ */
@@ -86,7 +86,7 @@ main,.hd,.ft{position:relative;z-index:1}
 .k-index{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.16em;color:var(--faint)}
 .rule{border:0;border-top:1px solid var(--line)}
 
-/* eyebrow with a lead rule — used above section heads */
+/* eyebrow with a lead rule - used above section heads */
 .eyebrow{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--red)}
 
@@ -112,7 +112,7 @@ main,.hd,.ft{position:relative;z-index:1}
 .btn:active{transform:scale(.98)}
 .btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px -8px rgba(225,19,32,.5)}
 .btn-red:hover{background:var(--red-2);transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(225,19,32,.62)}
-/* glass outline — the default secondary on a dark canvas */
+/* glass outline - the default secondary on a dark canvas */
 .btn-ghost,.btn-navy,.btn-line{background:var(--panel-2);color:var(--paper);border:1px solid var(--line-2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .btn-ghost:hover,.btn-navy:hover,.btn-line:hover{border-color:var(--day-2);background:rgba(150,182,232,.12);color:#fff;transform:translateY(-2px)}
 
@@ -150,7 +150,7 @@ main,.hd,.ft{position:relative;z-index:1}
 }
 
 /* ============================================================
-   Sheet-index rail (kept — architectural sheet sets ARE numbered)
+   Sheet-index rail (kept - architectural sheet sets ARE numbered)
    ============================================================ */
 .rail{position:fixed;left:max(14px,calc((100vw - var(--w-max))/2 - 40px));top:50%;transform:translateY(-50%);z-index:800;display:flex;flex-direction:column;gap:15px}
 .rail a{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--faint);transition:color var(--dur-1) var(--ease)}
@@ -162,17 +162,17 @@ main,.hd,.ft{position:relative;z-index:1}
 @media (max-width:1180px){.rail{display:none}}
 
 /* ============================================================
-   HERO — the thesis: a curtain wall at dusk
+   HERO - the thesis: a curtain wall at dusk
    ============================================================ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;overflow:hidden}
 .hero-media{position:absolute;inset:0;z-index:-2}
 .hero-media img{width:100%;height:100%;object-fit:cover;animation:heroZoom 22s var(--ease) both}
 @keyframes heroZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
-/* dusk grade — deepen to void at the base, cool the top */
+/* dusk grade - deepen to void at the base, cool the top */
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
   linear-gradient(180deg,rgba(7,11,20,.55) 0,rgba(7,11,20,.12) 34%,rgba(7,11,20,.66) 76%,var(--void) 100%),
   linear-gradient(90deg,rgba(7,11,20,.6) 0,transparent 55%)}
-/* daylight glint — a slow sheen sweeping across the facade */
+/* daylight glint - a slow sheen sweeping across the facade */
 .hero::after{content:"";position:absolute;top:-40%;left:-30%;width:60%;height:180%;z-index:-1;pointer-events:none;
   background:linear-gradient(105deg,transparent 42%,rgba(191,212,239,.07) 49%,rgba(191,212,239,.15) 50%,rgba(191,212,239,.07) 51%,transparent 58%);
   transform:skewX(-14deg);animation:glint 14s var(--ease-io) 2s infinite}
@@ -192,13 +192,13 @@ main,.hd,.ft{position:relative;z-index:1}
 .hero-label::before{content:"";width:32px;height:1px;background:var(--red)}
 .hero-label .k-label{color:var(--day)}
 .hero h1{font-family:var(--serif);color:#fff;font-weight:600;font-size:clamp(2.7rem,6.8vw,5.6rem);line-height:1;letter-spacing:-.016em;max-width:15ch;text-shadow:0 2px 44px rgba(7,11,20,.55)}
-/* the glass word — transparent fill, frosted mullion stroke, a living sheen */
+/* the glass word - transparent fill, frosted mullion stroke, a living sheen */
 .hero h1 em{font-style:italic;color:transparent;background:linear-gradient(100deg,rgba(191,212,239,.28),rgba(255,255,255,.95) 50%,rgba(191,212,239,.28));-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:.6px rgba(191,212,239,.55);background-size:230% 100%;animation:sheen 11s var(--ease-io) 1.5s infinite}
 @keyframes sheen{0%,72%,100%{background-position:180% 0}36%{background-position:-40% 0}}
 .hero-sub{margin-top:26px;font-size:clamp(1.02rem,1.35vw,1.22rem);line-height:1.55;color:var(--soft);max-width:50ch}
 .hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
 
-/* spec strip — the drawing's title block, restrained */
+/* spec strip - the drawing's title block, restrained */
 .hero-strip{margin-top:56px;border-top:1px solid var(--line);backdrop-filter:blur(3px)}
 .hero-strip-in{max-width:var(--w-max);margin:0 auto;padding:22px var(--gutter) 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .hero-strip .cell{position:relative;padding-left:16px}
@@ -213,7 +213,7 @@ main,.hd,.ft{position:relative;z-index:1}
 /* Hide the old busy hero furniture if any lingers */
 .regmark,.anno,.tblock{display:none!important}
 
-/* Slim "now bidding" bar — replaces the marquee tickers */
+/* Slim "now bidding" bar - replaces the marquee tickers */
 .nowbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--void-2)}
 .nowbar-in{max-width:var(--w-max);margin:0 auto;padding:15px var(--gutter);display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted)}
 .nowbar .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(225,19,32,.6);animation:pulse 2.6s var(--ease-io) infinite;flex-shrink:0}
@@ -235,7 +235,7 @@ main,.hd,.ft{position:relative;z-index:1}
 .bignum{position:absolute;top:clamp(30px,5vw,64px);right:var(--gutter);font-family:var(--serif);font-weight:600;font-size:clamp(6rem,15vw,13rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--line-2);z-index:0;pointer-events:none;user-select:none}
 
 /* ============================================================
-   Partners — quiet, static (no marquee)
+   Partners - quiet, static (no marquee)
    ============================================================ */
 .partners{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--void-2)}
 .partners-in{max-width:var(--w-max);margin:0 auto;padding:40px var(--gutter);display:flex;align-items:center;gap:clamp(22px,4vw,54px);flex-wrap:wrap;justify-content:center}
@@ -251,7 +251,7 @@ main,.hd,.ft{position:relative;z-index:1}
 .partners-note{width:100%;text-align:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--faint);margin-top:6px}
 
 /* ============================================================
-   Services — the glazing schedule (a real drawing schedule)
+   Services - the glazing schedule (a real drawing schedule)
    ============================================================ */
 .svc .sched{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
 .sched-head,.sched-row{display:grid;grid-template-columns:130px 1.1fr 2.4fr 44px;align-items:center;gap:22px;padding:20px clamp(20px,2.6vw,34px)}
@@ -275,7 +275,7 @@ main,.hd,.ft{position:relative;z-index:1}
 }
 
 /* ============================================================
-   Featured project — cinematic split
+   Featured project - cinematic split
    ============================================================ */
 .feat{background:var(--void-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .feat-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,72px);align-items:center}
@@ -293,7 +293,7 @@ main,.hd,.ft{position:relative;z-index:1}
 @media (max-width:840px){.feat-grid{grid-template-columns:1fr}}
 
 /* ============================================================
-   General notes — glass pillar cards
+   General notes - glass pillar cards
    ============================================================ */
 .gnotes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .gnote{background:var(--void);padding:clamp(26px,3vw,38px) clamp(22px,2.4vw,30px);position:relative;transition:background var(--dur-2) var(--ease)}
@@ -306,7 +306,7 @@ main,.hd,.ft{position:relative;z-index:1}
 @media (max-width:520px){.gnotes-grid{grid-template-columns:1fr}}
 
 /* ============================================================
-   Projects strip — horizontal gallery
+   Projects strip - horizontal gallery
    ============================================================ */
 .strip-wrap{position:relative}
 .strip{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 26px;scrollbar-width:none;cursor:grab}
@@ -352,7 +352,7 @@ main,.hd,.ft{position:relative;z-index:1}
 @media (max-width:840px){.lead-grid{grid-template-columns:1fr}}
 
 /* ============================================================
-   CTA band — the closing frame
+   CTA band - the closing frame
    ============================================================ */
 .cta-band{position:relative;padding:clamp(80px,11vw,150px) 0;overflow:hidden;border-top:1px solid var(--line);background:radial-gradient(120% 130% at 15% 0,rgba(20,44,86,.7),var(--void) 62%)}
 .cta-band::after{content:"";position:absolute;top:-30%;left:-20%;width:50%;height:160%;background:linear-gradient(105deg,transparent 42%,rgba(191,212,239,.1) 50%,transparent 58%);transform:skewX(-14deg);animation:glint 11s var(--ease-io) 2s infinite}
