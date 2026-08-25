@@ -72,14 +72,14 @@ class HeldDescriptionTests(unittest.TestCase):
             checker.held_long_description_matches("new-page.html", "x" * 200)
         )
 
-    def test_held_description_set_is_only_the_four_protected_pages(self):
+    def test_held_description_set_is_only_the_byte_frozen_homepage(self):
+        # Emptied down to index.html on 2026-08-20 (main commit 70308a175): the
+        # three government pages now fit the 155-char limit with approval-gated
+        # claims removed, so they no longer need an overlength exception.
+        # index.html stays held only because it is byte-frozen in
+        # .github/seo/url-primaries.json.
         self.assertEqual(
-            {
-                "buildingconnected-basisboard-glazing.html",
-                "government-glazing-contractor-florida.html",
-                "government-public-sector-glazing.html",
-                "index.html",
-            },
+            {"index.html"},
             set(checker.HELD_LONG_DESCRIPTION_HASHES),
         )
 

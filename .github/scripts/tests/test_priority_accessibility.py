@@ -24,32 +24,32 @@ LANDMARK_ONLY_PAGES = (
 )
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
-        "head": "9a1dd7d2324c04abf49e33d6e06c3e6607246593ea6093d2bbcca14bbe633bdf",
-        "jsonld": "cbe03bce400f4b8693960a5c82e327a79a509253738e0218f0219f219254ebd3",
-        "scripts": "886fe08506e6b1884d31e50b169bca1d5735995f83cd3e9e4d7ac7766499e7a4",
-        "hrefs": "7e30d5e0bb79f0616da02b9a99147904c583c8aa00d7595335dae51520775736",
-        "visible": "083eb903cf8bc489bb794499f368d7f758bfe6bf390c43a60419a57d9505c76e",
+        "head": "7f9d07ce7ab230d9d2fc0471f49e88819227b255df70092bcb815e8aba702831",
+        "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
+        "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
+        "hrefs": "948a33bf910a1ea58f4e4ed7699206077881de60218d3b42b8f7f9a0706a69af",
+        "visible": "da9adf72f710b5f06796b7134ce138d3dc9011e3693afa16b891cc75bcf452f8",
     },
     "multi-slide-bifold-doors.html": {
-        "head": "98b48b78f60afbe1fd2f17c8c527c2fb4e7b495eb4a6e148f9879b8b6e531050",
-        "jsonld": "432be9b17b3f18a2713c074fde86eae96827e65c4dff3f95cfbe837a6f5ef697",
-        "scripts": "2feebda52a455b15084cd36667e638052049110598326beeff6f47e28efd2e25",
-        "hrefs": "ae423c9f86df0ebc059db4bfaf61f167b9fda64651a1a3eb0f28e0209f46006e",
-        "visible": "7756822ce2c4f3e5bc517240ea6c3e1010424dd3fa14a2bcde9d4d9c242d17c7",
+        "head": "a6548335f86a87cfe0edad5b1a99aa688264267f093282b74b56b4e014d91779",
+        "jsonld": "1f800a06c4815d3beeb406c92acfe48aa65334ab34171a9af8cd1d2eabeb179b",
+        "scripts": "84b01a42b425bbd1a4db42ab009246dc80d857733de8e369adf90928736a97dd",
+        "hrefs": "c1050b4e8576163a4e2f42df3d9044fa652dba57cc3c77ec3f7dfbf2c3a7f537",
+        "visible": "d5634f15d70d4a7984f3737e2ae23bd02f8e0d892158803e481856ace2635571",
     },
     "privacy-policy.html": {
-        "head": "6724051cd3c3b52e4d7356ff3c4634ce8667b9eb3c9b4ea7d17f2e22f84fff32",
+        "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "602b81cc175a16c0d7104e55d880b415e295f6aa24f13dbb41c6d89507861945",
         "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
-        "visible": "7cb3ed5eab55c71154c0470413e93de7f73e838fb03aac48a85de0e3705bb864",
+        "visible": "0616a02edf9c35c49405839abcec88e30be41956ff910ae9b55b02242b5d7c22",
     },
     "terms-of-use.html": {
-        "head": "2034c36628ed34fbea85e0234d7a3fa9005bda35aaa3df6826eaa7d354112426",
+        "head": "353fb9c5f91945a215c3af07a55b360f37c776714c98143e29ae9da7f00a3c02",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "31c1c638780ee6d016e87b4cc4d6d823c4a41abbfd14225a58d6f5504555f3f4",
         "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
-        "visible": "5389bac37fb7c2ef77bebc3f7f2029fde8ef26552da17143ec085cbbe6f2ac00",
+        "visible": "42f09d5327726f4c31cd79455351f5c6fff42b938079617de4c7743681df005b",
     },
 }
 
