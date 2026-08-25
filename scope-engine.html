@@ -6,24 +6,24 @@
   No build step. All config in one object near top of <script>.
 
   CHANGELOG v2.0 (2026-06-04):
-  - Real lead capture (was discarding 100% of data before)
-  - Form posts to formsubmit.co/ajax/connor@acglass.com (proven backend)
-  - Full scope+contact+estimate payload delivered to ACG
-  - Carry-over via URL params + sessionStorage to send-plans.html
-  - Pricing model v2: HVHZ, coastal WBD, building height all affect cost
-  - Building height step added (drives system recommendation + cost)
-  - Fixed openings bug (per-type avg now actually used)
-  - Confidence band tightens with more inputs
-  - Rounded display ranges (no 7-digit false precision)
-  - Live assumptions list under the number
-  - Editable refinement chips on results
-  - All pricing constants in ACG_CONFIG (one place to calibrate)
-  - GA4 funnel events: scope_started, step_completed, result_generated,
+ - Real lead capture (was discarding 100% of data before)
+ - Form posts to formsubmit.co/ajax/connor@acglass.com (proven backend)
+ - Full scope+contact+estimate payload delivered to ACG
+ - Carry-over via URL params + sessionStorage to send-plans.html
+ - Pricing model v2: HVHZ, coastal WBD, building height all affect cost
+ - Building height step added (drives system recommendation + cost)
+ - Fixed openings bug (per-type avg now actually used)
+ - Confidence band tightens with more inputs
+ - Rounded display ranges (no 7-digit false precision)
+ - Live assumptions list under the number
+ - Editable refinement chips on results
+ - All pricing constants in ACG_CONFIG (one place to calibrate)
+ - GA4 funnel events: scope_started, step_completed, result_generated,
     lead_captured, cta_send_plans_click, cta_call_click
-  - sessionStorage persistence (refresh-safe)
-  - @media print rules for "Save as PDF"
-  - Keyboard nav + aria roles + reduced-motion respected
-  - Banned brands absent
+ - sessionStorage persistence (refresh-safe)
+ - @media print rules for "Save as PDF"
+ - Keyboard nav + aria roles + reduced-motion respected
+ - Banned brands absent
 
   TO CALIBRATE: scroll to ACG_CONFIG.basePsf and update from your last
   20-30 actual bid prices per system. Same for multipliers. See README.
@@ -371,7 +371,7 @@
   <div class="se-container">
     <div class="se-hero-eyebrow"><span class="dot"></span>ACG Scope Intelligence Engine</div>
     <h1>Define your glazing scope. Two minutes. No phone call required.</h1>
-    <p>Answer a handful of questions about your commercial glazing scope. The engine returns the recommended system, code requirements, and a realistic install timeline  -  benchmarked against ACG's Florida project history and current building code. For pricing, request an itemized bid.</p>
+    <p>Answer a handful of questions about your commercial glazing scope. The engine returns the recommended system, code requirements, and a realistic install timeline - benchmarked against ACG's Florida project history and current building code. For pricing, request an itemized bid.</p>
     <div class="se-hero-chips">
       <span class="se-chip">Florida HVHZ &amp; statewide</span>
       <span class="se-chip">Storefront &middot; Curtainwall &middot; Impact &middot; Multi-slide</span>
@@ -448,15 +448,15 @@
     <p class="se-step-hint">Height drives both the recommended system and the install cost factor (high-rise needs unitized, cranes, and sequencing).</p>
     <div class="se-card-grid" role="radiogroup" aria-label="Building height">
       <div class="se-card" role="radio" tabindex="0" data-value="low_rise" aria-checked="false">
-        <div class="se-card-title">Low-rise  -  1 to 2 stories</div>
+        <div class="se-card-title">Low-rise - 1 to 2 stories</div>
         <div class="se-card-sub">Standard storefront installations. Boom lift or ladder access. No height premium.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="mid_rise" aria-checked="false">
-        <div class="se-card-title">Mid-rise  -  3 to 7 stories</div>
+        <div class="se-card-title">Mid-rise - 3 to 7 stories</div>
         <div class="se-card-sub">Window wall or stick-built curtainwall. Swing stages and hoisting add to the scope.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="high_rise" aria-checked="false">
-        <div class="se-card-title">High-rise  -  8+ stories</div>
+        <div class="se-card-title">High-rise - 8+ stories</div>
         <div class="se-card-sub">Unitized curtainwall standard. Cranes, mast climbers, and sequencing add to the scope.</div>
       </div>
     </div>
@@ -471,7 +471,7 @@
   <section class="se-panel" id="step-3" data-step="3" aria-labelledby="step-3-title">
     <div class="se-step-label">Step 3 of 6</div>
     <h2 id="step-3-title" class="se-step-title">How big is the scope?</h2>
-    <p class="se-step-hint">Pick whichever you actually know. They all work  -  the engine converts to system area in the background.</p>
+    <p class="se-step-hint">Pick whichever you actually know. They all work - the engine converts to system area in the background.</p>
 
     <div class="se-tabs" role="tablist" aria-label="Size input method">
       <button class="se-tab active" role="tab" data-method="glass_sf">Glass area (SF)</button>
@@ -536,11 +536,11 @@
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="hvhz_keys" aria-checked="false">
         <div class="se-card-title">Florida Keys (HVHZ)</div>
-        <div class="se-card-sub">Monroe County. 190 mph design wind  -  the most stringent zone in the state. Miami-Dade NOA required.</div>
+        <div class="se-card-sub">Monroe County. 190 mph design wind - the most stringent zone in the state. Miami-Dade NOA required.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="palm_beach" aria-checked="false">
         <div class="se-card-title">Palm Beach + Treasure Coast</div>
-        <div class="se-card-sub">Palm Beach, Martin, St. Lucie. HVHZ-adjacent  -  impact rated glazing standard via broader-state product approvals.</div>
+        <div class="se-card-sub">Palm Beach, Martin, St. Lucie. HVHZ-adjacent - impact rated glazing standard via broader-state product approvals.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="sw_florida" aria-checked="false">
         <div class="se-card-title">SW Florida (coastal)</div>
@@ -616,7 +616,7 @@
   <section class="se-panel" id="step-6" data-step="6" aria-labelledby="step-6-title">
     <div class="se-step-label">Step 6 of 6 &middot; optional</div>
     <h2 id="step-6-title" class="se-step-title">Glass makeup tier?</h2>
-    <p class="se-step-hint">If you've talked to a designer about a specific tier, pick it. Otherwise leave the default  -  the engine picks per region and project type.</p>
+    <p class="se-step-hint">If you've talked to a designer about a specific tier, pick it. Otherwise leave the default - the engine picks per region and project type.</p>
     <div class="se-card-grid" role="radiogroup" aria-label="Glass makeup tier">
       <div class="se-card" role="radio" tabindex="0" data-value="auto" aria-checked="true">
         <div class="se-card-title">Let the engine pick</div>
@@ -652,8 +652,8 @@
     <div class="se-analyzing-sub">Cross-referencing FL code, system catalog, and ACG bid history.</div>
     <div class="se-analyzing-steps" aria-hidden="true">
       <div data-step="0">[ scope/inputs ] validated</div>
-      <div data-step="1">[ code/region ] applied  -  <span id="an-region"> - </span></div>
-      <div data-step="2">[ system/match ] selected  -  <span id="an-system"> - </span></div>
+      <div data-step="1">[ code/region ] applied - <span id="an-region"> - </span></div>
+      <div data-step="2">[ system/match ] selected - <span id="an-system"> - </span></div>
       <div data-step="3">[ pricing/range ] calculated</div>
       <div data-step="4">[ timeline/phases ] built</div>
       <div data-step="5">[ ready ] rendering report</div>
@@ -666,7 +666,7 @@
   <div class="se-container">
 
     <div class="se-print-header" aria-hidden="false">
-      <h2>ACG Scope Intelligence Engine  -  Scope Report</h2>
+      <h2>ACG Scope Intelligence Engine - Scope Report</h2>
       <div class="meta" id="print-meta"></div>
     </div>
 
@@ -679,7 +679,7 @@
       <div class="se-headline-range" id="headline-range" style="font-size:clamp(26px,4vw,40px);">Recommended scope &amp; system</div>
       <div class="se-headline-psf"><span id="headline-sf"> - </span> SF system area (estimated)</div>
       <div class="se-confidence" id="confidence-badge" role="status">&nbsp;</div>
-      <div class="se-disclaimer-short">This engine returns a recommended system, glass make-up, code requirements, and a realistic timeline. It does not generate pricing. For an itemized bid, ACG reviews plans, elevations, and the scope  -  <a href="#capture" style="color:var(--se-accent);">request one below</a>.</div>
+      <div class="se-disclaimer-short">This engine returns a recommended system, glass make-up, code requirements, and a realistic timeline. It does not generate pricing. For an itemized bid, ACG reviews plans, elevations, and the scope - <a href="#capture" style="color:var(--se-accent);">request one below</a>.</div>
       <div class="se-refine" id="refine-chips" aria-label="Refine scope"></div>
     </div>
 
@@ -712,7 +712,7 @@
     <div class="se-capture" id="capture">
       <div class="se-capture-label">Get your branded PDF scope report</div>
       <h2>Email this full breakdown to your team.</h2>
-      <p class="se-capture-sub">We'll send you a printable PDF version + a copy lands with our estimating team for follow-up. No phone tag, no spam  -  just a clean record of what you scoped + a real human on standby.</p>
+      <p class="se-capture-sub">We'll send you a printable PDF version + a copy lands with our estimating team for follow-up. No phone tag, no spam - just a clean record of what you scoped + a real human on standby.</p>
 
       <form id="lead-form" novalidate>
         <!-- honeypot -->
@@ -758,7 +758,7 @@
       </form>
 
       <div style="margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);">
-        <div style="font-size:12px;color:var(--se-text-muted);letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:14px;">Or skip the form  - </div>
+        <div style="font-size:12px;color:var(--se-text-muted);letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:14px;">Or skip the form - </div>
         <div class="se-cta-row">
           <a href="/send-plans.html" class="se-cta se-cta-ghost" id="cta-send-plans">Send us your plans &rarr;</a>
           <a href="tel:+17724867711" class="se-cta se-cta-ghost" id="cta-call">Call Connor &middot; (772) 486-7711</a>
@@ -769,13 +769,13 @@
     <!-- ASSUMPTIONS -->
     <div class="se-section" aria-labelledby="asm-h">
       <h2 id="asm-h">Assumptions behind this number</h2>
-      <div class="se-section-sub">What this estimate includes  -  and what it doesn't.</div>
+      <div class="se-section-sub">What this estimate includes - and what it doesn't.</div>
       <ul class="se-assumptions" id="assumptions-list"></ul>
     </div>
 
     <!-- LONG DISCLAIMER -->
     <div class="se-disclaimer">
-      <strong style="color:var(--se-text);">Full disclaimer.</strong> The ACG Scope Intelligence Engine returns a recommended system, glass make-up, code requirements, and a realistic timeline based on the inputs you provide, ACG's recent Florida project history, and current Florida Building Code. It does not generate pricing. It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter, and ACG returns line-item pricing on that basis. Multi-slide and folding-door systems are sized per unit or linear foot  -  send a real takeoff for that scope. Calibrated against ACG's project history as of 2026 and Florida Building Code 8th Edition (2023). Reach out at (772) 486-7711 or <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> for a bid.
+      <strong style="color:var(--se-text);">Full disclaimer.</strong> The ACG Scope Intelligence Engine returns a recommended system, glass make-up, code requirements, and a realistic timeline based on the inputs you provide, ACG's recent Florida project history, and current Florida Building Code. It does not generate pricing. It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter, and ACG returns line-item pricing on that basis. Multi-slide and folding-door systems are sized per unit or linear foot - send a real takeoff for that scope. Calibrated against ACG's project history as of 2026 and Florida Building Code 8th Edition (2023). Reach out at (772) 486-7711 or <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> for a bid.
     </div>
 
   </div>
