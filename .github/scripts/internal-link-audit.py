@@ -72,14 +72,9 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
 # is edge-specific, so any new indexable page linking to the same targets still
 # fails the audit.
 HELD_INDEXABILITY_EDGE_HASHES = {
-    (
-        "/government-glazing-contractor-florida.html",
-        "/federal-glazing-contractor-tennessee.html",
-    ): "c4d3657ed68cc160642c23db052e924ab3056b3554f35b8e5aa8d16cb8f3f8f3",
-    (
-        "/government-public-sector-glazing.html",
-        "/federal-glazing-contractor-tennessee.html",
-    ): "c4d3657ed68cc160642c23db052e924ab3056b3554f35b8e5aa8d16cb8f3f8f3",
+    # The two /federal-glazing-contractor-tennessee.html edges were retired in the
+    # 2026-08 compliance scrub: the links were removed at source, so the held
+    # exception is no longer needed and must not be re-granted.
     (
         "/government-glazing-contractor-florida.html",
         "/wbe-sbe-procurement.html",

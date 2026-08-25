@@ -95,15 +95,15 @@ HELD_PLACE_GEO_HASHES = {
         "7a7110dfa87efbe1f05fb0040a1c2ff069045beacd30ffb1bdfe84f0ede529b4",
     ),
     "commercial-glazing-tennessee.html": (
-        "58745bdd60bacead2257132d71db208cdcec9bae306828be8ef862656fecf9e1",
         "65e3bca55dfe20ecdfbf642749697e49469bbf738bda08d635ea7f08afc6ea89",
+        "7587394968fdc6c9b8e67366e7606059487fef1d51500ff0500f4065487fc9ea",
     ),
     "commercial-glazing-west-palm-beach.html": (
         "7a7110dfa87efbe1f05fb0040a1c2ff069045beacd30ffb1bdfe84f0ede529b4",
         "a906bcbae144a79dcc0c2f0eca71401a923d886f854338e68827eb28900e4e7d",
     ),
     "eau-palm-beach-resort.html": (
-        "8e894e208c29eac363882504a098cb7fcaf234f89cf9569affda662b66f5daed",
+        "e53172abaa80292eedd913cf1ff23f7f09c4ddbebdc185fd2d1ef0bdb8ba51e0",
     ),
     "franklin-tn/cool-springs-franklin/index.html": (
         "e2314f9b246b1a0841bfe2d8f5bf719ff7070f091bc1a2bd6d9392548cf93bf0",

@@ -83,7 +83,7 @@ REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
 
 EXCLUDED_FRAGMENT_SURFACE_SHA256 = {
     "services-schema-block.html":
-        "2f239fbdf98725113793686d7c7903c71937d0a95bf668f6ebcb3c5e6133613d",
+        "bd6a8c8529390709d2be18fb3dab88068854021077bdfaa5ab70e0a9d45ec5d2",
 }
 
 TN_CONTENT_TOKEN = re.compile(
@@ -218,13 +218,13 @@ TITLE_TAGS = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
-# One known claim is retained only because projects/index.html is inside the
-# staged IA and protected-content lane. The normalized context fingerprint
-# makes the exception exact. Planned or opening language is never a qualifier.
-HELD_DELIVERY_CLAIMS = {
-    ("projects/index.html", "office-count"):
-        "3b35ffbcfdf32d781ffb604811211a99ed2411f2c538586264e71dfdfbc14179",
-}
+# No held delivery claims remain. The prior exception covered an "ACG operates
+# four offices across two states" line on projects/index.html, retained while
+# the Tennessee office was a staged plan. That plan is withdrawn: Tennessee is a
+# furnish-and-consulting market with no ACG office and no ACG field labor, so
+# the claim was removed at the source rather than governed. Any future held
+# claim must be added here with an exact normalized context fingerprint.
+HELD_DELIVERY_CLAIMS: dict[tuple[str, str], str] = {}
 
 
 def iter_html_files():
