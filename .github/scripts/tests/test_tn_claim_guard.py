@@ -803,5 +803,289 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
         self.assertEqual(int(stated.group(1)), rendered_count)
 
 
+# ---------------------------------------------------------------------------
+# Prohibited public-positioning coverage (Regexes A–E)
+#
+# Each test drives check_prohibited_public_positioning directly against a
+# synthetic HTML fixture built inline — no bad HTML is ever committed to
+# disk. Fixtures embed the offending claim in the metadata surface the rule
+# is supposed to catch (title, meta description, og/twitter, JSON-LD, inline
+# script, body) so each surface is exercised.
+# ---------------------------------------------------------------------------
+
+
+def _positioning_violations(html: str, rel: str = "page.html"):
+    fails: list[str] = []
+    warns: list[str] = []
+    guard.check_prohibited_public_positioning(
+        rel,
+        html,
+        lambda path, msg: fails.append(msg),
+        warn=lambda path, msg: warns.append(msg),
+    )
+    return fails, warns
+
+
+class ProhibitedPublicPositioningTests(unittest.TestCase):
+    def test_ai_augmented_is_flagged_in_body(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>ACG is an AI-augmented glazing contractor.</p></body></html>"
+        )
+        self.assertTrue(any("AI-augmented" in m for m in fails))
+
+    def test_ai_augmented_variant_with_space_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>Our AI augmented estimating engine.</p></body></html>"
+        )
+        self.assertTrue(any("AI-augmented" in m for m in fails))
+
+    def test_ai_augmented_inside_title_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><head><title>AI-Augmented Glazing | ACG</title></head></html>"
+        )
+        self.assertTrue(any("AI-augmented" in m for m in fails))
+
+    def test_wbe_certified_without_qualifier_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>ACG is WBE certified and serves projects statewide.</p></body></html>"
+        )
+        self.assertTrue(any("WBE certified" in m for m in fails))
+
+    def test_wbenc_certified_without_qualifier_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>WBENC certified glazing subcontractor.</p></body></html>"
+        )
+        self.assertTrue(any("WBE certified" in m for m in fails))
+
+    def test_wbe_certified_with_in_progress_is_ok(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>ACG's WBE certified in progress; expected 2027.</p></body></html>"
+        )
+        self.assertEqual([m for m in fails if "WBE certified" in m], [])
+
+    def test_wbe_certified_with_pending_is_ok(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>Woman-owned certified, pending WBENC review.</p></body></html>"
+        )
+        self.assertEqual([m for m in fails if "WBE certified" in m], [])
+
+    def test_wbe_certified_with_filed_is_ok(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>WBENC certified; application filed with the council.</p></body></html>"
+        )
+        self.assertEqual([m for m in fails if "WBE certified" in m], [])
+
+    def test_authorized_dealer_heading_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><div>Authorized Dealer For</div>"
+            "<div>ESWindows &middot; Euro-Wall &middot; PGT</div></body></html>"
+        )
+        self.assertTrue(any("authorized dealer" in m.lower() for m in fails))
+
+    def test_authorized_dealer_for_manufacturer_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>We are an authorized dealer for ESWindows.</p></body></html>"
+        )
+        self.assertTrue(any("authorized dealer" in m.lower() for m in fails))
+
+    def test_we_are_an_authorized_dealer_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>Come to ACG - we are an authorized dealer.</p></body></html>"
+        )
+        self.assertTrue(any("authorized dealer" in m.lower() for m in fails))
+
+    def test_editorial_authorized_dealer_plural_is_not_flagged(self):
+        html = (
+            "<html><body><p>Ask specifically which manufacturers they are "
+            "authorized dealers for, and verify it if the answer matters to "
+            "your spec.</p></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertEqual([m for m in fails if "authorized dealer" in m.lower()], [])
+
+    def test_editorial_authorized_dealers_get_is_not_flagged(self):
+        html = (
+            "<html><body><p>Why does this matter? Authorized dealers get direct "
+            "technical support from the manufacturer.</p></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertEqual([m for m in fails if "authorized dealer" in m.lower()], [])
+
+    def test_completed_federal_work_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>ACG has completed federal glazing projects in the region.</p></body></html>"
+        )
+        self.assertTrue(any("federal" in m for m in fails))
+
+    def test_awarded_gsa_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>ACG was awarded GSA contracts last year.</p></body></html>"
+        )
+        self.assertTrue(any("federal" in m for m in fails))
+
+    def test_delivered_usace_is_flagged(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>Delivered USACE glazing packages on schedule.</p></body></html>"
+        )
+        self.assertTrue(any("federal" in m for m in fails))
+
+    def test_tn_office_opening_in_title_of_indexable_page_fails(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<title>Nashville Office Opening Q3 2026 | ACG</title>"
+            "</head><body><p>Body.</p></body></html>"
+        )
+        fails, warns = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+        self.assertEqual([m for m in warns if "office-opening" in m], [])
+
+    def test_tn_office_opening_in_meta_description_of_indexable_page_fails(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<meta name=\"description\" content=\"Nashville office opening Q3 2026.\">"
+            "</head><body></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_tn_office_opening_in_og_description_of_indexable_page_fails(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<meta property=\"og:description\" content=\"Coming to Nashville soon.\">"
+            "</head><body></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_tn_office_opening_in_jsonld_of_indexable_page_fails(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<script type=\"application/ld+json\">"
+            "{\"@type\":\"FAQPage\",\"mainEntity\":[{\"name\":\"When is ACG's "
+            "Nashville office opening?\"}]}"
+            "</script></head><body></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_tn_office_opening_in_inline_script_of_indexable_page_fails(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<script>var msg = 'Nashville office opens Q3 2026';</script>"
+            "</head><body></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_tn_office_opening_on_noindex_page_warns_not_fails(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<meta name=\"robots\" content=\"noindex,follow\">"
+            "<title>Nashville Office Opens Q3 2026 | ACG</title>"
+            "</head><body></body></html>"
+        )
+        fails, warns = _positioning_violations(html)
+        self.assertEqual([m for m in fails if "office-opening" in m], [])
+        self.assertTrue(any("office-opening" in m for m in warns))
+
+    def test_expanding_to_nashville_variant_is_caught(self):
+        html = (
+            "<!doctype html><html><head><title>ACG</title></head>"
+            "<body><p>ACG is expanding to Nashville next year.</p></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_expansion_governed_qualifier_is_not_flagged(self):
+        # "expansion evaluated / off the table / not active" documents that the
+        # plan is withdrawn and must not trip the guard.
+        for qualifier in (
+            "expansion evaluated",
+            "expansion off the table",
+            "expansion not active",
+        ):
+            with self.subTest(qualifier=qualifier):
+                html = (
+                    "<!doctype html><html><body><p>Tennessee "
+                    f"{qualifier}; no ACG office.</p></body></html>"
+                )
+                fails, warns = _positioning_violations(html)
+                self.assertEqual([m for m in fails if "office-opening" in m], [])
+                self.assertEqual([m for m in warns if "office-opening" in m], [])
+
+
+class NoindexDetectionTests(unittest.TestCase):
+    def test_noindex_meta_is_detected(self):
+        self.assertTrue(
+            guard.has_noindex_directive(
+                '<meta name="robots" content="noindex,follow">'
+            )
+        )
+        self.assertTrue(
+            guard.has_noindex_directive(
+                '<meta name="googlebot" content="noindex">'
+            )
+        )
+
+    def test_index_page_is_not_detected_as_noindex(self):
+        self.assertFalse(
+            guard.has_noindex_directive('<meta name="robots" content="index,follow">')
+        )
+        self.assertFalse(guard.has_noindex_directive("<html><body></body></html>"))
+
+
+class ClaimGuardAllowlistTests(unittest.TestCase):
+    def test_missing_file_returns_empty_allowlist(self):
+        # Point at a path that doesn't exist; guard must not raise.
+        empty = guard.load_claim_guard_allowlist(
+            path=str(SCRIPTS_DIR / "claim-guard-allowlist-DOES-NOT-EXIST.json")
+        )
+        self.assertEqual(empty.get("authorized_dealer_editorial", {}), {})
+
+    def test_repo_allowlist_loads(self):
+        loaded = guard.load_claim_guard_allowlist()
+        self.assertEqual(loaded.get("schema_version"), 1)
+        self.assertIsInstance(
+            loaded.get("authorized_dealer_editorial", {}), dict
+        )
+
+    def test_block_hash_allowlist_exempts_matching_authorized_dealer_block(self):
+        html = (
+            "<html><body><div>Authorized Dealer For</div>"
+            "<span>ESWindows</span></body></html>"
+        )
+        # First discover the block hash the guard would compute.
+        m = guard.AUTHORIZED_DEALER_RE.search(html)
+        self.assertIsNotNone(m)
+        block_hash = guard._authorized_dealer_block_hash(html, m)
+        allowlist = {"authorized_dealer_editorial": {"page.html": [block_hash]}}
+        fails: list[str] = []
+        guard.check_prohibited_public_positioning(
+            "page.html", html, lambda p, msg: fails.append(msg), allowlist=allowlist
+        )
+        self.assertEqual([m for m in fails if "authorized dealer" in m.lower()], [])
+
+    def test_allowlist_only_exempts_the_named_relpath(self):
+        html = (
+            "<html><body><div>Authorized Dealer For</div>"
+            "<span>ESWindows</span></body></html>"
+        )
+        m = guard.AUTHORIZED_DEALER_RE.search(html)
+        block_hash = guard._authorized_dealer_block_hash(html, m)
+        allowlist = {
+            "authorized_dealer_editorial": {
+                "blog/some-other-page.html": [block_hash]
+            }
+        }
+        fails: list[str] = []
+        guard.check_prohibited_public_positioning(
+            "commercial-glazing-west-palm-beach.html",
+            html,
+            lambda p, msg: fails.append(msg),
+            allowlist=allowlist,
+        )
+        self.assertTrue(any("authorized dealer" in m.lower() for m in fails))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -44,6 +44,8 @@ import sys
 from html.parser import HTMLParser
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CLAIM_GUARD_ALLOWLIST_PATH = os.path.join(SCRIPT_DIR, "claim-guard-allowlist.json")
 
 SKIP_DIRS = {".git", ".github", "_internal", "node_modules", "fonts", "images", "css", "js"}
 CSS_SCAN_SKIP_DIRS = {".git", "_internal", "node_modules"}
@@ -217,6 +219,181 @@ TITLE_TAGS = re.compile(
     r"|<meta[^>]+(?:name|property)\s*=\s*\"(?:og:title|twitter:title)\"[^>]*>",
     re.DOTALL | re.IGNORECASE,
 )
+
+# --- prohibited public positioning (site-wide, all metadata surfaces) ------
+#
+# These claims are prohibited on *every* HTML surface — <title>, <meta>,
+# <meta og:*/twitter:*>, JSON-LD strings, inline <script> literals, and body
+# text — because they are load-bearing marketing claims that must not appear
+# anywhere the crawler or a user can see them, indexable or not.
+#
+# On indexable pages any match is a hard fail. On noindex pages (see
+# has_noindex_directive) the Nashville/TN office-opening match downgrades to a
+# warning so it stays visible while other cleanup PRs run.
+
+# Regex A: AI-augmented positioning is prohibited outright.
+AI_AUGMENTED_RE = re.compile(r"\bAI[-\s]?augmented\b", re.IGNORECASE)
+
+# Regex B: WBE / WBENC / woman-owned "certified" without an "in progress",
+# "pending", or "filed" qualifier inside the following 60 characters.
+WBE_CERTIFIED_RE = re.compile(
+    r"(?:WBENC|WBE|woman[-\s]?owned)\s+certified(?![^.]{0,60}(?:pending|in\s+progress|filed))",
+    re.IGNORECASE,
+)
+
+# Regex C: authorized-dealer as a heading or first-party claim (not editorial).
+# We flag five literal patterns. The plural editorial form used in the two
+# blog posts ("which manufacturers they are authorized dealers for",
+# "authorized dealers get direct technical support") is NOT matched because
+# the singular "dealer" and the trailing capitalized manufacturer are required.
+AUTHORIZED_DEALER_RE = re.compile(
+    r"Authorized\s+Dealer\s+[Ff]or\b"                          # "Authorized Dealer For|for" (heading)
+    r"|\bauthorized\s+dealer\s+for\s+(?=[A-Z\"\d])"            # "authorized dealer for <Manufacturer>"
+    r"|\bwe\s+are\s+an\s+authorized\s+dealer\b"
+    r"|\bACG\s+is\s+(?:an\s+)?authorized\s+dealer\b",
+    re.IGNORECASE,
+)
+
+# Regex D: "completed federal" / delivered / installed / awarded federal work.
+COMPLETED_FEDERAL_RE = re.compile(
+    r"\b(?:completed|delivered|installed|awarded)\s+(?:federal|GSA|VA|DoD|USACE)\b",
+    re.IGNORECASE,
+)
+
+# Regex E: Nashville / Tennessee office-opening claim in ANY surface. The
+# noqa negative-lookahead lets us keep the "expansion evaluated / off the
+# table / not active" governed language visible without tripping the guard.
+TN_OFFICE_OPENING_RE = re.compile(
+    r"(?:nashville|tennessee)[^<]{0,80}"
+    r"(?:office\s+(?:opening|opens|launching)"
+    r"|opens\s+Q3"
+    r"|opening\s+Q3"
+    r"|expansion(?!\s+(?:evaluated|off\s+the\s+table|not\s+active)))"
+    r"|expanding\s+to\s+nashville"
+    r"|coming\s+to\s+nashville",
+    re.IGNORECASE,
+)
+
+# Robots-meta noindex detection. Any of: <meta name="robots" content="...noindex...">,
+# <meta name="googlebot" content="...noindex...">, X-Robots-Tag http-equiv.
+NOINDEX_META_RE = re.compile(
+    r'<meta[^>]+(?:name|http-equiv)\s*=\s*"(?:robots|googlebot|x-robots-tag)"'
+    r'[^>]*content\s*=\s*"[^"]*\bnoindex\b',
+    re.IGNORECASE,
+)
+
+
+def has_noindex_directive(html: str) -> bool:
+    return bool(NOINDEX_META_RE.search(html))
+
+
+def load_claim_guard_allowlist(path: str = CLAIM_GUARD_ALLOWLIST_PATH):
+    """Load the block-hash allowlist. Missing file = empty allowlist.
+
+    Schema:
+      { "schema_version": 1,
+        "authorized_dealer_editorial": {
+            "<relpath>": ["<sha256 of exact HTML block>", ...] } }
+
+    Only exact block hashes are honored — no line-number allowances — so any
+    edit to a whitelisted block silently invalidates the exemption and re-fails
+    the guard.
+    """
+    if not os.path.exists(path):
+        return {"authorized_dealer_editorial": {}}
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def _iter_positioning_matches(rx, html):
+    """Yield (match, snippet) for every regex hit, deduped by (start, group)."""
+    seen = set()
+    for m in rx.finditer(html):
+        key = (m.start(), m.group(0).lower())
+        if key in seen:
+            continue
+        seen.add(key)
+        start = max(0, m.start() - 80)
+        end = min(len(html), m.end() + 80)
+        snippet = re.sub(r"\s+", " ", html[start:end]).strip()
+        yield m, snippet
+
+
+def _authorized_dealer_block_hash(html: str, match: re.Match[str]) -> str:
+    """Hash of the enclosing paragraph/heading block for the allowlist."""
+    # Walk out to the nearest surrounding block-level open tag on the left and
+    # its closing counterpart on the right; fall back to a 400-char window.
+    left = html.rfind("<", max(0, match.start() - 2000), match.start())
+    right = html.find(">", match.end(), match.end() + 2000)
+    if left < 0:
+        left = max(0, match.start() - 200)
+    if right < 0:
+        right = min(len(html), match.end() + 200)
+    block = html[left : right + 1]
+    normalized = re.sub(r"\s+", " ", block).strip()
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def check_prohibited_public_positioning(
+    rel: str,
+    html: str,
+    fail,
+    warn=None,
+    allowlist=None,
+):
+    """Scan the WHOLE HTML file (title, meta, og/twitter, JSON-LD strings,
+    inline <script> literals, body) for prohibited public positioning claims.
+
+    Regex E (TN office opening) FAILS on indexable pages and WARNS on
+    noindex pages so cleanup PRs can address them separately.
+    """
+    allowlist = allowlist or {"authorized_dealer_editorial": {}}
+    dealer_allow = set(
+        allowlist.get("authorized_dealer_editorial", {}).get(rel, [])
+    )
+    is_indexable = not has_noindex_directive(html)
+
+    # A — AI-augmented positioning
+    for _, snippet in _iter_positioning_matches(AI_AUGMENTED_RE, html):
+        fail(rel, f"prohibited 'AI-augmented' positioning: …{snippet}…")
+
+    # B — WBE / WBENC / woman-owned "certified" without in-progress qualifier
+    for _, snippet in _iter_positioning_matches(WBE_CERTIFIED_RE, html):
+        fail(
+            rel,
+            "prohibited 'WBE certified' claim without an in-progress "
+            f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
+        )
+
+    # C — authorized dealer as a heading or claim (editorial mentions are fine)
+    for m, snippet in _iter_positioning_matches(AUTHORIZED_DEALER_RE, html):
+        block_hash = _authorized_dealer_block_hash(html, m)
+        if block_hash in dealer_allow:
+            continue
+        fail(
+            rel,
+            f"prohibited 'authorized dealer' claim {m.group(0)!r} "
+            f"(block hash {block_hash}) — …{snippet}…",
+        )
+
+    # D — completed / delivered / installed / awarded federal work
+    for _, snippet in _iter_positioning_matches(COMPLETED_FEDERAL_RE, html):
+        fail(
+            rel,
+            f"prohibited completed-federal-work claim: …{snippet}…",
+        )
+
+    # E — Nashville / TN office-opening claim across ALL surfaces
+    for _, snippet in _iter_positioning_matches(TN_OFFICE_OPENING_RE, html):
+        message = (
+            "prohibited Nashville/Tennessee office-opening claim on ANY surface "
+            f"(title, meta, og/twitter, JSON-LD, script, body): …{snippet}…"
+        )
+        if is_indexable:
+            fail(rel, message)
+        elif warn is not None:
+            warn(rel, message + " [noindex — warning only]")
+
 
 # No held delivery claims remain. The prior exception covered an "ACG operates
 # four offices across two states" line on projects/index.html, retained while
@@ -1227,9 +1404,15 @@ def main() -> int:
     args = ap.parse_args()
 
     violations: list[tuple[str, str]] = []
+    warnings: list[tuple[str, str]] = []
 
     def fail(rel, msg):
         violations.append((rel, msg))
+
+    def warn(rel, msg):
+        warnings.append((rel, msg))
+
+    allowlist = load_claim_guard_allowlist()
 
     tn_pages = []
     scanned = 0
@@ -1248,6 +1431,13 @@ def main() -> int:
         if not args.list:
             check_delivery_claims(rel, html, fail, held_observed)
             check_scoped_stale_operating_claims(rel, html, fail)
+            # Prohibited public positioning (A–E) is also site-wide and covers
+            # both indexable and noindex HTML. Only .html files carry the
+            # metadata surfaces this rule scans — llms.txt et al are text-only.
+            if rel.endswith(".html"):
+                check_prohibited_public_positioning(
+                    rel, html, fail, warn=warn, allowlist=allowlist
+                )
 
         if not rel.endswith(".html") or not is_tn_page(rel, html):
             continue
@@ -1266,6 +1456,17 @@ def main() -> int:
         check_external_css_generated_content(fail)
     else:
         reference_stats = {}
+
+    if warnings and not args.list:
+        print("tn-claim-guard warnings (non-blocking):")
+        by_file_w: dict[str, list[str]] = {}
+        for rel, msg in warnings:
+            by_file_w.setdefault(rel, []).append(msg)
+        for rel in sorted(by_file_w):
+            print(f"  {rel}")
+            for msg in by_file_w[rel]:
+                print(f"    [!] {msg}")
+        print(f"  ({len(warnings)} warning(s) across {len(by_file_w)} file(s))\n")
 
     if args.list:
         for p in tn_pages:
