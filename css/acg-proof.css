@@ -235,3 +235,7 @@ header.nav.scrolled{background:rgba(5,7,12,.94);border-bottom:1px solid rgba(240
   .geo-ledger{border-left:0;border-top:1px solid rgba(240,243,248,.14);padding:2rem 1.5rem 2.4rem}
 }
 @media(max-width:430px){.geo-project{grid-template-columns:1fr;gap:.2rem}}
+
+/* Visually-hidden utility: keeps the brand string in the crawled DOM as text
+   alongside the nav logo image without changing the visual design. */
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
