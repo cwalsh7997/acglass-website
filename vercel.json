@@ -344,6 +344,32 @@
       "source": "/why-acg.html",
       "destination": "/about.html",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.acglass.com"
+        }
+      ],
+      "destination": "https://acglass.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/curtain-wall-systems.html",
+      "destination": "/curtainwall-systems.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-jacksonville-fl",
+      "destination": "/commercial-glazing-jacksonville.html",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-glazing-jacksonville-fl/",
+      "destination": "/commercial-glazing-jacksonville.html",
+      "permanent": true
     }
   ],
   "headers": [
