@@ -48,7 +48,6 @@
   },
   "frozen_prefixes": [
     "/west-palm-beach-commercial-glazing.html",
-    "/commercial-glazing-west-palm-beach.html",
     "/west-palm-beach/",
     "/storefront-glazier-west-palm-beach-florida/",
     "/storefront-installer-west-palm-beach.html",
@@ -56,6 +55,22 @@
     "/impact-windows-palm-beach.html",
     "/eswindows-installer-west-palm-beach.html",
     "/"
+  ],
+  "_frozen_prefixes_change_log": [
+    "2026-08-25 -- Removed /commercial-glazing-west-palm-beach.html from the byte freeze.",
+    "Two independent primary-source reasons:",
+    "1. Its <link rel=canonical> already points to /storefront-glazier-west-palm-beach-florida/,",
+    "   so the page cannot rank as itself. Google attributes signals to the canonical target.",
+    "   Any change to this URL's body content cannot move the ranking of the file it aliases.",
+    "2. 90-day GSC baseline (2026-05-27 -- 2026-08-24, sc-domain:acglass.com), attribution by page:",
+    "      /west-palm-beach-commercial-glazing.html   clicks=2  impressions=561  position=9.26",
+    "      /commercial-glazing-west-palm-beach.html   clicks=0  impressions= 31  position=8.61",
+    "      /storefront-installer-west-palm-beach.html clicks=0  impressions= 62  position=8.31",
+    "      every other WPB URL in the cluster:        clicks=0  impressions<32",
+    "      no WPB URL holds #1 organic. Best is position 9.",
+    "   The 'WPB holds #1 organic' premise recorded in _frozen_note above is unverified;",
+    "   GSC now attributes and disagrees.",
+    "This is a narrow lift, not a full unfreeze. Every other prefix in the list stays byte-frozen."
   ],
   "_frozen_note": [
     "West Palm Beach holds #1 organic for 'commercial glazing contractor west palm beach'",
