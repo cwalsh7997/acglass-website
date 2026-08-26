@@ -15,7 +15,7 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 
 PROTECTED_HASHES = {
     "anchors": "555ddaef659d5c7e6a3727696117aed782500731bbf530e36e32dd81a53e1dd5",
-    "body": "3a8e91eb130f2882cb97b51958b192b052e4b267c7e6be166b2574aa039c856d",
+    "body": "d4f2704ca252ec9f1f086868e45ef9b0b899cbdea24c0afd7dde4bcb1822906c",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "7b9e50a4aa712fc774f975ac315135fe1ec1b90344faf8f8df685c82ef38e95b",
     "jsonld": "d6078e92ff30d6acee2bf9656a6d145ee432c17149931707c3f752aa037e74a0",
