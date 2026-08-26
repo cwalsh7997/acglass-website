@@ -28,28 +28,28 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
         "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
         "hrefs": "948a33bf910a1ea58f4e4ed7699206077881de60218d3b42b8f7f9a0706a69af",
-        "visible": "da9adf72f710b5f06796b7134ce138d3dc9011e3693afa16b891cc75bcf452f8",
+        "visible": "8f1707894711b78aea4384b17ff18d73e32e03377671a66cb05990341417705c",
     },
     "multi-slide-bifold-doors.html": {
         "head": "a6548335f86a87cfe0edad5b1a99aa688264267f093282b74b56b4e014d91779",
         "jsonld": "1f800a06c4815d3beeb406c92acfe48aa65334ab34171a9af8cd1d2eabeb179b",
         "scripts": "84b01a42b425bbd1a4db42ab009246dc80d857733de8e369adf90928736a97dd",
         "hrefs": "c1050b4e8576163a4e2f42df3d9044fa652dba57cc3c77ec3f7dfbf2c3a7f537",
-        "visible": "d5634f15d70d4a7984f3737e2ae23bd02f8e0d892158803e481856ace2635571",
+        "visible": "abfff1a222ee324b8b478d09c8c63e7c8cf0aa32e12cab03d050c89bb8eaf148",
     },
     "privacy-policy.html": {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "602b81cc175a16c0d7104e55d880b415e295f6aa24f13dbb41c6d89507861945",
         "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
-        "visible": "0616a02edf9c35c49405839abcec88e30be41956ff910ae9b55b02242b5d7c22",
+        "visible": "791c38bc88ae9223624ac561dc97f9e58628e322337e81d251da55c2231f3768",
     },
     "terms-of-use.html": {
         "head": "353fb9c5f91945a215c3af07a55b360f37c776714c98143e29ae9da7f00a3c02",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "31c1c638780ee6d016e87b4cc4d6d823c4a41abbfd14225a58d6f5504555f3f4",
         "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
-        "visible": "42f09d5327726f4c31cd79455351f5c6fff42b938079617de4c7743681df005b",
+        "visible": "1f0c3379f37d8ae1641af324bb4a12fbbc4a290bd5862e215827a4fec91ba64d",
     },
 }
 
