@@ -1,3 +1,22 @@
+# WHY HTML AND CSS ARE TRIGGERS
+#
+# This workflow runs the measurement-layer suites, several of which pin sha256
+# digests of page HTML fragments: test_priority_accessibility (head, visible,
+# jsonld, hrefs, scripts per hub page), test_no_external_google_fonts (body),
+# test_nav_opacity, test_template_contrast_contract, test_intrinsic_image_
+# dimensions. Their entire purpose is to catch unintended drift in page markup.
+#
+# The filter used to list only scripts, .github/seo/** and css/acg-proof.css,
+# so an HTML-only commit ran none of them. That is not hypothetical. The
+# "Sprint 011" mass edit of 2026-07-31 preceded a ranking collapse on 2026-08-01,
+# and its two most consequential commits skipped this workflow entirely:
+#
+#   850f44d11  13 files  homepage title/H1/meta/og rewrite   -> did not trigger
+#   15d053320  18 files  head cleanup, breadcrumbs, schema   -> did not trigger
+#
+# Only 3ab0ac505 and e29d68abe triggered it, and only because they happened to
+# touch css/acg-proof.css. A guard that pins HTML must run when HTML changes.
+
 name: SEO Report (weekly)
 
 on:
@@ -13,8 +32,12 @@ on:
       - '.github/scripts/seo-gsc-export.py'
       - '.github/scripts/tests/**'
       - '.github/seo/**'
-      # test_nav_opacity.py asserts on this stylesheet.
-      - 'css/acg-proof.css'
+      # The suites pin digests of page HTML -- head, visible text, JSON-LD,
+      # hrefs, scripts. An HTML-only change is precisely what they exist to
+      # catch, so HTML must be a trigger. See the note below.
+      - '**/*.html'
+      - 'css/**'
+      - 'sitemap*.xml'
   pull_request:
     paths:
       - '.github/scripts/seo_measure/**'
@@ -22,8 +45,9 @@ on:
       - '.github/scripts/seo-gsc-export.py'
       - '.github/scripts/tests/**'
       - '.github/seo/**'
-      # test_nav_opacity.py asserts on this stylesheet.
-      - 'css/acg-proof.css'
+      - '**/*.html'
+      - 'css/**'
+      - 'sitemap*.xml'
   workflow_dispatch: {}
 
 permissions:
