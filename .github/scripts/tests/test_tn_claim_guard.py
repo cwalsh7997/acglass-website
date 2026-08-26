@@ -804,10 +804,10 @@ class ScopedStaleOperatingClaimTests(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Prohibited public-positioning coverage (Regexes A–E)
+# Prohibited public-positioning coverage (Regexes A - E)
 #
 # Each test drives check_prohibited_public_positioning directly against a
-# synthetic HTML fixture built inline — no bad HTML is ever committed to
+# synthetic HTML fixture built inline - no bad HTML is ever committed to
 # disk. Fixtures embed the offending claim in the metadata surface the rule
 # is supposed to catch (title, meta description, og/twitter, JSON-LD, inline
 # script, body) so each surface is exercised.
@@ -1012,6 +1012,186 @@ class ProhibitedPublicPositioningTests(unittest.TestCase):
                 fails, warns = _positioning_violations(html)
                 self.assertEqual([m for m in fails if "office-opening" in m], [])
                 self.assertEqual([m for m in warns if "office-opening" in m], [])
+
+    # ------------------------------------------------------------------
+    # Regex E false-positive regression tests.
+    #
+    # The first cut of Regex E carried a bare "expansion" alternative that
+    # fired on any "expansion" token within 80 characters of a Tennessee place
+    # name. Both phrases below are verbatim from the repo and are third-party /
+    # market-observation uses, not ACG claims. They must never be flagged, and
+    # they are fixed in the regex rather than in the allowlist so the whole
+    # class of false positive is gone.
+    # ------------------------------------------------------------------
+
+    def test_third_party_airport_expansion_is_not_flagged(self):
+        # acoustic-glazing-stc-oitc-commercial.html - the AIRPORT is expanding.
+        html = (
+            "<!doctype html><html><body><div class=\"prose rv\"><p>Acoustic "
+            "glazing shows up most often on projects where exterior noise is a "
+            "known, named problem at the design stage, and healthcare or "
+            "education buildings where interior sound isolation is part of the "
+            "program. Nashville's BNA airport expansion is a regional example "
+            "of the demand - the on-site Hilton at BNA was specified with "
+            "triple-pane acoustical windows.</p></div></body></html>"
+        )
+        fails, warns = _positioning_violations(html)
+        self.assertEqual([m for m in fails if "office-opening" in m], [])
+        self.assertEqual([m for m in warns if "office-opening" in m], [])
+
+    def test_blog_card_market_observation_expansion_is_not_flagged(self):
+        # blog/index.html - a blog card description framing market observations.
+        html = (
+            "<!doctype html><html><body><h3>Florida Commercial Construction "
+            "2026 Outlook</h3><p>What the 2026 Florida commercial construction "
+            "market looks like from inside a 350-project glazing contractor. "
+            "Restaurant, hotel, office, medical, and Tennessee expansion "
+            "observations.</p></body></html>"
+        )
+        fails, warns = _positioning_violations(html)
+        self.assertEqual([m for m in fails if "office-opening" in m], [])
+        self.assertEqual([m for m in warns if "office-opening" in m], [])
+
+    def test_bare_third_party_expansion_nouns_are_not_flagged(self):
+        # Same class of false positive: someone else's project expanding.
+        for phrase in (
+            "Sumner Regional Medical Center expansion, charter schools, and "
+            "grocery-anchored retail are the dominant Nashville project types.",
+            "Nashville leads it - corporate campuses, hotels, multifamily "
+            "towers, and healthcare expansion are all going vertical at once.",
+            "Each state is unlocked by the Tennessee license, making the "
+            "expansion efficient rather than 5 separate applications.",
+            "The Tennessee stadium expansion broke ground in March.",
+        ):
+            with self.subTest(phrase=phrase):
+                html = f"<!doctype html><html><body><p>{phrase}</p></body></html>"
+                fails, warns = _positioning_violations(html)
+                self.assertEqual([m for m in fails if "office-opening" in m], [])
+                self.assertEqual([m for m in warns if "office-opening" in m], [])
+
+    # ------------------------------------------------------------------
+    # Regex E must still catch genuine first-party ACG expansion claims.
+    # ------------------------------------------------------------------
+
+    def test_acg_is_expanding_into_tennessee_is_flagged(self):
+        html = (
+            "<!doctype html><html><body><p>ACG is expanding into Tennessee "
+            "to serve Middle TN general contractors.</p></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_our_tennessee_expansion_is_flagged(self):
+        html = (
+            "<!doctype html><html><body><p>Read more about our Tennessee "
+            "expansion and what it means for your project.</p></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_expanding_to_nashville_with_quarter_is_flagged(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<meta name=\"description\" content=\"Expanding to Nashville in "
+            "Q3 2026.\"></head><body></body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_new_nashville_office_opening_is_flagged(self):
+        html = (
+            "<!doctype html><html><body><h2>New Nashville office opening</h2>"
+            "</body></html>"
+        )
+        fails, _ = _positioning_violations(html)
+        self.assertTrue(any("office-opening" in m for m in fails))
+
+    def test_first_person_and_full_company_expansion_claims_are_flagged(self):
+        for phrase in (
+            "American Commercial Glass is expanding into Tennessee this year.",
+            "ACG's Tennessee expansion begins in the spring.",
+            "We are planning our expansion into Nashville.",
+            "We're opening a Nashville office in the fall.",
+            "Our new Nashville branch launches early 2027.",
+            "Our Nashville location opens Q3 2026.",
+        ):
+            with self.subTest(phrase=phrase):
+                html = f"<!doctype html><html><body><p>{phrase}</p></body></html>"
+                fails, _ = _positioning_violations(html)
+                self.assertTrue(
+                    any("office-opening" in m for m in fails),
+                    f"genuine ACG expansion claim not flagged: {phrase}",
+                )
+
+    def test_genuine_claim_still_only_warns_on_a_noindex_page(self):
+        html = (
+            "<!doctype html><html><head>"
+            "<meta name=\"robots\" content=\"noindex,follow\">"
+            "<title>Our Tennessee expansion | ACG</title>"
+            "</head><body></body></html>"
+        )
+        fails, warns = _positioning_violations(html)
+        self.assertEqual([m for m in fails if "office-opening" in m], [])
+        self.assertTrue(any("office-opening" in m for m in warns))
+
+
+class RegexEExpansionBindingTests(unittest.TestCase):
+    """Direct assertions on TN_OFFICE_OPENING_RE, independent of surfaces.
+
+    These pin the structural rule: an expansion term is a claim only when it is
+    bound to an ACG / first-person subject, is inherently directional, or sits
+    next to an office/location opening term.
+    """
+
+    FALSE_POSITIVES = (
+        "Nashville's BNA airport expansion is a regional example of the demand",
+        "Restaurant, hotel, office, medical, and Tennessee expansion observations.",
+        "Sumner Regional Medical Center expansion near Nashville Pike",
+        "healthcare expansion is going vertical across Nashville",
+        "the Tennessee license, making the expansion efficient",
+    )
+
+    GENUINE_CLAIMS = (
+        "ACG is expanding into Tennessee",
+        "our Tennessee expansion",
+        "expanding to Nashville in Q3 2026",
+        "new Nashville office opening",
+        "American Commercial Glass is expanding into Tennessee",
+        "ACG's Tennessee expansion begins in the spring",
+        "We are opening a Nashville office",
+        "Our Nashville location opens Q3 2026",
+    )
+
+    def test_bare_expansion_no_longer_matches(self):
+        for phrase in self.FALSE_POSITIVES:
+            with self.subTest(phrase=phrase):
+                self.assertIsNone(
+                    guard.TN_OFFICE_OPENING_RE.search(phrase),
+                    f"regex E still fires on a third-party expansion: {phrase}",
+                )
+
+    def test_subject_bound_expansion_still_matches(self):
+        for phrase in self.GENUINE_CLAIMS:
+            with self.subTest(phrase=phrase):
+                self.assertIsNotNone(
+                    guard.TN_OFFICE_OPENING_RE.search(phrase),
+                    f"regex E no longer catches a genuine claim: {phrase}",
+                )
+
+    def test_governed_withdrawal_language_never_matches(self):
+        for phrase in (
+            "our Tennessee expansion evaluated and closed",
+            "ACG Tennessee expansion off the table",
+            "our Nashville expansion not active",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIsNone(guard.TN_OFFICE_OPENING_RE.search(phrase))
+
+    def test_allowlist_stays_empty_for_regex_e(self):
+        # The two false positives above are fixed structurally, so no page-level
+        # exemption is needed. Guard against a regression that re-adds one.
+        loaded = guard.load_claim_guard_allowlist()
+        self.assertEqual(loaded.get("authorized_dealer_editorial", {}), {})
 
 
 class NoindexDetectionTests(unittest.TestCase):

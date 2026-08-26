@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-tn-claim-guard.py — offline claim-integrity guard for the Tennessee pages.
+tn-claim-guard.py - offline claim-integrity guard for the Tennessee pages.
 
-Runs against the repo working tree (no HTTP), so it fails *before* deploy —
+Runs against the repo working tree (no HTTP), so it fails *before* deploy  - 
 unlike seo-verify.py, which only sees what is already live.
 
 It guards three things that regressed once already because the TN pages were
 generated from the Florida templates:
 
-  1. Florida location leakage in TN metadata — ", FL" state tokens, plus the
+  1. Florida location leakage in TN metadata - ", FL" state tokens, plus the
      Florida-only regulatory constructs (HVHZ, Miami-Dade, NOA) used as if they
      were Tennessee proof.
   2. Staffed-office language ("Nashville HQ", "Tennessee headquarters") that
@@ -222,9 +222,9 @@ TITLE_TAGS = re.compile(
 
 # --- prohibited public positioning (site-wide, all metadata surfaces) ------
 #
-# These claims are prohibited on *every* HTML surface — <title>, <meta>,
+# These claims are prohibited on *every* HTML surface - <title>, <meta>,
 # <meta og:*/twitter:*>, JSON-LD strings, inline <script> literals, and body
-# text — because they are load-bearing marketing claims that must not appear
+# text - because they are load-bearing marketing claims that must not appear
 # anywhere the crawler or a user can see them, indexable or not.
 #
 # On indexable pages any match is a hard fail. On noindex pages (see
@@ -260,17 +260,70 @@ COMPLETED_FEDERAL_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Regex E: Nashville / Tennessee office-opening claim in ANY surface. The
-# noqa negative-lookahead lets us keep the "expansion evaluated / off the
-# table / not active" governed language visible without tripping the guard.
+# Regex E: Nashville / Tennessee office-opening claim in ANY surface.
+#
+# The first version of this regex allowed a *bare* "expansion" alternative
+# anywhere within 80 characters of a Tennessee place name. "expansion" on its
+# own is not an ACG claim, so that produced two false positives:
+#
+#   1. "Nashville's BNA airport expansion is a regional example of the demand"
+#      (acoustic-glazing-stc-oitc-commercial.html) - the AIRPORT is expanding.
+#   2. "Restaurant, hotel, office, medical, and Tennessee expansion
+#      observations." (blog/index.html) - market-observation framing in a blog
+#      card description, not a first-party ACG claim.
+#
+# Both are third-party / market-observation uses. The fix is structural, not an
+# allowlist entry: an expansion term is only a prohibited claim when it is bound
+# to a first-person / ACG SUBJECT inside a short window (E3), or when the
+# language is inherently first-party directional (E4), or when it sits next to
+# an office/location OPENING term (E1/E2). Any of those still fails; a bare
+# "<something> expansion" no longer does.
+
+# Tennessee place tokens Regex E cares about.
+TN_E_PLACE = r"(?:nashville|tennessee)"
+
+# First-person / ACG subject. Deliberately does NOT include "us", which shows
+# up in unrelated CTA copy ("contact us") close enough to market prose to
+# reintroduce the false-positive class we are removing here.
+TN_E_ACG_SUBJECT = (
+    r"(?:ACG(?:'s|&#(?:39|x27);s)?"
+    r"|American\s+Commercial\s+Glass(?:'s|&#(?:39|x27);s)?"
+    r"|we(?:'re|&#(?:39|x27);re|\s+are|\s+will|\s+plan)?"
+    r"|our)"
+)
+
+# Expansion terms. The negative lookahead keeps the governed withdrawal
+# language ("expansion evaluated / off the table / not active") visible on the
+# page without tripping the guard, even when a subject is nearby.
+TN_E_EXPANSION_TERM = (
+    r"(?:expansion|expanding|expands|expand)"
+    r"(?!\s+(?:evaluated|off\s+the\s+table|not\s+active))"
+)
+
+# Office / location opening terms. These are claims regardless of subject: an
+# opening date for a place is only ever asserted by the party opening it.
+TN_E_OPENING_TERM = (
+    r"(?:office|location|branch|shop|facility|showroom)\s+"
+    r"(?:opening|opens|open|launch|launching|launches|launched|coming)"
+)
+TN_E_OPENING_VERB = r"(?:new|opening|opens|open|launch|launching|launches|launched)"
+
 TN_OFFICE_OPENING_RE = re.compile(
-    r"(?:nashville|tennessee)[^<]{0,80}"
-    r"(?:office\s+(?:opening|opens|launching)"
-    r"|opens\s+Q3"
-    r"|opening\s+Q3"
-    r"|expansion(?!\s+(?:evaluated|off\s+the\s+table|not\s+active)))"
-    r"|expanding\s+to\s+nashville"
-    r"|coming\s+to\s+nashville",
+    # E1 - office/location opening tied to a TN place name, either order.
+    rf"{TN_E_PLACE}[^<]{{0,80}}?{TN_E_OPENING_TERM}"
+    rf"|{TN_E_OPENING_VERB}\s+[^<]{{0,40}}?{TN_E_PLACE}\s+"
+    r"(?:office|location|branch|shop|facility|showroom)"
+    # E2 - a dated opening near a TN place name ("opens Q3 2026").
+    rf"|{TN_E_PLACE}[^<]{{0,80}}?(?:opens|opening|launches|launching)\s+"
+    r"(?:in\s+)?(?:Q[1-4]|early|late|mid)"
+    # E3 - an expansion term bound to an ACG / first-person subject, either
+    #      "ACG is expanding into Tennessee" or "our Tennessee expansion".
+    rf"|\b{TN_E_ACG_SUBJECT}\b[^<]{{0,60}}?{TN_E_EXPANSION_TERM}[^<]{{0,40}}?{TN_E_PLACE}"
+    rf"|\b{TN_E_ACG_SUBJECT}\b[^<]{{0,40}}?{TN_E_PLACE}[^<]{{0,25}}?{TN_E_EXPANSION_TERM}"
+    # E4 - inherently first-party directional language; no subject required
+    #      because only the mover can be "expanding to" or "coming to" a market.
+    rf"|expand(?:ing|s|ed)?\s+(?:in)?to\s+(?:the\s+)?{TN_E_PLACE}"
+    rf"|coming\s+(?:soon\s+)?to\s+{TN_E_PLACE}",
     re.IGNORECASE,
 )
 
@@ -295,7 +348,7 @@ def load_claim_guard_allowlist(path: str = CLAIM_GUARD_ALLOWLIST_PATH):
         "authorized_dealer_editorial": {
             "<relpath>": ["<sha256 of exact HTML block>", ...] } }
 
-    Only exact block hashes are honored — no line-number allowances — so any
+    Only exact block hashes are honored - no line-number allowances - so any
     edit to a whitelisted block silently invalidates the exemption and re-fails
     the guard.
     """
@@ -353,11 +406,11 @@ def check_prohibited_public_positioning(
     )
     is_indexable = not has_noindex_directive(html)
 
-    # A — AI-augmented positioning
+    # A - AI-augmented positioning
     for _, snippet in _iter_positioning_matches(AI_AUGMENTED_RE, html):
         fail(rel, f"prohibited 'AI-augmented' positioning: …{snippet}…")
 
-    # B — WBE / WBENC / woman-owned "certified" without in-progress qualifier
+    # B - WBE / WBENC / woman-owned "certified" without in-progress qualifier
     for _, snippet in _iter_positioning_matches(WBE_CERTIFIED_RE, html):
         fail(
             rel,
@@ -365,7 +418,7 @@ def check_prohibited_public_positioning(
             f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
         )
 
-    # C — authorized dealer as a heading or claim (editorial mentions are fine)
+    # C - authorized dealer as a heading or claim (editorial mentions are fine)
     for m, snippet in _iter_positioning_matches(AUTHORIZED_DEALER_RE, html):
         block_hash = _authorized_dealer_block_hash(html, m)
         if block_hash in dealer_allow:
@@ -373,17 +426,17 @@ def check_prohibited_public_positioning(
         fail(
             rel,
             f"prohibited 'authorized dealer' claim {m.group(0)!r} "
-            f"(block hash {block_hash}) — …{snippet}…",
+            f"(block hash {block_hash}) - …{snippet}…",
         )
 
-    # D — completed / delivered / installed / awarded federal work
+    # D - completed / delivered / installed / awarded federal work
     for _, snippet in _iter_positioning_matches(COMPLETED_FEDERAL_RE, html):
         fail(
             rel,
             f"prohibited completed-federal-work claim: …{snippet}…",
         )
 
-    # E — Nashville / TN office-opening claim across ALL surfaces
+    # E - Nashville / TN office-opening claim across ALL surfaces
     for _, snippet in _iter_positioning_matches(TN_OFFICE_OPENING_RE, html):
         message = (
             "prohibited Nashville/Tennessee office-opening claim on ANY surface "
@@ -392,7 +445,7 @@ def check_prohibited_public_positioning(
         if is_indexable:
             fail(rel, message)
         elif warn is not None:
-            warn(rel, message + " [noindex — warning only]")
+            warn(rel, message + " [noindex - warning only]")
 
 
 # No held delivery claims remain. The prior exception covered an "ACG operates
@@ -1298,7 +1351,7 @@ def check_hq_language(rel: str, html: str, fail):
     for m in HQ_LANGUAGE.finditer(html):
         start = max(0, m.start() - 80)
         snippet = re.sub(r"\s+", " ", html[start : m.end() + 80])
-        fail(rel, f"unsupported Tennessee office language {m.group(0)!r} — …{snippet}…")
+        fail(rel, f"unsupported Tennessee office language {m.group(0)!r} - …{snippet}…")
 
 
 def check_structured_data(rel: str, html: str, fail):
@@ -1314,7 +1367,7 @@ def check_structured_data(rel: str, html: str, fail):
                 fail(
                     rel,
                     "JSON-LD PostalAddress asserts a Tennessee business address "
-                    f"({node.get('addressLocality')}, TN) — ACG has no TN address yet",
+                    f"({node.get('addressLocality')}, TN) - ACG has no TN address yet",
                 )
             if node.get("@type") == "GeoCoordinates" and not under_area_served:
                 try:
@@ -1326,7 +1379,7 @@ def check_structured_data(rel: str, html: str, fail):
                     fail(
                         rel,
                         f"JSON-LD GeoCoordinates ({lat}, {lon}) place the business in "
-                        "Tennessee — no TN premises exist",
+                        "Tennessee - no TN premises exist",
                     )
             node_id = node.get("@id")
             if isinstance(node_id, str) and node_id.endswith("#office-nashville"):
@@ -1431,9 +1484,9 @@ def main() -> int:
         if not args.list:
             check_delivery_claims(rel, html, fail, held_observed)
             check_scoped_stale_operating_claims(rel, html, fail)
-            # Prohibited public positioning (A–E) is also site-wide and covers
+            # Prohibited public positioning (A - E) is also site-wide and covers
             # both indexable and noindex HTML. Only .html files carry the
-            # metadata surfaces this rule scans — llms.txt et al are text-only.
+            # metadata surfaces this rule scans - llms.txt et al are text-only.
             if rel.endswith(".html"):
                 check_prohibited_public_positioning(
                     rel, html, fail, warn=warn, allowlist=allowlist
