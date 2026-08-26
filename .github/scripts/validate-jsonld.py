@@ -78,12 +78,6 @@ HELD_PLACE_GEO_HASHES = {
     "brentwood-tn/index.html": (
         "099321b42b880409e643cc8912e620635f8c7b7eef5c534e78fdd60d552505bd",
     ),
-    "brentwood-tn/maryland-farms-brentwood/index.html": (
-        "901a4bd05c75bd209bb89550a088d86dd5596f5d9a0d79b17118eec9d070ff6a",
-    ),
-    "chattanooga/downtown-chattanooga/index.html": (
-        "3d97f91aed844d98a0a5ebb0754cb35e5b268bdd7244025c568d5191b6d1a37a",
-    ),
     "chattanooga/index.html": (
         "d232ee0c49a767d009542a5586957d77147558b0d215ad9b70c370e4830060e2",
     ),
@@ -105,47 +99,17 @@ HELD_PLACE_GEO_HASHES = {
     "eau-palm-beach-resort.html": (
         "e53172abaa80292eedd913cf1ff23f7f09c4ddbebdc185fd2d1ef0bdb8ba51e0",
     ),
-    "franklin-tn/cool-springs-franklin/index.html": (
-        "e2314f9b246b1a0841bfe2d8f5bf719ff7070f091bc1a2bd6d9392548cf93bf0",
-    ),
-    "franklin-tn/downtown-franklin/index.html": (
-        "c100a1e727235adcf59a5688471cfde5f3f58784cfd0ee1e5044ae4fa8efc40f",
-    ),
     "franklin-tn/index.html": (
         "84b126dd66b8fde984be7229f0bedc37fa0ad35d63b2617d9fc0c5581364a6c6",
     ),
-    "knoxville/downtown-knoxville/index.html": (
-        "53be82e5d03fdbd9a821041a9baf0841af8d3f856024504b22beb11058cc1eac",
-    ),
     "knoxville/index.html": (
         "c34b9747346b8c09780e9b08e4d5e1f9d3c6da6a55f4deb5b57a6b57ef8b1ef1",
-    ),
-    "knoxville/turkey-creek-knoxville/index.html": (
-        "49d5cffd12d8354e407f6cb3364c94b11e8b219e4ea6692df772c2cd1da196fa",
-    ),
-    "memphis/downtown-memphis/index.html": (
-        "bda1c082e6e0005f504b139d26a853c26308fb0b00e6c1e14a68df7eb422f261",
-    ),
-    "memphis/east-memphis-poplar/index.html": (
-        "716e4978cc9e4b1e285c93828eeab659f003386f8b068da3ef4a9ad20fb105b7",
     ),
     "memphis/index.html": (
         "b2c39edfdc78f1bcd3ff3acc7ec928ab089d72c64381640250b7eaa134128745",
     ),
     "murfreesboro-tn/index.html": (
         "7c70b6842b4adfe080de44245e9f6dd09e086d58aec9b18b6c565ed6468454fd",
-    ),
-    "nashville/east-nashville/index.html": (
-        "db1867f1f8b11de68f4d92eb8490679169885eed11a7abeb6950aade24cd98c1",
-    ),
-    "nashville/index.html": (
-        "cdeb6130d596f602776269826dc3054818b687ed1242db6ef580e80ab5184d5e",
-    ),
-    "nashville/sobro-nashville/index.html": (
-        "d661465ed1a9fb5b673d0336a2fee42f3b0de11dd667934e2de26197d2ab14b1",
-    ),
-    "nashville/the-gulch-nashville/index.html": (
-        "6eb0c6551f509e2a459782585e06772dcaddddcc9cf7ca9c04686febf2df128b",
     ),
     "ocean-prime-ft-lauderdale.html": (
         "25551ef21c950f8a9f33ff37175ad6730072e93dafbce36441b67f4371f8ac7f",
@@ -155,9 +119,6 @@ HELD_PLACE_GEO_HASHES = {
         "362ebad2cd210b356dd063b5b16d910d2371d8f1e8a7a98c51583bf2c401c87a",
         "5cbf7ecfbbe9bb4cdbd67636374dfc5fb7cee333d73db080aecf4c4a29cc2e49",
         "8c9abfbd45853639a94d50aac12ec0c6e371dce8cd480b65672a08cf347333ea",
-    ),
-    "tennessee/index.html": (
-        "3e444c1cd7d3188dc1a919ccd47d1402daea48e9686f681f74deb8bdbeb412b7",
     ),
     "west-palm-beach/clematis-street-west-palm-beach/index.html": (
         "44ec9488219f6c1bf840490e86a342d86dadd3db31f772a517f2b37619290d4a",
