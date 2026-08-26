@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "_doc": "Block-hash allowlist for tn-claim-guard.py 'prohibited_public_positioning' rules. Entries only allow specific known-good editorial contexts; the guard identifies them by SHA-256 of the enclosing HTML block, not by line number, so any edit to a whitelisted block silently invalidates the exemption and re-fails the guard. The two blog posts that discuss authorized-dealer relationships editorially do not match the singular 'authorized dealer for <Manufacturer>' or 'we are an authorized dealer' phrasings the guard targets, so no entries are needed at present.",
+  "authorized_dealer_editorial": {}
+}
