@@ -78,6 +78,38 @@ def drop_ld_node(text: str, id_fragment: str) -> str:
     return text[:m.start(1)] + json.dumps(data) + text[m.end(1):]
 
 
+# The Tampa LocalBusiness node as it existed before the claim-safety removal.
+# The carve-out tests inject it rather than reading it from the tree, so they
+# keep exercising the carve-out after the node is gone from index.html.
+TAMPA_NODE = {
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": "https://acglass.com/#localbusiness-tampa",
+    "name": "American Commercial Glass",
+    "parentOrganization": {"@id": "https://acglass.com/#organization"},
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3031 N Rocky Point Dr W Ste 600",
+        "addressLocality": "Tampa",
+        "addressRegion": "FL",
+        "postalCode": "33607",
+        "addressCountry": "US",
+    },
+    "geo": {"@type": "GeoCoordinates", "latitude": 27.96863, "longitude": -82.56867},
+    "telephone": "+1-772-486-7711",
+    "url": "https://acglass.com/",
+}
+
+
+def with_tampa_node(text: str) -> str:
+    """Return `text` with the historical Tampa identity node spliced back in."""
+    m = cv.LD_JSON_RE.search(text)
+    data = json.loads(m.group(1))
+    assert not any("localbusiness-tampa" in str(n.get("@id", ""))
+                   for n in data["@graph"]), "Tampa node unexpectedly still present"
+    data["@graph"] = data["@graph"] + [TAMPA_NODE]
+    return text[:m.start(1)] + json.dumps(data) + text[m.end(1):]
+
+
 # A body-only addition of the kind the freeze is meant to permit: truthful
 # contextual navigation to service and market hubs, no protected field touched.
 CONTEXTUAL_NAV = """
@@ -155,7 +187,10 @@ class NegativeTests(unittest.TestCase):
         self.assertEqual({"wpb-links"}, set(failures))
 
     def test_removing_an_identity_node_is_caught(self):
-        new = drop_ld_node(HOME, "localbusiness-tampa")
+        # Uses a verified-office node, not the carved-out Tampa node: the Tampa
+        # node was removed as a false physical-location claim, so mutating it
+        # here would make this test pass for the wrong reason.
+        new = drop_ld_node(HOME, "localbusiness-naples")
         failures, _ = diff(HOME, new)
         self.assertEqual({"schema-identity"}, set(failures))
         self.assertIn("removed", failures["schema-identity"])
@@ -220,6 +255,118 @@ class PolicyTests(unittest.TestCase):
         self.assertIn("/", REGISTRY["frozen_prefixes"])
         self.assertIn("/", SEMANTIC)
         self.assertEqual("index.html", ROOT_SPEC["file"])
+
+
+class SchemaIdentityCarveOutTests(unittest.TestCase):
+    """The claim-safety carve-out must be removal-only and narrowly scoped.
+
+    Tampa is an ACG service area, not an office. A LocalBusiness node asserting
+    a Tampa postal address, geo and opening hours is a false physical-location
+    claim, and claim safety outranks ranking stability -- so removing it is
+    permitted. Every other use of the carve-out must still fail, or the freeze
+    becomes a rename-and-reword hole.
+    """
+
+    CARVE = "https://acglass.com/#localbusiness-tampa"
+    VERIFIED = ("https://acglass.com/#localbusiness-west-palm-beach",
+                "https://acglass.com/#localbusiness-naples",
+                "https://acglass.com/#localbusiness-stuart")
+
+    def _drop_node(self, html, node_id):
+        i = html.find(f'"@id": "{node_id}"')
+        if i < 0:
+            self.fail(f"{node_id} not present in the fixture")
+        depth, start = 0, None
+        for j in range(i, -1, -1):
+            if html[j] == "}":
+                depth += 1
+            elif html[j] == "{":
+                if depth == 0:
+                    start = j
+                    break
+                depth -= 1
+        depth, end = 0, None
+        for j in range(start, len(html)):
+            if html[j] == "{":
+                depth += 1
+            elif html[j] == "}":
+                depth -= 1
+                if depth == 0:
+                    end = j
+                    break
+        rest = html[end + 1:]
+        stripped = rest.lstrip()
+        if stripped.startswith(","):
+            rest = stripped[1:]
+        return html[:start] + rest
+
+    def test_declared_removable_id_may_be_removed(self):
+        base = with_tampa_node(HOME)
+        failures, _ = cv.semantic_freeze_diff(
+            base, HOME, BYTE_FROZEN, frozenset([self.CARVE]))
+        self.assertNotIn("schema-identity", failures,
+                         "the declared claim-safety removal was blocked")
+
+    def test_removal_still_fails_when_not_declared(self):
+        base = with_tampa_node(HOME)
+        failures, _ = cv.semantic_freeze_diff(base, HOME, BYTE_FROZEN)
+        self.assertIn("schema-identity", failures,
+                      "an undeclared node removal slipped through")
+        self.assertIn("removed", failures["schema-identity"])
+
+    def test_carve_out_does_not_permit_altering_the_node(self):
+        # The carve-out is removal-only, so a reworded address on a carved-out
+        # node must still fail.
+        base = with_tampa_node(HOME)
+        new = base.replace("3031 N Rocky Point Dr W Ste 600", "999 Example St")
+        self.assertNotEqual(base, new, "the address mutation matched nothing")
+        failures, _ = cv.semantic_freeze_diff(
+            base, new, BYTE_FROZEN, frozenset([self.CARVE]))
+        self.assertIn("schema-identity", failures,
+                      "the carve-out wrongly permitted an edit, not just a removal")
+
+    def test_carve_out_does_not_permit_re_adding_the_node(self):
+        # Re-adding the false Tampa node must fail even though it is declared
+        # removable, or the carve-out becomes a two-way door.
+        new = with_tampa_node(HOME)
+        failures, _ = cv.semantic_freeze_diff(
+            HOME, new, BYTE_FROZEN, frozenset([self.CARVE]))
+        self.assertIn("schema-identity", failures,
+                      "the carve-out wrongly permitted re-adding the node")
+        self.assertIn("added", failures["schema-identity"])
+
+    def test_carve_out_does_not_cover_verified_offices(self):
+        removable = frozenset(ROOT_SPEC.get("schema_identity_removable", ()))
+        for node_id in self.VERIFIED:
+            self.assertNotIn(node_id, removable,
+                             f"{node_id} is a verified office and must stay frozen")
+
+    def test_verified_office_removal_still_fails_under_the_declared_carve_out(self):
+        declared = frozenset(ROOT_SPEC.get("schema_identity_removable", ()))
+        for node_id in self.VERIFIED:
+            frag = node_id.rsplit("#", 1)[1]
+            if frag not in HOME:
+                continue
+            new = drop_ld_node(HOME, frag)
+            failures, _ = cv.semantic_freeze_diff(HOME, new, BYTE_FROZEN, declared)
+            self.assertIn("schema-identity", failures,
+                          f"removing {node_id} was permitted")
+
+    def test_carve_out_list_is_documented_and_minimal(self):
+        removable = ROOT_SPEC.get("schema_identity_removable", [])
+        self.assertEqual([self.CARVE], removable,
+                         "the carve-out list grew; each entry needs its own review")
+        self.assertIn("CARVE-OUT", ROOT_SPEC["protected_fields"]["schema-identity"],
+                      "the carve-out must be documented on the protected field")
+        self.assertTrue(ROOT_SPEC.get("carve_out_log"),
+                        "every carve-out needs a dated log entry naming the reason")
+
+    def test_no_tampa_address_remains_on_the_root(self):
+        self.assertNotIn("Rocky Point", HOME,
+                         "a Tampa street address is still asserted on the root")
+        self.assertNotIn("localbusiness-tampa", HOME,
+                         "the Tampa LocalBusiness node is still on the root")
+
 
 
 if __name__ == "__main__":

@@ -539,12 +539,21 @@ def _wpb_text(html: str) -> set[str]:
 
 
 def semantic_freeze_diff(base: str, new: str,
-                         frozen_urls: set[str]) -> tuple[dict[str, str], set[str]]:
+                         frozen_urls: set[str],
+                         removable_ids: frozenset[str] = frozenset(),
+                         ) -> tuple[dict[str, str], set[str]]:
     """Compare the protected fields of one page across two versions.
 
     Returns (field -> failure detail) for fields that changed, plus any newly
     added links into a byte-frozen WPB URL. A field absent from both versions
     compares equal: for meta-robots, absence is the protected value.
+
+    `removable_ids` is the config-declared schema-identity carve-out: an @id
+    listed there may be REMOVED without failing, because it asserts a physical
+    address for a location ACG does not occupy and claim safety outranks
+    ranking stability. The carve-out is removal-only by construction -- an @id
+    that is altered, renamed, or re-added still fails, and an @id absent from
+    the list is untouched by this branch.
     """
     scalars = {
         "title": lambda t: (TITLE_RE.search(t).group(1).strip() if TITLE_RE.search(t) else None),
@@ -567,12 +576,18 @@ def semantic_freeze_diff(base: str, new: str,
         for key in sorted(set(was_id) | set(now_id)):
             if was_id.get(key) != now_id.get(key):
                 if key not in now_id:
+                    if key in removable_ids:
+                        continue  # declared claim-safety removal
                     detail.append(f"{key} removed")
                 elif key not in was_id:
                     detail.append(f"{key} added")
                 else:
                     detail.append(f"{key} altered")
-        failures["schema-identity"] = "; ".join(detail[:4])
+        # An empty `detail` means every difference was a declared carve-out
+        # removal, so there is nothing to report. Setting the key with an empty
+        # value would leave a field that reads as enforced but says nothing.
+        if detail:
+            failures["schema-identity"] = "; ".join(detail[:4])
 
     was_links, now_links = _wpb_links(base, frozen_urls), _wpb_links(new, frozen_urls)
     lost = sorted(was_links - now_links)
@@ -649,7 +664,9 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
                     True, str(exc)[:120])
             continue
 
-        failures, added = semantic_freeze_diff(base_text, read(rel), frozen_norm)
+        removable = frozenset(spec.get("schema_identity_removable", ()))
+        failures, added = semantic_freeze_diff(base_text, read(rel), frozen_norm,
+                                               removable)
         for field in spec["protected_fields"]:
             detail = failures.get(field, "")
             rep.add("FAIL", f"{url} semantic freeze: {field} unchanged since {base_ref}",
