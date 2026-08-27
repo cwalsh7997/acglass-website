@@ -1,0 +1,51 @@
+name: Pages Deploy Watchdog
+
+# Watches the surface that actually serves acglass.com: GitHub Pages (legacy
+# build type, source branch `main`, path `/`) behind Cloudflare. Vercel is not
+# the live host and vercel.json is dead config, so no Vercel check can tell us
+# whether main is live.
+#
+# Motivation: on 2026-08-26 the Pages build for 002721322 hung in status
+# "building" at 15:08:11Z and never published. Normal builds take 43-120
+# seconds. It sat for about 14 hours in silence, a merged SEO fix looked
+# shipped and was not live, and it was found only by manual inspection. A
+# manual rebuild then succeeded in 42 seconds.
+#
+# This job fails (red run, notification) on: errored build, build stuck in
+# "building" for more than 15 minutes, or a published sha that is behind main
+# HEAD. It warns without failing when the Cloudflare edge is serving content
+# more than 30 minutes older than the newest successful build.
+
+on:
+  schedule:
+    # Every 30 minutes. A hang is therefore caught within about 45 minutes of
+    # the 15 minute threshold being crossed, instead of 14 hours.
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: pages-deploy-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Stdlib only on purpose: no pip step, so nothing in the dependency
+      # supply chain can make the alarm itself go quiet.
+      - name: Check Pages build health and edge freshness
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 .github/scripts/pages-watchdog.py
