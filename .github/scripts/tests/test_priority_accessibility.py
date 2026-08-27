@@ -31,14 +31,19 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "visible": "da9adf72f710b5f06796b7134ce138d3dc9011e3693afa16b891cc75bcf452f8",
     },
     "multi-slide-bifold-doors.html": {
-        "head": "a6548335f86a87cfe0edad5b1a99aa688264267f093282b74b56b4e014d91779",
-        # Rebaselined 2026-08-27: "authorized Euro-Wall installer" removed from
-        # visible copy, the FAQPage answer and its inline script duplicate.
-        # head and hrefs are deliberately unchanged - body copy only.
-        "jsonld": "449dafae5ab561d7cef082e76f9ef800f1ed5506b8e02de56a6e071d2d6a3d45",
-        "scripts": "580f1cf172d7d0a0180a3adcf267ca2c8ce59ca15cae14e53d15664d2dee415b",
+        # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
+        # "Authorized Euro-Wall ..." removed from the Service JSON-LD
+        # description in <head>, the "Authorized on the ..." H2 became
+        # "Installed on the ...", and "installed by an authorized Florida
+        # installer" became "installed by a Florida commercial installer".
+        # head/jsonld/scripts move because the edited JSON-LD block lives in
+        # <head>; hrefs is unchanged because no link or URL was touched.
+        # Digests recomputed with this module's own _fingerprints() helper.
+        "head": "b35b27924a0cd4e9ba6c4cbe29fad6fbad932770734290d0b8b8338a82625f07",
+        "jsonld": "4afbd33f45d172e288866ca76b1c7378573aa821bcd033a5187ec2d0cf0352f6",
+        "scripts": "99ef7cbb1dac5a40482698f99990ac2b56180e7a51b2c40102dd25060118b69e",
         "hrefs": "c1050b4e8576163a4e2f42df3d9044fa652dba57cc3c77ec3f7dfbf2c3a7f537",
-        "visible": "cb05226ac7d6827f3177e043f6770b0e3317a2f24de7bb766f257dc0d864cfb2",
+        "visible": "0f7af31a2f54d4a7dce87574c61653a55a653bc8692e4bc553839ce531d0a1cd",
     },
     "privacy-policy.html": {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
