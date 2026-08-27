@@ -124,9 +124,18 @@ MUTATIONS = {
     ),
 }
 
-# wpb-links has no base case to remove: the root links no frozen WPB URL today.
-# The test supplies one, so the check is exercised rather than skipped.
-WPB_LINK = '<a href="/west-palm-beach/">Our headquarters market</a>'
+# wpb-links has no base case to remove: the root links no frozen WPB URL that is
+# absent from this fixture. The test supplies one, so the check is exercised
+# rather than skipped.
+#
+# This must be a URL that is BOTH still listed in frozen_prefixes AND not already
+# linked from index.html. /west-palm-beach/ was used here until 2026-08-27, when it
+# was lifted out of the freeze to strip a prohibited "Nashville Q3 2026." claim and
+# an "Authorized" manufacturer label from the page users actually reach. Do not use
+# /storefront-glazier-west-palm-beach-florida/ either: index.html already links it,
+# so it cannot serve as an "added link" fixture.
+WPB_FROZEN_URL = "/eswindows-installer-west-palm-beach.html"
+WPB_LINK = f'<a href="{WPB_FROZEN_URL}">Our headquarters market</a>'
 
 
 class NegativeTests(unittest.TestCase):
@@ -146,7 +155,7 @@ class NegativeTests(unittest.TestCase):
         base = sub(HOME, "</body>", f"{WPB_LINK}</body>")
         failures, _ = diff(base, HOME)
         self.assertEqual({"wpb-links"}, set(failures))
-        self.assertIn("/west-palm-beach/", failures["wpb-links"])
+        self.assertIn(WPB_FROZEN_URL, failures["wpb-links"])
 
     def test_wpb_links_fails_when_an_existing_link_is_reworded(self):
         base = sub(HOME, "</body>", f"{WPB_LINK}</body>")
@@ -192,7 +201,7 @@ class PositiveTests(unittest.TestCase):
         failures, added = diff(HOME, new)
         self.assertEqual({}, failures)
         self.assertEqual(1, len(added), "a new link into a frozen WPB URL must be surfaced")
-        self.assertIn("/west-palm-beach/", next(iter(added)))
+        self.assertIn(WPB_FROZEN_URL, next(iter(added)))
 
     def test_identical_input_yields_nothing(self):
         self.assertEqual(({}, set()), diff(HOME, HOME))

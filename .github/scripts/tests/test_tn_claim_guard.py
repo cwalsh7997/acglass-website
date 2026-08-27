@@ -204,11 +204,11 @@ class ReferenceInventoryTests(unittest.TestCase):
         self.assertEqual(
             stats,
             {
-                "document_sources": 151,
+                "document_sources": 150,
                 "path_or_title_discovery": 73,
-                "outside_discovery": 78,
+                "outside_discovery": 77,
                 "known_edge_301_sources": 4,
-                "document_sources_excluding_recorded_edge_sources": 147,
+                "document_sources_excluding_recorded_edge_sources": 146,
                 "excluded_non_page_fragments": 1,
             },
         )
@@ -219,7 +219,7 @@ class ReferenceInventoryTests(unittest.TestCase):
             },
             {
                 "path_or_title_discovery": 73,
-                "stale_operating_claim_hold": 26,
+                "stale_operating_claim_hold": 25,
                 "mixed_claim_review": 1,
                 "biography_only": 39,
                 "technical_or_market_review": 8,
