@@ -1187,11 +1187,23 @@ class RegexEExpansionBindingTests(unittest.TestCase):
             with self.subTest(phrase=phrase):
                 self.assertIsNone(guard.TN_OFFICE_OPENING_RE.search(phrase))
 
-    def test_allowlist_stays_empty_for_regex_e(self):
+    def test_no_allowlist_class_exists_for_regex_e(self):
         # The two false positives above are fixed structurally, so no page-level
         # exemption is needed. Guard against a regression that re-adds one.
+        #
+        # This used to assert the whole allowlist file was empty, which was true
+        # only because nothing had ever been exempted. Regex C now carries
+        # entries (spec-section requirement text and the byte-frozen West Palm
+        # Beach pages), so the assertion is narrowed to its actual intent: regex
+        # E must still have no exemption class of its own.
         loaded = guard.load_claim_guard_allowlist()
-        self.assertEqual(loaded.get("authorized_dealer_editorial", {}), {})
+        self.assertEqual(
+            sorted(k for k in loaded if not k.startswith("_")),
+            ["authorized_dealer_editorial", "schema_version"],
+        )
+        for key in loaded:
+            self.assertNotIn("expansion", key)
+            self.assertNotIn("office", key)
 
 
 class NoindexDetectionTests(unittest.TestCase):
