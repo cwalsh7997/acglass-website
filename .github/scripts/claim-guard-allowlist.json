@@ -1,5 +1,37 @@
 {
   "schema_version": 1,
-  "_doc": "Block-hash allowlist for tn-claim-guard.py 'prohibited_public_positioning' rules. Entries only allow specific known-good editorial contexts; the guard identifies them by SHA-256 of the enclosing HTML block, not by line number, so any edit to a whitelisted block silently invalidates the exemption and re-fails the guard. The two blog posts that discuss authorized-dealer relationships editorially do not match the singular 'authorized dealer for <Manufacturer>' or 'we are an authorized dealer' phrasings the guard targets, so no entries are needed at present.",
-  "authorized_dealer_editorial": {}
+  "_doc": "Block-hash allowlist for tn-claim-guard.py 'prohibited_public_positioning' rules. Entries only allow specific known-good contexts; the guard identifies them by SHA-256 of the enclosing HTML block, not by line number, so any edit to a whitelisted block silently invalidates the exemption and re-fails the guard. Regex C is now noun-agnostic (installer/dealer/distributor/partner/reseller/fabricator, bare 'Authorized' labels, 'manufacturer-authorized'), and editorial third-party phrasing is separated structurally (a first-party ACG subject is required) rather than by entry, so only two narrow classes are listed here: (1) architect spec-section and blog checklist text that states what a SPEC should require of the installer, which is not an ACG self-claim, and (2) the byte-frozen West Palm Beach pages and the site-root-adjacent WPB paths, whose copy cannot be edited while .github/seo/url-primaries.json frozen_prefixes is in force. Class (2) entries are debt, not approval: they must be removed together with the copy as soon as the WPB freeze lifts.",
+  "authorized_dealer_editorial": {
+    "architect-specs/section-08-43-29-folding-glass-walls.html": [
+      "e329458d1286f7b24800e4d7ef7358ffd0e08b8ecba0c1d132b95589d15f34d5"
+    ],
+    "architect-specs/section-08-51-13-aluminum-windows.html": [
+      "ab62dd934fe68801b4f15a5536b9cea64913928f2acb07c97df063c279e00a2d"
+    ],
+    "blog/tornado-rated-glazing-tennessee-commercial.html": [
+      "d9e2495ec11456345281630d9d85f576ac81e7fe654dfe0fd8f21ea87a83c9ba"
+    ],
+    "eswindows-installer-west-palm-beach.html": [
+      "1fcef30da7f6caacd7b0d2a4c2ba67a78d3c6075710aa983a3c02a65e18b12f2",
+      "3b4b4bd04ea86d558ba3570c581972ce57d80ae39c6a66867e0c3ad3ba654e2f",
+      "3c5f2a411e9016c18eca4b568767f5cc68b720a86912b9289b4df939bcec7925",
+      "55f8bc82bc389cb23ed8ed08b05d2dfd0e6392dab11d11f2f39a09bbdd2e4f3d",
+      "5716e3689db2b5ea86a03d8329be97ea37e99af7a2d02b3c66cb1682c800db94",
+      "f972cee8085feac85ebeffc504df81cefc686f634da9cd9c4b7e3bb56c0ab390"
+    ],
+    "storefront-glazier-west-palm-beach-florida/index.html": [
+      "1301ddc87d7c5a1199acce53d7c578845f9f6ec6d7997858a339e7b139f3d9c4",
+      "63e4dcc1e8dca51f00c59eb603ccaeeb787652e75cf6dfec3b287f5840bad6a9",
+      "70f8fbcc3b28d204b92f762b6be6398f7c815be9bc89586312612a0283ebff3f",
+      "efd1b6de9e0f0ed3b05a2a7cf769758eed312131c6b037f4e3e6928bd560efa1"
+    ],
+    "storefront-installer-west-palm-beach.html": [
+      "93fedce12f3a5fa70bea231f3a2039e6b14fc6ad81a08bc7efb0b60f1377457e",
+      "dd54fd4d917c80be86ce924a9a52f1624a69d484ead866c8f8386c86acf538b1",
+      "ecbec85d1623675da09c3bc1ca99abaf4d92df65a30e113341fb22375cdb61d8"
+    ],
+    "west-palm-beach/index.html": [
+      "39c53d3a765bb5a4ff2e601abd2f1124100d8b549af0d586dd056239040401e9"
+    ]
+  }
 }

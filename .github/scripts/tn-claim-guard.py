@@ -241,18 +241,119 @@ WBE_CERTIFIED_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Regex C: authorized-dealer as a heading or first-party claim (not editorial).
-# We flag five literal patterns. The plural editorial form used in the two
-# blog posts ("which manufacturers they are authorized dealers for",
-# "authorized dealers get direct technical support") is NOT matched because
-# the singular "dealer" and the trailing capitalized manufacturer are required.
+# Regex C: first-party manufacturer-authorization claims, any noun.
+#
+# The original version matched the literal word "dealer" only. The site never
+# used it: it said "authorized installer", "authorized partner", bare
+# "Authorized" card labels and "Manufacturer-authorized only", so roughly 90
+# files carried an undocumentable authorization claim and still passed green.
+# The rule is now noun-agnostic (installer / dealer / distributor / partner /
+# reseller / fabricator), and also covers bare "Authorized" labels and the
+# hyphenated "manufacturer-authorized" adjective.
+#
+# Editorial / third-party phrasing must still pass, and the separation is
+# structural rather than allowlist-based wherever possible:
+#
+#   - C2 requires a first-party SUBJECT (ACG / American Commercial Glass / we /
+#     our / its) inside a short window in front of the authorized-noun phrase,
+#     so generic advice keeps working: "which manufacturers they are authorized
+#     dealers for", "authorized dealers get direct technical support", "most
+#     premium systems require authorized-installer status", "a firm that is
+#     authorized on ES-50", "non-authorized contractors".
+#   - The change-order sense ("priced and authorized before it proceeds") is
+#     excluded explicitly - it is a permission to proceed, not a manufacturer
+#     grant.
+#   - "manufacturer authorization" as a noun ("ask for manufacturer
+#     authorization letters") is deliberately NOT matched; only the first-party
+#     adjective form "manufacturer-authorized" is.
+#
+# The block-hash allowlist (authorized_dealer_editorial) still applies to every
+# match, unchanged, for editorial blocks the structure cannot separate.
+
+# Nouns that turn "authorized" into a claimed manufacturer relationship.
+AUTH_RELATIONSHIP_NOUN = (
+    r"(?:installer|dealer|distributor|partner|reseller|fabricator)s?"
+)
+
+# First-person / ACG subject. Mirrors TN_E_ACG_SUBJECT but adds the possessive
+# "its", which the storefront pages use ("its seven authorized manufacturer
+# partners"). "they", "their" and bare "a firm" are deliberately absent: those
+# are the editorial voices.
+AUTH_ACG_SUBJECT = (
+    r"(?:ACG(?:'s|&#(?:39|x27);s|&rsquo;s)?"
+    r"|American\s+Commercial\s+Glass(?:'s|&#(?:39|x27);s|&rsquo;s)?"
+    r"|we(?:'re|&#(?:39|x27);re|&rsquo;re|\s+are)?"
+    r"|our|its)"
+)
+
+# "authorized <up to three intervening words> <noun>", hyphen or space joined.
+# The intervening words cover "authorized commercial Euro-Wall installer",
+# "authorized manufacturer partners", "authorized-installer".
+AUTH_NOUN_PHRASE = (
+    r"authorized[-\s](?:[A-Za-z][A-Za-z&;.-]*[-\s]){0,3}?" + AUTH_RELATIONSHIP_NOUN + r"\b"
+)
+
+# The change-order sense of "authorized" - never a manufacturer claim.
+AUTH_CHANGE_ORDER = r"authorized\s+before\s+it\s+proceeds"
+
 AUTHORIZED_DEALER_RE = re.compile(
+    # C1 - the original literal dealer patterns, unchanged.
     r"Authorized\s+Dealer\s+[Ff]or\b"                          # "Authorized Dealer For|for" (heading)
     r"|\bauthorized\s+dealer\s+for\s+(?=[A-Z\"\d])"            # "authorized dealer for <Manufacturer>"
     r"|\bwe\s+are\s+an\s+authorized\s+dealer\b"
-    r"|\bACG\s+is\s+(?:an\s+)?authorized\s+dealer\b",
+    r"|\bACG\s+is\s+(?:an\s+)?authorized\s+dealer\b"
+    # C2 - first-party subject bound to an authorized-<noun> phrase, either
+    #      "ACG is an authorized Euro-Wall installer" or "our authorized
+    #      manufacturer partners". Sentence-bounded so the subject has to
+    #      actually govern the claim.
+    rf"|\b{AUTH_ACG_SUBJECT}\b[^<.!?]{{0,60}}?\b{AUTH_NOUN_PHRASE}"
+    # C4 - the hyphenated first-party adjective.
+    r"|\bmanufacturer-authorized\b",
     re.IGNORECASE,
 )
+
+# Case-SENSITIVE companion rules. These must not run under re.IGNORECASE:
+# both depend on a capital letter to tell a first-party claim from editorial
+# prose ("is an authorized Euro-Wall installer" vs "which manufacturers they
+# are authorized dealers for"; a "Authorized" card label vs the word used
+# mid-sentence).
+AUTHORIZED_LABEL_RE = re.compile(
+    # C3 - "is/are/as an authorized <Manufacturer>". The capitalized token after
+    #      the grant is what makes it a named-manufacturer claim. The
+    #      change-order sense is excluded explicitly.
+    rf"\b(?:[Ii]s|[Aa]re|[Aa]s)\s+(?:an?\s+|the\s+)?authorized\s+(?!{AUTH_CHANGE_ORDER})(?=[A-Z])"
+    # C5 - bare "Authorized" used as a label, heading or card value.
+    r"|>\s*Authorized[.:;!]?\s*<"
+    r"|>\s*Authorized\s+[A-Z][^<]{0,60}<"
+)
+
+# A disclaimer is the opposite of a claim. "ACG does not hold authorized-installer
+# status for those brands" and "we do not claim authorized-dealer status" are the
+# governed *denials* the site is supposed to carry, so a negation immediately in
+# front of the grant word suppresses rules C2/C3. The window is short and must
+# stay inside the sentence, so "we are an authorized installer. We do not ..."
+# cannot launder a real claim.
+AUTH_NEGATION_RE = re.compile(
+    r"\b(?:not|never|no|without|cannot|can\s*not|don't|doesn't|do\s+not|does\s+not)\b"
+    r"[^.!?<]{0,30}$",
+    re.IGNORECASE,
+)
+
+
+def _is_negated_authorization(html: str, match: re.Match) -> bool:
+    """True when the matched grant word is inside an explicit denial.
+
+    The negation is measured from the grant word itself, not from the start of
+    the match: rule C2 starts at the ACG subject, so "ACG does not hold
+    authorized-installer status" only reads as a denial when the window is
+    anchored on "authorized".
+    """
+    text = match.group(0)
+    offset = text.lower().find("authoriz")
+    grant_start = match.start() + (offset if offset >= 0 else 0)
+    window = html[max(0, grant_start - 60):grant_start]
+    return bool(AUTH_NEGATION_RE.search(window))
+
 
 # Regex D: "completed federal" / delivered / installed / awarded federal work.
 COMPLETED_FEDERAL_RE = re.compile(
@@ -418,16 +519,27 @@ def check_prohibited_public_positioning(
             f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
         )
 
-    # C - authorized dealer as a heading or claim (editorial mentions are fine)
-    for m, snippet in _iter_positioning_matches(AUTHORIZED_DEALER_RE, html):
-        block_hash = _authorized_dealer_block_hash(html, m)
-        if block_hash in dealer_allow:
-            continue
-        fail(
-            rel,
-            f"prohibited 'authorized dealer' claim {m.group(0)!r} "
-            f"(block hash {block_hash}) - …{snippet}…",
-        )
+    # C - first-party authorization claim, any noun (editorial mentions are
+    #     fine). Two regexes: the case-insensitive rules and the case-sensitive
+    #     label / named-manufacturer rules. Both share the block-hash allowlist.
+    seen_c = set()
+    for rx in (AUTHORIZED_DEALER_RE, AUTHORIZED_LABEL_RE):
+        for m, snippet in _iter_positioning_matches(rx, html):
+            block_hash = _authorized_dealer_block_hash(html, m)
+            if block_hash in dealer_allow:
+                continue
+            if _is_negated_authorization(html, m):
+                continue
+            key = (m.start(), block_hash)
+            if key in seen_c:
+                continue
+            seen_c.add(key)
+            fail(
+                rel,
+                f"prohibited first-party manufacturer-authorization claim "
+                f"('authorized dealer'/installer class) {m.group(0)!r} "
+                f"(block hash {block_hash}) - ...{snippet}...",
+            )
 
     # D - completed / delivered / installed / awarded federal work
     for _, snippet in _iter_positioning_matches(COMPLETED_FEDERAL_RE, html):
