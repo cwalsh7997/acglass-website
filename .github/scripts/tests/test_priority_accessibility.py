@@ -32,10 +32,13 @@ LANDMARK_ONLY_FINGERPRINTS = {
     },
     "multi-slide-bifold-doors.html": {
         "head": "a6548335f86a87cfe0edad5b1a99aa688264267f093282b74b56b4e014d91779",
-        "jsonld": "1f800a06c4815d3beeb406c92acfe48aa65334ab34171a9af8cd1d2eabeb179b",
-        "scripts": "84b01a42b425bbd1a4db42ab009246dc80d857733de8e369adf90928736a97dd",
+        # Rebaselined 2026-08-27: "authorized Euro-Wall installer" removed from
+        # visible copy, the FAQPage answer and its inline script duplicate.
+        # head and hrefs are deliberately unchanged - body copy only.
+        "jsonld": "449dafae5ab561d7cef082e76f9ef800f1ed5506b8e02de56a6e071d2d6a3d45",
+        "scripts": "580f1cf172d7d0a0180a3adcf267ca2c8ce59ca15cae14e53d15664d2dee415b",
         "hrefs": "c1050b4e8576163a4e2f42df3d9044fa652dba57cc3c77ec3f7dfbf2c3a7f537",
-        "visible": "d5634f15d70d4a7984f3737e2ae23bd02f8e0d892158803e481856ace2635571",
+        "visible": "cb05226ac7d6827f3177e043f6770b0e3317a2f24de7bb766f257dc0d864cfb2",
     },
     "privacy-policy.html": {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",

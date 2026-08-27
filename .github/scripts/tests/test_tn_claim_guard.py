@@ -1187,11 +1187,23 @@ class RegexEExpansionBindingTests(unittest.TestCase):
             with self.subTest(phrase=phrase):
                 self.assertIsNone(guard.TN_OFFICE_OPENING_RE.search(phrase))
 
-    def test_allowlist_stays_empty_for_regex_e(self):
+    def test_no_allowlist_class_exists_for_regex_e(self):
         # The two false positives above are fixed structurally, so no page-level
         # exemption is needed. Guard against a regression that re-adds one.
+        #
+        # This used to assert the whole allowlist file was empty, which was true
+        # only because nothing had ever been exempted. Regex C now carries
+        # entries (spec-section requirement text and the byte-frozen West Palm
+        # Beach pages), so the assertion is narrowed to its actual intent: regex
+        # E must still have no exemption class of its own.
         loaded = guard.load_claim_guard_allowlist()
-        self.assertEqual(loaded.get("authorized_dealer_editorial", {}), {})
+        self.assertEqual(
+            sorted(k for k in loaded if not k.startswith("_")),
+            ["authorized_dealer_editorial", "schema_version"],
+        )
+        for key in loaded:
+            self.assertNotIn("expansion", key)
+            self.assertNotIn("office", key)
 
 
 class NoindexDetectionTests(unittest.TestCase):
@@ -1265,6 +1277,247 @@ class ClaimGuardAllowlistTests(unittest.TestCase):
             allowlist=allowlist,
         )
         self.assertTrue(any("authorized dealer" in m.lower() for m in fails))
+
+
+# ---------------------------------------------------------------------------
+# Regex C - first-party manufacturer-authorization claims, any noun.
+#
+# The rule used to match the literal word "dealer" only. The site said
+# "authorized installer", "authorized partner", carried bare "Authorized" card
+# labels and "Manufacturer-authorized only", so roughly 90 files asserted an
+# undocumentable manufacturer grant and still passed. These tests pin the
+# noun-agnostic behaviour AND the editorial phrasings that must keep passing.
+# ---------------------------------------------------------------------------
+
+
+def _authorization_fails(html: str, rel: str = "page.html", allowlist=None):
+    fails: list[str] = []
+    guard.check_prohibited_public_positioning(
+        rel, html, lambda path, msg: fails.append(msg), allowlist=allowlist
+    )
+    return [m for m in fails if "manufacturer-authorization claim" in m]
+
+
+class AuthorizationClaimNounCoverageTests(unittest.TestCase):
+    """Positive controls: one per noun, plus the label and adjective forms."""
+
+    def test_every_relationship_noun_is_caught_with_an_acg_subject(self):
+        for noun in ("installer", "dealer", "distributor", "partner",
+                     "reseller", "fabricator"):
+            html = (
+                "<html><body><p>ACG is an authorized Euro-Wall commercial "
+                f"{noun} in Florida.</p></body></html>"
+            )
+            with self.subTest(noun=noun):
+                self.assertTrue(_authorization_fails(html), noun)
+
+    def test_plural_noun_with_first_party_subject_is_caught(self):
+        html = (
+            "<html><body><p>ACG installs commercial storefront in Orlando from "
+            "its seven authorized manufacturer partners.</p></body></html>"
+        )
+        self.assertTrue(_authorization_fails(html))
+
+    def test_we_are_an_authorized_installer_is_caught(self):
+        html = (
+            "<html><body><p>We are an authorized commercial installer for "
+            "ESWindows and Euro-Wall.</p></body></html>"
+        )
+        self.assertTrue(_authorization_fails(html))
+
+    def test_hyphenated_authorized_installer_status_is_caught(self):
+        html = (
+            "<html><body><p>American Commercial Glass holds authorized-installer "
+            "status with Euro-Wall Systems.</p></body></html>"
+        )
+        self.assertTrue(_authorization_fails(html))
+
+    def test_bare_authorized_card_label_is_caught(self):
+        html = '<html><body><div class="card-num">Authorized</div></body></html>'
+        self.assertTrue(_authorization_fails(html))
+
+    def test_authorized_label_with_trailing_punctuation_is_caught(self):
+        html = "<html><body><h2>Authorized. <span>Certified.</span></h2></body></html>"
+        self.assertTrue(_authorization_fails(html))
+
+    def test_authorized_heading_with_manufacturer_is_caught(self):
+        html = "<html><body><h4>Authorized ESWindows &amp; Euro-Wall</h4></body></html>"
+        self.assertTrue(_authorization_fails(html))
+
+    def test_manufacturer_authorized_adjective_is_caught(self):
+        html = "<html><body><p>Manufacturer-authorized only.</p></body></html>"
+        self.assertTrue(_authorization_fails(html))
+
+    def test_is_an_authorized_named_manufacturer_is_caught(self):
+        html = (
+            "<html><body><p>Yes. Because ACG is an authorized Euro-Wall Florida "
+            "installer, the manufacturer warranty is intact.</p></body></html>"
+        )
+        self.assertTrue(_authorization_fails(html))
+
+    def test_claim_is_caught_in_metadata_and_json_ld_surfaces(self):
+        title = (
+            "<html><head><title>Authorized Euro-Wall Commercial Installer (USA) "
+            "| ACG</title></head></html>"
+        )
+        meta = (
+            '<html><head><meta name="description" content="ACG is an authorized '
+            'Euro-Wall commercial installer (USA)."></head></html>'
+        )
+        jsonld = (
+            '<html><head><script type="application/ld+json">{"@type": "Answer", '
+            '"text": "American Commercial Glass is an authorized Euro-Wall '
+            'commercial installer serving the USA."}</script></head></html>'
+        )
+        for surface, html in (("title", title), ("meta", meta), ("json-ld", jsonld)):
+            with self.subTest(surface=surface):
+                self.assertTrue(_authorization_fails(html), surface)
+
+
+class AuthorizationClaimEditorialTests(unittest.TestCase):
+    """Negative controls: third-party / editorial / denial phrasing must pass."""
+
+    def test_plural_editorial_advice_is_not_a_first_party_claim(self):
+        html = (
+            "<html><body><p>Ask specifically which manufacturers they are "
+            "authorized dealers for, and verify it if the answer matters to your "
+            "spec.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_generic_benefit_statement_about_dealers_passes(self):
+        html = (
+            "<html><body><p>Authorized dealers get direct technical support and "
+            "priority production slots.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_warranty_precondition_advice_passes(self):
+        html = (
+            "<html><body><p>Most premium glazing systems - ESWindows, Euro-Wall, "
+            "PGT, TGP - require authorized-installer status as a warranty "
+            "precondition.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_third_party_firm_phrasing_passes(self):
+        html = (
+            "<html><body><p>Authorization is not transferable: a firm that is "
+            "authorized on ESWindows ES-50 storefront is not automatically "
+            "authorized on ES-70 curtain wall.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_manufacturer_authorization_letters_advice_passes(self):
+        html = (
+            "<html><body><p>Confirm bonding capacity, manufacturer authorization "
+            "letters, and AAMA InstallationMasters training.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_change_order_authorization_passes(self):
+        html = (
+            "<html><body><p>Documented change orders keep added glazing work "
+            "properly priced and authorized before it proceeds.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_explicit_denial_passes(self):
+        denials = (
+            "<html><body><p>ACG also installs and coordinates PGT, Allegion, TGP, "
+            "Slimpact, and Aldora systems; ACG does not hold authorized-installer "
+            "status for those brands.</p></body></html>",
+            "<html><body><p>We install these products; we do not claim "
+            "authorized-dealer status for them.</p></body></html>",
+        )
+        for html in denials:
+            with self.subTest(html=html[:60]):
+                self.assertEqual(_authorization_fails(html), [])
+
+    def test_denial_cannot_launder_a_separate_claim_in_the_next_sentence(self):
+        html = (
+            "<html><body><p>ACG does not claim certification. ACG is an "
+            "authorized Euro-Wall installer.</p></body></html>"
+        )
+        self.assertTrue(_authorization_fails(html))
+
+    def test_factual_installer_list_passes(self):
+        html = (
+            "<html><body><p>Installer for ESWindows (Tecnoglass), Euro-Wall, PGT "
+            "Innovations, Allegion, TGP, Slimpact, and Aldora. Direct factory "
+            "engineering support.</p></body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+    def test_scrubbed_replacement_copy_passes(self):
+        html = (
+            "<html><body>"
+            '<div class="card-num">Product Lines</div>'
+            "<p>Do you install ESWindows and Euro-Wall systems?</p>"
+            "<p>Yes. ACG installs ESWindows (Tecnoglass) and Euro-Wall systems on "
+            "commercial projects across Florida, with direct factory engineering "
+            "support.</p>"
+            "<h4>ESWindows &amp; Euro-Wall Systems</h4>"
+            "<p>Manufacturer systems only.</p>"
+            "</body></html>"
+        )
+        self.assertEqual(_authorization_fails(html), [])
+
+
+class AuthorizationClaimAllowlistTests(unittest.TestCase):
+    def test_block_hash_allowlist_still_exempts_an_installer_class_block(self):
+        html = (
+            "<html><body><p>B. Installer: Manufacturer-authorized; minimum 5 "
+            "installations of similar size in Florida.</p></body></html>"
+        )
+        self.assertTrue(_authorization_fails(html))
+        m = guard.AUTHORIZED_DEALER_RE.search(html)
+        block_hash = guard._authorized_dealer_block_hash(html, m)
+        allowlist = {"authorized_dealer_editorial": {"spec.html": [block_hash]}}
+        self.assertEqual(
+            _authorization_fails(html, rel="spec.html", allowlist=allowlist), []
+        )
+        # Same block, different page: still a violation.
+        self.assertTrue(
+            _authorization_fails(html, rel="other.html", allowlist=allowlist)
+        )
+
+    def test_repo_allowlist_entries_are_all_live(self):
+        """Every allowlisted hash must still match a block in its file.
+
+        A stale entry means the copy changed and the exemption should have been
+        deleted with it.
+        """
+        allowlist = guard.load_claim_guard_allowlist()
+        repo_root = Path(guard.REPO_ROOT)
+        for rel, hashes in allowlist["authorized_dealer_editorial"].items():
+            path = repo_root / rel
+            self.assertTrue(path.exists(), rel)
+            html = path.read_text(encoding="utf-8")
+            live = set()
+            for rx in (guard.AUTHORIZED_DEALER_RE, guard.AUTHORIZED_LABEL_RE):
+                for m in rx.finditer(html):
+                    live.add(guard._authorized_dealer_block_hash(html, m))
+            for h in hashes:
+                with self.subTest(rel=rel, block_hash=h[:12]):
+                    self.assertIn(h, live)
+
+
+class AuthorizationClaimSiteScanTests(unittest.TestCase):
+    def test_tracked_html_carries_no_unexempted_authorization_claim(self):
+        """Negative control for the scrub itself.
+
+        This is the check that fails on the pre-scrub content and passes after
+        it, without needing the full guard run.
+        """
+        allowlist = guard.load_claim_guard_allowlist()
+        offenders = []
+        for rel, full in guard.iter_html_files():
+            with open(full, encoding="utf-8") as fh:
+                html = fh.read()
+            if _authorization_fails(html, rel=rel, allowlist=allowlist):
+                offenders.append(rel)
+        self.assertEqual(offenders, [])
 
 
 if __name__ == "__main__":
