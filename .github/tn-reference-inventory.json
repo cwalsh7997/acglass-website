@@ -4,11 +4,11 @@
   "baseline_commit": "9197a20f6af6d639530ee6dd4cc500558c48eadd",
   "scope": "Exact union of path or title discovery and standalone Tennessee, Nashville, or TN tokens across decoded HTML semantic surfaces, static script strings and character codes, and inline plus external CSS generated content including attr values.",
   "expected_counts": {
-    "document_sources": 151,
+    "document_sources": 150,
     "path_or_title_discovery": 73,
-    "outside_discovery": 78,
+    "outside_discovery": 77,
     "known_edge_301_sources": 4,
-    "document_sources_excluding_recorded_edge_sources": 147,
+    "document_sources_excluding_recorded_edge_sources": 146,
     "excluded_non_page_fragments": 1
   },
   "excluded_non_page_fragments": [
@@ -170,7 +170,6 @@
     "tennessee-commercial-glazier-license-requirements/index.html": "31e185fcca4ed7fac748ed3e9cc29b1e772af96eb631beaff7c9fefff284a743",
     "tennessee-commercial-glazing/index.html": "930c5309eb15c6ef06808867886afa814304c76793137d57ff6510ae3a0ab085",
     "tennessee/index.html": "18af62bd7ffaf6f664ec21bcc772f25baffbb62b12cd46c9496ef20147e28818",
-    "west-palm-beach/index.html": "6c1e8a1dc748c2388f83010eb50a62654ea111870c95019c9961dbcdd4fb2400",
     "wikipedia-draft.html": "a2fe4cf888cb3ec2fb7113a1cf3bd5c579c27d70779010c8792ad533f9f658a8"
   },
   "reference_groups": {
@@ -274,8 +273,7 @@
       "national-commercial-glazing-contractor.html",
       "projects/index.html",
       "redesign-preview.html",
-      "scope-engine.html",
-      "west-palm-beach/index.html"
+      "scope-engine.html"
     ],
     "mixed_claim_review": [
       "blog/commercial-glazing-contractor-nashville-how-to-choose.html"
