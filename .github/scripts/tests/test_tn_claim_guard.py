@@ -219,7 +219,7 @@ class ReferenceInventoryTests(unittest.TestCase):
             },
             {
                 "path_or_title_discovery": 73,
-                "stale_operating_claim_hold": 26,
+                "stale_operating_claim_hold": 25,
                 "mixed_claim_review": 1,
                 "biography_only": 39,
                 "technical_or_market_review": 8,
