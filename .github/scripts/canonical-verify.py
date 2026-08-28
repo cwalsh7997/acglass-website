@@ -91,6 +91,32 @@ HELD_CROSS_CANONICAL_EDGE_HASHES = {
         "4b1824e64f7bee664049e299815644693f16b234540d920a7a14f2d69daed6ae",
     ("nashville/the-gulch-nashville/index.html", "/nashville"):
         "4b1824e64f7bee664049e299815644693f16b234540d920a7a14f2d69daed6ae",
+    # Surfaced by registering the florida-statewide storefront-systems and
+    # division-08 intents (2026-08-28). Both new primaries already had an
+    # in-repo page rel=canonical'ing to them, so those two pages became
+    # declared aliases and their pre-existing inbound links became visible to
+    # this gate. Nothing here is a mislink: each edge is a listing card, a
+    # resource card, or a related-reading link whose visible subject IS the
+    # aliased document, and the alias forwards its signal to the primary by
+    # canonical already. Rewriting a blog listing row or a resource card to
+    # point at a service page would misstate what the row links to, so the
+    # edges are pinned exactly instead. The two edges whose anchor text was
+    # about the Division 08 scope itself were repointed to the primary rather
+    # than pinned (atlantic-fields-golf-house.html and
+    # tools/glazing-spec-checklist/index.html).
+    ("blog/best-glass-options-florida-storefronts.html",
+     "/blog/best-commercial-storefront-systems-florida.html"):
+        "c66299422def48da84998f74294aa1a1b457a6180d281a4730d770ac65c196e9",
+    ("blog/index.html", "/blog/best-commercial-storefront-systems-florida.html"):
+        "96d26e7bc3f33f01bff8993a95ffa6cf9db0f5169e0a1cecd6edae1e5d3514d3",
+    ("infographics-index.html", "/blog/best-commercial-storefront-systems-florida.html"):
+        "473b4f30254b1ebd220f037cedae5fadb90d3dfde570b8941ac28979f28f6449",
+    ("division-08-subcontractor-florida.html", "/division-08-scope.html"):
+        "7c5c5fad09c591864adcf7365390c03b45e4b63c8d1f0d153212aade49adc275",
+    ("gulfside-twelve.html", "/division-08-scope.html"):
+        "08aef69ae538f9485cdd79b8eef5f694ff7c65f4c349a34931a07c310ac6b031",
+    ("resources/index.html", "/division-08-scope.html"):
+        "274de0d24be2d17225d493ae67c6f48656aeabb245b0cbe1662199989dd0b24f",
 }
 
 

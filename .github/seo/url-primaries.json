@@ -448,6 +448,28 @@
       ],
       "requires_external_redirect": [],
       "notes": "/tennessee/ is 334 words against 1,774 for the hub, is not linked from llms.txt, and duplicates the hub's intent exactly. Consolidating it moves nothing that ranks."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "storefront-systems",
+      "head_terms": ["commercial storefront systems", "storefront systems", "storefront installation", "storefront glass installation", "storefront glazing"],
+      "primary": "/commercial-storefront-systems.html",
+      "status": "ratified",
+      "evidence": ["gsc:cannibalization.csv rows 1,4,5,7,28,29 (2026-05-30..2026-08-25)", "measurement:pages[/commercial-storefront-systems.html]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Product and service intent for storefront systems and their installation. Separate from the geo storefront intent held by /storefront-glazier-florida/, which is city/state finder intent. The 90-day GSC baseline (2026-05-30 -- 2026-08-25) shows about 4,000 impressions and zero clicks for this cluster, split between this URL at positions 53-95 and six informational blog posts at 18-35. Nothing is deleted, no canonical and no URL moves: the blog posts keep the informational reading of the query and link up to this page with commercial anchor text. /blog/best-commercial-storefront-systems-florida.html already rel=canonicals here, so it is an alias of this primary, not a competitor."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "division-08",
+      "head_terms": ["division 08", "division 08 subcontractor", "csi division 08 glazing"],
+      "primary": "/division-08-subcontractor-florida.html",
+      "status": "ratified",
+      "evidence": ["gsc:cannibalization.csv row 6 (2026-05-30..2026-08-25)", "measurement:pages[/division-08-subcontractor-florida.html]"],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Commercial Division 08 intent. The query 'division 08' drew 424 impressions and zero clicks across /blog/what-is-division-08-construction.html (pos 9.2), /blog/division-08-specifications-guide.html (386 imp, pos 33.7), /blog/what-is-division-08-glazing-construction.html and /division-08-scope.html. /division-08-scope.html already rel=canonicals here and is therefore an alias of this primary. The blog posts keep the informational reading and link up with commercial anchor text."
     }
   ],
   "seo_targets_reconciliation": [
