@@ -122,7 +122,7 @@
     "franklin-tn/downtown-franklin/index.html": "bee4253ca62a2d70964e2337dd9d77918aefa8eb46de7d255f11e36f13c8b5ab",
     "franklin-tn/index.html": "4409afdc0ab5224150a0e49bf067a9ede9a8af2928a436fad4ef7f198948b9f0",
     "government-glazing-contractor-florida.html": "0c21400db9647f578df20b53a4f70f9695d2ba575588ab7e80119527d95f4900",
-    "government-public-sector-glazing.html": "5593fdd8ce3dc65113e36332152f5eff431e70e55a1b2420e6908244f10fdf4f",
+    "government-public-sector-glazing.html": "f53c0de76569bdd1e78139940a1cdd882b34c328721d6a482b3f527ac194f42d",
     "healthcare-glazing-nashville/index.html": "1f12dd4ff328962a49eb8fc2ee753ff8ee6aca08ae2d386b2ce51386da852714",
     "hendersonville-tn/index.html": "9400519c735efb219e57c265c094724e5ee3534f32184b3abcd21bd58f814c51",
     "hotel-glazing-nashville/index.html": "3564e2a287f0ee2b5bc2023ea47d0db16e93303908a4928975347d1068f0e8f8",
@@ -157,9 +157,9 @@
     "nashville/west-end-nashville/index.html": "037598f73ee9f6201b39daacf93daeb6298fa461be4ae4b264e088784f03b6f0",
     "national-commercial-glazing-contractor.html": "73e9b2b6ac0c26bb13b1c497ada7fb66f42253e4d2ba652c4d129861176022ea",
     "preglazed-systems-tennessee.html": "4d96e48098987f64f61dfca7602fe60d28aef9062298130e15a5f6f977608d7c",
-    "press.html": "477a9cbd81dae648996e509f9a51fde61a03d4127dea4e3f7c07327105567847",
+    "press.html": "9d5b3a96c555966fc4efbbd042b8066bbb91cbb8e2add5ccf7c0c298d1864074",
     "project-map.html": "0b9e455d1b1cb8c444438ad7e3f666d9250ad6d7b69fff786beaff1371260347",
-    "projects/index.html": "90f20ddc7dcd21d7a0abf7930eb113c8b94c10e535a4f731c1bd1717d68ad51d",
+    "projects/index.html": "772676ad3a8150c4909f1e41e338589cdf72a7c49d0bf041f094437634e3a6da",
     "redesign-preview.html": "bd9ad3b7c8061243d0224f7bd75604558ba43c4a829c9332f29548ce127e969b",
     "restaurant-glazing-nashville/index.html": "b23a5b44a912fbdbb15e422699fb5ebf570e525e9c4cf04b0676e9ce21e7e7e2",
     "scope-engine.html": "4ae3897dcd0561be9513ca5f74bd9df791871fbf238ececce6080e3295fd3979",
@@ -340,5 +340,5 @@
       "commercial-glazing-west-palm-beach.html"
     ]
   },
-  "rebaseline_note": "Surface digests only, regenerated 2026-08-20 during the SEO sprint. 44 surfaces refreshed; each verified to hold the same or FEWER Tennessee reference tokens than the prior baseline (zero increases). Group membership, expected_counts and classifications UNCHANGED from the governed baseline."
+  "rebaseline_note": "Surface digests only, regenerated 2026-08-28 for the duplicate self-canonical consolidation. 3 surfaces refreshed (government-public-sector-glazing.html, press.html, projects/index.html); every change is a URL-form swap of a non-Tennessee link or the page's own canonical/og:url, and each surface was verified to hold the SAME Tennessee reference token count as the prior baseline (zero increases). Group membership, expected_counts and classifications UNCHANGED from the governed baseline."
 }
