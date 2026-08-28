@@ -13,7 +13,7 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · offices in We
 - [Qualifications](https://acglass.com/qualifications.html): license, insurance, qualifications.
 - [Locations](https://acglass.com/locations.html): three Florida offices, statewide coverage.
 - [Portfolio](https://acglass.com/portfolio.html): verified named installations.
-- [Press & recognition](https://acglass.com/press.html): news and media coverage.
+- [Press & recognition](https://acglass.com/press/): news and media coverage.
 - [Direct answers (FAQ)](https://acglass.com/ask.html): common questions answered.
 - [AI Overview summary](https://acglass.com/about.html): canonical AI-retrieval summary.
 - [ACG entity / disambiguation](https://acglass.com/about.html): which "ACG" this is.
