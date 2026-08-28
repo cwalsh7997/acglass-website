@@ -470,6 +470,273 @@
       "consolidate_in_repo": [],
       "requires_external_redirect": [],
       "notes": "Commercial Division 08 intent. The query 'division 08' drew 424 impressions and zero clicks across /blog/what-is-division-08-construction.html (pos 9.2), /blog/division-08-specifications-guide.html (386 imp, pos 33.7), /blog/what-is-division-08-glazing-construction.html and /division-08-scope.html. /division-08-scope.html already rel=canonicals here and is therefore an alias of this primary. The blog posts keep the informational reading and link up with commercial anchor text."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "all-glass-entrances",
+      "head_terms": ["all glass entrances", "all glass entrance doors", "frameless glass entrance commercial", "herculite door florida"],
+      "primary": "/all-glass-entrances/",
+      "status": "ratified",
+      "evidence": [
+        "gsc:permutation_pages.csv 2026-05-30..2026-08-25 (all-glass-entrances slug: 77 city-permutation URLs, 129 impressions, 3 clicks combined)",
+        "gsc:permutation_pages.csv 2026-05-30..2026-08-25 (49 of those 77 URLs returned exactly zero impressions over the full 90-day window)",
+        "gsc:permutation_pages.csv 2026-05-30..2026-08-25 (/all-glass-entrance-doors-florida/ returned zero impressions)",
+        "live:self-canonical"
+      ],
+      "consolidate_in_repo": [
+        {
+          "url": "/all-glass-entrance-doors-florida/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-services.xml"
+        },
+        {
+          "url": "/bal-harbour-village/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/bay-harbor-islands/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/bonita-springs/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/boynton-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/clearwater/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/coral-gables/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/dania-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/davie/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/delray-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/englewood/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/florida-keys/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/fort-myers-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/fort-pierce/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/golden-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/gulfstream/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/hallandale-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/highland-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/hillsboro-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/hobe-sound/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/hollywood-florida/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/islamorada/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/jensen-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/juno-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/jupiter/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/key-biscayne-village/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/key-largo/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/key-west/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/kissimmee/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/lantana/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/manalapan/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/marco-island/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/miami-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/miami-shores-village/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/miami/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/naples/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/north-miami-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/palm-bay/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/palm-city/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/palm-harbor/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/palmetto-bay-village/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/pompano-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/sunny-isles-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/surfside/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/tequesta/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/venice/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/virginia-gardens/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/west-palm-beach/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/weston/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        },
+        {
+          "url": "/winter-heaven/all-glass-entrances/",
+          "mechanism": "rel=canonical",
+          "also": "removed from sitemap.xml and sitemap-cities.xml"
+        }
+      ],
+      "requires_external_redirect": [],
+      "notes": "REVERSIBLE PILOT, approved by ownership, measured at the next GSC gate. The site carries four city-permutation service clusters of 77 pages each (308 URLs). Over the 90-day window 2026-05-30..2026-08-25 those 308 URLs earned 1,892 impressions and 11 clicks combined, and 169 of them earned exactly zero impressions. This entry treats ONLY the all-glass-entrances slug, which earned 129 impressions and 3 clicks across 77 URLs. /all-glass-entrances/ is a new statewide parent hub written for the service intent rather than for a city permutation. The 49 all-glass permutation URLs with zero impressions rel=canonical to it; their content and URLs stay in place and they are NOT noindexed, so the change is a one-line revert per file. The 28 all-glass permutation URLs that did earn impressions are untouched and keep their own canonicals. /all-glass-entrance-doors-florida/ (379 words, zero impressions) is consolidated in the same move because leaving it self-canonical would put it in direct competition with the new hub for the same head terms. Internal links that pointed at the 49 consolidated URLs now point at the hub so link equity flows up; the anchor text was changed from 'All-Glass Entrances - <City>' to 'All-Glass Entrances' so it describes the page it actually resolves to. REVERSAL TRIGGER: if the hub has not picked up the impressions the consolidated set gave up by the next GSC gate, restore the 49 self-canonicals and the sitemap rows and re-point the internal links. Nothing in this entry touches the impact-windows-hurricane slug, which earns 1,211 impressions and is the only permutation cluster with real demand."
     }
   ],
   "seo_targets_reconciliation": [
