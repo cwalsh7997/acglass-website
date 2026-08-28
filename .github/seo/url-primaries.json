@@ -48,11 +48,8 @@
   },
   "frozen_prefixes": [
     "/west-palm-beach-commercial-glazing.html",
-    "/storefront-glazier-west-palm-beach-florida/",
-    "/storefront-installer-west-palm-beach.html",
     "/commercial-glazier-near-me-west-palm-beach/",
     "/impact-windows-palm-beach.html",
-    "/eswindows-installer-west-palm-beach.html",
     "/"
   ],
   "_frozen_prefixes_change_log": [
@@ -89,7 +86,29 @@
     "   prefix (see internal-link-audit.py note). Those are now corrected to href=\"/\".",
     "Still frozen and still carrying claims: /eswindows-installer-west-palm-beach.html holds 18",
     "   authorization claims across its title, meta, H1, FAQ and JSON-LD serviceType. Left in place",
-    "   pending an owner decision on whether documented manufacturer authorization exists."
+    "   pending an owner decision on whether documented manufacturer authorization exists.",
+    "",
+    "2026-08-28 -- Removed /eswindows-installer-west-palm-beach.html,",
+    "   /storefront-glazier-west-palm-beach-florida/ and /storefront-installer-west-palm-beach.html",
+    "   from the byte freeze. Owner (Connor Walsh) approved the lift explicitly and accepted the",
+    "   ranking risk on these three URLs, which is the decision the 2026-08-27 entry above was",
+    "   waiting on. No documented manufacturer authorization exists, so the claims cannot stay.",
+    "Reason: these were the last three pages carrying first-party manufacturer-authorization",
+    "   claims - 28 instances total (18 / 7 / 3), including the exclusivity form",
+    "   'American Commercial Glass is the authorized ESWindows installer'. They spanned title,",
+    "   meta description, og/twitter tags, H1, visible FAQ copy, FAQPage answers, Service",
+    "   serviceType/description and LocalBusiness knowsAbout. Copy is now capability language",
+    "   ('we install', 'commercial installer', 'experienced ESWindows installer'), matching the",
+    "   phrasing the earlier sweeps left on manufacturers.html and ask.html.",
+    "Scope: exactly these three prefixes. /west-palm-beach-commercial-glazing.html,",
+    "   /commercial-glazier-near-me-west-palm-beach/, /impact-windows-palm-beach.html and / stay",
+    "   frozen and were not edited.",
+    "Side effect: all 13 class-(2) block-hash entries in",
+    "   .github/scripts/claim-guard-allowlist.json are deleted with the copy they exempted, as that",
+    "   file's _doc required. test_repo_allowlist_entries_are_all_live fails on stale entries.",
+    "SEO preservation: manufacturer product names (ESWindows 8000/9000/SGD-2020, ES325/ES420/ES425,",
+    "   Euro-Wall) and the West Palm Beach / Palm Beach County terms are all retained; body word",
+    "   count moves by less than 0.2 percent on each page."
   ],
   "_frozen_note": [
     "West Palm Beach holds #1 organic for 'commercial glazing contractor west palm beach'",

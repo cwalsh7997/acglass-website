@@ -131,10 +131,14 @@ MUTATIONS = {
 # This must be a URL that is BOTH still listed in frozen_prefixes AND not already
 # linked from index.html. /west-palm-beach/ was used here until 2026-08-27, when it
 # was lifted out of the freeze to strip a prohibited "Nashville Q3 2026." claim and
-# an "Authorized" manufacturer label from the page users actually reach. Do not use
-# /storefront-glazier-west-palm-beach-florida/ either: index.html already links it,
-# so it cannot serve as an "added link" fixture.
-WPB_FROZEN_URL = "/eswindows-installer-west-palm-beach.html"
+# an "Authorized" manufacturer label from the page users actually reach.
+# /eswindows-installer-west-palm-beach.html replaced it and was itself lifted on
+# 2026-08-28, together with /storefront-glazier-west-palm-beach-florida/ and
+# /storefront-installer-west-palm-beach.html, to remove 28 first-party
+# manufacturer-authorization claims. None of those three can serve as this fixture
+# any more. /impact-windows-palm-beach.html is still byte-frozen and index.html does
+# not link it.
+WPB_FROZEN_URL = "/impact-windows-palm-beach.html"
 WPB_LINK = f'<a href="{WPB_FROZEN_URL}">Our headquarters market</a>'
 
 
