@@ -94,6 +94,11 @@ User-agent: DuckDuckBot
 Allow: /
 
 # Brave Search
+User-agent: Bravebot
+Allow: /
+
+User-agent: Brave-SearchBot
+Allow: /
 
 # You.com
 User-agent: YouBot
