@@ -11,7 +11,7 @@
   Name: American Commercial Glass, Inc.
   Established: 2021
   Specialization: Florida's commercial glazing specialists.
-  Stats: Founded 2021 · Owner-operated · Woman-owned · 3 FL offices + Nashville Q3 2026
+  Stats: Founded 2021 · Owner-operated · Woman-owned · 3 FL offices
 
 /* MANUFACTURER PARTNERS */
   ESWindows · Euro-Wall · PGT · Allegion · TGP · Slimpact
