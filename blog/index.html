@@ -694,8 +694,7 @@ html, body { overflow-x: clip; }
 .blog-hero h1 { font-size:clamp(40px,6vw,76px); font-weight:900; line-height:1.04; max-width:1000px; margin-bottom:20px; }
 .blog-hero p { font-size:clamp(16px,1.35vw,19px); color:rgba(255,255,255,0.7); max-width:760px; line-height:1.6; }
 .blog-filter { position: sticky; top: 0; z-index: 30; background: rgba(14,40,79,0.82); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.08); }
-.blog-filter-inner { display:flex; gap:8px; padding:14px 0; overflow-x:auto; scrollbar-width:none; }
-.blog-filter-inner::-webkit-scrollbar { display:none; }
+.blog-filter-inner { display:flex; flex-wrap:wrap; gap:8px; padding:14px 0; }
 .chip-btn { flex:0 0 auto; padding:9px 16px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:100px; color:rgba(255,255,255,0.7); font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; transition:all .18s; white-space:nowrap; }
 .chip-btn:hover { color:#fff; border-color:rgba(255,255,255,0.25); }
 .chip-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
@@ -842,7 +841,6 @@ html, body { overflow-x: clip; }
         <button class="chip-btn active" data-filter="all">All Articles</button>
         <button class="chip-btn" data-filter="capabilities">Capabilities</button>
         <button class="chip-btn" data-filter="projects">Projects</button>
-        <button class="chip-btn" data-filter="ai-ops">AI Ops</button>
         <button class="chip-btn" data-filter="industry">Industry</button>
         <button class="chip-btn" data-filter="operations">Operations</button>
         <button class="chip-btn" data-filter="tools">Tools</button>

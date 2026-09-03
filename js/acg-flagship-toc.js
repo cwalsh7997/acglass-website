@@ -3,7 +3,7 @@
   var host = document.querySelector(".acg-toc-host");
   if (!article || !host) return;
   var h2s = Array.prototype.slice.call(article.querySelectorAll("h2"));
-  var heads = h2s.length >= 4 ? h2s : Array.prototype.slice.call(article.querySelectorAll("h2, h3"));
+  var heads = h2s.length ? h2s : Array.prototype.slice.call(article.querySelectorAll("h3"));
   function slug(el, i) {
     if (el.id) return el.id;
     var t = (el.textContent || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");

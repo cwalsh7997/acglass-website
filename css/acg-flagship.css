@@ -7,10 +7,8 @@
 .acg-flagship-article h2,
 .acg-flagship-article h3 { scroll-margin-top: 96px; }
 
+/* Stay in flow so the TOC never covers Quick Answer. */
 .acg-flagship .acg-toc-host {
-  position: sticky;
-  top: 0;
-  z-index: 24;
   margin: 0 0 22px;
 }
 
@@ -36,15 +34,15 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px 12px;
+  flex-direction: column;
+  gap: 7px;
 }
 
 .acg-flagship .acg-toc-desktop a,
 .acg-flagship .acg-toc-mobile a {
   font-family: var(--font-mono, "JetBrains Mono", monospace);
-  font-size: 0.72rem;
-  line-height: 1.35;
+  font-size: 0.78rem;
+  line-height: 1.4;
   color: rgba(255,255,255,0.78);
   text-decoration: none;
   border-bottom: 1px solid rgba(225,19,32,0.35);
@@ -54,11 +52,10 @@
 .acg-flagship .acg-toc-mobile a:hover { color: #fff; }
 
 .acg-flagship .acg-toc-mobile {
-  display: none;
   background: #0e284f;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 6px;
-  padding: 8px 14px 10px;
+  padding: 4px 14px;
 }
 
 .acg-flagship .acg-toc-mobile summary {
@@ -69,11 +66,26 @@
   color: #fff;
   cursor: pointer;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
 }
 
 .acg-flagship .acg-toc-mobile summary::-webkit-details-marker { display: none; }
-.acg-flagship .acg-toc-mobile[open] summary { margin-bottom: 10px; color: #e11320; }
-.acg-flagship .acg-toc-mobile ol { flex-direction: column; gap: 8px; }
+.acg-flagship .acg-toc-mobile summary::after {
+  content: "+";
+  font-size: 18px;
+  line-height: 1;
+  color: #e11320;
+  flex: 0 0 auto;
+}
+.acg-flagship .acg-toc-mobile[open] summary {
+  margin-bottom: 10px;
+  color: #e11320;
+}
+.acg-flagship .acg-toc-mobile[open] summary::after { content: "\2212"; }
 
 .acg-family {
   border: 1px solid rgba(255,255,255,0.1);
@@ -125,15 +137,27 @@
 
 .acg-flagship .blog-content,
 .acg-flagship-article {
-  overflow-x: auto;
+  overflow-x: clip;
   max-width: 100%;
 }
 
+@media (min-width: 861px) {
+  /* Hide mobile details on desktop. Never set display:block on
+     <details> at the mobile breakpoint; that breaks open/close in Chromium. */
+  .acg-flagship .acg-toc-mobile { display: none; }
+}
+
 @media (max-width: 860px) {
-  .acg-flagship .acg-toc-host { position: static; }
+  html, body.acg-flagship { overflow-x: clip; }
   .acg-flagship .acg-toc-desktop { display: none; }
-  .acg-flagship .acg-toc-mobile { display: block; }
   .acg-family-back { margin-left: 0; }
+}
+
+@media (max-width: 768px) {
+  .acg-flagship-article,
+  .acg-flagship .blog-content {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 @media print {
