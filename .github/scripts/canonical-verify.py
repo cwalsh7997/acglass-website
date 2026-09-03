@@ -108,8 +108,6 @@ HELD_CROSS_CANONICAL_EDGE_HASHES = {
     ("blog/best-glass-options-florida-storefronts.html",
      "/blog/best-commercial-storefront-systems-florida.html"):
         "c66299422def48da84998f74294aa1a1b457a6180d281a4730d770ac65c196e9",
-    ("blog/index.html", "/blog/best-commercial-storefront-systems-florida.html"):
-        "96d26e7bc3f33f01bff8993a95ffa6cf9db0f5169e0a1cecd6edae1e5d3514d3",
     ("infographics-index.html", "/blog/best-commercial-storefront-systems-florida.html"):
         "473b4f30254b1ebd220f037cedae5fadb90d3dfde570b8941ac28979f28f6449",
     ("division-08-subcontractor-florida.html", "/division-08-scope.html"):
