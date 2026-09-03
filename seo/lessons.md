@@ -11,7 +11,7 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 - Homepage title (live 2026-09-03): `Commercial Glazing Contractor Florida | ACG`. Homepage is the federal lead. Do not rewrite it in the week-1 PR beyond one internal link.
 - Target Florida hub: `/florida-commercial-glazing/` (was live 404). Long-form sibling already exists: `/florida-commercial-glazing-complete-guide/`.
 - Real services URL is `/services.html`. `/services/` is a noindex JS + meta-refresh stub.
-- Real author URL is `/authors/connor-walsh.html`. `/author-connor-walsh.html` is a noindex stub. `/about/connor-walsh/` is now the same stub pattern (noindex + canonical + meta-refresh + JS). Not a second bio. Not an HTTP 301. `/about/index.html` is a matching parent stub to `/about.html` so creating the `about/` directory does not leave `/about/` as a 404 parent.
+- Real author URLs are `/authors/connor-walsh.html` (GSC last 28 days: 5 clicks / 66 impr) and `/authors/rielly-walsh.html` (1 click / 32 impr). Keep both indexable. `/author/connor-walsh/` and `/author/rielly-walsh/` are GitHub Pages stubs (noindex + canonical + meta-refresh + JS) onto those keepers. Same stub already existed at `/author-connor-walsh.html` and `/about/connor-walsh/`. Not an HTTP 301. Do not invent a Cloudflare rule.
 - `/products/` is an installer index. `/products/euro-wall/` is sourced. `/products/eswindows/` was not created (manufacturer site blocked).
 - `/projects/` and `/resources/` exist and are self-canonical.
 - Office metros `/west-palm-beach/`, `/naples/`, `/tampa/` were live-canonicalized off to `/storefront-glazier-{city}-florida/` clones. Do not bulk-fix the rest of the storefront-glazier set in a week-1 PR.
@@ -82,7 +82,14 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 - Live and repo sitemaps still agree at **909** unique page URLs. Wave-2's 324 stay `noindex,follow` and out of sitemaps. Eight keepers stay indexable. `/products/eswindows/` is a live 404.
 - Highest-value safe fix: inbound to `/florida-commercial-glazing/` (was 5) and `/products/` / `/products/euro-wall/` (were 2 and 1). One-sentence or one-list-item links added on the eight keepers, three office metros, and the remaining GC service/statewide hubs. No titles rewritten. Homepage not edited.
 - Inventory: `/seo/wave3-audit.md`.
-- Left alone without GSC: 77 `/{city}/all-glass-entrances/` (28 in sitemaps), 10 vertical-city pages, 17 commercial-glazier city pages, eight out-of-Florida state pages, `/author/connor-walsh/` vs `/authors/connor-walsh.html`.
+- Left alone without GSC: 77 `/{city}/all-glass-entrances/` (28 in sitemaps), 10 vertical-city pages, 17 commercial-glazier city pages, eight out-of-Florida state pages.
+
+## Crawl batch 2 (2026-09-03)
+
+- Author family consolidated on `/authors/*.html` after GSC last-28-days clicks. `/author/*/` stubs onto those keepers and left the sitemaps.
+- City roots that were indexable and canonicalized to a wave-2 noindex `storefront-glazier-*` URL are now self-canonical. The 8 keepers and the 324 noindex templates were not redesigned. `/west-palm-beach/`, `/naples/`, and `/tampa/` were left for Wave-4 (#94).
+- Hub inbound added from services, locations, manufacturers, blog index, and the eight keeper storefront-glazier pages onto sitemap orphans. No nav rewrite. The 77 all-glass-entrances pages were not noindexed.
+- Remaining mixed "Request a bid" RFQ blocks on non-Wave-4 pages now primary to `/send-plans.html`, with Scope Engine labeled secondary. Wave-4 title/meta files were not edited.
 - Leftover first-party `Euro-Wall authorized` on `/services.html` and `Euro-Wall dealer (authorized)` in `/llms.txt` were softened this wave to installer / factory-certified language. Same pass softened ACG-as-subject factory-authorization leftovers on the reliability / professional-install / decorative / Jacksonville / Nashville pages. Generic "ask the sub" editorial was left alone. BuildZoom and Procore bios stay external cleanup items (unsupported authorized-installer list; false "20 years of experience"). Do not add those claims on-site.
 - `estimating@eswindows.com` bounced 550 5.1.1. Dead address was ledger-only. Next route is the public form https://eswindows.com/connect-dealer/ (fetched 200). Do not invent a replacement inbox.
 - BBB profile 0633-92045708 is live-corrected (primary (772) 486-7711, website https://acglass.com/, old (561) 283-8030 secondary). Manta slug `mtmntvt` is removed (301 to a generic WPB flat-glass category); recheck 2026-09-10.

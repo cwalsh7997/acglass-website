@@ -4,11 +4,11 @@
   "baseline_commit": "9197a20f6af6d639530ee6dd4cc500558c48eadd",
   "scope": "Exact union of path or title discovery and standalone Tennessee, Nashville, or TN tokens across decoded HTML semantic surfaces, static script strings and character codes, and inline plus external CSS generated content including attr values.",
   "expected_counts": {
-    "document_sources": 137,
+    "document_sources": 136,
     "path_or_title_discovery": 73,
-    "outside_discovery": 64,
+    "outside_discovery": 63,
     "known_edge_301_sources": 4,
-    "document_sources_excluding_recorded_edge_sources": 133,
+    "document_sources_excluding_recorded_edge_sources": 132,
     "excluded_non_page_fragments": 1
   },
   "excluded_non_page_fragments": [
@@ -25,7 +25,6 @@
     "acg-glass-florida/index.html": "6410539040674a781f90b35999d7a1c0cf24554334bf888d8f856c5c059dea5e",
     "acoustic-glazing-stc-oitc-commercial.html": "19defc29e1022341ac3355123aaa170cc545e2eb3cb68e6b83fa8f9a4a13f3a8",
     "atlanta-commercial-glazing.html": "1e2f3455ef895d6e5843515e2dc2395208da797a435fb1adc8993e2c20f4032f",
-    "author/rielly-walsh/index.html": "c60985d8bcdec67daeccfcdcabe9bfeba709bdf5e221594ef879a9269b786948",
     "authors/connor-walsh.html": "90ec792e0d58fd5cd333a2eaac3f1cefae21d67509059dd74605f3c6e3e59d94",
     "authors/rielly-walsh.html": "e111fb06d08dbbf4fb4806f34b537e03b999b216e07cffd1947c3542ec5170f7",
     "bid-hub.html": "529b7e1cf18a0cd9927076f1981aef0451c461a2de30be119d1aa8c642021342",
@@ -120,7 +119,7 @@
     "knoxville/index.html": "9184cf4e77270dd7036bcb82830b6660f6968934ecb579ea0990336fd5fae3c4",
     "knoxville/turkey-creek-knoxville/index.html": "91587fb809a680e41ae7c09ee0a1055c81d45c87d5a83b7caaeb9fb5e4f845dd",
     "laminated-glass-tennessee.html": "596e584720ac57c1f3b02940024ccf8037c8a0bf446af87611ea48cdf309e7fc",
-    "leadership.html": "31be421393ee922efcfcd1bf67320bf7b4a5cf7c51c5f02af8e535febf58b0cf",
+    "leadership.html": "6e76bdbc6be3edea4a83be3c91881e843f6c1ba6ec4cf97c1ec089d4036b949a",
     "memphis/downtown-memphis/index.html": "fb623a6ffe45d8e3b02b0293c10c84ad421de7e9e984f4bdd0d7018464e3c7e7",
     "memphis/east-memphis-poplar/index.html": "a68a81532deec7cadfd86bc6aa525a50d1a9c7e621a1de8f3d54850ae7490fcc",
     "memphis/index.html": "948b61130967f5ecba95e3f52a602cddaefea0ba72377337530dae88a9f4a925",
@@ -157,7 +156,7 @@
     "tennessee-commercial-glazier-license-requirements/index.html": "6f51792d8034f05cb433be4bab7c8b32757df35096b93291aaf6d56275679e0f",
     "tennessee-commercial-glazing/index.html": "e12029ea0f1222284ef9421cc33e587a5d30486cd53c5392a48bcece67c7e1a2",
     "tennessee/index.html": "92b2eabebc5cc712c4bb7fc873bdaaa9fe41adbab3b1069999abfea056d8dd31",
-    "wikipedia-draft.html": "a2fe4cf888cb3ec2fb7113a1cf3bd5c579c27d70779010c8792ad533f9f658a8"
+    "wikipedia-draft.html": "bc78bf4b7a71a39ce1d89359a6ac845b029cf7a19a98933eb30158f0861d27c3"
   },
   "reference_groups": {
     "path_or_title_discovery": [
@@ -254,7 +253,6 @@
     ],
     "biography_only": [
       "about.html",
-      "author/rielly-walsh/index.html",
       "blog/736-lagoon-dr-glazing.html",
       "blog/atlantic-fields-glazing.html",
       "blog/automatic-entrance-systems-commercial-buildings-florida.html",
