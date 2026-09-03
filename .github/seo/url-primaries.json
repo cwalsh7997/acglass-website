@@ -47,7 +47,6 @@
     "live": "HEAD probe of 612 URLs with redirects disabled, 2026-07-29: 200x542 301x69, server=cloudflare on every response"
   },
   "frozen_prefixes": [
-    "/west-palm-beach-commercial-glazing.html",
     "/commercial-glazier-near-me-west-palm-beach/",
     "/impact-windows-palm-beach.html",
     "/"
@@ -108,7 +107,15 @@
     "   file's _doc required. test_repo_allowlist_entries_are_all_live fails on stale entries.",
     "SEO preservation: manufacturer product names (ESWindows 8000/9000/SGD-2020, ES325/ES420/ES425,",
     "   Euro-Wall) and the West Palm Beach / Palm Beach County terms are all retained; body word",
-    "   count moves by less than 0.2 percent on each page."
+    "   count moves by less than 0.2 percent on each page.",
+    "",
+    "2026-09-03 -- Removed /west-palm-beach-commercial-glazing.html from the byte freeze.",
+    "Reason: GSC Web last 28 days, pulled 2026-09-03, now attributes this URL as the ranking",
+    "   West Palm Beach page (1 click / 274 impressions / position 6.28) for commercial-glass-",
+    "   contractor queries. The freeze existed because the ranking URL was unknown. Title and",
+    "   meta were a CTR problem, not a routing problem. Wave-4 edits title, description, og/twitter,",
+    "   and one hub link only. Canonical, H1, and NAP schema stay. Homepage freeze stays.",
+    "   /commercial-glazier-near-me-west-palm-beach/ and /impact-windows-palm-beach.html stay frozen."
   ],
   "_frozen_note": [
     "West Palm Beach holds #1 organic for 'commercial glazing contractor west palm beach'",

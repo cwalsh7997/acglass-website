@@ -2,7 +2,7 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (wave-3 morning findings: BBB live NAP, Manta removed, leftover authorized-installer soften)
+Last updated: 2026-09-03 (wave-4 CTR titles on ranking RFQ pages; hub title unique vs homepage)
 Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
@@ -86,3 +86,11 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 - Leftover first-party `Euro-Wall authorized` on `/services.html` and `Euro-Wall dealer (authorized)` in `/llms.txt` were softened this wave to installer / factory-certified language. Same pass softened ACG-as-subject factory-authorization leftovers on the reliability / professional-install / decorative / Jacksonville / Nashville pages. Generic "ask the sub" editorial was left alone. BuildZoom and Procore bios stay external cleanup items (unsupported authorized-installer list; false "20 years of experience"). Do not add those claims on-site.
 - `estimating@eswindows.com` bounced 550 5.1.1. Dead address was ledger-only. Next route is the public form https://eswindows.com/connect-dealer/ (fetched 200). Do not invent a replacement inbox.
 - BBB profile 0633-92045708 is live-corrected (primary (772) 486-7711, website https://acglass.com/, old (561) 283-8030 secondary). Manta slug `mtmntvt` is removed (301 to a generic WPB flat-glass category); recheck 2026-09-10.
+
+## Wave-4 CTR (2026-09-03)
+
+- GSC Web last 28 days, pulled 2026-09-03: 119 clicks / 13,237 impressions. Unbranded query-attributed clicks: 1. Inventory and old/new title table: `/seo/wave4-ctr.md`.
+- Titles and descriptions rewritten on the GSC page-1/2 RFQ URLs plus `/florida-commercial-glazing/`. Hub title stays in the `Commercial Glazing Contractor Florida` family and is now unique vs the frozen homepage (`| Bid in 48 Hrs`).
+- `/west-palm-beach-commercial-glazing.html` freeze lifted for title/meta/hub-link only. Canonical and H1 unchanged. Homepage freeze stays.
+- Body links to the Florida hub added on those ranking pages. Complete-guide left self-canonical. No Tennessee or Nashville file edited. Offices remain West Palm Beach, Naples, and Tampa only.
+- Homepage hash impressions (`#capability` `#discipline` `#prequal`) left alone; root canonical is already fragment-free. Live www/http 301s already exist; no extra redirect.
