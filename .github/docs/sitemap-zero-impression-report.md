@@ -520,3 +520,6 @@ accrue impressions as itself and is a sitemap-inclusion bug independent of conte
 |---|---|---|
 | `/atlantic-fields-sales-center.html` | self-canonical |  |
 
+This file lives at `.github/docs/sitemap-zero-impression-report.md`. GitHub Pages does not
+serve `.github/`, so it is not publicly fetchable. Do not move it back under the deploy root.
+

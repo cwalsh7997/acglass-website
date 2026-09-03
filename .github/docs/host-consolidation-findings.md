@@ -193,3 +193,6 @@ curl -sSI -L "http://www.acglass.com/?a=b"      # expect 1 hop, query preserved
 Follow-up in Search Console: use URL Inspection on `http://www.acglass.com/` to request a
 recrawl once the single hop is live, then watch the `http://www.acglass.com/` page row
 decay in the `sc-domain:acglass.com` property. Expect weeks, not days.
+
+This file lives at `.github/docs/host-consolidation-findings.md`. GitHub Pages does not
+serve `.github/`, so it is not publicly fetchable. Do not move it back under the deploy root.
