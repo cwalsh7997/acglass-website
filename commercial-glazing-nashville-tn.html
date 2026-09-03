@@ -476,6 +476,7 @@
     .intake-form .note { color: rgba(255,255,255,0.65); font-size: 0.82rem; margin-top: 14px; line-height: 1.5; }
     .intake-form .status { font-family: var(--mono); font-size: 0.82rem; margin-top: 14px; color: #6BCB77; min-height: 1.4em; opacity: 0; transition: opacity 0.3s; }
     .intake-form .status.show { opacity: 1; }
+    .intake-form .status a { color: inherit; text-decoration: underline; }
 
     /* Education block specific */
     .edu-block p { max-width: 860px; }
@@ -904,7 +905,7 @@
 
           <button type="submit">Submit to Early-Bid List</button>
           <p class="note">Submits directly to <!--email_off-->connor@acglass.com<!--/email_off-->. Your information is not shared with anyone outside ACG. For urgent project inquiries, call (772) 486-7711.</p>
-          
+          <p id="intakeStatus" class="status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -1017,14 +1018,21 @@
       formData.append('_source_page', '/commercial-glazing-nashville-tn');
       if (submitterEmail) { formData.append('_replyto', submitterEmail); }
 
+      // FormSubmit often returns HTTP 200 with JSON {success:false}. Gate on
+      // both HTTP OK and JSON success, same as /bid.html. Do not treat
+      // response.ok alone as acceptance, and do not clear the form on failure.
       fetch('https://formsubmit.co/ajax/connor@acglass.com', {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
       })
-      .then(function(response){
-        if (response.ok) {
-          // Real submission - fire conversion event AFTER confirmed success.
+      .then(function(r){
+        return r.json().then(function(data){ return { r: r, data: data }; }, function(){ return { r: r, data: {} }; });
+      })
+      .then(function(result){
+        var r = result.r;
+        var data = result.data;
+        if (r.ok && String(data.success) === 'true') {
           if (typeof gtag === 'function') {
             gtag('event', 'generate_lead', {
               form_id: 'nashville-early-bid',
@@ -1034,16 +1042,18 @@
             });
           }
           status.textContent = '✓ You are on the Nashville early-bid list. We will reach out within 48 hours.';
+          status.style.color = '#6BCB77';
           form.reset();
         } else {
           if (typeof gtag === 'function') {
             gtag('event', 'form_submission_failed', {
               form_id: 'nashville-early-bid',
               source_page: '/commercial-glazing-nashville-tn',
-              http_status: response.status
+              http_status: r.status
             });
           }
-          status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+          status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+          status.style.color = '#FBBF24';
         }
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       })
@@ -1055,7 +1065,8 @@
             error_type: 'network'
           });
         }
-        status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+        status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+        status.style.color = '#FBBF24';
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       });
       return false;
