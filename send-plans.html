@@ -579,6 +579,101 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         window.scrollTo({ top: 0, behavior: 'smooth' });
       })();
 
+      (function prefillFromBidEngine() {
+        var qp = new URLSearchParams(location.search);
+        if (qp.get('from') !== 'bid-engine') return;
+
+        function setIfEmpty(name, value) {
+          if (!value) return;
+          var el = form.querySelector('[name="' + name + '"]');
+          if (el && !el.value) el.value = value;
+        }
+        setIfEmpty('name', qp.get('name'));
+        setIfEmpty('company', qp.get('company'));
+        setIfEmpty('email', qp.get('email'));
+        setIfEmpty('phone', qp.get('phone'));
+        setIfEmpty('project_name', qp.get('project_name'));
+        setIfEmpty('project_location', qp.get('project_location'));
+
+        var typeMap = {
+          retail: 'Retail', hospitality: 'Hospitality', healthcare: 'Healthcare',
+          office: 'Office / Commercial', multifamily: 'Multifamily',
+          government: 'Municipal / Public', seniorliving: 'Other', industrial: 'Industrial'
+        };
+        var mapped = typeMap[qp.get('building_type') || ''] || qp.get('building_type_label') || '';
+        if (mapped && form.project_type) {
+          for (var i = 0; i < form.project_type.options.length; i++) {
+            if (form.project_type.options[i].value === mapped || form.project_type.options[i].text === mapped) {
+              form.project_type.selectedIndex = i;
+              break;
+            }
+          }
+        }
+
+        var notesInput = form.querySelector('[name="notes"]');
+        if (notesInput && !notesInput.value) {
+          var lines = ['=== FROM ACG BID ENGINE ==='];
+          if (qp.get('building_type_label')) lines.push('Building type: ' + qp.get('building_type_label'));
+          if (qp.get('building_sf')) lines.push('Building SF: ' + qp.get('building_sf'));
+          if (qp.get('glass_sf')) lines.push('Glass SF: ' + qp.get('glass_sf'));
+          if (qp.get('floors')) lines.push('Floors: ' + qp.get('floors'));
+          if (qp.get('construction_type')) lines.push('Construction: ' + qp.get('construction_type'));
+          if (qp.get('requirements')) lines.push('Requirements: ' + qp.get('requirements'));
+          if (qp.get('notes')) lines.push(qp.get('notes'));
+          notesInput.value = lines.join('\n');
+        }
+
+        var banner = document.createElement('div');
+        banner.id = 'bid-engine-handoff-banner';
+        banner.style.cssText = 'background:rgba(225,19,32,.08);border:1px solid rgba(225,19,32,.32);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:14px;line-height:1.5;color:#fff;';
+        banner.innerHTML = '<strong style="color:#E11320;letter-spacing:.04em;">Continued from the Bid Engine.</strong> Contact and project fields are pre-filled. Confirm bid due date, bid type, and consent, then submit so Connor actually receives the drawings.';
+        form.parentNode.insertBefore(banner, form);
+
+        restoreBidEngineFiles(banner);
+      })();
+
+      function restoreBidEngineFiles(banner) {
+        var DB = 'acg-bid-handoff';
+        var STORE = 'pending';
+        var KEY = 'bid-engine';
+        var fileInput = form.querySelector('input[type="file"][name="files[]"]');
+        if (!fileInput || !window.indexedDB) return;
+
+        var req = indexedDB.open(DB, 1);
+        req.onupgradeneeded = function() {
+          if (!req.result.objectStoreNames.contains(STORE)) req.result.createObjectStore(STORE);
+        };
+        req.onerror = function() {};
+        req.onsuccess = function() {
+          var db = req.result;
+          if (!db.objectStoreNames.contains(STORE)) { db.close(); return; }
+          var tx = db.transaction(STORE, 'readwrite');
+          var get = tx.objectStore(STORE).get(KEY);
+          get.onsuccess = function() {
+            var payload = get.result;
+            tx.objectStore(STORE).delete(KEY);
+            if (!payload || !payload.files || !payload.files.length) return;
+            try {
+              var dt = new DataTransfer();
+              payload.files.forEach(function(rec) {
+                var blob = new Blob([rec.buffer], { type: rec.type || 'application/octet-stream' });
+                dt.items.add(new File([blob], rec.name, { type: rec.type || '', lastModified: rec.lastModified || Date.now() }));
+              });
+              fileInput.files = dt.files;
+              var list = document.getElementById('file-list');
+              if (list) {
+                list.innerHTML = Array.from(fileInput.files).map(function(f) {
+                  return '<div style="font-size:13px;color:#fff;margin-top:6px;">&#128206; ' + f.name + ' &middot; ' + (f.size/1024/1024).toFixed(2) + ' MB</div>';
+                }).join('');
+              }
+              if (banner) {
+                banner.innerHTML += '<div style="margin-top:8px;">' + fileInput.files.length + ' drawing file' + (fileInput.files.length > 1 ? 's' : '') + ' carried over and attached below.</div>';
+              }
+            } catch (e) {}
+          };
+        };
+      }
+
       (function prefillFromScopeEngine() {
         var qp = new URLSearchParams(location.search);
         if (!qp.has('project_type') && !qp.has('system') && !qp.has('estimate_low')) return;
