@@ -172,7 +172,7 @@ def check_h1_integrity(results: list[Result]) -> None:
                     "WARN",
                     "Homepage H1 carries 'commercial glazing'",
                     "commercial glazing" in h1.lower(),
-                    f"h1={h1!r} — manifesto hero is owner-SETTLED 2026-09-03 "
+                    f"h1={h1!r} - manifesto hero is owner-SETTLED 2026-09-03 "
                     "('Commercial glazing. Written in 48 hours.'); "
                 )
             )
