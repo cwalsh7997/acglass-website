@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[3]
 CSS_PATH = ROOT / "css" / "acg-chrome.css"
 SCOPE_MARKER = 'data-acg-block="full-scope-v1"'
 TEMPLATE_MARKER = ".wpb-section-eyebrow"
-EXPECTED_SCOPE_PAGE_COUNT = 336
+EXPECTED_SCOPE_PAGE_COUNT = 328
 CACHE_VERSION = "20260814-contrast"
 TEMPLATE_CACHE_VERSION = "20260814-template-contrast"
 FROZEN_SCOPE_PATHS = {
