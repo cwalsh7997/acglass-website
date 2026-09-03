@@ -2,8 +2,8 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (products index + Euro-Wall specs; ESWindows product page skipped)
-Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md` was not present in this environment.
+Last updated: 2026-09-03 (wave-2 noindex applied; ESWindows product page still skipped)
+Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
 
@@ -50,7 +50,7 @@ Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md
 - Self-canonical on those 3 office metros is optional and is Tier 2 (creates a second indexable URL next to each storefront clone).
 - Add `/florida-commercial-glazing/` as the state hub. Link only to URLs that exist.
 - Do not bulk-generate city or service pages. Do not noindex the blog set.
-- Wave-2 inventory (counts only): `seo/prune-wave2.md`. 77 city storefront + 77 railing + 77 impact + 101 storefront-glazier URLs. Recommendation is noindex+sitemap drop, not 301 onto the 3 offices + 6 satellites. Not applied.
+- Wave-2 inventory lived in `seo/prune-wave2.md`. Applied in the follow-up PR: see Wave-2 apply below.
 
 ## Products pass (2026-09-03)
 
@@ -58,5 +58,20 @@ Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md
 - `/products/euro-wall/` sourced from euro-wall.com HTML (home, products, commercial-products, Vista Multi Slide, Vista Fold, Vista Pivot, Vista DS) plus re-fetched ACG pages (`euro-wall.html`, `euro-wall-installer-florida.html`, `facts.html`). Numeric DPs, NOA numbers, FL PA numbers, and lead times omitted. SGD2020 / Vistafold named only as ACG-page labels, not factory SKUs.
 - `/products/eswindows/` skipped. `https://eswindows.com/` returned a Cloudflare "Performing security verification" challenge on 2026-09-03. Product URLs timed out. Do not copy the ACG installer or `/noa/eswindows.html` tables onto a new URL until the manufacturer HTML can be fetched. Existing ACG ESWindows NOA/DP figures also conflict across those two on-site pages.
 - `/about/connor-walsh/` noindex stub added. `/about/index.html` parent stub added so the new `about/` directory does not 404 `/about/`. Neither stub is in sitemaps. Neither is a second bio. Do not call either an HTTP 301.
-- 77×3 city folders were not noindexed in this pass.
+- 77×3 city folders were not noindexed in the products pass. Applied in wave-2.
 - One-line link from `/services.html` technical references to `/products/`. No services rewrite.
+
+## Wave-2 apply (2026-09-03)
+
+- **324 URLs** received `noindex,follow` and kept their self-canonical. Files were not deleted. No 301.
+- 77 `/{city}/commercial-storefronts/` + 77 `/{city}/glass-railings/` + 77 `/{city}/impact-windows-hurricane/` = 231. No sibling impact folder exists; the city path is `impact-windows-hurricane` only.
+- 93 `/storefront-glazier-{city}-florida/` pages noindexed. Eight keepers stay indexable: west-palm-beach, naples, tampa, miami, orlando, fort-lauderdale, fort-myers, sarasota. Jacksonville has no file in that pattern; none was invented.
+- `/storefront-glazier-florida/` (statewide guide, the 102nd glob match) stays indexable. It is not a city slug.
+- Those 324 URLs were removed from `sitemap.xml` and `sitemap-cities.xml`. They were not in the other child sitemaps.
+- `/boca-raton/` city root is now self-canonical and added to both sitemaps so crawl-check still represents Boca after the storefront-glazier URL left the sitemap. `url-primaries.json` Boca storefront primary stays gsc-gated on `/storefront-glazier-boca-raton-florida/` (still self-canonical, now noindex). Registry not flipped.
+- Internal-link-audit allows indexable pages to keep linking at wave-2 noindex URLs. GitHub Pages cannot 301 them. A later link-rewire can drop that allowlist.
+- Hub links to `/florida-commercial-glazing/` added on `/services.html`, `/commercial-storefront-systems.html`, `/curtainwall-systems.html`, and `/contact.html` (one list item or one sentence each). Homepage already had a hub mention; no second one added.
+
+## ESWindows fetch retry (2026-09-03, wave-2)
+
+- `https://eswindows.com/` still returns HTTP 403 + Cloudflare "Just a moment..." challenge. `/products/eswindows/` was not created. Do not copy NOA/DP tables from `/eswindows-installer-florida.html` or `/noa/eswindows.html` onto a new URL until manufacturer HTML loads.

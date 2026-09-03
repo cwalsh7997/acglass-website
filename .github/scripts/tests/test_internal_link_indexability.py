@@ -101,6 +101,25 @@ class IndexableLinkTargetTests(unittest.TestCase):
         self.assertFalse(results["Indexable pages do not link to known redirect sources"].ok)
         self.assertIn("/source.html", results["Indexable pages do not link to noindex pages"].detail)
 
+    def test_wave2_noindex_targets_are_allowed_link_destinations(self):
+        self.assertTrue(audit.is_wave2_noindex_target("/aventura/commercial-storefronts/"))
+        self.assertTrue(audit.is_wave2_noindex_target("/storefront-glazier-boca-raton-florida/"))
+        self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-florida/"))
+        self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-miami-florida/"))
+        self.assertFalse(audit.is_wave2_noindex_target("/dealer/login.html"))
+        pages = {
+            "/source.html": self.page("/source.html"),
+            "/aventura/commercial-storefronts/": self.page(
+                "/aventura/commercial-storefronts/",
+                '<meta name="robots" content="noindex,follow">',
+            ),
+        }
+        inbound = {
+            "/aventura/commercial-storefronts/": {"/source.html": ["Aventura storefronts"]}
+        }
+        results = self.run_gate(pages, inbound)
+        self.assertTrue(results["Indexable pages do not link to noindex pages"].ok)
+
     def test_noindex_and_refresh_sources_are_not_treated_as_indexable(self):
         pages = {
             "/hidden-source.html": self.page(

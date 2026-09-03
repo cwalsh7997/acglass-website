@@ -1,8 +1,6 @@
-# Prune wave 2 (inventory only)
+# Prune wave 2
 
-Decision aid. **No noindex, sitemap drop, or 301 was applied in this pass.** Do not delete pages.
-
-Counted on branch `seo-auto`, 2026-09-03. Pattern counts only, plus five example URLs each. City service folders and the storefront-glazier set stay indexable until Connor picks a move.
+Inventory counted on branch `seo-auto`, 2026-09-03. **Applied 2026-09-03** on `cursor/seo-auto-wave2-6d6c`: `noindex,follow` + self-canonical + sitemap drop. HTML files were not deleted. No 301.
 
 ## Pattern counts
 
@@ -73,14 +71,23 @@ Deeper than the city-service folders (~1,200-2,300 words) but still templated. 6
 
 No `storefront-glazier-jacksonville-florida/` exists. Jacksonville's declared storefront primary is `/storefront-installer-jacksonville.html`.
 
-## Recommendation (not applied)
+## Applied 2026-09-03
 
-**Prefer noindex + sitemap drop** for the 231 city-service URLs and for storefront-glazier URLs that are not one of the nine coverage targets. Do **not** 301 the 231 onto the three office metros plus six satellites.
+**noindex,follow + self-canonical + sitemap drop.** HTML files were not deleted. No 301. GitHub Pages cannot HTTP 301 without Cloudflare, and Cloudflare is out of scope.
 
-Rationale, one line each:
+| Set | Noindexed | Kept indexable |
+| --- | --- | --- |
+| `/{city}/commercial-storefronts/` | 77 | 0 |
+| `/{city}/glass-railings/` | 77 | 0 |
+| `/{city}/impact-windows-hurricane/` | 77 | 0 (no sibling impact folder exists) |
+| `/storefront-glazier-{city}-florida/` | 93 | 8 keepers below |
 
-- **City-service 77×3:** These are city+service clones (storefront / railing / impact). A 301 onto `/west-palm-beach/`, `/naples/`, `/tampa/`, `/miami/`, `/orlando/`, `/jacksonville/`, `/fort-lauderdale/`, `/fort-myers/`, or `/sarasota/` would send railing and impact URLs at storefront or city-root aliases. Several of those city roots still `rel=canonical` to a storefront-glazier URL. Wrong intent, and GitHub Pages cannot issue HTTP 301 without a Cloudflare rule.
-- **Storefront-glazier 101:** Keep the pages that already serve as declared or de-facto primaries for the three staffed offices and the six satellites that 200. On disk that is eight of this pattern: `/storefront-glazier-west-palm-beach-florida/`, `/storefront-glazier-naples-florida/`, `/storefront-glazier-tampa-florida/`, `/storefront-glazier-miami-florida/`, `/storefront-glazier-orlando-florida/`, `/storefront-glazier-fort-lauderdale-florida/`, `/storefront-glazier-fort-myers-florida/`, `/storefront-glazier-sarasota-florida/`. Jacksonville is the ninth coverage city but is not in this filename pattern. noindex + sitemap drop the other **93**. A later 301 of those 93 onto the nearest of the eight (or onto `/commercial-glazing-jacksonville.html` for North Florida) needs Cloudflare and a GSC equity check. [NEED: GSC clicks/impressions on the 93.]
-- **Why not apply now:** Original week-1 rule still holds: do not noindex the 77×3 or the storefront-glazier set in this PR. This file is the inventory.
+**Total URLs noindexed: 324.**
 
-If Connor later wants a single move, do city-service noindex+drop first (thinner, one title bank). Leave storefront-glazier until GSC is in hand. Do not delete directories.
+Keepers (staffed offices + satellites that exist in this filename pattern): `/storefront-glazier-west-palm-beach-florida/`, `/storefront-glazier-naples-florida/`, `/storefront-glazier-tampa-florida/`, `/storefront-glazier-miami-florida/`, `/storefront-glazier-orlando-florida/`, `/storefront-glazier-fort-lauderdale-florida/`, `/storefront-glazier-fort-myers-florida/`, `/storefront-glazier-sarasota-florida/`. Jacksonville has no `storefront-glazier-jacksonville-florida` file; none was created.
+
+Left indexable, not in the city-slug count of 101: `/storefront-glazier-florida/` (statewide GC guide). That is the 102nd `storefront-glazier-*-florida` glob match.
+
+`/boca-raton/` city root is now self-canonical and listed in `sitemap.xml` + `sitemap-cities.xml` so crawl-check still has a Boca market in a sitemap after `/storefront-glazier-boca-raton-florida/` was noindexed and dropped. Boca is a gsc-gated storefront primary in `url-primaries.json`; that registry row was not flipped.
+
+A later 301 of the 93 onto the nearest keeper (or onto `/commercial-glazing-jacksonville.html` for North Florida) needs Cloudflare and a GSC equity check. [NEED: GSC clicks/impressions on the 93.] Do not delete directories.

@@ -43,7 +43,7 @@ Used to source `/products/euro-wall/`. Do not upgrade installer status from thes
 
 | URL | Result | Facts used |
 | --- | --- | --- |
-| https://eswindows.com/ | Blocked. Cloudflare security challenge. Product URLs timed out. | None. `/products/eswindows/` skipped. |
+| https://eswindows.com/ | Blocked twice on 2026-09-03. HTTP 403 + Cloudflare "Just a moment..." challenge. | None. `/products/eswindows/` skipped again. |
 | https://euro-wall.com/ | 200. HQ 2200 Murphy Court, North Port, FL 34289. 888.989.EURO. info@euro-wall.com. FOR YOU Crew. Locator exists. | HQ, phone, email, support program name. |
 | https://euro-wall.com/products/ | 200. Crafted in the USA. Sliding / Folding / Pivot / Windows. | USA manufacture claim. |
 | https://euro-wall.com/products/commercial-products/ | 200. Commercial families listed, including thermally broken fold and window lines. | Family names only where dedicated HTML was not fetched. |
