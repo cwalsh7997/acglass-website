@@ -1,0 +1,195 @@
+{
+  "asOf": "2026-09-03",
+  "canonical": "https://acglass.com/tools/bid-day-glazing-checker.html",
+  "author": "Connor Walsh",
+  "phone": "(772) 486-7711",
+  "license": "FL CGC #1531993",
+  "company": "American Commercial Glass",
+  "cta": "/send-plans.html",
+  "ufcEditionStamp": "UFC 4-010-01 Jul 2 2026 digital WBDG",
+  "widgets": {
+    "occupancy": {
+      "id": "occupancy",
+      "letter": "A",
+      "label": "Occupancy / regime",
+      "hint": "Regime follows occupancy, not county. VA-leased is ISC.",
+      "options": [
+        {
+          "id": "dod",
+          "label": "DoD UFC 4-010-01 Jul 2 2026 digital",
+          "shortLabel": "DoD UFC 4-010-01 Jul 2 2026 digital §5-11",
+          "detail": "§5-11 / WBDG. Glazing is §5-11, not Standard 10.",
+          "floorChecks": [
+            "Confirm UFC 4-010-01 dated Jul 2 2026 on T-001 or Division 01. Price that stamp.",
+            "Glazing floor is §5-11, not cancelled C3 Standard 10.",
+            "Commentary: minimize hazardous fragments. Not designed for blast resistance.",
+            "Glass floor: min 1/4 in laminated or polycarbonate, or two 1/8 in plies + 0.030 in PVB. Cite §5-11.1.",
+            "IGU: laminate or PC inboard. No monolithic inner lite.",
+            "Silicone bite = larger of 3/8 in or glass thickness. Bead min 3/16 in. Cite §5-11.1.",
+            "Tape bite = 2× laminated-glass thickness. Not 2× the silicone bite. Cite §5-11.1.",
+            "Bite on both sides of a single pane. Inboard lite only on an IGU. Cite §5-11.1.",
+            "Polycarbonate bite ≥ 1.5× PC thickness.",
+            "Vestibules and stairs are in §5-11.2. Doors are §5-12.1.",
+            "Replacement on an inhabited DoD building still triggers §5-11 under §5-1.1.2.1. Not the 50% renovation trigger.",
+            "Film is not a UFC alternate. §5-11.4.",
+            "2018 Appendix B B-3.1 is deleted. Do not price it.",
+            "ASTM F1642 / F2912 / F2248 only if the spec cites them.",
+            "Florida impact often laminates outboard. UFC laminates inboard. Check the makeup.",
+            "Do not invent psi or standoff. Those are not on the §5-11 floor.",
+            "Sources: https://www.wbdg.org/dod/ufc/ufc-4-010-01 and digital.wbdg.org criteria 232da0b3-da5b-430e-aaaf-232c4e98d202/latest"
+          ]
+        },
+        {
+          "id": "gsa-isc",
+          "label": "GSA / ISC leased off-post",
+          "shortLabel": "GSA-ISC leased off-post",
+          "detail": "UFC 5-1.2.7.6 sends leased not-on-DoD to ISC. VA-leased is also ISC.",
+          "floorChecks": [
+            "UFC 5-1.2.7.6 sends leased space that is not on a DoD installation to ISC.",
+            "Use ISC RMP 2024. Do not copy UFC §5-11 numbers onto an ISC job.",
+            "GSA P100 was rescinded Feb 24 2025. PBS Interim Core Building Standards still cite ISC.",
+            "Public glazing LOP tables are FOUO. Print TBD. Do not print psi.",
+            "VA-leased space is ISC, not VA-owned PSRDM.",
+            "Still run the Florida wind path in parallel. An NOA is not a blast rating.",
+            "Do not copy DoD UFGS 08 56 53 onto this job."
+          ]
+        },
+        {
+          "id": "va-owned",
+          "label": "VA-owned PSRDM",
+          "shortLabel": "VA-owned PSRDM",
+          "detail": "VA Physical Security and Resiliency Design Manual. Not UFC.",
+          "floorChecks": [
+            "VA Physical Security and Resiliency Design Manual, Oct 1 2020, rev May 1 2024. Not UFC.",
+            "Designations are Critical / Essential / Ancillary. Not the old Life Safety / Mission Critical labels.",
+            "Standoff Table 3-1: Essential/Ancillary 25 ft, Critical 50 ft, screened 5 ft.",
+            "New glass: laminated inner lite.",
+            "Bite 1/2 in plus 3/8 in structural silicone on the inner lite. §6.3.1.2.",
+            "Table 6-3: Essential/Ancillary fragments ≤ 10 ft into the room. Critical may crack but stay in frame.",
+            "Table 6-1 GP psi: TBD. Do not invent a GP magnitude.",
+            "If glazing is not replaced, §6.3.2.1 allows 7-mil film with demonstrated performance. VA existing-glass only. Not a UFC substitute.",
+            "VA 08 56 53 live URL: TBD. DoD UFGS 08 56 53 is not VA.",
+            "VA-leased is ISC. This path is VA-owned only.",
+            "Do not copy UFC §5-11 numbers onto a VA job.",
+            "Still run the Florida wind path in parallel.",
+            "Source: https://www.cfm.va.gov/til/PhysicalSecurity/dmPhySec.pdf"
+          ]
+        }
+      ]
+    },
+    "floridaWind": {
+      "id": "floridaWind",
+      "letter": "B",
+      "label": "Florida wind path",
+      "hint": "Palm Beach and Monroe are not HVHZ. NOA is accepted statewide. FL# is not enough in HVHZ.",
+      "options": [
+        {
+          "id": "hvhz",
+          "label": "HVHZ Miami-Dade + Broward NOA (TAS 201/202/203)",
+          "shortLabel": "HVHZ NOA (TAS 201/202/203)",
+          "detail": "HVHZ is Miami-Dade and Broward only.",
+          "floorChecks": [
+            "HVHZ is Miami-Dade and Broward only. Palm Beach and Monroe are not HVHZ.",
+            "Current Miami-Dade NOA tested to TAS 201 / 202 / 203.",
+            "Verify the NOA live at permit and again at installation. Configuration-specific.",
+            "FL# is not enough in HVHZ. NOA is accepted statewide; the reverse is not true.",
+            "9th Edition manufacturer affirmation if the permit application is on or after Dec 31 2026.",
+            "FBC 9th Edition effective Dec 31 2026. Fla. Stat. 553.73(6) and 553.73(7)(d): permit-application date governs.",
+            "Dec 30 application stays 8th Edition. Dec 31 and later is 9th Edition.",
+            "ASCE 7-22 is already in the 8th Edition. December 31 is not a wind-code switch.",
+            "Do not spec 9th Edition U-factor or SHGC. Those cells are TBD.",
+            "9th Edition TAS cell deltas are TBD. Do not invent them.",
+            "Florida impact often laminates outboard. Check that makeup against the federal overlay."
+          ]
+        },
+        {
+          "id": "rest-of-florida",
+          "label": "Rest-of-Florida FPA",
+          "shortLabel": "Rest-of-Florida FPA",
+          "detail": "Current FL# or NOA. NOA is accepted statewide.",
+          "floorChecks": [
+            "Rest of Florida: current FL# or a Miami-Dade NOA. NOA is accepted statewide.",
+            "Palm Beach and Monroe are not HVHZ. Do not demand an NOA as if they were.",
+            "FL# is not enough if this opening is actually in Miami-Dade or Broward. Recheck the county.",
+            "9th Edition manufacturer affirmation if the permit application is on or after Dec 31 2026.",
+            "FBC 9th Edition effective Dec 31 2026. Fla. Stat. 553.73(6) and 553.73(7)(d): permit-application date governs.",
+            "Dec 30 application stays 8th Edition. Dec 31 and later is 9th Edition.",
+            "ASCE 7-22 is already in the 8th Edition. December 31 is not a wind-code switch.",
+            "Do not spec 9th Edition U-factor or SHGC. Those cells are TBD.",
+            "Florida impact often laminates outboard. Check that makeup against the federal overlay."
+          ]
+        }
+      ]
+    },
+    "overlay": {
+      "id": "overlay",
+      "letter": "C",
+      "label": "Federal overlay",
+      "hint": "A Miami-Dade NOA is not a blast rating.",
+      "options": [
+        {
+          "id": "floor-only",
+          "label": "§5-11 floor only",
+          "shortLabel": "§5-11 floor only",
+          "stop": false,
+          "detail": "Price the floor. Do not add ASTM unless the spec names it.",
+          "floorChecks": [
+            "Price the §5-11 floor only. Do not add ASTM F1642 / F2912 / F2248 unless the spec names them.",
+            "Dual-path Florida wind approval is still required.",
+            "A Miami-Dade NOA is wind and impact. It is not a blast rating."
+          ]
+        },
+        {
+          "id": "astm-cited",
+          "label": "Spec cites F1642 / F2912 / F2248",
+          "shortLabel": "Spec cites F1642 / F2912 / F2248",
+          "stop": false,
+          "detail": "Above the floor. Do not invent hazard levels.",
+          "floorChecks": [
+            "The spec cites ASTM F1642 / F2912 / F2248. That is above the §5-11 floor.",
+            "Do not invent hazard levels, psi, or standoff.",
+            "Florida NOA or FPA is still required. The NOA is not the ASTM overlay.",
+            "Check inboard vs outboard laminate. Florida impact often laminates outboard. UFC and VA laminate inboard."
+          ]
+        },
+        {
+          "id": "noa-as-blast",
+          "label": "GC treating NOA as blast",
+          "shortLabel": "GC treating NOA as blast",
+          "stop": true,
+          "stopTitle": "STOP",
+          "stopBody": "A Miami-Dade NOA is wind and impact, not blast. You still need (1) NOA or FPA, (2) the occupancy-regime glass and bite, and (3) ASTM only if the spec cites it. Check inboard vs outboard laminate before you price.",
+          "detail": "STOP. An NOA is not a blast rating.",
+          "floorChecks": [
+            "STOP. An NOA is wind and impact, not blast.",
+            "Need (1) NOA or FPA, (2) occupancy-regime glass and bite, (3) ASTM only if cited.",
+            "Check inboard vs outboard laminate. Florida impact often laminates outboard. UFC and VA laminate inboard.",
+            "Do not copy UFC numbers onto a VA or ISC job. Do not copy DoD UFGS 08 56 53 onto VA."
+          ]
+        }
+      ]
+    }
+  },
+  "printChecklistTemplate": [
+    { "id": "project", "label": "Project", "source": "field:project" },
+    { "id": "bid-date", "label": "Bid date", "source": "field:bidDate" },
+    { "id": "ahj", "label": "AHJ county", "source": "field:ahjCounty" },
+    { "id": "permit-date", "label": "Permit-application date", "source": "field:permitDate" },
+    { "id": "widget-a", "label": "Widget A occupancy / regime", "source": "widget:occupancy" },
+    { "id": "ufc-stamp", "label": "UFC edition stamp", "source": "ufcStamp" },
+    { "id": "widget-b", "label": "Widget B Florida wind", "source": "widget:floridaWind" },
+    { "id": "live-noa", "label": "Live NOA / FL# (verify at permit and install)", "source": "field:liveNoa" },
+    { "id": "widget-c", "label": "Widget C overlay", "source": "widget:overlay" },
+    { "id": "inboard", "label": "Inboard laminate", "text": "Florida impact often laminates outboard. UFC and VA laminate inboard. Check the makeup." },
+    { "id": "glass-floor", "label": "Glass floor", "source": "glassFloor" },
+    { "id": "bite", "label": "Bite", "source": "bite" },
+    { "id": "vestibules", "label": "Vestibules / doors", "source": "vestibules" },
+    { "id": "no-film", "label": "No film", "source": "noFilm" },
+    { "id": "replacement", "label": "Replacement trigger", "source": "replacement" },
+    { "id": "no-b31", "label": "No B-3.1", "source": "noB31" },
+    { "id": "regime-extras", "label": "VA or ISC extras", "source": "regimeExtras" },
+    { "id": "no-9th-ushgc", "label": "No 9th Edition U / SHGC", "text": "Do not spec 9th Edition U-factor or SHGC. Those cells are TBD. TAS deltas TBD. Permit-application date governs. Dec 30 = 8th. Dec 31+ = 9th. ASCE 7-22 already in 8th." },
+    { "id": "taa", "label": "TAA / BABA / BAA", "text": "TAA / BABA / BAA apply to glass and frame." },
+    { "id": "cta", "label": "Send plans", "text": "acglass.com/send-plans.html · (772) 486-7711 · FL CGC #1531993 · American Commercial Glass" }
+  ]
+}

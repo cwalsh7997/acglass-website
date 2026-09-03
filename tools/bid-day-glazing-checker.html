@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0e284f">
+  <title>Bid-Day Glazing Checker | ACG FL</title>
+  <meta name="description" content="Pick occupancy, Florida wind path, and UFC overlay. Print a dual-path checklist. A Miami-Dade NOA is not a blast rating.">
+  <meta name="author" content="Connor Walsh, ACG">
+  <link rel="icon" type="image/png" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="canonical" href="https://acglass.com/tools/bid-day-glazing-checker.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bid-Day Glazing Checker | ACG">
+  <meta property="og:description" content="Pick occupancy, Florida wind path, and UFC overlay. Print a dual-path checklist. A Miami-Dade NOA is not a blast rating.">
+  <meta property="og:url" content="https://acglass.com/tools/bid-day-glazing-checker.html">
+  <meta property="og:image" content="https://acglass.com/images/team/connor-walsh-portrait.jpg">
+  <meta property="og:image:alt" content="Connor Walsh, President of American Commercial Glass">
+  <meta property="og:site_name" content="American Commercial Glass">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bid-Day Glazing Checker | ACG">
+  <meta name="twitter:description" content="Pick occupancy, Florida wind path, and UFC overlay. Print a dual-path checklist. A Miami-Dade NOA is not a blast rating.">
+  <meta name="twitter:image" content="https://acglass.com/images/team/connor-walsh-portrait.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css?v=20260705">
+  <link rel="stylesheet" href="/css/acg-chrome.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://acglass.com/#organization",
+  "name": "American Commercial Glass",
+  "url": "https://acglass.com/",
+  "logo": "https://acglass.com/images/acg-logo-nav@2x.png",
+  "telephone": "+17724867711",
+  "email": "connor@acglass.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "700 S Rosemary Ave Suite 204",
+    "addressLocality": "West Palm Beach",
+    "addressRegion": "FL",
+    "postalCode": "33401",
+    "addressCountry": "US"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bid-Day Glazing Checker",
+  "url": "https://acglass.com/tools/bid-day-glazing-checker.html",
+  "description": "Pick occupancy, Florida wind path, and UFC overlay. Print a dual-path checklist. A Miami-Dade NOA is not a blast rating.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "@id": "https://acglass.com/#connor-walsh",
+    "name": "Connor Walsh",
+    "url": "https://acglass.com/authors/connor-walsh.html"
+  },
+  "publisher": {
+    "@id": "https://acglass.com/#organization"
+  },
+  "dateModified": "2026-09-03"
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a Miami-Dade NOA a blast rating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A Miami-Dade NOA is a Florida wind and impact approval (TAS 201/202/203). It is not a blast rating and it does not satisfy UFC 4-010-01 Section 5-11 or AT/FP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does UFC 4-010-01 Section 5-11 require ASTM F1642?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Section 5-11 is fragment reduction: laminated inboard glass and a specified bite. ASTM F1642, F2912, and F2248 apply only when the spec cites them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What triggers Florida Building Code 8th Edition vs 9th Edition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The permit-application date. Fla. Stat. 553.73(6) and 553.73(7)(d). A complete application filed December 30, 2026 stays on the 8th Edition. December 31, 2026 and later is 9th Edition. ASCE 7-22 is already in the 8th Edition."
+      }
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://acglass.com/tools/" },
+    { "@type": "ListItem", "position": 3, "name": "Bid-Day Glazing Checker", "item": "https://acglass.com/tools/bid-day-glazing-checker.html" }
+  ]
+}
+  </script>
+
+  <style>
+    :root { --bdgc-acc: #e11320; --bdgc-navy: #0e284f; --bdgc-ink: #050A12; }
+    html { overflow-x: clip; }
+    body { overflow-x: hidden; }
+    .bdgc-hero {
+      background: linear-gradient(180deg, #050A12 0%, #0e284f 100%);
+      padding: clamp(88px, 12vw, 132px) 0 clamp(28px, 4vw, 44px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .bdgc-eyebrow {
+      font-family: var(--font-mono, "JetBrains Mono", monospace);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bdgc-acc);
+      margin: 0 0 14px;
+    }
+    .bdgc-hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin: 0 0 14px;
+      max-width: 18ch;
+    }
+    .bdgc-lede {
+      font-size: clamp(15px, 1.4vw, 18px);
+      color: rgba(255,255,255,0.78);
+      line-height: 1.6;
+      max-width: 58ch;
+      margin: 0 0 16px;
+    }
+    .bdgc-byline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      font-family: var(--font-mono, "JetBrains Mono", monospace);
+      font-size: 0.8rem;
+      color: var(--text-muted, rgba(255,255,255,0.5));
+    }
+    .bdgc-byline a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bdgc-body { background: #050A12; padding: clamp(28px, 4vw, 48px) 0 clamp(56px, 8vw, 96px); }
+    .bdgc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 920px) {
+      .bdgc-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: start; }
+    }
+    .bdgc-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 18px 16px;
+    }
+    .bdgc-card h2 {
+      font-size: 16px;
+      font-weight: 800;
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+    .bdgc-letter {
+      font-family: var(--font-mono, "JetBrains Mono", monospace);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--bdgc-acc);
+      margin-bottom: 8px;
+    }
+    .bdgc-hint {
+      font-size: 13px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.5;
+      margin: 0 0 14px;
+    }
+    .bdgc-opts { display: grid; gap: 8px; }
+    .bdgc-opt {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      cursor: pointer;
+    }
+    .bdgc-opt:hover { border-color: rgba(255,255,255,0.28); }
+    .bdgc-opt:has(input:checked) {
+      border-color: var(--bdgc-acc);
+      background: rgba(225,19,32,0.08);
+    }
+    .bdgc-opt input { margin-top: 3px; accent-color: var(--bdgc-acc); }
+    .bdgc-opt strong { display: block; font-size: 14px; color: #fff; }
+    .bdgc-opt span { display: block; font-size: 12.5px; color: rgba(255,255,255,0.58); line-height: 1.45; margin-top: 2px; }
+    .bdgc-fields { display: grid; gap: 10px; }
+    .bdgc-fields label {
+      display: grid;
+      gap: 5px;
+      font-family: var(--font-mono, "JetBrains Mono", monospace);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .bdgc-fields input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(8,18,36,0.7);
+      color: #fff;
+      font: 15px/1.4 var(--font, Inter, sans-serif);
+    }
+    .bdgc-fields input:focus { outline: 2px solid #fff; outline-offset: 2px; }
+    .bdgc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .bdgc-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font, Inter, sans-serif);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .bdgc-btn:hover { background: rgba(255,255,255,0.1); }
+    .bdgc-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+    .bdgc-btn-acc { background: var(--bdgc-acc); border-color: var(--bdgc-acc); }
+    .bdgc-btn-acc:hover { background: #c20f1c; }
+    .bdgc-print-note {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.5);
+      margin: 10px 0 0;
+      line-height: 1.5;
+    }
+    .bdgc-stop {
+      display: none;
+      margin: 0 0 16px;
+      padding: 14px 16px;
+      border: 1px solid rgba(225,19,32,0.55);
+      background: rgba(225,19,32,0.12);
+      border-radius: 8px;
+    }
+    .bdgc-stop.is-on { display: block; }
+    .bdgc-stop strong {
+      display: block;
+      font-family: var(--font-mono, "JetBrains Mono", monospace);
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      color: var(--bdgc-acc);
+      margin-bottom: 6px;
+    }
+    .bdgc-stop p { margin: 0; color: #fff; font-size: 14.5px; line-height: 1.55; }
+    .bdgc-checks h2 { font-size: 18px; margin: 0 0 12px; }
+    .bdgc-list { list-style: none; margin: 0; padding: 0; }
+    .bdgc-list li {
+      display: flex;
+      gap: 10px;
+      padding: 9px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.86);
+      overflow-wrap: anywhere;
+    }
+    .bdgc-list li:first-child { border-top: none; }
+    .bdgc-list input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      margin-top: 2px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 5px;
+      background: transparent;
+      cursor: pointer;
+    }
+    .bdgc-list input[type="checkbox"]:checked {
+      background: var(--bdgc-acc);
+      border-color: var(--bdgc-acc);
+    }
+    .bdgc-empty { color: rgba(255,255,255,0.5); font-size: 14.5px; line-height: 1.55; margin: 0; }
+    .bdgc-hubs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .bdgc-hubs a {
+      display: inline-flex;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .bdgc-hubs a:hover { border-color: var(--bdgc-acc); color: #fff; }
+    .bdgc-faq { margin-top: 28px; }
+    .bdgc-faq h2 { font-size: 22px; margin: 0 0 14px; }
+    .bdgc-faq h3 { font-size: 16px; margin: 18px 0 6px; }
+    .bdgc-faq p { color: rgba(255,255,255,0.78); line-height: 1.65; margin: 0; }
+    .bdgc-cta {
+      margin-top: 28px;
+      background: linear-gradient(135deg, #0e284f 0%, #16386b 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 3px solid var(--bdgc-acc);
+      border-radius: 10px;
+      padding: 22px 18px;
+    }
+    .bdgc-cta h2 { font-size: 22px; margin: 0 0 8px; }
+    .bdgc-cta p { color: rgba(255,255,255,0.78); margin: 0 0 14px; line-height: 1.6; }
+    .bdgc-print-card { display: none; }
+    @media print {
+      @page { size: letter; margin: 0.5in; }
+      html, body { background: #fff !important; color: #111 !important; overflow: visible !important; }
+      .grain, .cursor-dot, .cursor-ring, .hd, .ft, .bdgc-hero, .bdgc-screen, .bdgc-hubs, .bdgc-faq, .bdgc-cta, .acg-rfq, .skip-link { display: none !important; }
+      .bdgc-body { background: #fff !important; padding: 0 !important; }
+      .bdgc-print-card { display: block !important; }
+      .bdgc-print-mast {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .bdgc-print-card h1 { font-size: 20px; margin: 0 0 4px; color: #0e284f; }
+      .bdgc-print-card .bdgc-print-sub { font-size: 12px; color: #444; margin: 0 0 12px; }
+      .bdgc-print-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+      .bdgc-print-table th, .bdgc-print-table td {
+        border-bottom: 1px solid #ccc;
+        padding: 6px 8px;
+        text-align: left;
+        vertical-align: top;
+      }
+      .bdgc-print-table th { width: 34%; color: #0e284f; }
+      .bdgc-print-stop {
+        border: 2px solid #e11320;
+        padding: 8px 10px;
+        margin: 10px 0;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="grain"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <header class="hd">
+    <div class="hd-in">
+      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
+      </a>
+      <nav class="hd-nav" aria-label="Primary">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+        <a href="/locations.html">Locations</a>
+        <a href="/about.html">About</a>
+        <a href="/manufacturers.html">Partners</a>
+        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
+        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
+      </nav>
+      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/services.html">Services</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/about.html">About</a>
+      <a href="/manufacturers.html">Partners</a>
+      <a href="tel:+17724867711">(772) 486-7711</a>
+      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
+    </nav>
+  </header>
+
+  <section class="bdgc-hero" id="tool-hero">
+    <div class="container">
+      <p class="bdgc-eyebrow">Florida federal dual path</p>
+      <h1>Bid-Day Glazing Checker</h1>
+      <p class="bdgc-lede">Pick occupancy, Florida wind path, and UFC overlay. Print a dual-path checklist. A Miami-Dade NOA is not a blast rating.</p>
+      <div class="bdgc-byline">
+        <a href="/authors/connor-walsh.html" rel="author">Connor Walsh</a>
+        <span>·</span>
+        <time datetime="2026-09-03">2026-09-03</time>
+        <span>·</span>
+        <span>https://acglass.com/tools/bid-day-glazing-checker.html</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="bdgc-body" id="main-content">
+    <div class="container">
+      <div class="bdgc-screen">
+        <div class="bdgc-grid">
+          <div>
+            <form id="bdgc-form" novalidate>
+              <div class="bdgc-card" data-widget="occupancy">
+                <div class="bdgc-letter">Widget A</div>
+                <h2>Occupancy / regime</h2>
+                <p class="bdgc-hint">Regime follows occupancy, not county. VA-leased is ISC.</p>
+                <div class="bdgc-opts" id="opts-occupancy"></div>
+              </div>
+              <div class="bdgc-card" style="margin-top:14px;" data-widget="floridaWind">
+                <div class="bdgc-letter">Widget B</div>
+                <h2>Florida wind path</h2>
+                <p class="bdgc-hint">Palm Beach and Monroe are not HVHZ. NOA is accepted statewide. FL# is not enough in HVHZ.</p>
+                <div class="bdgc-opts" id="opts-floridaWind"></div>
+              </div>
+              <div class="bdgc-card" style="margin-top:14px;" data-widget="overlay">
+                <div class="bdgc-letter">Widget C</div>
+                <h2>Federal overlay</h2>
+                <p class="bdgc-hint">A Miami-Dade NOA is not a blast rating.</p>
+                <div class="bdgc-opts" id="opts-overlay"></div>
+              </div>
+              <div class="bdgc-card" style="margin-top:14px;">
+                <div class="bdgc-letter">Print fields</div>
+                <h2>Project stamp</h2>
+                <p class="bdgc-hint">Optional on screen. These lines print on the field card.</p>
+                <div class="bdgc-fields">
+                  <label>Project <input type="text" id="field-project" name="project" autocomplete="off"></label>
+                  <label>Bid date <input type="text" id="field-bidDate" name="bidDate" autocomplete="off"></label>
+                  <label>AHJ county <input type="text" id="field-ahjCounty" name="ahjCounty" autocomplete="off"></label>
+                  <label>Permit-application date <input type="text" id="field-permitDate" name="permitDate" autocomplete="off"></label>
+                  <label>Live NOA / FL# <input type="text" id="field-liveNoa" name="liveNoa" autocomplete="off"></label>
+                </div>
+                <div class="bdgc-actions">
+                  <button type="button" class="bdgc-btn bdgc-btn-acc" id="bdgc-print" disabled>Print field card</button>
+                  <a class="bdgc-btn" href="/send-plans.html">Send plans</a>
+                </div>
+                <p class="bdgc-print-note" id="bdgc-print-note">Answer A, B, and C before print.</p>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div class="bdgc-stop" id="bdgc-stop" role="alert">
+              <strong>STOP</strong>
+              <p id="bdgc-stop-body"></p>
+            </div>
+            <div class="bdgc-card bdgc-checks">
+              <h2>Floor checks</h2>
+              <p class="bdgc-empty" id="bdgc-empty">Select occupancy, Florida wind, and overlay. Matching floor checks render here.</p>
+              <ul class="bdgc-list" id="bdgc-checks" hidden></ul>
+            </div>
+            <div class="bdgc-hubs">
+              <a href="/at-fp-blast-rated-glazing-florida.html">AT/FP hub</a>
+              <a href="/government-glazing-contractor-florida.html">Government glazing</a>
+              <a href="/va-hospital-glazing-requirements.html">VA hospital glazing</a>
+              <a href="/glazing-submittal-package.html">Submittal package</a>
+              <a href="/taa-baba-buy-american-act-glazing.html">TAA / BABA / BAA</a>
+              <a href="/blog/ufc-glazing-vs-florida-noa.html">UFC vs NOA</a>
+              <a href="/blog/florida-building-code-9th-edition-december-31-2026.html">FBC 9th Edition</a>
+            </div>
+          </div>
+        </div>
+
+        <section class="bdgc-faq" aria-labelledby="bdgc-faq-h">
+          <h2 id="bdgc-faq-h">Frequently Asked Questions</h2>
+          <h3>Is a Miami-Dade NOA a blast rating?</h3>
+          <p>No. A Miami-Dade NOA is a Florida wind and impact approval (TAS 201/202/203). It is not a blast rating and it does not satisfy UFC 4-010-01 Section 5-11 or AT/FP.</p>
+          <h3>Does UFC 4-010-01 Section 5-11 require ASTM F1642?</h3>
+          <p>No. Section 5-11 is fragment reduction: laminated inboard glass and a specified bite. ASTM F1642, F2912, and F2248 apply only when the spec cites them.</p>
+          <h3>What triggers Florida Building Code 8th Edition vs 9th Edition?</h3>
+          <p>The permit-application date. Fla. Stat. 553.73(6) and 553.73(7)(d). A complete application filed December 30, 2026 stays on the 8th Edition. December 31, 2026 and later is 9th Edition. ASCE 7-22 is already in the 8th Edition.</p>
+        </section>
+
+        <section class="bdgc-cta">
+          <h2>Need the dual path priced?</h2>
+          <p>Send elevations and the door and window schedule. <a href="tel:+17724867711" style="color:inherit;">(772) 486-7711</a>. FL CGC #1531993.</p>
+          <a href="/send-plans.html" class="bdgc-btn bdgc-btn-acc">Send Us Plans</a>
+        </section>
+      </div>
+
+      <article class="bdgc-print-card" id="bdgc-print-card">
+        <div class="bdgc-print-mast" id="bdgc-print-mast"></div>
+        <h1>Bid-Day Glazing Checker</h1>
+        <p class="bdgc-print-sub">Florida federal dual path · as-of 2026-09-03 · Connor Walsh · American Commercial Glass</p>
+        <div id="bdgc-print-stop"></div>
+        <table class="bdgc-print-table" id="bdgc-print-table"></table>
+      </article>
+    </div>
+  </main>
+
+  <footer class="ft">
+    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
+    <div class="ft-main">
+      <div class="ft-brand">
+        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
+        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+      </div>
+      <nav aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/leadership.html">Leadership</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/qualifications.html">Qualifications</a></li>
+          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
+          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
+          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
+          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
+          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
+          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
+          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
+          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
+          <li><a href="/locations.html">All service areas →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-legal">
+      <div class="ft-legal-in">
+        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="/js/main.js"></script>
+  <script src="/js/acg-chrome.js" defer></script>
+  <script>
+(function () {
+  var DATA = null;
+  var KEYS = ["occupancy", "floridaWind", "overlay"];
+
+  function selected(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+
+  function option(widgetKey, id) {
+    if (!DATA) return null;
+    var opts = DATA.widgets[widgetKey].options;
+    for (var i = 0; i < opts.length; i++) if (opts[i].id === id) return opts[i];
+    return null;
+  }
+
+  function field(id) {
+    var el = document.getElementById(id);
+    var v = el && el.value ? el.value.trim() : "";
+    return v || "TBD";
+  }
+
+  function ready() {
+    return KEYS.every(function (k) { return !!selected(k); });
+  }
+
+  function renderOptions() {
+    KEYS.forEach(function (key) {
+      var host = document.getElementById("opts-" + key);
+      var widget = DATA.widgets[key];
+      host.innerHTML = "";
+      widget.options.forEach(function (opt, i) {
+        var lab = document.createElement("label");
+        lab.className = "bdgc-opt";
+        lab.innerHTML =
+          '<input type="radio" name="' + key + '" value="' + opt.id + '" required>' +
+          "<div><strong>" + opt.label + "</strong><span>" + opt.detail + "</span></div>";
+        host.appendChild(lab);
+      });
+    });
+  }
+
+  function renderChecks() {
+    var list = document.getElementById("bdgc-checks");
+    var empty = document.getElementById("bdgc-empty");
+    var stop = document.getElementById("bdgc-stop");
+    var stopBody = document.getElementById("bdgc-stop-body");
+    var items = [];
+    KEYS.forEach(function (key) {
+      var opt = option(key, selected(key));
+      if (!opt) return;
+      opt.floorChecks.forEach(function (t) { items.push(t); });
+    });
+    var ov = option("overlay", selected("overlay"));
+    if (ov && ov.stop) {
+      stop.classList.add("is-on");
+      stopBody.textContent = ov.stopBody;
+    } else {
+      stop.classList.remove("is-on");
+      stopBody.textContent = "";
+    }
+    if (!items.length) {
+      empty.hidden = false;
+      list.hidden = true;
+      list.innerHTML = "";
+    } else {
+      empty.hidden = true;
+      list.hidden = false;
+      list.innerHTML = items.map(function (t, i) {
+        return '<li><input type="checkbox" id="chk-' + i + '"><label for="chk-' + i + '">' + t + "</label></li>";
+      }).join("");
+    }
+    var printBtn = document.getElementById("bdgc-print");
+    var note = document.getElementById("bdgc-print-note");
+    printBtn.disabled = !ready();
+    note.textContent = ready()
+      ? "Print builds one letter-page field card from the template plus your answers."
+      : "Answer A, B, and C before print.";
+  }
+
+  function regimeLine(key, fallback) {
+    var occ = selected("occupancy");
+    if (occ === "dod") return fallback.dod;
+    if (occ === "gsa-isc") return fallback.isc;
+    if (occ === "va-owned") return fallback.va;
+    return "TBD";
+  }
+
+  function resolveSource(item) {
+    if (item.text) return item.text;
+    if (item.source === "ufcStamp") {
+      return selected("occupancy") === "dod" ? DATA.ufcEditionStamp : "Not UFC. Do not copy UFC numbers onto this job.";
+    }
+    if (item.source === "widget:occupancy" || item.source === "widget:floridaWind" || item.source === "widget:overlay") {
+      var key = item.source.split(":")[1];
+      var opt = option(key, selected(key));
+      return opt ? opt.shortLabel : "TBD";
+    }
+    if (item.source && item.source.indexOf("field:") === 0) {
+      var map = {
+        project: "field-project",
+        bidDate: "field-bidDate",
+        ahjCounty: "field-ahjCounty",
+        permitDate: "field-permitDate",
+        liveNoa: "field-liveNoa"
+      };
+      return field(map[item.source.slice(6)]);
+    }
+    if (item.source === "glassFloor") {
+      return regimeLine("glassFloor", {
+        dod: "Min 1/4 in laminated or PC, or two 1/8 in + 0.030 in PVB. IGU laminate/PC inboard. Cite §5-11.1.",
+        isc: "ISC public LOP glazing tables are FOUO. Print TBD. Do not print psi. Do not copy UFC glass numbers.",
+        va: "New glass: laminated inner lite. VA PSRDM, not UFC."
+      });
+    }
+    if (item.source === "bite") {
+      return regimeLine("bite", {
+        dod: "Silicone bite = larger of 3/8 in or glass thickness, bead min 3/16 in. Tape bite = 2× laminated-glass thickness. Cite §5-11.1.",
+        isc: "Do not copy UFC bite onto an ISC job. LOP cells TBD (FOUO).",
+        va: "Bite 1/2 in + 3/8 in structural silicone on the inner lite. §6.3.1.2."
+      });
+    }
+    if (item.source === "vestibules") {
+      return regimeLine("vestibules", {
+        dod: "Vestibules/stairs §5-11.2. Doors §5-12.1.",
+        isc: "Follow ISC for the occupancy. Do not copy UFC vestibule/door numbers.",
+        va: "Follow VA PSRDM for the designation. Do not copy UFC vestibule/door numbers."
+      });
+    }
+    if (item.source === "noFilm") {
+      return regimeLine("noFilm", {
+        dod: "Film is not a UFC alternate. §5-11.4.",
+        isc: "Do not treat film as a UFC substitute. ISC path, not §5-11.4.",
+        va: "If glazing is not replaced, §6.3.2.1 allows 7-mil film with demonstrated performance. VA existing-glass only. Not a UFC substitute."
+      });
+    }
+    if (item.source === "replacement") {
+      return regimeLine("replacement", {
+        dod: "Replacement on inhabited DoD still triggers §5-11 (§5-1.1.2.1), not the 50% trigger.",
+        isc: "ISC leased path. Do not apply the UFC replacement trigger.",
+        va: "If glass is replaced, new glass is laminated inner lite. If not replaced, see §6.3.2.1 film rule."
+      });
+    }
+    if (item.source === "noB31") {
+      return selected("occupancy") === "dod"
+        ? "2018 Appendix B B-3.1 is deleted. Do not price it."
+        : "B-3.1 is a deleted UFC appendix item. Do not import it onto VA or ISC.";
+    }
+    if (item.source === "regimeExtras") {
+      return regimeLine("regimeExtras", {
+        dod: "No ISC LOP psi and no VA GP. Stay on the §5-11 floor unless the spec cites ASTM.",
+        isc: "ISC LOP cells TBD (FOUO). GSA P100 rescinded Feb 24 2025. PBS Interim Core Building Standards still cite ISC.",
+        va: "Table 6-1 GP psi TBD. VA 08 56 53 live URL TBD. DoD UFGS 08 56 53 is not VA. Standoff Table 3-1: Essential/Ancillary 25 ft, Critical 50 ft, screened 5 ft. Table 6-3 fragment limits as selected."
+      });
+    }
+    return "TBD";
+  }
+
+  function buildPrint() {
+    var mast = document.getElementById("bdgc-print-mast");
+    mast.textContent = "Connor Walsh · 2026-09-03 · https://acglass.com/tools/bid-day-glazing-checker.html";
+    var stopHost = document.getElementById("bdgc-print-stop");
+    var ov = option("overlay", selected("overlay"));
+    stopHost.innerHTML = (ov && ov.stop)
+      ? '<div class="bdgc-print-stop"><strong>STOP.</strong> ' + ov.stopBody + "</div>"
+      : "";
+    var table = document.getElementById("bdgc-print-table");
+    table.innerHTML = DATA.printChecklistTemplate.map(function (row) {
+      return "<tr><th>" + row.label + "</th><td>" + resolveSource(row) + "</td></tr>";
+    }).join("");
+  }
+
+  function onChange() {
+    renderChecks();
+    if (ready()) buildPrint();
+  }
+
+  document.getElementById("bdgc-form").addEventListener("change", onChange);
+  document.getElementById("bdgc-form").addEventListener("input", function (e) {
+    if (e.target && e.target.id && e.target.id.indexOf("field-") === 0 && ready()) buildPrint();
+  });
+  document.getElementById("bdgc-print").addEventListener("click", function () {
+    if (!ready()) return;
+    buildPrint();
+    window.print();
+  });
+
+  fetch("/tools/bid-day-glazing-checker.json", { credentials: "same-origin" })
+    .then(function (r) { if (!r.ok) throw new Error("data"); return r.json(); })
+    .then(function (json) {
+      DATA = json;
+      renderOptions();
+      renderChecks();
+    })
+    .catch(function () {
+      document.getElementById("bdgc-empty").textContent = "Could not load checker data. Refresh and try again.";
+    });
+})();
+  </script>
+</body>
+</html>
