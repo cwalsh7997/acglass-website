@@ -21,7 +21,7 @@ Do not noindex the 225 blog posts. Do not touch city **root** folders for the th
 
 ## Five examples per pattern
 
-Thin/template evidence is the same shape on every sample: city-swapped title, a description from a small phrase bank, shared Haines EOC OG image, ~850–910 words on the city-service pages, geo tags for the city.
+Thin/template evidence is the same shape on every sample: city-swapped title, a description from a small phrase bank, shared Haines EOC OG image, ~850-910 words on the city-service pages, geo tags for the city.
 
 ### `/{city}/commercial-storefronts/`
 
@@ -61,7 +61,7 @@ Title bank is almost one string. 54 of 77 are `Commercial Storefront Installatio
 
 ### `/storefront-glazier-{city}-florida/`
 
-Deeper than the city-service folders (~1,200–2,300 words) but still templated. 62 of 101 titles are `Storefront Glazier in {City}, FL | ACG - 48-Hr Bids`.
+Deeper than the city-service folders (~1,200-2,300 words) but still templated. 62 of 101 titles are `Storefront Glazier in {City}, FL | ACG - 48-Hr Bids`.
 
 | URL | Title | Words (approx.) | Notes |
 | --- | --- | --- | --- |
