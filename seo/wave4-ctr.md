@@ -49,7 +49,7 @@ Pages were not deleted. og:url follows each new canonical.
 | `/tampa/` | `https://acglass.com/tampa/` (self) | `https://acglass.com/storefront-glazier-tampa-florida/` |
 | `/florida-commercial-glazing-complete-guide/` | `https://acglass.com/florida-commercial-glazing-complete-guide/` (self) | `https://acglass.com/florida-commercial-glazing/` |
 
-Complete-guide breadcrumb item now names the hub. File stays on disk, stays 200. Hub office cards now link the three keeper glazier URLs so the office-metro aliases do not create new cross-canonical edges. The indexable `naples/all-glass-entrances/` breadcrumb also points at the Naples keeper.
+Complete-guide breadcrumb item now names the hub. File stays on disk, stays 200. Hub office cards now link the three keeper glazier URLs so the office-metro aliases do not create new cross-canonical edges. The indexable `naples/all-glass-entrances/` breadcrumb also points at the Naples keeper (this was the cross-canonical edge that failed Canonical Verify and the SEO Report unit test on the first live-verify commit).
 
 Those four URLs were dropped from `sitemap.xml` and the matching child urlset (`sitemap-cities.xml` for the three office metros, `sitemap-pages.xml` for the complete guide) because crawl-check requires sitemap locs to be self-canonical. Keepers stay listed. This is not sitemap-advertising expansion. `robots.txt` still advertises only the apex sitemap. Unique `sitemap.xml` locs after the drop: 901.
 
