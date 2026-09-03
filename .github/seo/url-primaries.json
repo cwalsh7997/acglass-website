@@ -161,7 +161,7 @@
         "meta-description": "meta[name=description] content, exact.",
         "canonical": "link[rel=canonical] href, exact.",
         "meta-robots": "meta[name=robots] content, exact. ABSENT is a protected value -- adding any robots directive fails.",
-        "h1": "The ordered list of H1 texts, exact. The H1 is owner-settled.",
+        "h1": "The ordered list of H1 texts, exact. The H1 is owner-settled (Connor, 2026-09-03: 'Commercial glazing. Written in 48 hours.').",
         "og:title": "meta[property=og:title] content, exact.",
         "og:url": "meta[property=og:url] content, exact.",
         "schema-identity": "For every JSON-LD node typed Organization, LocalBusiness, HomeAndConstructionBusiness or WebSite: the @id set is fixed, and each node's @type, name, legalName, url, telephone, address, geo, sameAs, areaServed and logo are fixed. This is the NAP and entity identity the map pack resolves against, including the #localbusiness-west-palm-beach node.",

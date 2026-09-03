@@ -45,8 +45,10 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "jsonld": "4afbd33f45d172e288866ca76b1c7378573aa821bcd033a5187ec2d0cf0352f6",
         "scripts": "99ef7cbb1dac5a40482698f99990ac2b56180e7a51b2c40102dd25060118b69e",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
+        # Visible digest updated 2026-09-03 when the Ocean Prime featured card
+        # was pulled back to one Euro-Wall door/opening.
         "hrefs": "ef2fb6c07b6f693de3e51369c131d60ead08f494c4956c69e03e12dbed760050",
-        "visible": "be89e1bd9896473fd1f1de6d3e9b3ffda7f707843d7a7d5cb66c1d1be0fef930",
+        "visible": "5946f0c8fa87ba1d2c355f1f58356e44fb1d853039147deca6de83942b92fc05",
     },
     "privacy-policy.html": {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",

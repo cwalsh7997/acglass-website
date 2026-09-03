@@ -15,13 +15,13 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 
 PROTECTED_HASHES = {
     "anchors": "555ddaef659d5c7e6a3727696117aed782500731bbf530e36e32dd81a53e1dd5",
-    # Rebaselined 2026-08-27: the Euro-Wall dealer/authorization claim was
-    # removed from this page's body copy. Head, metadata and jsonld unchanged.
-    "body": "4935e49d1230667cec9ae8cb872bcbfd3165b295f3d9b5ca7a986c0f93bfeec9",
+    # Rebaselined 2026-09-03: Ocean Prime scope pulled back to one Euro-Wall
+    # opening at 171 Las Olas Circle. Anchors and scripts unchanged.
+    "body": "9d726b7f0205a1014bdd68f326382293744d8ab4a4c5d6e3dff08ac5cb42852b",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "images": "7b9e50a4aa712fc774f975ac315135fe1ec1b90344faf8f8df685c82ef38e95b",
-    "jsonld": "d6078e92ff30d6acee2bf9656a6d145ee432c17149931707c3f752aa037e74a0",
-    "metadata": "8e8ce0ff76fb12b7b21ad2e349a8df43ac98cab962cb8a621d661bd42a3ff02a",
+    "images": "f293b0d3972fa909d8f9a1216132ebcf89a99f46d4961977d74dc90801f19d51",
+    "jsonld": "d3051ce529b38fb0ab09fe6121b9c6a1c95e6fe3017decd2bfd185cb2c907426",
+    "metadata": "0122da70a793d448c278c1cf00e099d8e4ca22279fa05e9eefe296188e15fb53",
     "scripts": "59d80dfe70fb34b631f5af37c031aa15a9fb62d74c3f0c7f7ba40f348fd81567",
 }
 
