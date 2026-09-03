@@ -69,6 +69,40 @@ class SendPlansCtaTests(unittest.TestCase):
         self.assertIn('content="0;url=/thanks.html"', stub)
         self.assertIn("noindex", stub)
 
+    def test_high_intent_rfq_request_a_bid_goes_to_send_plans(self):
+        pages = (
+            "services.html",
+            "about.html",
+            "portfolio.html",
+            "capabilities.html",
+            "leadership.html",
+        )
+        bid_link = re.compile(
+            r'<a href="([^"]+)"[^>]*>Request a bid',
+            re.IGNORECASE,
+        )
+        for rel in pages:
+            with self.subTest(rel=rel):
+                html = read(rel)
+                start = html.find("<!-- ACG RFQ BLOCK -->")
+                end = html.find("<!-- /ACG RFQ BLOCK -->")
+                self.assertGreater(start, 0)
+                self.assertGreater(end, start)
+                block = html[start:end]
+                self.assertIn(
+                    "Send us the drawings. Scope letter back in 48 hours.",
+                    block,
+                )
+                hrefs = bid_link.findall(block)
+                self.assertEqual(hrefs, ["/send-plans.html"])
+                self.assertNotIn(
+                    'href="/scope-engine.html">Request a bid',
+                    block,
+                )
+                self.assertIn('href="/scope-engine.html"', block)
+                self.assertIn(">Scope Engine</a>", block)
+                self.assertIn('href="/contact.html"', block)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

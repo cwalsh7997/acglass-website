@@ -168,6 +168,7 @@
     .cform button[type="submit"]:hover{background:var(--red-press);transform:translateY(-2px);box-shadow:0 8px 24px rgba(225,19,32,.32)}
     .cform button[type="submit"] svg{width:16px;height:16px}
     #contact-form-status{margin-top:14px;font-size:.92rem;font-weight:600;min-height:1.4em;color:var(--body)}
+    #contact-form-status a{color:inherit;text-decoration:underline}
     .dc-card{background:var(--paper);border:1px solid var(--hairline);border-radius:var(--radius);padding:clamp(24px,3vw,34px)}
     .dc-card h2{font-size:1.3rem;margin-bottom:6px}
     .dc-rows{margin-top:18px;border-top:1px solid var(--hairline)}
@@ -325,17 +326,21 @@
               formData.append('_source_page', '/contact');
               if (submitterEmail) { formData.append('_replyto', submitterEmail); }
 
-              // Submit FIRST, then only fire generate_lead on a confirmed-successful response.
-              // (Earlier version fired the event before the fetch, which logged phantom
-              // conversions for failed/blocked POSTs and inflated GA4 vs real inbox volume.)
+              // FormSubmit often returns HTTP 200 with JSON {success:false}. Gate on
+              // both HTTP OK and JSON success, same as /bid.html. Do not treat
+              // response.ok alone as acceptance, and do not clear the form on failure.
               fetch('https://formsubmit.co/ajax/connor@acglass.com', {
                 method: 'POST',
                 body: formData,
                 headers: { 'Accept': 'application/json' }
               })
-              .then(function(response){
-                if (response.ok) {
-                  // Real submission - fire conversion event NOW.
+              .then(function(r){
+                return r.json().then(function(data){ return { r: r, data: data }; }, function(){ return { r: r, data: {} }; });
+              })
+              .then(function(result){
+                var r = result.r;
+                var data = result.data;
+                if (r.ok && String(data.success) === 'true') {
                   if (typeof gtag !== 'undefined') {
                     gtag('event', 'generate_lead', {
                       'form_id': 'contact-form',
@@ -349,20 +354,19 @@
                   try { sessionStorage.setItem('acg_form_awaiting_confirm', 'contact'); } catch (err) {}
                   window.location.href = '/thanks.html?submitted=1';
                 } else {
-                  // Log failure separately so we can see formsubmit rejection volume.
                   if (typeof gtag !== 'undefined') {
                     gtag('event', 'form_submission_failed', {
                       'form_id': 'contact-form',
                       'source_page': '/contact',
-                      'http_status': response.status
+                      'http_status': r.status
                     });
                   }
-                  status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+                  status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
                   status.style.color = '#B45309';
                 }
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
               })
-              .catch(function(err){
+              .catch(function(){
                 if (typeof gtag !== 'undefined') {
                   gtag('event', 'form_submission_failed', {
                     'form_id': 'contact-form',
@@ -370,7 +374,7 @@
                     'error_type': 'network'
                   });
                 }
-                status.textContent = '⚠ Send failed. Please email connor@acglass.com directly or call (772) 486-7711.';
+                status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
                 status.style.color = '#B45309';
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
               });
