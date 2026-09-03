@@ -434,6 +434,38 @@ class NashvilleResidualTests(unittest.TestCase):
         healthcare = read("healthcare-glazing-nashville/index.html")
         self.assertNotIn("when the office furnishes", healthcare)
 
+    def test_nashville_storefront_faq_is_furnish_specify_not_eswindows_installer(self):
+        html = read("storefront-installer-nashville.html")
+        self.assertNotIn("ACG is an installer of ESWindows", html)
+        self.assertNotIn("installer of ESWindows", html)
+        self.assertNotIn("systems installed in Nashville", html)
+        self.assertNotIn("Q3 2026", html)
+        self.assertNotRegex(html, r"factory[- ]certif", re.I)
+        self.assertIn(
+            "ACG furnishes and specifies ESWindows (Tecnoglass) storefront systems "
+            "for commercial projects in Nashville",
+            html,
+        )
+        self.assertIn(
+            "ACG holds no Tennessee office and performs no Tennessee field labor",
+            html,
+        )
+        self.assertGreaterEqual(html.count("ACG furnishes and specifies ESWindows"), 2)
+
+    def test_no_html_calls_acg_an_eswindows_installer_for_nashville(self):
+        leftover = re.compile(
+            r"ACG is an installer of ESWindows.{0,160}Nashville",
+            re.I | re.S,
+        )
+        bad = []
+        for path in REPO_ROOT.rglob("*.html"):
+            if SKIP_DIRS.intersection(path.relative_to(REPO_ROOT).parts):
+                continue
+            text = path.read_text(encoding="utf-8")
+            if leftover.search(text):
+                bad.append(str(path.relative_to(REPO_ROOT)))
+        self.assertEqual(bad, [])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
