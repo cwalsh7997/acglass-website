@@ -426,6 +426,7 @@ class NashvilleResidualTests(unittest.TestCase):
         html = read("nashville/index.html")
         self.assertNotIn("moving into Nashville", html)
         self.assertNotIn("when the office furnishes", html)
+        self.assertNotIn("until the local team is in place", html)
         self.assertIn("holds no Tennessee office", html)
         self.assertIn("furnish-and-consult", html)
         healthcare = read("healthcare-glazing-nashville/index.html")
