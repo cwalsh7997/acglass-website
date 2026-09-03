@@ -149,8 +149,184 @@
   "name": "UFC Glazing vs Florida NOA: What GCs Mix Up"
 }
 </script>
+  <style>
+
+  /* Flagship TOC + field-card print. Scoped to .acg-flagship only. */
+  .acg-flagship .acg-print-mast,
+  .acg-flagship .acg-print-kicker { display: none; }
+  .acg-flagship-article h2,
+  .acg-flagship-article h3 { scroll-margin-top: 96px; }
+  .acg-flagship .acg-toc-host {
+    position: sticky;
+    top: 0;
+    z-index: 24;
+    margin: 0 0 22px;
+  }
+  .acg-flagship .acg-toc-desktop {
+    background: #0e284f;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 10px 14px 12px;
+  }
+  .acg-flagship .acg-toc-desktop .acg-toc-label {
+    font-family: var(--font-mono, "JetBrains Mono", monospace);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e11320;
+    margin: 0 0 8px;
+  }
+  .acg-flagship .acg-toc-desktop ol,
+  .acg-flagship .acg-toc-mobile ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  .acg-flagship .acg-toc-desktop a,
+  .acg-flagship .acg-toc-mobile a {
+    font-family: var(--font-mono, "JetBrains Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(225,19,32,0.35);
+  }
+  .acg-flagship .acg-toc-desktop a:hover,
+  .acg-flagship .acg-toc-mobile a:hover { color: #fff; }
+  .acg-flagship .acg-toc-mobile {
+    display: none;
+    background: #0e284f;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 8px 14px 10px;
+  }
+  .acg-flagship .acg-toc-mobile summary {
+    font-family: var(--font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+  }
+  .acg-flagship .acg-toc-mobile summary::-webkit-details-marker { display: none; }
+  .acg-flagship .acg-toc-mobile[open] summary { margin-bottom: 10px; color: #e11320; }
+  .acg-flagship .acg-toc-mobile ol { flex-direction: column; gap: 8px; }
+  @media (max-width: 860px) {
+    .acg-flagship .acg-toc-host { position: static; }
+    .acg-flagship .acg-toc-desktop { display: none; }
+    .acg-flagship .acg-toc-mobile { display: block; }
+  }
+  @media print {
+    @page { size: letter; margin: 0.45in; }
+    html, body.acg-flagship {
+      background: #fff !important;
+      color: #111 !important;
+      overflow: visible !important;
+    }
+    .acg-flagship .grain,
+    .acg-flagship .cursor-dot,
+    .acg-flagship .cursor-ring,
+    .acg-flagship .hd,
+    .acg-flagship .page-hero,
+    .acg-flagship .acg-toc-host,
+    .acg-flagship .acg-print-hide,
+    .acg-flagship .cta-section,
+    .acg-flagship .ft,
+    .acg-flagship .acg-rfq,
+    .acg-flagship [aria-label="Related resources"],
+    .acg-flagship [aria-labelledby="acg-rfq-h"],
+    .acg-flagship [aria-labelledby="acg-next-h"],
+    .acg-flagship [aria-label="About the author"] {
+      display: none !important;
+    }
+    .acg-flagship .section { padding: 0 !important; margin: 0 !important; }
+    .acg-flagship .container { max-width: none !important; padding: 0 !important; }
+    .acg-flagship .acg-print-mast {
+      display: block !important;
+      font-family: "Inter", Helvetica, Arial, sans-serif;
+      font-size: 8.5pt;
+      line-height: 1.35;
+      color: #111;
+      border-bottom: 2pt solid #e11320;
+      padding: 0 0 7pt;
+      margin: 0 0 10pt;
+    }
+    .acg-flagship .acg-print-mast strong {
+      display: block;
+      font-size: 13pt;
+      line-height: 1.2;
+      margin: 0 0 3pt;
+      color: #0e284f;
+    }
+    .acg-flagship .acg-print-kicker {
+      display: block !important;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0e284f !important;
+      margin: 0 0 6pt;
+    }
+    .acg-flagship-article > *:not(.acg-print-keep) { display: none !important; }
+    .acg-flagship .acg-quick-answer {
+      background: #fff !important;
+      border: 1pt solid #111 !important;
+      border-left: 3pt solid #e11320 !important;
+      padding: 8pt 10pt !important;
+      margin: 0 0 9pt !important;
+      break-inside: avoid;
+    }
+    .acg-flagship .acg-quick-answer .acg-qa-label {
+      color: #e11320 !important;
+      font-size: 8pt !important;
+      margin: 0 0 4pt !important;
+    }
+    .acg-flagship .acg-quick-answer p {
+      color: #111 !important;
+      font-size: 9.5pt !important;
+      line-height: 1.35 !important;
+    }
+    .acg-flagship .acg-field-table {
+      overflow: visible !important;
+      margin: 0 0 9pt !important;
+      break-inside: avoid;
+    }
+    .acg-flagship .acg-field-table table {
+      width: 100% !important;
+      min-width: 0 !important;
+      font-size: 8pt !important;
+      color: #111 !important;
+    }
+    .acg-flagship .acg-field-table th,
+    .acg-flagship .acg-field-table td {
+      color: #111 !important;
+      padding: 4pt 6pt !important;
+      border-bottom: 0.5pt solid #999 !important;
+    }
+    .acg-flagship .acg-field-checklist {
+      break-inside: avoid;
+    }
+    .acg-flagship .acg-field-checklist h2 {
+      color: #0e284f !important;
+      font-size: 12pt !important;
+      margin: 0 0 6pt !important;
+    }
+    .acg-flagship .acg-field-checklist ul {
+      margin: 0;
+      padding-left: 16pt;
+    }
+    .acg-flagship .acg-field-checklist li {
+      color: #111 !important;
+      font-size: 9pt !important;
+      line-height: 1.3 !important;
+      margin: 0 0 3.5pt;
+    }
+  }
+  </style>
 </head>
-<body>
+<body class="acg-flagship">
 
   <div class="grain"></div>
   <div class="cursor-dot"></div>
@@ -199,24 +375,29 @@
     </div>
   </section>
 
+  <div class="acg-print-mast">
+    <strong>UFC Glazing vs Florida NOA: What GCs Mix Up</strong>
+    Connor Walsh · 2026-09-02 · https://acglass.com/blog/ufc-glazing-vs-florida-noa.html
+  </div>
   <!-- CONTENT -->
   <section class="section">
     <div class="container">
-      <div class="blog-content" style="max-width:780px;" data-reveal>
-        <aside class="acg-quick-answer speakable" role="note" aria-label="Quick answer" itemprop="abstract">
+      <div class="blog-content acg-flagship-article" style="max-width:780px;" data-reveal>
+        <div class="acg-toc-host"></div>
+        <aside class="acg-quick-answer acg-print-keep speakable" role="note" aria-label="Quick answer" itemprop="abstract">
           <div class="acg-qa-label">Quick Answer</div>
           <p>A Miami-Dade NOA is a Florida wind and impact approval. It is not a blast rating and it does not satisfy AT/FP. UFC 4-010-01 dated July 2, 2026, Section 5-11 is fragment reduction: laminated inboard glass and a specified bite. It is not blast-resistant design. ASTM F1642, F2912, and F2248 are spec overlays above that floor. Replacement of windows on an inhabited DoD building still triggers 5-11.</p>
         </aside>
 
         <p class="text-xl" style="margin-bottom:32px;">GCs bid Florida federal work with two stamps in the same folder. One is a Miami-Dade NOA or Florida Product Approval. The other is UFC 4-010-01. Those documents answer different questions. Treating them as interchangeable is how a storefront package fails AT/FP review after the buyout.</p>
 
-        <h2>A Miami-Dade NOA is not a blast rating</h2>
+        <h2 id="noa-not-blast-rating">A Miami-Dade NOA is not a blast rating</h2>
 
         <p>A Miami-Dade Notice of Acceptance and a Florida Product Approval are wind and impact approvals. They prove the assembly was tested for design pressure and wind-borne debris under Florida protocols. They do not prove ASTM F1642 airblast performance. They do not prove the inboard lite is laminated. They do not prove the UFC 4-010-01 Section 5-11.1 bite.</p>
 
         <p>If the job is in the High Velocity Hurricane Zone, you still need the NOA. That is a Florida permit path, not a federal AT/FP path. See the <a href="/blog/hvhz-glazing-requirements-florida.html">HVHZ glazing requirements</a> for the wind and impact side, and the <a href="/at-fp-blast-rated-glazing-florida.html">AT/FP blast-rated glazing hub</a> for the federal overlay. Put both proofs in the <a href="/glazing-submittal-package.html">glazing submittal package</a>. One stamp does not stand in for the other.</p>
 
-        <h2>UFC Section 5-11 does not require a blast-tested window</h2>
+        <h2 id="ufc-5-11-not-blast-test">UFC Section 5-11 does not require a blast-tested window</h2>
 
         <p>UFC 4-010-01, DoD Minimum Antiterrorism Standards for Buildings, dated July 2, 2026, Section 5-11 is the glazing floor for inhabited DoD buildings. The commentary is direct:</p>
 
@@ -228,13 +409,14 @@
 
         <p>The 2018 edition used C3 Standard 10 for the same idea under old numbering. That standard is cancelled. If a spec still cites C3 Standard 10, it is pointing at fragment reduction, not a blast test. Confirm the July 2, 2026 section numbers before you price a tested assembly that nobody asked for.</p>
 
-        <h2>The floor is laminated inboard glass and a specified bite</h2>
+        <h2 id="laminated-inboard-glass-and-bite">The floor is laminated inboard glass and a specified bite</h2>
 
         <p>Section 5-11.1 is the construction rule. Minimum glass is 1/4 inch laminated or polycarbonate. The alternate makeup is two 1/8 inch plies with 0.030 inch PVB. On an insulated glass unit, the innermost lite must be laminated or polycarbonate. A monolithic inner pane does not comply.</p>
 
         <p>Bite is written into the same paragraph. Silicone bite is the larger of 3/8 inch or the glass thickness. The silicone bead is 3/16 inch minimum. Tape bite is twice the silicone bite. On a single pane, bite applies on both sides. On an IGU, bite applies to the inboard lite only.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;max-width:100%;">
+        <div class="acg-field-table acg-print-keep" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;max-width:100%;">
+          <p class="acg-print-kicker">UFC 4-010-01 Section 5-11.1 floor. Laminated inboard glass and bite. Not a blast test.</p>
           <table style="width:100%;min-width:520px;border-collapse:collapse;font-size:0.9rem;">
             <thead>
               <tr style="border-bottom:2px solid var(--accent);">
@@ -279,21 +461,21 @@
 
         <p>Section 5-11.2 pulls vestibules and stairs into the same fragment-reduction rule. Do not price those openings as unprotected interior glass. Section 5-12.1 covers doors. Section 5-11.4 is explicit: film is not acceptable as a substitute for the laminated inboard glass and bite in 5-11.1.</p>
 
-        <h2>If the spec cites ASTM F1642 / F2912 / F2248, you are above the UFC floor</h2>
+        <h2 id="astm-overlay">If the spec cites ASTM F1642 / F2912 / F2248, you are above the UFC floor</h2>
 
         <p>When Division 08 names ASTM F1642, F2912, or F2248, the package is no longer a 5-11 floor job. Those standards are a spec overlay. Hazard levels, standoff, and equivalent static load belong on that overlay, not in a 5-11 takeoff. Read the <a href="/at-fp-blast-rated-glazing-florida.html">AT/FP hub</a> for those methods. This post does not recap them.</p>
 
-        <h2>Replacing windows on an inhabited DoD building triggers 5-11 even on a small renovation</h2>
+        <h2 id="window-replacement-trigger">Replacing windows on an inhabited DoD building triggers 5-11 even on a small renovation</h2>
 
         <p>Section 5-1.1.2.1 is the trigger people miss. Replacement of windows on an inhabited DoD building still has to meet 5-11. It is not the 50 percent renovation trigger. A six-opening package on an occupied admin building is enough.</p>
 
         <p>Supplemental interior windows and new openings are included. If you add a borrowed lite or cut a new punched opening, treat it as 5-11 work. Do not wait for a major renovation percentage to show up on the cover sheet.</p>
 
-        <h2>DoD on the installation is UFC; GSA/leased off-post is ISC; VA is VA</h2>
+        <h2 id="dod-gsa-va">DoD on the installation is UFC; GSA/leased off-post is ISC; VA is VA</h2>
 
         <p>The federal regime follows occupancy, not the county. A building on a DoD installation uses UFC 4-010-01. GSA and leased off-post space uses the Interagency Security Committee (ISC) criteria. VA medical work uses the VA design manuals, not a copied UFC section. Wrong regime is a bid-day error. Start at the <a href="/government-glazing-contractor-florida.html">government glazing contractor page</a> and, for VA work, the <a href="/va-hospital-glazing-requirements.html">VA hospital glazing requirements</a> page.</p>
 
-        <h2>Dual path in Florida: one assembly, two proofs</h2>
+        <h2 id="dual-path-florida">Dual path in Florida: one assembly, two proofs</h2>
 
         <p>On a Florida DoD job you usually need one physical assembly and two paper paths. Path one is the Florida wind and impact approval: Miami-Dade NOA in the HVHZ, Florida Product Approval elsewhere. Path two is UFC 4-010-01 Section 5-11 glass and bite. ASTM F1642 / F2912 / F2248 is a third path only if the spec cites it.</p>
 
@@ -301,7 +483,8 @@
 
         <p>For the Florida code side of the same opening, use the <a href="/blog/florida-building-code-commercial-windows-2026.html">Florida Building Code commercial windows guide</a>.</p>
 
-        <h2>Bid-day mistakes</h2>
+        <div class="acg-field-checklist acg-print-keep">
+        <h2 id="bid-day-mistakes">Bid-day mistakes</h2>
 
         <ul>
           <li><strong>Treating an NOA as AT/FP.</strong> Wind and impact approval is not a blast rating and it does not satisfy 5-11.</li>
@@ -314,12 +497,13 @@
           <li><strong>Shops that omit bite.</strong> 5-11.1 is glass and bite. A laminate without the specified silicone or tape bite is incomplete.</li>
           <li><strong>Assuming spandrel is exempt.</strong> Confirm the opening type against 5-11 before you exclude it.</li>
         </ul>
+        </div>
 
-        <h2>Confirm which UFC is on the drawings</h2>
+        <h2 id="confirm-ufc-edition">Confirm which UFC is on the drawings</h2>
 
         <p>Ask for the edition date on sheet T-001 or in Division 01. July 2, 2026 uses Section 5-11. The 2018 edition used C3 Standard 10. Same fragment-reduction idea, different numbering. A change-summary memo is not the criteria. Unified Facilities Specifications (UFS) are not the UFC. Price the document stamped on the drawings, then send the elevations if the edition is missing.</p>
 
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
         <h3>Does a Miami-Dade NOA satisfy AT/FP?</h3>
         <p>No. A Miami-Dade NOA or Florida Product Approval is a wind and impact approval. It does not prove ASTM F1642 performance, inboard laminated glass, or the UFC 4-010-01 Section 5-11.1 bite. It does not satisfy AT/FP.</p>
@@ -344,7 +528,7 @@
   </section>
 
   <!-- RELATED -->
-  <section class="section" style="padding-top:0;">
+  <section class="section acg-print-hide" style="padding-top:0;">
     <div class="container">
       <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:clamp(32px,4vw,48px);">
         <div class="label" style="margin-bottom:20px;"><span class="line"></span> Related Resources</div>
@@ -359,7 +543,7 @@
   </section>
 
   <!-- SHARE -->
-  <section style="padding: clamp(20px,3vw,30px) 0 0;">
+  <section class="acg-print-hide" style="padding: clamp(20px,3vw,30px) 0 0;">
     <div class="container">
       <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;">Share this</span>
@@ -495,5 +679,54 @@
 
   <script defer src="../js/main.js"></script>
   <script src="/js/acg-chrome.js" defer></script>
+
+<script>
+(function(){
+  var article = document.querySelector(".acg-flagship-article");
+  var host = document.querySelector(".acg-toc-host");
+  if (!article || !host) return;
+  var h2s = Array.prototype.slice.call(article.querySelectorAll("h2"));
+  var heads = h2s.length >= 4 ? h2s : Array.prototype.slice.call(article.querySelectorAll("h2, h3"));
+  function slug(el, i){
+    if (el.id) return el.id;
+    var t = (el.textContent || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    el.id = t || ("section-" + (i + 1));
+    return el.id;
+  }
+  var links = heads.map(function(h, i){
+    return { id: slug(h, i), label: (h.textContent || "").replace(/\s+/g, " ").trim() };
+  }).filter(function(l){ return l.label; });
+  if (!links.length) return;
+  function list(){
+    var ol = document.createElement("ol");
+    links.forEach(function(l){
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = "#" + l.id;
+      a.textContent = l.label;
+      li.appendChild(a);
+      ol.appendChild(li);
+    });
+    return ol;
+  }
+  var mobile = document.createElement("details");
+  mobile.className = "acg-toc-mobile";
+  var sum = document.createElement("summary");
+  sum.textContent = "On this page";
+  mobile.appendChild(sum);
+  mobile.appendChild(list());
+  var desktop = document.createElement("nav");
+  desktop.className = "acg-toc-desktop";
+  desktop.setAttribute("aria-label", "On this page");
+  var lab = document.createElement("div");
+  lab.className = "acg-toc-label";
+  lab.textContent = "On this page";
+  desktop.appendChild(lab);
+  desktop.appendChild(list());
+  host.appendChild(mobile);
+  host.appendChild(desktop);
+})();
+</script>
+
 </body>
 </html>
