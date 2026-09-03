@@ -452,6 +452,23 @@ class NashvilleResidualTests(unittest.TestCase):
         )
         self.assertGreaterEqual(html.count("ACG furnishes and specifies ESWindows"), 2)
 
+    def test_nashville_storefront_copy_is_not_doubled_furnish_consult(self):
+        html = read("storefront-installer-nashville.html")
+        garbled = (
+            "project consulting furnishing glazing materials",
+            "consulting for Middle Tennessee furnishing glazing materials",
+            "is a licensed commercial glazing contractor furnishing glazing materials and consulting",
+        )
+        for phrase in garbled:
+            with self.subTest(phrase=phrase):
+                self.assertNotIn(phrase, html)
+        self.assertIn(
+            "furnishes glazing materials and provides project consulting in Middle Tennessee",
+            html,
+        )
+        self.assertNotIn("ACG is an installer of ESWindows", html)
+        self.assertNotIn("Q3 2026", html)
+
     def test_no_html_calls_acg_an_eswindows_installer_for_nashville(self):
         leftover = re.compile(
             r"ACG is an installer of ESWindows.{0,160}Nashville",
