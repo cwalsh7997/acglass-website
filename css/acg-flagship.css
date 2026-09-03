@@ -7,9 +7,18 @@
 .acg-flagship-article h2,
 .acg-flagship-article h3 { scroll-margin-top: 96px; }
 
+/* Article body must paint without waiting for reveal JS. Otherwise the TOC
+   and Quick Answer stay at opacity 0 and the mobile details never looks open. */
+.acg-flagship-article[data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 /* Stay in flow so the TOC never covers Quick Answer. */
 .acg-flagship .acg-toc-host {
   margin: 0 0 22px;
+  scroll-margin-top: 88px;
 }
 
 .acg-flagship .acg-toc-desktop {
@@ -137,7 +146,6 @@
 
 .acg-flagship .blog-content,
 .acg-flagship-article {
-  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -148,7 +156,6 @@
 }
 
 @media (max-width: 860px) {
-  html, body.acg-flagship { overflow-x: clip; }
   .acg-flagship .acg-toc-desktop { display: none; }
   .acg-family-back { margin-left: 0; }
 }
