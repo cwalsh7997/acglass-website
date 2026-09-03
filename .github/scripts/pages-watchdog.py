@@ -26,6 +26,10 @@ Failure conditions (exit 1)
    `main` HEAD sha. main advanced and Pages never rebuilt.
 4. the API or the live origin could not be read at all (unknown state is not a
    healthy state).
+5. any `Sitemap:` URL declared in live robots.txt returns a non-200 status or
+   does not parse as XML. This catches the 2026-09-03 report where
+   https://acglass.com/sitemap.xml briefly returned HTTP 500 during a Pages
+   deploy window while sitemap-blog.xml still looked fine.
 
 Warning condition (exit 0, loud text)
 -------------------------------------
@@ -45,9 +49,11 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 
 REPO = os.environ.get("GITHUB_REPOSITORY", "cwalsh7997/acglass-website")
@@ -56,6 +62,8 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "cwalsh7997/acglass-website")
 # that is not api.github.com without editing code.
 API_ROOT = os.environ.get("GITHUB_API_URL", "https://api.github.com").rstrip("/")
 LIVE_URL = "https://acglass.com/"
+ROBOTS_URL = LIVE_URL + "robots.txt"
+MASTER_SITEMAP_URL = LIVE_URL + "sitemap.xml"
 USER_AGENT = "acglass-pages-watchdog"
 
 # A build that has not finished in this long is hung, not slow. Normal builds
@@ -326,6 +334,64 @@ def fetch_live_last_modified(errors):
     return None
 
 
+def parse_robots_sitemaps(text):
+    """Return Sitemap: URLs from a robots.txt body."""
+    if not text:
+        return []
+    return re.findall(r"^\s*Sitemap:\s*(\S+)", text, re.IGNORECASE | re.MULTILINE)
+
+
+def evaluate_sitemap_response(url, status, body):
+    """Pure check for one live sitemap response. Returns a failure string or None."""
+    if status != 200:
+        return "sitemap %s HTTP %s (search engines use this as a primary entry point)" % (
+            url, status)
+    if not body or not body.strip():
+        return "sitemap %s HTTP 200 but empty body" % (url,)
+    try:
+        ET.fromstring(body)
+    except ET.ParseError as exc:
+        return "sitemap %s HTTP 200 but XML parse failed: %s" % (url, exc)
+    return None
+
+
+def check_live_sitemaps(errors):
+    """Fetch robots.txt and every declared sitemap. Returns (failures, url_count)."""
+    failures = []
+    try:
+        with _request(ROBOTS_URL) as response:
+            robots = response.read().decode("utf-8", errors="replace")
+    except urllib.error.HTTPError as exc:
+        errors.append("robots.txt: HTTP %s from %s" % (exc.code, ROBOTS_URL))
+        return failures, 0
+    except Exception as exc:  # noqa: BLE001
+        errors.append("robots.txt: %s from %s" % (exc, ROBOTS_URL))
+        return failures, 0
+
+    sitemap_urls = parse_robots_sitemaps(robots)
+    if not sitemap_urls:
+        failures.append("robots.txt declares no Sitemap: URLs")
+        return failures, 0
+
+    if MASTER_SITEMAP_URL not in sitemap_urls:
+        failures.append("robots.txt omits the master sitemap %s" % MASTER_SITEMAP_URL)
+
+    for url in sitemap_urls:
+        try:
+            with _request(url) as response:
+                body = response.read()
+                failure = evaluate_sitemap_response(url, response.status, body)
+        except urllib.error.HTTPError as exc:
+            failure = evaluate_sitemap_response(url, exc.code, b"")
+        except Exception as exc:  # noqa: BLE001
+            failures.append("sitemap fetch: %s from %s" % (exc, url))
+            continue
+        if failure:
+            failures.append(failure)
+
+    return failures, len(sitemap_urls)
+
+
 def newest_successful_build(builds):
     """Pick the newest build with status `built` from a builds list payload."""
     if not isinstance(builds, list):
@@ -361,9 +427,16 @@ def main(argv=None):
         latest_success = newest_successful_build(builds)
 
     live_last_modified = fetch_live_last_modified(errors)
+    sitemap_failures, sitemap_count = check_live_sitemaps(errors)
 
     result = decide(latest, head_sha, live_last_modified,
                     latest_success=latest_success, errors=errors)
+    result.failures.extend(sitemap_failures)
+    if sitemap_failures:
+        result.summary.append("live sitemap checks: FAIL (%d)" % len(sitemap_failures))
+    else:
+        result.summary.append("live sitemap checks: OK (%d URLs from robots.txt)"
+                              % sitemap_count)
     print(result.render())
 
     summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
