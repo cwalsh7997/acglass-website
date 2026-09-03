@@ -73,8 +73,8 @@ HELD_CROSS_CANONICAL_EDGE_HASHES = {
         "eec767cc5127c3963fa07deb9741b8685fd09e02cfb61ada4ce2e86d4d3dcdae",
     ("medical-office-glazier-fort-lauderdale/index.html", "/fort-lauderdale"):
         "2406e8fb96ec2a68083ad6c5dff229c1f8362979b7eac38ceb98ad6da3137fd0",
-    ("naples/all-glass-entrances/index.html", "/naples"):
-        "a7de172450c4b96a3fddd963da72e5b38458ca1c8c32b66699358fac3c9331ae",
+    # /naples/ is now self-canonical (office metro), so this is no longer a
+    # cross-canonical edge and the prior hold is retired.
     ("nashville/belle-meade-nashville/index.html", "/nashville"):
         "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
     ("nashville/bellevue-nashville/index.html", "/nashville"):

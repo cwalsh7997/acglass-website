@@ -51,16 +51,13 @@ class TitleMetadataTests(unittest.TestCase):
         self.assertGreaterEqual(len(title), checker.TITLE_MIN)
         self.assertLessEqual(len(title), checker.TITLE_MAX)
 
-    def test_long_title_exception_is_exact(self):
+    def test_west_palm_beach_title_fits_limit(self):
         rel = "west-palm-beach/index.html"
         source = (REPO_ROOT / rel).read_text(encoding="utf-8")
         title = checker.title_content(source)
-        self.assertEqual(
-            {rel},
-            set(checker.HELD_LONG_TITLE_HASHES),
-        )
-        self.assertTrue(checker.held_long_title_matches(rel, title))
-        self.assertFalse(checker.held_long_title_matches(rel, title + " changed"))
+        self.assertGreaterEqual(len(title), checker.TITLE_MIN)
+        self.assertLessEqual(len(title), checker.TITLE_MAX)
+        self.assertEqual({}, checker.HELD_LONG_TITLE_HASHES)
 
 
 if __name__ == "__main__":

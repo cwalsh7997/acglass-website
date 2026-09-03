@@ -14,6 +14,9 @@ Allow: /
 # Internal admin & dealer-only views - no value to crawlers, contain no public content.
 Disallow: /dealer/admin.html
 Disallow: /dealer/thanks.html
+# JSON-LD include fragment, not a page. Kept out of sitemaps. HTML stub would
+# trip tn-claim-guard (excluded fragment must not look like a document).
+Disallow: /services-schema-block.html
 
 # ------------------------------------------------------------------------
 # AI Answer Engine Crawlers - Explicitly Permitted
