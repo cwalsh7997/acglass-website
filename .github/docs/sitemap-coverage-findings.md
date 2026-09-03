@@ -286,7 +286,7 @@ measured traffic: keep `/industries/`, `/press/`, `/for-general-contractors/`,
 
 ## 1c. Zero-impression report
 
-Delivered as `sitemap-zero-impression-report.md`. 409 of 1,276 sitemap URLs (32.1%) had
+Delivered as `.github/docs/sitemap-zero-impression-report.md`. 409 of 1,276 sitemap URLs (32.1%) had
 exactly zero impressions, worst in `sitemap-cities.xml` at 231/562 (41.1%). Counts
 reconcile exactly with `gsc_full/ANALYSIS.md` and the 409 lines of
 `gsc_full/zero_impression_urls.txt`. **Nothing was removed.**
@@ -295,9 +295,12 @@ reconcile exactly with `gsc_full/ANALYSIS.md` and the 409 lines of
 
 | File | Change |
 |---|---|
-| `sitemap-zero-impression-report.md` | new -- 409 zero-impression URLs grouped by child sitemap |
-| `host-consolidation-findings.md` | new -- www duplicate-host investigation and Cloudflare recommendation |
-| `sitemap-coverage-findings.md` | new -- this file |
+| `.github/docs/sitemap-zero-impression-report.md` | new -- 409 zero-impression URLs grouped by child sitemap |
+| `.github/docs/host-consolidation-findings.md` | new -- www duplicate-host investigation and Cloudflare recommendation |
+| `.github/docs/sitemap-coverage-findings.md` | new -- this file |
 | `sitemap*.xml` | **unchanged** -- no `<loc>` added, removed or edited; no `<lastmod>` touched |
 | all HTML pages | **unchanged** |
 | `vercel.json` | **unchanged** -- its one `www.acglass.com` string is a redirect match condition and must stay |
+
+This file lives at `.github/docs/sitemap-coverage-findings.md`. GitHub Pages does not
+serve `.github/`, so it is not publicly fetchable. Do not move it back under the deploy root.
