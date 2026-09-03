@@ -10,8 +10,6 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SKIP_DIRS = {".git", ".github", "_internal", "node_modules", "dealer"}
-# Original instruction: do not touch Nashville copy.
-NASHVILLE_COPY_SKIP = {"storefront-installer-nashville.html"}
 HREF_RE = re.compile(r"""<a\b[^>]*?\bhref\s*=\s*["']([^"']+)["']""", re.I)
 FACTORY_CERT_RE = re.compile(r"factory[- ]certif(?:ied|ication)", re.I)
 EURO_RE = re.compile(r"euro-?wall", re.I)
@@ -48,12 +46,10 @@ class EuroWallCertSofteningTests(unittest.TestCase):
         self.assertIn("Installer / specifier", html)
         self.assertIn("installs and specifies Euro-Wall", html)
 
-    def test_live_pages_drop_euro_wall_factory_cert_except_nashville_copy(self):
+    def test_live_pages_drop_euro_wall_factory_cert_claims(self):
         leftovers = []
         for path in iter_html():
             rel = str(path.relative_to(REPO_ROOT))
-            if rel in NASHVILLE_COPY_SKIP:
-                continue
             text = path.read_text(encoding="utf-8")
             if not EURO_RE.search(text):
                 continue
@@ -67,6 +63,12 @@ class EuroWallCertSofteningTests(unittest.TestCase):
         self.assertIn("Installer and specifier language only.", facts)
         products = (REPO_ROOT / "products/index.html").read_text(encoding="utf-8")
         self.assertIn("Installer / specifier.", products)
+        nashville = (REPO_ROOT / "storefront-installer-nashville.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("an installer and specifier rather than a one-time special order", nashville)
+        self.assertNotIn("factory-certified installer", nashville)
+        self.assertNotIn("office opening", nashville.lower())
 
 
 if __name__ == "__main__":
