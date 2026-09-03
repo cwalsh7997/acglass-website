@@ -68,6 +68,43 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/dealer/login.html",
 }
 
+# Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).
+# Indexable hubs still list them. A later link-rewire can drop this allowlist.
+WAVE2_CITY_SERVICES = {
+    "commercial-storefronts",
+    "glass-railings",
+    "impact-windows-hurricane",
+}
+
+WAVE2_KEEPER_GLAZIERS = {
+    "/storefront-glazier-west-palm-beach-florida/",
+    "/storefront-glazier-naples-florida/",
+    "/storefront-glazier-tampa-florida/",
+    "/storefront-glazier-miami-florida/",
+    "/storefront-glazier-orlando-florida/",
+    "/storefront-glazier-fort-lauderdale-florida/",
+    "/storefront-glazier-fort-myers-florida/",
+    "/storefront-glazier-sarasota-florida/",
+}
+
+
+def is_wave2_noindex_target(url: str) -> bool:
+    """True for the 324 wave-2 noindex URLs. Keepers and the statewide guide are not."""
+    if not url.endswith("/"):
+        url = url + "/"
+    if url in WAVE2_KEEPER_GLAZIERS or url == "/storefront-glazier-florida/":
+        return False
+    parts = [p for p in url.split("/") if p]
+    if len(parts) == 2 and parts[1] in WAVE2_CITY_SERVICES:
+        return True
+    if (
+        len(parts) == 1
+        and parts[0].startswith("storefront-glazier-")
+        and parts[0].endswith("-florida")
+    ):
+        return True
+    return False
+
 # These exact source-target pairs are held behind approval gates. The exception
 # is edge-specific, so any new indexable page linking to the same targets still
 # fails the audit.
@@ -445,7 +482,9 @@ def check_indexable_link_targets(results, inbound, pages, redirects, frozen):
     checks = (
         (
             "Indexable pages do not link to noindex pages",
-            noindex - ALLOWED_NOINDEX_LINK_TARGETS,
+            noindex
+            - ALLOWED_NOINDEX_LINK_TARGETS
+            - {u for u in noindex if is_wave2_noindex_target(u)},
         ),
         ("Indexable pages do not link to meta-refresh stubs", meta_refresh),
         ("Indexable pages do not link to known redirect sources", redirect_sources),

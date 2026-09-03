@@ -69,8 +69,9 @@ SKIP_SERVED_DIRS = {".git", ".github", "_internal", "node_modules", "drafts"}
 # href value, visible anchor text and occurrence count. A changed or missing
 # edge fails, and a new source cannot inherit the exception.
 HELD_CROSS_CANONICAL_EDGE_HASHES = {
-    ("west-palm-beach/index.html", "/boca-raton"):
-        "eec767cc5127c3963fa07deb9741b8685fd09e02cfb61ada4ce2e86d4d3dcdae",
+    # /boca-raton/ is now self-canonical so the market stays in a sitemap after
+    # wave-2 noindex of /storefront-glazier-boca-raton-florida/. The prior hold
+    # on west-palm-beach/index.html -> /boca-raton is retired.
     ("medical-office-glazier-fort-lauderdale/index.html", "/fort-lauderdale"):
         "2406e8fb96ec2a68083ad6c5dff229c1f8362979b7eac38ceb98ad6da3137fd0",
     # /naples/ is now self-canonical (office metro), so this is no longer a
