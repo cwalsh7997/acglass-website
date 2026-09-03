@@ -283,4 +283,4 @@ Known leftover quality issues, not 404s:
 4. No merge of the Lucie, Bradley, Wave, or Waxin's project pairs
 5. No GSC-based keeper changes on the impact-vs-shutters pile
 6. Flagship HTML for UFC, FBC 9th Edition, and the bid-day tool was not touched
-7. `docs/blog-cluster-map.md` is a working note. It will be publicly served because repo root is the deploy root. Move it under `_internal/` after review if it should not stay live
+7. This file lives at `.github/docs/blog-cluster-map.md`. GitHub Pages does not serve `.github/`, so it is not publicly fetchable. Do not move it back under the deploy root.

@@ -251,5 +251,28 @@ class ParsingCase(unittest.TestCase):
         self.assertIsNone(wd.newest_successful_build(None))
 
 
+class SitemapChecksCase(unittest.TestCase):
+    def test_parse_robots_sitemaps(self):
+        text = "User-agent: *\nSitemap: https://acglass.com/sitemap.xml\n"
+        self.assertEqual(wd.parse_robots_sitemaps(text),
+                         ["https://acglass.com/sitemap.xml"])
+
+    def test_evaluate_sitemap_response_ok(self):
+        body = b'<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>'
+        self.assertIsNone(wd.evaluate_sitemap_response("https://acglass.com/sitemap.xml",
+                                                         200, body))
+
+    def test_evaluate_sitemap_response_500(self):
+        failure = wd.evaluate_sitemap_response("https://acglass.com/sitemap.xml",
+                                                 500, b"")
+        self.assertIn("HTTP 500", failure)
+        self.assertIn("sitemap.xml", failure)
+
+    def test_evaluate_sitemap_response_bad_xml(self):
+        failure = wd.evaluate_sitemap_response("https://acglass.com/sitemap.xml",
+                                               200, b"<urlset><unclosed>")
+        self.assertIn("XML parse failed", failure)
+
+
 if __name__ == "__main__":
     unittest.main()
