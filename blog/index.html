@@ -11,7 +11,7 @@
 <title>Blog | ACG American Commercial Glass</title>
 <link rel="icon" type="image/png" href="/images/favicon-32.png">
 <meta name="description" content="Insights from the field. 226 articles on commercial glazing, Florida building code, HVHZ/NOA, and GC resources from ACG.">
-<meta name="keywords" content="commercial glazing blog, florida building code glazing, HVHZ requirements, miami-dade noa, impact glass florida, GC resources glazing, AI operations glazing">
+<meta name="keywords" content="commercial glazing blog, florida building code glazing, HVHZ requirements, miami-dade noa, impact glass florida, GC resources glazing">
 <link rel="canonical" href="https://acglass.com/blog/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blog | ACG American Commercial Glass">
@@ -35,7 +35,7 @@
       "@type": "Blog",
       "@id": "https://acglass.com/blog/#blog",
       "name": "ACG Blog - Insights from the Field",
-      "description": "226 articles on commercial glazing systems, Florida building code, HVHZ and Miami-Dade NOA compliance, GC resources, AI operations, and project management from American Commercial Glass.",
+      "description": "226 articles on commercial glazing systems, Florida building code, HVHZ and Miami-Dade NOA compliance, GC and architect resources, operations, and project management. Written by a working commercial glazing contractor, not a content shop.",
       "url": "https://acglass.com/blog/",
       "publisher": {
         "@type": "Organization",
@@ -688,6 +688,7 @@
 }
 </script>
 <style>
+html, body { overflow-x: clip; }
 .blog-hero { padding: clamp(110px, 14vw, 180px) 0 clamp(36px, 5vw, 60px); }
 .blog-hero .loc-label { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color: var(--accent); margin-bottom: 16px; }
 .blog-hero h1 { font-size:clamp(40px,6vw,76px); font-weight:900; line-height:1.04; max-width:1000px; margin-bottom:20px; }
@@ -699,14 +700,14 @@
 .chip-btn:hover { color:#fff; border-color:rgba(255,255,255,0.25); }
 .chip-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
 .blog-count { font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.45); padding:18px 0 4px; }
-.blog-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:clamp(16px,2vw,24px); padding-bottom:40px; }
-.blog-card { display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:clamp(22px,2.4vw,30px); text-decoration:none; color:inherit; transition:border-color .2s, transform .2s; }
+.blog-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px),1fr)); gap:clamp(16px,2vw,24px); padding-bottom:40px; }
+.blog-card { display:flex; flex-direction:column; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:clamp(22px,2.4vw,30px); text-decoration:none; color:inherit; transition:border-color .2s, transform .2s; min-width:0; }
 .blog-card:hover { border-color:rgba(225,19,32,0.45); transform:translateY(-2px); }
-.blog-card-meta { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.blog-card-meta { display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
 .blog-card-cat { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); border:1px solid rgba(225,19,32,0.35); border-radius:100px; padding:4px 10px; }
 .blog-card-date { font-family:var(--mono); font-size:10px; letter-spacing:0.06em; color:rgba(255,255,255,0.45); }
-.blog-card h3 { font-size:18px; font-weight:800; line-height:1.3; margin-bottom:10px; color:#fff; }
-.blog-card p { font-size:13.5px; line-height:1.6; color:rgba(255,255,255,0.6); margin:0 0 18px; flex:1; }
+.blog-card h3 { font-size:18px; font-weight:800; line-height:1.3; margin-bottom:10px; color:#fff; overflow-wrap:break-word; word-break:normal; hyphens:manual; }
+.blog-card p { font-size:13.5px; line-height:1.6; color:rgba(255,255,255,0.6); margin:0 0 18px; flex:1; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 .blog-card-footer { display:flex; align-items:center; justify-content:space-between; }
 .blog-read { font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.7); }
 .blog-arrow svg { width:18px; height:18px; color:var(--accent); transition:transform .2s; }
@@ -717,21 +718,47 @@
 .page-btn:hover:not(:disabled) { color:#fff; border-color:rgba(255,255,255,0.3); }
 .page-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
 .page-btn:disabled { opacity:.35; cursor:not-allowed; }
-@media (max-width:560px) { .blog-grid { grid-template-columns:1fr; } }
-.blog-search-wrap { padding:0 0 12px; }
+@media (max-width:560px) {
+  .blog-grid { grid-template-columns:1fr; }
+  .blog-search { max-width:100%; }
+}
+.blog-search-wrap { padding:18px 0 0; }
 .blog-search {
   width:100%;
-  max-width:420px;
-  padding:10px 16px;
+  max-width:560px;
+  min-height:48px;
+  padding:14px 18px;
   background:rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:100px;
   color:#fff;
   font-family:var(--mono);
-  font-size:12px;
+  font-size:16px;
   letter-spacing:0.04em;
 }
 .blog-search::placeholder { color:rgba(255,255,255,0.45); }
+.blog-archive { padding-top:12px; }
+.blog-archive-head { padding:10px 0 6px; }
+.blog-archive-head h2 { font-size:22px; font-weight:800; color:#fff; margin:0 0 6px; }
+.blog-archive-head p { font-size:14px; color:rgba(255,255,255,0.55); margin:0 0 8px; max-width:640px; line-height:1.5; }
+.blog-empty { display:none; padding:36px 8px 56px; }
+.blog-empty.is-visible { display:block; }
+.blog-empty p { font-size:18px; font-weight:700; color:#fff; margin:0 0 10px; }
+.blog-empty button {
+  min-height:44px;
+  padding:10px 16px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:8px;
+  color:#fff;
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.blog-rail.is-hidden { display:none; }
+.blog-rails.is-hidden { display:none; }
 .blog-card-flagship { border-color:rgba(225,19,32,0.45); }
 .blog-card-flag {
   font-family:var(--mono);
@@ -803,6 +830,9 @@
       <div class="loc-label">ACG Blog</div>
       <h1>Insights from <span class="accent">the field.</span></h1>
       <p>226 articles on commercial glazing systems, Florida building code, HVHZ and Miami-Dade NOA compliance, GC and architect resources, operations, and project management. Written by a working commercial glazing contractor, not a content shop.</p>
+      <div class="blog-search-wrap">
+        <input type="search" id="blogSearch" class="blog-search" placeholder="Search tools, series, and the archive" aria-label="Search articles" autocomplete="off">
+      </div>
     </div>
   </section>
 
@@ -816,9 +846,6 @@
         <button class="chip-btn" data-filter="industry">Industry</button>
         <button class="chip-btn" data-filter="operations">Operations</button>
         <button class="chip-btn" data-filter="tools">Tools</button>
-      </div>
-      <div class="blog-search-wrap">
-        <input type="search" id="blogSearch" class="blog-search" placeholder="Search articles" aria-label="Search articles" autocomplete="off">
       </div>
     </div>
   </div>
@@ -958,9 +985,17 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top:0;">
+  <section class="section blog-archive" style="padding-top:0;" aria-labelledby="blog-archive-h">
     <div class="container">
-      <div class="blog-count" id="blogCount">Showing all 226 articles</div>
+      <div class="blog-archive-head">
+        <h2 id="blog-archive-h">Archive</h2>
+        <p>The full 226-article library. Tools and series stay above. Use search or the chips to filter this grid.</p>
+      </div>
+      <div class="blog-count" id="blogCount" aria-live="polite">Showing all 226 articles</div>
+      <div class="blog-empty" id="blogEmpty">
+        <p>No articles match</p>
+        <button type="button" id="blogEmptyClear">Clear search</button>
+      </div>
       <div class="blog-grid" id="blogGrid">
       <a href="/tools/bid-day-glazing-checker.html" class="blog-card blog-card-tool" data-cat="tools" data-date="2026-09-03" data-search="bid day glazing checker ufc noa florida dual path">
         <div class="blog-card-meta"><span class="blog-card-cat">Tools</span><span class="blog-card-date">Sep 3, 2026</span></div>
@@ -994,13 +1029,13 @@
       </a>
       <a href="/blog/commercial-glazing-submittal-process-guide.html" class="blog-card" data-cat="operations" data-date="2026-07-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jul 22, 2026</span></div>
-        <h3>The Commercial Glazing Submittal Process: What GCs Need to</h3>
+        <h3>The Commercial Glazing Submittal Process What GCs Need to Know</h3>
         <p>A GC&#x27;s guide to the commercial glazing submittal process - what&#x27;s included, typical timelines, review cycles, common rejection reasons, and how to keep…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/curtainwall-systems-explained-commercial-construction.html" class="blog-card" data-cat="capabilities" data-date="2026-07-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Jul 22, 2026</span></div>
-        <h3>Curtainwall Systems Explained: How They Work &amp; When Your</h3>
+        <h3>Curtainwall Systems Explained How They Work &amp; When Your Building Needs One</h3>
         <p>What is a curtainwall system? Learn how curtainwall works, stick-built vs unitized types, when your building needs curtainwall vs storefront, and typical…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1018,7 +1053,7 @@
       </a>
       <a href="/blog/commercial-glass-types-guide-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>Commercial Glass Types: A Complete Guide for Florida</h3>
+        <h3>Commercial Glass Types: A Complete Guide for Florida Projects</h3>
         <p>A complete guide to commercial glass types for Florida projects: tempered, laminated, IGU, Low-E, impact-rated, fire-rated, tinted, and reflective - with…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1030,7 +1065,7 @@
       </a>
       <a href="/blog/florida-building-code-commercial-glazing-guide.html" class="blog-card" data-cat="capabilities" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>Florida Building Code for Commercial Glazing: A</h3>
+        <h3>Florida Building Code for Commercial Glazing A Contractor's Quick Reference</h3>
         <p>A practical contractor&#x27;s reference for Florida Building Code requirements for commercial glazing - FBC 8th Edition, energy code, wind load, HVHZ, and…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1042,13 +1077,13 @@
       </a>
       <a href="/blog/how-long-does-commercial-glass-installation-take.html" class="blog-card" data-cat="operations" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>How Long Does Commercial Glass Installation Take? Project</h3>
+        <h3>How Long Does Commercial Glass Installation Take? Project Timeline Guide</h3>
         <p>How long does commercial glass installation take? A realistic guide to glazing project timelines - submittals, shop drawings, fabrication, installation…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/how-to-choose-commercial-glass-contractor-florida.html" class="blog-card" data-cat="operations" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>How to Choose a Commercial Glass Contractor in Florida: The</h3>
+        <h3>How to Choose a Commercial Glass Contractor in Florida The Complete Checklist</h3>
         <p>Hiring a commercial glazing subcontractor in Florida? This complete checklist covers licensing, insurance, portfolio review, manufacturer partnerships…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1060,25 +1095,25 @@
       </a>
       <a href="/blog/hurricane-impact-windows-vs-shutters-commercial.html" class="blog-card" data-cat="operations" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>Hurricane Impact Windows vs Shutters for Commercial</h3>
+        <h3>Hurricane Impact Windows vs Shutters for Commercial Buildings Which Is Better?</h3>
         <p>Impact windows vs hurricane shutters for commercial buildings: cost comparison, insurance implications, FBC requirements, aesthetics, and maintenance.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/impact-rated-glass-requirements-florida-2026.html" class="blog-card" data-cat="industry" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Industry</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>Impact-Rated Glass Requirements in Florida: What You Need</h3>
+        <h3>Impact-Rated Glass Requirements in Florida (2026)</h3>
         <p>Where is impact glass required in Florida in 2026? HVHZ, wind-borne debris regions, FBC 8th Edition, Miami-Dade NOA vs FL Product Approval, large vs small…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/questions-to-ask-glazing-subcontractor-before-hiring.html" class="blog-card" data-cat="operations" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>10 Questions to Ask a Glazing Subcontractor Before You Hire</h3>
+        <h3>10 Questions to Ask a Glazing Subcontractor Before You Hire Them</h3>
         <p>Before you award a glazing scope, ask these 10 questions. A GC&#x27;s checklist for vetting glazing subcontractors - license, insurance, experience…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/storefront-vs-curtainwall-vs-window-wall-difference.html" class="blog-card" data-cat="capabilities" data-date="2026-07-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Jul 15, 2026</span></div>
-        <h3>Storefront vs Curtainwall vs Window Wall: What&#x27;s the</h3>
+        <h3>Storefront vs Curtainwall vs Window Wall: What's the Difference?</h3>
         <p>Storefront, curtainwall, and window wall - what&#x27;s the difference? Cost, performance, and when to use each system explained, with side-by-side comparison…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1090,13 +1125,13 @@
       </a>
       <a href="/blog/commercial-glazing-tampa-bay-market-2026.html" class="blog-card" data-cat="industry" data-date="2026-07-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Industry</span><span class="blog-card-date">Jul 10, 2026</span></div>
-        <h3>Tampa Bay Commercial Glazing Market: What GCs Need to Know</h3>
+        <h3>Tampa Bay Commercial Glazing Market: What GCs Need to Know in 2026</h3>
         <p>Tampa Bay&#x27;s commercial construction pipeline is massive in 2026. Here&#x27;s what GCs building in Hillsborough, Pinellas, and Pasco counties need to know about…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/tampa-commercial-construction-boom-glazing.html" class="blog-card" data-cat="projects" data-date="2026-07-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Projects</span><span class="blog-card-date">Jul 10, 2026</span></div>
-        <h3>Tampa&#x27;s Construction Boom: What It Means for Commercial</h3>
+        <h3>Tampa's Construction Boom: What It Means for Commercial Glazing</h3>
         <p>Tampa&#x27;s construction pipeline in 2026 is among the most active in Florida. Water Street Phase 2, Midtown Tampa, Tampa General expansion - here&#x27;s what the…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1108,7 +1143,7 @@
       </a>
       <a href="/blog/commercial-glazing-inspection-florida.html" class="blog-card" data-cat="operations" data-date="2026-06-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jun 10, 2026</span></div>
-        <h3>What Happens During a Commercial Glazing Inspection in</h3>
+        <h3>What Happens During a Commercial Glazing Inspection?</h3>
         <p>What inspectors check during a commercial glazing inspection in Florida: product approvals, labels, installation per manufacturer instructions, sealants…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1120,7 +1155,7 @@
       </a>
       <a href="/blog/fire-rated-glass-requirements-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-06-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Jun 10, 2026</span></div>
-        <h3>Fire-Rated Glass Requirements in Florida - What You Need to</h3>
+        <h3>Fire-Rated Glass Requirements in Florida</h3>
         <p>Fire-rated glass requirements in Florida: when it&#x27;s required, rating levels (20/45/60/90 min), glass types, testing standards (UL 9, UL 10B/C, NFPA 252)…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1132,13 +1167,13 @@
       </a>
       <a href="/blog/what-is-a-window-wall-system.html" class="blog-card" data-cat="capabilities" data-date="2026-06-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Jun 10, 2026</span></div>
-        <h3>What Is a Window Wall System? (And How It&#x27;s Different from</h3>
+        <h3>What Is a Window Wall System? And How It Differs from Curtainwall</h3>
         <p>A window wall system sits between floor slabs - different from curtainwall, which hangs in front of the structure. Cost, code, and use cases.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/what-is-division-08-construction.html" class="blog-card" data-cat="operations" data-date="2026-06-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jun 10, 2026</span></div>
-        <h3>What Is Division 08 in Construction? (The Complete Guide to</h3>
+        <h3>What Is Division 08 in Construction?</h3>
         <p>Division 08 in the CSI MasterFormat covers Openings - doors, windows, storefronts, curtainwall, and hardware. Plain-language guide for GCs.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1192,7 +1227,7 @@
       </a>
       <a href="/blog/impact-window-contractor-commercial-florida.html" class="blog-card" data-cat="operations" data-date="2026-06-01">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Jun 1, 2026</span></div>
-        <h3>How to Choose a Commercial Impact Window Contractor in</h3>
+        <h3>Choosing a Commercial Impact Window Contractor in Florida</h3>
         <p>Florida GCs and developers: what to look for in a commercial impact window contractor - HVHZ ratings, product approvals, Florida Building Code compliance…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1378,7 +1413,7 @@
       </a>
       <a href="/blog/aluminum-vs-vinyl-windows-commercial-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Aluminum vs Vinyl Windows: Which is Right for Commercial</h3>
+        <h3>Aluminum vs Vinyl Windows: Which is Right for Commercial Buildings in Florida?</h3>
         <p>Aluminum vs vinyl windows for Florida commercial buildings - compare cost, hurricane performance, code path, and 25-year lifespan side-by-side.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1390,13 +1425,13 @@
       </a>
       <a href="/blog/best-glass-types-florida-commercial-climate.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>What Type of Glass Works Best for Florida&#x27;s Commercial</h3>
+        <h3>What Type of Glass Works Best for Florida's Commercial Climate?</h3>
         <p>A technical guide to commercial glass for Florida heat, humidity, hurricanes, and UV. Laminated, tempered, low-E, and insulating glass explained for…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/best-time-replace-commercial-windows-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>When Is the Best Time to Replace Commercial Windows in</h3>
+        <h3>Best Time to Replace Commercial Windows in Florida</h3>
         <p>Timing a commercial window replacement in Florida depends on hurricane season, insurance renewal, budget cycle, and occupancy.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1420,7 +1455,7 @@
       </a>
       <a href="/blog/commercial-glass-insurance-claims-florida.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Commercial Glass Insurance Claims in Florida: A GC and</h3>
+        <h3>Commercial Glass Insurance Claims in Florida</h3>
         <p>How Florida commercial property owners and GCs file glass damage claims, document losses, work with adjusters, and match existing glazing under hurricane…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1438,7 +1473,7 @@
       </a>
       <a href="/blog/commercial-glass-property-value-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How Commercial Glass Upgrades Increase Florida Property</h3>
+        <h3>How Commercial Glass Upgrades Increase Florida Property Value</h3>
         <p>Commercial glazing upgrades - impact, energy-efficient, tinted - measurably increase Florida property valuation, NOI, insurance credits, and tenant…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1450,7 +1485,7 @@
       </a>
       <a href="/blog/commercial-glazing-project-turnaround-time-florida.html" class="blog-card" data-cat="industry" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Industry</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>What&#x27;s the Typical Turnaround Time for Commercial Glazing</h3>
+        <h3>What's the Typical Turnaround Time for Commercial Glazing Projects?</h3>
         <p>Commercial glazing turnaround time in Florida - typical 2026 lead times from plans submission through installation, including HVHZ permit windows.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1462,7 +1497,7 @@
       </a>
       <a href="/blog/commercial-glazing-warranties-florida.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Commercial Glazing Warranties in Florida: What&#x27;s Actually</h3>
+        <h3>Commercial Glazing Warranties in Florida: What's Actually Covered</h3>
         <p>Commercial glass warranties vary dramatically by manufacturer and installer. Here&#x27;s what Florida GCs and owners need to verify before specifying a glazing…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1492,7 +1527,7 @@
       </a>
       <a href="/blog/commercial-window-permits-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Do You Need a Permit to Replace Commercial Windows in</h3>
+        <h3>Do You Need a Permit to Replace Commercial Windows in Florida?</h3>
         <p>Florida commercial window replacement permit requirements - FBC, local AHJ rules, when permits are required, and the shop drawing / NOA documentation…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1504,7 +1539,7 @@
       </a>
       <a href="/blog/cost-of-impact-windows-commercial-florida.html" class="blog-card" data-cat="industry" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Industry</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Cost of Impact Windows for Commercial Buildings in Florida</h3>
+        <h3>Cost of Impact Windows for Commercial Buildings in Florida (2026 Pricing)</h3>
         <p>Cost of impact windows for commercial buildings in Florida. Real 2026 pricing per SF, project totals, HVHZ premiums, ESWindows rates. From ACG.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1516,13 +1551,13 @@
       </a>
       <a href="/blog/do-windows-block-uv-commercial-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Do Commercial Windows Block UV Rays? A Florida Commercial</h3>
+        <h3>Do Commercial Windows Block UV Rays? A Florida Commercial Guide</h3>
         <p>Do commercial windows block UV rays? Florida guide covering low-E, laminated glass, tinting, and how commercial glazing protects interiors, inventory, and…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/emergency-commercial-glass-replacement-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Emergency Commercial Glass Replacement in Florida: What to</h3>
+        <h3>Emergency Commercial Glass Replacement in Florida</h3>
         <p>Broken commercial glass after hours? Board up, secure the opening, document damage for insurance, then call a licensed commercial glazier.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1546,7 +1581,7 @@
       </a>
       <a href="/blog/frameless-glass-doors-commercial-spaces.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Frameless Glass Doors for Commercial Spaces: Design and</h3>
+        <h3>Frameless Glass Doors for Commercial Spaces</h3>
         <p>Frameless entry doors, pivot doors, and interior glass walls for commercial offices, retail, and hospitality projects across Florida.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1576,7 +1611,7 @@
       </a>
       <a href="/blog/how-much-does-impact-glass-cost-commercial-buildings-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How Much Does Impact Glass Cost for Commercial Buildings in</h3>
+        <h3>How Much Does Impact Glass Cost for Commercial Buildings in Florida?</h3>
         <p>What drives commercial impact glass cost in Florida - laminated glass, reinforced framing, engineering, NOA documentation, and HVHZ / Miami-Dade requirements explained.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1588,19 +1623,19 @@
       </a>
       <a href="/blog/how-to-choose-commercial-glazier-tampa-bay.html" class="blog-card" data-cat="industry" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Industry</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How to Choose a Commercial Glazier in Tampa Bay: 2026 GC</h3>
+        <h3>How to Choose a Commercial Glazier in Tampa Bay: 2026 GC Buyer's Guide</h3>
         <p>Choosing a commercial glazier for Tampa Bay? Complete GC buyer&#x27;s guide covering licensing, experience, local presence, products, and Florida code.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/how-to-get-quote-commercial-window-replacement-florida.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How to Get a Real Commercial Window Replacement Quote in</h3>
+        <h3>How to Get a Real Commercial Window Replacement Quote in Florida</h3>
         <p>Getting a commercial glazing quote shouldn&#x27;t take 2 weeks of phone tag. Here&#x27;s what to send, what to ask for, and what makes a bid accurate.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/hurricane-impact-sliding-glass-doors-commercial-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Hurricane Impact Sliding Glass Doors for Commercial</h3>
+        <h3>Hurricane Impact Sliding Glass Doors for Commercial Florida: Cost, Specs &amp; Options</h3>
         <p>Hurricane impact sliding glass doors for commercial Florida projects. Cost, FBC approvals, ESWindows SGD-2020, installation. Guide from ACG.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1612,43 +1647,43 @@
       </a>
       <a href="/blog/hurricane-preparation-commercial-impact-glass.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Hurricane Preparation with Commercial Impact Glass: A</h3>
+        <h3>Hurricane Preparation with Impact Glass</h3>
         <p>Pre-season inspections, understanding FBC HVHZ vs non-HVHZ ratings, DP values, missile test levels, maintenance, and post-storm walkthroughs for…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/hurricane-proof-windows-commercial-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Hurricane Proof Windows: Commercial Protection Standards</h3>
+        <h3>Hurricane Proof Windows: Commercial Protection Standards for Florida</h3>
         <p>Are hurricane proof windows really proof? Commercial-grade hurricane protection windows for Florida businesses. Ratings, standards, and ACG installation.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/hurricane-replacement-windows-commercial-timing-florida.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Hurricane Replacement Windows: When to Replace Commercial</h3>
+        <h3>Hurricane Replacement Windows: When to Replace Commercial Glass in Florida</h3>
         <p>When should commercial buildings replace hurricane windows? Lifespan, warning signs, cost of hurricane replacement windows, and installation timing.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/hurricane-window-installers-cost-hiring-florida-commercial.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How to Hire a Hurricane Window Installer for Commercial</h3>
+        <h3>How to Hire a Hurricane Window Installer for Commercial Florida Projects</h3>
         <p>Hiring a hurricane window installer or impact window company for commercial Florida work? What to look for, cost, licensing, references, and common red…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/impact-rated-windows-commercial-specs-florida.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Impact Rated Windows: Commercial Specification Guide for</h3>
+        <h3>Impact Rated Windows: Commercial Specification Guide for Florida</h3>
         <p>Impact rated windows spec guide for Florida commercial buildings. DP ratings, missile test levels, FBC approval, NOA, and how to spec correctly on…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/impact-vs-hurricane-windows-difference-commercial.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Impact Windows vs Hurricane Windows: Are They the Same</h3>
+        <h3>Impact Windows vs Hurricane Windows: Are They the Same Thing?</h3>
         <p>Impact windows vs hurricane windows - are they different? Commercial guide explaining the terminology, ratings, and what Florida businesses actually need.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/noise-reducing-glass-florida-businesses.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Noise-Reducing Glass for Florida Businesses: What Actually</h3>
+        <h3>Noise-Reducing Glass for Florida Businesses: What Actually Works</h3>
         <p>Noise-reducing laminated IGU glass can drop interior decibels 10-15 dB for restaurants, hotels, and offices facing Florida traffic or aircraft.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1660,7 +1695,7 @@
       </a>
       <a href="/blog/prepare-building-commercial-glass-installation.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How to Prepare Your Building for Commercial Glass</h3>
+        <h3>How to Prepare Your Building for Commercial Glass Installation</h3>
         <p>Before the glazing crew arrives: openings, staging, utility access, tenant notice, and protection prep that make a commercial window install go smoothly.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1672,7 +1707,7 @@
       </a>
       <a href="/blog/questions-to-ask-before-hiring-commercial-glazing-contractor.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>10 Questions to Ask Before Hiring a Commercial Glazing</h3>
+        <h3>10 Questions to Ask Before Hiring a Commercial Glazing Contractor</h3>
         <p>The essential questions commercial GCs and owners should ask before awarding a Division 08 scope. License, insurance, manufacturers, references, schedule.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1684,7 +1719,7 @@
       </a>
       <a href="/blog/reduce-glare-commercial-glass-solutions.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>How to Reduce Glare in Commercial Spaces with Glass</h3>
+        <h3>How to Reduce Glare in Commercial Spaces with Glass Solutions</h3>
         <p>Screen glare, interior reflection, and parking-lot glare on commercial buildings - Low-E coatings, tints, and frit patterns that actually work.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1726,7 +1761,7 @@
       </a>
       <a href="/blog/what-are-impact-windows-commercial-guide.html" class="blog-card" data-cat="capabilities" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>What Are Impact Windows? A Complete Commercial Guide for</h3>
+        <h3>What Are Impact Windows? A Complete Commercial Guide for Florida</h3>
         <p>What are impact windows and how do impact resistant windows work in Florida commercial buildings? Complete guide covering FBC code, HVHZ, ESWindows…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1744,25 +1779,25 @@
       </a>
       <a href="/blog/why-does-commercial-glass-fog-up-and-how-to-fix-it.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Why Does Commercial Glass Fog Up? (And How to Actually Fix</h3>
+        <h3>Why Does Commercial Glass Fog Up? (And How to Actually Fix It)</h3>
         <p>Commercial glass fogging between panes means IGU seal failure. Here&#x27;s how to diagnose it, when to repair vs replace, and what Florida&#x27;s humidity does to…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/why-hire-licensed-commercial-glazier-florida.html" class="blog-card" data-cat="operations" data-date="2026-04-22">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 22, 2026</span></div>
-        <h3>Why You Should Only Hire a Licensed Commercial Glazier in</h3>
+        <h3>Why You Should Only Hire a Licensed Commercial Glazier in Florida</h3>
         <p>Florida requires a CGC license for commercial glazing - here&#x27;s what GCs, owners, and architects need to verify before awarding a Division 08 scope.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/commercial-glazing-tampa-bay-what-gcs-need-to-know.html" class="blog-card" data-cat="industry" data-date="2026-04-21">
         <div class="blog-card-meta"><span class="blog-card-cat">Industry</span><span class="blog-card-date">Apr 21, 2026</span></div>
-        <h3>Commercial Glazing in Tampa Bay - What GCs Need to Know in</h3>
+        <h3>Commercial Glazing in Tampa Bay What GCs Need to Know in 2026</h3>
         <p>Tampa Bay&#x27;s commercial construction market is booming. Here&#x27;s what general contractors need to know about sourcing Division 08 glazing in Hillsborough…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/how-to-choose-commercial-glazing-contractor-west-palm-beach.html" class="blog-card" data-cat="operations" data-date="2026-04-21">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 21, 2026</span></div>
-        <h3>How to Choose a Commercial Glazing Contractor in West Palm</h3>
+        <h3>How to Choose a Commercial Glazing Contractor in West Palm Beach</h3>
         <p>Hiring a commercial glazing subcontractor in Palm Beach County? Here&#x27;s what GCs and developers need to verify before awarding a Division 08 scope.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1804,7 +1839,7 @@
       </a>
       <a href="/blog/commercial-glazing-miami-florida.html" class="blog-card" data-cat="operations" data-date="2026-04-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 15, 2026</span></div>
-        <h3>Commercial Glazing Contractors in Miami, FL: What GCs Need</h3>
+        <h3>Commercial Glazing in Miami, FL</h3>
         <p>A GC&#x27;s guide to commercial glazing in Miami - HVHZ requirements, NOA documentation, finding a qualified sub, and what makes Miami the hardest glazing…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1840,7 +1875,7 @@
       </a>
       <a href="/blog/impact-glass-vs-laminated-glass-commercial.html" class="blog-card" data-cat="operations" data-date="2026-04-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 15, 2026</span></div>
-        <h3>Impact Glass vs. Laminated Glass: What Florida GCs Need to</h3>
+        <h3>Impact Glass vs. Laminated Glass</h3>
         <p>The real difference between impact glass and laminated glass for commercial projects in Florida - code requirements, performance specs, and when each is…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1852,7 +1887,7 @@
       </a>
       <a href="/blog/storefronts-vs-windows-commercial-buildings.html" class="blog-card" data-cat="operations" data-date="2026-04-15">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 15, 2026</span></div>
-        <h3>Storefront Systems vs. Windows: What&#x27;s the Difference in</h3>
+        <h3>Storefront Systems vs. Windows</h3>
         <p>GC&#x27;s guide: what&#x27;s the difference between a commercial storefront system and commercial windows - and why it matters for your glazing scope and budget.</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1942,13 +1977,13 @@
       </a>
       <a href="/blog/florida-commercial-glazing-hurricane-code.html" class="blog-card" data-cat="capabilities" data-date="2026-04-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Capabilities</span><span class="blog-card-date">Apr 10, 2026</span></div>
-        <h3>Florida Commercial Glazing &amp; Hurricane Code: What</h3>
+        <h3>Florida Commercial Glazing &amp; Hurricane Code</h3>
         <p>Florida Building Code impact requirements for commercial glazing - HVHZ vs standard zones, NOA requirements, product approvals, Large Missile Impact…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
       <a href="/blog/how-to-choose-glazing-subcontractor.html" class="blog-card" data-cat="operations" data-date="2026-04-10">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 10, 2026</span></div>
-        <h3>How to Choose a Glazing Subcontractor | What GCs Need to</h3>
+        <h3>How to Choose a Glazing Subcontractor</h3>
         <p>A practical guide for general contractors on how to choose a glazing subcontractor - what to look for, what to avoid, and why the GC-glazing sub…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -1984,7 +2019,7 @@
       </a>
       <a href="/blog/impact-windows-vs-hurricane-shutters.html" class="blog-card" data-cat="operations" data-date="2026-04-08">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 8, 2026</span></div>
-        <h3>Impact Windows vs Hurricane Shutters | Which is Right for</h3>
+        <h3>Impact Windows vs. Hurricane Shutters</h3>
         <p>Impact windows vs hurricane shutters for commercial construction - code requirements, cost tradeoffs, and why most Florida GCs are specifying impact glass…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -2008,7 +2043,7 @@
       </a>
       <a href="/blog/window-wall-multifamily-guide.html" class="blog-card" data-cat="operations" data-date="2026-04-08">
         <div class="blog-card-meta"><span class="blog-card-cat">Operations</span><span class="blog-card-date">Apr 8, 2026</span></div>
-        <h3>Window Wall for Multifamily Construction: A GC&#x27;s Complete</h3>
+        <h3>Window Wall for Multifamily Construction</h3>
         <p>Everything general contractors need to know about window wall systems for multifamily construction - system selection, coordination, tolerances, and HVHZ…</p>
         <div class="blog-card-footer"><span class="blog-read">Read article</span><span class="blog-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
       </a>
@@ -2388,21 +2423,57 @@
   var filterBar = document.getElementById('blogFilter');
   var pagEl = document.getElementById('blogPagination');
   var countEl = document.getElementById('blogCount');
+  var emptyEl = document.getElementById('blogEmpty');
+  var emptyClear = document.getElementById('blogEmptyClear');
+  var railsWrap = document.querySelector('.blog-rails');
+  var rails = Array.prototype.slice.call(document.querySelectorAll('.blog-rail'));
   var current = 'all';
   var page = 1;
   var query = '';
   var searchEl = document.getElementById('blogSearch');
+  var debounceTimer = null;
+
+  function cardHay(card){
+    return ((card.textContent || '') + ' ' + (card.getAttribute('href') || '') + ' ' + (card.getAttribute('data-search') || '')).toLowerCase();
+  }
 
   function matches(card){
     var catOk = current === 'all' || card.getAttribute('data-cat') === current;
     if (!catOk) return false;
     if (!query) return true;
-    var hay = ((card.textContent || '') + ' ' + (card.getAttribute('href') || '') + ' ' + (card.getAttribute('data-search') || '')).toLowerCase();
-    return hay.indexOf(query) !== -1;
+    return cardHay(card).indexOf(query) !== -1;
+  }
+
+  function filterRails(){
+    var anyRail = false;
+    rails.forEach(function(rail){
+      var cards = Array.prototype.slice.call(rail.querySelectorAll('.blog-rail-card'));
+      var shown = 0;
+      cards.forEach(function(card){
+        var li = card.closest('li') || card;
+        var ok = !query || cardHay(card).indexOf(query) !== -1;
+        li.hidden = !ok;
+        if (ok) shown++;
+      });
+      var hide = query && shown === 0;
+      rail.classList.toggle('is-hidden', hide);
+      if (!hide) anyRail = true;
+    });
+    if (railsWrap) railsWrap.classList.toggle('is-hidden', query && !anyRail);
   }
 
   function render(opts){
     var filtered = allCards.filter(matches);
+    filterRails();
+    var empty = filtered.length === 0;
+    if (emptyEl) emptyEl.classList.toggle('is-visible', empty);
+    if (grid) grid.style.display = empty ? 'none' : '';
+    if (empty) {
+      allCards.forEach(function(c){ c.classList.add('is-hidden'); });
+      countEl.textContent = query ? '0 matches' : '0 articles';
+      pagEl.innerHTML = '';
+      return;
+    }
     var pages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
     if (page > pages) page = pages;
     var start = (page - 1) * PER_PAGE;
@@ -2410,20 +2481,30 @@
     allCards.forEach(function(c){ c.classList.add('is-hidden'); });
     filtered.slice(start, end).forEach(function(c){ c.classList.remove('is-hidden'); });
     var articleN = filtered.filter(function(c){ return c.getAttribute('data-cat') !== 'tools'; }).length;
-    var label = current === 'tools'
-      ? (filtered.length + ' tool' + (filtered.length===1?'':'s'))
-      : (articleN + ' article' + (articleN===1?'':'s') + (current==='all' ? '' : ' in ' + current.replace('-',' ')));
+    var label;
+    if (query) {
+      label = filtered.length + ' match' + (filtered.length===1?'':'es');
+    } else if (current === 'tools') {
+      label = filtered.length + ' tool' + (filtered.length===1?'':'s');
+    } else {
+      label = articleN + ' article' + (articleN===1?'':'s') + (current==='all' ? '' : ' in ' + current.replace('-',' '));
+    }
     countEl.textContent = label + ' · page ' + page + ' of ' + pages;
     renderPagination(pages);
     if (!opts || opts.scroll !== false) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var archive = document.getElementById('blog-archive-h');
+      if (opts && opts.scrollArchive && archive) {
+        archive.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (!opts || opts.scroll !== false) {
+        /* Keep first paint and search updates in place. Pagination jumps to archive. */
+      }
     }
   }
 
   function renderPagination(pages){
     pagEl.innerHTML = '';
     if (pages <= 1) return;
-    var prev = btn('Prev', function(){ if(page>1){page--;render();} });
+    var prev = btn('Prev', function(){ if(page>1){page--;render({ scrollArchive: true });} });
     prev.disabled = page === 1; pagEl.appendChild(prev);
     var list = [];
     for (var i=1;i<=pages;i++){
@@ -2432,15 +2513,27 @@
     }
     list.forEach(function(n){
       if (n==='…'){ var s=document.createElement('span'); s.textContent='…'; s.style.color='rgba(255,255,255,.4)'; s.style.padding='0 4px'; pagEl.appendChild(s); return; }
-      var b = btn(String(n), function(){ page=n; render(); });
+      var b = btn(String(n), function(){ page=n; render({ scrollArchive: true }); });
       if (n===page) b.classList.add('active');
       pagEl.appendChild(b);
     });
-    var next = btn('Next', function(){ if(page<pages){page++;render();} });
+    var next = btn('Next', function(){ if(page<pages){page++;render({ scrollArchive: true });} });
     next.disabled = page === pages; pagEl.appendChild(next);
   }
 
   function btn(label, fn){ var b=document.createElement('button'); b.className='page-btn'; b.textContent=label; b.addEventListener('click',fn); return b; }
+
+  function applyQuery(nextQuery){
+    query = nextQuery;
+    page = 1;
+    render({ scroll: false });
+  }
+
+  function clearSearch(){
+    if (searchEl) searchEl.value = '';
+    applyQuery('');
+    if (searchEl) searchEl.focus();
+  }
 
   filterBar.addEventListener('click', function(e){
     var t = e.target.closest('.chip-btn'); if(!t) return;
@@ -2448,18 +2541,26 @@
     t.classList.add('active');
     current = t.getAttribute('data-filter');
     page = 1;
-    render();
+    render({ scroll: false });
   });
 
   if (searchEl) {
     searchEl.addEventListener('input', function(){
-      query = (searchEl.value || '').trim().toLowerCase();
-      page = 1;
-      render({ scroll: false });
+      var value = (searchEl.value || '').trim().toLowerCase();
+      window.clearTimeout(debounceTimer);
+      debounceTimer = window.setTimeout(function(){ applyQuery(value); }, 200);
+    });
+    searchEl.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        window.clearTimeout(debounceTimer);
+        clearSearch();
+      }
     });
   }
+  if (emptyClear) emptyClear.addEventListener('click', clearSearch);
 
-  render();
+  render({ scroll: false });
 })();
 </script>
   <script src="/js/acg-chrome.js" defer></script>
