@@ -2353,9 +2353,9 @@
         <h2 class="be-fail-title" id="fail-title">The plans did not go through</h2>
         <p class="be-fail-body" id="fail-body">Your bid was not submitted. Do not assume Connor has the drawings. Email them directly or continue to plan intake.</p>
         <div class="be-fail-actions">
-          <a id="fail-mailto" href="mailto:connor@acglass.com" class="be-btn be-btn-primary">
+          <!--email_off--><a id="fail-mailto" href="mailto:connor@acglass.com" class="be-btn be-btn-primary">
             Email Connor: connor@acglass.com
-          </a>
+          </a><!--/email_off-->
           <button type="button" class="be-btn be-btn-primary" onclick="continueToSendPlans()">
             Continue to plan intake
           </button>
@@ -3222,7 +3222,7 @@
       '(Attach the drawings to this email.)'
     ].join('\n');
     return 'mailto:connor@acglass.com?subject=' +
-      encodeURIComponent('[ACG] Bid Engine drawings — ' + (state.projectName || 'project')) +
+      encodeURIComponent('[ACG] Bid Engine drawings - ' + (state.projectName || 'project')) +
       '&body=' + encodeURIComponent(body);
   }
 
