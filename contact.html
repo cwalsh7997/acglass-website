@@ -346,7 +346,8 @@
                   }
                   status.textContent = 'Sent. Taking you to the confirmation page…';
                   status.style.color = '#34D399';
-                  window.location.href = '/thanks.html';
+                  try { sessionStorage.setItem('acg_form_awaiting_confirm', 'contact'); } catch (err) {}
+                  window.location.href = '/thanks.html?submitted=1';
                 } else {
                   // Log failure separately so we can see formsubmit rejection volume.
                   if (typeof gtag !== 'undefined') {

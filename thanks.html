@@ -3,7 +3,7 @@
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
-  <meta name="description" content="Thanks. ACG received your message. We will reply from connor@acglass.com. For drawings, use the send-plans page.">
+  <meta name="description" content="ACG form confirmation. We reply from connor@acglass.com. For drawings, use the send-plans page.">
   <link rel="canonical" href="https://acglass.com/thanks.html">
   <meta charset="UTF-8">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/css/acg-chrome.css">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Thanks | American Commercial Glass">
-  <meta property="og:description" content="ACG received your message. We will reply from connor@acglass.com.">
+  <meta property="og:description" content="ACG form confirmation. We reply from connor@acglass.com.">
   <meta property="og:url" content="https://acglass.com/thanks.html">
   <meta property="og:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
   <meta property="og:site_name" content="American Commercial Glass">
@@ -56,9 +56,16 @@
 
   <section style="min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;" id="main-content">
     <div style="max-width:600px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:16px;">Received</div>
-      <h1 style="font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:20px;">Thanks. We have it.</h1>
-      <p style="font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;">If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. Still need to attach drawings? Use the send-plans page.</p>
+      <div id="thanks-unconfirmed">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:16px;">Form confirmation</div>
+        <h1 style="font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:20px;">No new submission confirmed</h1>
+        <p style="font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;">This page only confirms a form after the send service accepts it and redirects you here. If you opened it directly, we have not confirmed a new submission. To send drawings, use Send Plans or email <!--email_off-->connor@acglass.com<!--/email_off-->.</p>
+      </div>
+      <div id="thanks-confirmed" hidden>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:16px;">Received</div>
+        <h1 style="font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:20px;">Thanks. We have it.</h1>
+        <p style="font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;">If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. Still need to attach drawings? Use the send-plans page.</p>
+      </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:48px;">
         <a href="/send-plans.html" class="btn btn-primary" style="font-size:14px;">Send plans</a>
         <a href="/" class="btn" style="font-size:14px;border:1px solid rgba(255,255,255,0.2);color:white;">Home</a>
@@ -71,6 +78,31 @@
     </div>
   </section>
 
+  <script>
+    (function () {
+      var AWAITING_KEY = 'acg_form_awaiting_confirm';
+      var redirected = new URLSearchParams(location.search).get('submitted') === '1';
+      var source = '';
+      try { source = sessionStorage.getItem(AWAITING_KEY) || ''; } catch (e) {}
+      var confirmed = redirected && !!source;
+      var unconfirmed = document.getElementById('thanks-unconfirmed');
+      var received = document.getElementById('thanks-confirmed');
+      if (confirmed && unconfirmed && received) {
+        try { sessionStorage.removeItem(AWAITING_KEY); } catch (e) {}
+        unconfirmed.hidden = true;
+        received.hidden = false;
+        if (source === 'send-plans' && typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            form_id: 'send-plans-form',
+            source_page: '/send-plans.html',
+            currency: 'USD',
+            value: 750
+          });
+          gtag('event', 'bid_form_confirmed');
+        }
+      }
+    })();
+  </script>
   <script defer src="js/main.js"></script>
   <footer class="ft">
     <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
