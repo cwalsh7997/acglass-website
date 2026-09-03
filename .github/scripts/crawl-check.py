@@ -55,6 +55,24 @@ TARGET_MARKET_HUBS = [
 # Paths whose parent directory must serve an index (the /author/ 404 class).
 MASTER_SITEMAP = "sitemap.xml"
 SITEMAP_INDEX = "sitemap-index.xml"
+# Child urlsets stay on disk for the master==union check. They are not
+# advertised in robots.txt; sitemap-index.xml lists only the apex master.
+CHILD_URLSETS = [
+    "sitemap-pages.xml",
+    "sitemap-cities.xml",
+    "sitemap-services.xml",
+    "sitemap-blog.xml",
+    "sitemap-projects.xml",
+    "sitemap-images.xml",
+    "sitemap-llm.xml",
+]
+RETIRED_SITEMAP_URLS = (
+    "https://acglass.com/ocean-prime-ft-lauderdale.html",
+    "https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html",
+    "https://acglass.com/case-study-ocean-prime-fort-lauderdale.html",
+    "https://acglass.com/google9d45280643313cec.html",
+)
+APEX_SITEMAP = BASE + "/sitemap.xml"
 
 # Refs produced by JS string concatenation in inline <script>-adjacent markup.
 # They are not real URLs and can never resolve on disk.
@@ -462,12 +480,17 @@ def check_email_obfuscation(results: list[Result], scan: Scan) -> None:
     )
 
 
-def sitemap_children() -> list[str]:
+def sitemap_index_targets() -> list[str]:
     root = ET.fromstring(read(SITEMAP_INDEX))
     out = []
     for el in root.iter(SM_NS + "loc"):
         out.append(el.text.strip().replace(BASE + "/", ""))
     return out
+
+
+def advertised_sitemaps() -> list[str]:
+    text = read("robots.txt")
+    return re.findall(r"^\s*Sitemap:\s*(\S+)", text, re.IGNORECASE | re.MULTILINE)
 
 
 def locs(rel: str) -> list[str]:
@@ -480,14 +503,33 @@ def loc_to_path(loc: str) -> str:
 
 
 def check_sitemaps(results: list[Result]) -> None:
-    children = sitemap_children()
+    advertised = advertised_sitemaps()
     results.append(
-        Result("FAIL", "sitemap-index lists children", len(children) >= 7, f"{len(children)}")
+        Result(
+            "FAIL",
+            "robots.txt advertises only the apex sitemap",
+            advertised == [APEX_SITEMAP],
+            f"{advertised}",
+        )
+    )
+    index_targets = sitemap_index_targets()
+    results.append(
+        Result(
+            "FAIL",
+            "sitemap-index lists only the apex master",
+            index_targets == [MASTER_SITEMAP],
+            f"{index_targets}",
+        )
+    )
+
+    children = list(CHILD_URLSETS)
+    results.append(
+        Result("FAIL", "child urlsets remain on disk", len(children) >= 7, f"{len(children)}")
     )
 
     all_child_locs: set[str] = set()
     unparsed: list[str] = []
-    for c in children + [MASTER_SITEMAP]:
+    for c in children + [MASTER_SITEMAP, SITEMAP_INDEX]:
         if not exists(c):
             unparsed.append(f"{c} missing")
             continue
@@ -504,6 +546,20 @@ def check_sitemaps(results: list[Result]) -> None:
     for c in children:
         all_child_locs.update(locs(c))
     master = set(locs(MASTER_SITEMAP))
+    leftover_retired = []
+    for rel in [MASTER_SITEMAP, SITEMAP_INDEX, *CHILD_URLSETS]:
+        body = read(rel)
+        for url in RETIRED_SITEMAP_URLS:
+            if url in body:
+                leftover_retired.append(f"{url} in {rel}")
+    results.append(
+        Result(
+            "FAIL",
+            "retired 301s and verify stub absent from every sitemap",
+            not leftover_retired,
+            "; ".join(leftover_retired[:4]),
+        )
+    )
 
     # An image sitemap legitimately cross-lists pages, so compare on the
     # non-image children only.

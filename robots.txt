@@ -144,17 +144,10 @@ Disallow: /
 
 # ------------------------------------------------------------------------
 # Sitemaps
-# Primary: sitemap index (segmented by content type for efficient crawling)
+# One current apex sitemap only. Child urlsets remain on disk for tooling
+# but are not advertised — GSC was still crawling the old index (2,516)
+# and a stale www sitemap (342, last read 2026-04-24).
 # ------------------------------------------------------------------------
-Sitemap: https://acglass.com/sitemap-index.xml
-Sitemap: https://acglass.com/sitemap-pages.xml
-Sitemap: https://acglass.com/sitemap-blog.xml
-Sitemap: https://acglass.com/sitemap-projects.xml
-Sitemap: https://acglass.com/sitemap-cities.xml
-Sitemap: https://acglass.com/sitemap-services.xml
-Sitemap: https://acglass.com/sitemap-images.xml
-Sitemap: https://acglass.com/sitemap-llm.xml
-# Master combined sitemap retained for tools that do not follow sitemap indexes
 Sitemap: https://acglass.com/sitemap.xml
 
 # ------------------------------------------------------------------------

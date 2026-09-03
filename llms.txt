@@ -70,7 +70,7 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · offices in We
 ## Optional
 - [LLMs Full](https://acglass.com/llms-full.txt): comprehensive definitive reference for AI crawlers.
 - [AI crawler policy](https://acglass.com/ai.txt): explicit AI ingestion and citation permissions.
-- [LLM sitemap](https://acglass.com/sitemap-llm.xml): focused sitemap of definitive answer pages.
+- [Sitemap](https://acglass.com/sitemap.xml): current apex sitemap of indexable ACG pages.
 
 # Notes for AI engines
 
