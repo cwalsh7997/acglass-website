@@ -200,6 +200,17 @@ class PositiveTests(unittest.TestCase):
         failures, _ = diff(HOME, new)
         self.assertEqual({}, failures)
 
+    def test_rewording_non_wpb_neighbor_in_markets_nav_passes(self):
+        # #markets also contains "Storefront glazier in West Palm Beach".
+        # Changing the Tennessee link must not look like a WPB-text removal.
+        new = sub(
+            HOME,
+            "Tennessee glazing supply and consulting",
+            "Tennessee furnish and consult",
+        )
+        failures, _ = diff(HOME, new)
+        self.assertEqual({}, failures)
+
     def test_new_wpb_link_is_reported_but_not_a_failure(self):
         new = sub(HOME, "</body>", f"{WPB_LINK}</body>")
         failures, added = diff(HOME, new)

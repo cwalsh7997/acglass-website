@@ -55,6 +55,13 @@ LD_JSON_RE = re.compile(
 DROP_RE = re.compile(r"<(script|style)\b[^>]*>.*?</\1>", re.I | re.S)
 WPB_RE = re.compile(r"West\s+Palm\s+Beach", re.I)
 SEGMENT_RE = re.compile(r"[·|\n]|(?<=\.)\s+")
+# Flattening the whole homepage first made one WPB link inside #markets
+# freeze the entire markets nav. Split on block/link boundaries so a
+# Tennessee furnish/consult reword is not treated as a WPB deletion.
+VISIBLE_BLOCK_RE = re.compile(
+    r"</(?:p|div|h[1-6]|li|section|article|nav|header|footer|td|th|blockquote|a|br)\s*>",
+    re.I,
+)
 
 # The entity identity the map pack resolves against.
 SCHEMA_IDENTITY_TYPES = {"Organization", "LocalBusiness", "HomeAndConstructionBusiness", "WebSite"}
@@ -544,6 +551,18 @@ def _json_strings(data):
         yield data
 
 
+def _visible_blocks(html: str) -> list[str]:
+    """Visible text, one block/link at a time.
+
+    `_visible_text` collapses the page to a single string. That is too coarse
+    for the WPB freeze: a storefront-glazier-in-West-Palm-Beach link then
+    freezes every neighbor in #markets, including Tennessee geography.
+    """
+    body = DROP_RE.sub(" ", html)
+    return [text for chunk in VISIBLE_BLOCK_RE.split(body)
+            if (text := _text_of(chunk))]
+
+
 def _wpb_text(html: str) -> set[str]:
     """Every West Palm Beach mention, in visible copy and in JSON-LD prose alike.
 
@@ -552,7 +571,7 @@ def _wpb_text(html: str) -> set[str]:
     parsed strings rather than the raw block keeps this insensitive to JSON
     reformatting while leaving no hole to reword through.
     """
-    sources = [_visible_text(html)]
+    sources = _visible_blocks(html)
     for m in LD_JSON_RE.finditer(html):
         try:
             data = json.loads(m.group(1))

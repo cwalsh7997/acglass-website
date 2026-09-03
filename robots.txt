@@ -145,7 +145,7 @@ Disallow: /
 # ------------------------------------------------------------------------
 # Sitemaps
 # One current apex sitemap only. Child urlsets remain on disk for tooling
-# but are not advertised — GSC was still crawling the old index (2,516)
+# but are not advertised - GSC was still crawling the old index (2,516)
 # and a stale www sitemap (342, last read 2026-04-24).
 # ------------------------------------------------------------------------
 Sitemap: https://acglass.com/sitemap.xml
