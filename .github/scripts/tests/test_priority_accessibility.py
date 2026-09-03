@@ -27,8 +27,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "head": "7f9d07ce7ab230d9d2fc0471f49e88819227b255df70092bcb815e8aba702831",
         "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
         "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
-        "hrefs": "948a33bf910a1ea58f4e4ed7699206077881de60218d3b42b8f7f9a0706a69af",
-        "visible": "da9adf72f710b5f06796b7134ce138d3dc9011e3693afa16b891cc75bcf452f8",
+        # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
+        "hrefs": "98d0bbf6e368b3f8e301e67fc1da4ddcb672087727ddefad58498a82e3dcecab",
+        "visible": "f8ed5be4194044d3d045b0bf51cb9192fc5d147f90e24e9105dcda77b0ecd0c7",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -37,13 +38,15 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # "Installed on the ...", and "installed by an authorized Florida
         # installer" became "installed by a Florida commercial installer".
         # head/jsonld/scripts move because the edited JSON-LD block lives in
-        # <head>; hrefs is unchanged because no link or URL was touched.
+        # <head>. hrefs/visible moved again 2026-09-03 when the RFQ primary
+        # went to /send-plans.html.
         # Digests recomputed with this module's own _fingerprints() helper.
         "head": "b35b27924a0cd4e9ba6c4cbe29fad6fbad932770734290d0b8b8338a82625f07",
         "jsonld": "4afbd33f45d172e288866ca76b1c7378573aa821bcd033a5187ec2d0cf0352f6",
         "scripts": "99ef7cbb1dac5a40482698f99990ac2b56180e7a51b2c40102dd25060118b69e",
-        "hrefs": "c1050b4e8576163a4e2f42df3d9044fa652dba57cc3c77ec3f7dfbf2c3a7f537",
-        "visible": "0f7af31a2f54d4a7dce87574c61653a55a653bc8692e4bc553839ce531d0a1cd",
+        # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
+        "hrefs": "ef2fb6c07b6f693de3e51369c131d60ead08f494c4956c69e03e12dbed760050",
+        "visible": "be89e1bd9896473fd1f1de6d3e9b3ffda7f707843d7a7d5cb66c1d1be0fef930",
     },
     "privacy-policy.html": {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
