@@ -2,7 +2,7 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (wave-4 CTR titles on ranking RFQ pages; hub title unique vs homepage)
+Last updated: 2026-09-03 (wave-4 CTR; hub title left as live string; Website Agent owns sitemap/404 PR)
 Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
@@ -90,7 +90,7 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 ## Wave-4 CTR (2026-09-03)
 
 - GSC Web last 28 days, pulled 2026-09-03: 119 clicks / 13,237 impressions. Unbranded query-attributed clicks: 1. Inventory and old/new title table: `/seo/wave4-ctr.md`.
-- Titles and descriptions rewritten on the GSC page-1/2 RFQ URLs plus `/florida-commercial-glazing/`. Hub title stays in the `Commercial Glazing Contractor Florida` family and is now unique vs the frozen homepage (`| Bid in 48 Hrs`).
+- Titles and descriptions rewritten on the GSC page-1/2 RFQ URLs. Hub title left as live `Commercial Glazing Contractor Florida | ACG`. Hub meta description rewritten. Inbound links from those GSC pages stay.
 - `/west-palm-beach-commercial-glazing.html` freeze lifted for title/meta/hub-link only. Canonical and H1 unchanged. Homepage freeze stays.
-- Body links to the Florida hub added on those ranking pages. Complete-guide left self-canonical. No Tennessee or Nashville file edited. Offices remain West Palm Beach, Naples, and Tampa only.
+- Body links to the Florida hub added on those ranking pages. Complete-guide left self-canonical. No Tennessee or Nashville file edited. Homepage Nashville links left for Website Agent. Offices named here remain West Palm Beach, Naples, and Tampa only.
 - Homepage hash impressions (`#capability` `#discipline` `#prequal`) left alone; root canonical is already fragment-free. Live www/http 301s already exist; no extra redirect.
