@@ -365,9 +365,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   // ---------- STICKY MOBILE CTA BAR ----------
   // ============================================
-  // Only show on mobile (<=768px), hide on /send-plans.html + /contact.html
+  // Only show on mobile (<=768px), hide on intake and confirmation pages
   if (window.innerWidth <= 768 &&
-      !/send-plans\.html|contact\.html/.test(location.pathname)) {
+      !/send-plans\.html|contact\.html|thanks\.html|thank-you\.html/.test(location.pathname)) {
     const bar = document.createElement('div');
     bar.className = 'mobile-cta-bar';
     bar.innerHTML = `
