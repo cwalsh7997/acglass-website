@@ -28,7 +28,6 @@ Email sent 2026-09-02 from connor@acglass.com to info@euro-wall.com to distingui
 | HQ West Palm Beach | 700 S Rosemary Ave Ste 204, West Palm Beach, FL 33401 | 2026-09-03 |
 | Naples | 4850 Tamiami Trail N Ste 301, Naples, FL 34103 | 2026-09-03 |
 | Tampa | 3031 N Rocky Point Dr W Ste 600, Tampa, FL 33607 | 2026-09-03 |
-| Nashville | Q3 2026, not live coverage | 2026-09-03 (`facts.html`) |
 
 ## Manufacturer posture (do not upgrade these)
 

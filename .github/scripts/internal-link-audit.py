@@ -84,10 +84,6 @@ HELD_INDEXABILITY_EDGE_HASHES = {
         "/wbe-sbe-procurement.html",
     ): "ec11f1072b94998b39fcd47378aed5acb5ca874626221190d3856ef29ea6c497",
     (
-        "/scope-engine.html",
-        "/commercial-glazing-nashville-tn.html",
-    ): "56d53a3423a0f149726ca6defe5809c4256c2828902950d85c70fbce3d8a4bdc",
-    (
         "/blog/ocean-prime-ft-lauderdale-glazing.html",
         "/author-connor-walsh.html",
     ): "4851026cd8413cbe3492ad886acb4f030df4e1a341be229b1872c9e16bdab560",

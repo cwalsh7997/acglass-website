@@ -47,13 +47,6 @@
       "city": "Tampa",
       "state": "FL",
       "service_zone": "Tampa Bay + Central Florida - Hillsborough, Pinellas, Pasco, Polk, Manatee, Hernando counties"
-    },
-    {
-      "label": "Nashville (opening Q3 2026)",
-      "city": "Nashville",
-      "state": "TN",
-      "service_zone": "Middle Tennessee - Davidson, Williamson, Rutherford, Wilson, Sumner counties (Q3 2026 onward)",
-      "status": "opening_q3_2026"
     }
   ],
   "service_states": ["FL", "TN"],
@@ -82,8 +75,8 @@
   "track_record": {
     "commercial_projects_delivered": "350+",
     "square_feet_installed": "1M+",
-    "office_count": 4,
-    "office_count_note": "3 active in Florida; Nashville opens Q3 2026",
+    "office_count": 3,
+    "office_count_note": "West Palm Beach (HQ), Naples, and Tampa. ACG holds no Tennessee office.",
     "osha_recordables_since_founding": 0,
     "source": "Connor Walsh audit brief 2026-06-22 (confirmed as canonical figures to corroborate across sources)"
   },

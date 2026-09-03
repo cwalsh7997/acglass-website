@@ -93,7 +93,7 @@
       "source": "/nashville/",
       "current_destination": null,
       "reason": "not-required",
-      "detail": "Consolidated in-repo by rel=canonical to /commercial-glazing-nashville-tn.html plus sitemap removal. A 301 would also work but is strictly worse here: acg_local_seo_maps_strategy_research_20260728.md Gate 5 wants /nashville/ available as a Google Business Profile landing page once the Q3 2026 office is real. A canonical keeps that option; a 301 destroys it."
+      "detail": "Consolidated in-repo by rel=canonical to /commercial-glazing-nashville-tn.html plus sitemap removal. ACG holds no Nashville office; do not treat this URL as a future-office landing page."
     },
     {
       "source": "/tennessee/",

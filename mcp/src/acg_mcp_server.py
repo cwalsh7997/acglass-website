@@ -207,8 +207,9 @@ def find_acg_service_area(city: str, state: str = "FL") -> dict[str, Any]:
             "city": city,
             "state": state_code,
             "reason": (
-                "ACG is licensed in Florida (CGC1531993) with a Nashville, "
-                "TN office opening Q3 2026. Other states are not currently served."
+                "ACG is licensed in Florida (CGC1531993) with offices in "
+                "West Palm Beach, Naples, and Tampa. ACG holds no Tennessee "
+                "office. Other states are not currently served as field markets."
             ),
         }
     # Slugify city for URL lookup

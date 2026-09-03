@@ -131,8 +131,8 @@ HELD_PLACE_GEO_HASHES = {
 }
 
 # Offices with a street address, staff on site, and signage (facts.html,
-# locations.html). Nashville is announced for Q3 2026 with no street address —
-# a LocalBusiness node there would assert premises that do not exist.
+# locations.html). ACG holds no Tennessee office — a LocalBusiness node there
+# would assert premises that do not exist.
 VERIFIED_OFFICES = {
     "https://acglass.com/#localbusiness-west-palm-beach": "West Palm Beach",
     "https://acglass.com/#localbusiness-naples": "Naples",
