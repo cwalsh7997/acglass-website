@@ -2,7 +2,7 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (prune-wave2 inventory added; not applied)
+Last updated: 2026-09-03 (products index + Euro-Wall specs; ESWindows product page skipped)
 Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
@@ -11,8 +11,8 @@ Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md
 - Homepage title (live 2026-09-03): `Commercial Glazing Contractor Florida | ACG`. Homepage is the federal lead. Do not rewrite it in the week-1 PR beyond one internal link.
 - Target Florida hub: `/florida-commercial-glazing/` (was live 404). Long-form sibling already exists: `/florida-commercial-glazing-complete-guide/`.
 - Real services URL is `/services.html`. `/services/` is a noindex JS + meta-refresh stub.
-- Real author URL is `/authors/connor-walsh.html`. `/author-connor-walsh.html` is a noindex stub. `/about/connor-walsh/` is a live 404.
-- `/products/` is a live 404. Do not create it until manufacturer spec sourcing is ready.
+- Real author URL is `/authors/connor-walsh.html`. `/author-connor-walsh.html` is a noindex stub. `/about/connor-walsh/` is now the same stub pattern (noindex + canonical + meta-refresh + JS). Not a second bio. Not an HTTP 301. `/about/index.html` is a matching parent stub to `/about.html` so creating the `about/` directory does not leave `/about/` as a 404 parent.
+- `/products/` is an installer index. `/products/euro-wall/` is sourced. `/products/eswindows/` was not created (manufacturer site blocked).
 - `/projects/` and `/resources/` exist and are self-canonical.
 - Office metros `/west-palm-beach/`, `/naples/`, `/tampa/` were live-canonicalized off to `/storefront-glazier-{city}-florida/` clones. Do not bulk-fix the rest of the storefront-glazier set in a week-1 PR.
 
@@ -51,3 +51,12 @@ Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md
 - Add `/florida-commercial-glazing/` as the state hub. Link only to URLs that exist.
 - Do not bulk-generate city or service pages. Do not noindex the blog set.
 - Wave-2 inventory (counts only): `seo/prune-wave2.md`. 77 city storefront + 77 railing + 77 impact + 101 storefront-glazier URLs. Recommendation is noindex+sitemap drop, not 301 onto the 3 offices + 6 satellites. Not applied.
+
+## Products pass (2026-09-03)
+
+- `/products/` created as an installer index. Links Euro-Wall to the new sourced page. ESWindows stays on `/eswindows-installer-florida.html`.
+- `/products/euro-wall/` sourced from euro-wall.com HTML (home, products, commercial-products, Vista Multi Slide, Vista Fold, Vista Pivot, Vista DS) plus re-fetched ACG pages (`euro-wall.html`, `euro-wall-installer-florida.html`, `facts.html`). Numeric DPs, NOA numbers, FL PA numbers, and lead times omitted. SGD2020 / Vistafold named only as ACG-page labels, not factory SKUs.
+- `/products/eswindows/` skipped. `https://eswindows.com/` returned a Cloudflare "Performing security verification" challenge on 2026-09-03. Product URLs timed out. Do not copy the ACG installer or `/noa/eswindows.html` tables onto a new URL until the manufacturer HTML can be fetched. Existing ACG ESWindows NOA/DP figures also conflict across those two on-site pages.
+- `/about/connor-walsh/` noindex stub added. `/about/index.html` parent stub added so the new `about/` directory does not 404 `/about/`. Neither stub is in sitemaps. Neither is a second bio. Do not call either an HTTP 301.
+- 77×3 city folders were not noindexed in this pass.
+- One-line link from `/services.html` technical references to `/products/`. No services rewrite.
