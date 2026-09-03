@@ -1320,6 +1320,44 @@
       animation: fadeInUp 0.5s var(--ease-out) forwards;
     }
 
+    #send-fail-panel {
+      display: none;
+      opacity: 0;
+    }
+
+    #send-fail-panel.active {
+      display: block;
+      animation: fadeInUp 0.5s var(--ease-out) forwards;
+    }
+
+    .be-fail-card {
+      background: var(--be-surface);
+      border: 1px solid rgba(226,27,44,0.35);
+      border-radius: 14px;
+      padding: clamp(22px, 3vw, 32px);
+      margin-bottom: 24px;
+    }
+
+    .be-fail-title {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 10px;
+    }
+
+    .be-fail-body {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--be-text-muted);
+      margin: 0 0 20px;
+    }
+
+    .be-fail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .be-results-header {
       text-align: center;
       margin-bottom: clamp(28px, 4vw, 44px);
@@ -1852,7 +1890,7 @@
         </div>
         <div class="be-analyzing-step" id="astep-6">
           <div class="be-step-indicator"></div>
-          Compiling preliminary scope
+          Delivering to ACG
         </div>
       </div>
     </div>
@@ -2084,7 +2122,7 @@
               </svg>
             </div>
             <div class="be-upload-title">Drop plans here or click to browse</div>
-            <p class="be-upload-subtitle">Multiple files accepted - PDFs, images, CAD exports</p>
+            <p class="be-upload-subtitle">PDF, JPG, PNG, DWG, DXF &middot; under 10 MB total so the files can be emailed</p>
             <div class="be-upload-formats">
               <span class="be-format-pill">PDF</span>
               <span class="be-format-pill">JPG</span>
@@ -2100,8 +2138,10 @@
 
       <div class="be-file-list" id="file-list"></div>
 
+      <div class="be-validation" id="upload-error" style="margin-top:0;"></div>
+
       <div class="be-upload-note">
-        <strong>What to upload:</strong> Architectural drawings, window schedules, elevation drawings, floor plans, Division 08 specs, or any glazing-related documents. If you don't have plans yet, skip this step and Connor will follow up.
+        <strong>What to upload:</strong> Architectural drawings, window schedules, elevation drawings, floor plans, Division 08 specs, or any glazing-related documents. Files must be under 10 MB total to send from this page. Larger sets: email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> or continue to <a href="/send-plans.html">plan intake</a> with a Procore / BuildingConnected link. If you don't have plans yet, skip this step and Connor will follow up.
       </div>
 
       <div class="be-btn-row" style="margin-top: 24px;">
@@ -2258,8 +2298,15 @@
         By submitting, you'll receive a <strong>preliminary scope range instantly</strong> and a <strong>detailed Division 08 bid from ACG within 48 hours</strong>. Your plans will be reviewed personally by Connor Walsh. This is not an automated system - every bid is human-reviewed.
       </div>
 
-      <!-- Hidden form - results emailed via send-plans.html flow once Formspree ID is provisioned -->
-      <form id="bid-form" action="send-plans.html" method="GET" style="display:none;">
+      <!-- Native multipart POST to formsubmit.co when plans are attached (same proven
+           path as /send-plans.html). AJAX is used only when there are no files. -->
+      <form id="bid-form"
+            action="https://formsubmit.co/connor@acglass.com"
+            method="POST"
+            enctype="multipart/form-data"
+            style="display:none;"
+            aria-hidden="true">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
         <input type="hidden" name="project_name" id="form-project-name">
         <input type="hidden" name="project_address" id="form-project-address">
         <input type="hidden" name="building_type" id="form-building-type">
@@ -2276,9 +2323,15 @@
         <input type="hidden" name="contact_role" id="form-contact-role">
         <input type="hidden" name="scope_range_low" id="form-scope-low">
         <input type="hidden" name="scope_range_high" id="form-scope-high">
-        <input type="hidden" name="_subject" value="[ACG LEAD] Bid request - plans attached">
-        <input type="hidden" name="_template" value="basic">
+        <input type="hidden" name="attached_filenames" id="form-attached-filenames">
+        <input type="hidden" name="attached_file_count" id="form-attached-count">
+        <input type="hidden" name="submission_source" value="bid-engine">
+        <input type="hidden" name="_subject" id="form-subject" value="[ACG LEAD] Bid Engine">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_replyto" id="form-replyto">
+        <input type="hidden" name="_next" id="form-next" value="https://acglass.com/bid.html?submitted=1">
+        <input type="file" name="files[]" id="form-files" multiple>
       </form>
 
       <div class="be-btn-row">
@@ -2290,6 +2343,27 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           Generate My Scope
         </button>
+      </div>
+    </div>
+
+    <!-- ===== SEND FAILURE (never shown as success) ===== -->
+    <div id="send-fail-panel">
+      <div class="be-fail-card">
+        <div class="be-results-badge" style="margin-bottom:16px;">Plans not delivered</div>
+        <h2 class="be-fail-title" id="fail-title">The plans did not go through</h2>
+        <p class="be-fail-body" id="fail-body">Your bid was not submitted. Do not assume Connor has the drawings. Email them directly or continue to plan intake.</p>
+        <div class="be-fail-actions">
+          <!--email_off--><a id="fail-mailto" href="mailto:connor@acglass.com" class="be-btn be-btn-primary">
+            Email Connor: connor@acglass.com
+          </a><!--/email_off-->
+          <button type="button" class="be-btn be-btn-primary" onclick="continueToSendPlans()">
+            Continue to plan intake
+          </button>
+          <a href="tel:+17724867711" class="be-btn be-btn-ghost">Call (772) 486-7711</a>
+          <button type="button" class="be-btn be-btn-ghost" onclick="returnToReview()">
+            Back to review
+          </button>
+        </div>
       </div>
     </div>
 
@@ -2346,7 +2420,7 @@
         <div class="be-next-items">
           <div class="be-next-item">
             <div class="be-next-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            Your project details have been submitted to ACG
+            <span id="next-plans-status">Your project details have been submitted to ACG</span>
           </div>
           <div class="be-next-item">
             <div class="be-next-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -2490,8 +2564,19 @@
     // Computed
     computedGlassSF: null,
     scopeLow: null,
-    scopeHigh: null
+    scopeHigh: null,
+    deliveredFileNames: []
   };
+
+  // FormSubmit's documented attachment cap is ~10 MB for the whole POST.
+  // Stay under that so a GC never sees success after a silently dropped set.
+  const FORMSUBMIT_MAX_BYTES = 9 * 1024 * 1024;
+  const ALLOWED_EXTS = { pdf: 1, jpg: 1, jpeg: 1, png: 1, dwg: 1, dxf: 1 };
+  const BID_STATE_KEY = 'acg_bid_engine_state';
+  const BID_CONFIRM_KEY = 'acg_bid_engine_awaiting_confirm';
+  const BID_HANDOFF_DB = 'acg-bid-handoff';
+  const BID_HANDOFF_STORE = 'pending';
+  const BID_HANDOFF_KEY = 'bid-engine';
 
   // ---- PRICING DATA ----
   // Glass-area ratios per building type (used only to estimate glass SF - no pricing)
@@ -2713,13 +2798,46 @@
     handleFiles(e.dataTransfer.files);
   });
 
+  function fileExt(name) {
+    const m = String(name || '').toLowerCase().match(/\.([a-z0-9]+)$/);
+    return m ? m[1] : '';
+  }
+
+  function totalUploadBytes(files) {
+    return (files || state.uploadedFiles).reduce((sum, f) => sum + (f.size || 0), 0);
+  }
+
+  function showUploadError(msg) {
+    const err = document.getElementById('upload-error');
+    if (!err) return;
+    if (msg) {
+      err.textContent = msg;
+      err.classList.add('show');
+    } else {
+      err.textContent = '';
+      err.classList.remove('show');
+    }
+  }
+
   function handleFiles(files) {
+    const messages = [];
     Array.from(files).forEach(file => {
-      // Deduplicate by name
       if (state.uploadedFiles.find(f => f.name === file.name)) return;
+      const ext = fileExt(file.name);
+      if (!ALLOWED_EXTS[ext]) {
+        messages.push(file.name + ' is not an accepted type (PDF, JPG, PNG, DWG, DXF).');
+        return;
+      }
+      if (totalUploadBytes() + file.size > FORMSUBMIT_MAX_BYTES) {
+        messages.push(file.name + ' would exceed the 10 MB send limit. Email the set to connor@acglass.com or continue to plan intake with a share link.');
+        return;
+      }
       state.uploadedFiles.push(file);
     });
+    showUploadError(messages.join(' '));
     renderFileList();
+    const picker = document.getElementById('file-input');
+    if (picker) picker.value = '';
   }
 
   function renderFileList() {
@@ -2757,6 +2875,7 @@
 
   function removeFile(idx) {
     state.uploadedFiles.splice(idx, 1);
+    showUploadError('');
     renderFileList();
   }
 
@@ -2846,8 +2965,7 @@
   // SUBMIT + ANALYZE
   // ====================
 
-  function submitBid() {
-    // Populate hidden form fields
+  function populateHiddenForm() {
     document.getElementById('form-project-name').value = state.projectName;
     document.getElementById('form-project-address').value = state.projectAddress;
     document.getElementById('form-building-type').value = state.buildingTypeLabel || '';
@@ -2863,16 +2981,52 @@
     document.getElementById('form-contact-phone').value = state.contactPhone;
     document.getElementById('form-contact-role').value = state.contactRole;
     document.getElementById('form-replyto').value = state.contactEmail;
+    document.getElementById('form-subject').value = '[ACG LEAD] Bid Engine - ' + (state.projectName || 'Scope request');
+    document.getElementById('form-next').value = location.origin + '/bid.html?submitted=1';
+    const names = state.uploadedFiles.map(f => f.name + ' (' + formatFileSize(f.size) + ')');
+    document.getElementById('form-attached-filenames').value = names.join(', ') || 'none';
+    document.getElementById('form-attached-count').value = String(state.uploadedFiles.length);
+  }
 
-    // Calculate scope now
+  function attachFilesToForm() {
+    const input = document.getElementById('form-files');
+    if (!input) return false;
+    if (!state.uploadedFiles.length) {
+      input.disabled = true;
+      input.value = '';
+      return true;
+    }
+    input.disabled = false;
+    const dt = new DataTransfer();
+    state.uploadedFiles.forEach(f => dt.items.add(f));
+    input.files = dt.files;
+    return input.files.length === state.uploadedFiles.length;
+  }
+
+  function validateReadyToSend() {
+    if (!state.uploadedFiles.length) return { ok: true };
+    const badType = state.uploadedFiles.filter(f => !ALLOWED_EXTS[fileExt(f.name)]);
+    if (badType.length) return { ok: false, kind: 'type' };
+    if (totalUploadBytes() > FORMSUBMIT_MAX_BYTES) return { ok: false, kind: 'size' };
+    return { ok: true };
+  }
+
+  function submitBid() {
+    collectStep(5);
+    populateHiddenForm();
     calculateScope();
 
     // Pricing is not estimated client-side; submit glass area only.
     document.getElementById('form-scope-low').value = '';
     document.getElementById('form-scope-high').value = (state.computedGlassSF || '') + ' SF glass (est.)';
 
-    // Show analyzing overlay
-    runAnalysis();
+    const check = validateReadyToSend();
+    if (!check.ok) {
+      showSendFailure(check.kind);
+      return;
+    }
+
+    runAnalysisAndSend();
   }
 
   // ====================
@@ -2897,59 +3051,257 @@
   // ANALYZING ANIMATION
   // ====================
 
-  function runAnalysis() {
+  function persistBidStateForReturn() {
+    const copy = {
+      currentStep: 6,
+      projectName: state.projectName,
+      projectAddress: state.projectAddress,
+      buildingType: state.buildingType,
+      buildingTypeLabel: state.buildingTypeLabel,
+      buildingSF: state.buildingSF,
+      glassSF: state.glassSF,
+      floors: state.floors,
+      constructionType: state.constructionType,
+      requirements: state.requirements,
+      specialNotes: state.specialNotes,
+      contactName: state.contactName,
+      contactCompany: state.contactCompany,
+      contactEmail: state.contactEmail,
+      contactPhone: state.contactPhone,
+      contactRole: state.contactRole,
+      computedGlassSF: state.computedGlassSF,
+      deliveredFileNames: state.uploadedFiles.map(f => ({ name: f.name, size: f.size }))
+    };
+    try {
+      sessionStorage.setItem(BID_STATE_KEY, JSON.stringify(copy));
+      sessionStorage.setItem(BID_CONFIRM_KEY, '1');
+    } catch (e) {}
+  }
+
+  function sendBidAjax() {
+    const form = document.getElementById('bid-form');
+    const fileInput = document.getElementById('form-files');
+    if (fileInput) fileInput.disabled = true;
+    const formData = new FormData(form);
+    if (fileInput) fileInput.disabled = false;
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 20000);
+    return fetch('https://formsubmit.co/ajax/connor@acglass.com', {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+      signal: controller.signal
+    }).then(r => r.json().then(data => ({ r, data }), () => ({ r, data: {} })))
+      .then(({ r, data }) => {
+        clearTimeout(timer);
+        if (r.ok && String(data.success) === 'true') return { ok: true };
+        return { ok: false, kind: 'rejected' };
+      })
+      .catch(() => {
+        clearTimeout(timer);
+        return { ok: false, kind: 'network' };
+      });
+  }
+
+  function runAnalysisAndSend() {
     const overlay = document.getElementById('analyzing-overlay');
     const bar = document.getElementById('analyzing-bar');
+    const title = overlay.querySelector('.be-analyzing-title');
+    const sub = overlay.querySelector('.be-analyzing-sub');
     overlay.classList.add('active');
+    if (title) title.textContent = state.uploadedFiles.length ? 'Sending your plans' : 'Sending your request';
+    if (sub) sub.textContent = 'Delivering to Connor at connor@acglass.com…';
+    bar.style.width = '0%';
+
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) submitBtn.disabled = true;
 
     const steps = document.querySelectorAll('.be-analyzing-step');
+    steps.forEach(s => s.classList.remove('active', 'done'));
+    if (steps[0]) steps[0].classList.add('active');
+
+    const hasFiles = state.uploadedFiles.length > 0;
+    let sendPromise;
+    if (hasFiles) {
+      if (!attachFilesToForm()) {
+        overlay.classList.remove('active');
+        if (submitBtn) submitBtn.disabled = false;
+        showSendFailure('rejected');
+        return;
+      }
+      persistBidStateForReturn();
+      sendPromise = Promise.resolve({ mode: 'native' });
+    } else {
+      sendPromise = sendBidAjax();
+    }
+
     let progress = 0;
     let stepIdx = 0;
-
-    // Activate first step immediately
-    steps[0].classList.add('active');
-
     const interval = setInterval(() => {
       progress += 2.5;
-      bar.style.width = Math.min(progress, 100) + '%';
-
-      // Mark steps as done at milestones
-      const milestone = Math.floor(progress / (100 / steps.length));
+      bar.style.width = Math.min(progress, 90) + '%';
+      const milestone = Math.floor(progress / (90 / steps.length));
       if (milestone > stepIdx && stepIdx < steps.length) {
         steps[stepIdx].classList.remove('active');
         steps[stepIdx].classList.add('done');
         stepIdx++;
-        if (stepIdx < steps.length) {
-          steps[stepIdx].classList.add('active');
-        }
+        if (stepIdx < steps.length) steps[stepIdx].classList.add('active');
       }
-
-      if (progress >= 100) {
+      if (progress >= 90) {
         clearInterval(interval);
-        // Finish all steps
-        steps.forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
-
-        setTimeout(() => {
-          overlay.classList.remove('active');
-          showResults();
-          // Submit form to Formspree (non-blocking - doesn't depend on success)
-          try {
-            const formData = new FormData(document.getElementById('bid-form'));
-            // Send form data to Connor via FormSubmit
-            formData.append('_subject', '[ACG LEAD] Bid Engine - ' + (state.projectName || 'Scope request'));
-            formData.append('_template', 'basic');
-            var submitterEmail = (state.contactEmail || state.email || '');
-            if (submitterEmail) { formData.append('_replyto', submitterEmail); }
-            formData.append('_captcha', 'false');
-            fetch('https://formsubmit.co/ajax/connor@acglass.com', {
-              method: 'POST',
-              body: formData,
-              headers: { Accept: 'application/json' }
-            }).catch(() => {});
-          } catch(e) {}
-        }, 500);
+        finishSend();
       }
-    }, 75); // ~3 seconds total
+    }, 75);
+
+    function finishSend() {
+      sendPromise.then(result => {
+        if (result && result.mode === 'native') {
+          bar.style.width = '100%';
+          steps.forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
+          document.getElementById('bid-form').submit();
+          return;
+        }
+        if (result && result.ok) {
+          bar.style.width = '100%';
+          steps.forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
+          overlay.classList.remove('active');
+          if (submitBtn) submitBtn.disabled = false;
+          showResults();
+          return;
+        }
+        overlay.classList.remove('active');
+        if (submitBtn) submitBtn.disabled = false;
+        showSendFailure((result && result.kind) || 'network');
+      });
+    }
+  }
+
+  function failCopy(kind) {
+    if (kind === 'size') {
+      return {
+        title: 'Those drawings are too large to send from this page',
+        body: 'The email path we use cannot accept more than about 10 MB total. Your bid was not submitted. Email the set to Connor or continue to plan intake and paste a Procore / BuildingConnected link.'
+      };
+    }
+    if (kind === 'type') {
+      return {
+        title: 'Those files cannot be sent from this page',
+        body: 'Bid Engine accepts PDF, JPG, PNG, DWG, and DXF. Your bid was not submitted. Email Connor the drawings or continue to plan intake (ZIP and Office files are accepted there).'
+      };
+    }
+    return {
+      title: 'The plans did not go through',
+      body: 'The send failed, so your bid was not submitted. Do not assume Connor has the drawings. Email them directly or continue to plan intake.'
+    };
+  }
+
+  function buildConnorMailto() {
+    const names = (state.uploadedFiles.length
+      ? state.uploadedFiles.map(f => f.name + ' (' + formatFileSize(f.size) + ')')
+      : (state.deliveredFileNames || []).map(f => f.name)).join(', ') || 'none attached in the browser';
+    const body = [
+      'Bid Engine submission that did not send automatically.',
+      '',
+      'Project: ' + (state.projectName || '-'),
+      'Address: ' + (state.projectAddress || '-'),
+      'Type: ' + (state.buildingTypeLabel || '-'),
+      'Building SF: ' + (state.buildingSF || '-'),
+      'Glass SF: ' + (state.glassSF || '-'),
+      'Floors: ' + (state.floors || '-'),
+      'Construction: ' + (state.constructionType || '-'),
+      'Requirements: ' + ((state.requirements || []).join(', ') || '-'),
+      'Notes: ' + (state.specialNotes || '-'),
+      '',
+      'Contact: ' + (state.contactName || '-') + ' / ' + (state.contactCompany || '-'),
+      'Email: ' + (state.contactEmail || '-'),
+      'Phone: ' + (state.contactPhone || '-'),
+      '',
+      'Files: ' + names,
+      '',
+      '(Attach the drawings to this email.)'
+    ].join('\n');
+    return 'mailto:connor@acglass.com?subject=' +
+      encodeURIComponent('[ACG] Bid Engine drawings - ' + (state.projectName || 'project')) +
+      '&body=' + encodeURIComponent(body);
+  }
+
+  function openHandoffDb() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(BID_HANDOFF_DB, 1);
+      req.onupgradeneeded = () => {
+        if (!req.result.objectStoreNames.contains(BID_HANDOFF_STORE)) {
+          req.result.createObjectStore(BID_HANDOFF_STORE);
+        }
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  async function stashBidHandoff(files, fields) {
+    const payloads = [];
+    for (let i = 0; i < files.length; i++) {
+      const f = files[i];
+      payloads.push({
+        name: f.name,
+        type: f.type || '',
+        lastModified: f.lastModified || Date.now(),
+        buffer: await f.arrayBuffer()
+      });
+    }
+    const db = await openHandoffDb();
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(BID_HANDOFF_STORE, 'readwrite');
+      tx.objectStore(BID_HANDOFF_STORE).put({ files: payloads, fields: fields, ts: Date.now() }, BID_HANDOFF_KEY);
+      tx.oncomplete = () => { db.close(); resolve(); };
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
+  function showSendFailure(kind) {
+    document.querySelectorAll('.be-step-panel').forEach(p => p.classList.remove('active'));
+    const results = document.getElementById('results-panel');
+    if (results) results.classList.remove('active');
+    const copy = failCopy(kind);
+    document.getElementById('fail-title').textContent = copy.title;
+    document.getElementById('fail-body').textContent = copy.body;
+    document.getElementById('fail-mailto').href = buildConnorMailto();
+    document.getElementById('send-fail-panel').classList.add('active');
+    window.scrollTo({ top: document.querySelector('.be-header').offsetTop, behavior: 'smooth' });
+  }
+
+  function returnToReview() {
+    document.getElementById('send-fail-panel').classList.remove('active');
+    buildReview();
+    showStep(6, 'back');
+  }
+
+  async function continueToSendPlans() {
+    const fields = {
+      name: state.contactName,
+      company: state.contactCompany,
+      email: state.contactEmail,
+      phone: state.contactPhone,
+      project_name: state.projectName,
+      project_location: state.projectAddress,
+      building_type: state.buildingType || '',
+      building_type_label: state.buildingTypeLabel || '',
+      building_sf: state.buildingSF || '',
+      glass_sf: state.glassSF || '',
+      floors: state.floors || '',
+      construction_type: state.constructionType || '',
+      requirements: (state.requirements || []).join(', '),
+      notes: state.specialNotes || ''
+    };
+    try {
+      if (state.uploadedFiles.length) await stashBidHandoff(state.uploadedFiles, fields);
+    } catch (e) {}
+    const params = new URLSearchParams({ from: 'bid-engine' });
+    Object.keys(fields).forEach(k => {
+      if (fields[k]) params.set(k, String(fields[k]));
+    });
+    location.href = '/send-plans.html?' + params.toString();
   }
 
   // ====================
@@ -2959,6 +3311,8 @@
   function showResults() {
     // Hide all step panels
     document.querySelectorAll('.be-step-panel').forEach(p => p.classList.remove('active'));
+    const failPanel = document.getElementById('send-fail-panel');
+    if (failPanel) failPanel.classList.remove('active');
 
     // Mark all progress steps done
     document.querySelectorAll('.be-progress-step').forEach(s => {
@@ -2991,6 +3345,16 @@
 
     // Contact confirmation
     document.getElementById('confirm-email').textContent = state.contactEmail;
+
+    const nextPlans = document.getElementById('next-plans-status');
+    if (nextPlans) {
+      const delivered = state.uploadedFiles.length
+        ? state.uploadedFiles
+        : (state.deliveredFileNames || []);
+      nextPlans.textContent = delivered.length
+        ? 'Your plans and project details were delivered to Connor at connor@acglass.com'
+        : 'Your project details have been submitted to ACG';
+    }
 
     // Add download PDF button if not already present
     if (!document.getElementById('download-pdf-btn')) {
@@ -3248,7 +3612,8 @@
       contactRole: '',
       computedGlassSF: null,
       scopeLow: null,
-      scopeHigh: null
+      scopeHigh: null,
+      deliveredFileNames: []
     });
 
     // Reset UI
@@ -3267,9 +3632,34 @@
 
     // Show results then hide
     document.getElementById('results-panel').classList.remove('active');
+    const failPanel = document.getElementById('send-fail-panel');
+    if (failPanel) failPanel.classList.remove('active');
+    const overlay = document.getElementById('analyzing-overlay');
+    if (overlay) overlay.classList.remove('active');
+    showUploadError('');
 
     showStep(1, 'back');
   }
+
+  (function restoreAfterConfirmedSend() {
+    const qp = new URLSearchParams(location.search);
+    if (qp.get('submitted') !== '1') return;
+    let awaiting = '';
+    try { awaiting = sessionStorage.getItem(BID_CONFIRM_KEY) || ''; } catch (e) {}
+    if (awaiting !== '1') return;
+    try { sessionStorage.removeItem(BID_CONFIRM_KEY); } catch (e) {}
+    let raw = '';
+    try { raw = sessionStorage.getItem(BID_STATE_KEY) || ''; } catch (e) {}
+    if (raw) {
+      try {
+        const saved = JSON.parse(raw);
+        Object.assign(state, saved);
+        sessionStorage.removeItem(BID_STATE_KEY);
+      } catch (e) {}
+    }
+    calculateScope();
+    showResults();
+  })();
 
   // ====================
   // INPUT EVENTS - clear error on type
