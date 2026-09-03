@@ -68,7 +68,7 @@ REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
     "path_or_title_discovery":
         "f61df174a5b1d602577b0457f4a53ae0f8344dd12af0d23ec24b1ed2c6ff37ae",
     "stale_operating_claim_hold":
-        "453e8f161a819656bc8395f60437b071f0125b62d838d09f4470070bbdcd6143",
+        "613a78852fe91ee88143740bb72d6e9b313b299a64d2ee1760cb6090284e6ac4",
     "mixed_claim_review":
         "875c20e4a22f237694248ad5101fada3ebd82d263f695f643435bd73e59d8798",
     "biography_only":

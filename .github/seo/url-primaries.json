@@ -438,7 +438,7 @@
         }
       ],
       "requires_external_redirect": [],
-      "notes": "This is the one primary in the set that is both ratified and actionable in-repo. /commercial-glazing-nashville-tn.html is the URL Google already selected for this query (SERP action 4 identifies the #16 page by its H1, 'Nashville's Standard for Laminated Glass & High-Performance IGUs', which is on this file). Consolidating /nashville/ into it therefore removes a competitor for a ranking URL rather than moving one. /commercial-glazing-nashville.html already 301s here at the edge, so no redirect change is needed. REVERSAL TRIGGER: maps Gate 5 wants /nashville/ as the Google Business Profile landing page for the Q3 2026 office. That profile cannot exist yet -- ACG has no verified Tennessee address, and Safe Phase 1 removed the unsupported Tennessee premises claims. If a Nashville GBP is ever created, revisit this entry before pointing its website field at a canonicalised URL."
+      "notes": "This is the one primary in the set that is both ratified and actionable in-repo. /commercial-glazing-nashville-tn.html is the URL Google already selected for this query (SERP action 4 identifies the #16 page by its H1, 'Nashville's Standard for Laminated Glass & High-Performance IGUs', which is on this file). Consolidating /nashville/ into it therefore removes a competitor for a ranking URL rather than moving one. /commercial-glazing-nashville.html already 301s here at the edge, so no redirect change is needed. ACG holds no Nashville office and no verified Tennessee address. Do not treat /nashville/ as a future-office Google Business Profile landing page."
     },
     {
       "market": "nashville",

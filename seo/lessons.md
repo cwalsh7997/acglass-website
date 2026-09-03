@@ -28,7 +28,7 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 
 - `llms.txt` states Florida only. Eight indexable out-of-Florida pages still exist (`commercial-glazing-al.html`, `-ga.html`, `-louisiana.html`, `-north-carolina.html`, `-south-carolina.html`, `-southeast.html`, `-texas.html`, `-tn.html`). Do not delete them. noindex + self-canonical + drop from sitemaps is the containment move.
 - Duplicate title pattern on office metros: `Storefront Glazier in {City}, FL | ACG - 48-Hr Bids` (WPB variant added "Service Area" and em dashes). Storefront-clone titles for Naples and Tampa were already rewritten; WPB clone still matches the old pattern.
-- Nashville office is Q3 2026, not live coverage (`facts.html`). Do not treat TN pages as a live office.
+- ACG holds no Nashville or Tennessee office. Live offices are West Palm Beach, Naples, and Tampa only. Tennessee pages are furnish-and-consult geography, not a live office.
 
 ## Redirects
 
