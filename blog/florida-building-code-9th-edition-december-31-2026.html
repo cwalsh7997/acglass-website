@@ -15,6 +15,7 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20260705">
   <link rel="stylesheet" href="/css/acg-chrome.css">
+  <link rel="stylesheet" href="/css/acg-flagship.css">
   <meta name="description" content="The Florida Building Code 9th Edition takes effect December 31, 2026. ASCE 7-22 is already in force. What changes for glazing, and what is still in glitch.">
   <meta name="author" content="Connor Walsh, ACG">
   <link rel="canonical" href="https://acglass.com/blog/florida-building-code-9th-edition-december-31-2026.html">
@@ -141,182 +142,17 @@
   "name": "What Changes for Commercial Glazing on December 31, 2026"
 }
 </script>
-  <style>
-
-  /* Flagship TOC + field-card print. Scoped to .acg-flagship only. */
-  .acg-flagship .acg-print-mast,
-  .acg-flagship .acg-print-kicker { display: none; }
-  .acg-flagship-article h2,
-  .acg-flagship-article h3 { scroll-margin-top: 96px; }
-  .acg-flagship .acg-toc-host {
-    position: sticky;
-    top: 0;
-    z-index: 24;
-    margin: 0 0 22px;
-  }
-  .acg-flagship .acg-toc-desktop {
-    background: #0e284f;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 6px;
-    padding: 10px 14px 12px;
-  }
-  .acg-flagship .acg-toc-desktop .acg-toc-label {
-    font-family: var(--font-mono, "JetBrains Mono", monospace);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #e11320;
-    margin: 0 0 8px;
-  }
-  .acg-flagship .acg-toc-desktop ol,
-  .acg-flagship .acg-toc-mobile ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 12px;
-  }
-  .acg-flagship .acg-toc-desktop a,
-  .acg-flagship .acg-toc-mobile a {
-    font-family: var(--font-mono, "JetBrains Mono", monospace);
-    font-size: 0.72rem;
-    line-height: 1.35;
-    color: rgba(255,255,255,0.78);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(225,19,32,0.35);
-  }
-  .acg-flagship .acg-toc-desktop a:hover,
-  .acg-flagship .acg-toc-mobile a:hover { color: #fff; }
-  .acg-flagship .acg-toc-mobile {
-    display: none;
-    background: #0e284f;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 6px;
-    padding: 8px 14px 10px;
-  }
-  .acg-flagship .acg-toc-mobile summary {
-    font-family: var(--font-mono, "JetBrains Mono", monospace);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #fff;
-    cursor: pointer;
-    list-style: none;
-  }
-  .acg-flagship .acg-toc-mobile summary::-webkit-details-marker { display: none; }
-  .acg-flagship .acg-toc-mobile[open] summary { margin-bottom: 10px; color: #e11320; }
-  .acg-flagship .acg-toc-mobile ol { flex-direction: column; gap: 8px; }
-  @media (max-width: 860px) {
-    .acg-flagship .acg-toc-host { position: static; }
-    .acg-flagship .acg-toc-desktop { display: none; }
-    .acg-flagship .acg-toc-mobile { display: block; }
-  }
-  @media print {
-    @page { size: letter; margin: 0.45in; }
-    html, body.acg-flagship {
-      background: #fff !important;
-      color: #111 !important;
-      overflow: visible !important;
-    }
-    .acg-flagship .grain,
-    .acg-flagship .cursor-dot,
-    .acg-flagship .cursor-ring,
-    .acg-flagship .hd,
-    .acg-flagship .page-hero,
-    .acg-flagship .acg-toc-host,
-    .acg-flagship .acg-print-hide,
-    .acg-flagship .cta-section,
-    .acg-flagship .ft,
-    .acg-flagship .acg-rfq,
-    .acg-flagship [aria-label="Related resources"],
-    .acg-flagship [aria-labelledby="acg-rfq-h"],
-    .acg-flagship [aria-labelledby="acg-next-h"],
-    .acg-flagship [aria-label="About the author"] {
-      display: none !important;
-    }
-    .acg-flagship .section { padding: 0 !important; margin: 0 !important; }
-    .acg-flagship .container { max-width: none !important; padding: 0 !important; }
-    .acg-flagship .acg-print-mast {
-      display: block !important;
-      font-family: "Inter", Helvetica, Arial, sans-serif;
-      font-size: 8.5pt;
-      line-height: 1.35;
-      color: #111;
-      border-bottom: 2pt solid #e11320;
-      padding: 0 0 7pt;
-      margin: 0 0 10pt;
-    }
-    .acg-flagship .acg-print-mast strong {
-      display: block;
-      font-size: 13pt;
-      line-height: 1.2;
-      margin: 0 0 3pt;
-      color: #0e284f;
-    }
-    .acg-flagship .acg-print-kicker {
-      display: block !important;
-      font-size: 10pt;
-      font-weight: 700;
-      color: #0e284f !important;
-      margin: 0 0 6pt;
-    }
-    .acg-flagship-article > *:not(.acg-print-keep) { display: none !important; }
-    .acg-flagship .acg-quick-answer {
-      background: #fff !important;
-      border: 1pt solid #111 !important;
-      border-left: 3pt solid #e11320 !important;
-      padding: 8pt 10pt !important;
-      margin: 0 0 9pt !important;
-      break-inside: avoid;
-    }
-    .acg-flagship .acg-quick-answer .acg-qa-label {
-      color: #e11320 !important;
-      font-size: 8pt !important;
-      margin: 0 0 4pt !important;
-    }
-    .acg-flagship .acg-quick-answer p {
-      color: #111 !important;
-      font-size: 9.5pt !important;
-      line-height: 1.35 !important;
-    }
-    .acg-flagship .acg-field-table {
-      overflow: visible !important;
-      margin: 0 0 9pt !important;
-      break-inside: avoid;
-    }
-    .acg-flagship .acg-field-table table {
-      width: 100% !important;
-      min-width: 0 !important;
-      font-size: 8pt !important;
-      color: #111 !important;
-    }
-    .acg-flagship .acg-field-table th,
-    .acg-flagship .acg-field-table td {
-      color: #111 !important;
-      padding: 4pt 6pt !important;
-      border-bottom: 0.5pt solid #999 !important;
-    }
-    .acg-flagship .acg-field-checklist {
-      break-inside: avoid;
-    }
-    .acg-flagship .acg-field-checklist h2 {
-      color: #0e284f !important;
-      font-size: 12pt !important;
-      margin: 0 0 6pt !important;
-    }
-    .acg-flagship .acg-field-checklist ul {
-      margin: 0;
-      padding-left: 16pt;
-    }
-    .acg-flagship .acg-field-checklist li {
-      color: #111 !important;
-      font-size: 9pt !important;
-      line-height: 1.3 !important;
-      margin: 0 0 3.5pt;
-    }
-  }
-  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://acglass.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://acglass.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "What Changes for Commercial Glazing on December 31, 2026", "item": "https://acglass.com/blog/florida-building-code-9th-edition-december-31-2026.html" }
+  ]
+}
+</script>
 </head>
 <body class="acg-flagship">
 
@@ -375,6 +211,15 @@
   <section class="section">
     <div class="container">
       <div class="blog-content acg-flagship-article" style="max-width:780px;" data-reveal>
+        <nav class="acg-family" aria-label="Florida Federal Glazing family">
+          <div class="acg-family-kicker">Florida Federal Glazing</div>
+          <div class="acg-family-row">
+            <span class="acg-family-step">2 of 3</span>
+            <a class="acg-family-prev" href="/blog/ufc-glazing-vs-florida-noa.html">Previous: UFC vs NOA</a>
+            <a class="acg-family-next" href="/tools/bid-day-glazing-checker.html">Next: Bid-day checker</a>
+            <a class="acg-family-back" href="/blog/">On the blog</a>
+          </div>
+        </nav>
         <div class="acg-toc-host"></div>
         <aside class="acg-quick-answer acg-print-keep speakable" role="note" aria-label="Quick answer" itemprop="abstract">
           <div class="acg-qa-label">Quick Answer</div>
@@ -662,54 +507,7 @@
 
   <script defer src="../js/main.js"></script>
   <script src="/js/acg-chrome.js" defer></script>
-
-<script>
-(function(){
-  var article = document.querySelector(".acg-flagship-article");
-  var host = document.querySelector(".acg-toc-host");
-  if (!article || !host) return;
-  var h2s = Array.prototype.slice.call(article.querySelectorAll("h2"));
-  var heads = h2s.length >= 4 ? h2s : Array.prototype.slice.call(article.querySelectorAll("h2, h3"));
-  function slug(el, i){
-    if (el.id) return el.id;
-    var t = (el.textContent || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    el.id = t || ("section-" + (i + 1));
-    return el.id;
-  }
-  var links = heads.map(function(h, i){
-    return { id: slug(h, i), label: (h.textContent || "").replace(/\s+/g, " ").trim() };
-  }).filter(function(l){ return l.label; });
-  if (!links.length) return;
-  function list(){
-    var ol = document.createElement("ol");
-    links.forEach(function(l){
-      var li = document.createElement("li");
-      var a = document.createElement("a");
-      a.href = "#" + l.id;
-      a.textContent = l.label;
-      li.appendChild(a);
-      ol.appendChild(li);
-    });
-    return ol;
-  }
-  var mobile = document.createElement("details");
-  mobile.className = "acg-toc-mobile";
-  var sum = document.createElement("summary");
-  sum.textContent = "On this page";
-  mobile.appendChild(sum);
-  mobile.appendChild(list());
-  var desktop = document.createElement("nav");
-  desktop.className = "acg-toc-desktop";
-  desktop.setAttribute("aria-label", "On this page");
-  var lab = document.createElement("div");
-  lab.className = "acg-toc-label";
-  lab.textContent = "On this page";
-  desktop.appendChild(lab);
-  desktop.appendChild(list());
-  host.appendChild(mobile);
-  host.appendChild(desktop);
-})();
-</script>
+  <script src="/js/acg-flagship-toc.js" defer></script>
 
 </body>
 </html>

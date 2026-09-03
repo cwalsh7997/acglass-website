@@ -1,0 +1,243 @@
+/* Flagship TOC, field-card print, and family strip.
+   Scoped to .acg-flagship so site chrome is untouched. */
+
+.acg-flagship .acg-print-mast,
+.acg-flagship .acg-print-kicker { display: none; }
+
+.acg-flagship-article h2,
+.acg-flagship-article h3 { scroll-margin-top: 96px; }
+
+.acg-flagship .acg-toc-host {
+  position: sticky;
+  top: 0;
+  z-index: 24;
+  margin: 0 0 22px;
+}
+
+.acg-flagship .acg-toc-desktop {
+  background: #0e284f;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 10px 14px 12px;
+}
+
+.acg-flagship .acg-toc-desktop .acg-toc-label {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e11320;
+  margin: 0 0 8px;
+}
+
+.acg-flagship .acg-toc-desktop ol,
+.acg-flagship .acg-toc-mobile ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
+.acg-flagship .acg-toc-desktop a,
+.acg-flagship .acg-toc-mobile a {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225,19,32,0.35);
+}
+
+.acg-flagship .acg-toc-desktop a:hover,
+.acg-flagship .acg-toc-mobile a:hover { color: #fff; }
+
+.acg-flagship .acg-toc-mobile {
+  display: none;
+  background: #0e284f;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 8px 14px 10px;
+}
+
+.acg-flagship .acg-toc-mobile summary {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  list-style: none;
+}
+
+.acg-flagship .acg-toc-mobile summary::-webkit-details-marker { display: none; }
+.acg-flagship .acg-toc-mobile[open] summary { margin-bottom: 10px; color: #e11320; }
+.acg-flagship .acg-toc-mobile ol { flex-direction: column; gap: 8px; }
+
+.acg-family {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 10px 14px 12px;
+  margin: 0 0 22px;
+  background: rgba(14,40,79,0.55);
+}
+
+.acg-family-kicker {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e11320;
+  margin: 0 0 8px;
+}
+
+.acg-family-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  min-width: 0;
+}
+
+.acg-family-step,
+.acg-family-prev[aria-disabled="true"] {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.45);
+}
+
+.acg-family a {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(225,19,32,0.35);
+}
+
+.acg-family a:hover { color: #fff; }
+
+.acg-family-back {
+  margin-left: auto;
+}
+
+.acg-flagship .blog-content,
+.acg-flagship-article {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 860px) {
+  .acg-flagship .acg-toc-host { position: static; }
+  .acg-flagship .acg-toc-desktop { display: none; }
+  .acg-flagship .acg-toc-mobile { display: block; }
+  .acg-family-back { margin-left: 0; }
+}
+
+@media print {
+  @page { size: letter; margin: 0.45in; }
+  html, body.acg-flagship {
+    background: #fff !important;
+    color: #111 !important;
+    overflow: visible !important;
+  }
+  .acg-flagship .grain,
+  .acg-flagship .cursor-dot,
+  .acg-flagship .cursor-ring,
+  .acg-flagship .hd,
+  .acg-flagship .page-hero,
+  .acg-flagship .acg-toc-host,
+  .acg-flagship .acg-family,
+  .acg-flagship .acg-print-hide,
+  .acg-flagship .cta-section,
+  .acg-flagship .ft,
+  .acg-flagship .acg-rfq,
+  .acg-flagship [aria-label="Related resources"],
+  .acg-flagship [aria-labelledby="acg-rfq-h"],
+  .acg-flagship [aria-labelledby="acg-next-h"],
+  .acg-flagship [aria-label="About the author"] {
+    display: none !important;
+  }
+  .acg-flagship .section { padding: 0 !important; margin: 0 !important; }
+  .acg-flagship .container { max-width: none !important; padding: 0 !important; }
+  .acg-flagship .acg-print-mast {
+    display: block !important;
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.35;
+    color: #111;
+    border-bottom: 2pt solid #e11320;
+    padding: 0 0 7pt;
+    margin: 0 0 10pt;
+  }
+  .acg-flagship .acg-print-mast strong {
+    display: block;
+    font-size: 13pt;
+    line-height: 1.2;
+    margin: 0 0 3pt;
+    color: #0e284f;
+  }
+  .acg-flagship .acg-print-kicker {
+    display: block !important;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0e284f !important;
+    margin: 0 0 6pt;
+  }
+  .acg-flagship-article > *:not(.acg-print-keep) { display: none !important; }
+  .acg-flagship .acg-quick-answer {
+    background: #fff !important;
+    border: 1pt solid #111 !important;
+    border-left: 3pt solid #e11320 !important;
+    padding: 8pt 10pt !important;
+    margin: 0 0 9pt !important;
+    break-inside: avoid;
+  }
+  .acg-flagship .acg-quick-answer .acg-qa-label {
+    color: #e11320 !important;
+    font-size: 8pt !important;
+    margin: 0 0 4pt !important;
+  }
+  .acg-flagship .acg-quick-answer p {
+    color: #111 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.35 !important;
+  }
+  .acg-flagship .acg-field-table {
+    overflow: visible !important;
+    margin: 0 0 9pt !important;
+    break-inside: avoid;
+  }
+  .acg-flagship .acg-field-table table {
+    width: 100% !important;
+    min-width: 0 !important;
+    font-size: 8pt !important;
+    color: #111 !important;
+  }
+  .acg-flagship .acg-field-table th,
+  .acg-flagship .acg-field-table td {
+    color: #111 !important;
+    padding: 4pt 6pt !important;
+    border-bottom: 0.5pt solid #999 !important;
+  }
+  .acg-flagship .acg-field-checklist {
+    break-inside: avoid;
+  }
+  .acg-flagship .acg-field-checklist h2 {
+    color: #0e284f !important;
+    font-size: 12pt !important;
+    margin: 0 0 6pt !important;
+  }
+  .acg-flagship .acg-field-checklist ul {
+    margin: 0;
+    padding-left: 16pt;
+  }
+  .acg-flagship .acg-field-checklist li {
+    color: #111 !important;
+    font-size: 9pt !important;
+    line-height: 1.3 !important;
+    margin: 0 0 3.5pt;
+  }
+}
