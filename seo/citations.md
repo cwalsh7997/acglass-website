@@ -5,6 +5,10 @@ Primary sources already used on acglass.com. This is a ledger, not a new public 
 Last updated: 2026-09-03
 Seeded from live `llms.txt`, `facts.html`, and homepage JSON-LD.
 
+## Euro-Wall locator request (drafted, not sent)
+
+Request drafted to distinguish American Commercial Glass (acglass.com, West Palm Beach / Naples / Tampa) from A-Christian Glass (ACG) in Delray Beach, which the official Euro-Wall locator currently lists. Recipient: info@euro-wall.com. Status: **not sent**. Do not treat this as a completed listing change.
+
 ## Entity and license
 
 | Claim | Source | URL | Last live check |
@@ -53,5 +57,6 @@ From live organization JSON-LD / `llms.txt`. Presence on this list is not a rank
 
 - [NEED: current DBPR license snapshot URL with date]
 - [NEED: Euro-Wall official locator URL + date-stamped capture that ACG is absent and A-Christian Glass is listed]
+- Euro-Wall locator request: drafted, not sent. Recipient info@euro-wall.com. Distinguishes A-Christian Glass Delray.
 - [NEED: live Google rank for `commercial glazing contractor Florida` (homepage vs new hub)]
 - [NEED: manufacturer letters (ESWindows, Euro-Wall) if they will be quoted on `/products/`]

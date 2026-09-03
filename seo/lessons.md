@@ -32,9 +32,10 @@ Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md
 
 ## Redirects
 
-- GitHub Pages static hosting has no native HTTP 301. This repo has no Jekyll `_config.yml` and no `.nojekyll` is required for static serve, but there is also no `jekyll-redirect-from` pipeline.
-- Existing stubs (`/services/`, `/contact/`, `/author-connor-walsh.html`) already use `rel=canonical` + `noindex,follow` + meta-refresh + JS `location.replace`. That is the GitHub Pages-safe pattern.
-- Live 301s observed on host/www are Cloudflare edge rules. Do not invent a new Cloudflare rule from this repo.
+- GitHub Pages static hosting has no native HTTP 301. This repo has no Jekyll `_config.yml` and no `jekyll-redirect-from` pipeline.
+- `vercel.json` is an observed mirror of Cloudflare edge rules. Editing it does not deploy redirects on GitHub Pages (see `.github/cloudflare/RUNBOOK.md`). Do not invent a Cloudflare rule from this repo.
+- Existing stubs (`/services/`, `/contact/`, `/author-connor-walsh.html`) already use `rel=canonical` + `noindex,follow` + meta-refresh + JS `location.replace`. That is the GitHub Pages-safe pattern. Same pattern applied to `services-schema-block.html` (snippet, not a page). JSON-LD body of that file was kept below the stub so the snippet was not deleted.
+- Live 301s observed on host/www are Cloudflare edge rules.
 
 ## Claims discipline
 
