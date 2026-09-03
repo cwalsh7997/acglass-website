@@ -42,6 +42,7 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 - Never publish unverified quantitative claims, certifications, NOAs, lead times, prices, or manufacturer relationships.
 - Verified manufacturer posture (from `facts.html`, re-checked 2026-09-03): ESWindows = commercial installer; Euro-Wall = installer / factory certified; PGT, Allegion, TGP, Slimpact, Aldora = installed to spec, not authorized-dealer relationships.
 - Euro-Wall official locator does not list American Commercial Glass. It lists A-Christian Glass (ACG) in Delray Beach. That is a name-collision risk, not a dealer listing for this company.
+- GBP: do not say posting is active. WPB posting was turned off after policy rejections. Naples case 2-8095000041141 still open unless independently verified. Tampa still suspended.
 - Positioning line: `Precision glazing. AI-managed. Delivered.` Do not compete on price.
 
 ## Week-1 decisions
