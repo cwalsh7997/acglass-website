@@ -141,8 +141,184 @@
   "name": "What Changes for Commercial Glazing on December 31, 2026"
 }
 </script>
+  <style>
+
+  /* Flagship TOC + field-card print. Scoped to .acg-flagship only. */
+  .acg-flagship .acg-print-mast,
+  .acg-flagship .acg-print-kicker { display: none; }
+  .acg-flagship-article h2,
+  .acg-flagship-article h3 { scroll-margin-top: 96px; }
+  .acg-flagship .acg-toc-host {
+    position: sticky;
+    top: 0;
+    z-index: 24;
+    margin: 0 0 22px;
+  }
+  .acg-flagship .acg-toc-desktop {
+    background: #0e284f;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 10px 14px 12px;
+  }
+  .acg-flagship .acg-toc-desktop .acg-toc-label {
+    font-family: var(--font-mono, "JetBrains Mono", monospace);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e11320;
+    margin: 0 0 8px;
+  }
+  .acg-flagship .acg-toc-desktop ol,
+  .acg-flagship .acg-toc-mobile ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  .acg-flagship .acg-toc-desktop a,
+  .acg-flagship .acg-toc-mobile a {
+    font-family: var(--font-mono, "JetBrains Mono", monospace);
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(225,19,32,0.35);
+  }
+  .acg-flagship .acg-toc-desktop a:hover,
+  .acg-flagship .acg-toc-mobile a:hover { color: #fff; }
+  .acg-flagship .acg-toc-mobile {
+    display: none;
+    background: #0e284f;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 8px 14px 10px;
+  }
+  .acg-flagship .acg-toc-mobile summary {
+    font-family: var(--font-mono, "JetBrains Mono", monospace);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+  }
+  .acg-flagship .acg-toc-mobile summary::-webkit-details-marker { display: none; }
+  .acg-flagship .acg-toc-mobile[open] summary { margin-bottom: 10px; color: #e11320; }
+  .acg-flagship .acg-toc-mobile ol { flex-direction: column; gap: 8px; }
+  @media (max-width: 860px) {
+    .acg-flagship .acg-toc-host { position: static; }
+    .acg-flagship .acg-toc-desktop { display: none; }
+    .acg-flagship .acg-toc-mobile { display: block; }
+  }
+  @media print {
+    @page { size: letter; margin: 0.45in; }
+    html, body.acg-flagship {
+      background: #fff !important;
+      color: #111 !important;
+      overflow: visible !important;
+    }
+    .acg-flagship .grain,
+    .acg-flagship .cursor-dot,
+    .acg-flagship .cursor-ring,
+    .acg-flagship .hd,
+    .acg-flagship .page-hero,
+    .acg-flagship .acg-toc-host,
+    .acg-flagship .acg-print-hide,
+    .acg-flagship .cta-section,
+    .acg-flagship .ft,
+    .acg-flagship .acg-rfq,
+    .acg-flagship [aria-label="Related resources"],
+    .acg-flagship [aria-labelledby="acg-rfq-h"],
+    .acg-flagship [aria-labelledby="acg-next-h"],
+    .acg-flagship [aria-label="About the author"] {
+      display: none !important;
+    }
+    .acg-flagship .section { padding: 0 !important; margin: 0 !important; }
+    .acg-flagship .container { max-width: none !important; padding: 0 !important; }
+    .acg-flagship .acg-print-mast {
+      display: block !important;
+      font-family: "Inter", Helvetica, Arial, sans-serif;
+      font-size: 8.5pt;
+      line-height: 1.35;
+      color: #111;
+      border-bottom: 2pt solid #e11320;
+      padding: 0 0 7pt;
+      margin: 0 0 10pt;
+    }
+    .acg-flagship .acg-print-mast strong {
+      display: block;
+      font-size: 13pt;
+      line-height: 1.2;
+      margin: 0 0 3pt;
+      color: #0e284f;
+    }
+    .acg-flagship .acg-print-kicker {
+      display: block !important;
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0e284f !important;
+      margin: 0 0 6pt;
+    }
+    .acg-flagship-article > *:not(.acg-print-keep) { display: none !important; }
+    .acg-flagship .acg-quick-answer {
+      background: #fff !important;
+      border: 1pt solid #111 !important;
+      border-left: 3pt solid #e11320 !important;
+      padding: 8pt 10pt !important;
+      margin: 0 0 9pt !important;
+      break-inside: avoid;
+    }
+    .acg-flagship .acg-quick-answer .acg-qa-label {
+      color: #e11320 !important;
+      font-size: 8pt !important;
+      margin: 0 0 4pt !important;
+    }
+    .acg-flagship .acg-quick-answer p {
+      color: #111 !important;
+      font-size: 9.5pt !important;
+      line-height: 1.35 !important;
+    }
+    .acg-flagship .acg-field-table {
+      overflow: visible !important;
+      margin: 0 0 9pt !important;
+      break-inside: avoid;
+    }
+    .acg-flagship .acg-field-table table {
+      width: 100% !important;
+      min-width: 0 !important;
+      font-size: 8pt !important;
+      color: #111 !important;
+    }
+    .acg-flagship .acg-field-table th,
+    .acg-flagship .acg-field-table td {
+      color: #111 !important;
+      padding: 4pt 6pt !important;
+      border-bottom: 0.5pt solid #999 !important;
+    }
+    .acg-flagship .acg-field-checklist {
+      break-inside: avoid;
+    }
+    .acg-flagship .acg-field-checklist h2 {
+      color: #0e284f !important;
+      font-size: 12pt !important;
+      margin: 0 0 6pt !important;
+    }
+    .acg-flagship .acg-field-checklist ul {
+      margin: 0;
+      padding-left: 16pt;
+    }
+    .acg-flagship .acg-field-checklist li {
+      color: #111 !important;
+      font-size: 9pt !important;
+      line-height: 1.3 !important;
+      margin: 0 0 3.5pt;
+    }
+  }
+  </style>
 </head>
-<body>
+<body class="acg-flagship">
 
   <div class="grain"></div>
   <div class="cursor-dot"></div>
@@ -191,18 +367,23 @@
     </div>
   </section>
 
+  <div class="acg-print-mast">
+    <strong>What Changes for Commercial Glazing on December 31, 2026</strong>
+    Connor Walsh · 2026-09-02 · https://acglass.com/blog/florida-building-code-9th-edition-december-31-2026.html
+  </div>
   <!-- CONTENT -->
   <section class="section">
     <div class="container">
-      <div class="blog-content" style="max-width:780px;" data-reveal>
-        <aside class="acg-quick-answer speakable" role="note" aria-label="Quick answer" itemprop="abstract">
+      <div class="blog-content acg-flagship-article" style="max-width:780px;" data-reveal>
+        <div class="acg-toc-host"></div>
+        <aside class="acg-quick-answer acg-print-keep speakable" role="note" aria-label="Quick answer" itemprop="abstract">
           <div class="acg-qa-label">Quick Answer</div>
           <p>The Florida Building Code 9th Edition takes effect December 31, 2026. The edition in force on the permit-application date governs the work. ASCE 7-22 and HVHZ geography already apply under the 8th Edition; they are not a 9th Edition wind-code switch. What does flip: product-approval reaffirmation to the 9th Edition, and energy criteria based on 2024 IECC and ASHRAE 90.1-2022. Final commercial U-factor and SHGC cells are still in glitch. Do not spec them yet.</p>
         </aside>
 
         <p class="text-xl" style="margin-bottom:32px;">This is a cutover note, not another Florida Building Code explainer. The 8th Edition is still the enforced code as of 2026-09-02. Use the existing ACG pages for the code that is in force today: the <a href="/blog/florida-building-code-commercial-windows-2026.html">commercial windows guide</a>, the <a href="/blog/florida-building-code-commercial-glazing-guide.html">commercial glazing guide</a>, and the <a href="/blog/south-florida-building-code-glazing.html">South Florida / HVHZ guide</a>. One older ACG page, <a href="/blog/florida-building-codes-commercial-glazing-2026.html">Florida Building Codes for Commercial Glazing</a>, treated the 9th Edition as a 2027 start. The Commission workplans and the ICC shop date are December 31, 2026.</p>
 
-        <h2>The permit-application date is the trigger</h2>
+        <h2 id="permit-application-date">The permit-application date is the trigger</h2>
 
         <p>The 8th Edition (2023) took effect December 31, 2023 and is still enforced. The 9th Edition (2026) takes effect December 31, 2026. That date is on the Commission June 9 and August 2026 workplans and on the <a href="https://shop.iccsafe.org/florida-building-code-building-9th-edition-2026.html" rel="noopener">ICC shop listing</a>.</p>
 
@@ -212,13 +393,13 @@
 
         <p>Rulemaking is still TBD: final rule hearing, SOS / JAPC, and the final PDF. Glitch #1 has a workshop on October 13, 2026. Glitch #2 comment close is listed as October 8, 2026 on the <a href="https://www.floridabuilding.org/fbc/thecode/2026_Code_Development/2026_Code_Development_Process.html" rel="noopener">Commission code-development page</a> and as October 15, 2026 on the <a href="https://www.floridabuilding.org/fbc/commission/FBC_0726/Commission/2026_FBC_Workplan_August_2026.pdf" rel="noopener">August 2026 workplan</a>. Cite both until staff reconcile the calendar.</p>
 
-        <h2>What does not change on December 31</h2>
+        <h2 id="what-does-not-change">What does not change on December 31</h2>
 
         <p>ASCE 7-22 is already the 8th Edition wind standard. The Commission <a href="https://www.floridabuilding.org/fbc/thecode/2023_Code_Development/2023_Code_Resources/ASCE-7-22_Wind_Loads_Fact_Sheet.pdf" rel="noopener">ASCE 7-22 Wind Loads Fact Sheet</a> states that the 8th Edition (2023) was updated to reference ASCE 7-22. December 31 is not a wind-code switch. Do not reprice a package as if design pressures reset on that date.</p>
 
         <p>HVHZ geography stays Miami-Dade and Broward. TAS 201, TAS 202, and TAS 203 stay the HVHZ test framework. Cell-level TAS deltas in the 9th Edition are TBD. The NOA versus Florida Product Approval system does not change. The new check is a 9th Edition affirmation of the existing approval, not a new approval path. For the wind and impact side that is already in force, stay on the <a href="/blog/south-florida-building-code-glazing.html">South Florida building code page</a> and the <a href="/blog/hvhz-glazing-requirements-florida.html">HVHZ glazing requirements</a> page. Do not re-explain HVHZ here.</p>
 
-        <h2>What does change</h2>
+        <h2 id="what-does-change">What does change</h2>
 
         <p>Manufacturers must affirm existing product approvals to the 9th Edition. That direction came out of the June 9, 2026 Commission meeting. Self-affirmation, revision, or a new application are the three paths. Get the written affirmation before you stamp a 9th Edition submittal. See <a href="/blog/florida-product-approval-glazing-guide.html">Florida Product Approval for glazing</a> for the system that is already in force.</p>
 
@@ -228,11 +409,12 @@
 
         <p>Florida Statute 553.73(7)(e) also lets the Commission delay the energy provisions up to three months if energy-code compliance software is not approved at least three months before the effective date. That gate is about September 30, 2026. A September 4, 2026 sitting is TBD. Watch the clock. Do not assert a delay.</p>
 
-        <h2>The energy table is still in glitch</h2>
+        <h2 id="energy-table-still-in-glitch">The energy table is still in glitch</h2>
 
         <p>Refuse 9th Edition commercial U-factor and SHGC cells until the glitch cycle closes and the final PDF is posted. You may use the 8th Edition Table C402.4 Climate Zone 1 and 2 values that are in force today. Those are the numbers on a permit filed before December 31, 2026.</p>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;max-width:100%;">
+        <div class="acg-field-table acg-print-keep" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;max-width:100%;">
+          <p class="acg-print-kicker">8th Edition Table C402.4, Climate Zones 1 and 2 (in force today). 9th Edition cells are TBD.</p>
           <table style="width:100%;min-width:640px;border-collapse:collapse;font-size:0.9rem;">
             <thead>
               <tr style="border-bottom:2px solid var(--accent);">
@@ -291,7 +473,8 @@
 
         <p>Some older ACG pages flattened this table to 0.50 / 0.25. That is the fixed-fenestration U-factor and the PF &lt; 0.2 southeast-west SHGC only. It is not the whole table. Operable units, entrance doors, north glass, and skylights have their own cells. Use the row that matches the opening. The flattened version lives on the <a href="/blog/florida-building-code-commercial-windows-2026.html">2026 commercial windows page</a>. Correct it at the opening, not by inventing a 9th Edition number.</p>
 
-        <h2>GC cutover checklist</h2>
+        <div class="acg-field-checklist acg-print-keep">
+        <h2 id="gc-cutover-checklist">GC cutover checklist</h2>
 
         <ul>
           <li><strong>Stamp the application date.</strong> The edition on the permit-application date governs for the life of the permit. December 30 is 8th Edition. December 31 and after is 9th Edition.</li>
@@ -302,8 +485,9 @@
           <li><strong>Do not re-explain HVHZ.</strong> Miami-Dade and Broward, TAS 201 / 202 / 203, and NOA versus FPA are already in force. They are not the cutover.</li>
           <li><strong>Calendar the glitch dates.</strong> October 13 workshop. Glitch #2 comment close October 8 or October 15, depending on which Commission document you open. Final rule hearing, SOS / JAPC, and final PDF are TBD.</li>
         </ul>
+        </div>
 
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
         <h3>When does the Florida Building Code 9th Edition apply?</h3>
         <p>The 9th Edition takes effect December 31, 2026. Under Florida Statute 553.73(6) and 553.73(7)(d), the edition in force on the permit-application date governs the work for the life of that permit. A complete application filed December 30, 2026 stays on the 8th Edition. An application filed December 31, 2026 or later is 9th Edition work.</p>
@@ -325,7 +509,7 @@
   </section>
 
   <!-- RELATED -->
-  <section class="section" style="padding-top:0;">
+  <section class="section acg-print-hide" style="padding-top:0;">
     <div class="container">
       <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:clamp(32px,4vw,48px);">
         <div class="label" style="margin-bottom:20px;"><span class="line"></span> Related Resources</div>
@@ -340,7 +524,7 @@
   </section>
 
   <!-- SHARE -->
-  <section style="padding: clamp(20px,3vw,30px) 0 0;">
+  <section class="acg-print-hide" style="padding: clamp(20px,3vw,30px) 0 0;">
     <div class="container">
       <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
         <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;">Share this</span>
@@ -476,5 +660,54 @@
 
   <script defer src="../js/main.js"></script>
   <script src="/js/acg-chrome.js" defer></script>
+
+<script>
+(function(){
+  var article = document.querySelector(".acg-flagship-article");
+  var host = document.querySelector(".acg-toc-host");
+  if (!article || !host) return;
+  var h2s = Array.prototype.slice.call(article.querySelectorAll("h2"));
+  var heads = h2s.length >= 4 ? h2s : Array.prototype.slice.call(article.querySelectorAll("h2, h3"));
+  function slug(el, i){
+    if (el.id) return el.id;
+    var t = (el.textContent || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    el.id = t || ("section-" + (i + 1));
+    return el.id;
+  }
+  var links = heads.map(function(h, i){
+    return { id: slug(h, i), label: (h.textContent || "").replace(/\s+/g, " ").trim() };
+  }).filter(function(l){ return l.label; });
+  if (!links.length) return;
+  function list(){
+    var ol = document.createElement("ol");
+    links.forEach(function(l){
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = "#" + l.id;
+      a.textContent = l.label;
+      li.appendChild(a);
+      ol.appendChild(li);
+    });
+    return ol;
+  }
+  var mobile = document.createElement("details");
+  mobile.className = "acg-toc-mobile";
+  var sum = document.createElement("summary");
+  sum.textContent = "On this page";
+  mobile.appendChild(sum);
+  mobile.appendChild(list());
+  var desktop = document.createElement("nav");
+  desktop.className = "acg-toc-desktop";
+  desktop.setAttribute("aria-label", "On this page");
+  var lab = document.createElement("div");
+  lab.className = "acg-toc-label";
+  lab.textContent = "On this page";
+  desktop.appendChild(lab);
+  desktop.appendChild(list());
+  host.appendChild(mobile);
+  host.appendChild(desktop);
+})();
+</script>
+
 </body>
 </html>
