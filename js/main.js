@@ -385,6 +385,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </a>
     `;
     document.body.appendChild(bar);
-    // Apply body padding so content clears the fixed bar
-    document.body.style.paddingBottom = '72px';
+    // Apply body padding so content clears the fixed bar (plus iOS safe area)
+    document.body.style.paddingBottom = 'calc(88px + env(safe-area-inset-bottom, 0px))';
   }

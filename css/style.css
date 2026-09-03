@@ -3521,6 +3521,12 @@ main.content ul { color: rgba(255,255,255,0.85); line-height: 1.85; padding-left
 main.content table { width: 100%; border-collapse: collapse; margin: 22px 0 32px; font-size: 0.94rem; }
 /* Blog articles: wide tables scroll inside the column, not the page. */
 .blog-content { overflow-x: auto; max-width: 100%; }
+@media (max-width: 768px) {
+  /* Sticky Call/Email/Send Plans bar is ~64px plus safe area. */
+  .blog-content {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+  }
+}
 main.content th { text-align: left; padding: 14px 14px; border-bottom: 1px solid rgba(255,255,255,0.18); font-family: 'JetBrains Mono', monospace; font-size:0.75rem; letter-spacing:0.16em; text-transform: uppercase; color: var(--accent); font-weight:800; }
 main.content td { padding: 14px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.88); vertical-align: top; }
 main.content td:first-child { color: #fff; font-weight:600; }
