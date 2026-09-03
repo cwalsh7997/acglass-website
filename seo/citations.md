@@ -58,5 +58,8 @@ From live organization JSON-LD / `llms.txt`. Presence on this list is not a rank
 - [NEED: current DBPR license snapshot URL with date]
 - [NEED: Euro-Wall official locator URL + date-stamped capture that ACG is absent and A-Christian Glass is listed]
 - Euro-Wall locator request: drafted, not sent. Recipient info@euro-wall.com. Distinguishes A-Christian Glass Delray.
+- Naples Google Business Profile: case 2-8095000041141. [NEED: case status and what the listing currently shows]
+- Tampa Google Business Profile: suspended. [NEED: suspension reason and restore date]
+- West Palm Beach Google Business Profile: Bobcat post. [NEED: post URL, date, and whether it is still live]
 - [NEED: live Google rank for `commercial glazing contractor Florida` (homepage vs new hub)]
 - [NEED: manufacturer letters (ESWindows, Euro-Wall) if they will be quoted on `/products/`]

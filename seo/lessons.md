@@ -2,7 +2,7 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03
+Last updated: 2026-09-03 (prune-wave2 inventory added; not applied)
 Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
@@ -50,3 +50,4 @@ Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md
 - Self-canonical on those 3 office metros is optional and is Tier 2 (creates a second indexable URL next to each storefront clone).
 - Add `/florida-commercial-glazing/` as the state hub. Link only to URLs that exist.
 - Do not bulk-generate city or service pages. Do not noindex the blog set.
+- Wave-2 inventory (counts only): `seo/prune-wave2.md`. 77 city storefront + 77 railing + 77 impact + 101 storefront-glazier URLs. Recommendation is noindex+sitemap drop, not 301 onto the 3 offices + 6 satellites. Not applied.

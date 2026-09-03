@@ -71,9 +71,8 @@ TITLE_MAX = 60
 DESC_MIN = 80
 DESC_MAX = 155
 
-HELD_LONG_TITLE_HASHES = {
-    "west-palm-beach/index.html":
-        "3c31b0d69e86986dc1f4ef6c056f33a30dad1926838327f0c950f649f5f65e2f",
+HELD_LONG_TITLE_HASHES: dict[str, str] = {
+    # west-palm-beach/index.html title shortened 2026-09-03 to fit TITLE_MAX.
 }
 
 # Copy on these pages intersects approval-gated claims. Keep the exception
