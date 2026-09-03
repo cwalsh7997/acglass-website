@@ -149,8 +149,11 @@ Do not invent replacements on public pages. [NEED:] means a fact is unverified h
 
 | Claim | Where | Indexable? | Notes | Next |
 | --- | --- | --- | --- | --- |
-| `Euro-Wall authorized` CSI label | `/services.html` line ~303 | yes | First-party leftover. `facts.html` / hub copy say installer / factory certified, not authorized dealer. | Rewrite label to installer language in a claims PR. Not done here. |
-| `Euro-Wall dealer` + `(authorized)` | `/llms.txt` manufacturer list | n/a (txt) | Contradicts the same file's "installer" line for ESWindows and contradicts `facts.html`. | Same claims PR. |
+| `Euro-Wall authorized` CSI label | `/services.html` | yes | First-party leftover. Softened this PR to `Euro-Wall installer` to match `facts.html`. | Done. |
+| `Euro-Wall dealer` + `(authorized)` | `/llms.txt` | n/a (txt) | Softened this PR to `Euro-Wall installer` / `(factory certified)`. | Done. |
+| First-party `factory authorization` / `factory-authorized` / `direct factory authorization` leftovers | `/blog/reliable-commercial-glass-company-florida.html`, `/blog/professional-installation-commercial-glazing-important.html`, `/blog/decorative-glass-storefront-options-florida.html`, `/blog/how-much-does-impact-glass-cost-commercial-buildings-florida.html`, `/storefront-installer-jacksonville.html`, `/storefront-installer-nashville.html`, `/blog/questions-to-ask-before-hiring-commercial-glazing-contractor.html` | yes | ACG-as-subject leftovers (including garbled ESWindows repeats and Stanley / Horton / Record letter language). Softened this PR to installer / factory-certified / documentation-not-a-bio wording. Generic "ask the sub" editorial left alone. | Done. |
+| BuildZoom bio "Authorized installer for Euro-Wall, ESWindows (Tecnoglass), PGT, Allegion, TGP, Slimpact" | external https://www.buildzoom.com/contractor/american-commercial-glass-inc | n/a | Unsupported unless manufacturer-proven. Not in this repo. Do not add the claim on-site. Do not edit BuildZoom from this PR. | External cleanup. [NEED: manufacturer proof before any authorized-installer language.] |
+| Procore "20 years of experience" | external Procore Construction Network profile | n/a | False. External profile data. Not added anywhere in this repo. | External cleanup. [NEED: live recapture after Procore removes the line.] |
 | `authorized dealer` editorial | `/blog/how-to-choose-commercial-glass-contractor-florida.html`, `/blog/questions-to-ask-glazing-subcontractor-before-hiring.html` | yes | Third-party "ask the sub" wording. claim-guard allowlists similar architect-spec uses. | Leave unless a first-party ACG subject is added. |
 | `24-hour response` on site visits / emergency | `/commercial-glazier-near-me-miami/`, `-tampa/`, `-west-palm-beach/`, `/emergency-commercial-glass-repair-florida/` | yes | SLA not verified in this environment. | [NEED: whether ACG commits to 24-hour site visits.] Do not tighten or delete without that. |
 | `WBENC certification in progress` | 1,085 indexable pages (footer chrome) | yes | Not "WBENC certified". Matches claim-guard (in-progress qualifier). | [NEED: filing date / application ID if the line should stay.] |
@@ -193,15 +196,27 @@ Not added: `/products/eswindows/` (404). ESWindows stays on `/eswindows-installe
 
 Post-fix inbound (distinct linking pages, self excluded): `/florida-commercial-glazing/` **23** (was 5), `/products/` **3** (was 2), `/products/euro-wall/` **5** (was 1).
 
+## Morning findings (2026-09-03, later)
+
+Owner-verified. This environment could not recapture BBB or Manta HTML (Cloudflare 403). Exact evidence and [NEED:] live in `/seo/citations.md`. No homepage, GBP, or marketing-copy rewrite.
+
+1. **BBB 0633-92045708 live corrected.** Primary phone (772) 486-7711. Visit Website https://acglass.com/. Old (561) 283-8030 is secondary. No public-site content change. Ledger updated.
+2. **Manta slug `mtmntvt` removed.** 301 to a generic WPB flat-glass category. Virginia Gardens / 24210 / (276) 466-2743 / Steve Thorogood gone. Recheck 2026-09-10. [NEED: exact pre-301 URL + destination URL.]
+3. **`estimating@eswindows.com` bounced 550 5.1.1.** Repo hit was ledger-only. Historical send row kept and marked bounced. No replacement inbox invented. Next route: fetched https://eswindows.com/connect-dealer/ (200, "Connect with an ES Dealer" / Get a Quote). No public ACG page needed that contact language, so the form was not added to a public page.
+4. **Procore** still shows false "20 years of experience". External cleanup. Claim not added on-site.
+5. **BuildZoom** bio still claims authorized-installer status for Euro-Wall, ESWindows (Tecnoglass), PGT, Allegion, TGP, Slimpact. Unsupported. External only. Matching first-party leftovers on ACG pages were softened (above). BuildZoom was not edited.
+6. **Extra/duplicate sends** to FreeListingUSA, Blue Book, and BBB (plus a found Constrafor NAP send) logged in citations Round 3 with UTC times. No other code action.
+
 ## Not done (out of allowed Tier 1)
 
 - Unique-ify Florida hub title vs homepage
 - Stub `/author/connor-walsh/` and `/author/rielly-walsh/`
 - Noindex `/{city}/all-glass-entrances/` or out-of-Florida state pages
-- Rewrite `Euro-Wall authorized` on `/services.html` / `/llms.txt`
 - Homepage claim freeze
 - Cloudflare 301s, GBP, DNS, nav, logo, design tokens
 - Bulk city pages
+- External Procore / BuildZoom profile edits
+- Inventing an ESWindows replacement inbox or adding `/connect-dealer/` to a public ACG page that did not need contact language
 
 ## Blocked decisions (top three)
 
