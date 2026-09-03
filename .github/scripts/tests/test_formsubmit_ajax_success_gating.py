@@ -21,7 +21,7 @@ AJAX_FORMS = (
 
 GATE = "r.ok && String(data.success) === 'true'"
 BARE_OK = re.compile(r"if\s*\(\s*(?:response|r)\.ok\s*\)")
-THANKS_REDIRECT = "window.location.href = '/thanks.html'"
+THANKS_REDIRECT = "window.location.href = '/thanks.html?submitted=1'"
 
 
 def read(rel: str) -> str:
