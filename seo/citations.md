@@ -5,9 +5,9 @@ Primary sources already used on acglass.com. This is a ledger, not a new public 
 Last updated: 2026-09-03
 Seeded from live `llms.txt`, `facts.html`, and homepage JSON-LD.
 
-## Euro-Wall locator request (drafted, not sent)
+## Euro-Wall locator request (sent)
 
-Request drafted to distinguish American Commercial Glass (acglass.com, West Palm Beach / Naples / Tampa) from A-Christian Glass (ACG) in Delray Beach, which the official Euro-Wall locator currently lists. Recipient: info@euro-wall.com. Status: **not sent**. Do not treat this as a completed listing change.
+Email sent 2026-09-02 from connor@acglass.com to info@euro-wall.com to distinguish American Commercial Glass (acglass.com, West Palm Beach / Naples / Tampa) from A-Christian Glass (ACG) in Delray Beach, which the official Euro-Wall locator currently lists. Status: **sent**. Do not treat this as a completed listing change. [NEED: Euro-Wall reply and a date-stamped locator capture.]
 
 ## Entity and license
 
@@ -77,7 +77,7 @@ From live organization JSON-LD / `llms.txt`. Presence on this list is not a rank
 
 - [NEED: current DBPR license snapshot URL with date]
 - [NEED: Euro-Wall official locator URL + date-stamped capture that ACG is absent and A-Christian Glass is listed]
-- Euro-Wall locator request: drafted, not sent. Recipient info@euro-wall.com. Distinguishes A-Christian Glass Delray.
+- Euro-Wall locator request: sent 2026-09-02 from connor@acglass.com to info@euro-wall.com. Distinguishes A-Christian Glass Delray. [NEED: reply and locator recapture]
 - Naples Google Business Profile: case 2-8095000041141. [NEED: case status and what the listing currently shows]
 - Tampa Google Business Profile: suspended. [NEED: suspension reason and restore date]
 - West Palm Beach Google Business Profile: Bobcat post. [NEED: post URL, date, and whether it is still live]
