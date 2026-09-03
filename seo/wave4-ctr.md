@@ -1,10 +1,10 @@
 # SEO wave-4: CTR on ranking RFQ pages
 
-Counted on branch `cursor/seo-wave4-ctr-b764`, 2026-09-03, off latest `main` (`2f6f4d796`). `_internal/CLAUDE.md` was not present.
+Counted on branch `cursor/seo-wave4-ctr-b764`, 2026-09-03, rebased onto `main` after PR 95 (`e6bd1066`). `_internal/CLAUDE.md` was not present.
 
 Source of truth for traffic: operator GSC export, Web, last 28 days, pulled 2026-09-03. Headline 119 clicks / 13,237 impressions vs 265 / 28,673 prior. Almost all query-attributed clicks are branded (`american commercial glass` 25 clicks, position 1.26 → 6.17). Unbranded: 1 click across 1,528 query rows.
 
-No pages were deleted. No city templates added. Keepers stay indexable. `/products/eswindows/` was not created. Homepage was not redesigned. No Tennessee or Nashville file was edited. No DNS change. No extra www/http redirect.
+No pages were deleted. No city templates added. Keepers stay indexable. `/products/eswindows/` was not created. Homepage was not redesigned. Homepage title, description, H1, and NAP stay. Nashville stays cancelled. Tennessee stays furnish/consult, no field labor, no opening date. The only Tennessee file edited is `federal-glazing-contractor-tennessee.html`, and only to soften one unsupported authorization string. No DNS change. No extra www/http redirect. Sitemap advertising left apex-only (`robots.txt` still lists only `https://acglass.com/sitemap.xml`).
 
 ## What changed
 
@@ -29,18 +29,47 @@ Lengths are characters. CI allows titles 30-60 and descriptions 80-155.
 | `/blog/florida-building-codes-commercial-glazing-2026.html` | 0 / 60 / 8.12 | Florida Building Codes for Commercial Glazing \| ACG (51) | 2026 Florida Glazing Codes for GCs \| HVHZ, 48-Hr Bid (52) | Use this guide to review Florida commercial glazing code topics, approvals and document coordination steps. Use it before bid day. Send drawings. (145) | 2026 Florida building codes for commercial glazing, including HVHZ and NOA. FL CGC #1531993. Bid in 48 hours. Send drawings. (772) 486-7711. (140) |
 | `/blog/commercial-glazing-project-turnaround-time-florida.html` | 0 / 59 / 6.76 | Commercial Glazing Project Turnaround Time Guide \| ACG (54) | Commercial Glazing Turnaround in Florida \| 48-Hr Bid (52) | Learn what drives commercial glazing turnaround, from scope review and submittals to procurement and field readiness. Send drawings. (132) | Florida commercial glazing turnaround: takeoff, submittals, fabrication, install. FL CGC #1531993. Bid in 48 hours. Send drawings. (772) 486-7711. (146) |
 | `/blog/commercial-glazing-submittal-process-guide.html` | 0 / 67 / 9.87 | Commercial Glazing Submittal Process Guide for GCs \| ACG (56) | Glazing Submittals for GCs \| Florida, CGC #1531993 (50) | Follow a commercial glazing submittal process that helps GCs track approvals, questions and release decisions. Send drawings. (125) | Glazing submittals for GCs: shop drawings, NOA, approvals, and delay causes. FL CGC #1531993. Bid in 48 hours. Send drawings. (772) 486-7711. (141) |
-| `/florida-commercial-glazing/` | not in 28-day page table | Commercial Glazing Contractor Florida \| ACG (43) | title left as live `Commercial Glazing Contractor Florida \| ACG` (43). Description only. | American Commercial Glass is a Florida commercial glazing contractor. Division 08 storefront, curtain wall, impact, operable walls. FL CGC #1531993. (148) | Florida commercial glazing contractor for South Florida GCs. WPB, Naples, Tampa. FL CGC #1531993. Bid in 48 hours. Send drawings. (772) 486-7711. (145) |
+| `/florida-commercial-glazing/` | not in 28-day page table | Commercial Glazing Contractor Florida \| ACG (43) | Commercial Glazing Contractor Florida \| Bid in 48 Hrs (53) | American Commercial Glass is a Florida commercial glazing contractor. Division 08 storefront, curtain wall, impact, operable walls. FL CGC #1531993. (148) | Florida commercial glazing contractor for South Florida GCs. WPB, Naples, Tampa. FL CGC #1531993. Bid in 48 hours. Send drawings. (772) 486-7711. (145) |
 | `/` | branded / hash URLs | Commercial Glazing Contractor Florida \| ACG (43) | unchanged | Florida's commercial glazing contractor for storefront, curtainwall, and impact glass - 350+ projects, FL CGC #1531993, bonded $3M/$6M. Get a scope in 48 hrs. (158, held; live uses a long dash) | unchanged |
 
 Homepage title already says commercial glazing contractor Florida. Homepage description already says get a scope in 48 hrs. Frozen. Not edited.
 
-## Hub
+## Hub title (live-verify collision)
 
-`/florida-commercial-glazing/` is indexable (`index,follow`), self-canonical to `https://acglass.com/florida-commercial-glazing/`, and listed in `sitemap.xml` and `sitemap-pages.xml`. Title left as the live string `Commercial Glazing Contractor Florida | ACG` (same family as homepage). Description rewritten for South Florida GCs, the three Florida offices, CGC, 48-hour bid, send drawings, and the phone. Inbound links from the GSC zero-CTR set stay.
+Live HTTP verify 2026-09-03 ~9:40 AM PT: homepage and `/florida-commercial-glazing/` shared the exact title `Commercial Glazing Contractor Florida | ACG`. Homepage keeps that company/home title. Hub title is now unique and aimed at Florida GC queries: `Commercial Glazing Contractor Florida | Bid in 48 Hrs` (53). og/twitter/JSON-LD `name` match. Description from the earlier pass stays.
 
-`/florida-commercial-glazing-complete-guide/` is a longer pillar, not a duplicate. It already self-canonicals and already links to the hub. Not merged. Not deleted. Not recanonicalized in this pass.
+## Canonicals (live verify 2026-09-03)
 
-Website Agent owns a separate PR for jsPDF / scope-engine, architect-resources, Ocean Prime 301s, google verify, sitemap hygiene, and homepage Nashville link wording. Those files were not edited here.
+Pages were not deleted. og:url follows each new canonical.
+
+| URL | Old canonical | New canonical |
+| --- | --- | --- |
+| `/west-palm-beach/` | `https://acglass.com/west-palm-beach/` (self) | `https://acglass.com/storefront-glazier-west-palm-beach-florida/` |
+| `/naples/` | `https://acglass.com/naples/` (self) | `https://acglass.com/storefront-glazier-naples-florida/` |
+| `/tampa/` | `https://acglass.com/tampa/` (self) | `https://acglass.com/storefront-glazier-tampa-florida/` |
+| `/florida-commercial-glazing-complete-guide/` | `https://acglass.com/florida-commercial-glazing-complete-guide/` (self) | `https://acglass.com/florida-commercial-glazing/` |
+
+Complete-guide breadcrumb item now names the hub. File stays on disk, stays 200. Hub office cards now link the three keeper glazier URLs so the office-metro aliases do not create new cross-canonical edges.
+
+Those four URLs were dropped from `sitemap.xml` and the matching child urlset (`sitemap-cities.xml` for the three office metros, `sitemap-pages.xml` for the complete guide) because crawl-check requires sitemap locs to be self-canonical. Keepers stay listed. This is not sitemap-advertising expansion. `robots.txt` still advertises only the apex sitemap. Unique `sitemap.xml` locs after the drop: 901.
+
+## Inbound (live verify 2026-09-03)
+
+Specified main-page inbound to `/florida-commercial-glazing/` was 14, not 23. Missing from about, portfolio, glossary, and most `/storefront-*` and `/curtainwall-*` URLs. About and portfolio already gained hub links in the title pass. This pass adds crawlable text links on `glossary.html`, `storefront-glossary.html`, and the remaining storefront/curtainwall service pages. `storefront-installer-nashville.html` was not edited.
+
+Specified main-page inbound to `/products/euro-wall/` was 0. Crawlable text links added from homepage (body only; title/desc/H1/NAP untouched), about, portfolio, contact, glossary, storefront-glossary, the three office metros, the eight keeper glazier pages, and the storefront/curtainwall service pages. Anchor text is installer/specifier ("Euro-Wall Vista page", "sourced operable-wall specs"). No authorization invented.
+
+## Claims softened (live verify 2026-09-03)
+
+| URL | Old string | New string |
+| --- | --- | --- |
+| `/products/euro-wall/` | Factory certified installer per facts.html. | Installer and specifier language only. |
+| `/products/euro-wall/` | facts.html lists Euro-Wall as installer, factory certified. | facts.html lists Euro-Wall as installer. |
+| `/federal-glazing-contractor-tennessee.html` | manufacturer- / authorized install (SVG) | installer and / specifier |
+
+Tennessee page still says no Tennessee office or field labor. No Nashville opening language restored.
+
+Website Agent owns jsPDF / scope-engine, architect-resources 404s, Ocean Prime 301s, and google verify files. Those files were not edited here.
 
 ## Sitemap / host variants
 
@@ -55,9 +84,11 @@ GSC shows 52 impressions each on `/#capability`, `/#discipline`, `/#prequal`. Ho
 ## Left alone
 
 - Homepage title, description, H1, NAP schema
-- All Tennessee / Nashville files
-- Keepers (WPB, Naples, Tampa, Miami, Orlando, Fort Lauderdale, Fort Myers, Sarasota storefront-glazier pages)
+- Keepers stay indexable (WPB, Naples, Tampa, Miami, Orlando, Fort Lauderdale, Fort Myers, Sarasota storefront-glazier pages)
 - `/products/eswindows/` (still absent; manufacturer HTML still blocked as of wave-3)
 - DNS, nav, logo, brand tokens
 - GBP
-- Complete-guide URL membership and canonical
+- Sitemap advertising (apex-only from PR 95)
+- 324 wave-2 `noindex,follow` pages and the 8 keepers
+- `storefront-installer-nashville.html` (no hub or euro-wall link added)
+- jsPDF / scope-engine, architect-resources, Ocean Prime, google verify files

@@ -2,7 +2,7 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (wave-4 CTR; hub title left as live string; Website Agent owns sitemap/404 PR)
+Last updated: 2026-09-03 (wave-4 CTR live-verify: unique hub title, office-metro canonicals, euro-wall inbound)
 Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
@@ -90,7 +90,9 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 ## Wave-4 CTR (2026-09-03)
 
 - GSC Web last 28 days, pulled 2026-09-03: 119 clicks / 13,237 impressions. Unbranded query-attributed clicks: 1. Inventory and old/new title table: `/seo/wave4-ctr.md`.
-- Titles and descriptions rewritten on the GSC page-1/2 RFQ URLs. Hub title left as live `Commercial Glazing Contractor Florida | ACG`. Hub meta description rewritten. Inbound links from those GSC pages stay.
-- `/west-palm-beach-commercial-glazing.html` freeze lifted for title/meta/hub-link only. Canonical and H1 unchanged. Homepage freeze stays.
-- Body links to the Florida hub added on those ranking pages. Complete-guide left self-canonical. No Tennessee or Nashville file edited. Homepage Nashville links left for Website Agent. Offices named here remain West Palm Beach, Naples, and Tampa only.
+- Titles and descriptions rewritten on the GSC page-1/2 RFQ URLs. Homepage title stays `Commercial Glazing Contractor Florida | ACG`. Hub title is now unique: `Commercial Glazing Contractor Florida | Bid in 48 Hrs`. Hub meta description rewritten.
+- `/west-palm-beach-commercial-glazing.html` freeze lifted for title/meta/hub-link only. Canonical and H1 unchanged. Homepage freeze stays (body-only euro-wall link added).
+- Live verify 2026-09-03 ~9:40 AM PT: office metros `/west-palm-beach/`, `/naples/`, `/tampa/` now canonical to the keeper glazier URLs (miami pattern). `/florida-commercial-glazing-complete-guide/` canonicals to the hub. Pages not deleted. Those four locs dropped from sitemaps so locs stay self-canonical. Advertising stays apex-only.
+- Specified main-page inbound to the hub was 14, not 23. Hub and `/products/euro-wall/` crawlable text links added on glossary plus storefront/curtainwall service pages. Euro-wall also from homepage, about, portfolio, contact. Nashville installer page not edited.
+- Softened `/products/euro-wall/` "Factory certified installer per facts.html." and the federal Tennessee SVG "manufacturer-authorized install" to installer/specifier language. No Nashville opening restored.
 - Homepage hash impressions (`#capability` `#discipline` `#prequal`) left alone; root canonical is already fragment-free. Live www/http 301s already exist; no extra redirect.

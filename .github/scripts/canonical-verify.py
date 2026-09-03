@@ -81,8 +81,8 @@ HELD_CROSS_CANONICAL_EDGE_HASHES = {
     # on west-palm-beach/index.html -> /boca-raton is retired.
     ("medical-office-glazier-fort-lauderdale/index.html", "/fort-lauderdale"):
         "2406e8fb96ec2a68083ad6c5dff229c1f8362979b7eac38ceb98ad6da3137fd0",
-    # /naples/ is now self-canonical (office metro), so this is no longer a
-    # cross-canonical edge and the prior hold is retired.
+    # /naples/ again canonicals to the Naples keeper (live verify 2026-09-03).
+    # Hub office cards link the keepers, so no new held edge is required.
     ("nashville/belle-meade-nashville/index.html", "/nashville"):
         "c8c55cc0a6c624e9551272b9a0bbd04bfbc4c853eb10366f3246bf0486f081ba",
     ("nashville/bellevue-nashville/index.html", "/nashville"):
