@@ -215,11 +215,13 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(broken, [])
 
     def test_wave4_office_metros_left_to_wave4(self):
-        # Wave-4 owns these files. Do not retarget them in this batch.
+        # Wave-4 owns these files and points them at the indexable keepers.
         for city in LEAVE_CITY_ROOTS:
             html = read(f"{city}/index.html")
-            self.assertEqual(canonical(html), f"{BASE}/{city}/")
+            keeper = f"{BASE}/storefront-glazier-{city}-florida/"
+            self.assertEqual(canonical(html), keeper)
             self.assertFalse(is_noindex(html))
+            self.assertFalse(is_noindex(read(f"storefront-glazier-{city}-florida/index.html")))
 
     def test_leftover_city_roots_canonical_to_hub_not_noindex_templates(self):
         # SEO: never canonical-to-noindex. Prefer hub (or a keeper) over
