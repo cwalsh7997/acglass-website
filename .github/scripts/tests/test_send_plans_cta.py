@@ -44,19 +44,25 @@ class SendPlansCtaTests(unittest.TestCase):
         self.assertIn('class="hd-cta">Send Us Plans</a>', html)
         self.assertIn("this form does not accept files", html)
         self.assertIn('href="send-plans.html"', html)
-        self.assertIn("window.location.href = '/thanks.html'", html)
+        self.assertIn("window.location.href = '/thanks.html?submitted=1'", html)
         self.assertNotIn('type="file"', html)
 
     def test_send_plans_posts_files_and_nexts_to_thanks(self):
         html = read("send-plans.html")
         self.assertIn('enctype="multipart/form-data"', html)
-        self.assertIn('type="file" name="files[]"', html)
-        self.assertIn('name="_next" value="https://acglass.com/thanks.html"', html)
+        self.assertIn('name="files[]"', html)
+        self.assertIn('type="file"', html)
+        self.assertIn(
+            'name="_next" value="https://acglass.com/thanks.html?submitted=1"',
+            html,
+        )
         self.assertIn("https://formsubmit.co/connor@acglass.com", html)
 
     def test_thanks_page_exists_and_thank_you_forwards(self):
         thanks = read("thanks.html")
         self.assertIn("Thanks. We have it.", thanks)
+        self.assertIn('id="thanks-confirmed" hidden', thanks)
+        self.assertIn("No new submission confirmed", thanks)
         self.assertIn("noindex", thanks)
         self.assertIn("/send-plans.html", thanks)
         stub = read("thank-you.html")

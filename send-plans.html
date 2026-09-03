@@ -298,7 +298,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
       <div data-reveal style="margin-bottom:32px;text-align:center;">
         <div class="label" style="justify-content:center;"><span class="line"></span> Plan Submission <span class="line"></span></div>
         <h2 style="margin-top:14px;">Send plans. <span class="accent">Get a scope.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:640px;margin:16px auto 0;">The more info you share, the faster we scope. Required fields are marked. File uploads accept up to 25 MB total.</p>
+        <p style="color:rgba(255,255,255,.7);max-width:640px;margin:16px auto 0;">The more info you share, the faster we scope. Required fields are marked. File uploads accept up to 9 MB total.</p>
       </div>
 
       <!-- Backend: formsubmit.co (same proven endpoint as contact form / scope-engine).
@@ -315,7 +315,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         <input type="hidden" name="_subject" value="[ACG LEAD] New plans submission via send-plans">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://acglass.com/thanks.html">
+        <input type="hidden" name="_next" value="https://acglass.com/thanks.html?submitted=1">
         <input type="hidden" name="_language" value="en">
         <input type="hidden" name="submission_source" value="send-plans-form">
 
@@ -465,11 +465,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
           <label style="display:block;padding:28px;background:rgba(0,0,0,.2);border:2px dashed rgba(255,255,255,.15);border-radius:12px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(225,19,32,.05)'" onmouseout="this.style.borderColor='rgba(255,255,255,.15)';this.style.background='rgba(0,0,0,.2)'">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,.5);margin-bottom:10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             <div style="font-size:15px;font-weight:600;color:#fff;margin-bottom:4px;">Click to upload or drop files</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.55);">PDF, DWG, ZIP, DOCX, XLSX &middot; 25 MB total</div>
-            <input type="file" name="files[]" multiple accept=".pdf,.dwg,.zip,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"
-                   style="display:none" onchange="document.getElementById('file-list').innerHTML = Array.from(this.files).map(f => '<div style=\'font-size:13px;color:#fff;margin-top:6px;\'>&#128206; ' + f.name + ' &middot; ' + (f.size/1024/1024).toFixed(2) + ' MB</div>').join('')">
+            <div style="font-size:12px;color:rgba(255,255,255,.55);">PDF, DWG, ZIP, DOCX, XLSX &middot; 9 MB total</div>
+            <input type="file" id="send-plans-files" name="files[]" multiple accept=".pdf,.dwg,.zip,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"
+                   style="display:none">
           </label>
           <div id="file-list" style="margin-top:10px;"></div>
+          <p id="upload-limit-note" style="margin:10px 0 0;font-size:13px;color:rgba(255,255,255,.6);line-height:1.55;">Keep the set under 9 MB. If the drawings are larger, email them to <!--email_off-->connor@acglass.com<!--/email_off--> or put a Procore, BuildingConnected, or BIM 360 link in Notes.</p>
         </fieldset>
 
         <!-- Notes -->
@@ -490,7 +491,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
         <!-- Submit -->
         <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
-          <button type="submit" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px;">
+          <button type="submit" id="send-plans-submit" class="btn btn-primary btn-lg" style="display:inline-flex;align-items:center;gap:8px;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
             Submit Plans for Bid
           </button>
@@ -517,7 +518,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         </details>
         <details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;">
           <summary style="cursor:pointer;font-weight:800;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">What file size limit? <span style="color:var(--accent);">+</span></summary>
-          <p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">25 MB total through the form. If your drawing set is bigger, share a Procore, BuildingConnected, or BIM 360 link in the Notes field, or email it to <!--email_off-->connor@acglass.com<!--/email_off--> and reference the form submission.</p>
+          <p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">9 MB total through the form. If your drawing set is bigger, share a Procore, BuildingConnected, or BIM 360 link in the Notes field, or email it to <!--email_off-->connor@acglass.com<!--/email_off--> and reference the form submission.</p>
         </details>
         
         <details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;">
@@ -548,11 +549,90 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </main>
 
   <script>
-    // Client-side enhancement: async submit with status feedback + GA4 event
+    // Native multipart POST to formsubmit.co. Client checks only stop a send
+    // that FormSubmit would reject. Success is claimed only after FormSubmit
+    // redirects to /thanks.html?submitted=1.
     (function(){
       var form = document.getElementById('send-plans-form');
       if (!form) return;
       var status = document.getElementById('form-status');
+      var fileInput = form.querySelector('input[type="file"][name="files[]"]');
+      var submitBtn = document.getElementById('send-plans-submit');
+      var AWAITING_KEY = 'acg_form_awaiting_confirm';
+      // FormSubmit's documented attachment cap is ~10 MB for the whole POST.
+      // Stay under that so a GC never sees success after a silently dropped set.
+      var FORMSUBMIT_MAX_BYTES = 9 * 1024 * 1024;
+      var ALLOWED_EXTS = { pdf:1, dwg:1, zip:1, doc:1, docx:1, xls:1, xlsx:1, jpg:1, jpeg:1, png:1 };
+      var OVERSIZE_COPY = 'These files are over the 9 MB form limit, so they were not sent. Email the set to connor@acglass.com, or put a Procore, BuildingConnected, or BIM 360 link in Notes and submit without the large attachments.';
+      var TYPE_COPY = 'That file type cannot be sent here. Use PDF, DWG, ZIP, Word, Excel, JPG, or PNG. Or email connor@acglass.com / paste a Procore, BuildingConnected, or BIM 360 link in Notes.';
+
+      function fileExt(name) {
+        var m = String(name || '').toLowerCase().match(/\.([a-z0-9]+)$/);
+        return m ? m[1] : '';
+      }
+      function totalUploadBytes(files) {
+        var list = files || (fileInput && fileInput.files);
+        if (!list || !list.length) return 0;
+        var sum = 0;
+        for (var i = 0; i < list.length; i++) sum += list[i].size || 0;
+        return sum;
+      }
+      function formatMb(bytes) {
+        return (bytes / 1024 / 1024).toFixed(2);
+      }
+      function escapeText(str) {
+        return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+      function validateUploads(files) {
+        var list = files || (fileInput && fileInput.files);
+        if (!list || !list.length) return { ok: true, bytes: 0 };
+        var badType = [];
+        for (var i = 0; i < list.length; i++) {
+          if (!ALLOWED_EXTS[fileExt(list[i].name)]) badType.push(list[i].name);
+        }
+        if (badType.length) return { ok: false, kind: 'type', names: badType };
+        var bytes = totalUploadBytes(list);
+        if (bytes > FORMSUBMIT_MAX_BYTES) return { ok: false, kind: 'size', bytes: bytes };
+        return { ok: true, bytes: bytes };
+      }
+      function failCopy(kind) {
+        return kind === 'type' ? TYPE_COPY : OVERSIZE_COPY;
+      }
+      function setUploadStatus(check) {
+        if (!status) return;
+        if (!check || check.ok) {
+          status.style.color = 'rgba(255,255,255,.7)';
+          if (check && check.bytes) {
+            status.textContent = formatMb(check.bytes) + ' MB selected (9 MB limit).';
+          } else {
+            status.textContent = '';
+          }
+          if (submitBtn) submitBtn.disabled = false;
+          return;
+        }
+        status.style.color = '#FBBF24';
+        status.textContent = failCopy(check.kind);
+        if (submitBtn) submitBtn.disabled = true;
+      }
+      function renderFileList() {
+        var list = document.getElementById('file-list');
+        if (!list || !fileInput) return;
+        var files = fileInput.files;
+        if (!files || !files.length) {
+          list.textContent = '';
+          setUploadStatus({ ok: true, bytes: 0 });
+          return;
+        }
+        var html = [];
+        for (var i = 0; i < files.length; i++) {
+          html.push('<div style="font-size:13px;color:#fff;margin-top:6px;">' + escapeText(files[i].name) + ' &middot; ' + formatMb(files[i].size) + ' MB</div>');
+        }
+        html.push('<div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:8px;">Total ' + formatMb(totalUploadBytes(files)) + ' MB of 9 MB</div>');
+        list.innerHTML = html.join('');
+        setUploadStatus(validateUploads(files));
+      }
+      if (fileInput) fileInput.addEventListener('change', renderFileList);
+
       // Track form start
       var started = false;
       form.addEventListener('focusin', function(){
@@ -567,17 +647,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
          carries the scope context. Fill matching fields + hidden carry-overs
          + a banner so the visitor knows their scope was pulled across.
          ============================================================================ */
-      // Success confirmation banner (when formsubmit redirects back with ?submitted=1)
-      (function showSubmittedBanner() {
-        var qp = new URLSearchParams(location.search);
-        if (qp.get('submitted') !== '1') return;
-        var banner = document.createElement('div');
-        banner.style.cssText = 'background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.32);border-radius:8px;padding:18px 22px;margin-bottom:20px;font-size:14px;line-height:1.5;color:#fff;';
-        banner.innerHTML = '<strong style="color:#34D399;">\u2713 Plans received.</strong> A copy is in your inbox and with our estimating team. Expect a scope reply within 48 hours. For urgent items, call <a href="tel:+17724867711" style="color:#fff;">(772) 486-7711</a>.';
-        form.parentNode.insertBefore(banner, form);
-        if (typeof gtag === 'function') gtag('event', 'bid_form_confirmed');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      })();
 
       (function prefillFromBidEngine() {
         var qp = new URLSearchParams(location.search);
@@ -660,12 +729,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
                 dt.items.add(new File([blob], rec.name, { type: rec.type || '', lastModified: rec.lastModified || Date.now() }));
               });
               fileInput.files = dt.files;
-              var list = document.getElementById('file-list');
-              if (list) {
-                list.innerHTML = Array.from(fileInput.files).map(function(f) {
-                  return '<div style="font-size:13px;color:#fff;margin-top:6px;">&#128206; ' + f.name + ' &middot; ' + (f.size/1024/1024).toFixed(2) + ' MB</div>';
-                }).join('');
-              }
+              renderFileList();
               if (banner) {
                 banner.innerHTML += '<div style="margin-top:8px;">' + fileInput.files.length + ' drawing file' + (fileInput.files.length > 1 ? 's' : '') + ' carried over and attached below.</div>';
               }
@@ -733,10 +797,15 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         form.parentNode.insertBefore(banner, form);
       })();
 
-      // Real POST to formsubmit.co. Native form submit (so file uploads work).
-      // We let the form post naturally, then formsubmit redirects to _next.
-      // GA4 tracking fires only when the form is actually submitting.
+      // Native POST to formsubmit.co so file uploads work. Block oversize/type
+      // failures here. Do not claim success until FormSubmit redirects to _next.
       form.addEventListener('submit', function(e){
+        var check = validateUploads();
+        if (!check.ok) {
+          e.preventDefault();
+          setUploadStatus(check);
+          return;
+        }
         // Set _replyto to whatever email the user typed (formsubmit uses this for reply chain)
         var emailEl = form.querySelector('[name="email"]');
         if (emailEl && emailEl.value) {
@@ -749,7 +818,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
             existing.value = emailEl.value;
           }
         }
-        // GA4: fire conversion event (we're about to navigate away to formsubmit's _next page)
+        try { sessionStorage.setItem(AWAITING_KEY, 'send-plans'); } catch (err) {}
+        // Attempt-only tracking. generate_lead fires on /thanks.html after
+        // FormSubmit actually redirects with ?submitted=1.
         if (typeof gtag === 'function') {
           var bidtype = (form.bid_type && form.bid_type.value) || '';
           gtag('event', 'bid_form_submit', {
@@ -757,17 +828,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
             bid_type: bidtype,
             source_page: '/send-plans.html'
           });
-          gtag('event', 'generate_lead', {
-            form_id: 'send-plans-form',
-            source_page: '/send-plans.html',
-            bid_type: bidtype,
-            currency: 'USD',
-            value: 750
-          });
         }
-        // Visual status while submitting
-        status.style.color = 'var(--accent)';
-        status.innerHTML = 'Sending\u2026';
+        if (status) {
+          status.style.color = 'var(--accent)';
+          status.textContent = 'Sending\u2026';
+        }
         // Allow native POST to proceed
       });
     })();
