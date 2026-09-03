@@ -48,6 +48,5 @@ User-agent: MistralAI-User
 User-agent: Diffbot
 Allow: /
 
-# Sitemaps for AI crawlers:
-Sitemap: https://acglass.com/sitemap-llm.xml
+# Sitemaps for AI crawlers (one current apex sitemap only):
 Sitemap: https://acglass.com/sitemap.xml
