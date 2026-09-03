@@ -9,6 +9,13 @@
  * 5. Deploy
  */
 
+// Exact paths retired in-repo. GitHub Pages cannot emit HTTP 410; this worker
+// is the edge treatment. Keep these paths as origin Gone stubs as well.
+const GONE_PATHS = new Set([
+  "/acg-nashville-office-opening",
+  "/acg-nashville-office-opening/",
+]);
+
 const SPAM_PATTERNS = [
   /\/(casino|gambling|poker|slot|omegle|betting|roulette|blackjack)/i,
   /\/wp-(admin|login|content|includes|json)/i,
@@ -35,6 +42,21 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   const url = new URL(request.url);
   const path = url.pathname + url.search;
+
+  const pathname = url.pathname.replace(/\/+$/, "") || "/";
+  if (GONE_PATHS.has(url.pathname) || GONE_PATHS.has(pathname) || GONE_PATHS.has(pathname + "/")) {
+    return new Response(
+      '<!DOCTYPE html><html><head><title>410 Gone</title></head><body><h1>410 Gone</h1><p>This page has been permanently removed.</p><p><a href="https://acglass.com">Visit acglass.com</a></p></body></html>',
+      {
+        status: 410,
+        headers: {
+          "Content-Type": "text/html;charset=UTF-8",
+          "X-Robots-Tag": "noindex",
+          "Cache-Control": "public, max-age=86400",
+        },
+      }
+    );
+  }
 
   // Check if the URL matches any spam pattern
   for (const pattern of SPAM_PATTERNS) {

@@ -221,6 +221,42 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertEqual(canonical(html), f"{BASE}/{city}/")
             self.assertFalse(is_noindex(html))
 
+    def test_leftover_city_roots_canonical_to_hub_not_noindex_templates(self):
+        # SEO: never canonical-to-noindex. Prefer hub (or a keeper) over
+        # self-canonical for the leftover city roots. Leave Wave-4 metros alone.
+        leftovers = []
+        bad = []
+        hub = f"{BASE}/florida-commercial-glazing/"
+        for path in sorted(REPO_ROOT.glob("storefront-glazier-*-florida/index.html")):
+            slug = path.parent.name
+            city = slug[len("storefront-glazier-") : -len("-florida")]
+            if (
+                city in LEAVE_CITY_ROOTS
+                or city in KEEPER_CITY_ROOTS
+                or slug == "storefront-glazier-florida"
+            ):
+                continue
+            city_page = REPO_ROOT / city / "index.html"
+            if not city_page.is_file():
+                continue
+            if not is_noindex(path.read_text(encoding="utf-8")):
+                continue
+            html = city_page.read_text(encoding="utf-8")
+            if is_noindex(html) or REFRESH_RE.search(html):
+                continue
+            leftovers.append(city)
+            canon = canonical(html)
+            if canon != hub:
+                bad.append(f"/{city}/ -> {canon}")
+            if "storefront-glazier-" in canon:
+                target = REPO_ROOT / canon.rstrip("/").split("/")[-1] / "index.html"
+                if target.is_file() and is_noindex(target.read_text(encoding="utf-8")):
+                    bad.append(f"/{city}/ still points at noindex {canon}")
+        self.assertGreaterEqual(len(leftovers), 60)
+        self.assertEqual(bad, [])
+        locs = sitemap_locs()
+        self.assertNotIn(f"{BASE}/boca-raton/", locs)
+
     def test_satellite_city_roots_still_point_at_indexable_keepers(self):
         for city in KEEPER_CITY_ROOTS:
             html = read(f"{city}/index.html")
@@ -317,6 +353,69 @@ class OrphanInboundTests(unittest.TestCase):
         for rel in ("services.html", "locations.html", "manufacturers.html"):
             hrefs = HREF_RE.findall(read(rel))
             self.assertLess(len(hrefs), 180, rel)
+
+
+class EsWindowsLinkTests(unittest.TestCase):
+    def test_es_windows_does_not_link_unverified_product_paths(self):
+        html = read("es-windows.html")
+        self.assertNotIn("eswindows.com/product/", html)
+        self.assertNotIn("es-9000-impact-door", html)
+        self.assertIn('href="https://eswindows.com"', html)
+        self.assertFalse((REPO_ROOT / "products/eswindows/index.html").exists())
+        self.assertFalse((REPO_ROOT / "products/eswindows.html").exists())
+
+
+class HomepageJsonLdTests(unittest.TestCase):
+    def test_homepage_jsonld_is_florida_contractor_not_tennessee(self):
+        html = read("index.html")
+        self.assertIn(
+            '"description": "Florida commercial glazing contractor. '
+            "Storefront, curtainwall, impact, and fire-rated glazing for general contractors.\"",
+            html,
+        )
+        self.assertNotIn("Florida & Tennessee commercial glazing contractor", html)
+        # Wave-4 / semantic freeze: title, meta, og, H1 stay put.
+        self.assertIn("<title>Commercial Glazing Contractor Florida | ACG</title>", html)
+        self.assertIn(
+            'content="Florida\'s commercial glazing contractor for storefront, curtainwall, and impact glass',
+            html,
+        )
+        self.assertIn(
+            'property="og:title" content="Commercial Glazing Contractor Florida | ACG"',
+            html,
+        )
+        self.assertIn('<span class="l1">Commercial glazing.</span>', html)
+
+
+class NashvilleResidualTests(unittest.TestCase):
+    def test_nashville_office_opening_is_gone_not_a_refresh_200(self):
+        html = read("acg-nashville-office-opening/index.html")
+        self.assertTrue(is_noindex(html))
+        self.assertFalse(REFRESH_RE.search(html))
+        self.assertIn("410 Gone", html)
+        self.assertNotIn("This page has been removed. Redirecting", html)
+        worker = read("cloudflare-410-worker.js")
+        self.assertIn('"/acg-nashville-office-opening"', worker)
+        self.assertIn('"/acg-nashville-office-opening/"', worker)
+        self.assertNotIn(f"{BASE}/acg-nashville-office-opening/", sitemap_locs())
+
+    def test_tennessee_hub_title_drops_orphan_q3(self):
+        html = read("tennessee-commercial-glazing/index.html")
+        self.assertNotIn("consulting Q3", html)
+        self.assertIn(
+            "<title>Tennessee Commercial Glazing - ACG | Tennessee supply and consulting</title>",
+            html,
+        )
+        self.assertIn("Tennessee supply and consulting", html)
+
+    def test_nashville_copy_does_not_read_as_an_office_move(self):
+        html = read("nashville/index.html")
+        self.assertNotIn("moving into Nashville", html)
+        self.assertNotIn("when the office furnishes", html)
+        self.assertIn("holds no Tennessee office", html)
+        self.assertIn("furnish-and-consult", html)
+        healthcare = read("healthcare-glazing-nashville/index.html")
+        self.assertNotIn("when the office furnishes", healthcare)
 
 
 if __name__ == "__main__":
