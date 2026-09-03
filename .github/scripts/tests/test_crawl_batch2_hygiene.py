@@ -254,6 +254,20 @@ class CityCanonicalTests(unittest.TestCase):
                     bad.append(f"/{city}/ still points at noindex {canon}")
         self.assertGreaterEqual(len(leftovers), 60)
         self.assertEqual(bad, [])
+        # Slug mismatches from the live leftover set (hollywood-florida vs
+        # storefront-glazier-hollywood-florida, winter-heaven vs winter-haven, …).
+        for city in (
+            "gulfstream",
+            "hollywood-florida",
+            "key-biscayne-village",
+            "miami-shores-village",
+            "palmetto-bay-village",
+            "st-petersburg",
+            "winter-heaven",
+        ):
+            html = read(f"{city}/index.html")
+            self.assertEqual(canonical(html), hub, city)
+            self.assertFalse(is_noindex(html), city)
         locs = sitemap_locs()
         self.assertNotIn(f"{BASE}/boca-raton/", locs)
 
