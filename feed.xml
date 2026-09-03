@@ -7,7 +7,7 @@
     <description>Florida's commercial glazing specialists. Code, systems, projects, and field notes from ACG.</description>
     <language>en-us</language>
     <copyright>© 2026 American Commercial Glass, Inc.</copyright>
-    <lastBuildDate>Mon, 27 Apr 2026 02:16:32 -0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 00:00:00 -0000</lastBuildDate>
     <managingEditor>connor@acglass.com (Connor Walsh)</managingEditor>
     <webMaster>connor@acglass.com (Connor Walsh)</webMaster>
     <category>Construction</category>
@@ -18,6 +18,15 @@
       <title>American Commercial Glass</title>
       <link>https://acglass.com/</link>
     </image>
+    <item>
+      <title>UFC Glazing vs Florida NOA: What GCs Mix Up</title>
+      <link>https://acglass.com/blog/ufc-glazing-vs-florida-noa.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/ufc-glazing-vs-florida-noa.html</guid>
+      <description>UFC 4-010-01 Section 5-11 is laminated glass, not a blast test. A Miami-Dade NOA is wind and impact only and does not satisfy AT/FP.</description>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 -0000</pubDate>
+      <dc:creator>Connor Walsh, ACG</dc:creator>
+      <category>Article</category>
+    </item>
     <item>
       <title>Bi-Fold Glass Walls for Restaurants &amp; Hospitality: Indoor-Outdoor Dining Done Right</title>
       <link>https://acglass.com/blog/bi-fold-glass-walls-restaurants-hospitality.html</link>
