@@ -191,6 +191,8 @@ Narrow inbound links to already-approved hubs. One sentence or one list item. No
 
 Not added: `/products/eswindows/` (404). ESWindows stays on `/eswindows-installer-florida.html`.
 
+Post-fix inbound (distinct linking pages, self excluded): `/florida-commercial-glazing/` **23** (was 5), `/products/` **3** (was 2), `/products/euro-wall/` **5** (was 1).
+
 ## Not done (out of allowed Tier 1)
 
 - Unique-ify Florida hub title vs homepage
