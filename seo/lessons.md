@@ -2,7 +2,7 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (wave-2 noindex applied; ESWindows product page still skipped)
+Last updated: 2026-09-03 (wave-3 morning findings: BBB live NAP, Manta removed, leftover authorized-installer soften)
 Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
@@ -76,3 +76,13 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 ## ESWindows fetch retry (2026-09-03, wave-2)
 
 - `https://eswindows.com/` still returns HTTP 403 + Cloudflare "Just a moment..." challenge. `/products/eswindows/` was not created. Do not copy NOA/DP tables from `/eswindows-installer-florida.html` or `/noa/eswindows.html` onto a new URL until manufacturer HTML loads.
+
+## Wave-3 audit (2026-09-03)
+
+- Live and repo sitemaps still agree at **909** unique page URLs. Wave-2's 324 stay `noindex,follow` and out of sitemaps. Eight keepers stay indexable. `/products/eswindows/` is a live 404.
+- Highest-value safe fix: inbound to `/florida-commercial-glazing/` (was 5) and `/products/` / `/products/euro-wall/` (were 2 and 1). One-sentence or one-list-item links added on the eight keepers, three office metros, and the remaining GC service/statewide hubs. No titles rewritten. Homepage not edited.
+- Inventory: `/seo/wave3-audit.md`.
+- Left alone without GSC: 77 `/{city}/all-glass-entrances/` (28 in sitemaps), 10 vertical-city pages, 17 commercial-glazier city pages, eight out-of-Florida state pages, `/author/connor-walsh/` vs `/authors/connor-walsh.html`.
+- Leftover first-party `Euro-Wall authorized` on `/services.html` and `Euro-Wall dealer (authorized)` in `/llms.txt` were softened this wave to installer / factory-certified language. Same pass softened ACG-as-subject factory-authorization leftovers on the reliability / professional-install / decorative / Jacksonville / Nashville pages. Generic "ask the sub" editorial was left alone. BuildZoom and Procore bios stay external cleanup items (unsupported authorized-installer list; false "20 years of experience"). Do not add those claims on-site.
+- `estimating@eswindows.com` bounced 550 5.1.1. Dead address was ledger-only. Next route is the public form https://eswindows.com/connect-dealer/ (fetched 200). Do not invent a replacement inbox.
+- BBB profile 0633-92045708 is live-corrected (primary (772) 486-7711, website https://acglass.com/, old (561) 283-8030 secondary). Manta slug `mtmntvt` is removed (301 to a generic WPB flat-glass category); recheck 2026-09-10.
