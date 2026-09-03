@@ -10,7 +10,7 @@
   <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e284f">
-  <title>ACG Bid Engine | Upload Plans. Get a Glazing Scope in 48</title>
+  <title>ACG Bid Engine | Upload Plans. Glazing Scope in 48 Hours</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="description" content="Upload your construction plans and ACG returns an itemized commercial glazing bid within 48 hours. Florida's GC-facing glazing bid engine.">
@@ -1465,6 +1465,25 @@
 
     .be-scope-meta span { color: var(--be-accent); }
 
+    .be-pdf-download {
+      text-align: center;
+      margin: -8px 0 24px;
+    }
+
+    .be-pdf-download .be-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .be-pdf-note {
+      margin: 10px 0 0;
+      font-family: var(--be-mono);
+      font-size: 12px;
+      color: var(--be-text-faint);
+    }
+
     /* ===== RESULTS GRID ===== */
     .be-results-grid {
       display: grid;
@@ -2390,6 +2409,13 @@
         </div>
       </div>
 
+      <div class="be-pdf-download" id="pdf-download-wrap">
+        <button type="button" id="download-pdf-btn" class="be-btn be-btn-primary" onclick="generateBidPDF()">
+          Download Preliminary Scope (PDF)
+        </button>
+        <p class="be-pdf-note" id="pdf-download-note" hidden></p>
+      </div>
+
       <!-- System + Manufacturers (2-col) -->
       <div class="be-results-grid">
         <div class="be-result-card">
@@ -2532,7 +2558,8 @@
     </div>
   </footer>
 
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" integrity="sha384-5MXQT3yrGpx6/FO6Z5JlMsn1xsN/OggV+b88W2CfpNqmvPfmv7JW/O8x78GzptfE" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- jsPDF 2.5.2 does not exist on cdnjs (404 / HTML MIME). Pin the last 2.5.x UMD that returns 200. -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="js/main.js"></script>
 
   <script>
@@ -3325,7 +3352,6 @@
     window.scrollTo({ top: document.querySelector('.be-header').offsetTop, behavior: 'smooth' });
 
     const type = state.buildingType || 'office';
-    const pricing = PRICING[type] || PRICING.office;
     const system = SYSTEMS[type] || SYSTEMS.office;
 
     // Scope summary (no pricing displayed - itemized bid returned by ACG)
@@ -3356,16 +3382,7 @@
         : 'Your project details have been submitted to ACG';
     }
 
-    // Add download PDF button if not already present
-    if (!document.getElementById('download-pdf-btn')) {
-      const costSection = document.querySelector('.be-cost-card') || document.querySelector('#results-panel .be-cost-display');
-      if (costSection) {
-        const btnWrap = document.createElement('div');
-        btnWrap.style.cssText = 'text-align:center;margin-top:16px;';
-        btnWrap.innerHTML = '<button id="download-pdf-btn" onclick="generateBidPDF()" style="background:var(--accent,#E11320);color:white;border:none;padding:12px 28px;border-radius:6px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity=0.85" onmouseout="this.style.opacity=1">\u2193 Download Official Bid Estimate (PDF)</button>';
-        costSection.parentNode.insertBefore(btnWrap, costSection.nextSibling);
-      }
-    }
+    preparePdfDownload();
 
     // Timeline
     renderTimeline();
@@ -3386,15 +3403,89 @@
       });
     }
 
-    // Generate and auto-download the PDF bid estimate
-    setTimeout(() => { generateBidPDF(); }, 1500);
   }
 
   // ====================
-  // PDF BID ESTIMATE
+  // PRELIMINARY SCOPE PDF
   // ====================
+  // The PDF is an intake / preliminary scope summary from the current
+  // submission fields. It is not a priced bid and is not a binding proposal.
+  function jspdfCtor() {
+    return (window.jspdf && window.jspdf.jsPDF) ? window.jspdf.jsPDF : null;
+  }
+
+  function hasScopePdfData() {
+    return !!(state.projectName || state.buildingTypeLabel || state.computedGlassSF || state.contactEmail);
+  }
+
+  function formatRequirements() {
+    const req = state.requirements;
+    if (Array.isArray(req)) {
+      const labels = req.filter(Boolean);
+      return labels.length ? labels.join(', ') : 'Standard';
+    }
+    return req || 'Standard';
+  }
+
+  function setPdfControlState(ready, message) {
+    const btn = document.getElementById('download-pdf-btn');
+    const note = document.getElementById('pdf-download-note');
+    if (btn) {
+      btn.disabled = !ready;
+      btn.setAttribute('aria-disabled', ready ? 'false' : 'true');
+    }
+    if (note) {
+      if (message) {
+        note.hidden = false;
+        note.textContent = message;
+      } else {
+        note.hidden = true;
+        note.textContent = '';
+      }
+    }
+  }
+
+  function preparePdfDownload() {
+    if (!hasScopePdfData()) {
+      setPdfControlState(false, 'A scope summary PDF is not available because this submission is missing project details.');
+      return;
+    }
+    const arm = function () {
+      if (jspdfCtor()) {
+        setPdfControlState(true, '');
+        return true;
+      }
+      return false;
+    };
+    if (arm()) {
+      setTimeout(function () { generateBidPDF(); }, 1500);
+      return;
+    }
+    setPdfControlState(false, 'Loading the PDF library...');
+    let attempts = 0;
+    const poll = function () {
+      if (arm()) return;
+      attempts += 1;
+      if (attempts >= 12) {
+        setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at connor@acglass.com for a copy of this scope summary.');
+        return;
+      }
+      setTimeout(poll, 250);
+    };
+    setTimeout(poll, 250);
+  }
+
   function generateBidPDF() {
-    const { jsPDF } = window.jspdf;
+    const jsPDF = jspdfCtor();
+    if (!jsPDF) {
+      setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at connor@acglass.com for a copy of this scope summary.');
+      return false;
+    }
+    if (!hasScopePdfData()) {
+      setPdfControlState(false, 'A scope summary PDF is not available because this submission is missing project details.');
+      return false;
+    }
+    try {
     const doc = new jsPDF('p', 'mm', 'letter');
     const W = 215.9;
     const margin = 20;
@@ -3430,7 +3521,7 @@
     doc.setFontSize(8);
     const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     doc.text('Date: ' + today, W - margin, 22, { align: 'right' });
-    doc.text('Ref: ACG-BID-' + Date.now().toString(36).toUpperCase(), W - margin, 27, { align: 'right' });
+    doc.text('Ref: ACG-SCOPE-' + Date.now().toString(36).toUpperCase(), W - margin, 27, { align: 'right' });
     doc.text('CGC License #1531993', W - margin, 32, { align: 'right' });
 
     y = 55;
@@ -3455,7 +3546,12 @@
       ['Estimated Glass SF', state.computedGlassSF ? state.computedGlassSF.toLocaleString() + ' SF' : '-'],
       ['Floors', state.floors || '1'],
       ['Construction Type', state.constructionType === 'renovation' ? 'Renovation' : 'New Construction'],
-      ['Special Requirements', state.requirements || 'Standard']];
+      ['Special Requirements', formatRequirements()]
+    ];
+    if (state.specialNotes) fields.push(['Notes', state.specialNotes]);
+    if (state.contactEmail) {
+      fields.push(['Submitted by', [state.contactName, state.contactEmail].filter(Boolean).join(' / ')]);
+    }
 
     fields.forEach(([label, value]) => {
       doc.setFont('helvetica', 'bold');
@@ -3463,8 +3559,9 @@
       doc.text(label + ':', margin, y);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(...dark);
-      doc.text(String(value), margin + 55, y);
-      y += 6;
+      const lines = doc.splitTextToSize(String(value), cw - 55);
+      doc.text(lines, margin + 55, y);
+      y += Math.max(6, lines.length * 5);
     });
 
     y += 8;
@@ -3560,8 +3657,14 @@
     doc.text('CGC #1531993  \u00b7  Woman-owned', W - margin, 274, { align: 'right' });
 
     // Save
-    const filename = 'ACG-Bid-Estimate-' + (state.projectName || 'Project').replace(/[^a-zA-Z0-9]/g, '-') + '.pdf';
+    const filename = 'ACG-Scope-Summary-' + (state.projectName || 'Project').replace(/[^a-zA-Z0-9]/g, '-') + '.pdf';
     doc.save(filename);
+    setPdfControlState(true, '');
+    return true;
+    } catch (err) {
+      setPdfControlState(false, 'This scope summary could not be generated from the current submission.');
+      return false;
+    }
   }
 
   function renderTimeline() {
