@@ -8,6 +8,24 @@
 .acg-flagship-article h2,
 .acg-flagship-article h3 { scroll-margin-top: 96px; }
 
+.acg-byline {
+  margin-top: 24px;
+  display: flex;
+  gap: 8px 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 0.8rem;
+  color: var(--text-muted, rgba(255,255,255,0.55));
+}
+.acg-byline a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.acg-byline a:hover { color: #fff; }
+.acg-byline .acg-byline-read { color: var(--accent, #e11320); }
+
 /* Article body must paint without waiting for reveal JS. Otherwise the TOC
    and Quick Answer stay at opacity 0 and the mobile details never looks open. */
 .acg-flagship-article[data-reveal] {
@@ -140,10 +158,40 @@
 }
 
 .acg-family a:hover { color: #fff; }
+.acg-family [aria-current="page"] {
+  color: #fff;
+  border-bottom-color: #e11320;
+}
 
 .acg-family-back {
   margin-left: auto;
 }
+
+.acg-flagship .acg-field-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+.acg-flagship .acg-field-table table {
+  width: 100%;
+}
+
+@media (max-width: 420px) {
+  .acg-flagship .acg-field-table table {
+    min-width: 0 !important;
+    font-size: 0.78rem;
+  }
+  .acg-flagship .acg-field-table th,
+  .acg-flagship .acg-field-table td {
+    padding: 8px !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* Duplicate mill next-link row. Family strip already covers next pages. */
+.acg-flagship [aria-labelledby="acg-next-h"] { display: none; }
 
 .acg-flagship .blog-content,
 .acg-flagship-article {
