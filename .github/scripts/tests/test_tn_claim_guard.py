@@ -1520,5 +1520,31 @@ class AuthorizationClaimSiteScanTests(unittest.TestCase):
         self.assertEqual(offenders, [])
 
 
+class CommercialGlazingTnTruthTests(unittest.TestCase):
+    """Regression contract for the statewide Tennessee hub page."""
+
+    REQUIRED = (
+        "ACG furnishes glazing materials and provides project consulting",
+        "ACG holds no Tennessee office and performs no Tennessee field labor",
+    )
+    PROHIBITED = (
+        re.compile(r"\bdeploys?\b", re.I),
+        re.compile(r"Storefront Installation", re.I),
+        re.compile(r"ACG installs .{0,40}Tennessee", re.I),
+        re.compile(r"Nashville's Glazing Sub", re.I),
+    )
+
+    def test_statewide_tn_hub_is_furnish_consult_only(self):
+        source = (Path(guard.REPO_ROOT) / "commercial-glazing-tn.html").read_text(
+            encoding="utf-8"
+        )
+        for phrase in self.REQUIRED:
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, source)
+        for pattern in self.PROHIBITED:
+            with self.subTest(pattern=pattern.pattern):
+                self.assertIsNone(pattern.search(source))
+
+
 if __name__ == "__main__":
     unittest.main()

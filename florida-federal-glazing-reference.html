@@ -12,9 +12,9 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Permissions-Policy" content="geolocation=(self), camera=(), microphone=(), payment=(), usb=()">
   <meta name="theme-color" content="#0E284F">
-  <title>Florida &amp; Federal Commercial Glazing — Standards Reference (2026) | ACG</title>
+  <title>Florida &amp; Federal Glazing Reference (2026) | ACG</title>
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <meta name="description" content="Standards reference for Florida HVHZ design pressures (FBC 2023, ASCE 7-22), DoD AT/FP blast-rated glazing (UFC 4-010-01, ASTM F1642/F2248/F2912), and TAA / Buy American manufacturer sourcing for federal construction glazing.">
+  <meta name="description" content="Reference for Florida HVHZ design pressures (FBC 2023, ASCE 7-22), DoD AT/FP blast glazing (UFC 4-010-01), and TAA / Buy American federal sourcing.">
   <meta name="keywords" content="Florida HVHZ design pressure reference, FBC 2023 chapter 1620, ASCE 7-22 wind load, UFC 4-010-01 blast glazing, ASTM F1642 F2248 F2912, TAA compliant glazing manufacturers, Buy American Act glazing, FAR Part 25 federal construction">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
   <link rel="canonical" href="https://acglass.com/florida-federal-glazing-reference.html">
@@ -74,11 +74,7 @@
         "jobTitle": "President",
         "worksFor": {"@id": "https://acglass.com/#organization"}
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "American Commercial Glass",
-        "logo": {"@type": "ImageObject", "url": "https://acglass.com/images/acg-logo-nav@2x.png"}
-      },
+      "publisher": {"@id": "https://acglass.com/#organization"},
       "mainEntityOfPage": "https://acglass.com/florida-federal-glazing-reference.html",
       "citation": [
         "https://codes.iccsafe.org/content/FLBC2023P1/chapter-16-structural-design",
@@ -114,7 +110,14 @@
       "iso6523Code": "0199:CGC1531993",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q139858578"
-      ]
+      ],
+      "parentOrganization": {"@id": "https://acglass.com/#organization"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://acglass.com/#organization",
+      "name": "American Commercial Glass",
+      "url": "https://acglass.com/"
     },
     {
       "@type": "BreadcrumbList",
@@ -122,72 +125,6 @@
         {"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},
         {"@type":"ListItem","position":2,"name":"Resources","item":"https://acglass.com/resources.html"},
         {"@type":"ListItem","position":3,"name":"Florida & Federal Glazing Reference","item":"https://acglass.com/florida-federal-glazing-reference.html"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://acglass.com/florida-federal-glazing-reference.html#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What counties are inside Florida's High-Velocity Hurricane Zone?",
-          "acceptedAnswer": {"@type":"Answer","text": "The HVHZ is defined in Florida Building Code, Building (FBC-B) Section 202 as Miami-Dade County and Broward County only. No other Florida county is inside the HVHZ."}
-        },
-        {
-          "@type": "Question",
-          "name": "What wind speeds does FBC 2023 assign to HVHZ counties?",
-          "acceptedAnswer": {"@type":"Answer","text": "FBC 2023 Section 1620.2 assigns 3-second gust design wind speeds by Risk Category. Miami-Dade: 165 mph (I), 175 mph (II), 186 mph (III), 195 mph (IV). Broward: 156 mph (I), 170 mph (II), 180 mph (III), 185 mph (IV). All buildings default to Exposure Category C unless Exposure D applies per ASCE 7 Section 26.7."}
-        },
-        {
-          "@type": "Question",
-          "name": "What is a Miami-Dade Notice of Acceptance (NOA)?",
-          "acceptedAnswer": {"@type":"Answer","text": "A Miami-Dade NOA is a product approval issued by the Miami-Dade County Product Control Section documenting that a fenestration product has been tested to the applicable TAS (Testing Application Standard) protocols and is accepted for use in the HVHZ. NOAs are searchable in the county's Product Control database and are the accepted product-approval pathway inside HVHZ; Florida Product Approval (FL#) with HVHZ designation is the equivalent pathway outside HVHZ."}
-        },
-        {
-          "@type": "Question",
-          "name": "What standards govern AT/FP blast-rated glazing on federal projects?",
-          "acceptedAnswer": {"@type":"Answer","text": "The Department of Defense's UFC 4-010-01 (DoD Minimum Antiterrorism Standards for Buildings) sets minimum standoff distances and mandates hazard-rated glazing performance. ASTM F1642 is the test method (arena shock-tube or open-air), ASTM F2248 is the practice for specifying an equivalent 3-second design load for laminated glazing, and ASTM F2912 is the standard specification that ties hazard rating to installed assembly performance."}
-        },
-        {
-          "@type": "Question",
-          "name": "What are the ASTM F1642 hazard rating tiers?",
-          "acceptedAnswer": {"@type":"Answer","text": "ASTM F1642/F1642M-17 defines glazing performance under airblast loading using rating tiers ranging from No Break, No Hazard, Minimal Hazard, Very Low Hazard, Low Hazard, Medium Hazard, and High Hazard, based on post-test debris location and injury potential."}
-        },
-        {
-          "@type": "Question",
-          "name": "Which countries are TAA-designated for federal procurement?",
-          "acceptedAnswer": {"@type":"Answer","text": "TAA-designated countries include WTO GPA signatories, Free Trade Agreement partners, Caribbean Basin countries, and Least Developed Countries as designated under 19 U.S.C. § 2511 and implemented in FAR 25.4 and FAR 52.225-5. The current designated-country list is maintained by GSA and mirrors FAR 52.225-5. Colombia, Japan, the United Kingdom, and Canada are examples of designated countries. China, India, Brazil, and Russia are not."}
-        },
-        {
-          "@type": "Question",
-          "name": "How does the Buy American Act treat construction materials?",
-          "acceptedAnswer": {"@type":"Answer","text": "FAR Part 25.2 implements the Buy American Act for federal construction. It requires, with limited exceptions, use of only domestic construction materials on covered federal construction contracts performed in the United States. Domestic-content thresholds are set by FAR 25.003 and are scheduled to rise to 75 percent for items delivered starting in calendar year 2029."}
-        },
-        {
-          "@type": "Question",
-          "name": "Is Tecnoglass / ESWindows TAA-compliant?",
-          "acceptedAnswer": {"@type":"Answer","text": "Tecnoglass and its ESWindows brand manufacture in Colombia. Colombia is a TAA-designated country under FAR 52.225-5, so Tecnoglass-manufactured product qualifies as a designated-country end product for TAA-covered federal acquisitions. Buy American Act coverage (for construction materials on non-TAA-covered federal construction) is a separate analysis handled by the contracting officer."}
-        },
-        {
-          "@type": "Question",
-          "name": "What ASCE 7 edition does FBC 2023 reference?",
-          "acceptedAnswer": {"@type":"Answer","text": "The 2023 Florida Building Code, Building (8th Edition) references ASCE 7-22 (Minimum Design Loads and Associated Criteria for Buildings and Other Structures) for wind, seismic, flood, tornado, and load combinations. HVHZ sections 1620.1 and 1620.7 explicitly cite ASCE 7 Chapters 26 through 32."}
-        },
-        {
-          "@type": "Question",
-          "name": "What testing standards must HVHZ fenestration meet?",
-          "acceptedAnswer": {"@type":"Answer","text": "HVHZ fenestration must be tested and approved under Miami-Dade Testing Application Standards (TAS): TAS 201 (large- and small-missile impact), TAS 202 (uniform static air pressure), and TAS 203 (cyclic wind pressure loading). Products passing these protocols are documented on a Miami-Dade NOA."}
-        },
-        {
-          "@type": "Question",
-          "name": "What is the Wind-Borne Debris Region outside HVHZ?",
-          "acceptedAnswer": {"@type":"Answer","text": "Per FBC-B Section 1609.2, the Wind-Borne Debris Region (WBDR) is any area where the ultimate design wind speed (V_ult) for a Risk Category II building is 140 mph or greater, or 130 mph or greater within one mile of the coastal mean high water line. All exterior openings in the WBDR must have impact protection — either impact-rated glazing tested to ASTM E1886/E1996 or approved shutters."}
-        },
-        {
-          "@type": "Question",
-          "name": "What interlayer types are used in blast-resistant laminated glazing?",
-          "acceptedAnswer": {"@type":"Answer","text": "Common interlayers used in blast-resistant laminated glazing include standard PVB (polyvinyl butyral), structural PVB (stiffer / higher-modulus grades), and ionoplast interlayers such as SentryGlas. Interlayer selection is a function of the specified hazard rating under ASTM F1642, the equivalent 3-second design load per ASTM F2248, and the frame anchorage capacity — always determined by the project blast consultant."}
-        }
       ]
     }
   ]
