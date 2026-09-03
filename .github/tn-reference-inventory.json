@@ -4,11 +4,11 @@
   "baseline_commit": "9197a20f6af6d639530ee6dd4cc500558c48eadd",
   "scope": "Exact union of path or title discovery and standalone Tennessee, Nashville, or TN tokens across decoded HTML semantic surfaces, static script strings and character codes, and inline plus external CSS generated content including attr values.",
   "expected_counts": {
-    "document_sources": 138,
+    "document_sources": 137,
     "path_or_title_discovery": 73,
-    "outside_discovery": 65,
+    "outside_discovery": 64,
     "known_edge_301_sources": 4,
-    "document_sources_excluding_recorded_edge_sources": 134,
+    "document_sources_excluding_recorded_edge_sources": 133,
     "excluded_non_page_fragments": 1
   },
   "excluded_non_page_fragments": [
@@ -148,7 +148,6 @@
     "press.html": "9d5b3a96c555966fc4efbbd042b8066bbb91cbb8e2add5ccf7c0c298d1864074",
     "project-map.html": "0b9e455d1b1cb8c444438ad7e3f666d9250ad6d7b69fff786beaff1371260347",
     "projects/index.html": "772676ad3a8150c4909f1e41e338589cdf72a7c49d0bf041f094437634e3a6da",
-    "redesign-preview.html": "6697b957437fba158950f41e3b941f45e3a1220dc599bc4d9fb81d973aea5fa7",
     "restaurant-glazing-nashville/index.html": "b23a5b44a912fbdbb15e422699fb5ebf570e525e9c4cf04b0676e9ce21e7e7e2",
     "scope-engine.html": "cb2dd399e92b16d9a602d1bca574244e25087d8bc5ceb47d36c81b39baebd59d",
     "spandrel-glass-commercial.html": "055dd7ba4166715778f2d772f03c704537e67c11823f9f409b9fb9027ce9beda",
@@ -248,7 +247,6 @@
       "leadership.html",
       "national-commercial-glazing-contractor.html",
       "projects/index.html",
-      "redesign-preview.html",
       "scope-engine.html"
     ],
     "mixed_claim_review": [
