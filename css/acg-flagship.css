@@ -1,5 +1,6 @@
 /* Flagship TOC, field-card print, and family strip.
-   Scoped to .acg-flagship so site chrome is untouched. */
+   Scoped to .acg-flagship so site chrome is untouched.
+   Chip/TOC/sticky polish after PR 96. */
 
 .acg-flagship .acg-print-mast,
 .acg-flagship .acg-print-kicker { display: none; }
