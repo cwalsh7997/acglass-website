@@ -42,7 +42,7 @@ Eight keepers are live 200, indexable, self-canonical, in sitemaps:
 
 | URL | Inbound pages (pre-fix) | Title |
 | --- | --- | --- |
-| `/storefront-glazier-west-palm-beach-florida/` | 45 | Storefront Glazier in West Palm Beach, FL \| ACG — 48-Hr Bids |
+| `/storefront-glazier-west-palm-beach-florida/` | 45 | Storefront Glazier in West Palm Beach, FL \| ACG - 48-Hr Bids (live title uses an em dash) |
 | `/storefront-glazier-naples-florida/` | 47 | Commercial Storefront Glazier Naples, FL for GCs \| ACG |
 | `/storefront-glazier-tampa-florida/` | 59 | Commercial Storefront Glazier Tampa, FL for GCs \| ACG |
 | `/storefront-glazier-miami-florida/` | 66 | Storefront Glazier in Miami, FL \| ACG - 48-Hr Bids |
@@ -61,7 +61,7 @@ Approved hubs live 200, self-canonical, in sitemaps: `/florida-commercial-glazin
 
 Do not noindex another broad family without Search Console evidence.
 
-### A. `/{city}/all-glass-entrances/` — 77 indexable, 28 in sitemaps
+### A. `/{city}/all-glass-entrances/` - 77 indexable, 28 in sitemaps
 
 Same city-swap shape as the wave-2 triples. Avg ~848 words. Titles are `All-Glass Entrance Installation in {City}…`. Statewide hub `/all-glass-entrances/` already exists (PR 71 consolidated a doorway set into that hub). 49 of the 77 city URLs are indexable and **absent** from sitemaps. Adding them would enlarge a thin family. Noindexing them would repeat wave-2 without GSC.
 
@@ -69,19 +69,19 @@ Examples: `/aventura/all-glass-entrances/`, `/boca-raton/all-glass-entrances/`, 
 
 **Next:** [NEED: GSC page report for `/*/all-glass-entrances/`.] If impressions are near zero, same treatment as wave-2 (noindex,follow + sitemap drop, no delete). If any city has clicks, keep that URL.
 
-### B. `/{vertical}-glazing-{city}/` — 10 indexable, all in sitemaps, avg 386 words
+### B. `/{vertical}-glazing-{city}/` - 10 indexable, all in sitemaps, avg 386 words
 
 `/assisted-living-glazing-{naples,orlando,west-palm-beach}/`, `/automotive-showroom-glazing-{fort-lauderdale,orlando,tampa,west-palm-beach}/`, `/bar-brewery-glazing-{miami,orlando,tampa}/`. Thin and templated. Keeper-market overlap only.
 
 **Next:** GSC-gated. Do not noindex on word count alone.
 
-### C. `/commercial-glazier-{place}/` — 18 files, 17 indexable, 17 in sitemaps, avg 597 words
+### C. `/commercial-glazier-{place}/` - 18 files, 17 indexable, 17 in sitemaps, avg 597 words
 
 City clones plus `/commercial-glazier-bid-process-florida/`. Title bank includes `Commercial Glazier in {City}, FL | ACG - 48-Hr Bids`.
 
 **Next:** GSC-gated.
 
-### D. `/commercial-glazing-*.html` — 131 files, 97 indexable, 49 in sitemaps
+### D. `/commercial-glazing-*.html` - 131 files, 97 indexable, 49 in sitemaps
 
 Mix of real hubs, aliases, and out-of-Florida pages. Not one family. Do not treat as a single noindex set.
 
@@ -93,7 +93,7 @@ Week-1 note was "noindex + self-canonical + drop from sitemaps." That was not ap
 
 **Next:** [NEED: GSC on the 8 + 3 longer state URLs.] Containment is noindex + sitemap drop, not deletion.
 
-### F. `/storefront-installer-*.html` — 9 files, 8 indexable, 7 in sitemaps, avg 2,307 words
+### F. `/storefront-installer-*.html` - 9 files, 8 indexable, 7 in sitemaps, avg 2,307 words
 
 Deeper than city templates. Jacksonville's declared storefront primary in wave-2 notes is `/storefront-installer-jacksonville.html` (no `storefront-glazier-jacksonville-florida/` file). Leave until GSC.
 
