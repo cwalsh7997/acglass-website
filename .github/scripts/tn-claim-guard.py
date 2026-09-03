@@ -72,7 +72,7 @@ REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
     "mixed_claim_review":
         "875c20e4a22f237694248ad5101fada3ebd82d263f695f643435bd73e59d8798",
     "biography_only":
-        "6d3e95e04f8be403007daf48ddae2078c3c3628277bf6875801cc90e70f818af",
+        "8540e32a7da5de8bb4afc4ce541e3a7c4c574717017227579430d7fbaa89c0a4",
     "technical_or_market_review":
         "e398c6c6583e0dbba6a3125480a233828b59b4d74cf38615eba8ffbfcf72deab",
     "license_disclaimer_link_review":
