@@ -1,0 +1,133 @@
+/* Shared end-of-article Send Us Plans block.
+   Injected by js/acg-blog-cta.js. Dark ACG tokens, red primary.
+   No build step. Print keeps the CTA plus a one-line URL. */
+
+.acg-blog-cta {
+  background: #0e284f;
+  border-top: 3px solid #e11320;
+  padding: 44px 24px;
+  margin: 0;
+}
+
+.acg-blog-cta-inner {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.acg-blog-cta-kicker {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e11320;
+  margin: 0 0 10px;
+}
+
+.acg-blog-cta-title {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.acg-blog-cta-copy {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0 0 22px;
+}
+
+.acg-blog-cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.acg-blog-cta-btn {
+  display: inline-block;
+  background: #e11320;
+  color: #fff;
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 15px 26px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.acg-blog-cta-btn:hover,
+.acg-blog-cta-btn:focus-visible {
+  background: #f5303c;
+  color: #fff;
+}
+
+.acg-blog-cta-tel {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 15px 4px;
+  text-decoration: none;
+}
+
+.acg-blog-cta-tel:hover,
+.acg-blog-cta-tel:focus-visible {
+  color: #fff;
+}
+
+.acg-blog-cta-print-url {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Same clearance as flagship article padding so the red button
+     does not sit under the sticky Call / Email / Send Plans bar. */
+  .acg-blog-cta {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media print {
+  .mobile-cta-bar {
+    display: none !important;
+  }
+
+  .acg-blog-cta {
+    background: #fff !important;
+    color: #111 !important;
+    border-top: 2pt solid #e11320;
+    padding: 10pt 0 !important;
+    margin: 10pt 0 0 !important;
+    break-inside: avoid;
+  }
+
+  .acg-blog-cta-kicker {
+    color: #e11320 !important;
+  }
+
+  .acg-blog-cta-title,
+  .acg-blog-cta-copy,
+  .acg-blog-cta-tel {
+    color: #111 !important;
+  }
+
+  .acg-blog-cta-btn {
+    background: #fff !important;
+    color: #111 !important;
+    border: 1pt solid #111;
+    box-shadow: none;
+  }
+
+  .acg-blog-cta-print-url {
+    display: block;
+    margin: 8pt 0 0;
+    font-size: 10pt;
+    color: #111;
+  }
+}
