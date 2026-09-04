@@ -42,3 +42,24 @@
     });
   }
 })();
+
+/* Blog / bid-day end CTA. Loads js/acg-blog-cta.js on article pages only.
+   Skips /blog/index.html. The CTA script itself skips posts that already
+   have a body Send Us Plans button. */
+(function () {
+  var path = (location.pathname || '').replace(/\\/g, '/');
+  var file = path.split('/').pop() || '';
+  var isTool = file === 'bid-day-glazing-checker.html';
+  var isPost = path.indexOf('/blog/') !== -1 && file && file !== 'index.html';
+  if (!isPost && !isTool) return;
+  if (!document.querySelector('link[href*="acg-blog-cta.css"]')) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/css/acg-blog-cta.css';
+    (document.head || document.documentElement).appendChild(link);
+  }
+  var script = document.createElement('script');
+  script.src = '/js/acg-blog-cta.js';
+  script.defer = true;
+  (document.head || document.documentElement).appendChild(script);
+})();
