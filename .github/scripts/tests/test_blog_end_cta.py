@@ -124,8 +124,11 @@ class BlogEndCtaTests(unittest.TestCase):
     def test_shared_files_exist_and_chrome_loads_them(self):
         self.assertTrue((REPO_ROOT / "js/acg-blog-cta.js").is_file())
         self.assertTrue((REPO_ROOT / "css/acg-blog-cta.css").is_file())
-        self.assertIn("/js/acg-blog-cta.js", CHROME_JS)
-        self.assertIn("/css/acg-blog-cta.css", CHROME_JS)
+        self.assertIn("/js/acg-blog-cta.js?v=20260904-blog-cta", CHROME_JS)
+        self.assertIn("/css/acg-blog-cta.css?v=20260904-blog-cta", CHROME_JS)
+        mill = read("blog/how-to-choose-commercial-glass-contractor-florida.html")
+        self.assertIn('src="/js/acg-blog-cta.js?v=20260904-blog-cta"', mill)
+        self.assertNotIn("acg-blog-cta.js", read("blog/index.html"))
         self.assertIn("index.html", CHROME_JS)
         self.assertIn("/blog/", CHROME_JS)
         self.assertIn("bid-day-glazing-checker.html", CHROME_JS)

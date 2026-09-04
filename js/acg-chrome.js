@@ -55,11 +55,11 @@
   if (!document.querySelector('link[href*="acg-blog-cta.css"]')) {
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/css/acg-blog-cta.css';
+    link.href = '/css/acg-blog-cta.css?v=20260904-blog-cta';
     (document.head || document.documentElement).appendChild(link);
   }
   var script = document.createElement('script');
-  script.src = '/js/acg-blog-cta.js';
+  script.src = '/js/acg-blog-cta.js?v=20260904-blog-cta';
   script.defer = true;
   (document.head || document.documentElement).appendChild(script);
 })();
