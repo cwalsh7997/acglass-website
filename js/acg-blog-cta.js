@@ -133,7 +133,7 @@
     if (document.querySelector('link[href*="acg-blog-cta.css"]')) return;
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/css/acg-blog-cta.css';
+    link.href = '/css/acg-blog-cta.css?v=20260904-blog-cta';
     (document.head || document.documentElement).appendChild(link);
   }
 
