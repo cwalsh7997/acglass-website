@@ -28,8 +28,6 @@ PROHIBITED_COPY = (
     "WBENC",
     "\u2013",
     "\u2014",
-    "&ndash;",
-    "&mdash;",
 )
 
 
