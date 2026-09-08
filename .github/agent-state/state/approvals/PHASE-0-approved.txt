@@ -1,0 +1,28 @@
+PHASE 0 — SELF-APPROVED 2026-09-08
+
+Commits: 444053464, cd158c367  (branch refresh/p0-remediation, cut from main @ 48dfa14c9)
+
+GATES PASSED
+  safety-claims      PASS  (full tree; defect 4 genuinely closed, regression guard live)
+  volume-claims      PASS  (350+ and 1,000,000+ SF intact per D6)
+  baseline captured  _internal/agent/evidence/p0-remediation/verify-baseline.txt
+  agent tree         relocated out of the deploy root; canary planted
+
+SHIPPED
+  D5/D9a  leadership.html false Nashville service claim struck
+  D2      live EMR figures removed from the prequalification blog post
+  D6      bonding claims swept from 72 pages, technique vocabulary preserved
+          via allowlist (now standing method)
+  infra   scripts/verify.sh + 9 checks + config + state, none of which shipped
+          in the bundle
+
+NOT DONE, CARRIED
+  bonding      2 structured-data FAILs, all technique pages. PC-07, check refinement
+  license      CONFIG. PC-01, number unconfirmed, policy is remove-everywhere
+  geography    CONFIG. PC-02, county list empty
+  deny-list    CONFIG. Buy American list not generated
+  image-rights CONFIG. csv seeded, 0 rows
+
+CLAIMS OVERTURNED THIS PHASE: 9. Three were my own.
+  broken links (0 real, not 10) · defect 4 (real, my earlier clear was too narrow)
+  · defect 3 scope (219 pages not 1 node) · .agent/ serving (checked, not inferred)

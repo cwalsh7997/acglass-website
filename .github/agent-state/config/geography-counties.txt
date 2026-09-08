@@ -1,0 +1,3 @@
+# Florida counties where ACG self-performs. One per line.
+# STATUS: INCOMPLETE - awaiting Connor (PENDING-CONNOR.md, county-list)
+# Until this list is populated, check-geography.sh reports CONFIG, never PASS.

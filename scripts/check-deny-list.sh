@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # D8: Buy American pages are never-touch. Fails if one appears in the diff.
 source "$(dirname "$0")/_lib.sh"
-DENY="$ROOT/_internal/agent/state/deny-list-buy-american.txt"
+DENY="$ROOT/.github/agent-state/state/deny-list-buy-american.txt"
 [ -f "$DENY" ] || { say "CONFIG  deny-list: not yet generated"; exit 3; }
 BASE="${1:-origin/main}"
 changed=$(git -C "$ROOT" diff --name-only "$BASE"...HEAD 2>/dev/null)

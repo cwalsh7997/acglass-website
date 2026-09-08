@@ -1,0 +1,26 @@
+PHASE 1 — SELF-APPROVED 2026-09-08
+Branch: refresh/p1-audit-and-consolidation (stacked on refresh/p0-remediation)
+
+ARTIFACTS (all three required, all present)
+  _internal/agent/state/url-inventory.csv        1,593 rows
+  _internal/agent/state/consolidation-plan.md
+  _internal/agent/state/redirect-map.csv         proposed only, nothing shipped
+
+CONSTRAINT MET: documents and CSVs only. No page, style, template, URL, redirect
+or crawler directive was changed in this phase.
+
+INPUT THAT DOES NOT EXIST: reviews/06_current_site_urls.csv, the 1,352-row baseline
+this phase was written against. Never present in this repo, on any branch, in any
+commit. Inventory rebuilt from the tracked tree, the live sitemap (899 URLs,
+curl-fetched; the Python UA gets a 403 from Cloudflare) and _internal/recon/.
+
+DISPOSITIONS
+  KEEP 873 · REVIEW-PHASE-4 432 · LINK-OR-RETIRE 178 · REVIEW 108 · CONSOLIDATE 2
+
+TWO TASKS DROPPED, both because they do not reproduce
+  canonical repair   0 of 1,593 canonicals resolve to a 404
+  broken links       0 real; 52 of 53 are draft cross-links, the 53rd my own
+                     recon misparsing a JS template literal
+
+GATE THAT IS NOT MINE: 178 sitemapped orphans cannot be retired without a traffic
+check. Hard stop 6. No Search Console access from here.
