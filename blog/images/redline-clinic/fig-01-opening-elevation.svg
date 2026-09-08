@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="1040" viewBox="0 0 820 1040" role="img">
+<rect width="820" height="1040" fill="#fbf7f0"/>
+
+<rect x="16" y="12" width="788" height="28" fill="none" stroke="#0e284f" stroke-width="1.2"/>
+<text x="28" y="31" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">FIG 01</text>
+<text x="792" y="31" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#b42318">TYPICAL 5x7 SF-1 · NOT A PROJECT DRAWING</text>
+<rect x="16" y="994" width="788" height="30" fill="none" stroke="#0e284f" stroke-width="1.2"/>
+<text x="28" y="1014" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">ACG REDLINE CLINIC</text>
+<text x="410.0" y="1014" text-anchor="middle" font-family="Georgia, Times, serif" font-size="13" fill="#1c1916">Opening elevation · typical SF-1</text>
+<text x="792" y="1014" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#6b6258">INVENTED TYPICAL LITE</text>
+
+<rect x="210" y="90" width="360" height="504" fill="#b8b2a8" stroke="#0e284f" stroke-width="2"/>
+<rect x="232" y="112" width="316" height="460" fill="#c5d8e6" stroke="#0e284f" stroke-width="1.2"/>
+<path d="M210 80 H570" stroke="#1c1916" stroke-width="1"/>
+<text x="390" y="74" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1c1916">5'-0"</text>
+<path d="M190 90 V594" stroke="#1c1916" stroke-width="1"/>
+<text x="178" y="360" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1c1916">7'-0"</text>
+<text x="390" y="350" text-anchor="middle" font-family="Georgia, Times, serif" font-size="20" fill="#0e284f">SF-1</text>
+<text x="390" y="372" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#6b6258">TYP. STOREFRONT LITE</text>
+
+<ellipse cx="390" cy="170" rx="118" ry="36" fill="none" stroke="#b42318" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="390" y="174" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#b42318">1  IGU MAKEUP</text>
+
+
+<ellipse cx="560" cy="320" rx="92" ry="34" fill="none" stroke="#b42318" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="560" y="324" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#b42318">2  BITE</text>
+
+
+<ellipse cx="300" cy="480" rx="110" ry="34" fill="none" stroke="#b42318" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="300" y="484" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#b42318">3  VESTIBULE?</text>
+
+
+<ellipse cx="500" cy="560" rx="118" ry="32" fill="none" stroke="#b42318" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="500" y="564" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#b42318">4  REPLACEMENT</text>
+
+<text x="40" y="640" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#b42318">REDLINE SET (INVENTED TYPICAL, NOT A JOB)</text>
+<text x="40" y="660" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">1  Confirm inboard lite is laminated or PC. A Florida</text>
+<text x="40" y="680" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">   impact IGU that laminates outboard is not 5-11.1.</text>
+<text x="40" y="700" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">2  Show silicone bite (larger of 3/8 in or glass</text>
+<text x="40" y="720" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">   thickness) or tape bite = 2x laminated thickness.</text>
+<text x="40" y="740" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">3  If this lite sits in a vestibule or stair, 5-11.2</text>
+<text x="40" y="760" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">   still applies. Do not mark it interior-unprotected.</text>
+<text x="40" y="780" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">4  Window replacement on an inhabited DoD building</text>
+<text x="40" y="800" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">   triggers 5-11 under 5-1.1.2.1. Not a 50% trigger.</text>
+<text x="40" y="820" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">Do not invent an NOA ID, design pressure, U-factor,</text>
+<text x="40" y="840" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1c1916">or SHGC on this sheet. Those stay project-specific.</text>
+</svg>
