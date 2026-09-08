@@ -68,7 +68,13 @@ scan '(unsplash|shutterstock|istockphoto|pexels|gettyimages|stock\.adobe)' \
      'stock photo host reference'
 
 # 8. font-size in component CSS. Six sizes render per page; components use tokens.
-scan 'font-size:\s*[^v]' 'font-size outside a token' --exclude=tokens.css
+#    NOT a regex with \s*[^v]: that matches zero spaces then eats the space itself,
+#    flagging every legitimate var(). grep -E has no negative lookahead, so match all
+#    font-size declarations and filter the compliant ones out. Corrected 2026-09-08.
+out=$(grep -rnE 'font-size:' "$SRC" --exclude=tokens.css 2>/dev/null | grep -vE 'font-size:\s*var\(')
+[ -n "$out" ] && while IFS= read -r l; do
+  report "$(echo "$l" | sed "s|$ROOT/||") :: font-size outside a token"
+done <<< "$out"
 
 if [ "$fail" -eq 0 ]; then
   say "PASS    design-lint (src/ clean against rules/01 section 11)"

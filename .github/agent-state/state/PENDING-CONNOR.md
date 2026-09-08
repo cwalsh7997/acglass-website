@@ -76,3 +76,42 @@ Rule: block or 404 any request to `/.agent/*` and `/_internal/*` at the edge.
 **Default if unanswered: proceed without it. The canary at `.agent/canary.txt` is
 the control, and the agent tree already lives under `_internal/`.**
 _2026-09-08_
+
+## PC-01 UPDATE. The licence sweep is 11,319 occurrences, not a handful
+**Measured 2026-09-08 after defect 1 was fixed. This changes the question.**
+
+`1531993` renders **11,319 times across 1,550 of 1,593 pages**. It is not confined to
+the licence page. The four dominant forms:
+
+| Count | Form |
+|---:|---|
+| 1,509 | `...certification in progress. FL CGC #1531993. UEI QTQYMLLL9PS4.` (footer compliance line) |
+| 1,504 | `American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business` |
+| 933 + 366 | `"isoNCode": "FL:CGC1531993"` inside JSON-LD `hasCredential` |
+| 421 | `<div class="stat-label">#1531993</div>` in a stat block |
+
+The PC-01 default was set on the assumption this was a small sweep. It is a
+sitewide change touching almost every page, and the footer and JSON-LD forms are
+SEO-visible.
+
+**I did not execute it.** Removing the number from 1,550 pages on an unconfirmed
+premise, in one pass, is the kind of change that should be made once and correctly.
+
+**Three options, and the middle one is my recommendation:**
+
+1. **Remove sitewide.** Follows the stated PC-01 default literally. Largest diff,
+   loses a genuine trust signal from every footer and every JSON-LD credential node.
+2. **Confirm the number first, then attribute at the two places a human reads it**
+   (the licence page and the footer compliance line), and leave the JSON-LD
+   `hasCredential` node as the machine-readable credential it already is.
+   `hasCredential` is structured data, not a rendered claim, and Schema.org's
+   `EducationalOccupationalCredential` has no qualifying-agent field to carry an
+   attribution sentence anyway.
+3. **Remove from the 421 stat-block instances only**, where the number is displayed
+   as a decorative statistic with no context at all, and hold the rest.
+
+**Default if unanswered: option 3.** It removes the number from the one place it
+renders with no explanatory context, is a small reversible diff, and leaves the
+compliance and structured-data uses intact pending your answer on the number itself.
+
+_2026-09-08_
