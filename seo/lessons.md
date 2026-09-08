@@ -2,8 +2,8 @@
 
 Working notes for acglass.com. Not a marketing page. Do not invent ranks, traffic, or citations. If a measurement is missing, write `unknown`.
 
-Last updated: 2026-09-03 (wave-4 CTR live-verify: unique hub title, office-metro canonicals, euro-wall inbound)
-Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_internal/CLAUDE.md` was not present in this environment.
+Last updated: 2026-09-08 (weekly hygiene: contain leftover thin city roots and sitemap all-glass city URLs)
+Source: live page checks + repo audit on branch `seo-auto`. `_internal/CLAUDE.md` was not present in this environment.
 
 ## Architecture
 
@@ -106,3 +106,14 @@ Source: live page checks + repo audit on branch `cursor/seo-auto-wave2-6d6c`. `_
 - Specified main-page inbound to the hub was 14, not 23. Hub and `/products/euro-wall/` crawlable text links added on glossary plus storefront/curtainwall service pages. Euro-wall also from homepage, about, portfolio, contact. Nashville installer page not edited.
 - Softened `/products/euro-wall/` "Factory certified installer per facts.html." and the federal Tennessee SVG "manufacturer-authorized install" to installer/specifier language. No Nashville opening restored.
 - Homepage hash impressions (`#capability` `#discipline` `#prequal`) left alone; root canonical is already fragment-free. Live www/http 301s already exist; no extra redirect.
+
+## Weekly hygiene (2026-09-08)
+
+Containment only. Zero page deletes. No 301 (GitHub Pages cannot). Wave-2 pattern reused: `noindex,follow` + keep self-canonical + drop from sitemaps.
+
+- Live check 2026-09-08: `/winter-park/` still `index,follow` and self-canonical. `/wynwood/` had no robots meta and was self-canonical. Both were in `sitemap.xml` and `sitemap-pages.xml`. Thin city roots left indexable after wave-2/3 pending GSC. Contained now. `/winter-park/winter-park-park-ave/` stays listed.
+- Live sitemap still listed **28** `/{city}/all-glass-entrances/` URLs (plus the hub). Those 28 were self-canonical and indexable. The other **49** city folders already hub-canonical to `/all-glass-entrances/` and were not in sitemaps; left as the reversible pilot (no noindex added). Hub stays indexable and in `sitemap.xml` + `sitemap-services.xml`.
+- Files noindexed this pass: **30** (2 city roots + 28 city all-glass). Sitemap unique URL count: **897 -> 867**. Master dropped 30. `sitemap-cities.xml` dropped 28. `sitemap-pages.xml` dropped 2.
+- High-traffic Nashville office / Q3 2026 / "4 offices FL + TN" scan on `locations.html`, homepage, `reviews.html`, `llms.txt`, and `facts.html`: already Florida-only (WPB, Naples, Tampa). No copy change.
+- Leftover first-party Euro-Wall dealer/authorized claims on those same surfaces: already installer / specifier from the crawl-batch-2 / wave-4 pass. No copy change.
+- Internal-link-audit allowlist extended so indexable hubs may still link at the new noindex URLs. Same reason as wave-2: no HTTP 301 available.
