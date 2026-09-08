@@ -6,3 +6,8 @@ __pycache__/
 # internal ops/build files — never deploy
 _internal/
 __pycache__/
+
+# local agent + design tooling config, root-level by necessity
+# (these cannot live under _internal/ because the tools resolve them from the repo root)
+.claude/
+.impeccable/
