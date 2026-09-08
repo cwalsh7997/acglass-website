@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img">
+<rect width="1200" height="420" fill="#fbf7f0"/>
+
+<rect x="16" y="12" width="1168" height="28" fill="none" stroke="#0e284f" stroke-width="1.2"/>
+<text x="28" y="31" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">FIG 00</text>
+<text x="1172" y="31" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#b42318">TYPICAL 5x7 SF-1 · NOT A PROJECT DRAWING</text>
+<rect x="16" y="374" width="1168" height="30" fill="none" stroke="#0e284f" stroke-width="1.2"/>
+<text x="28" y="394" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">ACG REDLINE CLINIC</text>
+<text x="600.0" y="394" text-anchor="middle" font-family="Georgia, Times, serif" font-size="13" fill="#1c1916">Four redlines on one typical 5x7 storefront lite</text>
+<text x="1172" y="394" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#6b6258">INVENTED TYPICAL LITE</text>
+
+
+<rect x="24" y="56" width="280" height="300" fill="#fffdf8" stroke="#0e284f" stroke-width="1"/>
+<rect x="24" y="56" width="28" height="22" fill="#b42318"/>
+<text x="38" y="72" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#fff">01</text>
+<text x="62" y="72" font-family="Georgia, Times, serif" font-size="13" fill="#0e284f">IGU makeup</text>
+<text x="38" y="104" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#1c1916"></text>
+
+<text x="40" y="96" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">Florida impact often</text>
+<text x="40" y="116" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">laminates outboard. UFC</text>
+<text x="40" y="136" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">5-11.1 laminates the inboard</text>
+<text x="40" y="156" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">lite.</text>
+<rect x="40" y="250" width="248" height="88" fill="#fbf7f0" stroke="#d8cfc2"/>
+<rect x="60" y="262" width="18" height="64" fill="#7ea8c4"/>
+<rect x="82" y="262" width="10" height="64" fill="#e8f2f8"/>
+<rect x="96" y="262" width="18" height="64" fill="#d7e4ee"/>
+<text x="124" y="288" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#b42318">WRONG: outboard lam</text>
+<text x="124" y="308" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">UFC wants inboard lam</text>
+
+<rect x="316" y="56" width="280" height="300" fill="#fffdf8" stroke="#0e284f" stroke-width="1"/>
+<rect x="316" y="56" width="28" height="22" fill="#b42318"/>
+<text x="330" y="72" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#fff">02</text>
+<text x="354" y="72" font-family="Georgia, Times, serif" font-size="13" fill="#0e284f">Bite</text>
+<text x="330" y="104" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#1c1916"></text>
+
+<text x="332" y="96" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">Silicone: larger of 3/8 in</text>
+<text x="332" y="116" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">or glass thickness. Tape: 2x</text>
+<text x="332" y="136" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">laminated-glass thickness.</text>
+<rect x="332" y="250" width="248" height="88" fill="#fbf7f0" stroke="#d8cfc2"/>
+<rect x="352" y="268" width="70" height="52" fill="#b8b2a8"/>
+<rect x="372" y="278" width="36" height="32" fill="#c5d8e6"/>
+<path d="M372 294 H356" stroke="#b42318" stroke-width="2"/>
+<text x="432" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#b42318">bite + bead</text>
+<text x="432" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">tape = 2x thickness</text>
+
+<rect x="608" y="56" width="280" height="300" fill="#fffdf8" stroke="#0e284f" stroke-width="1"/>
+<rect x="608" y="56" width="28" height="22" fill="#b42318"/>
+<text x="622" y="72" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#fff">03</text>
+<text x="646" y="72" font-family="Georgia, Times, serif" font-size="13" fill="#0e284f">Vestibule</text>
+<text x="622" y="104" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#1c1916"></text>
+
+<text x="624" y="96" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">UFC 5-11.2 pulls vestibules</text>
+<text x="624" y="116" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">and stairs into the same</text>
+<text x="624" y="136" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">fragment-reduction rule.</text>
+<rect x="624" y="250" width="248" height="88" fill="#fbf7f0" stroke="#d8cfc2"/>
+<rect x="648" y="266" width="50" height="56" fill="none" stroke="#0e284f"/>
+<rect x="698" y="278" width="36" height="32" fill="none" stroke="#0e284f"/>
+
+<ellipse cx="673" cy="294" rx="42" ry="28" fill="none" stroke="#b42318" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="673" y="298" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" fill="#b42318">5-11.2</text>
+
+
+<rect x="900" y="56" width="280" height="300" fill="#fffdf8" stroke="#0e284f" stroke-width="1"/>
+<rect x="900" y="56" width="28" height="22" fill="#b42318"/>
+<text x="914" y="72" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#fff">04</text>
+<text x="938" y="72" font-family="Georgia, Times, serif" font-size="13" fill="#0e284f">Replacement</text>
+<text x="914" y="104" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="12" fill="#1c1916"></text>
+
+<text x="916" y="96" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">UFC 5-1.1.2.1: window</text>
+<text x="916" y="116" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">replacement on an inhabited</text>
+<text x="916" y="136" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">DoD building still triggers</text>
+<text x="916" y="156" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">5-11.</text>
+<rect x="916" y="250" width="248" height="88" fill="#fbf7f0" stroke="#d8cfc2"/>
+<text x="928" y="284" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1c1916">inhabited DoD</text>
+<text x="928" y="304" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1c1916">+ replace windows</text>
+<text x="928" y="324" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#b42318">= 5-11, not 50% reno</text>
+</svg>
