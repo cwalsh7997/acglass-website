@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # D10: hard stop 3. Any image whose rights status is unverified or unknown.
 source "$(dirname "$0")/_lib.sh"
-CSV="$ROOT/.agent/state/image-rights.csv"
+CSV="$ROOT/_internal/agent/state/image-rights.csv"
 [ -f "$CSV" ] || { say "CONFIG  image-rights: csv missing"; exit 3; }
 rows=$(($(wc -l < "$CSV") - 1))
 [ "$rows" -le 0 ] && { say "CONFIG  image-rights: 0 rows recorded, cannot validate"; exit 3; }

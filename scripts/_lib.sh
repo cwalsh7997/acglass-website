@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Shared helpers. Three outcomes: PASS, FAIL, CONFIG. CONFIG is not a PASS.
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-CFG="$ROOT/.agent/config"
+CFG="$ROOT/_internal/agent/config"
 # One tree-wide grep. Excludes .github (not served) and _internal (git-ignored).
 gg() { git -C "$ROOT" grep -nI "$@" -- '*.html' ':!.github/*' 2>/dev/null; }
 ggi() { gg -i "$@"; }

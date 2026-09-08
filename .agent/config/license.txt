@@ -1,6 +1,0 @@
-# License number and its required same-block attribution (D9, D9a).
-NUMBER=1531993
-ATTRIBUTION=Jeff Walsh
-# STATUS: UNCONFIRMED - is CGC 1531993 Jeff Walsh's certification number, or a
-# business certificate of authority? Until confirmed, the number stays removed
-# sitewide rather than shipping bare. See PENDING-CONNOR.md, license-number.
