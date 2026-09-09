@@ -102,3 +102,22 @@ Every phase-0 defect appears in the inventory dispositions:
 5. **T04 to T06.** Separate reads.
 
 Nothing in this plan ships in phase 1.
+
+## Publish step for drafts/cornerstones (recorded 2026-09-08)
+
+The 8 cornerstone drafts cross-link each other at the ROOT paths they expect to
+have after publication, not the draft paths they live at now. All 68 links were
+dead on pages that are actually served, so they now point at
+`/drafts/cornerstones/<name>.html`.
+
+**When these publish to root, that rewrite must be undone.** Otherwise every
+published cornerstone will link back into the drafts directory.
+
+    for f in drafts/cornerstones/*.html; do
+      sed -i '' 's|href="/drafts/cornerstones/|href="/|g' "$f"
+    done
+
+Two of the nine targets were not draft siblings and are already correct:
+`/miami-dade-noa-explained/` is published, and `/florida-hvhz-glazing-contractor.html`
+never existed at all, now pointing at `blog/hvhz-certified-glazing-contractor-florida.html`.
+Leave both alone.
