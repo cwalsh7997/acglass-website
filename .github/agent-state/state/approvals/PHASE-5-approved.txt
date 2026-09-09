@@ -1,4 +1,4 @@
-PHASE 5 — SELF-APPROVED 2026-09-08 (what is executable without provisioning)
+PHASE 5, SELF-APPROVED 2026-09-08 (what is executable without provisioning)
 Branch: refresh/p5-procurement-trust
 
 SHIPPED

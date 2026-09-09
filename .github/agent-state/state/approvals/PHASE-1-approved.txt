@@ -1,4 +1,4 @@
-PHASE 1 — SELF-APPROVED 2026-09-08
+PHASE 1, SELF-APPROVED 2026-09-08
 Branch: refresh/p1-audit-and-consolidation (stacked on refresh/p0-remediation)
 
 ARTIFACTS (all three required, all present)

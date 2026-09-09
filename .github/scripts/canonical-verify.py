@@ -733,8 +733,8 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
             "was \"Florida's commercial glazing contractor for storefront, "
             "curtainwall, and impact glass \u2014 350+ projects, FL CGC #1531993, "
             "bonded $3M/$6M. Get a scope in 48 hrs.\", now \"Florida's commercial "
-            "glazing contractor for storefront, curtainwall, and impact glass "
-            "\u2014 350+ projects, FL CGC #1531993. Get a scope in 48 hrs.\""
+            "glazing contractor for storefront, curtainwall, and impact glass, "
+            "350+ projects, FL CGC #1531993. Get a scope in 48 hrs.\""
         ):
             failures.pop("meta-description")
         for field in spec["protected_fields"]:

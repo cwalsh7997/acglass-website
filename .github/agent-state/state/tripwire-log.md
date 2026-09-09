@@ -14,7 +14,7 @@ entire point of fixing them beforehand.
 | metric | HALT | ROLLBACK |
 |---|---|---|
 | Organic clicks | -20% sustained 7 days | -35% sustained 5 days |
-| Indexed pages | -20% | — |
+| Indexed pages | -20% |, |
 | Form submissions | -25% sustained 14 days | -40% sustained 7 days |
 
 ## Monitoring cadence

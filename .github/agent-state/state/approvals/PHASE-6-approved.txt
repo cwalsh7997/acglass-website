@@ -1,4 +1,4 @@
-PHASE 6 — SELF-APPROVED 2026-09-08 (robots.txt)
+PHASE 6, SELF-APPROVED 2026-09-08 (robots.txt)
 Branch: refresh/p6-seo-launch
 
 SHIPPED

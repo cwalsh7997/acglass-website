@@ -7,7 +7,7 @@
 #   C  a page is self-canonical and indexable but absent from the sitemap
 #
 # A and B are hard failures: they tell Google two different things about the same
-# URL. C is also a failure, but the fix is not always "add it" — a page that
+# URL. C is also a failure, but the fix is not always "add it", a page that
 # canonicals elsewhere belongs OUT of the sitemap, and 93 pages here are correctly
 # excluded for exactly that reason. Only self-canonical indexable pages are
 # counted, so the check cannot push a duplicate into the sitemap.

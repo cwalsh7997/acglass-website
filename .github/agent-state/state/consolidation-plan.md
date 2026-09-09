@@ -54,8 +54,8 @@ Examples: `acg-glass.html`, `aventura/aventura-mall-area/`, `bar-brewery-glazing
 
 Each needs one of two decisions, and hard stop 6 applies to the second:
 
-- **LINK** — earn its place with real inbound links from relevant hubs, or
-- **RETIRE** — remove from the sitemap, and 301 only after a traffic check
+- **LINK**, earn its place with real inbound links from relevant hubs, or
+- **RETIRE**, remove from the sitemap, and 301 only after a traffic check
 
 **No page with organic traffic or inbound links gets retired without a disposition row.** I have no Search Console access, so traffic cannot be checked from here. That gate is real and it is Connor's.
 

@@ -1,4 +1,4 @@
-PHASE 4 — SELF-APPROVED 2026-09-08 (image-rights gate)
+PHASE 4, SELF-APPROVED 2026-09-08 (image-rights gate)
 Branch: refresh/p4-projects-resources
 
 DELIVERED
