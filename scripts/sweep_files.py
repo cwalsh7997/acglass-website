@@ -25,10 +25,26 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DENY = os.path.join(ROOT, ".github/agent-state/state/deny-list-buy-american.txt")
 
 
+FROZEN = os.path.join(ROOT, ".github/agent-state/state/byte-frozen-paths.txt")
+
+
 def denied():
+    """Paths no sweep may touch: the D8 never-touch list AND the byte-frozen
+    West Palm Beach pages.
+
+    The frozen list was added 2026-09-09. A sitewide stat-bar sweep modified
+    impact-windows-palm-beach.html, which is byte-frozen because it is one of four
+    contested candidates for the organic #1 and nobody knows which one ranks.
+    canonical-verify caught it, but only after the edit. Excluding both lists here
+    means a sweep cannot reach either, whether or not whoever wrote the sweep
+    remembered they exist.
+    """
     if not os.path.isfile(DENY):
         raise SystemExit("sweep_files: deny list missing, refusing to sweep blind")
-    return {l.strip() for l in open(DENY) if l.strip() and not l.startswith("#")}
+    out = {l.strip() for l in open(DENY) if l.strip() and not l.startswith("#")}
+    if os.path.isfile(FROZEN):
+        out |= {l.strip() for l in open(FROZEN) if l.strip() and not l.startswith("#")}
+    return out
 
 
 def sweep_files(pattern="*.html"):

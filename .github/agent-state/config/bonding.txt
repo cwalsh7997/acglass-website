@@ -1,0 +1,7 @@
+# Bonding capacity. CONFIRMED 2026-09-09 by Connor Walsh.
+# Closes questionnaire item 20, which D6 obligation 4 recorded as open.
+SINGLE=$3M
+AGGREGATE=$6M
+# The figure may be published. A DIFFERENT figure may not: surety capacity changes
+# when the surety re-underwrites, and a stale bond number on a prequalification
+# page is discovered by the GC asking for the capacity letter.
