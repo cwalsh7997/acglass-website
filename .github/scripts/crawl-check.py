@@ -35,8 +35,8 @@ BASE = "https://acglass.com"
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
 # Hero LCP asset guarded by the FAIL tier.
-HERO_JPG = "images/hero/tower-360.jpg"
-HERO_WEBP = "images/hero/tower-360.webp"
+HERO_JPG = "images/hero/gulfside-twelve-twilight.jpg"
+HERO_WEBP = "images/hero/gulfside-twelve-twilight.webp"
 
 # City hubs named as target markets in the indexation audit. Each one must be
 # represented in a child sitemap either directly (self-canonical) or through the
