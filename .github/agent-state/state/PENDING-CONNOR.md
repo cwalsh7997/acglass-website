@@ -603,3 +603,27 @@ Three ways out, in the order I would pick them:
 Everything else is done: 3 dedicated pages replaced with redirect stubs, the 1.4MB
 case-study PDF deleted, 49 images deleted, 232 text and markup references removed
 across 169 files, and the sitemap and schema updated.
+
+## PC-25: one page says ACG crews work in Pinellas County (2026-09-09)
+
+You confirmed seven self-perform counties: Palm Beach, Martin, St. Lucie, Broward,
+Miami-Dade, Lee, Collier. `commercial-glazing-st-petersburg.html` says:
+
+> St. Pete's construction renaissance has made it one of our most active markets,
+> and **our crews are regularly working** on projects throughout the downtown core,
+> the EDGE and Grand Central districts, and **South Pinellas County**.
+
+Pinellas is not on your list. One of the two is wrong.
+
+- **If ACG does self-perform there**, tell me and I add Pinellas to
+  `config/geography-counties.txt`. The check goes green and the page is accurate.
+- **If it does not**, I soften the sentence to coverage language rather than a
+  crew-placement claim, which is what the rest of the city pages already do.
+
+Default if nothing is decided: the check keeps failing and the claim stays up.
+
+Worth knowing: the same sweep flagged `blog/commercial-glazing-orlando-fl.html` for
+"familiar with Orange County Building Division's review and inspection processes".
+That is knowledge of a jurisdiction, not a claim to put crews in it, so the check
+now excludes familiarity constructions. Knowing a building department is competence,
+not an overreach.

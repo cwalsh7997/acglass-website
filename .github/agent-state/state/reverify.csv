@@ -13,4 +13,4 @@ Miami-Dade NOA,NOA 24-0321.07,UNKNOWN,UNKNOWN,Connor,published; expiry unconfirm
 Miami-Dade NOA,NOA 24-0615.02,UNKNOWN,UNKNOWN,Connor,published; expiry unconfirmed. Miami-Dade BCCO database is the authority.,1,ACTIVE,2026-09-08
 """as of 2026"" dated claims",copy that dates itself to 2026 and goes stale on 2027-01-01,2026-12-31,2026-11-30,Connor,site copy,11,ACTIVE,2026-09-08
 Contractor license CGC 1531993,Connor Walsh confirmed qualifier of record 2026-09-09,UNKNOWN,2027-09-09,Connor,CGC licences renew biennially; set a yearly check until the real date is on file,1550,ACTIVE,2026-09-08
-Certificate of insurance,"GL, workers comp, auto, umbrella. Referenced sitewide, no expiry published",UNKNOWN,UNKNOWN,Connor,site copy,7,ACTIVE,2026-09-08
+Certificate of insurance,"GL, workers comp, auto, umbrella. Referenced sitewide, no expiry published",UNKNOWN,2027-01-01,Connor,annual check set 2026-09-09; real expiry not yet on file. COIs renew yearly.,7,ACTIVE,2026-09-08

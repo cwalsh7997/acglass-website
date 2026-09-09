@@ -1,3 +1,13 @@
-# Florida counties where ACG self-performs. One per line.
-# STATUS: INCOMPLETE - awaiting Connor (PENDING-CONNOR.md, county-list)
-# Until this list is populated, check-geography.sh reports CONFIG, never PASS.
+# Florida counties where ACG SELF-PERFORMS. Confirmed 2026-09-09 by Connor Walsh.
+# Hard stop 8: a geography claim outside this list needs Connor's approval.
+#
+# Outside Florida, ACG furnishes glazing materials and provides project consulting.
+# It holds no out-of-state office and performs no out-of-state field labour, which
+# is why check-out-of-state-claims.sh keeps every such page noindexed.
+Palm Beach
+Martin
+St. Lucie
+Broward
+Miami-Dade
+Lee
+Collier
