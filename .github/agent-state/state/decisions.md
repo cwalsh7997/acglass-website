@@ -154,3 +154,26 @@ Working through the Verdex contexts surfaced five more GCs named as partners:
 
 They are still UNAPPROVED and still published. D3 obligation 3 applies to them
 exactly as it did to the six.
+
+
+## services.html edited under explicit authorisation, 2026-09-09
+
+`services.html` is on the D8 never-touch deny list. Connor authorised one edit to it
+after the Panther removal left the page rendering a broken image.
+
+Removed: a single project card, 781 bytes, linking to
+`panther-national-clubhouse.html` with three `<picture>` sources pointing at deleted
+images and a caption reading "Curtain wall glazing - Panther National Clubhouse".
+Removing only the `<picture>` would have left a card linking to a redirect stub and
+still naming the project, so the whole card went.
+
+Guards applied before writing, since I violated this deny list three times earlier
+in the session:
+
+- the block was asserted to contain no "Buy American", "TAA" or "BABA" text
+- the `taa-baba-buy-american-act-glazing.html` link was diffed before and after and
+  is byte-identical
+- anchor tags balance 88 to 88, so the preceding Ocean Prime card still closes
+
+The page stays on the deny list. This was one authorised edit, not a change in its
+status.

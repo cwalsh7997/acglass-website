@@ -606,7 +606,17 @@ Fastest path: look up the two 2018 numbers first. If they are expired, the rest
 of the list is worth a pass; if they are somehow still current, this drops down
 the queue.
 
-## PC-24: services.html still shows three deleted Panther images (2026-09-09)
+## PC-24: RESOLVED 2026-09-09. Connor authorised the single edit.
+
+The project card was removed, 781 bytes. Not just the `<picture>`: the card also
+linked to a redirect stub and its caption named the project, so leaving it would
+have kept both a dead link and the association. Buy American text verified untouched
+and anchor tags verified balanced before writing. services.html stays on the deny
+list; this was one authorised edit, not a status change.
+
+The original note follows.
+
+## PC-24 (original): services.html still shows three deleted Panther images
 
 **Your own hard stop is blocking your own instruction, so this is yours to resolve.**
 
@@ -640,7 +650,15 @@ Everything else is done: 3 dedicated pages replaced with redirect stubs, the 1.4
 case-study PDF deleted, 49 images deleted, 232 text and markup references removed
 across 169 files, and the sitemap and schema updated.
 
-## PC-25: one page says ACG crews work in Pinellas County (2026-09-09)
+## PC-25: RESOLVED 2026-09-09. Pinellas and Hillsborough added.
+
+Connor confirmed ACG crews serve Tampa Bay, which is consistent with the confirmed
+Tampa office. Both counties added to `config/geography-counties.txt`, now nine. The
+St. Petersburg page stays exactly as written.
+
+The original note follows.
+
+## PC-25 (original): one page says ACG crews work in Pinellas County
 
 You confirmed seven self-perform counties: Palm Beach, Martin, St. Lucie, Broward,
 Miami-Dade, Lee, Collier. `commercial-glazing-st-petersburg.html` says:
