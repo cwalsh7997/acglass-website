@@ -1422,6 +1422,28 @@ p {
   transform: translateY(0);
 }
 
+/* Reduced motion, added 2026-09-09.
+ *
+ * [data-reveal] sets opacity:0 and waits for js/main.js to add .revealed. That
+ * means the hidden state is applied by the stylesheet and removed by JavaScript,
+ * so on any page where main.js is slow, blocked or absent the content never
+ * appears. 386 pages use this attribute and none of them had a reduced-motion
+ * escape.
+ *
+ * Under prefers-reduced-motion the reveal should not run at all, so the elements
+ * are simply visible from the start. This also removes the 0.9s transition and
+ * the 40px travel, both of which are well outside the 260ms and 8px that
+ * MOTION.md specifies. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal-fade],
+  [data-reveal-scale] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 [data-reveal-fade] { opacity: 0; transition: opacity 1s var(--ease-out); }
 [data-reveal-fade].revealed { opacity: 1; }
 
