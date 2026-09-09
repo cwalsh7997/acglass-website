@@ -354,3 +354,64 @@ Only the endpoint is blocked. The rest is in better shape than the gate implies:
   wrapping labels, which are valid with no id at all. The 9 real failures were
   8 calculator inputs whose labels sat beside them unassociated, and one
   unlabelled file input on bid.html. All fixed.
+
+## PC-21: the site and its own config name different license qualifiers (2026-09-08)
+
+**Two different people are recorded as qualifier of record for CGC #1531993.**
+
+The site says, on 5 pages:
+
+> Connor Walsh is the President of American Commercial Glass and the qualifier of
+> record for Florida Certified General Contractor license CGC #1531993, publicly
+> verifiable at the Florida DBPR public license search.
+
+`.github/agent-state/config/license.txt` says:
+
+    ATTRIBUTION=Jeff Walsh
+    # STATUS: UNCONFIRMED
+
+"Jeff Walsh" appears on zero served pages. The number itself is on 1,550.
+
+**Why this is worse than an ordinary wording error.** Qualifier of record is a
+legal designation under F.S. 489, not a job title. The claim sits on
+prequalification pages, tells the reader it is verifiable on DBPR, and elsewhere
+the site actively coaches general contractors to check whether a glazier's
+qualifier changed recently and to treat that as a yellow flag. If DBPR shows a
+different name, the person most likely to look is the GC deciding whether to award
+you work, on the page written to win it.
+
+I cannot read DBPR from here, and I will not guess between two named people on a
+licensing question.
+
+**D9 already ruled on this, and I had not read it when I first wrote this note.**
+D9 is a LOCKED decision and it says plainly: the license is held by Jeff Walsh,
+ACG's qualifying agent, and "it is not Connor's license and it is not a corporate
+credential belonging to Connor personally." So the 5 pages naming Connor as
+qualifier of record contradict a locked decision, not just a config file.
+
+**D9a item 5 pre-authorises the fix and its condition is already met.** It says
+that if the number is not confirmed as Jeff's when the sweep executes, remove
+every occurrence sitewide rather than ship a partially attributed site. The
+number is still unconfirmed. That sweep was assigned to phase 0 and never ran.
+
+**I have not run it, and here is why.** It strips a licensing credential from
+1,550 pages and 10,896 occurrences. If the DBPR record actually names Connor,
+removal is the wrong direction and expensive to undo. The two candidate answers
+are a coin flip from where I sit and one of them makes the sweep actively harmful.
+That is worth thirty seconds of your attention rather than my judgement.
+
+`scripts/apply-d9a-license-sweep.sh` is written and tested in dry-run. If you want
+the pre-authorised path, run it with --apply.
+
+**One lookup settles it.** Open myfloridalicense.com, search CGC 1531993, read the
+qualifier name off the record.
+
+- If it names **Jeff**: run the sweep, then re-add with the D9 pattern,
+  "Florida Certified General Contractor CGC 1531993. Qualifying agent: Jeff Walsh."
+  The 5 pages calling Connor the qualifier of record are wrong and are the urgent part.
+- If it names **Connor**: the config is stale, D9 was written on a wrong premise,
+  and nothing on the site needs to change. Tell me and I will fix the config.
+
+**Default if nothing is decided: nothing changes.** I am not editing a licensing
+claim in either direction on a guess. `check-qualifier-claim.sh` pins it at 5
+pages so it cannot spread while unresolved.
