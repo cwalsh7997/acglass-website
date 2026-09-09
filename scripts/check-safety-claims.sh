@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
-# D2: no numeric safety statistic publishes. Regression guard.
-source "$(dirname "$0")/_lib.sh"
-pat=$(paste -sd'|' "$CFG/safety-terms.txt")
-# Window widened from 12 to 60 chars, and only ACG self-claims are matched.
-# "EMR (Experience Modification Rate): 0.81" sat on a live prequal page and this
-# check passed, because the parenthetical pushed the number 31 characters past
-# the term and the old window stopped at 12.
+# D2: no numeric safety statistic about ACG publishes. Regression guard.
 #
-# Generic advice is deliberately excluded. A page may tell a GC that industry
-# average EMR is 1.0 and that above 1.0 is a red flag. That is education, not a
-# statistic about ACG, and D2 does not touch it.
-out=$(ggi -E "(ACG|American Commercial Glass|our|we)[^.<>]{0,60}($pat)[^.<>]{0,60}[0-9]\\.[0-9]|($pat)[^.<>]{0,45}:[^.<>]{0,6}[0-9]\\.[0-9]")
-n=$(printf '%s' "$out" | grep -c . )
-[ "$n" -eq 0 ] && { say "PASS    safety-claims (no numeric safety statistic published)"; exit 0; }
-printf '%s\n' "$out" | sed 's/^/  /' | head -20
-say "FAIL    safety-claims: $n numeric claims"; exit 1
+# The scan moved to scripts/_safety_claims.py on 2026-09-09. The shell regex it
+# replaces ended both branches in [0-9]\.[0-9], so it required a decimal point,
+# and "0 OSHA recordable incidents" was live on about.html and facts.html, in
+# the body copy and inside the FAQPage schema of both, while this check printed
+# "no numeric safety statistic published".
+#
+# Generic advice is still deliberately excluded, and so are OSHA course and log
+# names. A page may tell a GC that industry average EMR is 1.0, and may say ACG
+# runs OSHA 30 trained crews and keeps an OSHA 300 log. Neither is a statistic
+# about ACG's safety record. That distinction is what the scanner encodes.
+source "$(dirname "$0")/_lib.sh"
+out=$(python3 "$ROOT/scripts/_safety_claims.py" "$ROOT" 2>&1)
+n=$(printf '%s\n' "$out" | sed -n 's/^COUNT=//p')
+printf '%s\n' "$out" | grep -v '^COUNT=' | grep -v '^$'
+if [ "${n:-1}" -eq 0 ] 2>/dev/null; then
+  say "PASS    safety-claims (no numeric safety statistic published)"; exit 0
+fi
+say "FAIL    safety-claims: ${n:-?} numeric claim(s)"; exit 1
