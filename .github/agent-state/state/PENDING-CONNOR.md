@@ -355,7 +355,27 @@ Only the endpoint is blocked. The rest is in better shape than the gate implies:
   8 calculator inputs whose labels sat beside them unassociated, and one
   unlabelled file input on bid.html. All fixed.
 
-## PC-21: the site and its own config name different license qualifiers (2026-09-08)
+## PC-21: RESOLVED 2026-09-09. Connor is the qualifier of record.
+
+**Connor confirmed he is the qualifier of record on CGC #1531993.** The site was
+right on all 5 pages. D9 was written on a wrong premise, and D9 obligation 3
+anticipated exactly this by requiring confirmation before publishing an attributed
+sentence, so this is D9's own escape path and not a re-litigation.
+
+Effect: D9's same-block attribution requirement dissolves, because its entire
+rationale was that a bare number misattributes someone else's credential. The
+credential is Connor's, so a bare number is accurate and 10,896 attribution
+sentences would have been noise. D9a item 5's sitewide removal is REVOKED, its
+trigger condition is now false, and the sweep script is deleted. Jeff Walsh is not
+added to any page.
+
+Both checks were rewritten to guard what is actually at risk now: a wrong licence
+number, the superseded name appearing as qualifying agent, and the old placeholder
+returning. Recorded in decisions.md.
+
+The original note follows.
+
+## PC-21 (original, 2026-09-08): the site and its own config name different license qualifiers
 
 **Two different people are recorded as qualifier of record for CGC #1531993.**
 

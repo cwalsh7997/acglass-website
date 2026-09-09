@@ -1,33 +1,33 @@
 #!/usr/bin/env bash
-# Who is the qualifier of record on CGC #1531993?
+# The published qualifier of record must match the confirmed one.
 #
-# The site answers this on 5 pages, by name, and invites verification:
+# RESOLVED 2026-09-09. Connor confirmed he is the qualifier of record on CGC
+# #1531993, which is what 5 pages have been publishing. D9 asserted the licence was
+# Jeff Walsh's; it was written on a wrong premise and D9 obligation 3 required this
+# confirmation before publishing an attributed sentence. See decisions.md.
 #
-#   "Connor Walsh is the President of American Commercial Glass and the qualifier
-#    of record for Florida Certified General Contractor license CGC #1531993"
-#   "publicly verifiable at the Florida DBPR public license search"
-#
-# The repo's own config disagrees. .github/agent-state/config/license.txt carries
-# ATTRIBUTION=Jeff Walsh and marks the whole thing UNCONFIRMED. Jeff Walsh appears
-# on zero served pages. So two different people are recorded as qualifier for one
-# license number, and only one of them can be right.
-#
-# WHY THIS IS WORSE THAN A NORMAL WORDING ERROR. Qualifier of record is a legal
-# designation under F.S. 489, not a job title. The site publishes it on
-# prequalification pages, tells the reader it is verifiable on DBPR, and elsewhere
-# actively coaches general contractors to check whether a glazier's qualifier
-# recently changed and to treat that as a yellow flag. If DBPR shows a different
-# name, the GC most likely to look is the one being asked to award work, on the
-# page written to win it.
-#
-# I cannot read DBPR from here and will not guess between two named people on a
-# licensing question. This pins the count and fails until someone confirms the
-# name on the actual DBPR record. Logged as PC-21.
+# The check now guards the opposite direction from before: it fails if a DIFFERENT
+# name is published as qualifier of record, or if the confirmed name stops appearing
+# alongside the claim. Jeff Walsh must not appear as qualifying agent anywhere,
+# because he is not one.
 source "$(dirname "$0")/_lib.sh"
-n=$(git -C "$ROOT" grep -lI "qualifier of record" -- '*.html' | grep -vc '^\.github/')
-printf '  %s page(s) name a qualifier of record for CGC #1531993\n' "$n"
-printf '  config/license.txt says the attribution is "Jeff Walsh", status UNCONFIRMED\n'
-printf '  "Jeff Walsh" appears on 0 served pages\n'
-[ "$n" -ne 5 ] && { say "FAIL    qualifier-claim: count moved from 5 to $n while unresolved"; exit 1; }
-say "FAIL    qualifier-claim: unconfirmed qualifier named on $n page(s)"
+CFGF="$ROOT/.github/agent-state/config/license.txt"
+NAME=$(sed -n 's/^ATTRIBUTION=//p' "$CFGF" | head -1)
+[ -z "$NAME" ] && { say "CONFIG  qualifier-claim: no ATTRIBUTION in license.txt"; exit 3; }
+
+fail=0
+# every page asserting a qualifier of record must name the confirmed person
+while IFS= read -r p; do
+  [ -z "$p" ] && continue
+  grep -qF "$NAME" "$ROOT/$p" || {
+    printf '  %s: names a qualifier of record without "%s"\n' "$p" "$NAME"; fail=$((fail+1)); }
+done <<< "$(git -C "$ROOT" grep -lI 'qualifier of record' -- '*.html' | grep -v '^\.github/')"
+
+# and the superseded name must not be published as qualifying agent
+sup=$(git -C "$ROOT" grep -lIiE 'qualifying agent[^.<]{0,30}jeff|jeff[^.<]{0,30}qualifying agent' -- '*.html' | grep -vc '^\.github/')
+[ "$sup" -gt 0 ] && { printf '  %s page(s) publish Jeff Walsh as qualifying agent. D9 was superseded.\n' "$sup"; fail=$((fail+1)); }
+
+n=$(git -C "$ROOT" grep -lI 'qualifier of record' -- '*.html' | grep -vc '^\.github/')
+[ "$fail" -eq 0 ] && { say "PASS    qualifier-claim ($n page(s), all name the confirmed qualifier $NAME)"; exit 0; }
+say "FAIL    qualifier-claim: $fail problem(s)"
 exit 1

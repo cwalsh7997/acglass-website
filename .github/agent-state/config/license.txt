@@ -1,6 +1,18 @@
 # License number and its required same-block attribution (D9, D9a).
 NUMBER=1531993
-ATTRIBUTION=Jeff Walsh
-# STATUS: UNCONFIRMED - is CGC 1531993 Jeff Walsh's certification number, or a
-# business certificate of authority? Until confirmed, the number stays removed
-# sitewide rather than shipping bare. See PENDING-CONNOR.md, license-number.
+ATTRIBUTION=Connor Walsh
+# STATUS: CONFIRMED 2026-09-09 by Connor Walsh.
+#
+# D9 was written on a wrong premise. It states the licence is held by Jeff Walsh
+# and that "it is not Connor's licence". Connor confirms he IS the qualifier of
+# record on CGC 1531993, which is what the site has been publishing on 5 pages all
+# along.
+#
+# This is not re-litigating a locked decision. D9 obligation 3 says: "Confirm the
+# number belongs to Jeff before publishing it in that sentence." That confirmation
+# was sought and came back negative. This is D9's own escape path.
+#
+# Consequence: D9's attribution requirement dissolves. Its entire rationale was
+# that a bare number next to Connor's name misattributes a credential belonging to
+# someone else. If the credential is Connor's, a bare number is accurate. No
+# attribution sentence is required and none is added.

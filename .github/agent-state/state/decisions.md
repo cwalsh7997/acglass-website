@@ -27,3 +27,29 @@ replacement. Correctly built. Counting them as content inflates duplicates and o
 ## 2026-09-08. Kit staged, not installed to the deploy root
 The bundle is 21 markdown files. Extracting them to the repo root would recreate the
 exposure closed in 44d9a7e0a. Staged under `_internal/` instead, which is git-ignored.
+
+
+## D9 superseded by owner confirmation, 2026-09-09
+
+**D9 stated:** the contractor licence is held by Jeff Walsh, ACG's qualifying agent,
+and "it is not Connor's licence and it is not a corporate credential belonging to
+Connor personally."
+
+**Connor confirms:** he is the qualifier of record on Florida CGC #1531993.
+
+D9 was written on a wrong premise. Its obligation 3 anticipated exactly this and
+required confirmation before publishing the attributed sentence; the confirmation
+was sought and returned negative, so this is D9's own escape path rather than a
+re-litigation of a locked decision.
+
+**Effect.** D9's attribution requirement dissolves. Its whole rationale was that a
+bare number sitting next to Connor's name misattributes a credential belonging to
+someone else. The credential is Connor's, so a bare number is accurate.
+
+- The 5 pages naming Connor as qualifier of record are CORRECT and stay as written.
+- The 1,550 pages carrying CGC 1531993 need no attribution sentence.
+- D9a item 5's sitewide removal is REVOKED. Its trigger condition, "if Connor has
+  not confirmed", is now false. `scripts/apply-d9a-license-sweep.sh` is removed so
+  it cannot be run against a premise that no longer holds.
+- Jeff Walsh is not added to any page. D9 obligation 4 forbade describing his role
+  beyond "qualifying agent", and he is not the qualifying agent.
