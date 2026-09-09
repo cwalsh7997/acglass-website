@@ -682,7 +682,26 @@ That is knowledge of a jurisdiction, not a claim to put crews in it, so the chec
 now excludes familiarity constructions. Knowing a building department is competence,
 not an overreach.
 
-## PC-26: two conflicts between your own rules, both blocking merge (2026-09-09)
+## PC-26: RESOLVED 2026-09-09 on Connor's instruction to proceed.
+
+**1. Homepage bonding claim.** The claim stays removed, per D6 obligation 4. The
+semantic freeze now carries a content-pinned exception for that exact before/after
+description text. Any OTHER change to the homepage description still fails, verified
+by test.
+
+**2. Panther on the byte-frozen page.** Removed the project card from
+`impact-windows-palm-beach.html`, and also dropped Verdex and Suffolk from its VIP
+list to match `project-approvals.csv`. Authorisation pinned to sha256 in
+`byte-freeze-authorized-edits.txt`. Any further byte change to that page fails,
+verified by test.
+
+**The GSC baseline is still the real answer to the freeze**, and it is still not
+recorded. These exceptions are narrow and content-pinned, not a lifted freeze. See
+`tripwire-log.md`.
+
+The original note follows.
+
+## PC-26 (original): two conflicts between your own rules
 
 CI is green except one check, and both items below are cases where two of your rules
 point opposite ways. Neither is mine to settle.
@@ -730,7 +749,22 @@ the authorisation against a content hash the way the deny list now works.
 Default if nothing is decided: it stays, and both checks correctly report it as
 excluded rather than clean.
 
-## PC-27: the site publishes three different project counts
+## PC-27: RESOLVED 2026-09-09. All aligned to the approved 350+.
+
+23 replacements across 12 pages. "200+ commercial projects in the county since 2021"
+and "500+ projects in South Florida" are gone, along with an unapproved "100+ office
+projects completed" buried in bid.html's JavaScript that the first sweep missed.
+
+Left alone: "PM running 10+ active commercial projects is overloaded", which is
+advice about project managers, not a claim about ACG.
+
+`check-volume-claims.sh` was rewritten. It could not fail on a wrong number before,
+only on 350+ disappearing entirely, which is how twelve pages disagreeing with the
+approved figure survived a green check for the whole refresh.
+
+The original note follows.
+
+## PC-27 (original): the site publishes three different project counts
 
     "200+ commercial projects"   11 pages
     "350+ projects"               1 page
