@@ -22,18 +22,27 @@
   color: var(--ink-500); }
 
 .u-h2 { font-size: var(--fs-h2); font-weight: var(--fw-h2);
-  line-height: var(--lh-h2); letter-spacing: var(--tr-h2); color: var(--navy-800); }
+  line-height: var(--lh-h2); letter-spacing: var(--tr-h2); color: var(--heading-color, var(--navy-800)); }
 .u-h3 { font-size: var(--fs-h3); font-weight: var(--fw-h3);
-  line-height: var(--lh-h3); letter-spacing: var(--tr-h3); color: var(--navy-800); }
+  line-height: var(--lh-h3); letter-spacing: var(--tr-h3); color: var(--heading-color, var(--navy-800)); }
 .u-h4 { font-size: var(--fs-h4); font-weight: var(--fw-h4);
-  line-height: var(--lh-h4); letter-spacing: var(--tr-h4); color: var(--navy-800); }
+  line-height: var(--lh-h4); letter-spacing: var(--tr-h4); color: var(--heading-color, var(--navy-800)); }
 .u-lead { font-size: var(--fs-lead); font-weight: var(--fw-lead);
   line-height: var(--lh-lead); color: var(--ink-700); }
 .u-body { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-700); }
 .u-sm { font-size: var(--fs-sm); line-height: var(--lh-sm); color: var(--ink-500); }
 
 /* Section rhythm. Nothing exceeds 128px of vertical padding anywhere. */
-.u-section { padding-block: var(--s-16); }
+.u-section {
+  padding-block: var(--s-16);
+  /* Own the surface. Without these two lines the component inherits the host
+     page's background while its text colours still assume a light one, which
+     rendered navy-800 headings on a near-black body: invisible, not merely
+     low-contrast. A component that only works on a page it does not control is
+     not a component. */
+  background: var(--paper);
+  color: var(--ink-900);
+}
 @media (min-width: 1024px) { .u-section { padding-block: var(--s-24); } }
 .u-section--navy { background: var(--navy-800); color: var(--paper); }
 .u-section--alt { background: var(--paper-alt); }
@@ -50,7 +59,7 @@
 .u-btn--primary:hover { background: var(--red-600); }
 .u-btn--secondary { background: transparent; color: var(--navy-800);
   border-color: var(--line-300); }
-.u-btn--secondary:hover { border-color: var(--navy-800); }
+.u-btn--secondary:hover { border-color: var(--heading-color, var(--navy-800)); }
 .u-btn:focus-visible { outline: 2px solid var(--navy-800); outline-offset: 2px; }
 .u-section--navy .u-btn--secondary { color: var(--paper);
   border-color: var(--on-navy-rule); }
@@ -251,3 +260,70 @@
 .c-plate--alt .c-plate__key { color: var(--ink-500); }
 .c-plate__val { font-size: var(--fs-h4); font-weight: var(--fw-h4);
   line-height: var(--lh-h4); }
+
+
+/* Dark surfaces repoint the heading colour rather than each component opting in.
+   --heading-color is the single hook: set it on the surface, and every u-h*,
+   c-hero__title and c-capability__name inside follows without knowing where it
+   is. Added 2026-09-09 after dropping the system onto a dark host page. */
+.u-section--navy,
+.c-ctaband,
+.c-plate:not(.c-plate--alt) {
+  --heading-color: var(--paper);
+}
+.c-hero__title { color: var(--heading-color, var(--navy-800)); }
+.c-capability__name { color: var(--heading-color, var(--navy-800)); }
+.u-section--navy .c-doclist__name,
+.u-section--navy .c-capability__scope { color: var(--paper); }
+.u-section--navy .c-doclist__meta { color: var(--on-navy-secondary); }
+
+/* Body text on dark surfaces, added 2026-09-09.
+ *
+ * .c-hero__lead defaulted to --ink-700, which is correct on paper and measured
+ * 1.46:1 against --navy-800. Not low contrast: unreadable. The heading fix above
+ * routed headings through --heading-color and left body copy behind, so the
+ * title was legible and the sentence under it was not.
+ *
+ * --body-color is the same idea for prose. Surfaces set it once; every lead and
+ * scope paragraph inside follows. --on-navy-secondary measures 6.88:1 on navy. */
+.u-section--navy,
+.c-ctaband,
+.c-plate:not(.c-plate--alt) {
+  --body-color: var(--on-navy-secondary);
+}
+.c-hero__lead,
+.c-capability__scope,
+.c-ctaband__line {
+  color: var(--body-color, var(--ink-700));
+}
+.u-section--navy .u-body,
+.u-section--navy p:not([class]) {
+  color: var(--body-color, var(--ink-700));
+}
+
+/* The eyebrow measured 2.65:1 on navy at 13px. It is small text, so it needs 4.5:1,
+ * and it is the first thing above the H1. Routed through --label-color so dark
+ * surfaces can lift it without every page overriding a component. */
+.u-section--navy,
+.c-ctaband,
+.c-plate:not(.c-plate--alt) {
+  --label-color: var(--on-navy-secondary);
+}
+.c-hero__eyebrow,
+.u-mono--label {
+  color: var(--label-color, var(--navy-600));
+}
+
+/* Doclist stacks below the content gutter, added 2026-09-09.
+ *
+ * .c-doclist__row is a flex row with the name and the meta side by side. At 500px
+ * the meta ran past the right edge and was clipped: "CGC #1531993, verifiable at
+ * FL DBPR por". A prequalification table that truncates the licence number is
+ * worse than one that wraps. */
+@media (max-width: 640px) {
+  .c-doclist__row {
+    flex-direction: column;
+    gap: var(--s-1);
+  }
+  .c-doclist__meta { text-align: left; }
+}

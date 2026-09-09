@@ -27,7 +27,11 @@ scan() { # pattern, message, extra grep args
 }
 
 # 1. Any hex outside tokens.css.
-scan '#[0-9a-fA-F]{3,8}\b' 'raw hex outside tokens.css' --exclude=tokens.css
+#    Exactly 3, 4, 6 or 8 digits, because those are the only valid CSS hex colour
+#    lengths. The old {3,8} range matched anything in between and flagged
+#    "#1531993" in a comment, which is ACG's licence number, not a colour. A
+#    length that cannot be a colour is not a colour.
+scan '#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\b' 'raw hex outside tokens.css' --exclude=tokens.css
 
 # 2. Radius outside the permitted set (0, 2px, 4px, or a var).
 out=$(grep -rnE 'border-radius:' "$SRC" 2>/dev/null | grep -vE 'border-radius:\s*(var\(|0|2px|4px)')
