@@ -1,0 +1,9 @@
+# Bracket forms that are legitimate reader-facing convention, not leaked placeholders.
+# Everything else in [Brackets] fails check-placeholders.sh, because a bracketed note
+# has already shipped to production on this site once (defect 1).
+# Reviewed occurrence by occurrence 2026-09-08.
+\[None\]
+\[ACG LEAD
+\[DISABLED\]
+\[Supplier [Nn]ame\]
+\[Position\]
