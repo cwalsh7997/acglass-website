@@ -57,6 +57,8 @@ Disallow: /
 # but are not advertised - GSC was still crawling the old index (2,516)
 # and a stale www sitemap (342, last read 2026-04-24).
 # ------------------------------------------------------------------------
+Disallow: /drafts/
+
 Sitemap: https://acglass.com/sitemap.xml
 
 # ------------------------------------------------------------------------

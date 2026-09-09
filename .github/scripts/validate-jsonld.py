@@ -34,9 +34,7 @@ ORG_NAME = "American Commercial Glass"
 # Exact fingerprints for conflicts on pages that cannot be changed in this
 # release. A changed value or a new conflict does not match and fails the gate.
 HELD_ID_PROPERTY_CONFLICTS = {
-    ("city-of-haines-emergency.html", ORG_ID, "telephone"):
-        "a1c0b3aec993a9f1e18e952877a6b76705ba06f8d3f80b4a775eae96f40cded7",
-    (
+        (
         "commercial-glazing-west-palm-beach.html",
         "https://acglass.com/#localbusiness-west-palm-beach",
         "areaServed",
@@ -58,18 +56,9 @@ HELD_ID_PROPERTY_CONFLICTS = {
         "https://acglass.com/#localbusiness-west-palm-beach",
         "email",
     ): "28a3e6d1f0fd2272228f90d1709c1f9e4abdc05df275956b7ea995c16ffab5a0",
-    (
-        "eswindows-installer-west-palm-beach.html",
-        "https://acglass.com/#localbusiness-west-palm-beach",
-        "telephone",
-    ): "e6fa53a105eff9e83b7739733c0aa01700f1cc65db2e43ac4ff1d5564dcc22a6",
-    ("ocean-prime-ft-lauderdale.html", ORG_ID, "description"):
+        ("ocean-prime-ft-lauderdale.html", ORG_ID, "description"):
         "daa291f744019d386f7ce92b33dc5b5613b7888f9cd0e63703cf151dac0500ca",
-    ("ocean-prime-ft-lauderdale.html", ORG_ID, "telephone"):
-        "a1c0b3aec993a9f1e18e952877a6b76705ba06f8d3f80b4a775eae96f40cded7",
-    ("panther-national-clubhouse.html", ORG_ID, "telephone"):
-        "5d8f8eab734517871390ff6aea53b4d08c948bc1d11eeff782a29d8d31f8300e",
-}
+        }
 
 # Exact fingerprints for legacy Place nodes with coordinates on pages held out
 # of this release. Editable pages must not publish Place coordinates without a
@@ -114,11 +103,6 @@ HELD_PLACE_GEO_HASHES = {
     "ocean-prime-ft-lauderdale.html": (
         "25551ef21c950f8a9f33ff37175ad6730072e93dafbce36441b67f4371f8ac7f",
         "350628098ae7abb828ea0360ce763984905abfc9d45d535c68795366c3292bb6",
-    ),
-    "panther-national-clubhouse.html": (
-        "362ebad2cd210b356dd063b5b16d910d2371d8f1e8a7a98c51583bf2c401c87a",
-        "5cbf7ecfbbe9bb4cdbd67636374dfc5fb7cee333d73db080aecf4c4a29cc2e49",
-        "8c9abfbd45853639a94d50aac12ec0c6e371dce8cd480b65672a08cf347333ea",
     ),
     "west-palm-beach/clematis-street-west-palm-beach/index.html": (
         "44ec9488219f6c1bf840490e86a342d86dadd3db31f772a517f2b37619290d4a",
