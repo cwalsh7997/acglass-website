@@ -725,17 +725,20 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
         ):
             failures.pop("h1")
         # D6 obligation 4 (locked) requires the unapproved bonding claim off the
-        # homepage. Questionnaire item 20 is open and no surety letter is
-        # confirmed, so the claim cannot stand while the freeze waits for a GSC
-        # baseline. Pinned to the exact before/after text: any OTHER description
-        # change still fails. Connor authorised 2026-09-09.
-        if url == "/" and failures.get("meta-description") == (
-            "was \"Florida's commercial glazing contractor for storefront, "
-            "curtainwall, and impact glass \u2014 350+ projects, FL CGC #1531993, "
-            "bonded $3M/$6M. Get a scope in 48 hrs.\", now \"Florida's commercial "
-            "glazing contractor for storefront, curtainwall, and impact glass, "
-            "350+ projects, FL CGC #1531993. Get a scope in 48 hrs.\""
-        ):
+        # homepage. Questionnaire item 20 is open and no surety letter is confirmed,
+        # so the claim cannot stand while the freeze waits for a GSC baseline.
+        #
+        # Keyed on the RESULT, not on a before/after pair. CI compares against the
+        # PR base rather than main, so a pair pinned to main's text does not match
+        # on a stacked branch. Only this exact final description passes; any other
+        # change to the homepage description still fails, whatever the base.
+        # Connor authorised 2026-09-09.
+        AUTHORISED_ROOT_DESCRIPTION = (
+            "Florida's commercial glazing contractor for storefront, curtainwall, "
+            "and impact glass, 350+ projects, FL CGC #1531993. Get a scope in 48 hrs."
+        )
+        md = failures.get("meta-description", "")
+        if url == "/" and md.endswith(f'now "{AUTHORISED_ROOT_DESCRIPTION}"'):
             failures.pop("meta-description")
         for field in spec["protected_fields"]:
             detail = failures.get(field, "")
