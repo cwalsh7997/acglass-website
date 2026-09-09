@@ -3,7 +3,7 @@
 # Three outcomes: PASS, FAIL, CONFIG. CONFIG means a required list is incomplete.
 # CONFIG IS NOT A PASS. verify.sh exits 0 only when everything is PASS.
 cd "$(dirname "$0")/.." || exit 2
-CHECKS="design-lint seo-hygiene license-attribution safety-claims placeholders volume-claims bonding geography federal-status deny-list image-rights out-of-state-claims litigation-exposure sitemap-integrity broken-links office-claims form-a11y"
+CHECKS="design-lint seo-hygiene license-attribution safety-claims placeholders volume-claims bonding geography federal-status deny-list image-rights out-of-state-claims litigation-exposure sitemap-integrity broken-links office-claims form-a11y schema-integrity"
 NAMES=()
 RESULTS=()
 pass=0; fail=0; config=0
