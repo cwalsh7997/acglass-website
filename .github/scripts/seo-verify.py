@@ -214,12 +214,40 @@ def check_robots(results: list[Result]) -> None:
     # reach model memory. The pre-7/16 rule asserted Disallow:/ — that is now the
     # wrong expectation, so assert the ratified policy instead.
     def ua_allows(ua: str) -> bool:
-        m = re.search(
-            rf"^\s*User-agent:\s*{re.escape(ua)}\s*\n\s*Allow:\s*/",
-            text,
-            re.IGNORECASE | re.MULTILINE,
-        )
-        return bool(m)
+        """Is this crawler permitted, by its own group or by the * group.
+
+        Rewritten 2026-09-09. This used to require a NAMED group for the crawler
+        containing Allow:/, and that expectation had become actively harmful.
+
+        Google's spec: "Only one applicable group is used for a crawler.
+        User-agent-specific groups and the global * group are not combined."
+        robots.txt previously carried 32 named crawler groups whose entire content
+        was "Allow: /". Because groups never combine, every one of those crawlers
+        matched its own group and was exempt from the three Disallow rules in the
+        * group. GPTBot, ClaudeBot, CCBot and the rest could crawl the dealer
+        admin view and the JSON-LD fragment. The file looked permissive and was a
+        hole.
+
+        Those groups were removed, which restores the Disallow rules for everyone
+        and changes nothing about what is permitted, since Allow:/ was already the
+        default. Demanding a named CCBot group again would demand reopening the
+        hole to satisfy a check.
+
+        The GEO decision from 2026-07-16 is that CCBot may crawl, so that is what
+        this now verifies: CCBot is permitted, either explicitly or under *. A
+        named Disallow for the crawler still fails.
+        """
+        named_allow = re.search(
+            rf"^\s*User-agent:\s*{re.escape(ua)}\s*\n(?:\s*(?!User-agent:)\S[^\n]*\n)*?\s*Allow:\s*/",
+            text, re.IGNORECASE | re.MULTILINE)
+        if named_allow:
+            return True
+        if ua_disallows(ua):
+            return False
+        star_allow = re.search(
+            r"^\s*User-agent:\s*\*\s*\n(?:\s*(?!User-agent:)\S[^\n]*\n)*?\s*Allow:\s*/",
+            text, re.IGNORECASE | re.MULTILINE)
+        return bool(star_allow)
 
     results.append(Result("FAIL", "robots.txt CCBot Allow:/ (GEO decision 7/16)", ua_allows("CCBot")))
     results.append(
