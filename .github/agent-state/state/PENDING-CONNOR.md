@@ -266,3 +266,33 @@ Two things worth knowing before you start:
 For project photos the question is usually one line: **who shot it.** ACG, the GC,
 the owner, or an architectural photographer. If it was a photographer, they
 normally retain copyright and the licence terms matter.
+
+## PC-19: two regional office addresses are published in schema. Real or not? (2026-09-08)
+
+The West Palm Beach HQ is asserted on 1,020 schema nodes and is not in question.
+Two other addresses are also published as ACG regional offices, on 17 pages each,
+in body text AND in machine-readable LocalBusiness schema:
+
+    4850 Tamiami Trail N, Suite 301, Naples FL 34103
+    3031 N Rocky Point Dr W, Suite 600, Tampa FL 33607
+
+**A structured-data office claim is stronger than a sentence.** Google may use it
+for local pack eligibility. If an office is not real, that is not a wording
+problem, it is a false business location submitted to a search engine. If the
+offices ARE real, deleting them throws away legitimate local presence.
+
+I cannot tell which from inside the repo and I am not guessing on a question that
+can go badly wrong in both directions.
+
+Worth noting: the same about.html paragraph that makes these claims handles
+Tennessee correctly, saying ACG "holds no Tennessee office and performs no
+Tennessee field labor." Whoever wrote that was being careful about exactly this,
+which is mild evidence the Florida offices were meant literally. Mild evidence is
+not confirmation.
+
+**Default if nothing is decided: the pages stay exactly as they are.**
+`check-office-claims.sh` pins both counts at 17 so the claim cannot quietly
+spread while unresolved. It fails on drift in either direction.
+
+One answer per office clears this: does ACG have a leased or owned space at that
+address, staffed, that could receive mail and a visitor.
