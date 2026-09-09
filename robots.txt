@@ -8,6 +8,33 @@
 # search=yes:    allow indexing for traditional search results
 # ai-input=yes:  allow content as real-time AI input (RAG, AI overviews)
 # ai-train=yes:  allow content for AI model training (lets ACG be named from model memory)
+
+# ------------------------------------------------------------------------
+# One group governs every crawler.
+#
+# Google's specification: "Only one applicable group is used for a crawler...
+# User-agent-specific groups and the global * group are not combined."
+# https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt
+#
+# This file previously carried 32 named crawler groups that each contained
+# nothing but "Allow: /". Because groups are never combined, every one of those
+# crawlers -- GPTBot, ClaudeBot, PerplexityBot, Bingbot, CCBot, Google-Extended,
+# Applebot and the rest -- matched its own group and was therefore exempt from
+# all three Disallow rules below. They could crawl the dealer admin view and the
+# JSON-LD fragment. The groups looked permissive and were actually a hole.
+#
+# Deleting them changes nothing about what is permitted, because "Allow: /" was
+# already the default, and it restores the three Disallow rules for everyone.
+#
+# The allow-everything-that-cites posture is deliberate and is preserved: AI and
+# search crawlers are welcome. Only Bytespider is refused, and that is a
+# deliberate exception kept below.
+#
+# Content-Signal is [SPECULATIVE]. It is not a supported robots.txt field and no
+# crawler is known to honour it. It is retained as a declaration of intent. Do
+# not describe it as a control.
+# ------------------------------------------------------------------------
+
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
@@ -19,126 +46,8 @@ Disallow: /dealer/thanks.html
 Disallow: /services-schema-block.html
 
 # ------------------------------------------------------------------------
-# AI Answer Engine Crawlers - Explicitly Permitted
-# ACG content is intended to be discoverable and citable by AI engines.
+# The one refusal. TikTok/Doubao's crawler takes content without citing it.
 # ------------------------------------------------------------------------
-
-# OpenAI / ChatGPT
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ChatGPT-Search-User
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-# Anthropic / Claude
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-# Perplexity
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-# Google AI / Gemini / SGE
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GoogleOther
-Allow: /
-
-# Microsoft Bing / Copilot
-User-agent: Bingbot
-Allow: /
-
-User-agent: BingPreview
-Allow: /
-
-User-agent: MSNBot
-Allow: /
-
-# Meta AI
-User-agent: FacebookBot
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: Meta-ExternalFetcher
-Allow: /
-
-# Apple Intelligence
-User-agent: Applebot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# Amazon / Alexa
-User-agent: Amazonbot
-Allow: /
-
-# Cohere
-User-agent: cohere-ai
-Allow: /
-
-# DuckDuckGo
-User-agent: DuckAssistBot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Brave Search
-User-agent: Bravebot
-Allow: /
-
-User-agent: Brave-SearchBot
-Allow: /
-
-# You.com
-User-agent: YouBot
-Allow: /
-
-# Phind
-# Kagi
-User-agent: KagiBot
-Allow: /
-
-# Neeva (legacy)
-# Google Gemini (explicit)
-# Mistral
-User-agent: MistralAI-User
-Allow: /
-
-# Diffbot / content extraction
-User-agent: Diffbot
-Allow: /
-
-# Common Crawl (feeds many AI training sets - allowed so ACG facts reach model training)
-User-agent: CCBot
-Allow: /
-
-# Bytespider (TikTok/Doubao)
 User-agent: Bytespider
 Disallow: /
 
