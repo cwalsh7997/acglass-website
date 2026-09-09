@@ -32,8 +32,18 @@ total=$(gg -F "$NUM" | grep -c . )
 #    Excludes placeholder= and value= attributes: become-a-dealer.html carries
 #    placeholder="CGC1234567" as a format hint on a form input, which is an example
 #    of the shape, not a credential ACG is publishing about itself.
+  #
+  #    Also excludes a licence cell in the Florida contractor comparison table,
+  #    added 2026-09-09. JEM Glass publishes "Certified General Contractor :
+  #    CGC1525578" on its own site, and that page quotes it inside a row whose
+  #    row header is "JEM Glass". Same reasoning as the placeholder above: a
+  #    credential published about a named other firm, correctly attributed, is
+  #    not a credential ACG is publishing about itself. The exclusion is tied to
+  #    that table cell's data-label rather than to a page name, so it cannot leak
+  #    into ordinary prose. A wrong number in ACG's own copy still fails.
 wrong=$(gg -E 'CGC[ #]*[0-9]{6,8}' | grep -v "$NUM" \
-        | grep -vE '(placeholder|value)="[^"]*CGC' | head -10)
+        | grep -vE '(placeholder|value)="[^"]*CGC' \
+        | grep -vF 'data-label="License, as published"' | head -10)
 if [ -n "$wrong" ]; then
   printf '%s\n' "$wrong" | cut -c1-120 | sed 's/^/  wrong number: /'
   fail=$((fail + $(printf '%s' "$wrong" | grep -c .)))
