@@ -1,0 +1,20 @@
+PHASE 4 — SELF-APPROVED 2026-09-08 (image-rights gate)
+Branch: refresh/p4-projects-resources
+
+DELIVERED
+  .github/agent-state/state/image-rights.csv   1,428 rows, populated from the real tree
+  check-image-rights.sh                        CONFIG -> FAIL, correctly
+
+The gate is now real. It was CONFIG ("cannot validate, csv empty"); it is now FAIL
+("validated, 1,007 of 1,428 files have no recorded rights"). That is progress. A
+gate that cannot fail is not a gate.
+
+FOUND, and it is what the gate exists to catch:
+  multifamily-commercial-glazing-florida/index.html is live, indexable, and renders
+  five images from /images/stock/. rules/01 s.10 calls stock imagery of glass or
+  buildings an instant rejection. The other 31 files in that directory are
+  referenced by nothing. Parked as PC-09 with a default.
+
+CARRIED
+  the 11 noindexed drafts remain phase-4 content candidates, still blocked by the
+  pinned TN governance digests in tn-claim-guard.py (PC-03)

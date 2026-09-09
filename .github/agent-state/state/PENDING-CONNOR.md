@@ -115,3 +115,42 @@ renders with no explanatory context, is a small reversible diff, and leaves the
 compliance and structured-data uses intact pending your answer on the number itself.
 
 _2026-09-08_
+
+## PC-09. Stock imagery is live on an indexable page
+**Phase 4 · Hard stop 3 · rules/01 s.10 calls this an instant rejection**
+
+`multifamily-commercial-glazing-florida/index.html` returns 200, carries no noindex,
+and renders **five images from `/images/stock/`**:
+`multifamily-1.jpg`, `multifamily-2.jpg`, `multifamily-3.jpg`, `glass-detail-1.jpg`,
+`curtainwall-1.jpg`.
+
+rules/01 section 10 bans "stock or AI-generated imagery of glass, buildings, workers,
+or hard hats" as an instant rejection. D10 routes any image with unverified rights to
+the `TypographicPlate` fallback, which is component 18 and is already built.
+
+The other 31 files in `images/stock/` are referenced by nothing.
+
+**Default if unanswered: swap the five for `TypographicPlate`, which keeps the page's
+layout, section count and component count rather than shrinking around the gap, then
+delete all 36 unreferenced stock files.** I did not execute it because it is a
+visible design change on a live page and I cannot screenshot-verify it here.
+
+## PC-10. Image rights are unverified on 1,007 of 1,428 files
+**Phase 4 · Hard stop 3 · `check-image-rights.sh` now FAILS, correctly**
+
+The CSV is populated from the real tree. Source category was inferred from path,
+which is evidence of location, not of rights:
+
+| rights_status | files |
+|---|---:|
+| owned (`/infographics/`, `/brand/`: ACG-authored artwork) | 421 |
+| **unverified** | **1,007** |
+
+935 are `unknown` category, dominated by `images/projects/` at 849 files.
+
+The check moved from CONFIG to FAIL and that is progress, not regression: CONFIG meant
+"cannot validate", FAIL means "validated, and 1,007 files have no recorded rights".
+
+**Default if unanswered: nothing publishes from an unverified path in later phases;
+`TypographicPlate` is used instead.** One batched answer per project, not per file,
+is all that is needed. See the existing `image-source-categories` request.
