@@ -14,7 +14,7 @@ EXPECTED = {
         "images/acg-coverage-map.svg": (900, 560),
     },
     "index-proof.html": {
-        "/images/hero/tower-360.jpg": (2000, 1116),
+        "/images/hero/gulfside-twelve-twilight.jpg": (1920, 1071),
         "/images/projects/ocean-prime-ft-lauderdale/ocean-prime-ftl-twilight-exterior.jpg": (1600, 1197),
         "/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg": (1564, 1028),
         "/images/projects/gulfside-twelve/hero-twilight-beachfront.jpg": (1920, 1071),

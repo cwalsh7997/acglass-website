@@ -20,13 +20,13 @@
 <meta property="og:title" content="Commercial Glazing Contractor Florida | ACG">
 <meta property="og:description" content="Federal-ready commercial glazing in Florida for government and institutional facilities. SAM.gov registered, CAGE 234B0, FL CGC 1531993. ">
 <meta property="og:url" content="https://acglass.com/">
-<meta property="og:image" content="https://acglass.com/images/hero/tower-360.jpg">
+<meta property="og:image" content="https://acglass.com/images/hero/gulfside-twelve-twilight.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Commercial Glazing Contractor Florida | ACG">
 <meta name="twitter:description" content="Federal-ready commercial glazing in Florida for government and institutional facilities. SAM.gov registered, CAGE 234B0, FL CGC 1531993. ">
-<meta name="twitter:image" content="https://acglass.com/images/hero/tower-360.jpg">
+<meta name="twitter:image" content="https://acglass.com/images/hero/gulfside-twelve-twilight.jpg">
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="/images/hero/tower-360.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/images/hero/gulfside-twelve-twilight.avif" type="image/avif" fetchpriority="high">
 <link rel="stylesheet" href="/css/acg-proof.css?v=20260802-map">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -324,12 +324,11 @@
 <section class="hero" id="top">
   <div class="film" id="film">
     <picture>
-      <source type="image/webp" srcset="/images/hero/tower-360.webp">
-      <img src="/images/hero/tower-360.jpg" alt="" aria-hidden="true" fetchpriority="high" width="2000" height="1116" decoding="async" loading="eager" fetchpriority="high">
+      <source type="image/avif" srcset="/images/hero/gulfside-twelve-twilight.avif">
+      <source type="image/webp" srcset="/images/hero/gulfside-twelve-twilight.webp">
+      <img src="/images/hero/gulfside-twelve-twilight.jpg" alt="" aria-hidden="true" fetchpriority="high" width="1920" height="1071" decoding="async" loading="eager">
     </picture>
-    <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.webp" aria-hidden="true" tabindex="-1"></video>
   </div>
-  <button class="motion-toggle" id="motionToggle" type="button" aria-controls="heroVideo" aria-label="Pause background motion" aria-pressed="false"></button>
   <div class="hero-copy">
     <h1>
       <span class="l1">Commercial glazing.</span>
@@ -797,39 +796,6 @@
     setTimeout(function(){
       revealTargets.forEach(function(el){if(!el.classList.contains('in'))el.classList.add('in')});
     },2000);
-  }
-  if(!reduce){
-    var v=document.getElementById('heroVideo');
-    var hero=document.getElementById('top');
-    var motionToggle=document.getElementById('motionToggle');
-    var userPaused=false;
-    var heroVisible=true;
-    function safePlay(){
-      if(!userPaused&&heroVisible&&!document.hidden){v.play().catch(function(){})}
-    }
-    function setMotionState(paused){
-      motionToggle.setAttribute('aria-pressed',paused?'true':'false');
-      motionToggle.setAttribute('aria-label',paused?'Play background motion':'Pause background motion');
-      motionToggle.classList.toggle('is-paused',paused);
-    }
-    var s=document.createElement('source'); s.src='/videos/hero-360-720-loop.mp4'; s.type='video/mp4';
-    v.appendChild(s); v.load();
-    v.addEventListener('canplay',safePlay);
-    motionToggle.addEventListener('click',function(){
-      userPaused=!v.paused;
-      if(userPaused){v.pause()}else{safePlay()}
-      setMotionState(userPaused);
-    });
-    if('IntersectionObserver' in window){
-      var heroObserver=new IntersectionObserver(function(entries){
-        heroVisible=entries[0].isIntersecting;
-        if(heroVisible){safePlay()}else{v.pause()}
-      },{threshold:.08});
-      heroObserver.observe(hero);
-    }
-    document.addEventListener('visibilitychange',function(){
-      if(document.hidden){v.pause()}else{safePlay()}
-    });
   }
 })();
 </script>

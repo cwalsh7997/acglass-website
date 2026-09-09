@@ -24,8 +24,11 @@
 
 <section class="hero" id="top">
   <div class="film" id="film">
-    <img src="/images/hero/tower-360.jpg" width="2000" height="1116" alt="" aria-hidden="true" fetchpriority="high" loading="eager" fetchpriority="high">
-    <video id="heroVideo" muted loop playsinline preload="none" poster="/images/hero/tower-360.jpg" aria-label="Slow aerial orbit of a glass tower at dusk"></video>
+    <picture>
+      <source type="image/avif" srcset="/images/hero/gulfside-twelve-twilight.avif">
+      <source type="image/webp" srcset="/images/hero/gulfside-twelve-twilight.webp">
+      <img src="/images/hero/gulfside-twelve-twilight.jpg" width="1920" height="1071" alt="" aria-hidden="true" fetchpriority="high" loading="eager">
+    </picture>
   </div>
   <div class="hero-copy">
     <h1>
@@ -175,10 +178,6 @@
   addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
   var film=document.getElementById('film');
   if(!reduce){
-    var v=document.getElementById('heroVideo');
-    var s=document.createElement('source'); s.src='/videos/hero-360-720.mp4'; s.type='video/mp4';
-    v.appendChild(s); v.load();
-    v.addEventListener('canplay',function(){ v.play().catch(function(){}); });
     requestAnimationFrame(function(){ setTimeout(function(){ film.classList.add('lit'); },300); });
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
