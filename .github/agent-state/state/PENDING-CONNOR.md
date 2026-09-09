@@ -310,3 +310,47 @@ spread while unresolved. It fails on drift in either direction.
 
 One answer per office clears this: does ACG have a leased or owned space at that
 address, staffed, that could receive mail and a visitor.
+
+## PC-20: your email is in the page source of 6 lead forms (2026-09-08)
+
+Every lead form posts to formsubmit.co with the address written into the markup:
+
+    action="https://formsubmit.co/connor@acglass.com"
+    fetch('https://formsubmit.co/ajax/connor@acglass.com')
+
+7 occurrences across bid.html, contact.html, partners.html, send-plans.html,
+scope-engine.html and commercial-glazing-nashville-tn.html.
+
+An earlier pass wrapped 3,641 visible mentions of staff email in
+`<!--email_off-->` to keep harvesters off them. These endpoints were the ones
+left raw, and they are the same address in the same HTML, just inside an
+attribute instead of a paragraph. Wrapping them is not an option because the
+attribute has to stay a working URL.
+
+**The fix is a formsubmit.co alias, and it needs you, not me.** They issue a
+random token that forwards to the same inbox, so the markup becomes
+
+    action="https://formsubmit.co/ajax/a1b2c3d4e5f6..."
+
+and the address disappears from the source with no behaviour change. Log in,
+take the alias for connor@acglass.com, paste it here, and I will swap all 7 in
+one pass and verify each form still posts.
+
+**Default if nothing is decided: leave it.** A working form that leaks an address
+beats a broken form that does not, and this address is already public on the
+contact page by design. This is spam-surface reduction, not a breach.
+
+## Note on forms, since the phase-5 gate reads as fully blocked
+
+Only the endpoint is blocked. The rest is in better shape than the gate implies:
+
+- `dealer/dealer.js` degrades correctly. With no API configured it falls back to
+  a prefilled mailto rather than silently dropping the submission. I expected to
+  find a dead form on become-a-dealer.html and did not.
+- Honeypots are present on the forms that post to a third party (`_gotcha`,
+  `_honey`). My first count said 3 forms lacked one; I had been looking for the
+  wrong attribute names.
+- Form accessibility now passes. 27 of 28 controls on send-plans.html use
+  wrapping labels, which are valid with no id at all. The 9 real failures were
+  8 calculator inputs whose labels sat beside them unassociated, and one
+  unlabelled file input on bid.html. All fixed.

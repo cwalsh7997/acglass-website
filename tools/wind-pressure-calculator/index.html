@@ -136,7 +136,7 @@
 <div class="container" style="max-width:800px;">
 <form onsubmit="return false;" style="background:#0e284f;padding:40px;border-radius:12px;">
 
-<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Design wind speed (3-sec gust, mph)</label>
+<label for="V" style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Design wind speed (3-sec gust, mph)</label>
 <select id="V" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:24px;">
 <option value="135">135 mph (inland Florida, standard)</option>
 <option value="145">145 mph (Tampa Bay area)</option>
@@ -147,17 +147,17 @@
 <option value="180">180 mph (Florida Keys)</option>
 </select>
 
-<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Building height (feet)</label>
+<label for="z" style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Building height (feet)</label>
 <input id="z" type="number" value="30" min="10" max="500" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:24px;">
 
-<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Exposure category</label>
+<label for="exp" style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Exposure category</label>
 <select id="exp" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:24px;">
 <option value="B">Exposure B (urban / suburban, sheltered)</option>
 <option value="C" selected>Exposure C (open terrain, scattered obstructions)</option>
 <option value="D">Exposure D (open water, direct coastal)</option>
 </select>
 
-<label style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Surface location</label>
+<label for="loc" style="color:#fff;display:block;margin-bottom:8px;font-weight:600;">Surface location</label>
 <select id="loc" style="width:100%;padding:14px;background:#050A12;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:16px;border-radius:6px;margin-bottom:32px;">
 <option value="field">Wall field (away from corners)</option>
 <option value="corner">Wall corner zone (within 10% of building width)</option>
