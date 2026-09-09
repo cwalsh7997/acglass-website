@@ -259,7 +259,30 @@ count at 29 so it cannot drift while nobody is watching.
 To clear: counsel rules, the ruling is recorded in `decisions.md`, and the CSV
 rows move off `litigated-project`.
 
-## PC-18: image rights is 59 directory answers, not 1,007 file answers
+## PC-18: MOSTLY RESOLVED 2026-09-09. 380 blocked -> 22.
+
+Connor confirmed the project photography, staff portraits, hero images and event
+photos are ACG's own. 346 images marked acg_shot + owned.
+
+**22 remain blocked, 14 of them published**, and they are all one kind of problem:
+manufacturer photography under `images/partners/` and third-party GC logos under
+`images/logos/gcs`. Connor confirmed permission for both, but it is verbal. D10
+obligation 4 requires `licensed_written` for the `manufacturer_supplied` and
+`gc_supplied` categories specifically, because those are the ones that generate
+invoices, so verbal is recorded honestly and still does not clear publication.
+
+**An email closes this.** Ask Euro-Wall, ES Windows and the GCs to confirm in
+writing that ACG may use their product photography and marks. Most manufacturers
+grant this to installers as a matter of course.
+
+Correction: I reported 12 stock images to delete. There were none. `images/stock/`
+is not in the repo and the rows referenced files that do not exist. I read the CSV
+instead of the filesystem. Rows removed, and the rest of the ledger audited for the
+same fault with zero further phantoms.
+
+The original note follows.
+
+## PC-18 (original): image rights is 59 directory answers, not 1,007 file answers
 
 The gate read as 1,007 unverified files. That number was encodings. The same photo
 ships as jpg, webp and avif, which is one rights decision recorded three times.
@@ -499,7 +522,25 @@ further while unanswered.
 the other 124 pages, the architect spec section should not carry an unverified
 certification claim. Say the word and I will remove just that one.
 
-## PC-23: 11 Miami-Dade NOA numbers are published with no expiry on file (2026-09-08)
+## PC-23: PARTIALLY RESOLVED 2026-09-09.
+
+**The two 2018 numbers are pulled.** NOA 18-0404.02 and 18-0404.03, both Series 5250
+curtain wall, both on architect-resources.html, both linking to the county PDF. They
+were the highest risk in the set: issued 2018, and NOAs run three to five years. The
+system's document count was corrected from 3 to 1 in the same edit.
+
+**Nine remain published with expiry still unconfirmed:**
+
+    NOA 20-0401.11   NOA 20-1211.01   NOA 21-0914.03   NOA 21-1108.05
+    NOA 23-0724.09   NOA 23-0724.12   NOA 23-0724.13   NOA 24-0321.07
+    NOA 24-0615.02
+
+The 20- pair is next by age. The Miami-Dade BCCO database is the authority, not the
+manufacturer's PDF, because expired NOAs stay downloadable after they lapse.
+
+The original note follows.
+
+## PC-23 (original, 2026-09-08): 11 Miami-Dade NOA numbers published with no expiry
 
 Miami-Dade Notices of Acceptance expire. The site publishes 11 of them across 16
 pages and the repo holds no expiry date for any:

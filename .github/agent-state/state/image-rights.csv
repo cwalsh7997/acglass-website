@@ -1,22 +1,22 @@
 image_stem,encodings,project_group,source_category,rights_status,evidence_ref,note,recorded_date
-images/acg-coverage-map,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-favicon,jpg,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-icon-44,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-icon-88,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-icon-nav,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-logo-nav,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-logo-nav-OLD@2x,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-logo-nav@2x,avif png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/acg-mark,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/apple-touch-icon,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/atlantic-fields-card,jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/atlantic-fields-entry,avif jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/atlantic-fields-fitness,avif jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/atlantic-fields-hero,avif jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/blog/top-chef-2026/awards-table,jpg webp,images/blog/top-chef-2026,unknown,unverified,,Event photography. Needs the photographer.,2026-09-08
-images/blog/top-chef-2026/nannette-walsh-winner,jpg webp,images/blog/top-chef-2026,unknown,unverified,,Event photography. Needs the photographer.,2026-09-08
-images/blog/top-chef-2026/packed-house,avif jpg webp,images/blog/top-chef-2026,unknown,unverified,,Event photography. Needs the photographer.,2026-09-08
-images/blog/top-chef-2026/sponsor-wall,jpg webp,images/blog/top-chef-2026,unknown,unverified,,Event photography. Needs the photographer.,2026-09-08
+images/acg-coverage-map,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-favicon,jpg,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-icon-44,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-icon-88,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-icon-nav,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-logo-nav,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-logo-nav-OLD@2x,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-logo-nav@2x,avif png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/acg-mark,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/apple-touch-icon,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/atlantic-fields-card,jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/atlantic-fields-entry,avif jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/atlantic-fields-fitness,avif jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/atlantic-fields-hero,avif jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/blog/top-chef-2026/awards-table,jpg webp,images/blog/top-chef-2026,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/blog/top-chef-2026/nannette-walsh-winner,jpg webp,images/blog/top-chef-2026,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/blog/top-chef-2026/packed-house,avif jpg webp,images/blog/top-chef-2026,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/blog/top-chef-2026/sponsor-wall,jpg webp,images/blog/top-chef-2026,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
 images/brand/acg-icon,png,images/brand,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/brand/acg-lockup-2x,png,images/brand,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/brand/acg-lockup-full,png,images/brand,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
@@ -24,13 +24,13 @@ images/brand/acg-logo-horizontal,png,images/brand,acg_shot,owned,,"carried forwa
 images/brand/acg-logo-stacked,png,images/brand,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/brand/acg-stacked,png,images/brand,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/brand/acg-wordmark,png,images/brand,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
-images/favicon-192,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/favicon-32,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/favicon-512,png,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/hero-carib-circle,avif jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/hero/storefront-cinematic,jpg,images/hero,unknown,unverified,,Composed hero. Needs the source of every element in the composition.,2026-09-08
-images/hero/tower-360,jpg webp,images/hero,unknown,unverified,,Composed hero. Needs the source of every element in the composition.,2026-09-08
-images/impact-windows-multifamily,avif jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
+images/favicon-192,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/favicon-32,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/favicon-512,png,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/hero-carib-circle,avif jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/hero/storefront-cinematic,jpg,images/hero,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/hero/tower-360,jpg webp,images/hero,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/impact-windows-multifamily,avif jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
 images/infographics/infographic-1172-s-harbor-glazing,avif webp,images/infographics,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/infographics/infographic-2143-carib-circle-glazing,avif webp,images/infographics,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/infographics/infographic-736-lagoon-dr-glazing,avif webp,images/infographics,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
@@ -238,33 +238,33 @@ images/infographics/infographic-why-hire-licensed-commercial-glazier-florida,avi
 images/infographics/infographic-wild-blue-clubhouse-glazing,avif webp,images/infographics,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/infographics/infographic-window-wall-multifamily-guide,avif webp,images/infographics,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
 images/infographics/infographic-window-wall-systems-florida-guide,avif webp,images/infographics,acg_shot,owned,,"carried forward from the prior CSV, not re-derived",2026-09-08
-images/leadership/rielly-panther-national,avif jpg webp,images/leadership,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/leadership/rielly-panther-national-original,avif jpg webp,images/leadership,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/leadership/rielly-panther-square,jpg webp,images/leadership,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/logos/eswindows,png,images/logos,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/logos/gcs/curran-young-construction,png webp,images/logos/gcs,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/logos/gcs/hooks-construction,png webp,images/logos/gcs,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/logos/gcs/made-in-rio,png webp,images/logos/gcs,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/logos/gcs/proctor-construction,png webp,images/logos/gcs,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/logos/gcs/rycon-construction,png webp,images/logos/gcs,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/padel-club,jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/partners/eswindows/logo-tag,png,images/partners/eswindows,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eswindows/product-es8000,jpg png webp,images/partners/eswindows,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/logo,png,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/logo-white,png,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/product-folding,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/product-multislide,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/product-pivot,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/product-windows,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-alkai-estates,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-allen-residence,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-american-harvest,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-american-harvest-OLD,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-andco,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-hero-multislide,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-lemoyne-interior,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-oilnutbay,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
-images/partners/eurowall/project-yeti,avif jpg webp,images/partners/eurowall,manufacturer_supplied,unverified,,"Manufacturer's own photography. Needs written permission on file. Manufacturer's own photography. ACG needs written permission on file, not assumed.",2026-09-08
+images/leadership/rielly-panther-national,avif jpg webp,images/leadership,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/leadership/rielly-panther-national-original,avif jpg webp,images/leadership,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/leadership/rielly-panther-square,jpg webp,images/leadership,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/logos/eswindows,png,images/logos,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/logos/gcs/curran-young-construction,png webp,images/logos/gcs,gc_supplied,permission_verbal,"Connor 2026-09-09: displayed with GC permission, not yet in writing",Third-party trade mark. D10 requires licensed_written for gc_supplied.,2026-09-08
+images/logos/gcs/hooks-construction,png webp,images/logos/gcs,gc_supplied,permission_verbal,"Connor 2026-09-09: displayed with GC permission, not yet in writing",Third-party trade mark. D10 requires licensed_written for gc_supplied.,2026-09-08
+images/logos/gcs/made-in-rio,png webp,images/logos/gcs,gc_supplied,permission_verbal,"Connor 2026-09-09: displayed with GC permission, not yet in writing",Third-party trade mark. D10 requires licensed_written for gc_supplied.,2026-09-08
+images/logos/gcs/proctor-construction,png webp,images/logos/gcs,gc_supplied,permission_verbal,"Connor 2026-09-09: displayed with GC permission, not yet in writing",Third-party trade mark. D10 requires licensed_written for gc_supplied.,2026-09-08
+images/logos/gcs/rycon-construction,png webp,images/logos/gcs,gc_supplied,permission_verbal,"Connor 2026-09-09: displayed with GC permission, not yet in writing",Third-party trade mark. D10 requires licensed_written for gc_supplied.,2026-09-08
+images/padel-club,jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/partners/eswindows/logo-tag,png,images/partners/eswindows,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eswindows/product-es8000,jpg png webp,images/partners/eswindows,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/logo,png,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/logo-white,png,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/product-folding,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/product-multislide,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/product-pivot,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/product-windows,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-alkai-estates,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-allen-residence,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-american-harvest,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-american-harvest-OLD,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-andco,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-hero-multislide,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-lemoyne-interior,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-oilnutbay,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
+images/partners/eurowall/project-yeti,avif jpg webp,images/partners/eurowall,manufacturer_supplied,permission_verbal,"Connor 2026-09-09: used with manufacturer permission, not yet in writing",D10 obligation 4 requires licensed_written for manufacturer_supplied. Verbal is not enough to clear publication.,2026-09-08
 images/projects/1172-s-harbor/foyer-wine-cellar,avif jpg webp,images/projects/1172-s-harbor,acg_shot,owned,"Connor 2026-09-09: ACG staff, ACG equipment",Project photography shot by ACG staff on ACG equipment.,2026-09-08
 images/projects/1172-s-harbor/hero-twilight,avif jpg webp,images/projects/1172-s-harbor,acg_shot,owned,"Connor 2026-09-09: ACG staff, ACG equipment",Project photography shot by ACG staff on ACG equipment.,2026-09-08
 images/projects/1172-s-harbor/interior-living,avif jpg webp,images/projects/1172-s-harbor,acg_shot,owned,"Connor 2026-09-09: ACG staff, ACG equipment",Project photography shot by ACG staff on ACG equipment.,2026-09-08
@@ -576,8 +576,8 @@ images/projects/wild-blue/wild-blue-hero-progress,avif jpg webp,images/projects/
 images/projects/wild-blue/wild-blue-interior-view,avif jpg webp,images/projects/wild-blue,acg_shot,owned,"Connor 2026-09-09: ACG staff, ACG equipment",Project photography shot by ACG staff on ACG equipment.,2026-09-08
 images/projects/wild-blue/wild-blue-rear-elevation,avif jpg webp,images/projects/wild-blue,acg_shot,owned,"Connor 2026-09-09: ACG staff, ACG equipment",Project photography shot by ACG staff on ACG equipment.,2026-09-08
 images/projects/wild-blue/wild-blue-storefront-progress,avif jpg webp,images/projects/wild-blue,acg_shot,owned,"Connor 2026-09-09: ACG staff, ACG equipment",Project photography shot by ACG staff on ACG equipment.,2026-09-08
-images/savannas-ridge,jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/team/connor-walsh-portrait,avif jpg webp,images/team,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/team/rielly-walsh-card,jpg webp,images/team,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/team/rielly-walsh-portrait,avif jpg webp,images/team,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
-images/window-wall-atlantic-fields,avif jpg webp,images,unknown,unverified,,Sits at images/ root with no project directory.,2026-09-08
+images/savannas-ridge,jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/team/connor-walsh-portrait,avif jpg webp,images/team,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/team/rielly-walsh-card,jpg webp,images/team,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/team/rielly-walsh-portrait,avif jpg webp,images/team,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
+images/window-wall-atlantic-fields,avif jpg webp,images,acg_shot,owned,Connor 2026-09-09: ACG staff or made in-house,Shot by ACG staff or produced in-house.,2026-09-08
