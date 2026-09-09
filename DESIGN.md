@@ -72,3 +72,48 @@ Archivo (176 KB) and Playfair Display (75 KB across two files) were removed in p
 The payload went from 348 KB to 87 KB, a 75% reduction. Archivo's stacks already listed
 Inter as the next fallback, so removing it degraded cleanly. Playfair backed a `--serif`
 token that the two-family spec does not permit; that token now points at the sans stack.
+
+## Dark surface mode, 2026-09-09
+
+The library was built light: `.u-section` defaulted to `--paper` with `--ink-900`
+text. It was applied to three pages, and then the rest of the site was measured.
+
+    alachua-county/    rgb(5, 10, 18)
+    aventura/          rgb(5, 10, 18)
+    all-glass-entrances/ rgb(5, 10, 18)
+    index.html         rgb(5, 7, 12)
+    about.html         rgb(10, 14, 22)
+    portfolio.html     rgb(5, 7, 12)
+    blog/              rgb(5, 10, 18)
+
+Every page type is dark. The three converted pages were the only light ones on a
+1,527-page site, which means the design system was making acglass.com **less**
+uniform, not more. That is the opposite of the point.
+
+Dark is the brand. The components moved to it.
+
+### Surfaces are named, not hard-coded
+
+`tokens.css` section 3b defines `--surface`, `--surface-raised`, `--surface-alt`,
+`--on-surface`, `--on-surface-muted` and `--surface-rule`. Components reference
+those rather than `--paper` and `--ink-900` directly, so the theme is one block
+rather than a sweep. Measured against `--surface`:
+
+    --on-surface        16.7:1
+    --on-surface-muted   9.3:1
+    --red-300            7.2:1
+
+### The red that was wrong everywhere
+
+`tokens.css` already documented `--red-600` as "6.11:1 on white" and `--red-300`
+as "the only red permitted on a navy section". Every red text colour in the
+component library pointed at `--red-600` because the library was written light.
+On `--surface` that measures 3.07:1 and fails at body size. Seven components were
+repointed, including three that are not on any page yet, so the defect cannot
+arrive later with a new page.
+
+### Scope
+
+Loading the system is opt-in per page: three pages link `tokens.css` today. The
+other 1,594 are untouched by any of this, which is why a theme reversal of this
+size was safe to make in one commit.

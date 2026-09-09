@@ -68,6 +68,32 @@
   --on-navy-secondary: #a8b3c0;
   --on-navy-rule: rgba(255, 255, 255, .16);
 
+  /* -- 3b. Surfaces ------------------------------------------------------
+     Added 2026-09-09 after a measurement that changed the plan.
+
+     The component library was built light: sections defaulted to --paper with
+     --ink-900 text. Then it was applied to three pages and I sampled the rest of
+     the site. Every page type renders dark: the county pages, the city pages,
+     the blog, the homepage, about, portfolio, all near-black at rgb(5,10,18) or
+     rgb(5,7,12). Those three converted pages were the only light ones on a
+     1,527-page site.
+
+     So the system was making the site LESS uniform, not more. Dark is the
+     established brand language and the components move to it, not the reverse.
+     Naming the surfaces means components stop hard-coding --paper and a future
+     theme change is one block, not a sweep.
+
+     Contrast measured against --surface #050a12:
+       --on-surface       #e8ecf3  16.6:1
+       --on-surface-muted #a8b3c0   8.9:1
+       --red-300          #ff6b73   6.5:1  the only red permitted as text here */
+  --surface:          #050a12;  /* the page. matches the live body colour */
+  --surface-raised:   #0e284f;  /* a card or panel lifted off the page */
+  --surface-alt:      #0a1220;  /* alternating band, one step off --surface */
+  --on-surface:       #e8ecf3;
+  --on-surface-muted: #a8b3c0;
+  --surface-rule:     rgba(255, 255, 255, .12);
+
   /* Form states. TEXT ONLY. No other hues exist. */
   --ok:   #146c43;
   --warn: #8a5a00;

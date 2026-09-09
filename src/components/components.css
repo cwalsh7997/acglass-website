@@ -441,3 +441,95 @@
   max-width: none;
 }
 .c-doclist__name { max-width: none; }
+
+/* ============================================================================
+   DARK SURFACE MODE, 2026-09-09.
+
+   The library was built light. Applied to three pages and then measured against
+   the rest of the site, every other page type came back near-black: county,
+   city, blog, homepage, about, portfolio, all rgb(5,10,18) or rgb(5,7,12). The
+   three converted pages were the only light ones on 1,527 pages, so the system
+   was making the site less uniform rather than more.
+
+   Dark is the brand. The components move to it. Everything below repoints the
+   defaults at the --surface tokens; nothing above is deleted, so a light variant
+   remains available by setting the surface tokens on a wrapper.
+   ============================================================================ */
+
+.u-section {
+  background: var(--surface);
+  color: var(--on-surface);
+}
+.u-section--alt {
+  background: var(--surface-alt);
+  color: var(--on-surface);
+}
+.u-section--navy {
+  background: var(--surface-raised);
+  color: var(--on-surface);
+}
+
+.u-section,
+.u-section--alt,
+.u-section--navy,
+.c-ctaband,
+.c-project,
+.c-plate {
+  --heading-color: var(--on-surface);
+  --body-color: var(--on-surface-muted);
+  --label-color: var(--on-surface-muted);
+}
+
+.u-h2, .u-h3, .u-h4,
+.c-hero__title,
+.c-capability__name { color: var(--heading-color, var(--on-surface)); }
+
+.u-section > .u-container p,
+.u-section > .u-container li,
+.c-project__body p,
+.c-plate p,
+.c-capability p,
+.c-hero__lead,
+.c-capability__scope,
+.c-ctaband__line { color: var(--body-color, var(--on-surface-muted)); }
+
+.c-project {
+  background: var(--surface-raised);
+  border-color: var(--surface-rule);
+  color: var(--on-surface);
+}
+.c-project:hover { border-color: var(--red-300); }
+.c-project__spec,
+.c-doclist__meta { color: var(--on-surface-muted); }
+.c-project__link { color: var(--red-300); }
+
+.c-doclist__row { border-bottom-color: var(--surface-rule); }
+.c-doclist__name { color: var(--on-surface); }
+
+.c-capability { border-top-color: var(--surface-rule); }
+
+.c-ctaband { background: var(--surface-raised); color: var(--on-surface); }
+.c-ctaband__title { color: var(--on-surface); }
+
+.c-plate { background: var(--surface-raised); color: var(--on-surface); }
+.c-plate--alt { background: var(--surface-alt); color: var(--on-surface); }
+
+.u-btn--secondary { color: var(--on-surface); border-color: var(--surface-rule); }
+.u-btn--secondary:hover { border-color: var(--on-surface-muted); }
+
+/* Red text on a dark surface uses --red-300, added 2026-09-09.
+ *
+ * tokens.css documents --red-600 as "6.11:1 on white" and --red-300 as "the only
+ * red permitted on a navy section". The components were written light, so every
+ * red text colour was --red-600. On --surface it measures 3.07:1 and fails at
+ * body size. The token file already said which red belongs here; the components
+ * were simply pointing at the wrong one. */
+.c-capability__link,
+.c-project__link,
+.c-breadcrumb a,
+.c-faq__q,
+.c-steps__n,
+.c-form__req,
+.c-form__error {
+  color: var(--red-300);
+}
