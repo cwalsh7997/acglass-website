@@ -27,9 +27,9 @@ project_name,736 Lagoon Drive,21,1172-s-harbor.html,,,,,UNAPPROVED
 general_contractor,Proctor Construction,33,atlantic-fields-golf-house.html,named as GC client,Connor Walsh,2026-09-09,,APPROVED
 general_contractor,Rycon Construction,24,blog/index.html,named as GC client,Connor Walsh,2026-09-09,,APPROVED
 general_contractor,Verdex,0,baron-shoppes-tradition.html,replaced with generic descriptor,Connor Walsh,2026-09-09,118 replacements across 48 pages; counsel to be notified,REMOVED
-general_contractor,Suffolk,32,buildingconnected-basisboard-glazing.html,,,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,NOT APPROVED
-general_contractor,Kaufman Lynn,3,eswindows-installer-fort-lauderdale.html,,,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,NOT APPROVED
-general_contractor,Coastal Construction,1,tools/glazing-spec-checklist/index.html,,,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,NOT APPROVED
+general_contractor,Suffolk,0,buildingconnected-basisboard-glazing.html,"name dropped, sentence kept",Connor Walsh,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,REMOVED
+general_contractor,Kaufman Lynn,0,eswindows-installer-fort-lauderdale.html,"name dropped, sentence kept",Connor Walsh,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,REMOVED
+general_contractor,Coastal Construction,1,tools/glazing-spec-checklist/index.html,ledger error,,2026-09-09,"""Coastal Construction Control Line"", a Florida regulatory term, not a company",NOT A GC
 manufacturer_relationship,Euro-Wall,695,2143-carib-circle.html,,,,,UNAPPROVED
 manufacturer_relationship,ESWindows,1013,2143-carib-circle.html,,,,,UNAPPROVED
 manufacturer_relationship,PGT,447,2143-carib-circle.html,,,,,UNAPPROVED
@@ -39,3 +39,11 @@ manufacturer_relationship,Aldora,308,2143-carib-circle.html,,,,,UNAPPROVED
 manufacturer_relationship,Slimpact,404,2143-carib-circle.html,,,,,UNAPPROVED
 manufacturer_relationship,Klus,8,commercial-glazing-vero-beach.html,,,,,UNAPPROVED
 manufacturer_relationship,Trulite,5,architect-specs/section-08-41-13-aluminum-storefront.html,,,,,UNAPPROVED
+general_contractor,DeAngelis Diamond,35,buildingconnected-basisboard-glazing.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
+general_contractor,Curran Young,47,blog/how-to-choose-commercial-glazier-tampa-bay.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
+general_contractor,Pirtle,23,about.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
+general_contractor,Hooks,23,baron-shoppes-tradition.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
+general_contractor,Ahrens,12,blog/bobcat-treasure-coast-glazing.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
+general_contractor,Gates Construction,1,eswindows-installer-naples.html,,,,surfaced 2026-09-09 while working the Verdex contexts,UNAPPROVED
+general_contractor,Moss Construction,2,eswindows-installer-fort-lauderdale.html,,,,surfaced 2026-09-09 while working the Verdex contexts,UNAPPROVED
+general_contractor,Stiles,1,eswindows-installer-west-palm-beach.html,,,,surfaced 2026-09-09 while working the Verdex contexts,UNAPPROVED
