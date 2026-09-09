@@ -79,3 +79,33 @@ pages and treated them as one thing. Left in place deliberately:
 architect issues that spec and ACG bids it, ACG is answering its own qualification
 requirement under the equivalency clause. Not a defect. Worth being aware of before
 someone asks.
+
+## Office locations confirmed, 2026-09-09
+
+Connor confirmed both regional offices are real leased space:
+
+    HQ       700 S Rosemary Ave Suite 204, West Palm Beach FL 33401
+    Naples   4850 Tamiami Trail N Ste 301, Naples FL 34103
+    Tampa    3031 N Rocky Point Dr W Ste 600, Tampa FL 33607
+
+Nothing removed. Both stay in body copy and in LocalBusiness schema on all 17
+pages each. Recorded in `config/offices.txt`.
+
+`check-office-claims.sh` now guards the opposite direction. It used to pin two
+unconfirmed addresses so they could not spread; it now fails if any street address
+appears in ACG's own Organization or LocalBusiness schema that is not in the config,
+which is the case that actually matters: a new location entering machine-readable
+form without anyone confirming it exists.
+
+**One consequence.** `press-release-tampa.html` was parked as PC-13 solely because
+it asserted a Tampa office. The claim is true, so the park is void. It turned out to
+be a duplicate of `news/acg-tampa-office-expansion.html`, which is linked from the
+news index and carries more inbound links, so it now canonicals there and is out of
+the sitemap. Same treatment as `gc.html`. Not deleted, not unlinked.
+
+**Correction worth recording.** My first version of the check flagged
+"2645 Southeast Bridge Road" and "100 S Ocean Blvd" as unconfirmed ACG offices.
+They are Atlantic Fields and Eau Palm Beach Resort, both `Place` nodes, both project
+sites. It matched them because their `@id` is under acglass.com, which is true of
+every page-scoped fragment id on our own domain and says nothing about who the
+entity is. The check now requires an Organization-like `@type` AND an ACG name.

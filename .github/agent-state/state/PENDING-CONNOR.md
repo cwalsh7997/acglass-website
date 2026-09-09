@@ -281,7 +281,18 @@ For project photos the question is usually one line: **who shot it.** ACG, the G
 the owner, or an architectural photographer. If it was a photographer, they
 normally retain copyright and the licence terms matter.
 
-## PC-19: two regional office addresses are published in schema. Real or not? (2026-09-08)
+## PC-19: RESOLVED 2026-09-09. Both offices are real.
+
+Connor confirmed Naples and Tampa are both real leased space. Nothing removed, all
+34 pages stay as written, and the addresses are recorded in `config/offices.txt`.
+The check now fails on any UNCONFIRMED address entering ACG schema instead.
+
+This also voids the PC-13 park on `press-release-tampa.html`, which was held back
+only because it asserted the Tampa office. See decisions.md.
+
+The original note follows.
+
+## PC-19 (original, 2026-09-08): two regional office addresses are published in schema
 
 The West Palm Beach HQ is asserted on 1,020 schema nodes and is not in question.
 Two other addresses are also published as ACG regional offices, on 17 pages each,
