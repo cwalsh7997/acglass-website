@@ -1748,7 +1748,7 @@ function generateBrandedPDF(returnAs) {
     fJB(8, 'normal');
     setText(INK_MID);
     doc.text('AMERICAN COMMERCIAL GLASS · CGC #1531993', M, H - 32, { charSpace: 0.8 });
-    doc.text('(772) 486-7711 · connor@acglass.com · acglass.com', M, H - 20, { charSpace: 0.8 });
+    doc.text('(772) 486-7711 · <!--email_off-->connor@acglass.com<!--/email_off--> · acglass.com', M, H - 20, { charSpace: 0.8 });
     fJB(8, 'normal');
     setText(INK_MID);
     const pgStr = String(pageNum).padStart(2, '0') + ' / ' + String(totalPages).padStart(2, '0');
@@ -1844,7 +1844,7 @@ function generateBrandedPDF(returnAs) {
   fH(11, 'bold');
   doc.text('Reach Connor directly to convert this estimate to a real bid.', M, H - 35);
   fH(10, 'normal');
-  doc.text('(772) 486-7711   ·   connor@acglass.com   ·   acglass.com/send-plans', M, H - 18);
+  doc.text('(772) 486-7711   ·   <!--email_off-->connor@acglass.com<!--/email_off-->   ·   acglass.com/send-plans', M, H - 18);
 
   /* =====================================================================
      PAGE 2 - SYSTEM + SPEC
@@ -2060,7 +2060,7 @@ function generateBrandedPDF(returnAs) {
   doc.text('CALL  ', M + 14, y + 100, { charSpace: 0.8 });
   doc.text('(772) 486-7711', M + 50, y + 100);
   doc.text('EMAIL  ', M + 14, y + 116, { charSpace: 0.8 });
-  doc.text('connor@acglass.com', M + 50, y + 116);
+  doc.text('<!--email_off-->connor@acglass.com<!--/email_off-->', M + 50, y + 116);
   doc.text('SEND PLANS  ', W - M - 130, y + 100, { charSpace: 0.8 });
   doc.text('acglass.com/send-plans', W - M - 130, y + 116);
 
@@ -2195,7 +2195,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   // Shared failure handler: re-enable the button, keep inputs, tell the visitor how to reach us.
   // Their numbers are never lost - they can just resend.
   const FALLBACK = '⚠ We couldn\'t deliver that automatically. Please email '
-    + '<a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a> '
+    + '<!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> '
     + 'or call (772) 486-7711 - your details are safe, just resend.';
   const fail = (msg) => {
     status.className = 'se-form-status err';

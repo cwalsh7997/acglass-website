@@ -563,8 +563,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
       // Stay under that so a GC never sees success after a silently dropped set.
       var FORMSUBMIT_MAX_BYTES = 9 * 1024 * 1024;
       var ALLOWED_EXTS = { pdf:1, dwg:1, zip:1, doc:1, docx:1, xls:1, xlsx:1, jpg:1, jpeg:1, png:1 };
-      var OVERSIZE_COPY = 'These files are over the 9 MB form limit, so they were not sent. Email the set to connor@acglass.com, or put a Procore, BuildingConnected, or BIM 360 link in Notes and submit without the large attachments.';
-      var TYPE_COPY = 'That file type cannot be sent here. Use PDF, DWG, ZIP, Word, Excel, JPG, or PNG. Or email connor@acglass.com / paste a Procore, BuildingConnected, or BIM 360 link in Notes.';
+      var OVERSIZE_COPY = 'These files are over the 9 MB form limit, so they were not sent. Email the set to <!--email_off-->connor@acglass.com<!--/email_off-->, or put a Procore, BuildingConnected, or BIM 360 link in Notes and submit without the large attachments.';
+      var TYPE_COPY = 'That file type cannot be sent here. Use PDF, DWG, ZIP, Word, Excel, JPG, or PNG. Or email <!--email_off-->connor@acglass.com<!--/email_off--> / paste a Procore, BuildingConnected, or BIM 360 link in Notes.';
 
       function fileExt(name) {
         var m = String(name || '').toLowerCase().match(/\.([a-z0-9]+)$/);

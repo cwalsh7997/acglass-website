@@ -1052,7 +1052,7 @@
               http_status: r.status
             });
           }
-          status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+          status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
           status.style.color = '#FBBF24';
         }
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
@@ -1065,7 +1065,7 @@
             error_type: 'network'
           });
         }
-        status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+        status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
         status.style.color = '#FBBF24';
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       });

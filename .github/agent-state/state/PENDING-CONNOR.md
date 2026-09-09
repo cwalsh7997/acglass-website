@@ -171,7 +171,33 @@ browsers. The visitor sees a submit, nothing sends, and nobody learns the lead w
 other two forms already use.** It is not the target architecture, but a working form
 beats a silently broken one, and it costs nothing to move again later.
 
-## PC-12. Staff email is exposed on 1,530 pages, not just the forms
+## PC-12. RESOLVED, and my figure was wrong. Corrected 2026-09-08
+**I reported 1,530 exposed pages. The real number was 33 occurrences on 8 pages.**
+
+My measurement counted a page as unprotected if ANY occurrence sat outside an
+`<!--email_off-->` wrapper. Nearly every page has both a wrapped footer link and an
+unwrapped JSON-LD `"email"` field, so almost every page failed that test. My bug.
+
+Precise classification of all 4,204 occurrences:
+
+| | count |
+|---|---:|
+| already wrapped in `<!--email_off-->` | 3,641 |
+| inside JSON-LD, legitimate `schema.org` `Organization.email` | 530 |
+| **genuinely raw in HTML** | **33 across 8 pages** |
+
+20 of the 33 are now wrapped. The rest are `formsubmit.co/connor@acglass.com` form
+endpoints, which are handler URLs rather than displayed addresses and cannot be
+wrapped without breaking the attribute; those disappear when the handler in
+`form-architecture.md` is stood up.
+
+**The JSON-LD occurrences were deliberately left alone.** `Organization.email` is
+standard structured data that helps entity recognition, and HTML comments inside a
+JSON block would break the JSON.
+
+Nothing further needed. Superseded text below kept for the record.
+
+## PC-12 (superseded). Staff email is exposed on 1,530 pages, not just the forms
 **Phase 5/6 · Not a hard stop, a scope correction**
 
 The brief scopes this to form pages. Measured: `connor@acglass.com` sits unprotected

@@ -2856,7 +2856,7 @@
         return;
       }
       if (totalUploadBytes() + file.size > FORMSUBMIT_MAX_BYTES) {
-        messages.push(file.name + ' would exceed the 10 MB send limit. Email the set to connor@acglass.com or continue to plan intake with a share link.');
+        messages.push(file.name + ' would exceed the 10 MB send limit. Email the set to <!--email_off-->connor@acglass.com<!--/email_off--> or continue to plan intake with a share link.');
         return;
       }
       state.uploadedFiles.push(file);
@@ -3138,7 +3138,7 @@
     const sub = overlay.querySelector('.be-analyzing-sub');
     overlay.classList.add('active');
     if (title) title.textContent = state.uploadedFiles.length ? 'Sending your plans' : 'Sending your request';
-    if (sub) sub.textContent = 'Delivering to Connor at connor@acglass.com…';
+    if (sub) sub.textContent = 'Delivering to Connor at <!--email_off-->connor@acglass.com<!--/email_off-->…';
     bar.style.width = '0%';
 
     const submitBtn = document.getElementById('submit-btn');
@@ -3378,7 +3378,7 @@
         ? state.uploadedFiles
         : (state.deliveredFileNames || []);
       nextPlans.textContent = delivered.length
-        ? 'Your plans and project details were delivered to Connor at connor@acglass.com'
+        ? 'Your plans and project details were delivered to Connor at <!--email_off-->connor@acglass.com<!--/email_off-->'
         : 'Your project details have been submitted to ACG';
     }
 
@@ -3467,7 +3467,7 @@
       if (arm()) return;
       attempts += 1;
       if (attempts >= 12) {
-        setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at connor@acglass.com for a copy of this scope summary.');
+        setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at <!--email_off-->connor@acglass.com<!--/email_off--> for a copy of this scope summary.');
         return;
       }
       setTimeout(poll, 250);
@@ -3478,7 +3478,7 @@
   function generateBidPDF() {
     const jsPDF = jspdfCtor();
     if (!jsPDF) {
-      setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at connor@acglass.com for a copy of this scope summary.');
+      setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at <!--email_off-->connor@acglass.com<!--/email_off--> for a copy of this scope summary.');
       return false;
     }
     if (!hasScopePdfData()) {
@@ -3653,7 +3653,7 @@
     doc.setTextColor(...white);
     doc.setFontSize(8);
     doc.setFont('helvetica', 'normal');
-    doc.text('American Commercial Glass  \u00b7  (772) 486-7711  \u00b7  connor@acglass.com  \u00b7  acglass.com', margin, 274);
+    doc.text('American Commercial Glass  \u00b7  (772) 486-7711  \u00b7  <!--email_off-->connor@acglass.com<!--/email_off-->  \u00b7  acglass.com', margin, 274);
     doc.text('CGC #1531993  \u00b7  Woman-owned', W - margin, 274, { align: 'right' });
 
     // Save
