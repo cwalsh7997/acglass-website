@@ -219,3 +219,50 @@ unreachable.
 - `acg-glass.html` :: 15KB brand-name page, canonical to itself, reads as a thin homepage duplicate.
 - `best-glazing-subcontractor-florida.html` :: 'best' URL slug. Title is factual but the slug is a superlative claim.
 - `best-storefront-contractor-florida.html` :: 'best' URL slug. Same as above.
+
+---
+
+## PC-17: 29 pages publish Panther National imagery. Counsel gate. (2026-09-08)
+
+**This is the highest-priority item in this file and it is not an SEO question.**
+
+Partitioning the image-rights backlog surfaced it. 15 images under
+`images/projects/panther-national/` are published across 29 served pages, and
+those pages name the project in body text, 3 to 6 mentions each.
+
+Panther National was terminated 2026-05-22. ACG is in an active dispute over
+$311,125.31. Published marketing about a litigated job is discoverable and can be
+quoted back by the other side.
+
+**I did not touch it, and I am not going to.** Removing content about a live
+dispute is itself a gated act, and doing it quietly is worse than leaving it up.
+The charter routes Panther and Verdex to counsel. That is where this goes.
+
+**Default if nothing is decided: the pages stay exactly as they are.** Silence
+does not become permission to delete. `check-litigation-exposure.sh` holds the
+count at 29 so it cannot drift while nobody is watching.
+
+To clear: counsel rules, the ruling is recorded in `decisions.md`, and the CSV
+rows move off `litigated-project`.
+
+## PC-18: image rights is 59 directory answers, not 1,007 file answers
+
+The gate read as 1,007 unverified files. That number was encodings. The same photo
+ships as jpg, webp and avif, which is one rights decision recorded three times.
+
+Really: **380 images across 59 directories**, and a directory is normally one
+answer for the whole folder. `images/projects/klus-lighting` is 18 photos and one
+question. The CSV is now keyed per image with the directory as `project_group`,
+so answering is per folder.
+
+Two things worth knowing before you start:
+
+- `images/stock/` exists, 12 images, and **none of them are published**. No live
+  exposure. Worth deleting rather than licensing.
+- 9 published images are manufacturer photography under `images/partners/`
+  (eurowall, eswindows). ACG needs written permission on file. Most manufacturers
+  grant it to installers on request, so this is probably an email, not a problem.
+
+For project photos the question is usually one line: **who shot it.** ACG, the GC,
+the owner, or an architectural photographer. If it was a photographer, they
+normally retain copyright and the licence terms matter.
