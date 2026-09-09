@@ -85,6 +85,18 @@
   --gutter-desk: 32px;
   --gutter-mob:  20px;
 
+  /* -- 5b. Photographic scrim ---------------------------------------------
+     rules/01 mandates this exact gradient wherever text sits over photography,
+     and check-design-lint.sh bans gradients everywhere except this file. Both
+     are right. The scrim is a measured, named design value, so it lives here as
+     a token rather than being pasted into a component or the ban being softened.
+     Do not adjust these stops by eye. The 4.5:1 contrast claim is measured
+     against the .78 floor. */
+  --scrim-photo: linear-gradient(to top,
+                   rgba(8, 24, 47, .78) 0%,
+                   rgba(8, 24, 47, .35) 45%,
+                   transparent 75%);
+
   /* -- 6. Radius, elevation, motion --------------------------------------- */
   /* Glazing is a square-edged, mullion-and-frame product. 999px is banned. */
   --r-0: 0;

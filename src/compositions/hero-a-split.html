@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero composition A: split</title>
+<link rel="stylesheet" href="../styles/tokens.css">
+<style>
+  body{margin:0;background:var(--paper);color:var(--ink-900);font-family:var(--font-sans)}
+  .hero{max-width:var(--w-content);margin:0 auto;padding:var(--s-16) var(--gutter-desk);
+        display:grid;grid-template-columns:1fr 1fr;gap:var(--s-12);align-items:center}
+  .eyebrow{font-family:var(--font-mono);font-size:var(--fs-sm);line-height:var(--lh-sm);
+           text-transform:var(--tr-mono-upper);color:var(--navy-600);margin:0 0 var(--s-3)}
+  h1{font-size:var(--fs-display);line-height:var(--lh-display);color:var(--navy-800);
+     margin:0 0 var(--s-4);max-width:var(--measure)}
+  .lead{font-size:var(--fs-lead);line-height:var(--lh-lead);color:var(--ink-700);
+        margin:0 0 var(--s-8);max-width:var(--measure)}
+  .actions{display:flex;gap:var(--s-3);flex-wrap:wrap}
+  .btn{font-size:var(--fs-body);line-height:var(--lh-body);padding:var(--s-3) var(--s-6);
+       border-radius:var(--r-2);text-decoration:none;border:1px solid var(--navy-800);
+       transition:background var(--dur-base) var(--ease-out)}
+  .btn-p{background:var(--navy-800);color:var(--paper)}
+  .btn-s{background:var(--paper);color:var(--navy-800)}
+  .shot{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+        border-radius:var(--r-1);border:1px solid var(--line-200)}
+  .cap{font-family:var(--font-mono);font-size:var(--fs-sm);line-height:var(--lh-sm);
+       color:var(--ink-700);margin:var(--s-3) 0 0}
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;padding:var(--s-12) var(--gutter-mob);gap:var(--s-8)}
+  }
+</style></head><body>
+<section class="hero">
+  <div>
+    <p class="eyebrow">Division 08 subcontractor</p>
+    <h1>Commercial glazing, engineered to survive the inspection.</h1>
+    <p class="lead">Storefront, curtain wall and impact glazing across Florida. Shop drawings,
+      product approvals and field crews under one contract.</p>
+    <div class="actions">
+      <a class="btn btn-p" href="#">Send plans</a>
+      <a class="btn btn-s" href="#">See past performance</a>
+    </div>
+  </div>
+  <figure style="margin:0">
+    <img class="shot" src="../../images/hero/tower-360.jpg" width="720" height="540"
+         fetchpriority="high" decoding="async"
+         alt="Aluminium curtain wall elevation with vertical mullion lines">
+    <figcaption class="cap">Phase 3 replaces this with an approved project photograph.</figcaption>
+  </figure>
+</section>
+</body></html>
