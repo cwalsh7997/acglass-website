@@ -11,3 +11,7 @@ __pycache__/
 # (these cannot live under _internal/ because the tools resolve them from the repo root)
 .claude/
 .impeccable/
+
+# agent kit. CLAUDE.md must sit at the repo root for Claude Code to auto-load it,
+# but the root is the deploy root. Untracked keeps it local-only and undeployable.
+/CLAUDE.md

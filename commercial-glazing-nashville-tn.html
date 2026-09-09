@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e284f">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>commercial glazing supplier and consultant serving Middle Tennessee TN | ACG</title>
+  <title>Commercial Glazing Supply, Middle Tennessee | ACG</title>
   <meta name="description" content="commercial glazing supplier and consultant serving Middle Tennessee TN - American Commercial Glass (ACG) furnishes glazing materials in Middle Tennessee.">
   <meta name="keywords" content="Nashville commercial glazing, laminated glass Nashville, IGU commercial Tennessee, STC 45 glazing, low-E insulating glass Nashville, Tennessee glazing contractor, commercial curtainwall Nashville, Class-A office glazing Southeast">
   <meta name="geo.position" content="36.1627;-86.7816">
@@ -42,7 +42,7 @@
   ],
   "description": "Premium commercial glazing contractor specializing in laminated glass and high-performance insulating glass units (IGUs). Acoustic, thermal, UV, and security performance engineered as one assembly. Serving Nashville and the 300-mile regional market across Tennessee, Kentucky, Alabama, Georgia, North Carolina, and Ohio.",
   "url": "https://acglass.com/",
-  "telephone": "+1-772-486-7711",
+  "telephone": "+17724867711",
   "email": "connor@acglass.com",
   "image": "https://acglass.com/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg",
   "address": {
@@ -987,7 +987,7 @@
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
         <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
@@ -1013,7 +1013,7 @@
       var city = formData.get('in-city') || formData.get('city') || '';
       var submitterEmail = formData.get('in-email') || formData.get('email') || '';
       formData.append('_subject', '[ACG LEAD - Nashville] ' + (company || nm || 'Nashville inquiry'));
-      formData.append('_captcha', 'false');
+      
       formData.append('_template', 'basic');
       formData.append('_source_page', '/commercial-glazing-nashville-tn');
       if (submitterEmail) { formData.append('_replyto', submitterEmail); }
@@ -1052,7 +1052,7 @@
               http_status: r.status
             });
           }
-          status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+          status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
           status.style.color = '#FBBF24';
         }
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
@@ -1065,7 +1065,7 @@
             error_type: 'network'
           });
         }
-        status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+        status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
         status.style.color = '#FBBF24';
         if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
       });

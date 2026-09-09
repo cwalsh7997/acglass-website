@@ -1,0 +1,15 @@
+# Authorised edits to byte-frozen West Palm Beach pages.
+# Format: <path> <sha256 of the file content as authorised>
+#
+# The byte freeze protects four contested candidates for the organic #1 where the
+# ranking URL is unknown. It is not a rule against ever editing them, it is a rule
+# against editing them without a decision. Pinning to content means any FURTHER
+# change stops matching and fails, so an authorisation covers one reviewed edit.
+#
+# impact-windows-palm-beach.html, authorised 2026-09-09. Connor directed removal of
+# all Panther National association and instructed me to proceed without stopping.
+# Removed: one project card naming Panther National and Verdex Construction and
+# linking to a redirect stub, 370 bytes. Also removed Verdex and Suffolk from the
+# VIP relationships list, matching the decisions recorded in project-approvals.csv.
+# Verified after: 38 anchors open, 38 close. Zero Panther, Verdex or Suffolk refs.
+impact-windows-palm-beach.html 9fba718d5572d22f2e0b0e162cd5d68170ed915a2da91f9101518014dd05afb7

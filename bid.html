@@ -54,7 +54,7 @@
         "@type": "Organization",
         "name": "American Commercial Glass",
         "url": "https://acglass.com/",
-        "telephone": "(772) 486-7711",
+        "telephone": "+17724867711",
         "email": "connor@acglass.com",
         "license": "CGC1531993",
         "alternateName": [
@@ -2347,10 +2347,10 @@
         <input type="hidden" name="submission_source" value="bid-engine">
         <input type="hidden" name="_subject" id="form-subject" value="[ACG LEAD] Bid Engine">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+        
         <input type="hidden" name="_replyto" id="form-replyto">
         <input type="hidden" name="_next" id="form-next" value="https://acglass.com/bid.html?submitted=1">
-        <input type="file" name="files[]" id="form-files" multiple>
+        <input type="file" name="files[]" id="form-files" multiple aria-label="Attach plans, drawings or specifications">
       </form>
 
       <div class="be-btn-row">
@@ -2553,7 +2553,7 @@
       <div class="ft-legal-in">
         <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
         <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
+        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
       </div>
     </div>
   </footer>
@@ -2623,10 +2623,10 @@
     retail:      { name: 'Commercial Storefront System', desc: 'Aluminum storefront framing with thermally broken frames. High-performance low-e glass. PGT, ESWindows, or PGT systems. Standard for retail and entry applications.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG specifies ESWindows ES-8000 series, PGT WinGuard, and Euro-Wall storefronts for retail. All Florida product-approved.' },
     hospitality: { name: 'Sliding / Bi-fold System (Euro-Wall)', desc: 'Large-format sliding or bi-fold glass wall systems for open-to-outside hospitality applications. Folding Glass Walls, NanaWall, or custom curtainwall. Specialty hardware, multiple panel configurations.', mfrName: 'NanaWall / Folding Glass Walls / ESWindows', mfrDesc: 'ACG installs NanaWall SL60 and Folding Glass Walls systems for hospitality. Custom configurations available.' },
     healthcare:  { name: 'Impact-Rated Window Wall', desc: 'Impact-rated window wall with thermally broken aluminum frames. Low-e coatings for SHGC compliance. Specialized vision glass and spandrel panels. Certifications for healthcare construction.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG specifies ESWindows 1600 Wall and PGT BuildingEnvelope for healthcare. All HVHZ and FBC approved.' },
-    office:      { name: 'Curtainwall or Window Wall', desc: 'Unitized or stick-built curtainwall for office tower applications. High-performance double insulating glass units, low-e coatings, aluminum extrusions. Floor-to-ceiling vision or spandrel configuration.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG self-performs curtainwall with ESWindows 1600 Wall XT and PGT high-performance glass units. 100+ office projects completed.' },
+    office:      { name: 'Curtainwall or Window Wall', desc: 'Unitized or stick-built curtainwall for office tower applications. High-performance double insulating glass units, low-e coatings, aluminum extrusions. Floor-to-ceiling vision or spandrel configuration.', mfrName: 'ESWindows / PGT / Euro-Wall', mfrDesc: 'ACG self-performs curtainwall with ESWindows 1600 Wall XT and PGT high-performance glass units.' },
     multifamily: { name: 'Impact Window Package', desc: 'PGT or CGI impact-rated windows and balcony doors. Thermally broken frames for energy compliance. Single-unit replacement windows or new construction window package. Florida product approved.', mfrName: 'PGT WinGuard / CGI / Eco Window', mfrDesc: 'ACG installs PGT WinGuard and CGI Guardian windows for multifamily. Full Florida NOA compliance on all units.' },
     government:  { name: 'Government-Grade Storefront / Blast-Resistant Glazing', desc: 'Heavy-gauge aluminum storefront or curtainwall with blast-resistant glazing where required. Security laminated glass, anchored framing systems. ASTM F2248 blast testing compliance available.', mfrName: 'ESWindows / PGT / Norshield', mfrDesc: 'ACG has completed government, courthouse, and institutional projects with blast-rated and high-security glazing systems.' },
-    seniorliving:{ name: 'Impact Window Package + Storefront', desc: 'Impact-rated aluminum storefront for common areas and PGT window units for resident rooms. Energy-code compliant low-e glass. Accessible hardware specifications. Senior living experience since 2019.', mfrName: 'PGT WinGuard / ESWindows / CGI', mfrDesc: 'ACG has completed multiple CCRC and ALF projects across Florida, including Panther National and The Preserve.' },
+    seniorliving:{ name: 'Impact Window Package + Storefront', desc: 'Impact-rated aluminum storefront for common areas and PGT window units for resident rooms. Energy-code compliant low-e glass. Accessible hardware specifications. Senior living experience since 2019.', mfrName: 'PGT WinGuard / ESWindows / CGI', mfrDesc: 'ACG has completed multiple CCRC and ALF projects across Florida, including The Preserve.' },
     industrial:  { name: 'Commercial Storefront + Overhead Glazing', desc: 'Standard commercial storefront for office areas and clerestory windows for warehouse sections. Heavy-duty aluminum frames. Clear or tinted float glass where impact not required.', mfrName: 'ESWindows / Euro-Wall / PGT', mfrDesc: 'ACG installs ESWindows and Euro-Wall storefront systems for industrial office/warehouse combinations.' }
   };
 
@@ -2856,7 +2856,7 @@
         return;
       }
       if (totalUploadBytes() + file.size > FORMSUBMIT_MAX_BYTES) {
-        messages.push(file.name + ' would exceed the 10 MB send limit. Email the set to connor@acglass.com or continue to plan intake with a share link.');
+        messages.push(file.name + ' would exceed the 10 MB send limit. Email the set to <!--email_off-->connor@acglass.com<!--/email_off--> or continue to plan intake with a share link.');
         return;
       }
       state.uploadedFiles.push(file);
@@ -3138,7 +3138,7 @@
     const sub = overlay.querySelector('.be-analyzing-sub');
     overlay.classList.add('active');
     if (title) title.textContent = state.uploadedFiles.length ? 'Sending your plans' : 'Sending your request';
-    if (sub) sub.textContent = 'Delivering to Connor at connor@acglass.com…';
+    if (sub) sub.textContent = 'Delivering to Connor at <!--email_off-->connor@acglass.com<!--/email_off-->…';
     bar.style.width = '0%';
 
     const submitBtn = document.getElementById('submit-btn');
@@ -3378,7 +3378,7 @@
         ? state.uploadedFiles
         : (state.deliveredFileNames || []);
       nextPlans.textContent = delivered.length
-        ? 'Your plans and project details were delivered to Connor at connor@acglass.com'
+        ? 'Your plans and project details were delivered to Connor at <!--email_off-->connor@acglass.com<!--/email_off-->'
         : 'Your project details have been submitted to ACG';
     }
 
@@ -3467,7 +3467,7 @@
       if (arm()) return;
       attempts += 1;
       if (attempts >= 12) {
-        setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at connor@acglass.com for a copy of this scope summary.');
+        setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at <!--email_off-->connor@acglass.com<!--/email_off--> for a copy of this scope summary.');
         return;
       }
       setTimeout(poll, 250);
@@ -3478,7 +3478,7 @@
   function generateBidPDF() {
     const jsPDF = jspdfCtor();
     if (!jsPDF) {
-      setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at connor@acglass.com for a copy of this scope summary.');
+      setPdfControlState(false, 'The PDF library did not load. Refresh the page, or email Connor at <!--email_off-->connor@acglass.com<!--/email_off--> for a copy of this scope summary.');
       return false;
     }
     if (!hasScopePdfData()) {
@@ -3653,7 +3653,7 @@
     doc.setTextColor(...white);
     doc.setFontSize(8);
     doc.setFont('helvetica', 'normal');
-    doc.text('American Commercial Glass  \u00b7  (772) 486-7711  \u00b7  connor@acglass.com  \u00b7  acglass.com', margin, 274);
+    doc.text('American Commercial Glass  \u00b7  (772) 486-7711  \u00b7  <!--email_off-->connor@acglass.com<!--/email_off-->  \u00b7  acglass.com', margin, 274);
     doc.text('CGC #1531993  \u00b7  Woman-owned', W - margin, 274, { align: 'right' });
 
     // Save

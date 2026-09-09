@@ -1,0 +1,253 @@
+/* ============================================================================
+   ACG component library. The closed set of 18 from rules/01 section 9.
+
+   TOKEN LAW: every value here is a var() from tokens.css. No raw hex, no raw
+   spacing, no font-size literal, no duration literal. scripts/check-design-lint.sh
+   enforces it.
+
+   Building a 19th component requires an approval line in the PR.
+   ============================================================================ */
+
+/* -- shared primitives ----------------------------------------------------- */
+
+.u-container { max-width: var(--w-content); margin-inline: auto;
+  padding-inline: var(--gutter-mob); }
+@media (min-width: 768px) { .u-container { padding-inline: var(--gutter-desk); } }
+
+.u-mono { font-family: var(--font-mono); font-size: var(--fs-mono);
+  font-weight: var(--fw-mono); line-height: var(--lh-mono);
+  letter-spacing: var(--tr-mono); }
+/* Uppercase is permitted ONLY here, at this tracking, nowhere else. */
+.u-mono--label { text-transform: uppercase; letter-spacing: var(--tr-mono-upper);
+  color: var(--ink-500); }
+
+.u-h2 { font-size: var(--fs-h2); font-weight: var(--fw-h2);
+  line-height: var(--lh-h2); letter-spacing: var(--tr-h2); color: var(--navy-800); }
+.u-h3 { font-size: var(--fs-h3); font-weight: var(--fw-h3);
+  line-height: var(--lh-h3); letter-spacing: var(--tr-h3); color: var(--navy-800); }
+.u-h4 { font-size: var(--fs-h4); font-weight: var(--fw-h4);
+  line-height: var(--lh-h4); letter-spacing: var(--tr-h4); color: var(--navy-800); }
+.u-lead { font-size: var(--fs-lead); font-weight: var(--fw-lead);
+  line-height: var(--lh-lead); color: var(--ink-700); }
+.u-body { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-700); }
+.u-sm { font-size: var(--fs-sm); line-height: var(--lh-sm); color: var(--ink-500); }
+
+/* Section rhythm. Nothing exceeds 128px of vertical padding anywhere. */
+.u-section { padding-block: var(--s-16); }
+@media (min-width: 1024px) { .u-section { padding-block: var(--s-24); } }
+.u-section--navy { background: var(--navy-800); color: var(--paper); }
+.u-section--alt { background: var(--paper-alt); }
+
+/* Buttons. Red is the pointer: at most twice per viewport. */
+.u-btn { display: inline-flex; align-items: center; gap: var(--s-2);
+  padding: var(--s-3) var(--s-6); border-radius: var(--r-2);
+  font-size: var(--fs-body); font-weight: 600; text-decoration: none;
+  border: 1px solid transparent; cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out); }
+.u-btn--primary { background: var(--red-500); color: var(--paper); }
+.u-btn--primary:hover { background: var(--red-600); }
+.u-btn--secondary { background: transparent; color: var(--navy-800);
+  border-color: var(--line-300); }
+.u-btn--secondary:hover { border-color: var(--navy-800); }
+.u-btn:focus-visible { outline: 2px solid var(--navy-800); outline-offset: 2px; }
+.u-section--navy .u-btn--secondary { color: var(--paper);
+  border-color: var(--on-navy-rule); }
+
+/* 1. Header ---------------------------------------------------------------- */
+.c-header { position: sticky; top: 0; z-index: 50; height: var(--s-20);
+  background: var(--paper); border-bottom: 1px solid var(--line-200);
+  display: flex; align-items: center; }
+.c-header__inner { display: flex; align-items: center; justify-content: space-between;
+  width: 100%; gap: var(--s-8); }
+.c-header__nav { display: none; gap: var(--s-6); }
+.c-header__actions { display: flex; align-items: center; gap: var(--s-4); }
+.c-header__link { color: var(--navy-800); text-decoration: none;
+  font-size: var(--fs-body); }
+.c-header__link:hover { text-decoration: underline; }
+.c-header__burger { display: inline-flex; }
+@media (min-width: 900px) {
+  .c-header__nav { display: flex; }
+  .c-header__burger { display: none; }
+}
+
+/* 2. MobileNavSheet -------------------------------------------------------- */
+.c-navsheet { position: fixed; inset: 0; z-index: 60; background: var(--paper);
+  box-shadow: var(--e-2); padding: var(--s-6);
+  transform: translateY(var(--s-2)); opacity: 0; pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out); }
+.c-navsheet[data-open="true"] { transform: translateY(0); opacity: 1;
+  pointer-events: auto; }
+.c-navsheet__list { display: flex; flex-direction: column; gap: var(--s-4); }
+
+/* 3. HeroSplit. 7/5. Right column is ONE real project photo, no overlay, no
+      text over it. Never a full-viewport photo with centered white text. ----- */
+.c-hero { display: grid; gap: var(--s-8); padding-block: var(--s-20); }
+@media (min-width: 1024px) {
+  .c-hero { grid-template-columns: 7fr 5fr; gap: var(--s-12);
+    padding-block: var(--s-32); align-items: center; }
+}
+.c-hero__eyebrow { margin-bottom: var(--s-4); }
+.c-hero__title { font-size: var(--fs-display); font-weight: var(--fw-display);
+  line-height: var(--lh-display); letter-spacing: var(--tr-display);
+  color: var(--navy-800); margin-bottom: var(--s-4); }
+.c-hero__lead { margin-bottom: var(--s-8); }
+.c-hero__ctas { display: flex; flex-wrap: wrap; gap: var(--s-4);
+  margin-bottom: var(--s-6); }
+.c-hero__proof { color: var(--ink-500); }
+.c-hero__media { aspect-ratio: 4 / 3; border-radius: var(--r-0);
+  overflow: hidden; background: var(--paper-alt); }
+.c-hero__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 4. ProofBar. Text facts only. No logos, no icons, no counters. ----------- */
+.c-proofbar { background: var(--navy-800); color: var(--paper);
+  padding-block: var(--s-8); }
+.c-proofbar__row { display: grid; gap: var(--s-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { .c-proofbar__row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.c-proofbar__label { color: var(--on-navy-secondary); margin-bottom: var(--s-1); }
+.c-proofbar__value { font-size: var(--fs-h4); font-weight: var(--fw-h4);
+  line-height: var(--lh-h4); color: var(--paper); }
+
+/* 5. CapabilityList. Text list, NOT cards. Max 6 items. Zero icons. ------- */
+.c-capabilities { display: grid; gap: var(--s-8); }
+@media (min-width: 768px) { .c-capabilities { grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--s-12); } }
+.c-capability { border-top: 1px solid var(--line-200); padding-top: var(--s-4); }
+.c-capability__name { margin-bottom: var(--s-2); }
+.c-capability__scope { margin-bottom: var(--s-2); }
+.c-capability__link { color: var(--red-600); font-size: var(--fs-body); }
+
+/* 6. ProjectCard. No hover zoom. Hover darkens border, underlines link. ---- */
+.c-project { display: flex; flex-direction: column;
+  border: 1px solid var(--line-200); background: var(--paper);
+  transition: border-color var(--dur-fast) var(--ease-out); }
+.c-project:hover { border-color: var(--line-300); }
+.c-project:hover .c-project__link { text-decoration: underline; }
+.c-project__media { aspect-ratio: 3 / 2; background: var(--paper-alt); }
+.c-project__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.c-project__body { padding: var(--s-6); display: flex; flex-direction: column;
+  gap: var(--s-2); flex: 1; }
+@media (min-width: 1024px) { .c-project__body { padding: var(--s-8); } }
+.c-project__spec { color: var(--ink-500); font-size: var(--fs-sm); }
+.c-project__link { color: var(--red-600); font-size: var(--fs-body);
+  margin-top: auto; padding-top: var(--s-4); }
+
+/* 7. ProjectGrid. Never masonry. Equal height. ---------------------------- */
+.c-projectgrid { display: grid; gap: var(--s-6); grid-template-columns: 1fr; }
+@media (min-width: 768px)  { .c-projectgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .c-projectgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* 8. SpecTable. The workhorse. Mono keys, sans values, tnum. -------------- */
+.c-spectable { width: 100%; border-collapse: collapse;
+  font-feature-settings: "tnum" 1; }
+.c-spectable th, .c-spectable td { text-align: left; padding-block: var(--s-3);
+  border-bottom: 1px solid var(--line-200); vertical-align: baseline; }
+.c-spectable th { font-family: var(--font-mono); font-size: var(--fs-mono);
+  font-weight: var(--fw-mono); letter-spacing: var(--tr-mono);
+  color: var(--ink-500); width: 40%; }
+.c-spectable td { font-size: var(--fs-body); color: var(--ink-900); }
+
+/* 9. ProcessSteps. Vertical. Never a horizontal timeline, icons or arrows. */
+.c-steps { list-style: none; margin: 0; padding: 0;
+  border-left: 1px solid var(--line-200); }
+.c-steps__item { padding-left: var(--s-6); padding-bottom: var(--s-8);
+  position: relative; }
+.c-steps__n { display: block; color: var(--red-600); margin-bottom: var(--s-2); }
+
+/* 10. DocumentList -------------------------------------------------------- */
+.c-doclist { list-style: none; margin: 0; padding: 0; }
+.c-doclist__row { display: flex; align-items: baseline; gap: var(--s-4);
+  padding-block: var(--s-4); border-bottom: 1px solid var(--line-200); }
+.c-doclist__icon { width: var(--s-4); height: var(--s-4); flex: none; }
+.c-doclist__name { font-size: var(--fs-body); color: var(--navy-800); flex: 1; }
+.c-doclist__meta { color: var(--ink-500); }
+
+/* 11. CTABand. Max 2 per page. -------------------------------------------- */
+.c-ctaband { background: var(--navy-800); color: var(--paper);
+  padding-block: var(--s-16); }
+@media (min-width: 1024px) { .c-ctaband { padding-block: var(--s-20); } }
+.c-ctaband__title { font-size: var(--fs-h2); font-weight: var(--fw-h2);
+  line-height: var(--lh-h2); letter-spacing: var(--tr-h2);
+  color: var(--paper); margin-bottom: var(--s-4); }
+.c-ctaband__line { color: var(--on-navy-secondary); margin-bottom: var(--s-8); }
+.c-ctaband__ctas { display: flex; flex-wrap: wrap; gap: var(--s-4); }
+
+/* 12. FormBlock ----------------------------------------------------------- */
+.c-form__field { display: flex; flex-direction: column; gap: var(--s-2);
+  margin-bottom: var(--s-4); }
+.c-form__label { color: var(--ink-700); font-size: var(--fs-sm); }
+.c-form__req { color: var(--red-600); }
+.c-form__input { font-size: var(--fs-body); font-family: var(--font-sans);
+  padding: var(--s-3) var(--s-4); border: 1px solid var(--line-300);
+  border-radius: var(--r-2); background: var(--paper); color: var(--ink-900);
+  transition: border-color var(--dur-fast) var(--ease-out); }
+.c-form__input:focus-visible { outline: 2px solid var(--navy-800);
+  outline-offset: 1px; border-color: var(--navy-800); }
+.c-form__help { color: var(--ink-500); font-size: var(--fs-sm); }
+.c-form__error { color: var(--red-600); font-size: var(--fs-sm); }
+.c-form__ok { color: var(--ok); font-size: var(--fs-sm); }
+
+/* 13. OfficeCard. Exactly three exist. ------------------------------------ */
+.c-office { border: 1px solid var(--line-200); padding: var(--s-6);
+  display: flex; flex-direction: column; gap: var(--s-2); }
+@media (min-width: 1024px) { .c-office { padding: var(--s-8); } }
+.c-office__city { margin-bottom: var(--s-2); }
+.c-office__radius { color: var(--ink-500); font-size: var(--fs-sm);
+  margin-top: var(--s-2); }
+
+/* 14. FAQList. Native details/summary. Chevron rotates 90deg. ------------- */
+.c-faq__item { border-bottom: 1px solid var(--line-200); }
+.c-faq__q { font-size: var(--fs-h4); font-weight: var(--fw-h4);
+  line-height: var(--lh-h4); color: var(--navy-800);
+  padding-block: var(--s-4); cursor: pointer; list-style: none;
+  display: flex; align-items: baseline; gap: var(--s-4); }
+.c-faq__q::-webkit-details-marker { display: none; }
+.c-faq__chev { flex: none; transition: transform var(--dur-fast) var(--ease-out); }
+.c-faq__item[open] .c-faq__chev { transform: rotate(90deg); }
+.c-faq__a { padding-bottom: var(--s-4); }
+
+/* 15. Breadcrumb ---------------------------------------------------------- */
+.c-breadcrumb { font-family: var(--font-mono); font-size: var(--fs-sm);
+  color: var(--ink-500); padding-block: var(--s-4); }
+.c-breadcrumb a { color: var(--ink-500); }
+.c-breadcrumb a:hover { color: var(--navy-800); }
+
+/* 16. Footer. NO LICENCE BLOCK (D5, D9). If a licence number ever renders
+       anywhere, it renders with "Qualifying agent: Jeff Walsh." in the same
+       block. This component deliberately has no slot for one. ------------- */
+.c-footer { background: var(--navy-900); color: var(--paper);
+  padding-block: var(--s-16); }
+.c-footer__cols { display: grid; gap: var(--s-8);
+  grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 1024px) { .c-footer__cols { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.c-footer__head { color: var(--paper); margin-bottom: var(--s-4); }
+.c-footer__list { list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: var(--s-2); }
+.c-footer__list a { color: var(--on-navy-secondary); text-decoration: none;
+  font-size: var(--fs-body); }
+.c-footer__list a:hover { color: var(--paper); text-decoration: underline; }
+.c-footer__compliance { border-top: 1px solid var(--on-navy-rule);
+  margin-top: var(--s-12); padding-top: var(--s-6);
+  color: var(--on-navy-secondary); }
+
+/* 17. StickyActionBar. Mobile only. --------------------------------------- */
+.c-stickybar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: var(--paper); border-top: 1px solid var(--line-200);
+  box-shadow: var(--e-1); padding: var(--s-3) var(--s-4);
+  display: flex; gap: var(--s-3); }
+@media (min-width: 900px) { .c-stickybar { display: none; } }
+
+/* 18. TypographicPlate. The no-photo fallback. Used wherever a publishable
+       photo does not exist, including where the image-rights gate blocks one.
+       A page that substitutes a plate keeps its layout and section count. -- */
+.c-plate { background: var(--navy-800); color: var(--paper);
+  padding: var(--s-8); display: flex; flex-direction: column;
+  justify-content: center; gap: var(--s-3); aspect-ratio: 4 / 3; }
+.c-plate--alt { background: var(--paper-alt); color: var(--navy-800); }
+.c-plate__key { color: var(--on-navy-secondary); }
+.c-plate--alt .c-plate__key { color: var(--ink-500); }
+.c-plate__val { font-size: var(--fs-h4); font-weight: var(--fw-h4);
+  line-height: var(--lh-h4); }

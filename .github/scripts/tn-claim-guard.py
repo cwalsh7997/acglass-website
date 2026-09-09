@@ -66,15 +66,15 @@ REFERENCE_GROUPS = (
 
 REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
     "path_or_title_discovery":
-        "f61df174a5b1d602577b0457f4a53ae0f8344dd12af0d23ec24b1ed2c6ff37ae",
+        "2468d532095ce39c8e1faea66e15d1ff6cae6d6bf4a536b32126d372e883ad70",
     "stale_operating_claim_hold":
         "deb8007c8d861ca32b97f1caf20d27c44589050462e4d93a1012ea6508ed8515",
     "mixed_claim_review":
         "875c20e4a22f237694248ad5101fada3ebd82d263f695f643435bd73e59d8798",
     "biography_only":
-        "8540e32a7da5de8bb4afc4ce541e3a7c4c574717017227579430d7fbaa89c0a4",
+        "bee1f53db2f6de86339673da1fe98bd400201f57e2ed79557de8a2285ee5e94c",
     "technical_or_market_review":
-        "e398c6c6583e0dbba6a3125480a233828b59b4d74cf38615eba8ffbfcf72deab",
+        "5accf62a0a8a0ce6c16ea6338bb9f4fec6b914a4844f53627caa4a68702a98af",
     "license_disclaimer_link_review":
         "aefebeb2566e5501b8e12bb30fb8c8bc5a1e0027c1e69ccd362087260ded5fdd",
     "source_controlled_project_claim":

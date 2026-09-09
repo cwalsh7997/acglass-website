@@ -1,0 +1,22 @@
+# Glazing technique. "bonded" here describes a material or an assembly, never ACG.
+# Standing method: sweep terms with an ALLOWLIST of assertive self-claims and leave
+# everything else. A denylist sweep would corrupt all of this.
+factory-bonded
+bonded by a polymer
+bonded under heat
+structurally bonded
+structural silicone
+structurally glazed
+bonded to an interlayer
+bonded to a tough
+bonded between glass
+bonded between panes
+bonded contact
+bonded to the aluminum
+bonded to aluminum
+glass is bonded
+lites bonded
+layers bonded
+plies bonded
+licensed and bonded, and verify
+licensed and bonded for your project

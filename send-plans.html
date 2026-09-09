@@ -29,7 +29,7 @@
   <meta property="og:image:alt" content="American Commercial Glass - Florida's commercial glazing specialists">
   <meta property="og:site_name" content="American Commercial Glass">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Send Plans for Commercial Glazing Bid | ACG">
+  <meta name="twitter:title" content="Send Plans for Commercial Glazing Bid | Florida | ACG">
   <meta name="twitter:description" content="Send your commercial glazing plans to ACG - detailed Division 08 scope and price within 48 hours. Florida's commercial glazing specialists. (772) 486-7711.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
@@ -51,7 +51,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://acglass.com/send-plans.html#webpage","name":"Send Plans for Commercial Glazing Bid | Florida | ACG","description":"Submit your Division 08 plans to ACG - detailed scope and price within 48 hours. Florida's commercial glazing specialists.","url":"https://acglass.com/send-plans.html","isPartOf":{"@id":"https://acglass.com/#organization"}}</script>
 
   <!-- Organization Schema -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://acglass.com/#organization","name":"American Commercial Glass","alternateName":["ACG","ACG Glass","ACG Florida","American Commercial Glass Florida","ACG Commercial Glass"],"url":"https://acglass.com/","telephone":"+1-772-486-7711","email":"connor@acglass.com","address":{"@type":"PostalAddress","streetAddress":"700 S Rosemary Ave Suite 204","addressLocality":"West Palm Beach","addressRegion":"FL","postalCode":"33401","addressCountry":"US"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://acglass.com/#organization","name":"American Commercial Glass","alternateName":["ACG","ACG Glass","ACG Florida","American Commercial Glass Florida","ACG Commercial Glass"],"url":"https://acglass.com/","telephone": "+17724867711","email":"connor@acglass.com","address":{"@type":"PostalAddress","streetAddress":"700 S Rosemary Ave Suite 204","addressLocality":"West Palm Beach","addressRegion":"FL","postalCode":"33401","addressCountry":"US"}}</script>
   
 
   <style>
@@ -314,7 +314,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_subject" value="[ACG LEAD] New plans submission via send-plans">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
+        
         <input type="hidden" name="_next" value="https://acglass.com/thanks.html?submitted=1">
         <input type="hidden" name="_language" value="en">
         <input type="hidden" name="submission_source" value="send-plans-form">
@@ -563,8 +563,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
       // Stay under that so a GC never sees success after a silently dropped set.
       var FORMSUBMIT_MAX_BYTES = 9 * 1024 * 1024;
       var ALLOWED_EXTS = { pdf:1, dwg:1, zip:1, doc:1, docx:1, xls:1, xlsx:1, jpg:1, jpeg:1, png:1 };
-      var OVERSIZE_COPY = 'These files are over the 9 MB form limit, so they were not sent. Email the set to connor@acglass.com, or put a Procore, BuildingConnected, or BIM 360 link in Notes and submit without the large attachments.';
-      var TYPE_COPY = 'That file type cannot be sent here. Use PDF, DWG, ZIP, Word, Excel, JPG, or PNG. Or email connor@acglass.com / paste a Procore, BuildingConnected, or BIM 360 link in Notes.';
+      var OVERSIZE_COPY = 'These files are over the 9 MB form limit, so they were not sent. Email the set to <!--email_off-->connor@acglass.com<!--/email_off-->, or put a Procore, BuildingConnected, or BIM 360 link in Notes and submit without the large attachments.';
+      var TYPE_COPY = 'That file type cannot be sent here. Use PDF, DWG, ZIP, Word, Excel, JPG, or PNG. Or email <!--email_off-->connor@acglass.com<!--/email_off--> / paste a Procore, BuildingConnected, or BIM 360 link in Notes.';
 
       function fileExt(name) {
         var m = String(name || '').toLowerCase().match(/\.([a-z0-9]+)$/);

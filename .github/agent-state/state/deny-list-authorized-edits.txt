@@ -1,0 +1,15 @@
+# Explicitly authorised edits to never-touch pages.
+#
+# Format: <path> <sha256 of the file content as authorised>
+#
+# The deny list exists to stop UNAUTHORISED edits. An edit Connor asked for is not
+# one. But "Connor said it was fine" is not a mechanism, so the authorisation is
+# pinned to the exact file content: if services.html changes again by so much as a
+# byte, the hash stops matching and check-deny-list.sh fails as it should.
+#
+# services.html, authorised 2026-09-09. Connor authorised removing one project card
+# left broken by the Panther National removal. Verified before writing: the removed
+# block contained no Buy American, TAA or BABA text, the
+# taa-baba-buy-american-act-glazing.html link diffed byte-identical, and anchor tags
+# balance 88 to 88. See decisions.md.
+services.html 57e960dfebcc3fa3dc0b54d4b9b4233c5a8ca00f3a4f9e7039b1209315081741

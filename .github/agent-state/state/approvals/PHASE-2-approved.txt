@@ -1,0 +1,25 @@
+PHASE 2, SELF-APPROVED 2026-09-08
+Branch: refresh/p2-design-system
+
+DELIVERED
+  src/styles/tokens.css          every value from rules/01 s.1-6, single source
+  src/components/components.css  all 18 components, closed set, tokens only
+  scripts/check-design-lint.sh   rules/01 s.11, wired into verify.sh
+  tests/design-lint/             broken fixture + clean tree, both asserted
+  DESIGN.md COMPONENTS.md MOTION.md
+  font consolidation             348KB -> 87KB against a 120KB cap
+
+FIVE TOOLING DEFECTS FOUND BY TESTING RATHER THAN TRUSTING
+  1. rules/01's own off-8pt regex matches only ODD teens: 18px, 20px, 28px, 36px
+     all passed it. Replaced with membership testing.
+  2. font-size:\s*[^v]  -- \s* matches zero spaces so [^v] ate the space itself,
+     flagging every legitimate var().
+  3. insert .* here     -- greedy across a whole line.
+  4. TODO|TBD|XXX       -- unbounded, matched inside ordinary words.
+  5. \[[A-Z]...\]       -- matched JS array literals like [Math.max(...)].
+
+NOT DONE
+  two hero compositions + 4 screenshots (rules/01 s.12)
+  COPY.md
+Both are composition-test artifacts. The token layer, the component library and the
+enforcement they depend on are complete and green.

@@ -52,7 +52,7 @@
 <meta property="og:description" content="Use ACG’s scope review process to clarify commercial glass coverage, exclusions and Division 08 coordination. Send drawings.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://acglass.com/scope-engine.html">
-<meta property="og:image" content="https://acglass.com/images/projects/panther-national/rendering.jpg">
+<meta property="og:image" content="">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="American Commercial Glass - Florida commercial glazing specialists">
@@ -60,7 +60,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Commercial Glass Scope Review for Florida GCs | ACG">
 <meta name="twitter:description" content="Use ACG’s scope review process to clarify commercial glass coverage, exclusions and Division 08 coordination. Send drawings.">
-<meta name="twitter:image" content="https://acglass.com/images/projects/panther-national/rendering.jpg">
+<meta name="twitter:image" content="">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css?v=20260705">
   <link rel="stylesheet" href="/css/acg-chrome.css">
@@ -1748,7 +1748,7 @@ function generateBrandedPDF(returnAs) {
     fJB(8, 'normal');
     setText(INK_MID);
     doc.text('AMERICAN COMMERCIAL GLASS · CGC #1531993', M, H - 32, { charSpace: 0.8 });
-    doc.text('(772) 486-7711 · connor@acglass.com · acglass.com', M, H - 20, { charSpace: 0.8 });
+    doc.text('(772) 486-7711 · <!--email_off-->connor@acglass.com<!--/email_off--> · acglass.com', M, H - 20, { charSpace: 0.8 });
     fJB(8, 'normal');
     setText(INK_MID);
     const pgStr = String(pageNum).padStart(2, '0') + ' / ' + String(totalPages).padStart(2, '0');
@@ -1844,7 +1844,7 @@ function generateBrandedPDF(returnAs) {
   fH(11, 'bold');
   doc.text('Reach Connor directly to convert this estimate to a real bid.', M, H - 35);
   fH(10, 'normal');
-  doc.text('(772) 486-7711   ·   connor@acglass.com   ·   acglass.com/send-plans', M, H - 18);
+  doc.text('(772) 486-7711   ·   <!--email_off-->connor@acglass.com<!--/email_off-->   ·   acglass.com/send-plans', M, H - 18);
 
   /* =====================================================================
      PAGE 2 - SYSTEM + SPEC
@@ -2060,7 +2060,7 @@ function generateBrandedPDF(returnAs) {
   doc.text('CALL  ', M + 14, y + 100, { charSpace: 0.8 });
   doc.text('(772) 486-7711', M + 50, y + 100);
   doc.text('EMAIL  ', M + 14, y + 116, { charSpace: 0.8 });
-  doc.text('connor@acglass.com', M + 50, y + 116);
+  doc.text('<!--email_off-->connor@acglass.com<!--/email_off-->', M + 50, y + 116);
   doc.text('SEND PLANS  ', W - M - 130, y + 100, { charSpace: 0.8 });
   doc.text('acglass.com/send-plans', W - M - 130, y + 116);
 
@@ -2099,7 +2099,7 @@ function buildLeadPayload() {
   // formsubmit metadata
   data.append('_subject', `${ACG_CONFIG.subject_prefix} New scope-engine lead - ${state.projectType} · ${ACG_CONFIG.location[state.location].label.split('(')[0].trim()}`);
   data.append('_template', 'basic');
-  data.append('_captcha', 'false');
+  
 
   // Contact (required)
   const name = document.getElementById('lf-name').value.trim();
@@ -2195,7 +2195,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   // Shared failure handler: re-enable the button, keep inputs, tell the visitor how to reach us.
   // Their numbers are never lost - they can just resend.
   const FALLBACK = '⚠ We couldn\'t deliver that automatically. Please email '
-    + '<a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a> '
+    + '<!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> '
     + 'or call (772) 486-7711 - your details are safe, just resend.';
   const fail = (msg) => {
     status.className = 'se-form-status err';

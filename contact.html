@@ -61,7 +61,7 @@
         "ACG Commercial Glass"
       ],
       "url": "https://acglass.com/",
-      "telephone": "+1-772-486-7711",
+      "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "address": {
         "@type": "PostalAddress",
@@ -98,7 +98,7 @@
         "@id": "https://acglass.com/#organization"
       },
       "url": "https://acglass.com/",
-      "telephone": "+1-772-486-7711",
+      "telephone": "+17724867711",
       "email": "connor@acglass.com",
       "address": {
         "@type": "PostalAddress",
@@ -321,7 +321,7 @@
               var submitterName = formData.get('name') || '';
               var submitterCompany = formData.get('company') || '';
               formData.append('_subject', '[ACG LEAD] ' + (submitterCompany || submitterName || 'New project inquiry'));
-              formData.append('_captcha', 'false');
+              
               formData.append('_template', 'basic');
               formData.append('_source_page', '/contact');
               if (submitterEmail) { formData.append('_replyto', submitterEmail); }
@@ -361,7 +361,7 @@
                       'http_status': r.status
                     });
                   }
-                  status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+                  status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
                   status.style.color = '#B45309';
                 }
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
@@ -374,7 +374,7 @@
                     'error_type': 'network'
                   });
                 }
-                status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <a href="mailto:connor@acglass.com">connor@acglass.com</a>, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
+                status.innerHTML = '⚠ Send failed. Use the <a href="/send-plans.html">send-plans page</a>, email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->, or call <a href="tel:+17724867711">(772) 486-7711</a>.';
                 status.style.color = '#B45309';
                 if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = '1'; }
               });

@@ -99,15 +99,16 @@ class ArchitectResourcesLinkTests(unittest.TestCase):
 
 
 class ProjectImageSrcTests(unittest.TestCase):
-    def test_projects_index_uses_existing_panther_photo(self):
+    def test_projects_index_carries_no_panther_photo(self):
+        # Rewritten 2026-09-09. Panther National was removed from the site on
+        # Connor's instruction: the project is in active litigation and he asked
+        # for no ACG association online. The original test asserted the opposite,
+        # that projects/index.html DOES reference a Panther photo, so it had to
+        # invert rather than be deleted. The intent it protects is unchanged:
+        # this page must not reference an image that is not on disk.
         page = _read("projects/index.html")
-        self.assertNotIn("panther-national-hero.jpg", page)
-        self.assertIn(
-            "images/projects/panther-national/brochure-clubhouse-hero.jpg", page
-        )
-        self.assertTrue(
-            (REPO_ROOT / "images/projects/panther-national/brochure-clubhouse-hero.jpg").is_file()
-        )
+        self.assertNotIn("images/projects/panther-national/", page)
+        self.assertFalse((REPO_ROOT / "images/projects/panther-national").exists())
 
     def test_imperial_gallery_does_not_prefer_the_flaky_webp(self):
         page = _read("imperial-crossings-bonita-springs.html")
