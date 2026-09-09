@@ -403,3 +403,41 @@
     padding-block: var(--s-20);
   }
 }
+
+/* A hero inside a section does not pay padding twice, added 2026-09-09.
+ *
+ * .u-section carries 64px block padding and .c-hero carries 80px, rising to
+ * 128px above 1024px. Nested, the hero paid both: 144px of dead band above the
+ * headline and the same below it. A before/after comparison made it obvious,
+ * the rebuilt page showed less above the fold than the one it replaced while
+ * looking calmer. Calmer and emptier are not the same thing.
+ *
+ * The section owns the outer rhythm, so the hero drops its own when nested. */
+.u-section > .u-container > .c-hero,
+.u-section > .c-hero {
+  padding-block: 0;
+}
+@media (min-width: 1024px) {
+  .u-section > .u-container > .c-hero,
+  .u-section > .c-hero {
+    padding-block: 0;
+  }
+}
+
+/* Structural list items opt out of the reading measure, added 2026-09-09.
+ *
+ * tokens.css sets `p, li, blockquote { max-width: var(--measure) }`, which is
+ * correct: 68ch is the readability band and unbounded prose is hard to read.
+ * But .c-doclist__row is an <li> used as a two-column layout row, not a
+ * paragraph. It inherited the cap and rendered 686px wide inside a 1216px list,
+ * leaving half the section empty and the meta column crushed against the name.
+ *
+ * A token that governs prose should not govern layout. Components that use p or
+ * li structurally say so here rather than every page overriding it. */
+.c-doclist__row,
+.c-doclist,
+.c-projectgrid,
+.c-capabilities {
+  max-width: none;
+}
+.c-doclist__name { max-width: none; }
