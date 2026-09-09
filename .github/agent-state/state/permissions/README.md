@@ -1,38 +1,38 @@
 # Image permission requests
 
-Three drafts. Connor sends them. They are the last thing standing between
-`check-image-rights.sh` and PASS.
+**Only one draft is still needed.** The manufacturer half resolved without an email.
 
-D10 obligation 4 requires `licensed_written` for the `manufacturer_supplied` and
-`gc_supplied` categories, because "these are the categories that generate invoices".
-Connor confirmed verbal permission on 2026-09-09 and that is recorded honestly as
-`permission_verbal`. It is accurate and it does not clear publication.
+## Resolved 2026-09-09
 
-## What is actually published
+Connor confirmed ACG holds **signed dealer/installer agreements with both Euro-Wall
+and ES Windows**. Those agreements carry marketing and trademark use terms, which is
+exactly the written licence D10 obligation 4 asks for. All 17 manufacturer images
+are now `licensed_written` against the agreement rather than waiting on a reply.
 
-| draft | recipient | images | what they are |
-|---|---|---:|---|
-| 1 | Euro-Wall | 8 | 2 logos, 4 product photos, 2 project photos from their library |
-| 2 | ES Windows | 2 | logo tag, ES-8000 product photo |
-| 3 | 5 GCs | 5 | Curran Young, Hooks, Made in Rio, Proctor, Rycon logos |
+Drafts 1 and 2 were deleted. Asking a manufacturer for permission you already hold
+in a signed contract wastes their time and yours.
 
-## When a reply comes back
+Two images were also swapped out entirely rather than licensed:
 
-Set `rights_status` to `licensed_written` on those rows in `image-rights.csv` and
-put the date and sender in `evidence_ref`. The check goes green on real evidence.
+| was | now |
+|---|---|
+| `partners/eurowall/project-allen-residence` | `atlantic-fields-golf-house/sliding-doors` |
+| `partners/eurowall/project-hero-multislide` | `atlantic-fields-golf-house/hero-open-wall` |
 
-If a manufacturer or GC declines, say so and the image comes down. Draft 3 offers
-that explicitly, which is the honest way to ask.
+Both were photographs of other companies' jobs illustrating ACG's pages. Connor
+confirmed Atlantic Fields used Euro-Wall, so ACG's own photography of its own
+installed work replaces them. The caption changed from "Euro-Wall Vista Fold ·
+Allen Residence" to "Euro-Wall · Atlantic Fields Golf House", which is accurate and
+does not assert a specific model.
 
-## One thing I considered and did not do
+## Still open: 5 GC logos
 
-The two Euro-Wall project photos show someone else's jobs, including the Allen
-Residence, which is the weakest of the three classes. I looked at swapping them for
-ACG's own photography, since 346 images are now confirmed owned.
+`3-gc-logos.txt`. Curran Young, Hooks, Made in Rio, Proctor, Rycon.
 
-I did not, because captioning an ACG project photo as a Euro-Wall installation
-asserts which system went into that job, and I only found one documented Euro-Wall
-install in ACG's own copy: "the single Euro-Wall opening ACG installed at Ocean
-Prime". A single opening will not carry a hero shot honestly. If you tell me which
-of your projects used Euro-Wall, the swap removes the dependency entirely and no
-permission is needed for those two.
+A subcontract does not normally grant a subcontractor the right to display the GC's
+mark, so unlike the manufacturers there is probably no existing document covering
+this. The draft asks for a reply on file and explicitly offers them the option to
+say no, which is what makes a yes worth having.
+
+When a reply lands, set `rights_status` to `licensed_written` on that row with the
+date and sender in `evidence_ref`.
