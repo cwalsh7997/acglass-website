@@ -415,3 +415,44 @@ qualifier name off the record.
 **Default if nothing is decided: nothing changes.** I am not editing a licensing
 claim in either direction on a guess. `check-qualifier-claim.sh` pins it at 5
 pages so it cannot spread while unresolved.
+
+## PC-22: two crew-training claims D2 froze are on 125 pages (2026-09-08)
+
+D2 obligation 4, locked: "OSHA 30 for all workers" and "AAMA InstallationMasters
+trained crews" are **prohibited** until questionnaire items 25 and 26 are
+answered. It adds that the InstallationMasters claim "currently appears only on
+the Nashville page" and says to remove it in phase 0.
+
+It was not removed, and it is no longer only on the Nashville page:
+
+    OSHA 30 as an ACG self-claim              201 occurrences on 125 pages
+    InstallationMasters as an ACG self-claim    8 occurrences on   5 pages
+
+**The worst single instance is `architect-specs/section-08-41-13-aluminum-storefront.html`.**
+A spec section is not a marketing page. Spec sections get incorporated into
+contract documents, so an unverified certification claim sitting in one stops
+being marketing and becomes a representation ACG can be held to.
+
+**Why the existing safety check never caught it.** `check-safety-claims.sh`
+enforces the numeric half of D2, the EMR and TRIR figures, by matching a safety
+term followed by a number. A crew training claim has no number in it, so it went
+straight through. The check was not broken, it was only ever half of D2.
+
+**Two questions close this**, and they are questionnaire items 25 and 26:
+
+  25. Do all field employees hold current OSHA 30, or is it foremen only?
+  26. Does ACG hold a current AAMA InstallationMasters certification?
+
+If the answer to 25 is "foremen only", the claim is not wrong so much as
+overstated, and the honest wording is "OSHA 30 trained foremen, OSHA 10 field
+crews", which is the industry norm and reads as more credible, not less.
+
+**Default if nothing is decided: nothing changes.** I did not strip a safety
+credential off 125 pages on my own judgement. If the crews do hold it, removal
+makes ACG look worse than it is on exactly the pages GCs read when prequalifying.
+`check-crew-training-claims.sh` pins the counts so the claims cannot spread
+further while unanswered.
+
+**One instance is worth pulling ahead of the rest.** Whatever you decide about
+the other 124 pages, the architect spec section should not carry an unverified
+certification claim. Say the word and I will remove just that one.
