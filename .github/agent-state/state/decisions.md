@@ -53,3 +53,29 @@ someone else. The credential is Connor's, so a bare number is accurate.
   it cannot be run against a premise that no longer holds.
 - Jeff Walsh is not added to any page. D9 obligation 4 forbade describing his role
   beyond "qualifying agent", and he is not the qualifying agent.
+
+## D2 obligation 4 resolved, 2026-09-09
+
+Connor answered questionnaire items 25 and 26.
+
+**Item 25, OSHA 30: every field employee holds current OSHA 30.** The claim is
+accurate. All 201 occurrences across 125 pages stay exactly as written. D2 froze it
+pending an answer and the answer unfreezes it. No copy changed.
+
+**Item 26, AAMA InstallationMasters: ACG does not hold a current certification.**
+All 6 assertive ACG self-claims removed across 3 files.
+
+Two classes, and only one was a false claim. My first count said 8 occurrences on 5
+pages and treated them as one thing. Left in place deliberately:
+
+- `architect-specs/*` state what an INSTALLER must hold. ACG writes these sections
+  for architects. A requirement is not a claim about ACG.
+- Blog pages advising GCs what to look for when vetting a glazier.
+- `glossary.html`, explaining what the programme is.
+
+**Worth knowing.** The storefront spec section requires the installer to be
+"AAMA InstallationMasters certified or equivalent". ACG does not hold it. The
+"or equivalent" clause covers this, so it is not a contradiction, but if an
+architect issues that spec and ACG bids it, ACG is answering its own qualification
+requirement under the equivalency clause. Not a defect. Worth being aware of before
+someone asks.

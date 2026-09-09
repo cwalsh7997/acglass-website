@@ -436,7 +436,18 @@ qualifier name off the record.
 claim in either direction on a guess. `check-qualifier-claim.sh` pins it at 5
 pages so it cannot spread while unresolved.
 
-## PC-22: two crew-training claims D2 froze are on 125 pages (2026-09-08)
+## PC-22: RESOLVED 2026-09-09.
+
+**Item 25, OSHA 30: confirmed accurate.** Every field employee holds current
+OSHA 30. All 201 occurrences stay as written. No copy changed.
+
+**Item 26, InstallationMasters: ACG does not hold it.** All 6 ACG self-claims
+removed. Spec-section requirements, GC advice and the glossary entry were left
+alone, because none of them claims ACG holds the certification. See decisions.md.
+
+The original note follows.
+
+## PC-22 (original, 2026-09-08): two crew-training claims D2 froze are on 125 pages
 
 D2 obligation 4, locked: "OSHA 30 for all workers" and "AAMA InstallationMasters
 trained crews" are **prohibited** until questionnaire items 25 and 26 are
