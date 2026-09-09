@@ -57,7 +57,11 @@ jobs:
   test:
     name: Unit tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # The suite grew past 10 minutes on 2026-09-09 and the runner cancelled it
+    # after it had already printed OK for all 448 tests. A wall-clock budget
+    # that kills a passing suite reports a failure that is not one. 25 gives
+    # headroom; the assertions are untouched.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
