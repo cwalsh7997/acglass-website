@@ -207,3 +207,15 @@ Scrape Shield markers. It is mostly a footer contact link, not a form action.
 **Default if unanswered: sweep the footer occurrences into `<!--email_off-->` in phase
 6, which is where a 1,530-page mechanical edit belongs.** A routed alias
 (`bids@acglass.com`) would be better but that is a mail-routing change, hard stop 7.
+
+## PC-13 through PC-16: four orphans I linked nothing to (2026-09-08)
+
+The other 51 sitemapped orphans are now linked. These four I did not link, each for a
+stated reason. Default if you say nothing: they stay orphaned and get noindexed in a
+later pass, which removes them from Google rather than leaving them advertised and
+unreachable.
+
+- `press-release-tampa.html` :: asserts ACG opened a Tampa office. Physical-presence claim, geography gate.
+- `acg-glass.html` :: 15KB brand-name page, canonical to itself, reads as a thin homepage duplicate.
+- `best-glazing-subcontractor-florida.html` :: 'best' URL slug. Title is factual but the slug is a superlative claim.
+- `best-storefront-contractor-florida.html` :: 'best' URL slug. Same as above.
