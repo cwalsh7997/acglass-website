@@ -522,7 +522,43 @@ further while unanswered.
 the other 124 pages, the architect spec section should not carry an unverified
 certification claim. Say the word and I will remove just that one.
 
-## PC-23: PARTIALLY RESOLVED 2026-09-09.
+## PC-23: RESOLVED 2026-09-09. Two more were expired and I found them.
+
+I looked all nine up in the Miami-Dade record rather than waiting for you to.
+
+| NOA | expires | status |
+|---|---|---|
+| 20-0401.11 | 2023-08-23 | **EXPIRED 3 years**, removed |
+| 20-1211.01 | 2025-06-25 | **EXPIRED 15 months**, removed |
+| 24-0615.02 | unknown | county URL 404s, unverifiable, removed |
+| 21-0914.03 | 2031-08-25 | current |
+| 21-1108.05 | 2027-01-13 | current, rechecks 2026-10-15 |
+| 23-0724.09 | 2028-07-25 | current |
+| 23-0724.12 | 2028-12-24 | current |
+| 23-0724.13 | 2027-10-12 | current |
+| 24-0321.07 | 2028-04-03 | current |
+
+**The two 2018 numbers you told me to pull were the right instinct, and the set was
+worse than either of us thought.** 20-0401.11 sat on the PGT page three years past
+expiry, attached to a specific design pressure. 20-1211.01 sat on the Slimpact page
+15 months past, described as "unique in this category". A GC or plans examiner
+checking either one finds a dead approval on a page that reads as a capability
+claim.
+
+The DP values and test standards stayed. Those are properties of the product. Only
+the dead approval numbers came out.
+
+`24-0615.02` is its own problem: the county returns 404 on the standard URL pattern,
+so either the number is wrong or the NOA was withdrawn. Removed rather than
+published unchecked.
+
+Every remaining number now carries a real expiry in `reverify.csv` with a
+re-verification date 90 days prior. **21-1108.05 is the next one due, on
+2026-10-15.**
+
+The original note follows.
+
+## PC-23 (superseded): PARTIALLY RESOLVED 2026-09-09.
 
 **The two 2018 numbers are pulled.** NOA 18-0404.02 and 18-0404.03, both Series 5250
 curtain wall, both on architect-resources.html, both linking to the county PDF. They
