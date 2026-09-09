@@ -1,38 +1,26 @@
 # Image permission requests
 
-**Only one draft is still needed.** The manufacturer half resolved without an email.
+**None outstanding.** Every draft was deleted unsent, because the permissions
+already existed in documents ACG had signed.
 
-## Resolved 2026-09-09
+## What actually resolved this, 2026-09-09
 
-Connor confirmed ACG holds **signed dealer/installer agreements with both Euro-Wall
-and ES Windows**. Those agreements carry marketing and trademark use terms, which is
-exactly the written licence D10 obligation 4 asks for. All 17 manufacturer images
-are now `licensed_written` against the agreement rather than waiting on a reply.
+| images | covered by |
+|---:|---|
+| 17 | signed dealer/installer agreements with Euro-Wall and ES Windows |
+| 5 | publicity/marketing clauses in the executed GC subcontracts |
+| 2 | swapped for ACG's own Atlantic Fields photography, so no permission needed |
 
-Drafts 1 and 2 were deleted. Asking a manufacturer for permission you already hold
-in a signed contract wastes their time and yours.
+I had written three emails asking seven companies for permission ACG already held
+in contract. Asking one question first, "do you have a signed agreement", made all
+three unnecessary and saved sending letters that would have read as though ACG did
+not know what it had signed.
 
-Two images were also swapped out entirely rather than licensed:
+The lesson worth keeping: the blocker was never the permission. It was that nobody
+had written down where the permission lived.
 
-| was | now |
-|---|---|
-| `partners/eurowall/project-allen-residence` | `atlantic-fields-golf-house/sliding-doors` |
-| `partners/eurowall/project-hero-multislide` | `atlantic-fields-golf-house/hero-open-wall` |
+## If this comes back
 
-Both were photographs of other companies' jobs illustrating ACG's pages. Connor
-confirmed Atlantic Fields used Euro-Wall, so ACG's own photography of its own
-installed work replaces them. The caption changed from "Euro-Wall Vista Fold ·
-Allen Residence" to "Euro-Wall · Atlantic Fields Golf House", which is accurate and
-does not assert a specific model.
-
-## Still open: 5 GC logos
-
-`3-gc-logos.txt`. Curran Young, Hooks, Made in Rio, Proctor, Rycon.
-
-A subcontract does not normally grant a subcontractor the right to display the GC's
-mark, so unlike the manufacturers there is probably no existing document covering
-this. The draft asks for a reply on file and explicitly offers them the option to
-say no, which is what makes a yes worth having.
-
-When a reply lands, set `rights_status` to `licensed_written` on that row with the
-date and sender in `evidence_ref`.
+`image-rights.csv` now carries the evidence reference on every row. If a dealer
+agreement lapses or a GC relationship ends, set that row back to `unverified` and
+`check-image-rights.sh` will block publication under D10 obligation 4 again.
