@@ -321,7 +321,7 @@
               var submitterName = formData.get('name') || '';
               var submitterCompany = formData.get('company') || '';
               formData.append('_subject', '[ACG LEAD] ' + (submitterCompany || submitterName || 'New project inquiry'));
-              formData.append('_captcha', 'false');
+              
               formData.append('_template', 'basic');
               formData.append('_source_page', '/contact');
               if (submitterEmail) { formData.append('_replyto', submitterEmail); }

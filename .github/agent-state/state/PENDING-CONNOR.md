@@ -154,3 +154,30 @@ The check moved from CONFIG to FAIL and that is progress, not regression: CONFIG
 **Default if unanswered: nothing publishes from an unverified path in later phases;
 `TypographicPlate` is used instead.** One batched answer per project, not per file,
 is all that is needed. See the existing `image-source-categories` request.
+
+## PC-11. The form handler needs infrastructure I cannot provision
+**Phase 5 · Hard stop 7 · Blocked: defect 6 c, d, e**
+
+Design is written at `.github/agent-state/state/form-architecture.md`. Standing up a
+Pipedream workflow, provisioning storage, and issuing Turnstile keys are all
+irreversible actions outside the repo.
+
+Fixed without it: `_captcha=false` removed from all five forms that carried it.
+
+Still broken: `partners.html` posts to `mailto:`, which fails silently in most
+browsers. The visitor sees a submit, nothing sends, and nobody learns the lead was lost.
+
+**Default if unanswered: I repoint `partners.html` at the same formsubmit endpoint the
+other two forms already use.** It is not the target architecture, but a working form
+beats a silently broken one, and it costs nothing to move again later.
+
+## PC-12. Staff email is exposed on 1,530 pages, not just the forms
+**Phase 5/6 · Not a hard stop, a scope correction**
+
+The brief scopes this to form pages. Measured: `connor@acglass.com` sits unprotected
+in the page source of **1,530 pages**. Only 4 wrap it in Cloudflare `<!--email_off-->`
+Scrape Shield markers. It is mostly a footer contact link, not a form action.
+
+**Default if unanswered: sweep the footer occurrences into `<!--email_off-->` in phase
+6, which is where a 1,530-page mechanical edit belongs.** A routed alias
+(`bids@acglass.com`) would be better but that is a mail-routing change, hard stop 7.

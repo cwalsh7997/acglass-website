@@ -1013,7 +1013,7 @@
       var city = formData.get('in-city') || formData.get('city') || '';
       var submitterEmail = formData.get('in-email') || formData.get('email') || '';
       formData.append('_subject', '[ACG LEAD - Nashville] ' + (company || nm || 'Nashville inquiry'));
-      formData.append('_captcha', 'false');
+      
       formData.append('_template', 'basic');
       formData.append('_source_page', '/commercial-glazing-nashville-tn');
       if (submitterEmail) { formData.append('_replyto', submitterEmail); }

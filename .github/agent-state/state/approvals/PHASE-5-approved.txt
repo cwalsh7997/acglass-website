@@ -1,0 +1,20 @@
+PHASE 5 — SELF-APPROVED 2026-09-08 (what is executable without provisioning)
+Branch: refresh/p5-procurement-trust
+
+SHIPPED
+  _captcha=false removed from all five forms carrying it: bid.html, send-plans.html,
+  contact.html, scope-engine.html, commercial-glazing-nashville-tn.html.
+  It disabled formsubmit's only built-in abuse control on forms whose sole remaining
+  protection was a _gotcha honeypot.
+
+  form-architecture.md: the full target design, ready to execute.
+
+MEASURED, and both correct the brief
+  10 forms exist, not 9.
+  Staff email is exposed on 1,530 pages, not just the form pages. Only 4 use
+  Cloudflare Scrape Shield.
+
+PARKED, hard stop 7
+  The handler itself. Pipedream workflow, storage provisioning and Turnstile keys are
+  irreversible actions outside the repo. PC-11 carries a default that repoints
+  partners.html off its silently-failing mailto: in the meantime.

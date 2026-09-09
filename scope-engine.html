@@ -2099,7 +2099,7 @@ function buildLeadPayload() {
   // formsubmit metadata
   data.append('_subject', `${ACG_CONFIG.subject_prefix} New scope-engine lead - ${state.projectType} · ${ACG_CONFIG.location[state.location].label.split('(')[0].trim()}`);
   data.append('_template', 'basic');
-  data.append('_captcha', 'false');
+  
 
   // Contact (required)
   const name = document.getElementById('lf-name').value.trim();
