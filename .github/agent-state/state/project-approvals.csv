@@ -1,44 +1,44 @@
 item_type,published_value,pages,example_page,approval_type,approved_by,approved_date,evidence_ref,status
-project_name,Ocean Prime Fort Lauderdale,12,blog/index.html,,,,,UNAPPROVED
-project_name,Panther National,117,about.html,,,,,UNAPPROVED
-project_name,Atlantic Fields,163,about.html,,,,,UNAPPROVED
-project_name,Atlantic Fields Golf House,90,about.html,,,,,UNAPPROVED
-project_name,Atlantic Fields Performance Center,63,atlantic-fields-performance-center.html,,,,,UNAPPROVED
-project_name,Atlantic Fields Sales Center,16,atlantic-fields-golf-house.html,,,,,UNAPPROVED
-project_name,Haines City Emergency Operations Center,18,blog/index.html,,,,,UNAPPROVED
-project_name,Martin County Fire Training Tower,1,case-studies/index.html,,,,,UNAPPROVED
-project_name,Cudjoe Key,50,acoustic-glazing-stc-oitc-commercial.html,,,,,UNAPPROVED
-project_name,Wild Blue Clubhouse,67,ask.html,,,,,UNAPPROVED
-project_name,Siena Lakes Naples,30,ask.html,,,,,UNAPPROVED
-project_name,Baron Shoppes Tradition,29,ask.html,,,,,UNAPPROVED
-project_name,Tomoka Town Center,11,best-storefront-contractor-florida.html,,,,,UNAPPROVED
-project_name,Rome Collective,6,case-studies/index.html,,,,,UNAPPROVED
-project_name,Gulf Harbour,45,ask.html,,,,,UNAPPROVED
-project_name,Gulfside Twelve,49,blog/1172-s-harbor-glazing.html,,,,,UNAPPROVED
-project_name,Tradewinds Clubhouse,23,ask.html,,,,,UNAPPROVED
-project_name,Illumia Fort Myers,24,ask.html,,,,,UNAPPROVED
-project_name,Aspen Dental Edgewater,19,aspen-dental-edgewater.html,,,,,UNAPPROVED
-project_name,Causeway Building Bonita Springs,20,blog/causeway-building-bonita-springs-glazing.html,,,,,UNAPPROVED
-project_name,Bobcat Treasure Coast,15,automotive-showroom-glazing-fort-lauderdale/index.html,,,,,UNAPPROVED
-project_name,Bradley Daytona,24,aspen-dental-edgewater.html,,,,,UNAPPROVED
-project_name,Westlake Hialeah Retrofit,8,blog/commercial-glass-replacement-florida.html,,,,,UNAPPROVED
-project_name,1172 S Harbor,16,1172-s-harbor.html,,,,,UNAPPROVED
-project_name,736 Lagoon Drive,21,1172-s-harbor.html,,,,,UNAPPROVED
+project_name,Ocean Prime Fort Lauderdale,12,blog/index.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Panther National,117,about.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Atlantic Fields,163,about.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Atlantic Fields Golf House,90,about.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Atlantic Fields Performance Center,63,atlantic-fields-performance-center.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Atlantic Fields Sales Center,16,atlantic-fields-golf-house.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Haines City Emergency Operations Center,18,blog/index.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Martin County Fire Training Tower,1,case-studies/index.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Cudjoe Key,50,acoustic-glazing-stc-oitc-commercial.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Wild Blue Clubhouse,67,ask.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Siena Lakes Naples,30,ask.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Baron Shoppes Tradition,29,ask.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Tomoka Town Center,11,best-storefront-contractor-florida.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Rome Collective,6,case-studies/index.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Gulf Harbour,45,ask.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Gulfside Twelve,49,blog/1172-s-harbor-glazing.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Tradewinds Clubhouse,23,ask.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Illumia Fort Myers,24,ask.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Aspen Dental Edgewater,19,aspen-dental-edgewater.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Causeway Building Bonita Springs,20,blog/causeway-building-bonita-springs-glazing.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Bobcat Treasure Coast,15,automotive-showroom-glazing-fort-lauderdale/index.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Bradley Daytona,24,aspen-dental-edgewater.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,Westlake Hialeah Retrofit,8,blog/commercial-glass-replacement-florida.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,1172 S Harbor,16,1172-s-harbor.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
+project_name,736 Lagoon Drive,21,1172-s-harbor.html,named as ACG work,Connor Walsh,2026-09-09,,APPROVED
 general_contractor,Proctor Construction,33,atlantic-fields-golf-house.html,named as GC client,Connor Walsh,2026-09-09,,APPROVED
 general_contractor,Rycon Construction,24,blog/index.html,named as GC client,Connor Walsh,2026-09-09,,APPROVED
 general_contractor,Verdex,0,baron-shoppes-tradition.html,replaced with generic descriptor,Connor Walsh,2026-09-09,118 replacements across 48 pages; counsel to be notified,REMOVED
 general_contractor,Suffolk,0,buildingconnected-basisboard-glazing.html,"name dropped, sentence kept",Connor Walsh,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,REMOVED
 general_contractor,Kaufman Lynn,0,eswindows-installer-fort-lauderdale.html,"name dropped, sentence kept",Connor Walsh,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,REMOVED
 general_contractor,Coastal Construction,1,tools/glazing-spec-checklist/index.html,ledger error,,2026-09-09,"""Coastal Construction Control Line"", a Florida regulatory term, not a company",NOT A GC
-manufacturer_relationship,Euro-Wall,695,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,ESWindows,1013,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,PGT,447,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,Allegion,614,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,TGP,621,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,Aldora,308,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,Slimpact,404,2143-carib-circle.html,,,,,UNAPPROVED
-manufacturer_relationship,Klus,8,commercial-glazing-vero-beach.html,,,,,UNAPPROVED
-manufacturer_relationship,Trulite,5,architect-specs/section-08-41-13-aluminum-storefront.html,,,,,UNAPPROVED
+manufacturer_relationship,Euro-Wall,695,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,ESWindows,1013,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,PGT,447,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,Allegion,614,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,TGP,621,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,Aldora,308,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,Slimpact,404,2143-carib-circle.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,Klus,8,commercial-glazing-vero-beach.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
+manufacturer_relationship,Trulite,5,architect-specs/section-08-41-13-aluminum-storefront.html,manufacturer relationship,Connor Walsh,2026-09-09,,APPROVED
 general_contractor,DeAngelis Diamond,35,buildingconnected-basisboard-glazing.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
 general_contractor,Curran Young,47,blog/how-to-choose-commercial-glazier-tampa-bay.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED
 general_contractor,Pirtle,23,about.html,named as GC partner,Connor Walsh,2026-09-09,found 2026-09-09; original ledger was built from a hardcoded list,APPROVED

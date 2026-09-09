@@ -19,7 +19,13 @@ if not rows:
     print("CONFIG  third-party-approval: ledger is empty, cannot validate")
     sys.exit(3)
 
-un = [r for r in rows if r.get("status", "").strip().upper() != "APPROVED"]
+# Resolved states, not pending ones:
+#   APPROVED  Connor approved the name and it stays published
+#   REMOVED   the name was taken off the site, so there is nothing to approve
+#   NOT A GC  a ledger error. "Coastal Construction" is the Coastal Construction
+#             Control Line, a Florida regulatory boundary, not a company.
+RESOLVED = {"APPROVED", "REMOVED", "NOT A GC"}
+un = [r for r in rows if r.get("status", "").strip().upper() not in RESOLVED]
 if not un:
     print(f"PASS    third-party-approval ({len(rows)} items, all approved)")
     sys.exit(0)

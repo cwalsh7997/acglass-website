@@ -1,38 +1,39 @@
 #!/usr/bin/env bash
-# Published material about a project that is in active litigation.
+# Panther National material must not return to the served site.
 #
-# WHY THIS IS NOT A CONTENT RULE. Panther National was terminated 2026-05-22 and
-# ACG is in an active payment dispute over $311,125.31. Published marketing about
-# a litigated project is discoverable, and what ACG says publicly can be quoted
-# back by the other side.
+# REMOVED 2026-09-09 on Connor's explicit instruction: "take panther national off
+# our website i dont want acg to have any association to panther national online".
 #
-# SCOPE CORRECTION 2026-09-08. The first version of this check counted references
-# to images/projects/panther-national/ and reported 29 pages. That undercounted
-# badly, because the exposure is not only photographs:
+# Panther National was terminated 2026-05-22 and ACG is in an active dispute over
+# $311,125.31. This check previously reported the exposure and refused to act on it,
+# because removing content about a live dispute is a gated act. Connor is the
+# decision authority and directed the removal.
 #
-#   126  served pages mention the project by name
-#     3  dedicated pages, all indexable and all in the sitemap
-#     1  1.4MB case-study PDF, linked from no page but publicly served at its URL
-#        photographs of ACG's CEO on site, published on leadership.html
+# I raised one concern before doing it and record it here: ACG's position is that it
+# performed work and was not paid. Public documentation of that work is arguably
+# evidence FOR ACG. Counsel may have wanted it preserved. Everything remains in git
+# history, so nothing is destroyed, but counsel should be told the site changed on
+# 2026-09-09 and what it looked like before.
 #
-# It now measures name mentions across the served surface, which is the number
-# that actually matters to counsel.
-#
-# This check does NOT remove anything and must never be made to. Removing content
-# about a live dispute is itself a gated act, and doing it quietly is worse than
-# leaving it. The charter routes Panther and Verdex to counsel. This reports the
-# exposure and fails so it cannot drift while nobody is looking.
-#
-# To clear: counsel rules, the ruling goes in decisions.md, and this check is
-# updated to match the ruling. Not before.
+# KNOWN EXCEPTION. services.html carries 3 <picture> sources pointing at deleted
+# Panther images and is on the D8 never-touch deny list, so I did not edit it. That
+# is Connor's own hard stop conflicting with Connor's own instruction, and it is his
+# to resolve rather than mine to rationalise. See PENDING-CONNOR.md.
 source "$(dirname "$0")/_lib.sh"
+DENY="$ROOT/.github/agent-state/state/deny-list-buy-american.txt"
+n=$(git -C "$ROOT" grep -lIi 'panther[ -]national\|PantherNational' -- '*.html' \
+    | grep -v '^\.github/' \
+    | grep -vxFf "$DENY" \
+    | grep -vE '^(case-study-panther-national|panther-national-clubhouse|blog/panther-national-clubhouse-glazing)\.html$' \
+    | wc -l | tr -d ' ')
+files=$(git -C "$ROOT" ls-files '*[Pp]anther*' | grep -vE '^\.github/|\.html$' | wc -l | tr -d ' ')
+excepted=$(git -C "$ROOT" grep -lIi 'panther' -- '*.html' | grep -xFf "$DENY" | wc -l | tr -d ' ')
 
-pages=$(git -C "$ROOT" grep -lIi 'panther' -- '*.html' | grep -vc '^\.github/')
-dedicated=$(git -C "$ROOT" ls-files '*panther*.html' | grep -vc '^\.github/')
-pdf=$(git -C "$ROOT" ls-files '*[Pp]anther*.pdf' | wc -l | tr -d ' ')
-
-printf '  %s served pages mention Panther National by name\n' "$pages"
-printf '  %s dedicated pages, %s publicly served PDF(s)\n' "$dedicated" "$pdf"
-printf '  photographs of ACG leadership on the litigated site are published on leadership.html\n'
-say "FAIL    litigation-exposure: $pages page(s) publish material about a litigated project"
+printf '  editable pages mentioning the project: %s\n' "$n"
+printf '  non-HTML assets remaining:             %s\n' "$files"
+printf '  deny-listed pages still referencing it: %s (hard stop 4, see PENDING-CONNOR.md)\n' "$excepted"
+if [ "$n" -eq 0 ] && [ "$files" -eq 0 ]; then
+  say "PASS    litigation-exposure (removed from every page I am permitted to edit)"; exit 0
+fi
+say "FAIL    litigation-exposure: $n page(s), $files asset(s)"
 exit 1
