@@ -35,13 +35,19 @@ LANDMARK_ONLY_PAGES = (
 #   visible  added beside Privacy and Terms in the sitewide footer.
 # The contract is unchanged: these pages are landmark-only and may not drift
 # without someone noticing. This drift was intended.
+# Rebaselined 2026-09-09 (third pass). Only "hrefs" moved, on these two pages
+# only, and only because the footer LinkedIn link was normalised from
+# /company/american-commercial-glass-inc (a 301) to /company/acglass (the 200).
+# The site carried three LinkedIn company URLs, one of them a 404, which split
+# the entity. head, jsonld, scripts and visible are byte-identical, which is the
+# evidence that nothing but the href changed.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
         "head": "a1db4336325ede878aaa361501932eb200164380bf725ac0a8686eb2000ba0f6",
         "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
         "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
-        "hrefs": "98d0bbf6e368b3f8e301e67fc1da4ddcb672087727ddefad58498a82e3dcecab",
+        "hrefs": "8dee2470ec95eb9bd20d7824e2c5abea49367798521213f21162ca0070e236ca",
         "visible": "de3db46f74b8eed69dcc7c044037151c7dd912e6d2f2186a576797685db9e1e4",
     },
     "multi-slide-bifold-doors.html": {
@@ -60,7 +66,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
-        "hrefs": "ef2fb6c07b6f693de3e51369c131d60ead08f494c4956c69e03e12dbed760050",
+        "hrefs": "c718a8bb0e800e8cea7aadb4133ee207d70f5fd7ccc61693892104905c316117",
         "visible": "fd481c1aea2dbf2ff28e83aa786a27a4f2fe915813203942c3a4605544c6fba5",
     },
     "privacy-policy.html": {
