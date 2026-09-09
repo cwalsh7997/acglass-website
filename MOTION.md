@@ -77,3 +77,18 @@ The new work uses `data-acg-reveal` specifically so it can never collide with th
 legacy attribute. It collided during development, and because `main.js` is not
 loaded on `case-studies/index.html` the cards were hidden with nothing to reveal
 them.
+
+## Undocumented behaviour found in the wild, 2026-09-09
+
+A custom cursor follower, `.cursor-dot` and `.cursor-ring`, is defined in
+`css/style.css`, `css/acg-flagship.css` and `css/acg2026.css` and driven by
+`js/main.js`. It runs on the 792 pages that load main.js and is not one of the
+four behaviours above.
+
+Not removed. A cursor follower is a taste call across 792 pages, not a cleanup.
+Recorded here because MOTION.md said four behaviours were the ceiling and there
+were five.
+
+Worth knowing if it stays: a custom cursor overrides the pointer the operating
+system gives the user, it does nothing for touch or keyboard, and it has no
+`prefers-reduced-motion` guard. The same gap the `[data-reveal]` system had.
