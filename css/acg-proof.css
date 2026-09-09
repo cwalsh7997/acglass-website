@@ -2,15 +2,13 @@
    Fusion of A/B/C per 4-agent panel: manifesto resolves onto
    the 360° film; proof seated in the hero; spec-callout plates;
    one serif pull-quote; Prequal Room. Verified data only.     */
-@font-face{font-family:'Playfair Display';src:url('/fonts/playfair-display-variable-latin.woff2') format('woff2');font-weight:400 900;font-display:swap}
-@font-face{font-family:'Playfair Display';src:url('/fonts/playfair-display-italic-variable-latin.woff2') format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
 @font-face{font-family:'Inter';src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
 @font-face{font-family:'JetBrains Mono';src:url('/fonts/jetbrains-mono-variable-latin.woff2') format('woff2');font-weight:100 800;font-display:swap}
 :root{
   --obsidian:#05070C; --navy:#0E284F; --paper:#F0F3F8; --dim:#7C8AA1; --steel:#8FA3BF;
   --glint:#BFD4EF; --red:#E11320;
   --disp:'Inter',system-ui,sans-serif;
-  --serif:'Playfair Display',Georgia,serif;
+  --serif:'Inter',system-ui,-apple-system,sans-serif; /* Playfair removed: two-family spec */
   --sans:'Inter',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
   --pad:clamp(1.2rem,4vw,3.2rem);
