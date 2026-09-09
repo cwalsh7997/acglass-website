@@ -681,3 +681,66 @@ Worth knowing: the same sweep flagged `blog/commercial-glazing-orlando-fl.html` 
 That is knowledge of a jurisdiction, not a claim to put crews in it, so the check
 now excludes familiarity constructions. Knowing a building department is competence,
 not an overreach.
+
+## PC-26: two conflicts between your own rules, both blocking merge (2026-09-09)
+
+CI is green except one check, and both items below are cases where two of your rules
+point opposite ways. Neither is mine to settle.
+
+### 1. Homepage bonding claim vs the map-pack freeze
+
+**D6 obligation 4 (locked):** the bonding claim comes off the homepage. Questionnaire
+item 20 is open and no surety letter is confirmed.
+
+**Semantic freeze on `/` (.github/seo/url-primaries.json):** `meta-description` must
+be byte-identical to main until a GSC baseline exists, because the root holds #1 in
+the West Palm Beach map pack.
+
+    was:  "... FL CGC #1531993, bonded $3M/$6M. Get a scope in 48 hrs."
+    now:  "... FL CGC #1531993. Get a scope in 48 hrs."
+
+Removing it was correct and required. It also alters a protected field on the page
+carrying your map-pack ranking, with no baseline in place to notice if something
+breaks.
+
+**Three ways out, in the order I would pick them:**
+
+1. **Record the GSC baseline.** The freeze lifts by its own terms when one exists,
+   and the launch needs it anyway. See `tripwire-log.md` for exactly what to capture.
+   This resolves the conflict rather than choosing a side.
+2. Authorise the description change and I update the registry.
+3. Restore "bonded $3M/$6M" and reopen D6-4. Not recommended: that republishes an
+   unapproved claim.
+
+### 2. Panther National on a byte-frozen page
+
+`impact-windows-palm-beach.html` still says:
+
+> "High-end impact glazing on the clubhouse at Panther National, delivered for
+> Verdex Construction."
+
+It names both the project and the counterparty, and it links to the redirect stub.
+It is byte-frozen: it is one of four contested candidates for the organic #1 and
+nobody knows which one ranks, so CI forbids any change to it including body copy.
+
+**Same shape as PC-24, which you resolved by authorising the single edit.** Say the
+word and I remove that one card, verify nothing else on the page moved, and record
+the authorisation against a content hash the way the deny list now works.
+
+Default if nothing is decided: it stays, and both checks correctly report it as
+excluded rather than clean.
+
+## PC-27: the site publishes three different project counts
+
+    "200+ commercial projects"   11 pages
+    "350+ projects"               1 page
+    "500+ projects"               1 page
+
+D6 approves **"350+"** and says publish it consistently, one number sitewide, in
+copy and structured data. Twelve pages disagree with the approved figure, and one
+of them claims a number 43% higher than what you confirmed.
+
+`check-volume-claims.sh` prints the variants but does not fail on them, which is why
+this survived a green check for the whole refresh.
+
+Confirm 350+ is still the number and I align all twelve.

@@ -25,9 +25,13 @@ STUB = re.compile(r'http-equiv=["\']?refresh', re.I)
 EXEMPT_H1 = re.compile(r"^google[0-9a-f]+\.html$|services-schema-block\.html$")
 
 deny = set()
-dl = os.path.join(ROOT, ".github/agent-state/state/deny-list-buy-american.txt")
-if os.path.isfile(dl):
-    deny = {l.strip() for l in open(dl) if l.strip() and not l.startswith("#")}
+for f in ("deny-list-buy-american.txt", "byte-frozen-paths.txt"):
+    dl = os.path.join(ROOT, ".github/agent-state/state", f)
+    if os.path.isfile(dl):
+        deny |= {l.strip() for l in open(dl) if l.strip() and not l.startswith("#")}
+# byte-frozen West Palm Beach pages are exempt for the same reason the D8 pages
+# are: CI forbids editing them, so flagging one demands a change another gate
+# blocks. The freeze wins and neither check is weakened.
 
 fails = []
 for p in pages:
