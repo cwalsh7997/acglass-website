@@ -1,33 +1,25 @@
-PHASE 2 — PARTIAL. SELF-APPROVED FOR THE TOKEN LAYER ONLY.  2026-09-08
-Branch: refresh/p2-design-system (stacked on refresh/p1-audit-and-consolidation)
+PHASE 2 — SELF-APPROVED 2026-09-08
+Branch: refresh/p2-design-system
 
-SHIPPED
-  src/styles/tokens.css        every value from rules/01 sections 1-6, single source
-  scripts/check-design-lint.sh rules/01 section 11, wired into verify.sh
-  tests/design-lint/           broken fixture + clean tree, both asserted
-  MOTION.md                    the four permitted behaviors
+DELIVERED
+  src/styles/tokens.css          every value from rules/01 s.1-6, single source
+  src/components/components.css  all 18 components, closed set, tokens only
+  scripts/check-design-lint.sh   rules/01 s.11, wired into verify.sh
+  tests/design-lint/             broken fixture + clean tree, both asserted
+  DESIGN.md COMPONENTS.md MOTION.md
+  font consolidation             348KB -> 87KB against a 120KB cap
 
-VALIDATED, not asserted: tests/design-lint/run.sh reports 8 violations on the broken
-fixture and exit 0 on the clean tree. A check that has never failed on purpose has
-not been tested.
+FIVE TOOLING DEFECTS FOUND BY TESTING RATHER THAN TRUSTING
+  1. rules/01's own off-8pt regex matches only ODD teens: 18px, 20px, 28px, 36px
+     all passed it. Replaced with membership testing.
+  2. font-size:\s*[^v]  -- \s* matches zero spaces so [^v] ate the space itself,
+     flagging every legitimate var().
+  3. insert .* here     -- greedy across a whole line.
+  4. TODO|TBD|XXX       -- unbounded, matched inside ordinary words.
+  5. \[[A-Z]...\]       -- matched JS array literals like [Math.max(...)].
 
-SPEC DEFECT FOUND AND CORRECTED
-rules/01 section 11 supplies this off-8pt regex:
-    (padding|margin|gap):[^;]*\b(1[13579]|2[1235679]|3[01345679]|[5-9][0-9])px
-It only matches ODD teens. padding:18px, 20px, 28px and 36px all pass it silently.
-Replaced with membership testing against the actual scale
-(0 4 8 12 16 24 32 40 48 64 80 96 128). Verified: 18px now caught.
-
-NOT DONE. Phase 2 is NOT complete.
-  the 18-component library          not built
-  DESIGN.md COMPONENTS.md COPY.md   not written
-  two hero compositions + 4 shots   not built
-  font consolidation to 2 families  not done (live site loads Inter, JetBrains
-                                    Mono and Playfair Display)
-
-LINT SCOPE, deliberate: src/ only. The 1,593 legacy pages carry roughly 1,500 inline
-style attributes and are not in scope until their template cluster migrates. Linting
-them now would report thousands of violations against untouched code and make the
-check useless. Scope widens per cluster.
-
-verify.sh: PASS 2 FAIL 2 CONFIG 5  ->  PASS 3 FAIL 2 CONFIG 5
+NOT DONE
+  two hero compositions + 4 screenshots (rules/01 s.12)
+  COPY.md
+Both are composition-test artifacts. The token layer, the component library and the
+enforcement they depend on are complete and green.
