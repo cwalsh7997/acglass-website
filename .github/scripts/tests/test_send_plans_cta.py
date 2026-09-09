@@ -16,22 +16,30 @@ def read(rel: str) -> str:
 
 
 class SendPlansCtaTests(unittest.TestCase):
+    # Label updated 2026-09-09: "Send plans" became "Send Us Plans" sitewide.
+    # 1,435 pages already said "Send Us Plans" against 79 saying "Get a 48-Hour
+    # Bid" and 3 saying "Send plans", so a GC moving between two ACG pages met
+    # three different buttons. These tests guard the DESTINATION, which is the
+    # thing that breaks conversion, so they now assert the intake link and the
+    # unified label rather than the old wording.
+    CTA = 'class="btn-plans" href="/send-plans.html">Send Us Plans</a>'
+
     def test_homepage_send_plans_ctas_go_to_intake(self):
         html = read("index.html")
-        self.assertIn('class="btn-plans" href="/send-plans.html">Send plans</a>', html)
+        self.assertIn(self.CTA, html)
         self.assertEqual(
-            html.count('href="/send-plans.html">Send plans</a>'),
+            html.count('href="/send-plans.html">Send Us Plans</a>'),
             4,
-            "header, hero, #contact, and footer should all point Send plans at intake",
+            "header, hero, #contact, and footer should all point the CTA at intake",
         )
-        self.assertNotIn('href="/scope-engine.html">Send plans</a>', html)
+        self.assertNotIn('href="/scope-engine.html">Send Us Plans</a>', html)
 
     def test_shared_chrome_send_plans_goes_to_intake(self):
         for rel in ("portfolio.html", "past-performance.html", "index-proof.html"):
             with self.subTest(rel=rel):
                 html = read(rel)
-                self.assertIn('class="btn-plans" href="/send-plans.html">Send plans</a>', html)
-                self.assertNotIn('href="/scope-engine.html">Send plans</a>', html)
+                self.assertIn(self.CTA, html)
+                self.assertNotIn('href="/scope-engine.html">Send Us Plans</a>', html)
 
     def test_contact_is_not_labeled_as_plan_intake(self):
         html = read("contact.html")

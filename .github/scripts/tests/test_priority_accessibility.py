@@ -22,6 +22,10 @@ LANDMARK_ONLY_PAGES = (
     "privacy-policy.html",
     "terms-of-use.html",
 )
+# Rebaselined 2026-09-09 (second pass). The CTA label was unified sitewide:
+# "Send Us Plans for Bid" became "Send Us Plans" on these two pages, which moves
+# hrefs and visible. 1,435 pages already used the short label.
+#
 # Rebaselined 2026-09-09. Four digests moved for two deliberate reasons:
 #   head     impact-windows-doors.html and multi-slide-bifold-doors.html had a
 #            twitter:title copied from another page. impact-windows-doors.html
@@ -38,7 +42,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         "hrefs": "98d0bbf6e368b3f8e301e67fc1da4ddcb672087727ddefad58498a82e3dcecab",
-        "visible": "f8ed5be4194044d3d045b0bf51cb9192fc5d147f90e24e9105dcda77b0ecd0c7",
+        "visible": "de3db46f74b8eed69dcc7c044037151c7dd912e6d2f2186a576797685db9e1e4",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -57,7 +61,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
         "hrefs": "ef2fb6c07b6f693de3e51369c131d60ead08f494c4956c69e03e12dbed760050",
-        "visible": "5946f0c8fa87ba1d2c355f1f58356e44fb1d853039147deca6de83942b92fc05",
+        "visible": "fd481c1aea2dbf2ff28e83aa786a27a4f2fe915813203942c3a4605544c6fba5",
     },
     "privacy-policy.html": {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
