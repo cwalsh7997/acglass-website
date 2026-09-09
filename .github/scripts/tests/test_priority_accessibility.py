@@ -22,9 +22,18 @@ LANDMARK_ONLY_PAGES = (
     "privacy-policy.html",
     "terms-of-use.html",
 )
+# Rebaselined 2026-09-09. Four digests moved for two deliberate reasons:
+#   head     impact-windows-doors.html and multi-slide-bifold-doors.html had a
+#            twitter:title copied from another page. impact-windows-doors.html
+#            was advertising itself to social as "Reviews | ACG Commercial
+#            Glazing Contractor". Corrected to match each page's own title.
+#   hrefs    privacy-policy.html and terms-of-use.html gained the Security link
+#   visible  added beside Privacy and Terms in the sitewide footer.
+# The contract is unchanged: these pages are landmark-only and may not drift
+# without someone noticing. This drift was intended.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
-        "head": "7f9d07ce7ab230d9d2fc0471f49e88819227b255df70092bcb815e8aba702831",
+        "head": "a1db4336325ede878aaa361501932eb200164380bf725ac0a8686eb2000ba0f6",
         "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
         "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
@@ -41,7 +50,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # <head>. hrefs/visible moved again 2026-09-03 when the RFQ primary
         # went to /send-plans.html.
         # Digests recomputed with this module's own _fingerprints() helper.
-        "head": "b35b27924a0cd4e9ba6c4cbe29fad6fbad932770734290d0b8b8338a82625f07",
+        "head": "b097ce12f07b9fe2c4fdceb8724284e1c3c254ed31b778566c32938f87574ec0",
         "jsonld": "4afbd33f45d172e288866ca76b1c7378573aa821bcd033a5187ec2d0cf0352f6",
         "scripts": "99ef7cbb1dac5a40482698f99990ac2b56180e7a51b2c40102dd25060118b69e",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
@@ -54,15 +63,15 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "602b81cc175a16c0d7104e55d880b415e295f6aa24f13dbb41c6d89507861945",
-        "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
-        "visible": "0616a02edf9c35c49405839abcec88e30be41956ff910ae9b55b02242b5d7c22",
+        "hrefs": "3180511380f066b5ba1be6d415c211d418b42d5b20cfa52fd49b20304c67e8d3",
+        "visible": "be45e901881796e473cfd1a3a2fde57bbeb70f4c6bc26a964259037c9fcab4db",
     },
     "terms-of-use.html": {
         "head": "353fb9c5f91945a215c3af07a55b360f37c776714c98143e29ae9da7f00a3c02",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "31c1c638780ee6d016e87b4cc4d6d823c4a41abbfd14225a58d6f5504555f3f4",
-        "hrefs": "90d3fd7f9ba02d99f8af0273c3353778bc090581896c722a90f714ec4cc08e4b",
-        "visible": "42f09d5327726f4c31cd79455351f5c6fff42b938079617de4c7743681df005b",
+        "hrefs": "3180511380f066b5ba1be6d415c211d418b42d5b20cfa52fd49b20304c67e8d3",
+        "visible": "147920aa4c97efadd6dc76cabab05b0ea2a0fe8ad36a86f0cb6fdb1639e41df8",
     },
 }
 

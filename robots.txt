@@ -58,6 +58,7 @@ Disallow: /
 # and a stale www sitemap (342, last read 2026-04-24).
 # ------------------------------------------------------------------------
 Disallow: /drafts/
+Disallow: /_internal/
 
 Sitemap: https://acglass.com/sitemap.xml
 

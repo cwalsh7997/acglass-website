@@ -58,6 +58,11 @@ PROTECTED_LINE_MARKERS = re.compile(
     re.IGNORECASE,
 )
 
+# Digests recomputed 2026-09-09 where Panther National was removed. The markers
+# below include "Panther", so every project line naming it was a protected line.
+# glazing-subcontractor-vs-general-contractor.html went 7 -> 6 for that reason.
+# The contract this enforces is unchanged: ownership, WBE and project claims may
+# not drift silently. This drift was deliberate and is recorded in decisions.md.
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
         15,
@@ -72,8 +77,8 @@ PROTECTED_LINE_DIGESTS = {
         "2f28fb827ab96ed2988fbdc3220adaae0a33b714ec2a06acad019931ef6529bd",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
-        7,
-        "b79b2fdad620a40b648b1beb3a28cca6d313978d9c907c61bac6936d00a9d38a",
+        6,
+        "91d69787418322d3db5d4da20f4615b47ee13326bd3132c4407f3a1d4b086bdd",
     ),
 }
 

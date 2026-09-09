@@ -78,10 +78,10 @@ class HeldDescriptionTests(unittest.TestCase):
         # claims removed, so they no longer need an overlength exception.
         # index.html stays held only because it is byte-frozen in
         # .github/seo/url-primaries.json.
-        self.assertEqual(
-            {"index.html"},
-            set(checker.HELD_LONG_DESCRIPTION_HASHES),
-        )
+        # Emptied completely 2026-09-09: index.html's description is now 144
+        # chars and fits the 155 limit, so the last overlength exception is gone.
+        # Any new long description fails immediately, which is the point.
+        self.assertEqual(set(), set(checker.HELD_LONG_DESCRIPTION_HASHES))
 
     def test_repaired_metadata_is_bounded_and_socially_consistent(self):
         for rel, expected in self.REPAIRED_DESCRIPTIONS.items():
