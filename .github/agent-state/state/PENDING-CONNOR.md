@@ -226,6 +226,20 @@ unreachable.
 
 **This is the highest-priority item in this file and it is not an SEO question.**
 
+**CORRECTED 2026-09-08. I first reported this as 29 pages and that was wrong.**
+I had measured only references to the image directory. The real surface:
+
+    126  served pages mention Panther National by name
+      3  dedicated pages, all indexable and all in the sitemap
+           case-study-panther-national.html
+           panther-national-clubhouse.html
+           blog/panther-national-clubhouse-glazing.html
+      1  ACG-CaseStudy-PantherNational.pdf, 1.4MB, linked from no page but
+           publicly served at its URL, so it is retrievable and indexable
+           photographs of Rielly on the Panther National site, on leadership.html
+
+The original note follows.
+
 Partitioning the image-rights backlog surfaced it. 15 images under
 `images/projects/panther-national/` are published across 29 served pages, and
 those pages name the project in body text, 3 to 6 mentions each.
