@@ -327,3 +327,79 @@
   }
   .c-doclist__meta { text-align: left; }
 }
+
+/* Every surface sets its own colour, added 2026-09-09.
+ *
+ * A rule that paints a background and leaves colour to inheritance only works on
+ * a page whose text colour already suits that background. Dropped onto a dark
+ * host, .c-project painted a white card and let white text inherit through: 24
+ * descriptions at exactly 1.0:1, the same colour as the paper behind them.
+ *
+ * .u-section was fixed for this earlier and the same defect was sitting in five
+ * more components. Setting colour beside background is the rule, not the
+ * exception, so they are all corrected here rather than one at a time as each
+ * page finds them. */
+.u-section--alt,
+.c-project,
+.c-header,
+.c-stickybar {
+  color: var(--ink-900);
+}
+.c-navsheet {
+  color: var(--paper);
+}
+
+/* Components set colour on their own prose, added 2026-09-09.
+ *
+ * Setting colour on a component and letting descendants inherit works only until
+ * the host page styles the bare element. css/style.css carries `p { color: ... }`,
+ * and an explicit declaration on the element beats inheritance from an ancestor
+ * class no matter how specific that class is. The result was 24 card
+ * descriptions painted white on a white card: 1.0:1, invisible, while the card
+ * itself reported the correct colour.
+ *
+ * So each surface names the prose it owns. This is the general form of the
+ * .u-section and .c-project background fixes above: a component cannot assume
+ * anything about the page it lands on, including that bare elements are unstyled. */
+.u-section > .u-container p,
+.u-section > .u-container li,
+.c-project__body p,
+.c-plate p,
+.c-capability p {
+  color: var(--body-color, var(--ink-700));
+}
+.u-section--navy > .u-container p,
+.u-section--navy > .u-container li,
+.c-ctaband > .u-container p {
+  color: var(--on-navy-secondary);
+}
+.c-project__body p.c-project__spec,
+.c-doclist__meta {
+  color: var(--ink-500);
+}
+
+/* Category rhythm inside a single section, added 2026-09-09.
+ *
+ * The case-study hub has 24 cards across 15 verticals. Giving each vertical its
+ * own .u-section produced 17 sections and a 8,924px page, roughly 10 screens,
+ * because every section carries 64px of padding top and bottom whether it holds
+ * one card or four. Categories are subheads inside one section instead. */
+.cs-group { margin-top: var(--s-12); }
+.cs-group:first-of-type { margin-top: 0; }
+.cs-grid { margin-top: var(--s-6); }
+
+/* A hero with no media does not reserve a column for it, added 2026-09-09.
+ *
+ * .c-hero is 7fr/5fr above 1024px with 128px of block padding, sized for a
+ * headline beside an image. Used without a .c-hero__media the right column sits
+ * empty and the navy band runs about 250px past the last line of text. Dead
+ * space reads as an unfinished page, not a generous one.
+ *
+ * :has() lets the component notice, so no page has to add a modifier class and
+ * no existing hero with media changes. */
+@media (min-width: 1024px) {
+  .c-hero:not(:has(.c-hero__media)) {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: var(--s-20);
+  }
+}
