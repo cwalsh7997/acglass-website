@@ -6,4 +6,5 @@ CFG="$ROOT/.github/agent-state/config"
 gg() { git -C "$ROOT" grep -nI "$@" -- '*.html' ':!.github/*' 2>/dev/null; }
 ggi() { gg -i "$@"; }
 say()  { printf '%s\n' "$*"; }
+hit()  { printf '  %s:%s: %s\n' "$1" "$2" "$3"; }
 cfg_incomplete() { grep -q 'STATUS: INCOMPLETE\|STATUS: UNCONFIRMED' "$1" 2>/dev/null; }
