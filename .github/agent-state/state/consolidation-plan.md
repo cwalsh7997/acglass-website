@@ -121,3 +121,31 @@ Two of the nine targets were not draft siblings and are already correct:
 `/miami-dade-noa-explained/` is published, and `/florida-hvhz-glazing-contractor.html`
 never existed at all, now pointing at `blog/hvhz-certified-glazing-contractor-florida.html`.
 Leave both alone.
+
+## gc.html consolidated into /for-general-contractors/ (2026-09-08)
+
+Three pages served the same audience. General contractors are ACG's primary
+customer, so having three of these competing is worse here than it would be
+anywhere else on the site.
+
+| page | bytes | canonical | sitemap | inbound |
+|---|---:|---|---|---:|
+| `for-general-contractors/index.html` | 15,099 | self | yes | 2 |
+| `for-general-contractors.html` | 20,700 | -> the directory | no | 0 |
+| `gc.html` | 34,363 | **self** | **yes** | **0** |
+
+The first two were already consolidated correctly. `gc.html` was a third
+self-canonical page in the sitemap with no inbound links, competing with the
+canonical page on the same description.
+
+It now canonicals to `/for-general-contractors/` and is out of the sitemap. It is
+NOT deleted and NOT unlinked: it keeps serving, and any accumulated ranking
+signal consolidates into the canonical page instead of splitting against it.
+
+Chose the directory URL as canonical rather than the larger gc.html because it is
+the one already linked, already canonical for the other variant, and has the
+descriptive slug. Size lost to those three.
+
+**Still open:** `/for-general-contractors/` has only 2 inbound links for ACG's
+primary customer segment. Worth a nav or footer placement, which is a design
+decision rather than a cleanup.
