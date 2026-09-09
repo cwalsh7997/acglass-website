@@ -1,0 +1,16 @@
+fact,detail,expires_on,reverify_on,owner,source,pages,status,last_checked
+SAM.gov registration,"UEI QTQYMLLL9PS4, CAGE 234B0, current through 2027-07-17",2027-07-17,2027-04-17,Connor,D1 (locked),1514,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 18-0404.02,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 18-0404.03,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 20-0401.11,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 20-1211.01,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 21-0914.03,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,2,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 21-1108.05,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,2,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 23-0724.09,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,3,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 23-0724.12,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 23-0724.13,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 24-0321.07,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,2,ACTIVE,2026-09-08
+Miami-Dade NOA,NOA 24-0615.02,UNKNOWN,UNKNOWN,Connor,published on site; Miami-Dade NOAs expire and ES has expired NOAs live,1,ACTIVE,2026-09-08
+"""as of 2026"" dated claims",copy that dates itself to 2026 and goes stale on 2027-01-01,2026-12-31,2026-11-30,Connor,site copy,11,ACTIVE,2026-09-08
+Contractor license CGC 1531993,"qualifier of record DISPUTED, see PC-21",UNKNOWN,UNKNOWN,Connor,D9 vs published copy,1550,ACTIVE,2026-09-08
+Certificate of insurance,"GL, workers comp, auto, umbrella. Referenced sitewide, no expiry published",UNKNOWN,UNKNOWN,Connor,site copy,7,ACTIVE,2026-09-08

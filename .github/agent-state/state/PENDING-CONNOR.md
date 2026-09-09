@@ -456,3 +456,33 @@ further while unanswered.
 **One instance is worth pulling ahead of the rest.** Whatever you decide about
 the other 124 pages, the architect spec section should not carry an unverified
 certification claim. Say the word and I will remove just that one.
+
+## PC-23: 11 Miami-Dade NOA numbers are published with no expiry on file (2026-09-08)
+
+Miami-Dade Notices of Acceptance expire. The site publishes 11 of them across 16
+pages and the repo holds no expiry date for any:
+
+    NOA 18-0404.02   NOA 18-0404.03   NOA 20-0401.11   NOA 20-1211.01
+    NOA 21-0914.03   NOA 21-1108.05   NOA 23-0724.09   NOA 23-0724.12
+    NOA 23-0724.13   NOA 24-0321.07   NOA 24-0615.02
+
+**The two 18- numbers are from 2018 and are very likely expired already.** NOAs
+typically run three to five years.
+
+This is not a marketing problem. A published NOA number is what a plans examiner
+or a GC's submittal reviewer checks against the Miami-Dade product approval
+database. An expired number found there costs schedule on the project it was
+quoted for, and it costs credibility on every other page carrying one.
+
+There is a known trap here worth restating: expired NOAs stay visible on
+manufacturer sites after they lapse, so finding the PDF is not the same as
+confirming it is current. The Miami-Dade BCCO database is the authority.
+
+**Default if nothing is decided: nothing changes.** I am not deleting product
+approval numbers on a guess about expiry, and I cannot query the county database
+from here. `reverify.csv` now carries a row per NOA with expiry UNKNOWN, and
+`check-reverify-log.sh` fails while any time-bound fact is undated.
+
+Fastest path: look up the two 2018 numbers first. If they are expired, the rest
+of the list is worth a pass; if they are somehow still current, this drops down
+the queue.
