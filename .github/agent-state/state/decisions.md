@@ -109,3 +109,48 @@ They are Atlantic Fields and Eau Palm Beach Resort, both `Place` nodes, both pro
 sites. It matched them because their `@id` is under acglass.com, which is true of
 every page-scoped fragment id on our own domain and says nothing about who the
 entity is. The check now requires an Organization-like `@type` AND an ACG name.
+
+## Third-party GC approvals, 2026-09-09
+
+Connor's decisions on the six GC names in the approval ledger.
+
+    APPROVED      Proctor Construction    33 pages, stays as published
+    APPROVED      Rycon Construction      24 pages, stays as published
+    NOT APPROVED  Suffolk                 32 pages, awaiting descriptor decision
+    NOT APPROVED  Kaufman Lynn             3 pages, awaiting descriptor decision
+    NOT APPROVED  Coastal Construction     1 page,  awaiting descriptor decision
+    REMOVED       Verdex                  was 48 pages, now 0
+
+### Verdex
+
+**Connor directed the replacement, with the counsel caveat visible in the question
+he answered.** Recording that plainly because it is a content change touching an
+active dispute, and the charter routes Panther and Verdex to counsel.
+
+118 replacements across 48 pages. Two shapes, handled differently:
+
+- **In lists** the name was dropped rather than substituted. "DeAngelis Diamond,
+  Verdex, Proctor, Curran Young, Rycon, and Suffolk" became the same list without
+  it. Substituting a descriptor mid-list produces broken English.
+- **Standalone** references took D3 obligation 5's accurate generic descriptor,
+  "the general contractor". No invented size, sector or relationship.
+
+Two identifying URLs survived the name replacement on
+`panther-national-clubhouse.html`: Organization nodes renamed to "the general
+contractor" while still carrying `url: verdexconstruction.com`. That both identifies
+the party and is incoherent schema. URLs removed.
+
+**Counsel should be told this was done and when.** Nothing is destroyed: every prior
+version is in git history, and this is ACG's own marketing copy rather than a record
+of the dispute. But counsel deciding the Panther question should know the site
+changed underneath them on 2026-09-09.
+
+### The ledger was incomplete and that is my error
+
+The six names came from a hardcoded list in my own script, not from the site.
+Working through the Verdex contexts surfaced five more GCs named as partners:
+
+    DeAngelis Diamond    Curran Young    Pirtle    Hooks    Ahrens
+
+They are still UNAPPROVED and still published. D3 obligation 3 applies to them
+exactly as it did to the six.

@@ -24,12 +24,12 @@ project_name,Bradley Daytona,24,aspen-dental-edgewater.html,,,,,UNAPPROVED
 project_name,Westlake Hialeah Retrofit,8,blog/commercial-glass-replacement-florida.html,,,,,UNAPPROVED
 project_name,1172 S Harbor,16,1172-s-harbor.html,,,,,UNAPPROVED
 project_name,736 Lagoon Drive,21,1172-s-harbor.html,,,,,UNAPPROVED
-general_contractor,Proctor Construction,33,atlantic-fields-golf-house.html,,,,,UNAPPROVED
-general_contractor,Rycon Construction,24,blog/index.html,,,,,UNAPPROVED
-general_contractor,Verdex,48,baron-shoppes-tradition.html,,,,,UNAPPROVED
-general_contractor,Suffolk,32,buildingconnected-basisboard-glazing.html,,,,,UNAPPROVED
-general_contractor,Kaufman Lynn,3,eswindows-installer-fort-lauderdale.html,,,,,UNAPPROVED
-general_contractor,Coastal Construction,1,tools/glazing-spec-checklist/index.html,,,,,UNAPPROVED
+general_contractor,Proctor Construction,33,atlantic-fields-golf-house.html,named as GC client,Connor Walsh,2026-09-09,,APPROVED
+general_contractor,Rycon Construction,24,blog/index.html,named as GC client,Connor Walsh,2026-09-09,,APPROVED
+general_contractor,Verdex,0,baron-shoppes-tradition.html,replaced with generic descriptor,Connor Walsh,2026-09-09,118 replacements across 48 pages; counsel to be notified,REMOVED
+general_contractor,Suffolk,32,buildingconnected-basisboard-glazing.html,,,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,NOT APPROVED
+general_contractor,Kaufman Lynn,3,eswindows-installer-fort-lauderdale.html,,,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,NOT APPROVED
+general_contractor,Coastal Construction,1,tools/glazing-spec-checklist/index.html,,,2026-09-09,not selected by Connor 2026-09-09; awaiting descriptor decision,NOT APPROVED
 manufacturer_relationship,Euro-Wall,695,2143-carib-circle.html,,,,,UNAPPROVED
 manufacturer_relationship,ESWindows,1013,2143-carib-circle.html,,,,,UNAPPROVED
 manufacturer_relationship,PGT,447,2143-carib-circle.html,,,,,UNAPPROVED
