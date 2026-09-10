@@ -300,7 +300,13 @@ p{max-width:68ch}
   linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
   background-size:56px 56px;mask-image:radial-gradient(ellipse at 80% 0%,black 0%,transparent 62%);pointer-events:none}
 .p-hero .crumb{font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);display:flex;gap:10px;margin-bottom:20px}
-.p-hero .crumb a:hover{color:#fff}
+/* Breadcrumb links carried no affordance at all. Measured 2026-09-09: the
+   link and the aria-current span rendered byte-identical, rgba(255,255,255,.6),
+   no underline, same weight, 1.00:1 against each other, on 92 pages. Only a
+   :hover colour was defined, which does nothing for a keyboard or touch user.
+   WCAG 1.4.1. Brighter plus an underline, so it is not colour alone. */
+.p-hero .crumb a{color:rgba(255,255,255,.92);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.p-hero .crumb a:hover,.p-hero .crumb a:focus-visible{color:#fff}
 .p-hero h1{color:#fff;font-size:clamp(2.75rem,5.5vw,4.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.05;max-width:16ch}
 .p-hero h1 em{font-style:normal;color:var(--red)}
 .p-hero .p-sub{margin-top:18px;font-size:1.08rem;line-height:1.6;color:rgba(255,255,255,.8);max-width:56ch}
