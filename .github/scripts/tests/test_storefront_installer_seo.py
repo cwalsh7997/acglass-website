@@ -181,6 +181,27 @@ class CannibalizationTests(unittest.TestCase):
         self.assertNotRegex(html, r"authoriz(?:ed|ation)", re.I)
         self.assertNotRegex(html, r"factory[- ]certif", re.I)
         self.assertIn("installs and specifies", html)
+        self.assertNotIn("ACG meets all six", html)
+
+    def test_services_and_contact_link_office_keepers_and_euro_wall(self):
+        services = read("services.html")
+        contact = read("contact.html")
+        for slug in (
+            "storefront-glazier-west-palm-beach-florida",
+            "storefront-glazier-naples-florida",
+            "storefront-glazier-tampa-florida",
+        ):
+            self.assertIn(f"/{slug}/", services)
+            self.assertIn(f"/{slug}/", contact)
+        self.assertIn("/products/euro-wall/", services)
+        self.assertIn(
+            "<title>Florida Commercial Glazing Services for Contractors | ACG</title>",
+            services,
+        )
+        self.assertIn(
+            "<title>Florida Glazing Bid Desk | Send Plans, 48-Hr Reply</title>",
+            contact,
+        )
 
 
 if __name__ == "__main__":

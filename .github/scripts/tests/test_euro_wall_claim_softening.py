@@ -61,6 +61,8 @@ class EuroWallCertSofteningTests(unittest.TestCase):
         self.assertEqual(leftovers, [])
         facts = (REPO_ROOT / "facts.html").read_text(encoding="utf-8")
         self.assertIn("Installer and specifier language only.", facts)
+        self.assertIn("Installer and specifier: two. Installed: seven.", facts)
+        self.assertNotIn("Authorized: two. Installed: seven.", facts)
         products = (REPO_ROOT / "products/index.html").read_text(encoding="utf-8")
         self.assertIn("Installer / specifier.", products)
         nashville = (REPO_ROOT / "storefront-installer-nashville.html").read_text(
