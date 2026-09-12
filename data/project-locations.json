@@ -51,7 +51,7 @@
   {"name":"Lucie at Tradition","city":"Port St. Lucie","state":"FL","lat":27.273,"lng":-80.3582,"type":"project","page":"/lucie-at-tradition.html","source":"portfolio"},
   {"name":"3400 S Congress","city":"Palm Springs","state":"FL","lat":26.6359,"lng":-80.0962,"type":"project","page":"","source":"job-24-147"},
   {"name":"Rome Collective","city":"Tampa","state":"FL","lat":27.9506,"lng":-82.4572,"type":"project","page":"","source":"job-24-149"},
-  {"name":"Woodsdale Oaks","city":"Lauderdale Lakes","state":"FL","lat":26.1665,"lng":-80.2084,"type":"project","page":"","source":"job-24-151"},
+  {"name":"Woodsdale Oaks","city":"Lauderdale Lakes","state":"FL","lat":26.1665,"lng":-80.2084,"type":"project","page":"/woodsdale-oaks.html","source":"job-24-151"},
   {"name":"Westshore Place","city":"Tampa","state":"FL","lat":27.9506,"lng":-82.4572,"type":"project","page":"","source":"job-24-158"},
   {"name":"Bayshore Pines","city":"North Fort Myers","state":"FL","lat":26.6673,"lng":-81.8801,"type":"project","page":"","source":"job-25-189"},
   {"name":"Lido Regency Condominiums","city":"Sarasota","state":"FL","lat":27.3364,"lng":-82.5307,"type":"project","page":"","source":"job-25-191"},
@@ -61,7 +61,7 @@
   {"name":"Tomoka Town Center","city":"Daytona Beach","state":"FL","lat":29.2108,"lng":-81.0228,"type":"project","page":"","source":"job-25-209"},
   {"name":"Innovation Avenue Building 1","city":"North Port","state":"FL","lat":27.0442,"lng":-82.2359,"type":"project","page":"","source":"job-25-211a"},
   {"name":"Innovation Avenue Building 2","city":"North Port","state":"FL","lat":27.0442,"lng":-82.2359,"type":"project","page":"","source":"job-25-211b"},
-  {"name":"Oakbend at Wellen Park","city":"North Port","state":"FL","lat":27.0442,"lng":-82.2359,"type":"project","page":"","source":"job-25-212"},
+  {"name":"Oakbend at Wellen Park","city":"North Port","state":"FL","lat":27.0442,"lng":-82.2359,"type":"project","page":"/oakbend-wellen-park.html","source":"job-25-212"},
   {"name":"HoneyBee RV Storage","city":"Punta Gorda","state":"FL","lat":26.9298,"lng":-82.0454,"type":"project","page":"","source":"job-25-213"},
   {"name":"Vita Nova / Omega Residential","city":"West Palm Beach","state":"FL","lat":26.7153,"lng":-80.0534,"type":"project","page":"","source":"job-25-215"},
   {"name":"WDC Alachua","city":"Alachua","state":"FL","lat":29.7516,"lng":-82.4248,"type":"supply","page":"","source":"job-26-217"},
@@ -73,5 +73,7 @@
   {"name":"Alvin's Island #11","city":"Destin","state":"FL","lat":30.3935,"lng":-86.4958,"type":"project","page":"","source":"job-25-171"},
   {"name":"Storage Rentals of America Malabar","city":"Malabar","state":"FL","lat":28.0036,"lng":-80.5656,"type":"project","page":"","source":"job-24-135"},
   {"name":"Toucans","city":"Clearwater","state":"FL","lat":27.9659,"lng":-82.8001,"type":"project","page":"","source":"job-25-190"},
-  {"name":"Coconut Plantation","city":"Bonita Springs","state":"FL","lat":26.3398,"lng":-81.7787,"type":"project","page":"","source":"job-24-125"}
+  {"name":"Coconut Plantation","city":"Bonita Springs","state":"FL","lat":26.3398,"lng":-81.7787,"type":"project","page":"","source":"job-24-125"},
+  {"name":"St. Thomas Execujet","city":"Charlotte Amalie","state":"VI","lat":18.3373,"lng":-64.9736,"type":"project","page":"/st-thomas-execujet.html","source":"portfolio"},
+  {"name":"Padel Club","city":"West Palm Beach","state":"FL","lat":26.7285,"lng":-80.0520,"type":"project","page":"/padel-club.html","source":"portfolio"}
 ]
