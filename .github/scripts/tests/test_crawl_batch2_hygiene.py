@@ -80,10 +80,6 @@ ORPHAN_TARGETS = (
     "/blog-2026/commercial-glazing-rfq-checklist-for-architects/",
     "/eswindows-installer-miami.html",
     "/euro-wall-folding-door-installer-naples/",
-    "/fort-lauderdale/all-glass-entrances/",
-    "/orlando/all-glass-entrances/",
-    "/tampa/all-glass-entrances/",
-    "/sarasota/all-glass-entrances/",
     "/shop-drawings-glazing-explained/",
     "/west-palm-beach/clematis-street-west-palm-beach/",
 )
@@ -302,15 +298,45 @@ class CityCanonicalTests(unittest.TestCase):
             count += 1
         self.assertEqual(count, 93)
 
-    def test_all_glass_entrances_city_pages_were_not_noindexed(self):
+    def test_sitemap_all_glass_city_pages_are_noindex_self_canonical(self):
+        # Weekly hygiene 2026-09-08: the 28 city URLs that were still in
+        # sitemaps take the wave-2 containment (noindex,follow + self-canonical
+        # + sitemap drop). The hub stays indexable. The 49 zero-impression
+        # city pages stay hub-canonical and are not noindexed.
+        hub = f"{BASE}/all-glass-entrances/"
         pages = list(REPO_ROOT.glob("*/all-glass-entrances/index.html"))
-        self.assertGreaterEqual(len(pages), 70)
-        noindexed = [
-            p.parent.parent.name
-            for p in pages
-            if is_noindex(p.read_text(encoding="utf-8"))
-        ]
-        self.assertEqual(noindexed, [])
+        self.assertEqual(len(pages), 77)
+        noindexed = []
+        hub_canonical = []
+        for path in pages:
+            html = path.read_text(encoding="utf-8")
+            city = path.parent.parent.name
+            if is_noindex(html):
+                noindexed.append(city)
+                self.assertEqual(canonical(html), f"{BASE}/{city}/all-glass-entrances/")
+            elif canonical(html) == hub:
+                hub_canonical.append(city)
+            else:
+                self.fail(f"{city} is neither noindex-self nor hub-canonical")
+        self.assertEqual(len(noindexed), 28)
+        self.assertEqual(len(hub_canonical), 49)
+        locs = sitemap_locs()
+        for city in noindexed:
+            self.assertNotIn(f"{BASE}/{city}/all-glass-entrances/", locs)
+        hub_html = read("all-glass-entrances/index.html")
+        self.assertFalse(is_noindex(hub_html))
+        self.assertEqual(canonical(hub_html), hub)
+        self.assertIn(hub, locs)
+
+    def test_thin_city_roots_winter_park_and_wynwood_are_contained(self):
+        locs = sitemap_locs()
+        for city in ("winter-park", "wynwood"):
+            html = read(f"{city}/index.html")
+            self.assertTrue(is_noindex(html), city)
+            self.assertEqual(canonical(html), f"{BASE}/{city}/")
+            self.assertNotIn(f"{BASE}/{city}/", locs)
+        # Child street page stays listed; only the thin city root was contained.
+        self.assertIn(f"{BASE}/winter-park/winter-park-park-ave/", locs)
 
 
 class RfqCtaTests(unittest.TestCase):

@@ -70,10 +70,17 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
 
 # Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).
 # Indexable hubs still list them. A later link-rewire can drop this allowlist.
+# Weekly hygiene 2026-09-08 added city all-glass-entrances plus two thin city roots.
 WAVE2_CITY_SERVICES = {
     "commercial-storefronts",
     "glass-railings",
     "impact-windows-hurricane",
+    "all-glass-entrances",
+}
+
+WAVE_HYGIENE_CITY_ROOTS = {
+    "/winter-park/",
+    "/wynwood/",
 }
 
 WAVE2_KEEPER_GLAZIERS = {
@@ -89,11 +96,15 @@ WAVE2_KEEPER_GLAZIERS = {
 
 
 def is_wave2_noindex_target(url: str) -> bool:
-    """True for the 324 wave-2 noindex URLs. Keepers and the statewide guide are not."""
+    """True for wave-2 / weekly-hygiene noindex URLs. Keepers and statewide hubs are not."""
     if not url.endswith("/"):
         url = url + "/"
     if url in WAVE2_KEEPER_GLAZIERS or url == "/storefront-glazier-florida/":
         return False
+    if url == "/all-glass-entrances/":
+        return False
+    if url in WAVE_HYGIENE_CITY_ROOTS:
+        return True
     parts = [p for p in url.split("/") if p]
     if len(parts) == 2 and parts[1] in WAVE2_CITY_SERVICES:
         return True
