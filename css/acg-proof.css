@@ -193,13 +193,19 @@ header.nav.scrolled{background:rgba(5,7,12,.94);border-bottom:1px solid rgba(240
 .disc-cell h3{font-family:var(--disp);font-weight:800;font-size:1.02rem;text-transform:uppercase;letter-spacing:.16em}
 .disc-cell p{font-size:.85rem;color:var(--steel)}
 .record{padding:0 var(--pad) clamp(4.5rem,12vh,8rem)}
-.record-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2px}
+.record-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.record-strip>a{display:block;min-height:16rem;color:inherit}
+.record-strip>a .record-card{height:100%;min-height:16rem}
 .record-card{position:relative;isolation:isolate;min-height:16rem;display:flex;align-items:flex-end;overflow:hidden}
-.record-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.record-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .7s ease}
 .record-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(5,7,12,.85),rgba(5,7,12,.05) 60%)}
 .record-card figcaption{padding:0 1rem 1rem}
 .record-card h3{font-family:var(--disp);font-weight:800;font-size:.98rem;text-transform:uppercase}
 .record-card span{font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--glint)}
+.record-strip>a:hover .record-card img,.record-strip>a:focus-visible .record-card img{transform:scale(1.035)}
+@media(max-width:900px){.record-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.record-strip{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.record-card img{transition:none}.record-strip>a:hover .record-card img,.record-strip>a:focus-visible .record-card img{transform:none}}
 .project-geography{margin:3rem 0 0;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(20rem,.92fr);background:#080D16;border-top:1px solid rgba(240,243,248,.14);border-bottom:1px solid rgba(240,243,248,.14)}
 .geo-map{min-width:0;padding:clamp(1.5rem,4vw,3rem);display:grid;place-items:center}
 .geo-map img{width:100%;max-width:660px;height:auto}
