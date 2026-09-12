@@ -121,8 +121,9 @@ class HubTests(unittest.TestCase):
         hub = read("florida-commercial-glazing/index.html")
         home = read("index.html")
         self.assertEqual(
-            title_of(hub), "Commercial Glazing Contractor Florida | Bid in 48 Hrs"
+            title_of(hub), "Commercial Storefront Installer Florida | Bid in 48 Hrs"
         )
+        self.assertIn(PHRASE, title_of(hub).lower())
         self.assertIn(PHRASE, h1_of(hub).lower())
         self.assertNotEqual(title_of(hub), title_of(home))
         self.assertEqual(
