@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img">
+<rect width="1100" height="640" fill="#fbf7f0"/>
+
+<rect x="16" y="12" width="1068" height="28" fill="none" stroke="#0e284f" stroke-width="1.2"/>
+<text x="28" y="31" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">FIG 05</text>
+<text x="1072" y="31" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#b42318">TYPICAL 5x7 SF-1 · NOT A PROJECT DRAWING</text>
+<rect x="16" y="594" width="1068" height="30" fill="none" stroke="#0e284f" stroke-width="1.2"/>
+<text x="28" y="614" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#0e284f">ACG REDLINE CLINIC</text>
+<text x="550.0" y="614" text-anchor="middle" font-family="Georgia, Times, serif" font-size="13" fill="#1c1916">Replacement trigger · UFC 4-010-01 §5-1.1.2.1</text>
+<text x="1072" y="614" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#6b6258">INVENTED TYPICAL LITE</text>
+
+<rect x="80" y="90" width="260" height="150" fill="#fffdf8" stroke="#0e284f"/>
+<text x="96" y="126" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#b42318">INHABITED DoD BUILDING</text>
+<text x="96" y="160" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">Occupancy, not county. On-post is UFC.</text>
+<path d="340 165 L412 165" stroke="#b42318" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="420" y="90" width="260" height="150" fill="#fffdf8" stroke="#0e284f"/>
+<text x="436" y="126" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#b42318">WINDOW REPLACEMENT</text>
+<text x="436" y="160" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">Any replacement package. Six openings is enough.</text>
+<path d="680 165 L752 165" stroke="#b42318" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="760" y="90" width="260" height="150" fill="#fffdf8" stroke="#0e284f"/>
+<text x="776" y="126" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#b42318">SECTION 5-11 APPLIES</text>
+<text x="776" y="160" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="13" fill="#1c1916">Laminated inboard glass and specified bite.</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#b42318"/></marker></defs>
+<rect x="80" y="280" width="940" height="220" fill="#fffdf8" stroke="#b42318" stroke-width="1.4"/>
+<text x="100" y="314" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="14" fill="#1c1916">Not the 50 percent renovation trigger. A small package on an occupied admin building is enough.</text>
+<text x="100" y="356" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="14" fill="#1c1916">Supplemental interior windows and new openings are included. A borrowed lite or a new punched opening is 5-11 work.</text>
+<text x="100" y="398" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="14" fill="#1c1916">Film is not a substitute (5-11.4). ASTM F1642 / F2912 / F2248 apply only when the spec cites them.</text>
+<text x="100" y="440" font-family="ui-sans-serif, Helvetica, Arial, sans-serif" font-size="14" fill="#1c1916">Florida path still sits next to this: NOA in HVHZ, Florida Product Approval elsewhere. Two proofs, one assembly.</text>
+</svg>

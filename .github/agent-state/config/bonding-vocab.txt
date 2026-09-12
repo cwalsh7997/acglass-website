@@ -1,0 +1,12 @@
+# D6: the assertion that ACG *is* bonded comes out of JSON-LD, OG and Twitter.
+# Vocabulary family, not one string: three live variants measured 2026-09-08
+# ("bonded $3M/$6M", "Bonded &amp; insured", "Bonded and insured").
+#
+# Deliberately EXCLUDED: bare "bonding" and "surety". Those appear as ordinary
+# topic nouns on pages that discuss how to vet a glazier ("license verification,
+# bonding, NOA review"). Matching them produced 165 hits, nearly all false.
+# Only assertive self-claims are matched here.
+bonded
+\$3M/\$6M
+3M single
+6M aggregate

@@ -35,8 +35,8 @@ BASE = "https://acglass.com"
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
 # Hero LCP asset guarded by the FAIL tier.
-HERO_JPG = "images/hero/tower-360.jpg"
-HERO_WEBP = "images/hero/tower-360.webp"
+HERO_JPG = "images/hero/gulfside-twelve-twilight.jpg"
+HERO_WEBP = "images/hero/gulfside-twelve-twilight.webp"
 
 # City hubs named as target markets in the indexation audit. Each one must be
 # represented in a child sitemap either directly (self-canonical) or through the
@@ -96,12 +96,8 @@ HELD_LONG_TITLE_HASHES: dict[str, str] = {
 # Copy on these pages intersects approval-gated claims. Keep the exception
 # path-specific so another overlength description still fails immediately.
 HELD_LONG_DESCRIPTION_HASHES: dict[str, str] = {
-    # index.html is byte-frozen in .github/seo/url-primaries.json, so its
-    # overlength description cannot be shortened here. NOTE FOR OWNER: this copy
-    # still carries unverified project-count and bonding claims; fixing it
-    # requires lifting the homepage byte freeze first.
-    "index.html":
-        "546c0ce1bb58a1a54f6c03579ee68edcb419613e8c338de19b604c48a9fb0fa1",
+    # index.html removed 2026-09-09: its description is now 144 chars and fits
+    # the 155 limit, so it no longer needs an overlength exception.
     # Emptied 2026-08-20: every formerly-held description now fits the 155-char
     # limit with approval-gated claims removed (project counts, bonding language,
     # multi-office counts, TN code references). No page needs an overlength

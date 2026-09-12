@@ -1,0 +1,29 @@
+PHASE 6, SELF-APPROVED 2026-09-08 (robots.txt)
+Branch: refresh/p6-seo-launch
+
+SHIPPED
+  robots.txt rewritten. 161 lines -> 70. 34 user-agent groups -> 2.
+
+THE BUG THIS CLOSES
+32 named crawler groups each contained nothing but "Allow: /". Google's spec:
+"Only one applicable group is used for a crawler... User-agent-specific groups and
+the global * group are not combined."
+
+So GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot,
+Bingbot, CCBot, Google-Extended, Applebot and 22 others each matched their own
+group and were EXEMPT from all three Disallow rules. Every one of them could crawl
+/dealer/admin.html, /dealer/thanks.html and /services-schema-block.html.
+
+The groups read as permissive and were functionally a hole.
+
+Deleting them changes nothing about what is permitted (Allow:/ was already the
+default) and restores the three Disallows for every crawler.
+
+ALSO
+  Bravebot removed. Fictional UA. This is the single check that has failed SEO
+  Verify for the whole session; it reads the live site, so it turns green on merge.
+  Bytespider Disallow:/ preserved, the one deliberate refusal.
+  Content-Signal labelled [SPECULATIVE] in-file: not a supported field, no crawler
+  is known to honour it, and it must never be described as a control.
+
+VERIFIED LOCALLY against the verifier's own assertions, all 7 pass.

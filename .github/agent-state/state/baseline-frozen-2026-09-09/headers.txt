@@ -1,0 +1,5 @@
+cache-control: max-age=600
+server: cloudflare
+strict-transport-security: max-age=15768000; includeSubDomains
+via: 1.1 varnish
+x-content-type-options: nosniff

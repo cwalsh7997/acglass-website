@@ -13,11 +13,14 @@ ROOT = Path(__file__).resolve().parents[3]
 PAGE = ROOT / "projects" / "ocean-prime-ft-lauderdale.html"
 FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 
+# Rebaselined 2026-09-09: the sitewide footer gained a Security link beside
+# Privacy and Terms, which moves anchors and body on every page including this
+# one. No scope, claim or JSON-LD change; those digests are untouched.
 PROTECTED_HASHES = {
-    "anchors": "555ddaef659d5c7e6a3727696117aed782500731bbf530e36e32dd81a53e1dd5",
+    "anchors": "a223d072d459b43aff9c8fa9c8526e5a6c0b8bd192875d21f1ad511a8476ec8c",
     # Rebaselined 2026-09-03: Ocean Prime scope pulled back to one Euro-Wall
     # opening at 171 Las Olas Circle. Anchors and scripts unchanged.
-    "body": "9d726b7f0205a1014bdd68f326382293744d8ab4a4c5d6e3dff08ac5cb42852b",
+    "body": "7a3331d5e4eb57c4c52467ae80f49f6984decd5f09c59f0fc5df69ebc4db5540",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "f293b0d3972fa909d8f9a1216132ebcf89a99f46d4961977d74dc90801f19d51",
     "jsonld": "d3051ce529b38fb0ab09fe6121b9c6a1c95e6fe3017decd2bfd185cb2c907426",

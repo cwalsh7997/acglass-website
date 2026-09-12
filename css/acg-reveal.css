@@ -1,0 +1,28 @@
+/* Scroll reveal, MOTION.md behavior 3.
+ *
+ * The hidden state lives here, behind .js-reveal-ready, which JavaScript adds to
+ * <html> ONLY after the animation library has loaded. Three things then cannot
+ * blank the page:
+ *
+ *   no JS            the class is never added, nothing is ever hidden
+ *   library fails    the class is never added, nothing is ever hidden
+ *   reduced motion   the media query below wins regardless of any JS state
+ *
+ * An earlier version applied opacity:0 from JavaScript. Under
+ * prefers-reduced-motion the cards rendered blank and stayed blank, repeatably.
+ * A guard that a timing bug can defeat is not a guard, so it moved to CSS where
+ * the cascade decides rather than the event loop.
+ */
+.js-reveal-ready [data-acg-reveal] {
+  opacity: 0;
+  transform: translateY(8px);
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal-ready [data-acg-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}

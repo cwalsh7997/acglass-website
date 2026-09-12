@@ -8,7 +8,7 @@
    font-display: swap matches the prior Google Fonts behavior - fallback
    text renders immediately, web font swaps in when downloaded. No FOIT.
    Variable fonts cover all weights in a single file (Inter 100-900,
-   JetBrains Mono 100-800, Playfair Display 400-900 upright + italic).
+   JetBrains Mono 100-800). Playfair Display and Archivo removed in phase 2: the spec permits two families.
    ─────────────────────────────────────────────────────────────────── */
 @font-face {
   font-family: 'Inter';
@@ -26,23 +26,6 @@
   src: url('../fonts/jetbrains-mono-variable-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400 900;
-  font-display: swap;
-  src: url('../fonts/playfair-display-variable-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 400 900;
-  font-display: swap;
-  src: url('../fonts/playfair-display-italic-variable-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 /* ---------- RESET ---------- */
 *, *::before, *::after {
   margin: 0;
@@ -1437,6 +1420,28 @@ p {
 [data-reveal].revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Reduced motion, added 2026-09-09.
+ *
+ * [data-reveal] sets opacity:0 and waits for js/main.js to add .revealed. That
+ * means the hidden state is applied by the stylesheet and removed by JavaScript,
+ * so on any page where main.js is slow, blocked or absent the content never
+ * appears. 386 pages use this attribute and none of them had a reduced-motion
+ * escape.
+ *
+ * Under prefers-reduced-motion the reveal should not run at all, so the elements
+ * are simply visible from the start. This also removes the 0.9s transition and
+ * the 40px travel, both of which are well outside the 260ms and 8px that
+ * MOTION.md specifies. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal-fade],
+  [data-reveal-scale] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 [data-reveal-fade] { opacity: 0; transition: opacity 1s var(--ease-out); }

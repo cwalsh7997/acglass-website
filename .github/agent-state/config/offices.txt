@@ -1,0 +1,5 @@
+# ACG office locations. CONFIRMED 2026-09-09 by Connor Walsh.
+# Any address published in LocalBusiness schema must appear here.
+HQ=700 S Rosemary Ave Suite 204|West Palm Beach|FL|33401
+OFFICE=4850 Tamiami Trail N Ste 301|Naples|FL|34103
+OFFICE=3031 N Rocky Point Dr W Ste 600|Tampa|FL|33607

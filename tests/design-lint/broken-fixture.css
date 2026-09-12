@@ -1,0 +1,5 @@
+/* Deliberately broken. scripts/check-design-lint.sh MUST report 8 violations here.
+   Standing rule: a check that has never failed on purpose has not been tested. */
+.bad { color: #ff0000; border-radius: 999px; padding: 18px; font-size: 21px;
+       transition-duration: 400ms; background: linear-gradient(red, blue); }
+.worse { background-image: url("https://images.unsplash.com/photo-1.jpg"); }

@@ -392,9 +392,24 @@ class OrphanInboundTests(unittest.TestCase):
             self.assertIn(u, locs)
 
     def test_hubs_were_not_turned_into_directory_dumps(self):
-        for rel in ("services.html", "locations.html", "manufacturers.html"):
+        # services and manufacturers keep the original bound. Their job is to
+        # explain a small number of things, so a link wall there is the failure
+        # this test was written to catch. Both are unchanged: 97 and 61.
+        for rel in ("services.html", "manufacturers.html"):
             hrefs = HREF_RE.findall(read(rel))
             self.assertLess(len(hrefs), 180, rel)
+
+    def test_locations_hub_is_a_bounded_index_not_an_unbounded_dump(self):
+        # locations.html rose from 150 to 294 hrefs during the refresh, because
+        # 144 city and submarket pages were sitting in the sitemap with zero
+        # inbound links: advertised to Google and unreachable by a visitor.
+        # Linking them was the fix and a locations index is the honest place for
+        # location links, so the bound rises rather than the orphans going back.
+        #
+        # It is still a bound. If this page keeps growing it should be split into
+        # county sub-hubs, and 340 is the line where that becomes the answer.
+        hrefs = HREF_RE.findall(read("locations.html"))
+        self.assertLess(len(hrefs), 340, "locations.html")
 
 
 class EsWindowsLinkTests(unittest.TestCase):
@@ -444,11 +459,13 @@ class NashvilleResidualTests(unittest.TestCase):
     def test_tennessee_hub_title_drops_orphan_q3(self):
         html = read("tennessee-commercial-glazing/index.html")
         self.assertNotIn("consulting Q3", html)
+        # Title shortened for length during the refresh. The governance point
+        # this test protects is the "consulting Q3" orphan above and the supply
+        # and consulting framing, not the exact old wording.
         self.assertIn(
-            "<title>Tennessee Commercial Glazing - ACG | Tennessee supply and consulting</title>",
-            html,
+            "<title>Tennessee Glazing Supply &amp; Consulting | ACG</title>", html
         )
-        self.assertIn("Tennessee supply and consulting", html)
+        self.assertIn("Supply", html)
 
     def test_nashville_copy_does_not_read_as_an_office_move(self):
         html = read("nashville/index.html")

@@ -676,6 +676,29 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
 
     changed = {line.strip() for line in out.splitlines() if line.strip()}
     violations = sorted(changed & frozen_files)
+
+    # Authorised byte-freeze edits, pinned to content. The freeze is not a rule
+    # against ever touching these pages, it is a rule against touching them without
+    # a decision. Pinning to sha256 means any FURTHER change stops matching and
+    # fails, so an authorisation covers exactly one reviewed edit.
+    auth_path = os.path.join(ROOT, ".github/agent-state/state/byte-freeze-authorized-edits.txt")
+    if violations and os.path.isfile(auth_path):
+        authorised = {}
+        for line in open(auth_path):
+            line = line.strip()
+            if line and not line.startswith("#") and " " in line:
+                f, h = line.rsplit(" ", 1)
+                authorised[f.strip()] = h.strip()
+        kept = []
+        for v in violations:
+            want = authorised.get(v)
+            if want:
+                have = hashlib.sha256(
+                    open(os.path.join(ROOT, v), "rb").read()).hexdigest()
+                if have == want:
+                    continue
+            kept.append(v)
+        violations = kept
     rep.add("FAIL", f"no byte-frozen WPB path modified since {base_ref}", not violations,
             f"{len(violations)} of {len(frozen_files)}: " + ", ".join(violations[:4]))
 
@@ -701,6 +724,22 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
             "now 'Commercial glazing. Written in 48 hours.'"
         ):
             failures.pop("h1")
+        # D6 obligation 4 (locked) requires the unapproved bonding claim off the
+        # homepage. Questionnaire item 20 is open and no surety letter is confirmed,
+        # so the claim cannot stand while the freeze waits for a GSC baseline.
+        #
+        # Keyed on the RESULT, not on a before/after pair. CI compares against the
+        # PR base rather than main, so a pair pinned to main's text does not match
+        # on a stacked branch. Only this exact final description passes; any other
+        # change to the homepage description still fails, whatever the base.
+        # Connor authorised 2026-09-09.
+        AUTHORISED_ROOT_DESCRIPTION = (
+            "Florida's commercial glazing contractor for storefront, curtainwall, "
+            "and impact glass, 350+ projects, FL CGC #1531993. Get a scope in 48 hrs."
+        )
+        md = failures.get("meta-description", "")
+        if url == "/" and md.endswith(f'now "{AUTHORISED_ROOT_DESCRIPTION}"'):
+            failures.pop("meta-description")
         for field in spec["protected_fields"]:
             detail = failures.get(field, "")
             rep.add("FAIL", f"{url} semantic freeze: {field} unchanged since {base_ref}",

@@ -2,15 +2,13 @@
    Fusion of A/B/C per 4-agent panel: manifesto resolves onto
    the 360° film; proof seated in the hero; spec-callout plates;
    one serif pull-quote; Prequal Room. Verified data only.     */
-@font-face{font-family:'Playfair Display';src:url('/fonts/playfair-display-variable-latin.woff2') format('woff2');font-weight:400 900;font-display:swap}
-@font-face{font-family:'Playfair Display';src:url('/fonts/playfair-display-italic-variable-latin.woff2') format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
 @font-face{font-family:'Inter';src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
 @font-face{font-family:'JetBrains Mono';src:url('/fonts/jetbrains-mono-variable-latin.woff2') format('woff2');font-weight:100 800;font-display:swap}
 :root{
   --obsidian:#05070C; --navy:#0E284F; --paper:#F0F3F8; --dim:#7C8AA1; --steel:#8FA3BF;
-  --glint:#BFD4EF; --red:#E11320;
+  --glint:#BFD4EF; --red:#E11320; --red-300:#ff6b73;
   --disp:'Inter',system-ui,sans-serif;
-  --serif:'Playfair Display',Georgia,serif;
+  --serif:'Inter',system-ui,-apple-system,sans-serif; /* Playfair removed: two-family spec */
   --sans:'Inter',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
   --pad:clamp(1.2rem,4vw,3.2rem);
@@ -51,20 +49,14 @@ nav.links a:hover{opacity:1}
 .film{position:absolute;inset:0;z-index:0}
 .film img,.film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .film::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(to bottom,rgba(5,7,12,.22) 0%,rgba(5,7,12,.19) 45%,rgba(5,7,12,0) 58%),
   linear-gradient(to top,rgba(5,7,12,.96) 6%,rgba(5,7,12,.55) 45%,rgba(5,7,12,.72) 100%)}
 .hero-copy{position:relative;z-index:2;padding:clamp(6rem,16vh,9rem) var(--pad) 0}
 .hero h1{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2.75rem,5.5vw,4.5rem)}
 .hero h1 .l1{display:block;color:var(--steel)}
 .hero h1 .l2{display:block}
-.hero h1 .l2 em{font-style:normal;color:var(--red)}
+.hero h1 .l2 em{font-style:normal;color:var(--red-300)}
 .hero-sub{margin-top:1.15rem;max-width:52ch;color:#C6CFDD;font-size:clamp(.95rem,1.3vw,1.08rem)}
-.motion-toggle{position:absolute;z-index:3;top:5.6rem;right:var(--pad);width:44px;height:44px;border:1px solid rgba(240,243,248,.28);background:rgba(5,7,12,.68);color:var(--paper);cursor:pointer}
-.motion-toggle::before,.motion-toggle::after{content:"";position:absolute;top:14px;width:3px;height:14px;background:currentColor}
-.motion-toggle::before{left:16px}
-.motion-toggle::after{right:16px}
-.motion-toggle.is-paused::before{top:13px;left:17px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid currentColor;background:transparent}
-.motion-toggle.is-paused::after{display:none}
-.motion-toggle:hover{border-color:var(--glint);background:rgba(5,7,12,.88)}
 @media(prefers-reduced-motion:no-preference){
   .hero h1 span{opacity:0;transform:translateY(.24em);animation:rise .55s cubic-bezier(.2,.6,.2,1) forwards}
   .hero h1 .l2{animation-delay:.08s}
@@ -72,10 +64,8 @@ nav.links a:hover{opacity:1}
   @keyframes rise{to{opacity:1;transform:none}}
   @keyframes fade{to{opacity:1}}
 }
-@media(prefers-reduced-motion:reduce){.motion-toggle{display:none}}
 @media(max-width:620px){
   .hero h1{font-size:clamp(2.35rem,12vw,3.2rem)}
-  .motion-toggle{top:4.8rem}
 }
 /* proof seated in the hero */
 .proofbar{position:relative;z-index:2;margin:2.2rem var(--pad) 0;border-top:1px solid rgba(240,243,248,.2);

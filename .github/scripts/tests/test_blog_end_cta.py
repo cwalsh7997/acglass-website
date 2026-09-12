@@ -216,7 +216,10 @@ class BlogEndCtaTests(unittest.TestCase):
         self.assertEqual(missing, [])
         self.assertGreaterEqual(add, 100)
         self.assertGreaterEqual(skip, 20)
-        self.assertEqual(stubs, 2)
+        # 2 -> 3 on 2026-09-09: blog/panther-national-clubhouse-glazing.html
+        # became a redirect stub when Panther National was removed from the site
+        # on Connor's instruction. A stub correctly carries no chrome and no CTA.
+        self.assertEqual(stubs, 3)
         self.assertIn("file !== 'index.html'", CHROME_JS)
 
     def test_skip_detects_existing_body_button_helpers_in_js(self):

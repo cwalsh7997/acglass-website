@@ -1,0 +1,6 @@
+# Byte-frozen West Palm Beach paths, derived from .github/seo/url-primaries.json.
+# These are the contested candidates for the organic #1 and the ranking URL among
+# them is unknown, so nothing about them may move, including body copy. My checks
+# must not demand edits to a page CI forbids editing.
+commercial-glazier-near-me-west-palm-beach/index.html
+impact-windows-palm-beach.html
