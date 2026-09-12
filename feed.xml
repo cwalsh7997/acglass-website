@@ -7,7 +7,7 @@
     <description>Florida's commercial glazing specialists. Code, systems, projects, and field notes from ACG.</description>
     <language>en-us</language>
     <copyright>© 2026 American Commercial Glass, Inc.</copyright>
-    <lastBuildDate>Wed, 02 Sep 2026 00:00:00 -0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 00:00:00 -0000</lastBuildDate>
     <managingEditor>connor@acglass.com (Connor Walsh)</managingEditor>
     <webMaster>connor@acglass.com (Connor Walsh)</webMaster>
     <category>Construction</category>
@@ -18,6 +18,15 @@
       <title>American Commercial Glass</title>
       <link>https://acglass.com/</link>
     </image>
+    <item>
+      <title>What a GC Must Demand From a Division 08 Submittal for LEED v5</title>
+      <link>https://acglass.com/blog/leed-v5-division-08-submittal-checklist.html</link>
+      <guid isPermaLink="true">https://acglass.com/blog/leed-v5-division-08-submittal-checklist.html</guid>
+      <description>Collect two folders from the glazing sub: permit (NOA/FPA) and sustainability (EPD/HPD/recycled content). They are not interchangeable.</description>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 -0000</pubDate>
+      <dc:creator>Connor Walsh, ACG</dc:creator>
+      <category>Industry</category>
+    </item>
     <item>
       <title>What Changes for Commercial Glazing on December 31, 2026</title>
       <link>https://acglass.com/blog/florida-building-code-9th-edition-december-31-2026.html</link>
