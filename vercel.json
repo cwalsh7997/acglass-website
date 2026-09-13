@@ -370,6 +370,16 @@
       "source": "/commercial-glazing-jacksonville-fl/",
       "destination": "/commercial-glazing-jacksonville.html",
       "permanent": true
+    },
+    {
+      "source": "/products/eswindows/",
+      "destination": "/es-windows.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/eswindows",
+      "destination": "/es-windows.html",
+      "permanent": true
     }
   ],
   "headers": [
