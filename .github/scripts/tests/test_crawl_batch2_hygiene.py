@@ -513,6 +513,17 @@ class NashvilleResidualTests(unittest.TestCase):
             html,
         )
         self.assertGreaterEqual(html.count("ACG furnishes and specifies ESWindows"), 2)
+        self.assertNotIn("Commercial storefront installation in Nashville", html)
+        self.assertNotIn(
+            "Full Division 08 commercial storefront installation in Nashville", html
+        )
+        self.assertNotIn("fields OSHA 30 trained crews", html)
+        self.assertNotIn("OSHA 30 trained field crews", html)
+        self.assertNotIn("serviceType\": \"Commercial glazing - storefront installation\"", html)
+        self.assertIn("storefront systems supply and consulting", html)
+        self.assertIn(
+            "field installation is coordinated with in-state install partners", html
+        )
 
     def test_nashville_storefront_copy_is_not_doubled_furnish_consult(self):
         html = read("storefront-installer-nashville.html")

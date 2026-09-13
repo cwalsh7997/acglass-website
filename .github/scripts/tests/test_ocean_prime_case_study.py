@@ -84,6 +84,21 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
             _read("sitemap.xml"),
         )
 
+    def test_high_traffic_cards_link_to_live_projects_alias(self):
+        """Cloudflare still 301s the primary URL to portfolio; send GCs to the 200 alias."""
+        target = "/projects/ocean-prime-ft-lauderdale.html"
+        for rel in (
+            "index.html",
+            "portfolio.html",
+            "past-performance.html",
+            "services.html",
+            "capabilities.html",
+        ):
+            html = _read(rel)
+            self.assertIn(f'href="{target}"', html, rel)
+            self.assertNotIn('href="/ocean-prime-ft-lauderdale.html"', html, rel)
+            self.assertNotIn('href="ocean-prime-ft-lauderdale.html"', html, rel)
+
     def test_vercel_mirror_does_not_redirect_primary_to_portfolio(self):
         data = json.loads(_read("vercel.json"))
         for rule in data.get("redirects", []):
