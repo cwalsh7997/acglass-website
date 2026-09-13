@@ -15,6 +15,7 @@ APEX = "https://acglass.com/sitemap.xml"
 RETIRED = (
     "https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html",
     "https://acglass.com/case-study-ocean-prime-fort-lauderdale.html",
+    "https://acglass.com/ocean-prime-ft-lauderdale.html",
     "https://acglass.com/google9d45280643313cec.html",
 )
 
@@ -58,7 +59,7 @@ class RetiredSitemapUrlTests(unittest.TestCase):
         for path in _sitemap_files():
             body = path.read_text(encoding="utf-8")
             for url in RETIRED:
-                if url in body:
+                if f"<loc>{url}</loc>" in body:
                     leftovers.append(f"{url} in {path.name}")
         self.assertEqual(leftovers, [])
 

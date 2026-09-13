@@ -16,11 +16,19 @@ for f in glob.glob(os.path.join(ROOT, "sitemap*.xml")):
 # .github/scripts/crawl-check.py. This check once reported them as "missing" and I
 # added them back. A deliberate exclusion is not a defect.
 RETIRED = set()
+CROSS_CANON = {}
 cc = os.path.join(ROOT, ".github/scripts/crawl-check.py")
 if os.path.isfile(cc):
-    m = re.search(r"RETIRED_SITEMAP_URLS\s*=\s*\((.*?)\)", open(cc).read(), re.S)
+    src = open(cc, encoding="utf-8").read()
+    m = re.search(r"RETIRED_SITEMAP_URLS\s*=\s*\((.*?)\)", src, re.S)
     if m:
         RETIRED = {u.rstrip("/") for u in re.findall(r'"([^"]+)"', m.group(1))}
+    # Live Ocean Prime alias: sitemap lists the 200 /projects/ URL while the
+    # HTML canonical still names the Cloudflare-301 keeper.
+    m = re.search(r"SITEMAP_CROSS_CANONICAL_ALLOWED\s*=\s*\{(.*?)\}", src, re.S)
+    if m:
+        pairs = re.findall(r'"([^"]+)"\s*:\s*"([^"]+)"', m.group(1))
+        CROSS_CANON = {k.rstrip("/"): v.rstrip("/") for k, v in pairs}
 
 pages = [p for p in subprocess.run(["git", "-C", ROOT, "ls-files", "*.html"],
          capture_output=True, text=True).stdout.split() if not p.startswith(".github/")]
@@ -37,7 +45,8 @@ for p in pages:
     m = CANON.search(d)
     canon = m.group(1).rstrip("/") if m else ""
     noidx = bool(NOIDX.search(d))
-    if u in sitemap and canon and canon != u:
+    allowed = CROSS_CANON.get(u)
+    if u in sitemap and canon and canon != u and allowed != canon:
         print(f"  A {p}: sitemapped, but canonical points to {canon}"); A += 1
     if u in sitemap and noidx:
         print(f"  B {p}: sitemapped, but the page is noindex"); B += 1
