@@ -34,7 +34,12 @@ class NoEsWindowsProductHrefTests(unittest.TestCase):
                 if "products/eswindows" in href.lower():
                     bad.append(f"{path.relative_to(REPO_ROOT)} -> {raw}")
         self.assertEqual(bad, [])
-        self.assertFalse((REPO_ROOT / "products/eswindows/index.html").exists())
+        stub = REPO_ROOT / "products/eswindows/index.html"
+        self.assertTrue(stub.is_file())
+        stub_html = stub.read_text(encoding="utf-8")
+        self.assertIn('href="https://acglass.com/es-windows.html"', stub_html)
+        self.assertIn('content="noindex,follow"', stub_html)
+        self.assertIn('http-equiv="refresh"', stub_html)
         self.assertFalse((REPO_ROOT / "products/eswindows.html").exists())
 
 

@@ -418,8 +418,27 @@ class EsWindowsLinkTests(unittest.TestCase):
         self.assertNotIn("eswindows.com/product/", html)
         self.assertNotIn("es-9000-impact-door", html)
         self.assertIn('href="https://eswindows.com"', html)
-        self.assertFalse((REPO_ROOT / "products/eswindows/index.html").exists())
         self.assertFalse((REPO_ROOT / "products/eswindows.html").exists())
+
+    def test_eswindows_product_path_is_github_pages_redirect_stub(self):
+        stub = REPO_ROOT / "products/eswindows/index.html"
+        self.assertTrue(stub.is_file())
+        html = stub.read_text(encoding="utf-8")
+        self.assertIn(
+            'rel="canonical" href="https://acglass.com/es-windows.html"', html
+        )
+        self.assertIn(
+            'content="0; url=https://acglass.com/es-windows.html"', html
+        )
+        self.assertIn('content="noindex,follow"', html)
+        self.assertIn(
+            'window.location.replace("https://acglass.com/es-windows.html")',
+            html,
+        )
+        self.assertNotIn("eswindows.com/product/", html)
+        self.assertNotIn("<h1", html.lower())
+        for loc in sitemap_locs():
+            self.assertNotIn("/products/eswindows", loc)
 
 
 class HomepageJsonLdTests(unittest.TestCase):
