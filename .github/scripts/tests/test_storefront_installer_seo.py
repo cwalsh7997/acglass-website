@@ -170,7 +170,7 @@ class CannibalizationTests(unittest.TestCase):
         )
         self.assertNotIn(f"{BASE}/storefront-installer-florida.html", sitemap_locs())
 
-    def test_statewide_installer_stays_indexable_and_links_keepers(self):
+    def test_statewide_installer_noindexes_to_florida_hub(self):
         html = read("commercial-storefront-installer-florida.html")
         title = title_of(html)
         hub_title = title_of(read("florida-commercial-glazing/index.html"))
@@ -182,12 +182,13 @@ class CannibalizationTests(unittest.TestCase):
         self.assertNotIn("Bid in 48 Hrs", title)
         self.assertLessEqual(len(title), 60)
         self.assertIn(PHRASE, title.lower())
-        self.assertNotIn("noindex", robots(html))
+        self.assertIn("noindex", robots(html))
+        self.assertIn("follow", robots(html))
         self.assertEqual(
             canonical(html),
-            f"{BASE}/commercial-storefront-installer-florida.html",
+            f"{BASE}/florida-commercial-glazing/",
         )
-        self.assertIn(
+        self.assertNotIn(
             f"{BASE}/commercial-storefront-installer-florida.html",
             sitemap_locs(),
         )
@@ -262,6 +263,16 @@ class CannibalizationTests(unittest.TestCase):
         home = read("index.html")
         self.assertNotIn("/storefront-glazier-boca-raton-florida/", home)
         self.assertIn('href="/florida-commercial-glazing/"', home)
+        self.assertIn(
+            '<a class="sys-cell" href="/florida-commercial-glazing/">',
+            home,
+        )
+        self.assertNotIn(
+            'href="/commercial-storefront-installer-florida.html"',
+            home,
+        )
+        self.assertIn('href="/es-windows.html"', home)
+        self.assertIn('href="/products/euro-wall/"', home)
         html = read("commercial-storefront-installer-florida.html")
         self.assertIn(
             "What does a commercial storefront installer do in Florida?",
