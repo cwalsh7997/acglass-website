@@ -151,20 +151,37 @@ class CannibalizationTests(unittest.TestCase):
                 self.assertEqual(canonical(html), f"{BASE}/{slug}/")
                 self.assertNotIn(f"{BASE}/{rel}", locs)
 
-    def test_jacksonville_installer_stays_primary_without_a_keeper(self):
+    def test_jacksonville_installer_noindexes_to_statewide_glazier(self):
         html = read("storefront-installer-jacksonville.html")
-        self.assertNotIn("noindex", robots(html))
-        self.assertEqual(
-            canonical(html),
-            f"{BASE}/storefront-installer-jacksonville.html",
-        )
-        self.assertIn(
+        self.assertIn("noindex", robots(html))
+        self.assertIn("follow", robots(html))
+        self.assertEqual(canonical(html), f"{BASE}/storefront-glazier-florida/")
+        self.assertNotIn(
             f"{BASE}/storefront-installer-jacksonville.html", sitemap_locs()
         )
 
+    def test_legacy_statewide_installer_noindexes_to_csi_fl(self):
+        html = read("storefront-installer-florida.html")
+        self.assertIn("noindex", robots(html))
+        self.assertIn("follow", robots(html))
+        self.assertEqual(
+            canonical(html),
+            f"{BASE}/commercial-storefront-installer-florida.html",
+        )
+        self.assertNotIn(f"{BASE}/storefront-installer-florida.html", sitemap_locs())
+
     def test_statewide_installer_stays_indexable_and_links_keepers(self):
         html = read("commercial-storefront-installer-florida.html")
-        self.assertIn(PHRASE, title_of(html).lower())
+        title = title_of(html)
+        hub_title = title_of(read("florida-commercial-glazing/index.html"))
+        self.assertEqual(
+            title, "Commercial Storefront Installer Florida | 48-Hr Scope | ACG"
+        )
+        self.assertNotEqual(title, hub_title)
+        self.assertNotIn("Guide", title)
+        self.assertNotIn("Bid in 48 Hrs", title)
+        self.assertLessEqual(len(title), 60)
+        self.assertIn(PHRASE, title.lower())
         self.assertNotIn("noindex", robots(html))
         self.assertEqual(
             canonical(html),
@@ -187,13 +204,20 @@ class CannibalizationTests(unittest.TestCase):
     def test_services_and_contact_link_office_keepers_and_euro_wall(self):
         services = read("services.html")
         contact = read("contact.html")
-        for slug in (
-            "storefront-glazier-west-palm-beach-florida",
-            "storefront-glazier-naples-florida",
-            "storefront-glazier-tampa-florida",
+        for slug, city in (
+            (
+                "storefront-glazier-west-palm-beach-florida",
+                "West Palm Beach",
+            ),
+            ("storefront-glazier-naples-florida", "Naples"),
+            ("storefront-glazier-tampa-florida", "Tampa"),
         ):
             self.assertIn(f"/{slug}/", services)
             self.assertIn(f"/{slug}/", contact)
+            self.assertIn(
+                f'href="/{slug}/">{city} commercial storefront installer</a>',
+                services,
+            )
         self.assertIn("/products/euro-wall/", services)
         self.assertIn(
             "<title>Florida Commercial Glazing Services for Contractors | ACG</title>",
@@ -202,6 +226,148 @@ class CannibalizationTests(unittest.TestCase):
         self.assertIn(
             "<title>Florida Glazing Bid Desk | Send Plans, 48-Hr Reply</title>",
             contact,
+        )
+
+    def test_blog_and_services_carry_installer_anchors_to_hub_or_keepers(self):
+        blog = read("blog/what-is-a-storefront-glazing-system.html")
+        self.assertIn(
+            'href="/florida-commercial-glazing/">commercial storefront installer</a>',
+            blog,
+        )
+        self.assertIn('href="/storefront-glazier-west-palm-beach-florida/"', blog)
+        spec = read("blog/how-to-spec-commercial-storefront.html")
+        self.assertNotIn('href="/storefront-installer-florida.html"', spec)
+        self.assertNotIn('href="../storefront-installer-florida.html"', spec)
+        self.assertIn(
+            'href="/commercial-storefront-installer-florida.html">commercial storefront installer</a>',
+            spec,
+        )
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Florida commercial storefront installer</a>',
+            spec,
+        )
+        guide = read("blog/commercial-storefront-installation-guide.html")
+        self.assertIn("/commercial-storefront-installer-florida.html", guide)
+        self.assertIn("/florida-commercial-glazing/", guide)
+        self.assertIn("/storefront-glazier-west-palm-beach-florida/", guide)
+        wpb = read(
+            "blog/how-to-choose-commercial-glazing-contractor-west-palm-beach.html"
+        )
+        self.assertIn("/storefront-glazier-west-palm-beach-florida/", wpb)
+        tampa = read("blog/how-to-choose-commercial-glazier-tampa-bay.html")
+        self.assertIn(
+            'href="/storefront-glazier-tampa-florida/" style="color:var(--accent);">commercial storefront installer</a>',
+            tampa,
+        )
+        home = read("index.html")
+        self.assertNotIn("/storefront-glazier-boca-raton-florida/", home)
+        self.assertIn('href="/florida-commercial-glazing/"', home)
+        html = read("commercial-storefront-installer-florida.html")
+        self.assertIn(
+            "What does a commercial storefront installer do in Florida?",
+            html,
+        )
+        self.assertIn(
+            "bidding statewide from West Palm Beach, Naples, and Tampa",
+            html,
+        )
+
+
+class RetailDuplicateTests(unittest.TestCase):
+    RETAIL_TO_KEEPER = {
+        "retail-storefront-installer-tampa/index.html": (
+            "storefront-glazier-tampa-florida"
+        ),
+        "retail-storefront-installer-miami/index.html": (
+            "storefront-glazier-miami-florida"
+        ),
+        "retail-storefront-installer-naples/index.html": (
+            "storefront-glazier-naples-florida"
+        ),
+        "retail-storefront-installer-orlando/index.html": (
+            "storefront-glazier-orlando-florida"
+        ),
+        "retail-storefront-installer-sarasota/index.html": (
+            "storefront-glazier-sarasota-florida"
+        ),
+        "retail-storefront-installer-fort-lauderdale/index.html": (
+            "storefront-glazier-fort-lauderdale-florida"
+        ),
+    }
+
+    def test_retail_city_pages_noindex_to_keepers(self):
+        locs = sitemap_locs()
+        for rel, slug in self.RETAIL_TO_KEEPER.items():
+            html = read(rel)
+            with self.subTest(rel=rel):
+                self.assertIn("noindex", robots(html))
+                self.assertIn("follow", robots(html))
+                self.assertEqual(canonical(html), f"{BASE}/{slug}/")
+                self.assertNotIn(f"{BASE}/{rel.replace('/index.html', '/')}", locs)
+
+    def test_retail_jacksonville_noindexes_to_statewide_glazier(self):
+        html = read("retail-storefront-installer-jacksonville/index.html")
+        self.assertIn("noindex", robots(html))
+        self.assertIn("follow", robots(html))
+        self.assertEqual(canonical(html), f"{BASE}/storefront-glazier-florida/")
+        self.assertNotIn(
+            f"{BASE}/retail-storefront-installer-jacksonville/",
+            sitemap_locs(),
+        )
+
+
+class ThinTemplateContainmentTests(unittest.TestCase):
+    TO_KEEPER = {
+        "retail-storefront-installer-florida/index.html": "storefront-glazier-florida",
+        "restaurant-glazier-florida/index.html": "storefront-glazier-florida",
+        "restaurant-glazier-fort-lauderdale/index.html": (
+            "storefront-glazier-fort-lauderdale-florida"
+        ),
+        "restaurant-glazier-miami/index.html": "storefront-glazier-miami-florida",
+        "restaurant-glazier-naples/index.html": "storefront-glazier-naples-florida",
+        "restaurant-glazier-orlando/index.html": "storefront-glazier-orlando-florida",
+        "restaurant-glazier-sarasota/index.html": "storefront-glazier-sarasota-florida",
+        "restaurant-glazier-tampa/index.html": "storefront-glazier-tampa-florida",
+        "school-glazier-florida/index.html": "storefront-glazier-florida",
+        "school-glazier-fort-lauderdale/index.html": (
+            "storefront-glazier-fort-lauderdale-florida"
+        ),
+        "school-glazier-jacksonville/index.html": "storefront-glazier-florida",
+        "school-glazier-miami/index.html": "storefront-glazier-miami-florida",
+        "school-glazier-naples/index.html": "storefront-glazier-naples-florida",
+        "school-glazier-orlando/index.html": "storefront-glazier-orlando-florida",
+        "school-glazier-sarasota/index.html": "storefront-glazier-sarasota-florida",
+        "school-glazier-tampa/index.html": "storefront-glazier-tampa-florida",
+        "commercial-glazier-near-me-miami/index.html": (
+            "storefront-glazier-miami-florida"
+        ),
+        "commercial-glazier-near-me-tampa/index.html": (
+            "storefront-glazier-tampa-florida"
+        ),
+    }
+
+    def test_thin_templates_noindex_to_keepers(self):
+        locs = sitemap_locs()
+        for rel, slug in self.TO_KEEPER.items():
+            html = read(rel)
+            with self.subTest(rel=rel):
+                self.assertIn("noindex", robots(html))
+                self.assertIn("follow", robots(html))
+                self.assertEqual(canonical(html), f"{BASE}/{slug}/")
+                self.assertNotIn(
+                    f"{BASE}/{rel.replace('/index.html', '/')}", locs
+                )
+
+    def test_frozen_wpb_near_me_stays_indexable(self):
+        html = read("commercial-glazier-near-me-west-palm-beach/index.html")
+        self.assertNotIn("noindex", robots(html))
+        self.assertEqual(
+            canonical(html),
+            f"{BASE}/commercial-glazier-near-me-west-palm-beach/",
+        )
+        self.assertIn(
+            f"{BASE}/commercial-glazier-near-me-west-palm-beach/",
+            sitemap_locs(),
         )
 
 

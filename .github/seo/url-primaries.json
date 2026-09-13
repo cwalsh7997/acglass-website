@@ -367,12 +367,12 @@
       "market": "jacksonville",
       "intent": "storefront",
       "head_terms": ["storefront installer jacksonville"],
-      "primary": "/storefront-installer-jacksonville.html",
-      "status": "ratified",
-      "evidence": ["topical:SS4.3"],
+      "primary": null,
+      "status": "blocked-no-primary",
+      "evidence": ["topical:SS4.3", "live-audit:2026-09-12"],
       "consolidate_in_repo": [],
       "requires_external_redirect": [],
-      "notes": "Already correct. No /storefront-glazier-jacksonville-florida/ exists, so there is no duplicate."
+      "notes": "No /storefront-glazier-jacksonville-florida/ exists. Live audit 2026-09-12 noindexes /storefront-installer-jacksonville.html to /storefront-glazier-florida/. That statewide leftover cannot be this market's primary because it already holds florida-statewide storefront."
     },
     {
       "market": "south-florida",
