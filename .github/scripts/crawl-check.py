@@ -67,7 +67,6 @@ CHILD_URLSETS = [
     "sitemap-llm.xml",
 ]
 RETIRED_SITEMAP_URLS = (
-    "https://acglass.com/ocean-prime-ft-lauderdale.html",
     "https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html",
     "https://acglass.com/case-study-ocean-prime-fort-lauderdale.html",
     "https://acglass.com/google9d45280643313cec.html",

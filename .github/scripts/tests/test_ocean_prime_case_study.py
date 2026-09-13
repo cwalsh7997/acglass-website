@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+"""Guard the Ocean Prime Fort Lauderdale case study against portfolio overwrite."""
+
+from __future__ import annotations
+
+import json
+import re
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[3]
+PRIMARY = ROOT / "ocean-prime-ft-lauderdale.html"
+PRIMARY_URL = "https://acglass.com/ocean-prime-ft-lauderdale.html"
+PORTFOLIO_URL = "https://acglass.com/portfolio.html"
+
+
+def _read(rel: str) -> str:
+    return (ROOT / rel).read_text(encoding="utf-8")
+
+
+class OceanPrimeCaseStudyTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.html = PRIMARY.read_text(encoding="utf-8")
+
+    def test_page_is_not_a_redirect_stub(self):
+        self.assertNotIn('http-equiv="refresh"', self.html.lower())
+        self.assertNotIn("window.location.replace", self.html)
+        self.assertGreater(len(self.html), 8000)
+
+    def test_self_canonical_not_portfolio(self):
+        canonical = re.search(r'rel="canonical"[^>]+href="([^"]+)"', self.html, re.I)
+        self.assertIsNotNone(canonical)
+        self.assertEqual(PRIMARY_URL, canonical.group(1))
+        self.assertNotIn(f'rel="canonical" href="{PORTFOLIO_URL}"', self.html)
+
+    def test_title_og_and_h1_are_ocean_prime(self):
+        title = re.search(r"<title>(.*?)</title>", self.html, re.S).group(1)
+        h1 = re.search(r"<h1\b[^>]*>(.*?)</h1>", self.html, re.S).group(1)
+        h1_text = re.sub(r"<[^>]+>", "", h1)
+        self.assertIn("Ocean Prime", title)
+        self.assertIn("Fort Lauderdale", title)
+        self.assertNotIn("Florida Commercial Glazing Portfolio", title)
+        self.assertIn("Ocean Prime", h1_text)
+        self.assertNotIn("The record, project by project", h1_text)
+        self.assertIn("Ocean Prime", self.html)
+        self.assertIn("og:title", self.html)
+        self.assertIn("twitter:title", self.html)
+        self.assertIn("Euro-Wall", self.html)
+
+    def test_scope_and_address_are_live_truthful(self):
+        self.assertIn("171 Las Olas Circle", self.html)
+        self.assertIn("Las Olas Marina", self.html)
+        self.assertRegex(self.html, r"one Euro-Wall door/opening|single Euro-Wall door/opening")
+        self.assertNotIn("Buckeye", self.html)
+        self.assertNotIn("Made In Rio", self.html)
+        self.assertNotIn("The record, project by project", self.html)
+        self.assertNotIn("Florida Commercial Glazing Portfolio", self.html)
+
+    def test_rfq_cta_points_at_send_plans(self):
+        self.assertIn("send-plans.html", self.html)
+        self.assertIn("Send Us Plans", self.html)
+
+    def test_aliases_do_not_canonical_to_portfolio(self):
+        aliases = (
+            "projects/ocean-prime-ft-lauderdale.html",
+            "case-study-ocean-prime.html",
+            "case-study-ocean-prime-fort-lauderdale.html",
+            "ocean-prime-fort-lauderdale/index.html",
+        )
+        for rel in aliases:
+            html = _read(rel)
+            canonical = re.search(r'rel="canonical"[^>]+href="([^"]+)"', html, re.I)
+            self.assertIsNotNone(canonical, rel)
+            self.assertEqual(PRIMARY_URL, canonical.group(1), rel)
+            self.assertNotIn(f'href="{PORTFOLIO_URL}"', canonical.group(0), rel)
+
+    def test_primary_is_in_project_sitemaps(self):
+        self.assertIn(PRIMARY_URL, _read("sitemap.xml"))
+        self.assertIn(PRIMARY_URL, _read("sitemap-projects.xml"))
+        self.assertNotIn(
+            "https://acglass.com/projects/ocean-prime-ft-lauderdale.html",
+            _read("sitemap.xml"),
+        )
+
+    def test_vercel_mirror_does_not_redirect_primary_to_portfolio(self):
+        data = json.loads(_read("vercel.json"))
+        for rule in data.get("redirects", []):
+            source = rule.get("source", "")
+            dest = rule.get("destination", "")
+            if "ocean-prime" in source:
+                self.assertNotEqual("/portfolio.html", dest, source)
+                self.assertNotIn("portfolio.html", dest)
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
