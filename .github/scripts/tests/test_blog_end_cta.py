@@ -173,16 +173,22 @@ class BlogEndCtaTests(unittest.TestCase):
         self.assertTrue(page_has_body_cta(html))
         self.assertIn("send-plans.html", html)
 
-    def test_mill_contact_cta_does_not_count(self):
+    def test_mill_now_has_real_send_plans_button(self):
         html = read("blog/how-to-get-a-glazing-bid-florida.html")
-        self.assertFalse(page_has_body_cta(html))
-        self.assertIn("../contact.html", html)
+        self.assertTrue(page_has_body_cta(html))
+        self.assertIn("../send-plans.html", html)
         self.assertIn("class=\"hd-cta\"", html)
 
-    def test_project_contact_cta_does_not_count(self):
+    def test_project_send_plans_button_counts_as_body_cta(self):
         html = read("blog/waxins-eurowall-clematis-street.html")
+        self.assertTrue(page_has_body_cta(html))
+        self.assertIn("../send-plans.html", html)
+
+    def test_non_plans_contact_cta_does_not_count(self):
+        html = read("blog/nannette-walsh-top-chef-martin-county-2026.html")
         self.assertFalse(page_has_body_cta(html))
         self.assertIn("../contact.html", html)
+        self.assertIn("Get In Touch", html)
 
     def test_bid_day_tool_already_has_end_cta(self):
         html = read("tools/bid-day-glazing-checker.html")
@@ -214,8 +220,10 @@ class BlogEndCtaTests(unittest.TestCase):
             else:
                 add += 1
         self.assertEqual(missing, [])
-        self.assertGreaterEqual(add, 100)
-        self.assertGreaterEqual(skip, 20)
+        # 2026-09-12: leftover "Send Us Plans" buttons were retargeted from
+        # contact.html to send-plans.html, so most posts now skip the injected CTA.
+        self.assertGreaterEqual(add, 8)
+        self.assertGreaterEqual(skip, 200)
         # 2 -> 3 on 2026-09-09: blog/panther-national-clubhouse-glazing.html
         # became a redirect stub when Panther National was removed from the site
         # on Connor's instruction. A stub correctly carries no chrome and no CTA.

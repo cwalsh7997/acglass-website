@@ -76,6 +76,12 @@ class SendPlansCtaTests(unittest.TestCase):
         stub = read("thank-you.html")
         self.assertIn('content="0;url=/thanks.html"', stub)
         self.assertIn("noindex", stub)
+        alias = read("thanks/index.html")
+        self.assertIn('content="0;url=/thanks.html"', alias)
+        self.assertIn("noindex", alias)
+        self.assertIn("location.search", alias)
+        self.assertIn("window.location.replace", alias)
+        self.assertIn("https://acglass.com/thanks.html", alias)
 
     def test_high_intent_rfq_request_a_bid_goes_to_send_plans(self):
         pages = (

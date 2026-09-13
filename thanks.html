@@ -63,8 +63,8 @@
       </div>
       <div id="thanks-confirmed" hidden>
         <div style="font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:16px;">Received</div>
-        <h2 style="font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:20px;">Thanks. We have it.</h2>
-        <p style="font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;">If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. Still need to attach drawings? Use the send-plans page.</p>
+        <h2 id="thanks-confirmed-heading" style="font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:20px;">Thanks. We have it.</h2>
+        <p id="thanks-confirmed-copy" style="font-size:17px;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:40px;">If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. Still need to attach drawings? Use the send-plans page.</p>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:48px;">
         <a href="/send-plans.html" class="btn btn-primary" style="font-size:14px;">Send Us Plans</a>
@@ -84,13 +84,25 @@
       var redirected = new URLSearchParams(location.search).get('submitted') === '1';
       var source = '';
       try { source = sessionStorage.getItem(AWAITING_KEY) || ''; } catch (e) {}
-      var confirmed = redirected && !!source;
+      // FormSubmit sometimes drops the query string on _next. The session
+      // flag is set only immediately before a real submit, so it is enough
+      // to confirm receipt. A bookmark of ?submitted=1 alone is not.
+      var confirmed = !!source;
       var unconfirmed = document.getElementById('thanks-unconfirmed');
       var received = document.getElementById('thanks-confirmed');
+      var heading = document.getElementById('thanks-confirmed-heading');
+      var copy = document.getElementById('thanks-confirmed-copy');
       if (confirmed && unconfirmed && received) {
         try { sessionStorage.removeItem(AWAITING_KEY); } catch (e) {}
         unconfirmed.hidden = true;
         received.hidden = false;
+        if (source === 'send-plans') {
+          if (heading) heading.textContent = 'Thanks. We have your plans.';
+          if (copy) copy.innerHTML = 'The send service accepted the submission and redirected you here. A copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. If a file was over the 9 MB form limit, email that set or send a Procore / BuildingConnected link.';
+        } else if (source === 'contact' || source === 'partners') {
+          if (heading) heading.textContent = 'Thanks. We have it.';
+          if (copy) copy.innerHTML = 'If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. This path does not attach drawings. Use the send-plans page to upload files.';
+        }
         if (source === 'send-plans' && typeof gtag === 'function') {
           gtag('event', 'generate_lead', {
             form_id: 'send-plans-form',

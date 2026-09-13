@@ -2141,7 +2141,7 @@
               </svg>
             </div>
             <div class="be-upload-title">Drop plans here or click to browse</div>
-            <p class="be-upload-subtitle">PDF, JPG, PNG, DWG, DXF &middot; under 10 MB total so the files can be emailed</p>
+            <p class="be-upload-subtitle">PDF, JPG, PNG, DWG, DXF &middot; 9 MB total so the files can be emailed</p>
             <div class="be-upload-formats">
               <span class="be-format-pill">PDF</span>
               <span class="be-format-pill">JPG</span>
@@ -2160,7 +2160,7 @@
       <div class="be-validation" id="upload-error" style="margin-top:0;"></div>
 
       <div class="be-upload-note">
-        <strong>What to upload:</strong> Architectural drawings, window schedules, elevation drawings, floor plans, Division 08 specs, or any glazing-related documents. Files must be under 10 MB total to send from this page. Larger sets: email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> or continue to <a href="/send-plans.html">plan intake</a> with a Procore / BuildingConnected link. If you don't have plans yet, skip this step and Connor will follow up.
+        <strong>What to upload:</strong> Architectural drawings, window schedules, elevation drawings, floor plans, Division 08 specs, or any glazing-related documents. Files must be under 9 MB total to send from this page. Larger sets: email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> or continue to <a href="/send-plans.html">plan intake</a> with a Procore / BuildingConnected link. If you don't have plans yet, skip this step and Connor will follow up.
       </div>
 
       <div class="be-btn-row" style="margin-top: 24px;">
@@ -2856,7 +2856,7 @@
         return;
       }
       if (totalUploadBytes() + file.size > FORMSUBMIT_MAX_BYTES) {
-        messages.push(file.name + ' would exceed the 10 MB send limit. Email the set to <!--email_off-->connor@acglass.com<!--/email_off--> or continue to plan intake with a share link.');
+        messages.push(file.name + ' would exceed the 9 MB send limit. Email the set to <!--email_off-->connor@acglass.com<!--/email_off--> or continue to plan intake with a share link.');
         return;
       }
       state.uploadedFiles.push(file);
@@ -3208,7 +3208,7 @@
     if (kind === 'size') {
       return {
         title: 'Those drawings are too large to send from this page',
-        body: 'The email path we use cannot accept more than about 10 MB total. Your bid was not submitted. Email the set to Connor or continue to plan intake and paste a Procore / BuildingConnected link.'
+        body: 'The email path we use cannot accept more than about 9 MB total. Your bid was not submitted. Email the set to Connor or continue to plan intake and paste a Procore / BuildingConnected link.'
       };
     }
     if (kind === 'type') {

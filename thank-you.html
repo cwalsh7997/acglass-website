@@ -10,5 +10,11 @@
 </head>
 <body>
 <p>Continue to the <a href="/thanks.html">confirmation page</a>.</p>
+<script>
+  (function () {
+    var next = '/thanks.html' + (location.search || '') + (location.hash || '');
+    window.location.replace(next);
+  })();
+</script>
 </body>
 </html>

@@ -54,6 +54,15 @@ class BidEngineFileSendTests(unittest.TestCase):
         self.assertIn("restoreBidEngineFiles", SEND_PLANS)
         self.assertIn("acg-bid-handoff", SEND_PLANS)
 
+    def test_visible_copy_uses_nine_mb_not_ten(self):
+        self.assertIn("9 MB total so the files can be emailed", BID)
+        self.assertIn("Files must be under 9 MB total to send from this page", BID)
+        self.assertIn("would exceed the 9 MB send limit", BID)
+        self.assertIn("cannot accept more than about 9 MB total", BID)
+        self.assertNotIn("under 10 MB total", BID)
+        self.assertNotIn("under 10 MB total to send", BID)
+        self.assertIn("const FORMSUBMIT_MAX_BYTES = 9 * 1024 * 1024;", BID)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
