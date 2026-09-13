@@ -151,7 +151,9 @@ HTML_ATTR = re.compile(
 # Priority architecture: what this audit exists to protect
 # ---------------------------------------------------------------------------
 
-# Market hub → (label, minimum distinct inbound linking pages)
+# Market hub → (label, minimum distinct inbound linking pages).
+# /storefront-glazier-boca-raton-florida/ is wave-2 noindex, so it is not a
+# required market hub. Homepage and service-areas must not be forced to link it.
 PRIORITY_MARKETS = {
     "/glazing-contractor-florida.html": ("Florida", 12),
     "/commercial-glazing-south-florida.html": ("South Florida", 10),
@@ -162,7 +164,6 @@ PRIORITY_MARKETS = {
     "/storefront-glazier-orlando-florida/": ("Orlando", 8),
     "/storefront-glazier-naples-florida/": ("Naples", 8),
     "/storefront-glazier-fort-lauderdale-florida/": ("Fort Lauderdale", 8),
-    "/storefront-glazier-boca-raton-florida/": ("Boca Raton", 6),
 }
 
 # Service hub → (label, minimum distinct inbound linking pages)
