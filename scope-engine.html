@@ -711,8 +711,8 @@
     <!-- LEAD CAPTURE -->
     <div class="se-capture" id="capture">
       <div class="se-capture-label">Get your branded PDF scope report</div>
-      <h2>Email this full breakdown to your team.</h2>
-      <p class="se-capture-sub">We'll send you a printable PDF version + a copy lands with our estimating team for follow-up. No phone tag, no spam - just a clean record of what you scoped + a real human on standby.</p>
+      <h2>Send this scope to our estimating team.</h2>
+      <p class="se-capture-sub">The form emails your scope and contact data to ACG. A branded PDF downloads on your device only - it is not attached to that email. For drawings, use <a href="/send-plans.html">Send Us Plans</a>. Questions? Call Connor at (772) 486-7711 or email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->.</p>
 
       <form id="lead-form" novalidate>
         <!-- honeypot -->
@@ -742,7 +742,7 @@
         <div class="se-form-grid">
           <div class="se-field"><label for="lf-needed-by">Bid / needed-by date (optional)</label><input id="lf-needed-by" name="needed_by_date" type="date"></div>
           <div class="se-field" style="display:flex;align-items:end;">
-            <button class="se-btn se-btn-primary" type="submit" id="lf-submit" style="width:100%;padding:14px 18px;">Email me the PDF &rarr;</button>
+            <button class="se-btn se-btn-primary" type="submit" id="lf-submit" style="width:100%;padding:14px 18px;">Send my scope &amp; download PDF &rarr;</button>
           </div>
         </div>
         <label class="se-tcpa">
@@ -1691,7 +1691,7 @@ function jspdfCtor() {
   return (window.jspdf && window.jspdf.jsPDF) ? window.jspdf.jsPDF : null;
 }
 
-// returnAs: 'download' (default - triggers save) | 'blob' (returns the PDF Blob for attaching to FormData)
+// returnAs: 'download' (default - triggers save) | 'blob' (returns the PDF Blob for the local download)
 function generateBrandedPDF(returnAs) {
   const jsPDF = jspdfCtor();
   if (!jsPDF) {
@@ -2171,12 +2171,13 @@ ${fmtSF(state.computedSystemSF)} SF system area · ${ACG_CONFIG.glassMakeup[c.ma
 Recommended system: ${ACG_CONFIG.systems[state.recommendedSystem].name}
 Schedule: ${state.timeline.totalLow}-${state.timeline.totalHigh} weeks from award to punch.
 
-A branded PDF of the full report is attached to this email, and it also
-downloaded to your device when you submitted the form. If you can't find
-it, just reply and we'll resend it.
+This email includes the scope and contact data you submitted. The branded
+PDF is a local download on your device only - FormSubmit does not attach
+it to this message. If you need the file again, use Re-download PDF on
+the scope-engine page. For drawings, send them via:
+${ACG_CONFIG.page_url.replace('/scope-engine.html','/send-plans.html')}
 
-For a real bid on plans, reply to this email or call (772) 486-7711.
-For faster turnaround, send drawings via: ${ACG_CONFIG.page_url.replace('/scope-engine.html','/send-plans.html')}
+For follow-up, reply to this email or call Connor at (772) 486-7711.
 
 - Connor Walsh, President
 American Commercial Glass | FL CGC #1531993`;
@@ -2228,9 +2229,9 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
   status.className = 'se-form-status';
   status.textContent = 'Sending…';
 
-  // Build the branded PDF (best-effort - never blocks the lead). It's attached to the POST,
-  // and the ACG scope-engine Worker emails it to both ACG and the visitor (Resend). We also
-  // trigger a local download below so the visitor has the file immediately.
+  // Build the branded PDF (best-effort - never blocks the lead). The current
+  // FormSubmit /ajax/ path does not email this file; we trigger a local
+  // download below so the visitor has it immediately.
   let pdfBlob = null;
   let pdfFilename = null;
   try {
