@@ -66,6 +66,10 @@ NON_PAGES = {
 # navigation targets for users who need to sign in.
 ALLOWED_NOINDEX_LINK_TARGETS = {
     "/dealer/login.html",
+    # Contained leftover: noindex + canonical to the Florida hub. Inbound
+    # from indexable pages is left in place so this PR does not retarget
+    # the rest of the site.
+    "/commercial-storefront-installer-florida.html",
 }
 
 # Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).
@@ -168,7 +172,7 @@ PRIORITY_MARKETS = {
 
 # Service hub → (label, minimum distinct inbound linking pages)
 PRIORITY_SERVICES = {
-    "/commercial-storefront-installer-florida.html": ("Storefront glazing", 10),
+    "/florida-commercial-glazing/": ("Florida commercial glazing hub", 10),
     "/curtainwall-contractor-florida.html": ("Curtain wall", 10),
     "/impact-windows-doors-florida.html": ("Commercial impact windows", 8),
     "/division-08-subcontractor-florida.html": ("Division 08 / preconstruction", 10),
