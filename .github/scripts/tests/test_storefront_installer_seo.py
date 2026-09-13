@@ -273,6 +273,178 @@ class CannibalizationTests(unittest.TestCase):
         )
 
 
+class SchemaFollowupTests(unittest.TestCase):
+    """Missing LocalBusiness / FAQPage on four live pages. Titles stay frozen."""
+
+    FROZEN_TITLES = {
+        "index.html": "Commercial Glazing Contractor Florida | ACG",
+        "florida-commercial-glazing/index.html": (
+            "Commercial Storefront Installer Florida | Bid in 48 Hrs"
+        ),
+        "commercial-storefront-installer-florida.html": (
+            "Commercial Storefront Installer Florida | 48-Hr Scope | ACG"
+        ),
+        "storefront-glazier-west-palm-beach-florida/index.html": (
+            "Commercial Storefront Installer, West Palm Beach | Bid"
+        ),
+        "storefront-glazier-naples-florida/index.html": (
+            "Commercial Storefront Installer Naples | 48-Hr Bids"
+        ),
+        "storefront-glazier-tampa-florida/index.html": (
+            "Commercial Storefront Installer Tampa | 48-Hr Bids"
+        ),
+        "storefront-glazier-miami-florida/index.html": (
+            "Commercial Storefront Installer Miami | 48-Hr Bids"
+        ),
+        "storefront-glazier-orlando-florida/index.html": (
+            "Commercial Storefront Installer Orlando | 48-Hr Bids"
+        ),
+        "storefront-glazier-fort-lauderdale-florida/index.html": (
+            "Commercial Storefront Installer Fort Lauderdale | Bid"
+        ),
+        "storefront-glazier-fort-myers-florida/index.html": (
+            "Commercial Storefront Installer Fort Myers | 48-Hr Bid"
+        ),
+        "storefront-glazier-sarasota-florida/index.html": (
+            "Commercial Storefront Installer Sarasota | 48-Hr Bid"
+        ),
+        "storefront-glazier-florida/index.html": (
+            "Commercial Storefront Glazier Florida Guide for GCs | ACG"
+        ),
+        "services.html": (
+            "Florida Commercial Glazing Services for Contractors | ACG"
+        ),
+    }
+
+    def _ld_blocks(self, html: str) -> list:
+        return [
+            __import__("json").loads(block)
+            for block in re.findall(
+                r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                html,
+                re.I | re.S,
+            )
+        ]
+
+    def _walk(self, obj):
+        if isinstance(obj, dict):
+            yield obj
+            for value in obj.values():
+                yield from self._walk(value)
+        elif isinstance(obj, list):
+            for value in obj:
+                yield from self._walk(value)
+
+    def _types(self, node: dict) -> set[str]:
+        raw = node.get("@type")
+        if isinstance(raw, list):
+            return {item for item in raw if isinstance(item, str)}
+        return {raw} if isinstance(raw, str) else set()
+
+    def test_frozen_titles_unchanged(self):
+        for rel, expected in self.FROZEN_TITLES.items():
+            self.assertEqual(title_of(read(rel)), expected, rel)
+
+    def test_hub_has_localbusiness_and_keeps_faqpage(self):
+        html = read("florida-commercial-glazing/index.html")
+        types = set()
+        local_ids = set()
+        for block in self._ld_blocks(html):
+            for node in self._walk(block):
+                found = self._types(node)
+                types |= found
+                if "LocalBusiness" in found:
+                    local_ids.add(node.get("@id"))
+                    self.assertEqual(
+                        node.get("parentOrganization", {}).get("@id"),
+                        f"{BASE}/#organization",
+                    )
+                    self.assertEqual(node.get("telephone"), "+17724867711")
+                    self.assertEqual(
+                        node.get("address", {}).get("streetAddress"),
+                        "700 S Rosemary Ave Suite 204",
+                    )
+        self.assertIn("LocalBusiness", types)
+        self.assertIn("HomeAndConstructionBusiness", types)
+        self.assertIn("FAQPage", types)
+        self.assertEqual(local_ids, {f"{BASE}/#localbusiness-west-palm-beach"})
+
+    def test_statewide_glazier_faqpage_uses_on_page_facts(self):
+        html = read("storefront-glazier-florida/index.html")
+        self.assertIn("How fast can a GC get a Florida storefront bid from ACG?", html)
+        self.assertIn("What Florida license covers ACG commercial storefront work?", html)
+        self.assertIn(
+            "Which Florida offices and markets does ACG cover for storefront?",
+            html,
+        )
+        types = set()
+        for block in self._ld_blocks(html):
+            for node in self._walk(block):
+                types |= self._types(node)
+                if "FAQPage" in self._types(node):
+                    names = [q["name"] for q in node["mainEntity"]]
+                    self.assertEqual(len(names), 3)
+                    joined = " ".join(
+                        q["acceptedAnswer"]["text"] for q in node["mainEntity"]
+                    )
+                    self.assertIn("48-hour bid", joined)
+                    self.assertIn("CGC #1531993", joined)
+                    self.assertIn("79 Florida cities", joined)
+                    self.assertNotIn("bonded", joined.lower())
+        self.assertIn("FAQPage", types)
+
+    def test_csi_florida_has_localbusiness(self):
+        html = read("commercial-storefront-installer-florida.html")
+        types = set()
+        local_ids = set()
+        for block in self._ld_blocks(html):
+            for node in self._walk(block):
+                found = self._types(node)
+                types |= found
+                if "LocalBusiness" in found:
+                    local_ids.add(node.get("@id"))
+                    self.assertEqual(node.get("telephone"), "+17724867711")
+                    self.assertEqual(
+                        node.get("parentOrganization", {}).get("@id"),
+                        f"{BASE}/#organization",
+                    )
+        self.assertIn("LocalBusiness", types)
+        self.assertEqual(local_ids, {f"{BASE}/#localbusiness-west-palm-beach"})
+
+    def test_services_faqpage_and_organization_nap(self):
+        html = read("services.html")
+        self.assertIn(
+            "How fast does ACG bid a Florida commercial glazing package?", html
+        )
+        orgs = []
+        types = set()
+        for block in self._ld_blocks(html):
+            for node in self._walk(block):
+                found = self._types(node)
+                types |= found
+                if (
+                    found == {"Organization"}
+                    and node.get("@id") == f"{BASE}/#organization"
+                    and node.get("telephone")
+                ):
+                    orgs.append(node)
+        self.assertIn("FAQPage", types)
+        self.assertTrue(orgs)
+        org = orgs[0]
+        self.assertEqual(org.get("telephone"), "+17724867711")
+        self.assertEqual(
+            org.get("address"),
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "700 S Rosemary Ave Suite 204",
+                "addressLocality": "West Palm Beach",
+                "addressRegion": "FL",
+                "postalCode": "33401",
+                "addressCountry": "US",
+            },
+        )
+
+
 class RetailDuplicateTests(unittest.TestCase):
     RETAIL_TO_KEEPER = {
         "retail-storefront-installer-tampa/index.html": (
