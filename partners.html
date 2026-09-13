@@ -1085,9 +1085,14 @@
         </ul>
       </div>
 
-      <form class="cta-form" data-reveal data-delay="200" action="https://formsubmit.co/connor@acglass.com" onsubmit="return handlePartnerSubmit(event)" method="POST">
-        <h3 class="cta-form-h">Send your plans</h3>
-        <div class="cta-form-sub">48-hour bid turnaround</div>
+      <form class="cta-form" data-reveal data-delay="200" action="https://formsubmit.co/connor@acglass.com" method="POST" onsubmit="try{sessionStorage.setItem('acg_form_awaiting_confirm','partners')}catch(e){}">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="[ACG LEAD] Partners / GC plans inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://acglass.com/thanks.html?submitted=1">
+        <input type="hidden" name="submission_source" value="partners-form">
+        <h3 class="cta-form-h">Send a plan-room link</h3>
+        <div class="cta-form-sub">This form does not attach files. To upload drawings, use <a href="/send-plans.html">Send Us Plans</a>.</div>
         <div class="form-row">
           <div class="field">
             <label for="lp-name">Name</label>
@@ -1116,7 +1121,7 @@
           <label for="lp-msg">Plans link (Procore, Building Connected, Dropbox)</label>
           <textarea id="lp-msg" name="message" placeholder="Drop a link to the plan set, or describe the scope and we'll request a share."></textarea>
         </div>
-        <button class="form-submit" type="submit">Submit Plans →</button>
+        <button class="form-submit" type="submit">Send inquiry →</button>
         <div class="form-foot">Or email <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--accent);">contact@acglass.com</a><!--/email_off--> &nbsp;·&nbsp; <a href="tel:+17724867711" style="color:var(--text-muted);">(772) 486-7711</a></div>
       </form>
     </div>

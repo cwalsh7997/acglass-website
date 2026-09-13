@@ -2282,7 +2282,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         document.body.appendChild(a); a.click();
         setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1500);
         ga('scope_pdf_generated', { filename: pdfFilename });
-        status.innerHTML = '✓ Got it - your branded report was just emailed to you AND downloaded here as <strong>' + pdfFilename + '</strong>. Our estimating team has your scope + PDF too, and will reach out within 48 hours.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
+        status.innerHTML = '✓ Got it. Your report downloaded here as <strong>' + pdfFilename + '</strong>. The lead form sent your scope data to our team. FormSubmit does not attach that PDF to the email, so use <a href="/send-plans.html">Send Us Plans</a> if you have drawings.<br><button id="redownload-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Re-download PDF</button>';
         setTimeout(() => {
           const rb = document.getElementById('redownload-pdf-btn');
           if (rb) rb.addEventListener('click', () => {
@@ -2299,7 +2299,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         }, 50);
       } else {
         // PDF generation failed earlier - graceful fallback to browser print
-        status.innerHTML = '✓ Got it - your report is on its way to your inbox, and our estimating team has your scope. We will reach out within 48 hours.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
+        status.innerHTML = '✓ Got it. Our estimating team has your scope data and will reach out within 48 hours. To send drawings, use <a href="/send-plans.html">Send Us Plans</a>.<br>You can also <button id="print-pdf-btn" class="se-cta se-cta-ghost" style="margin-top:14px;padding:10px 18px;">Print / save this report as PDF</button>';
         setTimeout(() => {
           const pb = document.getElementById('print-pdf-btn');
           if (pb) pb.addEventListener('click', () => { ga('scope_pdf_print'); window.print(); });

@@ -70,9 +70,11 @@ class SendPlansFormsubmitBudgetTests(unittest.TestCase):
         self.assertNotIn("Thanks. We have it.", unconfirmed)
         self.assertNotIn("a copy is with our team", unconfirmed)
         self.assertIn("var redirected = new URLSearchParams(location.search).get('submitted') === '1'", self.thanks)
-        self.assertIn("var confirmed = redirected && !!source;", self.thanks)
+        self.assertIn("var confirmed = !!source;", self.thanks)
         self.assertIn("received.hidden = false", self.thanks)
         self.assertIn("Thanks. We have it.", self.thanks[self.thanks.find('id="thanks-confirmed"') :])
+        self.assertIn("Thanks. We have your plans.", self.thanks)
+        self.assertIn("source === 'send-plans'", self.thanks)
 
 
 if __name__ == "__main__":
