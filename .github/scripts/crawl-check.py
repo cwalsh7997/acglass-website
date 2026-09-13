@@ -69,8 +69,18 @@ CHILD_URLSETS = [
 RETIRED_SITEMAP_URLS = (
     "https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html",
     "https://acglass.com/case-study-ocean-prime-fort-lauderdale.html",
+    # Cloudflare Bulk Redirects 301 this Wave-4 keeper to /portfolio.html.
+    # Advertise the live 200 alias /projects/ocean-prime-ft-lauderdale.html instead.
+    "https://acglass.com/ocean-prime-ft-lauderdale.html",
     "https://acglass.com/google9d45280643313cec.html",
 )
+# The live Ocean Prime case study is a /projects/ alias whose HTML still
+# canonicals to the keeper above. Sitemap must list the 200 URL; do not
+# retarget the page canonical in this change.
+SITEMAP_CROSS_CANONICAL_ALLOWED = {
+    "https://acglass.com/projects/ocean-prime-ft-lauderdale.html":
+        "https://acglass.com/ocean-prime-ft-lauderdale.html",
+}
 APEX_SITEMAP = BASE + "/sitemap.xml"
 
 # Refs produced by JS string concatenation in inline <script>-adjacent markup.
@@ -545,7 +555,7 @@ def check_sitemaps(results: list[Result]) -> None:
     for rel in [MASTER_SITEMAP, SITEMAP_INDEX, *CHILD_URLSETS]:
         body = read(rel)
         for url in RETIRED_SITEMAP_URLS:
-            if url in body:
+            if f"<loc>{url}</loc>" in body:
                 leftover_retired.append(f"{url} in {rel}")
     results.append(
         Result(
@@ -597,7 +607,9 @@ def check_sitemaps(results: list[Result]) -> None:
             noindexed.append(loc)
         m = CANON.search(html)
         if m and m.group(1).rstrip("/") != loc.rstrip("/"):
-            cross_canon.append(f"{loc} -> {m.group(1)}")
+            allowed = SITEMAP_CROSS_CANONICAL_ALLOWED.get(loc.rstrip("/"))
+            if allowed != m.group(1).rstrip("/"):
+                cross_canon.append(f"{loc} -> {m.group(1)}")
         # Every ancestor directory of a sitemap URL must itself resolve, or the
         # crawler walks into a 404 parent (the /author/, /blog-2026/, /doral/ bug).
         parts = [p for p in path.split("/")[:-1] if p]

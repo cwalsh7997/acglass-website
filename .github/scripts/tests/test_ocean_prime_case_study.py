@@ -76,13 +76,13 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
             self.assertEqual(PRIMARY_URL, canonical.group(1), rel)
             self.assertNotIn(f'href="{PORTFOLIO_URL}"', canonical.group(0), rel)
 
-    def test_primary_is_in_project_sitemaps(self):
-        self.assertIn(PRIMARY_URL, _read("sitemap.xml"))
-        self.assertIn(PRIMARY_URL, _read("sitemap-projects.xml"))
-        self.assertNotIn(
-            "https://acglass.com/projects/ocean-prime-ft-lauderdale.html",
-            _read("sitemap.xml"),
-        )
+    def test_live_case_study_is_in_project_sitemaps(self):
+        """Cloudflare 301s the keeper short URL to portfolio; advertise the 200 alias."""
+        live = "https://acglass.com/projects/ocean-prime-ft-lauderdale.html"
+        self.assertIn(live, _read("sitemap.xml"))
+        self.assertIn(live, _read("sitemap-projects.xml"))
+        self.assertNotIn(PRIMARY_URL, _read("sitemap.xml"))
+        self.assertNotIn(PRIMARY_URL, _read("sitemap-projects.xml"))
 
     def test_high_traffic_cards_link_to_live_projects_alias(self):
         """Cloudflare still 301s the primary URL to portfolio; send GCs to the 200 alias."""
