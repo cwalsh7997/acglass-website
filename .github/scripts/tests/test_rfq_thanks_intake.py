@@ -80,8 +80,36 @@ class ThanksIntakeTests(unittest.TestCase):
         html = read("scope-engine.html")
         self.assertNotIn("emailed to you AND downloaded", html)
         self.assertNotIn("your report is on its way to your inbox", html)
+        self.assertNotIn("full report is attached to this email", html)
+        self.assertNotIn("A branded PDF of the full report is attached", html)
+        self.assertNotIn("we'll resend it", html)
+        self.assertNotIn("We'll send you a printable PDF version", html)
+        self.assertNotIn("Email me the PDF", html)
         self.assertIn("FormSubmit does not attach that PDF", html)
+        self.assertIn("FormSubmit does not attach", html)
+        self.assertIn("local download", html)
         self.assertIn('href="/send-plans.html"', html)
+
+        start = html.find("function buildAutoresponse(")
+        self.assertGreater(start, 0, "missing buildAutoresponse()")
+        depth = 0
+        body = ""
+        brace = html.find("{", start)
+        for i in range(brace, len(html)):
+            if html[i] == "{":
+                depth += 1
+            elif html[i] == "}":
+                depth -= 1
+                if depth == 0:
+                    body = html[start : i + 1]
+                    break
+        self.assertTrue(body)
+        self.assertIn("local download", body)
+        self.assertIn("FormSubmit does not attach", body)
+        self.assertIn("/send-plans.html", body)
+        self.assertIn("(772) 486-7711", body)
+        self.assertNotIn("is attached to this email", body)
+        self.assertNotIn("we'll resend it", body)
 
     def test_non_wave4_plan_upload_ctas_do_not_point_at_contact(self):
         leftovers = []
