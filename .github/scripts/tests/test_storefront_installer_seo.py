@@ -228,6 +228,50 @@ class CannibalizationTests(unittest.TestCase):
             "<title>Florida Glazing Bid Desk | Send Plans, 48-Hr Reply</title>",
             contact,
         )
+        self.assertIn('href="/es-windows.html">ESWindows partner page</a>', services)
+        self.assertIn('href="/es-windows.html">ESWindows partner page</a>', contact)
+
+    def test_high_value_pages_carry_contextual_hub_keeper_and_product_links(self):
+        keepers = (
+            "/storefront-glazier-west-palm-beach-florida/",
+            "/storefront-glazier-naples-florida/",
+            "/storefront-glazier-tampa-florida/",
+        )
+        need_hub = ("about.html", "facts.html", "manufacturers.html", "bid.html")
+        need_keepers = (
+            "about.html",
+            "facts.html",
+            "manufacturers.html",
+            "bid.html",
+            "portfolio.html",
+        )
+        need_euro = ("facts.html", "bid.html")
+        need_es = (
+            "about.html",
+            "facts.html",
+            "bid.html",
+            "portfolio.html",
+            "services.html",
+            "contact.html",
+        )
+        for rel in need_hub:
+            self.assertIn('href="/florida-commercial-glazing/"', read(rel), rel)
+        for rel in need_keepers:
+            html = read(rel)
+            for slug in keepers:
+                self.assertIn(f'href="{slug}"', html, f"{rel} missing {slug}")
+        for rel in need_euro:
+            self.assertIn('href="/products/euro-wall/"', read(rel), rel)
+        for rel in need_es:
+            self.assertIn('href="/es-windows.html"', read(rel), rel)
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Commercial Storefront Installer Florida</a>',
+            read("facts.html"),
+        )
+        self.assertIn(
+            'href="/storefront-glazier-west-palm-beach-florida/">West Palm Beach storefront</a>',
+            read("about.html"),
+        )
 
     def test_blog_and_services_carry_installer_anchors_to_hub_or_keepers(self):
         blog = read("blog/what-is-a-storefront-glazing-system.html")
