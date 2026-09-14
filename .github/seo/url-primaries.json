@@ -115,7 +115,12 @@
     "   contractor queries. The freeze existed because the ranking URL was unknown. Title and",
     "   meta were a CTR problem, not a routing problem. Wave-4 edits title, description, og/twitter,",
     "   and one hub link only. Canonical, H1, and NAP schema stay. Homepage freeze stays.",
-    "   /commercial-glazier-near-me-west-palm-beach/ and /impact-windows-palm-beach.html stay frozen."
+    "   /commercial-glazier-near-me-west-palm-beach/ and /impact-windows-palm-beach.html stay frozen.",
+    "",
+    "2026-09-14 -- Stubbed /west-palm-beach-commercial-glazing.html onto",
+    "   /storefront-glazier-west-palm-beach-florida/ (noindex,follow + canonical + HTML refresh).",
+    "   File stays on disk. WPB commercial-glazing and storefront intents stay frozen with no",
+    "   declared primary; a storefront-glazier URL cannot become the commercial-glazing primary."
   ],
   "_frozen_note": [
     "West Palm Beach holds #1 organic for 'commercial glazing contractor west palm beach'",
@@ -239,19 +244,12 @@
       "market": "tampa",
       "intent": "commercial-glazing",
       "head_terms": ["commercial glazing contractor tampa", "commercial glazing contractors tampa fl"],
-      "primary": "/tampa-commercial-glazing.html",
-      "status": "ratified",
+      "primary": null,
+      "status": "blocked-no-primary",
       "evidence": ["topical:SS4.3", "measurement:markets[tampa]"],
       "consolidate_in_repo": [],
-      "requires_external_redirect": [
-        {
-          "source": "/commercial-glazing-tampa.html",
-          "current_destination": "/tampa/",
-          "required_destination": "/tampa-commercial-glazing.html",
-          "reason": "Same two-hop as Miami: /tampa/ is storefront copy and canonicals to /storefront-glazier-tampa-florida/."
-        }
-      ],
-      "notes": "/tampa/ canonical left alone for the same reason as /miami/."
+      "requires_external_redirect": [],
+      "notes": "2026-09-14 SEO daily ship: /tampa-commercial-glazing.html is now a noindex,follow HTML refresh stub onto /storefront-glazier-tampa-florida/. A storefront-glazier page cannot hold the broad commercial-glazing primary (canonical-verify). /tampa/ still canonicals to the storefront keeper and is left alone. This intent stays blocked until a distinct commercial-glazing hub exists."
     },
     {
       "market": "tampa",
@@ -260,9 +258,15 @@
       "primary": "/storefront-glazier-tampa-florida/",
       "status": "gsc-gated",
       "evidence": ["topical:SS4.3"],
-      "consolidate_in_repo": [],
+      "consolidate_in_repo": [
+        {
+          "url": "/tampa-commercial-glazing.html",
+          "mechanism": "rel=canonical + noindex,follow + HTML refresh stub",
+          "also": "removed from sitemap.xml and sitemap-pages.xml"
+        }
+      ],
       "requires_external_redirect": [],
-      "notes": "Current self-canonical state retained. topical SS4.3 would invert to storefront-installer-tampa.html; that is a primary flip and needs GSC."
+      "notes": "Current self-canonical state retained. 2026-09-14 SEO daily ship stubs /tampa-commercial-glazing.html onto this keeper so the two URLs stop competing. topical SS4.3 would invert to storefront-installer-tampa.html; that is a primary flip and needs GSC."
     },
     {
       "market": "orlando",

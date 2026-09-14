@@ -173,7 +173,7 @@ SAMPLE = [
     "capabilities.html",
     "faq.html",
     "reviews/index.html",
-    "west-palm-beach-commercial-glazing.html",
+    "storefront-glazier-west-palm-beach-florida/index.html",
     "commercial-glazing-near-me-florida.html",
     "eau-palm-beach-resort.html",
 ]
