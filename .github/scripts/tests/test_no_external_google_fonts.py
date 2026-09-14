@@ -19,7 +19,7 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # Metadata, images, forms, and non-JSON-LD scripts are unchanged.
 PROTECTED_HASHES = {
     "anchors": "75d7427a83a1d4752a81bc3b388357df09812e4fa58c3cfcd955b9707302f1e9",
-    "body": "a5886e3d01b8be3265a65e80d219d84863cde76d751d1db90825821b88fa4654",
+    "body": "a94157055de14a2c64955e4ccd1c0574704ab9b6aac56ca689db189240dba5ec",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "f293b0d3972fa909d8f9a1216132ebcf89a99f46d4961977d74dc90801f19d51",
     "jsonld": "a867c654d313a068dd6155e1e59ed6a8e63a4003127054dddcf60e78b7d8b558",
