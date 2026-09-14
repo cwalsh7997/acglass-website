@@ -1,35 +1,63 @@
 #!/usr/bin/env bash
-# D6: "350+" projects and "1,000,000+ SF" are APPROVED. One value, one format.
+# Company-wide project-count and installed-SF totals are unpublished.
+# Connor cancelled unverified 350+ / 1M+ / 1,000,000+ SF figures on 2026-09-14.
 #
-# REWRITTEN 2026-09-09, because the old version could not fail on a wrong number.
-# It printed the variants for review and only failed if "350+" vanished entirely.
-# That is how the site carried "200+ commercial projects in the county since 2021"
-# on 11 pages and "500+ projects in South Florida" on another, both unapproved and
-# the second one 43% above the figure Connor actually confirmed, straight through a
-# green check for the whole refresh.
-#
-# It now fails on any company-volume claim that is not the approved figure. Project
-# SCALE measurements are not company volume and are left alone: "Board-up
-# (curtainwall section, 100+ SF)" describes an opening, not a portfolio.
+# Fail if public HTML still publishes those company-volume claims.
+# Leave alone:
+#   - $350+ / $150-$350+ unit prices
+#   - $1,000,000 insurance limits (no plus)
+#   - 3.6 million square feet (manufacturer campus, not ACG volume)
+#   - 350-square-foot project openings
+#   - legacy URL slugs (do not delete pages)
 source "$(dirname "$0")/_lib.sh"
 fail=0
 
-bad=$(gg -oE '\b[0-9,]+\+ [a-z ]*(commercial )?projects' | grep -v '350+ ' | head -8)
-if [ -n "$bad" ]; then
-  printf '%s\n' "$bad" | cut -c1-120 | sed 's/^/  unapproved project count: /'
-  fail=$((fail + $(printf '%s' "$bad" | grep -c .)))
+# 350+ that is not a dollar price ($350+ or $150-$350+).
+bad350=$(gg -nE '350\+' | grep -Ev '\$[0-9,]*350\+' | grep -Ev 'lessons-from-350-|acg-350-projects-milestone' | head -20)
+if [ -n "$bad350" ]; then
+  printf '%s\n' "$bad350" | cut -c1-160 | sed 's/^/  unpublished 350+ volume claim: /'
+  fail=$((fail + $(printf '%s' "$bad350" | grep -c .)))
 fi
 
-# company-volume square footage only: a figure attached to delivered work
-badsf=$(gg -oE '[0-9,]+\+ ?(SF|sq\.? ?ft|square feet) (of |delivered|installed|across)' \
-        | grep -v '1,000,000+' | head -5)
+bad1m=$(gg -nF '1M+' | head -20)
+if [ -n "$bad1m" ]; then
+  printf '%s\n' "$bad1m" | cut -c1-160 | sed 's/^/  unpublished 1M+ volume claim: /'
+  fail=$((fail + $(printf '%s' "$bad1m" | grep -c .)))
+fi
+
+# 1,000,000+ is company SF volume. Plain $1,000,000 insurance has no plus.
+badsf=$(gg -nE '1,000,000\+' | head -20)
 if [ -n "$badsf" ]; then
-  printf '%s\n' "$badsf" | cut -c1-120 | sed 's/^/  unapproved volume SF: /'
+  printf '%s\n' "$badsf" | cut -c1-160 | sed 's/^/  unpublished 1,000,000+ volume claim: /'
   fail=$((fail + $(printf '%s' "$badsf" | grep -c .)))
 fi
 
-p=$(gg -lF '350+' | wc -l | tr -d ' ')
-[ "$p" -eq 0 ] && { say "FAIL    volume-claims: approved '350+' claim has disappeared"; exit 1; }
-[ "$fail" -eq 0 ] && { say "PASS    volume-claims (350+ on $p pages, no unapproved variant)"; exit 0; }
-say "FAIL    volume-claims: $fail unapproved variant(s)"
+# Phrase forms. Do not use a bare "350-project" prefix: that matches the
+# legacy slug acg-350-projects-milestone / lessons-from-350-..., which stay.
+badphrase=$(gg -nE '350-project (dataset|glazing)|350 commercial glazing projects|million square feet of glazing|1 million SF' | head -20)
+if [ -n "$badphrase" ]; then
+  printf '%s\n' "$badphrase" | cut -c1-160 | sed 's/^/  unpublished volume phrase: /'
+  fail=$((fail + $(printf '%s' "$badphrase" | grep -c .)))
+fi
+
+# Public SVG assets.
+svg_hits=$(git -C "$ROOT" grep -nI -E '350\+|1M\+|1,000,000\+' -- 'images/*.svg' 2>/dev/null | head -20)
+if [ -n "$svg_hits" ]; then
+  printf '%s\n' "$svg_hits" | cut -c1-160 | sed 's/^/  unpublished volume claim in SVG: /'
+  fail=$((fail + $(printf '%s' "$svg_hits" | grep -c .)))
+fi
+
+# Served search index: company volume only, not $350+ unit prices or legacy slugs.
+idx_hits=$(git -C "$ROOT" grep -nI -E '350\+|1M\+|1,000,000\+' -- search-index.json 2>/dev/null \
+  | grep -Ev '\$[0-9,]*350\+|acg-350-projects-milestone|lessons-from-350-' | head -20)
+if [ -n "$idx_hits" ]; then
+  printf '%s\n' "$idx_hits" | cut -c1-160 | sed 's/^/  unpublished volume claim in search-index: /'
+  fail=$((fail + $(printf '%s' "$idx_hits" | grep -c .)))
+fi
+
+if [ "$fail" -eq 0 ]; then
+  say "PASS    volume-claims (no unpublished 350+/1M+/1,000,000+ SF company totals)"
+  exit 0
+fi
+say "FAIL    volume-claims: $fail unpublished volume claim(s)"
 exit 1

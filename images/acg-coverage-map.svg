@@ -42,12 +42,12 @@
   <g transform="translate(50 166)">
     <text x="0" y="0" fill="rgba(255,255,255,0.5)" font-size="10" font-weight="700" letter-spacing="2">FLORIDA OPERATIONS</text>
 
-    <text x="0" y="55" fill="#fff" font-size="22" font-weight="900">350+</text>
-    <text x="82" y="55" fill="rgba(255,255,255,0.82)" font-size="14" font-weight="700">Commercial projects</text>
+    <text x="0" y="55" fill="#fff" font-size="22" font-weight="900">2021</text>
+    <text x="68" y="55" fill="rgba(255,255,255,0.82)" font-size="14" font-weight="700">Founded in Florida</text>
     <line x1="0" y1="78" x2="258" y2="78" stroke="rgba(255,255,255,0.12)"/>
 
-    <text x="0" y="127" fill="#fff" font-size="22" font-weight="900">1M+ SF</text>
-    <text x="99" y="127" fill="rgba(255,255,255,0.82)" font-size="14" font-weight="700">Glazing installed</text>
+    <text x="0" y="127" fill="#fff" font-size="22" font-weight="900">CGC</text>
+    <text x="62" y="127" fill="rgba(255,255,255,0.82)" font-size="14" font-weight="700">FL License #1531993</text>
     <line x1="0" y1="150" x2="258" y2="150" stroke="rgba(255,255,255,0.12)"/>
 
     <text x="0" y="199" fill="#fff" font-size="22" font-weight="900">3</text>

@@ -205,7 +205,13 @@ def test_tool_get_bid_request_link():
 
 def test_tool_get_track_record():
     out = server.get_track_record()
-    assert out["commercial_projects_delivered"] == "350+"
+    blob = json.dumps(out)
+    assert "350+" not in blob
+    assert "1M+" not in blob
+    assert "commercial_projects_delivered" not in out
+    assert "square_feet_installed" not in out
+    assert out["founded"] == "2021"
+    assert out["office_count"] == 3
     assert out["osha_recordables_since_founding"] == 0
 
 
