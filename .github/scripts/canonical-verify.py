@@ -749,7 +749,7 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
         # Connor authorised 2026-09-09.
         AUTHORISED_ROOT_DESCRIPTION = (
             "Florida's commercial glazing contractor for storefront, curtainwall, "
-            "and impact glass, 350+ projects, FL CGC #1531993. Get a scope in 48 hrs."
+            "and impact glass. FL CGC #1531993. Get a scope in 48 hrs."
         )
         md = failures.get("meta-description", "")
         if url == "/" and md.endswith(f'now "{AUTHORISED_ROOT_DESCRIPTION}"'):

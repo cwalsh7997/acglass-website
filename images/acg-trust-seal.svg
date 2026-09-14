@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="ACG trust seal: Florida licensed, bonded, 350+ projects, zero OSHA recordables">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="ACG trust seal: Florida licensed, bonded, founded 2021, zero OSHA recordables">
   <defs>
     <!-- Curved paths for circular text. Both arcs sweep so text baseline points outward (top reads normally, bottom reads normally too because we draw left-to-right along the lower arc with sweep flag 1). -->
     <path id="acg-seal-top" d="M 24 110 a 86 86 0 0 1 172 0" fill="none"/>
@@ -34,20 +34,20 @@
         font-family="'JetBrains Mono', ui-monospace, monospace"
         font-size="7" font-weight="700" letter-spacing="1.6"
         fill="rgba(255,255,255,0.6)">
-    FL CGC 1531993 · EST 2020
+    FL CGC 1531993 · EST 2021
   </text>
 
   <!-- Center stack: stat numbers -->
   <g text-anchor="middle" font-family="'Inter', sans-serif">
 
-    <!-- Top stat: 350+ -->
+    <!-- Top stat: founded year -->
     <text x="110" y="80"
           font-size="22" font-weight="900"
-          letter-spacing="-1.2" fill="#FFFFFF">350+</text>
+          letter-spacing="-1.2" fill="#FFFFFF">2021</text>
     <text x="110" y="92"
           font-size="6.5" font-weight="700" letter-spacing="2.2"
           fill="rgba(255,255,255,0.55)"
-          font-family="'JetBrains Mono', ui-monospace, monospace">FL PROJECTS</text>
+          font-family="'JetBrains Mono', ui-monospace, monospace">FOUNDED</text>
 
     <!-- Middle: red divider with $3M/$6M -->
     <line x1="80" y1="100" x2="140" y2="100" stroke="#E11320" stroke-width="1.4"/>

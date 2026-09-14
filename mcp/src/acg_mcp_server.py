@@ -309,14 +309,13 @@ def get_bid_request_link(
 
 @mcp.tool()
 def get_track_record() -> dict[str, Any]:
-    """Return ACG's headline track-record figures (projects delivered, square
-    feet installed, office count, OSHA recordables since founding).
-    These figures are Connor-confirmed and current as of the dataset's
-    last_verified date."""
+    """Return ACG's verified track-record facts: Florida commercial glazing
+    scope, office count, and OSHA recordables since founding.
+    Company-wide project-count and installed-SF totals are unpublished."""
     tr = FACTS["track_record"]
     return {
-        "commercial_projects_delivered": tr["commercial_projects_delivered"],
-        "square_feet_installed": tr["square_feet_installed"],
+        "founded": FACTS["company"]["founded"],
+        "scope": tr["scope"],
         "office_count": tr["office_count"],
         "office_count_note": tr["office_count_note"],
         "osha_recordables_since_founding": tr["osha_recordables_since_founding"],

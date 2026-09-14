@@ -7,7 +7,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parents[3]
 MAP_PATH = ROOT / "images" / "acg-coverage-map.svg"
-CACHE_VERSION = "20260814-florida"
+CACHE_VERSION = "20260914-novolume"
 EXPECTED_REFERENCE_COUNTS = {
     "atlanta-commercial-glazing.html": 3,
     "buildingconnected-basisboard-glazing.html": 2,
@@ -46,10 +46,10 @@ EXPECTED_TEXT_FILLS = {
     "Florida Coverage": "#fff",
     "WEST PALM BEACH | NAPLES | TAMPA": "rgba(255,255,255,0.62)",
     "FLORIDA OPERATIONS": "rgba(255,255,255,0.5)",
-    "350+": "#fff",
-    "Commercial projects": "rgba(255,255,255,0.82)",
-    "1M+ SF": "#fff",
-    "Glazing installed": "rgba(255,255,255,0.82)",
+    "2021": "#fff",
+    "Founded in Florida": "rgba(255,255,255,0.82)",
+    "CGC": "#fff",
+    "FL License #1531993": "rgba(255,255,255,0.82)",
     "3": "#fff",
     "Current Florida offices": "rgba(255,255,255,0.82)",
     "FLORIDA FOOTPRINT": "rgba(255,255,255,0.5)",
@@ -198,8 +198,8 @@ class FloridaCoverageMapContractTests(unittest.TestCase):
         for required in (
             "ACG Florida coverage map",
             "WEST PALM BEACH | NAPLES | TAMPA",
-            "350+",
-            "1M+ SF",
+            "2021",
+            "FL License #1531993",
             "Current Florida offices",
             "HEADQUARTERS",
         ):
