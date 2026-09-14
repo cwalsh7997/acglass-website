@@ -1578,6 +1578,7 @@ class TennesseePublicInstallClaimScrubTests(unittest.TestCase):
         "ACG installs Euro-Wall",
         "ACG installs it as a",
         "fields OSHA 30 trained crews",
+        "ACG installs commercial glazing; AGC manufactures",
     )
 
     def test_public_tn_pages_do_not_claim_acg_field_install(self):
@@ -1600,6 +1601,50 @@ class TennesseePublicInstallClaimScrubTests(unittest.TestCase):
             source,
         )
         self.assertIn("Every laminated and tempered assembly ACG furnishes", source)
+        self.assertIn(
+            "ACG furnishes and installs commercial glazing in Florida; "
+            "Tennessee is material supply and consulting",
+            source,
+        )
+        self.assertNotIn("ACG installs commercial glazing; AGC manufactures", source)
+
+
+class TennesseeDisambiguationLaneTests(unittest.TestCase):
+    """Company-name disambiguation on TN pages must not imply TN field labor."""
+
+    BARE_INSTALL_CLAUSE = "ACG installs commercial glazing; AGC manufactures"
+    LANE_CLAUSE = (
+        "ACG furnishes and installs commercial glazing in Florida; "
+        "Tennessee is material supply and consulting"
+    )
+    PAGES_WITH_SHARED_SNIPPET = (
+        "commercial-glazing-nashville-tn.html",
+        "commercial-glazing-tn.html",
+        "commercial-glazing-tennessee.html",
+        "commercial-glazing-memphis-tn.html",
+        "commercial-glazing-knoxville-tn.html",
+        "commercial-glazing-chattanooga-tn.html",
+        "tennessee-building-code-glazing.html",
+    )
+
+    def test_shared_disambiguation_on_tn_pages_is_geography_aware(self):
+        for rel in self.PAGES_WITH_SHARED_SNIPPET:
+            source = (Path(guard.REPO_ROOT) / rel).read_text(encoding="utf-8")
+            with self.subTest(rel=rel):
+                self.assertNotIn(self.BARE_INSTALL_CLAUSE, source)
+                self.assertIn(self.LANE_CLAUSE, source)
+                self.assertIn("NOT affiliated with AGC Inc.", source)
+                self.assertIn("NOT affiliated with ACG Glass & Metals", source)
+
+    def test_all_tn_pages_lack_bare_install_disambiguation(self):
+        offenders = []
+        for rel, full in guard.iter_html_files():
+            source = Path(full).read_text(encoding="utf-8")
+            if self.BARE_INSTALL_CLAUSE not in source:
+                continue
+            if guard.is_tn_page(rel, source):
+                offenders.append(rel)
+        self.assertEqual(offenders, [])
 
 
 if __name__ == "__main__":

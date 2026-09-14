@@ -569,6 +569,12 @@ class NashvilleResidualTests(unittest.TestCase):
             "field installation is coordinated with in-state install partners",
             html,
         )
+        self.assertNotIn("ACG installs commercial glazing; AGC manufactures", html)
+        self.assertIn(
+            "ACG furnishes and installs commercial glazing in Florida; "
+            "Tennessee is material supply and consulting",
+            html,
+        )
 
 
 if __name__ == "__main__":
