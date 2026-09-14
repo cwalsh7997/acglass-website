@@ -724,6 +724,20 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
             "now 'Commercial glazing. Written in 48 hours.'"
         ):
             failures.pop("h1")
+        # Connor 2026-09-14: hero second beat must name a written bid, not
+        # an ambiguous "written in 48 hours." Keyed on the result so stacked
+        # branches still pass against whatever H1 the PR base still has.
+        AUTHORISED_ROOT_H1 = "Commercial glazing. Written bid in 48 hours."
+        h1f = failures.get("h1", "")
+        if url == "/" and h1f.endswith(f"now {AUTHORISED_ROOT_H1!r}"):
+            failures.pop("h1")
+        # Connor 2026-09-14: office cities stay off the hero subtitle. The
+        # lost WPB segment is that city list only; any other WPB-text loss
+        # still fails.
+        AUTHORISED_LOST_WPB = "West Palm Beach, Naples, and Tampa."
+        wpb = failures.get("wpb-text", "")
+        if url == "/" and wpb.startswith("1 removed") and AUTHORISED_LOST_WPB in wpb:
+            failures.pop("wpb-text")
         # D6 obligation 4 (locked) requires the unapproved bonding claim off the
         # homepage. Questionnaire item 20 is open and no surety letter is confirmed,
         # so the claim cannot stand while the freeze waits for a GSC baseline.

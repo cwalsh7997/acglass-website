@@ -202,11 +202,11 @@ class PositiveTests(unittest.TestCase):
 
     def test_rewording_non_wpb_neighbor_in_markets_nav_passes(self):
         # #markets also contains "Storefront glazier in West Palm Beach".
-        # Changing the Tennessee link must not look like a WPB-text removal.
+        # Changing a non-WPB neighbor must not look like a WPB-text removal.
         new = sub(
             HOME,
-            "Tennessee glazing supply and consulting",
-            "Tennessee furnish and consult",
+            "Commercial glazing contractor in Jacksonville",
+            "Commercial glazing contractor serving Jacksonville",
         )
         failures, _ = diff(HOME, new)
         self.assertEqual({}, failures)
