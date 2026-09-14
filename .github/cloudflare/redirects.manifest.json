@@ -43,22 +43,15 @@
       "after": "One hop, landing on the ratified commercial-glazing primary, which is self-canonical.",
       "moves_a_ranking_url": false,
       "rollback": "Restore destination to /miami/."
-    },
-    {
-      "id": "cg-tampa",
-      "source": "/commercial-glazing-tampa.html",
-      "current_destination": "/tampa/",
-      "required_destination": "/tampa-commercial-glazing.html",
-      "market": "tampa",
-      "intent": "commercial-glazing",
-      "status_code": 301,
-      "defect": "Same two-hop as Miami: 301 to /tampa/ (storefront copy), which rel=canonicals to /storefront-glazier-tampa-florida/.",
-      "after": "One hop, landing on the ratified commercial-glazing primary, which is self-canonical.",
-      "moves_a_ranking_url": false,
-      "rollback": "Restore destination to /tampa/."
     }
   ],
   "deliberately_not_requested": [
+    {
+      "source": "/commercial-glazing-tampa.html",
+      "current_destination": "/tampa/",
+      "reason": "blocked-no-primary",
+      "detail": "2026-09-14 SEO daily ship stubbed /tampa-commercial-glazing.html onto /storefront-glazier-tampa-florida/. There is no remaining self-canonical commercial-glazing hub to flatten this 301 onto. Leave the live edge 301 to /tampa/, which already canonicals to the Tampa storefront keeper."
+    },
     {
       "source": "/commercial-glazing-west-palm-beach.html",
       "current_destination": "/west-palm-beach/",
