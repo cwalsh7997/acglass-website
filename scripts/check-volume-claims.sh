@@ -4,7 +4,7 @@
 #
 # Fail if public HTML still publishes those company-volume claims.
 # Leave alone:
-#   - $350+ / $150–$350+ unit prices
+#   - $350+ / $150-$350+ unit prices
 #   - $1,000,000 insurance limits (no plus)
 #   - 3.6 million square feet (manufacturer campus, not ACG volume)
 #   - 350-square-foot project openings
@@ -12,7 +12,7 @@
 source "$(dirname "$0")/_lib.sh"
 fail=0
 
-# 350+ that is not a dollar price ($350+ or $150–$350+).
+# 350+ that is not a dollar price ($350+ or $150-$350+).
 bad350=$(gg -nE '350\+' | grep -Ev '\$[0-9,]*350\+' | grep -Ev 'lessons-from-350-|acg-350-projects-milestone' | head -20)
 if [ -n "$bad350" ]; then
   printf '%s\n' "$bad350" | cut -c1-160 | sed 's/^/  unpublished 350+ volume claim: /'
