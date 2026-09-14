@@ -556,6 +556,20 @@ class NashvilleResidualTests(unittest.TestCase):
                 bad.append(str(path.relative_to(REPO_ROOT)))
         self.assertEqual(bad, [])
 
+    def test_nashville_commercial_hub_is_furnish_consult_not_install_crews(self):
+        html = read("commercial-glazing-nashville-tn.html")
+        self.assertNotIn("AAMA InstallationMasters trained crews", html)
+        self.assertNotIn("Every laminated and tempered assembly ACG installs", html)
+        self.assertNotIn("manufacturer-specified installation only", html)
+        self.assertIn(
+            "ACG holds no Tennessee office and performs no Tennessee field labor",
+            html,
+        )
+        self.assertIn(
+            "field installation is coordinated with in-state install partners",
+            html,
+        )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
