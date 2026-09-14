@@ -1546,5 +1546,61 @@ class CommercialGlazingTnTruthTests(unittest.TestCase):
                 self.assertIsNone(pattern.search(source))
 
 
+class TennesseePublicInstallClaimScrubTests(unittest.TestCase):
+    """High-traffic TN pages must not advertise ACG field labor or trained crews."""
+
+    PAGES = (
+        "commercial-glazing-nashville-tn.html",
+        "commercial-glazing-tn.html",
+        "commercial-glazing-tennessee.html",
+        "storefront-installer-nashville.html",
+        "nashville/index.html",
+        "healthcare-glazing-nashville/index.html",
+        "restaurant-glazing-nashville/index.html",
+        "hotel-glazing-nashville/index.html",
+        "multifamily-glazing-nashville/index.html",
+        "laminated-glass-tennessee.html",
+        "tennessee-building-code-glazing.html",
+        "tennessee-commercial-glazing/index.html",
+        "commercial-glazing-memphis-tn.html",
+        "commercial-glazing-knoxville-tn.html",
+        "commercial-glazing-chattanooga-tn.html",
+    )
+    PROHIBITED = (
+        "AAMA InstallationMasters trained crews",
+        "Every laminated and tempered assembly ACG installs",
+        "OSHA 30 trained field crews",
+        "OSHA 30 trained crews",
+        "ACG installs the full CSI Division 08",
+        "Systems we'll install",
+        "ACG installs that full range",
+        "ACG installs ESWindows",
+        "ACG installs Euro-Wall",
+        "ACG installs it as a",
+        "fields OSHA 30 trained crews",
+    )
+
+    def test_public_tn_pages_do_not_claim_acg_field_install(self):
+        for rel in self.PAGES:
+            source = (Path(guard.REPO_ROOT) / rel).read_text(encoding="utf-8")
+            for phrase in self.PROHIBITED:
+                with self.subTest(rel=rel, phrase=phrase):
+                    self.assertNotIn(phrase, source)
+
+    def test_nashville_hub_keeps_furnish_consult_honesty(self):
+        source = (
+            Path(guard.REPO_ROOT) / "commercial-glazing-nashville-tn.html"
+        ).read_text(encoding="utf-8")
+        self.assertIn(
+            "ACG holds no Tennessee office and performs no Tennessee field labor",
+            source,
+        )
+        self.assertIn(
+            "field installation is coordinated with in-state install partners",
+            source,
+        )
+        self.assertIn("Every laminated and tempered assembly ACG furnishes", source)
+
+
 if __name__ == "__main__":
     unittest.main()
