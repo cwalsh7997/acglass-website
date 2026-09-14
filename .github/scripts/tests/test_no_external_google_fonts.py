@@ -13,14 +13,16 @@ ROOT = Path(__file__).resolve().parents[3]
 PAGE = ROOT / "projects" / "ocean-prime-ft-lauderdale.html"
 FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 
-# Rebaselined 2026-09-13: alias now canonicals to the root Ocean Prime case
-# study and the RFQ CTA goes to /send-plans.html. Scope copy unchanged.
+# Rebaselined 2026-09-14: live JSON-LD url/breadcrumb now name the /projects/
+# 200 (Cloudflare 301s the short URL to portfolio). Added Project @type,
+# GC takeaway, and contextual Euro-Wall / FTL / restaurant / projects links.
+# Metadata, images, forms, and non-JSON-LD scripts are unchanged.
 PROTECTED_HASHES = {
-    "anchors": "57a27685c018a7f6ad2b7861b6c319f56fd478ff089a013a54ec6d86cb306ad6",
-    "body": "9e929b2d6c5039a5c7c59272b09acb03b4e94aa71badd309d53970aa49882049",
+    "anchors": "75d7427a83a1d4752a81bc3b388357df09812e4fa58c3cfcd955b9707302f1e9",
+    "body": "a5886e3d01b8be3265a65e80d219d84863cde76d751d1db90825821b88fa4654",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "f293b0d3972fa909d8f9a1216132ebcf89a99f46d4961977d74dc90801f19d51",
-    "jsonld": "7e1e1dc00e609444ee29c7f330312a48e4b8791ecb0a3c34c08dda70da6d5075",
+    "jsonld": "a867c654d313a068dd6155e1e59ed6a8e63a4003127054dddcf60e78b7d8b558",
     "metadata": "04b21ef485f547009c1760a27f1e03ed0589bddc34c488601b496caf496868af",
     "scripts": "59d80dfe70fb34b631f5af37c031aa15a9fb62d74c3f0c7f7ba40f348fd81567",
 }

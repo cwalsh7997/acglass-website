@@ -499,6 +499,41 @@ class SchemaFollowupTests(unittest.TestCase):
             },
         )
 
+    def test_gc_hub_and_portfolio_have_rfq_faqpage(self):
+        required = (
+            "What Florida license covers ACG commercial glazing work?",
+            "How fast does ACG return a bid on documented scopes?",
+            "Where are ACG's Florida offices?",
+            "How do I invite ACG to bid?",
+            "Is ACG woman-owned?",
+        )
+        for rel in ("for-general-contractors/index.html", "portfolio.html"):
+            html = read(rel)
+            types = set()
+            names = []
+            answers = []
+            for block in self._ld_blocks(html):
+                for node in self._walk(block):
+                    types |= self._types(node)
+                    if "FAQPage" in self._types(node):
+                        names = [q["name"] for q in node["mainEntity"]]
+                        answers = [
+                            q["acceptedAnswer"]["text"] for q in node["mainEntity"]
+                        ]
+            self.assertIn("FAQPage", types, rel)
+            self.assertEqual(list(required), names, rel)
+            joined = " ".join(answers)
+            self.assertIn("CGC #1531993", joined, rel)
+            self.assertIn("48 hours", joined, rel)
+            self.assertIn("West Palm Beach", joined, rel)
+            self.assertIn("Naples", joined, rel)
+            self.assertIn("Tampa", joined, rel)
+            self.assertIn("BuildingConnected", joined, rel)
+            self.assertIn("woman-owned", joined, rel)
+            self.assertNotIn("bonded", joined.lower(), rel)
+            for question in required:
+                self.assertIn(question, html, rel)
+
 
 class RetailDuplicateTests(unittest.TestCase):
     RETAIL_TO_KEEPER = {

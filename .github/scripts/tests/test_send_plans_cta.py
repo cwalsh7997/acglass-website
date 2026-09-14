@@ -33,6 +33,11 @@ class SendPlansCtaTests(unittest.TestCase):
             "header, hero, #contact, and footer should all point the CTA at intake",
         )
         self.assertNotIn('href="/scope-engine.html">Send Us Plans</a>', html)
+        self.assertIn("<title>Commercial Glazing Contractor Florida | ACG</title>", html)
+        self.assertIn("Drawing set over 9 MB?", html)
+        self.assertIn("BuildingConnected", html)
+        self.assertIn("same 48-hour scope", html)
+        self.assertIn("Bid invite: BuildingConnected", html)
 
     def test_shared_chrome_send_plans_goes_to_intake(self):
         for rel in ("portfolio.html", "past-performance.html", "index-proof.html"):

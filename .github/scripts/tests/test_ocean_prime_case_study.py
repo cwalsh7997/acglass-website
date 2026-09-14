@@ -108,6 +108,60 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
                 self.assertNotEqual("/portfolio.html", dest, source)
                 self.assertNotIn("portfolio.html", dest)
 
+    def test_live_alias_jsonld_uses_projects_url_and_project_type(self):
+        """Cloudflare 301s the short URL to portfolio; JSON-LD must name the 200."""
+        live = "https://acglass.com/projects/ocean-prime-ft-lauderdale.html"
+        html = _read("projects/ocean-prime-ft-lauderdale.html")
+        blocks = [
+            json.loads(block)
+            for block in re.findall(
+                r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+                html,
+                re.I | re.S,
+            )
+        ]
+
+        def walk(obj):
+            if isinstance(obj, dict):
+                yield obj
+                for value in obj.values():
+                    yield from walk(value)
+            elif isinstance(obj, list):
+                for value in obj:
+                    yield from walk(value)
+
+        article = None
+        crumbs = []
+        for block in blocks:
+            for node in walk(block):
+                raw = node.get("@type")
+                types = set(raw) if isinstance(raw, list) else {raw}
+                if "Article" in types or "Project" in types:
+                    article = node
+                if "ListItem" in types and node.get("position") == 3:
+                    crumbs.append(node.get("item"))
+        self.assertIsNotNone(article)
+        types = article.get("@type")
+        self.assertIn("Project", types)
+        self.assertIn("Article", types)
+        self.assertEqual(live, article.get("url"))
+        self.assertEqual(live, article.get("mainEntityOfPage", {}).get("@id"))
+        self.assertIn(live, crumbs)
+        self.assertNotIn(
+            "https://acglass.com/ocean-prime-ft-lauderdale.html",
+            json.dumps(blocks),
+        )
+        self.assertIn("Cameron Mitchell", html)
+        self.assertIn("Kobi Karp", html)
+        self.assertIn("one Euro-Wall door/opening", html)
+        self.assertIn('href="/euro-wall.html"', html)
+        self.assertIn('href="/storefront-glazier-fort-lauderdale-florida/"', html)
+        self.assertIn('href="/projects/"', html)
+        self.assertIn('href="/restaurant-glazing-contractor.html"', html)
+        self.assertIn('href="/portfolio.html"', html)
+        self.assertIn("send-plans.html", html)
+        self.assertNotIn("full-facade package of", html.lower())
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
