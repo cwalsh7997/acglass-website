@@ -1,6 +1,6 @@
 # ========================================================================
 # robots.txt for American Commercial Glass (acglass.com)
-# Updated: 2026-05-17
+# Updated: 2026-09-16
 # Explicit AI crawler permissions for answer engine optimization (GEO)
 # ========================================================================
 
@@ -44,6 +44,10 @@ Disallow: /dealer/thanks.html
 # JSON-LD include fragment, not a page. Kept out of sitemaps. HTML stub would
 # trip tn-claim-guard (excluded fragment must not look like a document).
 Disallow: /services-schema-block.html
+# Drafts and internal paths must be blocked for all crawlers including Googlebot.
+# Groups do not combine, so these Disallows belong in User-agent: *, not after Bytespider.
+Disallow: /drafts/
+Disallow: /_internal/
 
 # ------------------------------------------------------------------------
 # The one refusal. TikTok/Doubao's crawler takes content without citing it.
@@ -57,9 +61,6 @@ Disallow: /
 # but are not advertised - GSC was still crawling the old index (2,516)
 # and a stale www sitemap (342, last read 2026-04-24).
 # ------------------------------------------------------------------------
-Disallow: /drafts/
-Disallow: /_internal/
-
 Sitemap: https://acglass.com/sitemap.xml
 
 # ------------------------------------------------------------------------
