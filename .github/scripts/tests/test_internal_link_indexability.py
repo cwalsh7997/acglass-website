@@ -101,6 +101,14 @@ class IndexableLinkTargetTests(unittest.TestCase):
         self.assertFalse(results["Indexable pages do not link to known redirect sources"].ok)
         self.assertIn("/source.html", results["Indexable pages do not link to noindex pages"].detail)
 
+    def test_thin_city_templates_and_gc_alias_are_allowed_noindex_targets(self):
+        for url in (
+            "/gc.html",
+            "/commercial-glazing-apopka.html",
+            "/commercial-glazing-tamarac.html",
+        ):
+            self.assertIn(url, audit.ALLOWED_NOINDEX_LINK_TARGETS)
+
     def test_wave2_noindex_targets_are_allowed_link_destinations(self):
         self.assertTrue(audit.is_wave2_noindex_target("/aventura/commercial-storefronts/"))
         self.assertTrue(audit.is_wave2_noindex_target("/storefront-glazier-boca-raton-florida/"))
