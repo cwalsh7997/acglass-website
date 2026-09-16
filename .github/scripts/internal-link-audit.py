@@ -70,6 +70,32 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     # from indexable pages is left in place so this PR does not retarget
     # the rest of the site.
     "/commercial-storefront-installer-florida.html",
+    # Thin commercial-glazing city templates + gc.html alias. Pages stay live
+    # (no deletes). locations.html and a few city satellites keep their hrefs
+    # so this containment PR does not retarget the rest of the site.
+    "/gc.html",
+    "/commercial-glazing-apopka.html",
+    "/commercial-glazing-brandon.html",
+    "/commercial-glazing-coconut-creek.html",
+    "/commercial-glazing-coral-springs.html",
+    "/commercial-glazing-greenacres.html",
+    "/commercial-glazing-homestead.html",
+    "/commercial-glazing-largo.html",
+    "/commercial-glazing-lauderhill.html",
+    "/commercial-glazing-lehigh-acres.html",
+    "/commercial-glazing-margate.html",
+    "/commercial-glazing-melbourne.html",
+    "/commercial-glazing-miami-gardens.html",
+    "/commercial-glazing-miramar.html",
+    "/commercial-glazing-north-port.html",
+    "/commercial-glazing-pinellas-park.html",
+    "/commercial-glazing-plantation.html",
+    "/commercial-glazing-riverview.html",
+    "/commercial-glazing-sanford.html",
+    "/commercial-glazing-spring-hill.html",
+    "/commercial-glazing-st-cloud.html",
+    "/commercial-glazing-sunrise.html",
+    "/commercial-glazing-tamarac.html",
 }
 
 # Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).

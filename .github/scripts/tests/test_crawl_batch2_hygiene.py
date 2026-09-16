@@ -44,6 +44,30 @@ KEEPER_GLAZIERS = (
     "storefront-glazier-fort-myers-florida",
     "storefront-glazier-sarasota-florida",
 )
+THIN_CITY_TEMPLATES = (
+    "commercial-glazing-apopka.html",
+    "commercial-glazing-brandon.html",
+    "commercial-glazing-coconut-creek.html",
+    "commercial-glazing-coral-springs.html",
+    "commercial-glazing-greenacres.html",
+    "commercial-glazing-homestead.html",
+    "commercial-glazing-largo.html",
+    "commercial-glazing-lauderhill.html",
+    "commercial-glazing-lehigh-acres.html",
+    "commercial-glazing-margate.html",
+    "commercial-glazing-melbourne.html",
+    "commercial-glazing-miami-gardens.html",
+    "commercial-glazing-miramar.html",
+    "commercial-glazing-north-port.html",
+    "commercial-glazing-pinellas-park.html",
+    "commercial-glazing-plantation.html",
+    "commercial-glazing-riverview.html",
+    "commercial-glazing-sanford.html",
+    "commercial-glazing-spring-hill.html",
+    "commercial-glazing-st-cloud.html",
+    "commercial-glazing-sunrise.html",
+    "commercial-glazing-tamarac.html",
+)
 WAVE4 = {
     "about.html",
     "contact.html",
@@ -285,6 +309,23 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertFalse(is_noindex(html), slug)
             self.assertEqual(canonical(html), f"{BASE}/{slug}/")
             self.assertIn(f"{BASE}/{slug}/", locs)
+
+    def test_thin_city_templates_are_noindex_self_canonical_and_off_sitemap(self):
+        locs = sitemap_locs()
+        self.assertEqual(len(THIN_CITY_TEMPLATES), 22)
+        for rel in THIN_CITY_TEMPLATES:
+            html = read(rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), f"{BASE}/{rel}")
+            self.assertNotIn(f"{BASE}/{rel}", locs)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+
+    def test_gc_alias_noindexes_to_general_contractors(self):
+        html = read("gc.html")
+        self.assertEqual(robots(html), "noindex,follow")
+        self.assertEqual(canonical(html), f"{BASE}/for-general-contractors/")
+        self.assertNotIn(f"{BASE}/gc.html", sitemap_locs())
+        self.assertTrue((REPO_ROOT / "gc.html").is_file())
 
     def test_wave2_templates_stay_noindex_self_canonical(self):
         count = 0
