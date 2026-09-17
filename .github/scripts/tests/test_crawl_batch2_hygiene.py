@@ -493,6 +493,42 @@ class Hard404RedirectStubTests(unittest.TestCase):
         self.assertEqual(canonical(keeper), dest)
 
 
+class EuroWallAliasRedirectStubTests(unittest.TestCase):
+    STUBS = (
+        "products/eurowall/index.html",
+        "eurowall.html",
+        "eurowall/index.html",
+        "euro-wall/index.html",
+    )
+    DEST = f"{BASE}/euro-wall.html"
+
+    def test_eurowall_alias_paths_are_github_pages_redirect_stubs(self):
+        locs = sitemap_locs()
+        dest = self.DEST
+        for rel in self.STUBS:
+            stub = REPO_ROOT / rel
+            self.assertTrue(stub.is_file(), rel)
+            html = stub.read_text(encoding="utf-8")
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'content="0; url={dest}"', html, rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertIn("This page has moved.", html, rel)
+            self.assertIn(f'<a href="{dest}">/euro-wall.html</a>', html, rel)
+            self.assertIn(f'window.location.replace("{dest}")', html, rel)
+        self.assertNotIn(f"{BASE}/products/eurowall/", locs)
+        self.assertNotIn(f"{BASE}/eurowall.html", locs)
+        self.assertNotIn(f"{BASE}/eurowall/", locs)
+        self.assertNotIn(f"{BASE}/euro-wall/", locs)
+        keeper = read("euro-wall.html")
+        self.assertFalse(is_noindex(keeper))
+        self.assertEqual(canonical(keeper), dest)
+        # Real product page stays put; do not stub /products/euro-wall/.
+        product = read("products/euro-wall/index.html")
+        self.assertFalse(is_noindex(product))
+        self.assertFalse(REFRESH_RE.search(product))
+        self.assertEqual(canonical(product), f"{BASE}/products/euro-wall/")
+
+
 class EsWindowsLinkTests(unittest.TestCase):
     def test_es_windows_does_not_link_unverified_product_paths(self):
         html = read("es-windows.html")
