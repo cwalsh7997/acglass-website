@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import unittest
 from pathlib import Path
@@ -41,6 +42,55 @@ class NoEsWindowsProductHrefTests(unittest.TestCase):
         self.assertIn('content="noindex,follow"', stub_html)
         self.assertIn('http-equiv="refresh"', stub_html)
         self.assertFalse((REPO_ROOT / "products/eswindows.html").exists())
+
+    def test_products_index_links_eswindows_hub_not_process_excuse(self):
+        html = (REPO_ROOT / "products/index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/es-windows.html"', html)
+        self.assertIn('href="/eswindows-installer-florida.html"', html)
+        self.assertNotIn("was not created in this pass", html)
+        self.assertNotIn("Cloudflare security challenge", html)
+        self.assertNotIn("<code>/products/eswindows/</code>", html)
+
+    def test_vercel_json_mirrors_both_eswindows_product_path_rules(self):
+        rules = json.loads((REPO_ROOT / "vercel.json").read_text(encoding="utf-8")).get(
+            "redirects", []
+        )
+        pair = {
+            (r.get("source"), r.get("destination"), r.get("permanent"))
+            for r in rules
+            if r.get("source") in {"/products/eswindows", "/products/eswindows/"}
+        }
+        self.assertEqual(
+            pair,
+            {
+                ("/products/eswindows", "/es-windows.html", True),
+                ("/products/eswindows/", "/es-windows.html", True),
+            },
+        )
+
+    def test_eswindows_products_path_apply_note_is_not_activated(self):
+        note = json.loads(
+            (REPO_ROOT / ".github/cloudflare/eswindows-products-path.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        self.assertIs(note.get("activated"), False)
+        self.assertEqual(note.get("id"), "eswindows-products-path")
+        sources = {r.get("source") for r in note.get("rules", [])}
+        dests = {r.get("destination") for r in note.get("rules", [])}
+        self.assertEqual(
+            sources,
+            {
+                "https://acglass.com/products/eswindows",
+                "https://acglass.com/products/eswindows/",
+            },
+        )
+        self.assertEqual(dests, {"https://acglass.com/es-windows.html"})
+        md = (REPO_ROOT / ".github/cloudflare/eswindows-products-path.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("NOT ACTIVATED", md)
+        self.assertIn("preserve query string", md.lower())
 
 
 class EuroWallCertSofteningTests(unittest.TestCase):

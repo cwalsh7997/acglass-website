@@ -1,0 +1,52 @@
+{
+  "id": "eswindows-products-path",
+  "activated": false,
+  "_about": [
+    "Apply note only. Nothing in this file changes live routing.",
+    "GitHub Pages serves products/eswindows/index.html as HTTP 200 with a soft",
+    "meta-refresh + JS replace to /es-windows.html. vercel.json already mirrors",
+    "both permanent rules. Other vercel.json redirects are live Cloudflare 301s;",
+    "this pair was mirrored in-repo but is not a live edge 301 (or is overridden",
+    "because origin still serves the HTML stub).",
+    "",
+    "Set activated to true only after a live HEAD probe (no follow) returns HTTP",
+    "301 Location: https://acglass.com/es-windows.html for both sources.",
+    "Do not claim the edge rule is live from a repo merge."
+  ],
+  "target": {
+    "provider": "cloudflare",
+    "zone": "acglass.com",
+    "mechanism": "Bulk Redirects (Rules > Redirect Rules > Bulk Redirects)",
+    "status_code": 301,
+    "preserve_query_string": true,
+    "subpath_matching": false
+  },
+  "rules": [
+    {
+      "source": "https://acglass.com/products/eswindows",
+      "destination": "https://acglass.com/es-windows.html",
+      "status_code": 301,
+      "preserve_query_string": true,
+      "subpath_matching": false
+    },
+    {
+      "source": "https://acglass.com/products/eswindows/",
+      "destination": "https://acglass.com/es-windows.html",
+      "status_code": 301,
+      "preserve_query_string": true,
+      "subpath_matching": false
+    }
+  ],
+  "observed_2026-09-17": {
+    "trailing_slash": "HTTP 200. Soft meta-refresh + JS to /es-windows.html from products/eswindows/index.html. Canonical + noindex already present.",
+    "no_slash": "HTTP 301 to /products/eswindows/ only. Not to the hub."
+  },
+  "after_live_verify": [
+    "Confirm both sources return one-hop HTTP 301 to https://acglass.com/es-windows.html and preserve the query string.",
+    "Then remove products/eswindows/index.html in a follow-up. Do not delete the stub in this pass."
+  ],
+  "out_of_scope": [
+    "This VM cannot apply Cloudflare dashboard Bulk Redirects.",
+    "Do not edit .github/cloudflare/redirects.manifest.json for this pair; that file is gated to the money-market registry."
+  ]
+}
