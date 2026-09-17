@@ -1,4 +1,4 @@
-# ESWindows `/products/eswindows` edge 301 — apply note
+# ESWindows `/products/eswindows` edge 301 - apply note
 
 **Status: NOT ACTIVATED.** `activated` in `eswindows-products-path.json` is
 `false`. Merging this note changes no routing. Applying it is a manual act in
