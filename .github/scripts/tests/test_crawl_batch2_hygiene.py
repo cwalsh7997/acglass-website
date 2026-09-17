@@ -261,7 +261,11 @@ class CityCanonicalTests(unittest.TestCase):
             city_page = REPO_ROOT / city / "index.html"
             if not city_page.is_file():
                 continue
-            if not is_noindex(path.read_text(encoding="utf-8")):
+            glazier_html = path.read_text(encoding="utf-8")
+            # GitHub Pages 404 stubs are noindex + meta-refresh to a keeper.
+            # They are not wave-2 templates and must not pull leftover city
+            # roots (e.g. /jacksonville/) into this hub-canonical check.
+            if REFRESH_RE.search(glazier_html) or not is_noindex(glazier_html):
                 continue
             html = city_page.read_text(encoding="utf-8")
             if is_noindex(html) or REFRESH_RE.search(html):
@@ -334,6 +338,8 @@ class CityCanonicalTests(unittest.TestCase):
             if slug in KEEPER_GLAZIERS or slug == "storefront-glazier-florida":
                 continue
             html = path.read_text(encoding="utf-8")
+            if REFRESH_RE.search(html):
+                continue
             self.assertTrue(is_noindex(html), slug)
             self.assertEqual(canonical(html), f"{BASE}/{slug}/")
             count += 1
@@ -451,6 +457,40 @@ class OrphanInboundTests(unittest.TestCase):
         # county sub-hubs, and 340 is the line where that becomes the answer.
         hrefs = HREF_RE.findall(read("locations.html"))
         self.assertLess(len(hrefs), 340, "locations.html")
+
+
+class Hard404RedirectStubTests(unittest.TestCase):
+    def test_florida_commercial_glazing_html_alias_is_github_pages_redirect_stub(self):
+        stub = REPO_ROOT / "florida-commercial-glazing.html"
+        self.assertTrue(stub.is_file())
+        html = stub.read_text(encoding="utf-8")
+        dest = f"{BASE}/florida-commercial-glazing/"
+        self.assertEqual(canonical(html), dest)
+        self.assertIn(f'content="0; url={dest}"', html)
+        self.assertEqual(robots(html), "noindex,follow")
+        self.assertIn("This page has moved.", html)
+        self.assertIn(f'<a href="{dest}">/florida-commercial-glazing/</a>', html)
+        self.assertNotIn(f"{BASE}/florida-commercial-glazing.html", sitemap_locs())
+        keeper = read("florida-commercial-glazing/index.html")
+        self.assertFalse(is_noindex(keeper))
+        self.assertEqual(canonical(keeper), dest)
+
+    def test_jacksonville_storefront_glazier_dir_is_github_pages_redirect_stub(self):
+        stub = REPO_ROOT / "storefront-glazier-jacksonville-florida" / "index.html"
+        self.assertTrue(stub.is_file())
+        html = stub.read_text(encoding="utf-8")
+        dest = f"{BASE}/commercial-glazing-jacksonville.html"
+        self.assertEqual(canonical(html), dest)
+        self.assertIn(f'content="0; url={dest}"', html)
+        self.assertEqual(robots(html), "noindex,follow")
+        self.assertIn("This page has moved.", html)
+        self.assertIn(f'<a href="{dest}">/commercial-glazing-jacksonville.html</a>', html)
+        self.assertNotIn(
+            f"{BASE}/storefront-glazier-jacksonville-florida/", sitemap_locs()
+        )
+        keeper = read("commercial-glazing-jacksonville.html")
+        self.assertFalse(is_noindex(keeper))
+        self.assertEqual(canonical(keeper), dest)
 
 
 class EsWindowsLinkTests(unittest.TestCase):
