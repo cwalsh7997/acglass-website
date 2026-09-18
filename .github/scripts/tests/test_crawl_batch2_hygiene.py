@@ -590,6 +590,48 @@ class EsWindowsAliasRedirectStubTests(unittest.TestCase):
         self.assertFalse(REFRESH_RE.search(keeper))
 
 
+class MetroInstallerAliasRedirectStubTests(unittest.TestCase):
+    STUBS = (
+        (
+            "commercial-storefront-installer-west-palm-beach.html",
+            "storefront-glazier-west-palm-beach-florida/",
+        ),
+        (
+            "commercial-storefront-installer-naples.html",
+            "storefront-glazier-naples-florida/",
+        ),
+        (
+            "commercial-storefront-installer-tampa.html",
+            "storefront-glazier-tampa-florida/",
+        ),
+    )
+
+    def test_metro_installer_alias_paths_are_github_pages_redirect_stubs(self):
+        locs = sitemap_locs()
+        for rel, slug in self.STUBS:
+            dest = f"{BASE}/{slug}"
+            stub = REPO_ROOT / rel
+            self.assertTrue(stub.is_file(), rel)
+            html = stub.read_text(encoding="utf-8")
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'content="0; url={dest}"', html, rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertIn("This page has moved.", html, rel)
+            self.assertIn(f'<a href="{dest}">/{slug}</a>', html, rel)
+            self.assertIn(f'window.location.replace("{dest}")', html, rel)
+            self.assertNotIn(f"{BASE}/{rel}", locs)
+            keeper = read(f"{slug.rstrip('/')}/index.html")
+            self.assertFalse(is_noindex(keeper), slug)
+            self.assertEqual(canonical(keeper), dest, slug)
+            self.assertFalse(REFRESH_RE.search(keeper), slug)
+        florida_hub = read("commercial-storefront-installer-florida.html")
+        self.assertFalse(REFRESH_RE.search(florida_hub))
+        self.assertIn("noindex", robots(florida_hub))
+        self.assertEqual(
+            canonical(florida_hub), f"{BASE}/florida-commercial-glazing/"
+        )
+
+
 class HomepageJsonLdTests(unittest.TestCase):
     def test_homepage_jsonld_is_florida_contractor_not_tennessee(self):
         html = read("index.html")
