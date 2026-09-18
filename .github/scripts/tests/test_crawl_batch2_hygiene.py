@@ -558,6 +558,38 @@ class EsWindowsLinkTests(unittest.TestCase):
             self.assertNotIn("/products/eswindows", loc)
 
 
+class EsWindowsAliasRedirectStubTests(unittest.TestCase):
+    STUBS = (
+        "eswindows.html",
+        "eswindows/index.html",
+        "products/es-windows/index.html",
+        "products/eswindows/index.html",
+    )
+    DEST = f"{BASE}/es-windows.html"
+
+    def test_eswindows_alias_paths_are_github_pages_redirect_stubs(self):
+        locs = sitemap_locs()
+        dest = self.DEST
+        for rel in self.STUBS:
+            stub = REPO_ROOT / rel
+            self.assertTrue(stub.is_file(), rel)
+            html = stub.read_text(encoding="utf-8")
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'content="0; url={dest}"', html, rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertIn("This page has moved.", html, rel)
+            self.assertIn(f'<a href="{dest}">/es-windows.html</a>', html, rel)
+            self.assertIn(f'window.location.replace("{dest}")', html, rel)
+        self.assertNotIn(f"{BASE}/eswindows.html", locs)
+        self.assertNotIn(f"{BASE}/eswindows/", locs)
+        self.assertNotIn(f"{BASE}/products/es-windows/", locs)
+        self.assertNotIn(f"{BASE}/products/eswindows/", locs)
+        keeper = read("es-windows.html")
+        self.assertFalse(is_noindex(keeper))
+        self.assertEqual(canonical(keeper), dest)
+        self.assertFalse(REFRESH_RE.search(keeper))
+
+
 class HomepageJsonLdTests(unittest.TestCase):
     def test_homepage_jsonld_is_florida_contractor_not_tennessee(self):
         html = read("index.html")
