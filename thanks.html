@@ -99,9 +99,21 @@
         if (source === 'send-plans') {
           if (heading) heading.textContent = 'Thanks. We have your plans.';
           if (copy) copy.innerHTML = 'The send service accepted the submission and redirected you here. A copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. If a file was over the 9 MB form limit, email that set or send a Procore / BuildingConnected link.';
+        } else if (source === 'scope-review') {
+          if (heading) heading.textContent = 'Thanks. We have the package.';
+          if (copy) copy.innerHTML = 'The send service accepted your scope review request and redirected you here. A copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off--> within 48 hours. If a file was over the 9 MB limit, email it or paste a share link in a reply.';
         } else if (source === 'contact' || source === 'partners') {
           if (heading) heading.textContent = 'Thanks. We have it.';
           if (copy) copy.innerHTML = 'If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. This path does not attach drawings. Use the send-plans page to upload files.';
+        }
+        if (source === 'scope-review' && typeof gtag === 'function') {
+          gtag('event', 'generate_lead', {
+            form_id: 'scope-review-form',
+            source_page: '/free-glazing-scope-review.html',
+            currency: 'USD',
+            value: 750
+          });
+          gtag('event', 'scope_review_confirmed');
         }
         if (source === 'send-plans' && typeof gtag === 'function') {
           gtag('event', 'generate_lead', {
