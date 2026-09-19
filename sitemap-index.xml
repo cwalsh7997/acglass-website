@@ -4,5 +4,5 @@
        It now points only at the current 909-URL apex master so an already-
        submitted index cannot keep feeding Google a second larger URL set.
        Public advertising is robots.txt → sitemap.xml only. -->
-  <sitemap><loc>https://acglass.com/sitemap.xml</loc><lastmod>2026-09-03</lastmod></sitemap>
+  <sitemap><loc>https://acglass.com/sitemap.xml</loc><lastmod>2026-09-19</lastmod></sitemap>
 </sitemapindex>
