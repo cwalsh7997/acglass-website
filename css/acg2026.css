@@ -345,6 +345,7 @@ p{max-width:68ch}
 .ft{background:var(--navy-deep);color:rgba(255,255,255,.78);font-size:.92rem}
 .ft a{transition:color var(--dur-1)}
 .ft a:hover{color:#fff}
+.ft ul a{display:inline-flex;align-items:center;min-height:24px}
 .ft-main{max-width:var(--w-max);margin:0 auto;padding:clamp(48px,6vw,80px) var(--gutter) 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
 .ft-brand img{height:30px;width:auto;margin-bottom:18px}
 .ft-brand p{font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.6);max-width:34ch}
@@ -552,7 +553,7 @@ p{max-width:68ch}
 .footer-brand .logo-img{height:32px;width:auto}
 .footer-brand p{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.65);margin-top:20px;max-width:300px}
 .footer-links{display:grid;gap:2px}
-.footer-links a{display:block;padding:6px 0;font-size:.85rem;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none}
+.footer-links a{display:block;padding:6px 0;min-height:24px;font-size:.85rem;color:rgba(255,255,255,.65);transition:color .3s;text-decoration:none}
 .footer-links a:hover{color:#fff}
 .footer-contact p{font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .footer-contact svg{width:14px;height:14px;flex-shrink:0;color:var(--red)}

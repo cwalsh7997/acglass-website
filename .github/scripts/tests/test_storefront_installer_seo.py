@@ -225,7 +225,7 @@ class CannibalizationTests(unittest.TestCase):
             services,
         )
         self.assertIn(
-            "<title>Florida Glazing Bid Desk | Send Plans, 48-Hr Reply</title>",
+            "<title>Contact ACG | Florida Commercial Glazing Bid Desk</title>",
             contact,
         )
         self.assertIn('href="/es-windows.html">ESWindows partner page</a>', services)

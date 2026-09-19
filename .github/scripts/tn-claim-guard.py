@@ -85,7 +85,7 @@ REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
 
 EXCLUDED_FRAGMENT_SURFACE_SHA256 = {
     "services-schema-block.html":
-        "bd6a8c8529390709d2be18fb3dab88068854021077bdfaa5ab70e0a9d45ec5d2",
+        "3fdbda0d8632387c1e51dd2f0de1a3e3a8066760194c84bf8907da16600a3998",
 }
 
 TN_CONTENT_TOKEN = re.compile(

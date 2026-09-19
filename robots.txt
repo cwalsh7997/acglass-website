@@ -41,8 +41,9 @@ Allow: /
 # Internal admin & dealer-only views - no value to crawlers, contain no public content.
 Disallow: /dealer/admin.html
 Disallow: /dealer/thanks.html
-# JSON-LD include fragment, not a page. Kept out of sitemaps. HTML stub would
-# trip tn-claim-guard (excluded fragment must not look like a document).
+# JSON-LD include fragment, not a page. Kept out of sitemaps. The file also
+# carries noindex,follow + a self-canonical. Do not wrap it in a full HTML
+# document; that would trip tn-claim-guard.
 Disallow: /services-schema-block.html
 # Drafts and internal paths must be blocked for all crawlers including Googlebot.
 # Groups do not combine, so these Disallows belong in User-agent: *, not after Bytespider.

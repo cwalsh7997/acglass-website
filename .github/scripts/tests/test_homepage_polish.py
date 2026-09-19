@@ -100,8 +100,8 @@ class HomepagePolishTests(unittest.TestCase):
         geo = HOME[HOME.index("geo-projects") : HOME.index("geo-foot")]
         self.assertNotIn("</span><h3>", strip)
         self.assertNotIn("</span><b>", geo)
-        self.assertIn('aria-label="Ocean Prime in Fort Lauderdale, one Euro-Wall opening"', strip)
-        self.assertIn('aria-label="Midway, Tennessee, supply-only window package"', geo)
+        self.assertIn('aria-label="Fort Lauderdale. Ocean Prime. One Euro-Wall opening"', strip)
+        self.assertIn('aria-label="Midway, TN. Supply-only window package"', geo)
 
     def test_sticky_header_has_scroll_padding(self):
         self.assertIn("scroll-padding-top", CSS)

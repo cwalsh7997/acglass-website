@@ -179,6 +179,8 @@
 <style id="a11y-contrast-tweak">
 /* Lift low-contrast muted text to meet WCAG AA body copy threshold */
 .hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
+#send-plans-form label{color:rgba(255,255,255,.92)}
+#send-plans-form legend{color:#ff6b73 !important}
 /* Focus-visible outline already handled in skip-style */
 /* Ensure form inputs and buttons show focus */
 button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
@@ -331,7 +333,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
         <!-- Contact -->
         <fieldset style="border:0;padding:0;margin:0 0 24px;">
-          <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;padding:0;margin-bottom:14px;">Your Contact</legend>
+          <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ff6b73;font-weight:800;padding:0;margin-bottom:14px;">Your Contact</legend>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
             <label style="display:flex;flex-direction:column;gap:6px;">
               <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);">Name <span style="color:var(--accent)">*</span></span>
@@ -358,7 +360,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
         <!-- Project -->
         <fieldset style="border:0;padding:0;margin:0 0 24px;">
-          <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;padding:0;margin-bottom:14px;">The Project</legend>
+          <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ff6b73;font-weight:800;padding:0;margin-bottom:14px;">The Project</legend>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
             <label style="display:flex;flex-direction:column;gap:6px;">
               <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);">Project Name <span style="color:var(--accent)">*</span></span>
@@ -398,7 +400,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
         <!-- Scope -->
         <fieldset style="border:0;padding:0;margin:0 0 24px;">
-          <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;padding:0;margin-bottom:14px;">Scope Needed</legend>
+          <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ff6b73;font-weight:800;padding:0;margin-bottom:14px;">Scope Needed</legend>
           <p style="color:rgba(255,255,255,.6);font-size:13px;margin:0 0 12px;">Check all that apply.</p>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
             <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;font-size:14px;">
@@ -536,7 +538,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   <!-- ========== CTA ========== -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>ACG</div>
+      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade aria-hidden="true">ACG</div>
       <h2>One glazing sub.<br><span class="accent">Every opening.</span></h2>
       <p>Florida commercial glazing. Owner-operated. 48-hour bids. Built for general contractors.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
