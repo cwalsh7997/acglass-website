@@ -33,7 +33,7 @@
   <meta name="twitter:description" content="Send your commercial glazing plans to ACG - detailed Division 08 scope and price within 48 hours. Florida's commercial glazing specialists. (772) 486-7711.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/acg2026.css?v=20260919-a11y">
+  <link rel="stylesheet" href="css/acg2026.css?v=20260919-visual">
   <link rel="stylesheet" href="/css/acg2026-dark.css?v=20260919-a11y">
   <style>
     /* 2026 header/footer chrome on this legacy dark page - header solid from the top */
@@ -45,6 +45,10 @@
     .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
     .p-hero{padding-bottom:clamp(48px,6vw,72px)}
     .p-hero .p-sub{color:rgba(255,255,255,.8)}
+    .bid-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .bid-type-grid label{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;font-size:14px;min-width:0}
+    .bid-type-grid input{accent-color:var(--accent);flex-shrink:0}
+    @media(max-width:360px){.bid-type-grid{grid-template-columns:1fr}}
   </style>
 
   <!-- AboutPage Schema -->
@@ -449,18 +453,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
         <!-- Bid Type -->
         <fieldset style="border:0;padding:0;margin:0 0 24px;">
           <legend style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800;padding:0;margin-bottom:14px;">Bid Type</legend>
-          <div style="display:flex;flex-wrap:wrap;gap:10px;">
-            <label style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;font-size:14px;">
-              <input type="radio" name="bid_type" value="Budget Pricing" required style="accent-color:var(--accent);"> Budget Pricing
+          <div class="bid-type-grid">
+            <label>
+              <input type="radio" name="bid_type" value="Budget Pricing" required> Budget Pricing
             </label>
-            <label style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;font-size:14px;">
-              <input type="radio" name="bid_type" value="Full Bid" style="accent-color:var(--accent);"> Full Bid
+            <label>
+              <input type="radio" name="bid_type" value="Full Bid"> Full Bid
             </label>
-            <label style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;font-size:14px;">
-              <input type="radio" name="bid_type" value="VE Alternate" style="accent-color:var(--accent);"> VE Alternate
+            <label>
+              <input type="radio" name="bid_type" value="VE Alternate"> VE Alternate
             </label>
-            <label style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:8px;cursor:pointer;font-size:14px;">
-              <input type="radio" name="bid_type" value="Design-Assist" style="accent-color:var(--accent);"> Design-Assist
+            <label>
+              <input type="radio" name="bid_type" value="Design-Assist"> Design-Assist
             </label>
           </div>
         </fieldset>
