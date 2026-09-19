@@ -48,7 +48,8 @@ class SendPlansCtaTests(unittest.TestCase):
 
     def test_contact_is_not_labeled_as_plan_intake(self):
         html = read("contact.html")
-        self.assertIn("<title>Florida Glazing Bid Desk | Send Plans, 48-Hr Reply</title>", html)
+        self.assertIn("<title>Contact ACG | Florida Commercial Glazing Bid Desk</title>", html)
+        self.assertNotIn("Send Plans, 48-Hr Reply", html)
         self.assertIn("Send inquiry", html)
         self.assertIsNone(
             re.search(r"<button[^>]*>\s*Send Us Plans", html),
