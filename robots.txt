@@ -62,6 +62,8 @@ Disallow: /
 # crawl-check.py asserts master == union of those urlsets. They are not
 # advertised here or in sitemap-index.xml. GSC was still crawling the
 # old index (2,516) and a stale www sitemap (342, last read 2026-04-24).
+# /sitemap-pages.xml is a retired empty stub (do not resubmit). The former
+# 418-URL child is a CI fixture only and is not published.
 # ------------------------------------------------------------------------
 Sitemap: https://acglass.com/sitemap.xml
 
