@@ -422,7 +422,7 @@ def check_homepage_faq6(results: list[Result]) -> None:
 
 
 def check_title_meta_lengths(results: list[Result], sample_limit: int = 50) -> None:
-    body, status, _ = fetch("/sitemap-pages.xml")
+    body, status, _ = fetch("/sitemap.xml")
     if status != 200:
         return
     locs = re.findall(r"<loc>(.*?)</loc>", body)
@@ -447,7 +447,7 @@ def check_title_meta_lengths(results: list[Result], sample_limit: int = 50) -> N
     results.append(
         Result(
             "WARN",
-            "Titles ≤60 chars (sample of sitemap-pages)",
+            "Titles ≤60 chars (sample of sitemap.xml)",
             too_long_title == 0,
             f"overlong={too_long_title}, longest={longest_title}",
         )

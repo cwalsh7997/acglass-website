@@ -60,8 +60,10 @@ Disallow: /
 # Sitemaps
 # One current apex sitemap only. Child urlsets remain on disk because
 # crawl-check.py asserts master == union of those urlsets. They are not
-# advertised here or in sitemap-index.xml. GSC was still crawling the
+# advertised here or in the sitemap index. GSC was still crawling the
 # old index (2,516) and a stale www sitemap (342, last read 2026-04-24).
+# The public pages child is a retired empty stub (do not resubmit). The
+# former 418-URL child is a CI fixture only and is not published.
 # ------------------------------------------------------------------------
 Sitemap: https://acglass.com/sitemap.xml
 

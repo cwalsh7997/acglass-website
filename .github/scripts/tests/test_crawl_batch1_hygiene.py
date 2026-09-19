@@ -25,7 +25,11 @@ def _read(rel: str) -> str:
 
 
 def _sitemap_files() -> list[Path]:
-    return sorted(REPO_ROOT.glob("sitemap*.xml"))
+    files = sorted(REPO_ROOT.glob("sitemap*.xml"))
+    fixture = REPO_ROOT / ".github" / "fixtures" / "sitemap-pages.xml"
+    if fixture.is_file():
+        files.append(fixture)
+    return files
 
 
 class ApexSitemapAdvertisingTests(unittest.TestCase):
@@ -51,6 +55,20 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         root = ET.fromstring(_read("sitemap-index.xml"))
         locs = [el.text.strip() for el in root.iter(f"{SM_NS}loc")]
         self.assertEqual([APEX], locs)
+
+    def test_public_sitemap_pages_is_an_empty_retired_stub(self):
+        root = ET.fromstring(_read("sitemap-pages.xml"))
+        locs = [el.text.strip() for el in root.iter(f"{SM_NS}loc")]
+        self.assertEqual(locs, [])
+        fixture = REPO_ROOT / ".github" / "fixtures" / "sitemap-pages.xml"
+        self.assertTrue(fixture.is_file())
+        fixture_locs = [
+            el.text.strip()
+            for el in ET.fromstring(fixture.read_text(encoding="utf-8")).iter(
+                f"{SM_NS}loc"
+            )
+        ]
+        self.assertGreaterEqual(len(fixture_locs), 400)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):

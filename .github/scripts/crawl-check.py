@@ -57,8 +57,11 @@ MASTER_SITEMAP = "sitemap.xml"
 SITEMAP_INDEX = "sitemap-index.xml"
 # Child urlsets stay on disk for the master==union check. They are not
 # advertised in robots.txt; sitemap-index.xml lists only the apex master.
+# sitemap-pages.xml at repo root is a public empty stub (418 duplicate locs
+# retired). The full child urlset lives at the CI fixture path below.
+PUBLIC_SITEMAP_PAGES_STUB = "sitemap-pages.xml"
 CHILD_URLSETS = [
-    "sitemap-pages.xml",
+    ".github/fixtures/sitemap-pages.xml",
     "sitemap-cities.xml",
     "sitemap-services.xml",
     "sitemap-blog.xml",
@@ -530,6 +533,26 @@ def check_sitemaps(results: list[Result]) -> None:
     children = list(CHILD_URLSETS)
     results.append(
         Result("FAIL", "child urlsets remain on disk", len(children) >= 7, f"{len(children)}")
+    )
+    stub_unparsed = False
+    stub_locs: list[str] = []
+    if not exists(PUBLIC_SITEMAP_PAGES_STUB):
+        stub_unparsed = True
+        stub_detail = "public sitemap-pages.xml missing"
+    else:
+        try:
+            stub_locs = locs(PUBLIC_SITEMAP_PAGES_STUB)
+            stub_detail = f"{len(stub_locs)} loc(s)"
+        except ET.ParseError as e:
+            stub_unparsed = True
+            stub_detail = str(e)
+    results.append(
+        Result(
+            "FAIL",
+            "public sitemap-pages.xml is an empty retired stub",
+            (not stub_unparsed) and exists(PUBLIC_SITEMAP_PAGES_STUB) and not stub_locs,
+            stub_detail,
+        )
     )
 
     all_child_locs: set[str] = set()
