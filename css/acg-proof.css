@@ -31,14 +31,14 @@ nav.links a{font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-
 nav.links a:hover{opacity:1}
 .btn-plans{background:var(--red);color:#fff;padding:.55rem 1.15rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;opacity:1 !important}
 .btn-plans:hover{background:#c60f1c}
-.menu-btn{display:none;background:none;border:1px solid rgba(240,243,248,.3);color:var(--paper);padding:.5rem .8rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.menu-btn{display:none;background:none;border:1px solid rgba(240,243,248,.3);color:var(--paper);padding:.5rem .8rem;font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;min-height:44px;min-width:44px}
 @media(max-width:820px){
   /* Opaque: this overlay covers the whole viewport, so any alpha lets page
      copy ghost through behind the menu links. */
   nav.links{position:fixed;inset:0;background:var(--obsidian);flex-direction:column;justify-content:center;gap:2.2rem;display:none}
   nav.links.open{display:flex}
   nav.links a{font-size:1rem}
-  .menu-btn{display:block;position:relative;z-index:61}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;position:relative;z-index:61}
   /* Same layer as .menu-btn so the wordmark stays above the opaque overlay. */
   .wordmark{position:relative;z-index:61}
   .nav-logo{width:148px;height:auto}
@@ -71,6 +71,9 @@ nav.links a:hover{opacity:1}
 .proofbar{position:relative;z-index:2;margin:2.2rem var(--pad) 0;border-top:1px solid rgba(240,243,248,.2);
   display:flex;justify-content:space-between;align-items:center;gap:1.6rem;flex-wrap:wrap;padding:1.3rem 0 2rem}
 .proof-stats{display:flex;gap:clamp(1.6rem,4vw,3.4rem);flex-wrap:wrap}
+@media(max-width:420px){
+  .proof-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.2rem;width:100%}
+}
 .stat b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,2.4vw,1.9rem);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
 /* Sprint 011: unified tabular-nums for stat/metric numbers (P1 typography) */
 .stat-num, [class*="-stat-num"], [class*="-metric-num"] { font-variant-numeric: tabular-nums; }
@@ -147,6 +150,11 @@ nav.links a:hover{opacity:1}
 .pq-cred{display:grid;gap:.7rem}
 .pq-cred div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(240,243,248,.14);padding-bottom:.6rem;font-size:.88rem}
 .pq-cred div b{font-family:var(--mono);font-size:0.75rem;letter-spacing:.1em;color:var(--glint);font-weight:600}
+.pq-cred div span{text-align:right}
+@media(max-width:480px){
+  .pq-cred div{flex-direction:column;align-items:flex-start;gap:.25rem}
+  .pq-cred div span{text-align:start}
+}
 .pq-person{font-size:.92rem;color:#C6CFDD}
 .pq-person b{display:block;color:var(--paper);font-weight:600}
 
@@ -157,6 +165,8 @@ nav.links a:hover{opacity:1}
 .cta p{margin:1.3rem auto 0;max-width:46ch;color:#C6CFDD}
 .cta-row{margin-top:2.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
+.ft-legal-meta{text-align:right}
+@media(max-width:560px){.ft-legal-meta{text-align:start}}
 footer{border-top:1px solid rgba(240,243,248,.1);padding:2.4rem var(--pad);display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;font-size:.78rem;color:var(--dim)}
 .footer-logo{width:169px;height:auto;margin-bottom:.85rem;background:transparent}
 .fmap{flex:1 1 100%;min-width:0;max-width:100%;display:flex;flex-wrap:wrap;gap:1.7rem 1.4rem;padding-bottom:2.2rem;margin-bottom:.4rem;border-bottom:1px solid rgba(240,243,248,.08)}
@@ -233,3 +243,17 @@ header.nav.scrolled{background:rgba(5,7,12,.94);border-bottom:1px solid rgba(240
   .geo-ledger{border-left:0;border-top:1px solid rgba(240,243,248,.14);padding:2rem 1.5rem 2.4rem}
 }
 @media(max-width:430px){.geo-project{grid-template-columns:1fr;gap:.2rem}}
+
+/* Submittal pipeline: keep the 6-stage SVG on desktop; stack the same
+   stage names below readable width so labels are not crushed. */
+.pipeline-fig{margin:2rem auto 0;max-width:1180px}
+.pipeline-svg{width:100%;height:auto}
+.pipeline-stack{display:none;list-style:none;margin:0;padding:0}
+@media(max-width:720px){
+  .pipeline-svg{display:none}
+  .pipeline-stack{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid rgba(240,243,248,.14)}
+  .pipeline-stack li{border:1px solid rgba(240,243,248,.14);padding:1rem .9rem;display:flex;flex-direction:column;gap:.35rem}
+  .pipeline-stack b{font-family:var(--mono);font-size:0.75rem;letter-spacing:.2em;color:#ED2833}
+  .pipeline-stack span{font-family:var(--disp);font-weight:800;font-size:.92rem;text-transform:uppercase;letter-spacing:.06em}
+  .pipeline-stack li.is-focus{border-color:var(--red)}
+}

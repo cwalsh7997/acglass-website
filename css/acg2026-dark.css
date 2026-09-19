@@ -16,7 +16,11 @@
   --hairline-2:rgba(255,255,255,.24);
   --shadow-1:0 1px 2px rgba(0,0,0,.45),0 4px 16px rgba(0,0,0,.35);
   --shadow-2:0 2px 6px rgba(0,0,0,.55),0 16px 40px rgba(0,0,0,.45);
+  --red-300:#ff6b73;
+  --accent:#ff6b73; /* brand red #E11320 fails on navy; this token is 5.3:1 */
 }
+/* Shared kickers on dark paper / navy. #E11320 on #0E284F is ~3.0:1. */
+.k-label{color:var(--red-300)}
 
 /* ---------- header chrome: dark glass, white logo always ---------- */
 .hd.scrolled{background:rgba(7,11,18,.92);box-shadow:0 1px 0 rgba(255,255,255,.08)}

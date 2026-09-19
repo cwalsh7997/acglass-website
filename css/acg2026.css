@@ -17,6 +17,7 @@
   --body:#3D4B63;
   --muted:#66748C;
   --red:#E11320;
+  --red-300:#ff6b73; /* 5.3:1 on navy. The only red permitted as text on dark surfaces */
   --red-press:#B90E19;
   --paper:#FFFFFF;
   --paper-2:#F6F8FB;
@@ -419,6 +420,10 @@ p{max-width:68ch}
 /* Giant footer wordmark */
 .ft-word{overflow:hidden;padding:clamp(30px,4vw,56px) 0 0;user-select:none;pointer-events:none}
 .ft-word span{display:block;font-family:var(--sans);font-weight:800;font-size:clamp(1.5rem,4.4vw,4.1rem);line-height:.9;letter-spacing:0;text-transform:uppercase;white-space:nowrap;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.17)}
+@media(max-width:560px){
+  .ft-word{overflow:visible}
+  .ft-word span{white-space:normal;overflow-wrap:break-word;padding:0 var(--gutter,16px)}
+}
 
 /* ============================================================
    V3 - "THE DRAWING SET"
@@ -545,7 +550,7 @@ p{max-width:68ch}
 .btn-lg{padding:20px 48px;font-size:1rem}
 .cta-section{padding:clamp(80px,12vw,160px) 0;text-align:center;position:relative;overflow:hidden}
 .cta-section .container{position:relative;z-index:2}
-.text-massive{font-size:clamp(4rem,12vw,14rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:rgba(255,255,255,.04);user-select:none}
+.text-massive{font-size:clamp(4rem,12vw,14rem);font-weight:800;letter-spacing:-.05em;line-height:.9;color:rgba(255,255,255,.04);user-select:none;pointer-events:none;contain:layout style;content-visibility:auto}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:.025}
 .cursor-dot,.cursor-ring{display:none!important}
 .footer{padding:clamp(60px,8vw,100px) 0 30px;border-top:1px solid rgba(255,255,255,.12);background:var(--navy-deep);color:rgba(255,255,255,.78)}

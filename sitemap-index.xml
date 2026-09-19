@@ -3,6 +3,8 @@
   <!-- Collapse: this file used to list seven children (~2,516 locs in GSC).
        It now points only at the current 909-URL apex master so an already-
        submitted index cannot keep feeding Google a second larger URL set.
-       Public advertising is robots.txt → sitemap.xml only. -->
+       Public advertising is robots.txt → sitemap.xml only.
+       sitemap-pages.xml and the other child urlsets stay on disk for
+       crawl-check.py (master == union) and are not listed here. -->
   <sitemap><loc>https://acglass.com/sitemap.xml</loc><lastmod>2026-09-19</lastmod></sitemap>
 </sitemapindex>

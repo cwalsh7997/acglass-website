@@ -22,8 +22,8 @@
 <meta name="twitter:description" content="Florida commercial glazing projects for GCs: storefront, curtain wall, impact. FL CGC #1531993. Bid in 48 hours. Send drawings. (772) 486-7711.">
 <meta name="twitter:image" content="https://acglass.com/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg">
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif" type="image/avif" fetchpriority="high">
-<link rel="stylesheet" href="/css/acg-proof.css?v=20260909-hero-contrast">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-960.avif 960w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-1280.avif 1280w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif 2000w" imagesizes="100vw">
+<link rel="stylesheet" href="/css/acg-proof.css?v=20260919-visual">
 <noscript><style>.rv{opacity:1!important;transform:none!important}.film{opacity:1!important}</style></noscript>
 <script type="application/ld+json">
 {
@@ -192,7 +192,7 @@
 .pt:hover img{transform:scale(1.045)}
 .pt::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,.9) 0%,rgba(5,7,12,.06) 46%,rgba(5,7,12,0) 64%)}
 .pt-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.3rem}
-.pt-cap .where{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--glint)}
+.pt-cap .where{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--glint);overflow-wrap:anywhere;white-space:normal}
 .pt-cap h3{font-family:var(--disp);font-weight:780;font-size:clamp(1rem,1.5vw,1.3rem);text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
 .pt .go{position:absolute;z-index:2;top:.9rem;right:.9rem;width:2.1rem;height:2.1rem;display:grid;place-items:center;border:1px solid rgba(240,243,248,.45);background:rgba(5,7,12,.55);opacity:0;transform:translateY(-4px);transition:opacity .35s,transform .35s}
 .pt:hover .go,a.pt:focus-visible .go{opacity:1;transform:none}
@@ -210,8 +210,12 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
   .pt.m12{grid-column:span 12}
   .pt-cap{padding:.65rem .7rem;gap:.2rem}
   .pt-cap h3{font-size:.8rem}
-  .pt-cap .where{font-size:.5rem;letter-spacing:.1em}
+  .pt-cap .where{font-size:12px;letter-spacing:.1em}
   .pt .go{display:none}
+}
+@media(max-width:480px){
+  .pp-mosaic,.pp-mosaic.wall{grid-auto-rows:min(58vw,280px)}
+  .pt,.pt.s5,.pt.s7,.pt.s8,.pt.m12{grid-column:span 12}
 }
 
 /* proof band before footer */
@@ -232,6 +236,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
 .pp-mosaic.wall{grid-auto-rows:clamp(250px,34vh,440px)}
 .pt.s12{grid-column:1/-1}
 @media(max-width:640px){.pp-mosaic.wall{grid-auto-rows:38vw}}
+@media(max-width:480px){.pp-mosaic.wall{grid-auto-rows:min(58vw,280px)}}
 </style>
 </head>
 <body>
@@ -248,8 +253,8 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
 <section class="hero" id="top">
   <div class="film" id="film">
   <picture>
-    <source srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif" type="image/avif">
-    <source srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.webp" type="image/webp">
+    <source type="image/avif" srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-960.avif 960w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-1280.avif 1280w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif 2000w" sizes="100vw">
+    <source type="image/webp" srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-960.webp 960w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-1280.webp 1280w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.webp 2000w" sizes="100vw">
     <img src="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.jpg" alt="" aria-hidden="true" fetchpriority="high" width="2000" height="1500" decoding="async" loading="eager">
   </picture>
   </div>
@@ -1207,7 +1212,7 @@ body.plb-lock{overflow:hidden}
 .wall-rail a::before{content:"";width:30px;height:1px;background:currentColor;transform:scaleX(.6);transform-origin:right center;transition:transform .25s}
 .wall-rail a.act{color:#fff}
 .wall-rail a.act::before{transform:scaleX(1)}
-@media (max-width:1200px){.wall-rail{display:none}}
+@media (max-width:1400px){.wall-rail{display:none}}
 </style>
 <script>
 (function(){
