@@ -6,6 +6,21 @@
       "permanent": true
     },
     {
+      "source": "/nashville.html",
+      "destination": "/commercial-glazing-nashville-tn.html",
+      "permanent": true
+    },
+    {
+      "source": "/nashville-commercial-glazing.html",
+      "destination": "/commercial-glazing-nashville-tn.html",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-commercial-glazing.html",
+      "destination": "/commercial-glazing-jacksonville.html",
+      "permanent": true
+    },
+    {
       "source": "/commercial-glazing-alabama.html",
       "destination": "/commercial-glazing-al.html",
       "permanent": true
