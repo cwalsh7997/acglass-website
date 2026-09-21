@@ -110,6 +110,7 @@ class IndexableLinkTargetTests(unittest.TestCase):
             self.assertIn(url, audit.ALLOWED_NOINDEX_LINK_TARGETS)
 
     def test_wave2_noindex_targets_are_allowed_link_destinations(self):
+        self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-stuart-florida/"))
         self.assertTrue(audit.is_wave2_noindex_target("/aventura/commercial-storefronts/"))
         self.assertTrue(audit.is_wave2_noindex_target("/storefront-glazier-boca-raton-florida/"))
         self.assertTrue(audit.is_wave2_noindex_target("/aventura/all-glass-entrances/"))
