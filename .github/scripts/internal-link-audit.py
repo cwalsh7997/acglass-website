@@ -114,6 +114,7 @@ WAVE_HYGIENE_CITY_ROOTS = {
 }
 
 WAVE2_KEEPER_GLAZIERS = {
+    "/storefront-glazier-stuart-florida/",
     "/storefront-glazier-west-palm-beach-florida/",
     "/storefront-glazier-naples-florida/",
     "/storefront-glazier-tampa-florida/",

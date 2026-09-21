@@ -35,6 +35,7 @@ KEEPER_CITY_ROOTS = (
     "sarasota",
 )
 KEEPER_GLAZIERS = (
+    "storefront-glazier-stuart-florida",
     "storefront-glazier-west-palm-beach-florida",
     "storefront-glazier-naples-florida",
     "storefront-glazier-tampa-florida",
@@ -306,7 +307,7 @@ class CityCanonicalTests(unittest.TestCase):
             target = read(f"{slug}/index.html")
             self.assertFalse(is_noindex(target), city)
 
-    def test_eight_keepers_remain_indexable_self_canonical(self):
+    def test_nine_keepers_remain_indexable_self_canonical(self):
         locs = sitemap_locs()
         for slug in KEEPER_GLAZIERS:
             html = read(f"{slug}/index.html")
@@ -343,7 +344,7 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertTrue(is_noindex(html), slug)
             self.assertEqual(canonical(html), f"{BASE}/{slug}/")
             count += 1
-        self.assertEqual(count, 93)
+        self.assertEqual(count, 92)
 
     def test_sitemap_all_glass_city_pages_are_noindex_self_canonical(self):
         # Weekly hygiene 2026-09-08: the 28 city URLs that were still in
