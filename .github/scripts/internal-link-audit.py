@@ -96,6 +96,19 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazing-st-cloud.html",
     "/commercial-glazing-sunrise.html",
     "/commercial-glazing-tamarac.html",
+    # Weekly thin-page audit 2026-09-21: non-office city/template pages stay
+    # live (no deletes). locations.html and a few satellites keep their hrefs.
+    "/impact-windows-anna-maria-island.html",
+    "/impact-windows-bonita-springs.html",
+    "/impact-windows-bradenton.html",
+    "/impact-windows-cape-coral.html",
+    "/impact-windows-venice-fl.html",
+    "/commercial-glazing-winter-park.html",
+    "/winter-park/winter-park-park-ave/",
+    "/miami/wynwood-miami/",
+    "/commercial-glazier-boca-raton/",
+    "/commercial-glazier-lakeland/",
+    "/commercial-glazier-vero-beach/",
 }
 
 # Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).

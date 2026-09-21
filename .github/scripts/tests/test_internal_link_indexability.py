@@ -106,6 +106,11 @@ class IndexableLinkTargetTests(unittest.TestCase):
             "/gc.html",
             "/commercial-glazing-apopka.html",
             "/commercial-glazing-tamarac.html",
+            "/impact-windows-anna-maria-island.html",
+            "/commercial-glazing-winter-park.html",
+            "/winter-park/winter-park-park-ave/",
+            "/miami/wynwood-miami/",
+            "/commercial-glazier-boca-raton/",
         ):
             self.assertIn(url, audit.ALLOWED_NOINDEX_LINK_TARGETS)
 
