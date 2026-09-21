@@ -32,7 +32,10 @@
   function attach() {
     document.querySelectorAll('form').forEach(function (form) {
       // Only the existing ACG lead receiver. Never modify search or login forms.
-      if (!/^https:\/\/formsubmit\.co\/(?:ajax\/)?connor@acglass\.com\/?$/.test(form.getAttribute('action') || '')) return;
+      var receiver = /^https:\/\/formsubmit\.co\/(?:ajax\/)?connor@acglass\.com\/?$/.test(form.getAttribute('action') || '');
+      // Contact builds FormData in its existing AJAX handler and has no action attribute.
+      var contact = window.location.pathname === '/contact.html' && form.id === 'contact-form';
+      if (!receiver && !contact) return;
       ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (name) {
         var input = form.querySelector('input[name="' + name + '"]');
         if (!input) {
