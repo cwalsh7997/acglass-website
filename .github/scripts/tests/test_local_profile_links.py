@@ -12,6 +12,15 @@ SERVICES = ('commercial-storefront-systems.html', 'curtainwall-systems.html',
             'automatic-entrance-systems.html', 'interior-glass-partitions.html')
 
 class LocalProfileLinks(unittest.TestCase):
+    def test_attribution_loads_on_landing_and_lead_pages(self):
+        pages = [('storefront-glazier-' + city + '-florida/index.html') for city in CITIES]
+        pages += ['send-plans.html', 'bid.html', 'contact.html', 'free-glazing-scope-review.html']
+        for page in pages:
+            with self.subTest(page=page):
+                text = (ROOT / page).read_text()
+                self.assertEqual(text.count('/js/acg-gbp-attribution.js?v=20260921'), 1)
+
+
     def test_each_city_has_resolved_provider_and_service_links(self):
         for city in CITIES:
             with self.subTest(city=city):

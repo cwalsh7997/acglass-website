@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const path = require('node:path');
-const script = fs.readFileSync(path.join(__dirname, '../../../js/acg-chrome.js'), 'utf8');
+const script = fs.readFileSync(path.join(__dirname, '../../../js/acg-gbp-attribution.js'), 'utf8');
 function run(search, storage = {}, action = 'https://formsubmit.co/connor@acglass.com', blocked = false) {
   const fields = {};
   const form = {
