@@ -364,7 +364,8 @@ class SchemaFollowupTests(unittest.TestCase):
             "Commercial Storefront Installer Sarasota | 48-Hr Bid"
         ),
         "storefront-glazier-florida/index.html": (
-            "Commercial Storefront Glazier Florida Guide for GCs | ACG"
+            # Shipped title restoration in 0623b058d; keep exact title freeze.
+            "Commercial Storefront Installer Florida | Bid in 48 Hrs"
         ),
         "services.html": (
             "Florida Commercial Glazing Services for Contractors | ACG"

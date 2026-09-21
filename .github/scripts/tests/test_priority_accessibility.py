@@ -41,13 +41,16 @@ LANDMARK_ONLY_PAGES = (
 # The site carried three LinkedIn company URLs, one of them a 404, which split
 # the entity. head, jsonld, scripts and visible are byte-identical, which is the
 # evidence that nothing but the href changed.
+# 2026-09-21: refresh only two href hashes for shipped commit 63d46e78e,
+# which consolidated WPB/Tampa links onto existing storefront keeper URLs.
+# Other fingerprints and all accessibility assertions remain unchanged.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
         "head": "a1db4336325ede878aaa361501932eb200164380bf725ac0a8686eb2000ba0f6",
         "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
         "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
-        "hrefs": "8dee2470ec95eb9bd20d7824e2c5abea49367798521213f21162ca0070e236ca",
+        "hrefs": "02b652403eac3dc2973856e25731a0f14f167abb35c0d30dedeb81a12dcd09fb",
         "visible": "de3db46f74b8eed69dcc7c044037151c7dd912e6d2f2186a576797685db9e1e4",
     },
     "multi-slide-bifold-doors.html": {
@@ -66,7 +69,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
-        "hrefs": "c718a8bb0e800e8cea7aadb4133ee207d70f5fd7ccc61693892104905c316117",
+        "hrefs": "80c4c4652a81e34c0935bb789658697a4584865e3dabde8496145fe26552bcaf",
         "visible": "fd481c1aea2dbf2ff28e83aa786a27a4f2fe915813203942c3a4605544c6fba5",
     },
     "privacy-policy.html": {
