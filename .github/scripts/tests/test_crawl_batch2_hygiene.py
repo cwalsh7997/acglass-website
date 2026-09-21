@@ -383,8 +383,45 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertTrue(is_noindex(html), city)
             self.assertEqual(canonical(html), f"{BASE}/{city}/")
             self.assertNotIn(f"{BASE}/{city}/", locs)
-        # Child street page stays listed; only the thin city root was contained.
-        self.assertIn(f"{BASE}/winter-park/winter-park-park-ave/", locs)
+        # 2026-09-21: the Park Avenue neighborhood page consolidates onto the
+        # Winter Park file. Both are noindex and off every sitemap.
+        park = read("winter-park/winter-park-park-ave/index.html")
+        self.assertEqual(robots(park), "noindex,follow")
+        self.assertEqual(
+            canonical(park), f"{BASE}/commercial-glazing-winter-park.html"
+        )
+        self.assertNotIn(f"{BASE}/winter-park/winter-park-park-ave/", locs)
+        winter = read("commercial-glazing-winter-park.html")
+        self.assertEqual(robots(winter), "noindex,follow")
+        self.assertEqual(
+            canonical(winter), f"{BASE}/commercial-glazing-winter-park.html"
+        )
+        self.assertNotIn(f"{BASE}/commercial-glazing-winter-park.html", locs)
+
+    def test_2026_09_21_thin_non_office_pages_are_noindex_and_off_sitemap(self):
+        # Self-canonical + noindex,follow, matching commercial-glazing-st-cloud.
+        # Files stay on disk. Park Avenue is covered above (cross-canonical).
+        pages = (
+            "impact-windows-anna-maria-island.html",
+            "impact-windows-bonita-springs.html",
+            "impact-windows-bradenton.html",
+            "impact-windows-cape-coral.html",
+            "impact-windows-venice-fl.html",
+            "commercial-glazier-boca-raton/index.html",
+            "commercial-glazier-lakeland/index.html",
+            "commercial-glazier-vero-beach/index.html",
+            "miami/wynwood-miami/index.html",
+        )
+        locs = sitemap_locs()
+        for rel in pages:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), url, rel)
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        tampa = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa))
 
 
 class RfqCtaTests(unittest.TestCase):
