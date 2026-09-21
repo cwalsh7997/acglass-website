@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 import re
 import unittest
+import subprocess
+import shutil
 
 ROOT = Path(__file__).resolve().parents[3]
 CITIES = ('west-palm-beach', 'stuart', 'tampa', 'naples')
@@ -12,6 +14,12 @@ SERVICES = ('commercial-storefront-systems.html', 'curtainwall-systems.html',
             'automatic-entrance-systems.html', 'interior-glass-partitions.html')
 
 class LocalProfileLinks(unittest.TestCase):
+    def test_attribution_behavior_in_javascript(self):
+        node = shutil.which("node")
+        self.assertIsNotNone(node, "Node is required for the browser attribution regression")
+        result = subprocess.run([node, str(ROOT / ".github/scripts/tests/test_gbp_attribution.js")], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
     def test_attribution_loads_on_landing_and_lead_pages(self):
         pages = [('storefront-glazier-' + city + '-florida/index.html') for city in CITIES]
         pages += ['send-plans.html', 'bid.html', 'contact.html', 'free-glazing-scope-review.html']
