@@ -106,14 +106,14 @@ class KeeperPhraseTests(unittest.TestCase):
                 self.assertFalse("noindex" in robots(html))
                 self.assertEqual(canonical(html), f"{BASE}/{slug}/")
 
-    def test_office_metros_still_canonicalise_to_keepers(self):
+    def test_office_metros_noindex_and_canonicalise_to_keepers(self):
         for city in OFFICE_METROS:
             html = read(f"{city}/index.html")
             self.assertEqual(
                 canonical(html),
                 f"{BASE}/storefront-glazier-{city}-florida/",
             )
-            self.assertNotIn("noindex", robots(html))
+            self.assertEqual(robots(html), "noindex,follow")
 
 
 class HubTests(unittest.TestCase):
