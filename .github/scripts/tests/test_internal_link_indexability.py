@@ -125,6 +125,13 @@ class IndexableLinkTargetTests(unittest.TestCase):
         self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-miami-florida/"))
         self.assertFalse(audit.is_wave2_noindex_target("/all-glass-entrances/"))
         self.assertFalse(audit.is_wave2_noindex_target("/dealer/login.html"))
+        self.assertIn("/miami/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/boca-raton/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertNotIn("/sanford/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertNotIn(
+            "/storefront-glazier-miami-florida/", audit.CONTAINED_CITY_ROOT_DUPLICATES
+        )
+        self.assertNotIn("/florida-commercial-glazing/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         pages = {
             "/source.html": self.page("/source.html"),
             "/aventura/commercial-storefronts/": self.page(
@@ -137,6 +144,21 @@ class IndexableLinkTargetTests(unittest.TestCase):
         }
         results = self.run_gate(pages, inbound)
         self.assertTrue(results["Indexable pages do not link to noindex pages"].ok)
+
+    def test_contained_city_root_duplicates_remain_allowed_link_targets(self):
+        pages = {
+            "/locations.html": self.page("/locations.html"),
+            "/miami/": self.page(
+                "/miami/", '<meta name="robots" content="noindex,follow">'
+            ),
+        }
+        inbound = {"/miami/": {"/locations.html": ["Miami"]}}
+        results = self.run_gate(pages, inbound)
+        self.assertTrue(results["Indexable pages do not link to noindex pages"].ok)
+        self.assertEqual(len(audit.CONTAINED_CITY_ROOT_DUPLICATES), 79)
+        self.assertIn("/jacksonville/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/stuart/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertNotIn("/winter-park/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
 
     def test_noindex_and_refresh_sources_are_not_treated_as_indexable(self):
         pages = {

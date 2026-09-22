@@ -235,19 +235,21 @@ class CityCanonicalTests(unittest.TestCase):
                 broken.append(f"/{city}/ -> {canon}")
         self.assertEqual(broken, [])
 
-    def test_wave4_office_metros_left_to_wave4(self):
-        # Wave-4 owns these files and points them at the indexable keepers.
+    def test_wave4_office_metros_noindex_to_indexable_keepers(self):
+        # Office city roots stay live and still canonicalize to the indexable
+        # keepers. They are noindex,follow so they stop competing in the index.
         for city in LEAVE_CITY_ROOTS:
             html = read(f"{city}/index.html")
             keeper = f"{BASE}/storefront-glazier-{city}-florida/"
             self.assertEqual(canonical(html), keeper)
-            self.assertFalse(is_noindex(html))
+            self.assertEqual(robots(html), "noindex,follow")
             self.assertFalse(is_noindex(read(f"storefront-glazier-{city}-florida/index.html")))
 
-    def test_leftover_city_roots_canonical_to_hub_not_noindex_templates(self):
-        # SEO: never canonical-to-noindex. Prefer hub (or a keeper) over
-        # self-canonical for the leftover city roots. Leave Wave-4 metros alone.
-        leftovers = []
+    def test_leftover_city_roots_noindex_to_hub_not_noindex_templates(self):
+        # SEO: never canonical-to-noindex. Leftover city roots stay live,
+        # canonicalize to the Florida hub, and are noindex,follow so they
+        # stop competing with that hub. Leave keeper files indexable.
+        contained = []
         bad = []
         hub = f"{BASE}/florida-commercial-glazing/"
         for path in sorted(REPO_ROOT.glob("storefront-glazier-*-florida/index.html")):
@@ -269,9 +271,11 @@ class CityCanonicalTests(unittest.TestCase):
             if REFRESH_RE.search(glazier_html) or not is_noindex(glazier_html):
                 continue
             html = city_page.read_text(encoding="utf-8")
-            if is_noindex(html) or REFRESH_RE.search(html):
+            if REFRESH_RE.search(html):
                 continue
-            leftovers.append(city)
+            contained.append(city)
+            if robots(html) != "noindex,follow":
+                bad.append(f"/{city}/ robots={robots(html)!r}")
             canon = canonical(html)
             if canon != hub:
                 bad.append(f"/{city}/ -> {canon}")
@@ -279,7 +283,7 @@ class CityCanonicalTests(unittest.TestCase):
                 target = REPO_ROOT / canon.rstrip("/").split("/")[-1] / "index.html"
                 if target.is_file() and is_noindex(target.read_text(encoding="utf-8")):
                     bad.append(f"/{city}/ still points at noindex {canon}")
-        self.assertGreaterEqual(len(leftovers), 60)
+        self.assertGreaterEqual(len(contained), 60)
         self.assertEqual(bad, [])
         # Slug mismatches from the live leftover set (hollywood-florida vs
         # storefront-glazier-hollywood-florida, winter-heaven vs winter-haven, …).
@@ -294,7 +298,7 @@ class CityCanonicalTests(unittest.TestCase):
         ):
             html = read(f"{city}/index.html")
             self.assertEqual(canonical(html), hub, city)
-            self.assertFalse(is_noindex(html), city)
+            self.assertEqual(robots(html), "noindex,follow", city)
         locs = sitemap_locs()
         self.assertNotIn(f"{BASE}/boca-raton/", locs)
 
@@ -302,10 +306,30 @@ class CityCanonicalTests(unittest.TestCase):
         for city in KEEPER_CITY_ROOTS:
             html = read(f"{city}/index.html")
             canon = canonical(html)
+            self.assertEqual(robots(html), "noindex,follow", city)
             self.assertIn(f"/storefront-glazier-{city}-florida/", canon)
             slug = canon.rstrip("/").split("/")[-1]
             target = read(f"{slug}/index.html")
             self.assertFalse(is_noindex(target), city)
+
+    def test_jacksonville_and_stuart_roots_noindex_without_touching_keepers(self):
+        jax = read("jacksonville/index.html")
+        self.assertEqual(robots(jax), "noindex,follow")
+        self.assertEqual(
+            canonical(jax), f"{BASE}/commercial-glazing-jacksonville.html"
+        )
+        self.assertFalse(is_noindex(read("commercial-glazing-jacksonville.html")))
+        stuart = read("stuart/index.html")
+        self.assertEqual(robots(stuart), "noindex,follow")
+        self.assertEqual(canonical(stuart), f"{BASE}/florida-commercial-glazing/")
+        self.assertFalse(is_noindex(read("storefront-glazier-stuart-florida/index.html")))
+        self.assertFalse(is_noindex(read("florida-commercial-glazing/index.html")))
+
+    def test_sanford_city_root_stays_self_canonical_and_indexable(self):
+        html = read("sanford/index.html")
+        self.assertNotIn("noindex", robots(html))
+        self.assertEqual(canonical(html), f"{BASE}/sanford/")
+        self.assertIn(f"{BASE}/sanford/", sitemap_locs())
 
     def test_nine_keepers_remain_indexable_self_canonical(self):
         locs = sitemap_locs()
