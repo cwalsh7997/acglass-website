@@ -76,13 +76,20 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
             self.assertEqual(PRIMARY_URL, canonical.group(1), rel)
             self.assertNotIn(f'href="{PORTFOLIO_URL}"', canonical.group(0), rel)
 
-    def test_live_case_study_is_in_project_sitemaps(self):
-        """Cloudflare 301s the keeper short URL to portfolio; advertise the 200 alias."""
-        live = "https://acglass.com/projects/ocean-prime-ft-lauderdale.html"
-        self.assertIn(live, _read("sitemap.xml"))
-        self.assertIn(live, _read("sitemap-projects.xml"))
-        self.assertNotIn(PRIMARY_URL, _read("sitemap.xml"))
-        self.assertNotIn(PRIMARY_URL, _read("sitemap-projects.xml"))
+    def test_projects_alias_is_noindex_and_keeper_is_sitemapped(self):
+        """Duplicate is noindex. Sitemap lists the keeper, not the projects alias."""
+        alias = "https://acglass.com/projects/ocean-prime-ft-lauderdale.html"
+        html = _read("projects/ocean-prime-ft-lauderdale.html")
+        keeper_line = (
+            "<url><loc>https://acglass.com/ocean-prime-ft-lauderdale.html</loc>"
+            "<lastmod>2026-08-20</lastmod></url>"
+        )
+        self.assertIn('<meta name="robots" content="noindex,follow">', html)
+        for name in ("sitemap.xml", "sitemap-projects.xml"):
+            body = _read(name)
+            self.assertNotIn(alias, body, name)
+            self.assertIn(keeper_line, body, name)
+        self.assertNotIn(alias, _read("sitemap-pages.xml"))
 
     def test_high_traffic_cards_link_to_live_projects_alias(self):
         """Cloudflare still 301s the primary URL to portfolio; send GCs to the 200 alias."""

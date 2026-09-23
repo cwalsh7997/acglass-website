@@ -72,17 +72,13 @@ CHILD_URLSETS = [
 RETIRED_SITEMAP_URLS = (
     "https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html",
     "https://acglass.com/case-study-ocean-prime-fort-lauderdale.html",
-    # Cloudflare Bulk Redirects 301 this Wave-4 keeper to /portfolio.html.
-    # Advertise the live 200 alias /projects/ocean-prime-ft-lauderdale.html instead.
-    "https://acglass.com/ocean-prime-ft-lauderdale.html",
+    # The keeper https://acglass.com/ocean-prime-ft-lauderdale.html stays in
+    # the sitemap. The /projects/ alias is the noindex duplicate and is absent.
     "https://acglass.com/google9d45280643313cec.html",
 )
-# The live Ocean Prime case study is a /projects/ alias whose HTML still
-# canonicals to the keeper above. Sitemap must list the 200 URL; do not
-# retarget the page canonical in this change.
+# The /projects/ Ocean Prime alias is noindex and removed from sitemaps.
+# It still canonicalizes to the keeper; do not retarget that canonical.
 SITEMAP_CROSS_CANONICAL_ALLOWED = {
-    "https://acglass.com/projects/ocean-prime-ft-lauderdale.html":
-        "https://acglass.com/ocean-prime-ft-lauderdale.html",
 }
 APEX_SITEMAP = BASE + "/sitemap.xml"
 

@@ -109,6 +109,10 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazier-boca-raton/",
     "/commercial-glazier-lakeland/",
     "/commercial-glazier-vero-beach/",
+    # Duplicate of the Ocean Prime keeper. Page stays live (no delete) and
+    # canonicalizes to /ocean-prime-ft-lauderdale.html. Inbound case-study
+    # cards keep their hrefs so this containment does not retarget the site.
+    "/projects/ocean-prime-ft-lauderdale.html",
 }
 
 # Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).
