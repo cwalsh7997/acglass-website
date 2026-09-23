@@ -16,14 +16,15 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # Rebaselined 2026-09-14: live JSON-LD url/breadcrumb now name the /projects/
 # 200 (Cloudflare 301s the short URL to portfolio). Added Project @type,
 # GC takeaway, and contextual Euro-Wall / FTL / restaurant / projects links.
-# Metadata, images, forms, and non-JSON-LD scripts are unchanged.
+# Images, forms, and non-JSON-LD scripts are unchanged.
+# Metadata rebaselined 2026-09-23: robots is noindex,follow on this duplicate.
 PROTECTED_HASHES = {
     "anchors": "75d7427a83a1d4752a81bc3b388357df09812e4fa58c3cfcd955b9707302f1e9",
     "body": "a94157055de14a2c64955e4ccd1c0574704ab9b6aac56ca689db189240dba5ec",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "f293b0d3972fa909d8f9a1216132ebcf89a99f46d4961977d74dc90801f19d51",
     "jsonld": "a867c654d313a068dd6155e1e59ed6a8e63a4003127054dddcf60e78b7d8b558",
-    "metadata": "04b21ef485f547009c1760a27f1e03ed0589bddc34c488601b496caf496868af",
+    "metadata": "fca1e68073280066336019ea04bc3fee475537b9b3259f2b736be659a7664970",
     "scripts": "59d80dfe70fb34b631f5af37c031aa15a9fb62d74c3f0c7f7ba40f348fd81567",
 }
 
