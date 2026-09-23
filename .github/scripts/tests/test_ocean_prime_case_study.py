@@ -76,11 +76,14 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
             self.assertEqual(PRIMARY_URL, canonical.group(1), rel)
             self.assertNotIn(f'href="{PORTFOLIO_URL}"', canonical.group(0), rel)
 
-    def test_live_case_study_is_in_project_sitemaps(self):
-        """Cloudflare 301s the keeper short URL to portfolio; advertise the 200 alias."""
+    def test_projects_alias_is_noindex_and_out_of_sitemaps(self):
+        """Duplicate canonicalizes to the keeper: noindex,follow and drop from sitemaps."""
         live = "https://acglass.com/projects/ocean-prime-ft-lauderdale.html"
-        self.assertIn(live, _read("sitemap.xml"))
-        self.assertIn(live, _read("sitemap-projects.xml"))
+        html = _read("projects/ocean-prime-ft-lauderdale.html")
+        self.assertIn('<meta name="robots" content="noindex,follow">', html)
+        self.assertNotIn(live, _read("sitemap.xml"))
+        self.assertNotIn(live, _read("sitemap-projects.xml"))
+        self.assertNotIn(live, _read("sitemap-pages.xml"))
         self.assertNotIn(PRIMARY_URL, _read("sitemap.xml"))
         self.assertNotIn(PRIMARY_URL, _read("sitemap-projects.xml"))
 
