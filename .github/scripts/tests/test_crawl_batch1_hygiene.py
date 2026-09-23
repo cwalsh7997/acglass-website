@@ -15,7 +15,6 @@ APEX = "https://acglass.com/sitemap.xml"
 RETIRED = (
     "https://acglass.com/blog/ocean-prime-ft-lauderdale-glazing.html",
     "https://acglass.com/case-study-ocean-prime-fort-lauderdale.html",
-    "https://acglass.com/ocean-prime-ft-lauderdale.html",
     "https://acglass.com/google9d45280643313cec.html",
 )
 
