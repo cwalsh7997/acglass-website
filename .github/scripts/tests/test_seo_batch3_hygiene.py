@@ -175,5 +175,87 @@ class CountyImpactClaimTests(unittest.TestCase):
         self.assertEqual(mismatches, [])
 
 
+class PalmBeachNotHvhzTests(unittest.TestCase):
+    """FBC HVHZ is Miami-Dade and Broward only. Palm Beach is not in it.
+
+    The West Palm Beach keeper already says so. These phrases were the
+    live contradiction: indexable explainers and Palm Beach pages calling
+    part of the county HVHZ, including an east-of-Military-Trail boundary
+    and a 170-200 mph figure that was attached to that false geography.
+    """
+
+    FORBIDDEN = (
+        "parts of Palm Beach",
+        "portions of Palm Beach",
+        "east of Military Trail",
+        "HVHZ partial",
+        "HVHZ portion of Palm Beach",
+        "Palm Beach County HVHZ",
+        "fully HVHZ designated",
+        "falls within the HVHZ",
+        "falls within HVHZ",
+        "South Palm Beach (HVHZ)",
+        "170-200 mph",
+        "hardened HVHZ",
+        "HVHZ tri-county",
+        "Military Trail is the line",
+        "same HVHZ standards",
+        "same HVHZ detailing",
+        "and Palm Beach counties - Florida's High Velocity Hurricane Zone",
+        "Palm Beach County's High Velocity Hurricane Zone",
+        "Palm Beach County&rsquo;s High Velocity Hurricane Zone",
+    )
+
+    def test_no_html_puts_palm_beach_inside_the_hvhz(self):
+        hits = []
+        for path in REPO_ROOT.rglob("*.html"):
+            rel = path.relative_to(REPO_ROOT)
+            if set(rel.parts) & {".git", "node_modules", ".github"}:
+                continue
+            html = path.read_text(encoding="utf-8", errors="replace")
+            for phrase in self.FORBIDDEN:
+                if phrase in html:
+                    hits.append(f"{rel}: {phrase}")
+        self.assertEqual(hits, [])
+
+    def test_no_paragraph_puts_a_palm_beach_place_inside_hvhz(self):
+        places = re.compile(
+            r"Palm Beach|Boynton Beach|Delray Beach|Wellington|Boca Raton|"
+            r"Riviera Beach|Lake Worth|Jupiter Island|North Palm Beach",
+            re.I,
+        )
+        membership = re.compile(
+            r"fall(?:s|ing)? within the High Velocity Hurricane Zone|"
+            r"within Florida's High Velocity Hurricane Zone",
+            re.I,
+        )
+        negation = re.compile(
+            r"not in the (?:High Velocity Hurricane Zone|HVHZ)|"
+            r"not the High Velocity Hurricane Zone|"
+            r"outside the High Velocity Hurricane Zone",
+            re.I,
+        )
+        hits = []
+        for path in REPO_ROOT.rglob("*.html"):
+            rel = path.relative_to(REPO_ROOT)
+            if set(rel.parts) & {".git", "node_modules", ".github"}:
+                continue
+            html = path.read_text(encoding="utf-8", errors="replace")
+            for chunk in re.findall(r"<p\b[^>]*>[\s\S]*?</p>", html, re.I):
+                text = re.sub(r"<[^>]+>", " ", chunk)
+                text = re.sub(r"\s+", " ", text)
+                if places.search(text) and membership.search(text) and not negation.search(text):
+                    hits.append(f"{rel}: {text.strip()[:180]}")
+        self.assertEqual(hits, [])
+
+    def test_palm_beach_cards_keep_existing_wind_numbers(self):
+        county = (REPO_ROOT / "palm-beach-county/index.html").read_text(encoding="utf-8")
+        self.assertIn("165 mph (east) / 150 mph (west)", county)
+        self.assertIn("Not HVHZ", county)
+        lookup = (REPO_ROOT / "tools/hvhz-zone-lookup/index.html").read_text(encoding="utf-8")
+        self.assertIn(">165 mph<", lookup)
+        self.assertIn("Not HVHZ. Wind-borne debris region.", lookup)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
