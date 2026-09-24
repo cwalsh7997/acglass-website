@@ -18,7 +18,9 @@ on:
 jobs:
   canonical-verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # fetch-depth 0 pulls every branch. A slow fetch can consume a 5-minute
+    # budget before canonical-verify.py starts, which cancels the job.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
