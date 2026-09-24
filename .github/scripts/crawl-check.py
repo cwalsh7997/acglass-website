@@ -604,10 +604,11 @@ def check_sitemaps(results: list[Result]) -> None:
         )
     )
 
-    nonhtml, missing, noindexed, cross_canon, badparent = [], [], [], [], []
+    nonhtml, missing, noindexed, cross_canon, og_mismatch, badparent = [], [], [], [], [], []
     STUB = re.compile(r'<meta[^>]+http-equiv="refresh"', re.I)
     NOINDEX = re.compile(r'<meta[^>]+name="robots"[^>]+content="[^"]*noindex', re.I)
     CANON = re.compile(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', re.I)
+    OG_URL = re.compile(r'<meta[^>]+property="og:url"[^>]+content="([^"]+)"', re.I)
     stubs = []
 
     for loc in sorted(all_child_locs | master):
@@ -625,10 +626,17 @@ def check_sitemaps(results: list[Result]) -> None:
         if NOINDEX.search(html):
             noindexed.append(loc)
         m = CANON.search(html)
-        if m and m.group(1).rstrip("/") != loc.rstrip("/"):
+        if not m:
+            cross_canon.append(f"{loc} has no canonical")
+        elif m.group(1).rstrip("/") != loc.rstrip("/"):
             allowed = SITEMAP_CROSS_CANONICAL_ALLOWED.get(loc.rstrip("/"))
             if allowed != m.group(1).rstrip("/"):
                 cross_canon.append(f"{loc} -> {m.group(1)}")
+        og = OG_URL.search(html)
+        if not og:
+            og_mismatch.append(f"{loc} has no og:url")
+        elif og.group(1).rstrip("/") != loc.rstrip("/"):
+            og_mismatch.append(f"{loc} og:url -> {og.group(1)}")
         # Every ancestor directory of a sitemap URL must itself resolve, or the
         # crawler walks into a 404 parent (the /author/, /blog-2026/, /doral/ bug).
         parts = [p for p in path.split("/")[:-1] if p]
@@ -643,6 +651,14 @@ def check_sitemaps(results: list[Result]) -> None:
     results.append(Result("FAIL", "no noindex pages in sitemaps", not noindexed, ", ".join(noindexed[:3])))
     results.append(
         Result("FAIL", "sitemap URLs are self-canonical", not cross_canon, "; ".join(cross_canon[:3]))
+    )
+    results.append(
+        Result(
+            "FAIL",
+            "sitemap URLs publish a matching og:url",
+            not og_mismatch,
+            "; ".join(og_mismatch[:3]),
+        )
     )
     results.append(
         Result(

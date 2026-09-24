@@ -94,6 +94,30 @@ class HeadHygieneTests(unittest.TestCase):
             html,
         )
 
+    def test_every_sitemap_url_is_self_canonical_and_has_matching_og_url(self):
+        # Indexable locs must name themselves. A missing canonical used to
+        # pass crawl-check because the checker only compared a tag it found.
+        canon_re = re.compile(
+            r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', re.I
+        )
+        og_re = re.compile(
+            r'<meta[^>]+property="og:url"[^>]+content="([^"]+)"', re.I
+        )
+        missing = []
+        master = _lastmods("sitemap.xml")
+        for loc in master:
+            rel = loc.removeprefix("https://acglass.com").lstrip("/")
+            if rel == "" or rel.endswith("/"):
+                rel += "index.html"
+            html = _read(rel)
+            canon = canon_re.search(html)
+            og = og_re.search(html)
+            if not canon or canon.group(1).rstrip("/") != loc.rstrip("/"):
+                missing.append(f"canonical {loc}")
+            if not og or og.group(1).rstrip("/") != loc.rstrip("/"):
+                missing.append(f"og:url {loc}")
+        self.assertEqual(missing, [])
+
     def test_free_scope_review_uses_current_dark_css_cache_key(self):
         html = _read("free-glazing-scope-review.html")
         self.assertIn('href="/css/acg2026-dark.css?v=20260919-a11y"', html)
