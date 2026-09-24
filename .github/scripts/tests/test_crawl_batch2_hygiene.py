@@ -235,6 +235,106 @@ class CityCanonicalTests(unittest.TestCase):
                 broken.append(f"/{city}/ -> {canon}")
         self.assertEqual(broken, [])
 
+    def test_commercial_glazing_html_aliases_do_not_canonical_to_noindex(self):
+        # The city-root guard above only walks */index.html. These root
+        # commercial-glazing-*.html aliases were still indexable while
+        # canonicalizing to a noindex storefront template or city root.
+        # Files stay. They are noindex,follow and canonical to the Florida
+        # hub, and they stay off the sitemap. An alias that already points
+        # at an indexable keeper (Naples) stays indexable.
+        hub = f"{BASE}/florida-commercial-glazing/"
+        locs = sitemap_locs()
+        contained = []
+        bad = []
+        for path in sorted(REPO_ROOT.glob("commercial-glazing-*.html")):
+            html = path.read_text(encoding="utf-8")
+            if REFRESH_RE.search(html):
+                continue
+            canon = canonical(html)
+            if not canon.startswith(BASE):
+                continue
+            # Self-canonical noindex templates are the approved containment.
+            # This guard is only the cross-canonical-to-noindex case.
+            if canon.rstrip("/") == f"{BASE}/{path.name}".rstrip("/"):
+                continue
+            target_rel = canon[len(BASE):].lstrip("/")
+            target = (
+                REPO_ROOT / target_rel / "index.html"
+                if target_rel.endswith("/")
+                else REPO_ROOT / target_rel
+            )
+            if not target.is_file():
+                continue
+            target_html = target.read_text(encoding="utf-8")
+            if not (is_noindex(target_html) or REFRESH_RE.search(target_html)):
+                continue
+            rel = path.name
+            contained.append(rel)
+            if robots(html) != "noindex,follow":
+                bad.append(f"{rel} robots={robots(html)!r}")
+            if canon != hub:
+                bad.append(f"{rel} -> {canon}")
+            if f"{BASE}/{rel}" in locs:
+                bad.append(f"{rel} still in sitemap")
+        self.assertEqual(bad, [])
+        self.assertEqual(contained, [])
+
+        aliases = (
+            "commercial-glazing-aventura.html",
+            "commercial-glazing-boca-raton.html",
+            "commercial-glazing-bonita-springs.html",
+            "commercial-glazing-boynton-beach.html",
+            "commercial-glazing-bradenton.html",
+            "commercial-glazing-cape-coral.html",
+            "commercial-glazing-clearwater.html",
+            "commercial-glazing-coral-gables.html",
+            "commercial-glazing-davie.html",
+            "commercial-glazing-deerfield-beach.html",
+            "commercial-glazing-delray-beach.html",
+            "commercial-glazing-estero.html",
+            "commercial-glazing-hobe-sound.html",
+            "commercial-glazing-juno-beach.html",
+            "commercial-glazing-jupiter.html",
+            "commercial-glazing-key-west.html",
+            "commercial-glazing-kissimmee.html",
+            "commercial-glazing-lakeland.html",
+            "commercial-glazing-marco-island.html",
+            "commercial-glazing-miami-beach.html",
+            "commercial-glazing-north-palm-beach.html",
+            "commercial-glazing-palm-bay.html",
+            "commercial-glazing-palm-beach-gardens.html",
+            "commercial-glazing-palm-beach.html",
+            "commercial-glazing-panama-city.html",
+            "commercial-glazing-pensacola.html",
+            "commercial-glazing-pompano-beach.html",
+            "commercial-glazing-port-st-lucie.html",
+            "commercial-glazing-royal-palm-beach.html",
+            "commercial-glazing-st-petersburg.html",
+            "commercial-glazing-sunny-isles-beach.html",
+            "commercial-glazing-tallahassee.html",
+            "commercial-glazing-tequesta.html",
+            "commercial-glazing-vero-beach.html",
+            "commercial-glazing-wellington.html",
+            "commercial-glazing-weston.html",
+        )
+        self.assertEqual(len(aliases), 36)
+        for rel in aliases:
+            html = read(rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), hub, rel)
+            self.assertIn(f'property="og:url" content="{hub}"', html)
+            self.assertNotIn(f"{BASE}/{rel}", locs)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+
+        naples = read("commercial-glazing-naples.html")
+        self.assertFalse(is_noindex(naples))
+        self.assertEqual(
+            canonical(naples), f"{BASE}/storefront-glazier-naples-florida/"
+        )
+        self.assertFalse(is_noindex(read("storefront-glazier-naples-florida/index.html")))
+        self.assertFalse(is_noindex(read("florida-commercial-glazing/index.html")))
+
     def test_wave4_office_metros_noindex_to_indexable_keepers(self):
         # Office city roots stay live and still canonicalize to the indexable
         # keepers. They are noindex,follow so they stop competing in the index.

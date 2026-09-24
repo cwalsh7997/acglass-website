@@ -119,6 +119,9 @@ class IndexableLinkTargetTests(unittest.TestCase):
             "/emergency-commercial-glass-repair-miami/",
             "/emergency-commercial-glass-repair-orlando/",
             "/emergency-commercial-glass-repair-tampa/",
+            "/commercial-glazing-key-west.html",
+            "/commercial-glazing-boca-raton.html",
+            "/commercial-glazing-panama-city.html",
         ):
             self.assertIn(url, audit.ALLOWED_NOINDEX_LINK_TARGETS)
 
