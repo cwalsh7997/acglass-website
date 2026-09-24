@@ -447,6 +447,41 @@ class CityCanonicalTests(unittest.TestCase):
         tampa = read("impact-windows-tampa.html")
         self.assertNotIn("noindex", robots(tampa))
 
+    def test_2026_09_24_thin_commercial_glazier_cities_are_noindex_and_off_sitemap(self):
+        # Same template as the already-noindexed Boca Raton / Lakeland / Vero
+        # Beach pages (~95% of main text). Self-canonical noindex,follow.
+        # Files stay. Distinct commercial-glazier pages stay indexable.
+        pages = (
+            "commercial-glazier-coral-springs/index.html",
+            "commercial-glazier-delray-beach/index.html",
+            "commercial-glazier-doral-fl/index.html",
+            "commercial-glazier-hialeah/index.html",
+            "commercial-glazier-hollywood-fl/index.html",
+            "commercial-glazier-jupiter/index.html",
+            "commercial-glazier-pembroke-pines/index.html",
+            "commercial-glazier-pinecrest/index.html",
+            "commercial-glazier-wellington/index.html",
+        )
+        keepers = (
+            "commercial-glazier-bid-process-florida/index.html",
+            "commercial-glazier-near-me-west-palm-beach/index.html",
+            "commercial-glazier-questions-to-ask-before-hiring/index.html",
+        )
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 9)
+        for rel in pages:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), url, rel)
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        for rel in keepers:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn("noindex", robots(html), rel)
+            self.assertIn(url, locs, rel)
+
     def test_2026_09_24_near_duplicate_verticals_are_noindex_and_off_sitemap(self):
         # City-swapped templates that share ~95% of their body. Self-canonical
         # noindex,follow, files kept, dropped from every sitemap. Statewide

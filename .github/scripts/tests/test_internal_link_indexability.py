@@ -111,6 +111,8 @@ class IndexableLinkTargetTests(unittest.TestCase):
             "/winter-park/winter-park-park-ave/",
             "/miami/wynwood-miami/",
             "/commercial-glazier-boca-raton/",
+            "/commercial-glazier-coral-springs/",
+            "/commercial-glazier-wellington/",
             "/healthcare-glazing-tampa/",
             "/religious-glazing-miami/",
             "/multifamily-glazing-orlando/",
