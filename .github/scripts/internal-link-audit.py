@@ -368,10 +368,9 @@ HELD_INDEXABILITY_EDGE_HASHES = {
         "/government-public-sector-glazing.html",
         "/wbe-sbe-procurement.html",
     ): "ec11f1072b94998b39fcd47378aed5acb5ca874626221190d3856ef29ea6c497",
-    (
-        "/blog/ocean-prime-ft-lauderdale-glazing.html",
-        "/author-connor-walsh.html",
-    ): "4851026cd8413cbe3492ad886acb4f030df4e1a341be229b1872c9e16bdab560",
+    # The Ocean Prime byline used to point at /author-connor-walsh.html, a
+    # noindex refresh stub. It now points at /authors/connor-walsh.html, so
+    # the held exception is retired and must not be re-granted.
 }
 
 A_TAG = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.IGNORECASE | re.DOTALL)
