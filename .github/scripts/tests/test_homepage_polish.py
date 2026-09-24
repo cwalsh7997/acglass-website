@@ -19,7 +19,8 @@ def _visible(html: str) -> str:
 
 class HomepagePolishTests(unittest.TestCase):
     def test_ocean_prime_is_one_opening_not_full_facade(self):
-        self.assertIn('href="/projects/ocean-prime-ft-lauderdale.html"', HOME)
+        self.assertIn('href="/ocean-prime-ft-lauderdale.html"', HOME)
+        self.assertNotIn('href="/projects/ocean-prime-ft-lauderdale.html"', HOME)
         self.assertIn("one Euro-Wall opening", HOME)
         self.assertIn("not the full facade", HOME)
         self.assertNotIn("full façade", HOME)

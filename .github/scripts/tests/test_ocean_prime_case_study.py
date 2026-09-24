@@ -91,20 +91,41 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
             self.assertIn(keeper_line, body, name)
         self.assertNotIn(alias, _read("sitemap-pages.xml"))
 
-    def test_high_traffic_cards_link_to_live_projects_alias(self):
-        """Cloudflare still 301s the primary URL to portfolio; send GCs to the 200 alias."""
-        target = "/projects/ocean-prime-ft-lauderdale.html"
+    def test_high_traffic_cards_link_to_the_keeper(self):
+        """Keeper returns 200. Indexable cards must not cite the noindex alias."""
+        target = "/ocean-prime-ft-lauderdale.html"
+        alias = "/projects/ocean-prime-ft-lauderdale.html"
         for rel in (
             "index.html",
             "portfolio.html",
             "past-performance.html",
             "services.html",
             "capabilities.html",
+            "florida-commercial-glazing/index.html",
         ):
             html = _read(rel)
             self.assertIn(f'href="{target}"', html, rel)
-            self.assertNotIn('href="/ocean-prime-ft-lauderdale.html"', html, rel)
-            self.assertNotIn('href="ocean-prime-ft-lauderdale.html"', html, rel)
+            self.assertNotIn(f'href="{alias}"', html, rel)
+
+    def test_indexable_pages_do_not_link_the_noindex_alias(self):
+        alias = 'href="/projects/ocean-prime-ft-lauderdale.html"'
+        robots = re.compile(
+            r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)',
+            re.I,
+        )
+        hits = []
+        for path in ROOT.rglob("*.html"):
+            rel = path.relative_to(ROOT)
+            if set(rel.parts) & {".git", ".github", "node_modules", "drafts"}:
+                continue
+            html = path.read_text(encoding="utf-8")
+            if alias not in html:
+                continue
+            meta = robots.search(html)
+            if meta and "noindex" in meta.group(1).lower():
+                continue
+            hits.append(str(rel))
+        self.assertEqual(hits, [])
 
     def test_vercel_mirror_does_not_redirect_primary_to_portfolio(self):
         data = json.loads(_read("vercel.json"))
@@ -115,9 +136,9 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
                 self.assertNotEqual("/portfolio.html", dest, source)
                 self.assertNotIn("portfolio.html", dest)
 
-    def test_live_alias_jsonld_uses_projects_url_and_project_type(self):
-        """Cloudflare 301s the short URL to portfolio; JSON-LD must name the 200."""
-        live = "https://acglass.com/projects/ocean-prime-ft-lauderdale.html"
+    def test_alias_jsonld_cites_the_keeper_and_project_type(self):
+        """Alias stays noindex. Its schema names the indexable keeper, which returns 200."""
+        live = PRIMARY_URL
         html = _read("projects/ocean-prime-ft-lauderdale.html")
         blocks = [
             json.loads(block)
@@ -155,7 +176,7 @@ class OceanPrimeCaseStudyTests(unittest.TestCase):
         self.assertEqual(live, article.get("mainEntityOfPage", {}).get("@id"))
         self.assertIn(live, crumbs)
         self.assertNotIn(
-            "https://acglass.com/ocean-prime-ft-lauderdale.html",
+            "https://acglass.com/projects/ocean-prime-ft-lauderdale.html",
             json.dumps(blocks),
         )
         self.assertIn("Cameron Mitchell", html)
