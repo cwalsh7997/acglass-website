@@ -294,5 +294,59 @@ class IndexableLinkTargetTests(unittest.TestCase):
         )
 
 
+class KeeperLinkTests(unittest.TestCase):
+    """Hubs must point at indexable money keepers, not the noindex /stuart/ root."""
+
+    ROOT = Path(__file__).resolve().parents[3]
+    STUART = "/storefront-glazier-stuart-florida/"
+    OFFICE_CITIES = (
+        "/office-building-glazier-fort-lauderdale/",
+        "/office-building-glazier-jacksonville/",
+        "/office-building-glazier-miami/",
+        "/office-building-glazier-naples/",
+        "/office-building-glazier-orlando/",
+        "/office-building-glazier-sarasota/",
+        "/office-building-glazier-tampa/",
+    )
+
+    def _read(self, rel: str) -> str:
+        return (self.ROOT / rel).read_text(encoding="utf-8")
+
+    def test_indexable_hubs_link_the_stuart_storefront_keeper(self):
+        for rel in (
+            "index.html",
+            "services.html",
+            "glazing-contractor-florida.html",
+            "commercial-glazing-treasure-coast.html",
+            "impact-windows-stuart.html",
+            "martin-county/index.html",
+            "locations.html",
+        ):
+            html = self._read(rel)
+            self.assertIn(self.STUART, html, rel)
+            self.assertNotIn('href="/stuart/"', html, rel)
+
+    def test_office_hub_links_each_indexable_city_keeper(self):
+        html = self._read("office-building-glazier-florida/index.html")
+        for url in self.OFFICE_CITIES:
+            self.assertIn(f'href="{url}"', html, url)
+        locations = self._read("locations.html")
+        for url in self.OFFICE_CITIES:
+            self.assertIn(f'href="{url}"', locations, url)
+
+    def test_stuart_keeper_links_impact_eswindows_eurowall_office_and_bid(self):
+        html = self._read("storefront-glazier-stuart-florida/index.html")
+        for url in (
+            "/impact-windows-stuart.html",
+            "/impact-windows-doors-florida.html",
+            "/es-windows.html",
+            "/euro-wall.html",
+            "/office-building-glazier-florida/",
+            "/bid.html",
+        ):
+            self.assertIn(f'href="{url}"', html, url)
+        self.assertNotIn("48-hour", html.lower())
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
