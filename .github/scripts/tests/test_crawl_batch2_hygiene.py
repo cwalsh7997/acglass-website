@@ -941,5 +941,89 @@ class NashvilleResidualTests(unittest.TestCase):
         )
 
 
+class HighIntentTrailingSlashStubTests(unittest.TestCase):
+    """GitHub Pages 404s /slug/ when the keeper is slug.html.
+
+    These noindex directory indexes match locations/index.html and forward
+    query and hash to the canonical .html page. Keepers stay indexable.
+    """
+
+    STUBS = (
+        "es-windows",
+        "eswindows-installer-florida",
+        "euro-wall-installer-florida",
+        "impact-windows-doors-florida",
+        "impact-windows-doors",
+        "commercial-glazing-jacksonville",
+        "commercial-glazing-south-florida",
+        "commercial-glazing-treasure-coast",
+        "healthcare-glazing-florida",
+        "hospitality-glazing-florida",
+        "multifamily-glazing-contractor-florida",
+        "government-glazing-contractor-florida",
+        "senior-living-glazing-florida",
+        "restaurant-glazing-contractor",
+        "retail-storefront-glazing",
+        "allegion-installer-florida",
+        "pgt-installer-florida",
+        "tgp-fire-rated-glass-installer",
+        "commercial-storefront-systems",
+        "curtainwall-systems",
+        "fire-rated-glass-systems",
+        "automatic-entrance-systems",
+        "glazing-subcontractor-florida",
+        "commercial-glass-installation-florida",
+        "how-to-hire-commercial-glazing-contractor-florida",
+        "best-glazing-subcontractor-florida",
+        "best-storefront-contractor-florida",
+        "licensed-glazing-contractor-florida",
+        "florida-hvhz-glazing-requirements",
+        "florida-noa-explained",
+        "miami-dade-noa-glazing",
+        "faq",
+    )
+
+    def test_slash_stubs_refresh_to_indexable_html_keepers(self):
+        locs = sitemap_locs()
+        self.assertEqual(len(self.STUBS), 32)
+        for slug in self.STUBS:
+            dest = f"/{slug}.html"
+            stub = read(f"{slug}/index.html")
+            keeper = read(f"{slug}.html")
+            self.assertEqual(canonical(stub), f"{BASE}{dest}", slug)
+            self.assertIn("noindex", robots(stub), slug)
+            self.assertIn("follow", robots(stub), slug)
+            self.assertIn(f'content="0;url={dest}"', stub, slug)
+            self.assertIn(f'href="{dest}"', stub, slug)
+            self.assertIn("location.search", stub, slug)
+            self.assertIn(f"var next = '{dest}'", stub, slug)
+            self.assertNotIn(f"{BASE}/{slug}/", locs, slug)
+            self.assertNotIn(f"{BASE}{dest}/", locs, slug)
+            self.assertFalse(is_noindex(keeper), slug)
+            self.assertFalse(REFRESH_RE.search(keeper), slug)
+            self.assertEqual(canonical(keeper), f"{BASE}{dest}", slug)
+            self.assertIn(f"{BASE}{dest}", locs, slug)
+
+    def test_indexable_pages_do_not_href_the_new_slash_stubs(self):
+        leftovers = []
+        targets = {f"/{slug}/" for slug in self.STUBS}
+        for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+            for fn in filenames:
+                if not fn.endswith(".html"):
+                    continue
+                path = Path(dirpath) / fn
+                html = path.read_text(encoding="utf-8", errors="replace")
+                if is_noindex(html) or REFRESH_RE.search(html):
+                    continue
+                for href in HREF_RE.findall(html):
+                    dest = resolve(path, href)
+                    if dest in targets:
+                        leftovers.append(
+                            f"{path.relative_to(REPO_ROOT).as_posix()} -> {href}"
+                        )
+        self.assertEqual(leftovers, [])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
