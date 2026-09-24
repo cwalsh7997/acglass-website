@@ -248,6 +248,14 @@ class PalmBeachNotHvhzTests(unittest.TestCase):
                     hits.append(f"{rel}: {text.strip()[:180]}")
         self.assertEqual(hits, [])
 
+    def test_palm_beach_county_page_does_not_claim_hvhz_certified(self):
+        html = _read("commercial-glazing-palm-beach-county.html")
+        self.assertNotIn("HVHZ-certified", html)
+        self.assertNotIn("HVHZ Impact Windows", html)
+        self.assertNotIn("HVHZ or FBC", html)
+        self.assertIn("not HVHZ", html)
+        self.assertIn("Florida Product Approval", html)
+
     def test_palm_beach_cards_keep_existing_wind_numbers(self):
         county = (REPO_ROOT / "palm-beach-county/index.html").read_text(encoding="utf-8")
         self.assertIn("165 mph (east) / 150 mph (west)", county)
@@ -294,6 +302,8 @@ class NonHvhzCountyClaimTests(unittest.TestCase):
         "which enforces Lee County HVHZ",
         "which enforces Collier County HVHZ",
         "NOA requirements that apply in Pinellas",
+        "all of Pinellas County is within the High-Velocity Hurricane Zone",
+        "The coastal areas of these counties are also in the High Velocity Hurricane Zone",
     )
 
     def _indexable_html(self):
@@ -310,6 +320,12 @@ class NonHvhzCountyClaimTests(unittest.TestCase):
             if robots and "noindex" in robots.group(1).lower():
                 continue
             yield rel, html
+
+    def test_projects_cudjoe_card_does_not_call_monroe_hvhz(self):
+        html = _read("projects/index.html")
+        self.assertNotIn("Monroe County HVHZ", html)
+        self.assertIn("not HVHZ", html)
+        self.assertIn("Florida Product Approval", html)
 
     def test_indexable_pages_do_not_put_non_hvhz_counties_in_the_hvhz(self):
         hits = []

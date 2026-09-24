@@ -119,6 +119,52 @@ class OfficeKeeperNapTests(unittest.TestCase):
         self.assertEqual(WPB_ID, nodes[0]["@id"])
         self.assertEqual(WPB_STREET, nodes[0]["address"]["streetAddress"])
 
+    def test_wpb_id_hours_match_the_homepage_node(self):
+        """Homepage LocalBusiness for this @id is Mon-Fri 07:00-18:00.
+        Naples and Tampa keepers use their own @ids and already match that window.
+        Every duplicate of the West Palm Beach @id must publish the same hours.
+        """
+        home = next(
+            node
+            for node in local_businesses((ROOT / "index.html").read_text(encoding="utf-8"))
+            if node.get("@id") == WPB_ID
+        )
+        spec = home["openingHoursSpecification"]
+        self.assertEqual(
+            [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                    ],
+                    "opens": "07:00",
+                    "closes": "18:00",
+                }
+            ],
+            spec,
+        )
+        mismatches = []
+        for path in ROOT.rglob("*.html"):
+            if ".git" in path.parts:
+                continue
+            html = path.read_text(encoding="utf-8", errors="replace")
+            if WPB_ID not in html:
+                continue
+            for node in local_businesses(html):
+                if node.get("@id") != WPB_ID:
+                    continue
+                hours = node.get("openingHoursSpecification")
+                if hours and hours != spec:
+                    mismatches.append(str(path.relative_to(ROOT)))
+        self.assertEqual(mismatches, [])
+        for rel in OFFICES:
+            node = local_businesses((ROOT / rel).read_text(encoding="utf-8"))[0]
+            self.assertEqual(spec, node["openingHoursSpecification"])
+
 
 def walk_all(html: str):
     for block in blocks(html):
