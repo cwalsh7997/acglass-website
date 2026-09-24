@@ -6,7 +6,8 @@ sitemap pages must use that canonical in BreadcrumbList.
 
 All-glass city templates are a separate contained set and are not in this
 sitemap guard. /doral/ is noindex and self-canonical, so the downtown Doral
-page has no other live parent to cite.
+page has no other live parent to cite. The West Palm Beach near-me page is
+byte-frozen, so its crumb stays on /west-palm-beach/.
 """
 
 from __future__ import annotations
@@ -69,10 +70,12 @@ CITY_KEEPERS = {
         "Sarasota",
         "https://acglass.com/storefront-glazier-sarasota-florida/",
     ),
-    "commercial-glazier-near-me-west-palm-beach/index.html": (
-        "West Palm Beach",
-        "https://acglass.com/storefront-glazier-west-palm-beach-florida/",
-    ),
+}
+# Byte-frozen. canonical-verify rejects any edit, so its crumb stays on the
+# noindex city root even though that root canonicals to the WPB keeper.
+BYTE_FROZEN = {
+    "commercial-glazier-near-me-west-palm-beach/index.html",
+    "impact-windows-palm-beach.html",
 }
 HUB_DISTRICTS = (
     "aventura/aventura-mall-area/index.html",
@@ -172,6 +175,8 @@ class DistrictBreadcrumbKeeperTests(unittest.TestCase):
                 sitemap.add(loc.text.strip().rstrip("/"))
         leaks = []
         for rel, info in pages.items():
+            if rel in BYTE_FROZEN:
+                continue
             if info["noindex"] or info["url"].rstrip("/") not in sitemap:
                 continue
             for trail in _crumbs(info["html"]):
@@ -227,6 +232,16 @@ class DistrictBreadcrumbKeeperTests(unittest.TestCase):
             html = (REPO_ROOT / rel).read_text(encoding="utf-8")
             self.assertIn("noindex", html, rel)
             self.assertIn(f'href="{keeper}"', html, rel)
+
+    def test_byte_frozen_near_me_page_keeps_the_city_root_crumb(self):
+        html = (
+            REPO_ROOT / "commercial-glazier-near-me-west-palm-beach" / "index.html"
+        ).read_text(encoding="utf-8")
+        trails = _crumbs(html)
+        self.assertEqual(
+            trails[0][1],
+            ("West Palm Beach", "https://acglass.com/west-palm-beach/"),
+        )
 
     def test_body_links_to_contained_city_urls_stay(self):
         # Containment left these hrefs in place. This pass only fixes schema.
