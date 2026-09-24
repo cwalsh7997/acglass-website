@@ -1054,6 +1054,43 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "curtainwall-vs-window-wall",
         "storefront-fbc-1609-compliance",
         "tas-201-202-203-glazing-testing",
+        # 2026-09-24: remaining indexable city commercial-glazing and
+        # impact-window .html keepers. GitHub Pages 404s the slash form.
+        # Keepers stay indexable and in the sitemap.
+        "commercial-glazing-brandon-riverview",
+        "commercial-glazing-brickell",
+        "commercial-glazing-daytona-beach",
+        "commercial-glazing-doral",
+        "commercial-glazing-gainesville",
+        "commercial-glazing-hialeah",
+        "commercial-glazing-hollywood-fl",
+        "commercial-glazing-lakewood-ranch",
+        "commercial-glazing-melbourne-fl",
+        "commercial-glazing-ocala",
+        "commercial-glazing-parkland-fl",
+        "commercial-glazing-pembroke-pines",
+        "commercial-glazing-plantation-fl",
+        "commercial-glazing-south-tampa",
+        "commercial-glazing-wesley-chapel",
+        "commercial-glazing-windermere",
+        "impact-windows-5th-avenue-south-naples",
+        "impact-windows-coral-gables",
+        "impact-windows-fort-lauderdale",
+        "impact-windows-fort-myers",
+        "impact-windows-jupiter",
+        "impact-windows-lakewood-ranch",
+        "impact-windows-longboat-key",
+        "impact-windows-marco-island",
+        "impact-windows-mercato-naples",
+        "impact-windows-miami",
+        "impact-windows-old-naples",
+        "impact-windows-palm-beach",
+        "impact-windows-pelican-bay-naples",
+        "impact-windows-port-st-lucie",
+        "impact-windows-sarasota",
+        "impact-windows-siesta-key",
+        "impact-windows-stuart",
+        "impact-windows-tampa",
     )
     # Slash path differs from the keeper filename or hub.
     ALIASES = (
@@ -1076,7 +1113,7 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.STUBS), 78)
+        self.assertEqual(len(self.STUBS), 112)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
