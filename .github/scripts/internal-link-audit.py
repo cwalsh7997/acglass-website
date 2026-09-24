@@ -120,10 +120,6 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazier-pembroke-pines/",
     "/commercial-glazier-pinecrest/",
     "/commercial-glazier-wellington/",
-    # Duplicate of the Ocean Prime keeper. Page stays live (no delete) and
-    # canonicalizes to /ocean-prime-ft-lauderdale.html. Inbound case-study
-    # cards keep their hrefs so this containment does not retarget the site.
-    "/projects/ocean-prime-ft-lauderdale.html",
     # 2026-09-24: city-swapped vertical templates (~95% identical across
     # cities). Files stay live. Statewide hubs keep the indexable URL, and
     # indexable pages keep their existing hrefs.

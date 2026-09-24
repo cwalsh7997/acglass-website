@@ -12,4 +12,8 @@
 # block contained no Buy American, TAA or BABA text, the
 # taa-baba-buy-american-act-glazing.html link diffed byte-identical, and anchor tags
 # balance 88 to 88. See decisions.md.
-services.html 57e960dfebcc3fa3dc0b54d4b9b4233c5a8ca00f3a4f9e7039b1209315081741
+#
+# services.html, authorised 2026-09-24. Connor's blanket SEO approval. One href on
+# the Ocean Prime card now points at the indexable keeper. Buy American, TAA, and
+# BABA text was not in that line. The diff is that href only.
+services.html 654b6e8856fab0744261c56fb85083b1ee51783d6cc03c96b29403cfd8c1b167
