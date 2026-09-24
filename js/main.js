@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Portfolio case study view (when on a project detail page)
-  const isProjectPage = location.pathname.match(/-clubhouse\.html|-twelve\.html|-prime-|panther-|wild-blue|atlantic-fields|eau-palm/i);
+  const isProjectPage = location.pathname.match(/-clubhouse\.html|-twelve\.html|-prime-|wild-blue|atlantic-fields|eau-palm/i);
   if (isProjectPage) {
     trackEvent('portfolio_case_study_view', {
       project_slug: location.pathname.replace(/^\//, '').replace('.html', ''),

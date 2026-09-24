@@ -1,7 +1,7 @@
 {
   "_meta": {
     "schema_version": "1.0",
-    "last_verified": "2026-06-23",
+    "last_verified": "2026-09-24",
     "source_hierarchy": [
       "1. Connor Walsh explicit confirmation (audit brief 2026-06-22, session continuity)",
       "2. State of Florida public records (CGC license lookup, county property records)",
@@ -82,31 +82,31 @@
   "services": [
     {
       "name": "Commercial Storefront Installation",
-      "page": "https://acglass.com/storefront-installation-florida.html"
+      "page": "https://acglass.com/commercial-storefront-systems.html"
     },
     {
       "name": "Curtain Wall Installation",
-      "page": "https://acglass.com/curtain-wall-florida.html"
+      "page": "https://acglass.com/curtainwall-installation.html"
     },
     {
       "name": "Impact Windows",
-      "page": "https://acglass.com/impact-windows-florida.html"
+      "page": "https://acglass.com/impact-windows-doors-florida.html"
     },
     {
       "name": "Eurowall Folding and Sliding Doors",
-      "page": "https://acglass.com/services/eurowall.html"
+      "page": "https://acglass.com/euro-wall.html"
     },
     {
       "name": "All-Glass Entrances",
-      "page": "https://acglass.com/services/all-glass-entrances.html"
+      "page": "https://acglass.com/all-glass-entrances/"
     },
     {
       "name": "Restaurant Glazing",
-      "page": "https://acglass.com/restaurant-glazing.html"
+      "page": "https://acglass.com/restaurant-glazing-contractor.html"
     },
     {
       "name": "Glass Railings",
-      "page": "https://acglass.com/services/glass-railings.html"
+      "page": "https://acglass.com/glass-railing-systems-florida/"
     },
     {
       "name": "Division 08 Subcontractor (Florida)",
@@ -115,13 +115,12 @@
   ],
   "published_projects": [
     { "name": "Atlantic Fields", "location": "Hobe Sound, FL", "page": "https://acglass.com/atlantic-fields.html" },
-    { "name": "Ocean Prime", "location": "Fort Lauderdale, FL", "page": "https://acglass.com/projects/ocean-prime/" },
-    { "name": "Panther National", "location": "Palm Beach Gardens, FL", "page": "https://acglass.com/projects/panther-national/" },
-    { "name": "Wild Blue Clubhouse", "location": "Estero, FL", "page": "https://acglass.com/projects/wild-blue/" },
-    { "name": "Haines City EOC", "location": "Haines City, FL", "page": "https://acglass.com/projects/haines-city-eoc/" },
-    { "name": "Gulf Harbour", "location": "Fort Myers, FL", "page": "https://acglass.com/projects/gulf-harbour/" },
-    { "name": "Tomoka Town Center", "location": "Daytona Beach, FL", "page": "https://acglass.com/projects/tomoka-town-center/" },
-    { "name": "Rome Collective", "location": "Tampa, FL", "page": "https://acglass.com/projects/rome-collective/" }
+    { "name": "Ocean Prime", "location": "Fort Lauderdale, FL", "page": "https://acglass.com/ocean-prime-ft-lauderdale.html" },
+    { "name": "Wild Blue Clubhouse", "location": "Lakewood Ranch, FL", "page": "https://acglass.com/wild-blue-clubhouse.html" },
+    { "name": "Haines City EOC", "location": "Haines City, FL", "page": "https://acglass.com/case-study-haines-city-eoc.html" },
+    { "name": "Gulf Harbour", "location": "Fort Myers, FL", "page": "https://acglass.com/gulf-harbour-country-club.html" },
+    { "name": "Tomoka Town Center", "location": "Daytona Beach, FL", "page": "https://acglass.com/case-study-tomoka-town-center.html" },
+    { "name": "Rome Collective", "location": "Florida", "page": "https://acglass.com/case-study-rome-collective.html" }
   ],
   "florida_county_code": {
     "_source": "Florida Building Code 8th Edition (2023), Chapter 16 wind loads. Coastal designations per FBC 1609.1.2. HVHZ per FBC 1620 - only Miami-Dade and Broward counties qualify. WBDR per FBC 1609.2.",
