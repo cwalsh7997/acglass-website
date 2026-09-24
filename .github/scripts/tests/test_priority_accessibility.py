@@ -44,14 +44,18 @@ LANDMARK_ONLY_PAGES = (
 # 2026-09-21: refresh only two href hashes for shipped commit 63d46e78e,
 # which consolidated WPB/Tampa links onto existing storefront keeper URLs.
 # Other fingerprints and all accessibility assertions remain unchanged.
+# 2026-09-24: head/jsonld/scripts rebaselined after the reviews-template leak
+# was removed from og:description, twitter:description, and BreadcrumbList.
+# Visible text on impact-windows-doors.html already moved in the HVHZ county
+# pass; this pin matches that body. hrefs are unchanged.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
-        "head": "a1db4336325ede878aaa361501932eb200164380bf725ac0a8686eb2000ba0f6",
-        "jsonld": "13bcb19f4382060a48bf2c75bec106ef1267e44427b51ee0d41057138be11600",
-        "scripts": "701d93f0e5535e23d301a89f9745fc2ca9916bd5bec164bf0db0d28264b320c2",
+        "head": "29a07ed271d75322a4901e753594e500c0e56413b72fb4b6065905251570a6d6",
+        "jsonld": "f852722b02bf696556895ae499798e363d3a201035863e44aed0117b0403f452",
+        "scripts": "6cd3dc3264a920749f21b84ce606e783f0bfcb956a2307cd3035694814638ea2",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         "hrefs": "02b652403eac3dc2973856e25731a0f14f167abb35c0d30dedeb81a12dcd09fb",
-        "visible": "de3db46f74b8eed69dcc7c044037151c7dd912e6d2f2186a576797685db9e1e4",
+        "visible": "44f7f91ab28b39091e7feb4aee8c4e4e743a484632e16548e21d42740446deb6",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -63,9 +67,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # <head>. hrefs/visible moved again 2026-09-03 when the RFQ primary
         # went to /send-plans.html.
         # Digests recomputed with this module's own _fingerprints() helper.
-        "head": "b097ce12f07b9fe2c4fdceb8724284e1c3c254ed31b778566c32938f87574ec0",
-        "jsonld": "4afbd33f45d172e288866ca76b1c7378573aa821bcd033a5187ec2d0cf0352f6",
-        "scripts": "99ef7cbb1dac5a40482698f99990ac2b56180e7a51b2c40102dd25060118b69e",
+        "head": "f6eb4c47a8ec7f66d7fe273d91832ddde5d0f1a084325a34f28be0b3096fdcfd",
+        "jsonld": "ad79a685eece44118a1212057a51bb2d3ac0224561f209e3672e234bccb7e2a7",
+        "scripts": "87cb5dda6ace674a3a0126efa8e2235cda429b47e22d0338b62ffc300a1d2c30",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
