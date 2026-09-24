@@ -43,7 +43,9 @@ class SitemapPagesRetirementTests(unittest.TestCase):
 
     def test_fixture_keeps_the_retired_child_urlset(self):
         fixture = _lastmods(".github/fixtures/sitemap-pages.xml")
-        self.assertGreaterEqual(len(fixture), 400)
+        # Floor tracks the retired child urlset after thin-template sitemap
+        # drops: 373 after #206-#210, 370 after the emergency-repair cities.
+        self.assertGreaterEqual(len(fixture), 370)
 
 
 class LastmodAlignmentTests(unittest.TestCase):

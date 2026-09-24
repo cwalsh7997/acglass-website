@@ -67,7 +67,9 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
                 f"{SM_NS}loc"
             )
         ]
-        self.assertGreaterEqual(len(fixture_locs), 400)
+        # Floor tracks the retired child urlset after thin-template sitemap
+        # drops: 373 after #206-#210, 370 after the emergency-repair cities.
+        self.assertGreaterEqual(len(fixture_locs), 370)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):
@@ -194,7 +196,7 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
-        self.assertEqual(len(locs), 787)
+        self.assertEqual(len(locs), 784)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
