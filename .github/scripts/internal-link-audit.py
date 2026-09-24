@@ -170,6 +170,11 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/university-college-glazing-miami/",
     "/university-college-glazing-orlando/",
     "/university-college-glazing-tampa/",
+    # 2026-09-24: city swaps of the emergency-repair template (~95% of main
+    # text). Files stay. The noindex city roots keep their hrefs.
+    "/emergency-commercial-glass-repair-miami/",
+    "/emergency-commercial-glass-repair-orlando/",
+    "/emergency-commercial-glass-repair-tampa/",
 }
 
 # Wave-2 prune pages stay live (GitHub Pages cannot HTTP 301 without Cloudflare).

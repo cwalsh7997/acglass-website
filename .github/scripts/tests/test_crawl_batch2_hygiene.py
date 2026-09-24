@@ -558,6 +558,30 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertNotIn("noindex", robots(naples))
         self.assertIn(f"{BASE}/euro-wall-folding-door-installer-naples/", locs)
 
+    def test_2026_09_24_thin_emergency_repair_cities_are_noindex_and_off_sitemap(self):
+        # Miami / Orlando / Tampa share ~95% of their main text with each
+        # other. Self-canonical noindex,follow. Files stay. The statewide
+        # emergency page stays indexable and in the sitemap.
+        pages = (
+            "emergency-commercial-glass-repair-miami/index.html",
+            "emergency-commercial-glass-repair-orlando/index.html",
+            "emergency-commercial-glass-repair-tampa/index.html",
+        )
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 3)
+        for rel in pages:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), url, rel)
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        hub = read("emergency-commercial-glass-repair-florida/index.html")
+        hub_url = f"{BASE}/emergency-commercial-glass-repair-florida/"
+        self.assertNotIn("noindex", robots(hub))
+        self.assertEqual(canonical(hub), hub_url)
+        self.assertIn(hub_url, locs)
+
 
 class RfqCtaTests(unittest.TestCase):
     def test_non_wave4_drawing_rfq_primary_goes_to_send_plans(self):
