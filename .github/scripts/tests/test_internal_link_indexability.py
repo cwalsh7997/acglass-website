@@ -111,6 +111,9 @@ class IndexableLinkTargetTests(unittest.TestCase):
             "/winter-park/winter-park-park-ave/",
             "/miami/wynwood-miami/",
             "/commercial-glazier-boca-raton/",
+            "/healthcare-glazing-tampa/",
+            "/religious-glazing-miami/",
+            "/multifamily-glazing-orlando/",
         ):
             self.assertIn(url, audit.ALLOWED_NOINDEX_LINK_TARGETS)
 

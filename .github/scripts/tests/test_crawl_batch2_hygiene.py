@@ -447,6 +447,82 @@ class CityCanonicalTests(unittest.TestCase):
         tampa = read("impact-windows-tampa.html")
         self.assertNotIn("noindex", robots(tampa))
 
+    def test_2026_09_24_near_duplicate_verticals_are_noindex_and_off_sitemap(self):
+        # City-swapped templates that share ~95% of their body. Self-canonical
+        # noindex,follow, files kept, dropped from every sitemap. Statewide
+        # hubs stay indexable. /euro-wall-folding-door-installer-naples/ stays
+        # indexable because the orphan-inbound guard requires it in the sitemap.
+        pages = (
+            "assisted-living-glazing-naples/index.html",
+            "assisted-living-glazing-orlando/index.html",
+            "assisted-living-glazing-west-palm-beach/index.html",
+            "automotive-showroom-glazing-fort-lauderdale/index.html",
+            "automotive-showroom-glazing-orlando/index.html",
+            "automotive-showroom-glazing-tampa/index.html",
+            "automotive-showroom-glazing-west-palm-beach/index.html",
+            "bar-brewery-glazing-miami/index.html",
+            "bar-brewery-glazing-orlando/index.html",
+            "bar-brewery-glazing-tampa/index.html",
+            "country-club-glazing-boca-raton/index.html",
+            "country-club-glazing-naples/index.html",
+            "country-club-glazing-palm-beach/index.html",
+            "eswindows-impact-window-installer-boca-raton/index.html",
+            "eswindows-impact-window-installer-palm-beach/index.html",
+            "euro-wall-folding-door-installer-miami/index.html",
+            "government-municipal-glazing-miami/index.html",
+            "government-municipal-glazing-tallahassee/index.html",
+            "gym-fitness-glazing-miami/index.html",
+            "gym-fitness-glazing-naples/index.html",
+            "gym-fitness-glazing-orlando/index.html",
+            "gym-fitness-glazing-tampa/index.html",
+            "healthcare-glazing-jacksonville/index.html",
+            "healthcare-glazing-miami/index.html",
+            "healthcare-glazing-orlando/index.html",
+            "healthcare-glazing-tampa/index.html",
+            "marina-glazing-miami-beach/index.html",
+            "marina-glazing-naples/index.html",
+            "multifamily-glazing-fort-lauderdale/index.html",
+            "multifamily-glazing-miami/index.html",
+            "multifamily-glazing-naples/index.html",
+            "multifamily-glazing-orlando/index.html",
+            "multifamily-glazing-tampa/index.html",
+            "multifamily-glazing-west-palm-beach/index.html",
+            "religious-glazing-miami/index.html",
+            "religious-glazing-orlando/index.html",
+            "religious-glazing-tampa/index.html",
+            "showroom-glazing-miami/index.html",
+            "showroom-glazing-naples/index.html",
+            "university-college-glazing-gainesville/index.html",
+            "university-college-glazing-miami/index.html",
+            "university-college-glazing-orlando/index.html",
+            "university-college-glazing-tampa/index.html",
+        )
+        hubs = (
+            "healthcare-glazing-florida.html",
+            "healthcare-commercial-glazing-florida/index.html",
+            "gym-fitness-commercial-glazing-florida/index.html",
+            "multifamily-commercial-glazing-florida/index.html",
+            "euro-wall-installer-florida.html",
+            "eswindows-installer-florida.html",
+        )
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 43)
+        for rel in pages:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), url, rel)
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        for rel in hubs:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn("noindex", robots(html), rel)
+            self.assertIn(url, locs, rel)
+        naples = read("euro-wall-folding-door-installer-naples/index.html")
+        self.assertNotIn("noindex", robots(naples))
+        self.assertIn(f"{BASE}/euro-wall-folding-door-installer-naples/", locs)
+
 
 class RfqCtaTests(unittest.TestCase):
     def test_non_wave4_drawing_rfq_primary_goes_to_send_plans(self):
