@@ -153,5 +153,149 @@ class StubPatternTests(unittest.TestCase):
         self.assertIn('window.location.replace("/qualifications.html")', html)
 
 
+class AiCitationHygieneTests(unittest.TestCase):
+    """AI citation files name live indexable pages, and they do not name Panther."""
+
+    CITATION_FILES = (
+        "llms.txt",
+        "llms-full.txt",
+        "mcp/data/acg_facts.json",
+        "feed.xml",
+        "search-index.json",
+        "data/project-locations.json",
+        "data/projects-map.json",
+        "js/acg-blog-cta.js",
+    )
+    DEAD = (
+        "https://acglass.com/panther-national.html",
+        "https://acglass.com/haines-city-eoc.html",
+        "https://acglass.com/gulf-harbour.html",
+        "https://acglass.com/tomoka-town-center.html",
+        "https://acglass.com/projects/ocean-prime-ft-lauderdale.html",
+        "https://acglass.com/projects/ocean-prime/",
+        "https://acglass.com/projects/panther-national/",
+        "https://acglass.com/projects/wild-blue/",
+        "https://acglass.com/projects/haines-city-eoc/",
+        "https://acglass.com/projects/gulf-harbour/",
+        "https://acglass.com/projects/tomoka-town-center/",
+        "https://acglass.com/projects/rome-collective/",
+    )
+
+    def test_public_citation_files_do_not_name_panther_national(self):
+        for rel in self.CITATION_FILES:
+            text = _read(rel).lower()
+            self.assertNotIn("panther national", text, rel)
+            self.assertNotIn("panther-national", text, rel)
+
+    def test_dead_project_urls_are_gone_from_ai_files(self):
+        blob = "\n".join(_read(rel) for rel in ("llms.txt", "llms-full.txt", "mcp/data/acg_facts.json"))
+        for url in self.DEAD:
+            self.assertNotIn(url, blob, url)
+
+    def test_llms_citations_resolve_to_indexable_keepers(self):
+        locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
+        self.assertEqual(len(locs), 787)
+        cited = []
+        for rel in ("llms.txt", "llms-full.txt"):
+            cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
+        self.assertGreaterEqual(len(cited), 40)
+        seen = set()
+        for path in cited:
+            path = path.rstrip(".,)")
+            if path in seen or path.endswith((".pdf", ".txt", ".xml")):
+                seen.add(path)
+                continue
+            seen.add(path)
+            if path.endswith("/"):
+                page = REPO_ROOT / path.strip("/") / "index.html"
+                self.assertTrue(page.is_file(), path)
+                html = page.read_text(encoding="utf-8")
+                self.assertNotIn("noindex", html.lower(), path)
+                self.assertIn(f"https://acglass.com{path}", locs, path)
+                continue
+            self.assertTrue(path.endswith(".html"), path)
+            page = REPO_ROOT / path.lstrip("/")
+            self.assertTrue(page.is_file(), path)
+            html = page.read_text(encoding="utf-8")
+            self.assertNotIn("noindex", html.lower(), path)
+            self.assertIn(f'href="https://acglass.com{path}"', html, path)
+            url = f"https://acglass.com{path}"
+            self.assertIn(url, locs, path)
+            slug = path[1:-5]
+            stub_path = REPO_ROOT / slug / "index.html"
+            self.assertTrue(stub_path.is_file(), slug)
+            stub = stub_path.read_text(encoding="utf-8")
+            self.assertIn("noindex", stub.lower(), slug)
+            self.assertIn("follow", stub.lower(), slug)
+            self.assertTrue(
+                f"url={path}" in stub or f"url=https://acglass.com{path}" in stub,
+                slug,
+            )
+            self.assertIn(f'href="https://acglass.com{path}"', stub, slug)
+            self.assertNotIn(f"https://acglass.com/{slug}/", locs, slug)
+
+    def test_facts_json_pages_exist_and_are_indexable(self):
+        import json
+
+        data = json.loads(_read("mcp/data/acg_facts.json"))
+        pages = [row["page"] for row in data["services"]] + [
+            row["page"] for row in data["published_projects"]
+        ]
+        self.assertNotIn("Panther National", [row["name"] for row in data["published_projects"]])
+        self.assertEqual(
+            next(row for row in data["published_projects"] if row["name"] == "Wild Blue Clubhouse")[
+                "location"
+            ],
+            "Lakewood Ranch, FL",
+        )
+        self.assertEqual(
+            next(row for row in data["published_projects"] if row["name"] == "Rome Collective")[
+                "location"
+            ],
+            "Florida",
+        )
+        for url in pages:
+            path = url.split("https://acglass.com", 1)[1]
+            if path.endswith("/"):
+                page = REPO_ROOT / path.strip("/") / "index.html"
+            else:
+                page = REPO_ROOT / path.lstrip("/")
+            self.assertTrue(page.is_file(), url)
+            html = page.read_text(encoding="utf-8")
+            self.assertNotIn("noindex", html.lower(), url)
+
+    def test_facts_ledger_cites_the_ocean_prime_keeper(self):
+        html = _read("facts.html")
+        self.assertIn('href="/ocean-prime-ft-lauderdale.html"', html)
+        self.assertNotIn('href="/projects/ocean-prime-ft-lauderdale.html"', html)
+
+    def test_frozen_keeper_titles_are_unchanged(self):
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>",
+            _read("index.html"),
+        )
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            _read("florida-commercial-glazing/index.html"),
+        )
+        for rel, needle in (
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "Commercial Storefront Installer, West Palm Beach",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "Commercial Storefront Installer Naples",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "Commercial Storefront Installer Tampa",
+            ),
+        ):
+            title = re.search(r"<title[^>]*>(.*?)</title>", _read(rel), re.I | re.S)
+            self.assertIsNotNone(title, rel)
+            self.assertIn(needle, title.group(1), rel)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

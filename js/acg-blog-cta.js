@@ -44,7 +44,6 @@
     'lucie-at-tradition-glazing': 1,
     'medley-business-park-glazing': 1,
     'ocean-prime-ft-lauderdale-glazing': 1,
-    'panther-national-clubhouse-glazing': 1,
     'pointe-palm-bay-glazing': 1,
     'prestige-marble-bonita-springs-glazing': 1,
     'project-lift-hobe-sound-glazing': 1,
