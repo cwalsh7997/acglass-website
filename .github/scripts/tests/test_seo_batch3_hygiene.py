@@ -124,5 +124,56 @@ class HeadHygieneTests(unittest.TestCase):
         self.assertNotIn("v=20260802-unified", html)
 
 
+class CountyImpactClaimTests(unittest.TestCase):
+    """County code paragraphs must agree with the wind-zone card on the same page."""
+
+    WBDR_SENTENCE = (
+        "Impact-rated assemblies (or approved shutters) are required for all "
+        "openings exposed to design wind pressure."
+    )
+    INLAND_SENTENCE = (
+        "Impact-rated assemblies are not required by code. Standard glazing "
+        "meeting wind load requirements is acceptable."
+    )
+
+    def test_code_paragraph_matches_wind_zone_card(self):
+        wind_re = re.compile(
+            r"Wind Code Zone</div>\s*<div[^>]*>(.*?)</div>", re.S | re.I
+        )
+        para_re = re.compile(r"Florida Building Code 8th Edition.*?</p>", re.S)
+        mismatches = []
+        for path in sorted(REPO_ROOT.glob("*-county/index.html")):
+            html = path.read_text(encoding="utf-8")
+            robots = re.search(r'name="robots"[^>]+content="([^"]+)"', html)
+            if robots and "noindex" in robots.group(1).lower():
+                continue
+            wind_m = wind_re.search(html)
+            para_m = para_re.search(html)
+            if not wind_m or not para_m:
+                continue
+            wind = re.sub(r"<[^>]+>", "", wind_m.group(1))
+            para = re.sub(r"<[^>]+>", "", para_m.group(0))
+            wind_l = wind.lower()
+            # "no WBDR" is an inland signal. Do not treat that phrase as debris.
+            says_no_wbdr = "no wbdr" in wind_l
+            debris = (
+                "wind-borne" in wind_l
+                or "hvhz" in wind_l
+                or "impact-rated assemblies required" in wind_l
+                or ("wbdr" in wind_l and not says_no_wbdr)
+            )
+            inland = says_no_wbdr or (
+                "inland" in wind_l
+                and "wbdr" not in wind_l
+                and "wind-borne" not in wind_l
+                and "hvhz" not in wind_l
+            )
+            if debris and self.INLAND_SENTENCE in para:
+                mismatches.append(f"{path.parent.name}: WBDR card, inland sentence")
+            if inland and self.WBDR_SENTENCE in para:
+                mismatches.append(f"{path.parent.name}: inland card, WBDR sentence")
+        self.assertEqual(mismatches, [])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
