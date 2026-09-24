@@ -981,11 +981,42 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "florida-noa-explained",
         "miami-dade-noa-glazing",
         "faq",
+        "eswindows-installer-west-palm-beach",
+        "eswindows-installer-naples",
+        "eswindows-installer-tampa",
+        "eswindows-installer-miami",
+        "eswindows-installer-fort-lauderdale",
+        "euro-wall-installer-fort-lauderdale",
+        "euro-wall-restaurant-installer-florida",
+        "miami-hvhz-glazing-contractor",
+        "storefront-bid-checklist-for-gcs",
+        "storefront-cost-per-square-foot-florida",
+        "storefront-shop-drawings-submittal",
+        "glazed-aluminum-curtain-wall-contractor",
+        "tgp-installer-florida",
+    )
+    # Slash path differs from the keeper filename or hub.
+    ALIASES = (
+        (
+            "commercial-storefront-installer-florida",
+            "/florida-commercial-glazing/",
+            "florida-commercial-glazing/index.html",
+        ),
+        (
+            "storefront-installer-florida",
+            "/florida-commercial-glazing/",
+            "florida-commercial-glazing/index.html",
+        ),
+        (
+            "slimact-installer-florida",
+            "/slimpact-installer-florida.html",
+            "slimpact-installer-florida.html",
+        ),
     )
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.STUBS), 32)
+        self.assertEqual(len(self.STUBS), 45)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
@@ -1004,9 +1035,30 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
             self.assertEqual(canonical(keeper), f"{BASE}{dest}", slug)
             self.assertIn(f"{BASE}{dest}", locs, slug)
 
+    def test_alias_slash_stubs_refresh_to_keepers(self):
+        locs = sitemap_locs()
+        self.assertEqual(len(self.ALIASES), 3)
+        self.assertFalse((REPO_ROOT / "slimact-installer-florida.html").is_file())
+        for slug, dest, keeper_rel in self.ALIASES:
+            stub = read(f"{slug}/index.html")
+            keeper = read(keeper_rel)
+            self.assertEqual(canonical(stub), f"{BASE}{dest}", slug)
+            self.assertIn("noindex", robots(stub), slug)
+            self.assertIn("follow", robots(stub), slug)
+            self.assertIn(f'content="0;url={dest}"', stub, slug)
+            self.assertIn(f'href="{dest}"', stub, slug)
+            self.assertIn("location.search", stub, slug)
+            self.assertIn(f"var next = '{dest}'", stub, slug)
+            self.assertNotIn(f"{BASE}/{slug}/", locs, slug)
+            self.assertFalse(is_noindex(keeper), slug)
+            self.assertFalse(REFRESH_RE.search(keeper), slug)
+            self.assertEqual(canonical(keeper), f"{BASE}{dest}", slug)
+            self.assertIn(f"{BASE}{dest}", locs, slug)
+
     def test_indexable_pages_do_not_href_the_new_slash_stubs(self):
         leftovers = []
         targets = {f"/{slug}/" for slug in self.STUBS}
+        targets.update(f"/{slug}/" for slug, _, _ in self.ALIASES)
         for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
             dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
             for fn in filenames:
