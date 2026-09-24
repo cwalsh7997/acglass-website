@@ -1018,6 +1018,42 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "storefront-shop-drawings-submittal",
         "glazed-aluminum-curtain-wall-contractor",
         "tgp-installer-florida",
+        # 2026-09-24: remaining statewide service, regional, and GC-intent
+        # .html keepers. GitHub Pages 404s the slash form. Keepers stay
+        # indexable and in the sitemap.
+        "healthcare-glazing",
+        "hospitality-hotel-glazing",
+        "educational-institutional-glazing",
+        "industrial-warehouse-glazing",
+        "interior-glass-partitions",
+        "mixed-use-development-glazing",
+        "multifamily-glazing",
+        "office-commercial-glazing",
+        "custom-specialty-glazing",
+        "new-construction-glazing",
+        "multi-slide-bifold-doors",
+        "window-wall-systems",
+        "slimpact-installer-florida",
+        "commercial-glazing-central-florida",
+        "commercial-glazing-southwest-florida",
+        "commercial-glazing-near-me-florida",
+        "commercial-glazing-palm-beach-county",
+        "glazing-submittal-package",
+        "glazing-subcontractor-prequalification",
+        "glazing-subcontractor-vs-general-contractor",
+        "commercial-glazing-submittal-process",
+        "aia-g702-g703-glazing",
+        "florida-notice-to-owner-glazing",
+        "glazing-scope-inclusions-exclusions",
+        "commercial-glazing-rfi",
+        "commercial-glazing-joint-check",
+        "storefront-replacement-commercial-florida",
+        "storefront-systems-comparison",
+        "storefront-vs-window-wall",
+        "storefront-water-intrusion-repair",
+        "curtainwall-vs-window-wall",
+        "storefront-fbc-1609-compliance",
+        "tas-201-202-203-glazing-testing",
     )
     # Slash path differs from the keeper filename or hub.
     ALIASES = (
@@ -1040,7 +1076,7 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.STUBS), 45)
+        self.assertEqual(len(self.STUBS), 78)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
