@@ -535,8 +535,8 @@
         <div class="se-card-sub">Miami-Dade, Broward. Strictest impact glazing. Miami-Dade NOA + TAS 201/202/203. 175+ mph design wind.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="hvhz_keys" aria-checked="false">
-        <div class="se-card-title">Florida Keys (HVHZ)</div>
-        <div class="se-card-sub">Monroe County. 190 mph design wind - the most stringent zone in the state. Miami-Dade NOA required.</div>
+        <div class="se-card-title">Florida Keys (WBDR)</div>
+        <div class="se-card-sub">Monroe County. Not HVHZ. 180 mph design wind on the county card. Florida Product Approval is the code path.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="palm_beach" aria-checked="false">
         <div class="se-card-title">Palm Beach + Treasure Coast</div>
@@ -909,13 +909,12 @@ const ACG_CONFIG = {
                         { key: 'NOA', val: 'Miami-Dade Product Approval (NOA) required for every assembly' },
                         { key: 'ASCE 7', val: 'ASCE 7-22 wind-load methodology, V = 175 mph design' },
                         { key: 'FS 553.842', val: 'Florida Statewide Product Approval where NOA not used' }] },
-    hvhz_keys:      { mult: { low: 1.18, high: 1.30 }, hvhz: true,  wbd: true,  designWind: '190 mph',
-                      label: 'Florida Keys (Monroe Co.) - HVHZ + highest wind',
+    hvhz_keys:      { mult: { low: 1.18, high: 1.30 }, hvhz: false, wbd: true,  designWind: '180 mph',
+                      label: 'Florida Keys (Monroe Co.) - WBDR, not HVHZ',
                       codes: [
-                        { key: 'FBC 8th Ed', val: 'Florida Building Code (2023), HVHZ chapters' },
-                        { key: 'TAS', val: 'TAS 201, 202, 203 with island-tier engineering' },
-                        { key: 'NOA', val: 'Miami-Dade NOA required; some assemblies need wind upgrades' },
-                        { key: 'ASCE 7', val: 'ASCE 7-22, V = 190 mph design - strictest in FL' }] },
+                        { key: 'FBC 8th Ed', val: 'Florida Building Code (2023). Monroe County is not HVHZ.' },
+                        { key: 'Wind', val: 'ASCE 7-22, V = 180 mph design on the Monroe County card. Wind-borne debris region.' },
+                        { key: 'Approvals', val: 'Florida Product Approval. Miami-Dade NOA is not required.' }] },
     palm_beach:     { mult: { low: 1.05, high: 1.12 }, hvhz: false, wbd: true,  designWind: '165-170 mph',
                       label: 'Palm Beach + Treasure Coast (HVHZ-adjacent)',
                       codes: [

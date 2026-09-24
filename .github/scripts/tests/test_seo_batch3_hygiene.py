@@ -257,5 +257,103 @@ class PalmBeachNotHvhzTests(unittest.TestCase):
         self.assertIn("Not HVHZ. Wind-borne debris region.", lookup)
 
 
+class NonHvhzCountyClaimTests(unittest.TestCase):
+    """Monroe, Lee, and Collier are wind-borne debris regions, not HVHZ.
+
+    Indexable pages and the Florida Keys pages linked from the indexable hub
+    were still telling GCs those counties are HVHZ and that Miami-Dade NOA is
+    required. The county cards already publish the wind speeds used here.
+    """
+
+    FORBIDDEN = (
+        "Lee County HVHZ",
+        "Collier County HVHZ",
+        "Florida Keys HVHZ",
+        "Florida Keys (HVHZ)",
+        "Keys · HVHZ",
+        "Keys HVHZ",
+        "FL Keys HVHZ",
+        "Gulf Coast HVHZ",
+        "HVHZ Lee County",
+        "HVHZ - Direct Gulf Exposure",
+        "Coastal HVHZ package",
+        "Every commercial opening in Florida Keys is in HVHZ",
+        "Florida Keys is in HVHZ",
+        "Florida Keys is in Florida's HVHZ envelope",
+        "Florida Keys (Monroe County) is in Florida's HVHZ envelope",
+        "in Florida's High-Velocity Hurricane Zone (HVHZ). Every commercial storefront",
+        "In HVHZ Florida Keys",
+        "HVHZ Florida Keys",
+        "Portions of Collier County",
+        "172 mph design pressure",
+        "Palm Beach · Coastal HVHZ",
+        "Palm Beach · HVHZ",
+        "Coastal HVHZ.",
+        "multi-building HVHZ envelope, Hobe Sound",
+        "which enforces Florida Keys HVHZ",
+        "which enforces Lee County HVHZ",
+        "which enforces Collier County HVHZ",
+        "NOA requirements that apply in Pinellas",
+    )
+
+    def _indexable_html(self):
+        robots_re = re.compile(
+            r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)',
+            re.I,
+        )
+        for path in REPO_ROOT.rglob("*.html"):
+            rel = path.relative_to(REPO_ROOT)
+            if set(rel.parts) & {".git", "node_modules", ".github"}:
+                continue
+            html = path.read_text(encoding="utf-8", errors="replace")
+            robots = robots_re.search(html)
+            if robots and "noindex" in robots.group(1).lower():
+                continue
+            yield rel, html
+
+    def test_indexable_pages_do_not_put_non_hvhz_counties_in_the_hvhz(self):
+        hits = []
+        for rel, html in self._indexable_html():
+            for phrase in self.FORBIDDEN:
+                if phrase in html:
+                    hits.append(f"{rel}: {phrase}")
+        self.assertEqual(hits, [])
+
+    def test_keys_pages_linked_from_the_hub_match_the_monroe_card(self):
+        # These two are noindex, but the indexable Florida Keys hub links them.
+        for rel in (
+            "florida-keys/commercial-storefronts/index.html",
+            "florida-keys/impact-windows-hurricane/index.html",
+        ):
+            html = _read(rel)
+            for phrase in self.FORBIDDEN:
+                self.assertNotIn(phrase, html, rel)
+            self.assertIn("not in the HVHZ", html)
+            self.assertIn("Florida Product Approval", html)
+
+    def test_scope_engine_keys_follow_the_monroe_card(self):
+        html = _read("scope-engine.html")
+        self.assertIn("Florida Keys (WBDR)", html)
+        self.assertNotIn("Florida Keys (HVHZ)", html)
+        self.assertIn("designWind: '180 mph'", html)
+        self.assertNotIn("designWind: '190 mph'", html)
+        self.assertIn("hvhz: false, wbd: true,  designWind: '180 mph'", html)
+        self.assertIn("Miami-Dade NOA is not required.", html)
+
+    def test_county_cards_keep_published_wind_speeds(self):
+        monroe = _read("monroe-county/index.html")
+        lee = _read("lee-county/index.html")
+        collier = _read("collier-county/index.html")
+        self.assertIn("Wind-Borne Debris Region (severe). Florida Keys.", monroe)
+        self.assertIn("180 mph (Risk Cat II)", monroe)
+        self.assertIn("Wind-Borne Debris Region. Heavy Hurricane Ian impact zone (2022).", lee)
+        self.assertIn("160 mph (Risk Cat II)", lee)
+        self.assertIn("Wind-Borne Debris Region. Impact-rated assemblies required.", collier)
+        self.assertIn("160 mph (Risk Cat II)", collier)
+        areas = _read("service-areas.html")
+        self.assertIn(">Keys · WBDR<", areas)
+        self.assertIn("Monroe County · Keys WBDR", areas)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

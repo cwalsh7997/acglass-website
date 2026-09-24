@@ -119,8 +119,8 @@ HELD_CROSS_CANONICAL_EDGE_HASHES = {
         "473b4f30254b1ebd220f037cedae5fadb90d3dfde570b8941ac28979f28f6449",
     ("division-08-subcontractor-florida.html", "/division-08-scope.html"):
         "7c5c5fad09c591864adcf7365390c03b45e4b63c8d1f0d153212aade49adc275",
-    ("gulfside-twelve.html", "/division-08-scope.html"):
-        "08aef69ae538f9485cdd79b8eef5f694ff7c65f4c349a34931a07c310ac6b031",
+    # gulfside-twelve.html no longer links /division-08-scope.html. The badge
+    # now points at /lee-county/, which matches the wind-zone card.
     ("resources/index.html", "/division-08-scope.html"):
         "274de0d24be2d17225d493ae67c6f48656aeabb245b0cbe1662199989dd0b24f",
 }
