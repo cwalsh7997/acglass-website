@@ -109,6 +109,17 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazier-boca-raton/",
     "/commercial-glazier-lakeland/",
     "/commercial-glazier-vero-beach/",
+    # 2026-09-24: leftover city swaps of the Boca Raton commercial-glazier
+    # template (~95% identical). Files stay. locations.html keeps its hrefs.
+    "/commercial-glazier-coral-springs/",
+    "/commercial-glazier-delray-beach/",
+    "/commercial-glazier-doral-fl/",
+    "/commercial-glazier-hialeah/",
+    "/commercial-glazier-hollywood-fl/",
+    "/commercial-glazier-jupiter/",
+    "/commercial-glazier-pembroke-pines/",
+    "/commercial-glazier-pinecrest/",
+    "/commercial-glazier-wellington/",
     # Duplicate of the Ocean Prime keeper. Page stays live (no delete) and
     # canonicalizes to /ocean-prime-ft-lauderdale.html. Inbound case-study
     # cards keep their hrefs so this containment does not retarget the site.
