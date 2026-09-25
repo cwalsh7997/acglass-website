@@ -72,7 +72,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
     def test_sitemap_still_lists_the_post_and_frozen_titles_hold(self):
         sitemap = (REPO / "sitemap.xml").read_text(encoding="utf-8")
         locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", sitemap)
-        self.assertEqual(len(set(locs)), 784)
+        # 785 after legal.html joined the master sitemap (784 before).
+        self.assertEqual(len(set(locs)), 785)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,
