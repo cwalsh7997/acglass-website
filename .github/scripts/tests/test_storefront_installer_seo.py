@@ -174,13 +174,24 @@ class CannibalizationTests(unittest.TestCase):
         html = read("commercial-storefront-installer-florida.html")
         title = title_of(html)
         hub_title = title_of(read("florida-commercial-glazing/index.html"))
+        # Noindex alias keeps the frozen hub phrase plus the existing "| ACG"
+        # suffix. That suffix is why the string is longer than 60 characters.
         self.assertEqual(
-            title, "Commercial Storefront Installer Florida | 48-Hr Scope | ACG"
+            title, "Commercial Storefront Installer Florida | Bid in 48 Hrs | ACG"
         )
         self.assertNotEqual(title, hub_title)
+        self.assertTrue(title.startswith(hub_title))
         self.assertNotIn("Guide", title)
-        self.assertNotIn("Bid in 48 Hrs", title)
-        self.assertLessEqual(len(title), 60)
+        self.assertIn("Bid in 48 Hrs", title)
+        self.assertNotIn("48-Hr Scope", html)
+        self.assertIn(
+            'property="og:title" content="Commercial Storefront Installer Florida | Bid in 48 Hrs | ACG"',
+            html,
+        )
+        self.assertIn(
+            'name="twitter:title" content="Commercial Storefront Installer Florida | Bid in 48 Hrs | ACG"',
+            html,
+        )
         self.assertIn(PHRASE, title.lower())
         self.assertIn("noindex", robots(html))
         self.assertIn("follow", robots(html))
@@ -337,7 +348,7 @@ class SchemaFollowupTests(unittest.TestCase):
             "Commercial Storefront Installer Florida | Bid in 48 Hrs"
         ),
         "commercial-storefront-installer-florida.html": (
-            "Commercial Storefront Installer Florida | 48-Hr Scope | ACG"
+            "Commercial Storefront Installer Florida | Bid in 48 Hrs | ACG"
         ),
         "storefront-glazier-west-palm-beach-florida/index.html": (
             "Commercial Storefront Installer, West Palm Beach | Bid"

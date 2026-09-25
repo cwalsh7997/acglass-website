@@ -212,12 +212,12 @@
     },
     {
       "source": "/kawneer-installer-florida/",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
       "source": "/kawneer-installer-florida",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
@@ -272,32 +272,32 @@
     },
     {
       "source": "/ykk-ap-installer-florida/",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
       "source": "/ykk-ap-installer-florida",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
       "source": "/ykk-ap-storefront-installer-jacksonville/",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
       "source": "/ykk-ap-storefront-installer-jacksonville",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
       "source": "/tubelite-installer-florida/",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
       "source": "/tubelite-installer-florida",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
@@ -352,7 +352,7 @@
     },
     {
       "source": "/trulite-installer-florida.html",
-      "destination": "/commercial-storefront-installer-florida.html",
+      "destination": "/florida-commercial-glazing/",
       "permanent": true
     },
     {
