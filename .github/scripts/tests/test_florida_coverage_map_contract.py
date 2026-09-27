@@ -15,7 +15,8 @@ EXPECTED_REFERENCE_COUNTS = {
     "glazed-aluminum-curtain-wall-contractor.html": 2,
     "glazing-subcontractor-vs-general-contractor.html": 2,
     "industries.html": 2,
-    "press.html": 1,
+    # 2026-09-27: twitter:image mirrors the existing og:image map URL.
+    "press.html": 2,
     "procore-integrated-glazing-subcontractor.html": 2,
     "projects/index.html": 2,
     "tgp-fire-rated-glass-installer.html": 2,
