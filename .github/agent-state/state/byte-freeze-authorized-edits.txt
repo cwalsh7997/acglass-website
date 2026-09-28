@@ -13,3 +13,9 @@
 # VIP relationships list, matching the decisions recorded in project-approvals.csv.
 # Verified after: 38 anchors open, 38 close. Zero Panther, Verdex or Suffolk refs.
 impact-windows-palm-beach.html 9fba718d5572d22f2e0b0e162cd5d68170ed915a2da91f9101518014dd05afb7
+
+# commercial-glazier-near-me-west-palm-beach/index.html, authorised 2026-09-28.
+# Midday social-image loop: add twitter:card=summary_large_image and twitter:image
+# mirroring the existing Haines City EOC og:image. og:image URL, title, canonical,
+# and body copy are unchanged. Any further byte change to this page fails.
+commercial-glazier-near-me-west-palm-beach/index.html 5034739229476506d0421750218eaec28366116a2bc750485e934c9ad2115d54
