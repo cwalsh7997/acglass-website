@@ -48,6 +48,11 @@ LANDMARK_ONLY_PAGES = (
 # was removed from og:description, twitter:description, and BreadcrumbList.
 # Visible text on impact-windows-doors.html already moved in the HVHZ county
 # pass; this pin matches that body. hrefs are unchanged.
+# 2026-09-28: multi-slide-bifold-doors.html "hrefs" only, for #225 (efce010a5).
+# Its featured-case card now links the live Ocean Prime keeper
+# /ocean-prime-ft-lauderdale.html instead of the noindex /projects/ alias.
+# That single href is the whole diff; head, jsonld, scripts and visible are
+# unchanged, which is the evidence nothing else moved.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
         "head": "29a07ed271d75322a4901e753594e500c0e56413b72fb4b6065905251570a6d6",
@@ -73,7 +78,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
-        "hrefs": "80c4c4652a81e34c0935bb789658697a4584865e3dabde8496145fe26552bcaf",
+        "hrefs": "c7fbe3769eb28ab411e2ada4530e50446437cad15ae1f3219d2951e558b36e0f",
         "visible": "fd481c1aea2dbf2ff28e83aa786a27a4f2fe915813203942c3a4605544c6fba5",
     },
     "privacy-policy.html": {
