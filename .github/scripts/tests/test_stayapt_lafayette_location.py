@@ -72,8 +72,9 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
     def test_sitemap_still_lists_the_post_and_frozen_titles_hold(self):
         sitemap = (REPO / "sitemap.xml").read_text(encoding="utf-8")
         locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", sitemap)
-        # 785 after legal.html joined the master sitemap (784 before).
-        self.assertEqual(len(set(locs)), 785)
+        # 775 after the 2026-09-28 remote impact-city and county noindex
+        # drop (785 before: legal.html plus the ten URLs removed here).
+        self.assertEqual(len(set(locs)), 775)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,

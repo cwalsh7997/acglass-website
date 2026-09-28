@@ -196,8 +196,9 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
-        # 785 after legal.html joined the master sitemap (784 before).
-        self.assertEqual(len(locs), 785)
+        # 775 after the 2026-09-28 remote impact-city and county noindex
+        # drop (785 before: legal.html plus the ten URLs removed here).
+        self.assertEqual(len(locs), 775)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))

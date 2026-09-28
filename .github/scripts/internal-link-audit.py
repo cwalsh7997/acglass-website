@@ -103,6 +103,19 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/impact-windows-bradenton.html",
     "/impact-windows-cape-coral.html",
     "/impact-windows-venice-fl.html",
+    # 2026-09-28: remaining remote impact-city templates and two remote
+    # county pages. Files stay. locations.html and city satellites keep
+    # their hrefs. Tampa impact stays indexable.
+    "/impact-windows-fort-myers.html",
+    "/impact-windows-lakewood-ranch.html",
+    "/impact-windows-longboat-key.html",
+    "/impact-windows-marco-island.html",
+    "/impact-windows-miami.html",
+    "/impact-windows-port-st-lucie.html",
+    "/impact-windows-sarasota.html",
+    "/impact-windows-siesta-key.html",
+    "/volusia-county/",
+    "/walton-county/",
     "/commercial-glazing-winter-park.html",
     "/winter-park/winter-park-park-ave/",
     "/miami/wynwood-miami/",
