@@ -547,6 +547,49 @@ class CityCanonicalTests(unittest.TestCase):
         tampa = read("impact-windows-tampa.html")
         self.assertNotIn("noindex", robots(tampa))
 
+    def test_2026_09_28_remote_impact_and_county_pages_are_noindex_and_off_sitemap(self):
+        # Same containment as Anna Maria / Bonita Springs / Bradenton /
+        # Cape Coral / Venice: self-canonical noindex,follow, files kept,
+        # dropped from every sitemap. Tampa impact stays the live-office keeper.
+        pages = (
+            "impact-windows-miami.html",
+            "impact-windows-sarasota.html",
+            "impact-windows-fort-myers.html",
+            "impact-windows-siesta-key.html",
+            "impact-windows-longboat-key.html",
+            "impact-windows-lakewood-ranch.html",
+            "impact-windows-marco-island.html",
+            "impact-windows-port-st-lucie.html",
+            "volusia-county/index.html",
+            "walton-county/index.html",
+        )
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 10)
+        for rel in pages:
+            html = read(rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), url, rel)
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        tampa = read("impact-windows-tampa.html")
+        tampa_url = f"{BASE}/impact-windows-tampa.html"
+        self.assertNotIn("noindex", robots(tampa))
+        self.assertEqual(canonical(tampa), tampa_url)
+        self.assertIn(tampa_url, locs)
+        # Slash aliases stay as retained refresh stubs. They already noindex
+        # and are not sitemap URLs. The .html files above are the kept URLs.
+        for rel in pages:
+            if not rel.endswith(".html") or rel.endswith("/index.html"):
+                continue
+            slug = rel[: -len(".html")]
+            dest = f"/{slug}.html"
+            stub = read(f"{slug}/index.html")
+            self.assertEqual(canonical(stub), f"{BASE}{dest}", slug)
+            self.assertIn("noindex", robots(stub), slug)
+            self.assertIn(f'content="0;url={dest}"', stub, slug)
+            self.assertNotIn(f"{BASE}/{slug}/", locs, slug)
+
     def test_2026_09_24_thin_commercial_glazier_cities_are_noindex_and_off_sitemap(self):
         # Same template as the already-noindexed Boca Raton / Lakeland / Vero
         # Beach pages (~95% of main text). Self-canonical noindex,follow.
@@ -1157,6 +1200,8 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         # 2026-09-24: remaining indexable city commercial-glazing and
         # impact-window .html keepers. GitHub Pages 404s the slash form.
         # Keepers stay indexable and in the sitemap.
+        # 2026-09-28: eight remote impact-city templates left this list.
+        # Their slash stubs still refresh, and the .html files are noindex.
         "commercial-glazing-brandon-riverview",
         "commercial-glazing-brickell",
         "commercial-glazing-daytona-beach",
@@ -1176,19 +1221,11 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "impact-windows-5th-avenue-south-naples",
         "impact-windows-coral-gables",
         "impact-windows-fort-lauderdale",
-        "impact-windows-fort-myers",
         "impact-windows-jupiter",
-        "impact-windows-lakewood-ranch",
-        "impact-windows-longboat-key",
-        "impact-windows-marco-island",
         "impact-windows-mercato-naples",
-        "impact-windows-miami",
         "impact-windows-old-naples",
         "impact-windows-palm-beach",
         "impact-windows-pelican-bay-naples",
-        "impact-windows-port-st-lucie",
-        "impact-windows-sarasota",
-        "impact-windows-siesta-key",
         "impact-windows-stuart",
         "impact-windows-tampa",
     )
@@ -1213,7 +1250,7 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.STUBS), 112)
+        self.assertEqual(len(self.STUBS), 104)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
