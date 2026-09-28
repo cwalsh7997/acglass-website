@@ -19,12 +19,18 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # Images, forms, and non-JSON-LD scripts are unchanged.
 # Metadata rebaselined 2026-09-23: robots is noindex,follow on this duplicate.
 # Metadata rebaselined 2026-09-27: twitter:image mirrors the existing og:image.
+# JSON-LD rebaselined 2026-09-28 for #225 (efce010a5), which merged a deliberate
+# change the pin never picked up: the Article/Project @id, url, mainEntityOfPage
+# and the breadcrumb item moved from this noindex /projects/ alias to the live
+# keeper /ocean-prime-ft-lauderdale.html, the URL this page has rel=canonical'd
+# to since #201 (957961430). Those four URL values are the only JSON-LD change.
+# Every other fragment digest is byte-identical to the previous pin.
 PROTECTED_HASHES = {
     "anchors": "75d7427a83a1d4752a81bc3b388357df09812e4fa58c3cfcd955b9707302f1e9",
     "body": "a94157055de14a2c64955e4ccd1c0574704ab9b6aac56ca689db189240dba5ec",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "f293b0d3972fa909d8f9a1216132ebcf89a99f46d4961977d74dc90801f19d51",
-    "jsonld": "a867c654d313a068dd6155e1e59ed6a8e63a4003127054dddcf60e78b7d8b558",
+    "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",
     "metadata": "f34f096e64ce1e4283154d8cdf34c46247be47df04ef5888ecd6f06cd83019ef",
     "scripts": "59d80dfe70fb34b631f5af37c031aa15a9fb62d74c3f0c7f7ba40f348fd81567",
 }
