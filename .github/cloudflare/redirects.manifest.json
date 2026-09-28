@@ -43,6 +43,20 @@
       "after": "One hop, landing on the ratified commercial-glazing primary, which is self-canonical.",
       "moves_a_ranking_url": false,
       "rollback": "Restore destination to /miami/."
+    },
+    {
+      "id": "cg-west-palm-beach",
+      "source": "/commercial-glazing-west-palm-beach.html",
+      "current_destination": "/west-palm-beach/",
+      "required_destination": "/storefront-glazier-west-palm-beach-florida/",
+      "market": "west-palm-beach",
+      "intent": "commercial-glazing",
+      "status_code": 301,
+      "defect": "Redirect target and canonical disagree. The edge 301 lands on /west-palm-beach/, which is noindex,follow (since 2026-09-22) and rel=canonicals to /storefront-glazier-west-palm-beach-florida/. The source file's rel=canonical has named that keeper since 2026-06-16; the edge rule still carries the pre-June target. GSC URL Inspection 2026-09-28: 'Page with redirect', googleCanonical=/west-palm-beach/, userCanonical=/storefront-glazier-west-palm-beach-florida/.",
+      "after": "One hop onto the indexed, self-canonical WPB keeper that every in-repo WPB alias already canonicals to and that the WPB Google Business Profile links to. The WPB commercial-glazing intent stays frozen with no declared primary.",
+      "moves_a_ranking_url": false,
+      "ranking_evidence": "GSC 2026-08-30..2026-09-26: source 19 impressions / 0 clicks (position 12.5); /west-palm-beach/ 19 impressions / 0 clicks; destination (GBP-tagged URL) 2 clicks / 108 impressions / position 5.6. The destination's content, title, canonical and robots are not changed.",
+      "rollback": "Restore destination to /west-palm-beach/."
     }
   ],
   "deliberately_not_requested": [
@@ -51,12 +65,6 @@
       "current_destination": "/tampa/",
       "reason": "blocked-no-primary",
       "detail": "2026-09-14 SEO daily ship stubbed /tampa-commercial-glazing.html onto /storefront-glazier-tampa-florida/. There is no remaining self-canonical commercial-glazing hub to flatten this 301 onto. Leave the live edge 301 to /tampa/, which already canonicals to the Tampa storefront keeper."
-    },
-    {
-      "source": "/commercial-glazing-west-palm-beach.html",
-      "current_destination": "/west-palm-beach/",
-      "reason": "frozen",
-      "detail": "West Palm Beach holds #1 organic and #1 map. Which of the four WPB URLs holds the organic #1 is not measurable from this workspace, and the two research documents disagree on which should be primary. No WPB routing change is requested."
     },
     {
       "source": "/commercial-glazing-orlando.html",

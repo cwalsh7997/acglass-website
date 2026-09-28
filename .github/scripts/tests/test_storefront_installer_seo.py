@@ -303,8 +303,19 @@ class CannibalizationTests(unittest.TestCase):
             spec,
         )
         guide = read("blog/commercial-storefront-installation-guide.html")
-        self.assertIn("/commercial-storefront-installer-florida.html", guide)
-        self.assertIn("/florida-commercial-glazing/", guide)
+        # 2026-09-28: the guide's installer anchor went to the noindex alias
+        # /commercial-storefront-installer-florida.html, which canonicals to the
+        # Florida hub. It now links the hub directly, plus the storefront-
+        # installation primary named in url-primaries.json.
+        self.assertNotIn('href="/commercial-storefront-installer-florida.html"', guide)
+        self.assertIn(
+            'href="/florida-commercial-glazing/">commercial storefront installer</a>',
+            guide,
+        )
+        self.assertIn(
+            'href="/commercial-storefront-systems.html">commercial storefront systems and installation</a>',
+            guide,
+        )
         self.assertIn("/storefront-glazier-west-palm-beach-florida/", guide)
         wpb = read(
             "blog/how-to-choose-commercial-glazing-contractor-west-palm-beach.html"
