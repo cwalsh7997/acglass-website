@@ -119,6 +119,15 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazing-winter-park.html",
     "/winter-park/winter-park-park-ave/",
     "/miami/wynwood-miami/",
+    # 2026-09-29: thin Tampa and West Palm Beach neighborhood-street pages
+    # soft-merge onto the office storefront keepers. Files stay.
+    # locations.html keeps Channelside and Davis Islands hrefs.
+    "/tampa/hyde-park-tampa/",
+    "/tampa/water-street-tampa/",
+    "/tampa/channelside-tampa/",
+    "/tampa/davis-islands-tampa/",
+    "/west-palm-beach/clematis-street-west-palm-beach/",
+    "/west-palm-beach/rosemary-square-west-palm-beach/",
     "/commercial-glazier-boca-raton/",
     "/commercial-glazier-lakeland/",
     "/commercial-glazier-vero-beach/",

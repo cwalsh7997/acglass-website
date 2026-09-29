@@ -106,7 +106,6 @@ ORPHAN_TARGETS = (
     "/eswindows-installer-miami.html",
     "/euro-wall-folding-door-installer-naples/",
     "/shop-drawings-glazing-explained/",
-    "/west-palm-beach/clematis-street-west-palm-beach/",
 )
 
 CANON_RE = re.compile(
@@ -724,6 +723,69 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertNotIn("noindex", robots(hub))
         self.assertEqual(canonical(hub), hub_url)
         self.assertIn(hub_url, locs)
+
+    def test_2026_09_29_tampa_wpb_neighborhood_streets_merge_onto_office_keepers(self):
+        # Thin street pages stay on disk. They are noindex,follow and canonical
+        # to the office storefront keeper, matching the city-root pattern.
+        # Bodies stay. The Waxin's Clematis blog URL stays in the sitemap.
+        tampa_keeper = f"{BASE}/storefront-glazier-tampa-florida/"
+        wpb_keeper = f"{BASE}/storefront-glazier-west-palm-beach-florida/"
+        pages = {
+            "tampa/hyde-park-tampa/index.html": tampa_keeper,
+            "tampa/water-street-tampa/index.html": tampa_keeper,
+            "tampa/channelside-tampa/index.html": tampa_keeper,
+            "tampa/davis-islands-tampa/index.html": tampa_keeper,
+            "west-palm-beach/clematis-street-west-palm-beach/index.html": wpb_keeper,
+            "west-palm-beach/rosemary-square-west-palm-beach/index.html": wpb_keeper,
+        }
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 6)
+        for rel, keeper in pages.items():
+            html = read(rel)
+            title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(title, rel)
+            self.assertNotIn("\u2014", title.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), keeper, rel)
+            self.assertIn(f'property="og:url" content="{keeper}"', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        self.assertIn(f"{BASE}/blog/waxins-eurowall-clematis-street.html", locs)
+        tampa = read("storefront-glazier-tampa-florida/index.html")
+        wpb = read("storefront-glazier-west-palm-beach-florida/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            tampa,
+        )
+        self.assertIn(
+            "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            wpb,
+        )
+        self.assertNotIn("noindex", robots(tampa))
+        self.assertNotIn("noindex", robots(wpb))
+        self.assertEqual(canonical(tampa), tampa_keeper)
+        self.assertEqual(canonical(wpb), wpb_keeper)
+        self.assertIn(tampa_keeper, locs)
+        self.assertIn(wpb_keeper, locs)
+        self.assertNotIn("/tampa/hyde-park-tampa/", tampa)
+        self.assertNotIn("/tampa/water-street-tampa/", tampa)
+        self.assertNotIn("/west-palm-beach/clematis-street-west-palm-beach/", wpb)
+        self.assertNotIn("/west-palm-beach/rosemary-square-west-palm-beach/", wpb)
+        locations = read("locations.html")
+        self.assertNotIn("/tampa/channelside-tampa/", locations)
+        self.assertNotIn("/tampa/davis-islands-tampa/", locations)
+        self.assertIn(">Channelside, FL</a>", locations)
+        self.assertIn(">Davis Islands, FL</a>", locations)
+        self.assertIn(
+            '<div class="submarket-name">Water Street</div><div class="submarket-meta">Mixed-Use</div>',
+            tampa,
+        )
+        self.assertIn(
+            '<div class="submarket-name">Davis Islands</div><div class="submarket-meta">Residential Island</div>',
+            tampa,
+        )
 
 
 class RfqCtaTests(unittest.TestCase):
