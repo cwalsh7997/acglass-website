@@ -154,10 +154,9 @@ its own schedule.
 
 ## What this runbook does not do
 
-- It does not touch West Palm Beach. Not one rule, not one canonical, not one
-  byte of visible content. WPB is #1 organic and #1 in the map pack, the ranking
-  URL is not attributable from the available evidence, and the two research
-  documents in the workspace prescribe opposite primaries for it.
+- The Miami/Tampa sections above do not touch West Palm Beach. The one WPB rule
+  (`cg-west-palm-beach`, added 2026-09-28) has its own section below. It changes
+  no canonical and no visible content, and it declares no WPB primary.
 - It does not resolve Orlando, Naples, Fort Lauderdale or Boca Raton. Those need
   a commercial-glazing hub page written first.
 - It does not promote `/commercial-glazing-near-me-florida.html` to statewide
@@ -167,3 +166,89 @@ its own schedule.
   this workspace and the measurement layer merged in PR #20 has never run - it
   needs the `GSC_SA_JSON` secret. Every "gsc-gated" entry in
   `.github/seo/url-primaries.json` is waiting on that.
+
+## West Palm Beach: `/commercial-glazing-west-palm-beach.html` (rule `cg-west-palm-beach`)
+
+**Status: NOT ACTIVATED.** Added 2026-09-28. Applying it is a manual Cloudflare
+edit, the same as the Miami rule.
+
+### Defect
+
+```
+/commercial-glazing-west-palm-beach.html
+  --301 (Cloudflare)-->  /west-palm-beach/                              <- noindex,follow since 2026-09-22
+  --rel=canonical-->     /storefront-glazier-west-palm-beach-florida/   <- indexed, self-canonical
+```
+
+The source file on disk has had `rel=canonical` =
+`/storefront-glazier-west-palm-beach-florida/` since 2026-06-16 (`ba2684752`).
+Before that it pointed at `/west-palm-beach/`, which is what the edge rule still
+says. The edge rule was never updated. GitHub Pages never serves the file,
+because the edge 301 answers first, so no in-repo edit can fix this.
+
+GSC URL Inspection, 2026-09-28: source is "Page with redirect",
+`googleCanonical` = `/west-palm-beach/`, `userCanonical` =
+`/storefront-glazier-west-palm-beach-florida/`, last crawl 2026-09-06.
+
+### Why this destination
+
+Every in-repo WPB alias already canonicals to
+`/storefront-glazier-west-palm-beach-florida/`: `/west-palm-beach/`,
+`/west-palm-beach-commercial-glazing.html`,
+`/commercial-storefront-installer-west-palm-beach.html`,
+`/storefront-installer-west-palm-beach.html`, and the source file itself. It is
+also the URL the WPB Google Business Profile links to (GSC 2026-08-30 to
+2026-09-26: the GBP-tagged URL has 2 clicks, 108 impressions, position 5.6, the
+only WPB URL with clicks). The rule moves the edge onto the canonical chain the
+repo already declares. It does not declare a WPB commercial-glazing primary; that
+intent stays `frozen` with `primary: null` in `url-primaries.json`.
+
+### Preconditions
+
+1. `python3 .github/scripts/canonical-verify.py --live` passes before you edit
+   anything.
+2. Record the current state:
+   ```
+   curl -sI https://acglass.com/commercial-glazing-west-palm-beach.html | grep -iE '^(HTTP|location)'
+   ```
+   Expect `301` and `location: https://acglass.com/west-palm-beach/`.
+3. Destination is 200, indexable and self-canonical:
+   ```
+   curl -sI https://acglass.com/storefront-glazier-west-palm-beach-florida/ | head -1
+   curl -s  https://acglass.com/storefront-glazier-west-palm-beach-florida/ | grep -oE 'rel="canonical"[^>]*|name="robots"[^>]*'
+   ```
+
+### Apply
+
+Bulk Redirects list: edit the existing row in place. Do not add a second row.
+
+| Source URL | Target URL | Status | Preserve query string | Subpath matching |
+|---|---|---|---|---|
+| `https://acglass.com/commercial-glazing-west-palm-beach.html` | `https://acglass.com/storefront-glazier-west-palm-beach-florida/` | 301 | on | off |
+
+### Verify
+
+```
+curl -sI https://acglass.com/commercial-glazing-west-palm-beach.html | grep -iE '^(HTTP|location)'
+```
+
+Expect one hop: `301`, then
+`location: https://acglass.com/storefront-glazier-west-palm-beach-florida/`.
+Then, in a follow-up commit, change that rule's `destination` in `vercel.json`
+to `/storefront-glazier-west-palm-beach-florida/` and move the `cg-west-palm-beach`
+entry's `current_destination` to match (steps 8 and 9 above apply). In GSC, run
+URL Inspection on the source and request indexing on the destination.
+
+### Expected GSC effect
+
+Within one or two recrawls of the source, URL Inspection should report
+`googleCanonical` = `/storefront-glazier-west-palm-beach-florida/`, so the
+canonical mismatch clears. The source only drew 19 impressions in the last 28
+days, so any traffic change will be small and may not be measurable.
+
+### Rollback criteria
+
+Revert the Target URL to `https://acglass.com/west-palm-beach/` if, over the
+28 days after apply, the destination's WPB-query impressions or position fall
+materially below the 2026-08-30 to 2026-09-26 baseline above, or the WPB map-pack
+position drops. Revert the `vercel.json` follow-up with it.

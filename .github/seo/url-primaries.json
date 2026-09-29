@@ -194,10 +194,17 @@
       "primary": null,
       "status": "frozen",
       "live_position": "#1 organic (URL not attributable), #1 map pack via / as GBP landing page",
-      "evidence": ["serp:Q2", "maps:D5"],
+      "evidence": ["serp:Q2", "maps:D5", "gsc:url-inspection 2026-09-28 /commercial-glazing-west-palm-beach.html", "gsc:pages 2026-08-30..2026-09-26"],
       "consolidate_in_repo": [],
-      "requires_external_redirect": [],
-      "notes": "Four ACG URLs share this intent with identical or near-identical metadata. Resolving that is real work, but it cannot be done without knowing which URL ranks. Freeze until GSC attributes the #1."
+      "requires_external_redirect": [
+        {
+          "source": "/commercial-glazing-west-palm-beach.html",
+          "current_destination": "/west-palm-beach/",
+          "required_destination": "/storefront-glazier-west-palm-beach-florida/",
+          "reason": "Redirect/canonical mismatch. The edge 301 lands on /west-palm-beach/, which has been noindex,follow since 2026-09-22 (c68ba2684) and rel=canonicals to /storefront-glazier-west-palm-beach-florida/. The source file's own rel=canonical has named that same keeper since 2026-06-16 (ba2684752); the edge rule was never updated. GSC URL Inspection 2026-09-28 reports the source as 'Page with redirect', googleCanonical=/west-palm-beach/, userCanonical=/storefront-glazier-west-palm-beach-florida/, last crawl 2026-09-06. One hop to the indexed, self-canonical keeper removes the 301 -> noindex -> canonical chain. This aligns the edge with the canonical chain already in the repo; it does NOT declare a WPB commercial-glazing primary, which stays null and frozen."
+        }
+      ],
+      "notes": "Four ACG URLs share this intent with identical or near-identical metadata. Resolving that is real work, but it cannot be done without knowing which URL ranks. Freeze until GSC attributes the #1. 2026-09-28: every in-repo WPB alias (/west-palm-beach/, /west-palm-beach-commercial-glazing.html, /commercial-storefront-installer-west-palm-beach.html, /storefront-installer-west-palm-beach.html and the source file of the edge 301) already canonicals to /storefront-glazier-west-palm-beach-florida/, which is also the Google Business Profile landing URL (GSC 2026-08-30..2026-09-26: the GBP-tagged URL has 2 clicks / 108 impressions / position 5.6, the only WPB URL with clicks). The one remaining disagreement is the edge 301 recorded in requires_external_redirect. No frozen file and no visible content changes."
     },
     {
       "market": "west-palm-beach",
@@ -482,13 +489,20 @@
     {
       "market": "florida-statewide",
       "intent": "storefront-systems",
-      "head_terms": ["commercial storefront systems", "storefront systems", "storefront installation", "storefront glass installation", "storefront glazing"],
+      "head_terms": ["commercial storefront systems", "storefront systems", "storefront installation", "storefront glass installation", "storefront window installation", "commercial storefront installation", "storefront glazing"],
       "primary": "/commercial-storefront-systems.html",
       "status": "ratified",
-      "evidence": ["gsc:cannibalization.csv rows 1,4,5,7,28,29 (2026-05-30..2026-08-25)", "measurement:pages[/commercial-storefront-systems.html]"],
+      "evidence": ["gsc:cannibalization.csv rows 1,4,5,7,28,29 (2026-05-30..2026-08-25)", "measurement:pages[/commercial-storefront-systems.html]", "gsc:query+page 2026-08-02..2026-09-26 (queries containing 'install')"],
+      "informational_keep": [
+        {"url": "/blog/how-long-does-storefront-installation-take.html", "question": "How long does storefront installation take?", "gsc_2026-08-02..09-26": "780 impressions, 0 clicks, position 43.7; 468 impressions for 'storefront glass installation' at 48.6"},
+        {"url": "/blog/whats-included-storefront-glass-installation.html", "question": "What does a storefront installation scope include?", "gsc_2026-08-02..09-26": "157 impressions, 0 clicks, position 76.2"},
+        {"url": "/blog/commercial-storefront-installation-guide.html", "question": "How should a GC plan and sequence a storefront installation?", "gsc_2026-08-02..09-26": "82 impressions, 1 click, position 22.4"},
+        {"url": "/storefront-installation-timeline.html", "question": "What is the phase-by-phase project schedule and critical path?", "gsc_2026-08-02..09-26": "147 impressions, 0 clicks, position 78.3"},
+        {"url": "/blog/what-is-a-storefront-glazing-system.html", "question": "What is a storefront glazing system?", "gsc_2026-08-02..09-26": "definition intent; not an installation-query competitor"}
+      ],
       "consolidate_in_repo": [],
       "requires_external_redirect": [],
-      "notes": "Product and service intent for storefront systems and their installation. Separate from the geo storefront intent held by /storefront-glazier-florida/, which is city/state finder intent. The 90-day GSC baseline (2026-05-30 -- 2026-08-25) shows about 4,000 impressions and zero clicks for this cluster, split between this URL at positions 53-95 and six informational blog posts at 18-35. Nothing is deleted, no canonical and no URL moves: the blog posts keep the informational reading of the query and link up to this page with commercial anchor text. /blog/best-commercial-storefront-systems-florida.html already rel=canonicals here, so it is an alias of this primary, not a competitor."
+      "notes": "Product and service intent for storefront systems and their installation. Separate from the geo storefront intent held by /storefront-glazier-florida/, which is city/state finder intent. The 90-day GSC baseline (2026-05-30 -- 2026-08-25) shows about 4,000 impressions and zero clicks for this cluster, split between this URL at positions 53-95 and six informational blog posts at 18-35. Nothing is deleted, no canonical and no URL moves: the blog posts keep the informational reading of the query and link up to this page with commercial anchor text. /blog/best-commercial-storefront-systems-florida.html already rel=canonicals here, so it is an alias of this primary, not a competitor. 2026-09-28 re-check (GSC 2026-08-02..2026-09-26): this URL is the only transactional page in the cluster and the one with the most clicks (page totals: 4 clicks, 313 impressions, position 41.5), so it stays the transactional primary. The informational_keep pages answer different questions and stay indexable and self-canonical; none is noindexed or canonicalised. Two in-repo link gaps were closed: /blog/commercial-storefront-installation-guide.html sent its 'commercial storefront installer' anchor to the noindex alias /commercial-storefront-installer-florida.html (it now goes to that alias's canonical, /florida-commercial-glazing/) and neither it nor /storefront-installation-timeline.html carried a contextual commercial-anchor link up to this primary. Open, owner-gated: /storefront-installation-timeline.html (8-14 week manufacturing window) and /blog/how-long-does-storefront-installation-take.html (8-11 weeks end to end) state different schedule figures for overlapping duration questions. Reconciling the figures is a content decision, not a canonical one, and is not made here."
     },
     {
       "market": "florida-statewide",
