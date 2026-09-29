@@ -44,8 +44,9 @@ class SitemapPagesRetirementTests(unittest.TestCase):
     def test_fixture_keeps_the_retired_child_urlset(self):
         fixture = _lastmods(".github/fixtures/sitemap-pages.xml")
         # Floor tracks the retired child urlset after thin-template sitemap
-        # drops: 373 after #206-#210, 370 after the emergency-repair cities.
-        self.assertGreaterEqual(len(fixture), 370)
+        # drops: 370 after the emergency-repair cities, 365 after the
+        # 2026-09-29 Tampa/WPB neighborhood soft-merge.
+        self.assertGreaterEqual(len(fixture), 365)
 
 
 class LastmodAlignmentTests(unittest.TestCase):
