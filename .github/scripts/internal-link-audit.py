@@ -128,6 +128,13 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/tampa/davis-islands-tampa/",
     "/west-palm-beach/clematis-street-west-palm-beach/",
     "/west-palm-beach/rosemary-square-west-palm-beach/",
+    # 2026-09-30: Brickell neighborhood pages and the Brickell
+    # commercial-glazing duplicate soft-merge onto the Miami storefront
+    # keeper. Files stay. locations.html and the Miami keeper no longer
+    # href them. Other indexable pages keep their existing hrefs.
+    "/miami/brickell-miami/",
+    "/miami/brickell-key-miami/",
+    "/commercial-glazing-brickell.html",
     "/commercial-glazier-boca-raton/",
     "/commercial-glazier-lakeland/",
     "/commercial-glazier-vero-beach/",
