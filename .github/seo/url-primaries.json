@@ -367,12 +367,12 @@
       "market": "jacksonville",
       "intent": "commercial-glazing",
       "head_terms": ["commercial glazing contractor jacksonville"],
-      "primary": "/commercial-glazing-jacksonville.html",
-      "status": "owned-elsewhere",
+      "primary": null,
+      "status": "blocked-no-primary",
       "evidence": ["topical:SS4.3", "measurement:markets[jacksonville]"],
       "consolidate_in_repo": [],
       "requires_external_redirect": [],
-      "notes": "Already self-canonical and NOT an edge 301 source, so no defect to fix. jacksonville/index.html and commercial-glazing-jacksonville.html are both modified by open PR #15, which is itself blocked on a factual question about whether ACG has delivered a Duval County project. Out of scope to avoid conflicting edits."
+      "notes": "2026-09-30 soft-merge: commercial-glazing-jacksonville.html stays on disk, is noindex,follow, and rel=canonical to /florida-commercial-glazing/. It is no longer a self-canonical primary. The Florida hub is not registered as this market primary, so inbound hrefs to the file stay allowed without a cross-canonical rewrite."
     },
     {
       "market": "jacksonville",

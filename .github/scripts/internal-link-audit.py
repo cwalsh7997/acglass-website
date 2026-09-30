@@ -135,6 +135,16 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/miami/brickell-miami/",
     "/miami/brickell-key-miami/",
     "/commercial-glazing-brickell.html",
+    # 2026-09-30: remote commercial-glazing cities and thin regionals
+    # soft-merge onto the Florida hub. Files stay. locations.html and the
+    # Florida hub no longer href them. Other indexable pages keep their hrefs.
+    "/commercial-glazing-gainesville.html",
+    "/commercial-glazing-ocala.html",
+    "/commercial-glazing-daytona-beach.html",
+    "/commercial-glazing-jacksonville.html",
+    "/commercial-glazing-central-florida.html",
+    "/commercial-glazing-southwest-florida.html",
+    "/commercial-glazing-treasure-coast.html",
     "/commercial-glazier-boca-raton/",
     "/commercial-glazier-lakeland/",
     "/commercial-glazier-vero-beach/",

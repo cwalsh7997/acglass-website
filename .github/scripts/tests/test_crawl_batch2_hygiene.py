@@ -414,10 +414,16 @@ class CityCanonicalTests(unittest.TestCase):
     def test_jacksonville_and_stuart_roots_noindex_without_touching_keepers(self):
         jax = read("jacksonville/index.html")
         self.assertEqual(robots(jax), "noindex,follow")
+        # The city root stays canonical to the kept HTML file. That file
+        # soft-merges onto the Florida hub, which is the sitemap URL.
         self.assertEqual(
             canonical(jax), f"{BASE}/commercial-glazing-jacksonville.html"
         )
-        self.assertFalse(is_noindex(read("commercial-glazing-jacksonville.html")))
+        jax_page = read("commercial-glazing-jacksonville.html")
+        self.assertEqual(robots(jax_page), "noindex,follow")
+        self.assertEqual(
+            canonical(jax_page), f"{BASE}/florida-commercial-glazing/"
+        )
         stuart = read("stuart/index.html")
         self.assertEqual(robots(stuart), "noindex,follow")
         self.assertEqual(canonical(stuart), f"{BASE}/florida-commercial-glazing/")
@@ -836,6 +842,84 @@ class CityCanonicalTests(unittest.TestCase):
         tampa_impact = read("impact-windows-tampa.html")
         self.assertNotIn("noindex", robots(tampa_impact))
 
+    def test_2026_09_30_remote_commercial_glazing_merges_onto_florida_hub(self):
+        # Remote cities and thin regional commercial-glazing templates stay
+        # on disk. They are noindex,follow and canonical to the Florida hub.
+        # Bodies stay. No page deletes.
+        hub = f"{BASE}/florida-commercial-glazing/"
+        pages = (
+            "commercial-glazing-gainesville.html",
+            "commercial-glazing-ocala.html",
+            "commercial-glazing-daytona-beach.html",
+            "commercial-glazing-jacksonville.html",
+            "commercial-glazing-central-florida.html",
+            "commercial-glazing-southwest-florida.html",
+            "commercial-glazing-treasure-coast.html",
+        )
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 7)
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 759)
+        for rel in pages:
+            html = read(rel)
+            title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(title, rel)
+            self.assertNotIn("\u2014", title.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), hub, rel)
+            self.assertIn(f'property="og:url" content="{hub}"', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            self.assertNotIn(f"{BASE}/{rel}", locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+            slug = rel[: -len(".html")]
+            stub = read(f"{slug}/index.html")
+            self.assertIn("noindex", robots(stub), slug)
+            self.assertIn(f'content="0;url=/{slug}.html"', stub, slug)
+            self.assertNotIn(f"{BASE}/{slug}/", locs, slug)
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        self.assertEqual(canonical(florida), hub)
+        self.assertIn(hub, locs)
+        locations = read("locations.html")
+        for rel in pages:
+            self.assertNotIn(rel, locations)
+            self.assertNotIn(rel, florida)
+        self.assertIn(">Jacksonville</a>", locations)
+        self.assertIn(">Gainesville</a>", locations)
+        self.assertIn(">Ocala</a>", locations)
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+        self.assertNotIn("noindex", robots(home))
+        for rel, title in (
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-miami-florida/index.html",
+                "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+            ),
+        ):
+            html = read(rel)
+            self.assertIn(title, html)
+            self.assertNotIn("noindex", robots(html))
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+        self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+
 
 class RfqCtaTests(unittest.TestCase):
     def test_non_wave4_drawing_rfq_primary_goes_to_send_plans(self):
@@ -940,8 +1024,8 @@ class Hard404RedirectStubTests(unittest.TestCase):
             f"{BASE}/storefront-glazier-jacksonville-florida/", sitemap_locs()
         )
         keeper = read("commercial-glazing-jacksonville.html")
-        self.assertFalse(is_noindex(keeper))
-        self.assertEqual(canonical(keeper), dest)
+        self.assertEqual(robots(keeper), "noindex,follow")
+        self.assertEqual(canonical(keeper), f"{BASE}/florida-commercial-glazing/")
 
 
 class EuroWallAliasRedirectStubTests(unittest.TestCase):
@@ -1232,9 +1316,7 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "euro-wall-installer-florida",
         "impact-windows-doors-florida",
         "impact-windows-doors",
-        "commercial-glazing-jacksonville",
         "commercial-glazing-south-florida",
-        "commercial-glazing-treasure-coast",
         "healthcare-glazing-florida",
         "hospitality-glazing-florida",
         "multifamily-glazing-contractor-florida",
@@ -1288,8 +1370,6 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "multi-slide-bifold-doors",
         "window-wall-systems",
         "slimpact-installer-florida",
-        "commercial-glazing-central-florida",
-        "commercial-glazing-southwest-florida",
         "commercial-glazing-near-me-florida",
         "commercial-glazing-palm-beach-county",
         "glazing-submittal-package",
@@ -1314,14 +1394,11 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         # 2026-09-28: eight remote impact-city templates left this list.
         # Their slash stubs still refresh, and the .html files are noindex.
         "commercial-glazing-brandon-riverview",
-        "commercial-glazing-daytona-beach",
         "commercial-glazing-doral",
-        "commercial-glazing-gainesville",
         "commercial-glazing-hialeah",
         "commercial-glazing-hollywood-fl",
         "commercial-glazing-lakewood-ranch",
         "commercial-glazing-melbourne-fl",
-        "commercial-glazing-ocala",
         "commercial-glazing-parkland-fl",
         "commercial-glazing-pembroke-pines",
         "commercial-glazing-plantation-fl",
@@ -1360,7 +1437,9 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.STUBS), 103)
+        # 96 after the 2026-09-30 remote commercial-glazing soft-merge
+        # removed seven templates that are no longer indexable keepers.
+        self.assertEqual(len(self.STUBS), 96)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
