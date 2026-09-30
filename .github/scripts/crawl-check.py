@@ -670,7 +670,16 @@ def check_sitemaps(results: list[Result]) -> None:
     )
 
     # Market representation: each named hub is either in a sitemap itself or
-    # canonicalises to a URL that is.
+    # canonicalises (following one extra hop) to a URL that is. The extra hop
+    # covers a noindex city file that itself canonicals to an indexable hub.
+    def _canon_target(url: str) -> str | None:
+        path = loc_to_path(url)
+        rel = os.path.join(path, "index.html") if (path == "" or path.endswith("/")) else path
+        if not exists(rel):
+            return None
+        m = CANON.search(read(rel))
+        return m.group(1) if m else None
+
     unrepresented = []
     for hub in TARGET_MARKET_HUBS:
         index = os.path.join(hub, "index.html")
@@ -679,10 +688,20 @@ def check_sitemaps(results: list[Result]) -> None:
         url = f"{BASE}/{hub}/"
         if url in page_locs:
             continue
-        m = CANON.search(read(index))
-        if m and m.group(1) in page_locs:
+        seen = {url}
+        target = _canon_target(url)
+        represented = False
+        for _ in range(2):
+            if not target or target in seen:
+                break
+            if target in page_locs:
+                represented = True
+                break
+            seen.add(target)
+            target = _canon_target(target)
+        if represented:
             continue
-        unrepresented.append(hub + (f" -> {m.group(1)}" if m else " (no canonical)"))
+        unrepresented.append(hub + (f" -> {target}" if target else " (no canonical)"))
     results.append(
         Result(
             "FAIL",
