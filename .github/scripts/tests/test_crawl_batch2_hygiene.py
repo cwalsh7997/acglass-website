@@ -787,6 +787,55 @@ class CityCanonicalTests(unittest.TestCase):
             tampa,
         )
 
+    def test_2026_09_30_brickell_pages_merge_onto_miami_keeper(self):
+        # Thin Brickell street pages and the Brickell commercial-glazing
+        # duplicate stay on disk. They are noindex,follow and canonical to
+        # the Miami storefront keeper. Bodies stay. No page deletes.
+        keeper = f"{BASE}/storefront-glazier-miami-florida/"
+        pages = {
+            "miami/brickell-miami/index.html": keeper,
+            "miami/brickell-key-miami/index.html": keeper,
+            "commercial-glazing-brickell.html": keeper,
+        }
+        locs = sitemap_locs()
+        self.assertEqual(len(pages), 3)
+        for rel, dest in pages.items():
+            html = read(rel)
+            title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(title, rel)
+            self.assertNotIn("\u2014", title.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        miami = read("storefront-glazier-miami-florida/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+            miami,
+        )
+        self.assertNotIn("noindex", robots(miami))
+        self.assertEqual(canonical(miami), keeper)
+        self.assertIn(keeper, locs)
+        self.assertNotIn("/miami/brickell-miami/", miami)
+        self.assertNotIn("/miami/brickell-key-miami/", miami)
+        self.assertNotIn("commercial-glazing-brickell.html", miami)
+        locations = read("locations.html")
+        hub = read("florida-commercial-glazing/index.html")
+        for path in (
+            "/miami/brickell-miami/",
+            "/miami/brickell-key-miami/",
+            "commercial-glazing-brickell.html",
+        ):
+            self.assertNotIn(path, locations)
+            self.assertNotIn(path, hub)
+        self.assertIn(">Brickell</a>", locations)
+        self.assertIn(">Brickell Key, FL</a>", locations)
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+
 
 class RfqCtaTests(unittest.TestCase):
     def test_non_wave4_drawing_rfq_primary_goes_to_send_plans(self):
@@ -1265,7 +1314,6 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         # 2026-09-28: eight remote impact-city templates left this list.
         # Their slash stubs still refresh, and the .html files are noindex.
         "commercial-glazing-brandon-riverview",
-        "commercial-glazing-brickell",
         "commercial-glazing-daytona-beach",
         "commercial-glazing-doral",
         "commercial-glazing-gainesville",
@@ -1312,7 +1360,7 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.STUBS), 104)
+        self.assertEqual(len(self.STUBS), 103)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
