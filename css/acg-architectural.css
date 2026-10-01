@@ -44,3 +44,22 @@ body.menu-open .nav .logo>span{border-color:#ffffff44}
 @media(max-width:1100px) and (min-width:601px){.hero h1{font-size:7.2vw}}
 @media(max-width:600px){.hero h1{font-size:13.5vw}.hero h1>span{font-size:.62em}}
 .hero-description{max-width:none}.hero-description p{max-width:34em}
+/* acglass.com homepage additions (2026-10-01): link index, project list and notes carried over from the previous homepage */
+.home-tail,.home-federal{max-width:62em;margin:28px 0 0;font-size:15px;line-height:1.6;color:#53616d}
+.home-tail a,.home-federal a,.cta-offer a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.market-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 32px;margin:64px 0 0;padding-top:32px;border-top:1px solid rgba(7,23,37,.14)}
+.market-index h3{grid-column:1/-1;font-size:clamp(22px,2vw,30px);font-weight:500;letter-spacing:-.03em;margin:0}
+.market-index div{display:flex;flex-direction:column;gap:10px}
+.market-index h4{margin:0;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#ed3b47}
+.market-index a{color:#071725;text-decoration:none;font-size:15px;line-height:1.35}
+.market-index a:hover{text-decoration:underline}
+.market-index .home-tail{grid-column:1/-1;margin-top:8px}
+.record-more{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;margin:48px 6% 0;padding-bottom:64px}
+.record-more>h3{grid-column:1/-1;font-size:clamp(20px,1.8vw,26px);font-weight:500;letter-spacing:-.03em;margin:0 0 18px;color:#fff}
+.record-more a{display:block;padding:18px 16px;border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none}
+.record-more a span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ed3b47}
+.record-more a h3,.record-more a h4{margin:8px 0 0;font-size:17px;font-weight:500;letter-spacing:-.02em}
+.record-more a em{display:block;margin-top:4px;font-style:normal;font-size:12px;color:rgba(255,255,255,.6)}
+.cta-offer{margin:14px 0 0;font-size:14px}
+@media(max-width:900px){.market-index{grid-template-columns:repeat(2,minmax(0,1fr))}.record-more{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.market-index{grid-template-columns:1fr}.record-more{grid-template-columns:1fr;margin:40px 6% 0}}

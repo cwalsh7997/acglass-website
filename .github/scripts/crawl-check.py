@@ -35,8 +35,10 @@ BASE = "https://acglass.com"
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
 # Hero LCP asset guarded by the FAIL tier.
-HERO_JPG = "images/hero/gulfside-twelve-twilight.jpg"
-HERO_WEBP = "images/hero/gulfside-twelve-twilight.webp"
+# Homepage hero, updated with the architectural redesign (staged 2026-10-01, Connor-approved before merge):
+# Gulfside Twelve front elevation at dusk. Same checks: asset exists, webp smaller than jpg, <picture> fallback.
+HERO_JPG = "images/projects/gulfside-twelve/aerial-sunset-beach.jpg"
+HERO_WEBP = "images/projects/gulfside-twelve/aerial-sunset-beach.webp"
 
 # City hubs named as target markets in the indexation audit. Each one must be
 # represented in a child sitemap either directly (self-canonical) or through the
