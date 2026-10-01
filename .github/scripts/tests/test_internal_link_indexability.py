@@ -192,7 +192,11 @@ class IndexableLinkTargetTests(unittest.TestCase):
         inbound = {"/miami/": {"/locations.html": ["Miami"]}}
         results = self.run_gate(pages, inbound)
         self.assertTrue(results["Indexable pages do not link to noindex pages"].ok)
-        self.assertEqual(len(audit.CONTAINED_CITY_ROOT_DUPLICATES), 79)
+        self.assertEqual(len(audit.CONTAINED_CITY_ROOT_DUPLICATES), 83)
+        self.assertIn("/gainesville/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/ocala/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/daytona-beach/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/temple-terrace/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/jacksonville/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/stuart/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertNotIn("/winter-park/", audit.CONTAINED_CITY_ROOT_DUPLICATES)

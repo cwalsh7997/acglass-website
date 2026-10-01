@@ -72,9 +72,9 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
     def test_sitemap_still_lists_the_post_and_frozen_titles_hold(self):
         sitemap = (REPO / "sitemap.xml").read_text(encoding="utf-8")
         locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", sitemap)
-        # 759 after the 2026-09-30 remote commercial-glazing soft-merge onto
-        # the Florida hub (766 before: seven city and regional URLs removed).
-        self.assertEqual(len(set(locs)), 759)
+        # 755 after the 2026-10-01 thin city-directory soft-merge
+        # (759 before: gainesville, ocala, daytona-beach, temple-terrace removed).
+        self.assertEqual(len(set(locs)), 755)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,

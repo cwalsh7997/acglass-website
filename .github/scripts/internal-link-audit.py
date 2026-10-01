@@ -270,8 +270,11 @@ WAVE_HYGIENE_CITY_ROOTS = {
 # 2026-09-22: city-root duplicates that already canonicalize to a keeper or the
 # Florida hub. Pages stay live (no deletes). County hubs, neighborhood pages,
 # and locations.html keep their hrefs so this containment does not retarget
-# the rest of the site. Self-canonical city roots (sanford, daytona-beach, …)
-# are not in this set.
+# the rest of the site. Self-canonical city roots (sanford, …) are not in
+# this set.
+# 2026-10-01: gainesville, ocala, and daytona-beach canonicalize to the
+# Florida hub. temple-terrace canonicalizes to the Tampa storefront keeper.
+# Files stay. The locations.html Temple Terrace label points at that keeper.
 CONTAINED_CITY_ROOT_DUPLICATES = {
     "/aventura/",
     "/bay-harbor-islands/",
@@ -285,6 +288,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/cutler-bay/",
     "/dania-beach/",
     "/davie/",
+    "/daytona-beach/",
     "/deerfield-beach/",
     "/delray-beach/",
     "/englewood/",
@@ -293,6 +297,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/fort-myers/",
     "/fort-myers-beach/",
     "/fort-pierce/",
+    "/gainesville/",
     "/golden-beach/",
     "/gulfstream/",
     "/hallandale-beach/",
@@ -323,6 +328,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/north-miami-beach/",
     "/north-palm-beach/",
     "/oakland-park/",
+    "/ocala/",
     "/orlando/",
     "/palm-bay/",
     "/palm-beach/",
@@ -345,6 +351,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/surfside/",
     "/tallahassee/",
     "/tampa/",
+    "/temple-terrace/",
     "/tequesta/",
     "/venice/",
     "/vero-beach/",
