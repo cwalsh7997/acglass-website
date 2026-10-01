@@ -70,3 +70,10 @@ html{scroll-padding-top:6.25rem}
 .hero-note{margin:18px 0 0;max-width:46ch;font-size:13px;line-height:1.45;color:rgba(255,255,255,.72)}.hero-note a{color:inherit}
 .hero-cap{display:inline-block;margin-top:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:underline;text-underline-offset:3px}
 .home-federal-wrap{margin-top:48px;padding-top:28px;border-top:1px solid rgba(7,23,37,.14)}.home-federal-wrap h3{margin:0;font-size:clamp(20px,1.8vw,26px);font-weight:500;letter-spacing:-.03em}
+/* Accessibility (2026-10-01): small grey and red text on the light #f4f5f5 sections and the red contact band
+   measured 2.8-4.4:1; WCAG AA needs 4.5:1. Same hues, darker values. */
+.page-facts,.knowledge-head p,.knowledge-links p,.directory-empty,.manufacturer-more p,.system-no,.knowledge-links span,.office-grid article>span,.system-body>span,.manufacturer-line>span:first-child,.coverage-bottom p{color:#5a6670}
+.market-index h4{color:#b8232c}
+.contact-note,.contact-note a{color:#1a1013}
+.market-index .home-tail a{text-decoration:underline;text-underline-offset:3px}
+.coverage-head p,.office-grid article p{color:#5a6670}
