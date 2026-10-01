@@ -35,6 +35,7 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="css/acg2026.css?v=20260919-visual">
   <link rel="stylesheet" href="/css/acg2026-dark.css?v=20260919-a11y">
+<link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
   <style>
     /* 2026 header/footer chrome on this legacy dark page - header solid from the top */
     .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink,#111E33)}
@@ -210,35 +211,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
   <!-- ========== Header ========== -->
-  <header class="hd hd-solid">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="locations.html">Locations</a>
-        <a href="about.html">About</a>
-        <a href="manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="services.html">Services</a>
-      <a href="locations.html">Locations</a>
-      <a href="about.html">About</a>
-      <a href="manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div>
 
   <main id="main-content">
 
@@ -849,100 +822,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </script>
 
   <!-- FOOTER -->
-    <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
-        <div>
-          <p class="ft-h">Company</p>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/government-glazing-contractor-florida.html">Government &amp; Public Sector</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="ft-h">Services</p>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="ft-h">Trust</p>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="ft-h">Locations</p>
-          <div class="footer-links">
-            <a href="/storefront-glazier-west-palm-beach-florida/">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <p class="ft-h">Contact</p>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <!--email_off-->connor@acglass.com<!--/email_off-->
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:12px;letter-spacing:0.1em;color:rgba(255,255,255,0.78);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/acglass" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-      </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:rgba(255,255,255,0.78);text-align:left;"><a href="/about.html" style="color:#ff6b73;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.72);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
-      </div>
-    </div>
-  </footer>
+    <footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>
@@ -957,5 +842,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   }
   </script>
 <script src="/js/acg-gbp-attribution.js?v=20260921" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

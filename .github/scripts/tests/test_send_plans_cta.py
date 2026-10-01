@@ -40,10 +40,13 @@ class SendPlansCtaTests(unittest.TestCase):
         self.assertIn("Bid invite: BuildingConnected", html)
 
     def test_shared_chrome_send_plans_goes_to_intake(self):
+        # 2026-10-01: these pages carry the shared architectural chrome; its header CTA is
+        # class="ax-btn-plans". past-performance.html keeps its own btn-plans CTA.
+        chrome_cta = 'class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a>'
         for rel in ("portfolio.html", "past-performance.html", "index-proof.html"):
             with self.subTest(rel=rel):
                 html = read(rel)
-                self.assertIn(self.CTA, html)
+                self.assertTrue(self.CTA in html or chrome_cta in html)
                 self.assertNotIn('href="/scope-engine.html">Send Us Plans</a>', html)
 
     def test_contact_is_not_labeled_as_plan_intake(self):
@@ -55,7 +58,7 @@ class SendPlansCtaTests(unittest.TestCase):
             re.search(r"<button[^>]*>\s*Send Us Plans", html),
             "contact submit must not claim to take plans",
         )
-        self.assertIn('class="hd-cta">Send Us Plans</a>', html)
+        self.assertIn('class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a>', html)
         self.assertIn("this form does not accept files", html)
         self.assertIn('href="send-plans.html"', html)
         self.assertIn("window.location.href = '/thanks.html?submitted=1'", html)
