@@ -858,7 +858,9 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 759)
+        # 755 after the 2026-10-01 thin city-directory soft-merge
+        # (759 before: gainesville, ocala, daytona-beach, temple-terrace removed).
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 755)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -919,6 +921,81 @@ class CityCanonicalTests(unittest.TestCase):
         tampa_impact = read("impact-windows-tampa.html")
         self.assertNotIn("noindex", robots(tampa_impact))
         self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+
+    def test_2026_10_01_thin_city_dirs_soft_merge(self):
+        # Thin city directories stay on disk as HTTP 200. Crawl signals only:
+        # noindex,follow, canonical and og:url at the keeper, off the sitemap.
+        # Titles and bodies stay. No page deletes.
+        hub = f"{BASE}/florida-commercial-glazing/"
+        tampa = f"{BASE}/storefront-glazier-tampa-florida/"
+        pages = {
+            "gainesville/index.html": (
+                hub,
+                "Storefront Glazier in Gainesville, FL | ACG - 48-Hr Bids",
+            ),
+            "ocala/index.html": (
+                hub,
+                "Storefront Glazier in Ocala, FL | ACG - 48-Hr Bids",
+            ),
+            "daytona-beach/index.html": (
+                hub,
+                "Storefront Glazier in Daytona Beach, FL | ACG - 48-Hr Bids",
+            ),
+            "temple-terrace/index.html": (
+                tampa,
+                "Commercial Glazing in Temple Terrace, FL | ACG - 48-Hr Bids",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 4)
+        self.assertEqual(len(locs), 755)
+        for rel, (dest, title) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            tw = re.search(
+                r'<meta[^>]+name="twitter:url"[^>]+content="([^"]+)"', html
+            )
+            if tw:
+                self.assertEqual(tw.group(1), dest, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        self.assertEqual(canonical(florida), hub)
+        self.assertIn(hub, locs)
+        tampa_html = read("storefront-glazier-tampa-florida/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            tampa_html,
+        )
+        self.assertNotIn("noindex", robots(tampa_html))
+        self.assertIn(tampa, locs)
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+        self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+        locations = read("locations.html")
+        self.assertIn(">Temple Terrace, FL</a>", locations)
+        self.assertNotIn('href="/temple-terrace/"', locations)
+        self.assertIn(
+            'href="/storefront-glazier-tampa-florida/" style="color:#0e284f;text-decoration:none;font-size:16px;line-height:1.5;">Temple Terrace, FL</a>',
+            locations,
+        )
 
 
 class RfqCtaTests(unittest.TestCase):
