@@ -437,7 +437,9 @@ PRIORITY_MARKETS = {
     "/commercial-glazing-south-florida.html": ("South Florida", 10),
     "/storefront-glazier-west-palm-beach-florida/": ("West Palm Beach", 10),
     "/storefront-glazier-miami-florida/": ("Miami", 10),
-    "/commercial-glazing-jacksonville.html": ("Jacksonville", 8),
+    # The Jacksonville HTML file is noindex and canonical to the Florida hub.
+    # Homepage and service-areas represent that market through the hub.
+    "/florida-commercial-glazing/": ("Jacksonville", 8),
     "/storefront-glazier-tampa-florida/": ("Tampa", 10),
     "/storefront-glazier-orlando-florida/": ("Orlando", 8),
     "/storefront-glazier-naples-florida/": ("Naples", 8),
