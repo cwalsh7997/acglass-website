@@ -66,7 +66,7 @@ REFERENCE_GROUPS = (
 
 REFERENCE_GROUP_MEMBERSHIP_SHA256 = {
     "path_or_title_discovery":
-        "ff30e076e8e8855d22fb4049a1dcdaa8f87db0b2b397a365d7a1d678555194c5",
+        "0a88ef5a289e7915aaeb74b63065e55889269040de2a43d5a7a8d6c00ebc4532",
     "stale_operating_claim_hold":
         "deb8007c8d861ca32b97f1caf20d27c44589050462e4d93a1012ea6508ed8515",
     "mixed_claim_review":
