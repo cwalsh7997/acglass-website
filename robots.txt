@@ -33,10 +33,14 @@
 # Content-Signal is [SPECULATIVE]. It is not a supported robots.txt field and no
 # crawler is known to honour it. It is retained as a declaration of intent. Do
 # not describe it as a control.
+#
+# Kept as a comment since 2026-10-01: as a live line it is an unknown directive,
+# which robots.txt validators (Lighthouse "robots.txt is not valid") flag as an
+# error on every page. The declaration of intent is unchanged.
 # ------------------------------------------------------------------------
 
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=yes
+# Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 # Internal admin & dealer-only views - no value to crawlers, contain no public content.
 Disallow: /dealer/admin.html
