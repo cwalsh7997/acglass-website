@@ -199,9 +199,9 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
-        # 755 after the 2026-10-01 thin city-directory soft-merge
-        # (759 before: gainesville, ocala, daytona-beach, temple-terrace removed).
-        self.assertEqual(len(locs), 755)
+        # 747 after the 2026-10-01 suburb commercial-glazing soft-merge
+        # (755 before: eight suburb commercial-glazing duplicates removed).
+        self.assertEqual(len(locs), 747)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
