@@ -858,9 +858,9 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
-        # 755 after the 2026-10-01 thin city-directory soft-merge
-        # (759 before: gainesville, ocala, daytona-beach, temple-terrace removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 755)
+        # 747 after the 2026-10-01 suburb commercial-glazing soft-merge
+        # (755 before: eight suburb commercial-glazing duplicates removed).
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 747)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -948,7 +948,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 755)
+        self.assertEqual(len(locs), 747)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -996,6 +996,121 @@ class CityCanonicalTests(unittest.TestCase):
             'href="/storefront-glazier-tampa-florida/" style="color:#0e284f;text-decoration:none;font-size:16px;line-height:1.5;">Temple Terrace, FL</a>',
             locations,
         )
+
+    def test_2026_10_01_suburb_commercial_glazing_soft_merge(self):
+        # Suburb commercial-glazing duplicates stay on disk as HTTP 200.
+        # Crawl signals only: noindex,follow, canonical and og:url at the
+        # regional storefront keeper, off the sitemap. Titles and bodies stay.
+        tampa = f"{BASE}/storefront-glazier-tampa-florida/"
+        miami = f"{BASE}/storefront-glazier-miami-florida/"
+        ftl = f"{BASE}/storefront-glazier-fort-lauderdale-florida/"
+        pages = {
+            "commercial-glazing-brandon-riverview.html": (
+                tampa,
+                "Commercial Glazing Contractor Brandon & Riverview, FL | ACG",
+            ),
+            "commercial-glazing-wesley-chapel.html": (
+                tampa,
+                "Commercial Glazing Contractor Wesley Chapel, FL | ACG",
+            ),
+            "commercial-glazing-south-tampa.html": (
+                tampa,
+                "Commercial Glazing Contractor South Tampa, FL | ACG",
+            ),
+            "commercial-glazing-doral.html": (
+                miami,
+                "Commercial Glazing Contractor Doral, FL | Storefronts | ACG",
+            ),
+            "commercial-glazing-hialeah.html": (
+                miami,
+                "Commercial Glazing Contractor Hialeah, FL | ACG",
+            ),
+            "commercial-glazing-hollywood-fl.html": (
+                ftl,
+                "Commercial Glazing Contractor Hollywood, FL | ACG",
+            ),
+            "commercial-glazing-pembroke-pines.html": (
+                ftl,
+                "Commercial Glazing Contractor Pembroke Pines, FL | ACG",
+            ),
+            "commercial-glazing-plantation-fl.html": (
+                ftl,
+                "Commercial Glazing Contractor Plantation, FL | ACG",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 8)
+        self.assertEqual(len(locs), 747)
+        for rel, (dest, title) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            self.assertIn(f'"mainEntityOfPage": "{dest}"', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            self.assertNotIn(f"{BASE}/{rel}", locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+            slug = rel[: -len(".html")]
+            stub = read(f"{slug}/index.html")
+            self.assertIn("noindex", robots(stub), slug)
+            self.assertIn(f'content="0;url=/{slug}.html"', stub, slug)
+            self.assertNotIn(f"{BASE}/{slug}/", locs, slug)
+        for rel, title in (
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-miami-florida/index.html",
+                "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-fort-lauderdale-florida/index.html",
+                "<title>Commercial Storefront Installer Fort Lauderdale | Bid</title>",
+            ),
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+            ),
+        ):
+            html = read(rel)
+            self.assertIn(title, html)
+            self.assertNotIn("noindex", robots(html))
+            self.assertIn(f"{BASE}/{rel[: -len('/index.html')]}/", locs)
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+        self.assertNotIn("noindex", robots(home))
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+        self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+        locations = read("locations.html")
+        areas = read("service-areas.html")
+        for rel in pages:
+            self.assertNotIn(rel, locations)
+            self.assertNotIn(rel, areas)
+        self.assertIn(">Doral</a>", locations)
+        self.assertIn(">Hialeah</a>", locations)
+        self.assertIn(">Hollywood</a>", locations)
+        self.assertIn(">Pembroke Pines</a>", locations)
+        self.assertIn(">Plantation</a>", locations)
+        self.assertIn(">Brandon &amp; Riverview</a>", locations)
+        self.assertIn(">South Tampa</a>", locations)
+        self.assertIn(">Wesley Chapel</a>", locations)
 
 
 class RfqCtaTests(unittest.TestCase):
@@ -1470,17 +1585,9 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         # Keepers stay indexable and in the sitemap.
         # 2026-09-28: eight remote impact-city templates left this list.
         # Their slash stubs still refresh, and the .html files are noindex.
-        "commercial-glazing-brandon-riverview",
-        "commercial-glazing-doral",
-        "commercial-glazing-hialeah",
-        "commercial-glazing-hollywood-fl",
         "commercial-glazing-lakewood-ranch",
         "commercial-glazing-melbourne-fl",
         "commercial-glazing-parkland-fl",
-        "commercial-glazing-pembroke-pines",
-        "commercial-glazing-plantation-fl",
-        "commercial-glazing-south-tampa",
-        "commercial-glazing-wesley-chapel",
         "commercial-glazing-windermere",
         "impact-windows-5th-avenue-south-naples",
         "impact-windows-coral-gables",
@@ -1514,9 +1621,9 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_slash_stubs_refresh_to_indexable_html_keepers(self):
         locs = sitemap_locs()
-        # 96 after the 2026-09-30 remote commercial-glazing soft-merge
-        # removed seven templates that are no longer indexable keepers.
-        self.assertEqual(len(self.STUBS), 96)
+        # 88 after the 2026-10-01 suburb commercial-glazing soft-merge
+        # removed eight templates that are no longer indexable keepers.
+        self.assertEqual(len(self.STUBS), 88)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")

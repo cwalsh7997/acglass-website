@@ -145,6 +145,18 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazing-central-florida.html",
     "/commercial-glazing-southwest-florida.html",
     "/commercial-glazing-treasure-coast.html",
+    # 2026-10-01: suburb commercial-glazing duplicates soft-merge onto the
+    # Tampa, Miami, and Fort Lauderdale storefront keepers. Files stay.
+    # Coverage indexes and city-destination links point at those keepers.
+    # Other indexable pages keep their existing hrefs.
+    "/commercial-glazing-brandon-riverview.html",
+    "/commercial-glazing-wesley-chapel.html",
+    "/commercial-glazing-south-tampa.html",
+    "/commercial-glazing-doral.html",
+    "/commercial-glazing-hialeah.html",
+    "/commercial-glazing-hollywood-fl.html",
+    "/commercial-glazing-pembroke-pines.html",
+    "/commercial-glazing-plantation-fl.html",
     "/commercial-glazier-boca-raton/",
     "/commercial-glazier-lakeland/",
     "/commercial-glazier-vero-beach/",
