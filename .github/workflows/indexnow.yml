@@ -1,0 +1,54 @@
+# Push-based indexing notice for Bing, Yandex, Naver, Seznam and the other
+# IndexNow engines. Runs after a push to main changes HTML, waits until GitHub
+# Pages has published that commit, then submits only the changed pages that are
+# listed in a sitemap (see .github/scripts/indexnow-ping.py). Best effort: a
+# refused ping logs a warning and never fails the deploy. Added 2026-10-01.
+
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Wait for GitHub Pages to publish this commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 60); do
+            build=$(gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '"\(.status) \(.commit)"' || echo "unknown none")
+            status=${build%% *}; commit=${build##* }
+            if [ "$status" = "built" ] && git merge-base --is-ancestor "${{ github.sha }}" "$commit" 2>/dev/null; then
+              echo "Pages built $commit (contains ${{ github.sha }})"; exit 0
+            fi
+            echo "waiting for Pages: $status $commit"; sleep 15
+          done
+          echo "::warning::Pages build for ${{ github.sha }} not confirmed after 15 minutes; skipping IndexNow"
+          echo "SKIP_INDEXNOW=1" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Submit changed sitemap pages to IndexNow
+        if: env.SKIP_INDEXNOW != '1'
+        run: python3 .github/scripts/indexnow-ping.py --before "${{ github.event.before }}" --after "${{ github.sha }}"
