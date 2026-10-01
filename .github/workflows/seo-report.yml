@@ -38,16 +38,11 @@ on:
       - '**/*.html'
       - 'css/**'
       - 'sitemap*.xml'
+  # Every PR runs the suite, with no path filter, so "Unit tests" can be a
+  # required status check on main. A path-filtered required check never
+  # reports on PRs outside the filter and blocks them forever. Added 2026-10-01
+  # after 36 PRs merged with this suite red.
   pull_request:
-    paths:
-      - '.github/scripts/seo_measure/**'
-      - '.github/scripts/seo-report.py'
-      - '.github/scripts/seo-gsc-export.py'
-      - '.github/scripts/tests/**'
-      - '.github/seo/**'
-      - '**/*.html'
-      - 'css/**'
-      - 'sitemap*.xml'
   workflow_dispatch: {}
 
 permissions:
