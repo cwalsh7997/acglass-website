@@ -42,7 +42,7 @@ on:
   # required status check on main. A path-filtered required check never
   # reports on PRs outside the filter and blocks them forever. Added 2026-10-01
   # after 36 PRs merged with this suite red.
-  pull_request: {}
+  pull_request:
   workflow_dispatch: {}
 
 permissions:
