@@ -430,11 +430,77 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertFalse(is_noindex(read("storefront-glazier-stuart-florida/index.html")))
         self.assertFalse(is_noindex(read("florida-commercial-glazing/index.html")))
 
-    def test_sanford_city_root_stays_self_canonical_and_indexable(self):
-        html = read("sanford/index.html")
-        self.assertNotIn("noindex", robots(html))
-        self.assertEqual(canonical(html), f"{BASE}/sanford/")
-        self.assertIn(f"{BASE}/sanford/", sitemap_locs())
+    def test_2026_10_02_city_dir_soft_merge(self):
+        # Thin city directories stay on disk as HTTP 200. Crawl signals only:
+        # noindex,follow, canonical and og:url at the keeper, off the sitemap.
+        # Titles and bodies stay. No page deletes.
+        orlando = f"{BASE}/storefront-glazier-orlando-florida/"
+        hub = f"{BASE}/florida-commercial-glazing/"
+        pages = {
+            "sanford/index.html": (
+                orlando,
+                "Storefront Glazier in Sanford, FL | ACG - 48-Hr Bids",
+            ),
+            "kissimmee-tourism/index.html": (
+                orlando,
+                "Storefront Glazier in Kissimmee Tourism Corridor, FL | ACG",
+            ),
+            "port-orange/index.html": (
+                hub,
+                "Storefront Glazier in Port Orange, FL | ACG - 48-Hr Bids",
+            ),
+            "st-augustine/index.html": (
+                hub,
+                "Storefront Glazier in St. Augustine, FL | ACG - 48-Hr Bids",
+            ),
+            "ponte-vedra-beach/index.html": (
+                hub,
+                "Storefront Glazier in Ponte Vedra Beach, FL | ACG",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 5)
+        self.assertEqual(len(locs), 742)
+        for rel, (dest, title) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            tw = re.search(
+                r'<meta[^>]+name="twitter:url"[^>]+content="([^"]+)"', html
+            )
+            if tw:
+                self.assertEqual(tw.group(1), dest, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        orlando_html = read("storefront-glazier-orlando-florida/index.html")
+        self.assertNotIn("noindex", robots(orlando_html))
+        self.assertEqual(canonical(orlando_html), orlando)
+        self.assertIn(orlando, locs)
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        self.assertEqual(canonical(florida), hub)
+        self.assertIn(hub, locs)
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+        self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+        locations = read("locations.html")
+        self.assertIn(">Kissimmee Tourism Corridor, FL</a>", locations)
+        self.assertNotIn('href="/kissimmee-tourism/"', locations)
+        self.assertIn(
+            '<a href="/storefront-glazier-orlando-florida/">Kissimmee Tourism Corridor, FL</a>',
+            locations,
+        )
 
     def test_nine_keepers_remain_indexable_self_canonical(self):
         locs = sitemap_locs()
@@ -858,9 +924,9 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
-        # 747 after the 2026-10-01 suburb commercial-glazing soft-merge
-        # (755 before: eight suburb commercial-glazing duplicates removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 747)
+        # 742 after the 2026-10-02 city-dir soft-merge
+        # (747 before: five thin city directories removed).
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 742)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -948,7 +1014,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 747)
+        self.assertEqual(len(locs), 742)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1041,7 +1107,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
-        self.assertEqual(len(locs), 747)
+        self.assertEqual(len(locs), 742)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
