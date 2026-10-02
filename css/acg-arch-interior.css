@@ -839,3 +839,5 @@ body.ax-interior{--accent:#b8232c;--red:#b8232c;--accent-2:#b8232c}
 /* Text-only kickers: the red mark stays on the first line when the label wraps. */
 .ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*)){display:block}
 .ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*))::before{display:inline-block;vertical-align:2px;margin-right:12px}
+/* OpenStreetMap tiles rendered as a dark navy basemap so the white glazing pins and red supply pins read. */
+.ax-page #project-map .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) grayscale(.85) brightness(.82) contrast(1.05)}
