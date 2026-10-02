@@ -70,22 +70,24 @@ PROTECTED_LINE_MARKERS = re.compile(
 # Recomputed 2026-10-01 (Rielly CEO feature, staged for Rielly's approval): each page gains one
 # protected line, the sitewide footer line "Led by Rielly Walsh, CEO and majority owner." No
 # existing protected line changed (checked line by line).
+# Recomputed 2026-10-02 (Connor: WBENC certified; Rielly joined 2022, title "CEO and majority owner"):
+# footer lines now read "WBENC-certified woman-owned business"; Rielly co-founder wording removed.
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
         16,
-        "bf609465f2ecec09019b206f7741c2bb1b0f880d353d9da5fa249f51c7dbf94e",
+        "a15b6179b36f86ab89fd0f26ff8970d0be5010dbe2a7f640c0ac1a89a8cce6d5",
     ),
     "acg-vs-harmon.html": (
         16,
-        "a8dc24759c6cc581eccfa9649bee41e14090040ab1b33539b9a63711166ff818",
+        "aae6e64a481a38916ede3a50a076f7cf9d89ccbf8f6ba4b24f2a7d01892d28c6",
     ),
     "acg-vs-permasteelisa.html": (
         12,
-        "458c104dfc46ddff5343378e868844876f97c53dc9531b8802b5e43ecb754ed4",
+        "acab7c4f2394fc939c6381f9f560b6886704d04f4b178fc742be68480cb80da6",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
         7,
-        "efe93edbd2a6d0b17b04d8bf24e6277af240239f6f9353a07d5b3d8691b47c65",
+        "11c278266401df607fb96f9f79763fe5ae6c7d553584dec0723323c1ccd31910",
     ),
 }
 
