@@ -70,18 +70,21 @@ PROTECTED_LINE_MARKERS = re.compile(
 # Recomputed 2026-10-01 (Rielly CEO feature, staged for Rielly's approval): each page gains one
 # protected line, the sitewide footer line "Led by Rielly Walsh, CEO and majority owner." No
 # existing protected line changed (checked line by line).
+# Recomputed 2026-10-02 (48-hour promise reworded to budget pricing, per Connor): protected lines
+# on the acg-vs pages carry "48-hour budget pricing" in place of "48-hour bids", and a mangled insertion
+# ("a Woman-owned · Rielly Walsh, CEO and 51% majority owner, ... sub") now reads "a woman-owned ... sub".
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
         16,
-        "bf609465f2ecec09019b206f7741c2bb1b0f880d353d9da5fa249f51c7dbf94e",
+        "105585cf57e36f0c731d5c77c5b749de0462bfdae7f07d912576dca2e403f1eb",
     ),
     "acg-vs-harmon.html": (
         16,
-        "a8dc24759c6cc581eccfa9649bee41e14090040ab1b33539b9a63711166ff818",
+        "144780099cc743e08a2f4a8d2da0d9b9b1bf42cfc7869eddc18fe52500e480b2",
     ),
     "acg-vs-permasteelisa.html": (
         12,
-        "458c104dfc46ddff5343378e868844876f97c53dc9531b8802b5e43ecb754ed4",
+        "af32e6f70f10082762640973cb93fb6d8e3c4dee8f2d33291162f62f8a12c22a",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
         7,
