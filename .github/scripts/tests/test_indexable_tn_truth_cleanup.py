@@ -67,22 +67,25 @@ PROTECTED_LINE_MARKERS = re.compile(
 # lost one inline style attribute on a protected line (<h3 style="margin-top:10px">).
 # Protected line counts are unchanged and the tag-stripped text of every protected
 # line is identical to the previous pin (checked line by line).
+# Recomputed 2026-10-01 (Rielly CEO feature, staged for Rielly's approval): each page gains one
+# protected line, the sitewide footer line "Led by Rielly Walsh, CEO and majority owner." No
+# existing protected line changed (checked line by line).
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
-        15,
-        "351dbb346bd50d5e1f1a18b85dd60db692fdf9aaadb81ef615f43f8bd5ec05d9",
+        16,
+        "bf609465f2ecec09019b206f7741c2bb1b0f880d353d9da5fa249f51c7dbf94e",
     ),
     "acg-vs-harmon.html": (
-        15,
-        "8a7c097a7de29a48592fb92a0130660390a0db470942d05b7d8219a914421030",
+        16,
+        "a8dc24759c6cc581eccfa9649bee41e14090040ab1b33539b9a63711166ff818",
     ),
     "acg-vs-permasteelisa.html": (
-        11,
-        "7bfd4c98382812b49f74805b54fbd57033eba0e1e814234ed08bae154a080159",
+        12,
+        "458c104dfc46ddff5343378e868844876f97c53dc9531b8802b5e43ecb754ed4",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
-        6,
-        "91d69787418322d3db5d4da20f4615b47ee13326bd3132c4407f3a1d4b086bdd",
+        7,
+        "efe93edbd2a6d0b17b04d8bf24e6277af240239f6f9353a07d5b3d8691b47c65",
     ),
 }
 

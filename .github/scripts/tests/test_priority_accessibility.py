@@ -66,7 +66,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "scripts": "fc9ef4decb6b725a2f461e1f3a5b5f946fbaadf76a6bea893b7fb2ac349f163e",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         "hrefs": "59eda6361e56ff67fe9e64307b6f2a9bad14ca86eae81c9236991aeff2277d77",
-        "visible": "2575af7743b2962083b941c0412e7f6f7dd53bf1580644db8f3594538deb24cc",
+        # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
+        "visible": "625385e2aaf116b8e933c4e89bd56db782887891b2a5ea24e8b09eb262019475",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -88,7 +89,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
         "hrefs": "0493d4bf8b11f3bc2fb4d0720d4e37865f507e24f0f1a85548d9486f0e1ac9b2",
-        "visible": "baa3a9362b0eb147b3354dc7e87746a2cc68461646200f108d6898d77975775f",
+        # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
+        "visible": "ab2ab5b0b33627b89c74e34835d83c509550f54b30b1345ce8b97df11b44306c",
     },
     "privacy-policy.html": {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
@@ -98,7 +100,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "79b1d73c8555bd00767c5c2e54ebf96f99371a3e6ca68a9f9f7b080588793e54",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
-        "visible": "7b1503c488c37344fbf6c7935e9040a5c6653823edebbd944c27c8354b0f20f7",
+        # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
+        "visible": "e716a749a81a5d419c8c26c5803aa6fa2147fb722bfb3eb76ef6e43bc3820611",
     },
     "terms-of-use.html": {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
@@ -108,7 +111,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "a0fb3425f2b1c3179c113d7f603129f2c68a0768a5423700cfd33bbc1ad015d6",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
-        "visible": "15784867daf1f60c1c1c44b8af284a7682d1c4fe940ef055c9a5621f2f8f8543",
+        # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
+        "visible": "7f1f8fb6280e6583855ef800e445db3f7a00bfe99550b97a842770da144f185e",
     },
 }
 

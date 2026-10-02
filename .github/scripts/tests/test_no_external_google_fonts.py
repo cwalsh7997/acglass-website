@@ -33,9 +33,11 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # scripts were verified unchanged with an HTML5 parser. Anchors/forms/jsonld/metadata/
 # scripts digests are unchanged. The @font-face moved from the page <style> block to
 # the shared interior sheet.
+# 2026-10-01 (Rielly CEO feature): body rebaselined for the one added footer line
+# "Led by Rielly Walsh, CEO and majority owner."; every other fragment unchanged.
 PROTECTED_HASHES = {
     "anchors": "08cbc65e66beafb717e364479df4ac9dafb7938674d4bd5e20b57471b1ad6973",
-    "body": "b9cdfebe56e5eb927d8617360e9ccea73b2d1b207419645f6aa2df6910c878de",
+    "body": "2a72563c7add57ebb805c14389c06cafafac23e83205951bc7ed3e71138c4905",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "59ccfef5b2b2882acbcdc80aa4bbeb2a4d6c8f3309ce23d3ca6a02fb909baeba",
     "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",

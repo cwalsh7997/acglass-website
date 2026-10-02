@@ -59,6 +59,7 @@ FOOTER = (
     '<div class="ax-footer-brand">'
     '<a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>'
     '\n<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>\n'
+    '<p>Led by Rielly Walsh, CEO and majority owner.</p>\n'
     '<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p>'
     '<!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->'
     '<a href="tel:+17724867711">(772) 486-7711</a>'
