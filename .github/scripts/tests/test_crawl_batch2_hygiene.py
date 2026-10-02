@@ -460,7 +460,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 742)
+        self.assertEqual(len(locs), 737)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -501,6 +501,123 @@ class CityCanonicalTests(unittest.TestCase):
             '<a href="/storefront-glazier-orlando-florida/">Kissimmee Tourism Corridor, FL</a>',
             locations,
         )
+
+    def test_2026_10_02_plant_city_batch_city_dir_soft_merge(self):
+        # Thin city directories stay on disk as HTTP 200. Crawl signals only:
+        # noindex,follow, canonical and og:url at the keeper, off the sitemap.
+        # Titles and bodies stay. No page deletes. Nested service dirs under
+        # bal-harbour-village and manalapan are not part of this merge.
+        tampa = f"{BASE}/storefront-glazier-tampa-florida/"
+        miami = f"{BASE}/storefront-glazier-miami-florida/"
+        wpb = f"{BASE}/storefront-glazier-west-palm-beach-florida/"
+        fort_myers = f"{BASE}/storefront-glazier-fort-myers-florida/"
+        hub = f"{BASE}/florida-commercial-glazing/"
+        pages = {
+            "plant-city/index.html": (
+                tampa,
+                "Commercial Glazing in Plant City, FL | ACG - 48-Hr Bids",
+            ),
+            "coconut-grove/index.html": (
+                miami,
+                "Commercial Glazing in Coconut Grove, Miami, FL | ACG",
+            ),
+            "bal-harbour-village/index.html": (
+                miami,
+                "Storefront Glazier in Bal Harbour Village, FL | ACG",
+            ),
+            "manalapan/index.html": (
+                wpb,
+                "Storefront Glazier in Manalapan, FL | ACG - 48-Hr Bids",
+            ),
+            "sanibel/index.html": (
+                fort_myers,
+                "Commercial Glazing in Sanibel, FL | ACG - 48-Hr Bids",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 5)
+        self.assertEqual(len(locs), 737)
+        for rel, (dest, title) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            tw = re.search(
+                r'<meta[^>]+name="twitter:url"[^>]+content="([^"]+)"', html
+            )
+            if tw:
+                self.assertEqual(tw.group(1), dest, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        keepers = {
+            "storefront-glazier-tampa-florida/index.html": tampa,
+            "storefront-glazier-miami-florida/index.html": miami,
+            "storefront-glazier-west-palm-beach-florida/index.html": wpb,
+            "storefront-glazier-fort-myers-florida/index.html": fort_myers,
+        }
+        for rel, dest in keepers.items():
+            html = read(rel)
+            self.assertNotIn("noindex", robots(html), rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(dest, locs, rel)
+            if rel != "storefront-glazier-fort-myers-florida/index.html":
+                title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+                self.assertIsNotNone(title, rel)
+                self.assertIn("Commercial Storefront Installer", title.group(1), rel)
+        naples = read("storefront-glazier-naples-florida/index.html")
+        naples_title = re.search(r"<title[^>]*>(.*?)</title>", naples, re.S)
+        self.assertIsNotNone(naples_title)
+        self.assertIn("Commercial Storefront Installer", naples_title.group(1))
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        self.assertEqual(canonical(florida), hub)
+        self.assertIn(hub, locs)
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+        self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+        locations = read("locations.html")
+        self.assertIn(
+            '<a href="/storefront-glazier-tampa-florida/">Plant City, FL</a>',
+            locations,
+        )
+        self.assertIn(
+            '<a href="/storefront-glazier-miami-florida/">Coconut Grove, Miami, FL</a>',
+            locations,
+        )
+        self.assertIn(
+            '<a href="/storefront-glazier-fort-myers-florida/">Sanibel, FL</a>',
+            locations,
+        )
+        self.assertIn('href="/miami/coconut-grove-miami/"', locations)
+        self.assertNotIn('href="/plant-city/"', locations)
+        self.assertNotIn('href="/coconut-grove/"', locations)
+        self.assertNotIn('href="/sanibel/"', locations)
+        for nested in (
+            "bal-harbour-village/commercial-storefronts/index.html",
+            "bal-harbour-village/glass-railings/index.html",
+            "bal-harbour-village/impact-windows-hurricane/index.html",
+            "manalapan/commercial-storefronts/index.html",
+            "manalapan/glass-railings/index.html",
+            "manalapan/impact-windows-hurricane/index.html",
+            "manalapan/all-glass-entrances/index.html",
+        ):
+            self.assertTrue((REPO_ROOT / nested).is_file(), nested)
+            self.assertNotEqual(canonical(read(nested)), miami, nested)
+            self.assertNotEqual(canonical(read(nested)), wpb, nested)
 
     def test_nine_keepers_remain_indexable_self_canonical(self):
         locs = sitemap_locs()
@@ -924,9 +1041,10 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
-        # 742 after the 2026-10-02 city-dir soft-merge
-        # (747 before: five thin city directories removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 742)
+        # 737 after the 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
+        # Manalapan / Sanibel city-dir soft-merge
+        # (742 before: five thin city directories removed).
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 737)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1014,7 +1132,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 742)
+        self.assertEqual(len(locs), 737)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1107,7 +1225,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
-        self.assertEqual(len(locs), 742)
+        self.assertEqual(len(locs), 737)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)

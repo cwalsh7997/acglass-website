@@ -290,8 +290,15 @@ WAVE_HYGIENE_CITY_ROOTS = {
 # storefront keeper. port-orange, st-augustine, and ponte-vedra-beach
 # canonicalize to the Florida hub. Files stay. The locations.html
 # Kissimmee Tourism Corridor label points at the Orlando keeper.
+# 2026-10-02: plant-city canonicalizes to the Tampa storefront keeper.
+# coconut-grove and bal-harbour-village canonicalize to the Miami
+# storefront keeper. manalapan canonicalizes to the West Palm Beach
+# storefront keeper. sanibel canonicalizes to the Fort Myers storefront
+# keeper. Files stay. The locations.html Plant City, Coconut Grove Miami,
+# and Sanibel labels point at those keepers.
 CONTAINED_CITY_ROOT_DUPLICATES = {
     "/aventura/",
+    "/bal-harbour-village/",
     "/bay-harbor-islands/",
     "/boca-raton/",
     "/bonita-springs/",
@@ -299,6 +306,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/bradenton/",
     "/cape-coral/",
     "/clearwater/",
+    "/coconut-grove/",
     "/coral-gables/",
     "/cutler-bay/",
     "/dania-beach/",
@@ -334,6 +342,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/lantana/",
     "/lauderdale-by-the-sea/",
     "/lighthouse-point/",
+    "/manalapan/",
     "/marathon/",
     "/marco-island/",
     "/miami/",
@@ -355,12 +364,14 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/parkland/",
     "/pensacola/",
     "/pinecrest/",
+    "/plant-city/",
     "/pompano-beach/",
     "/ponte-vedra-beach/",
     "/port-orange/",
     "/port-saint-lucie/",
     "/riviera-beach/",
     "/sanford/",
+    "/sanibel/",
     "/sarasota/",
     "/sebastian/",
     "/south-miami/",
