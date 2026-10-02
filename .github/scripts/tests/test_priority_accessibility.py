@@ -67,7 +67,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         "hrefs": "59eda6361e56ff67fe9e64307b6f2a9bad14ca86eae81c9236991aeff2277d77",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
-        "visible": "625385e2aaf116b8e933c4e89bd56db782887891b2a5ea24e8b09eb262019475",
+        # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
+        "visible": "a7ea7bfbe82f425b360d13887e316e22ec79e2dd1ba7e022d78ef666b434309f",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -90,7 +91,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # was pulled back to one Euro-Wall door/opening.
         "hrefs": "0493d4bf8b11f3bc2fb4d0720d4e37865f507e24f0f1a85548d9486f0e1ac9b2",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
-        "visible": "ab2ab5b0b33627b89c74e34835d83c509550f54b30b1345ce8b97df11b44306c",
+        # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
+        "visible": "bff37641eb78b5574ad6f446496dca9cd978f07f2396d51a1aaf99e276ecb4a1",
     },
     "privacy-policy.html": {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
@@ -101,7 +103,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "scripts": "79b1d73c8555bd00767c5c2e54ebf96f99371a3e6ca68a9f9f7b080588793e54",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
-        "visible": "e716a749a81a5d419c8c26c5803aa6fa2147fb722bfb3eb76ef6e43bc3820611",
+        # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
+        "visible": "6ce5f8e37fb432491afe010510e4c033792fe2072c1a540700084a31986284cd",
     },
     "terms-of-use.html": {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
@@ -112,7 +115,8 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "scripts": "a0fb3425f2b1c3179c113d7f603129f2c68a0768a5423700cfd33bbc1ad015d6",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
-        "visible": "7f1f8fb6280e6583855ef800e445db3f7a00bfe99550b97a842770da144f185e",
+        # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
+        "visible": "41f2d7289660370f59632548c8122a66eda676babc85255923a995e0c114af97",
     },
 }
 
