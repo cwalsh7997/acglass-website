@@ -35,9 +35,10 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # the shared interior sheet.
 # 2026-10-01 (Rielly CEO feature): body rebaselined for the one added footer line
 # "Led by Rielly Walsh, CEO and majority owner."; every other fragment unchanged.
+# 2026-10-02: body rebaselined for the footer WBENC wording ("WBENC-certified").
 PROTECTED_HASHES = {
     "anchors": "08cbc65e66beafb717e364479df4ac9dafb7938674d4bd5e20b57471b1ad6973",
-    "body": "2a72563c7add57ebb805c14389c06cafafac23e83205951bc7ed3e71138c4905",
+    "body": "c031627cfe21876f7ae72976c609347d8636e74ee38f5deae694121f1ab89beb",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "59ccfef5b2b2882acbcdc80aa4bbeb2a4d6c8f3309ce23d3ca6a02fb909baeba",
     "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",
