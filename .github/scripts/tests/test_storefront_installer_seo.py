@@ -467,7 +467,8 @@ class SchemaFollowupTests(unittest.TestCase):
                     joined = " ".join(
                         q["acceptedAnswer"]["text"] for q in node["mainEntity"]
                     )
-                    self.assertIn("48-hour bid", joined)
+                    # 2026-10-02: promise reworded to budget pricing in 48 hours (Connor); full bid by the bid date.
+                    self.assertIn("48-hour budget pricing", joined)
                     self.assertIn("CGC #1531993", joined)
                     self.assertIn("79 Florida cities", joined)
                     self.assertNotIn("bonded", joined.lower())

@@ -72,18 +72,21 @@ PROTECTED_LINE_MARKERS = re.compile(
 # existing protected line changed (checked line by line).
 # Recomputed 2026-10-02 (Connor: WBENC certified; Rielly joined 2022, title "CEO and majority owner"):
 # footer lines now read "WBENC-certified woman-owned business"; Rielly co-founder wording removed.
+# Recomputed 2026-10-02 (48-hour promise reworded to budget pricing, per Connor): protected lines
+# on the acg-vs pages carry "48-hour budget pricing" in place of "48-hour bids", and a mangled insertion
+# ("a Woman-owned · Rielly Walsh, CEO and 51% majority owner, ... sub") now reads "a woman-owned ... sub".
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
         16,
-        "a15b6179b36f86ab89fd0f26ff8970d0be5010dbe2a7f640c0ac1a89a8cce6d5",
+        "491a297c28ca448340b873b2cfb9e30f59ac9d0d2d516314241f677825a09616",
     ),
     "acg-vs-harmon.html": (
         16,
-        "aae6e64a481a38916ede3a50a076f7cf9d89ccbf8f6ba4b24f2a7d01892d28c6",
+        "7169af31de28a2a43496310c4edd5117c4141134df5334198597a97e7c07c540",
     ),
     "acg-vs-permasteelisa.html": (
         12,
-        "acab7c4f2394fc939c6381f9f560b6886704d04f4b178fc742be68480cb80da6",
+        "bfd3b415da4d1a584d995f98e9610060ebf80842ec102e21aab959172465e7ce",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
         7,
