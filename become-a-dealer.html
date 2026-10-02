@@ -33,8 +33,7 @@
 <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
 <link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
-<style>.dealer-perk{display:flex}.dealer-perk-icon{display:flex}</style>
-<style>.nav-dropdown-trigger{display:inline-flex}.nav-dropdown-menu{opacity:0;visibility:hidden}.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible}.nav-dropdown-menu a{display:block}@media(max-width:900px){.nav-dropdown-menu{opacity:1;visibility:visible;max-height:0;overflow:hidden}.nav-dropdown.open .nav-dropdown-menu{max-height:600px}.nav-dropdown-menu a{display:block}}</style>
+<style>.nav-dropdown-menu{opacity:0;visibility:hidden}.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible}@media(max-width:900px){.nav-dropdown-menu{opacity:1;visibility:visible;max-height:0;overflow:hidden}.nav-dropdown.open .nav-dropdown-menu{max-height:600px}}</style>
 
 <script type="application/ld+json">
 {
@@ -93,7 +92,7 @@
           <form id="dealer-application-form" novalidate>
 
             <!-- Honeypot (hidden from real users, bots fill it) -->
-            <div aria-hidden="true">
+            <div style="position:absolute;left:-9999px" aria-hidden="true">
               <label for="company_url">Company URL (leave blank)</label>
               <input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off">
             </div>

@@ -52,6 +52,10 @@ FUNCTIONAL = {
     "commercial-glazing-nashville-tn.html",
 }
 FUNCTIONAL_DIRS = ("tools/", "dealer/")
+STATE_SELECTOR_RE = re.compile(
+    r"\.(?:active|open|show|shown|selected|visible|in|done|completed|hidden|expanded|current|is-[\w-]+|has-[\w-]+)\b"
+    r"|:checked|\[aria-|\[hidden|\[open|\[data-state"
+)
 FUNCTIONAL_PROPS = {
     "display", "visibility", "opacity", "pointer-events", "max-height", "overflow",
     # entrance animations end at opacity:1, so they stay with the rules that start at opacity:0
@@ -136,7 +140,11 @@ def translate(tag: str, style: str) -> tuple[str, list[str]]:
     keep = [(k, v) for k, v in decls if k in KEEP_PROPS]
     # Text laid over photos (absolute/fixed overlays) loses its scrim with the dark theme,
     # so it returns to normal flow below the image as a caption.
-    if tag not in ("img", "picture", "video", "iframe", "svg") and props.get("position", "").lower() in ("absolute", "fixed"):
+    offscreen = any((px(props.get(k, "")) or 0) <= -999 for k in ("left", "top", "right"))
+    if offscreen:
+        # Visually hidden on purpose (form honeypots): keep the hiding intact.
+        keep += [(k, v) for k, v in decls if k == "opacity"]
+    elif tag not in ("img", "picture", "video", "iframe", "svg") and props.get("position", "").lower() in ("absolute", "fixed"):
         keep = [(k, v) for k, v in keep if k not in ("position", "top", "right", "bottom", "left", "inset", "z-index")]
     if tag in ("td", "th") and props.get("text-align") == "right":
         keep.append(("text-align", "right"))
@@ -251,7 +259,19 @@ def functional_css(css: str) -> str:
         elif not prelude.startswith("@"):
             decls = [d.strip() for d in body.split(";") if ":" in d]
             # Custom properties stay: kept rules reference them (e.g. animation easing).
-            kept = [d for d in decls if (lambda p: p in FUNCTIONAL_PROPS or p.startswith("--"))(d.split(":", 1)[0].strip().lower())]
+            # display is kept only where it hides something or belongs to a state rule; a base
+            # display:flex/grid without its old track sizes would only squeeze the new layout.
+            stateful = bool(STATE_SELECTOR_RE.search(prelude))
+
+            def keep(d: str) -> bool:
+                prop, value = (x.strip().lower() for x in d.split(":", 1))
+                if prop.startswith("--"):
+                    return True
+                if prop == "display":
+                    return "none" in value or stateful
+                return prop in FUNCTIONAL_PROPS
+
+            kept = [d for d in decls if keep(d)]
             if kept:
                 out.append(f"{prelude}{{{';'.join(kept)}}}")
         i = j
