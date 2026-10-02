@@ -85,8 +85,10 @@ HELD_PLACE_GEO_HASHES = {
         "7a7110dfa87efbe1f05fb0040a1c2ff069045beacd30ffb1bdfe84f0ede529b4",
         "a906bcbae144a79dcc0c2f0eca71401a923d886f854338e68827eb28900e4e7d",
     ),
+    # 2026-10-02: Place description reworded (owner-led design-build -> subcontractor to West
+    # Construction, per the executed contracts); geo coordinates unchanged (verified).
     "eau-palm-beach-resort.html": (
-        "e53172abaa80292eedd913cf1ff23f7f09c4ddbebdc185fd2d1ef0bdb8ba51e0",
+        "03105d088f864703ca0d0172e51f021fb92a7763f990181151222da64fbb92b1",
     ),
     "franklin-tn/index.html": (
         "84b126dd66b8fde984be7229f0bedc37fa0ad35d63b2617d9fc0c5581364a6c6",
