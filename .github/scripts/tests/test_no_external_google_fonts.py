@@ -27,11 +27,17 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # Every other fragment digest is byte-identical to the previous pin.
 # 2026-10-01: anchors/body/images/scripts rebaselined for the sitewide architectural chrome;
 # the page is byte-identical outside the replaced header/footer and the two include tags.
+# 2026-10-01 (interior redesign): body/images rebaselined. The page moved onto
+# acg-arch-interior.css; inline style attributes were dropped (img tags are identical
+# with style attributes removed) and visible text, links, images, forms, JSON-LD and
+# scripts were verified unchanged with an HTML5 parser. Anchors/forms/jsonld/metadata/
+# scripts digests are unchanged. The @font-face moved from the page <style> block to
+# the shared interior sheet.
 PROTECTED_HASHES = {
     "anchors": "08cbc65e66beafb717e364479df4ac9dafb7938674d4bd5e20b57471b1ad6973",
-    "body": "8a2f7284ece9475996667a6093941698aabd6f394519f573e5169af46b34c92e",
+    "body": "b9cdfebe56e5eb927d8617360e9ccea73b2d1b207419645f6aa2df6910c878de",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "images": "138c878606fd432bf0593382e8e9394aab3f10d792a3cc1a4c9bba12a2dc3f1c",
+    "images": "59ccfef5b2b2882acbcdc80aa4bbeb2a4d6c8f3309ce23d3ca6a02fb909baeba",
     "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",
     "metadata": "f34f096e64ce1e4283154d8cdf34c46247be47df04ef5888ecd6f06cd83019ef",
     "scripts": "ffbda8d04e09ae363b47ab94d78dd00e21a72c74651cfedf2402c0d67e70e442",
@@ -118,7 +124,17 @@ class NoExternalGoogleFontsTests(unittest.TestCase):
             "font-style:normal;font-weight:100 900;font-display:swap;}"
         )
         self.assertEqual(1, self.source.count(preload))
-        self.assertEqual(1, self.source.count(font_face))
+        # Interior-theme pages declare Inter once, in the shared sheet they link.
+        interior_link = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+        if interior_link in self.source:
+            sheet = (ROOT / "css" / "acg-arch-interior.css").read_text(encoding="utf-8")
+            self.assertEqual(0, self.source.count("@font-face"))
+            self.assertEqual(1, sheet.count(
+                "@font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') "
+                "format('woff2');font-weight:100 900;font-display:swap}"
+            ))
+        else:
+            self.assertEqual(1, self.source.count(font_face))
 
     def test_page_content_and_behavior_contracts_are_unchanged(self):
         fragments = _protected_fragments(self.source)

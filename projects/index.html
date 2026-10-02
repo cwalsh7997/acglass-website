@@ -28,9 +28,8 @@
   <meta name="twitter:description" content="17 verified commercial glazing projects by sector - Florida. FL CGC #1531993.">
   <meta name="twitter:image" content="https://acglass.com/images/acg-coverage-map.svg?v=20260914-novolume">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
-<link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
@@ -174,144 +173,46 @@
   }
 }</script>
 
-  <style>
-    /* ─── Page-level overrides ─── */
-    .proj-hero { padding: clamp(80px, 12vw, 160px) 0 clamp(40px, 6vw, 72px); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .proj-eyebrow { font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; color: var(--accent,#E11320); margin-bottom: 16px; }
-
-    /* ─── Filter strip ─── */
-    .filter-strip { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.01); position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    .filter-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-    .filter-label { font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.12em; color: rgba(255,255,255,0.35); margin-right: 4px; white-space: nowrap; }
-    .chip { display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.04); cursor: default; transition: border-color 0.2s, color 0.2s, background 0.2s; user-select: none; }
-    .chip:hover { border-color: rgba(225,19,32,0.5); color: #fff; background: rgba(225,19,32,0.08); }
-    .chip.active { border-color: var(--accent,#E11320); color: #fff; background: rgba(225,19,32,0.15); }
-    .chip.state-chip { border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.02); }
-    .chip.state-chip.active { border-color: rgba(255,255,255,0.4); color: #fff; background: rgba(255,255,255,0.06); }
-    .filter-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.1); margin: 0 6px; flex-shrink: 0; }
-    .filter-note { font-size:11px; color:rgba(255,255,255,0.3); font-family:'JetBrains Mono',monospace; margin-left: auto; white-space: nowrap; }
-
-    /* ─── Project grid ─── */
-    .projects-section { padding: clamp(48px, 6vw, 96px) 0; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: clamp(16px, 2vw, 24px); }
-    .project-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; overflow: hidden; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-    .project-card:hover { border-color: rgba(225,19,32,0.4); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
-    .card-image { aspect-ratio: 16/9; background: linear-gradient(135deg, rgba(14,40,79,0.9) 0%, rgba(20,52,100,0.7) 100%); position: relative; overflow: hidden; display: flex; align-items: flex-end; }
-    .card-image img { width:100%; height:100%; object-fit:cover; display:block; }
-    .card-image-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
-    .card-image-placeholder svg { opacity: 0.12; }
-    .card-sector-badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .badge-hospitality { background: rgba(225,19,32,0.85); color: #fff; }
-    .badge-healthcare { background: rgba(0,140,120,0.85); color: #fff; }
-    .badge-government { background: rgba(30,80,160,0.9); color: #fff; }
-    .badge-multifamily { background: rgba(130,60,200,0.85); color: #fff; }
-    .badge-restaurant { background: rgba(210,100,20,0.88); color: #fff; }
-    .badge-education { background: rgba(20,140,60,0.85); color: #fff; }
-    .badge-retail { background: rgba(160,120,0,0.88); color: #fff; }
-    .badge-office { background: rgba(60,60,80,0.9); color: #fff; }
-    .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .card-name { font-size: 16px; font-weight: 800; line-height: 1.25; color: #fff; margin: 0; }
-    .card-location { font-family:'JetBrains Mono',monospace; font-size:11px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; }
-    .card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-    .card-tag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 4px; letter-spacing: 0.04em; }
-    .tag-system { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.1); }
-    .tag-gc { background: rgba(225,19,32,0.1); color: rgba(225,19,32,0.9); border: 1px solid rgba(225,19,32,0.2); }
-    .tag-year { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.06); font-family:'JetBrains Mono',monospace; }
-    .card-cta { margin-top: auto; padding-top: 12px; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--accent,#E11320); letter-spacing: 0.04em; text-transform: uppercase; }
-    .card-cta svg { transition: transform 0.2s; }
-    .project-card:hover .card-cta svg { transform: translateX(3px); }
-    .no-link .card-cta { color: rgba(255,255,255,0.3); }
-
-    /* ─── Sector summary footer ─── */
-    .sector-summary { padding: clamp(48px, 6vw, 80px) 0; border-top: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.01); }
-    .sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
-    .sector-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 20px; text-decoration: none; color: inherit; transition: border-color 0.2s; display: block; }
-    .sector-card:hover { border-color: rgba(225,19,32,0.3); }
-    .sector-card .sector-count { font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:900; color: var(--accent,#E11320); line-height:1; }
-    .sector-card .sector-name { font-size:13px; font-weight:700; margin-top:6px; margin-bottom:4px; color:#fff; }
-    .sector-card .sector-link-hint { font-size:11px; color:rgba(255,255,255,0.35); font-family:'JetBrains Mono',monospace; letter-spacing:0.06em; }
-
-    /* ─── Geographic summary ─── */
-    .geo-summary { padding: clamp(40px, 5vw, 64px) 0; border-top: 1px solid rgba(255,255,255,0.06); }
-    .geo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 32px; }
-    .geo-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 24px; }
-    .geo-card .geo-state { font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:700; color: var(--accent,#E11320); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:6px; }
-    .geo-card .geo-count { font-size:40px; font-weight:900; line-height:1; color:#fff; }
-    .geo-card .geo-desc { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; margin-top:8px; }
-    .geo-card .geo-badge { display:inline-block; margin-top:10px; padding:3px 10px; border-radius:100px; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; border:1px solid; }
-    .geo-badge-active { border-color:rgba(225,19,32,0.4); color:rgba(225,19,32,0.85); background:rgba(225,19,32,0.08); }
-    .geo-badge-coming { border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.5); background:rgba(255,255,255,0.04); }
-
-    /* ─── Section divider labels ─── */
-    .section-heading { font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.15em; color: var(--accent,#E11320); margin-bottom: 12px; }
-    .section-h2 { font-size: clamp(26px, 3vw, 38px); font-weight:900; line-height:1.1; margin-bottom:20px; }
-    .section-sub { font-size:15px; color:rgba(255,255,255,0.6); line-height:1.65; max-width:640px; margin-bottom:0; }
-
-    /* ─── Nav dropdown (copied from capabilities.html) ─── */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-    .nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-    .nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-    .nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-    .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-    .nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-    .nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-    .nav-dropdown-menu a:hover{color:#fff !important}
-    }
-
-    @media(max-width:680px){
-      .projects-grid { grid-template-columns: 1fr; }
-      .filter-note { display:none; }
-    }
-  </style>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
   <!-- NAV -->
-  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- HERO -->
-  <section class="proj-hero" id="main-content">
+  <section class="proj-hero ax-hero ax-hero-l" id="main-content">
     <div class="container">
       <div class="proj-eyebrow">Project portfolio - by sector, by state, by year</div>
-      <h1 style="font-size: clamp(38px, 5.5vw, 76px); font-weight: 900; line-height: 1.05; max-width: 900px; margin-bottom: 24px;">Florida's commercial glazing portfolio. <span class="accent">Verified. Documented. Sector-organized.</span></h1>
-      <p style="font-size: clamp(15px, 1.4vw, 19px); color: rgba(255,255,255,0.65); max-width: 700px; line-height: 1.65; margin-bottom: 40px;">17 verified commercial glazing projects across Florida - hospitality clubs, government facilities, healthcare clinics, multifamily amenities, retail corridors, and education campuses. Every project listed here ACG completed. FL CGC&nbsp;#1531993 &middot; NAICS&nbsp;238150.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="../send-plans.html" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:10px;">
+      <h1 style="max-width:900px">Florida's commercial glazing portfolio. <span class="accent">Verified. Documented. Sector-organized.</span></h1>
+      <p style="max-width:700px" class="ax-lead">17 verified commercial glazing projects across Florida - hospitality clubs, government facilities, healthcare clinics, multifamily amenities, retail corridors, and education campuses. Every project listed here ACG completed. FL CGC&nbsp;#1531993 &middot; NAICS&nbsp;238150.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="../send-plans.html" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:10px">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           Add ACG to Your Bid List
         </a>
         <a href="../capabilities.html" class="btn btn-secondary">Capabilities Statement</a>
       </div>
       <!-- Stats band inline -->
-      <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:clamp(24px,3vw,48px);padding:28px 0;border-top:1px solid rgba(255,255,255,0.07);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:clamp(24px,3vw,48px)" class="ax-rule">
         <div>
-          <div style="font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1;color:var(--accent,#E11320);">17</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-top:6px;">Verified Projects</div>
+          <div class="ax-num-xl ax-red ax-strong">17</div>
+          <div class="ax-kicker">Verified Projects</div>
         </div>
         <div>
-          <div style="font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1;">8</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-top:6px;">Sectors Served</div>
+          <div class="ax-num-xl ax-strong">8</div>
+          <div class="ax-kicker">Sectors Served</div>
         </div>
         <div>
-          <div style="font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1;">FL</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-top:6px;">Primary Market</div>
+          <div class="ax-num-xl ax-strong">FL</div>
+          <div class="ax-kicker">Primary Market</div>
         </div>
         <div>
-          <div style="font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1;color:rgba(255,255,255,0.45);">US</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;font-family:'JetBrains Mono',monospace;margin-top:6px;">Nationwide Supply</div>
+          <div class="ax-num-xl ax-strong">US</div>
+          <div class="ax-kicker">Nationwide Supply</div>
         </div>
       </div>
     </div>
@@ -345,7 +246,7 @@
     <div class="container">
       <div class="section-heading">17 Verified Projects</div>
       <h2 class="section-h2">Portfolio by sector.</h2>
-      <p class="section-sub" style="margin-bottom:40px;">Every project on this page was completed by American Commercial Glass, Inc. - no renderings, no aspirational listings. Verified against project records and GC relationships.</p>
+      <p class="section-sub">Every project on this page was completed by American Commercial Glass, Inc. - no renderings, no aspirational listings. Verified against project records and GC relationships.</p>
 
       <div class="projects-grid" id="projects-grid">
 
@@ -355,7 +256,7 @@
         
           <div class="card-image">
             
-            <div class="card-image-placeholder" style="display:none;">
+            <div class="card-image-placeholder" style="display:none">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-hospitality">Hospitality</span>
@@ -376,7 +277,7 @@
         <a href="../case-study-wild-blue-clubhouse.html" class="project-card" aria-label="Wild Blue Clubhouse - view case study">
           <div class="card-image">
             <img src="../images/projects/wild-blue-clubhouse-hero.jpg" alt="Wild Blue Clubhouse Estero - glazing by ACG" width="1600" height="900" loading="lazy" decoding="async" onerror="this.style.display='none';this.parentElement.querySelector('.card-image-placeholder').style.display='flex'">
-            <div class="card-image-placeholder" style="display:none;">
+            <div class="card-image-placeholder" style="display:none">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-hospitality">Hospitality</span>
@@ -395,7 +296,7 @@
         <!-- 3. Gulf Harbour Yacht & Country Club -->
         <a href="../case-study-gulf-harbour.html" class="project-card" aria-label="Gulf Harbour Yacht & Country Club - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-hospitality">Hospitality</span>
@@ -414,7 +315,7 @@
         <!-- 4. Tradewinds Clubhouse -->
         <a href="../case-study-tradewinds-clubhouse.html" class="project-card" aria-label="Tradewinds Clubhouse - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-hospitality">Hospitality</span>
@@ -432,7 +333,7 @@
         <!-- 5. Rome Collective -->
         <a href="../case-study-rome-collective.html" class="project-card" aria-label="Rome Collective - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-restaurant">Restaurants &amp; F&amp;B</span>
@@ -452,7 +353,7 @@
         <!-- 6. Haines City Public Safety Complex & EOC -->
         <a href="../case-study-haines-city-eoc.html" class="project-card" aria-label="Haines City Public Safety Complex & EOC - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-government">Government</span>
@@ -465,7 +366,7 @@
               <span class="card-tag tag-gc">GC: Pirtle Construction</span>
               <span class="card-tag tag-year">Completed 2025</span>
             </div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.5;">Essential-facility glazing. FBC Risk Category IV. Full project photography available.</div>
+            <div class="ax-small">Essential-facility glazing. FBC Risk Category IV. Full project photography available.</div>
             <div class="card-cta">View case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           </div>
         </a>
@@ -473,7 +374,7 @@
         <!-- 7. Martin County Fire Training -->
         <a href="../case-study-martin-county-fire-training.html" class="project-card" aria-label="Martin County Fire Training - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-government">Government</span>
@@ -491,7 +392,7 @@
         <!-- 8. Cudjoe Key Fire Station -->
         <a href="../cudjoe-key-fire-station.html" class="project-card" aria-label="Cudjoe Key Fire Station - view page">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-government">Government</span>
@@ -502,7 +403,7 @@
             <div class="card-meta">
               <span class="card-tag tag-system">Impact storefront &middot; High-wind</span>
             </div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.5;">Monroe County high-wind zone. Wind-borne debris region, not HVHZ. Florida Product Approval impact-rated assemblies.</div>
+            <div class="ax-small">Monroe County high-wind zone. Wind-borne debris region, not HVHZ. Florida Product Approval impact-rated assemblies.</div>
             <div class="card-cta">View project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           </div>
         </a>
@@ -512,7 +413,7 @@
         <!-- 9. Atlantic Fields Performance Center -->
         <a href="../case-study-atlantic-fields-performance-center.html" class="project-card" aria-label="Atlantic Fields Performance Center - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-multifamily">Multifamily</span>
@@ -531,7 +432,7 @@
         <!-- 10. Gulfside Twelve -->
         <a href="../case-study-gulfside-twelve.html" class="project-card" aria-label="Gulfside Twelve - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-multifamily">Multifamily</span>
@@ -551,7 +452,7 @@
         <!-- 11. Siena Lakes Naples -->
         <a href="../case-study-siena-lakes-naples.html" class="project-card" aria-label="Siena Lakes Naples senior living - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-healthcare">Healthcare</span>
@@ -562,7 +463,7 @@
             <div class="card-meta">
               <span class="card-tag tag-system">Impact storefront &middot; Window wall</span>
             </div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.5;">Senior living community. Full-building glazing package, Naples market.</div>
+            <div class="ax-small">Senior living community. Full-building glazing package, Naples market.</div>
             <div class="card-cta">View case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           </div>
         </a>
@@ -570,7 +471,7 @@
         <!-- 12. Ginsberg Eye Center -->
         <a href="../ginsberg-eye-center.html" class="project-card" aria-label="Ginsberg Eye Center Estero - view page">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-healthcare">Healthcare</span>
@@ -588,7 +489,7 @@
         <!-- 13. Aspen Dental Plaza -->
         <a href="../case-study-aspen-dental-edgewater.html" class="project-card" aria-label="Aspen Dental Plaza Edgewater - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-healthcare">Healthcare</span>
@@ -608,7 +509,7 @@
         <!-- 14. Tomoka Town Center -->
         <a href="../case-study-tomoka-town-center.html" class="project-card" aria-label="Tomoka Town Center Daytona Beach - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-retail">Retail</span>
@@ -619,7 +520,7 @@
             <div class="card-meta">
               <span class="card-tag tag-system">Impact storefront &middot; Entrance systems</span>
             </div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.5;">Retail corridor glazing package. Multi-tenant storefront rollout.</div>
+            <div class="ax-small">Retail corridor glazing package. Multi-tenant storefront rollout.</div>
             <div class="card-cta">View case study <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           </div>
         </a>
@@ -627,7 +528,7 @@
         <!-- 15. Baron Shoppes Tradition -->
         <a href="../case-study-baron-shoppes-tradition.html" class="project-card" aria-label="Baron Shoppes Tradition Port St Lucie - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-retail">Retail</span>
@@ -647,7 +548,7 @@
         <!-- 16. Illumia Fort Myers -->
         <a href="../case-study-illumia-fort-myers.html" class="project-card" aria-label="Illumia Fort Myers - view case study">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-restaurant">Restaurants &amp; F&amp;B</span>
@@ -667,7 +568,7 @@
         <!-- 17. Indiantown High School -->
         <a href="../indiantown-high-school.html" class="project-card" aria-label="Indiantown High School - view page">
           <div class="card-image">
-            <div class="card-image-placeholder" style="display:flex;">
+            <div class="card-image-placeholder" style="display:flex">
               <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="4" y="4" width="56" height="56" rx="4" stroke="white" stroke-width="1.5"/><rect x="12" y="18" width="40" height="28" rx="2" stroke="white" stroke-width="1.5"/><path d="M12 30h40" stroke="white" stroke-width="1.5"/><path d="M26 18v28" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <span class="card-sector-badge badge-education">Education &amp; Institutional</span>
@@ -678,7 +579,7 @@
             <div class="card-meta">
               <span class="card-tag tag-system">Interior glass partitions</span>
             </div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;line-height:1.5;">Interior architectural glass scope - classroom and corridor partition systems.</div>
+            <div class="ax-small">Interior architectural glass scope - classroom and corridor partition systems.</div>
             <div class="card-cta">View project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
           </div>
         </a>
@@ -729,8 +630,8 @@
           <div class="sector-name">Education &amp; Institutional</div>
           <div class="sector-link-hint">interior partitions &middot; K-12 &rarr;</div>
         </a>
-        <div class="sector-card" style="cursor:default;opacity:0.6;">
-          <div class="sector-count" style="color:rgba(255,255,255,0.4);">+</div>
+        <div class="sector-card">
+          <div class="sector-count">+</div>
           <div class="sector-name">Office</div>
           <div class="sector-link-hint">projects being documented</div>
         </div>
@@ -743,7 +644,7 @@
     <div class="container">
       <div class="section-heading">By State</div>
       <h2 class="section-h2">Geographic footprint.</h2>
-      <p class="section-sub" style="margin-bottom:32px;">ACG operates Florida offices in West Palm Beach, Naples, and Stuart, with service-area coverage across the Tampa Bay region, and furnishes commercial glazing systems nationwide.</p>
+      <p class="section-sub">ACG operates Florida offices in West Palm Beach, Naples, and Stuart, with service-area coverage across the Tampa Bay region, and furnishes commercial glazing systems nationwide.</p>
       <div class="geo-grid">
         <div class="geo-card">
           <div class="geo-state">Florida</div>
@@ -753,31 +654,31 @@
         </div>
         <div class="geo-card">
           <div class="geo-state">Tennessee</div>
-          <div class="geo-count" style="color:rgba(255,255,255,0.4);">Furnish only</div>
+          <div class="geo-count">Furnish only</div>
           <div class="geo-desc">ACG furnishes commercial glazing systems and provides scope consulting for Tennessee projects. Material supply, submittal packages, shop drawing coordination, and lead time management. Installation is performed by the general contractor or a local glazing subcontractor. ACG holds no Tennessee office and performs no Tennessee field labor.</div>
           <span class="geo-badge geo-badge-coming">Supply and Consulting</span>
         </div>
         <div class="geo-card">
           <div class="geo-state">Southeast Tier</div>
-          <div class="geo-count" style="color:rgba(255,255,255,0.3);">Project-by-project</div>
+          <div class="geo-count">Project-by-project</div>
           <div class="geo-desc">ACG considers Southeast U.S. work on a project-by-project basis in Georgia, Alabama, South Carolina, North Carolina, and Mississippi - typically on a furnish and consulting basis when partnered with a general contractor. Contact Connor to discuss.</div>
           <span class="geo-badge geo-badge-coming">Inquire</span>
         </div>
       </div>
 
       <!-- GC Partner recognition -->
-      <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06);">
-        <div class="section-heading" style="margin-bottom:16px;">General Contractor Partners</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.55);max-width:680px;line-height:1.65;margin-bottom:24px;">ACG has completed verified projects with the following general contractors. Each relationship is active and references are available on request.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">DeAngelis Diamond</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">the general contractor</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">Proctor Construction</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">Curran Young Construction</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">Pirtle Construction</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">Rycon Construction</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">a national general contractor</span>
-          <span style="padding:8px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.75);">Hooks Construction</span>
+      <div class="ax-rule">
+        <div class="section-heading">General Contractor Partners</div>
+        <p style="max-width:680px">ACG has completed verified projects with the following general contractors. Each relationship is active and references are available on request.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span class="ax-small ax-strong">DeAngelis Diamond</span>
+          <span class="ax-small ax-strong">the general contractor</span>
+          <span class="ax-small ax-strong">Proctor Construction</span>
+          <span class="ax-small ax-strong">Curran Young Construction</span>
+          <span class="ax-small ax-strong">Pirtle Construction</span>
+          <span class="ax-small ax-strong">Rycon Construction</span>
+          <span class="ax-small ax-strong">a national general contractor</span>
+          <span class="ax-small ax-strong">Hooks Construction</span>
         </div>
       </div>
     </div>
@@ -788,14 +689,14 @@
     <div class="container" data-reveal>
       <h2>Ready to put ACG on<br>your <span class="accent">next project?</span></h2>
       <p>Send plans, specifications, or a BuildingConnected / BasisBoard invite. Florida CGC on every submission. Owner-reviewed before delivery.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
         <a href="../send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="../capabilities.html" class="btn btn-secondary btn-lg">Download Capabilities</a>
       </div>
     </div>
   </section>
 
-    <footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+    </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
 <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
 <p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
 <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>

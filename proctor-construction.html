@@ -31,9 +31,8 @@
   <meta name="twitter:description" content="American Commercial Glass (ACG) is a repeat commercial glazing subcontractor for Proctor Construction. ACG is a repeat commercial glazing subcontractor for Proctor Construction across high-end multifamily, private golf clubs, and hospitality projects on Florida's East Coast. Florida CGC #1531993.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
-<link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <!-- AboutPage Schema -->
   
@@ -41,141 +40,6 @@
   <!-- Organization Schema -->
   
 
-  <style>
-    /* Responsive 2-column layout - collapses to 1 column on mobile */
-    .about-split-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .about-split-2col { grid-template-columns: 1fr; gap: 32px; }
-    }
-    /* Mission stats 2x2 grid */
-    .mission-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    /* No additional breakpoint needed - 2x2 is fine on mobile at 375px */
-    .about-section {
-      padding: clamp(48px, 7vw, 80px) 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .about-section:last-of-type {
-      border-bottom: none;
-    }
-    .section-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-    }
-    .office-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: clamp(24px, 3vw, 36px);
-    }
-    .office-card .office-name {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .office-card .office-tag {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .office-card p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      margin: 0;
-    }
-    .ai-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .ai-feature-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-    .ai-feature-text h5 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .ai-feature-text p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .mission-stat {
-      text-align: center;
-      padding: clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-    }
-    .mission-stat .m-num {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .mission-stat .m-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
   <script type="application/ld+json">
   {
@@ -307,30 +171,30 @@
 }
   </script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 <!-- NAVIGATION -->
-  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- HERO -->
-  <section class="hero" style="min-height:58vh;justify-content:center;padding-bottom:72px;" id="main-content">
+  <section class="hero ax-hero ax-hero-s" style="min-height:58vh;justify-content:center" id="main-content">
     <div class="hero-bg">
-      <picture><img height="789" width="1200" src="images/projects/atlantic-fields-golf-house/card-golden-hour.jpg" alt="Atlantic Fields Golf House at golden hour - ACG and Proctor Construction" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;" loading="lazy" decoding="async"></picture>
+      <picture><img height="789" width="1200" src="images/projects/atlantic-fields-golf-house/card-golden-hour.jpg" alt="Atlantic Fields Golf House at golden hour - ACG and Proctor Construction" style="width:100%;height:100%;object-fit:cover;object-position:center 50%" loading="lazy" decoding="async"></picture>
     </div>
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <div style="display:inline-flex;align-items:center;gap:16px;padding:16px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;margin-bottom:28px;backdrop-filter:blur(8px);animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;">
+        <div style="display:inline-flex;align-items:center;gap:16px" class="ax-box">
           <picture>
             <source type="image/webp" srcset="images/logos/gcs/proctor-construction.webp">
-            <img height="118" width="600" src="images/logos/gcs/proctor-construction.png" alt="Proctor Construction logo" style="height:40px;width:auto;display:block;filter:brightness(1.2);" loading="eager" decoding="async">
+            <img height="118" width="600" src="images/logos/gcs/proctor-construction.png" alt="Proctor Construction logo" style="height:40px;width:auto;display:block" loading="eager" decoding="async">
           </picture>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.65);line-height:1.3;">Approved<br>Subcontractor</div>
+          <div class="ax-kicker">Approved<br>Subcontractor</div>
         </div>
-        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;"><span class="line"></span> GC Partnership - Repeat Projects</div>
+        <div class="label"><span class="line"></span> GC Partnership - Repeat Projects</div>
         <h1>ACG + <span class="accent">Proctor Construction.</span></h1>
         <p class="hero-sub">ACG is a repeat commercial glazing subcontractor for Proctor Construction across high-end multifamily, private golf clubs, and hospitality projects on Florida's East Coast.</p>
       </div>
@@ -338,62 +202,62 @@
   </section>
 
   <!-- Breadcrumb -->
-  <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
-    <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
-      <a href="/" style="color:rgba(255,255,255,.5);text-decoration:none;">Home</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <a href="portfolio.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Portfolio</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <span style="color:var(--accent);">Proctor Construction</span>
+  <section class="ax-rule">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="portfolio.html">Portfolio</a>
+      <span>/</span>
+      <span class="ax-red">Proctor Construction</span>
     </div>
   </section>
 
   <!-- Partnership narrative -->
   <section class="section">
-    <div class="container" style="max-width:820px;">
+    <div class="container" style="max-width:820px">
       <div data-reveal>
         <div class="label"><span class="line"></span> The Relationship</div>
         <h2>Why <span class="accent">Proctor Construction</span> Hires ACG.</h2>
-        <p style="font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:rgba(255,255,255,.8);margin-top:22px;">ACG is a repeat commercial glazing subcontractor for Proctor Construction across high-end multifamily, private golf clubs, and hospitality projects on Florida's East Coast.</p>
-        <p style="font-size:clamp(16px,1.2vw,18px);line-height:1.7;color:rgba(255,255,255,.72);margin-top:16px;">Proctor projects demand coastal-grade envelope performance with architectural precision. ACG delivers Euro-Wall SGD2020 large-format sliders, ESWindows commercial storefront, and custom curtain wall - every opening detailed for coastal exposure, signed off in submittal, and installed by ACG field teams.</p>
-        <p style="font-size:clamp(16px,1.2vw,18px);line-height:1.7;color:rgba(255,255,255,.72);margin-top:16px;"><strong>Proctor Construction website:</strong> <a href="https://www.proctorcc.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(226,19,32,.4);padding-bottom:1px;">www.proctorcc.com</a></p>
-        <p style="font-size:clamp(16px,1.2vw,18px);line-height:1.7;color:rgba(255,255,255,.72);margin-top:16px;"><strong>Sectors:</strong> Private golf clubs, luxury multifamily, institutional, and high-end commercial.</p>
+        <p class="ax-lead">ACG is a repeat commercial glazing subcontractor for Proctor Construction across high-end multifamily, private golf clubs, and hospitality projects on Florida's East Coast.</p>
+        <p>Proctor projects demand coastal-grade envelope performance with architectural precision. ACG delivers Euro-Wall SGD2020 large-format sliders, ESWindows commercial storefront, and custom curtain wall - every opening detailed for coastal exposure, signed off in submittal, and installed by ACG field teams.</p>
+        <p><strong>Proctor Construction website:</strong> <a href="https://www.proctorcc.com" target="_blank" rel="noopener" class="ax-rule">www.proctorcc.com</a></p>
+        <p><strong>Sectors:</strong> Private golf clubs, luxury multifamily, institutional, and high-end commercial.</p>
       </div>
     </div>
   </section>
 
   <!-- Projects delivered -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+  <section class="section">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,36px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Project Record</div>
         <h2>Delivered Together - <span class="accent">4 Projects</span></h2>
-        <p style="max-width:720px;color:rgba(255,255,255,.65);margin-top:12px;">Every project here was completed by ACG as the commercial glazing subcontractor under Proctor Construction as the general contractor.</p>
+        <p style="max-width:720px">Every project here was completed by ACG as the commercial glazing subcontractor under Proctor Construction as the general contractor.</p>
       </div>
       <div class="grid grid-3" data-reveal data-delay="200">
-        <a href="atlantic-fields-golf-house.html" class="service-card" style="text-decoration:none;">
-          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin-bottom:8px;">HOBE SOUND, FL</div>
+        <a href="atlantic-fields-golf-house.html" class="service-card">
+          <div class="ax-small ax-red">HOBE SOUND, FL</div>
           <h4>Atlantic Fields Golf House</h4>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);margin:4px 0 8px;">Private Golf Club</div>
-          <p style="margin-top:6px;font-size:14px;color:rgba(255,255,255,.7);">Euro-Wall SGD2020</p>
+          <div class="ax-small">Private Golf Club</div>
+          <p>Euro-Wall SGD2020</p>
         </a>
-        <a href="atlantic-fields-performance-center.html" class="service-card" style="text-decoration:none;">
-          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin-bottom:8px;">HOBE SOUND, FL</div>
+        <a href="atlantic-fields-performance-center.html" class="service-card">
+          <div class="ax-small ax-red">HOBE SOUND, FL</div>
           <h4>Atlantic Fields Performance Center</h4>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);margin:4px 0 8px;">Athletic / Private Club</div>
-          <p style="margin-top:6px;font-size:14px;color:rgba(255,255,255,.7);">Euro-Wall + Storefront</p>
+          <div class="ax-small">Athletic / Private Club</div>
+          <p>Euro-Wall + Storefront</p>
         </a>
-        <a href="klus-lighting-vero-beach.html" class="service-card" style="text-decoration:none;">
-          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin-bottom:8px;">LAKE PARK, FL</div>
+        <a href="klus-lighting-vero-beach.html" class="service-card">
+          <div class="ax-small ax-red">LAKE PARK, FL</div>
           <h4>KLUS Lighting Showroom</h4>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);margin:4px 0 8px;">Commercial / Retail</div>
-          <p style="margin-top:6px;font-size:14px;color:rgba(255,255,255,.7);">ESWindows</p>
+          <div class="ax-small">Commercial / Retail</div>
+          <p>ESWindows</p>
         </a>
-        <a href="project-lift-hobe-sound.html" class="service-card" style="text-decoration:none;">
-          <div style="font-family:var(--font-mono);font-size:.7rem;color:var(--accent);margin-bottom:8px;">HOBE SOUND, FL</div>
+        <a href="project-lift-hobe-sound.html" class="service-card">
+          <div class="ax-small ax-red">HOBE SOUND, FL</div>
           <h4>Project LIFT</h4>
-          <div style="font-size:13px;color:rgba(255,255,255,.55);margin:4px 0 8px;">Institutional / Education</div>
-          <p style="margin-top:6px;font-size:14px;color:rgba(255,255,255,.7);">Storefront + Curtainwall</p>
+          <div class="ax-small">Institutional / Education</div>
+          <p>Storefront + Curtainwall</p>
         </a>
       </div>
     </div>
@@ -402,7 +266,7 @@
   <!-- Why ACG specifically -->
   <section class="section">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,36px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Why ACG on Proctor Construction Projects</div>
         <h2>A Glazing Sub <span class="accent">GCs Rehire.</span></h2>
       </div>
@@ -444,21 +308,21 @@
   <!-- Direct contact CTA -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>PLANS</div>
+      <div class="text-massive" data-reveal-fade>PLANS</div>
       <h2>Next <span class="accent">Proctor Construction</span> Project?</h2>
       <p>Send plans to Connor Walsh direct. Scoped estimate with line-item pricing, lead times, and product recommendations within 48 hours.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
         <!--email_off--><a href="mailto:connor@acglass.com?subject=Proctor%20Construction%20-%20ACG%20Glazing%20Estimate" class="btn btn-primary btn-lg">
           Email Connor Direct
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a><!--/email_off-->
         <a href="tel:+17724867711" class="btn btn-ghost btn-lg">(772) 486-7711</a>
       </div>
-      <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:20px;">Connor Walsh &middot; President</p>
+      <p class="ax-kicker">Connor Walsh &middot; President</p>
     </div>
   </section>
 
-  <footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
 <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
 <p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
 <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>

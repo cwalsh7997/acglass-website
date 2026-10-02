@@ -324,7 +324,8 @@ class CannibalizationTests(unittest.TestCase):
         self.assertIn("/storefront-glazier-west-palm-beach-florida/", wpb)
         tampa = read("blog/how-to-choose-commercial-glazier-tampa-bay.html")
         self.assertIn(
-            'href="/storefront-glazier-tampa-florida/" style="color:var(--accent);">commercial storefront installer</a>',
+            # 2026-10-01 interior redesign: inline colour moved to acg-arch-interior.css; href and anchor unchanged.
+            'href="/storefront-glazier-tampa-florida/">commercial storefront installer</a>',
             tampa,
         )
         home = read("index.html")

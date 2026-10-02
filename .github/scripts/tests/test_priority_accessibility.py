@@ -58,7 +58,10 @@ LANDMARK_ONLY_PAGES = (
 # byte-identical outside the replaced header/footer and the two include tags; jsonld unchanged.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
-        "head": "5704abf250405ef8bcf750e6abe77137a38b495fe76db307a71310ae3ecc3e12",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "6a16c03150ddda8dd7bc25b200307e91aae002779666b08b5d54dbce28ad6aeb",
         "jsonld": "f852722b02bf696556895ae499798e363d3a201035863e44aed0117b0403f452",
         "scripts": "fc9ef4decb6b725a2f461e1f3a5b5f946fbaadf76a6bea893b7fb2ac349f163e",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
@@ -75,7 +78,10 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # <head>. hrefs/visible moved again 2026-09-03 when the RFQ primary
         # went to /send-plans.html.
         # Digests recomputed with this module's own _fingerprints() helper.
-        "head": "7e315e0df79a19e6d390c2b1c9eb0b7f90f834fd7ee9ee5b58c3ae68343f6ed0",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "82fb705bb4008064360ef254b1cb61a78c7c877f31129e158046c1189329345e",
         "jsonld": "ad79a685eece44118a1212057a51bb2d3ac0224561f209e3672e234bccb7e2a7",
         "scripts": "1d173b7b332767edd8ed61825f17db02bfec58a7dc000632797dad5ac643f0ab",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
@@ -85,14 +91,20 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "visible": "baa3a9362b0eb147b3354dc7e87746a2cc68461646200f108d6898d77975775f",
     },
     "privacy-policy.html": {
-        "head": "ba51e67bd007489919e8420526ce5c3b59f85b883b2d332a8aff69e369af62f5",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "e3f9d7163f231370a282a755436e1b5ffe59bee8fd43d248935197e679c017a3",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "79b1d73c8555bd00767c5c2e54ebf96f99371a3e6ca68a9f9f7b080588793e54",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
         "visible": "7b1503c488c37344fbf6c7935e9040a5c6653823edebbd944c27c8354b0f20f7",
     },
     "terms-of-use.html": {
-        "head": "a14b10100275b0c0b9d3a3454db81a4e07acd331d564c8d64819a4708f9e75b5",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "93b5a737481c26a194b25990e2be7334aca7366e9dcec45d1097fc445f7bd8df",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "a0fb3425f2b1c3179c113d7f603129f2c68a0768a5423700cfd33bbc1ad015d6",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
@@ -214,6 +226,10 @@ class PriorityAccessibilityTests(unittest.TestCase):
         source = (REPO_ROOT / "for-general-contractors.html").read_text(
             encoding="utf-8"
         )
+        # 2026-10-01 interior redesign: the page's <style> block moved into the shared
+        # acg-arch-interior.css, so the contract is checked on the page plus that sheet.
+        self.assertIn('href="/css/acg-arch-interior.css?v=20261001"', source)
+        source += (REPO_ROOT / "css" / "acg-arch-interior.css").read_text(encoding="utf-8")
         self.assertRegex(
             source,
             r"\.skip-link\{[^}]*position:fixed;[^}]*top:-100px;"

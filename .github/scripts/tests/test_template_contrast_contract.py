@@ -39,12 +39,31 @@ EXPECTED_CSS_OVERRIDE = """.wpb-section-eyebrow,
 .author-title,
 .wpb-section a{color:#f5303c!important}
 .wpb-section a:hover{color:#fff!important}"""
+# 2026-10-01 interior redesign: the template cohort moved off the dark theme. Converted pages
+# (body class ax-interior) no longer carry the template <style> block or acg-chrome.css, so the
+# cohort is found by its markup class token and must load acg-arch-interior.css, whose exact
+# template override block is checked for normal-text contrast on the paper background.
+INTERIOR_CSS_PATH = ROOT / "css" / "acg-arch-interior.css"
+INTERIOR_LINK = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+INTERIOR_BODY = re.compile(r'<body[^>]*class="[^"]*\bax-interior\b')
+EXPECTED_INTERIOR_OVERRIDE = """.ax-page :is(.wpb-section-eyebrow,.quick-answer-label,.system-card-tagline,.project-cat,.author-title){color:var(--ax-soft)}
+.ax-page .costs-table td.price{color:var(--ax-ink);font-weight:550}
+.ax-page .wpb-section a:not([class]){color:var(--ax-ink)}"""
+PAPER = "#f4f5f5"
 DARK_BACKGROUNDS = (
     "#050a12",
     "#0a0f17",
     "#0b1018",
     "#10151c",
 )
+
+
+def page_relatives_interior(pages) -> set[str]:
+    return {
+        path.relative_to(ROOT).as_posix()
+        for path in pages
+        if INTERIOR_BODY.search(path.read_text(encoding="utf-8", errors="ignore"))
+    }
 
 
 class ClassTokenParser(HTMLParser):
@@ -107,6 +126,14 @@ class TemplateContrastContractTests(unittest.TestCase):
     def test_shared_stylesheet_contains_exact_template_overrides(self):
         self.assertIn(EXPECTED_CSS_OVERRIDE, self.css)
 
+    def test_interior_template_override_meets_contrast_on_paper(self):
+        interior = INTERIOR_CSS_PATH.read_text(encoding="utf-8")
+        self.assertIn(EXPECTED_INTERIOR_OVERRIDE, interior)
+        tokens = dict(re.findall(r"--(ax-[a-z-]+):(#[0-9a-f]{6})", interior))
+        for name in ("ax-soft", "ax-ink"):
+            with self.subTest(token=name):
+                self.assertGreaterEqual(contrast_ratio(tokens[name], PAPER), 4.5)
+
     def test_template_cohort_and_cache_keys_are_exact(self):
         pages = []
         page_relatives = set()
@@ -114,9 +141,18 @@ class TemplateContrastContractTests(unittest.TestCase):
         missing_markers = []
         missing_chrome = []
         stale_cache_keys = []
+        interior_missing = []
 
         for path in ROOT.rglob("*.html"):
             source = path.read_text(encoding="utf-8", errors="ignore")
+            interior = bool(INTERIOR_BODY.search(source))
+            if interior and "wpb-section-eyebrow" in html_class_tokens(source):
+                pages.append(path)
+                relative = path.relative_to(ROOT).as_posix()
+                page_relatives.add(relative)
+                if INTERIOR_LINK not in source or CHROME_LINK.search(source):
+                    interior_missing.append(relative)
+                continue
             if TEMPLATE_MARKER not in source:
                 continue
             pages.append(path)
@@ -137,16 +173,19 @@ class TemplateContrastContractTests(unittest.TestCase):
                 stale_cache_keys.append((relative, match.group("href")))
 
         self.assertEqual(EXPECTED_TEMPLATE_PAGE_COUNT, len(pages))
-        self.assertEqual(FROZEN_TEMPLATE_PATHS, set(frozen))
+        self.assertEqual([], interior_missing)
+        self.assertEqual(FROZEN_TEMPLATE_PATHS - page_relatives_interior(pages), set(frozen))
         self.assertEqual([], missing_markers)
         self.assertEqual([], missing_chrome)
         self.assertEqual([], stale_cache_keys)
 
-        quick_answer_pages = {
-            path.relative_to(ROOT).as_posix()
-            for path in ROOT.rglob("*.html")
-            if QUICK_ANSWER_MARKER in path.read_text(encoding="utf-8", errors="ignore")
-        }
+        quick_answer_pages = set()
+        for path in ROOT.rglob("*.html"):
+            source = path.read_text(encoding="utf-8", errors="ignore")
+            if QUICK_ANSWER_MARKER in source or (
+                INTERIOR_BODY.search(source) and "quick-answer-label" in html_class_tokens(source)
+            ):
+                quick_answer_pages.add(path.relative_to(ROOT).as_posix())
         self.assertEqual(
             OUTSIDE_QUICK_ANSWER_PATHS,
             quick_answer_pages - page_relatives,

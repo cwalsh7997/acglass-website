@@ -28,9 +28,8 @@
   <meta name="twitter:description" content="A free 8-section checklist for GCs and architects specifying commercial glazing in Florida: wind zones, impact ratings, fire-rated, submittals, close-out.">
   <meta name="twitter:image" content="https://acglass.com/tools/glazing-spec-checklist/og-image.png">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
-<link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -180,131 +179,20 @@
 }
   </script>
 
-  <style>
-    :root{ --acc:#e11320; }
-    .gsc-hero{ background:linear-gradient(180deg,#050A12 0%,#0e284f 100%); padding:clamp(96px,12vw,150px) 0 clamp(40px,6vw,72px); border-bottom:1px solid rgba(255,255,255,0.08); }
-    .gsc-eyebrow{ font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--acc); margin-bottom:18px; }
-    .gsc-hero h1{ font-size:clamp(34px,5.2vw,60px); font-weight:900; line-height:1.06; margin:0 0 22px; max-width:18ch; }
-    .gsc-lede{ font-size:clamp(16px,1.4vw,19px); color:rgba(255,255,255,0.78); line-height:1.7; max-width:68ch; }
-    .gsc-lede + .gsc-lede{ margin-top:16px; }
+<style>:root{--acc:#e11320}.gsc-toolbar-inner{display:flex}.gsc-progress-meta{display:flex}.gsc-bar{overflow:hidden}.gsc-actions{display:flex}.gsc-btn{display:inline-flex}.gsc-sec-head{display:flex}.gsc-item{display:flex}.gsc-why summary{display:flex}.gsc-why summary::-webkit-details-marker{display:none}.gsc-refs{display:flex}.gsc-print-head{display:none}@media print{.nav, .gsc-toolbar, .grain, .cursor-dot, .cursor-ring, .skip-link, .footer, .gsc-cta .btn, .gsc-hero .gsc-eyebrow, .gsc-refs, .nav-toggle{display:none !important}.gsc-print-head{display:block}.gsc-why{display:block !important}.gsc-why .gsc-why-body{display:block !important}}</style>
 
-    .gsc-toolbar{ position:sticky; top:64px; z-index:40; background:rgba(8,18,36,0.94); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,0.08); padding:14px 0; }
-    .gsc-toolbar-inner{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-    .gsc-progress-wrap{ flex:1 1 240px; min-width:200px; }
-    .gsc-progress-meta{ display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:7px; }
-    .gsc-progress-meta strong{ color:#fff; }
-    .gsc-bar{ height:8px; border-radius:999px; background:rgba(255,255,255,0.1); overflow:hidden; }
-    .gsc-bar-fill{ height:100%; width:0%; background:var(--acc); border-radius:999px; transition:width .35s var(--ease-out,ease); }
-    .gsc-actions{ display:flex; gap:10px; flex-wrap:wrap; }
-    .gsc-btn{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font); font-size:13px; font-weight:600; padding:9px 16px; border-radius:8px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.04); color:#fff; cursor:pointer; text-decoration:none; transition:all .18s; }
-    .gsc-btn:hover{ background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.3); }
-    .gsc-btn-accent{ background:var(--acc); border-color:var(--acc); }
-    .gsc-btn-accent:hover{ background:#c20f1c; border-color:#c20f1c; }
-    .gsc-btn svg{ width:15px; height:15px; }
-
-    .gsc-body{ background:#050A12; padding:clamp(40px,5vw,72px) 0 clamp(64px,8vw,110px); }
-    .gsc-intro-block{ max-width:74ch; margin:0 auto clamp(40px,5vw,64px); }
-    .gsc-intro-block h2{ font-size:clamp(22px,2.4vw,30px); font-weight:800; margin:0 0 16px; }
-    .gsc-intro-block p{ color:rgba(255,255,255,0.74); line-height:1.75; font-size:16px; margin:0 0 14px; }
-    .gsc-intro-block a{ color:#fff; text-decoration:underline; text-underline-offset:2px; }
-
-    .gsc-section{ max-width:74ch; margin:0 auto; border:1px solid rgba(255,255,255,0.08); border-radius:14px; background:rgba(255,255,255,0.022); padding:clamp(22px,3vw,34px); margin-bottom:22px; scroll-margin-top:140px; }
-    .gsc-sec-head{ display:flex; align-items:flex-start; gap:16px; margin-bottom:6px; }
-    .gsc-sec-num{ font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:700; color:var(--acc); padding-top:5px; min-width:34px; }
-    .gsc-sec-title{ flex:1; }
-    .gsc-sec-title h3{ font-size:clamp(19px,2vw,24px); font-weight:800; margin:0 0 4px; line-height:1.2; }
-    .gsc-sec-title .gsc-sec-sub{ font-size:13.5px; color:rgba(255,255,255,0.55); line-height:1.55; }
-    .gsc-sec-count{ font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(255,255,255,0.45); white-space:nowrap; padding-top:6px; }
-
-    .gsc-items{ list-style:none; margin:18px 0 0; padding:0; }
-    .gsc-item{ display:flex; gap:13px; padding:11px 0; border-top:1px solid rgba(255,255,255,0.06); }
-    .gsc-item:first-child{ border-top:none; }
-    .gsc-item input[type="checkbox"]{ appearance:none; -webkit-appearance:none; width:21px; height:21px; min-width:21px; margin-top:1px; border:1.5px solid rgba(255,255,255,0.3); border-radius:6px; background:transparent; cursor:pointer; position:relative; transition:all .15s; }
-    .gsc-item input[type="checkbox"]:hover{ border-color:rgba(255,255,255,0.55); }
-    .gsc-item input[type="checkbox"]:checked{ background:var(--acc); border-color:var(--acc); }
-    .gsc-item input[type="checkbox"]:checked::after{ content:""; position:absolute; left:6px; top:2px; width:5px; height:10px; border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg); }
-    .gsc-item input[type="checkbox"]:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
-    .gsc-item label{ font-size:15px; line-height:1.6; color:rgba(255,255,255,0.86); cursor:pointer; }
-    .gsc-item input:checked + label{ color:rgba(255,255,255,0.5); text-decoration:line-through; text-decoration-color:rgba(255,255,255,0.3); }
-
-    .gsc-why{ margin-top:18px; border-top:1px solid rgba(255,255,255,0.07); }
-    .gsc-why summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:8px; padding:13px 0 4px; font-family:'JetBrains Mono',monospace; font-size:11.5px; letter-spacing:0.07em; text-transform:uppercase; color:var(--acc); font-weight:600; }
-    .gsc-why summary::-webkit-details-marker{ display:none; }
-    .gsc-why summary .chev{ transition:transform .2s; }
-    .gsc-why[open] summary .chev{ transform:rotate(180deg); }
-    .gsc-why .gsc-why-body{ padding:6px 0 4px; font-size:14.5px; line-height:1.72; color:rgba(255,255,255,0.7); }
-    .gsc-why .gsc-why-body a{ color:#fff; text-decoration:underline; text-underline-offset:2px; }
-    .gsc-refs{ margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
-    .gsc-refs a{ font-size:12.5px; padding:5px 11px; border:1px solid rgba(255,255,255,0.14); border-radius:999px; color:rgba(255,255,255,0.8); text-decoration:none; transition:all .15s; }
-    .gsc-refs a:hover{ background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.3); }
-
-    .gsc-note{ max-width:74ch; margin:0 auto 26px; font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65; font-style:italic; }
-
-    .gsc-cta{ max-width:74ch; margin:clamp(36px,5vw,56px) auto 0; background:linear-gradient(135deg,#0e284f 0%,#16386b 100%); border:1px solid rgba(255,255,255,0.1); border-left:3px solid var(--acc); border-radius:14px; padding:clamp(28px,4vw,44px); }
-    .gsc-cta h2{ font-size:clamp(22px,2.6vw,30px); font-weight:800; margin:0 0 14px; line-height:1.2; }
-    .gsc-cta p{ color:rgba(255,255,255,0.78); line-height:1.7; font-size:16px; margin:0 0 22px; max-width:60ch; }
-    .gsc-cta .btn svg{ width:18px; height:18px; }
-
-    .gsc-print-head{ display:none; }
-
-    @media (max-width:640px){
-      .gsc-toolbar{ top:0; }
-      .gsc-section{ padding:20px 16px; }
-      .gsc-sec-head{ gap:11px; }
-      .gsc-actions{ width:100%; }
-      .gsc-btn{ flex:1 1 auto; justify-content:center; }
-    }
-
-    @media print{
-      .nav, .gsc-toolbar, .grain, .cursor-dot, .cursor-ring, .skip-link, .footer, .gsc-cta .btn, .gsc-hero .gsc-eyebrow, .gsc-refs, .nav-toggle{ display:none !important; }
-      body{ background:#fff !important; color:#000 !important; }
-      .gsc-hero{ background:#fff !important; padding:0 0 16px !important; border-bottom:2px solid #0e284f; }
-      .gsc-hero h1, .gsc-lede, .gsc-intro-block h2, .gsc-intro-block p, .gsc-sec-title h3, .gsc-sec-title .gsc-sec-sub, .gsc-item label, .gsc-why-body{ color:#000 !important; }
-      .gsc-body{ background:#fff !important; padding:8px 0 !important; }
-      .gsc-print-head{ display:block; font-size:12px; color:#444; margin-bottom:8px; }
-      .gsc-section{ border:1px solid #ccc !important; background:#fff !important; break-inside:avoid; page-break-inside:avoid; margin-bottom:14px; }
-      .gsc-sec-num, .gsc-why summary{ color:#e11320 !important; }
-      .gsc-item input[type="checkbox"]{ border:1.5px solid #555 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-      .gsc-item input[type="checkbox"]:checked{ background:#e11320 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-      .gsc-why{ display:block !important; }
-      .gsc-why .gsc-why-body{ display:block !important; }
-      .gsc-cta{ background:#fff !important; border:1px solid #0e284f !important; }
-      .gsc-cta h2, .gsc-cta p{ color:#000 !important; }
-      a{ color:#000 !important; }
-    }
-  </style>
-
-<style>
-.nav-dropdown{position:relative}
-.nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-.nav-dropdown-trigger:hover{color:#fff}
-.nav-dropdown-trigger svg{transition:transform .2s}
-.nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-.nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-@media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-</style>
+<style>.nav-dropdown-trigger{display:inline-flex}.nav-dropdown-menu{opacity:0;visibility:hidden}.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible}.nav-dropdown-menu a{display:block}@media(max-width:900px){.nav-dropdown-menu{opacity:1;visibility:visible;max-height:0;overflow:hidden}.nav-dropdown.open .nav-dropdown-menu{max-height:600px}.nav-dropdown-menu a{display:block}}</style>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- HERO -->
-  <header class="gsc-hero" id="main-content">
+  <header class="gsc-hero ax-hero ax-hero-m" id="main-content">
     <div class="container">
       <div class="gsc-eyebrow">Free Tool &middot; Florida Commercial Glazing</div>
       <h1>The Florida Commercial Glazing Specifier Checklist</h1>
@@ -346,7 +234,7 @@
         <p>It is written for Florida work, where the <a href="/florida-hvhz-glazing-requirements.html">Florida Building Code</a> and the High-Velocity Hurricane Zone provisions drive most of the early decisions. Items reference real code sections, ASTM test standards, and product-approval mechanisms so you can verify them against your project documents. Treat it as a starting point, not a substitute for the architect of record, the engineer of record, or the building official with jurisdiction over your site.</p>
       </div>
 
-      <ol style="list-style:none;margin:0;padding:0;" id="gsc-list">
+      <ol style="list-style:none" id="gsc-list">
 
         <!-- 01 PROJECT DISCOVERY -->
         <li class="gsc-section" id="sec-discovery">
@@ -621,7 +509,7 @@
     </div>
   </main>
 
-  <footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
 <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
 <p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
 <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
