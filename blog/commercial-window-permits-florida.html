@@ -11,8 +11,8 @@
   <link rel="icon" type="image/png" href="../images/favicon-32.png"><link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
   <meta name="description" content="Understand Florida commercial window permits, code documentation and coordination steps before work begins. Use it before bid day. Send drawings.">
   <meta name="keywords" content="commercial window permit florida, glazing permit requirements, NOA documentation florida, commercial glazing code compliance, FBC permit florida, window replacement permit">
   <link rel="canonical" href="https://acglass.com/blog/commercial-window-permits-florida.html">
@@ -108,31 +108,6 @@
   ]
 }
 </script>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:768px){
-      .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 0 16px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-      .nav-dropdown.open .nav-dropdown-menu{max-height:500px;transform:none}
-      .nav-dropdown-menu a{padding:5px 0;font-size:.875rem}
-    }
-    .blog-content h2{margin-top:40px;margin-bottom:16px;}
-    .blog-content h3{margin-top:28px;margin-bottom:12px;}
-    .blog-content p{margin-bottom:16px;}
-    .blog-content ul, .blog-content ol{margin:16px 0 24px 20px;color:var(--text-muted);}
-    .blog-content ul li, .blog-content ol li{margin-bottom:10px;}
-    .blog-content table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;}
-    .blog-content table th, .blog-content table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;}
-    .blog-content table th{color:var(--accent);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
-    .blog-content table td{color:rgba(255,255,255,.7);}
-  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -356,7 +331,7 @@
 }
 </script>
 </head>
-<body>
+<body class="ax-interior">
 
   <!-- GRAIN OVERLAY -->
   <div class="grain"></div>
@@ -366,45 +341,20 @@
   <div class="cursor-ring"></div>
 
   <!-- ========== NAVIGATION ========== -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero">
+  <section class="page-hero ax-hero ax-hero-l">
     <div class="container">
       <div class="label" data-reveal><span class="line"></span> Compliance</div>
       <h1 data-reveal data-delay="100">Do You Need a Permit to Replace <br> Commercial Windows in Florida?</h1>
       <p data-reveal data-delay="200">FBC 8th Edition, NOA documentation, shop drawings, and AHJ review - what the permit workflow actually requires on commercial glazing work.</p>
-      <div data-reveal data-delay="300" style="margin-top: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">Connor Walsh, ACG</span>
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">·</span>
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">2026-04-22</span>
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">·</span>
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);">8 min read</span>
+      <div data-reveal data-delay="300" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <span class="ax-small">Connor Walsh, ACG</span>
+        <span class="ax-small">·</span>
+        <span class="ax-small">2026-04-22</span>
+        <span class="ax-small">·</span>
+        <span class="ax-small ax-red">8 min read</span>
       </div>
     </div>
   </section>
@@ -412,27 +362,27 @@
   <!-- ========== BLOG CONTENT ========== -->
   <section class="section">
     <div class="container">
-      <div class="blog-content" style="max-width: 780px;" data-reveal>
+      <div class="blog-content" style="max-width:780px" data-reveal>
         <aside class="acg-quick-answer speakable" role="note" aria-label="Quick answer" itemprop="abstract">
           <div class="acg-qa-label">Quick Answer</div>
           <p><strong>Yes - Florida requires a permit for almost all commercial window replacement.</strong> Like-for-like replacement may qualify for a streamlined permit in some jurisdictions; any change in opening size, system type, glass thickness, or impact rating requires a full permit including signed/sealed engineering, Florida Product Approval submittals, and (in HVHZ) Miami-Dade NOA. Permitting timeline: 2-6 weeks typical, 6-12 weeks in HVHZ counties.</p>
         </aside>
 
-        <p class="text-xl" style="margin-bottom: 32px;">Many commercial property owners ask whether a permit is actually needed for their specific window replacement project - often with the implicit hope that the answer might be no. In most Florida commercial contexts, the answer is a clear yes, and the permit workflow is a meaningful part of the project timeline. Skipping the permit creates legal, insurance, and resale liability that can far exceed the cost of doing the work correctly. This article walks through when Florida requires a commercial window permit, what the documentation package looks like, and how the submittal and inspection process actually works across the state's major AHJs.</p>
+        <p class="text-xl">Many commercial property owners ask whether a permit is actually needed for their specific window replacement project - often with the implicit hope that the answer might be no. In most Florida commercial contexts, the answer is a clear yes, and the permit workflow is a meaningful part of the project timeline. Skipping the permit creates legal, insurance, and resale liability that can far exceed the cost of doing the work correctly. This article walks through when Florida requires a commercial window permit, what the documentation package looks like, and how the submittal and inspection process actually works across the state's major AHJs.</p>
 
-        <picture><source type="image/webp" srcset="../images/projects/lake-park-innovation/building-c.webp"><img height="1080" width="1440" src="../images/projects/lake-park-innovation/building-c.jpg" alt="Florida commercial building requiring permit-compliant glazing replacement" style="width:100%;border-radius:8px;margin-bottom:32px;" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/webp" srcset="../images/projects/lake-park-innovation/building-c.webp"><img height="1080" width="1440" src="../images/projects/lake-park-innovation/building-c.jpg" alt="Florida commercial building requiring permit-compliant glazing replacement" style="width:100%" loading="lazy" decoding="async"></picture>
 
         
         <!-- acg-infographic -->
-        <figure class="blog-infographic" itemscope itemtype="https://schema.org/ImageObject" style="margin:40px 0;padding:0;border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;background:#0C121E;">
+        <figure class="blog-infographic" itemscope itemtype="https://schema.org/ImageObject" style="overflow:hidden">
           <a href="../images/infographics/infographic-commercial-window-permits-florida.webp" target="_blank" rel="noopener" aria-label="View full-size infographic">
             <picture>
               <source type="image/webp" srcset="../images/infographics/infographic-commercial-window-permits-florida.webp">
-              <img src="../images/infographics/infographic-commercial-window-permits-florida.webp" alt="Do You Need a Permit to Replace Commercial Windows in Florida? - ACG infographic summary" itemprop="contentUrl" width="1200" height="1200" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;">
+              <img src="../images/infographics/infographic-commercial-window-permits-florida.webp" alt="Do You Need a Permit to Replace Commercial Windows in Florida? - ACG infographic summary" itemprop="contentUrl" width="1200" height="1200" loading="lazy" decoding="async" style="width:100%;height:auto;display:block">
             </picture>
           </a>
-          <figcaption itemprop="caption" style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);padding:12px 16px;border-top:1px solid rgba(255,255,255,0.08);text-align:center;">
-            <span style="color:var(--accent);font-weight:600;">INFOGRAPHIC</span> · Do You Need a Permit to Replace Commercial Windows in Florida? - at a glance. American Commercial Glass · FL CGC #1531993
+          <figcaption itemprop="caption" class="ax-small">
+            <span class="ax-red ax-strong">INFOGRAPHIC</span> · Do You Need a Permit to Replace Commercial Windows in Florida? - at a glance. American Commercial Glass · FL CGC #1531993
           </figcaption>
           <meta itemprop="name" content="Do You Need a Permit to Replace Commercial Windows in Florida?" />
           <meta itemprop="description" content="Do You Need a Permit to Replace Commercial Windows in Florida? - ACG infographic summary" />
@@ -474,7 +424,7 @@
           <li>Required substrate conditions</li>
           <li>Installation detail drawings</li>
         </ul>
-        <p>The NOA or FL number must be submitted with the permit and the installed product must be demonstrably the same product covered by that approval. See our <a href="what-is-a-product-approval-florida.html" style="color:var(--accent);">Florida Product Approval guide</a> for a deeper walkthrough.</p>
+        <p>The NOA or FL number must be submitted with the permit and the installed product must be demonstrably the same product covered by that approval. See our <a href="what-is-a-product-approval-florida.html">Florida Product Approval guide</a> for a deeper walkthrough.</p>
 
         <h3>2. Installer License Number</h3>
         <p>Commercial glazing in Florida requires a Certified General Contractor (CGC) or Certified Glass and Glazing Contractor (CGG) license. The permit application requires the license number of the installer of record. Unlicensed glazing work on commercial buildings is illegal, invalidates insurance, and can result in the building being flagged for non-compliance during sale or audit.</p>
@@ -539,7 +489,7 @@
           <li>Closing out the permit with the AHJ after final inspection</li>
         </ul>
         <p>For GCs, this turns a frequently problematic subcontractor deliverable into a handed-off scope. For owners acting as their own GC on renovation work, our permit workflow support keeps the project code-compliant from day one.</p>
-        <p>On projects like <a href="../lake-park-innovation-center.html" style="color:var(--accent);">Lake Park Innovation Center</a> and <a href="../baron-shoppes-tradition.html" style="color:var(--accent);">Baron Shoppes of Tradition</a>, the permit and NOA workflow is a core part of how we deliver. See our <a href="../services.html" style="color:var(--accent);">hurricane code compliance page</a> and the <a href="florida-building-code-commercial-glazing-guide.html" style="color:var(--accent);">FBC commercial glazing guide</a> for deeper code context.
+        <p>On projects like <a href="../lake-park-innovation-center.html">Lake Park Innovation Center</a> and <a href="../baron-shoppes-tradition.html">Baron Shoppes of Tradition</a>, the permit and NOA workflow is a core part of how we deliver. See our <a href="../services.html">hurricane code compliance page</a> and the <a href="florida-building-code-commercial-glazing-guide.html">FBC commercial glazing guide</a> for deeper code context.
 
         <h2>Ready to get started?</h2>
         <p>ACG is a CGC-licensed Florida commercial glazing subcontractor (CGC1531993) headquartered in West Palm Beach. Commercial Division 08 scope, statewide. Send plans and we return a detailed scope with system recommendations and 2026 pricing inside 48 hours.</p>
@@ -550,34 +500,34 @@
   </section>
 
   <!-- ========== RELATED RESOURCES ========== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section">
     <div class="container">
-      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: clamp(32px, 4vw, 48px);">
-        <div class="label" style="margin-bottom: 20px;"><span class="line"></span> Related Resources</div>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-          <a href="florida-building-code-commercial-glazing-guide.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.75)';">FBC Commercial Glazing Guide →</a>
-          <a href="what-is-a-product-approval-florida.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.75)';">What Is Florida Product Approval →</a>
-          <a href="hvhz-glazing-requirements-florida.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.75)';">HVHZ Glazing Requirements →</a>
+      <div class="ax-rule">
+        <div class="label"><span class="line"></span> Related Resources</div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="florida-building-code-commercial-glazing-guide.html" style="display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.borderColor='var(--accent)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.75)';" class="ax-btn">FBC Commercial Glazing Guide →</a>
+          <a href="what-is-a-product-approval-florida.html" style="display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.borderColor='var(--accent)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.75)';" class="ax-btn">What Is Florida Product Approval →</a>
+          <a href="hvhz-glazing-requirements-florida.html" style="display:inline-flex;align-items:center;gap:8px" onmouseover="this.style.borderColor='var(--accent)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.75)';" class="ax-btn">HVHZ Glazing Requirements →</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== SOCIAL SHARE ========== -->
-  <section style="padding: clamp(20px,3vw,30px) 0 0;">
+  <section>
     <div class="container">
-      <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <span style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;">Share this</span>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap" class="ax-rule">
+        <span class="ax-kicker">Share this</span>
         <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://acglass.com/blog/commercial-window-permits-florida.html&title=Do%20You%20Need%20a%20Permit%20to%20Replace%20Commercial%20Windows%20in%20Florida%3F" target="_blank" rel="noopener"
-           style="display:inline-flex;align-items:center;gap:8px;background:rgba(10,102,194,0.15);border:1px solid rgba(10,102,194,0.3);color:rgba(255,255,255,0.8);text-decoration:none;padding:8px 16px;border-radius:6px;font-size:13px;">
+           style="display:inline-flex;align-items:center;gap:8px" class="ax-btn">
           LinkedIn
         </a>
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://acglass.com/blog/commercial-window-permits-florida.html" target="_blank" rel="noopener"
-           style="display:inline-flex;align-items:center;gap:8px;background:rgba(24,119,242,0.15);border:1px solid rgba(24,119,242,0.3);color:rgba(255,255,255,0.8);text-decoration:none;padding:8px 16px;border-radius:6px;font-size:13px;">
+           style="display:inline-flex;align-items:center;gap:8px" class="ax-btn">
           Facebook
         </a>
         <!--email_off--><a href="mailto:?subject=Do%20You%20Need%20a%20Permit%20to%20Replace%20Commercial%20Windows%20in%20Florida%3F&body=Thought you'd find this useful: https://acglass.com/blog/commercial-window-permits-florida.html"
-           style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);text-decoration:none;padding:8px 16px;border-radius:6px;font-size:13px;">
+           style="display:inline-flex;align-items:center;gap:8px" class="ax-btn">
           Email
         </a><!--/email_off-->
       </div>
@@ -587,7 +537,7 @@
   <!-- ========== CTA ========== -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
+      <div class="text-massive" data-reveal-fade>SEND PLANS</div>
       <h2>Have Plans?<br>We'll Have a Scope in <span class="accent">48 Hours.</span></h2>
       <p>No chasing. No ghosting. Send your drawings and our team delivers a detailed scope, system recommendations, and competitive 2026 pricing - usually inside 48 hours.</p>
       <a href="../send-plans.html" class="btn btn-primary btn-lg">
@@ -598,81 +548,40 @@
   </section>
 
   <!-- ========== FOOTER ========== -->
-  <section aria-label="Related resources" style="background:#0e284f;color:#fff;padding:48px 24px;margin:64px 0 0;">
-  <div style="max-width:980px;margin:0 auto;">
-    <h2 style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 24px;font-weight:600;">Related Resources</h2>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px;">
-        <li><a href="/eswindows-installer-florida.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">PRODUCT</span>ESWindows Installer Florida <span aria-hidden="true">→</span></a></li>
-        <li><a href="/portfolio.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">PROJECTS</span>Project Portfolio <span aria-hidden="true">→</span></a></li>
-        <li><a href="/division-08-subcontractor-florida.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">PRODUCT</span>Division 08 Subcontractor Florida <span aria-hidden="true">→</span></a></li>
-        <li><a href="/blog/how-much-does-commercial-storefront-glass-cost-florida.html" style="color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding:10px 0;display:block;font-size:15px;line-height:1.4;"><span style="color:#e11320;font-size:11px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:2px;">COSTS</span>Commercial Glass Cost in Florida <span aria-hidden="true">→</span></a></li>
+  <section aria-label="Related resources">
+  <div style="max-width:980px">
+    <h2>Related Resources</h2>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 32px" class="ax-plain-list">
+        <li><a href="/eswindows-installer-florida.html" style="display:block" class="ax-rule"><span style="display:block" class="ax-kicker">PRODUCT</span>ESWindows Installer Florida <span aria-hidden="true">→</span></a></li>
+        <li><a href="/portfolio.html" style="display:block" class="ax-rule"><span style="display:block" class="ax-kicker">PROJECTS</span>Project Portfolio <span aria-hidden="true">→</span></a></li>
+        <li><a href="/division-08-subcontractor-florida.html" style="display:block" class="ax-rule"><span style="display:block" class="ax-kicker">PRODUCT</span>Division 08 Subcontractor Florida <span aria-hidden="true">→</span></a></li>
+        <li><a href="/blog/how-much-does-commercial-storefront-glass-cost-florida.html" style="display:block" class="ax-rule"><span style="display:block" class="ax-kicker">COSTS</span>Commercial Glass Cost in Florida <span aria-hidden="true">→</span></a></li>
     </ul>
   </div>
 </section>
 
-  <aside aria-label="About the author" style="background:#0e284f;padding:40px 24px;margin:0;border-top:1px solid rgba(255,255,255,.08);">
-    <div style="max-width:840px;margin:0 auto;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+  <aside aria-label="About the author" class="ax-box">
+    <div style="max-width:840px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap">
       <picture>
         <source type="image/webp" srcset="../images/team/connor-walsh-portrait.webp">
-        <img src="../images/team/connor-walsh-portrait.jpg" width="96" height="96" alt="Connor Walsh, President and Co-founder of American Commercial Glass" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid #e11320;flex-shrink:0;" loading="lazy" decoding="async">
+        <img src="../images/team/connor-walsh-portrait.jpg" width="96" height="96" alt="Connor Walsh, President and Co-founder of American Commercial Glass" style="width:96px;height:96px;object-fit:cover;flex-shrink:0" loading="lazy" decoding="async">
       </picture>
-      <div style="flex:1;min-width:240px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#e11320;margin-bottom:6px;">About the author</div>
-        <h2 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 2px;letter-spacing:-.01em;"><a href="../authors/connor-walsh.html" rel="author" style="color:#fff;text-decoration:none;">Connor Walsh</a></h2>
-        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:12px;">President &amp; Co-founder &middot; American Commercial Glass</div>
-        <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.82);margin:0 0 12px;">Connor Walsh is the President and co-founder of American Commercial Glass. He is a former pilot who previously founded and scaled a Florida glazing business from $400K to $10M. He leads ACG's commercial glazing operations across Florida.</p>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-bottom:12px;">FL CGC #1531993 &middot; Former pilot &middot; Co-founder, ACG</div>
-        <a href="../authors/connor-walsh.html" rel="author" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#fff;border-bottom:1px solid #e11320;text-decoration:none;">Full bio &amp; profile &rarr;</a>
+      <div style="flex:1;min-width:240px">
+        <div class="ax-kicker">About the author</div>
+        <h2><a href="../authors/connor-walsh.html" rel="author">Connor Walsh</a></h2>
+        <div>President &amp; Co-founder &middot; American Commercial Glass</div>
+        <p>Connor Walsh is the President and co-founder of American Commercial Glass. He is a former pilot who previously founded and scaled a Florida glazing business from $400K to $10M. He leads ACG's commercial glazing operations across Florida.</p>
+        <div class="ax-small">FL CGC #1531993 &middot; Former pilot &middot; Co-founder, ACG</div>
+        <a href="../authors/connor-walsh.html" rel="author" class="ax-kicker ax-strong ax-rule">Full bio &amp; profile &rarr;</a>
       </div>
     </div>
   </aside>
-  <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="../js/main.js"></script>
   <script>
@@ -680,5 +589,6 @@
   </script>
   <script src="/js/acg-chrome.js" defer></script>
   <script src="/js/acg-blog-cta.js?v=20260904-blog-cta" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

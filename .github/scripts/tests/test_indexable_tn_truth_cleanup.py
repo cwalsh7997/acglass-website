@@ -63,18 +63,22 @@ PROTECTED_LINE_MARKERS = re.compile(
 # glazing-subcontractor-vs-general-contractor.html went 7 -> 6 for that reason.
 # The contract this enforces is unchanged: ownership, WBE and project claims may
 # not drift silently. This drift was deliberate and is recorded in decisions.md.
+# Digests recomputed 2026-10-01 for the interior redesign: the three acg-vs-* pages
+# lost one inline style attribute on a protected line (<h3 style="margin-top:10px">).
+# Protected line counts are unchanged and the tag-stripped text of every protected
+# line is identical to the previous pin (checked line by line).
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
         15,
-        "13b3f36cf77690191070ad9b2648451458edaf385b89cbc9a8ed28ce56c69cc6",
+        "351dbb346bd50d5e1f1a18b85dd60db692fdf9aaadb81ef615f43f8bd5ec05d9",
     ),
     "acg-vs-harmon.html": (
         15,
-        "e1c717232aac88b761fdeb8166cbb573886c721c82eca335fdca5433d66f4425",
+        "8a7c097a7de29a48592fb92a0130660390a0db470942d05b7d8219a914421030",
     ),
     "acg-vs-permasteelisa.html": (
         11,
-        "2f28fb827ab96ed2988fbdc3220adaae0a33b714ec2a06acad019931ef6529bd",
+        "7bfd4c98382812b49f74805b54fbd57033eba0e1e814234ed08bae154a080159",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
         6,

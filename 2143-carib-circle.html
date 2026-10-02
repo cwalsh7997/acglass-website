@@ -30,111 +30,8 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/wild-blue-clubhouse-hero.jpg">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
-  <style>
-    .project-hero {
-      position: relative;
-      height: 80vh;
-      min-height: 500px;
-      overflow: hidden;
-    }
-    .project-hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .project-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(5,10,18,0.3) 0%, rgba(5,10,18,0.8) 100%);
-    }
-    .project-hero-content {
-      position: absolute;
-      bottom: clamp(40px, 8vw, 100px);
-      left: 0;
-      right: 0;
-      z-index: 2;
-    }
-    .project-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 32px;
-      padding: clamp(32px, 5vw, 48px) 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    .project-meta-item .meta-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .project-meta-item .meta-value {
-      font-size: clamp(15px, 1.2vw, 17px);
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-    .project-story {
-      max-width: 720px;
-    }
-    .project-story p {
-      font-size: clamp(16px, 1.3vw, 18px);
-      line-height: 1.8;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 24px;
-    }
-    .project-story h3 {
-      font-size: clamp(20px, 2vw, 26px);
-      color: white;
-      margin-bottom: 16px;
-      margin-top: 48px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(12px, 2vw, 24px);
-      margin: clamp(60px, 8vw, 120px) 0;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: var(--radius);
-      aspect-ratio: 16/10;
-    }
-    .gallery-grid .wide {
-      grid-column: 1 / -1;
-    }
-    @media (max-width: 768px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -269,7 +166,7 @@
 }
 </script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- GRAIN OVERLAY -->
@@ -280,41 +177,16 @@
   <div class="cursor-ring"></div>
 
   <!-- ========== NAVIGATION ========== -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
 
   <!-- ========== PROJECT HERO ========== -->
-  <section class="project-hero" id="main-content">
+  <section class="project-hero ax-hero ax-hero-s" id="main-content">
     <picture><source type="image/avif" srcset="images/projects/carib-circle/hero-twilight.avif"><source type="image/webp" srcset="images/projects/carib-circle/hero-twilight.webp"><img height="1025" width="1536" src="images/projects/carib-circle/hero-twilight.jpg" alt="2143 Carib Circle - luxury residential glazing at twilight" loading="lazy" decoding="async"></picture>
     <div class="project-hero-content">
       <div class="container">
         <div class="label"><span class="line"></span> Residential New Construction</div>
-        <h1 style="font-size: clamp(36px, 5vw, 72px); font-weight: 900; line-height: 1.05; margin-top: 16px;">2143 Carib Circle</h1>
+        <h1>2143 Carib Circle</h1>
       </div>
     </div>
   </section>
@@ -340,24 +212,11 @@
         </div>
     </div>
   </section>
-  <style>
-    .project-meta-strip{background:rgba(255,255,255,.02);border-top:2px solid var(--accent,#E11320);border-bottom:1px solid rgba(255,255,255,.08);padding:20px 0;position:relative;z-index:2}
-    .project-meta-strip .pm-inner{max-width:1400px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,40px);align-items:center}
-    .project-meta-strip .pm-cell{padding:4px 0;border-right:1px solid rgba(255,255,255,.06)}
-    .project-meta-strip .pm-cell:last-child{border-right:none}
-    .project-meta-strip .pm-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-    .project-meta-strip .pm-value{font-size:clamp(14px,1.2vw,17px);font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.005em}
-    @media (max-width:780px){
-      .project-meta-strip .pm-inner{grid-template-columns:repeat(2,1fr);gap:18px}
-      .project-meta-strip .pm-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px}
-      .project-meta-strip .pm-cell:nth-last-child(-n+2){border-bottom:none;padding-bottom:0}
-    }
-  </style>
 
 
 
   <!-- ========== PROJECT META ========== -->
-  <section class="section" style="padding-top: clamp(48px, 6vw, 80px);">
+  <section class="section">
     <div class="container">
       <div class="project-meta-grid" data-reveal>
         <div class="project-meta-item">
@@ -388,7 +247,7 @@
   <!-- ========== PROJECT STORY ========== -->
   <section class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 8vw, 120px); align-items: start;" data-reveal>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px, 8vw, 120px);align-items:start" data-reveal>
         <div class="project-story">
           <h3>The Project</h3>
           <p>2143 Carib Circle is a luxury custom residence built by High Tide Properties - a modern waterfront home designed around glass. Floor-to-ceiling impact windows, oversized multi-slide patio doors, and a glass-wrapped second floor that opens the entire living space to the pool deck and waterway beyond.</p>
@@ -403,8 +262,8 @@
         </div>
 
         <div>
-          <picture><source type="image/avif" srcset="images/projects/carib-circle/front.avif"><source type="image/webp" srcset="images/projects/carib-circle/front.webp"><img height="1025" width="1536" src="images/projects/carib-circle/front.jpg" alt="2143 Carib Circle front elevation" style="width:100%; border-radius: var(--radius); margin-bottom: clamp(16px, 2vw, 24px);" loading="lazy" decoding="async"></picture>
-          <picture><source type="image/avif" srcset="images/projects/carib-circle/interior.avif"><source type="image/webp" srcset="images/projects/carib-circle/interior.webp"><img height="1025" width="1536" src="images/projects/carib-circle/interior.jpg" alt="Interior living space with floor-to-ceiling ES Prestige impact glass" style="width:100%; border-radius: var(--radius);" loading="lazy" decoding="async"></picture>
+          <picture><source type="image/avif" srcset="images/projects/carib-circle/front.avif"><source type="image/webp" srcset="images/projects/carib-circle/front.webp"><img height="1025" width="1536" src="images/projects/carib-circle/front.jpg" alt="2143 Carib Circle front elevation" style="width:100%" loading="lazy" decoding="async"></picture>
+          <picture><source type="image/avif" srcset="images/projects/carib-circle/interior.avif"><source type="image/webp" srcset="images/projects/carib-circle/interior.webp"><img height="1025" width="1536" src="images/projects/carib-circle/interior.jpg" alt="Interior living space with floor-to-ceiling ES Prestige impact glass" style="width:100%" loading="lazy" decoding="async"></picture>
         </div>
       </div>
     </div>
@@ -412,7 +271,7 @@
 
 
   <!-- ========== GALLERY ========== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section">
     <div class="container">
       <div class="gallery-grid" data-reveal>
         <picture><source type="image/avif" srcset="images/projects/carib-circle/back2.avif"><source type="image/webp" srcset="images/projects/carib-circle/back2.webp"><img height="1024" width="1536" src="images/projects/carib-circle/back2.jpg" alt="Rear elevation with multi-slide impact doors and pool" class="wide" loading="lazy" decoding="async"></picture>
@@ -427,18 +286,18 @@
   <!-- ACG-ENRICHED-START -->
 
   <!-- ACG-ENRICHED: System detail -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(48px,8vw,120px);align-items:start;" data-reveal>
+      <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(48px,8vw,120px);align-items:start" data-reveal>
         <div>
-          <div class="label" style="margin-bottom:18px;"><span class="line"></span> The System</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">Euro-Wall multi-slide, PGT impact</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;">
+          <div class="label"><span class="line"></span> The System</div>
+          <h2>Euro-Wall multi-slide, PGT impact</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
             <div class="partner-badge"><div class="pb-label">Scope</div><div class="pb-name">Luxury residential envelope</div></div>
             <div class="partner-badge"><div class="pb-label">Completion</div><div class="pb-name">2024</div></div>
           </div>
         </div>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.65;color:rgba(255,255,255,0.78);">
+        <div class="story-text">
           <p>The glazing package on 2143 Carib Circle included luxury residential envelope. ACG specified, supplied, and installed Euro-Wall multi-slide, PGT impact - manufactured by ACG's seven approved partner lines: ESWindows, Euro-Wall, PGT, Allegion, TGP, Slimpact, and Aldora.</p><p>The scope was sequenced to ownership's field schedule, with weekly coordination meetings, RFI turn-around inside 24 hours, and submittals tracked against the construction critical path. ACG's three-office Florida footprint (West Palm Beach HQ, Naples, Tampa) keeps a project supervisor within driving distance of every active job site, and the Singer Island location pulled supervision out of our West Palm Beach office.</p>
         </div>
       </div>
@@ -447,12 +306,12 @@
 
 
   <!-- ACG-ENRICHED: Jurisdiction -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="container">
-      <div style="max-width:880px;" data-reveal>
-        <div class="label" style="margin-bottom:18px;"><span class="line"></span> Palm Beach County · Jurisdiction</div>
-        <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;">Why Singer Island.</h2>
-        <div class="story-text" style="font-size:clamp(16px,1.15vw,18px);line-height:1.7;color:rgba(255,255,255,0.78);">
+      <div style="max-width:880px" data-reveal>
+        <div class="label"><span class="line"></span> Palm Beach County · Jurisdiction</div>
+        <h2>Why Singer Island.</h2>
+        <div class="story-text">
           <p>Why this matters for the Singer Island market. 2143 Carib Circle is not just another envelope. Singer Island luxury residence. Subcontractors who deliver here build a body of evidence GCs and developers can verify - first-pass inspection clearance, on-time turnover, accurate submittals, no callback claims. Those four metrics are how a glazing sub gets called back, and they are the entire reason ACG was selected for this scope.</p><p>For developers and GCs evaluating subcontractors for similar work in Singer Island or surrounding Palm Beach County, 2143 Carib Circle is on our portfolio precisely because it represents the standard of execution we hold across every project, regardless of size.</p>
         </div>
       </div>
@@ -461,48 +320,48 @@
 
 
   <!-- ACG-ENRICHED: Related projects -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="container" data-reveal>
-      <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:20px;">
+      <div style="display:flex;justify-content:space-between;align-items:end" class="ax-rule">
         <div>
-          <div class="label" style="margin-bottom:14px;"><span class="line"></span> Related Work</div>
-          <h2 style="font-size:clamp(26px,3vw,44px);font-weight:900;line-height:1;letter-spacing:-0.02em;">Similar projects from our portfolio.</h2>
+          <div class="label"><span class="line"></span> Related Work</div>
+          <h2>Similar projects from our portfolio.</h2>
         </div>
-        <a href="portfolio.html" style="font-size:14px;font-weight:600;color:#fff;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;white-space:nowrap;">View All →</a>
+        <a href="portfolio.html" style="white-space:nowrap" class="ax-strong ax-rule">View All →</a>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2vw,32px);">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2vw,32px)">
         
-        <a href="1172-s-harbor.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
+        <a href="1172-s-harbor.html" class="related-proj-card" style="display:block">
+          <div style="aspect-ratio:4/3;overflow:hidden;position:relative" class="ax-box">
             <picture>
               <source type="image/avif" srcset="images/projects/1172-s-harbor/hero-twilight.avif">
               <source type="image/webp" srcset="images/projects/1172-s-harbor/hero-twilight.webp">
-              <img src="images/projects/1172-s-harbor/hero-twilight.jpg" alt="1172 S Harbor project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+              <img src="images/projects/1172-s-harbor/hero-twilight.jpg" alt="1172 S Harbor project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover">
             </picture>
           </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Boca Raton · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">1172 S Harbor</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Luxury residential envelope</div>
+          <div class="ax-kicker ax-strong">Boca Raton · Palm Beach County</div>
+          <div class="ax-lead ax-strong">1172 S Harbor</div>
+          <div class="ax-small">Luxury residential envelope</div>
         </a>
-        <a href="736-lagoon-dr.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
+        <a href="736-lagoon-dr.html" class="related-proj-card" style="display:block">
+          <div style="aspect-ratio:4/3;overflow:hidden;position:relative" class="ax-box">
             <picture>
               <source type="image/avif" srcset="images/projects/736-lagoon-dr/hero-pool-twilight.avif">
               <source type="image/webp" srcset="images/projects/736-lagoon-dr/hero-pool-twilight.webp">
-              <img src="images/projects/736-lagoon-dr/hero-pool-twilight.jpg" alt="736 Lagoon Drive project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+              <img src="images/projects/736-lagoon-dr/hero-pool-twilight.jpg" alt="736 Lagoon Drive project photo" width="800" height="600" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover">
             </picture>
           </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">North Palm Beach · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">736 Lagoon Drive</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Waterfront luxury envelope</div>
+          <div class="ax-kicker ax-strong">North Palm Beach · Palm Beach County</div>
+          <div class="ax-lead ax-strong">736 Lagoon Drive</div>
+          <div class="ax-small">Waterfront luxury envelope</div>
         </a>
-        <a href="lake-park-innovation-center.html" class="related-proj-card" style="display:block;color:inherit;text-decoration:none;group:card;transition:all 0.3s;">
-          <div style="aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:rgba(255,255,255,0.04);margin-bottom:16px;position:relative;">
+        <a href="lake-park-innovation-center.html" class="related-proj-card" style="display:block">
+          <div style="aspect-ratio:4/3;overflow:hidden;position:relative" class="ax-box">
             
           </div>
-          <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Lake Park · Palm Beach County</div>
-          <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;color:#fff;margin-bottom:4px;">Lake Park Innovation Center</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.4;">Innovation center envelope</div>
+          <div class="ax-kicker ax-strong">Lake Park · Palm Beach County</div>
+          <div class="ax-lead ax-strong">Lake Park Innovation Center</div>
+          <div class="ax-small">Innovation center envelope</div>
         </a>
       </div>
     </div>
@@ -510,31 +369,31 @@
 
 
   <!-- ACG-ENRICHED: Related reading -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="container" data-reveal>
-      <div style="max-width:760px;margin-bottom:36px;">
-        <div class="label" style="margin-bottom:14px;"><span class="line"></span> More Context</div>
-        <h2 style="font-size:clamp(24px,2.6vw,40px);font-weight:900;line-height:1.05;letter-spacing:-0.02em;">Related reading from the ACG knowledge base.</h2>
+      <div style="max-width:760px">
+        <div class="label"><span class="line"></span> More Context</div>
+        <h2>Related reading from the ACG knowledge base.</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px)">
         
-        <a href="blog/2143-carib-circle-glazing.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Project Brief</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">2143 Carib Circle - Glazing by ACG | Singer Island, FL</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG delivered the glazing envelope at 2143 Carib Circle in Singer Island, FL - direct with ownership. Euro-Wall multi-slide. Singe</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
+        <a href="blog/2143-carib-circle-glazing.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Project Brief</div>
+          <div class="ax-strong">2143 Carib Circle - Glazing by ACG | Singer Island, FL</div>
+          <div class="ax-small">ACG delivered the glazing envelope at 2143 Carib Circle in Singer Island, FL - direct with ownership. Euro-Wall multi-slide. Singe</div>
+          <div class="ax-small ax-red ax-strong">Read →</div>
         </a>
-        <a href="euro-wall-installer-florida.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Euro-Wall Installer Florida | Multi-Slide</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">ACG is an Euro-Wall installer for commercial projects across Florida. SGD2020 multi-slide doors, Vistafold folding door</div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
+        <a href="euro-wall-installer-florida.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Guide</div>
+          <div class="ax-strong">Euro-Wall Installer Florida | Multi-Slide</div>
+          <div class="ax-small">ACG is an Euro-Wall installer for commercial projects across Florida. SGD2020 multi-slide doors, Vistafold folding door</div>
+          <div class="ax-small ax-red ax-strong">Read →</div>
         </a>
-        <a href="multi-slide-bifold-doors.html" style="display:block;padding:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:all 0.25s;background:rgba(255,255,255,0.02);">
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Guide</div>
-          <div style="font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;color:#fff;margin-bottom:10px;">Multi-Slide &amp; Bifold Door Contractor Florida | Euro-Wall</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.5;">Florida multi-slide and bifold door contractor. Euro-Wall folding, sliding, and pivot systems for hospitality, country clubs, and </div>
-          <div style="margin-top:16px;font-family:var(--font-mono);font-size:11px;color:var(--accent);letter-spacing:0.04em;font-weight:600;">Read →</div>
+        <a href="multi-slide-bifold-doors.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Guide</div>
+          <div class="ax-strong">Multi-Slide &amp; Bifold Door Contractor Florida | Euro-Wall</div>
+          <div class="ax-small">Florida multi-slide and bifold door contractor. Euro-Wall folding, sliding, and pivot systems for hospitality, country clubs, and </div>
+          <div class="ax-small ax-red ax-strong">Read →</div>
         </a>
       </div>
     </div>
@@ -544,7 +403,7 @@
 
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>NEXT</div>
+      <div class="text-massive" data-reveal-fade>NEXT</div>
       <h2>Your Project Could Be<br><span class="accent">Next.</span></h2>
       <p>Custom homes, multifamily, hospitality, commercial - ACG delivers the same precision on every project. Send your drawings and get a scope in 48 hours.</p>
       <a href="send-plans.html" class="btn btn-primary btn-lg">
@@ -556,53 +415,12 @@
 
 
   <!-- ========== FOOTER ========== -->
-    <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+    </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
 
@@ -643,5 +461,6 @@
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

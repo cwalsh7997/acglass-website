@@ -62,8 +62,8 @@
 <meta name="twitter:description" content="Use ACG’s scope review process to clarify commercial glass coverage, exclusions and Division 08 coordination. Send drawings.">
 <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+  <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 <!-- jsPDF 2.5.2 does not exist on cdnjs (404 / HTML MIME). Pin the last 2.5.x UMD that returns 200. -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -113,261 +113,15 @@
 }
 </script>
 
-<style>
-  /* ============================================================
-     SCOPE ENGINE v2 - INLINE CSS
-     ============================================================ */
-  :root {
-    --se-bg: #050A12;
-    --se-surface: #0C1525;
-    --se-surface-2: #111E30;
-    --se-surface-3: #16243A;
-    --se-border: rgba(255,255,255,.08);
-    --se-border-strong: rgba(255,255,255,.18);
-    --se-text: #F1F4F8;
-    --se-text-muted: rgba(241,244,248,.62);
-    --se-text-dim: rgba(241,244,248,.40);
-    --se-accent: #E11320;
-    --se-accent-dim: rgba(225,19,32,.18);
-    --se-success: #34D399;
-    --se-warning: #FBBF24;
-    --se-navy: #0e284f;
-  }
-  body.se-page { background: var(--se-bg); color: var(--se-text); font-family: 'Inter', system-ui, -apple-system, sans-serif; margin: 0; }
-  .se-mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
-  .se-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-  /* HERO */
-  .se-hero { background: radial-gradient(1400px 600px at 50% -100px, rgba(225,19,32,.10), transparent 70%), linear-gradient(180deg, var(--se-bg) 0%, #07101F 100%); padding: 120px 24px 56px; text-align: center; border-bottom: 1px solid var(--se-border); }
-  .se-hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: rgba(241,244,248,.55); margin-bottom: 18px; }
-  .se-hero-eyebrow .dot { display:inline-block; width:6px; height:6px; background:var(--se-accent); border-radius:50%; margin:0 8px 2px 0; }
-  .se-hero h1 { font-size: clamp(36px, 5.4vw, 60px); line-height: 1.04; letter-spacing: -.025em; margin: 0 0 18px; color: #fff; font-weight: 600; }
-  .se-hero p { font-size: 17px; line-height: 1.65; color: var(--se-text-muted); max-width: 720px; margin: 0 auto 28px; }
-  .se-hero-chips { display: inline-flex; flex-wrap: wrap; gap: 8px 14px; justify-content: center; }
-  .se-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--se-border-strong); border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--se-text-muted); }
-
-  /* PROGRESS BAR */
-  .se-progress { position: sticky; top: 0; z-index: 40; background: rgba(7,16,31,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--se-border); padding: 16px 24px; }
-  .se-progress-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 12px; }
-  .se-progress-step { flex: 1; display: flex; align-items: center; gap: 10px; padding: 8px 6px; cursor: pointer; border-radius: 4px; transition: opacity .2s; opacity: .45; background: transparent; border: 0; color: inherit; text-align: left; font-family: inherit; }
-  .se-progress-step.active, .se-progress-step.completed { opacity: 1; }
-  .se-progress-step:disabled { cursor: not-allowed; }
-  .se-progress-step:hover:not(:disabled) { opacity: .85; }
-  .se-progress-step:focus-visible { outline: 2px solid var(--se-accent); outline-offset: 2px; }
-  .se-progress-num { width: 26px; height: 26px; flex: 0 0 26px; border-radius: 50%; background: var(--se-surface-3); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--se-text-muted); border: 1px solid var(--se-border-strong); }
-  .se-progress-step.active .se-progress-num { background: var(--se-accent); color: #fff; border-color: var(--se-accent); }
-  .se-progress-step.completed .se-progress-num { background: var(--se-success); color: #0a1a14; border-color: var(--se-success); }
-  .se-progress-label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--se-text); }
-  @media (max-width: 640px) { .se-progress-label { display: none; } }
-
-  /* PANELS */
-  .se-wizard { padding: 56px 24px 80px; }
-  .se-panel { display: none; max-width: 1100px; margin: 0 auto; }
-  .se-panel.active { display: block; }
-  .se-step-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--se-accent); margin-bottom: 14px; }
-  .se-step-title { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -.022em; color: #fff; margin: 0 0 14px; font-weight: 600; }
-  .se-step-hint { font-size: 16px; line-height: 1.6; color: var(--se-text-muted); margin: 0 0 34px; max-width: 720px; }
-
-  /* CARDS GRID - for radio-style choices */
-  .se-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  .se-card { background: var(--se-surface); border: 1px solid var(--se-border); border-radius: 8px; padding: 22px 20px; cursor: pointer; transition: all .18s; position: relative; }
-  .se-card:hover { background: var(--se-surface-2); border-color: var(--se-border-strong); transform: translateY(-1px); }
-  .se-card:focus-visible { outline: 2px solid var(--se-accent); outline-offset: 2px; }
-  .se-card[aria-checked="true"] { border-color: var(--se-accent); background: linear-gradient(180deg, var(--se-surface-2), var(--se-surface)); box-shadow: 0 0 0 1px var(--se-accent) inset; }
-  .se-card[aria-checked="true"]::after { content: "✓"; position: absolute; top: 14px; right: 16px; color: var(--se-accent); font-weight: 700; font-size: 14px; }
-  .se-card-title { font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 6px; }
-  .se-card-sub { font-size: 13px; color: var(--se-text-muted); line-height: 1.5; }
-
-  /* CHECKBOX MULTI-SELECT CARDS */
-  .se-check-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-  .se-check { display: flex; gap: 12px; align-items: flex-start; background: var(--se-surface); border: 1px solid var(--se-border); border-radius: 6px; padding: 14px 16px; cursor: pointer; transition: all .15s; }
-  .se-check:hover { background: var(--se-surface-2); }
-  .se-check[aria-checked="true"] { border-color: var(--se-accent); background: linear-gradient(180deg, var(--se-surface-2), var(--se-surface)); }
-  .se-check-box { width: 18px; height: 18px; flex: 0 0 18px; border-radius: 4px; border: 1.5px solid var(--se-border-strong); margin-top: 2px; display: grid; place-items: center; }
-  .se-check[aria-checked="true"] .se-check-box { background: var(--se-accent); border-color: var(--se-accent); }
-  .se-check[aria-checked="true"] .se-check-box::after { content: "✓"; color: #fff; font-size: 11px; font-weight: 700; }
-  .se-check-name { font-weight: 600; color: #fff; font-size: 15px; }
-  .se-check-desc { font-size: 12.5px; color: var(--se-text-muted); margin-top: 2px; line-height: 1.4; }
-
-  /* SIZE METHOD TABS + INPUTS */
-  .se-tabs { display: flex; gap: 6px; background: var(--se-surface); border: 1px solid var(--se-border); border-radius: 8px; padding: 6px; margin-bottom: 24px; }
-  .se-tab { flex: 1; padding: 11px 14px; background: transparent; border: 0; color: var(--se-text-muted); cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; border-radius: 4px; transition: all .15s; }
-  .se-tab.active { background: var(--se-surface-3); color: #fff; }
-  .se-tab:focus-visible { outline: 2px solid var(--se-accent); outline-offset: 2px; }
-  .se-input-block { background: var(--se-surface); border: 1px solid var(--se-border); border-radius: 8px; padding: 28px; }
-  .se-input-label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--se-text-muted); margin-bottom: 8px; display: block; }
-  .se-slider-wrap { display: flex; flex-direction: column; gap: 10px; }
-  .se-slider-row { display: flex; align-items: baseline; gap: 14px; }
-  .se-slider-value { font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: #fff; font-family: 'JetBrains Mono', monospace; letter-spacing: -.02em; }
-  .se-slider-unit { font-size: 16px; color: var(--se-text-muted); }
-  .se-slider { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; background: var(--se-surface-3); border-radius: 999px; outline: none; }
-  .se-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; background: var(--se-accent); border-radius: 50%; cursor: pointer; border: 3px solid #fff; }
-  .se-slider::-moz-range-thumb { width: 22px; height: 22px; background: var(--se-accent); border-radius: 50%; cursor: pointer; border: 3px solid #fff; }
-  .se-number-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .se-number { background: var(--se-bg); border: 1px solid var(--se-border-strong); border-radius: 6px; padding: 14px 18px; color: #fff; font-size: 22px; font-family: 'JetBrains Mono', monospace; width: 100%; }
-  .se-number:focus { outline: none; border-color: var(--se-accent); }
-  .se-method-hint { font-size: 13px; color: var(--se-text-muted); margin-top: 14px; line-height: 1.5; }
-  .se-method-hint strong { color: var(--se-text); }
-
-  /* VALIDATION + NAV */
-  .se-validation { color: var(--se-warning); font-size: 13px; margin-top: 14px; min-height: 18px; }
-  .se-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 38px; padding-top: 26px; border-top: 1px solid var(--se-border); }
-  .se-btn { padding: 13px 28px; border-radius: 4px; border: 0; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; transition: all .15s; }
-  .se-btn-primary { background: var(--se-accent); color: #fff; }
-  .se-btn-primary:hover { background: #c80f1c; }
-  .se-btn-primary:disabled { opacity: .4; cursor: not-allowed; }
-  .se-btn-ghost { background: transparent; color: var(--se-text-muted); border: 1px solid var(--se-border-strong); }
-  .se-btn-ghost:hover { color: var(--se-text); border-color: var(--se-text-muted); }
-  .se-btn:focus-visible { outline: 2px solid var(--se-accent); outline-offset: 2px; }
-
-  /* ANALYZING ANIMATION */
-  .se-analyzing { display: none; padding: 90px 24px; text-align: center; }
-  .se-analyzing.active { display: block; }
-  .se-scan { width: 80px; height: 80px; margin: 0 auto 28px; border: 2px solid var(--se-border-strong); border-top-color: var(--se-accent); border-radius: 50%; animation: se-spin 1s linear infinite; }
-  @keyframes se-spin { to { transform: rotate(360deg); } }
-  @media (prefers-reduced-motion: reduce) { .se-scan { animation-duration: 4s; } }
-  .se-analyzing-title { font-size: 22px; color: #fff; margin: 0 0 8px; }
-  .se-analyzing-sub { font-size: 14px; color: var(--se-text-muted); }
-  .se-analyzing-steps { margin-top: 28px; display: inline-block; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--se-text-muted); }
-  .se-analyzing-steps div { padding: 4px 0; opacity: 0; transition: opacity .3s; }
-  .se-analyzing-steps div.shown { opacity: 1; color: var(--se-success); }
-
-  /* RESULTS */
-  .se-results { display: none; padding: 64px 24px 96px; }
-  .se-results.active { display: block; }
-  .se-results .se-container { max-width: 1100px; }
-  .se-result-header { text-align: center; margin-bottom: 40px; }
-  .se-result-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--se-accent); margin-bottom: 14px; }
-  .se-headline-card { background: linear-gradient(180deg, var(--se-surface-2), var(--se-surface)); border: 1px solid var(--se-border-strong); border-radius: 12px; padding: 44px 36px; margin-bottom: 32px; text-align: center; position: relative; }
-  .se-headline-range { font-size: clamp(40px, 6.5vw, 80px); font-weight: 700; line-height: 1; letter-spacing: -.03em; color: #fff; margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; }
-  .se-headline-psf { font-size: 17px; color: var(--se-text-muted); margin-bottom: 14px; }
-  .se-headline-psf strong { color: var(--se-text); }
-  .se-confidence { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; background: rgba(52,211,153,.10); border: 1px solid rgba(52,211,153,.28); border-radius: 999px; font-size: 12px; color: var(--se-success); font-family: 'JetBrains Mono', monospace; letter-spacing: .08em; }
-  .se-confidence.medium { background: rgba(251,191,36,.08); border-color: rgba(251,191,36,.28); color: var(--se-warning); }
-  .se-confidence.low { background: rgba(225,19,32,.08); border-color: rgba(225,19,32,.28); color: var(--se-accent); }
-  .se-disclaimer-short { font-size: 12.5px; color: var(--se-text-muted); margin-top: 18px; line-height: 1.55; max-width: 620px; margin-left: auto; margin-right: auto; }
-
-  /* REFINEMENT CHIPS */
-  .se-refine { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 24px; }
-  .se-refine-chip { background: var(--se-bg); border: 1px solid var(--se-border-strong); padding: 8px 16px; border-radius: 999px; color: var(--se-text); font-size: 12.5px; cursor: pointer; transition: all .15s; font-family: 'JetBrains Mono', monospace; letter-spacing: .04em; }
-  .se-refine-chip:hover { border-color: var(--se-accent); color: var(--se-accent); }
-  .se-refine-chip:focus-visible { outline: 2px solid var(--se-accent); outline-offset: 2px; }
-  .se-refine-chip .chip-key { color: var(--se-text-muted); margin-right: 6px; font-size: 10.5px; text-transform: uppercase; letter-spacing: .14em; }
-
-  /* RESULT SECTIONS */
-  .se-section { background: var(--se-surface); border: 1px solid var(--se-border); border-radius: 8px; padding: 32px; margin-bottom: 22px; }
-  .se-section h2 { font-size: 22px; color: #fff; margin: 0 0 6px; font-weight: 600; letter-spacing: -.01em; }
-  .se-section h2 + .se-section-sub { font-size: 13.5px; color: var(--se-text-muted); margin-bottom: 22px; line-height: 1.55; }
-  .se-system-name { font-size: 26px; color: #fff; font-weight: 600; margin: 4px 0 6px; }
-  .se-why { background: var(--se-bg); border: 1px solid var(--se-border); border-left: 3px solid var(--se-accent); padding: 14px 18px; border-radius: 4px; margin: 14px 0 18px; font-size: 14px; line-height: 1.6; color: var(--se-text); }
-  .se-why-label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--se-accent); display: block; margin-bottom: 4px; }
-  .se-spec-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin-top: 16px; font-size: 13.5px; }
-  .se-spec-row > div { padding: 8px 0; border-bottom: 1px dashed var(--se-border); }
-  .se-spec-row .spec-key { color: var(--se-text-muted); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; }
-  .se-spec-row .spec-val { color: #fff; margin-top: 2px; }
-
-  /* TIMELINE */
-  .se-timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 18px; }
-  .se-phase { background: var(--se-bg); border: 1px solid var(--se-border); border-radius: 6px; padding: 16px; }
-  .se-phase-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--se-accent); margin-bottom: 6px; }
-  .se-phase-name { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 6px; line-height: 1.3; }
-  .se-phase-weeks { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--se-text-muted); }
-  .se-phase-weeks strong { color: var(--se-text); }
-  .se-timeline-total { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--se-border); font-size: 14px; color: var(--se-text-muted); }
-  .se-timeline-total strong { color: #fff; font-size: 16px; }
-  .se-risk-note { margin-top: 12px; padding: 10px 14px; background: rgba(251,191,36,.06); border-left: 3px solid var(--se-warning); border-radius: 4px; font-size: 13px; color: var(--se-text); line-height: 1.5; }
-
-  /* CODE LIST */
-  .se-code-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-  .se-code-list li { background: var(--se-bg); border: 1px solid var(--se-border); border-radius: 6px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; line-height: 1.55; }
-  .se-code-list .code-key { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--se-accent); flex: 0 0 100px; padding-top: 1px; letter-spacing: .08em; }
-  .se-code-list .code-val { color: var(--se-text); }
-
-  /* ASSUMPTIONS */
-  .se-assumptions { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-  .se-assumptions li { font-size: 13.5px; color: var(--se-text-muted); padding: 6px 0; border-bottom: 1px dashed var(--se-border); line-height: 1.5; }
-  .se-assumptions li:last-child { border-bottom: 0; }
-  .se-assumptions li::before { content: "·"; color: var(--se-accent); margin-right: 10px; font-weight: 700; }
-
-  /* LEAD CAPTURE */
-  .se-capture { background: linear-gradient(140deg, #0f1f3a 0%, var(--se-surface) 60%); border: 1px solid var(--se-accent); border-radius: 10px; padding: 36px; margin-bottom: 22px; }
-  .se-capture-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--se-accent); margin-bottom: 12px; }
-  .se-capture h2 { font-size: 26px; color: #fff; margin: 0 0 8px; font-weight: 600; letter-spacing: -.01em; }
-  .se-capture-sub { font-size: 15px; color: var(--se-text-muted); margin-bottom: 26px; line-height: 1.55; max-width: 580px; }
-  .se-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
-  @media (max-width: 640px) { .se-form-grid { grid-template-columns: 1fr; } }
-  .se-field label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--se-text-muted); display: block; margin-bottom: 6px; }
-  .se-field label .req { color: var(--se-accent); }
-  .se-field input, .se-field select { width: 100%; padding: 12px 14px; background: var(--se-bg); border: 1px solid var(--se-border-strong); border-radius: 4px; color: #fff; font-size: 16px; font-family: inherit; box-sizing: border-box; }
-  .se-field input:focus, .se-field select:focus { outline: none; border-color: var(--se-accent); }
-  .se-tcpa { display: flex; gap: 10px; align-items: flex-start; margin: 14px 0 22px; font-size: 12.5px; color: var(--se-text-muted); line-height: 1.5; }
-  .se-tcpa input { margin-top: 3px; }
-  .se-form-status { min-height: 22px; margin-top: 12px; font-size: 13.5px; }
-  .se-form-status.ok { color: var(--se-success); }
-  .se-form-status.err { color: var(--se-warning); }
-
-  /* CTAs row */
-  .se-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .se-cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; text-decoration: none; border-radius: 4px; transition: all .15s; }
-  .se-cta-primary { background: var(--se-accent); color: #fff; }
-  .se-cta-primary:hover { background: #c80f1c; }
-  .se-cta-ghost { background: transparent; color: var(--se-text); border: 1px solid var(--se-border-strong); }
-  .se-cta-ghost:hover { border-color: var(--se-text); }
-
-  /* DISCLAIMER */
-  .se-disclaimer { background: rgba(255,255,255,.025); border-radius: 6px; padding: 18px 22px; font-size: 12px; color: var(--se-text-dim); line-height: 1.6; margin-top: 24px; }
-
-  /* PRINT */
-  @media print {
-    body.se-page { background: #fff; color: #111; }
-    .se-progress, .se-wizard, .se-cta-row, .se-capture, nav, footer.site-footer, .se-refine, .acg-nav { display: none !important; }
-    .se-results { display: block !important; padding: 0; }
-    .se-section, .se-headline-card { background: #fff; border: 1px solid #d0d4dc; box-shadow: none; color: #111; page-break-inside: avoid; }
-    .se-section h2, .se-headline-range, .se-system-name, .se-step-title { color: #0e284f; }
-    .se-spec-row .spec-val, .se-code-list .code-val, .se-assumptions li { color: #222; }
-    .se-print-header { display: block !important; }
-  }
-  .se-print-header { display: none; padding: 24px 0; border-bottom: 2px solid #0e284f; margin-bottom: 24px; }
-  .se-print-header h2 { font-size: 18px; color: #0e284f; margin: 0; }
-  .se-print-header .meta { font-size: 12px; color: #555; margin-top: 4px; }
-  @media print { .se-print-header h2 { color: #0e284f; } }
-
-  /* SR-ONLY */
-  .se-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-</style>
+<style>:root{--se-bg: #050A12;--se-surface: #0C1525;--se-surface-2: #111E30;--se-surface-3: #16243A;--se-border: rgba(255,255,255,.08);--se-border-strong: rgba(255,255,255,.18);--se-text: #F1F4F8;--se-text-muted: rgba(241,244,248,.62);--se-text-dim: rgba(241,244,248,.40);--se-accent: #E11320;--se-accent-dim: rgba(225,19,32,.18);--se-success: #34D399;--se-warning: #FBBF24;--se-navy: #0e284f}.se-progress-step{opacity: .45}.se-progress-step.active, .se-progress-step.completed{opacity: 1}.se-progress-step:hover:not(:disabled){opacity: .85}@media (max-width: 640px){.se-progress-label{display: none}}.se-panel{display: none}.se-panel.active{display: block}.se-btn-primary:disabled{opacity: .4}.se-analyzing{display: none}.se-analyzing.active{display: block}.se-scan{animation: se-spin 1s linear infinite}@keyframes se-spin{ to { transform: rotate(360deg); } }@media (prefers-reduced-motion: reduce){.se-scan{animation-duration: 4s}}.se-analyzing-steps div{opacity: 0}.se-analyzing-steps div.shown{opacity: 1}.se-results{display: none}.se-results.active{display: block}@media print{.se-progress, .se-wizard, .se-cta-row, .se-capture, nav, footer.site-footer, .se-refine, .acg-nav{display: none !important}}.se-print-header{display: none}.se-sr{overflow: hidden}</style>
 </head>
-<body class="se-page">
+<body class="se-page ax-interior">
 
 <!-- ============ NAV (matches site nav pattern) ============ -->
-<header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+<header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
 <!-- ============ HERO ============ -->
-<header class="se-hero">
+<header class="se-hero ax-hero ax-hero-l">
   <div class="se-container">
     <div class="se-hero-eyebrow"><span class="dot"></span>ACG Scope Intelligence Engine</div>
     <h1>Define your glazing scope. Two minutes. No phone call required.</h1>
@@ -489,7 +243,7 @@
       <p class="se-method-hint">Counts framing + glass together, not vision-glass only. Most accurate input the engine accepts.</p>
     </div>
 
-    <div class="se-input-block" id="method-building_sf" style="display:none;">
+    <div class="se-input-block" id="method-building_sf" style="display:none">
       <div class="se-number-grid">
         <div>
           <label class="se-input-label" for="bldg-sf-input">Building gross SF</label>
@@ -503,7 +257,7 @@
       <p class="se-method-hint">Engine applies a project-type-specific <strong>glass-to-floor ratio</strong> (e.g., office ~0.35, multifamily ~0.18) to estimate system area. Refine after you see the result.</p>
     </div>
 
-    <div class="se-input-block" id="method-openings" style="display:none;">
+    <div class="se-input-block" id="method-openings" style="display:none">
       <div class="se-number-grid">
         <div>
           <label class="se-input-label" for="openings-input">Number of openings</label>
@@ -563,7 +317,7 @@
         <div class="se-card-sub">Bay, Escambia, Walton. Wind-borne-debris region, 140-160 mph design wind.</div>
       </div>
       <div class="se-card" role="radio" tabindex="0" data-value="nashville_tn" aria-checked="false">
-        <div class="se-card-title">Nashville, TN <span style="color:var(--se-accent);font-size:11px;">furnish only</span></div>
+        <div class="se-card-title">Nashville, TN <span class="ax-small">furnish only</span></div>
         <div class="se-card-sub">Tennessee. No HVHZ, freeze-thaw climate. IBC + IECC Climate Zone 4A. ACG furnishes materials and consults here; no ACG office or field labor in Tennessee.</div>
       </div>
     </div>
@@ -676,10 +430,10 @@
 
     <!-- HEADLINE -->
     <div class="se-headline-card">
-      <div class="se-headline-range" id="headline-range" style="font-size:clamp(26px,4vw,40px);">Recommended scope &amp; system</div>
+      <div class="se-headline-range" id="headline-range">Recommended scope &amp; system</div>
       <div class="se-headline-psf"><span id="headline-sf"> - </span> SF system area (estimated)</div>
       <div class="se-confidence" id="confidence-badge" role="status">&nbsp;</div>
-      <div class="se-disclaimer-short">This engine returns a recommended system, glass make-up, code requirements, and a realistic timeline. It does not generate pricing. For an itemized bid, ACG reviews plans, elevations, and the scope - <a href="#capture" style="color:var(--se-accent);">request one below</a>.</div>
+      <div class="se-disclaimer-short">This engine returns a recommended system, glass make-up, code requirements, and a realistic timeline. It does not generate pricing. For an itemized bid, ACG reviews plans, elevations, and the scope - <a href="#capture">request one below</a>.</div>
       <div class="se-refine" id="refine-chips" aria-label="Refine scope"></div>
     </div>
 
@@ -698,7 +452,7 @@
       <div class="se-section-sub">Phases from contract award to final punch. Real durations, scaled by SF, height, and code-cycle risk.</div>
       <div class="se-timeline" id="timeline-phases"></div>
       <div class="se-timeline-total" id="timeline-total"></div>
-      <div class="se-risk-note" id="timeline-risk" style="display:none;"></div>
+      <div class="se-risk-note" id="timeline-risk" style="display:none"></div>
     </div>
 
     <!-- CODE -->
@@ -716,7 +470,7 @@
 
       <form id="lead-form" novalidate>
         <!-- honeypot -->
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0">
 
         <div class="se-form-grid">
           <div class="se-field"><label for="lf-name">Full name <span class="req">*</span></label><input id="lf-name" name="name" required autocomplete="name"></div>
@@ -741,8 +495,8 @@
         </div>
         <div class="se-form-grid">
           <div class="se-field"><label for="lf-needed-by">Bid / needed-by date (optional)</label><input id="lf-needed-by" name="needed_by_date" type="date"></div>
-          <div class="se-field" style="display:flex;align-items:end;">
-            <button class="se-btn se-btn-primary" type="submit" id="lf-submit" style="width:100%;padding:14px 18px;">Send my scope &amp; download PDF &rarr;</button>
+          <div class="se-field" style="display:flex;align-items:end">
+            <button class="se-btn se-btn-primary" type="submit" id="lf-submit" style="width:100%">Send my scope &amp; download PDF &rarr;</button>
           </div>
         </div>
         <label class="se-tcpa">
@@ -753,12 +507,12 @@
 
         <noscript>
           <!-- Progressive enhancement: works without JS as a normal POST -->
-          <p style="margin-top:14px;color:var(--se-warning);font-size:13px;">JavaScript is off. <a href="/contact.html" style="color:var(--se-accent);">Use the contact form</a> or call (772) 486-7711.</p>
+          <p class="ax-small">JavaScript is off. <a href="/contact.html">Use the contact form</a> or call (772) 486-7711.</p>
         </noscript>
       </form>
 
-      <div style="margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);">
-        <div style="font-size:12px;color:var(--se-text-muted);letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:14px;">Or skip the form - </div>
+      <div class="ax-rule">
+        <div class="ax-kicker">Or skip the form - </div>
         <div class="se-cta-row">
           <a href="/send-plans.html" class="se-cta se-cta-ghost" id="cta-send-plans">Send us your plans &rarr;</a>
           <a href="tel:+17724867711" class="se-cta se-cta-ghost" id="cta-call">Call Connor &middot; (772) 486-7711</a>
@@ -775,107 +529,19 @@
 
     <!-- LONG DISCLAIMER -->
     <div class="se-disclaimer">
-      <strong style="color:var(--se-text);">Full disclaimer.</strong> The ACG Scope Intelligence Engine returns a recommended system, glass make-up, code requirements, and a realistic timeline based on the inputs you provide, ACG's recent Florida project history, and current Florida Building Code. It does not generate pricing. It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter, and ACG returns line-item pricing on that basis. Multi-slide and folding-door systems are sized per unit or linear foot - send a real takeoff for that scope. Calibrated against ACG's project history as of 2026 and Florida Building Code 8th Edition (2023). Reach out at (772) 486-7711 or <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--se-accent);">connor@acglass.com</a><!--/email_off--> for a bid.
+      <strong>Full disclaimer.</strong> The ACG Scope Intelligence Engine returns a recommended system, glass make-up, code requirements, and a realistic timeline based on the inputs you provide, ACG's recent Florida project history, and current Florida Building Code. It does not generate pricing. It is not a bid, not a quote, not a contract, and not a guarantee of price or availability. Real bids require sealed drawings, elevations, a site walk, and a confirmed scope letter, and ACG returns line-item pricing on that basis. Multi-slide and folding-door systems are sized per unit or linear foot - send a real takeoff for that scope. Calibrated against ACG's project history as of 2026 and Florida Building Code 8th Edition (2023). Reach out at (772) 486-7711 or <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> for a bid.
     </div>
 
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/about.html">About ACG</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/storefront-glazier-west-palm-beach-florida/">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <!--email_off-->connor@acglass.com<!--/email_off-->
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/acglass" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-      </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
 <script>
 /* ============================================================================
@@ -2393,5 +2059,6 @@ document.getElementById('cta-call').addEventListener('click', () => {
 </script>
   <script src="/js/acg-chrome.js" defer></script>
   <script defer src="/js/track.js"></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

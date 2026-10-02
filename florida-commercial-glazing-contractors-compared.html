@@ -30,55 +30,8 @@
   <meta name="twitter:description" content="Six Florida commercial glazing contractors compared on published facts: founding year, license number as published, counties served. Verified 2026-09-09.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/acg2026.css?v=20260909-crumb">
-  <link rel="stylesheet" href="/css/acg2026-dark.css?v=20260802-unified">
-  <style>
-      /* Comparison table. Real content measures ~983px, so the stacked
-         breakpoint is 1100px, not 860px. At 860 the sixth column vanished
-         between 821px and ~1075px with no affordance. */
-      .cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;margin:26px 0}
-      .cmp-wrap:focus-visible{outline:2px solid #E11320;outline-offset:3px}
-      .cmp{width:100%;border-collapse:collapse;font-size:.92rem}
-      .cmp caption{caption-side:top;text-align:left;padding:0 0 14px;color:#8FA0B8;
-        font-size:.82rem;line-height:1.6;max-width:78ch}
-      .cmp th,.cmp td{text-align:left;padding:13px 15px;vertical-align:top;border-bottom:1px solid var(--hairline)}
-      .cmp thead th{border-bottom:2px solid var(--hairline-2);font-size:.78rem;letter-spacing:.05em;
-        text-transform:uppercase;color:#8FA0B8;font-weight:700;white-space:nowrap}
-      .cmp tbody th{font-weight:700}
-      .cmp .src{display:block;font-weight:400;font-size:.74rem;color:#8FA0B8;margin-top:4px}
-      .cmp tbody tr:hover{background:rgba(255,255,255,.025)}
-      .cmp .acg-row{background:rgba(225,19,32,.05)}
-      .cmp .acg-row th{box-shadow:inset 3px 0 0 #E11320}
-      /* In-prose links. class="lnk" is used here and had no rule anywhere on
-         the site, so every link in main rendered identical to body text. */
-      main .lnk{color:#BFD4EF;text-decoration:underline;text-underline-offset:3px;font-weight:600}
-      main .lnk:hover,main .lnk:focus-visible{color:#fff}
-      @media(min-width:1101px){.cmp{min-width:940px}}
-      @media(max-width:360px){.cmp tbody td{grid-template-columns:1fr;gap:2px}}
-      @media(max-width:1100px){
-        .cmp-wrap{overflow-x:visible}
-        .cmp thead{display:none}
-        .cmp tbody tr{display:block;border:1px solid var(--hairline);border-radius:8px;padding:6px 2px;margin:0 0 14px}
-        .cmp tbody tr.acg-row{border-color:#E11320}
-        .cmp tbody th{display:block;font-size:1.02rem;border-bottom:1px solid var(--hairline);box-shadow:none}
-        .cmp tbody td{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr);gap:10px;border-bottom:0;padding:8px 15px}
-        .cmp tbody td>*{min-width:0}
-        .cmp tbody td::before{content:attr(data-label);color:#8FA0B8;font-size:.72rem;
-          letter-spacing:.07em;text-transform:uppercase;padding-top:.22em}
-      }
-
-
-    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
-    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
-    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
-    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
-    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
-    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
-    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
-
-    @media (max-width:760px){
-    }
-  </style>
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
 
   <!-- BreadcrumbList -->
@@ -133,44 +86,16 @@
 }
   </script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ========== Header ========== -->
-  <header class="hd hd-solid">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="locations.html">Locations</a>
-        <a href="about.html">About</a>
-        <a href="manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="services.html">Services</a>
-      <a href="locations.html">Locations</a>
-      <a href="about.html">About</a>
-      <a href="manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <main id="main-content">
 
   <!-- ========== Interior hero ========== -->
-  <section class="p-hero">
+  <section class="p-hero ax-hero ax-hero-m">
     <div class="wrap">
       <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/acg-vs-competitors.html">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Florida contractors</span></nav>
       <h1>Florida commercial glazing contractors, <em>compared</em>.</h1>
@@ -187,7 +112,7 @@
   <section class="sec svc gridpaper">
     <div class="wrap">
       <h2>The table.</h2>
-      <p class="lede" style="margin-top:14px;max-width:74ch;">Florida has no shortage of glass companies. It has far fewer that carry a commercial Division 08 package coordinated against a schedule and a submittal log. Every cell below is quoted or summarized from the firm's own website, and the domain read is printed under each name so you can go check it. Where a cell reads "not published on their site", that is a statement about the website and nothing more.</p>
+      <p class="lede" style="max-width:74ch">Florida has no shortage of glass companies. It has far fewer that carry a commercial Division 08 package coordinated against a schedule and a submittal log. Every cell below is quoted or summarized from the firm's own website, and the domain read is printed under each name so you can go check it. Where a cell reads "not published on their site", that is a statement about the website and nothing more.</p>
       <div class="cmp-wrap" tabindex="0" role="region" aria-labelledby="cmp-cap">
       <table class="cmp">
         <caption id="cmp-cap">Six Florida commercial glazing contractors, in alphabetical order, read from each firm's own website on <time datetime="2026-09-09">9 September 2026</time>. ACG's row is tinted because ACG publishes this page.</caption>
@@ -246,29 +171,29 @@
         </tbody>
       </table>
       </div>
-      <p style="max-width:74ch;color:#8FA0B8;font-size:.9rem;">Two notes on the license column. First, a specialty contractor license is entirely proper for glass and glazing work in Florida and is not a lesser credential. Second, and more important: a firm not printing its license number on its website is not evidence that it does not hold one. AP Glazing states it is licensed without printing a number. The Southern Glass Products site does not address licensing at all. Look the firm up rather than drawing a conclusion from a web page.</p>
+      <p style="max-width:74ch">Two notes on the license column. First, a specialty contractor license is entirely proper for glass and glazing work in Florida and is not a lesser credential. Second, and more important: a firm not printing its license number on its website is not evidence that it does not hold one. AP Glazing states it is licensed without printing a number. The Southern Glass Products site does not address licensing at all. Look the firm up rather than drawing a conclusion from a web page.</p>
     </div>
   </section>
 
-  <section class="sec svc" style="padding-top:0;">
+  <section class="sec svc">
     <div class="wrap">
       <h2>How do you evaluate a Florida glazing subcontractor?</h2>
-      <p class="lede" style="margin-top:14px;max-width:72ch;">On five things: an active DBPR license, a current NOA or Florida Product Approval for the exact assembly on your elevation, bond capacity confirmed in writing by the surety, an additional insured endorsement rather than just a certificate, and whether the crew is direct hire or subcontracted. Every one is checkable from a public source, including the row about ACG.</p>
-      <ol style="max-width:74ch;line-height:1.85;padding-left:1.2em;">
-        <li style="margin-bottom:.7em;"><b>The license.</b> <a class="lnk" href="https://www.myfloridalicense.com/wl11.asp" target="_blank" rel="noopener">Florida DBPR keeps a public licensee search</a>. Type the number. You get status, expiry, the qualifying individual and any discipline. A number that does not resolve is worth asking about directly.</li>
-        <li style="margin-bottom:.7em;"><b>The product approval.</b> Every impact assembly needs either a <a class="lnk" href="https://www.miamidade.gov/building/pc-search_app.asp" target="_blank" rel="noopener">Miami-Dade NOA</a> or a <a class="lnk" href="https://floridabuilding.org/pr/pr_app_srch.aspx" target="_blank" rel="noopener">Florida Product Approval</a>, and both are public. Ask which approval number covers the exact configuration on your elevation, then read it. Approvals expire, and an expired one on a submittal is a plans examiner rejection waiting to happen.</li>
-        <li style="margin-bottom:.7em;"><b>The bond.</b> Ask for the single and aggregate capacity and the surety's name, in writing from the surety or the agent, not from the subcontractor. This one takes days, not minutes.</li>
-        <li style="margin-bottom:.7em;"><b>The insurance.</b> A certificate naming your entity as additional insured, with the endorsement attached. The certificate alone is not the endorsement.</li>
-        <li style="margin-bottom:.7em;"><b>The crew.</b> Ask who installs: direct employees, or subcontracted labor. Both can work. Only one of them is who you think you hired.</li>
+      <p class="lede" style="max-width:72ch">On five things: an active DBPR license, a current NOA or Florida Product Approval for the exact assembly on your elevation, bond capacity confirmed in writing by the surety, an additional insured endorsement rather than just a certificate, and whether the crew is direct hire or subcontracted. Every one is checkable from a public source, including the row about ACG.</p>
+      <ol style="max-width:74ch">
+        <li><b>The license.</b> <a class="lnk" href="https://www.myfloridalicense.com/wl11.asp" target="_blank" rel="noopener">Florida DBPR keeps a public licensee search</a>. Type the number. You get status, expiry, the qualifying individual and any discipline. A number that does not resolve is worth asking about directly.</li>
+        <li><b>The product approval.</b> Every impact assembly needs either a <a class="lnk" href="https://www.miamidade.gov/building/pc-search_app.asp" target="_blank" rel="noopener">Miami-Dade NOA</a> or a <a class="lnk" href="https://floridabuilding.org/pr/pr_app_srch.aspx" target="_blank" rel="noopener">Florida Product Approval</a>, and both are public. Ask which approval number covers the exact configuration on your elevation, then read it. Approvals expire, and an expired one on a submittal is a plans examiner rejection waiting to happen.</li>
+        <li><b>The bond.</b> Ask for the single and aggregate capacity and the surety's name, in writing from the surety or the agent, not from the subcontractor. This one takes days, not minutes.</li>
+        <li><b>The insurance.</b> A certificate naming your entity as additional insured, with the endorsement attached. The certificate alone is not the endorsement.</li>
+        <li><b>The crew.</b> Ask who installs: direct employees, or subcontracted labor. Both can work. Only one of them is who you think you hired.</li>
       </ol>
-      <p style="max-width:74ch;">The license and the product approval take about ten minutes between them. The bond and the insurance depend on somebody else's turnaround. For the long version of each criterion, see <a class="lnk" href="/florida-commercial-glaziers-compared/">how to compare Florida commercial glaziers</a>.</p>
+      <p style="max-width:74ch">The license and the product approval take about ten minutes between them. The bond and the insurance depend on somebody else's turnaround. For the long version of each criterion, see <a class="lnk" href="/florida-commercial-glaziers-compared/">how to compare Florida commercial glaziers</a>.</p>
     </div>
   </section>
 
-  <section class="sec svc gridpaper" style="padding-top:0;">
+  <section class="sec svc gridpaper">
     <div class="wrap">
       <h2>What the table does not tell you.</h2>
-      <p class="lede" style="margin-top:14px;max-width:72ch;">A table of published facts is a filter. Four things it cannot show, including one that counts against ACG.</p>
+      <p class="lede" style="max-width:72ch">A table of published facts is a filter. Four things it cannot show, including one that counts against ACG.</p>
       <div class="cards">
         <article class="card">
           <h3>ACG is the newest firm here</h3>
@@ -290,69 +215,28 @@
     </div>
   </section>
 
-  <section class="sec svc" style="padding-top:0;">
+  <section class="sec svc">
     <div class="wrap">
       <h2>Where ACG fits, and how to correct this page.</h2>
-      <p class="lede" style="margin-top:14px;max-width:74ch;">ACG is a Division 08 subcontractor working for general contractors in Florida, out of West Palm Beach, Naples and Tampa. Certified general contractor license CGC #1531993, bonded to $3M single and $6M aggregate, Florida commercial glazing work since 2021. The scope is the whole envelope opening: storefront, curtainwall, window wall, impact glazing and entrances, with the shop drawings and product approvals that go with them.</p>
-      <p style="max-width:74ch;">This page exists because the honest version of the comparison is more useful to a general contractor than a sales page. If a firm above fits your project better, use them.</p>
-      <p style="max-width:74ch;">Facts here were read on <time datetime="2026-09-09">9 September 2026</time> and will go out of date. If a firm listed finds something inaccurate or stale about itself, write to <!--email_off--><a class="lnk" href="mailto:info@acglass.com">info@acglass.com</a><!--/email_off--> and it will be corrected or removed.</p>
-      <p style="max-width:74ch;">American Commercial Glass is not affiliated with AGC Inc or with ACG Glass &amp; Metals.</p>
-      <p style="max-width:74ch;"><a class="lnk" href="/acg-vs-competitors.html">How ACG compares to national glaziers</a> &middot; <a class="lnk" href="/portfolio.html">Project record</a> &middot; <a class="lnk" href="/for-general-contractors.html">For general contractors</a></p>
+      <p class="lede" style="max-width:74ch">ACG is a Division 08 subcontractor working for general contractors in Florida, out of West Palm Beach, Naples and Tampa. Certified general contractor license CGC #1531993, bonded to $3M single and $6M aggregate, Florida commercial glazing work since 2021. The scope is the whole envelope opening: storefront, curtainwall, window wall, impact glazing and entrances, with the shop drawings and product approvals that go with them.</p>
+      <p style="max-width:74ch">This page exists because the honest version of the comparison is more useful to a general contractor than a sales page. If a firm above fits your project better, use them.</p>
+      <p style="max-width:74ch">Facts here were read on <time datetime="2026-09-09">9 September 2026</time> and will go out of date. If a firm listed finds something inaccurate or stale about itself, write to <!--email_off--><a class="lnk" href="mailto:info@acglass.com">info@acglass.com</a><!--/email_off--> and it will be corrected or removed.</p>
+      <p style="max-width:74ch">American Commercial Glass is not affiliated with AGC Inc or with ACG Glass &amp; Metals.</p>
+      <p style="max-width:74ch"><a class="lnk" href="/acg-vs-competitors.html">How ACG compares to national glaziers</a> &middot; <a class="lnk" href="/portfolio.html">Project record</a> &middot; <a class="lnk" href="/for-general-contractors.html">For general contractors</a></p>
     </div>
   </section>
 </main>
 
   <!-- ========== Footer ========== -->
-  <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="qualifications.html">Qualifications</a></li>
-          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script src="js/acg2026.js?v=20260704" defer></script>
   <script defer src="/js/track.js"></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

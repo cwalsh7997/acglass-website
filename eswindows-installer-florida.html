@@ -32,30 +32,8 @@
   <meta name="twitter:description" content="Coordinate ESWindows product approval data and commercial glazing scope for Florida construction documents. Use it before bid day. Send drawings.">
   <meta name="twitter:image" content="https://acglass.com/images/partners/eswindows/product-es8000.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/acg2026.css?v=20260909-crumb">
-  <link rel="stylesheet" href="/css/acg2026-dark.css?v=20260802-unified">
-  <style>
-    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
-    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
-    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
-    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
-    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
-    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
-    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
-    /* spec tables + FAQ details, light system */
-    .spec-scroll{overflow-x:auto}
-    .spec-table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:680px}
-    .spec-table th{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);text-align:left;padding:12px 14px;border-bottom:2px solid var(--navy);white-space:nowrap}
-    .spec-table td{padding:13px 14px;border-bottom:1px solid var(--hairline);color:var(--body);vertical-align:top;line-height:1.55}
-    .spec-table td:first-child{color:var(--ink);font-weight:650}
-    .spec-note{margin-top:14px;font-size:.85rem;color:var(--muted);font-style:italic;max-width:80ch}
-    .faq-d{background:var(--paper);border:1px solid var(--hairline);border-radius:var(--radius);padding:18px 22px}
-    .faq-d summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
-    .faq-d summary::-webkit-details-marker{display:none}
-    .faq-d summary::after{content:"+";color:var(--red);font-size:1.25rem;font-weight:400;flex-shrink:0;line-height:1}
-    .faq-d[open] summary::after{content:"-"}
-    .faq-d p{margin-top:10px;line-height:1.65;font-size:.95rem}
-  </style>
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <!-- Service Schema -->
   <script type="application/ld+json">
@@ -476,44 +454,16 @@
   "@context": "https://schema.org"
 }</script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ========== Header ========== -->
-  <header class="hd hd-solid">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="locations.html">Locations</a>
-        <a href="about.html">About</a>
-        <a href="manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="services.html">Services</a>
-      <a href="locations.html">Locations</a>
-      <a href="about.html">About</a>
-      <a href="manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <main id="main-content">
 
   <!-- ========== Interior hero ========== -->
-  <section class="p-hero">
+  <section class="p-hero ax-hero ax-hero-s">
     <div class="wrap">
       <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="services.html">Services</a><span aria-hidden="true">/</span><span aria-current="page">ESWindows Installer Florida</span></nav>
       <h1>ESWindows installer for <em>Florida.</em></h1>
@@ -528,11 +478,11 @@
   </section>
 
   <!-- ========== Direct answer ========== -->
-  <section class="sec" aria-labelledby="ans-h" style="padding-bottom:0">
+  <section class="sec" aria-labelledby="ans-h">
     <div class="wrap">
-      <div class="prose rv" style="border-left:2px solid var(--red);padding-left:clamp(18px,3vw,32px)">
+      <div class="prose rv">
         <span class="k-label">Direct answer</span>
-        <h2 id="ans-h" style="font-size:1.3rem;margin:10px 0 12px">Who installs ESWindows in Florida?</h2>
+        <h2 id="ans-h">Who installs ESWindows in Florida?</h2>
         <p>American Commercial Glass (ACG) is a Florida-based installer of ESWindows commercial systems, including the ES8000 storefront, ES50 high-performance window line, and ES Curtainwall. ACG carries Miami-Dade Notice of Acceptance (NOA) documentation for High-Velocity Hurricane Zone (HVHZ) projects in Miami-Dade and Broward counties. License: FL CGC #1531993.</p>
       </div>
     </div>
@@ -589,22 +539,22 @@
       <div class="cards cards-4 rv" data-stagger>
         <div class="card">
           <span class="k-index">01</span>
-          <h3 style="margin-top:10px">Miami-Dade NOA + FBC product approvals</h3>
+          <h3>Miami-Dade NOA + FBC product approvals</h3>
           <p>Active NOA numbers across storefront, window wall and curtainwall. ACG manages the NOA submittal process and product-approval documentation for HVHZ-permitted projects in Miami-Dade and Broward.</p>
         </div>
         <div class="card">
           <span class="k-index">02</span>
-          <h3 style="margin-top:10px">Thermal + impact in one system</h3>
+          <h3>Thermal + impact in one system</h3>
           <p>The ES8000T thermal storefront (NOA 21-0914.03) and GW-7000 unitized curtainwall satisfy concurrent thermal and hurricane-impact requirements - energy-code-governed and LEED-targeted builds included.</p>
         </div>
         <div class="card">
           <span class="k-index">03</span>
-          <h3 style="margin-top:10px">Single-manufacturer envelope</h3>
+          <h3>Single-manufacturer envelope</h3>
           <p>Storefront, window wall and curtainwall from one engineering team - aligned mullion profiles, thermal-break geometry and finish programs. Fewer RFIs, a simpler submittals package.</p>
         </div>
         <div class="card">
           <span class="k-index">04</span>
-          <h3 style="margin-top:10px">Direct commercial relationship</h3>
+          <h3>Direct commercial relationship</h3>
           <p>A direct installer relationship means pricing, lead-time coordination and technical support flow through a direct channel - not a distributor layer. On critical-path glazing procurement, that matters.</p>
         </div>
       </div>
@@ -651,7 +601,7 @@
           <h2 id="data-h">The specs we install to.</h2>
         </div>
       </div>
-      <p class="rv" style="margin-bottom:22px;max-width:78ch">Every number below is sourced from ESWindows' official technical datasheets and the Miami-Dade NOA database. We do not substitute glass or framing outside the tested configuration. Where a number is not published, we say so.</p>
+      <p class="rv" style="max-width:78ch">Every number below is sourced from ESWindows' official technical datasheets and the Miami-Dade NOA database. We do not substitute glass or framing outside the tested configuration. Where a number is not published, we say so.</p>
       <div class="spec-scroll rv">
       <table class="spec-table">
         <thead>
@@ -667,8 +617,8 @@
         </tbody>
       </table>
       </div>
-      <p class="spec-note rv">Source: <a href="https://eswindows.com" rel="nofollow" style="color:var(--navy)">ESWindows official technical datasheets</a> and the <a href="https://www.miamidade.gov/global/economy/board-and-code/product-approval.page" rel="nofollow" style="color:var(--navy)">Miami-Dade Product Control NOA database</a>. The ES-8000 (non-thermal) standard configuration shows a published-document discrepancy and is not listed above; ACG confirms the controlling NOA configuration with the manufacturer on each project.</p>
-      <p class="rv" style="margin-top:20px"><a href="send-plans.html" style="color:var(--navy);font-weight:650;border-bottom:1px solid var(--hairline-2)">Request the ESWindows commercial specification packet →</a></p>
+      <p class="spec-note rv">Source: <a href="https://eswindows.com" rel="nofollow">ESWindows official technical datasheets</a> and the <a href="https://www.miamidade.gov/global/economy/board-and-code/product-approval.page" rel="nofollow">Miami-Dade Product Control NOA database</a>. The ES-8000 (non-thermal) standard configuration shows a published-document discrepancy and is not listed above; ACG confirms the controlling NOA configuration with the manufacturer on each project.</p>
+      <p class="rv"><a href="send-plans.html" class="ax-rule">Request the ESWindows commercial specification packet →</a></p>
     </div>
   </section>
 
@@ -765,32 +715,32 @@
       <div class="cards rv" data-stagger>
         
           <span class="k-index">CS-01</span>
-          <h3 style="margin-top:10px"></h3>
+          <h3></h3>
           <p>Private golf community - ESWindows curtainwall, Palm Beach County.</p>
         
         <a class="card" href="case-study-atlantic-fields.html">
           <span class="k-index">CS-02</span>
-          <h3 style="margin-top:10px">Atlantic Fields</h3>
+          <h3>Atlantic Fields</h3>
           <p>Private golf club main package - ESWindows, Hobe Sound.</p>
         </a>
         <a class="card" href="case-study-atlantic-fields-golf-house.html">
           <span class="k-index">CS-03</span>
-          <h3 style="margin-top:10px">Atlantic Fields Golf House</h3>
+          <h3>Atlantic Fields Golf House</h3>
           <p>Golf house glazing - ESWindows.</p>
         </a>
         <a class="card" href="case-study-wild-blue-clubhouse.html">
           <span class="k-index">CS-04</span>
-          <h3 style="margin-top:10px">Wild Blue Clubhouse</h3>
+          <h3>Wild Blue Clubhouse</h3>
           <p>Private club clubhouse - ESWindows, Estero.</p>
         </a>
         <a class="card" href="case-study-illumia-fort-myers.html">
           <span class="k-index">CS-05</span>
-          <h3 style="margin-top:10px">Illumia Fort Myers</h3>
+          <h3>Illumia Fort Myers</h3>
           <p>Mid-rise commercial - ESWindows curtainwall.</p>
         </a>
         <a class="card" href="case-study-causeway-building-bonita-springs.html">
           <span class="k-index">CS-06</span>
-          <h3 style="margin-top:10px">Causeway Building Bonita Springs</h3>
+          <h3>Causeway Building Bonita Springs</h3>
           <p>Class A office - ESWindows.</p>
         </a>
       </div>
@@ -850,56 +800,15 @@
   </main>
 
   <!-- ========== Footer ========== -->
-  <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="qualifications.html">Qualifications</a></li>
-          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script src="js/acg2026.js?v=20260704" defer></script>
   <script defer src="/js/track.js"></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

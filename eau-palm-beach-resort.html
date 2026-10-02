@@ -36,577 +36,18 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/eau-palm-beach/polpo-exterior-ocean.jpg">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
-  <style>
-    /* === EAU PALM BEACH EDITORIAL SYSTEM (page-local) === */
-    :root {
-      --eau-ivory: #F2ECDF;
-      --eau-ivory-soft: #E8E0CD;
-      --eau-mist: #AEB8C7;
-      --eau-mist-deep: #7E8A9E;
-      --eau-navy: #0E2238;
-      --eau-navy-deep: #050F1C;
-      --eau-gold: #BFA05E;
-      --eau-gold-deep: #957935;
-      --eau-rule: rgba(242,236,223,.18);
-      --eau-text: rgba(242,236,223,.82);
-      --eau-text-muted: rgba(242,236,223,.58);
-      --eau-display: 'Playfair Display', Georgia, serif;
-      --eau-sans: 'Inter', system-ui, sans-serif;
-      --eau-mono: 'JetBrains Mono', monospace;
-    }
-    body { background: var(--eau-navy-deep); }
-    .eau-page { color: var(--eau-ivory); font-family: var(--eau-sans); }
-    .eau-page * { box-sizing: border-box; }
-    .eau-container { max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
-    .eau-container--narrow { max-width: 1080px; }
-
-    /* HERO */
-    .eau-hero {
-      position: relative;
-      min-height: clamp(640px, 98vh, 1060px);
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: #000;
-    }
-    .eau-hero-media { position: absolute; inset: 0; }
-    .eau-hero-media img { width:100%;height:100%;object-fit:cover;display:block;object-position:center 55%; }
-    .eau-hero-media::after {
-      content:''; position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(5,15,28,.0) 0%, rgba(5,15,28,.18) 45%, rgba(5,15,28,.92) 100%),
-        linear-gradient(90deg, rgba(5,15,28,.35) 0%, rgba(5,15,28,0) 55%);
-    }
-    .eau-hero-inner { position: relative; z-index: 2; padding: clamp(48px, 7vw, 110px) 0; width: 100%; }
-
-    .eau-eyebrow {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-family: var(--eau-mono);
-      font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--eau-ivory);
-      font-weight: 600;
-      opacity: .9;
-    }
-    .eau-eyebrow::before { content:''; width: 36px; height: 1px; background: var(--eau-gold); opacity: .9; }
-    .eau-eyebrow--center { justify-content: center; }
-    .eau-eyebrow--center::after { content:''; width: 36px; height: 1px; background: var(--eau-gold); opacity: .9; }
-
-    /* Forbes five star badge */
-    .eau-stars {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--eau-mono);
-      font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
-      color: var(--eau-gold);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-    .eau-stars-glyph { letter-spacing: .2em; color: var(--eau-gold); font-size: 13px; }
-
-    .eau-h1 {
-      font-family: var(--eau-display);
-      font-weight: 500;
-      font-size: clamp(52px, 10vw, 152px);
-      line-height: .93;
-      letter-spacing: -.02em;
-      color: var(--eau-ivory);
-      margin: 18px 0 0;
-    }
-    .eau-h1 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--eau-ivory-soft);
-    }
-    .eau-h1-sub {
-      font-family: var(--eau-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(20px, 1.8vw, 26px);
-      line-height: 1.45;
-      color: var(--eau-ivory-soft);
-      max-width: 720px;
-      margin: clamp(20px, 2.5vw, 30px) 0 0;
-      letter-spacing: -.005em;
-    }
-
-    .eau-hero-meta {
-      display: flex; flex-wrap: wrap;
-      gap: clamp(16px, 2vw, 28px) clamp(28px, 3.5vw, 56px);
-      margin-top: clamp(32px, 4vw, 52px);
-      padding-top: clamp(22px, 2.8vw, 36px);
-      border-top: 1px solid rgba(242,236,223,.22);
-      max-width: 1100px;
-    }
-    .eau-hero-meta-item { min-width: 130px; }
-    .eau-hero-meta-label {
-      font-family: var(--eau-mono);
-      font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--eau-text-muted);
-      margin-bottom: 7px;
-    }
-    .eau-hero-meta-value {
-      font-size: clamp(15px, 1.1vw, 17px);
-      font-weight: 500;
-      color: var(--eau-ivory);
-      line-height: 1.35;
-    }
-
-    /* SECTIONS */
-    .eau-section { padding: clamp(72px, 9vw, 140px) 0; position: relative; }
-    .eau-section--ivory { background: var(--eau-ivory); color: var(--eau-navy); }
-    .eau-section--ivory .eau-eyebrow { color: var(--eau-navy); opacity: .78; }
-    .eau-section--ivory .eau-eyebrow::before,
-    .eau-section--ivory .eau-eyebrow::after { background: var(--eau-gold-deep); opacity: .9; }
-
-    .eau-rule { width: 64px; height: 1px; background: var(--eau-gold); opacity: .85; margin: 0 0 18px; }
-    .eau-section--ivory .eau-rule { background: var(--eau-gold-deep); opacity: .9; }
-
-    .eau-h2 {
-      font-family: var(--eau-display);
-      font-weight: 500;
-      font-size: clamp(34px, 5vw, 76px);
-      line-height: 1.02;
-      letter-spacing: -.014em;
-      color: var(--eau-ivory);
-      margin: 0 0 24px;
-    }
-    .eau-section--ivory .eau-h2 { color: var(--eau-navy); }
-    .eau-h2 em { font-style: italic; font-weight: 400; color: var(--eau-gold); }
-    .eau-section--ivory .eau-h2 em { color: var(--eau-gold-deep); }
-
-    .eau-h3 {
-      font-family: var(--eau-display);
-      font-weight: 500;
-      font-size: clamp(24px, 2.6vw, 36px);
-      line-height: 1.15;
-      letter-spacing: -.005em;
-      color: var(--eau-ivory);
-      margin: 0;
-    }
-    .eau-section--ivory .eau-h3 { color: var(--eau-navy); }
-    .eau-h3 em { font-style: italic; color: var(--eau-gold); font-weight: 400; }
-    .eau-section--ivory .eau-h3 em { color: var(--eau-gold-deep); }
-
-    .eau-lead {
-      font-size: clamp(17px, 1.4vw, 22px);
-      line-height: 1.6;
-      color: var(--eau-text);
-      max-width: 760px;
-      margin: 0 0 22px;
-      font-weight: 400;
-    }
-    .eau-section--ivory .eau-lead { color: rgba(14,34,56,.82); }
-
-    .eau-prose p {
-      font-size: clamp(15px, 1.15vw, 17.5px);
-      line-height: 1.78;
-      color: var(--eau-text);
-      margin: 0 0 18px;
-      max-width: 720px;
-    }
-    .eau-section--ivory .eau-prose p { color: rgba(14,34,56,.85); }
-    .eau-prose a { color: var(--eau-gold); text-decoration:none; border-bottom: 1px solid rgba(191,160,94,.5); transition: border-color .2s, opacity .2s; }
-    .eau-prose a:hover { border-color: var(--eau-gold); }
-    .eau-section--ivory .eau-prose a { color: var(--eau-gold-deep); border-bottom-color: rgba(149,121,53,.5); }
-
-    /* TWO-COL LAYOUT */
-    .eau-two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-      gap: clamp(36px, 5vw, 88px);
-      align-items: start;
-    }
-    @media (max-width: 900px) { .eau-two-col { grid-template-columns: 1fr; gap: 32px; } }
-
-    /* IMAGE TREATMENTS */
-    .eau-figure { position: relative; overflow: hidden; background: #000; border-radius: 2px; }
-    .eau-figure img { width:100%;height:100%;object-fit:cover;display:block; }
-    .eau-figure-caption {
-      position: absolute; left: 16px; bottom: 16px;
-      font-family: var(--eau-mono);
-      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--eau-ivory);
-      background: rgba(5,15,28,.72);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      padding: 6px 12px;
-      border: 1px solid rgba(242,236,223,.12);
-      border-radius: 2px;
-      font-weight: 600;
-    }
-
-    /* FULL-BLEED IMG */
-    .eau-fullbleed { position: relative; width: 100%; aspect-ratio: 21/9; overflow: hidden; background: #000; }
-    .eau-fullbleed img { width:100%;height:100%;object-fit:cover;display:block; }
-
-    /* FACT CARDS */
-    .eau-facts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--eau-rule);
-      border-bottom: 1px solid var(--eau-rule);
-    }
-    .eau-fact { padding: clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 32px); border-right: 1px solid var(--eau-rule); }
-    .eau-fact:last-child { border-right: none; }
-    @media (max-width: 720px) {
-      .eau-fact { border-right: none; border-bottom: 1px solid var(--eau-rule); }
-      .eau-fact:last-child { border-bottom: none; }
-    }
-    .eau-fact-num {
-      font-family: var(--eau-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(28px, 3.6vw, 48px);
-      line-height: 1;
-      color: var(--eau-ivory);
-      letter-spacing: -.012em;
-    }
-    .eau-fact-num small { font-size: .5em; font-style: normal; color: var(--eau-text-muted); margin-left: 4px; }
-    .eau-fact-label {
-      margin-top: 12px;
-      font-family: var(--eau-mono);
-      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--eau-text-muted);
-      font-weight: 600;
-    }
-    .eau-fact-detail {
-      margin-top: 8px;
-      font-size: 13px;
-      color: var(--eau-text);
-      line-height: 1.55;
-    }
-
-    /* PHASE CARDS - editorial alternating */
-    .eau-phase {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 0;
-      align-items: stretch;
-      margin-bottom: clamp(28px, 3.5vw, 44px);
-      border-top: 1px solid var(--eau-rule);
-      padding-top: clamp(28px, 3.5vw, 44px);
-    }
-    .eau-phase--reverse { grid-template-columns: 1.4fr 1fr; }
-    .eau-phase--reverse .eau-phase-media { order: 2; }
-    .eau-phase--reverse .eau-phase-body { order: 1; padding-right: clamp(24px, 4vw, 60px); padding-left: 0; }
-    @media (max-width: 900px) {
-      .eau-phase, .eau-phase--reverse { grid-template-columns: 1fr; gap: 24px; }
-      .eau-phase--reverse .eau-phase-media { order: 1; }
-      .eau-phase--reverse .eau-phase-body { order: 2; padding-right: 0; }
-    }
-    .eau-phase-media { aspect-ratio: 4/3; overflow: hidden; background: #000; border-radius: 2px; position: relative; }
-    .eau-phase-media img { width:100%;height:100%;object-fit:cover;display:block;transition: transform .8s cubic-bezier(.16,1,.3,1); }
-    .eau-phase:hover .eau-phase-media img { transform: scale(1.02); }
-    .eau-phase-media--split { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: transparent; aspect-ratio: 4/3; }
-    .eau-phase-media--split > picture, .eau-phase-media--split > picture img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 2px; }
-    .eau-phase-body { padding-left: clamp(24px, 4vw, 60px); display: flex; flex-direction: column; justify-content: center; }
-    .eau-phase-num {
-      font-family: var(--eau-display);
-      font-style: italic;
-      font-size: clamp(22px, 2.4vw, 32px);
-      color: var(--eau-gold);
-      line-height: 1;
-      margin-bottom: 14px;
-    }
-    .eau-phase-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--eau-mono);
-      font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--eau-text-muted);
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-    .eau-phase-tag::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--eau-gold); opacity: .9;
-    }
-    .eau-phase-text {
-      font-size: clamp(15px, 1.15vw, 17.5px);
-      line-height: 1.7;
-      color: var(--eau-text);
-      margin: 14px 0 22px;
-      max-width: 540px;
-    }
-    .eau-phase-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
-    .eau-phase-tags span {
-      padding: 5px 11px;
-      background: transparent;
-      border: 1px solid var(--eau-rule);
-      border-radius: 2px;
-      font-family: var(--eau-mono);
-      font-size: 10px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--eau-text-muted);
-      font-weight: 600;
-    }
-
-    /* QUOTE / PULL */
-    .eau-quote { max-width: 920px; margin: 0 auto; text-align: center; }
-    .eau-quote-mark {
-      font-family: var(--eau-display);
-      font-size: 96px; line-height: 0.5;
-      color: var(--eau-gold);
-      display: block; margin-bottom: 8px;
-    }
-    .eau-quote-text {
-      font-family: var(--eau-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(22px, 2.6vw, 36px);
-      line-height: 1.32;
-      color: var(--eau-ivory);
-      letter-spacing: -.005em;
-    }
-    .eau-section--ivory .eau-quote-text { color: var(--eau-navy); }
-    .eau-quote-cite {
-      margin-top: 24px;
-      font-family: var(--eau-mono);
-      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--eau-text-muted);
-      font-weight: 600;
-    }
-    .eau-section--ivory .eau-quote-cite { color: rgba(14,34,56,.6); }
-
-    /* GALLERY GRID */
-    .eau-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .eau-gallery .eau-figure { aspect-ratio: 4/3; }
-    .eau-gallery .gw-12 { grid-column: span 12; aspect-ratio: 21/9; }
-    .eau-gallery .gw-7 { grid-column: span 7; aspect-ratio: 4/3; }
-    .eau-gallery .gw-5 { grid-column: span 5; aspect-ratio: 4/3; }
-    .eau-gallery .gw-6 { grid-column: span 6; aspect-ratio: 4/3; }
-    .eau-gallery .gw-8 { grid-column: span 8; aspect-ratio: 16/9; }
-    .eau-gallery .gw-4 { grid-column: span 4; aspect-ratio: 4/5; }
-    @media (max-width: 820px) {
-      .eau-gallery { grid-template-columns: 1fr; }
-      .eau-gallery [class*="gw-"] { grid-column: span 1; aspect-ratio: 4/3; }
-    }
-
-    /* STANDARDS - the Forbes discipline list */
-    .eau-standards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0;
-    }
-    .eau-standard {
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(14,34,56,.12);
-      font-family: var(--eau-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(18px, 1.6vw, 22px);
-      color: var(--eau-navy);
-      letter-spacing: -.005em;
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-    }
-    .eau-standard-num {
-      font-family: var(--eau-mono);
-      font-style: normal;
-      font-size: 10px;
-      letter-spacing: .15em;
-      color: var(--eau-gold-deep);
-      font-weight: 600;
-      min-width: 26px;
-    }
-
-    /* FAQ */
-    .eau-faq details {
-      padding: clamp(20px, 2.4vw, 28px) 0;
-      border-bottom: 1px solid var(--eau-rule);
-      cursor: pointer;
-    }
-    .eau-faq summary {
-      font-family: var(--eau-display);
-      font-weight: 500;
-      font-size: clamp(18px, 1.8vw, 24px);
-      line-height: 1.3;
-      color: var(--eau-ivory);
-      list-style: none;
-      letter-spacing: -.005em;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
-    }
-    .eau-faq summary::-webkit-details-marker { display: none; }
-    .eau-faq summary::after {
-      content: '+';
-      font-family: var(--eau-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(22px, 2.2vw, 30px);
-      color: var(--eau-gold);
-      line-height: 1;
-      transition: transform .3s;
-      flex-shrink: 0;
-    }
-    .eau-faq details[open] summary::after { content: '-'; }
-    .eau-faq-answer {
-      margin-top: 16px;
-      font-size: clamp(15px, 1.1vw, 17px);
-      line-height: 1.75;
-      color: var(--eau-text);
-      max-width: 820px;
-    }
-
-    /* PARTNER STRIP (below CTA) */
-    .eau-partners {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--eau-rule);
-      border-bottom: 1px solid var(--eau-rule);
-      margin-top: clamp(36px, 4.5vw, 56px);
-    }
-    .eau-partner {
-      padding: clamp(20px, 2.5vw, 30px) clamp(18px, 2vw, 28px);
-      border-right: 1px solid var(--eau-rule);
-    }
-    .eau-partner:last-child { border-right: none; }
-    @media (max-width: 720px) {
-      .eau-partner { border-right: none; border-bottom: 1px solid var(--eau-rule); }
-      .eau-partner:last-child { border-bottom: none; }
-    }
-    .eau-partner-label {
-      font-family: var(--eau-mono);
-      font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--eau-text-muted);
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .eau-partner-name {
-      font-family: var(--eau-display);
-      font-size: clamp(18px, 1.7vw, 22px);
-      color: var(--eau-ivory);
-      font-weight: 500;
-      line-height: 1.25;
-    }
-
-    /* CTA */
-    .eau-cta-band {
-      background: var(--eau-navy);
-      padding: clamp(72px, 9vw, 130px) 0;
-      text-align: center;
-      border-top: 1px solid var(--eau-rule);
-      border-bottom: 1px solid var(--eau-rule);
-    }
-    .eau-cta-h2 {
-      font-family: var(--eau-display);
-      font-weight: 500;
-      font-size: clamp(32px, 4.2vw, 56px);
-      line-height: 1.1;
-      color: var(--eau-ivory);
-      margin: 16px 0 22px;
-      letter-spacing: -.012em;
-    }
-    .eau-cta-h2 em { font-style: italic; color: var(--eau-gold); }
-    .eau-cta-p {
-      font-size: clamp(15px, 1.2vw, 18px);
-      line-height: 1.7;
-      color: var(--eau-text);
-      max-width: 620px;
-      margin: 0 auto 36px;
-    }
-    .eau-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 16px 32px;
-      background: var(--eau-ivory);
-      color: var(--eau-navy);
-      text-decoration: none;
-      border-radius: 2px;
-      font-family: var(--eau-sans);
-      font-size: 13px; font-weight: 600;
-      letter-spacing: .08em; text-transform: uppercase;
-      transition: all .25s;
-    }
-    .eau-btn:hover { background: #fff; transform: translateY(-1px); }
-    .eau-btn--ghost {
-      background: transparent;
-      color: var(--eau-ivory);
-      border: 1px solid rgba(242,236,223,.32);
-    }
-    .eau-btn--ghost:hover {
-      background: rgba(242,236,223,.06);
-      border-color: var(--eau-ivory);
-    }
-    .eau-btn-row { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-
-    /* DECORATIVE DIVIDER */
-    .eau-divider {
-      display: flex; align-items: center; justify-content: center;
-      gap: 18px;
-      padding: clamp(44px, 6vw, 80px) 0;
-    }
-    .eau-divider-line { flex: 0 0 80px; height: 1px; background: var(--eau-rule); }
-    .eau-section--ivory .eau-divider-line { background: rgba(14,34,56,.18); }
-    .eau-divider-mark {
-      font-family: var(--eau-display);
-      font-style: italic;
-      color: var(--eau-gold);
-      font-size: 18px;
-    }
-
-    /* Reveal */
-    [data-eau-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
-    [data-eau-reveal].in { opacity: 1; transform: translateY(0); }
-
-    /* Nav dropdown styles (canonical) */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-      .nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-      .nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-      .nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-      .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-      .nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-      .nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-      .nav-dropdown-menu a:hover{color:#fff !important}
-    }
-  </style>
 </head>
-<body class="eau-page">
+<body class="eau-page ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ========== NAV ========== -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- ========== HERO ========== -->
-  <section class="eau-hero" id="main-content">
+  <section class="eau-hero ax-hero ax-hero-s" id="main-content">
     <div class="eau-hero-media">
       <picture>
         <source type="image/avif" srcset="images/projects/eau-palm-beach/polpo-exterior-ocean.avif">
@@ -619,7 +60,7 @@
       <div class="eau-container">
         <div data-eau-reveal>
           <span class="eau-eyebrow">Manalapan · Florida · Owner-Led Design-Build</span>
-          <div class="eau-stars" style="display:flex;margin-top:22px;">
+          <div class="eau-stars" style="display:flex">
             <span class="eau-stars-glyph">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
             <span>Forbes Travel Guide · Five-Star Resort</span>
           </div>
@@ -659,7 +100,7 @@
         <div data-eau-reveal>
           <div class="eau-rule"></div>
           <span class="eau-eyebrow">The Resort</span>
-          <h2 class="eau-h2" style="margin-top:18px;">Seven private acres<br><em>on the Atlantic.</em></h2>
+          <h2 class="eau-h2">Seven private acres<br><em>on the Atlantic.</em></h2>
         </div>
         <div class="eau-prose" data-eau-reveal>
           <p>Eau Palm Beach is one of South Florida's most iconic oceanfront properties - seven private acres of Atlantic beachfront in Manalapan, formerly the Ritz-Carlton Palm Beach. It rebranded in 2013 and has held a Forbes Five-Star rating for more than a decade, one of the rarest distinctions in American hospitality.</p>
@@ -671,7 +112,7 @@
   </section>
 
   <!-- ========== KEY FACTS BAND ========== -->
-  <section style="padding-top:0;padding-bottom:0;">
+  <section>
     <div class="eau-container">
       <div class="eau-facts" data-eau-reveal>
         <div class="eau-fact">
@@ -709,7 +150,7 @@
   </section>
 
   <!-- ========== FULL-BLEED - AERIAL ========== -->
-  <div class="eau-fullbleed" data-eau-reveal style="margin-top:0;">
+  <div class="eau-fullbleed" data-eau-reveal>
     <picture>
       <source type="image/avif" srcset="images/projects/eau-palm-beach/aerial-resort.avif">
       <source type="image/webp" srcset="images/projects/eau-palm-beach/aerial-resort.webp">
@@ -725,7 +166,7 @@
         <div data-eau-reveal>
           <div class="eau-rule"></div>
           <span class="eau-eyebrow">The Assignment</span>
-          <h2 class="eau-h2" style="margin-top:18px;">A design-build<br><em>by ownership.</em></h2>
+          <h2 class="eau-h2">A design-build<br><em>by ownership.</em></h2>
         </div>
         <div class="eau-prose" data-eau-reveal>
           <p>Eau's renovation wasn't delivered through a general contractor. Ownership and resort management ran the project themselves - a design-build program that put ACG in the room with the principals who cared about the outcome most, working straight to their standard, on their timing, without a layer in between.</p>
@@ -737,13 +178,13 @@
   </section>
 
   <!-- ========== SEVEN PHASES ========== -->
-  <section class="eau-section" style="padding-top:0;">
+  <section class="eau-section">
     <div class="eau-container">
-      <div data-eau-reveal style="margin-bottom:clamp(48px,6vw,80px);max-width:880px;">
+      <div data-eau-reveal style="max-width:880px">
         <div class="eau-rule"></div>
         <span class="eau-eyebrow">The Program</span>
-        <h2 class="eau-h2" style="margin-top:18px;">Seven areas,<br><em>one standard.</em></h2>
-        <p class="eau-lead" style="margin-top:22px;">From the first impression at the front door to the rear facade no guest is supposed to notice - the same material specification, the same alignment tolerance, the same installer.</p>
+        <h2 class="eau-h2">Seven areas,<br><em>one standard.</em></h2>
+        <p class="eau-lead">From the first impression at the front door to the rear facade no guest is supposed to notice - the same material specification, the same alignment tolerance, the same installer.</p>
       </div>
 
       <!-- Phase 01 - Front Doors -->
@@ -846,13 +287,13 @@
 
       <!-- Phase 05 - Spa Additions -->
       <article class="eau-phase" data-eau-reveal>
-        <div class="eau-phase-media" style="background:linear-gradient(140deg,rgba(191,160,94,.12),rgba(5,15,28,.5));display:flex;align-items:center;justify-content:center;border:1px solid var(--eau-rule);">
-          <div style="text-align:center;padding:32px;">
+        <div class="eau-phase-media" style="display:flex;align-items:center;justify-content:center">
+          <div>
             <svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="rgba(191,160,94,.55)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 12h18M3 6h18M3 18h18"/>
             </svg>
-            <div style="margin-top:22px;font-family:var(--eau-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--eau-text-muted);font-weight:600;">Spa - 42,000 SF</div>
-            <div style="margin-top:10px;font-family:var(--eau-display);font-style:italic;color:var(--eau-gold);font-size:14px;">Among Florida's largest resort spas</div>
+            <div class="ax-kicker ax-strong">Spa - 42,000 SF</div>
+            <div>Among Florida's largest resort spas</div>
           </div>
         </div>
         <div class="eau-phase-body">
@@ -892,14 +333,14 @@
       </article>
 
       <!-- Phase 07 - The Discipline -->
-      <article class="eau-phase" data-eau-reveal style="border-top: 1px dashed rgba(242,236,223,.25);">
-        <div class="eau-phase-media" style="background:linear-gradient(140deg,rgba(191,160,94,.12),rgba(5,15,28,.5));display:flex;align-items:center;justify-content:center;border:1px solid var(--eau-rule);">
-          <div style="text-align:center;padding:32px;">
+      <article class="eau-phase" data-eau-reveal>
+        <div class="eau-phase-media" style="display:flex;align-items:center;justify-content:center">
+          <div>
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(191,160,94,.55)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
-            <div style="margin-top:22px;font-family:var(--eau-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--eau-text-muted);font-weight:600;">Operating Around Guests</div>
-            <div style="margin-top:10px;font-family:var(--eau-display);font-style:italic;color:var(--eau-gold);font-size:14px;">Through every phase - no service interruptions</div>
+            <div class="ax-kicker ax-strong">Operating Around Guests</div>
+            <div>Through every phase - no service interruptions</div>
           </div>
         </div>
         <div class="eau-phase-body">
@@ -925,13 +366,13 @@
   </div>
 
   <!-- ========== WHAT FIVE-STAR MEANS FOR GLASS - IVORY SECTION ========== -->
-  <section class="eau-section eau-section--ivory" style="padding-top:clamp(80px,10vw,150px);padding-bottom:clamp(60px,7vw,100px);">
+  <section class="eau-section eau-section--ivory">
     <div class="eau-container">
-      <div class="eau-two-col" style="margin-bottom:clamp(40px,5vw,64px);">
+      <div class="eau-two-col">
         <div data-eau-reveal>
           <div class="eau-rule"></div>
           <span class="eau-eyebrow">The Standard</span>
-          <h2 class="eau-h2" style="margin-top:18px;">What Five-Star means<br><em>for glass.</em></h2>
+          <h2 class="eau-h2">What Five-Star means<br><em>for glass.</em></h2>
         </div>
         <div class="eau-prose" data-eau-reveal>
           <p>A Forbes Five-Star rating isn't awarded - it's earned, and it's re-evaluated every year. The criteria cover hundreds of touch points: the response time on a guest request, the temperature of the towels, the condition of every surface in every space.</p>
@@ -993,10 +434,10 @@
     </div>
 
     <!-- Standards list -->
-    <div class="eau-container" style="margin-top:clamp(60px,7vw,100px);">
-      <div data-eau-reveal style="margin-bottom:clamp(28px,3.5vw,44px);">
+    <div class="eau-container">
+      <div data-eau-reveal>
         <span class="eau-eyebrow">The Installer's Discipline</span>
-        <h3 style="font-family:var(--eau-display);font-weight:500;font-size:clamp(28px,3.4vw,42px);line-height:1.05;margin-top:14px;color:var(--eau-navy);letter-spacing:-.012em;">What holds a <em style="color:var(--eau-gold-deep);">five-star rating.</em></h3>
+        <h3>What holds a <em>five-star rating.</em></h3>
       </div>
       <div class="eau-standards" data-eau-reveal>
         <div class="eau-standard"><span class="eau-standard-num">01</span>Frame alignment within tolerance</div>
@@ -1025,13 +466,13 @@
   </section>
 
   <!-- ========== A PERSONAL PROJECT ========== -->
-  <section class="eau-section" style="padding-top:0;">
+  <section class="eau-section">
     <div class="eau-container">
       <div class="eau-two-col">
         <div data-eau-reveal>
           <div class="eau-rule"></div>
           <span class="eau-eyebrow">A Personal Project</span>
-          <h2 class="eau-h2" style="margin-top:18px;">The photo of <em>Connor at the door.</em></h2>
+          <h2 class="eau-h2">The photo of <em>Connor at the door.</em></h2>
         </div>
         <div class="eau-prose" data-eau-reveal>
           <p>Eau Palm Beach was one of ACG's earliest projects. Connor Walsh built the relationship directly with ownership and resort management - before ACG had a portfolio of hospitality projects to show.</p>
@@ -1044,12 +485,12 @@
   </section>
 
   <!-- ========== FAQ ========== -->
-  <section class="eau-section" style="padding-top:0;">
+  <section class="eau-section">
     <div class="eau-container eau-container--narrow">
-      <div data-eau-reveal style="margin-bottom:clamp(36px,4.5vw,56px);">
+      <div data-eau-reveal>
         <div class="eau-rule"></div>
         <span class="eau-eyebrow">Field Notes</span>
-        <h2 class="eau-h2" style="margin-top:18px;">Eau Palm Beach,<br><em>answered.</em></h2>
+        <h2 class="eau-h2">Eau Palm Beach,<br><em>answered.</em></h2>
       </div>
 
       <div class="eau-faq" data-eau-reveal>
@@ -1121,53 +562,12 @@
   </section>
 
   <!-- ========== FOOTER ========== -->
-    <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+    </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <!-- ========== SCHEMA ========== -->
   <script type="application/ld+json">
@@ -1396,5 +796,6 @@
   </script>
   <script defer src="js/main.js"></script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

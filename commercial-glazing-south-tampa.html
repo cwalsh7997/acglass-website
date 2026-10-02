@@ -19,8 +19,8 @@
   <link rel="icon" type="image/png" href="images/favicon-32.png"><link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="google-site-verification" content="qsi2Km3KPIFUKS6p41yGs8E_HQT15Z8yMCzyl1hSJ1E">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css?v=20260814-contrast">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
   <meta name="description" content="ACG provides commercial glazing services in South Tampa, FL - storefronts, curtainwall systems, impact-rated glass, automatic entrances, and Division 08…">
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://acglass.com/storefront-glazier-tampa-florida/">
@@ -99,26 +99,6 @@
   ]
 }
 </script>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
 <script type="application/ld+json">
 {
@@ -191,7 +171,7 @@
 }
 </script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- GRAIN OVERLAY -->
@@ -202,35 +182,10 @@
   <div class="cursor-ring"></div>
 
   <!-- ========== NAVIGATION ========== -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- ========== PAGE HERO ========== -->
-  <section class="page-hero" id="main-content">
+  <section class="page-hero ax-hero ax-hero-s" id="main-content">
     <div class="container">
       <div class="label" data-reveal><span class="line"></span> ACG Tampa Office · South Tampa</div>
       <h1 data-reveal data-delay="100">Commercial Glazing <br> <span class="accent">South Tampa</span></h1>
@@ -245,9 +200,9 @@
         <div class="label"><span class="line"></span> South Tampa Market</div>
         <h2>Tampa's Most Design-Forward<br>Projects Demand <span class="accent">Precision Glazing.</span></h2>
         <div class="divider"></div>
-        <p class="text-lg" style="margin-bottom: 20px;">South Tampa sits at the intersection of architectural ambition and construction complexity. South Howard Avenue - SoHo - has become one of Tampa's most active commercial redevelopment corridors, with restaurant, retail, and mixed-use projects pushing the boundaries of what commercial glazing looks like in an urban environment. Storefronts here aren't commodity systems run off a standard shop drawing. They're designed to spec - flush-glazed, minimal-frame, high-aesthetic, and often incorporating specialty glass that most glazing subs can't source or install.</p>
-        <p class="text-lg" style="margin-bottom: 20px;">Hyde Park Village and the surrounding neighborhood commercial district represent a similar level of expectation. These projects attract architects who have strong opinions about sightline depth, framing color, glass reflectivity, and installation precision. A glazing sub that shows up with the wrong system or runs field installations loosely doesn't survive in this market. ACG does, because our shop drawings, submittals, and field execution are held to the same standard the architect used when they designed the building.</p>
-        <p class="text-lg" style="margin-bottom: 20px;">Harbour Island and the Channel District have added a different dimension - residential towers, mixed-use podium buildings, and commercial bases with curtainwall and window wall systems that require full structural coordination, engineer-of-record involvement, and precise sequencing with other trades. These are not storefront jobs. They require a glazing contractor with the technical depth to manage complex envelope packages, and the project management infrastructure to execute without creating schedule problems for the GC.</p>
+        <p class="text-lg">South Tampa sits at the intersection of architectural ambition and construction complexity. South Howard Avenue - SoHo - has become one of Tampa's most active commercial redevelopment corridors, with restaurant, retail, and mixed-use projects pushing the boundaries of what commercial glazing looks like in an urban environment. Storefronts here aren't commodity systems run off a standard shop drawing. They're designed to spec - flush-glazed, minimal-frame, high-aesthetic, and often incorporating specialty glass that most glazing subs can't source or install.</p>
+        <p class="text-lg">Hyde Park Village and the surrounding neighborhood commercial district represent a similar level of expectation. These projects attract architects who have strong opinions about sightline depth, framing color, glass reflectivity, and installation precision. A glazing sub that shows up with the wrong system or runs field installations loosely doesn't survive in this market. ACG does, because our shop drawings, submittals, and field execution are held to the same standard the architect used when they designed the building.</p>
+        <p class="text-lg">Harbour Island and the Channel District have added a different dimension - residential towers, mixed-use podium buildings, and commercial bases with curtainwall and window wall systems that require full structural coordination, engineer-of-record involvement, and precise sequencing with other trades. These are not storefront jobs. They require a glazing contractor with the technical depth to manage complex envelope packages, and the project management infrastructure to execute without creating schedule problems for the GC.</p>
         <p class="text-lg">Bayshore Boulevard's commercial development adds another market segment - high-visibility projects where street-facing glazing is part of the architecture's identity. ACG brings the product knowledge, manufacturer relationships, and installation capability to make these projects work.</p>
       </div>
     </div>
@@ -256,7 +211,7 @@
   <!-- ========== SERVICES GRID ========== -->
   <section class="section">
     <div class="container">
-      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
+      <div data-reveal>
         <div class="label"><span class="line"></span> South Tampa Scope</div>
         <h2>Full Glazing Scope for South Tampa's<br>Most Demanding Projects</h2>
       </div>
@@ -292,8 +247,8 @@
         <div class="label"><span class="line"></span> Urban Site Expertise</div>
         <h2>Precision Coordination for<br><span class="accent">Constrained Urban Sites</span></h2>
         <div class="divider"></div>
-        <p class="text-lg" style="margin-bottom: 20px;">South Tampa's urban commercial sites are physically constrained in ways that suburban projects never are. Street-level storefronts on South Howard have no staging yard - glass arrives, gets cut to final dimension, and goes directly into the opening. Harbour Island projects involve material deliveries across a bridge with limited lane access. Channel District tower installations require crane picks coordinated with the general contractor's steel and concrete schedule. None of this is improvised.</p>
-        <p class="text-lg" style="margin-bottom: 20px;">ACG's scheduling platform exists specifically to handle this complexity. Crew arrivals, material deliveries, inspection requests, and trade coordination are managed through a system that gives your PM and superintendent real-time visibility - not a phone call to a project manager who may or may not have the answer. When staging windows are narrow and the schedule is tight, that level of coordination is what separates glazing subs that perform from ones that create problems.</p>
+        <p class="text-lg">South Tampa's urban commercial sites are physically constrained in ways that suburban projects never are. Street-level storefronts on South Howard have no staging yard - glass arrives, gets cut to final dimension, and goes directly into the opening. Harbour Island projects involve material deliveries across a bridge with limited lane access. Channel District tower installations require crane picks coordinated with the general contractor's steel and concrete schedule. None of this is improvised.</p>
+        <p class="text-lg">ACG's scheduling platform exists specifically to handle this complexity. Crew arrivals, material deliveries, inspection requests, and trade coordination are managed through a system that gives your PM and superintendent real-time visibility - not a phone call to a project manager who may or may not have the answer. When staging windows are narrow and the schedule is tight, that level of coordination is what separates glazing subs that perform from ones that create problems.</p>
         <p class="text-lg">We've delivered commercial projects across Florida's most demanding markets. South Tampa's combination of high design expectations, physical site constraints, and compressed schedules is exactly what our operating model is built for. Send us your plans - we'll tell you what we can do, at what price, on what schedule, and we'll back it up in the field.</p>
       </div>
     </div>
@@ -306,7 +261,7 @@
         <div class="label"><span class="line"></span> Areas Also Served</div>
         <h2>All of South Tampa -<br>Every <span class="accent">Design-Forward District.</span></h2>
         <div class="divider"></div>
-        <p class="text-lg" style="margin-bottom: 32px;">ACG's Tampa office covers South Tampa's full commercial geography - from the walkable urban corridors to the waterfront mixed-use to the emerging neighborhoods along Ybor and beyond.</p>
+        <p class="text-lg">ACG's Tampa office covers South Tampa's full commercial geography - from the walkable urban corridors to the waterfront mixed-use to the emerging neighborhoods along Ybor and beyond.</p>
       </div>
       <div class="grid grid-4" data-reveal data-delay="100">
         <div class="service-card">
@@ -332,22 +287,22 @@
   <!-- ========== FAQ SECTION ========== -->
   <section class="section">
     <div class="container">
-      <div style="margin-bottom: clamp(40px, 6vw, 80px);" data-reveal>
+      <div data-reveal>
         <div class="label"><span class="line"></span> FAQ</div>
         <h2>Commercial Glazing in South Tampa -<br><span class="accent">Common Questions</span></h2>
       </div>
-      <div style="max-width: 800px;" data-reveal>
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 0;">
-          <h4 style="margin-bottom: 12px; font-size: 1.1rem;">Does ACG have experience with design-forward glazing in urban South Tampa environments?</h4>
-          <p style="color: var(--text-muted, #8a9ab5);">Yes. South Tampa projects - SoHo, Hyde Park Village, Harbour Island, the Channel District - often require glazing systems specified beyond standard commercial-grade, with custom sightlines, flush detailing, specialty glass coatings, and tight architectural tolerances. ACG's experience with complex commercial glazing packages, including specialty systems from Euro-Wall and PGT, gives us the technical capability to meet design-intent specifications in these demanding urban environments.</p>
+      <div style="max-width:800px" data-reveal>
+        <div class="ax-rule">
+          <h4>Does ACG have experience with design-forward glazing in urban South Tampa environments?</h4>
+          <p>Yes. South Tampa projects - SoHo, Hyde Park Village, Harbour Island, the Channel District - often require glazing systems specified beyond standard commercial-grade, with custom sightlines, flush detailing, specialty glass coatings, and tight architectural tolerances. ACG's experience with complex commercial glazing packages, including specialty systems from Euro-Wall and PGT, gives us the technical capability to meet design-intent specifications in these demanding urban environments.</p>
         </div>
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 0;">
-          <h4 style="margin-bottom: 12px; font-size: 1.1rem;">How does ACG handle logistics on tight urban South Tampa job sites?</h4>
-          <p style="color: var(--text-muted, #8a9ab5);">Urban South Tampa sites - particularly Harbour Island, the Channel District, and SoHo - require precision scheduling because there's limited staging area, active pedestrian and vehicle traffic, and adjacent occupied buildings. ACG's scheduling platform coordinates material deliveries and crew arrivals to minimize staging time and avoid conflicts with other trades. We've worked in constrained urban environments and our project management approach is built for the complexity that comes with them.</p>
+        <div class="ax-rule">
+          <h4>How does ACG handle logistics on tight urban South Tampa job sites?</h4>
+          <p>Urban South Tampa sites - particularly Harbour Island, the Channel District, and SoHo - require precision scheduling because there's limited staging area, active pedestrian and vehicle traffic, and adjacent occupied buildings. ACG's scheduling platform coordinates material deliveries and crew arrivals to minimize staging time and avoid conflicts with other trades. We've worked in constrained urban environments and our project management approach is built for the complexity that comes with them.</p>
         </div>
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 32px 0;">
-          <h4 style="margin-bottom: 12px; font-size: 1.1rem;">What glazing systems does ACG use for South Tampa's coastal exposure requirements?</h4>
-          <p style="color: var(--text-muted, #8a9ab5);">South Tampa's Bayshore Boulevard, Harbour Island, and coastal-adjacent areas require wind-rated glazing systems engineered for Florida's coastal exposure zones. ACG specifies ESWindows and Slimpact impact systems - all with Florida Product Approvals - and uses wind-rated storefront and curtainwall systems from Euro-Wall and PGT that are tested and certified to the applicable ASCE wind load requirements. Our shop drawing packages include the product approval documentation required for Hillsborough County plan review.</p>
+        <div class="ax-rule">
+          <h4>What glazing systems does ACG use for South Tampa's coastal exposure requirements?</h4>
+          <p>South Tampa's Bayshore Boulevard, Harbour Island, and coastal-adjacent areas require wind-rated glazing systems engineered for Florida's coastal exposure zones. ACG specifies ESWindows and Slimpact impact systems - all with Florida Product Approvals - and uses wind-rated storefront and curtainwall systems from Euro-Wall and PGT that are tested and certified to the applicable ASCE wind load requirements. Our shop drawing packages include the product approval documentation required for Hillsborough County plan review.</p>
         </div>
       </div>
     </div>
@@ -363,24 +318,24 @@
       </div>
       <div class="grid grid-4" data-reveal data-delay="100">
         <div class="service-card">
-          <h4><a href="/storefront-glazier-tampa-florida/" style="color: inherit; text-decoration: none;">ACG Tampa Office</a></h4>
-          <p>Our Tampa office covers all of Hillsborough County - from downtown's towers to the suburban commercial corridors. <a href="/storefront-glazier-tampa-florida/" style="color: #E11320;">View Tampa page →</a></p>
+          <h4><a href="/storefront-glazier-tampa-florida/">ACG Tampa Office</a></h4>
+          <p>Our Tampa office covers all of Hillsborough County - from downtown's towers to the suburban commercial corridors. <a href="/storefront-glazier-tampa-florida/">View Tampa page →</a></p>
         </div>
         <div class="service-card">
-          <h4><a href="commercial-glazing-brandon-riverview.html" style="color: inherit; text-decoration: none;">Brandon & Riverview</a></h4>
-          <p>ACG serves east Hillsborough's fast-growing suburban commercial market - Brandon, Riverview, Valrico, and beyond. <a href="commercial-glazing-brandon-riverview.html" style="color: #E11320;">View Brandon page →</a></p>
+          <h4><a href="commercial-glazing-brandon-riverview.html">Brandon & Riverview</a></h4>
+          <p>ACG serves east Hillsborough's fast-growing suburban commercial market - Brandon, Riverview, Valrico, and beyond. <a href="commercial-glazing-brandon-riverview.html">View Brandon page →</a></p>
         </div>
         <div class="service-card">
-          <h4><a href="commercial-glazing-wesley-chapel.html" style="color: inherit; text-decoration: none;">Wesley Chapel</a></h4>
-          <p>ACG covers Pasco County's booming SR-54/56 commercial corridor - Wesley Chapel, Land O Lakes, New Tampa. <a href="commercial-glazing-wesley-chapel.html" style="color: #E11320;">View Wesley Chapel page →</a></p>
+          <h4><a href="commercial-glazing-wesley-chapel.html">Wesley Chapel</a></h4>
+          <p>ACG covers Pasco County's booming SR-54/56 commercial corridor - Wesley Chapel, Land O Lakes, New Tampa. <a href="commercial-glazing-wesley-chapel.html">View Wesley Chapel page →</a></p>
         </div>
         <div class="service-card">
-          <h4><a href="send-plans.html" style="color: inherit; text-decoration: none;">Send Your Plans</a></h4>
-          <p>Upload drawings for a South Tampa project and get a complete scope and pricing back within 48 hours. <a href="send-plans.html" style="color: #E11320;">Send Us Plans →</a></p>
+          <h4><a href="send-plans.html">Send Your Plans</a></h4>
+          <p>Upload drawings for a South Tampa project and get a complete scope and pricing back within 48 hours. <a href="send-plans.html">Send Us Plans →</a></p>
         </div>
         <div class="service-card">
-          <h4><a href="/storefront-glazier-tampa-florida/" style="color: inherit; text-decoration: none;">Tampa hub page</a></h4>
-          <p>View the full ACG Tampa office overview - service area, systems, and the complete commercial glazing scope we deliver across all of Tampa Bay. <a href="/storefront-glazier-tampa-florida/" style="color: #E11320;">View Tampa hub →</a></p>
+          <h4><a href="/storefront-glazier-tampa-florida/">Tampa hub page</a></h4>
+          <p>View the full ACG Tampa office overview - service area, systems, and the complete commercial glazing scope we deliver across all of Tampa Bay. <a href="/storefront-glazier-tampa-florida/">View Tampa hub →</a></p>
         </div>
       </div>
     </div>
@@ -389,7 +344,7 @@
   <!-- ========== CTA ========== -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom: clamp(30px, 4vw, 50px);" data-reveal-fade>SEND PLANS</div>
+      <div class="text-massive" data-reveal-fade>SEND PLANS</div>
       <h2>Have Plans?<br>We'll Have a Scope in <span class="accent">48 Hours.</span></h2>
       <p>No chasing. No ghosting. Send your drawings and our team delivers a detailed scope, system recommendations, and a complete Division 08 scope breakdown - fast.</p>
       <a href="send-plans.html" class="btn btn-primary btn-lg">
@@ -403,79 +358,39 @@
   
 
 <!-- ========== RELATED FLORIDA MARKETS ========== -->
-<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1" style="background:#f5f1ea;padding:72px 24px;">
-  <div style="max-width:980px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e11320;margin-bottom:14px;font-weight:600;">Full Commercial Glass Scope</div>
-    <h2 style="font-size:clamp(28px,3.6vw,40px);letter-spacing:-.022em;line-height:1.08;color:#0e284f;margin:0 0 18px;">Not just impact glass. Every commercial glass system.</h2>
-    <p style="font-size:17px;line-height:1.65;color:#3a4a5e;margin:0 0 36px;max-width:760px;">ACG installs the full CSI Division 08 (Openings) scope across the state - hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px;font-size:15px;line-height:1.55;">
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Storefront systems</strong><span style="color:#6a7484;">ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Curtain wall</strong><span style="color:#6a7484;">Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Impact windows &amp; doors</strong><span style="color:#6a7484;">HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Sliding &amp; folding doors</strong><span style="color:#6a7484;">Euro-Wall folding, multi-slide, arched storefront.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Interior glass</strong><span style="color:#6a7484;">Office partitions, conference walls, demountable systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Glass railings</strong><span style="color:#6a7484;">Frameless, channel-mounted, terrace and stair installations.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Mirrors</strong><span style="color:#6a7484;">Gym, retail, salon, commercial restroom, lobby walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Fire-rated glazing</strong><span style="color:#6a7484;">TGP systems, 20 to 180 minute fire ratings.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Automatic entrances</strong><span style="color:#6a7484;">Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Decorative + specialty</strong><span style="color:#6a7484;">Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Skylights + roof glazing</strong><span style="color:#6a7484;">Sloped, atrium, structural silicone systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Service + retrofit</strong><span style="color:#6a7484;">Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
+<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1">
+  <div style="max-width:980px">
+    <div class="ax-kicker ax-strong">Full Commercial Glass Scope</div>
+    <h2>Not just impact glass. Every commercial glass system.</h2>
+    <p style="max-width:760px">ACG installs the full CSI Division 08 (Openings) scope across the state - hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px" class="ax-plain-list">
+      <li><strong style="display:block">Storefront systems</strong><span>ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
+      <li><strong style="display:block">Curtain wall</strong><span>Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
+      <li><strong style="display:block">Impact windows &amp; doors</strong><span>HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
+      <li><strong style="display:block">Sliding &amp; folding doors</strong><span>Euro-Wall folding, multi-slide, arched storefront.</span></li>
+      <li><strong style="display:block">Interior glass</strong><span>Office partitions, conference walls, demountable systems.</span></li>
+      <li><strong style="display:block">Glass railings</strong><span>Frameless, channel-mounted, terrace and stair installations.</span></li>
+      <li><strong style="display:block">Mirrors</strong><span>Gym, retail, salon, commercial restroom, lobby walls.</span></li>
+      <li><strong style="display:block">Fire-rated glazing</strong><span>TGP systems, 20 to 180 minute fire ratings.</span></li>
+      <li><strong style="display:block">Automatic entrances</strong><span>Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
+      <li><strong style="display:block">Decorative + specialty</strong><span>Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
+      <li><strong style="display:block">Skylights + roof glazing</strong><span>Sloped, atrium, structural silicone systems.</span></li>
+      <li><strong style="display:block">Service + retrofit</strong><span>Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
     </ul>
   </div>
 </section>
-<footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+</div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

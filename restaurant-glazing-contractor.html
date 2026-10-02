@@ -30,77 +30,9 @@
   <meta name="twitter:description" content="Restaurant & F&B commercial glazing - Euro-Wall folding doors, ESWindows impact storefront, Slimpact. ACG's signature specialty.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
-  <style>
-    /* ===== NAV DROPDOWN ===== */
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-      .nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-      .nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-      .nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-      .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-      .nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-      .nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-      .nav-dropdown-menu a:hover{color:#fff !important}
-    }
-
-    /* ===== SYSTEM CARDS ===== */
-    .system-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:clamp(22px,2.8vw,32px);transition:border-color .25s,box-shadow .25s;}
-    .system-card:hover{border-color:rgba(225,19,32,.3);box-shadow:0 10px 32px rgba(0,0,0,.28);}
-    .system-card-badge{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#E11320;margin-bottom:10px;display:block;}
-    .system-card h3{font-size:clamp(1.0625rem,1.8vw,1.25rem);font-weight:800;color:#fff;letter-spacing:-.015em;margin-bottom:10px;}
-    .system-card p{font-size:.875rem;line-height:1.65;color:rgba(255,255,255,.65);}
-    .system-card-specs{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px;}
-    .spec-tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.05em;padding:4px 9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.6);}
-
-    /* ===== CONSIDERATION ROW ===== */
-    .consideration-row{display:flex;gap:clamp(14px,2vw,20px);align-items:flex-start;padding:clamp(16px,2.5vw,22px);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;transition:border-color .2s;}
-    .consideration-row:hover{border-color:rgba(255,255,255,.13);}
-    .consideration-icon{width:38px;height:38px;flex-shrink:0;background:rgba(225,19,32,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;}
-    .consideration-icon svg{width:18px;height:18px;color:#E11320;}
-    .consideration-text h4{font-size:.9375rem;font-weight:700;color:#fff;margin-bottom:5px;}
-    .consideration-text p{font-size:.8125rem;line-height:1.6;color:rgba(255,255,255,.6);margin:0;}
-
-    /* ===== ACG ROLE SPLIT ===== */
-    .role-panel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;}
-    @media(max-width:768px){.role-panel{grid-template-columns:1fr;}}
-    .role-list{display:flex;flex-direction:column;gap:12px;margin-top:20px;}
-    .role-item{display:flex;gap:12px;align-items:flex-start;}
-    .role-num{font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;color:#E11320;flex-shrink:0;width:20px;padding-top:2px;}
-    .role-item-text h4{font-size:.9375rem;font-weight:700;color:#fff;margin-bottom:4px;}
-    .role-item-text p{font-size:.8125rem;color:rgba(255,255,255,.6);line-height:1.6;margin:0;}
-
-    /* ===== PROJECT CARDS ===== */
-    .project-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:clamp(22px,2.8vw,32px);transition:border-color .25s,box-shadow .25s;}
-    .project-card:hover{border-color:rgba(225,19,32,.25);box-shadow:0 10px 32px rgba(0,0,0,.3);}
-    .project-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#E11320;margin-bottom:10px;}
-    .project-card h3{font-size:clamp(1.0625rem,1.8vw,1.25rem);font-weight:800;color:#fff;letter-spacing:-.015em;margin-bottom:10px;}
-    .project-card p{font-size:.875rem;line-height:1.65;color:rgba(255,255,255,.65);margin-bottom:10px;}
-    .project-facts{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
-    .project-fact{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.05em;padding:4px 9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.6);}
-
-    /* ===== GEO SPLIT ===== */
-    .geo-split{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,36px);}
-    @media(max-width:640px){.geo-split{grid-template-columns:1fr;}}
-    .geo-col{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:clamp(20px,2.5vw,30px);}
-    .geo-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:12px;}
-    .geo-badge-fl{background:#E11320;color:#fff;}
-    .geo-col h4{font-size:1.125rem;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.015em;}
-    .geo-col p{font-size:.875rem;line-height:1.65;color:rgba(255,255,255,.65);}
-    .geo-col ul{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
-    .geo-col ul li{font-size:.8125rem;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px;}
-    .geo-col ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:#E11320;flex-shrink:0;}
-  </style>
 
   <script type="application/ld+json">
 {
@@ -180,47 +112,22 @@
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does ACG install Euro-Wall folding door systems?","acceptedAnswer":{"@type":"Answer","text":"Yes. ACG is an Euro-Wall installer. Euro-Wall folding and multi-slide systems are ACG's signature product for restaurant and food-and-beverage venues seeking indoor-outdoor connectivity."}},{"@type":"Question","name":"What glazing systems does ACG offer for restaurant projects?","acceptedAnswer":{"@type":"Answer","text":"ACG installs Euro-Wall folding and sliding glass walls, aluminum-framed storefront systems (impact-rated where required), all-glass entrances, and ADA-compliant threshold systems. All systems are matched to the specific project's building code jurisdiction and operational needs."}},{"@type":"Question","name":"Can ACG meet typical restaurant buildout schedules?","acceptedAnswer":{"@type":"Answer","text":"ACG coordinates closely with GCs and owners on restaurant-specific schedules, including pre-glazed storefront delivery sequencing through ESWindows to reduce field installation time. Discuss your schedule requirements with Connor Walsh during preconstruction."}},{"@type":"Question","name":"Does ACG coordinate with FF&E delivery and interior fitout teams?","acceptedAnswer":{"@type":"Answer","text":"Yes. ACG can coordinate glazing installation sequencing with FF&E delivery, millwork, and interior fitout contractors to avoid conflicts at threshold and entrance locations. This is a standard coordination item ACG manages on restaurant tenant improvement projects."}},{"@type":"Question","name":"Does ACG work in Florida HVHZ zones for restaurant projects?","acceptedAnswer":{"@type":"Answer","text":"Yes. ACG installs impact-rated storefront and glazing systems compliant with Florida Building Code HVHZ requirements for Miami-Dade and Broward counties, including Miami-Dade NOA-approved assemblies. Euro-Wall systems for HVHZ zones require project-specific engineering and product approval confirmation."}},{"@type":"Question","name":"Who is a restaurant glazing contractor in Florida?","acceptedAnswer":{"@type":"Answer","text":"American Commercial Glass specializes in restaurant and F&B glazing, installing Euro-Wall folding and sliding operable glass walls with ADA-compliant thresholds and Florida hurricane-code compliance. Restaurant glazing is ACG's signature specialty, delivered with impact storefront systems for coastal Florida venues."}},{"@type":"Question","name":"What glass systems work best for restaurant indoor-outdoor dining?","acceptedAnswer":{"@type":"Answer","text":"Operable glass walls - folding and multi-slide door systems - open a restaurant to the outdoors for indoor-outdoor dining. American Commercial Glass installs Euro-Wall folding and sliding systems with ADA-compliant thresholds and Florida hurricane-code compliance, paired with impact storefront for coastal F&B venues."}},{"@type":"Question","name":"Do restaurant glass walls meet Florida hurricane code?","acceptedAnswer":{"@type":"Answer","text":"Yes. American Commercial Glass installs Euro-Wall operable glass walls in hurricane-rated configurations that meet Florida wind-borne debris and HVHZ requirements, paired with impact storefront systems. ACG has Miami-Dade NOA compliance experience and delivers restaurant glazing as its signature specialty across coastal Florida."}}]}</script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
   <!-- ===== NAV ===== -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- ===== HERO ===== -->
-  <section class="page-hero" id="main-content">
+  <section class="page-hero ax-hero ax-hero-m" id="main-content">
     <div class="container">
       <div class="label" data-reveal><span class="line"></span> Euro-Wall specialty installer &middot; Florida statewide</div>
       <h1 data-reveal data-delay="100">Restaurant &amp; F&amp;B <br> <span class="accent">commercial glazing.</span></h1>
-      <p data-reveal data-delay="200" style="max-width:720px;">Euro-Wall folding and sliding door systems are ACG's signature specialty in the restaurant sector. We install the glazing that defines indoor-outdoor dining - frameless fold-back walls, framed multi-panel door systems, impact storefronts, and glazed dining fronts built to Florida's coastal wind and hurricane codes. ACG is not just an installer: we bring design assistance, code-compliance interpretation, mockup coordination, and schedule integration with FF&amp;E delivery teams.</p>
-      <div data-reveal data-delay="300" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
+      <p data-reveal data-delay="200" style="max-width:720px">Euro-Wall folding and sliding door systems are ACG's signature specialty in the restaurant sector. We install the glazing that defines indoor-outdoor dining - frameless fold-back walls, framed multi-panel door systems, impact storefronts, and glazed dining fronts built to Florida's coastal wind and hurricane codes. ACG is not just an installer: we bring design assistance, code-compliance interpretation, mockup coordination, and schedule integration with FF&amp;E delivery teams.</p>
+      <div data-reveal data-delay="300" style="display:flex;gap:16px;flex-wrap:wrap">
         <a href="send-plans.html" class="btn btn-primary">Send Us Plans &rarr;</a>
         <a href="euro-wall.html" class="btn btn-ghost">Euro-Wall Systems</a>
       </div>
@@ -228,12 +135,12 @@
   </section>
 
   <!-- FEATURED-SNIPPET DIRECT ANSWER (Agent IFS) -->
-  <section class="direct-answer-band" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(24px,3vw,36px) 0;">
-    <div class="container" style="max-width:880px;">
+  <section class="direct-answer-band">
+    <div class="container" style="max-width:880px">
       <div class="direct-answer" itemscope itemtype="https://schema.org/Question">
         <p itemprop="name" hidden>Who is a restaurant glazing contractor in Florida?</p>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#fff;margin:0;"><strong>A restaurant glazing contractor in Florida installs storefronts, folding glass walls, and impact-rated entrances for dining spaces. American Commercial Glass self-performs restaurant glazing statewide using Euro-Wall and ESWindows systems, coordinating with general contractors on tight build-out schedules under Florida license CGC #1531993.</strong></p>
+          <p itemprop="text" class="ax-lead"><strong>A restaurant glazing contractor in Florida installs storefronts, folding glass walls, and impact-rated entrances for dining spaces. American Commercial Glass self-performs restaurant glazing statewide using Euro-Wall and ESWindows systems, coordinating with general contractors on tight build-out schedules under Florida license CGC #1531993.</strong></p>
         </div>
       </div>
     </div>
@@ -246,7 +153,7 @@
       <div class="stat-text">Approved Installer - FL</div>
     </div>
     <div class="stat-block">
-      <div class="num">350<span style="font-size:.6em;">+</span></div>
+      <div class="num">350<span class="ax-small">+</span></div>
       <div class="stat-text">Commercial Projects</div>
     </div>
     <div class="stat-block">
@@ -262,20 +169,20 @@
   <!-- ===== SYSTEM TYPES ===== -->
   <section class="section" aria-label="Restaurant glazing systems ACG installs">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(28px,4vw,44px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Systems &amp; products</div>
-        <h2 style="font-size:clamp(26px,4vw,48px);font-weight:900;letter-spacing:-.025em;line-height:1.1;">The systems ACG installs for <span class="accent">restaurants and F&amp;B.</span></h2>
-        <p style="margin-top:14px;font-size:.9375rem;color:rgba(255,255,255,.65);max-width:660px;">Every system listed here is one ACG has an active manufacturer relationship with and has installed on completed commercial projects. No unfamiliar products on your timeline-critical scope.</p>
+        <h2>The systems ACG installs for <span class="accent">restaurants and F&amp;B.</span></h2>
+        <p style="max-width:660px">Every system listed here is one ACG has an active manufacturer relationship with and has installed on completed commercial projects. No unfamiliar products on your timeline-critical scope.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);" data-reveal>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px)" data-reveal>
 
         <!-- EURO-WALL FOLDING - FRAMELESS -->
         <div class="system-card">
           <span class="system-card-badge">ACG specialty &middot; Euro-Wall</span>
           <h3>Euro-Wall Folding Doors - Frameless</h3>
           <p>Frameless glass panels that fold completely out of the dining envelope, creating a fully open indoor-outdoor connection. No visible frame at the panel face - maximum transparency, maximum ambiance.</p>
-          <p style="font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.55;margin-top:8px;">Ideal for: upscale dining rooms, chef's counter openings, bar-to-patio transitions in coastal FL environments.</p>
+          <p class="ax-small">Ideal for: upscale dining rooms, chef's counter openings, bar-to-patio transitions in coastal FL environments.</p>
           <div class="system-card-specs">
             <span class="spec-tag">Frameless panel</span>
             <span class="spec-tag">Full-open configuration</span>
@@ -288,7 +195,7 @@
           <span class="system-card-badge">ACG specialty &middot; Euro-Wall</span>
           <h3>Euro-Wall Folding Doors - Framed</h3>
           <p>Framed aluminum-and-glass bi-fold panels with slimmer sightlines than conventional storefront. Structured for larger openings and locations requiring higher wind-load performance documentation - including Florida coastal HVHZ projects.</p>
-          <p style="font-size:.8125rem;color:rgba(255,255,255,.5);line-height:1.55;margin-top:8px;">Impact-rated configurations available. Florida product approval documentation provided. <cite style="font-style:normal;">FBC Ch. 16 / HVHZ compliance per Florida product approval system.</cite></p>
+          <p class="ax-small">Impact-rated configurations available. Florida product approval documentation provided. <cite>FBC Ch. 16 / HVHZ compliance per Florida product approval system.</cite></p>
           <div class="system-card-specs">
             <span class="spec-tag">Framed aluminum</span>
             <span class="spec-tag">HVHZ configs available</span>
@@ -350,15 +257,15 @@
   </section>
 
   <!-- ===== RESTAURANT-SPECIFIC CONSIDERATIONS ===== -->
-  <section class="section" style="padding-top:clamp(24px,3vw,40px);" aria-label="Restaurant glazing design considerations">
+  <section class="section" aria-label="Restaurant glazing design considerations">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,40px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> What matters on a restaurant scope</div>
-        <h2 style="font-size:clamp(24px,3.5vw,44px);font-weight:900;letter-spacing:-.025em;line-height:1.1;">Restaurant glazing is a different <span class="accent">kind of job.</span></h2>
-        <p style="margin-top:12px;font-size:.9375rem;color:rgba(255,255,255,.65);max-width:660px;">Commercial glazing on a restaurant is not identical to glazing on an office building. The operational demands, the code requirements at coastal sites, and the relationship between glazing and the overall design concept all require specific attention.</p>
+        <h2>Restaurant glazing is a different <span class="accent">kind of job.</span></h2>
+        <p style="max-width:660px">Commercial glazing on a restaurant is not identical to glazing on an office building. The operational demands, the code requirements at coastal sites, and the relationship between glazing and the overall design concept all require specific attention.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,18px);" data-reveal>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,18px)" data-reveal>
 
         <div class="consideration-row">
           <div class="consideration-icon">
@@ -376,7 +283,7 @@
           </div>
           <div class="consideration-text">
             <h4>Hurricane code at Florida coastal sites</h4>
-            <p>Florida coastal restaurants - especially those on or near HVHZ boundaries - require impact-rated glazing assemblies with Florida product approvals or Miami-Dade NOAs. ACG prepares the approval documentation and coordinates with the AHJ on any substitutions. <cite style="font-style:normal;font-size:.75rem;">FBC Ch. 16; HVHZ per Miami-Dade / Broward County boundaries.</cite></p>
+            <p>Florida coastal restaurants - especially those on or near HVHZ boundaries - require impact-rated glazing assemblies with Florida product approvals or Miami-Dade NOAs. ACG prepares the approval documentation and coordinates with the AHJ on any substitutions. <cite>FBC Ch. 16; HVHZ per Miami-Dade / Broward County boundaries.</cite></p>
           </div>
         </div>
 
@@ -425,13 +332,13 @@
   </section>
 
   <!-- ===== ACG'S ROLE ===== -->
-  <section class="section" style="padding-top:clamp(24px,3vw,40px);" aria-label="ACG's role beyond installation">
+  <section class="section" aria-label="ACG's role beyond installation">
     <div class="container">
       <div class="role-panel" data-reveal>
         <div>
           <div class="label"><span class="line"></span> Beyond installation</div>
-          <h2 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;letter-spacing:-.025em;line-height:1.1;color:#fff;">ACG's role on a restaurant <span class="accent">glazing scope.</span></h2>
-          <p style="margin-top:14px;font-size:.9375rem;color:rgba(255,255,255,.65);line-height:1.7;">ACG is not a pass-through installer. On restaurant projects - particularly those involving Euro-Wall systems - the work begins well before fabrication. Our process is structured around preventing surprises at installation, not discovering them on-site.</p>
+          <h2>ACG's role on a restaurant <span class="accent">glazing scope.</span></h2>
+          <p>ACG is not a pass-through installer. On restaurant projects - particularly those involving Euro-Wall systems - the work begins well before fabrication. Our process is structured around preventing surprises at installation, not discovering them on-site.</p>
           <div class="role-list">
             <div class="role-item">
               <span class="role-num">01</span>
@@ -464,12 +371,12 @@
           </div>
         </div>
         <div>
-          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:clamp(24px,3vw,36px);">
-            <div class="label" style="margin-bottom:16px;"><span class="line"></span> Why Euro-Wall at restaurants</div>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:16px;">Euro-Wall systems require precise rough opening preparation, correct slab-edge details, and experienced installation to operate correctly in daily restaurant service. A misaligned track or incorrect threshold detail creates an operational problem - not just an aesthetic one.</p>
-            <p style="font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:16px;">ACG has installed Euro-Wall systems across Florida's hospitality and F&amp;B market. We understand the installation sequencing, the relationship between the slab and the track, and the final adjustment process that makes the difference between a system that works flawlessly and one that needs callbacks.</p>
-            <div style="padding:16px;background:rgba(225,19,32,.07);border:1px solid rgba(225,19,32,.2);border-radius:8px;margin-top:8px;">
-              <p style="font-size:.875rem;color:rgba(255,255,255,.8);line-height:1.6;margin:0;"><strong style="color:#fff;">Connor Walsh, President &amp; Co-founder</strong> specifically identified restaurant Euro-Wall installations as ACG's sector specialty - the work that ACG has built the most deliberate expertise around.</p>
+          <div class="ax-box">
+            <div class="label"><span class="line"></span> Why Euro-Wall at restaurants</div>
+            <p>Euro-Wall systems require precise rough opening preparation, correct slab-edge details, and experienced installation to operate correctly in daily restaurant service. A misaligned track or incorrect threshold detail creates an operational problem - not just an aesthetic one.</p>
+            <p>ACG has installed Euro-Wall systems across Florida's hospitality and F&amp;B market. We understand the installation sequencing, the relationship between the slab and the track, and the final adjustment process that makes the difference between a system that works flawlessly and one that needs callbacks.</p>
+            <div class="ax-box">
+              <p><strong>Connor Walsh, President &amp; Co-founder</strong> specifically identified restaurant Euro-Wall installations as ACG's sector specialty - the work that ACG has built the most deliberate expertise around.</p>
             </div>
           </div>
         </div>
@@ -478,15 +385,15 @@
   </section>
 
   <!-- ===== FEATURED PROJECTS ===== -->
-  <section class="section" style="padding-top:clamp(24px,3vw,40px);" aria-label="Featured restaurant and F&B glazing projects">
+  <section class="section" aria-label="Featured restaurant and F&B glazing projects">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,40px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Portfolio</div>
-        <h2 style="font-size:clamp(24px,3.5vw,44px);font-weight:900;letter-spacing:-.025em;line-height:1.1;">Verified F&amp;B and retail <span class="accent">glazing projects.</span></h2>
-        <p style="margin-top:12px;font-size:.9375rem;color:rgba(255,255,255,.65);max-width:580px;">ACG cites only verified projects. Restaurant projects across Florida - full list available on request.</p>
+        <h2>Verified F&amp;B and retail <span class="accent">glazing projects.</span></h2>
+        <p style="max-width:580px">ACG cites only verified projects. Restaurant projects across Florida - full list available on request.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);" data-reveal>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px)" data-reveal>
 
         <!-- BARON SHOPPES TRADITION -->
         <div class="project-card">
@@ -500,8 +407,8 @@
             <span class="project-fact">Impact storefront</span>
             <span class="project-fact">Multi-tenant</span>
           </div>
-          <div style="margin-top:14px;">
-            <a href="case-study-baron-shoppes-tradition.html" style="font-size:.875rem;font-weight:600;color:#E11320;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#ff3040'" onmouseout="this.style.color='#E11320'">View case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+          <div>
+            <a href="case-study-baron-shoppes-tradition.html" style="display:inline-flex;align-items:center;gap:6px" onmouseover="this.style.color='#ff3040'" onmouseout="this.style.color='#E11320'" class="ax-strong">View case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
           </div>
         </div>
 
@@ -516,8 +423,8 @@
             <span class="project-fact">Commercial storefront</span>
             <span class="project-fact">Multi-phase coordination</span>
           </div>
-          <div style="margin-top:14px;">
-            <a href="case-study-rome-collective.html" style="font-size:.875rem;font-weight:600;color:#E11320;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#ff3040'" onmouseout="this.style.color='#E11320'">View case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
+          <div>
+            <a href="case-study-rome-collective.html" style="display:inline-flex;align-items:center;gap:6px" onmouseover="this.style.color='#ff3040'" onmouseout="this.style.color='#E11320'" class="ax-strong">View case study <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></a>
           </div>
         </div>
 
@@ -536,19 +443,19 @@
       </div>
 
       <!-- PORTFOLIO NOTE -->
-      <div style="margin-top:clamp(20px,3vw,32px);padding:clamp(16px,2.5vw,24px);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:flex-start;gap:14px;" data-reveal>
+      <div style="display:flex;align-items:flex-start;gap:14px" data-reveal class="ax-box">
         <svg style="width:18px;height:18px;flex-shrink:0;color:rgba(255,255,255,.4);margin-top:2px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <p style="font-size:.875rem;color:rgba(255,255,255,.6);line-height:1.65;margin:0;"><strong style="color:rgba(255,255,255,.8);">Restaurant projects across Florida - full list available on request.</strong> ACG does not publish every project on this page. If you are evaluating ACG for a specific restaurant or F&amp;B scope, contact <!--email_off--><a href="mailto:connor@acglass.com" style="color:rgba(255,255,255,.75);text-decoration:none;">connor@acglass.com</a><!--/email_off--> and we will provide references and project details relevant to your project type and location.</p>
+        <p><strong>Restaurant projects across Florida - full list available on request.</strong> ACG does not publish every project on this page. If you are evaluating ACG for a specific restaurant or F&amp;B scope, contact <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> and we will provide references and project details relevant to your project type and location.</p>
       </div>
     </div>
   </section>
 
   <!-- ===== GEOGRAPHIC COVERAGE ===== -->
-  <section class="section" style="padding-top:clamp(24px,3vw,40px);" aria-label="Geographic coverage for restaurant glazing">
+  <section class="section" aria-label="Geographic coverage for restaurant glazing">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,36px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Where we work</div>
-        <h2 style="font-size:clamp(22px,3vw,38px);font-weight:900;letter-spacing:-.025em;line-height:1.1;">Florida statewide today.</h2>
+        <h2>Florida statewide today.</h2>
       </div>
 
       <div class="geo-split" data-reveal>
@@ -563,34 +470,34 @@
             <li>Central Florida (Orlando, Daytona Beach)</li>
             <li>Northeast Florida (Jacksonville)</li>
           </ul>
-          <p style="margin-top:14px;font-size:.8125rem;color:rgba(255,255,255,.45);">HVHZ-rated assemblies apply in Miami-Dade and Broward. Monroe County is a wind-borne debris region; Florida Product Approval is the code path there.</p>
+          <p class="ax-small">HVHZ-rated assemblies apply in Miami-Dade and Broward. Monroe County is a wind-borne debris region; Florida Product Approval is the code path there.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA BLOCK ===== -->
-  <section class="section" style="padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(48px,7vw,96px);" aria-label="Contact ACG for restaurant glazing">
+  <section class="section" aria-label="Contact ACG for restaurant glazing">
     <div class="container" data-reveal>
-      <div style="background:linear-gradient(135deg,rgba(225,19,32,.09),rgba(255,255,255,.02));border:1px solid rgba(225,19,32,.2);border-radius:14px;padding:clamp(32px,5vw,60px);display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;" class="cta-split-rest">
+      <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center" class="cta-split-rest">
         <div>
-          <div class="label" style="margin-bottom:14px;"><span class="line"></span> Ready to bid your restaurant scope?</div>
-          <h2 style="font-size:clamp(22px,3.5vw,42px);font-weight:900;letter-spacing:-.025em;color:#fff;margin-bottom:12px;">Send plans or a concept set.<br><span class="accent">ACG responds within 48 hours.</span></h2>
-          <p style="font-size:.9375rem;color:rgba(255,255,255,.65);line-height:1.65;max-width:560px;">Whether you have a full set of construction documents or early-schematic drawings with an opening size, ACG can provide a preliminary scope number, a product recommendation for the Euro-Wall or storefront configuration, and a timeline for fabrication and installation. No obligation, no boilerplate follow-up.</p>
-          <div style="margin-top:16px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-            <a href="tel:+17724867711" style="font-size:.9rem;color:rgba(255,255,255,.65);text-decoration:none;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">
+          <div class="label"><span class="line"></span> Ready to bid your restaurant scope?</div>
+          <h2>Send plans or a concept set.<br><span class="accent">ACG responds within 48 hours.</span></h2>
+          <p style="max-width:560px">Whether you have a full set of construction documents or early-schematic drawings with an opening size, ACG can provide a preliminary scope number, a product recommendation for the Euro-Wall or storefront configuration, and a timeline for fabrication and installation. No obligation, no boilerplate follow-up.</p>
+          <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+            <a href="tel:+17724867711" style="display:flex;align-items:center;gap:8px" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">
               <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               (772) 486-7711
             </a>
-            <!--email_off--><a href="mailto:connor@acglass.com" style="font-size:.9rem;color:rgba(255,255,255,.65);text-decoration:none;display:flex;align-items:center;gap:8px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">
+            <!--email_off--><a href="mailto:connor@acglass.com" style="display:flex;align-items:center;gap:8px" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.65)'">
               <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               connor@acglass.com
             </a><!--/email_off-->
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0;">
-          <a href="send-plans.html" class="btn btn-primary" style="white-space:nowrap;">Send Us Plans &rarr;</a>
-          <a href="euro-wall.html" class="btn btn-ghost" style="white-space:nowrap;">Euro-Wall Systems</a>
+        <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0">
+          <a href="send-plans.html" class="btn btn-primary" style="white-space:nowrap">Send Us Plans &rarr;</a>
+          <a href="euro-wall.html" class="btn btn-ghost" style="white-space:nowrap">Euro-Wall Systems</a>
         </div>
       </div>
     </div>
@@ -599,8 +506,8 @@
   <!-- ===== FLAGSHIP 4-COL FOOTER ===== -->
     
   <!-- PAA: People Also Ask Q&A (Agent X2) -->
-  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) 24px;">
-    <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:800;margin:0 0 28px;">Related questions</h2>
+  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px">
+    <h2>Related questions</h2>
     <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
       <h3 itemprop="name">Who is a restaurant glazing contractor in Florida?</h3>
       <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
@@ -620,53 +527,12 @@
       </div>
     </div>
   </section>
-<footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+</div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>
@@ -694,5 +560,6 @@
     })();
   </script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

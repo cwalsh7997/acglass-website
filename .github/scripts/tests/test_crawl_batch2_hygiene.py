@@ -993,7 +993,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertIn(">Temple Terrace, FL</a>", locations)
         self.assertNotIn('href="/temple-terrace/"', locations)
         self.assertIn(
-            'href="/storefront-glazier-tampa-florida/" style="color:#0e284f;text-decoration:none;font-size:16px;line-height:1.5;">Temple Terrace, FL</a>',
+            # 2026-10-01 interior redesign: inline styling moved to acg-arch-interior.css; href and anchor unchanged.
+            '<a href="/storefront-glazier-tampa-florida/">Temple Terrace, FL</a>',
             locations,
         )
 

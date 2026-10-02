@@ -19,10 +19,23 @@ FROZEN_SCOPE_PATHS = {
     "storefront-installer-west-palm-beach.html",
     "west-palm-beach/index.html",
 }
+# 2026-10-01 interior redesign: pages converted by scripts/arch-interior-migrate.py (body class
+# ax-interior) drop the dark-theme acg-chrome.css and load acg-arch-interior.css instead. The
+# contrast contract follows the page: legacy pages keep the acg-chrome checks, converted pages
+# must load the interior sheet at its exact cache key and that sheet's colours are checked below.
+INTERIOR_CSS_PATH = ROOT / "css" / "acg-arch-interior.css"
+INTERIOR_LINK = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+INTERIOR_BODY = re.compile(r'<body[^>]*class="[^"]*\bax-interior\b')
+PAPER = "#f4f5f5"
 CHROME_LINK = re.compile(
     r'<link[^>]+href=["\'](?P<href>[^"\']*css/acg-chrome\.css(?:\?[^"\']*)?)["\']',
     re.IGNORECASE,
 )
+# Byte-frozen pages are not converted and keep the legacy chrome contract.
+LEGACY_SCOPE_PATHS = {
+    "commercial-glazier-near-me-west-palm-beach/index.html",
+    "impact-windows-palm-beach.html",
+}
 
 
 def relative_luminance(hex_color: str) -> float:
@@ -75,17 +88,37 @@ class SharedContrastContractTests(unittest.TestCase):
             self.css,
         )
 
+    def test_interior_scope_colors_meet_normal_text_contrast_on_paper(self):
+        interior = INTERIOR_CSS_PATH.read_text(encoding="utf-8")
+        tokens = dict(re.findall(r"--(ax-[a-z-]+):(#[0-9a-f]{6})", interior))
+        for name in ("ax-ink", "ax-text", "ax-soft", "ax-red-text"):
+            with self.subTest(token=name):
+                self.assertGreaterEqual(contrast_ratio(tokens[name], PAPER), 4.5)
+        self.assertIn(
+            '.ax-page [data-acg-block="full-scope-v1"]>div>div:first-child{color:var(--ax-soft);',
+            interior,
+        )
+        self.assertIn(
+            '.ax-page [data-acg-block="full-scope-v1"] li>span{color:var(--ax-text);',
+            interior,
+        )
+
     def test_every_full_scope_page_loads_shared_chrome(self):
         pages = []
         missing = []
         frozen = []
         stale_cache_keys = []
+        interior_missing = []
         for path in ROOT.rglob("*.html"):
             source = path.read_text(encoding="utf-8", errors="ignore")
             if SCOPE_MARKER not in source:
                 continue
             pages.append(path)
             relative = path.relative_to(ROOT).as_posix()
+            if INTERIOR_BODY.search(source):
+                if INTERIOR_LINK not in source or CHROME_LINK.search(source):
+                    interior_missing.append(relative)
+                continue
             match = CHROME_LINK.search(source)
             if not match:
                 missing.append(relative)
@@ -98,9 +131,10 @@ class SharedContrastContractTests(unittest.TestCase):
             if match.group("href") != expected:
                 stale_cache_keys.append((relative, match.group("href")))
         self.assertEqual(EXPECTED_SCOPE_PAGE_COUNT, len(pages))
-        self.assertEqual(FROZEN_SCOPE_PATHS, set(frozen))
+        self.assertEqual(FROZEN_SCOPE_PATHS & LEGACY_SCOPE_PATHS, set(frozen))
         self.assertEqual([], missing)
         self.assertEqual([], stale_cache_keys)
+        self.assertEqual([], interior_missing)
 
 
 if __name__ == "__main__":

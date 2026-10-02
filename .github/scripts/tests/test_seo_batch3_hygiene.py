@@ -123,7 +123,10 @@ class HeadHygieneTests(unittest.TestCase):
 
     def test_free_scope_review_uses_current_dark_css_cache_key(self):
         html = _read("free-glazing-scope-review.html")
-        self.assertIn('href="/css/acg2026-dark.css?v=20260919-a11y"', html)
+        # 2026-10-01 interior redesign: the page moved off acg2026-dark.css onto the interior
+        # sheet; the cache-key contract now applies to that sheet. No stale key may remain.
+        self.assertIn('href="/css/acg-arch-interior.css?v=20261001"', html)
+        self.assertNotIn("acg2026-dark.css", html)
         self.assertNotIn("v=20260802-unified", html)
 
 

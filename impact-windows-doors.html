@@ -30,8 +30,8 @@
   <meta name="twitter:description" content="ACG installs commercial impact-rated windows and doors across Florida. FBC HVHZ compliant, DP-rated, NOA-approved. ESWindows, PGT, Slimpact systems.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css?v=20260814-contrast">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <!-- AboutPage Schema -->
   
@@ -39,155 +39,8 @@
   <!-- Organization Schema -->
   
 
-  <style>
-    /* Responsive 2-column layout - collapses to 1 column on mobile */
-    .about-split-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .about-split-2col { grid-template-columns: 1fr; gap: 32px; }
-    }
-    /* Mission stats 2x2 grid */
-    .mission-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    /* No additional breakpoint needed - 2x2 is fine on mobile at 375px */
-    .about-section {
-      padding: clamp(48px, 7vw, 80px) 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .about-section:last-of-type {
-      border-bottom: none;
-    }
-    .section-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-    }
-    .office-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: clamp(24px, 3vw, 36px);
-    }
-    .office-card .office-name {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .office-card .office-tag {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .office-card p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      margin: 0;
-    }
-    .ai-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .ai-feature-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-    .ai-feature-text h5 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .ai-feature-text p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .mission-stat {
-      text-align: center;
-      padding: clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-    }
-    .mission-stat .m-num {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .mission-stat .m-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
-<style id="a11y-skip-style">
-.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
-.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
-*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
-</style>
 
-<style id="a11y-contrast-tweak">
-/* Lift low-contrast muted text to meet WCAG AA body copy threshold */
-.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
-/* Focus-visible outline already handled in skip-style */
-/* Ensure form inputs and buttons show focus */
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
-</style>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://acglass.com/services.html"},{"@type":"ListItem","position":3,"name":"Impact Windows & Doors","item":"https://acglass.com/impact-windows-doors.html"}]}</script>
   <script type="application/ld+json">
@@ -215,52 +68,27 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 }
 </script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <a href="#main-content" class="skip-to-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 <!-- NAVIGATION -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
 
   <main id="main-content" tabindex="-1">
 
   <!-- ========== HERO ========== -->
-  <section class="hero" style="min-height:55vh;justify-content:center;padding-bottom:60px;">
+  <section class="hero ax-hero ax-hero-m" style="min-height:55vh;justify-content:center">
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;"><span class="line"></span> Commercial Scope</div>
+        <div class="label"><span class="line"></span> Commercial Scope</div>
         <h1>Commercial Impact Windows <br> <span class="accent">& Doors in Florida.</span></h1>
-        <p class="hero-sub" style="max-width:720px;">Florida Building Code impact-rated windows and doors for commercial buildings. HVHZ Miami-Dade and Broward NOA-approved. Designed for Category 5 wind loads and large-missile impact. Installed by one accountable subcontractor.</p>
-        <div style="margin-top:clamp(28px,3vw,40px);display:flex;gap:14px;flex-wrap:wrap;">
+        <p class="hero-sub" style="max-width:720px">Florida Building Code impact-rated windows and doors for commercial buildings. HVHZ Miami-Dade and Broward NOA-approved. Designed for Category 5 wind loads and large-missile impact. Installed by one accountable subcontractor.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
           <a href="send-plans.html" class="btn btn-primary">Send Us Plans</a>
           <a href="portfolio.html" class="btn btn-ghost">See Project Examples</a>
         </div>
@@ -269,47 +97,47 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- FEATURED-SNIPPET DIRECT ANSWER (Agent IFS) -->
-  <section class="direct-answer-band" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(24px,3vw,36px) 0;">
-    <div class="container" style="max-width:880px;">
+  <section class="direct-answer-band">
+    <div class="container" style="max-width:880px">
       <div class="direct-answer" itemscope itemtype="https://schema.org/Question">
         <p itemprop="name" hidden>What is commercial impact window installation in Florida?</p>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#fff;margin:0;"><strong>Commercial impact windows in Florida are hurricane-rated glazing systems engineered to meet High-Velocity Hurricane Zone (HVHZ) and Miami-Dade NOA standards. American Commercial Glass installs impact windows and doors from ESWindows, PGT, and Slimpact for general contractors statewide, delivering tested assemblies that satisfy Florida Building Code wind-load and large-missile impact requirements.</strong></p>
+          <p itemprop="text" class="ax-lead"><strong>Commercial impact windows in Florida are hurricane-rated glazing systems engineered to meet High-Velocity Hurricane Zone (HVHZ) and Miami-Dade NOA standards. American Commercial Glass installs impact windows and doors from ESWindows, PGT, and Slimpact for general contractors statewide, delivering tested assemblies that satisfy Florida Building Code wind-load and large-missile impact requirements.</strong></p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Breadcrumb -->
-  <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
-    <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
-      <a href="/" style="color:rgba(255,255,255,.5);text-decoration:none;">Home</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <a href="services.html" style="color:rgba(255,255,255,.5);text-decoration:none;">Services</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <span style="color:var(--accent);">Impact Windows & Doors</span>
+  <section class="ax-rule">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="services.html">Services</a>
+      <span>/</span>
+      <span class="ax-red">Impact Windows & Doors</span>
     </div>
   </section>
 
   <!-- ========== WHAT THIS SCOPE INCLUDES ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:start;" data-reveal>
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,80px);align-items:start" data-reveal>
         <div>
           <div class="label"><span class="line"></span> What This Scope Includes</div>
-          <h2 style="margin-top:14px;">Every opening, FBC HVHZ compliant.</h2>
-          <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:18px;">ACG delivers the full impact-rated scope for commercial and multifamily projects across Florida. Every system we install is engineered, submitted, and inspected against the governing Florida Building Code including HVHZ requirements in Miami-Dade and Broward.</p>
+          <h2>Every opening, FBC HVHZ compliant.</h2>
+          <p>ACG delivers the full impact-rated scope for commercial and multifamily projects across Florida. Every system we install is engineered, submitted, and inspected against the governing Florida Building Code including HVHZ requirements in Miami-Dade and Broward.</p>
         </div>
         <div>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Commercial impact-rated storefront windows</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Impact swing doors, sliding doors, and multi-slide systems</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Impact window walls and punched openings</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Large-missile impact certification (ASTM E1886 / E1996)</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Florida Product Approval and Miami-Dade NOA documentation</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">DP rating specification and shop-drawing engineering</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Hurricane-zone coastal finishes and salt-spray protection</span></li>
-<li style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span style="color:rgba(255,255,255,.88);line-height:1.55;">Post-install inspections and as-built documentation</span></li>
+          <ul style="list-style:none" class="ax-plain-list">
+            <li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Commercial impact-rated storefront windows</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Impact swing doors, sliding doors, and multi-slide systems</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Impact window walls and punched openings</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Large-missile impact certification (ASTM E1886 / E1996)</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Florida Product Approval and Miami-Dade NOA documentation</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>DP rating specification and shop-drawing engineering</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Hurricane-zone coastal finishes and salt-spray protection</span></li>
+<li style="display:flex;align-items:flex-start;gap:12px" class="ax-rule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg><span>Post-install inspections and as-built documentation</span></li>
           </ul>
         </div>
       </div>
@@ -317,11 +145,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- ========== HVHZ makeup diagram ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
+  <section class="section">
+    <div class="container" style="max-width:1100px">
       <div class="label" data-reveal><span class="line"></span> What "HVHZ-rated" actually means</div>
-      <h2 data-reveal style="margin-top:14px;margin-bottom:clamp(24px,3vw,40px);">The laminate holds. The approval proves it.</h2>
-      <figure data-reveal role="img" aria-label="Impact glazing is a laminated makeup: two glass lites bonded to a PVB or SGP interlayer that holds the glass together after impact. To earn a Miami-Dade NOA or Florida HVHZ approval, the assembly passes a large-missile test (a nine-pound 2x4 fired at about 50 feet per second) and roughly 9,000 cycles of positive and negative wind pressure." style="margin:0;">
+      <h2 data-reveal>The laminate holds. The approval proves it.</h2>
+      <figure data-reveal role="img" aria-label="Impact glazing is a laminated makeup: two glass lites bonded to a PVB or SGP interlayer that holds the glass together after impact. To earn a Miami-Dade NOA or Florida HVHZ approval, the assembly passes a large-missile test (a nine-pound 2x4 fired at about 50 feet per second) and roughly 9,000 cycles of positive and negative wind pressure.">
 <svg viewBox="0 0 1200 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;border:1px solid rgba(154,184,230,.18);border-radius:4px;background:rgba(10,20,38,.35)">
   <style>.im-mono{font-family:'JetBrains Mono',monospace;letter-spacing:.12em;text-transform:uppercase}.im-big{font-family:'Archivo','Inter',sans-serif;font-weight:800}.im-body{font-family:'Inter',sans-serif}</style>
   <!-- laminated cross-section -->
@@ -355,28 +183,28 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- ========== WHERE ACG USES IT ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);">
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Where ACG Uses Impact Windows & Doors</div>
-        <h2 style="margin-top:14px;">Projects ACG has delivered impact glazing on.</h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:720px;">Multifamily rebuilds, coastal condominiums, hospitality towers, healthcare facilities, and municipal buildings across every HVHZ and non-HVHZ county in Florida.</p>
+        <h2>Projects ACG has delivered impact glazing on.</h2>
+        <p style="max-width:720px">Multifamily rebuilds, coastal condominiums, hospitality towers, healthcare facilities, and municipal buildings across every HVHZ and non-HVHZ county in Florida.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;" data-reveal data-delay="120">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px" data-reveal data-delay="120">
         <div class="qual-pill">Beachfront Multifamily</div><div class="qual-pill">Coastal Condominiums</div><div class="qual-pill">Hospitality Towers</div><div class="qual-pill">Healthcare Facilities</div><div class="qual-pill">Fire Stations</div><div class="qual-pill">Municipal Buildings</div><div class="qual-pill">Mixed-Use Developments</div><div class="qual-pill">Country Club Amenities</div><div class="qual-pill">Post-Hurricane Rebuilds</div><div class="qual-pill">Luxury Residential</div>
       </div>
     </div>
   </section>
 
   <!-- ========== FLORIDA CODE & COMPLIANCE ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);">
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Florida Code &amp; Compliance</div>
-        <h2 style="margin-top:14px;">FBC, NOA, HVHZ. All of it.</h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:720px;">Every impact opening ACG installs carries active Florida Product Approval. Miami-Dade and Broward NOAs are documented on submittal and available for owner records at closeout.</p>
+        <h2>FBC, NOA, HVHZ. All of it.</h2>
+        <p style="max-width:720px">Every impact opening ACG installs carries active Florida Product Approval. Miami-Dade and Broward NOAs are documented on submittal and available for owner records at closeout.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;" data-reveal data-delay="120">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px" data-reveal data-delay="120">
         <div class="qual-pill">FBC Florida Building Code</div>
 <div class="qual-pill">HVHZ - Miami-Dade NOA</div>
 <div class="qual-pill">HVHZ - Broward County</div>
@@ -391,14 +219,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- ========== MANUFACTURER SYSTEMS ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);">
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Manufacturer Systems</div>
-        <h2 style="margin-top:14px;">Authorized on the <span class="accent">impact windows & doors</span> systems that matter.</h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:720px;">ACG only installs manufacturers on our partners list. For this scope, that means:</p>
+        <h2>Authorized on the <span class="accent">impact windows & doors</span> systems that matter.</h2>
+        <p style="max-width:720px">ACG only installs manufacturers on our partners list. For this scope, that means:</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;" data-reveal data-delay="120">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px" data-reveal data-delay="120">
         <a href="eswindows-installer-florida.html" class="qual-partner"><div class="qual-partner-name">ESWindows</div><div class="qual-partner-role">Impact storefronts, window walls, curtainwall</div></a>
 <a href="partners.html#pgt" class="qual-partner"><div class="qual-partner-name">PGT</div><div class="qual-partner-role">Impact windows and sliding glass doors</div></a>
 <a href="partners.html#slimpact" class="qual-partner"><div class="qual-partner-name">Slimpact</div><div class="qual-partner-role">Ultra-slim impact sliders and doors</div></a>
@@ -407,51 +235,51 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- ========== COORDINATION ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);">
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div data-reveal>
         <div class="label"><span class="line"></span> GC Coordination</div>
-        <h2 style="margin-top:14px;">Where the <span class="accent">scope seams are.</span></h2>
-        <p style="color:rgba(255,255,255,.75);line-height:1.75;font-size:clamp(15px,1.1vw,17px);margin-top:14px;max-width:720px;">Where ACG coordinates with other trades during an impact-rated install. Knowing the scope seams ahead of time eliminates the surprises that burn schedule on HVHZ projects.</p>
+        <h2>Where the <span class="accent">scope seams are.</span></h2>
+        <p style="max-width:720px">Where ACG coordinates with other trades during an impact-rated install. Knowing the scope seams ahead of time eliminates the surprises that burn schedule on HVHZ projects.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;" data-reveal data-delay="120">
-        <div class="qual-card"><div class="qual-card-label">Rough Opening Bucking</div><div class="qual-card-detail" style="margin-top:8px;font-size:14px;">Coordinated with framing and waterproofing. ACG verifies tolerances before trim-in.</div></div>
-<div class="qual-card"><div class="qual-card-label">Waterproofing Interface</div><div class="qual-card-detail" style="margin-top:8px;font-size:14px;">Sill flashing, head flashing, and peel-and-stick overlap sequenced with envelope contractor.</div></div>
-<div class="qual-card"><div class="qual-card-label">Structural Embeds & Blocking</div><div class="qual-card-detail" style="margin-top:8px;font-size:14px;">Embed plate locations verified with steel contractor before glazing shop drawings release.</div></div>
-<div class="qual-card"><div class="qual-card-label">Hardware & Access Control</div><div class="qual-card-detail" style="margin-top:8px;font-size:14px;">ACG coordinates door hardware with Allegion, electrified hardware with EC, and access-control conduit with low-voltage.</div></div>
-<div class="qual-card"><div class="qual-card-label">Inspection & Close-Out</div><div class="qual-card-detail" style="margin-top:8px;font-size:14px;">Field inspections scheduled with AHJ. As-builts and NOAs delivered at closeout.</div></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px" data-reveal data-delay="120">
+        <div class="qual-card"><div class="qual-card-label">Rough Opening Bucking</div><div class="qual-card-detail">Coordinated with framing and waterproofing. ACG verifies tolerances before trim-in.</div></div>
+<div class="qual-card"><div class="qual-card-label">Waterproofing Interface</div><div class="qual-card-detail">Sill flashing, head flashing, and peel-and-stick overlap sequenced with envelope contractor.</div></div>
+<div class="qual-card"><div class="qual-card-label">Structural Embeds & Blocking</div><div class="qual-card-detail">Embed plate locations verified with steel contractor before glazing shop drawings release.</div></div>
+<div class="qual-card"><div class="qual-card-label">Hardware & Access Control</div><div class="qual-card-detail">ACG coordinates door hardware with Allegion, electrified hardware with EC, and access-control conduit with low-voltage.</div></div>
+<div class="qual-card"><div class="qual-card-label">Inspection & Close-Out</div><div class="qual-card-detail">Field inspections scheduled with AHJ. As-builts and NOAs delivered at closeout.</div></div>
       </div>
     </div>
   </section>
 
   <!-- ========== RELATED PROJECTS ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);">
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Related Project Experience</div>
-        <h2 style="margin-top:14px;">Already built. <span class="accent">Already delivered.</span></h2>
+        <h2>Already built. <span class="accent">Already delivered.</span></h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;" data-reveal data-delay="120">
-        <a href="gulfside-twelve.html" class="service-card" style="text-decoration:none;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Post-Ian Beachfront Multifamily</div><h4 style="margin:0 0 8px;">Gulfside Twelve</h4><p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;">Complete PGT impact package. Oversized sliding glass doors on every Gulf-facing residence. Fort Myers Beach.</p></a>
-<a href="portfolio.html" class="service-card" style="text-decoration:none;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Municipal / Life-Safety</div><h4 style="margin:0 0 8px;">Martin County Fire Training Facility</h4><p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;">Impact-rated glazing package for a county-level emergency-services training structure.</p></a>
-<a href="portfolio.html" class="service-card" style="text-decoration:none;"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Municipal / Emergency Operations</div><h4 style="margin:0 0 8px;">Haines City EOC</h4><p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;">HVHZ impact glazing for a county emergency operations center. NOA-documented closeout.</p></a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px" data-reveal data-delay="120">
+        <a href="gulfside-twelve.html" class="service-card"><div class="ax-kicker ax-strong">Post-Ian Beachfront Multifamily</div><h4>Gulfside Twelve</h4><p>Complete PGT impact package. Oversized sliding glass doors on every Gulf-facing residence. Fort Myers Beach.</p></a>
+<a href="portfolio.html" class="service-card"><div class="ax-kicker ax-strong">Municipal / Life-Safety</div><h4>Martin County Fire Training Facility</h4><p>Impact-rated glazing package for a county-level emergency-services training structure.</p></a>
+<a href="portfolio.html" class="service-card"><div class="ax-kicker ax-strong">Municipal / Emergency Operations</div><h4>Haines City EOC</h4><p>HVHZ impact glazing for a county emergency operations center. NOA-documented closeout.</p></a>
       </div>
     </div>
   </section>
 
   <!-- ========== FAQ ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px);">
-    <div class="container" style="max-width:880px;">
-      <div data-reveal style="margin-bottom:clamp(28px,3.5vw,40px);text-align:center;">
-        <div class="label" style="justify-content:center;"><span class="line"></span> FAQ <span class="line"></span></div>
-        <h2 style="margin-top:14px;">Questions GCs ask <span class="accent">before they bid.</span></h2>
+  <section class="section">
+    <div class="container" style="max-width:880px">
+      <div data-reveal>
+        <div class="label" style="justify-content:center"><span class="line"></span> FAQ <span class="line"></span></div>
+        <h2>Questions GCs ask <span class="accent">before they bid.</span></h2>
       </div>
-      <div style="display:flex;flex-direction:column;gap:12px;" data-reveal data-delay="120">
-        <details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;"><summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is HVHZ and where does it apply?<span style="color:var(--accent);">+</span></summary><p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">HVHZ (High-Velocity Hurricane Zone) applies in Miami-Dade and Broward counties under the Florida Building Code. HVHZ requires impact-rated systems with active Miami-Dade NOA approvals. ACG is experienced in HVHZ submittal and installation protocols and carries manufacturer NOAs on every HVHZ project.</p></details>
-<details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;"><summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is a DP rating?<span style="color:var(--accent);">+</span></summary><p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">DP (Design Pressure) rating specifies the structural and water-resistance capacity of a window or door system at a given building elevation. Higher floors and coastal exposures require higher DP ratings. ACG engineers DP-appropriate system selection from shop-drawing phase forward.</p></details>
-<details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;"><summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">What is the difference between impact and hurricane-rated?<span style="color:var(--accent);">+</span></summary><p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">"Impact" means the system has passed large-missile impact testing (ASTM E1886/E1996). "Hurricane-rated" is a more general marketing term. For code compliance in Florida - especially HVHZ - the spec should always say "impact-rated" and reference the NOA or Florida Product Approval.</p></details>
-<details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;"><summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">Can ACG supply impact glazing for a GC in a non-HVHZ county?<span style="color:var(--accent);">+</span></summary><p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">Yes. Florida Product Approval applies statewide. We install impact glazing in Lee, Collier, Palm Beach, Martin, St. Lucie, Hillsborough, Pinellas, and every county between.</p></details>
-<details style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 22px;"><summary style="cursor:pointer;font-weight:700;font-size:16px;color:#fff;list-style:none;display:flex;justify-content:space-between;align-items:center;">How long are typical lead times on commercial impact systems?<span style="color:var(--accent);">+</span></summary><p style="color:rgba(255,255,255,.75);line-height:1.7;margin:12px 0 0;font-size:15px;">Standard impact storefront runs 6-10 weeks from approved shop drawings. Large-missile tested window wall 8-12 weeks. Custom impact sliders 10-14 weeks. ACG confirms firm lead times with a bid submission.</p></details>
+      <div style="display:flex;flex-direction:column;gap:12px" data-reveal data-delay="120">
+        <details class="ax-box"><summary style="list-style:none;display:flex;justify-content:space-between;align-items:center">What is HVHZ and where does it apply?<span class="ax-red">+</span></summary><p>HVHZ (High-Velocity Hurricane Zone) applies in Miami-Dade and Broward counties under the Florida Building Code. HVHZ requires impact-rated systems with active Miami-Dade NOA approvals. ACG is experienced in HVHZ submittal and installation protocols and carries manufacturer NOAs on every HVHZ project.</p></details>
+<details class="ax-box"><summary style="list-style:none;display:flex;justify-content:space-between;align-items:center">What is a DP rating?<span class="ax-red">+</span></summary><p>DP (Design Pressure) rating specifies the structural and water-resistance capacity of a window or door system at a given building elevation. Higher floors and coastal exposures require higher DP ratings. ACG engineers DP-appropriate system selection from shop-drawing phase forward.</p></details>
+<details class="ax-box"><summary style="list-style:none;display:flex;justify-content:space-between;align-items:center">What is the difference between impact and hurricane-rated?<span class="ax-red">+</span></summary><p>"Impact" means the system has passed large-missile impact testing (ASTM E1886/E1996). "Hurricane-rated" is a more general marketing term. For code compliance in Florida - especially HVHZ - the spec should always say "impact-rated" and reference the NOA or Florida Product Approval.</p></details>
+<details class="ax-box"><summary style="list-style:none;display:flex;justify-content:space-between;align-items:center">Can ACG supply impact glazing for a GC in a non-HVHZ county?<span class="ax-red">+</span></summary><p>Yes. Florida Product Approval applies statewide. We install impact glazing in Lee, Collier, Palm Beach, Martin, St. Lucie, Hillsborough, Pinellas, and every county between.</p></details>
+<details class="ax-box"><summary style="list-style:none;display:flex;justify-content:space-between;align-items:center">How long are typical lead times on commercial impact systems?<span class="ax-red">+</span></summary><p>Standard impact storefront runs 6-10 weeks from approved shop drawings. Large-missile tested window wall 8-12 weeks. Custom impact sliders 10-14 weeks. ACG confirms firm lead times with a bid submission.</p></details>
       </div>
     </div>
   </section>
@@ -459,10 +287,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   <!-- ========== CTA ========== -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>IMPACT</div>
+      <div class="text-massive" data-reveal-fade>IMPACT</div>
       <h2>Florida impact package.<br><span class="accent">Scoped in 48 hours.</span></h2>
       <p>Send drawings. ACG returns a scoped proposal with manufacturer system recommendations and NOA documentation for qualifying GCs, owners, and architects.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
         <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans</a>
         <a href="portfolio.html" class="btn btn-ghost btn-lg">View Portfolio</a>
       </div>
@@ -476,70 +304,70 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   <!-- FOOTER -->
   
   <!-- Related blog articles - internal linking boost -->
-  <section class="section" style="padding-top:0;">
+  <section class="section">
     <div class="container" data-reveal>
       <div class="label"><span class="line"></span> Related from the ACG library</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:24px;">
-        <a href="blog/hurricane-impact-windows-commercial-building-florida.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Article</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Hurricane Impact Windows for Commercial Buildings</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+        <a href="blog/hurricane-impact-windows-commercial-building-florida.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Article</div>
+          <div class="ax-strong">Hurricane Impact Windows for Commercial Buildings</div>
         </a>
-        <a href="blog/cost-of-impact-windows-commercial-florida.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Article</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Cost of Impact Windows in Commercial Florida</div>
+        <a href="blog/cost-of-impact-windows-commercial-florida.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Article</div>
+          <div class="ax-strong">Cost of Impact Windows in Commercial Florida</div>
         </a>
-        <a href="blog/impact-rated-glass-requirements-florida-2026.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Article</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Florida 2026 Impact-Rated Glass Requirements</div>
+        <a href="blog/impact-rated-glass-requirements-florida-2026.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Article</div>
+          <div class="ax-strong">Florida 2026 Impact-Rated Glass Requirements</div>
         </a>
-        <a href="blog/hurricane-impact-vs-non-impact-commercial.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Article</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Impact vs. Non-Impact for Commercial Projects</div>
+        <a href="blog/hurricane-impact-vs-non-impact-commercial.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Article</div>
+          <div class="ax-strong">Impact vs. Non-Impact for Commercial Projects</div>
         </a>
-        <a href="blog/hurricane-impact-windows-complete-guide-commercial-florida.html" style="display:block;padding:18px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:10px;text-decoration:none;transition:background .2s, transform .2s;">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;">Article</div>
-          <div style="font-size:15px;font-weight:600;color:#fff;line-height:1.35;">Complete Guide to Hurricane Impact Windows in Commercial Florida</div>
+        <a href="blog/hurricane-impact-windows-complete-guide-commercial-florida.html" style="display:block" class="ax-btn">
+          <div class="ax-kicker ax-strong">Article</div>
+          <div class="ax-strong">Complete Guide to Hurricane Impact Windows in Commercial Florida</div>
         </a>
       </div>
-      <p style="margin-top:24px;font-size:14px;color:rgba(255,255,255,.55);"><a href="/blog/" style="color:var(--accent);text-decoration:underline;">Browse all 156 articles →</a></p>
+      <p><a href="/blog/">Browse all 156 articles →</a></p>
     </div>
   </section>
-<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1" style="background:#f5f1ea;padding:72px 24px;">
-  <div style="max-width:980px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e11320;margin-bottom:14px;font-weight:600;">Full Commercial Glass Scope</div>
-    <h2 style="font-size:clamp(28px,3.6vw,40px);letter-spacing:-.022em;line-height:1.08;color:#0e284f;margin:0 0 18px;">Not just impact glass. Every commercial glass system.</h2>
-    <p style="font-size:17px;line-height:1.65;color:#3a4a5e;margin:0 0 36px;max-width:760px;">ACG installs the full CSI Division 08 (Openings) scope across the state - hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px;font-size:15px;line-height:1.55;">
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Storefront systems</strong><span style="color:#6a7484;">ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Curtain wall</strong><span style="color:#6a7484;">Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Impact windows &amp; doors</strong><span style="color:#6a7484;">HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Sliding &amp; folding doors</strong><span style="color:#6a7484;">Euro-Wall folding, multi-slide, arched storefront.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Interior glass</strong><span style="color:#6a7484;">Office partitions, conference walls, demountable systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Glass railings</strong><span style="color:#6a7484;">Frameless, channel-mounted, terrace and stair installations.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Mirrors</strong><span style="color:#6a7484;">Gym, retail, salon, commercial restroom, lobby walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Fire-rated glazing</strong><span style="color:#6a7484;">TGP systems, 20 to 180 minute fire ratings.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Automatic entrances</strong><span style="color:#6a7484;">Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Decorative + specialty</strong><span style="color:#6a7484;">Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Skylights + roof glazing</strong><span style="color:#6a7484;">Sloped, atrium, structural silicone systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Service + retrofit</strong><span style="color:#6a7484;">Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
+<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1">
+  <div style="max-width:980px">
+    <div class="ax-kicker ax-strong">Full Commercial Glass Scope</div>
+    <h2>Not just impact glass. Every commercial glass system.</h2>
+    <p style="max-width:760px">ACG installs the full CSI Division 08 (Openings) scope across the state - hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px" class="ax-plain-list">
+      <li><strong style="display:block">Storefront systems</strong><span>ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
+      <li><strong style="display:block">Curtain wall</strong><span>Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
+      <li><strong style="display:block">Impact windows &amp; doors</strong><span>HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
+      <li><strong style="display:block">Sliding &amp; folding doors</strong><span>Euro-Wall folding, multi-slide, arched storefront.</span></li>
+      <li><strong style="display:block">Interior glass</strong><span>Office partitions, conference walls, demountable systems.</span></li>
+      <li><strong style="display:block">Glass railings</strong><span>Frameless, channel-mounted, terrace and stair installations.</span></li>
+      <li><strong style="display:block">Mirrors</strong><span>Gym, retail, salon, commercial restroom, lobby walls.</span></li>
+      <li><strong style="display:block">Fire-rated glazing</strong><span>TGP systems, 20 to 180 minute fire ratings.</span></li>
+      <li><strong style="display:block">Automatic entrances</strong><span>Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
+      <li><strong style="display:block">Decorative + specialty</strong><span>Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
+      <li><strong style="display:block">Skylights + roof glazing</strong><span>Sloped, atrium, structural silicone systems.</span></li>
+      <li><strong style="display:block">Service + retrofit</strong><span>Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
     </ul>
   </div>
 </section>
 <!-- RELATED SCOPES - contextual internal links (Agent IFS) -->
-  <section class="related-scopes-ifs" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);padding:clamp(28px,3vw,44px) 0;">
-    <div class="container" style="max-width:1100px;">
-      <p style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 14px;">Related ACG capabilities</p>
-      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 32px;font-size:15px;line-height:1.6;">
-        <li style="padding:6px 0;"><a href="/aluminum-vs-vinyl-windows-commercial/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">aluminum vs vinyl windows for commercial buildings</a></li>
-        <li style="padding:6px 0;"><a href="/restaurant-glazing-contractor.html" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">restaurant glazing contractor services</a></li>
+  <section class="related-scopes-ifs">
+    <div class="container" style="max-width:1100px">
+      <p class="ax-kicker">Related ACG capabilities</p>
+      <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px 32px" class="ax-plain-list">
+        <li><a href="/aluminum-vs-vinyl-windows-commercial/">aluminum vs vinyl windows for commercial buildings</a></li>
+        <li><a href="/restaurant-glazing-contractor.html">restaurant glazing contractor services</a></li>
       </ul>
     </div>
   </section>
 
     
   <!-- PAA: People Also Ask Q&A (Agent X2) -->
-  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) 24px;">
-    <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:800;margin:0 0 28px;">Related questions</h2>
+  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px">
+    <h2>Related questions</h2>
     <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
       <h3 itemprop="name">What is HVHZ glazing?</h3>
       <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
@@ -561,142 +389,55 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
     <!-- featured-case: /projects/gulfside-twelve.html -->
-    <aside class="featured-case" style="max-width:880px;margin:32px auto;padding:0 24px;">
-      <a href="/projects/gulfside-twelve.html" style="display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center;padding:18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-left:3px solid #e11320;border-radius:6px;text-decoration:none;color:#fff;">
-        <img src="/images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve featured project image" loading="lazy" decoding="async" width="1920" height="1071" style="width:160px;height:107px;object-fit:cover;border-radius:4px;">
+    <aside class="featured-case" style="max-width:880px">
+      <a href="/projects/gulfside-twelve.html" style="display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center" class="ax-btn">
+        <img src="/images/projects/gulfside-twelve/hero-twilight-beachfront.jpg" alt="Gulfside Twelve featured project image" loading="lazy" decoding="async" width="1920" height="1071" style="width:160px;height:107px;object-fit:cover">
         <div>
-          <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#e11320;font-weight:700;margin-bottom:4px;">Featured project</div>
-          <div style="font-size:17px;font-weight:600;margin-bottom:4px;">Gulfside Twelve</div>
-          <div style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5;">Fort Myers Beach post-Ian rebuild - full-building PGT impact package, 12 beachfront residences</div>
-          <div style="font-size:13px;color:#e11320;margin-top:6px;">Read the case study &rarr;</div>
+          <div class="ax-kicker ax-strong">Featured project</div>
+          <div class="ax-strong">Gulfside Twelve</div>
+          <div>Fort Myers Beach post-Ian rebuild - full-building PGT impact package, 12 beachfront residences</div>
+          <div class="ax-small ax-red">Read the case study &rarr;</div>
         </div>
       </a>
     </aside>
 <!-- ACG RFQ BLOCK -->
-<section aria-labelledby="acg-rfq-h" class="acg-rfq" style="background:#0e284f;border-top:3px solid #e11320;padding:44px 24px;margin:0;">
-  <div style="max-width:840px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff6b75;margin-bottom:10px;">Pricing this scope?</div>
-    <h2 id="acg-rfq-h" style="font-size:26px;line-height:1.2;font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.01em;">Send us the drawings. Scope letter back in 48 hours.</h2>
-    <p style="font-size:16px;line-height:1.65;color:rgba(255,255,255,.86);margin:0 0 10px;">American Commercial Glass bids the impact package for general contractors across Florida: takeoff, system selection, shop drawings, and product approvals included. Send elevations, window schedule, and design pressures, and we return a written scope letter with inclusions, exclusions, and lead times.</p>
-    <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.62);margin:0 0 22px;">Licensed Florida glazing subcontractor · FL CGC #1531993 · West Palm Beach</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
-      <a href="/send-plans.html" style="display:inline-block;background:#e11320;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:15px 26px;border-radius:2px;text-decoration:none;">Request a bid &rarr;</a>
-      <a href="/scope-engine.html" style="display:inline-block;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:15px 4px;border-bottom:1px solid #e11320;text-decoration:none;">Scope Engine</a>
-      <a href="/contact.html" style="display:inline-block;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:15px 4px;border-bottom:1px solid #e11320;text-decoration:none;">Talk to an estimator</a>
-      <a href="tel:+17724867711" style="display:inline-block;color:rgba(255,255,255,.8);font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;padding:15px 4px;text-decoration:none;">772.486.7711</a>
+<section aria-labelledby="acg-rfq-h" class="acg-rfq">
+  <div style="max-width:840px">
+    <div class="ax-kicker">Pricing this scope?</div>
+    <h2 id="acg-rfq-h">Send us the drawings. Scope letter back in 48 hours.</h2>
+    <p>American Commercial Glass bids the impact package for general contractors across Florida: takeoff, system selection, shop drawings, and product approvals included. Send elevations, window schedule, and design pressures, and we return a written scope letter with inclusions, exclusions, and lead times.</p>
+    <p>Licensed Florida glazing subcontractor · FL CGC #1531993 · West Palm Beach</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <a href="/send-plans.html" style="display:inline-block" class="ax-kicker ax-strong ax-btn-primary">Request a bid &rarr;</a>
+      <a href="/scope-engine.html" style="display:inline-block" class="ax-kicker ax-strong ax-rule">Scope Engine</a>
+      <a href="/contact.html" style="display:inline-block" class="ax-kicker ax-strong ax-rule">Talk to an estimator</a>
+      <a href="tel:+17724867711" style="display:inline-block">772.486.7711</a>
     </div>
   </div>
 </section>
 <!-- /ACG RFQ BLOCK -->
 <!-- ACG NEXT LINKS -->
-<section aria-labelledby="acg-next-h" style="background:#f4f6f9;padding:36px 24px;border-top:1px solid #dde3ec;">
-  <div style="max-width:840px;margin:0 auto;">
-    <h2 id="acg-next-h" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0e284f;margin:0 0 16px;font-weight:700;">Related ACG services</h2>
-    <ul style="list-style:none;padding:0;margin:0;columns:2;column-gap:32px;"><li style="margin:0 0 10px;"><a href="/approvals/" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">Florida product approvals &amp; NOAs</a></li><li style="margin:0 0 10px;"><a href="/storefront-glazier-miami-florida/" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">Commercial glazing contractor in Miami</a></li><li style="margin:0 0 10px;"><a href="/multi-slide-bifold-doors.html" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">Folding &amp; multi-slide glass walls</a></li><li style="margin:0 0 10px;"><a href="/services.html" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">All commercial glazing services</a></li></ul>
+<section aria-labelledby="acg-next-h" class="ax-rule">
+  <div style="max-width:840px">
+    <h2 id="acg-next-h">Related ACG services</h2>
+    <ul style="list-style:none;column-gap:32px" class="ax-plain-list"><li><a href="/approvals/" class="ax-rule">Florida product approvals &amp; NOAs</a></li><li><a href="/storefront-glazier-miami-florida/" class="ax-rule">Commercial glazing contractor in Miami</a></li><li><a href="/multi-slide-bifold-doors.html" class="ax-rule">Folding &amp; multi-slide glass walls</a></li><li><a href="/services.html" class="ax-rule">All commercial glazing services</a></li></ul>
   </div>
 </section>
 <!-- /ACG NEXT LINKS -->
 
 
-<footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="nav-logo" style="margin-bottom: 0;">
-            <img height="72" width="338" src="/images/acg-logo-nav@2x.png" style="height:36px;width:auto;" alt="ACG - American Commercial Glass" class="logo-img" loading="lazy" decoding="async">
-          </a>
-          <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach; Naples and Tampa offices. Storefronts, curtain wall, impact glazing, multi-slide, fire-rated, and entrances.</p>
-        </div>
-
-        <div>
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="/about.html">About</a>
-            <a href="/leadership.html">Leadership</a>
-            <a href="/portfolio.html">Portfolio</a>
-            <a href="/capabilities.html">Capabilities</a>
-            <a href="/manufacturers.html">Manufacturer Partners</a>
-            <a href="/about.html">About ACG</a>
-            <a href="/careers.html">Careers</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Services</h5>
-          <div class="footer-links">
-            <a href="/commercial-storefront-systems.html">Storefront Systems</a>
-            <a href="/curtainwall-systems.html">Curtain Wall</a>
-            <a href="/impact-windows-doors.html">Impact Glazing</a>
-            <a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a>
-            <a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a>
-            <a href="/automatic-entrance-systems.html">Aluminum Entrances</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Trust</h5>
-          <div class="footer-links">
-            <a href="/qualifications.html">Qualifications</a>
-            <a href="https://network.procore.com/p/american-commercial-glass-west-palm-beach" target="_blank" rel="noopener">Procore Network</a>
-            <a href="https://www.wikidata.org/wiki/Q139858578" target="_blank" rel="noopener">Wikidata Q139858578</a>
-            <a href="/reviews.html">Reviews</a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Locations</h5>
-          <div class="footer-links">
-            <a href="/storefront-glazier-west-palm-beach-florida/">West Palm Beach (HQ)</a>
-            <a href="/storefront-glazier-naples-florida/">Naples</a>
-            <a href="/storefront-glazier-tampa-florida/">Tampa</a>
-            <a href="/locations.html"><strong>All service areas →</strong></a>
-          </div>
-        </div>
-
-        <div>
-          <h5>Contact</h5>
-          <div class="footer-contact">
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <!--email_off-->connor@acglass.com<!--/email_off-->
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (772) 486-7711
-            </p>
-            <p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              700 S Rosemary Ave #204, West Palm Beach, FL 33401
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;margin-top:40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Follow ACG</span>
-        <a href="https://www.linkedin.com/company/acglass" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/acglass.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color .2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          Instagram
-        </a>
-      </div>
-
-      <div class="acg-disambig-footer" style="border-top:1px solid rgba(255,255,255,0.06);padding:14px 0 6px;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:rgba(255,255,255,0.55);text-align:left;"><a href="/about.html" style="color:#e11320;text-decoration:none;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;" aria-label="ACG | American Commercial Glass disambiguation">ACG | American Commercial Glass</a> &nbsp;·&nbsp; Florida commercial glazing contractor &nbsp;·&nbsp; CGC1531993 &nbsp;·&nbsp; <span style="color:rgba(255,255,255,0.4);">Not affiliated with ACG Glass &amp; Metals or AGC Inc.</span></div>
-      <div class="footer-bottom">
-        <span>© 2026 American Commercial Glass, Inc. &nbsp;·&nbsp; FL CGC #1531993 &nbsp;·&nbsp; NAICS 238150 &nbsp;·&nbsp; Wikidata Q139858578</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span style="opacity:.55;">·</span> <a href="/privacy-policy.html" style="color:inherit;text-decoration:none;">Privacy</a> <span style="opacity:.55;">·</span> <a href="/terms-of-use.html" style="color:inherit;text-decoration:none;">Terms</a>
-      </div>
-    </div>
-  </footer>
+</div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

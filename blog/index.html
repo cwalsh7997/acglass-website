@@ -25,8 +25,8 @@
 <meta name="twitter:image" content="https://acglass.com/images/projects/atlantic-fields-golf-house/card-golden-hour.jpg">
 <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="/feed.xml">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+  <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -687,153 +687,16 @@
   ]
 }
 </script>
-<style>
-html, body { overflow-x: clip; }
-.blog-hero { padding: clamp(96px, 12vw, 160px) 0 clamp(20px, 3vw, 40px); }
-.blog-hero .loc-label { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color: var(--accent); margin-bottom: 16px; }
-.blog-hero h1 { font-size:clamp(40px,6vw,76px); font-weight:900; line-height:1.04; max-width:1000px; margin-bottom:20px; }
-.blog-hero p { font-size:clamp(16px,1.35vw,19px); color:rgba(255,255,255,0.7); max-width:760px; line-height:1.6; }
-.blog-filter { border-top:1px solid rgba(255,255,255,0.06); padding-top:8px; overflow:visible; }
-.blog-filter-inner { display:flex; flex-wrap:wrap; gap:8px; padding:14px 0; overflow:visible; }
-.chip-btn { flex:0 0 auto; padding:9px 16px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:100px; color:rgba(255,255,255,0.7); font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; transition:all .18s; white-space:nowrap; }
-.chip-btn:hover { color:#fff; border-color:rgba(255,255,255,0.25); }
-.chip-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
-.blog-count { font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.45); padding:18px 0 4px; }
-.blog-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px),1fr)); gap:clamp(16px,2vw,24px); padding-bottom:40px; }
-.blog-card { display:flex; flex-direction:column; background:transparent; border:1px solid rgba(255,255,255,0.08); border-radius:4px; padding:clamp(16px,2vw,22px); text-decoration:none; color:inherit; transition:border-color .2s; min-width:0; }
-.blog-card:hover { border-color:rgba(255,255,255,0.22); }
-.blog-card-meta { display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
-.blog-card-cat { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); border:1px solid rgba(225,19,32,0.35); border-radius:100px; padding:4px 10px; }
-.blog-card-date { font-family:var(--mono); font-size:10px; letter-spacing:0.06em; color:rgba(255,255,255,0.45); }
-.blog-card h3,
-.blog-rail-card strong {
-  font-size:16px; font-weight:700; line-height:1.35; margin-bottom:8px; color:#fff;
-  overflow-wrap:anywhere; word-break:normal; hyphens:manual;
-  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; line-clamp:3;
-  overflow:hidden; text-overflow:ellipsis;
-}
-.blog-rail-card strong { font-size:15px; font-weight:800; margin-bottom:0; }
-.blog-card p { font-size:13px; line-height:1.55; color:rgba(255,255,255,0.52); margin:0 0 14px; flex:1; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-.blog-card-footer { display:flex; align-items:center; justify-content:space-between; }
-.blog-read { font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.7); }
-.blog-arrow svg { width:18px; height:18px; color:var(--accent); transition:transform .2s; }
-.blog-card:hover .blog-arrow svg { transform:translateX(3px); }
-.blog-card.is-hidden { display:none; }
-.blog-pagination { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; padding:20px 0 70px; }
-.page-btn { min-width:42px; padding:10px 14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:rgba(255,255,255,0.75); font-family:var(--mono); font-size:13px; cursor:pointer; transition:all .18s; }
-.page-btn:hover:not(:disabled) { color:#fff; border-color:rgba(255,255,255,0.3); }
-.page-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
-.page-btn:disabled { opacity:.35; cursor:not-allowed; }
-@media (max-width:640px) {
-  .blog-hero { padding: 84px 0 16px; }
-  .blog-hero .loc-label { margin-bottom: 8px; }
-  .blog-hero h1 { font-size: clamp(28px, 8vw, 36px); margin-bottom: 10px; }
-  .blog-hero p { font-size: 14px; line-height: 1.45; }
-  .blog-search-wrap { padding: 12px 0 0; }
-  .blog-grid { grid-template-columns:1fr; }
-  .blog-search { max-width:100%; }
-}
-.blog-search-wrap { padding:18px 0 0; }
-.blog-search {
-  width:100%;
-  max-width:560px;
-  min-height:48px;
-  padding:14px 18px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:100px;
-  color:#fff;
-  font-family:var(--mono);
-  font-size:16px;
-  letter-spacing:0.04em;
-}
-.blog-search::placeholder { color:rgba(255,255,255,0.45); }
-.blog-archive { padding-top:28px; border-top:1px solid rgba(255,255,255,0.08); margin-top:12px; }
-.blog-archive-head { padding:4px 0 6px; }
-.blog-archive-head h2 { font-family:var(--mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:rgba(255,255,255,0.45); margin:0 0 8px; }
-.blog-archive-head p { font-size:14px; color:rgba(255,255,255,0.5); margin:0 0 8px; max-width:640px; line-height:1.5; }
-.blog-empty { display:none; padding:36px 8px 56px; }
-.blog-empty.is-visible { display:block; }
-.blog-empty p { font-size:18px; font-weight:700; color:#fff; margin:0 0 10px; }
-.blog-empty button {
-  min-height:44px;
-  padding:10px 16px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.16);
-  border-radius:8px;
-  color:#fff;
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  cursor:pointer;
-}
-.blog-rail.is-hidden { display:none; }
-.blog-rails.is-hidden { display:none; }
-.blog-card-flagship { border-color:rgba(255,255,255,0.12); }
-.blog-card-flag {
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:#fff;
-  background:var(--accent);
-  border-radius:100px;
-  padding:4px 10px;
-}
-.blog-card-tool { border-color:rgba(255,255,255,0.12); }
-
-.blog-rails { padding: 20px 0 8px; display:flex; flex-direction:column; gap:36px; }
-.blog-rail h2 { font-size:20px; font-weight:800; color:#fff; margin:0 0 6px; letter-spacing:-0.01em; }
-.blog-rail-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px; margin-bottom:12px; }
-.blog-rail-kicker { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); }
-.blog-rail-hub { font-family:var(--mono); font-size:11px; letter-spacing:0.04em; color:rgba(255,255,255,0.55); text-decoration:none; }
-.blog-rail-hub:hover { color:#fff; }
-.blog-rail-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap:12px; margin:0; padding:0; list-style:none; }
-.blog-rail-card { display:flex; flex-direction:column; gap:6px; padding:16px 16px 14px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); text-decoration:none; color:inherit; min-width:0; }
-.blog-rail-card:hover { border-color:rgba(225,19,32,0.45); }
-.blog-rail-card-flagship { border-color:rgba(225,19,32,0.45); }
-.blog-rail-num { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); }
-.blog-rail-card strong { font-size:15px; font-weight:800; line-height:1.3; color:#fff; }
-.blog-rail-card time { font-family:var(--mono); font-size:10px; letter-spacing:0.06em; color:rgba(255,255,255,0.45); }
-.blog-rail-tools .blog-rail-card { background:linear-gradient(180deg,rgba(225,19,32,0.08) 0%,rgba(255,255,255,0.03) 42%); border-color:rgba(225,19,32,0.45); }
-@media (max-width:560px) {
-  .blog-rail-list { grid-template-columns:1fr; }
-}
-</style>
+<style>.blog-filter{overflow:visible}.blog-filter-inner{overflow:visible}.blog-card h3,
+.blog-rail-card strong{overflow:hidden}.blog-card p{overflow:hidden}.blog-card.is-hidden{display:none}.page-btn:disabled{opacity:.35}.blog-empty{display:none}.blog-empty.is-visible{display:block}.blog-rail.is-hidden{display:none}.blog-rails.is-hidden{display:none}</style>
 </head>
-<body>
+<body class="ax-interior">
 <a class="skip-link" href="#main-content">Skip to content</a>
 <div class="grain"></div>
-<header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+<header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
 <main id="main-content">
-  <section class="blog-hero">
+  <section class="blog-hero ax-hero ax-hero-s">
     <div class="container">
       <div class="loc-label">ACG Blog</div>
       <h1>Insights from <span class="accent">the field.</span></h1>
@@ -1022,7 +885,7 @@ html, body { overflow-x: clip; }
     </div>
   </section>
 
-  <section class="section blog-archive" style="padding-top:0;" aria-labelledby="blog-archive-h">
+  <section class="section blog-archive" aria-labelledby="blog-archive-h">
     <div class="container">
       <div class="blog-archive-head">
         <h2 id="blog-archive-h">Archive</h2>
@@ -1196,7 +1059,7 @@ html, body { overflow-x: clip; }
         <div class="blog-card-footer"><span class="blog-read">Read article</span></div>
       </a>
         <div class="blog-card-footer"><span class="blog-read">Read article</span></div>
-      </a>
+      
       <a href="/blog/folding-vs-multi-slide-glass-walls-restaurants.html" class="blog-card blog-card-flagship" data-cat="industry" data-dest="1" data-date="2026-09-12" data-search="folding vs multi-slide glass walls restaurants">
         <div class="blog-card-meta"><span class="blog-card-cat">Restaurant</span><span class="blog-card-flag">New</span><span class="blog-card-date">Sep 12, 2026</span></div>
         <h3>Folding vs Multi-Slide Glass Walls for Restaurants</h3>
@@ -2637,53 +2500,12 @@ html, body { overflow-x: clip; }
   </section>
 </main>
 
-  <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 <script defer src="/js/main.js"></script>
 
 </html>
@@ -2849,5 +2671,6 @@ html, body { overflow-x: clip; }
 })();
 </script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

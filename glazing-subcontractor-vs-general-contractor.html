@@ -25,51 +25,8 @@
   <meta name="twitter:description" content="When to hire a Division 08 glazing sub vs self-perform. Risk, schedule, warranty - the GC's decision framework.">
   <meta name="twitter:image" content="https://acglass.com/images/acg-coverage-map.svg?v=20260914-novolume">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-    .nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-    .nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-    .nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-    .nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-    .nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-    .nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-    .nav-dropdown-menu a:hover{color:#fff !important}
-    }
-    .guide-hero{padding:clamp(80px,12vw,160px) 0 clamp(40px,6vw,80px);border-bottom:1px solid rgba(255,255,255,0.08);}
-    .guide-section{padding:clamp(48px,6vw,96px) 0;border-bottom:1px solid rgba(255,255,255,0.06);}
-    .guide-label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);margin-bottom:16px;}
-    .guide-h2{font-size:clamp(26px,3vw,40px);font-weight:900;line-height:1.1;margin-bottom:24px;}
-    .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2vw,24px);}
-    .guide-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius,8px);padding:clamp(24px,3vw,32px);}
-    .guide-card h4{font-size:17px;font-weight:700;margin-bottom:10px;line-height:1.3;}
-    .guide-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.6;margin:0;}
-    .guide-card.pro{border-color:rgba(34,197,94,0.2);}
-    .guide-card.con{border-color:rgba(239,68,68,0.2);}
-    .comparison-table{width:100%;border-collapse:collapse;margin-top:16px;}
-    .comparison-table th{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);padding:10px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.08);}
-    .comparison-table td{font-size:14px;color:rgba(255,255,255,0.8);padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5;vertical-align:top;}
-    .comparison-table tr:last-child td{border-bottom:none;}
-    .verdict{display:inline-block;padding:2px 10px;border-radius:4px;font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace;}
-    .verdict-sub{background:rgba(34,197,94,0.15);color:#4ade80;}
-    .verdict-gc{background:rgba(251,191,36,0.12);color:#fbbf24;}
-    .verdict-either{background:rgba(148,163,184,0.12);color:rgba(255,255,255,0.6);}
-    .article-body{max-width:760px;}
-    .article-body h3{font-size:20px;font-weight:700;margin:36px 0 12px;color:white;}
-    .article-body p{font-size:16px;color:rgba(255,255,255,0.75);line-height:1.75;margin-bottom:18px;}
-    .article-body ul{color:rgba(255,255,255,0.75);line-height:2;font-size:15px;padding-left:24px;margin-bottom:18px;}
-    .article-body strong{color:white;}
-  </style>
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -108,46 +65,21 @@
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between a glazing subcontractor and a general contractor?","acceptedAnswer":{"@type":"Answer","text":"A general contractor manages an entire construction project and coordinates all trades; a glazing subcontractor specializes in one scope - the glass-and-aluminum envelope. American Commercial Glass works as a glazing subcontractor to GCs, delivering storefront, curtainwall, and impact systems with Procore-native submittals, RFIs, and scheduling integrated into the GC's project record."}},{"@type":"Question","name":"Does a glazing subcontractor work for the general contractor?","acceptedAnswer":{"@type":"Answer","text":"Yes. A glazing subcontractor is engaged by and reports to the general contractor, delivering one specialized scope within the GC's overall project. American Commercial Glass works as a glazing subcontractor across Florida, running submittals, RFIs, and scheduling natively in Procore, the GC's system of record."}},{"@type":"Question","name":"Is American Commercial Glass a Procore-integrated subcontractor?","acceptedAnswer":{"@type":"Answer","text":"Yes. American Commercial Glass runs submittals, RFIs, and scheduling natively in Procore, the general contractor's system of record. This Procore-native workflow keeps every submittal, revision, and material status visible to the GC in real time, reducing correction cycles and schedule slippage on commercial projects."}}]}</script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <!-- HERO -->
-  <section class="guide-hero" id="main-content">
+  <section class="guide-hero ax-hero ax-hero-l" id="main-content">
     <div class="container">
       <div class="guide-label">GC Resource Guide - Division 08</div>
-      <h1 style="font-size:clamp(36px,5.5vw,72px);font-weight:900;line-height:1.05;max-width:960px;margin-bottom:24px;">Glazing subcontractor vs general contractor. <br> <span class="accent">A GC's decision guide.</span></h1>
-      <p style="font-size:clamp(16px,1.4vw,20px);color:rgba(255,255,255,0.65);max-width:740px;line-height:1.6;">When should a general contractor self-perform Division 08 glazing work versus hiring a dedicated glazing subcontractor? This guide addresses the risk profile, warranty exposure, schedule implications, and single-point-of-failure analysis from the GC's perspective - written by a Division 08 specialist who works alongside GCs every week.</p>
-      <div style="display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;">
+      <h1 style="max-width:960px">Glazing subcontractor vs general contractor. <br> <span class="accent">A GC's decision guide.</span></h1>
+      <p style="max-width:740px" class="ax-lead">When should a general contractor self-perform Division 08 glazing work versus hiring a dedicated glazing subcontractor? This guide addresses the risk profile, warranty exposure, schedule implications, and single-point-of-failure analysis from the GC's perspective - written by a Division 08 specialist who works alongside GCs every week.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
         <a href="send-plans.html" class="btn btn-primary">Add ACG to Your Bid List</a>
         <a href="capabilities.html" class="btn btn-ghost">ACG Capabilities</a>
       </div>
@@ -155,12 +87,12 @@
   </section>
 
   <!-- FEATURED-SNIPPET DIRECT ANSWER (Agent IFS) -->
-  <section class="direct-answer-band" style="background:#0e284f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(24px,3vw,36px) 0;">
-    <div class="container" style="max-width:880px;">
+  <section class="direct-answer-band">
+    <div class="container" style="max-width:880px">
       <div class="direct-answer" itemscope itemtype="https://schema.org/Question">
         <p itemprop="name" hidden>What is the difference between a glazing subcontractor and a general contractor?</p>
         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-          <p itemprop="text" style="font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#fff;margin:0;"><strong>A glazing subcontractor self-performs the Division 08 glass and glazing scope (storefronts, curtain wall, impact windows), while a general contractor manages the entire project and hires subcontractors. American Commercial Glass works as the glazing subcontractor for general contractors statewide, holding Florida license CGC #1531993.</strong></p>
+          <p itemprop="text" class="ax-lead"><strong>A glazing subcontractor self-performs the Division 08 glass and glazing scope (storefronts, curtain wall, impact windows), while a general contractor manages the entire project and hires subcontractors. American Commercial Glass works as the glazing subcontractor for general contractors statewide, holding Florida license CGC #1531993.</strong></p>
         </div>
       </div>
     </div>
@@ -194,11 +126,11 @@
   </section>
 
   <!-- COMPARISON TABLE -->
-  <section class="guide-section" style="background:rgba(255,255,255,0.015);">
+  <section class="guide-section">
     <div class="container">
       <div class="guide-label">Risk Comparison</div>
       <h2 class="guide-h2">Self-perform vs dedicated glazing subcontractor.</h2>
-      <div style="overflow-x:auto;">
+      <div style="overflow-x:auto">
         <table class="comparison-table">
           <thead>
             <tr>
@@ -289,11 +221,11 @@
   </section>
 
   <!-- SCHEDULE RISK -->
-  <section class="guide-section" style="background:rgba(255,255,255,0.015);">
+  <section class="guide-section">
     <div class="container">
       <div class="guide-label">Schedule Risk</div>
       <h2 class="guide-h2">Glazing is often on the critical path. Here's why that matters.</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
         <div class="guide-card">
           <h4>Weather-In is Non-Negotiable</h4>
           <p>Until the building envelope is closed - windows, doors, storefront, and curtain wall installed and glazed - interior trades cannot work without weather protection. Every day glazing is delayed is a day interior trades are exposed to weather delays or idle time. The GC's master schedule has a hard date for glazing completion; the glazing subcontract makes that date contractually binding on a dedicated party.</p>
@@ -347,8 +279,8 @@
 
     
   <!-- PAA: People Also Ask Q&A (Agent X2) -->
-  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px;margin:0 auto;padding:clamp(40px,6vw,72px) 24px;">
-    <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:800;margin:0 0 28px;">Related questions</h2>
+  <section class="paa-faq" itemscope itemtype="https://schema.org/FAQPage" style="max-width:880px">
+    <h2>Related questions</h2>
     <div class="paa-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
       <h3 itemprop="name">What is the difference between a glazing subcontractor and a general contractor?</h3>
       <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
@@ -368,56 +300,16 @@
       </div>
     </div>
   </section>
-<footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+</div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>(function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();</script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

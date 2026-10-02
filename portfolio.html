@@ -26,8 +26,9 @@
 <meta name="twitter:image" content="https://acglass.com/images/projects/atlantic-fields-golf-house/hero-golden-hour.jpg">
 <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-960.avif 960w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-1280.avif 1280w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif 2000w" imagesizes="100vw">
-<link rel="stylesheet" href="/css/acg-proof.css?v=20260919-visual">
-<noscript><style>.rv{opacity:1!important;transform:none!important}.film{opacity:1!important}</style></noscript>
+<link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
+<noscript></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -173,87 +174,12 @@
   ]
 }
 </script>
-<style>
-/* ---------- portfolio page additions (do not touch acg-proof.css) ---------- */
-.pp-groups{padding:0}
-.pp-group{padding:clamp(4.5rem,12vh,7.5rem) 0 0}
-.pp-group:first-of-type{padding-top:clamp(3.5rem,9vh,6rem)}
-.pp-group-head{padding:0 var(--pad) 2.2rem;display:flex;align-items:baseline;gap:1.1rem;flex-wrap:wrap}
-.pp-group-head .idx{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:#ED2833}
-.pp-group-head h2{font-family:var(--disp);font-weight:840;font-size:clamp(1.7rem,4.4vw,3.2rem);text-transform:uppercase;letter-spacing:-.02em;line-height:.98}
-.pp-group-head p{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-left:auto}
-
-/* full-bleed mosaic - the collage wall */
-.pp-mosaic{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(230px,30vh,400px);grid-auto-flow:dense;gap:2px;padding:0 2px}
-.pt{position:relative;overflow:hidden;grid-column:span 4;background:#0A0E16;display:block}
-.pt.s5{grid-column:span 5}
-.pt.s7{grid-column:span 7}
-.pt.s8{grid-column:span 8}
-.pt.r2{grid-row:span 2}
-.pt picture{display:block;height:100%}
-.pt img{width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.6,.2,1)}
-.pt:hover img{transform:scale(1.045)}
-.pt::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,.9) 0%,rgba(5,7,12,.06) 46%,rgba(5,7,12,0) 64%)}
-.pt-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.3rem}
-.pt-cap .where{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--glint);overflow-wrap:anywhere;white-space:normal}
-.pt-cap h3{font-family:var(--disp);font-weight:780;font-size:clamp(1rem,1.5vw,1.3rem);text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
-.pt .go{position:absolute;z-index:2;top:.9rem;right:.9rem;width:2.1rem;height:2.1rem;display:grid;place-items:center;border:1px solid rgba(240,243,248,.45);background:rgba(5,7,12,.55);opacity:0;transform:translateY(-4px);transition:opacity .35s,transform .35s}
-.pt:hover .go,a.pt:focus-visible .go{opacity:1;transform:none}
-.pt .go svg{width:.8rem;height:.8rem}
-a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
-@media(max-width:980px){
-  .pp-mosaic{grid-auto-rows:clamp(190px,26vh,300px)}
-  .pt,.pt.s5,.pt.s7{grid-column:span 6}
-  .pt.s8{grid-column:span 12}
-}
-@media(max-width:640px){
-  .pp-mosaic{grid-auto-rows:34vw}
-  .pt,.pt.s5{grid-column:span 6}
-  .pt.s7,.pt.s8{grid-column:span 12}
-  .pt.m12{grid-column:span 12}
-  .pt-cap{padding:.65rem .7rem;gap:.2rem}
-  .pt-cap h3{font-size:.8rem}
-  .pt-cap .where{font-size:12px;letter-spacing:.1em}
-  .pt .go{display:none}
-}
-@media(max-width:480px){
-  .pp-mosaic,.pp-mosaic.wall{grid-auto-rows:min(58vw,280px)}
-  .pt,.pt.s5,.pt.s7,.pt.s8,.pt.m12{grid-column:span 12}
-}
-
-/* proof band before footer */
-.pp-proof{margin:0 var(--pad) clamp(3rem,8vh,5rem);border:1px solid rgba(191,212,239,.28);
-  background:linear-gradient(120deg,rgba(14,40,79,.5),rgba(5,7,12,.2) 70%);padding:clamp(2.2rem,6vw,3.6rem)}
-.pp-proof-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1.6rem 2rem;border-bottom:1px solid rgba(191,212,239,.22);padding-bottom:1.8rem;margin-bottom:1.8rem}
-.pp-proof-stats .stat b{font-size:clamp(1.3rem,2.6vw,2rem)}
-.pp-proof-row{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap}
-.pp-proof-row p{max-width:44ch;color:#C6CFDD;font-size:.95rem}
-.pp-proof-cta{display:flex;gap:.9rem;flex-wrap:wrap}
-
-/* bridge to the full portfolio */
-.pp-more{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;
-  margin:clamp(3rem,8vh,5rem) var(--pad) 0;padding-top:1.6rem;border-top:1px solid rgba(191,212,239,.22)}
-.pp-more p{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-
-/* full-record wall - widescreen collage, same grammar as the featured mosaic */
-.pp-mosaic.wall{grid-auto-rows:clamp(250px,34vh,440px)}
-.pt.s12{grid-column:1/-1}
-@media(max-width:640px){.pp-mosaic.wall{grid-auto-rows:38vw}}
-@media(max-width:480px){.pp-mosaic.wall{grid-auto-rows:min(58vw,280px)}}
-</style>
 </head>
-<body>
+<body class="ax-interior">
 <a class="skip" href="#main-content">Skip to content</a>
-<header class="nav" id="siteNav">
-  <a class="wordmark" href="/" aria-label="ACG - American Commercial Glass home"><img class="nav-logo" src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" fetchpriority="high" decoding="async" loading="eager"></a>
-  <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
-  <nav class="links" id="menu" aria-label="Main">
-    <a href="/#capability">Capability</a><a href="/#discipline">Discipline</a><a href="#full-portfolio">Record</a><a href="/#prequal">Prequal</a><a href="/#contact">Contact</a>
-    <a class="btn-plans" href="/send-plans.html">Send Us Plans</a>
-  </nav>
-</header>
+<header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
-<section class="hero" id="top">
+<section class="hero ax-hero ax-hero-s" id="top">
   <div class="film" id="film">
   <picture>
     <source type="image/avif" srcset="/images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-960.avif 960w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight-1280.avif 1280w, /images/projects/cudjoe-key-fire-station/cudjoe-key-fire-station-twilight.avif 2000w" sizes="100vw">
@@ -1023,7 +949,7 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
 </main>
 
 <section class="pp-proof rv" aria-labelledby="proof-h">
-  <h2 id="proof-h" class="mono" style="font-size:.72rem;margin-bottom:1.6rem;display:block">The record behind the work</h2>
+  <h2 id="proof-h" class="mono" style="display:block">The record behind the work</h2>
   <div class="pp-proof-stats">
     <div class="stat"><b>2021</b><span>Founded in Florida</span></div>
     <div class="stat"><b>WPB / NAP / TPA</b><span>Florida offices</span></div>
@@ -1039,122 +965,79 @@ a.pt:focus-visible{outline:2px solid var(--glint);outline-offset:-4px}
   </div>
 </section>
 <!-- ACG RFQ BLOCK -->
-<section aria-labelledby="acg-rfq-h" class="acg-rfq" style="background:#0e284f;border-top:3px solid #e11320;padding:44px 24px;margin:0;">
-  <div style="max-width:840px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff6b73;margin-bottom:10px;">Pricing this scope?</div>
-    <h2 id="acg-rfq-h" style="font-size:26px;line-height:1.2;font-weight:800;color:#fff;margin:0 0 14px;letter-spacing:-.01em;">Send us the drawings. Scope letter back in 48 hours.</h2>
-    <p style="font-size:16px;line-height:1.65;color:rgba(255,255,255,.86);margin:0 0 10px;">American Commercial Glass bids the glazing package for general contractors across Florida: takeoff, system selection, shop drawings, and product approvals included. Send elevations, the door and window schedule, and glass types, and we return a written scope letter with inclusions, exclusions, and lead times.</p>
-    <p style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.62);margin:0 0 22px;">Licensed Florida glazing subcontractor · FL CGC #1531993 · West Palm Beach</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
-      <a href="/send-plans.html" style="display:inline-block;background:#e11320;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:15px 26px;border-radius:2px;text-decoration:none;">Request a bid &rarr;</a>
-      <a href="/scope-engine.html" style="display:inline-block;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:15px 4px;border-bottom:1px solid #e11320;text-decoration:none;">Scope Engine</a>
-      <a href="/contact.html" style="display:inline-block;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:15px 4px;border-bottom:1px solid #e11320;text-decoration:none;">Talk to an estimator</a>
-      <a href="tel:+17724867711" style="display:inline-block;color:rgba(255,255,255,.8);font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.06em;padding:15px 4px;text-decoration:none;">772.486.7711</a>
+<section aria-labelledby="acg-rfq-h" class="acg-rfq">
+  <div style="max-width:840px">
+    <div class="ax-kicker">Pricing this scope?</div>
+    <h2 id="acg-rfq-h">Send us the drawings. Scope letter back in 48 hours.</h2>
+    <p>American Commercial Glass bids the glazing package for general contractors across Florida: takeoff, system selection, shop drawings, and product approvals included. Send elevations, the door and window schedule, and glass types, and we return a written scope letter with inclusions, exclusions, and lead times.</p>
+    <p>Licensed Florida glazing subcontractor · FL CGC #1531993 · West Palm Beach</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <a href="/send-plans.html" style="display:inline-block" class="ax-kicker ax-strong ax-btn-primary">Request a bid &rarr;</a>
+      <a href="/scope-engine.html" style="display:inline-block" class="ax-kicker ax-strong ax-rule">Scope Engine</a>
+      <a href="/contact.html" style="display:inline-block" class="ax-kicker ax-strong ax-rule">Talk to an estimator</a>
+      <a href="tel:+17724867711" style="display:inline-block">772.486.7711</a>
     </div>
   </div>
 </section>
 <!-- /ACG RFQ BLOCK -->
 <!-- ACG NEXT LINKS -->
-<section aria-labelledby="acg-next-h" style="background:#f4f6f9;padding:36px 24px;border-top:1px solid #dde3ec;">
-  <div style="max-width:840px;margin:0 auto;">
-    <h2 id="acg-next-h" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0e284f;margin:0 0 16px;font-weight:700;">Related ACG services</h2>
-    <ul style="list-style:none;padding:0;margin:0;columns:2;column-gap:32px;"><li style="margin:0 0 10px;"><a href="/multi-slide-bifold-doors.html" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">Folding &amp; multi-slide glass walls</a></li><li style="margin:0 0 10px;"><a href="/curtainwall-systems.html" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">Commercial curtain wall contractor services</a></li><li style="margin:0 0 10px;"><a href="/commercial-storefront-systems.html" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">Commercial storefront systems &amp; installation</a></li><li style="margin:0 0 10px;"><a href="/services.html" style="color:#0e284f;font-weight:650;font-size:16px;text-decoration:none;border-bottom:2px solid #e11320;">All commercial glazing services</a></li></ul>
+<section aria-labelledby="acg-next-h" class="ax-rule">
+  <div style="max-width:840px">
+    <h2 id="acg-next-h">Related ACG services</h2>
+    <ul style="list-style:none;column-gap:32px" class="ax-plain-list"><li><a href="/multi-slide-bifold-doors.html" class="ax-rule">Folding &amp; multi-slide glass walls</a></li><li><a href="/curtainwall-systems.html" class="ax-rule">Commercial curtain wall contractor services</a></li><li><a href="/commercial-storefront-systems.html" class="ax-rule">Commercial storefront systems &amp; installation</a></li><li><a href="/services.html" class="ax-rule">All commercial glazing services</a></li></ul>
   </div>
 </section>
 <!-- /ACG NEXT LINKS -->
-<section aria-labelledby="portfolio-faq-h" style="background:#0a1628;padding:44px 24px;border-top:1px solid rgba(255,255,255,.08);">
-  <div style="max-width:840px;margin:0 auto;">
-    <h2 id="portfolio-faq-h" style="font-size:22px;line-height:1.25;font-weight:800;color:#fff;margin:0 0 22px;letter-spacing:-.01em;">GC bid FAQ</h2>
-    <div style="margin:0 0 18px;">
-      <h3 style="font-size:16px;color:#fff;margin:0 0 8px;">What Florida license covers ACG commercial glazing work?</h3>
-      <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.78);margin:0;">American Commercial Glass holds Florida CGC #1531993 issued by the Florida DBPR, operates under NAICS classification 238150 (Glass and Glazing Contractors), and maintains industry-standard general liability, automobile, and workers compensation insurance.</p>
-    </div>
-    <div style="margin:0 0 18px;">
-      <h3 style="font-size:16px;color:#fff;margin:0 0 8px;">How fast does ACG return a bid on documented scopes?</h3>
-      <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.78);margin:0;">Documented scopes get a detailed proposal or budget direction back within 48 hours - with an exclusions list, not surprises.</p>
-    </div>
-    <div style="margin:0 0 18px;">
-      <h3 style="font-size:16px;color:#fff;margin:0 0 8px;">Where are ACG's Florida offices?</h3>
-      <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.78);margin:0;">American Commercial Glass operates statewide in Florida from three offices: West Palm Beach (HQ, 700 S Rosemary Ave Ste 204), Naples (4850 Tamiami Trail N, Ste 301), and Tampa (3031 N Rocky Point Dr W, Ste 600).</p>
-    </div>
-    <div style="margin:0 0 18px;">
-      <h3 style="font-size:16px;color:#fff;margin:0 0 8px;">How do I invite ACG to bid?</h3>
-      <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.78);margin:0;">Send drawings on Send Us Plans, email <!--email_off-->connor@acglass.com<!--/email_off-->, call (772) 486-7711, or invite ACG on BuildingConnected or Procore. ACG bids Division 08 only.</p>
+<section aria-labelledby="portfolio-faq-h" class="ax-rule">
+  <div style="max-width:840px">
+    <h2 id="portfolio-faq-h">GC bid FAQ</h2>
+    <div>
+      <h3>What Florida license covers ACG commercial glazing work?</h3>
+      <p>American Commercial Glass holds Florida CGC #1531993 issued by the Florida DBPR, operates under NAICS classification 238150 (Glass and Glazing Contractors), and maintains industry-standard general liability, automobile, and workers compensation insurance.</p>
     </div>
     <div>
-      <h3 style="font-size:16px;color:#fff;margin:0 0 8px;">Is ACG woman-owned?</h3>
-      <p style="font-size:15px;line-height:1.65;color:rgba(255,255,255,.78);margin:0;">American Commercial Glass is woman-owned - Rielly Walsh, CEO and co-founder, is the 51% majority owner.</p>
+      <h3>How fast does ACG return a bid on documented scopes?</h3>
+      <p>Documented scopes get a detailed proposal or budget direction back within 48 hours - with an exclusions list, not surprises.</p>
+    </div>
+    <div>
+      <h3>Where are ACG's Florida offices?</h3>
+      <p>American Commercial Glass operates statewide in Florida from three offices: West Palm Beach (HQ, 700 S Rosemary Ave Ste 204), Naples (4850 Tamiami Trail N, Ste 301), and Tampa (3031 N Rocky Point Dr W, Ste 600).</p>
+    </div>
+    <div>
+      <h3>How do I invite ACG to bid?</h3>
+      <p>Send drawings on Send Us Plans, email <!--email_off-->connor@acglass.com<!--/email_off-->, call (772) 486-7711, or invite ACG on BuildingConnected or Procore. ACG bids Division 08 only.</p>
+    </div>
+    <div>
+      <h3>Is ACG woman-owned?</h3>
+      <p>American Commercial Glass is woman-owned - Rielly Walsh, CEO and co-founder, is the 51% majority owner.</p>
     </div>
   </div>
 </section>
 
 
 
-<footer>
-  <nav class="fmap" aria-label="Site index">
-    <div>
-      <p class="mono">Commercial glazing</p>
-      <a href="/services.html">All services</a>
-      <a href="/commercial-storefront-systems.html">Storefront systems</a>
-      <a href="/curtainwall-systems.html">Curtainwall</a>
-      <a href="/impact-windows-doors.html">Impact windows &amp; doors</a>
-      <a href="/fire-rated-glass-systems.html">Fire-rated glass</a>
-      <a href="/automatic-entrance-systems.html">Automatic entrances</a>
-      <a href="/multi-slide-bifold-doors.html">Multi-slide &amp; bifold</a>
-    </div>
-    <div>
-      <p class="mono">Company</p>
-      <a href="/about.html">About</a>
-      <a href="/leadership.html">Leadership</a>
-      <a href="/qualifications.html">Qualifications</a>
-      <a href="/manufacturers.html">Manufacturers</a>
-      <a href="/testimonials.html">Testimonials</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/careers.html">Careers</a>
-    </div>
-    <div>
-      <p class="mono">Work</p>
-      <a href="/portfolio.html">Portfolio &amp; past performance</a>
-      <a href="/atlantic-fields-golf-house.html">Atlantic Fields Golf House</a>
-      <a href="/gulfside-twelve.html">Gulfside Twelve</a>
-      <a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a>
-      <a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a>
-      <a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a>
-      <a href="/case-study-haines-city-eoc.html">Haines City EOC</a>
-    </div>
-    <div>
-      <p class="mono">Start a project</p>
-      <a href="/send-plans.html">Send Us Plans</a>
-      <a href="/scope-engine.html">Scope engine</a>
-      <a href="/contact.html">Contact</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->
-    </div>
-  </nav>
-  <div>
-    <img class="footer-logo" src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy" decoding="async">
-    <p style="color:var(--paper)">© 2026 American Commercial Glass, Inc. · Woman-owned business, WBENC certification in progress</p>
-    <p style="margin-top:.4rem">700 S Rosemary Ave, Ste 204 · West Palm Beach, FL</p>
-    <p style="margin-top:.4rem"><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a></p>
-  </div>
-  <div style="text-align:right">
-    <p>(772) 486-7711</p>
-    <p class="mono" style="margin-top:.4rem">UEI QTQYMLLL9PS4 · FL CGC 1531993</p>
-  </div>
-</footer>
+</div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
 <script>
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  // Shared ax- chrome replaced this page's own header (2026-10-01); guard so the reveal code below still runs.
+  if(btn&&menu){
   btn.addEventListener('click',function(){
     var open=menu.classList.toggle('open');
     btn.setAttribute('aria-expanded',open?'true':'false');
     btn.textContent=open?'Close':'Menu';
   });
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu'})});
+  }
   var nav=document.getElementById('siteNav');
-  addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40)},{passive:true});
+  if(nav){addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>40)},{passive:true});}
   var film=document.getElementById('film');
   if(!reduce){requestAnimationFrame(function(){setTimeout(function(){film.classList.add('lit');},200);});}
   else{film.classList.add('lit');}
@@ -1323,5 +1206,6 @@ body.plb-lock{overflow:hidden}
 })();
 </script>
 <script defer src="/js/track.js"></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

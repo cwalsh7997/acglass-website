@@ -177,7 +177,7 @@ class BlogEndCtaTests(unittest.TestCase):
         html = read("blog/how-to-get-a-glazing-bid-florida.html")
         self.assertTrue(page_has_body_cta(html))
         self.assertIn("../send-plans.html", html)
-        self.assertIn("class=\"hd-cta\"", html)
+        self.assertIn("class=\"ax-btn-plans\"", html)
 
     def test_project_send_plans_button_counts_as_body_cta(self):
         html = read("blog/waxins-eurowall-clematis-street.html")

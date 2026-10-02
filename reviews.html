@@ -30,8 +30,8 @@
   <meta name="twitter:description" content="Read feedback about American Commercial Glass and its commercial glazing coordination for Florida contractors. Send drawings.">
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <!-- AboutPage Schema -->
   
@@ -39,236 +39,64 @@
   <!-- Organization Schema -->
   
 
-  <style>
-    /* Responsive 2-column layout - collapses to 1 column on mobile */
-    .about-split-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 6vw, 100px);
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .about-split-2col { grid-template-columns: 1fr; gap: 32px; }
-    }
-    /* Mission stats 2x2 grid */
-    .mission-stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    /* No additional breakpoint needed - 2x2 is fine on mobile at 375px */
-    .about-section {
-      padding: clamp(48px, 7vw, 80px) 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .about-section:last-of-type {
-      border-bottom: none;
-    }
-    .section-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--accent);
-    }
-    .office-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: clamp(24px, 3vw, 36px);
-    }
-    .office-card .office-name {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .office-card .office-tag {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .office-card p {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.75;
-      margin: 0;
-    }
-    .ai-feature {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .ai-feature-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
-    .ai-feature-text h5 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 4px;
-    }
-    .ai-feature-text p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .mission-stat {
-      text-align: center;
-      padding: clamp(24px, 3vw, 36px);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 8px;
-    }
-    .mission-stat .m-num {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .mission-stat .m-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-    }
-  </style>
-  <style>
-    .nav-dropdown{position:relative}
-    .nav-dropdown-trigger{display:inline-flex;align-items:center;gap:4px;background:none;border:none;color:rgba(255,255,255,.7);font-family:var(--font,'Inter',sans-serif);font-size:.875rem;font-weight:500;letter-spacing:.02em;cursor:pointer;padding:8px 0;transition:color .2s}
-    .nav-dropdown-trigger:hover{color:#fff}
-    .nav-dropdown-trigger svg{transition:transform .2s}
-    .nav-dropdown.open .nav-dropdown-trigger svg{transform:rotate(180deg)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(-8px);min-width:200px;background:var(--navy-light,#132B4A);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:6px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.16,1,.3,1);z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.4)}
-    .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-    .nav-dropdown-menu a{display:block;padding:7px 12px;font-size:.8125rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;border-radius:4px;transition:all .15s}
-    .nav-dropdown-menu a:hover{color:#fff;background:rgba(255,255,255,.04)}
-    @media(max-width:900px){
-.nav-dropdown-trigger{font-size:clamp(1.5rem,5vw,2.5rem) !important;font-weight:700 !important;padding:12px 0 !important;width:100%;justify-content:flex-start;color:rgba(255,255,255,.7)}
-.nav-dropdown-trigger:hover,.nav-dropdown.open .nav-dropdown-trigger{color:#fff}
-.nav-dropdown-trigger svg{width:16px;height:16px;margin-left:6px}
-.nav-dropdown-menu{position:static;transform:none;min-width:unset;background:transparent;border:none;padding:0 0 8px 20px;box-shadow:none;opacity:1;visibility:visible;max-height:0;overflow:hidden;transition:max-height .3s}
-.nav-dropdown.open .nav-dropdown-menu{max-height:600px;transform:none}
-.nav-dropdown-menu a{padding:10px 0 !important;font-size:clamp(1rem,3.8vw,1.25rem) !important;font-weight:500 !important;color:rgba(255,255,255,.65) !important;display:block}
-.nav-dropdown-menu a:hover{color:#fff !important}
-}
-  </style>
 
-<style id="a11y-skip-style">
-.skip-to-content{position:absolute;top:-44px;left:8px;background:var(--accent,#E11320);color:#fff;padding:10px 18px;z-index:10000;font-weight:700;text-decoration:none;border-radius:0 0 6px 6px;font-size:14px;transition:top .15s}
-.skip-to-content:focus{top:0;outline:2px solid #fff;outline-offset:2px}
-*:focus-visible{outline:2px solid var(--accent,#E11320);outline-offset:2px;border-radius:2px}
-</style>
 
-<style id="a11y-contrast-tweak">
-/* Lift low-contrast muted text to meet WCAG AA body copy threshold */
-.hero-sub, p.hero-sub{color:rgba(255,255,255,.85) !important}
-/* Focus-visible outline already handled in skip-style */
-/* Ensure form inputs and buttons show focus */
-button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{outline:2px solid #fff !important; outline-offset:2px !important; box-shadow:0 0 0 4px rgba(226,19,32,.4) !important}
-</style>
 
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://acglass.com/"},{"@type":"ListItem","position":2,"name":"Reviews","item":"https://acglass.com/reviews.html"}]}</script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <a href="#main-content" class="skip-to-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 <!-- NAVIGATION -->
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <main id="main-content">
 
   <!-- ========== HERO ========== -->
-  <section class="hero" style="min-height:60vh;justify-content:center;padding-bottom:60px;">
+  <section class="hero ax-hero ax-hero-s" style="min-height:60vh;justify-content:center">
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="label" style="animation:fadeUp 0.8s var(--ease-out) 0.2s forwards;opacity:0;"><span class="line"></span> Client Feedback</div>
+        <div class="label"><span class="line"></span> Client Feedback</div>
         <h1>Reviews &amp; <br> <span class="accent">Testimonials.</span></h1>
-        <p class="hero-sub" style="max-width:680px;">How Florida's general contractors and architects describe ACG after the job is delivered, the punch list is signed, and the next project is being scoped.</p>
+        <p class="hero-sub" style="max-width:680px">How Florida's general contractors and architects describe ACG after the job is delivered, the punch list is signed, and the next project is being scoped.</p>
       </div>
     </div>
   </section>
 
   <!-- Breadcrumb -->
-  <section style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;">
-    <div class="container" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);">
-      <a href="/" style="color:rgba(255,255,255,.5);text-decoration:none;">Home</a>
-      <span style="margin:0 10px;color:rgba(255,255,255,.25);">/</span>
-      <span style="color:var(--accent);">Reviews</span>
+  <section class="ax-rule">
+    <div class="container">
+      <a href="/">Home</a>
+      <span>/</span>
+      <span class="ax-red">Reviews</span>
     </div>
   </section>
 
   <!-- ========== RATING HERO CARD ========== -->
-  <section class="section" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(32px,4vw,48px);">
-    <div class="container" style="max-width:960px;">
-      <div data-reveal style="background:linear-gradient(140deg, rgba(225,19,32,0.08), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:clamp(32px,5vw,56px) clamp(24px,4vw,48px);">
-        <div style="display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center;">
-          <div style="text-align:center;">
-            <div style="font-size:clamp(72px,9vw,112px);font-weight:900;line-height:1;color:#fff;letter-spacing:-0.03em;">5.0</div>
-            <div style="display:flex;gap:3px;justify-content:center;margin-top:8px;">
+  <section class="section">
+    <div class="container" style="max-width:960px">
+      <div data-reveal class="ax-box">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center">
+          <div>
+            <div class="ax-num-xl ax-strong">5.0</div>
+            <div style="display:flex;gap:3px;justify-content:center">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:14px;">Google Rating &middot; 6 Reviews</div>
+            <div class="ax-kicker">Google Rating &middot; 6 Reviews</div>
           </div>
           <div>
-            <h2 style="font-size:clamp(26px,3vw,40px);line-height:1.1;margin-bottom:14px;">The scorecard GCs actually check.</h2>
-            <p style="color:rgba(255,255,255,.75);line-height:1.7;font-size:clamp(15px,1.1vw,17px);">ACG maintains a perfect 5.0 rating across our West Palm Beach and Naples Google Business Profiles. Every review is from a verified client on a completed project - no gamed feedback, no paid placement.</p>
-            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;">
-              <a href="https://search.google.com/local/writereview?placeid=ChIJT6EKF8pECOURYaNbVLnjzAo" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px;">
+            <h2>The scorecard GCs actually check.</h2>
+            <p>ACG maintains a perfect 5.0 rating across our West Palm Beach and Naples Google Business Profiles. Every review is from a verified client on a completed project - no gamed feedback, no paid placement.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a href="https://search.google.com/local/writereview?placeid=ChIJT6EKF8pECOURYaNbVLnjzAo" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex;align-items:center;gap:8px">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 Leave a Google Review
               </a>
@@ -281,64 +109,64 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- ========== THREE GBP LOCATIONS ========== -->
-  <section class="section" style="padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(48px,6vw,72px);">
-    <div class="container" style="max-width:1100px;">
-      <div data-reveal style="text-align:center;margin-bottom:clamp(28px,4vw,44px);">
-        <div class="label" style="justify-content:center;"><span class="line"></span> Three Offices <span class="line"></span></div>
-        <h2 style="margin-top:16px;">Reviews - by <span class="accent">Office.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:640px;margin:14px auto 0;">ACG runs three Google Business Profiles - one per Florida office. GCs on the West Coast review the Naples location. South Florida reviews go to West Palm Beach. Central Florida to Tampa.</p>
+  <section class="section">
+    <div class="container" style="max-width:1100px">
+      <div data-reveal>
+        <div class="label" style="justify-content:center"><span class="line"></span> Three Offices <span class="line"></span></div>
+        <h2>Reviews - by <span class="accent">Office.</span></h2>
+        <p style="max-width:640px">ACG runs three Google Business Profiles - one per Florida office. GCs on the West Coast review the Naples location. South Florida reviews go to West Palm Beach. Central Florida to Tampa.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;" data-reveal data-delay="150">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px" data-reveal data-delay="150">
         <!-- WPB -->
-        <div style="padding:30px 26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Headquarters</div>
-          <h3 style="font-size:22px;font-weight:800;margin-bottom:6px;">West Palm Beach</h3>
-          <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:18px;">700 S Rosemary Ave #204</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:14px;">
+        <div class="ax-box">
+          <div class="ax-kicker">Headquarters</div>
+          <h3>West Palm Beach</h3>
+          <div class="ax-small">700 S Rosemary Ave #204</div>
+          <div style="display:flex;align-items:center;gap:6px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span style="margin-left:8px;font-size:13px;font-weight:600;">5.0</span>
-            <span style="margin-left:4px;font-size:12px;color:rgba(255,255,255,.5);">&middot; 4 reviews</span>
+            <span class="ax-small ax-strong">5.0</span>
+            <span class="ax-small">&middot; 4 reviews</span>
           </div>
-          <div style="display:flex;gap:10px;">
-            <a href="https://maps.app.goo.gl/3trGAGUwXhv5Ap1C9" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1;font-size:12px;padding:10px 14px;">Read Reviews</a>
-            <a href="https://search.google.com/local/writereview?placeid=ChIJT6EKF8pECOURYaNbVLnjzAo" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;font-size:12px;padding:10px 14px;">Write One</a>
+          <div style="display:flex;gap:10px">
+            <a href="https://maps.app.goo.gl/3trGAGUwXhv5Ap1C9" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1">Read Reviews</a>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJT6EKF8pECOURYaNbVLnjzAo" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">Write One</a>
           </div>
         </div>
         <!-- Naples -->
-        <div style="padding:30px 26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">West Coast</div>
-          <h3 style="font-size:22px;font-weight:800;margin-bottom:6px;">Naples</h3>
-          <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:18px;">4850 Tamiami Trail N, Ste 301</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:14px;">
+        <div class="ax-box">
+          <div class="ax-kicker">West Coast</div>
+          <h3>Naples</h3>
+          <div class="ax-small">4850 Tamiami Trail N, Ste 301</div>
+          <div style="display:flex;align-items:center;gap:6px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span style="margin-left:8px;font-size:13px;font-weight:600;">5.0</span>
-            <span style="margin-left:4px;font-size:12px;color:rgba(255,255,255,.5);">&middot; 2 reviews</span>
+            <span class="ax-small ax-strong">5.0</span>
+            <span class="ax-small">&middot; 2 reviews</span>
           </div>
-          <div style="display:flex;gap:10px;">
-            <a href="https://maps.app.goo.gl/43nqkFBGg75C7osU8" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1;font-size:12px;padding:10px 14px;">Read Reviews</a>
-            <a href="https://search.google.com/local/writereview?placeid=ChIJowyx9n8Z24gRJad2VRNeFoI" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;font-size:12px;padding:10px 14px;">Write One</a>
+          <div style="display:flex;gap:10px">
+            <a href="https://maps.app.goo.gl/43nqkFBGg75C7osU8" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1">Read Reviews</a>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJowyx9n8Z24gRJad2VRNeFoI" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">Write One</a>
           </div>
         </div>
         <!-- Tampa -->
-        <div style="padding:30px 26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Central Florida</div>
-          <h3 style="font-size:22px;font-weight:800;margin-bottom:6px;">Tampa</h3>
-          <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:18px;">3031 N Rocky Point Dr W, Ste 600</div>
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:14px;">
-            <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);">New office</span>
-            <span style="margin-left:4px;font-size:12px;color:rgba(255,255,255,.5);">&middot; Building review history</span>
+        <div class="ax-box">
+          <div class="ax-kicker">Central Florida</div>
+          <h3>Tampa</h3>
+          <div class="ax-small">3031 N Rocky Point Dr W, Ste 600</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="ax-small ax-strong">New office</span>
+            <span class="ax-small">&middot; Building review history</span>
           </div>
-          <div style="display:flex;gap:10px;">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=American+Commercial+Glass+West+Palm+Beach+FL" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1;font-size:12px;padding:10px 14px;">View Listing</a>
-            <a href="https://search.google.com/local/writereview?placeid=ChIJLRlp11DpwogRBRnCJot9iww" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;font-size:12px;padding:10px 14px;">Be the First</a>
+          <div style="display:flex;gap:10px">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=American+Commercial+Glass+West+Palm+Beach+FL" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1">View Listing</a>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJLRlp11DpwogRBRnCJot9iww" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">Be the First</a>
           </div>
         </div>
       </div>
@@ -346,154 +174,154 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   </section>
 
   <!-- ========== FEATURED REVIEWS ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px);">
-    <div class="container" style="max-width:1200px;">
-      <div data-reveal style="margin-bottom:clamp(40px,5vw,64px);text-align:center;">
-        <div class="label" style="justify-content:center;"><span class="line"></span> What GCs Say <span class="line"></span></div>
-        <h2 style="margin-top:16px;">The feedback<br><span class="accent">after the punch list.</span></h2>
-        <p style="color:rgba(255,255,255,.7);max-width:700px;margin:16px auto 0;">Every testimonial below comes from a general contractor, architect, or owner ACG has delivered a completed scope for. Reviews are attributed to the role; full names available on request.</p>
+  <section class="section">
+    <div class="container" style="max-width:1200px">
+      <div data-reveal>
+        <div class="label" style="justify-content:center"><span class="line"></span> What GCs Say <span class="line"></span></div>
+        <h2>The feedback<br><span class="accent">after the punch list.</span></h2>
+        <p style="max-width:700px">Every testimonial below comes from a general contractor, architect, or owner ACG has delivered a completed scope for. Reviews are attributed to the role; full names available on request.</p>
       </div>
 
       <!-- Grid of review cards -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;" data-reveal data-delay="150">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px" data-reveal data-delay="150">
 
         <!-- Review 1 -->
-        <article style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:clamp(24px,2.5vw,32px);display:flex;flex-direction:column;">
-          <div style="display:flex;gap:3px;margin-bottom:18px;">
+        <article style="display:flex;flex-direction:column" class="ax-box">
+          <div style="display:flex;gap:3px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.3vw,20px);line-height:1.55;color:rgba(255,255,255,.92);margin:0 0 22px;font-style:italic;">&ldquo;Submittals on time, material showed up when it was supposed to, and the field crew was professional from day one. That&rsquo;s all we ask for. ACG delivered it.&rdquo;</blockquote>
-          <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);">
-            <div style="font-weight:700;font-size:14px;">Project Manager</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Top-10 Florida Commercial GC &middot; Multifamily, South Florida</div>
+          <blockquote>&ldquo;Submittals on time, material showed up when it was supposed to, and the field crew was professional from day one. That&rsquo;s all we ask for. ACG delivered it.&rdquo;</blockquote>
+          <div class="ax-rule">
+            <div class="ax-strong">Project Manager</div>
+            <div class="ax-small">Top-10 Florida Commercial GC &middot; Multifamily, South Florida</div>
           </div>
         </article>
 
         <!-- Review 2 -->
-        <article style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:clamp(24px,2.5vw,32px);display:flex;flex-direction:column;">
-          <div style="display:flex;gap:3px;margin-bottom:18px;">
+        <article style="display:flex;flex-direction:column" class="ax-box">
+          <div style="display:flex;gap:3px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.3vw,20px);line-height:1.55;color:rgba(255,255,255,.92);margin:0 0 22px;font-style:italic;">&ldquo;We&rsquo;ve used ACG on three projects now. Every time - clean shop drawings, no surprises on lead times, and they actually answer the phone. Easy decision to keep calling them.&rdquo;</blockquote>
-          <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);">
-            <div style="font-weight:700;font-size:14px;">Project Executive</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Hospitality GC &middot; Treasure Coast</div>
+          <blockquote>&ldquo;We&rsquo;ve used ACG on three projects now. Every time - clean shop drawings, no surprises on lead times, and they actually answer the phone. Easy decision to keep calling them.&rdquo;</blockquote>
+          <div class="ax-rule">
+            <div class="ax-strong">Project Executive</div>
+            <div class="ax-small">Hospitality GC &middot; Treasure Coast</div>
           </div>
         </article>
 
         <!-- Review 3 -->
-        <article style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:clamp(24px,2.5vw,32px);display:flex;flex-direction:column;">
-          <div style="display:flex;gap:3px;margin-bottom:18px;">
+        <article style="display:flex;flex-direction:column" class="ax-box">
+          <div style="display:flex;gap:3px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.3vw,20px);line-height:1.55;color:rgba(255,255,255,.92);margin:0 0 22px;font-style:italic;">&ldquo;The HVHZ submittal package was complete the first time - no back-and-forth with the building department. On a fast-track healthcare project, that matters. ACG knows what they&rsquo;re doing.&rdquo;</blockquote>
-          <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);">
-            <div style="font-weight:700;font-size:14px;">Superintendent</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Healthcare GC &middot; Miami-Dade County</div>
+          <blockquote>&ldquo;The HVHZ submittal package was complete the first time - no back-and-forth with the building department. On a fast-track healthcare project, that matters. ACG knows what they&rsquo;re doing.&rdquo;</blockquote>
+          <div class="ax-rule">
+            <div class="ax-strong">Superintendent</div>
+            <div class="ax-small">Healthcare GC &middot; Miami-Dade County</div>
           </div>
         </article>
 
         <!-- Review 4 -->
-        <article style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:clamp(24px,2.5vw,32px);display:flex;flex-direction:column;">
-          <div style="display:flex;gap:3px;margin-bottom:18px;">
+        <article style="display:flex;flex-direction:column" class="ax-box">
+          <div style="display:flex;gap:3px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.3vw,20px);line-height:1.55;color:rgba(255,255,255,.92);margin:0 0 22px;font-style:italic;">&ldquo;The architect specified an open-wall system the drawings made look impossible. ACG worked through it with the manufacturer, built a mockup, and the install looks cleaner than the rendering.&rdquo;</blockquote>
-          <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);">
-            <div style="font-weight:700;font-size:14px;">Senior Project Architect</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Boutique Design Firm &middot; Palm Beach County</div>
+          <blockquote>&ldquo;The architect specified an open-wall system the drawings made look impossible. ACG worked through it with the manufacturer, built a mockup, and the install looks cleaner than the rendering.&rdquo;</blockquote>
+          <div class="ax-rule">
+            <div class="ax-strong">Senior Project Architect</div>
+            <div class="ax-small">Boutique Design Firm &middot; Palm Beach County</div>
           </div>
         </article>
 
         <!-- Review 5 -->
-        <article style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:clamp(24px,2.5vw,32px);display:flex;flex-direction:column;">
-          <div style="display:flex;gap:3px;margin-bottom:18px;">
+        <article style="display:flex;flex-direction:column" class="ax-box">
+          <div style="display:flex;gap:3px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.3vw,20px);line-height:1.55;color:rgba(255,255,255,.92);margin:0 0 22px;font-style:italic;">&ldquo;Post-Ian rebuild on a beachfront condo. Tight window, demanding owner. ACG turned over every opening on schedule and the punch list was three items. Three.&rdquo;</blockquote>
-          <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);">
-            <div style="font-weight:700;font-size:14px;">Owner&rsquo;s Rep</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Barrier Island Multifamily &middot; Fort Myers Beach</div>
+          <blockquote>&ldquo;Post-Ian rebuild on a beachfront condo. Tight window, demanding owner. ACG turned over every opening on schedule and the punch list was three items. Three.&rdquo;</blockquote>
+          <div class="ax-rule">
+            <div class="ax-strong">Owner&rsquo;s Rep</div>
+            <div class="ax-small">Barrier Island Multifamily &middot; Fort Myers Beach</div>
           </div>
         </article>
 
         <!-- Review 6 -->
-        <article style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:clamp(24px,2.5vw,32px);display:flex;flex-direction:column;">
-          <div style="display:flex;gap:3px;margin-bottom:18px;">
+        <article style="display:flex;flex-direction:column" class="ax-box">
+          <div style="display:flex;gap:3px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB400"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <blockquote style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.3vw,20px);line-height:1.55;color:rgba(255,255,255,.92);margin:0 0 22px;font-style:italic;">&ldquo;Most glazing subs treat lead time like a suggestion. ACG treats it like a contract. We awarded them the next two projects before this one was even closed out.&rdquo;</blockquote>
-          <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);">
-            <div style="font-weight:700;font-size:14px;">Director of Preconstruction</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Mixed-Use Developer &middot; Naples &amp; Fort Myers</div>
+          <blockquote>&ldquo;Most glazing subs treat lead time like a suggestion. ACG treats it like a contract. We awarded them the next two projects before this one was even closed out.&rdquo;</blockquote>
+          <div class="ax-rule">
+            <div class="ax-strong">Director of Preconstruction</div>
+            <div class="ax-small">Mixed-Use Developer &middot; Naples &amp; Fort Myers</div>
           </div>
         </article>
 
       </div>
 
-      <p style="text-align:center;margin-top:clamp(28px,3vw,40px);font-size:12px;color:rgba(255,255,255,.4);max-width:720px;margin-left:auto;margin-right:auto;">Identifying details omitted by client preference. Project attribution and named references available upon request for GCs and architects considering ACG for upcoming work.</p>
+      <p style="max-width:720px" class="ax-small">Identifying details omitted by client preference. Project attribution and named references available upon request for GCs and architects considering ACG for upcoming work.</p>
     </div>
   </section>
 
   <!-- ========== REPEAT-CLIENT GC GRID ========== -->
   <section class="section">
     <div class="container">
-      <div data-reveal style="margin-bottom:clamp(24px,3vw,36px);">
+      <div data-reveal>
         <div class="label"><span class="line"></span> Repeat Relationships</div>
         <h2>The clearest review is <span class="accent">getting hired twice.</span></h2>
-        <p style="max-width:760px;color:rgba(255,255,255,.7);margin-top:14px;">A glazing sub&rsquo;s real report card is whether the same GC calls them back for the next job. These are ACG&rsquo;s repeat GC clients - each one has awarded at least two projects, most have awarded three or more.</p>
+        <p style="max-width:760px">A glazing sub&rsquo;s real report card is whether the same GC calls them back for the next job. These are ACG&rsquo;s repeat GC clients - each one has awarded at least two projects, most have awarded three or more.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;" data-reveal data-delay="150">
-        <a href="proctor-construction.html" class="service-card" style="text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-          <img height="118" width="600" src="images/logos/gcs/proctor-construction.png" alt="Proctor Construction" style="height:32px;width:auto;align-self:flex-start;opacity:.92;background:rgba(255,255,255,.92);padding:6px 10px;border-radius:4px;margin-bottom:4px;" loading="lazy" decoding="async">
-          <h4 style="margin:0;">Proctor Construction</h4>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);">4 projects - Atlantic Fields Golf House, Performance Center, KLUS Lighting, Project LIFT</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px" data-reveal data-delay="150">
+        <a href="proctor-construction.html" class="service-card" style="display:flex;flex-direction:column;gap:8px">
+          <img height="118" width="600" src="images/logos/gcs/proctor-construction.png" alt="Proctor Construction" style="height:32px;width:auto;align-self:flex-start" loading="lazy" decoding="async">
+          <h4>Proctor Construction</h4>
+          <p>4 projects - Atlantic Fields Golf House, Performance Center, KLUS Lighting, Project LIFT</p>
         </a>
-        <a href="rycon-construction.html" class="service-card" style="text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-          <img height="244" width="600" src="images/logos/gcs/rycon-construction.png" alt="Rycon Construction" style="height:32px;width:auto;align-self:flex-start;opacity:.92;background:rgba(255,255,255,.92);padding:6px 10px;border-radius:4px;margin-bottom:4px;" loading="lazy" decoding="async">
-          <h4 style="margin:0;">Rycon Construction</h4>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);">3 projects - Storage King Winter Haven, StayApt Suites, Illumia at GCTC</p>
+        <a href="rycon-construction.html" class="service-card" style="display:flex;flex-direction:column;gap:8px">
+          <img height="244" width="600" src="images/logos/gcs/rycon-construction.png" alt="Rycon Construction" style="height:32px;width:auto;align-self:flex-start" loading="lazy" decoding="async">
+          <h4>Rycon Construction</h4>
+          <p>3 projects - Storage King Winter Haven, StayApt Suites, Illumia at GCTC</p>
         </a>
-        <a href="hooks-construction.html" class="service-card" style="text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-          <img height="207" width="600" src="images/logos/gcs/hooks-construction.png" alt="Hooks Construction" style="height:32px;width:auto;align-self:flex-start;opacity:.92;background:rgba(255,255,255,.92);padding:6px 10px;border-radius:4px;margin-bottom:4px;" loading="lazy" decoding="async">
-          <h4 style="margin:0;">Hooks Construction</h4>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);">3 projects - El Car Wash Northlake, Baron Shoppes, Hulett Environmental</p>
+        <a href="hooks-construction.html" class="service-card" style="display:flex;flex-direction:column;gap:8px">
+          <img height="207" width="600" src="images/logos/gcs/hooks-construction.png" alt="Hooks Construction" style="height:32px;width:auto;align-self:flex-start" loading="lazy" decoding="async">
+          <h4>Hooks Construction</h4>
+          <p>3 projects - El Car Wash Northlake, Baron Shoppes, Hulett Environmental</p>
         </a>
-        <a href="curran-young-construction.html" class="service-card" style="text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-          <img height="200" width="200" src="images/logos/gcs/curran-young-construction.png" alt="Curran Young Construction" style="height:32px;width:auto;align-self:flex-start;opacity:.92;background:rgba(255,255,255,.92);padding:6px 10px;border-radius:4px;margin-bottom:4px;" loading="lazy" decoding="async">
-          <h4 style="margin:0;">Curran Young Construction</h4>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);">2 projects - Wild Blue at Waterside, Gulf Harbour Country Club</p>
+        <a href="curran-young-construction.html" class="service-card" style="display:flex;flex-direction:column;gap:8px">
+          <img height="200" width="200" src="images/logos/gcs/curran-young-construction.png" alt="Curran Young Construction" style="height:32px;width:auto;align-self:flex-start" loading="lazy" decoding="async">
+          <h4>Curran Young Construction</h4>
+          <p>2 projects - Wild Blue at Waterside, Gulf Harbour Country Club</p>
         </a>
-        <a href="made-in-rio-construction.html" class="service-card" style="text-decoration:none;display:flex;flex-direction:column;gap:8px;">
-          <img height="172" width="600" src="images/logos/gcs/made-in-rio.png" alt="Made In Rio" style="height:32px;width:auto;align-self:flex-start;opacity:.92;background:rgba(255,255,255,.92);padding:6px 10px;border-radius:4px;margin-bottom:4px;" loading="lazy" decoding="async">
-          <h4 style="margin:0;">Made In Rio</h4>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,.65);">2 projects - Siena Lakes Senior Living, Ginsberg Eye Center</p>
+        <a href="made-in-rio-construction.html" class="service-card" style="display:flex;flex-direction:column;gap:8px">
+          <img height="172" width="600" src="images/logos/gcs/made-in-rio.png" alt="Made In Rio" style="height:32px;width:auto;align-self:flex-start" loading="lazy" decoding="async">
+          <h4>Made In Rio</h4>
+          <p>2 projects - Siena Lakes Senior Living, Ginsberg Eye Center</p>
         </a>
         <div class="service-card">
           <h4>Additional repeat GCs</h4>
-          <p style="margin-top:6px;font-size:14px;color:rgba(255,255,255,.65);">Fort Construction (Prestige Marble + Causeway) &middot; New Age Development (Gulfside Twelve + Estero Vista) &middot; Mattamy Homes (Savannas Ridge + Lucie at Tradition) &middot; Ahrens Companies (Bobcat TC + Lake Park Innovation).</p>
+          <p>Fort Construction (Prestige Marble + Causeway) &middot; New Age Development (Gulfside Twelve + Estero Vista) &middot; Mattamy Homes (Savannas Ridge + Lucie at Tradition) &middot; Ahrens Companies (Bobcat TC + Lake Park Innovation).</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========== HOW WE ASK ========== -->
-  <section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
-    <div class="container" style="max-width:880px;text-align:center;" data-reveal>
-      <div class="label" style="justify-content:center;"><span class="line"></span> How ACG Collects Reviews <span class="line"></span></div>
-      <h2 style="margin-top:16px;">Earned, not chased.</h2>
-      <p style="color:rgba(255,255,255,.7);line-height:1.75;font-size:clamp(15px,1.15vw,17px);margin-top:18px;">Every ACG review comes from a GC, architect, or owner ACG has delivered a completed scope for. There is no incentive, no reciprocal arrangement, no third-party review platform. Two to three days after the punch list is signed, the PM gets one email: if ACG hit the mark, a Google review link. If anything fell short, direct escalation to Connor Walsh. That&rsquo;s the process.</p>
-      <p style="color:rgba(255,255,255,.55);font-size:14px;margin-top:18px;">If ACG has worked on your project and you&rsquo;d like to share feedback, the review links are above - or email <!--email_off--><a href="mailto:connor@acglass.com" style="color:var(--accent);text-decoration:none;">connor@acglass.com</a><!--/email_off--> directly.</p>
+  <section class="section">
+    <div class="container" style="max-width:880px" data-reveal>
+      <div class="label" style="justify-content:center"><span class="line"></span> How ACG Collects Reviews <span class="line"></span></div>
+      <h2>Earned, not chased.</h2>
+      <p>Every ACG review comes from a GC, architect, or owner ACG has delivered a completed scope for. There is no incentive, no reciprocal arrangement, no third-party review platform. Two to three days after the punch list is signed, the PM gets one email: if ACG hit the mark, a Google review link. If anything fell short, direct escalation to Connor Walsh. That&rsquo;s the process.</p>
+      <p>If ACG has worked on your project and you&rsquo;d like to share feedback, the review links are above - or email <!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--> directly.</p>
     </div>
   </section>
 
   <!-- ========== CTA ========== -->
   <section class="cta-section">
     <div class="container" data-reveal>
-      <div class="text-massive" style="margin-bottom:clamp(30px,4vw,50px);" data-reveal-fade>NEXT</div>
+      <div class="text-massive" data-reveal-fade>NEXT</div>
       <h2>Your project.<br><span class="accent">Next on the list.</span></h2>
       <p>Send plans. Get a scoped estimate in 48 hours. Decide whether ACG belongs on your bid.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
         <a href="send-plans.html" class="btn btn-primary btn-lg">Send Us Plans <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="portfolio.html" class="btn btn-ghost btn-lg">View Portfolio</a>
       </div>
@@ -506,135 +334,95 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   
 
 <!-- ========== FLORIDA MARKETS STRIP (SEO internal linking) ========== -->
-<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px);">
-  <div class="container" style="max-width:1200px;">
-    <div data-reveal style="margin-bottom:clamp(28px,3vw,40px);">
+<section class="section">
+  <div class="container" style="max-width:1200px">
+    <div data-reveal>
       <div class="label"><span class="line"></span> Florida Markets</div>
-      <h2 style="margin-top:12px;font-size:clamp(28px,3vw,40px);">Commercial glazing across <span class="accent">Florida.</span></h2>
-      <p style="color:rgba(255,255,255,.7);max-width:720px;margin-top:12px;font-size:clamp(14px,1vw,16px);line-height:1.7;">ACG serves general contractors and owners statewide with three offices: West Palm Beach, Naples, and Tampa. Below are the markets we actively bid and install in.</p>
+      <h2>Commercial glazing across <span class="accent">Florida.</span></h2>
+      <p style="max-width:720px">ACG serves general contractors and owners statewide with three offices: West Palm Beach, Naples, and Tampa. Below are the markets we actively bid and install in.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;" data-reveal data-delay="100">
-      <a href="/storefront-glazier-aventura-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Aventura</a>
-      <a href="/storefront-glazier-boca-raton-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Boca Raton</a>
-      <a href="/storefront-glazier-bonita-springs-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Bonita Springs</a>
-      <a href="/storefront-glazier-boynton-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Boynton Beach</a>
-      <a href="/storefront-glazier-bradenton-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Bradenton</a>
-      <a href="/storefront-glazier-tampa-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Brandon Riverview</a>
-      <a href="/storefront-glazier-miami-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Brickell</a>
-      <a href="/storefront-glazier-cape-coral-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Cape Coral</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Central FL</a>
-      <a href="/storefront-glazier-clearwater-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Clearwater</a>
-      <a href="/storefront-glazier-coral-gables-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Coral Gables</a>
-      <a href="/storefront-glazier-davie-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Davie</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Daytona Beach</a>
-      <a href="/storefront-glazier-deerfield-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Deerfield Beach</a>
-      <a href="/storefront-glazier-delray-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Delray Beach</a>
-      <a href="/storefront-glazier-miami-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Doral</a>
-      <a href="/storefront-glazier-estero-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Estero</a>
-      <a href="/storefront-glazier-fort-lauderdale-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fort Lauderdale</a>
-      <a href="/storefront-glazier-fort-myers-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Fort Myers</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Gainesville</a>
-      <a href="/storefront-glazier-miami-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hialeah</a>
-      <a href="/storefront-glazier-hobe-sound-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hobe Sound</a>
-      <a href="/storefront-glazier-fort-lauderdale-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Hollywood</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Jacksonville</a>
-      <a href="/storefront-glazier-juno-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Juno Beach</a>
-      <a href="/storefront-glazier-jupiter-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Jupiter</a>
-      <a href="/storefront-glazier-kissimmee-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Kissimmee</a>
-      <a href="/storefront-glazier-lakeland-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Lakeland</a>
-      <a href="commercial-glazing-lakewood-ranch.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Lakewood Ranch</a>
-      <a href="/storefront-glazier-marco-island-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Marco Island</a>
-      <a href="commercial-glazing-melbourne-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Melbourne</a>
-      <a href="/storefront-glazier-miami-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Miami Beach</a>
-      <a href="/storefront-glazier-miami-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Miami</a>
-      <a href="/storefront-glazier-naples-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Naples</a>
-      <a href="commercial-glazing-near-me-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Florida</a>
-      <a href="/storefront-glazier-north-palm-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">North Palm Beach</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Ocala</a>
-      <a href="/storefront-glazier-orlando-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Orlando</a>
-      <a href="commercial-glazing-palm-beach-county.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach County</a>
-      <a href="/storefront-glazier-palm-beach-gardens-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach Gardens</a>
-      <a href="/storefront-glazier-palm-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Palm Beach</a>
-      <a href="/storefront-glazier-panama-city-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Panama City</a>
-      <a href="commercial-glazing-parkland-fl.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Parkland</a>
-      <a href="/storefront-glazier-fort-lauderdale-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pembroke Pines</a>
-      <a href="/storefront-glazier-pensacola-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pensacola</a>
-      <a href="/storefront-glazier-fort-lauderdale-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Plantation</a>
-      <a href="/storefront-glazier-pompano-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Pompano Beach</a>
-      <a href="/port-saint-lucie/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Port St Lucie</a>
-      <a href="/storefront-glazier-sarasota-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Sarasota</a>
-      <a href="commercial-glazing-south-florida.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South FL</a>
-      <a href="/storefront-glazier-tampa-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">South Tampa</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Southwest FL</a>
-      <a href="/st-petersburg/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">St Petersburg</a>
-      <a href="/storefront-glazier-stuart-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Stuart</a>
-      <a href="/storefront-glazier-tallahassee-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tallahassee</a>
-      <a href="/storefront-glazier-tampa-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tampa</a>
-      <a href="/storefront-glazier-tequesta-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Tequesta</a>
-      <a href="/florida-commercial-glazing/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Treasure Coast</a>
-      <a href="/storefront-glazier-vero-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Vero Beach</a>
-      <a href="/storefront-glazier-wellington-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Wellington</a>
-      <a href="/storefront-glazier-tampa-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Wesley Chapel</a>
-      <a href="/storefront-glazier-west-palm-beach-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">West Palm Beach</a>
-      <a href="/storefront-glazier-weston-florida/" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Weston</a>
-      <a href="commercial-glazing-windermere.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Windermere</a>
-      <a href="commercial-glazing-winter-park.html" style="padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;transition:border-color .2s,color .2s;" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''">Winter Park</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px" data-reveal data-delay="100">
+      <a href="/storefront-glazier-aventura-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Aventura</a>
+      <a href="/storefront-glazier-boca-raton-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Boca Raton</a>
+      <a href="/storefront-glazier-bonita-springs-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Bonita Springs</a>
+      <a href="/storefront-glazier-boynton-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Boynton Beach</a>
+      <a href="/storefront-glazier-bradenton-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Bradenton</a>
+      <a href="/storefront-glazier-tampa-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Brandon Riverview</a>
+      <a href="/storefront-glazier-miami-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Brickell</a>
+      <a href="/storefront-glazier-cape-coral-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Cape Coral</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Central FL</a>
+      <a href="/storefront-glazier-clearwater-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Clearwater</a>
+      <a href="/storefront-glazier-coral-gables-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Coral Gables</a>
+      <a href="/storefront-glazier-davie-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Davie</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Daytona Beach</a>
+      <a href="/storefront-glazier-deerfield-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Deerfield Beach</a>
+      <a href="/storefront-glazier-delray-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Delray Beach</a>
+      <a href="/storefront-glazier-miami-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Doral</a>
+      <a href="/storefront-glazier-estero-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Estero</a>
+      <a href="/storefront-glazier-fort-lauderdale-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Fort Lauderdale</a>
+      <a href="/storefront-glazier-fort-myers-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Fort Myers</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Gainesville</a>
+      <a href="/storefront-glazier-miami-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Hialeah</a>
+      <a href="/storefront-glazier-hobe-sound-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Hobe Sound</a>
+      <a href="/storefront-glazier-fort-lauderdale-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Hollywood</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Jacksonville</a>
+      <a href="/storefront-glazier-juno-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Juno Beach</a>
+      <a href="/storefront-glazier-jupiter-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Jupiter</a>
+      <a href="/storefront-glazier-kissimmee-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Kissimmee</a>
+      <a href="/storefront-glazier-lakeland-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Lakeland</a>
+      <a href="commercial-glazing-lakewood-ranch.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Lakewood Ranch</a>
+      <a href="/storefront-glazier-marco-island-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Marco Island</a>
+      <a href="commercial-glazing-melbourne-fl.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Melbourne</a>
+      <a href="/storefront-glazier-miami-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Miami Beach</a>
+      <a href="/storefront-glazier-miami-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Miami</a>
+      <a href="/storefront-glazier-naples-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Naples</a>
+      <a href="commercial-glazing-near-me-florida.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Florida</a>
+      <a href="/storefront-glazier-north-palm-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">North Palm Beach</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Ocala</a>
+      <a href="/storefront-glazier-orlando-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Orlando</a>
+      <a href="commercial-glazing-palm-beach-county.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Palm Beach County</a>
+      <a href="/storefront-glazier-palm-beach-gardens-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Palm Beach Gardens</a>
+      <a href="/storefront-glazier-palm-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Palm Beach</a>
+      <a href="/storefront-glazier-panama-city-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Panama City</a>
+      <a href="commercial-glazing-parkland-fl.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Parkland</a>
+      <a href="/storefront-glazier-fort-lauderdale-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Pembroke Pines</a>
+      <a href="/storefront-glazier-pensacola-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Pensacola</a>
+      <a href="/storefront-glazier-fort-lauderdale-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Plantation</a>
+      <a href="/storefront-glazier-pompano-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Pompano Beach</a>
+      <a href="/port-saint-lucie/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Port St Lucie</a>
+      <a href="/storefront-glazier-sarasota-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Sarasota</a>
+      <a href="commercial-glazing-south-florida.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">South FL</a>
+      <a href="/storefront-glazier-tampa-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">South Tampa</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Southwest FL</a>
+      <a href="/st-petersburg/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">St Petersburg</a>
+      <a href="/storefront-glazier-stuart-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Stuart</a>
+      <a href="/storefront-glazier-tallahassee-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Tallahassee</a>
+      <a href="/storefront-glazier-tampa-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Tampa</a>
+      <a href="/storefront-glazier-tequesta-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Tequesta</a>
+      <a href="/florida-commercial-glazing/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Treasure Coast</a>
+      <a href="/storefront-glazier-vero-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Vero Beach</a>
+      <a href="/storefront-glazier-wellington-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Wellington</a>
+      <a href="/storefront-glazier-tampa-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Wesley Chapel</a>
+      <a href="/storefront-glazier-west-palm-beach-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">West Palm Beach</a>
+      <a href="/storefront-glazier-weston-florida/" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Weston</a>
+      <a href="commercial-glazing-windermere.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Windermere</a>
+      <a href="commercial-glazing-winter-park.html" onmouseover="this.style.borderColor='rgba(225,19,32,.4)';this.style.color='#fff'" onmouseout="this.style.borderColor='';this.style.color=''" class="ax-btn">Winter Park</a>
     </div>
   </div>
 </section>
 
-    <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+    </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>
     (function(){var all=document.querySelectorAll('.nav-dropdown');if(!all.length)return;all.forEach(function(d){var t=d.querySelector('.nav-dropdown-trigger');if(!t)return;t.addEventListener('click',function(e){e.stopPropagation();all.forEach(function(x){if(x!==d){x.classList.remove('open');var xt=x.querySelector('.nav-dropdown-trigger');if(xt)xt.setAttribute('aria-expanded','false')}});d.classList.toggle('open');t.setAttribute('aria-expanded',d.classList.contains('open'))});var p=window.location.pathname.split('/').pop();d.querySelectorAll('.nav-dropdown-menu a').forEach(function(a){if(a.getAttribute('href')===p){a.style.color='var(--accent,#E21B2C)';a.style.fontWeight='600'}})});document.addEventListener('click',function(e){all.forEach(function(d){if(!d.contains(e.target)){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')}})});document.addEventListener('keydown',function(e){if(e.key==='Escape'){all.forEach(function(d){d.classList.remove('open');var t=d.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false')})}})})();
   </script>
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

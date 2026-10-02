@@ -610,113 +610,14 @@
 }
 </script>
 
-<style>
-  body { margin:0; font-family:'Inter',-apple-system,sans-serif; background:#050a12; color:#e8ecf2; line-height:1.6; -webkit-font-smoothing:antialiased; }
-  .nav { position:sticky; top:0; z-index:50; background:rgba(5,10,18,.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.06); }
-  .nav-inner { max-width:1280px; margin:0 auto; padding:18px 28px; display:flex; align-items:center; justify-content:space-between; }
-  .nav-logo img { height:32px; width:auto; }
-  .nav-links { display:flex; gap:28px; align-items:center; }
-  .nav-links a { color:rgba(232,236,242,.75); text-decoration:none; font-size:14px; font-weight:500; }
-  .nav-links a:hover { color:#fff; }
-  .nav-cta { background:#e11320; color:#fff !important; padding:10px 18px; border-radius:6px; font-weight:600; }
-
-  .hero { position:relative; min-height:70vh; display:flex; align-items:center; padding:80px 0; overflow:hidden; }
-  .hero-bg { position:absolute; inset:0; z-index:0; }
-  .hero-bg img { width:100%; height:100%; object-fit:cover; transform:scale(1.06); }
-  .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(5,10,18,.6) 0%,rgba(5,10,18,.78) 50%,rgba(5,10,18,.96) 100%); }
-  .hero-content { position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:0 28px; }
-  .eyebrow { display:inline-flex; align-items:center; gap:12px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.7); font-weight:600; margin-bottom:32px; }
-  .eyebrow .dot { width:6px; height:6px; background:#e11320; border-radius:50%; }
-  .eyebrow .bar { width:28px; height:1px; background:rgba(255,255,255,.3); }
-  h1 { font-size:clamp(40px,6vw,84px); font-weight:800; line-height:1.02; letter-spacing:-.025em; color:#fff; margin:0 0 28px; max-width:980px; }
-  h1 .accent { color:#e11320; }
-  .hero-sub { font-size:clamp(17px,1.6vw,22px); line-height:1.55; color:rgba(232,236,242,.85); max-width:780px; margin:0 0 40px; }
-  .hero-actions { display:flex; gap:14px; flex-wrap:wrap; }
-  .btn-primary { background:#e11320; color:#fff; padding:16px 30px; border-radius:6px; text-decoration:none; font-weight:600; font-size:16px; display:inline-flex; align-items:center; gap:10px; border:1px solid #e11320; }
-  .btn-primary:hover { background:#c10f1c; border-color:#c10f1c; }
-  .btn-ghost { background:transparent; color:#fff; padding:16px 30px; border-radius:6px; text-decoration:none; font-weight:600; font-size:16px; display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,.25); }
-
-  section { padding:clamp(72px,8vw,120px) 0; }
-  section.alt { background:rgba(255,255,255,.018); border-top:1px solid rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.05); }
-  .container { max-width:1280px; margin:0 auto; padding:0 28px; }
-  .section-eyebrow { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#e11320; font-weight:600; margin-bottom:18px; }
-  h2 { font-size:clamp(30px,3.8vw,52px); font-weight:800; letter-spacing:-.025em; color:#fff; line-height:1.1; margin:0 0 24px; max-width:880px; }
-  .lede { font-size:clamp(17px,1.4vw,20px); line-height:1.65; color:rgba(232,236,242,.82); max-width:780px; margin:0 0 56px; }
-  p { font-size:17px; line-height:1.7; color:rgba(232,236,242,.82); max-width:780px; margin:0 0 22px; }
-  a { color:#e11320; text-decoration:underline; text-underline-offset:3px; }
-  a:hover { color:#fff; }
-
-  .stats-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid rgba(255,255,255,.12); padding-top:32px; max-width:980px; margin-top:40px; }
-  .stat { padding-right:28px; }
-  .stat-num { font-size:clamp(32px,3.4vw,44px); font-weight:800; letter-spacing:-.02em; color:#fff; line-height:1; margin-bottom:6px; }
-  .stat-num .accent { color:#e11320; }
-  .stat-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6); font-weight:600; }
-
-  .region-block { margin-bottom:56px; }
-  .region-header { margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,.1); }
-  .region-header h3 { font-size:24px; font-weight:700; color:#fff; margin:0 0 6px; letter-spacing:-.015em; }
-  .region-meta { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#e11320; font-weight:600; }
-  .city-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px; }
-  .city-link { display:block; padding:14px 18px; background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.07); border-radius:6px; color:#fff; text-decoration:none; font-size:15px; font-weight:500; letter-spacing:-.005em; transition:all .2s; }
-  .city-link:hover { border-color:rgba(225,19,32,.5); background:rgba(225,19,32,.06); color:#fff; }
-
-  .quick-answer { background:linear-gradient(180deg,rgba(225,19,32,.04) 0%,rgba(225,19,32,.01) 100%); border:1px solid rgba(225,19,32,.18); border-left:3px solid #e11320; padding:36px 40px; border-radius:6px; }
-  .quick-answer-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#e11320; font-weight:600; margin-bottom:14px; }
-  .quick-answer p { font-size:19px; line-height:1.65; color:#fff; max-width:none; margin:0; }
-  .quick-answer p + p { margin-top:16px; }
-  .quick-answer strong { color:#fff; }
-
-  .final-cta { background:linear-gradient(135deg,#0e284f 0%,#050a12 100%); border-top:1px solid rgba(225,19,32,.25); padding:clamp(80px,9vw,120px) 0; text-align:center; position:relative; overflow:hidden; }
-  .final-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 30%,rgba(225,19,32,.12) 0%,transparent 60%); }
-  .final-cta-inner { position:relative; z-index:1; max-width:880px; margin:0 auto; padding:0 28px; }
-  .final-cta h2 { font-size:clamp(32px,4.5vw,60px); }
-  .faq-list{list-style:none;margin:0;padding:0;max-width:880px}
-  .faq-item{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-  .faq-item:first-child{border-top:1px solid rgba(255,255,255,.1)}
-  .faq-q{margin:0 0 8px;font-size:1.1rem;font-weight:700;color:#fff}
-  .faq-a{margin:0;color:rgba(232,236,242,.82);font-size:17px;max-width:780px;line-height:1.7}
-
-  footer { background:#030610; border-top:1px solid rgba(255,255,255,.06); padding:56px 0 36px; color:rgba(232,236,242,.6); font-size:13px; }
-  footer .footer-inner { max-width:1280px; margin:0 auto; padding:0 28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; }
-
-  @media (max-width:880px) {
-    .nav-links a:not(.nav-cta) { display:none; }
-    .stats-strip { grid-template-columns:repeat(2,1fr); gap:24px 0; }
-    .city-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); }
-  }
-</style>
-  <link rel="stylesheet" href="/css/acg-chrome.css?v=20260814-contrast">
+  <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 </head>
-<body>
+<body class="ax-interior">
 
-<header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+<header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
-<header class="hero">
+<header class="hero ax-hero ax-hero-m">
   <div class="hero-bg">
     <picture>
       <source type="image/avif" srcset="/images/projects/eau-palm-beach/aerial-resort.avif">
@@ -949,84 +850,44 @@
   <section class="final-cta">
     <div class="final-cta-inner">
       <h2>Get a real Florida storefront number in 48 hours.</h2>
-      <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:rgba(232,236,242,.8);margin:0 auto 36px;max-width:640px;">Send drawings, scope, and schedule. We'll come back with a line-itemized bid, system recommendation, and a lead-time commitment. No mystery numbers.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <p style="max-width:640px" class="ax-lead">Send drawings, scope, and schedule. We'll come back with a line-itemized bid, system recommendation, and a lead-time commitment. No mystery numbers.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
         <a href="/send-plans.html" class="btn-primary">Send Us Plans</a>
         <a href="tel:+17724867711" class="btn-ghost">Call (772) 486-7711</a>
       </div>
     </div>
   </section>
 </main>
-<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1" style="background:#f5f1ea;padding:72px 24px;">
-  <div style="max-width:980px;margin:0 auto;">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e11320;margin-bottom:14px;font-weight:600;">Full Commercial Glass Scope</div>
-    <h2 style="font-size:clamp(28px,3.6vw,40px);letter-spacing:-.022em;line-height:1.08;color:#0e284f;margin:0 0 18px;">Not just impact glass. Every commercial glass system.</h2>
-    <p style="font-size:17px;line-height:1.65;color:#3a4a5e;margin:0 0 36px;max-width:760px;">ACG installs the full CSI Division 08 (Openings) scope across the state - hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px;font-size:15px;line-height:1.55;">
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Storefront systems</strong><span style="color:#6a7484;">ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Curtain wall</strong><span style="color:#6a7484;">Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Impact windows &amp; doors</strong><span style="color:#6a7484;">HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Sliding &amp; folding doors</strong><span style="color:#6a7484;">Euro-Wall folding, multi-slide, arched storefront.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Interior glass</strong><span style="color:#6a7484;">Office partitions, conference walls, demountable systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Glass railings</strong><span style="color:#6a7484;">Frameless, channel-mounted, terrace and stair installations.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Mirrors</strong><span style="color:#6a7484;">Gym, retail, salon, commercial restroom, lobby walls.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Fire-rated glazing</strong><span style="color:#6a7484;">TGP systems, 20 to 180 minute fire ratings.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Automatic entrances</strong><span style="color:#6a7484;">Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Decorative + specialty</strong><span style="color:#6a7484;">Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Skylights + roof glazing</strong><span style="color:#6a7484;">Sloped, atrium, structural silicone systems.</span></li>
-      <li><strong style="color:#0e284f;display:block;margin-bottom:4px;">Service + retrofit</strong><span style="color:#6a7484;">Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
+<section aria-label="Full commercial glass scope" data-acg-block="full-scope-v1">
+  <div style="max-width:980px">
+    <div class="ax-kicker ax-strong">Full Commercial Glass Scope</div>
+    <h2>Not just impact glass. Every commercial glass system.</h2>
+    <p style="max-width:760px">ACG installs the full CSI Division 08 (Openings) scope across the state - hurricane-zone <em>and</em> inland. Whether the project needs ESWindows impact-rated curtain wall in Miami-Dade or standard architectural storefront in Orlando, the same team delivers.</p>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px 32px" class="ax-plain-list">
+      <li><strong style="display:block">Storefront systems</strong><span>ESWindows ES-9500 / ES-8000, custom aluminum, butt-glazed walls.</span></li>
+      <li><strong style="display:block">Curtain wall</strong><span>Stick-built &amp; unitized, mid-rise to high-rise.</span></li>
+      <li><strong style="display:block">Impact windows &amp; doors</strong><span>HVHZ-rated where required, standard impact-resistant elsewhere.</span></li>
+      <li><strong style="display:block">Sliding &amp; folding doors</strong><span>Euro-Wall folding, multi-slide, arched storefront.</span></li>
+      <li><strong style="display:block">Interior glass</strong><span>Office partitions, conference walls, demountable systems.</span></li>
+      <li><strong style="display:block">Glass railings</strong><span>Frameless, channel-mounted, terrace and stair installations.</span></li>
+      <li><strong style="display:block">Mirrors</strong><span>Gym, retail, salon, commercial restroom, lobby walls.</span></li>
+      <li><strong style="display:block">Fire-rated glazing</strong><span>TGP systems, 20 to 180 minute fire ratings.</span></li>
+      <li><strong style="display:block">Automatic entrances</strong><span>Allegion integration, ADA-compliant low-energy and full-auto.</span></li>
+      <li><strong style="display:block">Decorative + specialty</strong><span>Switchable privacy, laminated art glass, low-iron, back-painted.</span></li>
+      <li><strong style="display:block">Skylights + roof glazing</strong><span>Sloped, atrium, structural silicone systems.</span></li>
+      <li><strong style="display:block">Service + retrofit</strong><span>Emergency repair, gasket replacement, IGU swaps, hardware service.</span></li>
     </ul>
   </div>
 </section>
-<footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+</div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script src="/js/acg-chrome.js" defer></script>
   <script defer src="/js/track.js"></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

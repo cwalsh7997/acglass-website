@@ -1,0 +1,45 @@
+/* Shared site chrome in the architectural design (2026-10-01): header, full-screen menu, footer.
+   The ax- prefix keeps legacy page CSS (style.css .nav and .footer-brand) from bleeding in.
+   Header height stays 72px, the height legacy page layouts already reserve. */
+:root{--ax-navy:#071725;--ax-red:#ed3b47;--ax-muted:#a8b4c0}
+.ax-nav,.ax-navigation,.ax-footer{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+.ax-nav *,.ax-navigation *,.ax-footer *{box-sizing:border-box}
+.ax-nav{position:fixed;top:0;left:0;width:100%;height:72px;padding:0 clamp(20px,4%,60px);display:flex;align-items:center;justify-content:space-between;z-index:1000;background:rgba(7,23,37,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.09);color:#fff;box-sizing:border-box}
+.ax-nav.scrolled{background:rgba(7,23,37,.99)}
+.ax-nav a{color:#fff;text-decoration:none}
+.ax-logo{display:flex;align-items:center;gap:18px}
+.ax-logo img{display:block;width:104px;height:auto}
+.ax-logo>span{font-size:9px;line-height:1.5;letter-spacing:.08em;border-left:1px solid rgba(255,255,255,.27);padding-left:16px;color:#fff}
+.ax-nav-right{display:flex;align-items:center;gap:44px;font-size:13px}
+.ax-btn-plans{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:500}
+.ax-btn-plans::after{content:"";width:7px;height:7px;background:var(--ax-red);flex-shrink:0;transition:transform .3s}
+.ax-btn-plans:hover::after,.ax-btn-plans:focus-visible::after{transform:rotate(90deg) scale(1.5)}
+.ax-menu-button{border:0;background:none;color:#fff;padding:12px 0;display:flex;align-items:center;gap:16px;font:inherit;font-size:13px;cursor:pointer}
+.ax-menu-icon{display:flex;flex-direction:column;gap:7px}
+.ax-menu-icon i{display:block;width:23px;height:1px;background:#fff;transition:transform .3s}
+.ax-menu-button[aria-expanded=true] .ax-menu-icon i:first-child{transform:translateY(4px) rotate(45deg)}
+.ax-menu-button[aria-expanded=true] .ax-menu-icon i:last-child{transform:translateY(-4px) rotate(-45deg)}
+.ax-navigation{position:fixed;inset:0;background:var(--ax-navy);color:#fff;z-index:999;padding:125px 8% 40px;overflow:auto}
+.ax-navigation[hidden]{display:none}
+.ax-navigation nav{display:flex;flex-direction:column;gap:15px}
+.ax-navigation nav a{color:#fff;text-decoration:none;font-size:clamp(25px,3.2vw,52px);letter-spacing:-.05em;line-height:1.15;display:flex;align-items:center;gap:30px}
+.ax-navigation nav a>span{font-size:13px;letter-spacing:0;color:var(--ax-red)}
+.ax-navigation nav a:hover,.ax-navigation nav a:focus-visible{color:var(--ax-red)}
+.ax-menu-footer{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.2);margin-top:50px;padding-top:25px;font-size:13px;color:var(--ax-muted)}
+.ax-menu-footer a{color:inherit;text-decoration:none}
+body.ax-menu-open{overflow:hidden}
+.ax-footer{background:var(--ax-navy);color:#fff;display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:45px;padding:65px 6% 25px;position:relative;z-index:1}
+.ax-footer a{text-decoration:none}
+.ax-footer-brand{display:flex;flex-direction:column;gap:14px}
+.ax-footer-brand .ax-logo img{width:145px}
+.ax-footer-brand p{margin:0;font-size:15px;line-height:1.65;color:#b9c8d4}
+.ax-footer-brand>a:not(.ax-logo){font-size:14px;color:#c7d3de}
+.ax-footer-col{display:flex;flex-direction:column;gap:13px}
+.ax-footer-col h2{font-size:12px;font-weight:500;letter-spacing:.05em;color:#8ea3b4;text-transform:uppercase;margin:0 0 10px;line-height:1.5}
+.ax-footer-col a{font-size:14px;color:#c7d3de;line-height:1.5}
+.ax-footer-col a:hover,.ax-footer-brand>a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.ax-footer-legal{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 25px;border-top:1px solid rgba(255,255,255,.13);padding-top:25px;margin-top:25px;font-size:12px;line-height:1.6;color:#9db0bf}
+.ax-footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.ax-footer{grid-template-columns:1fr 1fr}.ax-footer-brand{grid-column:1/-1}.ax-nav-right{gap:30px}}
+@media(max-width:600px){.ax-nav{padding:0 6%}.ax-logo img{width:85px}.ax-logo>span{display:none}.ax-nav-right{gap:22px}.ax-btn-plans{gap:10px}.ax-menu-button{font-size:12px;gap:10px}.ax-navigation{padding:115px 6% 35px}.ax-navigation nav{gap:17px}.ax-navigation nav a{font-size:29px;gap:18px}.ax-footer{padding:45px 6% 25px;gap:35px}.ax-footer-legal{flex-direction:column;gap:12px;margin-top:0}}
+@media(prefers-reduced-motion:reduce){.ax-btn-plans::after,.ax-menu-icon i{transition:none}}

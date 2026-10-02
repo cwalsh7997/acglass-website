@@ -35,30 +35,8 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/atlantic-fields-golf-house/hero-open-wall.jpg">
 
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/acg2026.css?v=20260909-crumb">
-  <link rel="stylesheet" href="/css/acg2026-dark.css?v=20260802-unified">
-  <style>
-    /* interior-page header: solid from the top; give nav/logo the light (scrolled) treatment pre-scroll */
-    .hd.hd-solid:not(.scrolled) .hd-nav>a{color:var(--ink)}
-    .hd.hd-solid:not(.scrolled) .hd-nav>a:hover{color:var(--navy);opacity:1}
-    .hd.hd-solid:not(.scrolled) .hd-phone{color:var(--navy)!important}
-    .hd.hd-solid:not(.scrolled) .hd-burger span{background:var(--navy)}
-    .hd.hd-solid:not(.scrolled) .hd-logo .logo-light{display:none}
-    .hd.hd-solid:not(.scrolled) .hd-logo .logo-dark{display:block}
-    /* spec tables + FAQ details, light system */
-    .spec-scroll{overflow-x:auto}
-    .spec-table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:680px}
-    .spec-table th{font-family:var(--mono);font-size:0.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);text-align:left;padding:12px 14px;border-bottom:2px solid var(--navy);white-space:nowrap}
-    .spec-table td{padding:13px 14px;border-bottom:1px solid var(--hairline);color:var(--body);vertical-align:top;line-height:1.55}
-    .spec-table td:first-child{color:var(--ink);font-weight:600}
-    .spec-note{margin-top:14px;font-size:.85rem;color:var(--muted);font-style:italic;max-width:80ch}
-    .faq-d{background:var(--paper);border:1px solid var(--hairline);border-radius:var(--radius);padding:18px 22px}
-    .faq-d summary{cursor:pointer;font-weight:800;color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
-    .faq-d summary::-webkit-details-marker{display:none}
-    .faq-d summary::after{content:"+";color:var(--red);font-size:1.25rem;font-weight:400;flex-shrink:0;line-height:1}
-    .faq-d[open] summary::after{content:"-"}
-    .faq-d p{margin-top:10px;line-height:1.65;font-size:.95rem}
-  </style>
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <script type="application/ld+json">
 {
@@ -498,44 +476,16 @@
   "@context": "https://schema.org"
 }</script>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ========== Header ========== -->
-  <header class="hd hd-solid">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img class="logo-light" src="images/acg-logo-nav@2x.png" width="169" height="36" style="height:34px;width:auto" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-        <img class="logo-dark" src="images/brand/acg-lockup-2x.png" width="226" height="48" style="height:34px;width:auto" alt="" aria-hidden="true" loading="eager" decoding="async">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="locations.html">Locations</a>
-        <a href="about.html">About</a>
-        <a href="manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav class="hd-mobile" id="mobile-menu" aria-label="Mobile">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="services.html">Services</a>
-      <a href="locations.html">Locations</a>
-      <a href="about.html">About</a>
-      <a href="manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
   <main id="main-content">
 
   <!-- ========== Interior hero ========== -->
-  <section class="p-hero">
+  <section class="p-hero ax-hero ax-hero-s">
     <div class="wrap">
       <nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="manufacturers.html">Partners</a><span aria-hidden="true">/</span><span aria-current="page">Euro-Wall</span></nav>
       <h1>Euro-Wall. <em>Commercial</em> installer.</h1>
@@ -554,7 +504,7 @@
     <div class="wrap">
       <div class="feat-grid">
         <div class="feat-copy rv">
-          <div class="k-wrap" style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="width:34px;height:1px;background:var(--red)"></span><span class="k-label">The manufacturer</span></div>
+          <div class="k-wrap" style="display:flex;align-items:center;gap:12px"><span style="width:34px;height:1px"></span><span class="k-label">The manufacturer</span></div>
           <h2 id="mfr-h">Built to Miami-Dade HVHZ - the country's toughest impact standard.</h2>
           <div class="prose">
             <p>Euro-Wall engineers and manufactures impact-rated folding, sliding, pivot, casement and fixed glass wall systems in the United States, headquartered in North Port, Florida. The company was founded on a conviction that still drives it: South Florida demands more than anywhere else - and the products built to live here should set the standard everywhere else.</p>
@@ -649,7 +599,7 @@
       </table>
       </div>
       <p class="spec-note rv">Design pressures are tested-assembly maximums per Florida Building Code 8th Edition (2026). Actual project DPs depend on glass make-up, anchor spacing, and assembly configuration. Send drawings for project-specific NOA verification.</p>
-      <p class="rv" style="margin-top:20px"><a href="send-plans.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--hairline-2)">Request the Euro-Wall commercial specification packet →</a></p>
+      <p class="rv"><a href="send-plans.html" class="ax-strong ax-rule">Request the Euro-Wall commercial specification packet →</a></p>
     </div>
   </section>
 
@@ -695,21 +645,21 @@
       <div class="cards rv" data-stagger>
         <div class="card">
           <span class="k-index">01</span>
-          <h3 style="margin-top:10px">Toby Bostwick</h3>
+          <h3>Toby Bostwick</h3>
           <span class="k-label k-label--navy">Chief Executive Officer</span>
-          <p style="margin-top:10px">Leads Euro-Wall with a commitment to engineering excellence and a dealer-first culture.</p>
+          <p>Leads Euro-Wall with a commitment to engineering excellence and a dealer-first culture.</p>
         </div>
         <div class="card">
           <span class="k-index">02</span>
-          <h3 style="margin-top:10px">Wade Mammon</h3>
+          <h3>Wade Mammon</h3>
           <span class="k-label k-label--navy">Director of Sales - East Region</span>
-          <p style="margin-top:10px">Champion of the dealer network. Promoted in 2025 to lead East Region sales and GC engagement.</p>
+          <p>Champion of the dealer network. Promoted in 2025 to lead East Region sales and GC engagement.</p>
         </div>
         <div class="card">
           <span class="k-index">03</span>
-          <h3 style="margin-top:10px">FOR YOU Crew&trade;</h3>
+          <h3>FOR YOU Crew&trade;</h3>
           <span class="k-label k-label--navy">Specialist Support Team</span>
-          <p style="margin-top:10px">Live-reach specialists who stay on every project from specification through installation.</p>
+          <p>Live-reach specialists who stay on every project from specification through installation.</p>
         </div>
       </div>
     </div>
@@ -785,7 +735,7 @@
             <span class="go"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
         
       </div>
-      <p class="spec-note rv" style="margin-top:16px">Field photography from ACG commercial projects across Florida. Euro-Wall systems are specified on qualifying ACG scopes - including the bi-fold package at Polpo, Eau Palm Beach Resort.</p>
+      <p class="spec-note rv">Field photography from ACG commercial projects across Florida. Euro-Wall systems are specified on qualifying ACG scopes - including the bi-fold package at Polpo, Eau Palm Beach Resort.</p>
     </div>
   </section>
 
@@ -803,7 +753,7 @@
         <p>Euro-Wall is different. It isn't just that the product is the best - though it is. It's that Toby, Wade, and their team operate the way we try to operate at ACG. They pick up the phone. They sweat the details. They stand behind what they build. They treat their dealers like partners, not accounts.</p>
         <p>When a commercial GC asks us what impact-rated folding or sliding system we recommend for their project, the answer is easy. Euro-Wall. Not because of a volume commitment or a co-marketing deal. Because when we install their systems, the GC gets what the architect drew - and nobody calls us during punch list.</p>
         <p>That's what a partnership should look like. That's what we've found in Euro-Wall.</p>
-        <p style="margin-top:1.6em"><strong>- Connor Walsh</strong><br><span class="k-index">American Commercial Glass</span></p>
+        <p><strong>- Connor Walsh</strong><br><span class="k-index">American Commercial Glass</span></p>
       </div>
     </div>
   </section>
@@ -813,7 +763,7 @@
     <div class="cta-in">
       <div class="rv-l">
         <h2 id="cta-h">Specify Euro-Wall on your next project.</h2>
-        <p>Send drawings and bid-date info - ACG coordinates the scope, the NOA package and the install. Manufacturer detail at <a href="https://euro-wall.com" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline">euro-wall.com</a>.</p>
+        <p>Send drawings and bid-date info - ACG coordinates the scope, the NOA package and the install. Manufacturer detail at <a href="https://euro-wall.com" target="_blank" rel="noopener">euro-wall.com</a>.</p>
       </div>
       <a href="send-plans.html" class="btn">Send Us Plans
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -824,56 +774,15 @@
   </main>
 
   <!-- ========== Footer ========== -->
-  <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <p class="ft-h">Company</p>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="leadership.html">Leadership</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="qualifications.html">Qualifications</a></li>
-          <li><a href="manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <p class="ft-h">Services</p>
-        <ul>
-          <li><a href="commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <p class="ft-h">Contact</p>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="privacy-policy.html">Privacy</a> · <a href="terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script src="js/acg2026.js?v=20260704" defer></script>
   <script defer src="/js/track.js"></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

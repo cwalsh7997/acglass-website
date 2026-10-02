@@ -53,14 +53,20 @@ LANDMARK_ONLY_PAGES = (
 # /ocean-prime-ft-lauderdale.html instead of the noindex /projects/ alias.
 # That single href is the whole diff; head, jsonld, scripts and visible are
 # unchanged, which is the evidence nothing else moved.
+# 2026-10-01: head/scripts/hrefs/visible rebaselined for the sitewide architectural chrome
+# (new header, menu and footer; css/acg-arch-chrome.css + js/acg-arch-chrome.js). Verified
+# byte-identical outside the replaced header/footer and the two include tags; jsonld unchanged.
 LANDMARK_ONLY_FINGERPRINTS = {
     "impact-windows-doors.html": {
-        "head": "29a07ed271d75322a4901e753594e500c0e56413b72fb4b6065905251570a6d6",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "6a16c03150ddda8dd7bc25b200307e91aae002779666b08b5d54dbce28ad6aeb",
         "jsonld": "f852722b02bf696556895ae499798e363d3a201035863e44aed0117b0403f452",
-        "scripts": "6cd3dc3264a920749f21b84ce606e783f0bfcb956a2307cd3035694814638ea2",
+        "scripts": "fc9ef4decb6b725a2f461e1f3a5b5f946fbaadf76a6bea893b7fb2ac349f163e",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
-        "hrefs": "02b652403eac3dc2973856e25731a0f14f167abb35c0d30dedeb81a12dcd09fb",
-        "visible": "44f7f91ab28b39091e7feb4aee8c4e4e743a484632e16548e21d42740446deb6",
+        "hrefs": "59eda6361e56ff67fe9e64307b6f2a9bad14ca86eae81c9236991aeff2277d77",
+        "visible": "2575af7743b2962083b941c0412e7f6f7dd53bf1580644db8f3594538deb24cc",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -72,28 +78,37 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # <head>. hrefs/visible moved again 2026-09-03 when the RFQ primary
         # went to /send-plans.html.
         # Digests recomputed with this module's own _fingerprints() helper.
-        "head": "f6eb4c47a8ec7f66d7fe273d91832ddde5d0f1a084325a34f28be0b3096fdcfd",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "82fb705bb4008064360ef254b1cb61a78c7c877f31129e158046c1189329345e",
         "jsonld": "ad79a685eece44118a1212057a51bb2d3ac0224561f209e3672e234bccb7e2a7",
-        "scripts": "87cb5dda6ace674a3a0126efa8e2235cda429b47e22d0338b62ffc300a1d2c30",
+        "scripts": "1d173b7b332767edd8ed61825f17db02bfec58a7dc000632797dad5ac643f0ab",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
-        "hrefs": "c7fbe3769eb28ab411e2ada4530e50446437cad15ae1f3219d2951e558b36e0f",
-        "visible": "fd481c1aea2dbf2ff28e83aa786a27a4f2fe915813203942c3a4605544c6fba5",
+        "hrefs": "0493d4bf8b11f3bc2fb4d0720d4e37865f507e24f0f1a85548d9486f0e1ac9b2",
+        "visible": "baa3a9362b0eb147b3354dc7e87746a2cc68461646200f108d6898d77975775f",
     },
     "privacy-policy.html": {
-        "head": "b259a593708ec0c5d1295afc309e3159c82da4a5f12597e4a0c2af3d346b48f5",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "e3f9d7163f231370a282a755436e1b5ffe59bee8fd43d248935197e679c017a3",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
-        "scripts": "602b81cc175a16c0d7104e55d880b415e295f6aa24f13dbb41c6d89507861945",
-        "hrefs": "3180511380f066b5ba1be6d415c211d418b42d5b20cfa52fd49b20304c67e8d3",
-        "visible": "be45e901881796e473cfd1a3a2fde57bbeb70f4c6bc26a964259037c9fcab4db",
+        "scripts": "79b1d73c8555bd00767c5c2e54ebf96f99371a3e6ca68a9f9f7b080588793e54",
+        "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
+        "visible": "7b1503c488c37344fbf6c7935e9040a5c6653823edebbd944c27c8354b0f20f7",
     },
     "terms-of-use.html": {
-        "head": "353fb9c5f91945a215c3af07a55b360f37c776714c98143e29ae9da7f00a3c02",
+        # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
+        # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
+        # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
+        "head": "93b5a737481c26a194b25990e2be7334aca7366e9dcec45d1097fc445f7bd8df",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
-        "scripts": "31c1c638780ee6d016e87b4cc4d6d823c4a41abbfd14225a58d6f5504555f3f4",
-        "hrefs": "3180511380f066b5ba1be6d415c211d418b42d5b20cfa52fd49b20304c67e8d3",
-        "visible": "147920aa4c97efadd6dc76cabab05b0ea2a0fe8ad36a86f0cb6fdb1639e41df8",
+        "scripts": "a0fb3425f2b1c3179c113d7f603129f2c68a0768a5423700cfd33bbc1ad015d6",
+        "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
+        "visible": "15784867daf1f60c1c1c44b8af284a7682d1c4fe940ef055c9a5621f2f8f8543",
     },
 }
 
@@ -211,6 +226,10 @@ class PriorityAccessibilityTests(unittest.TestCase):
         source = (REPO_ROOT / "for-general-contractors.html").read_text(
             encoding="utf-8"
         )
+        # 2026-10-01 interior redesign: the page's <style> block moved into the shared
+        # acg-arch-interior.css, so the contract is checked on the page plus that sheet.
+        self.assertIn('href="/css/acg-arch-interior.css?v=20261001"', source)
+        source += (REPO_ROOT / "css" / "acg-arch-interior.css").read_text(encoding="utf-8")
         self.assertRegex(
             source,
             r"\.skip-link\{[^}]*position:fixed;[^}]*top:-100px;"

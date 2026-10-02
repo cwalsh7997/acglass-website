@@ -24,8 +24,8 @@
   <meta name="twitter:description" content="Pick occupancy, Florida wind path, and UFC overlay. Print a dual-path checklist. A Miami-Dade NOA is not a blast rating.">
   <meta name="twitter:image" content="https://acglass.com/images/team/connor-walsh-portrait.jpg">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <script type="application/ld+json">
 {
@@ -120,299 +120,17 @@
 }
   </script>
 
-  <style>
-    :root { --bdgc-acc: #e11320; --bdgc-navy: #0e284f; --bdgc-ink: #050A12; }
-    html { overflow-x: clip; }
-    body { overflow-x: hidden; }
-    .bdgc-hero {
-      background: linear-gradient(180deg, #050A12 0%, #0e284f 100%);
-      padding: clamp(88px, 12vw, 132px) 0 clamp(28px, 4vw, 44px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .bdgc-eyebrow {
-      font-family: var(--font-mono, "JetBrains Mono", monospace);
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--bdgc-acc);
-      margin: 0 0 14px;
-    }
-    .bdgc-hero h1 {
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 900;
-      line-height: 1.08;
-      margin: 0 0 14px;
-      max-width: 18ch;
-    }
-    .bdgc-series { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
-    .bdgc-series a {
-      font-family: var(--font-mono, "JetBrains Mono", monospace);
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(225,19,32,0.35);
-    }
-    .bdgc-series a:hover { color: #fff; }
-    .bdgc-lede {
-      font-size: clamp(15px, 1.4vw, 18px);
-      color: rgba(255,255,255,0.78);
-      line-height: 1.6;
-      max-width: 58ch;
-      margin: 0 0 16px;
-    }
-    .bdgc-byline {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 12px;
-      align-items: center;
-      font-family: var(--font-mono, "JetBrains Mono", monospace);
-      font-size: 0.8rem;
-      color: var(--text-muted, rgba(255,255,255,0.5));
-    }
-    .bdgc-byline a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.15); }
-    .bdgc-body { background: #050A12; padding: clamp(28px, 4vw, 48px) 0 clamp(56px, 8vw, 96px); }
-    .bdgc-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    @media (min-width: 920px) {
-      .bdgc-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: start; }
-    }
-    .bdgc-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      padding: 18px 16px;
-    }
-    .bdgc-card h2 {
-      font-size: 16px;
-      font-weight: 800;
-      margin: 0 0 6px;
-      line-height: 1.3;
-    }
-    .bdgc-letter {
-      font-family: var(--font-mono, "JetBrains Mono", monospace);
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--bdgc-acc);
-      margin-bottom: 8px;
-    }
-    .bdgc-hint {
-      font-size: 13px;
-      color: rgba(255,255,255,0.58);
-      line-height: 1.5;
-      margin: 0 0 14px;
-    }
-    .bdgc-opts { display: grid; gap: 8px; }
-    .bdgc-opt {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 10px 12px;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      background: rgba(255,255,255,0.02);
-      cursor: pointer;
-    }
-    .bdgc-opt:hover { border-color: rgba(255,255,255,0.28); }
-    .bdgc-opt:has(input:checked) {
-      border-color: var(--bdgc-acc);
-      background: rgba(225,19,32,0.08);
-    }
-    .bdgc-opt input { margin-top: 3px; accent-color: var(--bdgc-acc); }
-    .bdgc-opt strong { display: block; font-size: 14px; color: #fff; }
-    .bdgc-opt span { display: block; font-size: 12.5px; color: rgba(255,255,255,0.58); line-height: 1.45; margin-top: 2px; }
-    .bdgc-fields { display: grid; gap: 10px; }
-    .bdgc-fields label {
-      display: grid;
-      gap: 5px;
-      font-family: var(--font-mono, "JetBrains Mono", monospace);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-    }
-    .bdgc-fields input {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(8,18,36,0.7);
-      color: #fff;
-      font: 15px/1.4 var(--font, Inter, sans-serif);
-    }
-    .bdgc-fields input:focus { outline: 2px solid #fff; outline-offset: 2px; }
-    .bdgc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-    .bdgc-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: var(--font, Inter, sans-serif);
-      font-size: 13px;
-      font-weight: 700;
-      padding: 11px 16px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.04);
-      color: #fff;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .bdgc-btn:hover { background: rgba(255,255,255,0.1); }
-    .bdgc-btn[disabled] { opacity: 0.4; cursor: not-allowed; }
-    .bdgc-btn-acc { background: var(--bdgc-acc); border-color: var(--bdgc-acc); }
-    .bdgc-btn-acc:hover { background: #c20f1c; }
-    .bdgc-print-note {
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.5);
-      margin: 10px 0 0;
-      line-height: 1.5;
-    }
-    .bdgc-stop {
-      display: none;
-      margin: 0 0 16px;
-      padding: 14px 16px;
-      border: 1px solid rgba(225,19,32,0.55);
-      background: rgba(225,19,32,0.12);
-      border-radius: 8px;
-    }
-    .bdgc-stop.is-on { display: block; }
-    .bdgc-stop strong {
-      display: block;
-      font-family: var(--font-mono, "JetBrains Mono", monospace);
-      letter-spacing: 0.12em;
-      font-size: 12px;
-      color: var(--bdgc-acc);
-      margin-bottom: 6px;
-    }
-    .bdgc-stop p { margin: 0; color: #fff; font-size: 14.5px; line-height: 1.55; }
-    .bdgc-checks h2 { font-size: 18px; margin: 0 0 12px; }
-    .bdgc-list { list-style: none; margin: 0; padding: 0; }
-    .bdgc-list li {
-      display: flex;
-      gap: 10px;
-      padding: 9px 0;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      font-size: 14.5px;
-      line-height: 1.5;
-      color: rgba(255,255,255,0.86);
-      overflow-wrap: anywhere;
-    }
-    .bdgc-list li:first-child { border-top: none; }
-    .bdgc-list input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      min-width: 18px;
-      margin-top: 2px;
-      border: 1.5px solid rgba(255,255,255,0.3);
-      border-radius: 5px;
-      background: transparent;
-      cursor: pointer;
-    }
-    .bdgc-list input[type="checkbox"]:checked {
-      background: var(--bdgc-acc);
-      border-color: var(--bdgc-acc);
-    }
-    .bdgc-empty { color: rgba(255,255,255,0.5); font-size: 14.5px; line-height: 1.55; margin: 0; }
-    .bdgc-hubs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .bdgc-hubs a {
-      display: inline-flex;
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px;
-      color: rgba(255,255,255,0.78);
-      text-decoration: none;
-      font-size: 13px;
-    }
-    .bdgc-hubs a:hover { border-color: var(--bdgc-acc); color: #fff; }
-    .bdgc-faq { margin-top: 28px; }
-    .bdgc-faq h2 { font-size: 22px; margin: 0 0 14px; }
-    .bdgc-faq h3 { font-size: 16px; margin: 18px 0 6px; }
-    .bdgc-faq p { color: rgba(255,255,255,0.78); line-height: 1.65; margin: 0; }
-    .bdgc-cta {
-      margin-top: 28px;
-      background: linear-gradient(135deg, #0e284f 0%, #16386b 100%);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-left: 3px solid var(--bdgc-acc);
-      border-radius: 10px;
-      padding: 22px 18px;
-    }
-    .bdgc-cta h2 { font-size: 22px; margin: 0 0 8px; }
-    .bdgc-cta p { color: rgba(255,255,255,0.78); margin: 0 0 14px; line-height: 1.6; }
-    .bdgc-print-card { display: none; }
-    @media print {
-      @page { size: letter; margin: 0.5in; }
-      html, body { background: #fff !important; color: #111 !important; overflow: visible !important; }
-      .grain, .cursor-dot, .cursor-ring, .hd, .ft, .bdgc-hero, .bdgc-screen, .bdgc-hubs, .bdgc-faq, .bdgc-cta, .acg-rfq, .skip-link { display: none !important; }
-      .bdgc-body { background: #fff !important; padding: 0 !important; }
-      .bdgc-print-card { display: block !important; }
-      .bdgc-print-mast {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 11px;
-        color: #333;
-        margin-bottom: 10px;
-      }
-      .bdgc-print-card .bdgc-print-title { font-size: 20px; font-weight: 700; margin: 0 0 4px; color: #0e284f; }
-      .bdgc-print-card .bdgc-print-sub { font-size: 12px; color: #444; margin: 0 0 12px; }
-      .bdgc-print-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-      .bdgc-print-table th, .bdgc-print-table td {
-        border-bottom: 1px solid #ccc;
-        padding: 6px 8px;
-        text-align: left;
-        vertical-align: top;
-      }
-      .bdgc-print-table th { width: 34%; color: #0e284f; }
-      .bdgc-print-stop {
-        border: 2px solid #e11320;
-        padding: 8px 10px;
-        margin: 10px 0;
-        font-size: 12px;
-      }
-    }
-  </style>
+<style>:root{--bdgc-acc: #e11320;--bdgc-navy: #0e284f;--bdgc-ink: #050A12}.bdgc-btn[disabled]{opacity: 0.4}.bdgc-stop{display: none}.bdgc-stop.is-on{display: block}.bdgc-print-card{display: none}@media print{html, body{overflow: visible !important}.grain, .cursor-dot, .cursor-ring, .hd, .ft, .bdgc-hero, .bdgc-screen, .bdgc-hubs, .bdgc-faq, .bdgc-cta, .acg-rfq, .skip-link{display: none !important}}</style>
 </head>
-<body>
+<body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="grain"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
 
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
-  <section class="bdgc-hero" id="tool-hero">
+  <section class="bdgc-hero ax-hero ax-hero-s" id="tool-hero">
     <div class="container">
       <p class="bdgc-eyebrow">Florida federal dual path</p>
       <h1>Bid-Day Glazing Checker</h1>
@@ -445,19 +163,19 @@
                 <p class="bdgc-hint">Regime follows occupancy, not county. VA-leased is ISC.</p>
                 <div class="bdgc-opts" id="opts-occupancy"></div>
               </div>
-              <div class="bdgc-card" style="margin-top:14px;" data-widget="floridaWind">
+              <div class="bdgc-card" data-widget="floridaWind">
                 <div class="bdgc-letter">Widget B</div>
                 <h2>Florida wind path</h2>
                 <p class="bdgc-hint">Palm Beach and Monroe are not HVHZ. NOA is accepted statewide. FL# is not enough in HVHZ.</p>
                 <div class="bdgc-opts" id="opts-floridaWind"></div>
               </div>
-              <div class="bdgc-card" style="margin-top:14px;" data-widget="overlay">
+              <div class="bdgc-card" data-widget="overlay">
                 <div class="bdgc-letter">Widget C</div>
                 <h2>Federal overlay</h2>
                 <p class="bdgc-hint">A Miami-Dade NOA is not a blast rating.</p>
                 <div class="bdgc-opts" id="opts-overlay"></div>
               </div>
-              <div class="bdgc-card" style="margin-top:14px;">
+              <div class="bdgc-card">
                 <div class="bdgc-letter">Print fields</div>
                 <h2>Project stamp</h2>
                 <p class="bdgc-hint">Optional on screen. These lines print on the field card.</p>
@@ -511,7 +229,7 @@
 
         <section class="bdgc-cta">
           <h2>Need the dual path priced?</h2>
-          <p>Send elevations and the door and window schedule. <a href="tel:+17724867711" style="color:inherit;">(772) 486-7711</a>. FL CGC #1531993.</p>
+          <p>Send elevations and the door and window schedule. <a href="tel:+17724867711">(772) 486-7711</a>. FL CGC #1531993.</p>
           <a href="/send-plans.html" class="bdgc-btn bdgc-btn-acc">Send Us Plans</a>
         </section>
       </div>
@@ -526,53 +244,12 @@
     </div>
   </main>
 
-  <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+  </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="/js/main.js"></script>
   <script src="/js/acg-chrome.js" defer></script>
@@ -777,5 +454,6 @@
     });
 })();
   </script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>

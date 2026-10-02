@@ -190,7 +190,7 @@ class PositiveTests(unittest.TestCase):
 
     def test_contextual_nav_plus_in_page_anchor_passes(self):
         new = sub(HOME, "</body>", f"{CONTEXTUAL_NAV}</body>")
-        new = sub(new, '<a href="#capability">', '<a href="#markets-followup">Markets</a><a href="#capability">')
+        new = sub(new, '<a class="hero-work" href="#work">', '<a href="#markets-followup">Markets</a><a class="hero-work" href="#work">')
         failures, _ = diff(HOME, new)
         self.assertEqual({}, failures)
 

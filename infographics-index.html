@@ -24,8 +24,8 @@
   <meta name="twitter:image" content="https://acglass.com/images/infographics/infographic-commercial-glass-types-guide-florida.webp">
   <meta name="keywords" content="commercial glazing infographic, Florida glass infographic, storefront curtainwall infographic, hurricane glass infographic, ACG infographics, glazing visual guide">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20260705">
-  <link rel="stylesheet" href="/css/acg-chrome.css">
+    <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 
   <script type="application/ld+json">
   {
@@ -395,245 +395,15 @@
 }
   </script>
 
-  <style>
-    /* INFOGRAPHICS INDEX */
-    .ig-hero {
-      padding: clamp(120px, 14vw, 180px) clamp(24px, 6vw, 96px) clamp(40px, 5vw, 60px);
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-    .ig-hero .label {
-      margin-bottom: 20px;
-    }
-    .ig-hero h1 {
-      font-size: clamp(38px, 5vw, 72px);
-      font-weight: 900;
-      line-height: 1.05;
-      margin-bottom: clamp(16px, 2vw, 24px);
-      letter-spacing: -0.02em;
-    }
-    .ig-hero h1 .accent { color: var(--accent); }
-    .ig-hero p.lede {
-      font-size: clamp(15px, 1.2vw, 18px);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.62);
-      max-width: 640px;
-    }
-    .ig-counts {
-      display: flex;
-      gap: 32px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .ig-count {
-      border-left: 2px solid var(--accent);
-      padding: 4px 0 4px 16px;
-    }
-    .ig-count strong {
-      display: block;
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    .ig-count span {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-    }
-
-    /* Filter bar */
-    .ig-filter-bar {
-      position: sticky;
-      top: 60px;
-      z-index: 40;
-      background: rgba(5, 10, 18, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      padding: 14px clamp(16px, 4vw, 48px);
-    }
-    .ig-filter-inner {
-      max-width: 1440px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .ig-filter-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.14);
-      color: rgba(255,255,255,0.78);
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.18s ease;
-    }
-    .ig-filter-btn:hover { border-color: var(--accent); color: var(--text); }
-    .ig-filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-    .ig-search {
-      flex: 1;
-      min-width: 200px;
-      max-width: 360px;
-      margin-left: auto;
-    }
-    .ig-search input {
-      width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: var(--text);
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-family: var(--font-sans, Inter, sans-serif);
-      font-size: 14px;
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-    .ig-search input:focus { border-color: var(--accent); }
-    .ig-search input::placeholder { color: rgba(255,255,255,0.4); }
-
-    /* Grid */
-    .ig-grid-wrap {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: clamp(40px, 5vw, 64px) clamp(16px, 4vw, 48px) clamp(80px, 10vw, 120px);
-    }
-    .ig-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: clamp(20px, 2vw, 32px);
-    }
-    .ig-card {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: all 0.22s ease;
-    }
-    .ig-card:hover {
-      border-color: rgba(225,19,32,0.45);
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(225,19,32,0.18);
-    }
-    .ig-card.hidden { display: none; }
-    .ig-link { display: block; text-decoration: none; color: inherit; }
-    .ig-image-wrap {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #0C121E;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .ig-image-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      transition: transform 0.4s ease;
-    }
-    .ig-card:hover .ig-image-wrap img { transform: scale(1.025); }
-    .ig-tag {
-      position: absolute;
-      top: 12px; left: 12px;
-      background: rgba(5,10,18,0.84);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.14);
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .ig-tag--project { border-color: rgba(225,19,32,0.55); color: #ff8b94; }
-    .ig-tag--comparison { border-color: rgba(201,168,106,0.55); color: var(--gold, #C9A86A); }
-    .ig-tag--guide { border-color: rgba(110,180,255,0.45); color: #9bd1ff; }
-    .ig-body { padding: 18px 20px 22px; }
-    .ig-title {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.35;
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
-      color: #fff;
-    }
-    .ig-desc {
-      font-size: 13px;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.55);
-      margin: 0 0 14px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .ig-cta {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .ig-empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 80px 20px;
-      color: rgba(255,255,255,0.4);
-      font-family: var(--font-mono);
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-      .ig-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
-      .ig-body { padding: 14px 14px 16px; }
-      .ig-title { font-size: 13px; }
-      .ig-desc { display: none; }
-      .ig-cta { font-size: 10px; }
-    }
-  </style>
+<style>.ig-card{overflow: hidden}.ig-card.hidden{display: none}.ig-image-wrap{overflow: hidden}.ig-desc{overflow: hidden}@media (max-width: 600px){.ig-desc{display: none}}</style>
 </head>
-<body>
+<body class="ax-interior">
 
-  <header class="hd">
-    <div class="hd-in">
-      <a href="/" class="hd-logo" aria-label="ACG - American Commercial Glass home">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="eager" decoding="async" fetchpriority="high">
-      </a>
-      <nav class="hd-nav" aria-label="Primary">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/locations.html">Locations</a>
-        <a href="/about.html">About</a>
-        <a href="/manufacturers.html">Partners</a>
-        <a href="tel:+17724867711" class="hd-phone">(772) 486-7711</a>
-        <a href="/send-plans.html" class="hd-cta">Send Us Plans</a>
-      </nav>
-      <button class="hd-burger" aria-label="Menu" aria-expanded="false" aria-controls="hd-mobile-menu"><span></span><span></span><span></span></button>
-    </div>
-    <nav class="hd-mobile" id="hd-mobile-menu" aria-label="Mobile">
-      <a href="/portfolio.html">Portfolio</a>
-      <a href="/services.html">Services</a>
-      <a href="/locations.html">Locations</a>
-      <a href="/about.html">About</a>
-      <a href="/manufacturers.html">Partners</a>
-      <a href="tel:+17724867711">(772) 486-7711</a>
-      <a href="/send-plans.html" class="hd-mobile-cta">Send Us Plans</a>
-    </nav>
-  </header>
+  <header class="ax-nav"><a class="ax-logo" href="/" aria-label="American Commercial Glass home"><img src="/images/acg-logo-nav@2x.png" alt="ACG" width="169" height="36" decoding="async"><span>AMERICAN<br>COMMERCIAL GLASS</span></a><div class="ax-nav-right"><a class="ax-btn-plans" href="/send-plans.html">Send Us Plans</a><button class="ax-menu-button" type="button" aria-expanded="false" aria-controls="ax-navigation">Menu<span class="ax-menu-icon" aria-hidden="true"><i></i><i></i></span></button></div></header><div id="ax-navigation" class="ax-navigation" hidden><nav aria-label="Main navigation"><a href="/portfolio.html"><span>01</span>The work</a><a href="/services.html"><span>02</span>The services</a><a href="/about.html"><span>03</span>The company</a><a href="/qualifications.html"><span>04</span>Qualifications</a><a href="/manufacturers.html"><span>05</span>Manufacturers</a><a href="/locations.html"><span>06</span>Coverage</a><a href="/resources.html"><span>07</span>Resources</a><a href="/contact.html"><span>08</span>Your project</a></nav><div class="ax-menu-footer"><span>Florida / Division 08</span><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div></div><div class="ax-page">
 
 
   <!-- HERO -->
-  <section class="ig-hero">
+  <section class="ig-hero ax-hero ax-hero-m">
     <div class="label" data-reveal><span class="line"></span> Visual Briefs</div>
     <h1 data-reveal data-delay="100">Florida Commercial Glazing <br> <span class="accent">Infographics - 207 Visual Briefs</span></h1>
     <p class="lede" data-reveal data-delay="200">Every ACG project, every technical guide, distilled into a single 1200×1200 visual. Code references, hurricane requirements, system comparisons, and project specs at a glance. Click any card to read the full article.</p>
@@ -4761,58 +4531,17 @@
             </div>
           </a>
         </article>
-      <div class="ig-empty" id="ig-empty" style="display:none;">No infographics match your search.</div>
+      <div class="ig-empty" id="ig-empty" style="display:none">No infographics match your search.</div>
     </div>
   </section>
 
 
-    <footer class="ft">
-    <div class="ft-word" aria-hidden="true"><span>American Commercial Glass</span></div>
-    <div class="ft-main">
-      <div class="ft-brand">
-        <img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="ACG - American Commercial Glass" loading="lazy">
-        <p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
-      </div>
-      <nav aria-label="Company">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/leadership.html">Leadership</a></li>
-          <li><a href="/portfolio.html">Portfolio</a></li>
-          <li><a href="/qualifications.html">Qualifications</a></li>
-          <li><a href="/manufacturers.html">Manufacturer Partners</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Services">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/commercial-storefront-systems.html">Storefront Systems</a></li>
-          <li><a href="/curtainwall-systems.html">Curtain Wall</a></li>
-          <li><a href="/impact-windows-doors.html">Impact Glazing</a></li>
-          <li><a href="/multi-slide-bifold-doors.html">Multi-Slide &amp; Folding</a></li>
-          <li><a href="/fire-rated-glass-systems.html">Fire-Rated Glass</a></li>
-          <li><a href="/automatic-entrance-systems.html">Aluminum Entrances</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--></li>
-          <li><a href="tel:+17724867711">(772) 486-7711</a></li>
-          <li>700 S Rosemary Ave #204<br>West Palm Beach, FL 33401</li>
-          <li><a href="/locations.html">All service areas →</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ft-legal">
-      <div class="ft-legal-in">
-        <span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
-        <span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
-        <span><a href="/privacy-policy.html">Privacy</a> · <a href="/terms-of-use.html">Terms</a> · <a href="/security-policy.html">Security</a> · Not affiliated with AGC Inc or ACG Glass &amp; Metals</span>
-      </div>
-    </div>
-  </footer>
+    </div><footer class="ax-footer"><div class="ax-footer-brand"><a class="ax-logo" href="/"><img src="/images/acg-logo-nav@2x.png" width="169" height="36" alt="American Commercial Glass" loading="lazy" decoding="async"></a>
+<p>Owner-operated commercial glazing. Florida HQ in West Palm Beach, offices in Naples and Tampa.</p>
+<p>700 S Rosemary Ave #204, West Palm Beach, FL 33401</p><!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off--><a href="tel:+17724867711">(772) 486-7711</a></div><div class="ax-footer-col"><h2>Work</h2><a href="/atlantic-fields-golf-house.html">Atlantic Fields</a><a href="/gulfside-twelve.html">Gulfside Twelve</a><a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a><a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a><a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a><a href="/case-study-haines-city-eoc.html">Haines City EOC</a><a href="/portfolio.html">Full portfolio</a></div><div class="ax-footer-col"><h2>Services</h2><a href="/commercial-storefront-systems.html">Storefront</a><a href="/curtainwall-systems.html">Curtainwall</a><a href="/window-wall-systems.html">Window wall</a><a href="/impact-windows-doors.html">Impact windows &amp; doors</a><a href="/multi-slide-bifold-doors.html">Moving glass walls</a><a href="/fire-rated-glass-systems.html">Fire-rated glazing</a><a href="/automatic-entrance-systems.html">Automatic entrances</a><a href="/interior-glass-partitions.html">Interior glass</a></div><div class="ax-footer-col"><h2>Company</h2><a href="/about.html">About ACG</a><a href="/leadership.html">Leadership</a><a href="/qualifications.html">Qualifications</a><a href="/manufacturers.html">Manufacturer partners</a><a href="/partners.html">Working with GCs</a><a href="/testimonials.html">Testimonials</a><a href="/careers.html">Careers</a></div><div class="ax-footer-col"><h2>Explore</h2><a href="/government-public-sector-glazing.html">Government &amp; public sector</a><a href="/locations.html">All service areas</a><a href="/resources.html">Technical resources</a><a href="/blog/">Articles</a><a href="/news/">News</a><a href="/scope-engine.html">Scope engine</a><a href="/contact.html">Contact</a><a href="/send-plans.html">Send Us Plans</a></div><div class="ax-footer-legal">
+<span>© 2026 American Commercial Glass, Inc. · FL CGC #1531993 · Woman-owned business, WBENC certification in progress</span>
+<span class="compliance-line" style="display:block;margin-top:6px;font-size:12px;color:#8892a3">Woman-owned business, WBENC certification in progress. FL CGC 1531993. UEI QTQYMLLL9PS4.</span>
+<span><a href="/privacy-policy.html">Privacy</a> &middot; <a href="/terms-of-use.html">Terms</a> &middot; <a href="/security-policy.html">Security</a> &middot; Not affiliated with AGC Inc or ACG Glass &amp; Metals</span></div></footer>
 
   <script defer src="js/main.js"></script>
   <script>
@@ -4895,5 +4624,6 @@
   </script>
 
   <script src="/js/acg-chrome.js" defer></script>
+<script src="/js/acg-arch-chrome.js?v=20261001" defer></script>
 </body>
 </html>
