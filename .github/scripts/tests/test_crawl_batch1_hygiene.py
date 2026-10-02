@@ -71,8 +71,10 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         # drops: 370 after the emergency-repair cities, 365 after the
         # 2026-09-29 Tampa/WPB neighborhood soft-merge, 363 after the
         # 2026-09-30 Brickell neighborhood soft-merge, 359 after the
-        # 2026-10-01 thin city-directory soft-merge.
-        self.assertGreaterEqual(len(fixture_locs), 359)
+        # 2026-10-01 thin city-directory soft-merge, 354 after the
+        # 2026-10-02 Sanford/Kissimmee/Port Orange/St. Augustine/Ponte Vedra
+        # city-directory soft-merge.
+        self.assertGreaterEqual(len(fixture_locs), 354)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):
@@ -199,9 +201,9 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
-        # 747 after the 2026-10-01 suburb commercial-glazing soft-merge
-        # (755 before: eight suburb commercial-glazing duplicates removed).
-        self.assertEqual(len(locs), 747)
+        # 742 after the 2026-10-02 city-dir soft-merge
+        # (747 before: five thin city directories removed).
+        self.assertEqual(len(locs), 742)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
