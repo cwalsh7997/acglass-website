@@ -47,8 +47,10 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # drops: 370 after the emergency-repair cities, 365 after the
         # 2026-09-29 Tampa/WPB neighborhood soft-merge, 363 after the
         # 2026-09-30 Brickell neighborhood soft-merge, 359 after the
-        # 2026-10-01 thin city-directory soft-merge.
-        self.assertGreaterEqual(len(fixture), 359)
+        # 2026-10-01 thin city-directory soft-merge, 354 after the
+        # 2026-10-02 Sanford/Kissimmee/Port Orange/St. Augustine/Ponte Vedra
+        # city-directory soft-merge.
+        self.assertGreaterEqual(len(fixture), 354)
 
 
 class LastmodAlignmentTests(unittest.TestCase):

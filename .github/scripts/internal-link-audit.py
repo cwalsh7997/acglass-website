@@ -282,11 +282,14 @@ WAVE_HYGIENE_CITY_ROOTS = {
 # 2026-09-22: city-root duplicates that already canonicalize to a keeper or the
 # Florida hub. Pages stay live (no deletes). County hubs, neighborhood pages,
 # and locations.html keep their hrefs so this containment does not retarget
-# the rest of the site. Self-canonical city roots (sanford, …) are not in
-# this set.
+# the rest of the site.
 # 2026-10-01: gainesville, ocala, and daytona-beach canonicalize to the
 # Florida hub. temple-terrace canonicalizes to the Tampa storefront keeper.
 # Files stay. The locations.html Temple Terrace label points at that keeper.
+# 2026-10-02: sanford and kissimmee-tourism canonicalize to the Orlando
+# storefront keeper. port-orange, st-augustine, and ponte-vedra-beach
+# canonicalize to the Florida hub. Files stay. The locations.html
+# Kissimmee Tourism Corridor label points at the Orlando keeper.
 CONTAINED_CITY_ROOT_DUPLICATES = {
     "/aventura/",
     "/bay-harbor-islands/",
@@ -326,6 +329,7 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/key-largo/",
     "/key-west/",
     "/kissimmee/",
+    "/kissimmee-tourism/",
     "/lakeland/",
     "/lantana/",
     "/lauderdale-by-the-sea/",
@@ -352,11 +356,15 @@ CONTAINED_CITY_ROOT_DUPLICATES = {
     "/pensacola/",
     "/pinecrest/",
     "/pompano-beach/",
+    "/ponte-vedra-beach/",
+    "/port-orange/",
     "/port-saint-lucie/",
     "/riviera-beach/",
+    "/sanford/",
     "/sarasota/",
     "/sebastian/",
     "/south-miami/",
+    "/st-augustine/",
     "/st-petersburg/",
     "/stuart/",
     "/sunny-isles-beach/",

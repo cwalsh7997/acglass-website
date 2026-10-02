@@ -172,7 +172,7 @@ class IndexableLinkTargetTests(unittest.TestCase):
         self.assertFalse(audit.is_wave2_noindex_target("/dealer/login.html"))
         self.assertIn("/miami/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/boca-raton/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
-        self.assertNotIn("/sanford/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/sanford/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertNotIn(
             "/storefront-glazier-miami-florida/", audit.CONTAINED_CITY_ROOT_DUPLICATES
         )
@@ -200,13 +200,18 @@ class IndexableLinkTargetTests(unittest.TestCase):
         inbound = {"/miami/": {"/locations.html": ["Miami"]}}
         results = self.run_gate(pages, inbound)
         self.assertTrue(results["Indexable pages do not link to noindex pages"].ok)
-        self.assertEqual(len(audit.CONTAINED_CITY_ROOT_DUPLICATES), 83)
+        self.assertEqual(len(audit.CONTAINED_CITY_ROOT_DUPLICATES), 88)
         self.assertIn("/gainesville/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/ocala/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/daytona-beach/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/temple-terrace/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/jacksonville/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertIn("/stuart/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/sanford/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/kissimmee-tourism/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/port-orange/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/st-augustine/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
+        self.assertIn("/ponte-vedra-beach/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
         self.assertNotIn("/winter-park/", audit.CONTAINED_CITY_ROOT_DUPLICATES)
 
     def test_noindex_and_refresh_sources_are_not_treated_as_indexable(self):
