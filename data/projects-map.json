@@ -58,9 +58,9 @@
   {
     "name": "Wild Blue Clubhouse",
     "type": "Hospitality",
-    "city": "Estero",
-    "lat": 26.4376,
-    "lng": -81.8014,
+    "city": "Lakewood Ranch",
+    "lat": 27.3867,
+    "lng": -82.4404,
     "url": "wild-blue-clubhouse.html"
   },
   {
@@ -98,9 +98,9 @@
   {
     "name": "Aspen Dental Plaza",
     "type": "Healthcare",
-    "city": "Edgewater",
-    "lat": 28.9589,
-    "lng": -80.9026,
+    "city": "Englewood",
+    "lat": 26.9620,
+    "lng": -82.3519,
     "url": "aspen-dental-edgewater.html"
   },
   {
