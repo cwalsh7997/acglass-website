@@ -59,9 +59,8 @@ RESTORED = {
     "glazing-submittal-package.html": (
         "Commercial Glazing Submittal Package - Sample for GCs | ACG"
     ),
-    "case-study-gulfside-twelve.html": (
-        "Gulfside Twelve - Gulf Coast Multifamily Glazing | ACG"
-    ),
+    # case-study-gulfside-twelve.html: retired 2026-10-02, now a noindex
+    # redirect stub to gulfside-twelve.html (Connor: forward duplicates).
     "wild-blue-clubhouse.html": (
         "Wild Blue at Waterside Clubhouse | Resort Glazing - ACG"
     ),

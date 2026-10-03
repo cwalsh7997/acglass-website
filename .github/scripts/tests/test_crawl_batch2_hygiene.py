@@ -460,7 +460,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 734)
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -536,7 +536,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 734)
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1041,12 +1041,15 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
-        # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
+        # 720 after Westlake Hialeah (page + post) forwarded to the portfolio
+        # (Connor 2026-10-03); 722 after the duplicate Illumia case study forwarded too (2026-10-03);
+        # 723 after 11 more duplicate case studies forwarded to their project pages
+        # (Connor 2026-10-02); 734 after the 2026-10-02 retirement of three duplicate case-study URLs
         # (two Wild Blue, one Aspen; now forwards to their project pages); 737 after the
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 734)
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 720)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1134,7 +1137,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 734)
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1227,7 +1230,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
-        self.assertEqual(len(locs), 734)
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
