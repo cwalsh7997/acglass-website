@@ -203,13 +203,14 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
+        # 722 after the duplicate Illumia case study forwarded too (2026-10-03);
         # 723 after 11 more duplicate case studies forwarded to their project pages
         # (Connor 2026-10-02); 734 after the 2026-10-02 retirement of three duplicate case-study URLs
         # (two Wild Blue, one Aspen; now forwards to their project pages); 737 after the
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(locs), 723)
+        self.assertEqual(len(locs), 722)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
