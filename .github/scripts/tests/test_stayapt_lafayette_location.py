@@ -72,12 +72,13 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
     def test_sitemap_still_lists_the_post_and_frozen_titles_hold(self):
         sitemap = (REPO / "sitemap.xml").read_text(encoding="utf-8")
         locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", sitemap)
-        # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
+        # 723 after 11 more duplicate case studies forwarded to their project pages
+        # (Connor 2026-10-02); 734 after the 2026-10-02 retirement of three duplicate case-study URLs
         # (two Wild Blue, one Aspen; now forwards to their project pages); 737 after the
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(locs)), 734)
+        self.assertEqual(len(set(locs)), 723)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,
