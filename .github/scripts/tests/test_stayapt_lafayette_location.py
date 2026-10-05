@@ -72,6 +72,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
     def test_sitemap_still_lists_the_post_and_frozen_titles_hold(self):
         sitemap = (REPO / "sitemap.xml").read_text(encoding="utf-8")
         locs = re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", sitemap)
+        # 725 after the 2026-10-05 hotel-city template soft-merge
+        # (728 before: Fort Lauderdale, Sarasota, and Jacksonville removed).
         # 728 after the 2026-10-05 neighborhood stub soft-merge
         # (734 before: six thin neighborhood pages removed).
         # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
@@ -79,7 +81,7 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(locs)), 728)
+        self.assertEqual(len(set(locs)), 725)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,
