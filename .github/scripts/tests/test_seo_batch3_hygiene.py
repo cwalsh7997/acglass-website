@@ -52,8 +52,9 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # city-directory soft-merge, 349 after the 2026-10-02 Plant City /
         # Coconut Grove / Bal Harbour / Manalapan / Sanibel city-directory
         # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
-        # neighborhood stub soft-merge.
-        self.assertGreaterEqual(len(fixture), 343)
+        # neighborhood stub soft-merge, 340 after the 2026-10-05
+        # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
+        self.assertGreaterEqual(len(fixture), 340)
 
 
 class LastmodAlignmentTests(unittest.TestCase):

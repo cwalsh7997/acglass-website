@@ -460,7 +460,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 728)
+        self.assertEqual(len(locs), 725)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -536,7 +536,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 728)
+        self.assertEqual(len(locs), 725)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1014,7 +1014,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 6)
-        self.assertEqual(len(locs), 728)
+        self.assertEqual(len(locs), 725)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1107,6 +1107,147 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertNotIn("noindex", robots(tampa_impact))
         self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
 
+    def test_2026_10_05_hotel_city_templates_merge_onto_hospitality_hub(self):
+        # Thin Fort Lauderdale, Sarasota, and Jacksonville hotel templates
+        # stay on disk as HTTP 200. Crawl signals only: noindex,follow,
+        # canonical and og:url at the hospitality hub, off the sitemap.
+        # Titles, bodies, and JSON-LD url stay. No page deletes.
+        hub = f"{BASE}/hospitality-glazing-florida.html"
+        pages = {
+            "hotel-glazing-contractor-fort-lauderdale/index.html": (
+                hub,
+                "Hotel Glazier in Fort Lauderdale, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Fort Lauderdale</h1>",
+            ),
+            "hotel-glazing-contractor-sarasota/index.html": (
+                hub,
+                "Hotel Glazier in Sarasota, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Sarasota</h1>",
+            ),
+            "hotel-glazing-contractor-jacksonville/index.html": (
+                hub,
+                "Hotel Glazier in Jacksonville, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Jacksonville</h1>",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 3)
+        # 725 after this soft-merge (728 before: three thin hotel-city pages).
+        self.assertEqual(len(locs), 725)
+        for rel, (dest, title, h1) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertIn(h1, html, rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            tw = re.search(
+                r'<meta[^>]+name="twitter:url"[^>]+content="([^"]+)"', html
+            )
+            if tw:
+                self.assertEqual(tw.group(1), dest, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertIn(f'"url": "{url}"', html, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        keeper = read("hospitality-glazing-florida.html")
+        self.assertIn(
+            "<title>Hospitality Glazing Contractor Florida | Hotels &</title>",
+            keeper,
+        )
+        self.assertIn(
+            'content="Hospitality Glazing. Lobby-Grade. Guest-Ready. ACG bids and installs Division 08 glazing scopes for general contractors across Florida. Licensed FL CGC."',
+            keeper,
+        )
+        self.assertIn(
+            "Hospitality Glazing.",
+            keeper,
+        )
+        self.assertNotIn("noindex", robots(keeper))
+        self.assertEqual(canonical(keeper), hub)
+        self.assertIn(hub, locs)
+        for old in (
+            "/hotel-glazing-contractor-fort-lauderdale/",
+            "/hotel-glazing-contractor-sarasota/",
+            "/hotel-glazing-contractor-jacksonville/",
+        ):
+            self.assertNotIn(old, keeper, old)
+        locations = read("locations.html")
+        self.assertNotIn("/hotel-glazing-contractor-jacksonville/", locations)
+        self.assertIn(
+            '<a href="/hospitality-glazing-florida.html">Hotel Glazier in Jacksonville, FL</a>',
+            locations,
+        )
+        self.assertIn('href="/hotel-glazing-contractor-miami/"', locations)
+        self.assertIn('href="/hotel-glazing-contractor-orlando/"', locations)
+        self.assertIn('href="/hotel-glazing-contractor-tampa/"', locations)
+        fort = read("storefront-glazier-fort-lauderdale-florida/index.html")
+        sarasota = read("storefront-glazier-sarasota-florida/index.html")
+        self.assertNotIn("/hotel-glazing-contractor-fort-lauderdale/", fort)
+        self.assertNotIn("/hotel-glazing-contractor-sarasota/", sarasota)
+        self.assertIn(
+            'href="/hospitality-glazing-florida.html">hotel glazing in Fort Lauderdale</a>',
+            fort,
+        )
+        self.assertIn(
+            'href="/hospitality-glazing-florida.html">hotel glazing in Sarasota</a>',
+            sarasota,
+        )
+        for rel, title in (
+            (
+                "hotel-glazing-contractor-miami/index.html",
+                "Hotel Glazier in Miami, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-orlando/index.html",
+                "Hotel Glazier in Orlando, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-tampa/index.html",
+                "Hotel Glazier in Tampa, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-naples/index.html",
+                "Hotel Glazier in Naples, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-florida/index.html",
+                "Hotel Glazing Contractor Florida | Curtain Wall & | ACG",
+            ),
+        ):
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("noindex", robots(html), rel)
+            self.assertEqual(canonical(html), f"{BASE}{url_for(REPO_ROOT / rel)}", rel)
+            self.assertIn(f"{BASE}{url_for(REPO_ROOT / rel)}", locs, rel)
+        for rel, title in (
+            ("index.html", "<title>Commercial Glazing Contractor Florida | ACG</title>"),
+            (
+                "florida-commercial-glazing/index.html",
+                "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            ),
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+        ):
+            html = read(rel)
+            self.assertIn(title, html, rel)
+            self.assertNotIn("noindex", robots(html), rel)
+
     def test_2026_09_30_brickell_pages_merge_onto_miami_keeper(self):
         # Thin Brickell street pages and the Brickell commercial-glazing
         # duplicate stay on disk. They are noindex,follow and canonical to
@@ -1172,6 +1313,8 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
+        # 725 after the 2026-10-05 hotel-city template soft-merge
+        # (728 before: Fort Lauderdale, Sarasota, and Jacksonville removed).
         # 728 after the 2026-10-05 neighborhood stub soft-merge
         # (734 before: six thin neighborhood pages removed).
         # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
@@ -1179,7 +1322,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 728)
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 725)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1267,7 +1410,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 728)
+        self.assertEqual(len(locs), 725)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1360,7 +1503,7 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
-        self.assertEqual(len(locs), 728)
+        self.assertEqual(len(locs), 725)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)

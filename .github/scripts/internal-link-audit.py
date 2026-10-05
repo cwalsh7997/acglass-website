@@ -138,6 +138,13 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/coral-gables/coral-gables-miracle-mile/",
     "/tampa/westshore-tampa/",
     "/orlando/lake-nona-orlando/",
+    # 2026-10-05: thin Fort Lauderdale, Sarasota, and Jacksonville hotel
+    # templates soft-merge onto the hospitality hub. Files stay.
+    # locations.html and the Fort Lauderdale and Sarasota storefront
+    # nearby-page hrefs point at the hub.
+    "/hotel-glazing-contractor-fort-lauderdale/",
+    "/hotel-glazing-contractor-sarasota/",
+    "/hotel-glazing-contractor-jacksonville/",
     # 2026-09-30: Brickell neighborhood pages and the Brickell
     # commercial-glazing duplicate soft-merge onto the Miami storefront
     # keeper. Files stay. locations.html and the Miami keeper no longer

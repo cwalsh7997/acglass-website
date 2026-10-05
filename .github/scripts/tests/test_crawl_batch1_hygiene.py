@@ -76,8 +76,9 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         # city-directory soft-merge, 349 after the 2026-10-02 Plant City /
         # Coconut Grove / Bal Harbour / Manalapan / Sanibel city-directory
         # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
-        # neighborhood stub soft-merge.
-        self.assertGreaterEqual(len(fixture_locs), 343)
+        # neighborhood stub soft-merge, 340 after the 2026-10-05
+        # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
+        self.assertGreaterEqual(len(fixture_locs), 340)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):
@@ -204,6 +205,8 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
+        # 725 after the 2026-10-05 hotel-city template soft-merge
+        # (728 before: Fort Lauderdale, Sarasota, and Jacksonville removed).
         # 728 after the 2026-10-05 neighborhood stub soft-merge
         # (734 before: six thin neighborhood pages removed).
         # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
@@ -211,7 +214,7 @@ class AiCitationHygieneTests(unittest.TestCase):
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(locs), 728)
+        self.assertEqual(len(locs), 725)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
