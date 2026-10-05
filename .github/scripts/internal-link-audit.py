@@ -128,6 +128,16 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/tampa/davis-islands-tampa/",
     "/west-palm-beach/clematis-street-west-palm-beach/",
     "/west-palm-beach/rosemary-square-west-palm-beach/",
+    # 2026-10-05: thin Miami, Tampa, and Orlando neighborhood stubs
+    # soft-merge onto the office storefront keepers. Files stay.
+    # locations.html, the Doral city directory, and the Orlando keeper
+    # nearby-page href point at those keepers.
+    "/doral/downtown-doral/",
+    "/miami/coconut-grove-miami/",
+    "/aventura/aventura-mall-area/",
+    "/coral-gables/coral-gables-miracle-mile/",
+    "/tampa/westshore-tampa/",
+    "/orlando/lake-nona-orlando/",
     # 2026-09-30: Brickell neighborhood pages and the Brickell
     # commercial-glazing duplicate soft-merge onto the Miami storefront
     # keeper. Files stay. locations.html and the Miami keeper no longer
