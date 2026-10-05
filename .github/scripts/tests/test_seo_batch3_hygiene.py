@@ -51,8 +51,9 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # 2026-10-02 Sanford/Kissimmee/Port Orange/St. Augustine/Ponte Vedra
         # city-directory soft-merge, 349 after the 2026-10-02 Plant City /
         # Coconut Grove / Bal Harbour / Manalapan / Sanibel city-directory
-        # soft-merge.
-        self.assertGreaterEqual(len(fixture), 349)
+        # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
+        # neighborhood stub soft-merge.
+        self.assertGreaterEqual(len(fixture), 343)
 
 
 class LastmodAlignmentTests(unittest.TestCase):
