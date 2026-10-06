@@ -82,7 +82,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(set(locs)), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(set(locs)), 720)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,
