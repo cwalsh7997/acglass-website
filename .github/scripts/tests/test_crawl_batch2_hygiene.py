@@ -460,7 +460,8 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -536,7 +537,8 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1014,7 +1016,8 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 6)
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1133,7 +1136,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 3)
         # 725 after this soft-merge (728 before: three thin hotel-city pages).
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         for rel, (dest, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1248,6 +1252,114 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertIn(title, html, rel)
             self.assertNotIn("noindex", robots(html), rel)
 
+    def test_2026_10_06_remote_county_pages_merge_onto_florida_hub(self):
+        # Thin Escambia, Leon, Alachua, and Marion county templates stay on
+        # disk as HTTP 200. Crawl signals only: noindex,follow, canonical
+        # and og:url at the Florida hub, off the sitemap. Titles, H1s, and
+        # bodies stay. No page deletes.
+        hub = f"{BASE}/florida-commercial-glazing/"
+        pages = {
+            "escambia-county/index.html": (
+                "Commercial Storefront Glazier in Escambia County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Escambia County</h1>",
+            ),
+            "leon-county/index.html": (
+                "Commercial Storefront Glazier in Leon County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Leon County</h1>",
+            ),
+            "alachua-county/index.html": (
+                "Commercial Storefront Glazier in Alachua County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Alachua County</h1>",
+            ),
+            "marion-county/index.html": (
+                "Commercial Storefront Glazier in Marion County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Marion County</h1>",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 4)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
+        child_locs = sitemap_locs()
+        for rel, (title, h1) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertIn(h1, html, rel)
+            robots_tags = re.findall(
+                r'<meta\b[^>]*name="robots"[^>]*>', html, re.I
+            )
+            self.assertEqual(len(robots_tags), 1, rel)
+            self.assertIn('content="noindex,follow"', robots_tags[0], rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), hub, rel)
+            self.assertIn(f'property="og:url" content="{hub}"', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertNotIn(url, child_locs, rel)
+            self.assertIn(f'"url": "{url}"', html, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        self.assertEqual(canonical(florida), hub)
+        self.assertIn(hub, locs)
+        counties = read("florida-counties/index.html")
+        panhandle = read("florida-panhandle/index.html")
+        permits = read("florida-glazing-permit-timeline-by-county/index.html")
+        for old in (
+            "/escambia-county/",
+            "/leon-county/",
+            "/alachua-county/",
+            "/marion-county/",
+        ):
+            self.assertNotIn(f'href="{old}"', counties, old)
+            self.assertNotIn(f'href="{old}"', panhandle, old)
+            self.assertNotIn(f'href="{old}"', permits, old)
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Escambia County</a>', panhandle
+        )
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Leon County</a>', panhandle
+        )
+        self.assertIn(
+            'href="/florida-commercial-glazing/" class="ax-strong">Leon</a>',
+            permits,
+        )
+        for label in (
+            "Escambia County",
+            "Leon County",
+            "Alachua County",
+            "Marion County",
+        ):
+            self.assertIn(
+                'href="/florida-commercial-glazing/" style="display:block" '
+                f'class="ax-btn"><h3>{label}</h3>',
+                counties,
+                label,
+            )
+        for rel, label in (
+            ("storefront-glazier-pensacola-florida/index.html", "Escambia County"),
+            (
+                "storefront-glazier-pensacola-beach-florida/index.html",
+                "Escambia County",
+            ),
+            ("storefront-glazier-tallahassee-florida/index.html", "Leon County"),
+        ):
+            html = read(rel)
+            self.assertIn(
+                f'href="/florida-commercial-glazing/">{label}</a>', html, rel
+            )
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+
     def test_2026_09_30_brickell_pages_merge_onto_miami_keeper(self):
         # Thin Brickell street pages and the Brickell commercial-glazing
         # duplicate stay on disk. They are noindex,follow and canonical to
@@ -1322,7 +1434,8 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 721)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1410,7 +1523,8 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1503,7 +1617,8 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
