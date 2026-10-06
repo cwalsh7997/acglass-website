@@ -78,6 +78,7 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
         # neighborhood stub soft-merge, 340 after the 2026-10-05
         # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
+        # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
         self.assertGreaterEqual(len(fixture_locs), 340)
 
 
@@ -214,7 +215,8 @@ class AiCitationHygieneTests(unittest.TestCase):
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(locs), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(locs), 721)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))

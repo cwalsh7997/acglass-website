@@ -54,6 +54,7 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
         # neighborhood stub soft-merge, 340 after the 2026-10-05
         # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
+        # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
         self.assertGreaterEqual(len(fixture), 340)
 
 

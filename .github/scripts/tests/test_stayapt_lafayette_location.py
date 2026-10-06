@@ -81,7 +81,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(locs)), 725)
+        # 2026-10-06: -4 remote county soft-merge
+        self.assertEqual(len(set(locs)), 721)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,
