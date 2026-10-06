@@ -461,7 +461,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -538,7 +539,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1017,7 +1019,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 6)
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1137,7 +1140,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 3)
         # 725 after this soft-merge (728 before: three thin hotel-city pages).
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1279,7 +1283,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         child_locs = sitemap_locs()
         for rel, (title, h1) in pages.items():
             html = read(rel)
@@ -1360,6 +1365,121 @@ class CityCanonicalTests(unittest.TestCase):
             "<title>Commercial Glazing Contractor Florida | ACG</title>", home
         )
 
+    def test_2026_10_06_florida_glass_statistics_merge_onto_glazing_report(self):
+        # Thin statistics page stays on disk as HTTP 200. Crawl signals only:
+        # exactly one noindex,follow, canonical and og:url at the 2026 Florida
+        # glazing report, off every sitemap. Title, H1, and body stay. The
+        # Dataset block is removed. No page delete.
+        rel = "florida-commercial-glass-statistics-2026/index.html"
+        keeper_url = f"{BASE}/florida-commercial-glazing-report-2026.html"
+        title = "Florida Commercial Glass Statistics 2026 - Market | ACG"
+        h1 = "<h1>Florida Commercial Glass &amp; Glazing Statistics (2026)</h1>"
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        child_locs = sitemap_locs()
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
+        html = read(rel)
+        found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+        self.assertIsNotNone(found, rel)
+        self.assertEqual(found.group(1).strip(), title, rel)
+        self.assertIn(h1, html, rel)
+        self.assertIn(
+            "Industry stats, market sizing, hurricane glass adoption", html
+        )
+        robots_tags = re.findall(r'<meta\b[^>]*name="robots"[^>]*>', html, re.I)
+        self.assertEqual(len(robots_tags), 1, rel)
+        self.assertIn('content="noindex,follow"', robots_tags[0], rel)
+        self.assertEqual(robots(html), "noindex,follow", rel)
+        self.assertEqual(canonical(html), keeper_url, rel)
+        self.assertIn(f'property="og:url" content="{keeper_url}"', html, rel)
+        self.assertNotIn('name="twitter:url"', html, rel)
+        self.assertFalse(REFRESH_RE.search(html), rel)
+        self.assertNotIn('"@type": "Dataset"', html, rel)
+        self.assertIn('"@type": "Organization"', html, rel)
+        url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+        self.assertNotIn(url, locs, rel)
+        self.assertNotIn(url, child_locs, rel)
+        fixture = read(".github/fixtures/sitemap-pages.xml")
+        self.assertNotIn(url, fixture, rel)
+        self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        keeper = read("florida-commercial-glazing-report-2026.html")
+        self.assertIn(
+            "<title>State of Florida Commercial Glazing 2026</title>", keeper
+        )
+        self.assertNotIn("noindex", robots(keeper))
+        self.assertEqual(canonical(keeper), keeper_url)
+        self.assertIn(keeper_url, locs)
+        guide = read("florida-commercial-glazing-complete-guide/index.html")
+        self.assertNotIn("/florida-commercial-glass-statistics-2026", guide)
+        self.assertIn(
+            'href="/florida-commercial-glazing-report-2026.html">'
+            "Florida commercial glass statistics 2026</a>",
+            guide,
+        )
+        leftovers = []
+        for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+            for fn in filenames:
+                if not fn.endswith(".html"):
+                    continue
+                path = Path(dirpath) / fn
+                page_rel = path.relative_to(REPO_ROOT).as_posix()
+                if page_rel == rel:
+                    continue
+                page = path.read_text(encoding="utf-8", errors="replace")
+                if re.search(
+                    r'href=["\'][^"\']*florida-commercial-glass-statistics-2026',
+                    page,
+                ):
+                    leftovers.append(page_rel)
+        self.assertEqual(leftovers, [])
+        for frozen_rel, frozen_title in (
+            ("index.html", "<title>Commercial Glazing Contractor Florida | ACG</title>"),
+            (
+                "florida-commercial-glazing/index.html",
+                "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            ),
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-miami-florida/index.html",
+                "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-fort-lauderdale-florida/index.html",
+                "<title>Commercial Storefront Installer Fort Lauderdale | Bid</title>",
+            ),
+            (
+                "storefront-glazier-orlando-florida/index.html",
+                "<title>Commercial Storefront Installer Orlando | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-sarasota-florida/index.html",
+                "<title>Commercial Storefront Installer Sarasota | 48-Hr Bid</title>",
+            ),
+            (
+                "storefront-glazier-fort-myers-florida/index.html",
+                "<title>Commercial Storefront Installer Fort Myers | 48-Hr Bid</title>",
+            ),
+            (
+                "storefront-glazier-stuart-florida/index.html",
+                "<title>Commercial Storefront Installer Stuart | Bid</title>",
+            ),
+        ):
+            frozen = read(frozen_rel)
+            self.assertIn(frozen_title, frozen, frozen_rel)
+            self.assertNotIn("noindex", robots(frozen), frozen_rel)
+
     def test_2026_09_30_brickell_pages_merge_onto_miami_keeper(self):
         # Thin Brickell street pages and the Brickell commercial-glazing
         # duplicate stay on disk. They are noindex,follow and canonical to
@@ -1435,7 +1555,8 @@ class CityCanonicalTests(unittest.TestCase):
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 720)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1524,7 +1645,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1618,7 +1740,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
         # 2026-10-06: -4 remote county soft-merge
-        self.assertEqual(len(locs), 721)
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 720)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
