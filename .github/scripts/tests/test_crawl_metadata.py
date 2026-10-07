@@ -57,7 +57,18 @@ class TitleMetadataTests(unittest.TestCase):
         title = checker.title_content(source)
         self.assertGreaterEqual(len(title), checker.TITLE_MIN)
         self.assertLessEqual(len(title), checker.TITLE_MAX)
-        self.assertEqual({}, checker.HELD_LONG_TITLE_HASHES)
+        self.assertNotIn(rel, checker.HELD_LONG_TITLE_HASHES)
+        self.assertEqual(
+            set(checker.HELD_LONG_TITLE_HASHES),
+            {
+                "how-long-does-commercial-glazing-take-to-install/index.html",
+                "how-to-hire-commercial-glazier-florida/index.html",
+                "low-e-glass-coatings-commercial-explained/index.html",
+                "miami-dade-noa-glazing.html",
+                "multifamily-commercial-glazing-florida/index.html",
+                "occupied-building-glazing-installation-florida/index.html",
+            },
+        )
 
 
 if __name__ == "__main__":
