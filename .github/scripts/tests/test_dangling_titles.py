@@ -104,6 +104,29 @@ RESTORED = {
     ),
 }
 
+# Share titles completed past 60 characters so <title> matches og:title
+# and twitter:title. Any other sitemap title still has to fit the cap.
+COMPLETED_OVER_60 = {
+    "how-long-does-commercial-glazing-take-to-install/index.html": (
+        "How long does commercial glazing take to install in Florida? | ACG"
+    ),
+    "how-to-hire-commercial-glazier-florida/index.html": (
+        "How to hire a commercial glazier in Florida (2026 buyer's guide)"
+    ),
+    "low-e-glass-coatings-commercial-explained/index.html": (
+        "Low-E glass coatings: hard-coat vs soft-coat for commercial glass"
+    ),
+    "miami-dade-noa-glazing.html": (
+        "Miami-Dade NOA glazing: the Florida HVHZ approval system | ACG"
+    ),
+    "multifamily-commercial-glazing-florida/index.html": (
+        "Multifamily Commercial Glazing Florida | Apartments and Condos"
+    ),
+    "occupied-building-glazing-installation-florida/index.html": (
+        "Occupied building glazing installation Florida: retrofit and re-glaze"
+    ),
+}
+
 FROZEN_TITLES = {
     "index.html": "Commercial Glazing Contractor Florida | ACG",
     "florida-commercial-glazing/index.html": (
@@ -176,12 +199,23 @@ class DanglingTitleTests(unittest.TestCase):
             if not path.is_file():
                 continue
             title = title_of(path.read_text(encoding="utf-8", errors="replace"))
+            rel = str(path.relative_to(REPO_ROOT))
+            if rel in COMPLETED_OVER_60:
+                if title != COMPLETED_OVER_60[rel]:
+                    hits.append(f"{rel}: {title}")
+                continue
             if len(title) > 60:
-                hits.append(f"{path.relative_to(REPO_ROOT)}: {len(title)} chars")
+                hits.append(f"{rel}: {len(title)} chars")
             for pattern in DANGLING:
                 if pattern.search(title):
                     hits.append(f"{path.relative_to(REPO_ROOT)}: {title}")
         self.assertEqual(hits, [])
+
+    def test_completed_share_titles_match_document_and_og(self):
+        for rel, expected in COMPLETED_OVER_60.items():
+            html_text = (REPO_ROOT / rel).read_text(encoding="utf-8")
+            self.assertEqual(title_of(html_text), expected, rel)
+            self.assertEqual(og_title_of(html_text), expected, rel)
 
     def test_frozen_keeper_titles_are_unchanged(self):
         for rel, expected in FROZEN_TITLES.items():
