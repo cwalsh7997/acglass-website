@@ -2089,7 +2089,7 @@ class NashvilleResidualTests(unittest.TestCase):
         self.assertFalse(REFRESH_RE.search(html))
         self.assertIn("410 Gone", html)
         self.assertNotIn("This page has been removed. Redirecting", html)
-        worker = read("cloudflare-410-worker.js")
+        worker = read(".github/workers/cloudflare-410-worker.js")
         self.assertIn('"/acg-nashville-office-opening"', worker)
         self.assertIn('"/acg-nashville-office-opening/"', worker)
         self.assertNotIn(f"{BASE}/acg-nashville-office-opening/", sitemap_locs())
