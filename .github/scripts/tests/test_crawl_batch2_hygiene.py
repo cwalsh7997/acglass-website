@@ -460,7 +460,9 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 720)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -536,7 +538,9 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 5)
-        self.assertEqual(len(locs), 720)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -602,7 +606,10 @@ class CityCanonicalTests(unittest.TestCase):
             '<a href="/storefront-glazier-fort-myers-florida/">Sanibel, FL</a>',
             locations,
         )
-        self.assertIn('href="/miami/coconut-grove-miami/"', locations)
+        self.assertIn(
+            '<a href="/storefront-glazier-miami-florida/">Coconut Grove, FL</a>',
+            locations,
+        )
         self.assertNotIn('href="/plant-city/"', locations)
         self.assertNotIn('href="/coconut-grove/"', locations)
         self.assertNotIn('href="/sanibel/"', locations)
@@ -976,6 +983,503 @@ class CityCanonicalTests(unittest.TestCase):
             tampa,
         )
 
+    def test_2026_10_05_neighborhood_stubs_merge_onto_office_keepers(self):
+        # Thin neighborhood stubs stay on disk as HTTP 200. Crawl signals
+        # only: noindex,follow, canonical and og:url at the keeper, off the
+        # sitemap. Titles, bodies, and JSON-LD url stay. No page deletes.
+        miami = f"{BASE}/storefront-glazier-miami-florida/"
+        tampa_keeper = f"{BASE}/storefront-glazier-tampa-florida/"
+        orlando = f"{BASE}/storefront-glazier-orlando-florida/"
+        pages = {
+            "doral/downtown-doral/index.html": (
+                miami,
+                "Storefront Glazier in Downtown Doral, FL | ACG - 48-Hr Bids",
+            ),
+            "miami/coconut-grove-miami/index.html": (
+                miami,
+                "Storefront Glazier in Coconut Grove, FL | ACG - 48-Hr Bids",
+            ),
+            "aventura/aventura-mall-area/index.html": (
+                miami,
+                "Storefront Glazier in Aventura Mall Area, FL | ACG",
+            ),
+            "coral-gables/coral-gables-miracle-mile/index.html": (
+                miami,
+                "Storefront Glazier in Miracle Mile, FL | ACG - 48-Hr Bids",
+            ),
+            "tampa/westshore-tampa/index.html": (
+                tampa_keeper,
+                "Storefront Glazier in Westshore, FL | ACG - 48-Hr Bids",
+            ),
+            "orlando/lake-nona-orlando/index.html": (
+                orlando,
+                "Storefront Glazier in Lake Nona, FL | ACG - 48-Hr Bids",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 6)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
+        for rel, (dest, title) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            tw = re.search(
+                r'<meta[^>]+name="twitter:url"[^>]+content="([^"]+)"', html
+            )
+            if tw:
+                self.assertEqual(tw.group(1), dest, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertIn(f'"url": "{url}"', html, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        for rel, title in (
+            (
+                "storefront-glazier-miami-florida/index.html",
+                "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-orlando-florida/index.html",
+                "<title>Commercial Storefront Installer Orlando | 48-Hr Bids</title>",
+            ),
+        ):
+            html = read(rel)
+            self.assertIn(title, html, rel)
+            self.assertNotIn("noindex", robots(html), rel)
+        self.assertIn(miami, locs)
+        self.assertIn(tampa_keeper, locs)
+        self.assertIn(orlando, locs)
+        orlando_html = read("storefront-glazier-orlando-florida/index.html")
+        self.assertEqual(canonical(orlando_html), orlando)
+        self.assertNotIn("/orlando/lake-nona-orlando/", orlando_html)
+        self.assertIn(
+            'href="/storefront-glazier-orlando-florida/">Lake Nona</a>',
+            orlando_html,
+        )
+        locations = read("locations.html")
+        for old, label, keeper_path in (
+            (
+                "/aventura/aventura-mall-area/",
+                "Aventura Mall Area, FL",
+                "/storefront-glazier-miami-florida/",
+            ),
+            (
+                "/miami/coconut-grove-miami/",
+                "Coconut Grove, FL",
+                "/storefront-glazier-miami-florida/",
+            ),
+            (
+                "/coral-gables/coral-gables-miracle-mile/",
+                "Miracle Mile, FL",
+                "/storefront-glazier-miami-florida/",
+            ),
+            (
+                "/tampa/westshore-tampa/",
+                "Westshore, FL",
+                "/storefront-glazier-tampa-florida/",
+            ),
+        ):
+            self.assertNotIn(old, locations, old)
+            self.assertIn(f'<a href="{keeper_path}">{label}</a>', locations, label)
+        doral = read("doral/index.html")
+        self.assertIn("noindex", robots(doral))
+        self.assertNotIn("/doral/downtown-doral/", doral)
+        self.assertIn(
+            'href="/storefront-glazier-miami-florida/">Downtown Doral</a>',
+            doral,
+        )
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+        tampa_impact = read("impact-windows-tampa.html")
+        self.assertNotIn("noindex", robots(tampa_impact))
+        self.assertIn(f"{BASE}/impact-windows-tampa.html", locs)
+
+    def test_2026_10_05_hotel_city_templates_merge_onto_hospitality_hub(self):
+        # Thin Fort Lauderdale, Sarasota, and Jacksonville hotel templates
+        # stay on disk as HTTP 200. Crawl signals only: noindex,follow,
+        # canonical and og:url at the hospitality hub, off the sitemap.
+        # Titles, bodies, and JSON-LD url stay. No page deletes.
+        hub = f"{BASE}/hospitality-glazing-florida.html"
+        pages = {
+            "hotel-glazing-contractor-fort-lauderdale/index.html": (
+                hub,
+                "Hotel Glazier in Fort Lauderdale, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Fort Lauderdale</h1>",
+            ),
+            "hotel-glazing-contractor-sarasota/index.html": (
+                hub,
+                "Hotel Glazier in Sarasota, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Sarasota</h1>",
+            ),
+            "hotel-glazing-contractor-jacksonville/index.html": (
+                hub,
+                "Hotel Glazier in Jacksonville, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Jacksonville</h1>",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 3)
+        # 725 after this soft-merge (728 before: three thin hotel-city pages).
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
+        for rel, (dest, title, h1) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertIn(h1, html, rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            tw = re.search(
+                r'<meta[^>]+name="twitter:url"[^>]+content="([^"]+)"', html
+            )
+            if tw:
+                self.assertEqual(tw.group(1), dest, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertIn(f'"url": "{url}"', html, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        keeper = read("hospitality-glazing-florida.html")
+        self.assertIn(
+            "<title>Hospitality Glazing Contractor Florida | Hotels &</title>",
+            keeper,
+        )
+        self.assertIn(
+            'content="Hospitality Glazing. Lobby-Grade. Guest-Ready. ACG bids and installs Division 08 glazing scopes for general contractors across Florida. Licensed FL CGC."',
+            keeper,
+        )
+        self.assertIn(
+            "Hospitality Glazing.",
+            keeper,
+        )
+        self.assertNotIn("noindex", robots(keeper))
+        self.assertEqual(canonical(keeper), hub)
+        self.assertIn(hub, locs)
+        for old in (
+            "/hotel-glazing-contractor-fort-lauderdale/",
+            "/hotel-glazing-contractor-sarasota/",
+            "/hotel-glazing-contractor-jacksonville/",
+        ):
+            self.assertNotIn(old, keeper, old)
+        locations = read("locations.html")
+        self.assertNotIn("/hotel-glazing-contractor-jacksonville/", locations)
+        self.assertIn(
+            '<a href="/hospitality-glazing-florida.html">Hotel Glazier in Jacksonville, FL</a>',
+            locations,
+        )
+        self.assertIn('href="/hotel-glazing-contractor-miami/"', locations)
+        self.assertIn('href="/hotel-glazing-contractor-orlando/"', locations)
+        self.assertIn('href="/hotel-glazing-contractor-tampa/"', locations)
+        fort = read("storefront-glazier-fort-lauderdale-florida/index.html")
+        sarasota = read("storefront-glazier-sarasota-florida/index.html")
+        self.assertNotIn("/hotel-glazing-contractor-fort-lauderdale/", fort)
+        self.assertNotIn("/hotel-glazing-contractor-sarasota/", sarasota)
+        self.assertIn(
+            'href="/hospitality-glazing-florida.html">hotel glazing in Fort Lauderdale</a>',
+            fort,
+        )
+        self.assertIn(
+            'href="/hospitality-glazing-florida.html">hotel glazing in Sarasota</a>',
+            sarasota,
+        )
+        for rel, title in (
+            (
+                "hotel-glazing-contractor-miami/index.html",
+                "Hotel Glazier in Miami, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-orlando/index.html",
+                "Hotel Glazier in Orlando, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-tampa/index.html",
+                "Hotel Glazier in Tampa, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-naples/index.html",
+                "Hotel Glazier in Naples, FL | ACG - 48-Hr Bids",
+            ),
+            (
+                "hotel-glazing-contractor-florida/index.html",
+                "Hotel Glazing Contractor Florida | Curtain Wall & | ACG",
+            ),
+        ):
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("noindex", robots(html), rel)
+            self.assertEqual(canonical(html), f"{BASE}{url_for(REPO_ROOT / rel)}", rel)
+            self.assertIn(f"{BASE}{url_for(REPO_ROOT / rel)}", locs, rel)
+        for rel, title in (
+            ("index.html", "<title>Commercial Glazing Contractor Florida | ACG</title>"),
+            (
+                "florida-commercial-glazing/index.html",
+                "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            ),
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+        ):
+            html = read(rel)
+            self.assertIn(title, html, rel)
+            self.assertNotIn("noindex", robots(html), rel)
+
+    def test_2026_10_06_remote_county_pages_merge_onto_florida_hub(self):
+        # Thin Escambia, Leon, Alachua, and Marion county templates stay on
+        # disk as HTTP 200. Crawl signals only: noindex,follow, canonical
+        # and og:url at the Florida hub, off the sitemap. Titles, H1s, and
+        # bodies stay. No page deletes.
+        hub = f"{BASE}/florida-commercial-glazing/"
+        pages = {
+            "escambia-county/index.html": (
+                "Commercial Storefront Glazier in Escambia County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Escambia County</h1>",
+            ),
+            "leon-county/index.html": (
+                "Commercial Storefront Glazier in Leon County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Leon County</h1>",
+            ),
+            "alachua-county/index.html": (
+                "Commercial Storefront Glazier in Alachua County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Alachua County</h1>",
+            ),
+            "marion-county/index.html": (
+                "Commercial Storefront Glazier in Marion County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Marion County</h1>",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        self.assertEqual(len(pages), 4)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
+        child_locs = sitemap_locs()
+        for rel, (title, h1) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertIn(h1, html, rel)
+            robots_tags = re.findall(
+                r'<meta\b[^>]*name="robots"[^>]*>', html, re.I
+            )
+            self.assertEqual(len(robots_tags), 1, rel)
+            self.assertIn('content="noindex,follow"', robots_tags[0], rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), hub, rel)
+            self.assertIn(f'property="og:url" content="{hub}"', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertNotIn(url, child_locs, rel)
+            self.assertIn(f'"url": "{url}"', html, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        florida = read("florida-commercial-glazing/index.html")
+        self.assertIn(
+            "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            florida,
+        )
+        self.assertNotIn("noindex", robots(florida))
+        self.assertEqual(canonical(florida), hub)
+        self.assertIn(hub, locs)
+        counties = read("florida-counties/index.html")
+        panhandle = read("florida-panhandle/index.html")
+        permits = read("florida-glazing-permit-timeline-by-county/index.html")
+        for old in (
+            "/escambia-county/",
+            "/leon-county/",
+            "/alachua-county/",
+            "/marion-county/",
+        ):
+            self.assertNotIn(f'href="{old}"', counties, old)
+            self.assertNotIn(f'href="{old}"', panhandle, old)
+            self.assertNotIn(f'href="{old}"', permits, old)
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Escambia County</a>', panhandle
+        )
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Leon County</a>', panhandle
+        )
+        self.assertIn(
+            'href="/florida-commercial-glazing/" class="ax-strong">Leon</a>',
+            permits,
+        )
+        for label in (
+            "Escambia County",
+            "Leon County",
+            "Alachua County",
+            "Marion County",
+        ):
+            self.assertIn(
+                'href="/florida-commercial-glazing/" style="display:block" '
+                f'class="ax-btn"><h3>{label}</h3>',
+                counties,
+                label,
+            )
+        for rel, label in (
+            ("storefront-glazier-pensacola-florida/index.html", "Escambia County"),
+            (
+                "storefront-glazier-pensacola-beach-florida/index.html",
+                "Escambia County",
+            ),
+            ("storefront-glazier-tallahassee-florida/index.html", "Leon County"),
+        ):
+            html = read(rel)
+            self.assertIn(
+                f'href="/florida-commercial-glazing/">{label}</a>', html, rel
+            )
+        home = read("index.html")
+        self.assertIn(
+            "<title>Commercial Glazing Contractor Florida | ACG</title>", home
+        )
+
+    def test_2026_10_06_florida_glass_statistics_merge_onto_glazing_report(self):
+        # Thin statistics page stays on disk as HTTP 200. Crawl signals only:
+        # exactly one noindex,follow, canonical and og:url at the 2026 Florida
+        # glazing report, off every sitemap. Title, H1, and body stay. The
+        # Dataset block is removed. No page delete.
+        rel = "florida-commercial-glass-statistics-2026/index.html"
+        keeper_url = f"{BASE}/florida-commercial-glazing-report-2026.html"
+        title = "Florida Commercial Glass Statistics 2026 - Market | ACG"
+        h1 = "<h1>Florida Commercial Glass &amp; Glazing Statistics (2026)</h1>"
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        child_locs = sitemap_locs()
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
+        html = read(rel)
+        found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+        self.assertIsNotNone(found, rel)
+        self.assertEqual(found.group(1).strip(), title, rel)
+        self.assertIn(h1, html, rel)
+        self.assertIn(
+            "Industry stats, market sizing, hurricane glass adoption", html
+        )
+        robots_tags = re.findall(r'<meta\b[^>]*name="robots"[^>]*>', html, re.I)
+        self.assertEqual(len(robots_tags), 1, rel)
+        self.assertIn('content="noindex,follow"', robots_tags[0], rel)
+        self.assertEqual(robots(html), "noindex,follow", rel)
+        self.assertEqual(canonical(html), keeper_url, rel)
+        self.assertIn(f'property="og:url" content="{keeper_url}"', html, rel)
+        self.assertNotIn('name="twitter:url"', html, rel)
+        self.assertFalse(REFRESH_RE.search(html), rel)
+        self.assertNotIn('"@type": "Dataset"', html, rel)
+        self.assertIn('"@type": "Organization"', html, rel)
+        url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+        self.assertNotIn(url, locs, rel)
+        self.assertNotIn(url, child_locs, rel)
+        fixture = read(".github/fixtures/sitemap-pages.xml")
+        self.assertNotIn(url, fixture, rel)
+        self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        keeper = read("florida-commercial-glazing-report-2026.html")
+        self.assertIn(
+            "<title>State of Florida Commercial Glazing 2026</title>", keeper
+        )
+        self.assertNotIn("noindex", robots(keeper))
+        self.assertEqual(canonical(keeper), keeper_url)
+        self.assertIn(keeper_url, locs)
+        guide = read("florida-commercial-glazing-complete-guide/index.html")
+        self.assertNotIn("/florida-commercial-glass-statistics-2026", guide)
+        self.assertIn(
+            'href="/florida-commercial-glazing-report-2026.html">'
+            "Florida commercial glass statistics 2026</a>",
+            guide,
+        )
+        leftovers = []
+        for dirpath, dirnames, filenames in os.walk(REPO_ROOT):
+            dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+            for fn in filenames:
+                if not fn.endswith(".html"):
+                    continue
+                path = Path(dirpath) / fn
+                page_rel = path.relative_to(REPO_ROOT).as_posix()
+                if page_rel == rel:
+                    continue
+                page = path.read_text(encoding="utf-8", errors="replace")
+                if re.search(
+                    r'href=["\'][^"\']*florida-commercial-glass-statistics-2026',
+                    page,
+                ):
+                    leftovers.append(page_rel)
+        self.assertEqual(leftovers, [])
+        for frozen_rel, frozen_title in (
+            ("index.html", "<title>Commercial Glazing Contractor Florida | ACG</title>"),
+            (
+                "florida-commercial-glazing/index.html",
+                "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+            ),
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-miami-florida/index.html",
+                "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-fort-lauderdale-florida/index.html",
+                "<title>Commercial Storefront Installer Fort Lauderdale | Bid</title>",
+            ),
+            (
+                "storefront-glazier-orlando-florida/index.html",
+                "<title>Commercial Storefront Installer Orlando | 48-Hr Bids</title>",
+            ),
+            (
+                "storefront-glazier-sarasota-florida/index.html",
+                "<title>Commercial Storefront Installer Sarasota | 48-Hr Bid</title>",
+            ),
+            (
+                "storefront-glazier-fort-myers-florida/index.html",
+                "<title>Commercial Storefront Installer Fort Myers | 48-Hr Bid</title>",
+            ),
+            (
+                "storefront-glazier-stuart-florida/index.html",
+                "<title>Commercial Storefront Installer Stuart | Bid</title>",
+            ),
+        ):
+            frozen = read(frozen_rel)
+            self.assertIn(frozen_title, frozen, frozen_rel)
+            self.assertNotIn("noindex", robots(frozen), frozen_rel)
+
     def test_2026_09_30_brickell_pages_merge_onto_miami_keeper(self):
         # Thin Brickell street pages and the Brickell commercial-glazing
         # duplicate stay on disk. They are noindex,follow and canonical to
@@ -1041,15 +1545,23 @@ class CityCanonicalTests(unittest.TestCase):
         )
         locs = sitemap_locs()
         self.assertEqual(len(pages), 7)
+        # 706 after merging the 2026-10-03 round-3 forwards with the 2026-10-05/06 soft-merges.
         # 720 after Westlake Hialeah (page + post) forwarded to the portfolio
         # (Connor 2026-10-03); 722 after the duplicate Illumia case study forwarded too (2026-10-03);
         # 723 after 11 more duplicate case studies forwarded to their project pages
         # (Connor 2026-10-02); 734 after the 2026-10-02 retirement of three duplicate case-study URLs
+        # 725 after the 2026-10-05 hotel-city template soft-merge
+        # (728 before: Fort Lauderdale, Sarasota, and Jacksonville removed).
+        # 728 after the 2026-10-05 neighborhood stub soft-merge
+        # (734 before: six thin neighborhood pages removed).
+        # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
         # (two Wild Blue, one Aspen; now forwards to their project pages); 737 after the
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 720)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 706)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1137,7 +1649,9 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 4)
-        self.assertEqual(len(locs), 720)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1230,7 +1744,9 @@ class CityCanonicalTests(unittest.TestCase):
         }
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         self.assertEqual(len(pages), 8)
-        self.assertEqual(len(locs), 720)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)

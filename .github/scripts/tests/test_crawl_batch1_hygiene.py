@@ -75,9 +75,14 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         # 2026-10-02 Sanford/Kissimmee/Port Orange/St. Augustine/Ponte Vedra
         # city-directory soft-merge, 349 after the 2026-10-02 Plant City /
         # Coconut Grove / Bal Harbour / Manalapan / Sanibel city-directory
-        # soft-merge.
+        # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
+        # neighborhood stub soft-merge, 340 after the 2026-10-05
+        # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
+        # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
+        # 2026-10-06: -1 Florida glass statistics soft-merge (this fixture).
         # 348 after the 2026-10-03 Westlake Hialeah forward (Connor).
-        self.assertGreaterEqual(len(fixture_locs), 348)
+        # 338 after merging both (2026-10-07).
+        self.assertGreaterEqual(len(fixture_locs), 338)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):
@@ -204,15 +209,23 @@ class AiCitationHygieneTests(unittest.TestCase):
 
     def test_llms_citations_resolve_to_indexable_keepers(self):
         locs = set(re.findall(r"<loc>(.*?)</loc>", _read("sitemap.xml")))
+        # 706 after merging the 2026-10-03 round-3 forwards with the 2026-10-05/06 soft-merges.
         # 720 after Westlake Hialeah (page + post) forwarded to the portfolio
         # (Connor 2026-10-03); 722 after the duplicate Illumia case study forwarded too (2026-10-03);
         # 723 after 11 more duplicate case studies forwarded to their project pages
         # (Connor 2026-10-02); 734 after the 2026-10-02 retirement of three duplicate case-study URLs
+        # 725 after the 2026-10-05 hotel-city template soft-merge
+        # (728 before: Fort Lauderdale, Sarasota, and Jacksonville removed).
+        # 728 after the 2026-10-05 neighborhood stub soft-merge
+        # (734 before: six thin neighborhood pages removed).
+        # 734 after the 2026-10-02 retirement of three duplicate case-study URLs
         # (two Wild Blue, one Aspen; now forwards to their project pages); 737 after the
         # 2026-10-02 Plant City / Coconut Grove / Bal Harbour /
         # Manalapan / Sanibel city-dir soft-merge
         # (742 before: five thin city directories removed).
-        self.assertEqual(len(locs), 720)
+        # 2026-10-06: -4 remote county soft-merge
+        # 2026-10-06: -1 Florida glass statistics soft-merge
+        self.assertEqual(len(locs), 706)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))

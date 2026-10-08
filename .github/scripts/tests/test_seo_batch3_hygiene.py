@@ -51,9 +51,14 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # 2026-10-02 Sanford/Kissimmee/Port Orange/St. Augustine/Ponte Vedra
         # city-directory soft-merge, 349 after the 2026-10-02 Plant City /
         # Coconut Grove / Bal Harbour / Manalapan / Sanibel city-directory
-        # soft-merge, 348 after the 2026-10-03 Westlake Hialeah forward
+        # soft-merge, 343 after the 2026-10-05 Miami/Tampa/Orlando
+        # neighborhood stub soft-merge, 340 after the 2026-10-05
+        # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
+        # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
+        # 2026-10-06: -1 Florida glass statistics soft-merge (this fixture).
         # (Connor: page did not match job records).
-        self.assertGreaterEqual(len(fixture), 348)
+        # 338 after merging both (2026-10-07).
+        self.assertGreaterEqual(len(fixture), 338)
 
 
 class LastmodAlignmentTests(unittest.TestCase):
