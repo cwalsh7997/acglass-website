@@ -119,9 +119,9 @@ class DeliveryClaimTests(unittest.TestCase):
         source = (root / "projects/index.html").read_text(encoding="utf-8")
         self.assertNotIn("Tennessee from Q3 2026", source)
         restored = source.replace(
-            "ACG operates Florida offices in West Palm Beach, Naples, and Stuart",
+            "ACG operates Florida offices in West Palm Beach (HQ), Naples, and Tampa",
             "ACG operates four offices across two states - serving Florida now, "
-            "Tennessee from Q3 2026. ACG operates Florida offices in West Palm Beach, Naples, and Stuart",
+            "Tennessee from Q3 2026. ACG operates Florida offices in West Palm Beach (HQ), Naples, and Tampa",
             1,
         )
         self.assertNotEqual(restored, source)
