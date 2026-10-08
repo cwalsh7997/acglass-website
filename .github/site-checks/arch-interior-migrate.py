@@ -23,9 +23,9 @@ Text, links, head metadata, JSON-LD, forms, scripts and tracking are not touched
 Idempotent: pages that already have body class ax-interior are skipped.
 
 Usage:
-  python3 scripts/arch-interior-migrate.py                 # dry run, prints counts
-  python3 scripts/arch-interior-migrate.py --write         # rewrite every eligible page
-  python3 scripts/arch-interior-migrate.py --write a.html b/index.html   # only these
+  python3 .github/site-checks/arch-interior-migrate.py                 # dry run, prints counts
+  python3 .github/site-checks/arch-interior-migrate.py --write         # rewrite every eligible page
+  python3 .github/site-checks/arch-interior-migrate.py --write a.html b/index.html   # only these
 """
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 SKIP_DIRS = ("_internal/", "drafts/", "node_modules/", ".github/", "src/")
 EXCLUDE = {
     "index.html",  # homepage carries its own architectural design

@@ -4,7 +4,7 @@
 
    TOKEN LAW: no raw hex, no raw px spacing, no font-size, and no duration may
    appear in any component or page CSS. If a value is not here, it does not
-   exist. scripts/check-design-lint.sh fails the build on any violation.
+   exist. .github/site-checks/check-design-lint.sh fails the build on any violation.
 
    Clamps interpolate between the 390px mobile size and the 1440px desktop size
    on a 1.25 ratio at a 16px base. Formula: slope = (max-min)/(1440-390)*100vw,

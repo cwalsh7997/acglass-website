@@ -15,4 +15,4 @@
 # recorded in consolidation-plan.md. Broken today is worse than a documented
 # rewrite later.
 source "$(dirname "$0")/_lib.sh"
-python3 "$ROOT/scripts/_broken_links.py" "$ROOT"
+python3 "$ROOT/.github/site-checks/_broken_links.py" "$ROOT"

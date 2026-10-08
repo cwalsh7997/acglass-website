@@ -13,7 +13,7 @@ and flagging them would have meant "fixing" work that was already right.
 import collections, os, re, sys
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-sys.path.insert(0, os.path.join(ROOT, "scripts"))
+sys.path.insert(0, os.path.join(ROOT, ".github/site-checks"))
 from sweep_files import sweep_files
 
 STUB = re.compile(r'http-equiv=["\']?refresh', re.I)

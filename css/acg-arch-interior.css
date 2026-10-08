@@ -3,7 +3,7 @@
    legacy dark theme (style.css, acg-chrome.css, acg2026.css, acg-flagship.css), so it styles
    the legacy component classes directly in the homepage language: paper ground, ink type,
    hairline rules, red used only for small marks and large headline accents.
-   scripts/arch-interior-migrate.py adds the hooks: .ax-page wrapper, .ax-hero on the block
+   .github/site-checks/arch-interior-migrate.py adds the hooks: .ax-page wrapper, .ax-hero on the block
    holding the h1, and semantic classes (ax-box, ax-btn, ax-kicker, ax-num...) in place of
    inline decoration. */
 @font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
@@ -336,6 +336,7 @@ body.ax-interior :is(.skip,.skip-to-content):focus{top:0}
 .ax-page :is(.sched-head,.sched-row){display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,1fr) minmax(0,2fr) minmax(0,.4fr);gap:24px;align-items:start}
 .ax-page .sched-head{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-soft);padding-bottom:14px;border-bottom:1px solid var(--ax-ink)}
 .ax-page .sched-row{padding:22px 0;border-bottom:1px solid var(--ax-line-soft);font-size:15px;color:var(--ax-text)}
+@media(min-width:901px){.ax-page .sched-3 :is(.sched-head,.sched-row){grid-template-columns:minmax(0,.35fr) minmax(0,1fr) minmax(0,1fr)}}
 .ax-page .sched-row>:nth-child(2){font-size:19px;letter-spacing:-.025em;font-weight:500;color:var(--ax-ink)}
 .ax-page .sched .co-tag{display:none}
 .ax-page :is(.city-grid,.office-grid){display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:0 32px;margin:28px 0 0}
