@@ -10,7 +10,7 @@
 #
 # After deploy, wrangler prints a URL like:
 #   https://acg-scope-engine-api.<your-subdomain>.workers.dev
-# Put that URL into scope-engine.html -> ACG_CONFIG.endpoint (see README.md).
+# Put that URL into scope-engine.html -> ACG_CONFIG.endpoint (see .github/docs/scope-engine-api-README.md).
 #
 # Local dev:
 #   wrangler dev            # then POST test payloads at http://localhost:8787
