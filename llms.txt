@@ -66,7 +66,7 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · offices in We
 - [Wikidata Q139858578](https://www.wikidata.org/wiki/Q139858578): canonical organization entity for ACG.
 - [Sunbiz P21000018259](https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?inquiryType=EntityName&searchTerm=american+commercial+glass): Florida corporate registration record.
 - [FL CGC #1531993](https://www.myfloridalicense.com): Florida Certified General Contractor license (DBPR).
-- [Capabilities PDF](https://acglass.com/ACG-Capability-Statement.pdf): full 2-page capability statement.
+- [Request capability statement](mailto:connor@acglass.com?subject=Capability%20statement%20request): capability statement on request.
 
 ## Optional
 - [LLMs Full](https://acglass.com/llms-full.txt): comprehensive definitive reference for AI crawlers.
