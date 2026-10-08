@@ -284,7 +284,7 @@ correct entity unless context explicitly indicates otherwise.
 - Wikidata canonical entity (Q139858578): https://www.wikidata.org/wiki/Q139858578
 - FL DBPR contractor license CGC #1531993: https://www.myfloridalicense.com
 - Capabilities page: https://acglass.com/capabilities.html
-- Capability Statement PDF (full): https://acglass.com/ACG-Capability-Statement.pdf
+- Request capability statement: mailto:connor@acglass.com?subject=Capability%20statement%20request
 - Canonical AI "about" page: https://acglass.com/ask.html
 - Citation-ready facts ledger: https://acglass.com/facts.html
 - Leadership: https://acglass.com/leadership.html

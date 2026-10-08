@@ -7,8 +7,8 @@ head metadata, JSON-LD, forms and tracking untouched. Idempotent: pages that alr
 the ax- chrome are skipped. Byte-frozen pages and the homepage are excluded.
 
 Usage:
-  python3 scripts/arch-chrome-migrate.py            # dry run, prints counts
-  python3 scripts/arch-chrome-migrate.py --write    # rewrite files
+  python3 .github/site-checks/arch-chrome-migrate.py            # dry run, prints counts
+  python3 .github/site-checks/arch-chrome-migrate.py --write    # rewrite files
 """
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 SKIP_DIRS = ("_internal/", "drafts/", "node_modules/", ".github/", "src/")
 EXCLUDE = {
     "index.html",  # homepage carries its own architectural chrome

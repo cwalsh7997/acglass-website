@@ -3,4 +3,4 @@
 # See _geography.py, including why the previous version validated nothing.
 source "$(dirname "$0")/_lib.sh"
 [ -s "$CFG/geography-counties.txt" ] || { say "CONFIG  geography: county list missing"; exit 3; }
-python3 "$ROOT/scripts/_geography.py" "$ROOT"
+python3 "$ROOT/.github/site-checks/_geography.py" "$ROOT"

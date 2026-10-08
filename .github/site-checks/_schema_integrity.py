@@ -21,7 +21,7 @@ import subprocess
 import sys
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-sys.path.insert(0, os.path.join(ROOT, "scripts"))
+sys.path.insert(0, os.path.join(ROOT, ".github/site-checks"))
 from sweep_files import sweep_files
 
 BASE = "https://acglass.com/"

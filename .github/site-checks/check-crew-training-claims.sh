@@ -22,4 +22,4 @@
 # generic industry advice alone. A page may tell a reader that field crews should
 # hold OSHA 10 and foremen OSHA 30. That is advice, not a claim about ACG.
 source "$(dirname "$0")/_lib.sh"
-python3 "$ROOT/scripts/_crew_claims.py" "$ROOT"
+python3 "$ROOT/.github/site-checks/_crew_claims.py" "$ROOT"

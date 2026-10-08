@@ -21,7 +21,7 @@ on deny-list-buy-american.txt.
 import os
 import subprocess
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DENY = os.path.join(ROOT, ".github/agent-state/state/deny-list-buy-american.txt")
 
 

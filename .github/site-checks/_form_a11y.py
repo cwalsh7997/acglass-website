@@ -15,7 +15,7 @@ to be invisible to humans and unlabelled, and labelling one would defeat it.
 import os, re, subprocess, sys
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-sys.path.insert(0, os.path.join(ROOT, "scripts"))
+sys.path.insert(0, os.path.join(ROOT, ".github/site-checks"))
 from sweep_files import sweep_files
 
 HONEY = re.compile(r'name="(_gotcha|_honey|honeypot|_subject)"')

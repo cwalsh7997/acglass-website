@@ -2,13 +2,13 @@
 # Runs every check and prints a summary table.
 # Three outcomes: PASS, FAIL, CONFIG. CONFIG means a required list is incomplete.
 # CONFIG IS NOT A PASS. verify.sh exits 0 only when everything is PASS.
-cd "$(dirname "$0")/.." || exit 2
-CHECKS="design-lint seo-hygiene license-attribution safety-claims placeholders volume-claims bonding geography federal-status deny-list image-rights out-of-state-claims litigation-exposure sitemap-integrity broken-links office-claims form-a11y schema-integrity qualifier-claim crew-training-claims third-party-approval reverify-log dup-meta"
+cd "$(dirname "$0")/../.." || exit 2
+CHECKS="design-lint seo-hygiene license-attribution safety-claims placeholders volume-claims bonding geography federal-status deny-list image-rights out-of-state-claims removed-projects sitemap-integrity broken-links office-claims form-a11y schema-integrity qualifier-claim crew-training-claims third-party-approval reverify-log dup-meta"
 NAMES=()
 RESULTS=()
 pass=0; fail=0; config=0
 for c in $CHECKS; do
-  out=$(bash "scripts/check-$c.sh" 2>&1); code=$?
+  out=$(bash ".github/site-checks/check-$c.sh" 2>&1); code=$?
   case $code in
     0) r=PASS;   pass=$((pass+1));;
     3) r=CONFIG; config=$((config+1));;

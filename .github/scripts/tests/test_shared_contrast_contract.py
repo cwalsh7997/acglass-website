@@ -19,7 +19,7 @@ FROZEN_SCOPE_PATHS = {
     "storefront-installer-west-palm-beach.html",
     "west-palm-beach/index.html",
 }
-# 2026-10-01 interior redesign: pages converted by scripts/arch-interior-migrate.py (body class
+# 2026-10-01 interior redesign: pages converted by .github/site-checks/arch-interior-migrate.py (body class
 # ax-interior) drop the dark-theme acg-chrome.css and load acg-arch-interior.css instead. The
 # contrast contract follows the page: legacy pages keep the acg-chrome checks, converted pages
 # must load the interior sheet at its exact cache key and that sheet's colours are checked below.

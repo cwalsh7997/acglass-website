@@ -1,8 +1,8 @@
 # Design
 
 The system is fixed. `src/styles/tokens.css` is the single source of every value and
-is the only file permitted to contain a raw one. `scripts/check-design-lint.sh` fails
-the build on any violation and is wired into `scripts/verify.sh`.
+is the only file permitted to contain a raw one. `.github/site-checks/check-design-lint.sh` fails
+the build on any violation and is wired into `.github/site-checks/verify.sh`.
 
 Adjectives are not design direction. If a rule conflicts with a judgment about what
 looks premium, the rule wins.
