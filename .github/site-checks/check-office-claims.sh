@@ -21,7 +21,7 @@ CFGF="$ROOT/.github/agent-state/config/offices.txt"
 python3 - "$ROOT" "$CFGF" <<'PY'
 import json, os, re, sys
 ROOT, CFGF = sys.argv[1], sys.argv[2]
-sys.path.insert(0, os.path.join(ROOT, "scripts"))
+sys.path.insert(0, os.path.join(ROOT, ".github/site-checks"))
 from sweep_files import sweep_files
 
 ok = set()

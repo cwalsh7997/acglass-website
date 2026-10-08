@@ -12,4 +12,4 @@
 # excluded for exactly that reason. Only self-canonical indexable pages are
 # counted, so the check cannot push a duplicate into the sitemap.
 source "$(dirname "$0")/_lib.sh"
-python3 "$ROOT/scripts/_sitemap_integrity.py" "$ROOT"
+python3 "$ROOT/.github/site-checks/_sitemap_integrity.py" "$ROOT"

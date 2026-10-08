@@ -2,7 +2,7 @@
    ACG component library. The closed set of 18 from rules/01 section 9.
 
    TOKEN LAW: every value here is a var() from tokens.css. No raw hex, no raw
-   spacing, no font-size literal, no duration literal. scripts/check-design-lint.sh
+   spacing, no font-size literal, no duration literal. .github/site-checks/check-design-lint.sh
    enforces it.
 
    Building a 19th component requires an approval line in the PR.
