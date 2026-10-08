@@ -336,6 +336,7 @@ body.ax-interior :is(.skip,.skip-to-content):focus{top:0}
 .ax-page :is(.sched-head,.sched-row){display:grid;grid-template-columns:minmax(0,.35fr) minmax(0,1fr) minmax(0,2fr) minmax(0,.4fr);gap:24px;align-items:start}
 .ax-page .sched-head{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-soft);padding-bottom:14px;border-bottom:1px solid var(--ax-ink)}
 .ax-page .sched-row{padding:22px 0;border-bottom:1px solid var(--ax-line-soft);font-size:15px;color:var(--ax-text)}
+@media(min-width:901px){.ax-page .sched-3 :is(.sched-head,.sched-row){grid-template-columns:minmax(0,.35fr) minmax(0,1fr) minmax(0,1fr)}}
 .ax-page .sched-row>:nth-child(2){font-size:19px;letter-spacing:-.025em;font-weight:500;color:var(--ax-ink)}
 .ax-page .sched .co-tag{display:none}
 .ax-page :is(.city-grid,.office-grid){display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:0 32px;margin:28px 0 0}
