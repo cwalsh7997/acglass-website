@@ -1164,7 +1164,7 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertTrue((REPO_ROOT / rel).is_file(), rel)
         keeper = read("hospitality-glazing-florida.html")
         self.assertIn(
-            "<title>Hospitality Glazing Contractor Florida | Hotels &</title>",
+            "<title>Hospitality Glazing Contractor Florida | Hotels &amp; Resorts</title>",
             keeper,
         )
         self.assertIn(
