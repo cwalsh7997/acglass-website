@@ -4,11 +4,11 @@
   "baseline_commit": "9197a20f6af6d639530ee6dd4cc500558c48eadd",
   "scope": "Exact union of path or title discovery and standalone Tennessee, Nashville, or TN tokens across decoded HTML semantic surfaces, static script strings and character codes, and inline plus external CSS generated content including attr values.",
   "expected_counts": {
-    "document_sources": 139,
+    "document_sources": 138,
     "path_or_title_discovery": 76,
-    "outside_discovery": 63,
+    "outside_discovery": 62,
     "known_edge_301_sources": 4,
-    "document_sources_excluding_recorded_edge_sources": 135,
+    "document_sources_excluding_recorded_edge_sources": 134,
     "excluded_non_page_fragments": 1
   },
   "excluded_non_page_fragments": [
@@ -158,8 +158,7 @@
     "tennessee-building-code-glazing.html": "6dc585ef39f88b4b7425d87c321d8eb01c063bd47c7c3f7cfd72bd147c602427",
     "tennessee-commercial-glazier-license-requirements/index.html": "cb2cdc1defbb0f3e4ffeb96246dd6b8632959c186896b60ac6885a1c72186146",
     "tennessee-commercial-glazing/index.html": "246501da7a227068e622028dbb2923c9633cea55554c447d3372daf788506c89",
-    "tennessee/index.html": "11cc216aa0715f8553eb244c80b5d79b5c0f93a01ceb3717ed67aeb1db4481fe",
-    "wikipedia-draft.html": "0635bb9b78f3f84898ba4c68190f4201ff3b2d14efe3bbb0cce0511d50924ed9"
+    "tennessee/index.html": "11cc216aa0715f8553eb244c80b5d79b5c0f93a01ceb3717ed67aeb1db4481fe"
   },
   "reference_groups": {
     "path_or_title_discovery": [
@@ -293,8 +292,7 @@
       "blog/wave-haven-cocoa-beach-glazing.html",
       "blog/what-is-a-glazing-subcontractor.html",
       "blog/wild-blue-clubhouse-glazing.html",
-      "facts.html",
-      "wikipedia-draft.html"
+      "facts.html"
     ],
     "technical_or_market_review": [
       "acoustic-glazing-stc-oitc-commercial.html",
