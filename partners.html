@@ -91,7 +91,8 @@
     }.hero-eyebrow .pulse{animation: pulse 2s infinite}@keyframes pulse{
       0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
       50% { box-shadow: 0 0 0 14px transparent; }
-    }.hero-h1 .strike::after{animation: strike 1.4s cubic-bezier(.2,.8,.2,1) 0.6s forwards}@keyframes strike{ to { transform: translateY(-50%) scaleX(1); } }.btn-primary{overflow: hidden}.hero-card::before{pointer-events: none}.work-tile{overflow: hidden}.partner-item:last-child::after{display: none}.process{overflow: hidden}.quote-mark{opacity: 0.4}.cta{overflow: hidden}.cta-form::before{pointer-events: none}[data-reveal]{opacity: 0}[data-reveal].in{opacity: 1}@media (prefers-reduced-motion: reduce){[data-reveal]{opacity: 1}.ticker-track{animation: none}.hero-h1 .strike::after{animation: none}.cursor-glow{display: none}.hero-eyebrow .pulse{animation: none}}</style>
+    }.hero-h1 .strike::after{animation: strike 1.4s cubic-bezier(.2,.8,.2,1) 0.6s forwards}@keyframes strike{ to { transform: translateY(-50%) scaleX(1); } }.btn-primary{overflow: hidden}.hero-card::before{pointer-events: none}.work-tile{overflow: hidden}.partner-item:last-child::after{display: none}.process{overflow: hidden}.quote-mark{opacity: 0.4}.cta{overflow: hidden}.cta-form::before{pointer-events: none}[data-reveal]{opacity: 0}[data-reveal].in{opacity: 1}@media (prefers-reduced-motion: reduce){[data-reveal]{opacity: 1}.ticker-track{animation: none}.hero-h1 .strike::after{animation: none}.cursor-glow{display: none}.hero-eyebrow .pulse{animation: none}}.hero :is(.hero-eyebrow,.hero-h1,.hero-sub,.hero-cta-row,.hero-card){opacity:1}.hero-card picture,.work-tile picture{display:block}</style>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
   <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
 <link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
 </head>
@@ -115,15 +116,15 @@
 
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow" data-reveal>
+        <div class="hero-eyebrow">
           <span class="pulse"></span>
           For General Contractors & Developers
         </div>
-        <h1 class="hero-h1" data-reveal data-delay="100">The glazing sub <br> Florida GCs <span class="italic">call back.</span></h1>
-        <p class="hero-sub" data-reveal data-delay="200">
+        <h1 class="hero-h1">The glazing sub <br> Florida GCs <span class="italic">call back.</span></h1>
+        <p class="hero-sub">
           ACG is the commercial glazing subcontractor behind Eau Palm Beach, Atlantic Fields, Wild Blue, and HCA Cape Coral. One-pass inspections, 48-hour budget pricing, and a supervisor on every site.
         </p>
-        <div class="hero-cta-row" data-reveal data-delay="300">
+        <div class="hero-cta-row">
           <a class="btn-primary" href="#contact">
             Send Us Plans
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -134,9 +135,13 @@
         </div>
       </div>
 
-      <div class="hero-card" data-reveal data-delay="400">
+      <div class="hero-card">
         <div class="hero-card-label">Eau Palm Beach Resort · Manalapan, FL</div>
-        <img height="809" width="1080" class="hero-card-img" src="images/projects/eau-palm-beach/aerial-resort.jpg" alt="Aerial view of Eau Palm Beach Resort glazing envelope" loading="lazy" decoding="async">
+        <picture>
+          <source type="image/avif" sizes="(max-width: 900px) 88vw, min(560px, 37vw)" srcset="images/projects/eau-palm-beach/aerial-resort-480.avif 480w, images/projects/eau-palm-beach/aerial-resort-640.avif 640w, images/projects/eau-palm-beach/aerial-resort-800.avif 800w, images/projects/eau-palm-beach/aerial-resort-960.avif 960w, images/projects/eau-palm-beach/aerial-resort.avif 1080w">
+          <source type="image/webp" sizes="(max-width: 900px) 88vw, min(560px, 37vw)" srcset="images/projects/eau-palm-beach/aerial-resort-480.webp 480w, images/projects/eau-palm-beach/aerial-resort-640.webp 640w, images/projects/eau-palm-beach/aerial-resort-800.webp 800w, images/projects/eau-palm-beach/aerial-resort-960.webp 960w, images/projects/eau-palm-beach/aerial-resort.webp 1080w">
+          <img height="809" width="1080" class="hero-card-img" src="images/projects/eau-palm-beach/aerial-resort.jpg" srcset="images/projects/eau-palm-beach/aerial-resort-480.jpg 480w, images/projects/eau-palm-beach/aerial-resort-640.jpg 640w, images/projects/eau-palm-beach/aerial-resort-800.jpg 800w, images/projects/eau-palm-beach/aerial-resort-960.jpg 960w, images/projects/eau-palm-beach/aerial-resort.jpg 1080w" sizes="(max-width: 900px) 88vw, min(560px, 37vw)" alt="Aerial view of Eau Palm Beach Resort glazing envelope" loading="lazy" decoding="async">
+        </picture>
         <div class="hero-card-grid">
           <div>
             <div class="hero-stat-num">7</div>
@@ -259,7 +264,11 @@
 
       <div class="work-grid">
         <a class="work-tile span-8" href="eau-palm-beach-resort.html" data-reveal>
-          <img height="721" width="1080" src="images/projects/eau-palm-beach/entrance-dusk.jpg" alt="Eau Palm Beach Resort entrance at dusk" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/avif" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 28px) * 2 / 3)" srcset="images/projects/eau-palm-beach/entrance-dusk-480.avif 480w, images/projects/eau-palm-beach/entrance-dusk-640.avif 640w, images/projects/eau-palm-beach/entrance-dusk-800.avif 800w, images/projects/eau-palm-beach/entrance-dusk-960.avif 960w, images/projects/eau-palm-beach/entrance-dusk.avif 1080w">
+            <source type="image/webp" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 28px) * 2 / 3)" srcset="images/projects/eau-palm-beach/entrance-dusk-480.webp 480w, images/projects/eau-palm-beach/entrance-dusk-640.webp 640w, images/projects/eau-palm-beach/entrance-dusk-800.webp 800w, images/projects/eau-palm-beach/entrance-dusk-960.webp 960w, images/projects/eau-palm-beach/entrance-dusk.webp 1080w">
+            <img height="721" width="1080" src="images/projects/eau-palm-beach/entrance-dusk.jpg" srcset="images/projects/eau-palm-beach/entrance-dusk-480.jpg 480w, images/projects/eau-palm-beach/entrance-dusk-640.jpg 640w, images/projects/eau-palm-beach/entrance-dusk-800.jpg 800w, images/projects/eau-palm-beach/entrance-dusk-960.jpg 960w, images/projects/eau-palm-beach/entrance-dusk.jpg 1080w" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 28px) * 2 / 3)" alt="Eau Palm Beach Resort entrance at dusk" loading="lazy" decoding="async">
+          </picture>
           <div class="work-tile-overlay">
             <div class="work-tile-cat">Hospitality · Manalapan, FL</div>
             <div class="work-tile-title">Eau Palm Beach Resort &amp; Spa</div>
@@ -267,7 +276,11 @@
           </div>
         </a>
         <a class="work-tile span-4" href="atlantic-fields.html" data-reveal>
-          <img height="1066" width="1600" src="images/atlantic-fields-hero.jpg" alt="Atlantic Fields golf course" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/avif" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/atlantic-fields-hero-480.avif 480w, images/atlantic-fields-hero-640.avif 640w, images/atlantic-fields-hero-800.avif 800w, images/atlantic-fields-hero-960.avif 960w, images/atlantic-fields-hero.avif 1600w">
+            <source type="image/webp" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/atlantic-fields-hero-480.webp 480w, images/atlantic-fields-hero-640.webp 640w, images/atlantic-fields-hero-800.webp 800w, images/atlantic-fields-hero-960.webp 960w, images/atlantic-fields-hero.webp 1600w">
+            <img height="1066" width="1600" src="images/atlantic-fields-hero.jpg" srcset="images/atlantic-fields-hero-480.jpg 480w, images/atlantic-fields-hero-640.jpg 640w, images/atlantic-fields-hero-800.jpg 800w, images/atlantic-fields-hero-960.jpg 960w, images/atlantic-fields-hero.jpg 1600w" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" alt="Atlantic Fields golf course" loading="lazy" decoding="async">
+          </picture>
           <div class="work-tile-overlay">
             <div class="work-tile-cat">Hospitality · Hobe Sound</div>
             <div class="work-tile-title">Atlantic Fields</div>
@@ -275,7 +288,11 @@
           </div>
         </a>
         <a class="work-tile span-4" href="wild-blue-clubhouse.html" data-reveal data-delay="100">
-          <img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-front-elevation.jpg" alt="Wild Blue Clubhouse front elevation" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/avif" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/projects/wild-blue/wild-blue-front-elevation-480.avif 480w, images/projects/wild-blue/wild-blue-front-elevation-640.avif 640w, images/projects/wild-blue/wild-blue-front-elevation-800.avif 800w, images/projects/wild-blue/wild-blue-front-elevation-960.avif 960w, images/projects/wild-blue/wild-blue-front-elevation.avif 1800w">
+            <source type="image/webp" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/projects/wild-blue/wild-blue-front-elevation-480.webp 480w, images/projects/wild-blue/wild-blue-front-elevation-640.webp 640w, images/projects/wild-blue/wild-blue-front-elevation-800.webp 800w, images/projects/wild-blue/wild-blue-front-elevation-960.webp 960w, images/projects/wild-blue/wild-blue-front-elevation.webp 1920w">
+            <img height="1440" width="1920" src="images/projects/wild-blue/wild-blue-front-elevation.jpg" srcset="images/projects/wild-blue/wild-blue-front-elevation-480.jpg 480w, images/projects/wild-blue/wild-blue-front-elevation-640.jpg 640w, images/projects/wild-blue/wild-blue-front-elevation-800.jpg 800w, images/projects/wild-blue/wild-blue-front-elevation-960.jpg 960w, images/projects/wild-blue/wild-blue-front-elevation.jpg 1920w" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" alt="Wild Blue Clubhouse front elevation" loading="lazy" decoding="async">
+          </picture>
           <div class="work-tile-overlay">
             <div class="work-tile-cat">Hospitality · Estero, FL</div>
             <div class="work-tile-title">Wild Blue Clubhouse</div>
@@ -283,7 +300,11 @@
           </div>
         </a>
         <a class="work-tile span-4" href="hulett-environmental-port-st-lucie.html" data-reveal data-delay="200">
-          <img height="1236" width="2200" src="images/projects/hulett-environmental/aerial-front-entrance.jpg" alt="Hulett Environmental headquarters aerial" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/avif" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/projects/hulett-environmental/aerial-front-entrance-480.avif 480w, images/projects/hulett-environmental/aerial-front-entrance-640.avif 640w, images/projects/hulett-environmental/aerial-front-entrance-800.avif 800w, images/projects/hulett-environmental/aerial-front-entrance-960.avif 960w, images/projects/hulett-environmental/aerial-front-entrance.avif 1800w">
+            <source type="image/webp" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/projects/hulett-environmental/aerial-front-entrance-480.webp 480w, images/projects/hulett-environmental/aerial-front-entrance-640.webp 640w, images/projects/hulett-environmental/aerial-front-entrance-800.webp 800w, images/projects/hulett-environmental/aerial-front-entrance-960.webp 960w, images/projects/hulett-environmental/aerial-front-entrance.webp 2200w">
+            <img height="1236" width="2200" src="images/projects/hulett-environmental/aerial-front-entrance.jpg" srcset="images/projects/hulett-environmental/aerial-front-entrance-480.jpg 480w, images/projects/hulett-environmental/aerial-front-entrance-640.jpg 640w, images/projects/hulett-environmental/aerial-front-entrance-800.jpg 800w, images/projects/hulett-environmental/aerial-front-entrance-960.jpg 960w, images/projects/hulett-environmental/aerial-front-entrance.jpg 1600w" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" alt="Hulett Environmental headquarters aerial" loading="lazy" decoding="async">
+          </picture>
           <div class="work-tile-overlay">
             <div class="work-tile-cat">Commercial · Port St. Lucie</div>
             <div class="work-tile-title">Hulett HQ</div>
@@ -291,7 +312,11 @@
           </div>
         </a>
         <a class="work-tile span-4" href="klus-lighting-vero-beach.html" data-reveal>
-          <img height="1235" width="2200" src="images/projects/klus-lighting/aerial-front-three-quarter.jpg" alt="KLUS Lighting Showroom aerial" loading="lazy" decoding="async">
+          <picture>
+            <source type="image/avif" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/projects/klus-lighting/aerial-front-three-quarter-480.avif 480w, images/projects/klus-lighting/aerial-front-three-quarter-640.avif 640w, images/projects/klus-lighting/aerial-front-three-quarter-800.avif 800w, images/projects/klus-lighting/aerial-front-three-quarter-960.avif 960w, images/projects/klus-lighting/aerial-front-three-quarter.avif 1800w">
+            <source type="image/webp" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" srcset="images/projects/klus-lighting/aerial-front-three-quarter-480.webp 480w, images/projects/klus-lighting/aerial-front-three-quarter-640.webp 640w, images/projects/klus-lighting/aerial-front-three-quarter-800.webp 800w, images/projects/klus-lighting/aerial-front-three-quarter-960.webp 960w, images/projects/klus-lighting/aerial-front-three-quarter.webp 2200w">
+            <img height="1235" width="2200" src="images/projects/klus-lighting/aerial-front-three-quarter.jpg" srcset="images/projects/klus-lighting/aerial-front-three-quarter-480.jpg 480w, images/projects/klus-lighting/aerial-front-three-quarter-640.jpg 640w, images/projects/klus-lighting/aerial-front-three-quarter-800.jpg 800w, images/projects/klus-lighting/aerial-front-three-quarter-960.jpg 960w, images/projects/klus-lighting/aerial-front-three-quarter.jpg 1600w" sizes="(max-width: 600px) 88vw, (max-width: 900px) calc((88vw - 28px) / 2), calc((min(88vw, 1320px) - 56px) / 3)" alt="KLUS Lighting Showroom aerial" loading="lazy" decoding="async">
+          </picture>
           <div class="work-tile-overlay">
             <div class="work-tile-cat">Commercial · Vero Beach, FL</div>
             <div class="work-tile-title">KLUS Lighting Showroom</div>
