@@ -1473,7 +1473,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-stuart-florida/index.html",
-                "<title>Commercial Storefront Installer Stuart | 48-Hr Bids</title>",
+                "<title>Commercial Storefront Installer Stuart | Martin County</title>",
             ),
         ):
             frozen = read(frozen_rel)
