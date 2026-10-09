@@ -305,7 +305,7 @@ class AiCitationHygieneTests(unittest.TestCase):
         for rel, needle in (
             (
                 "storefront-glazier-west-palm-beach-florida/index.html",
-                "Commercial Storefront Installer, West Palm Beach",
+                "Commercial Storefront Installer West Palm Beach",
             ),
             (
                 "storefront-glazier-naples-florida/index.html",

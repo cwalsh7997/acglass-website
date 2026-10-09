@@ -111,7 +111,7 @@ class OfficeKeeperNapTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertEqual(
-            "Commercial Storefront Installer, West Palm Beach | Bid",
+            "Commercial Storefront Installer West Palm Beach | 48-Hr Bids",
             TITLE.search(html).group(1).strip(),
         )
         nodes = local_businesses(html)

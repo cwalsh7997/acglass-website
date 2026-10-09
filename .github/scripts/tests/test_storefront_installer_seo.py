@@ -364,7 +364,7 @@ class SchemaFollowupTests(unittest.TestCase):
             "Commercial Storefront Installer Florida | Bid in 48 Hrs, ACG"
         ),
         "storefront-glazier-west-palm-beach-florida/index.html": (
-            "Commercial Storefront Installer, West Palm Beach | Bid"
+            "Commercial Storefront Installer West Palm Beach | 48-Hr Bids"
         ),
         "storefront-glazier-naples-florida/index.html": (
             "Commercial Storefront Installer Naples | 48-Hr Bids"
@@ -379,7 +379,7 @@ class SchemaFollowupTests(unittest.TestCase):
             "Commercial Storefront Installer Orlando | 48-Hr Bids"
         ),
         "storefront-glazier-fort-lauderdale-florida/index.html": (
-            "Commercial Storefront Installer Fort Lauderdale | Bid"
+            "Commercial Storefront Installer Fort Lauderdale | 48-Hr Bids"
         ),
         "storefront-glazier-fort-myers-florida/index.html": (
             "Commercial Storefront Installer Fort Myers | 48-Hr Bid"
