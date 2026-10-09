@@ -1457,7 +1457,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-fort-lauderdale-florida/index.html",
-                "<title>Commercial Storefront Installer Fort Lauderdale | Bid</title>",
+                "<title>Commercial Storefront Installer Fort Lauderdale | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-orlando-florida/index.html",
@@ -1473,7 +1473,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-stuart-florida/index.html",
-                "<title>Commercial Storefront Installer Stuart | Bid</title>",
+                "<title>Commercial Storefront Installer Stuart | Martin County</title>",
             ),
         ):
             frozen = read(frozen_rel)
@@ -1770,7 +1770,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-fort-lauderdale-florida/index.html",
-                "<title>Commercial Storefront Installer Fort Lauderdale | Bid</title>",
+                "<title>Commercial Storefront Installer Fort Lauderdale | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-west-palm-beach-florida/index.html",

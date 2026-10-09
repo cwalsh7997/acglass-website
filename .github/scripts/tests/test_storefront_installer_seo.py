@@ -379,7 +379,7 @@ class SchemaFollowupTests(unittest.TestCase):
             "Commercial Storefront Installer Orlando | 48-Hr Bids"
         ),
         "storefront-glazier-fort-lauderdale-florida/index.html": (
-            "Commercial Storefront Installer Fort Lauderdale | Bid"
+            "Commercial Storefront Installer Fort Lauderdale | 48-Hr Bids"
         ),
         "storefront-glazier-fort-myers-florida/index.html": (
             "Commercial Storefront Installer Fort Myers | 48-Hr Bid"
