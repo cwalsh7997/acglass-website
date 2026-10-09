@@ -35,5 +35,18 @@ class GBPIndexability(unittest.TestCase):
         for target in ('atlantic-fields-golf-house.html', 'atlantic-fields-performance-center.html'):
             self.assertIn(f'href="/{target}"', html)
             self.assertTrue((ROOT / target).is_file())
+        # Title, og:title, and twitter:title match the other office keepers.
+        # The same claims stay off the body, schema, and description.
+        share_title = "Commercial Storefront Installer Stuart | 48-Hr Bids"
+        self.assertIn(f"<title>{share_title}</title>", html)
+        self.assertIn(f'property="og:title" content="{share_title}"', html)
+        self.assertIn(f'name="twitter:title" content="{share_title}"', html)
+        body = re.sub(r"<title\b[^>]*>.*?</title>", "", html, flags=re.I | re.S)
+        body = re.sub(
+            r"<meta\b[^>]*(?:og:title|twitter:title)[^>]*>",
+            "",
+            body,
+            flags=re.I,
+        )
         for claim in ('48-hour', '48-Hr', 'emergency dispatch', 'general liability', '170 mph', 'Written by Connor'):
-            self.assertNotIn(claim.lower(), html.lower())
+            self.assertNotIn(claim.lower(), body.lower())
