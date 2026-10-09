@@ -115,7 +115,13 @@
   ]
 }
 </script>
-<style>.cform .drop input[type="file"]{overflow:hidden}.cform button[type="submit"][disabled]{opacity:.6}</style>
+<style>
+.cform .drop input[type="file"]{overflow:hidden}
+.cform button[type="submit"][disabled]{opacity:.6}
+/* Inline body links on this page only. Underline is the non-color cue.
+   Buttons, breadcrumbs, nav, and footer links are outside this selector. */
+main :is(p,.sub,figcaption) a:not([class]){text-decoration:underline;text-decoration-color:#9aa6af;text-underline-offset:4px;text-decoration-thickness:1px}
+</style>
 </head>
 <body class="ax-interior">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -140,9 +146,9 @@
         </div>
         <figure class="offer-figure">
           <picture>
-            <source srcset="images/projects/savannas-ridge-clubhouse/dining-sliders.avif" type="image/avif">
-            <source srcset="images/projects/savannas-ridge-clubhouse/dining-sliders.webp" type="image/webp">
-            <img src="images/projects/savannas-ridge-clubhouse/dining-sliders.jpg" width="1536" height="1025" alt="Savannas Ridge Clubhouse dining room with the glass door wall open to the pool deck" loading="eager" decoding="async" fetchpriority="high">
+            <source type="image/avif" sizes="(min-width: 1500px) 1320px, 88vw" srcset="images/projects/savannas-ridge-clubhouse/dining-sliders-480.avif 480w, images/projects/savannas-ridge-clubhouse/dining-sliders-640.avif 640w, images/projects/savannas-ridge-clubhouse/dining-sliders-800.avif 800w, images/projects/savannas-ridge-clubhouse/dining-sliders-960.avif 960w, images/projects/savannas-ridge-clubhouse/dining-sliders.avif 1536w">
+            <source type="image/webp" sizes="(min-width: 1500px) 1320px, 88vw" srcset="images/projects/savannas-ridge-clubhouse/dining-sliders-480.webp 480w, images/projects/savannas-ridge-clubhouse/dining-sliders-640.webp 640w, images/projects/savannas-ridge-clubhouse/dining-sliders-800.webp 800w, images/projects/savannas-ridge-clubhouse/dining-sliders-960.webp 960w, images/projects/savannas-ridge-clubhouse/dining-sliders.webp 1536w">
+            <img src="images/projects/savannas-ridge-clubhouse/dining-sliders.jpg" srcset="images/projects/savannas-ridge-clubhouse/dining-sliders-480.jpg 480w, images/projects/savannas-ridge-clubhouse/dining-sliders-640.jpg 640w, images/projects/savannas-ridge-clubhouse/dining-sliders-800.jpg 800w, images/projects/savannas-ridge-clubhouse/dining-sliders-960.jpg 960w, images/projects/savannas-ridge-clubhouse/dining-sliders.jpg 1536w" sizes="(min-width: 1500px) 1320px, 88vw" width="1536" height="1025" alt="Savannas Ridge Clubhouse dining room with the glass door wall open to the pool deck" loading="eager" decoding="async" fetchpriority="high">
           </picture>
           <figcaption>Savannas Ridge Clubhouse · Fort Pierce, FL</figcaption>
         </figure>
