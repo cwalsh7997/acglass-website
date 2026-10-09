@@ -24,7 +24,7 @@ FROZEN_TITLES = {
         "Commercial Storefront Installer Florida | Bid in 48 Hrs"
     ),
     "storefront-glazier-west-palm-beach-florida/index.html": (
-        "Commercial Storefront Installer, West Palm Beach | Bid"
+        "Commercial Storefront Installer West Palm Beach | 48-Hr Bids"
     ),
     "storefront-glazier-naples-florida/index.html": (
         "Commercial Storefront Installer Naples | 48-Hr Bids"

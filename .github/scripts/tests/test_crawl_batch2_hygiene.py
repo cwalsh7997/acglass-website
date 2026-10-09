@@ -956,7 +956,7 @@ class CityCanonicalTests(unittest.TestCase):
             tampa,
         )
         self.assertIn(
-            "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+            "<title>Commercial Storefront Installer West Palm Beach | 48-Hr Bids</title>",
             wpb,
         )
         self.assertNotIn("noindex", robots(tampa))
@@ -1241,7 +1241,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-west-palm-beach-florida/index.html",
-                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+                "<title>Commercial Storefront Installer West Palm Beach | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-naples-florida/index.html",
@@ -1441,7 +1441,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-west-palm-beach-florida/index.html",
-                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+                "<title>Commercial Storefront Installer West Palm Beach | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-naples-florida/index.html",
@@ -1596,7 +1596,7 @@ class CityCanonicalTests(unittest.TestCase):
         for rel, title in (
             (
                 "storefront-glazier-west-palm-beach-florida/index.html",
-                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+                "<title>Commercial Storefront Installer West Palm Beach | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-naples-florida/index.html",
@@ -1774,7 +1774,7 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-west-palm-beach-florida/index.html",
-                "<title>Commercial Storefront Installer, West Palm Beach | Bid</title>",
+                "<title>Commercial Storefront Installer West Palm Beach | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-naples-florida/index.html",
