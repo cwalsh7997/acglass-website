@@ -533,3 +533,83 @@
 .c-form__error {
   color: var(--red-300);
 }
+
+/* ============================================================================
+   LIGHT INTERIOR HOST.
+
+   for-general-contractors/, resources.html, and case-studies/ are the only
+   pages that load this file. They also load acg-arch-interior.css and render
+   on body.ax-interior, whose page ground is the light paper surface. The
+   dark-surface block above still emits on-navy text, and the interior sheet
+   then paints ink onto the navy panels that remain. Selectors here are
+   specific enough to beat both, and they match only under body.ax-interior,
+   so a page that does not load this file is unchanged.
+
+   Light ground: navy and ink text, ink-500 for meta and eyebrows, red-600
+   is not used on these navy panels (red-300 is the red that clears AA there).
+   Navy panels (plates, project cards): paper text, on-navy-secondary for
+   supporting lines. The primary button keeps the red-500 fill with paper text.
+   ============================================================================ */
+
+body.ax-interior .u-section > .u-container p,
+body.ax-interior .u-section > .u-container li {
+  color: var(--ink-700);
+}
+body.ax-interior .u-section > .u-container p.c-hero__eyebrow {
+  color: var(--ink-500);
+}
+body.ax-interior .c-doclist__name {
+  color: var(--navy-800);
+}
+body.ax-interior .c-doclist__meta {
+  color: var(--ink-500);
+}
+body.ax-interior .c-doclist__row {
+  border-bottom-color: var(--line-200);
+}
+body.ax-interior .c-capability {
+  border-top-color: var(--line-200);
+}
+body.ax-interior .c-ctaband > .u-container p,
+body.ax-interior .c-ctaband__line {
+  color: var(--ink-700);
+}
+
+/* Paragraphs inside the remaining navy panels. The light-ground rule above
+   matches these too; this puts the supporting line back on the navy token. */
+body.ax-interior .ax-page .c-plate p,
+body.ax-interior .ax-page .c-project__body p {
+  color: var(--on-navy-secondary);
+}
+body.ax-interior .ax-page .c-plate :is(h1, h2, h3, h4, h5, h6, strong, b),
+body.ax-interior .ax-page .c-project :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--paper);
+}
+body.ax-interior .ax-page .c-plate a,
+body.ax-interior .ax-page .c-plate a:hover,
+body.ax-interior .ax-page .c-plate a:focus-visible {
+  color: var(--paper);
+  text-decoration-color: var(--paper);
+}
+
+body.ax-interior .ax-page a.u-btn--primary,
+body.ax-interior .ax-page a.u-btn--primary:hover,
+body.ax-interior .ax-page a.u-btn--primary:focus-visible {
+  background-color: var(--red-500);
+  color: var(--paper);
+  border-color: transparent;
+}
+body.ax-interior .ax-page a.u-btn--primary:hover {
+  background-color: var(--red-600);
+  color: var(--paper);
+}
+body.ax-interior .ax-page a.u-btn--secondary,
+body.ax-interior .ax-page .u-section--navy a.u-btn--secondary,
+body.ax-interior .ax-page a.u-btn--secondary:hover,
+body.ax-interior .ax-page .u-section--navy a.u-btn--secondary:hover,
+body.ax-interior .ax-page a.u-btn--secondary:focus-visible,
+body.ax-interior .ax-page .u-section--navy a.u-btn--secondary:focus-visible {
+  background-color: transparent;
+  color: var(--navy-800);
+  border-color: var(--navy-800);
+}
