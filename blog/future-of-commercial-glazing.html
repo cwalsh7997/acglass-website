@@ -27,7 +27,9 @@
   <link rel="icon" type="image/png" href="../images/favicon-32.png"><link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-variable-latin.woff2" crossorigin>
     <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
-<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">
+<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261010">
+<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001"></noscript>
+<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261001";document.head.appendChild(l)});</script>
   <link rel="alternate" type="application/rss+xml" title="ACG Blog RSS Feed" href="../feed.xml">
   <meta name="article:published_time" content="2026-06-01">
 
@@ -123,7 +125,11 @@
 
 <header class="post-hero ax-hero ax-hero-l">
   <div class="post-hero-bg">
-    <img src="/images/atlantic-fields-hero.jpg" alt="Atlantic Fields private golf community - commercial glazing installation by ACG" width="1600" height="1066" decoding="async" loading="eager" fetchpriority="high">
+    <picture>
+      <source type="image/avif" sizes="(max-width: 900px) 88vw, 1200px" srcset="/images/atlantic-fields-hero-480.avif 480w, /images/atlantic-fields-hero-640.avif 640w, /images/atlantic-fields-hero-800.avif 800w, /images/atlantic-fields-hero-960.avif 960w, /images/atlantic-fields-hero.avif 1600w">
+      <source type="image/webp" sizes="(max-width: 900px) 88vw, 1200px" srcset="/images/atlantic-fields-hero-480.webp 480w, /images/atlantic-fields-hero-640.webp 640w, /images/atlantic-fields-hero-800.webp 800w, /images/atlantic-fields-hero-960.webp 960w, /images/atlantic-fields-hero.webp 1600w">
+      <img src="/images/atlantic-fields-hero.jpg" srcset="/images/atlantic-fields-hero-480.jpg 480w, /images/atlantic-fields-hero-640.jpg 640w, /images/atlantic-fields-hero-800.jpg 800w, /images/atlantic-fields-hero-960.jpg 960w, /images/atlantic-fields-hero.jpg 1600w" sizes="(max-width: 900px) 88vw, 1200px" alt="Atlantic Fields private golf community - commercial glazing installation by ACG" width="1600" height="1066" decoding="async" loading="eager" fetchpriority="high">
+    </picture>
   </div>
   <div class="post-hero-overlay"></div>
   <div class="post-hero-inner">

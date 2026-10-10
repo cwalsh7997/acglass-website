@@ -61,9 +61,11 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
         # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
         # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
-        "head": "6a16c03150ddda8dd7bc25b200307e91aae002779666b08b5d54dbce28ad6aeb",
+        # head/scripts rebaselined 2026-10-10: blocking interior CSS moved behind a small
+        # critical sheet; the full sheet loads on window load. jsonld/hrefs/visible unchanged.
+        "head": "9168817ae6d5331c2b8e51a32b22ad72a4ec30765fc37c21bbc92e239a4cdbdc",
         "jsonld": "f852722b02bf696556895ae499798e363d3a201035863e44aed0117b0403f452",
-        "scripts": "fc9ef4decb6b725a2f461e1f3a5b5f946fbaadf76a6bea893b7fb2ac349f163e",
+        "scripts": "145b005061c90c4b0b1ef6ba16d861a09b38f54d877752d66f80959b270595bc",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         "hrefs": "59eda6361e56ff67fe9e64307b6f2a9bad14ca86eae81c9236991aeff2277d77",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
@@ -83,9 +85,10 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
         # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
         # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
-        "head": "82fb705bb4008064360ef254b1cb61a78c7c877f31129e158046c1189329345e",
+        # head/scripts rebaselined 2026-10-10: critical sheet plus deferred interior CSS.
+        "head": "7effd224957c31e2c9457f9634007fe4e1f9dd0b781752f04df552d1fd288938",
         "jsonld": "ad79a685eece44118a1212057a51bb2d3ac0224561f209e3672e234bccb7e2a7",
-        "scripts": "1d173b7b332767edd8ed61825f17db02bfec58a7dc000632797dad5ac643f0ab",
+        "scripts": "aeb1b88347fa8853bda72ea937a26809e282645f329872a9501795e4b068313b",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
@@ -98,9 +101,10 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
         # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
         # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
-        "head": "e3f9d7163f231370a282a755436e1b5ffe59bee8fd43d248935197e679c017a3",
+        # head/scripts rebaselined 2026-10-10: critical sheet plus deferred interior CSS.
+        "head": "d45ac06c71987ccb7f9a7e81151f061ccd10031e2ad6475e448b91503bdc75c6",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
-        "scripts": "79b1d73c8555bd00767c5c2e54ebf96f99371a3e6ca68a9f9f7b080588793e54",
+        "scripts": "a2ee6fa86995987ca0f6a5185d49d45bc9fbd177c9c035ae2c4fb40f4de56173",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
@@ -110,9 +114,10 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # head rebaselined 2026-10-01 (interior redesign): legacy stylesheet links and <style>
         # blocks swapped for acg-arch-interior.css; head is otherwise identical (verified by
         # stripping stylesheet links/style blocks from both versions). Other digests unchanged.
-        "head": "93b5a737481c26a194b25990e2be7334aca7366e9dcec45d1097fc445f7bd8df",
+        # head/scripts rebaselined 2026-10-10: critical sheet plus deferred interior CSS.
+        "head": "602fcacc225360835065733d6a04265860aef30a5e5534f13750d63209cc9292",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
-        "scripts": "a0fb3425f2b1c3179c113d7f603129f2c68a0768a5423700cfd33bbc1ad015d6",
+        "scripts": "8d31e5847a1cc28f17de432555276837a8714a96c6551cb4b037fa9e7106bac4",
         "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).

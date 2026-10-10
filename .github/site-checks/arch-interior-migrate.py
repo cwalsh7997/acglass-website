@@ -62,7 +62,11 @@ FUNCTIONAL_PROPS = {
     "animation", "animation-name", "animation-duration", "animation-delay", "animation-fill-mode",
     "animation-timing-function",
 }
-CSS_TAG = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+CSS_TAG = (
+    '<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261010">\n'
+    '<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001"></noscript>\n'
+    '<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261001";document.head.appendChild(l)});</script>'
+)
 CHROME_CSS_RE = re.compile(r'<link rel="stylesheet" href="/css/acg-arch-chrome\.css\?v=\d+">')
 LEGACY_CSS_RE = re.compile(
     r'<link\b[^>]*href="(?:\.\./|/)?css/(?:style|acg-chrome|acg-flagship|acg2026|acg2026-dark|acg-reveal|acg-proof)\.css[^"]*"[^>]*>[ \t]*\n?',

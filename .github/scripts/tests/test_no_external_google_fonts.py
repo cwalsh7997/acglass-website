@@ -43,7 +43,9 @@ PROTECTED_HASHES = {
     "images": "59ccfef5b2b2882acbcdc80aa4bbeb2a4d6c8f3309ce23d3ca6a02fb909baeba",
     "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",
     "metadata": "f34f096e64ce1e4283154d8cdf34c46247be47df04ef5888ecd6f06cd83019ef",
-    "scripts": "ffbda8d04e09ae363b47ab94d78dd00e21a72c74651cfedf2402c0d67e70e442",
+    # scripts rebaselined 2026-10-10: the interior sheet now loads from a window-load
+    # script so it is not render-blocking. No other fragment changed.
+    "scripts": "b53b75a937a82a9e9a20e2d166e4736537619df66f23dfd2d0528a437fee4b81",
 }
 
 
