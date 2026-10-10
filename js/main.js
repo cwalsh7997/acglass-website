@@ -128,7 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -60px 0px'
   });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  // Above-the-fold heroes and the first screen are the LCP on blog and interior
+  // pages. style.css keeps [data-reveal] at opacity 0 until .revealed, and the
+  // data-delay timeout waits out the animation. Paint those immediately.
+  // Below-the-fold reveals still run. prefers-reduced-motion is handled in CSS.
+  const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const inHero = el.closest('.ax-hero, .page-hero, .p-hero, .post-hero, .cap-hero, .hero');
+    if (inHero || (rect.top < viewHeight && rect.bottom > 0)) {
+      el.classList.add('revealed');
+      return;
+    }
+    revealObserver.observe(el);
+  });
 
   // ---------- COUNTER ANIMATION ----------
   const counters = document.querySelectorAll('[data-count]');

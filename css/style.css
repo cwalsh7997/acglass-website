@@ -1805,9 +1805,20 @@ p {
   transform: scale(1);
 }
 
-/* Above-fold headings and controls must paint without waiting for JavaScript. */
+/* Above-fold headings and the first article block must paint without waiting
+   for JavaScript. Below-the-fold [data-reveal] still fades in. */
 .page-hero [data-reveal],
-.cap-hero [data-reveal] {
+.page-hero [data-reveal-fade],
+.cap-hero [data-reveal],
+.cap-hero [data-reveal-fade],
+.p-hero [data-reveal],
+.p-hero [data-reveal-fade],
+.post-hero [data-reveal],
+.post-hero [data-reveal-fade],
+.ax-hero [data-reveal],
+.ax-hero [data-reveal-fade],
+.blog-content[data-reveal],
+.blog-content[data-reveal-fade] {
   opacity: 1;
   transform: none;
   transition: none;
