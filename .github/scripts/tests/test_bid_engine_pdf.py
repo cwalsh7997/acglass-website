@@ -58,12 +58,18 @@ def _between(start_token: str, end_token: str) -> str:
 
 class BidEnginePdfLibraryTests(unittest.TestCase):
     def test_jspdf_script_is_the_pinned_working_cdnjs_url(self):
+        # The library is inserted on demand (same URL and SRI). It must not be
+        # a startup script: Lighthouse was spending the load on an unused 95KB parse.
         scripts = re.findall(r"<script\b[^>]*\bsrc=['\"]([^'\"]+)['\"]", BID)
         jspdf = [src for src in scripts if "jspdf" in src.lower()]
-        self.assertEqual([JSPDF_SRC], jspdf)
+        self.assertEqual([], jspdf)
+        self.assertIn(JSPDF_SRC, BID)
         self.assertNotIn("/jspdf/2.5.2/", BID)
-        self.assertIn(f'integrity="{JSPDF_SRI}"', BID)
-        self.assertIn("crossorigin", BID)
+        self.assertIn(JSPDF_SRI, BID)
+        self.assertIn("crossOrigin", BID)
+        self.assertIn("function loadJsPdf()", BID)
+        self.assertIn("loadJsPdf()", _function_body("preparePdfDownload"))
+        self.assertIn("loadJsPdf()", _function_body("generateBidPDF"))
 
 
 class BidEnginePdfButtonTests(unittest.TestCase):
