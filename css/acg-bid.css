@@ -1,0 +1,303 @@
+/* Bid-page subset of acg-arch-interior.css (2026-10-10).
+   Used only by bid.html so the plan-upload page does not download interior rules it cannot match. */
+@font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{--ax-paper:#f4f5f5;--ax-ink:#0a1925;--ax-text:#4f5d68;--ax-soft:#5a6670;--ax-line:#c9d0d5;--ax-line-soft:#dde3e7;--ax-red-text:#b8232c;--ax-panel:#e9edef}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body.ax-interior{margin:0;background:var(--ax-paper);color:var(--ax-ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.ax-interior *,body.ax-interior *::before,body.ax-interior *::after{box-sizing:border-box}
+body.ax-interior ::selection{background:var(--ax-red);color:#fff}
+body.ax-interior :focus-visible{outline:3px solid var(--ax-red);outline-offset:4px}
+.ax-page{--gut:max(6%,calc((100% - 1320px) / 2));padding-top:72px;background:var(--ax-paper);color:var(--ax-ink);overflow-x:clip}
+
+/* ---------- Page frame: every top-level block gets the same gutter ---------- */
+.ax-page.ax-page>:not(main):not(article):not(script),.ax-page.ax-page>:is(main,article):not(:has(>p)):not(:has(>h2)):not(:has(>table))>:not(article):not(main):not(script),.ax-page.ax-page>:is(main,article)>:is(main,article)>:not(script){padding-left:var(--gut);padding-right:var(--gut)}
+.ax-page section{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px);background:none;color:inherit;position:relative}
+.ax-page section section{padding-top:0;padding-bottom:0;margin-top:clamp(40px,4vw,64px)}
+.ax-page section section:first-child{margin-top:0}
+.ax-page>:is(section,div,header,aside,nav)+:is(section,div,aside,main,article),.ax-page>:is(main,article)>:is(section,div,aside,header)+:is(section,div,aside){border-top:1px solid var(--ax-line-soft)}
+.ax-page>div:not(.ax-hero):has(>p,>h2,>h3){padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px)}
+/* main/article that hold running text directly (guides): the wrapper carries the gutter. */
+.ax-page.ax-page>:is(main,article):is(:has(>p),:has(>h2),:has(>table)){padding:clamp(48px,5vw,72px) var(--gut)}
+.ax-page.ax-page>:is(main,article):is(:has(>p),:has(>h2),:has(>table))>*{padding-left:0;padding-right:0}
+.ax-page.ax-page>:is(main,article):is(:has(>p),:has(>h2),:has(>table))>:is(p,ul,ol){max-width:780px}
+.ax-page.ax-page>:is(main,article):is(:has(>p),:has(>h2),:has(>table))>h2{font-size:clamp(30px,3vw,46px)}
+.ax-page>:is(main,article):is(:has(>p),:has(>h2),:has(>table))>section{padding-top:clamp(40px,4vw,56px);padding-bottom:0}
+
+/* ---------- Type ---------- */
+.ax-page :is(h1,h2,h3,h4,h5,h6){color:var(--ax-ink);font-family:inherit;text-transform:none;text-shadow:none;background:none;-webkit-text-fill-color:currentColor}
+.ax-page h1{font-size:clamp(44px,6vw,100px);line-height:1.01;letter-spacing:-.06em;font-weight:450;margin:0;max-width:1240px;text-wrap:balance}
+.ax-page h2{font-size:clamp(32px,3.7vw,58px);line-height:1.05;letter-spacing:-.05em;font-weight:450;margin:0 0 28px;max-width:1100px;text-wrap:balance}
+.ax-page h3{font-size:clamp(21px,1.8vw,28px);line-height:1.2;letter-spacing:-.035em;font-weight:500;margin:44px 0 14px;max-width:900px}
+.ax-page h4{font-size:19px;line-height:1.35;letter-spacing:-.02em;font-weight:550;margin:30px 0 10px}
+.ax-page :is(h5,h6){font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:550;margin:24px 0 8px}
+.ax-page :is(h2,h3,h4):first-child{margin-top:0}
+.ax-page :is(p,ul,ol,table,figure,blockquote,details,.faq-item,div:not(.loc-label):not(.label):not(.eyebrow):not(.k-wrap):not(.wpb-section-eyebrow):not(.ax-kicker):not(.wpb-eyebrow):not(.k-label))+h2{margin-top:clamp(56px,5.5vw,88px)}
+.ax-page p{margin:0 0 18px;font-size:17px;line-height:1.75;color:var(--ax-text);max-width:780px}
+.ax-page :is(p,li,td,dd):last-child{margin-bottom:0}
+.ax-page :is(strong,b){color:var(--ax-ink);font-weight:600}
+.ax-page em{font-style:italic}
+.ax-page :is(h1,h2) :is(em,.accent,.ax-red),.ax-page :is(h1,h2) span[style*="color"]{font-style:normal;color:var(--ax-red)}
+.ax-page a{color:var(--ax-ink);text-decoration:none;transition:color .2s}
+.ax-page :is(p,li,td,dd,figcaption,blockquote) a:not([class]){text-decoration:underline;text-decoration-color:#9aa6af;text-underline-offset:4px;text-decoration-thickness:1px}
+.ax-page a:hover{color:var(--ax-red-text)}
+.ax-page :is(ul,ol){margin:0 0 22px;padding-left:22px;color:var(--ax-text);max-width:820px}
+.ax-page li{margin:0 0 10px;font-size:17px;line-height:1.7}
+.ax-page li::marker{color:var(--ax-red-text)}
+.ax-page :is(ul.ax-plain-list,ul[style*="list-style:none"],ul[style*="list-style: none"]){padding-left:0;list-style:none}
+.ax-page hr{border:0;border-top:1px solid var(--ax-line);height:0;margin:48px 0;background:none}
+.ax-page blockquote{margin:40px 0;padding:6px 0 6px 28px;border-left:2px solid var(--ax-red);max-width:900px;background:none}
+.ax-page blockquote p{font-size:clamp(20px,1.9vw,26px);line-height:1.45;letter-spacing:-.025em;color:var(--ax-ink)}
+.ax-page blockquote :is(cite,footer,div){display:block;margin-top:14px;font-size:13px;font-style:normal;color:var(--ax-soft)}
+.ax-page small{font-size:13px;line-height:1.6;color:var(--ax-soft)}
+.ax-page code{font-size:.9em;background:var(--ax-panel);padding:1px 6px}
+.ax-page .ax-strong{font-weight:600;color:var(--ax-ink)}
+
+/* ---------- Editorial sections: heading left, prose right (desktop) ---------- */
+
+/* ---------- Kickers (eyebrows, labels) ---------- */
+
+/* ---------- Buttons and text links ---------- */
+
+/* ---------- Hero / page heading ---------- */
+.ax-page .ax-hero{position:relative;padding-top:clamp(60px,7.5vw,118px);padding-bottom:clamp(52px,6vw,88px);background:var(--ax-paper);color:var(--ax-ink);min-height:0;height:auto;display:block;overflow:visible;border-top:0}
+.ax-page .ax-hero::before,.ax-page .ax-hero::after{content:none}
+.ax-page .ax-hero :is(.container,.wrap,header,.wpb-hero-content,.hero-content,.hero-inner){position:static;max-width:none;padding:0;margin:0;background:none;text-align:left;transform:none}
+.ax-page .ax-hero h1{margin:0 0 30px}
+.ax-page .ax-hero h1+p,.ax-page .ax-hero h1~p:not(.ax-kicker):not(.ax-small){font-size:clamp(18px,1.55vw,22px);line-height:1.6;letter-spacing:-.015em;color:var(--ax-text);max-width:820px;margin:0 0 16px}
+.ax-page .ax-hero h1~p:last-of-type{margin-bottom:0}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb,.breadcrumbs){display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:12px;line-height:1.5;letter-spacing:.06em;text-transform:uppercase;color:var(--ax-soft);margin:0 0 40px;padding:0;background:none}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb,.breadcrumbs) a{color:var(--ax-red-text);text-decoration:none}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb,.breadcrumbs) a:hover{text-decoration:underline;text-underline-offset:3px}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb) :is(span,li){color:var(--ax-soft)}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb) ol{display:flex;flex-wrap:wrap;gap:6px 12px;list-style:none;padding:0;margin:0}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb) li{margin:0;font-size:12px}
+.ax-page .ax-hero>:is(div,.container)>div:has(>a)+div:has(>a){margin-top:0}
+.ax-page .ax-hero.ax-hero-s h1{font-size:clamp(48px,7vw,118px);line-height:.98;letter-spacing:-.065em}
+
+/* Hero with a photo (location template, project pages): copy left, photo right, like the homepage. */
+
+/* ---------- Stats and credential strips ---------- */
+
+/* ---------- Card grids ---------- */
+
+/* ---------- Quick answer / callouts ---------- */
+
+/* ---------- FAQ ---------- */
+.ax-page :is(.faq-item,details){border:0;border-top:1px solid var(--ax-line);border-radius:0;background:none;box-shadow:none;padding:26px 0;margin:0;max-width:980px}
+.ax-page :is(.faq-item,details):last-child{border-bottom:1px solid var(--ax-line)}
+.ax-page :is(.faq-q,summary,.faq-question){display:block;font-size:clamp(18px,1.5vw,23px);line-height:1.35;letter-spacing:-.025em;font-weight:500;color:var(--ax-ink);margin:0 0 12px;padding:0;background:none;border:0;cursor:default}
+.ax-page summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin:0}
+.ax-page summary::-webkit-details-marker{display:none}
+.ax-page summary::after{content:"+";font-size:28px;font-weight:300;line-height:1;color:var(--ax-ink);transition:transform .3s;flex-shrink:0}
+.ax-page details[open]>summary::after{transform:rotate(45deg)}
+.ax-page details[open]>summary{margin-bottom:14px}
+.ax-page details>:not(summary){color:var(--ax-text)}
+
+/* ---------- CTA bands (red, like the homepage contact section) ---------- */
+
+/* ---------- Tables ---------- */
+.ax-page table{width:100%;border-collapse:collapse;margin:32px 0;font-size:15px;line-height:1.6;background:none;border:0;max-width:none}
+.ax-page :is(th,td){padding:15px 20px 15px 0;border:0;border-bottom:1px solid var(--ax-line-soft);text-align:left;vertical-align:top;color:var(--ax-text);background:none}
+.ax-page th{font-size:12px;font-weight:550;letter-spacing:.06em;text-transform:uppercase;color:var(--ax-ink);border-bottom:1px solid var(--ax-ink);white-space:nowrap}
+.ax-page td:first-child{color:var(--ax-ink);font-weight:500}
+.ax-page tbody tr:hover td{background:rgba(10,25,37,.025)}
+.ax-page caption{caption-side:bottom;text-align:left;font-size:13px;color:var(--ax-soft);padding-top:12px}
+
+/* ---------- Media ---------- */
+.ax-page img{max-width:100%;height:auto;border-radius:0}
+.ax-page figure{margin:40px 0;max-width:none}
+.ax-page figure img{display:block;width:100%}
+.ax-page figcaption{font-size:13px;line-height:1.6;color:var(--ax-soft);padding-top:12px;text-align:left}
+.ax-page iframe{max-width:100%;border:0}
+.ax-page video{max-width:100%;display:block}
+
+/* ---------- Article (blog, guides, flagship) ---------- */
+.ax-page article figure:has(>picture) img{aspect-ratio:auto}
+
+/* ---------- acg2026 project/company layouts ---------- */
+
+/* ---------- Forms (pages themed by the script; tools are themed by hand) ---------- */
+.ax-page :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea){width:100%;max-width:640px;font:inherit;font-size:16px;color:var(--ax-ink);background:#fff;border:1px solid var(--ax-line);border-radius:0;padding:13px 14px}
+.ax-page :is(input,select,textarea):focus{outline:2px solid var(--ax-ink);outline-offset:1px}
+.ax-page label{display:block;font-size:13px;font-weight:500;color:var(--ax-ink);margin:0 0 6px}
+.ax-page :where(button){font:inherit;cursor:pointer}
+.ax-page :is(button[type=submit],input[type=submit]){display:inline-flex;align-items:center;gap:24px;width:auto;padding:16px 24px;background:var(--ax-navy);color:#fff;border:0;border-radius:0;font-size:15px;font-weight:550}
+.ax-page :is(button[type=submit],input[type=submit]):hover{background:var(--ax-ink)}
+
+/* ---------- Hidden-state and print-only rules carried over from the legacy CSS ---------- */
+.ax-page :is(.cursor-dot,.cursor-ring,.cursor-glow,.nav-toggle,.hd-mobile,.hd-burger,.acg-blog-cta-print-url,.gsc-print-head,.se-print-header,.bdgc-print-card){display:none}
+
+/* ---------- Responsive ---------- */
+.ax-page [style*="width"]{max-width:100%}
+@media(max-width:700px){
+.ax-page [style*="grid-template-columns"]{grid-template-columns:1fr!important}
+.ax-page [style*="display:flex"],.ax-page [style*="display: flex"]{flex-wrap:wrap}
+.ax-page p,.ax-page li{font-size:16px}
+.ax-page .ax-hero h1~p:not(.ax-kicker):not(.ax-small){font-size:17px}
+.ax-page .ax-hero :is(nav,.crumb,.breadcrumb){margin-bottom:28px;font-size:11px}
+.ax-page table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ax-page th{white-space:normal}
+.ax-page :is(th,td){min-width:130px}
+.ax-page summary::after{font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){.ax-page *{transition:none!important;animation:none!important}}
+@media print{
+.ax-nav,.ax-navigation,.ax-footer{display:none!important}
+.ax-page{padding-top:0}
+}
+body.ax-interior .skip-link{position:fixed;top:-100px;left:16px;z-index:10000;background:#fff;color:var(--ax-ink);padding:12px 16px;font-size:14px;font-weight:550;text-decoration:none;outline:3px solid var(--ax-red)}
+body.ax-interior .skip-link:focus{top:0;}
+
+/* ---------- Remaining legacy layout components ---------- */
+/* Full-scope block (data-acg-block="full-scope-v1", 328 pages): kicker, system list. */
+.ax-page [data-acg-block="full-scope-v1"]>div>div:first-child{color:var(--ax-soft);font-weight:500}
+.ax-page [data-acg-block="full-scope-v1"] ul{margin-top:36px;max-width:none}
+.ax-page [data-acg-block="full-scope-v1"] li{border-top:1px solid var(--ax-line);padding:16px 0 0;margin:0}
+.ax-page [data-acg-block="full-scope-v1"] li>strong{font-size:17px;font-weight:550;letter-spacing:-.015em;margin-bottom:4px}
+.ax-page [data-acg-block="full-scope-v1"] li>span{color:var(--ax-text);font-size:15px;line-height:1.6}
+/* Location template components (79 pages, the wpb-* cohort): exact colours on paper. */
+/* Hero h1 line breaks were set for the old full-width dark hero; every one sits next to a
+   space (checked across all 478), so the headline reflows with text-wrap:balance instead. */
+.ax-page .ax-hero h1 br{display:none}
+
+/* ---------- Portfolio (pp-* mosaic) and photo heroes (.film) ---------- */
+/* Loose caption fragments left in the mosaic outside any tile (no link, empty h3) stay hidden. */
+
+/* ---------- Runtime styles from page scripts written for the dark theme ---------- */
+/* Scripts on the form, filter and tool pages set status colours inline at runtime
+   (white, amber, var(--accent)). These keep them readable on paper without editing the scripts. */
+body.ax-interior{--accent:#b8232c;--red:#b8232c;--accent-2:#b8232c}
+.ax-page :is([style*="color: rgb(255, 255, 255)"],[style*="color: rgba(255, 255, 255"],[style*="color:#fff"],[style*="color: #fff"],[style*="color:white"]){color:var(--ax-ink)!important}
+.ax-page [style*="color: rgb(251, 191, 36)"]{color:#8a5a00!important}
+.ax-page [style*="background: rgba(225, 19, 32"]{border-radius:0!important;border:0!important;border-left:2px solid var(--ax-red)!important;background:#fff!important;color:var(--ax-ink)!important}
+
+/* ---------- Project map (Leaflet, dark basemap kept as a navy panel) ---------- */
+
+/* ---------- Bid Engine (bid.html, be-*) ---------- */
+.ax-page .be-header{padding-top:clamp(60px,7vw,110px);padding-bottom:clamp(36px,4vw,56px);position:relative}
+.ax-page :is(.be-scanlines,.be-cursor-blink,.be-gradient-border,.be-analyzing-scan){display:none}
+.ax-page .be-header-inner{max-width:1100px}
+.ax-page .be-badge-row{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:34px}
+.ax-page .be-badge{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-soft)}
+.ax-page .be-badge:first-child::before{content:"";width:6px;height:6px;background:var(--ax-red)}
+.ax-page .be-engine-title{font-size:clamp(48px,7vw,118px);line-height:.98;letter-spacing:-.065em;font-weight:450;color:var(--ax-ink);margin:0 0 22px}
+.ax-page .be-engine-sub{font-size:clamp(20px,1.9vw,28px);line-height:1.35;letter-spacing:-.03em;color:var(--ax-ink);margin:0 0 20px;max-width:820px}
+.ax-page .be-engine-desc{font-size:16px;max-width:780px}
+.ax-page .be-progress-wrap{margin-top:44px}
+.ax-page .be-progress-track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid var(--ax-line)}
+.ax-page .be-progress-step{position:relative;display:flex;align-items:center;gap:10px;padding:16px 8px 0 0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8b97a0}
+.ax-page .be-progress-step::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:var(--ax-ink);transition:width .35s}
+.ax-page .be-progress-step:is(.active,.done){color:var(--ax-ink)}
+.ax-page .be-progress-step:is(.active,.done)::before{width:100%}
+.ax-page .be-progress-step.active::after{content:"";position:absolute;top:-3px;left:0;width:5px;height:5px;background:var(--ax-red)}
+.ax-page .be-step-dot{font-size:11px;min-width:16px}
+.ax-page .be-body{padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(64px,7vw,104px);border-top:1px solid var(--ax-line-soft)}
+.ax-page .be-step-panel{max-width:1100px}
+.ax-page .be-step-heading{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-soft);margin:40px 0 16px}
+.ax-page .be-step-panel>.be-step-heading:first-child{margin-top:0}
+.ax-page .be-step-title{font-size:clamp(36px,4.4vw,68px)!important;line-height:1.02;letter-spacing:-.055em;margin:0 0 18px!important}
+.ax-page .be-step-desc{font-size:18px;max-width:720px;margin-bottom:28px}
+.ax-page :is(.be-field-group,.be-field-row){display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px 24px;margin:0 0 8px}
+.ax-page .be-field{display:flex;flex-direction:column;gap:6px;margin:0}
+.ax-page :is(.be-input,.be-select,.be-textarea){max-width:none}
+.ax-page .be-field.error :is(.be-input,.be-select,.be-textarea),.ax-page :is(.be-input,.be-select,.be-textarea).error{border-color:var(--ax-red-text);outline:1px solid var(--ax-red-text)}
+.ax-page .be-optional-tag{font-weight:400;color:var(--ax-soft);margin-left:6px}
+.ax-page :is(.be-card-grid,.be-floors-grid,.be-checkbox-grid){display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:12px;margin:0 0 8px}
+.ax-page :is(.be-type-card,.be-floor-pill,.be-checkbox-item,.be-radio-option){position:relative;display:flex;align-items:center;gap:14px;min-height:64px;padding:16px 18px;background:#fff;border:1px solid var(--ax-line);border-radius:0;cursor:pointer;font-size:15px;font-weight:500;color:var(--ax-ink);transition:border-color .2s,box-shadow .2s}
+.ax-page :is(.be-type-card,.be-floor-pill,.be-checkbox-item,.be-radio-option):hover{border-color:var(--ax-ink)}
+.ax-page :is(.be-type-card,.be-floor-pill,.be-checkbox-item,.be-radio-option).selected{border-color:var(--ax-ink);box-shadow:inset 0 0 0 1px var(--ax-ink)}
+.ax-page :is(.be-type-card,.be-floor-pill,.be-checkbox-item,.be-radio-option).selected::after{content:"";position:absolute;top:10px;right:10px;width:7px;height:7px;background:var(--ax-red)}
+.ax-page .be-type-icon{font-size:22px;line-height:1}
+.ax-page .be-check{display:none}
+.ax-page .be-checkbox-box{width:16px;height:16px;border:1px solid var(--ax-ink);flex-shrink:0}
+.ax-page .be-checkbox-item.selected .be-checkbox-box{background:var(--ax-ink)}
+.ax-page .be-checkbox-label{font-size:15px;font-weight:500;color:var(--ax-ink);margin:0}
+.ax-page .be-radio-toggle{display:flex;flex-wrap:wrap;gap:12px}
+.ax-page .be-upload-zone{display:block;padding:clamp(32px,5vw,64px);background:#fff;border:1px dashed #8b97a0;text-align:center;cursor:pointer;transition:border-color .2s,background .2s}
+.ax-page .be-upload-zone:is(.drag-over,:hover){border-color:var(--ax-ink);background:#fbfbfb}
+.ax-page .be-upload-icon{font-size:28px;margin-bottom:10px}
+.ax-page .be-upload-title{font-size:22px;letter-spacing:-.03em;font-weight:500;color:var(--ax-ink)}
+.ax-page :is(.be-upload-subtitle,.be-upload-note){font-size:14px;color:var(--ax-text);margin-top:6px}
+.ax-page .be-upload-formats{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.ax-page .be-format-pill{border:1px solid var(--ax-line);padding:4px 9px;font-size:11px;letter-spacing:.06em;color:var(--ax-text)}
+.ax-page .be-file-list{margin-top:16px;border-top:1px solid var(--ax-line)}
+.ax-page .be-file-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--ax-line-soft);font-size:14px}
+.ax-page .be-file-info{flex:1;min-width:0}
+.ax-page .be-file-name{color:var(--ax-ink);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ax-page .be-file-size{font-size:12px;color:var(--ax-soft)}
+.ax-page .be-file-remove{background:none;border:0;color:var(--ax-soft);font-size:18px}
+.ax-page .be-validation{color:var(--ax-red-text);font-size:14px;font-weight:500;margin:14px 0 0}
+.ax-page .be-btn-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 32px;margin-top:36px;padding-top:24px;border-top:1px solid var(--ax-line-soft)}
+.ax-page .be-btn{display:inline-flex;align-items:center;gap:20px;padding:15px 22px;border:1px solid var(--ax-ink);border-radius:0;background:none;color:var(--ax-ink);font:inherit;font-size:15px;font-weight:550;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+.ax-page .be-btn:is(.be-btn-primary,.be-btn-primary-lg){background:var(--ax-navy);border-color:var(--ax-navy);color:#fff}
+.ax-page .be-btn:is(.be-btn-primary,.be-btn-primary-lg)::after{content:"";width:7px;height:7px;background:var(--ax-red)}
+.ax-page .be-btn:is(.be-btn-primary,.be-btn-primary-lg):hover{background:var(--ax-ink);color:#fff}
+.ax-page .be-btn.be-btn-ghost{border-color:transparent;border-bottom-color:#9aa6af;padding-left:0;padding-right:0;color:var(--ax-text)}
+.ax-page .be-btn:disabled{opacity:.45;cursor:not-allowed}
+.ax-page .be-btn-lg{padding:18px 26px;font-size:16px}
+.ax-page :is(.be-review-grid,.be-results-grid){display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:24px;margin:8px 0 0}
+.ax-page :is(.be-review-card,.be-result-card,.be-scope-card,.be-timeline-card,.be-next-card,.be-contact-card,.be-fail-card,.be-analyzing-box){background:#fff;border:1px solid var(--ax-line);border-radius:0;padding:24px}
+.ax-page :is(.be-review-label,.be-result-label,.be-scope-label,.be-timeline-label,.be-next-label){font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-soft);margin-bottom:12px}
+.ax-page .be-review-row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--ax-line-soft);font-size:14px}
+.ax-page .be-review-key{color:var(--ax-soft)}
+.ax-page .be-review-val{color:var(--ax-ink);font-weight:500;text-align:right}
+.ax-page :is(.be-results-title,.be-analyzing-title,.be-cta-title,.be-fail-title,.be-contact-title){font-size:clamp(28px,3vw,44px);line-height:1.08;letter-spacing:-.045em;font-weight:450;color:var(--ax-ink);margin:0 0 10px}
+.ax-page :is(.be-results-sub,.be-analyzing-sub,.be-cta-sub,.be-fail-body,.be-result-body){font-size:16px;color:var(--ax-text)}
+.ax-page .be-results-badge{display:inline-block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-red-text);margin-bottom:12px}
+.ax-page .be-scope-range{font-size:clamp(32px,3.4vw,52px);letter-spacing:-.05em;font-weight:450;color:var(--ax-ink)}
+.ax-page .be-scope-meta{font-size:13px;color:var(--ax-soft);margin-top:6px}
+.ax-page .be-timeline-phases{display:grid;gap:10px;margin:12px 0}
+.ax-page .be-phase-name{font-size:14px;color:var(--ax-ink)}
+.ax-page .be-phase-weeks{font-size:12px;color:var(--ax-soft)}
+.ax-page .be-phase-bar-wrap{height:4px;background:var(--ax-line-soft);margin-top:6px}
+.ax-page .be-phase-bar{height:100%;background:var(--ax-ink)}
+.ax-page .be-timeline-total{display:flex;justify-content:space-between;border-top:1px solid var(--ax-ink);padding-top:10px;margin-top:12px}
+.ax-page .be-timeline-total-val{font-weight:550;color:var(--ax-ink)}
+.ax-page .be-analyzing-steps{display:grid;gap:8px;margin-top:18px}
+.ax-page .be-analyzing-step{font-size:14px;color:#8b97a0}
+.ax-page .be-analyzing-step:is(.active,.done){color:var(--ax-ink)}
+.ax-page .be-analyzing-progress{height:2px;background:var(--ax-line-soft);margin-top:18px}
+.ax-page .be-analyzing-bar{height:100%;background:var(--ax-red);width:0;transition:width .4s}
+.ax-page .be-next-items{display:grid;gap:10px}
+.ax-page .be-next-item{display:flex;gap:12px;font-size:15px;color:var(--ax-text)}
+.ax-page .be-next-check{color:var(--ax-red-text)}
+.ax-page .be-contact-info{display:flex;gap:18px;align-items:center}
+.ax-page .be-contact-avatar{width:64px;height:64px;object-fit:cover;border-radius:0}
+.ax-page .be-contact-name{font-weight:550;color:var(--ax-ink)}
+.ax-page .be-contact-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:6px}
+.ax-page .be-contact-link{font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.ax-page .be-cta-block{margin-top:40px;padding:clamp(32px,4vw,56px);background:var(--ax-red);color:var(--ax-navy)}
+.ax-page .be-cta-block :is(.be-cta-title,.be-cta-sub){color:var(--ax-navy)}
+.ax-page .be-cta-buttons{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:22px}
+.ax-page .be-cta-block .be-btn{border-color:var(--ax-navy);color:var(--ax-navy)}
+.ax-page .be-cta-block .be-btn:is(.be-btn-primary,.be-btn-primary-lg){background:var(--ax-navy);color:#fff}
+.ax-page :is(.be-disclaimer,.be-submit-note,.be-pdf-note){font-size:13px;line-height:1.6;color:var(--ax-soft);margin-top:18px;max-width:820px}
+.ax-page .be-restart-btn{background:none;border:0;border-bottom:1px solid #9aa6af;padding:10px 0;font:inherit;font-size:14px;color:var(--ax-text)}
+.ax-page .be-fail-actions{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:18px}
+@media(max-width:700px){.ax-page .be-progress-track{grid-template-columns:repeat(3,1fr);row-gap:14px}.ax-page .be-step-label{font-size:11px}}
+.ax-page .be-badge{animation:none!important;box-shadow:none!important;background:none!important}
+
+/* ---------- Scope Engine (scope-engine.html, se-*) ---------- */
+
+/* ---------- GC landing page (partners.html) ---------- */
+/* Caption shells left in the grid outside any tile (no link, empty title) stay hidden. */
+.ax-page [data-reveal],.ax-page [data-reveal-fade]{opacity:1!important;transform:none!important}
+/* Icon-grid SVGs (24/20/16 viewBox) that relied on legacy sizing classes. */
+.ax-page svg:is([viewBox="0 0 24 24"],[viewBox="0 0 20 20"],[viewBox="0 0 16 16"]):not([width]){width:20px;height:20px;flex-shrink:0;vertical-align:-4px}
+.ax-page :is(.dealer-perk-icon,[class*="-icon"]):has(>svg){display:inline-flex;align-items:center;justify-content:center;width:auto;height:auto;margin:0 0 12px;color:var(--ax-red-text);background:none;border:0}
+
+/* ---------- Filter chips (blog, glossary, infographics) ---------- */
+
+/* ---------- Blog index (blog/index.html) ---------- */
+
+/* ---------- Glossary (glossary/index.html) ---------- */
+
+/* ---------- Infographics index ---------- */
+
+/* ---------- Contact direct-line card ---------- */
+.ax-page form :is(input,select,textarea){max-width:none}
+/* Form honeypots stay off-screen regardless of inline styles. */
+.ax-page :is(input[name="_gotcha"],input[name="_honey"],input[name="company_url"]){position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.ax-page form+:is(h2,h3,div){margin-top:56px}
+/* Text-only kickers: the red mark stays on the first line when the label wraps. */
+/* OpenStreetMap tiles rendered as a dark navy basemap so the white glazing pins and red supply pins read. */
