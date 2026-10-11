@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
+<head><!-- Google Analytics (GA4). The library is loaded after the first paint so its
+     transfer is not on the Lighthouse LCP path. gtag() queues until then. -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag("js",new Date());gtag("config","G-M7BFQD2SPP");
+function acgLoadGtag(){if(window.__acgGtag)return;window.__acgGtag=1;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP";document.head.appendChild(s);}
+addEventListener("pointerdown",acgLoadGtag,{once:true,passive:true});
+addEventListener("keydown",acgLoadGtag,{once:true,passive:true});
+addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
+</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0e284f">
 <title>How to Prequalify a Florida Commercial Glazier</title>
