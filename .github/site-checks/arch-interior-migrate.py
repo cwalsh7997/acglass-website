@@ -63,9 +63,9 @@ FUNCTIONAL_PROPS = {
     "animation-timing-function",
 }
 CSS_TAG = (
-    '<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261010">\n'
-    '<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001"></noscript>\n'
-    '<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261001";document.head.appendChild(l)});</script>'
+    '<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261011">\n'
+    '<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261011"></noscript>\n'
+    '<script>window.addEventListener("load",function(){requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261011";document.head.appendChild(l)})})});</script>'
 )
 CHROME_CSS_RE = re.compile(r'<link rel="stylesheet" href="/css/acg-arch-chrome\.css\?v=\d+">')
 LEGACY_CSS_RE = re.compile(

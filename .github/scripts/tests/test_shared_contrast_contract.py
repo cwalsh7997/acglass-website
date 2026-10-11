@@ -24,7 +24,7 @@ FROZEN_SCOPE_PATHS = {
 # contrast contract follows the page: legacy pages keep the acg-chrome checks, converted pages
 # must load the interior sheet at its exact cache key and that sheet's colours are checked below.
 INTERIOR_CSS_PATH = ROOT / "css" / "acg-arch-interior.css"
-INTERIOR_LINK = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+INTERIOR_LINK = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261011">'
 INTERIOR_BODY = re.compile(r'<body[^>]*class="[^"]*\bax-interior\b')
 PAPER = "#f4f5f5"
 CHROME_LINK = re.compile(

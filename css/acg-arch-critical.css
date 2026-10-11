@@ -1,8 +1,9 @@
 /* Above-the-fold interior styles.
-   The full sheet (acg-arch-interior.css) is applied on window load. These rules
-   are the ones that paint the hero, so the first screen matches the settled page
-   and Lighthouse does not wait on the rest of that sheet. Declarations are copied
-   from acg-arch-interior.css; that file remains the source for everything else. */
+   The full sheet (acg-arch-interior.css) is applied on the second frame after
+   window load, so it cannot join the style pass that produces the first paint.
+   These rules paint the hero and anything else in the first screen that the full
+   sheet would otherwise move. Declarations are copied from acg-arch-interior.css;
+   that file remains the source for everything else. */
 /* Interior pages on the architectural design system (2026-10-01, phase 2).
    Loaded only on pages with body.ax-interior, after acg-arch-chrome.css. It replaces the
    legacy dark theme (style.css, acg-chrome.css, acg2026.css, acg-flagship.css), so it styles
@@ -230,3 +231,40 @@ body.ax-interior :is(.skip,.skip-to-content):focus{top:0}
 .ax-page :is(.ax-hero,.page-hero,.p-hero,.post-hero,.cap-hero) [data-reveal-fade],
 .ax-page .blog-content[data-reveal],
 .ax-page .blog-content[data-reveal-fade]{opacity:1!important;transform:none!important;transition:none!important}
+
+/* Form controls. The blog index search sits in the first screen; without these
+   rules it paints at the UA height and grows when the full sheet arrives. */
+.ax-page :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea){width:100%;max-width:640px;font:inherit;font-size:16px;color:var(--ax-ink);background:#fff;border:1px solid var(--ax-line);border-radius:0;padding:13px 14px}
+.ax-page :is(input,select,textarea):focus{outline:2px solid var(--ax-ink);outline-offset:1px}
+.ax-page label{display:block;font-size:13px;font-weight:500;color:var(--ax-ink);margin:0 0 6px}
+.ax-page :is(input[name="_gotcha"],input[name="_honey"],input[name="company_url"]){position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+
+/* Blog index rails are in the first mobile viewport. */
+.ax-page :is(.blog-search,.gl-search,.ig-search input,.noa-search){max-width:520px}
+.ax-page .blog-rails{padding-bottom:0}
+.ax-page .blog-rail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px 6%;padding:36px 0;border-top:1px solid var(--ax-line)}
+.ax-page .blog-rail:first-child{border-top:0;padding-top:0}
+.ax-page .blog-rail-head{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ax-page .blog-rail-head h2{font-size:clamp(26px,2.4vw,38px);margin:0}
+.ax-page .blog-rail-kicker{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ax-soft)}
+.ax-page .blog-rail-hub{font-size:13px;font-weight:550;border-bottom:1px solid #9aa6af;padding-bottom:3px}
+.ax-page .blog-rail-list{list-style:none;padding:0;margin:0;max-width:none;border-top:1px solid var(--ax-line-soft)}
+.ax-page .blog-rail-list li{margin:0}
+.ax-page .blog-rail-card{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--ax-line-soft);color:var(--ax-ink)}
+.ax-page .blog-rail-num{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ax-soft)}
+.ax-page .blog-rail-card-flagship .blog-rail-num{color:var(--ax-red-text)}
+.ax-page .blog-rail-card strong{font-size:17px;font-weight:500;letter-spacing:-.015em}
+.ax-page .blog-rail-card time{font-size:12px;color:var(--ax-soft);white-space:nowrap}
+.ax-page .blog-rail-card:hover strong{color:var(--ax-red-text)}
+@media(max-width:900px){
+.ax-page :is(.blog-rail,.gl-term){grid-template-columns:1fr}
+.ax-page .blog-rail-card{grid-template-columns:1fr auto}
+.ax-page .blog-rail-num{grid-column:1/-1}
+}
+
+/* The future-of-commercial-glazing hero image is in normal flow. Its width and
+   height attributes reserve the box only while the request is pending; a failed
+   response drops that ratio and the text below jumps up. The box ratio is the
+   file's 1600x1066. Content is slightly taller (inline strut), so a loaded
+   image is unchanged. */
+.ax-page .post-hero-bg{aspect-ratio:1600/1066}
