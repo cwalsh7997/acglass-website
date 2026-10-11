@@ -45,7 +45,8 @@ PROTECTED_HASHES = {
     "metadata": "f34f096e64ce1e4283154d8cdf34c46247be47df04ef5888ecd6f06cd83019ef",
     # scripts rebaselined 2026-10-10: the interior sheet now loads from a window-load
     # script so it is not render-blocking. No other fragment changed.
-    "scripts": "b53b75a937a82a9e9a20e2d166e4736537619df66f23dfd2d0528a437fee4b81",
+    # scripts rebaselined 2026-10-11: cache-bust and second-frame interior apply.
+    "scripts": "f1b39cb7fbb011e13ee1eaed10b6b03bfbc8494da0a337434b238cdf435d2b5f",
 }
 
 
@@ -130,7 +131,7 @@ class NoExternalGoogleFontsTests(unittest.TestCase):
         )
         self.assertEqual(1, self.source.count(preload))
         # Interior-theme pages declare Inter once, in the shared sheet they link.
-        interior_link = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+        interior_link = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261011">'
         if interior_link in self.source:
             sheet = (ROOT / "css" / "acg-arch-interior.css").read_text(encoding="utf-8")
             self.assertEqual(0, self.source.count("@font-face"))

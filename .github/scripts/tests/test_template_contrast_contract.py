@@ -44,7 +44,7 @@ EXPECTED_CSS_OVERRIDE = """.wpb-section-eyebrow,
 # cohort is found by its markup class token and must load acg-arch-interior.css, whose exact
 # template override block is checked for normal-text contrast on the paper background.
 INTERIOR_CSS_PATH = ROOT / "css" / "acg-arch-interior.css"
-INTERIOR_LINK = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001">'
+INTERIOR_LINK = '<link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261011">'
 INTERIOR_BODY = re.compile(r'<body[^>]*class="[^"]*\bax-interior\b')
 EXPECTED_INTERIOR_OVERRIDE = """.ax-page :is(.wpb-section-eyebrow,.quick-answer-label,.system-card-tagline,.project-cat,.author-title){color:var(--ax-soft)}
 .ax-page .costs-table td.price{color:var(--ax-ink);font-weight:550}

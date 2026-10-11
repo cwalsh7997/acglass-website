@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M7BFQD2SPP");</script>
+<!-- Google Analytics (GA4). The library is loaded after the first paint so its
+     transfer is not on the Lighthouse LCP path. gtag() queues until then. -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag("js",new Date());gtag("config","G-M7BFQD2SPP");
+function acgLoadGtag(){if(window.__acgGtag)return;window.__acgGtag=1;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-M7BFQD2SPP";document.head.appendChild(s);}
+addEventListener("pointerdown",acgLoadGtag,{once:true,passive:true});
+addEventListener("keydown",acgLoadGtag,{once:true,passive:true});
+addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -34,9 +39,9 @@
   <meta name="twitter:image" content="https://acglass.com/images/projects/736-lagoon-dr/hero-pool-twilight.jpg">
   <link rel="preload" as="font" type="font/woff2" href="fonts/inter-variable-latin.woff2" crossorigin>
     <link rel="stylesheet" href="/css/acg-arch-chrome.css?v=20261001">
-<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261010">
-<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261001"></noscript>
-<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261001";document.head.appendChild(l)});</script>
+<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261011">
+<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261011"></noscript>
+<script>window.addEventListener("load",function(){requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261011";document.head.appendChild(l)})})});</script>
 
   <!-- AboutPage Schema -->
   <script type="application/ld+json">

@@ -842,3 +842,5 @@ body.ax-interior{--accent:#b8232c;--red:#b8232c;--accent-2:#b8232c}
 .ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*))::before{display:inline-block;vertical-align:2px;margin-right:12px}
 /* OpenStreetMap tiles rendered as a dark navy basemap so the white glazing pins and red supply pins read. */
 .ax-page #project-map .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) grayscale(.85) brightness(.82) contrast(1.05)}
+/* Same hero-image ratio as the critical sheet, so a failed response cannot collapse the box. */
+.ax-page .post-hero-bg{aspect-ratio:1600/1066}
