@@ -33,12 +33,20 @@ def _function_body(name: str) -> str:
 
 class ScopeEnginePdfLibraryTests(unittest.TestCase):
     def test_jspdf_script_is_the_pinned_working_cdnjs_url(self):
+        # The library is inserted on demand (same URL and SRI). It must not be
+        # a startup script: the wizard does not need it until a PDF is generated.
         scripts = re.findall(r"<script\b[^>]*\bsrc=['\"]([^'\"]+)['\"]", SCOPE)
         jspdf = [src for src in scripts if "jspdf" in src.lower()]
-        self.assertEqual([JSPDF_SRC], jspdf)
+        self.assertEqual([], jspdf)
+        self.assertIn(JSPDF_SRC, SCOPE)
         self.assertNotIn("/jspdf/2.5.2/", SCOPE)
-        self.assertIn(f'integrity="{JSPDF_SRI}"', SCOPE)
-        self.assertIn("crossorigin", SCOPE)
+        self.assertIn(JSPDF_SRI, SCOPE)
+        self.assertIn("crossOrigin", SCOPE)
+        self.assertIn("function loadJsPdf()", SCOPE)
+        submit = SCOPE[SCOPE.find("document.getElementById('lead-form')"):]
+        self.assertIn("loadJsPdf()", submit)
+        redownload = SCOPE[SCOPE.find("redownload-pdf-btn"):]
+        self.assertIn("loadJsPdf()", redownload)
 
     def test_generate_branded_pdf_uses_defensive_ctor(self):
         fn = _function_body("generateBrandedPDF")
