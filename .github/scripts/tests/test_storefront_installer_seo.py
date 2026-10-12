@@ -296,7 +296,7 @@ class CannibalizationTests(unittest.TestCase):
         self.assertNotIn('href="/storefront-installer-florida.html"', spec)
         self.assertNotIn('href="../storefront-installer-florida.html"', spec)
         self.assertIn(
-            'href="/commercial-storefront-installer-florida.html">commercial storefront installer</a>',
+            'href="/florida-commercial-glazing/">commercial storefront installer</a>',
             spec,
         )
         self.assertIn(
