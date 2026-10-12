@@ -21,7 +21,7 @@
     "commercial-glazing-west-palm-beach.html"
   ],
   "reference_surface_sha256": {
-    "about.html": "0e5d03d92ca925e844152f9b5756118e1f5c0230bc5cef468d7178c0a4be8bc4",
+    "about.html": "39a5fb4311d5402700e443eb962147a14b5007411e4a2d390ced2646bb11b10b",
     "acg-glass-florida/index.html": "9b3cc0f0f31be1456786f0ebdc44af33db9a9236c7b92a56e1a98e5e4ddf223a",
     "acoustic-glazing-stc-oitc-commercial.html": "53565f1a68f2da67041a82d558e14e0a354a108ae3e4d4d90237d1cb28231d37",
     "atlanta-commercial-glazing.html": "2823f50630c382400d890bb21470500aae81c54af106c78ae49c3f21e7abc8c3",
@@ -316,5 +316,5 @@
       "commercial-glazing-west-palm-beach.html"
     ]
   },
-  "rebaseline_note": "Rebaselined 2026-09-03 after withdrawing the Nashville/Tennessee office. Opening-date claims removed; announcement-only satellite pages retired to locations.html stubs. Tennessee remains furnish-and-consult geography with no ACG office."
+  "rebaseline_note": "Rebaselined 2026-09-03 after withdrawing the Nashville/Tennessee office. Opening-date claims removed; announcement-only satellite pages retired to locations.html stubs. Tennessee remains furnish-and-consult geography with no ACG office. Rebaselined about.html fingerprint 2026-10-12 after removing duplicate Organization employee array (GSC duplicate unique property). Tennessee biography surface unchanged."
 }
