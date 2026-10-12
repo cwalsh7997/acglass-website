@@ -21,7 +21,7 @@
     "commercial-glazing-west-palm-beach.html"
   ],
   "reference_surface_sha256": {
-    "about.html": "39a5fb4311d5402700e443eb962147a14b5007411e4a2d390ced2646bb11b10b",
+    "about.html": "e068122ce4c0de5845b561c2f123b22d5654603ab945792fd827aaa4f8b4f559",
     "acg-glass-florida/index.html": "9b3cc0f0f31be1456786f0ebdc44af33db9a9236c7b92a56e1a98e5e4ddf223a",
     "acoustic-glazing-stc-oitc-commercial.html": "53565f1a68f2da67041a82d558e14e0a354a108ae3e4d4d90237d1cb28231d37",
     "atlanta-commercial-glazing.html": "2823f50630c382400d890bb21470500aae81c54af106c78ae49c3f21e7abc8c3",
@@ -36,9 +36,9 @@
     "blog/city-of-haines-emergency-glazing.html": "6853bed362f3ab99aae57d9b2ad00b1590adbf5172efc81f0416004752ef3115",
     "blog/commercial-glazing-contractor-nashville-how-to-choose.html": "e49aef7a33b69bb81e81e3971b92452ff6f0a2faf678b3e0927d667c1c304716",
     "blog/commercial-glazing-miami-florida.html": "20d132ac0d8cecdbbe444eff3df7620047af2c3374bc5fb9406cbcc736bfb61f",
-    "blog/commercial-glazing-project-delays-how-to-avoid.html": "894bbd756bc692f9d257c6f90733a0b2fdb12a6328b1bd7963b6da752a46d2cb",
+    "blog/commercial-glazing-project-delays-how-to-avoid.html": "5363cea8edb17e0eb76bbc4ac6b3386bc74e0e5b1556a86bbc7a553e3f746a92",
     "blog/commercial-glazing-subcontractor-florida.html": "49f1be6fe36be7b1d24e5e218e5cfbb96d25c11d94b8bc300453c002b45e01a1",
-    "blog/commercial-glazing-tampa-bay-market-2026.html": "70740354d3b7053538d54a14f15449f9ae85d2b1106743a692a5b8eccd575e11",
+    "blog/commercial-glazing-tampa-bay-market-2026.html": "29bacb7c517687a799845fce4995eba1c3f7e93de981f0c0f6744729527da975",
     "blog/compass-alton-town-center-glazing.html": "da09f45cc7718e69899cd51d271295651b7ef4fb2d7b569006d43582cf846ab7",
     "blog/cubesmart-davie-glazing.html": "c70b5ceebf9dd553f424813837f79a81459d2d06caef1cc2521d9223f5d8818d",
     "blog/curtainwall-vs-storefront-cost-guide.html": "cbb4ee9cbbd02e2c112748b29a43eebde6aef9a723ee204ef1cf2587b12ad971",
@@ -67,7 +67,7 @@
     "blog/wave-food-hall-cocoa-beach-glazing.html": "fecf56b0e4f0d1a68a606fb32145da360ca081c72199c3c9edb763c34abb99d7",
     "blog/wave-haven-cocoa-beach-glazing.html": "18b4da01278bd644399b4be892f0c19f488b7aab43d59e793cb78fe648419835",
     "blog/what-is-a-glazing-subcontractor.html": "a06a7b55ef1cf2f15027dcb1ae50cafb7828a1a9517904432de7c413d9e93188",
-    "blog/what-is-division-08-glazing-construction.html": "90ed35e30889975241db805e6ec9dd615ee4f8d74e27d2802f581f5921d57b1f",
+    "blog/what-is-division-08-glazing-construction.html": "b784e2f049b05cd940960f5125e22dfab2b12a66565f58468f9ff904d8104445",
     "blog/wild-blue-clubhouse-glazing.html": "b4c7019722f257e37e23e3ea5c84c14e2aa0a1a41d4040cf52589de0bc5e55d0",
     "brentwood-tn/index.html": "f838cb031e7632bced44a380cb89fc79fa2ac6243a7bc19a80ebf404b1d0c519",
     "brentwood-tn/maryland-farms-brentwood/index.html": "b062e1c63c61581ca9519b599da5bcc9823769def6a08e38a7b332fdf0327345",
@@ -316,5 +316,5 @@
       "commercial-glazing-west-palm-beach.html"
     ]
   },
-  "rebaseline_note": "Rebaselined 2026-09-03 after withdrawing the Nashville/Tennessee office. Opening-date claims removed; announcement-only satellite pages retired to locations.html stubs. Tennessee remains furnish-and-consult geography with no ACG office. Rebaselined about.html fingerprint 2026-10-12 after removing duplicate Organization employee array (GSC duplicate unique property). Tennessee biography surface unchanged."
+  "rebaseline_note": "Rebaselined 2026-09-03 after withdrawing the Nashville/Tennessee office. Opening-date claims removed; announcement-only satellite pages retired to locations.html stubs. Tennessee remains furnish-and-consult geography with no ACG office. Rebaselined about.html fingerprint 2026-10-12 after removing duplicate Organization employee array (GSC duplicate unique property). Tennessee biography surface unchanged. Rebaselined about.html, blog/commercial-glazing-project-delays-how-to-avoid.html, blog/commercial-glazing-tampa-bay-market-2026.html, and blog/what-is-division-08-glazing-construction.html fingerprints 2026-10-12 after retargeting internal hrefs off the noindex stubs gc.html and commercial-storefront-installer-florida.html. Tennessee biography surface unchanged."
 }
