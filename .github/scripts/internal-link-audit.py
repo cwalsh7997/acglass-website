@@ -419,6 +419,8 @@ WAVE2_KEEPER_GLAZIERS = {
     "/storefront-glazier-fort-lauderdale-florida/",
     "/storefront-glazier-fort-myers-florida/",
     "/storefront-glazier-sarasota-florida/",
+    "/storefront-glazier-boca-raton-florida/",
+    "/storefront-glazier-saint-petersburg-florida/",
 }
 
 
@@ -478,8 +480,8 @@ HTML_ATTR = re.compile(
 # ---------------------------------------------------------------------------
 
 # Market hub → (label, minimum distinct inbound linking pages).
-# /storefront-glazier-boca-raton-florida/ is wave-2 noindex, so it is not a
-# required market hub. Homepage and service-areas must not be forced to link it.
+# Boca Raton and St. Petersburg storefront pages are indexable keepers.
+# They are not required market hubs, so the homepage is not forced to link them.
 PRIORITY_MARKETS = {
     "/glazing-contractor-florida.html": ("Florida", 12),
     "/commercial-glazing-south-florida.html": ("South Florida", 10),
