@@ -1465,11 +1465,11 @@ class CityCanonicalTests(unittest.TestCase):
             ),
             (
                 "storefront-glazier-sarasota-florida/index.html",
-                "<title>Commercial Storefront Installer Sarasota | 48-Hr Bid</title>",
+                "<title>Commercial Storefront Installer Sarasota | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-fort-myers-florida/index.html",
-                "<title>Commercial Storefront Installer Fort Myers | 48-Hr Bid</title>",
+                "<title>Commercial Storefront Installer Fort Myers | 48-Hr Bids</title>",
             ),
             (
                 "storefront-glazier-stuart-florida/index.html",
