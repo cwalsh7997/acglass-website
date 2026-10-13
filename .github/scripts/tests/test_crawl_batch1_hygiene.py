@@ -218,7 +218,7 @@ class AiCitationHygieneTests(unittest.TestCase):
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 720)
+        self.assertEqual(len(locs), 722)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))

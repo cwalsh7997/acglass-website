@@ -86,9 +86,9 @@
     },
     {
       "source": "/commercial-glazing-boca-raton.html",
-      "current_destination": "/boca-raton/",
+      "current_destination": "/storefront-glazier-boca-raton-florida/",
       "reason": "blocked-no-primary",
-      "detail": "No /boca-raton-commercial-glazing.html exists. Same as Orlando."
+      "detail": "2026-10-13: Connor approved indexing /storefront-glazier-boca-raton-florida/. The edge mirror now lands on that self-canonical page. The broad commercial-glazing intent still has no separate primary."
     },
     {
       "source": "/nashville/",

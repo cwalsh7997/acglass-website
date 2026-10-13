@@ -171,7 +171,8 @@ class IndexableLinkTargetTests(unittest.TestCase):
     def test_wave2_noindex_targets_are_allowed_link_destinations(self):
         self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-stuart-florida/"))
         self.assertTrue(audit.is_wave2_noindex_target("/aventura/commercial-storefronts/"))
-        self.assertTrue(audit.is_wave2_noindex_target("/storefront-glazier-boca-raton-florida/"))
+        self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-boca-raton-florida/"))
+        self.assertFalse(audit.is_wave2_noindex_target("/storefront-glazier-saint-petersburg-florida/"))
         self.assertTrue(audit.is_wave2_noindex_target("/aventura/all-glass-entrances/"))
         self.assertTrue(audit.is_wave2_noindex_target("/winter-park/"))
         self.assertTrue(audit.is_wave2_noindex_target("/wynwood/"))

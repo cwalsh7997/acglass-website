@@ -83,7 +83,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(set(locs)), 720)
+        # 2026-10-13: +2 Boca Raton and St. Petersburg storefront keepers
+        self.assertEqual(len(set(locs)), 722)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,
