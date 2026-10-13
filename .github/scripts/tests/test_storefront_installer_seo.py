@@ -382,10 +382,10 @@ class SchemaFollowupTests(unittest.TestCase):
             "Commercial Storefront Installer Fort Lauderdale | 48-Hr Bids"
         ),
         "storefront-glazier-fort-myers-florida/index.html": (
-            "Commercial Storefront Installer Fort Myers | 48-Hr Bid"
+            "Commercial Storefront Installer Fort Myers | 48-Hr Bids"
         ),
         "storefront-glazier-sarasota-florida/index.html": (
-            "Commercial Storefront Installer Sarasota | 48-Hr Bid"
+            "Commercial Storefront Installer Sarasota | 48-Hr Bids"
         ),
         "storefront-glazier-florida/index.html": (
             # Differentiated from florida-commercial-glazing hub title (duplicate SERP titles).
