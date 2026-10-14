@@ -77,3 +77,4 @@ html{scroll-padding-top:6.25rem}
 .contact-note,.contact-note a{color:#1a1013}
 .market-index .home-tail a{text-decoration:underline;text-underline-offset:3px}
 .coverage-head p,.office-grid article p{color:#5a6670}
+@media(max-width:600px){.hero{height:auto;min-height:0;max-height:none;overflow:visible}.hero-copy{height:auto;padding:112px 6% 36px;justify-content:flex-start}.hero h1{margin-top:10px}.hero-actions{flex-wrap:wrap;align-items:flex-start}.hero-cta{max-width:100%}}

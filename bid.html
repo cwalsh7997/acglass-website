@@ -1070,6 +1070,7 @@
 
   function handleFiles(files) {
     const messages = [];
+    const beforeCount = state.uploadedFiles.length;
     Array.from(files).forEach(file => {
       if (state.uploadedFiles.find(f => f.name === file.name)) return;
       const ext = fileExt(file.name);
@@ -1084,6 +1085,12 @@
       state.uploadedFiles.push(file);
     });
     showUploadError(messages.join(' '));
+    if (state.uploadedFiles.length > beforeCount) {
+      var uploadParams = { form_name: 'bid', file_count: state.uploadedFiles.length - beforeCount };
+      if (typeof acgLoadGtag === 'function') acgLoadGtag();
+      if (typeof gtag === 'function') gtag('event', 'file_upload', uploadParams);
+      if (window.dataLayer) window.dataLayer.push(Object.assign({ event: 'file_upload' }, uploadParams));
+    }
     renderFileList();
     const picker = document.getElementById('file-input');
     if (picker) picker.value = '';
@@ -1617,13 +1624,22 @@
     }, 400);
 
     // GA event
-    if (typeof gtag !== 'undefined') {
+    var leadParams = {
+      form_name: 'bid',
+      event_category: 'BidEngine',
+      event_label: state.buildingTypeLabel,
+      value: state.computedGlassSF || 0
+    };
+    if (typeof acgLoadGtag === 'function') acgLoadGtag();
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', leadParams);
       gtag('event', 'bid_submitted', {
         event_category: 'BidEngine',
         event_label: state.buildingTypeLabel,
         value: state.computedGlassSF || 0
       });
     }
+    if (window.dataLayer) window.dataLayer.push(Object.assign({ event: 'generate_lead' }, leadParams));
 
   }
 

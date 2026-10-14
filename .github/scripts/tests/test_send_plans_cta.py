@@ -29,8 +29,12 @@ class SendPlansCtaTests(unittest.TestCase):
         self.assertIn(self.CTA, html)
         self.assertEqual(
             html.count('href="/send-plans.html">Send Us Plans</a>'),
-            4,
-            "header, hero, #contact, and footer should all point the CTA at intake",
+            3,
+            "header, #contact, and footer should point the nav and closing CTAs at intake",
+        )
+        self.assertIn(
+            'class="hero-cta" href="/send-plans.html">Send plans for a 48-hr bid</a>',
+            html,
         )
         self.assertNotIn('href="/scope-engine.html">Send Us Plans</a>', html)
         self.assertIn("<title>Commercial Glazing Contractor Florida | ACG</title>", html)
