@@ -329,7 +329,17 @@ class CannibalizationTests(unittest.TestCase):
             tampa,
         )
         home = read("index.html")
-        self.assertNotIn("/storefront-glazier-boca-raton-florida/", home)
+        # 2026-10-14: the market-index Boca label points at the indexed
+        # storefront keeper. Jacksonville and the storefront system cell stay
+        # on the Florida hub.
+        self.assertIn(
+            'href="/storefront-glazier-boca-raton-florida/">Storefront glazier in Boca Raton</a>',
+            home,
+        )
+        self.assertIn(
+            'href="/florida-commercial-glazing/">Commercial glazing contractor in Jacksonville</a>',
+            home,
+        )
         self.assertIn('href="/florida-commercial-glazing/"', home)
         self.assertIn(
             '<a class="sys-cell" href="/florida-commercial-glazing/">',
