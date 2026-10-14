@@ -55,7 +55,7 @@ class HomepagePolishTests(unittest.TestCase):
     def test_send_plans_is_the_dominant_hero_cta(self):
         start = HOME.index('class="hero"')
         hero = HOME[start : HOME.index("</section>", start)]
-        self.assertIn('class="hero-cta" href="/send-plans.html">Send Us Plans</a>', hero)
+        self.assertIn('class="hero-cta" href="/send-plans.html">Send plans for a 48-hr bid</a>', hero)
         self.assertNotIn('class="btn btn-ghost"', hero)
         self.assertIn("Request capability statement", hero)
         creds = HOME.index('class="credentials"')

@@ -1066,7 +1066,16 @@ function fmtSF(n) { return n.toLocaleString('en-US'); }
    GA4 EVENT HELPER
    ============================================================================ */
 function ga(name, params) {
-  try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+  params = params || {};
+  try {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+    }
+    if (name === 'generate_lead' && typeof window.acgLoadGtag === 'function') window.acgLoadGtag();
+    window.gtag('event', name, params);
+    window.dataLayer.push(Object.assign({ event: name }, params));
+  } catch (e) {}
 }
 
 /* ============================================================================
@@ -2054,7 +2063,7 @@ document.getElementById('lead-form').addEventListener('submit', async (e) => {
         project_type: state.projectType, height: state.height, location: state.location,
         system: state.recommendedSystem, system_sf: state.computedSystemSF});
       ga('generate_lead', {
-        form_id: 'scope-engine', source_page: '/scope-engine.html',
+        form_name: 'scope-engine', form_id: 'scope-engine', source_page: '/scope-engine.html',
         currency: 'USD', value: 1000});
       status.className = 'se-form-status ok';
 

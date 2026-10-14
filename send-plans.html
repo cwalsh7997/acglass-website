@@ -476,7 +476,17 @@
         }
         html.push('<div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:8px;">Total ' + formatMb(totalUploadBytes(files)) + ' MB of 9 MB</div>');
         list.innerHTML = html.join('');
-        setUploadStatus(validateUploads(files));
+        var uploadCheck = validateUploads(files);
+        setUploadStatus(uploadCheck);
+        if (!uploadCheck || !uploadCheck.ok) return;
+        var sig = String(files.length) + ':' + String(totalUploadBytes(files));
+        if (fileInput.getAttribute('data-upload-sig') !== sig) {
+          fileInput.setAttribute('data-upload-sig', sig);
+          var uploadParams = { form_name: 'send-plans', file_count: files.length };
+          if (typeof acgLoadGtag === 'function') acgLoadGtag();
+          if (typeof gtag === 'function') gtag('event', 'file_upload', uploadParams);
+          if (window.dataLayer) window.dataLayer.push(Object.assign({ event: 'file_upload' }, uploadParams));
+        }
       }
       if (fileInput) fileInput.addEventListener('change', renderFileList);
 

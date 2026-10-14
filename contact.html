@@ -284,14 +284,17 @@
                 var r = result.r;
                 var data = result.data;
                 if (r.ok && String(data.success) === 'true') {
-                  if (typeof gtag !== 'undefined') {
-                    gtag('event', 'generate_lead', {
-                      'form_id': 'contact-form',
-                      'source_page': '/contact',
-                      'currency': 'USD',
-                      'value': 500
-                    });
-                  }
+                  var leadParams = {
+                    'form_name': 'contact',
+                    'form_id': 'contact-form',
+                    'source_page': '/contact',
+                    'currency': 'USD',
+                    'value': 500
+                  };
+                  var leadEvent = 'generate_lead';
+                  if (typeof acgLoadGtag === 'function') acgLoadGtag();
+                  if (typeof gtag === 'function') gtag('event', leadEvent, leadParams);
+                  if (window.dataLayer) window.dataLayer.push(Object.assign({ event: leadEvent }, leadParams));
                   status.textContent = 'Sent. Taking you to the confirmation page…';
                   status.style.color = '#34D399';
                   try { sessionStorage.setItem('acg_form_awaiting_confirm', 'contact'); } catch (err) {}

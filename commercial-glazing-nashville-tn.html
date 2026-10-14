@@ -593,14 +593,17 @@
         var r = result.r;
         var data = result.data;
         if (r.ok && String(data.success) === 'true') {
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', {
-              form_id: 'nashville-early-bid',
-              source_page: '/commercial-glazing-nashville-tn',
-              currency: 'USD',
-              value: 1000
-            });
-          }
+          var leadParams = {
+            form_name: 'nashville-early-bid',
+            form_id: 'nashville-early-bid',
+            source_page: '/commercial-glazing-nashville-tn',
+            currency: 'USD',
+            value: 1000
+          };
+          var leadEvent = 'generate_lead';
+          if (typeof acgLoadGtag === 'function') acgLoadGtag();
+          if (typeof gtag === 'function') gtag('event', leadEvent, leadParams);
+          if (window.dataLayer) window.dataLayer.push(Object.assign({ event: leadEvent }, leadParams));
           status.textContent = '✓ You are on the Nashville early-bid list. We will reach out within 48 hours.';
           status.style.color = '#6BCB77';
           form.reset();

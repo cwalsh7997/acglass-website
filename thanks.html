@@ -87,23 +87,38 @@
           if (heading) heading.textContent = 'Thanks. We have it.';
           if (copy) copy.innerHTML = 'If you just submitted a form, a copy is with our team. We reply from <!--email_off-->connor@acglass.com<!--/email_off-->. This path does not attach drawings. Use the send-plans page to upload files.';
         }
-        if (source === 'scope-review' && typeof gtag === 'function') {
-          gtag('event', 'generate_lead', {
+        function confirmLead(formName, params, extraEvent) {
+          var lead = Object.assign({ form_name: formName }, params);
+          if (typeof acgLoadGtag === 'function') acgLoadGtag();
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', lead);
+            if (extraEvent) gtag('event', extraEvent);
+          }
+          if (window.dataLayer) window.dataLayer.push(Object.assign({ event: 'generate_lead' }, lead));
+        }
+        if (source === 'scope-review') {
+          confirmLead('scope-review', {
             form_id: 'scope-review-form',
             source_page: '/free-glazing-scope-review.html',
             currency: 'USD',
             value: 750
-          });
-          gtag('event', 'scope_review_confirmed');
+          }, 'scope_review_confirmed');
         }
-        if (source === 'send-plans' && typeof gtag === 'function') {
-          gtag('event', 'generate_lead', {
+        if (source === 'send-plans') {
+          confirmLead('send-plans', {
             form_id: 'send-plans-form',
             source_page: '/send-plans.html',
             currency: 'USD',
             value: 750
+          }, 'bid_form_confirmed');
+        }
+        if (source === 'partners') {
+          confirmLead('partners', {
+            form_id: 'partners-form',
+            source_page: '/partners.html',
+            currency: 'USD',
+            value: 500
           });
-          gtag('event', 'bid_form_confirmed');
         }
       }
     })();

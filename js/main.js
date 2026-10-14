@@ -311,13 +311,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- GA4 CONVERSION EVENTS ----------
   // ============================================
   function trackEvent(name, params = {}) {
-    if (typeof gtag === 'function') {
-      gtag('event', name, params);
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function () { window.dataLayer.push(arguments); };
     }
-    if (window.dataLayer) {
-      window.dataLayer.push({ event: name, ...params });
+    // Lead actions must not wait out the interior/blog 5s gtag defer.
+    if (name === 'generate_lead' || name === 'phone_click' || name === 'email_click' || name === 'file_upload' || name === 'page_not_found') {
+      if (typeof window.acgLoadGtag === 'function') window.acgLoadGtag();
     }
+    window.gtag('event', name, params);
+    window.dataLayer.push({ event: name, ...params });
   }
+  window.acgTrackEvent = trackEvent;
 
   // Phone clicks (tel: links)
   document.querySelectorAll('a[href^="tel:"]').forEach(a => {
