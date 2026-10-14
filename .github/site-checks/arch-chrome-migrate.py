@@ -47,6 +47,7 @@ HEADER = (
     '<a href="/locations.html"><span>06</span>Coverage</a>'
     '<a href="/resources.html"><span>07</span>Resources</a>'
     '<a href="/contact.html"><span>08</span>Your project</a>'
+    '<a href="https://acglass.ai/"><span>09</span>Shop glass</a>'  # the online glass store (Connor, 2026-10-14)
     '</nav>'
     '<div class="ax-menu-footer"><span>Florida / Division 08</span>'
     '<!--email_off--><a href="mailto:connor@acglass.com">connor@acglass.com</a><!--/email_off-->'
