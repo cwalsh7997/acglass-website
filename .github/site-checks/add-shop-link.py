@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """add-shop-link.py - add "09 Shop glass" to the main menu on every page, linking to the online glass store.
 
-Connor, 2026-10-14: the menu should send people to the new store at acglass.ai. The menu is copied into
+Connor, 2026-10-14: the menu should send people to the new store at shop.acglass.com (Connor chose the address 2026-10-14). The menu is copied into
 every page (ax- chrome and the homepage's own menu), so this inserts one link right after
 "08 Your project". Idempotent: pages that already have it are skipped. File list from sweep_files, so
 deny-listed and byte-frozen pages are never touched. arch-chrome-migrate.py carries the same link for
@@ -20,7 +20,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from sweep_files import ROOT, sweep_files  # noqa: E402
 
 AFTER = '<span>08</span>Your project</a>'
-LINK = '<a href="https://acglass.ai/"><span>09</span>Shop glass</a>'
+LINK = '<a href="https://shop.acglass.com/"><span>09</span>Shop glass</a>'
 
 
 def main(write: bool) -> None:

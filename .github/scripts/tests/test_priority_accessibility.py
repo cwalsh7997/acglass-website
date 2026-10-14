@@ -54,7 +54,7 @@ LANDMARK_ONLY_PAGES = (
 # That single href is the whole diff; head, jsonld, scripts and visible are
 # unchanged, which is the evidence nothing else moved.
 # 2026-10-14: hrefs/visible rebaselined on all four landmark-only pages for the one added menu link
-# "09 Shop glass" (https://acglass.ai/), Connor's request. Each page equals main plus that link exactly;
+# "09 Shop glass" (https://shop.acglass.com/), Connor's request. Each page equals main plus that link exactly;
 # head, jsonld and scripts are unchanged.
 # 2026-10-01: head/scripts/hrefs/visible rebaselined for the sitewide architectural chrome
 # (new header, menu and footer; css/acg-arch-chrome.css + js/acg-arch-chrome.js). Verified
@@ -72,7 +72,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "jsonld": "f852722b02bf696556895ae499798e363d3a201035863e44aed0117b0403f452",
         "scripts": "3c7fcd624eda21da8c3012883149020038fd6409d60e17fef491a98af0f2fc2b",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
-        "hrefs": "8303b88d837526220382f50bcfad46038dbfdc8def5b69f1f9b424ed44486eb7",
+        "hrefs": "4e597e3341bee15dbd591daab090cf25d930789e079ef4651f18432676a0e460",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "915911f0f5822291f672cf6230bcd69f126b9bae09c9e1cf2586e9d0371068ca",
@@ -98,7 +98,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
-        "hrefs": "c1de973af796d999b5f97402f6f275beacfbc818b4d15bcba1b3c3937f6adf9e",
+        "hrefs": "8f79842ad527e5e5db6df04476926790e17c73e07ab531357752fb6f5525dc0e",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "11e364a89707999c4d2c4910981f47887f8f709d0a469dca68d6b2d43b35ae06",
@@ -112,7 +112,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "head": "3dd0eaf5a1c6960e450d26f2af79cedb39fde5449b0b2a4c7bc88f2d20edc8f3",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "963eafbfa8513bd14dfad0f3f38c1e891acdd0d9368ba988c5b9d63bd73d936a",
-        "hrefs": "b44c204a29e44aac4923c661d4821c65b7c28cd0858fa31dd0a7ea70c316aa7d",
+        "hrefs": "68b5bde30e2cad588c6f04cc8e46544485281f2d4e9ee2d050982cae8305fb68",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "4f4b45b12d615143be070e909009481a5bf1024fb8ff6229800ca2acec188a9e",
@@ -126,7 +126,7 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "head": "bc205e86ef4b324f9250ce3d4157b9703ed0d315c33280c2681f6b921305a29a",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "c735be55b3414e20be6f2949383558c7575e0b36b1fe63a6b969eef2e30401a0",
-        "hrefs": "b44c204a29e44aac4923c661d4821c65b7c28cd0858fa31dd0a7ea70c316aa7d",
+        "hrefs": "68b5bde30e2cad588c6f04cc8e46544485281f2d4e9ee2d050982cae8305fb68",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "f868d55e95702ffb6c97ea5c51557b03e376457aedf13c53c8b4e9d83791e9a3",
