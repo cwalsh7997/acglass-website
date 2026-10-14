@@ -27,7 +27,7 @@
     "atlanta-commercial-glazing.html": "2823f50630c382400d890bb21470500aae81c54af106c78ae49c3f21e7abc8c3",
     "authors/connor-walsh.html": "d5be29b1979c4bdfd0a02eeedf9eba8bfc350dadd049adef98776e36e5a59793",
     "authors/rielly-walsh.html": "85499115a7b4cd18bb90ce0ec511cf7180f2354af675e87b89b39a4abc1949e3",
-    "bid-hub.html": "f803d979855db47c300413895aff59a08957693c36e424e56a67b507758878bc",
+    "bid-hub.html": "3b4300339f151587c4c39fbdf770a13797239b3f617a03c8caa2a08cabbe091e",
     "blog/736-lagoon-dr-glazing.html": "0a9c07dee0776b2774938a5b0fc58fb97e75f39948db7b235298b56f16744342",
     "blog/atlantic-fields-glazing.html": "5a80ea76d9aaf7943a17fbc1e78b103b9b71b61031d1c8873c16b8049db23539",
     "blog/automatic-entrance-systems-commercial-buildings-florida.html": "d1a072eb583ecb967150e909be9aaf382e14201e570a862c852f37acb18eb7e6",
@@ -316,5 +316,5 @@
       "commercial-glazing-west-palm-beach.html"
     ]
   },
-  "rebaseline_note": "Rebaselined 2026-09-03 after withdrawing the Nashville/Tennessee office. Opening-date claims removed; announcement-only satellite pages retired to locations.html stubs. Tennessee remains furnish-and-consult geography with no ACG office. Rebaselined about.html fingerprint 2026-10-12 after removing duplicate Organization employee array (GSC duplicate unique property). Tennessee biography surface unchanged. Rebaselined about.html, blog/commercial-glazing-project-delays-how-to-avoid.html, blog/commercial-glazing-tampa-bay-market-2026.html, and blog/what-is-division-08-glazing-construction.html fingerprints 2026-10-12 after retargeting internal hrefs off the noindex stubs gc.html and commercial-storefront-installer-florida.html. Tennessee biography surface unchanged. Rebaselined index.html and commercial-glazing-west-palm-beach.html fingerprints 2026-10-14 after retargeting Boca Raton and St. Petersburg stub hrefs to the indexed storefront keepers. Tennessee biography surface unchanged."
+  "rebaseline_note": "Rebaselined 2026-09-03 after withdrawing the Nashville/Tennessee office. Opening-date claims removed; announcement-only satellite pages retired to locations.html stubs. Tennessee remains furnish-and-consult geography with no ACG office. Rebaselined about.html fingerprint 2026-10-12 after removing duplicate Organization employee array (GSC duplicate unique property). Tennessee biography surface unchanged. Rebaselined about.html, blog/commercial-glazing-project-delays-how-to-avoid.html, blog/commercial-glazing-tampa-bay-market-2026.html, and blog/what-is-division-08-glazing-construction.html fingerprints 2026-10-12 after retargeting internal hrefs off the noindex stubs gc.html and commercial-storefront-installer-florida.html. Tennessee biography surface unchanged. Rebaselined index.html and commercial-glazing-west-palm-beach.html fingerprints 2026-10-14 after retargeting Boca Raton and St. Petersburg stub hrefs to the indexed storefront keepers. Tennessee biography surface unchanged. Rebaselined bid-hub.html fingerprint 2026-10-14 after retargeting one href from /storefront-vs-curtainwall.html to /blog/storefront-vs-curtainwall.html. Tennessee biography surface unchanged."
 }

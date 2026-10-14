@@ -12,10 +12,14 @@
 # linking to a redirect stub, 370 bytes. Also removed Verdex and Suffolk from the
 # VIP relationships list, matching the decisions recorded in project-approvals.csv.
 # Verified after: 38 anchors open, 38 close. Zero Panther, Verdex or Suffolk refs.
-impact-windows-palm-beach.html 9fba718d5572d22f2e0b0e162cd5d68170ed915a2da91f9101518014dd05afb7
+# 2026-10-14: logo href "/index.html" -> "/" and aria-label em dash replaced
+# with a comma ("ACG, American Commercial Glass home"). Title and meta unchanged.
+impact-windows-palm-beach.html 3da3c327d44935aa75ac6d093875c4daa127f73ac345cccb517b9e97e401009c
 
 # commercial-glazier-near-me-west-palm-beach/index.html, authorised 2026-09-28.
 # Midday social-image loop: add twitter:card=summary_large_image and twitter:image
 # mirroring the existing Haines City EOC og:image. og:image URL, title, canonical,
 # and body copy are unchanged. Any further byte change to this page fails.
-commercial-glazier-near-me-west-palm-beach/index.html 5034739229476506d0421750218eaec28366116a2bc750485e934c9ad2115d54
+# 2026-10-14: logo href "/index.html" -> "/" and aria-label em dash replaced
+# with a comma ("ACG, American Commercial Glass home"). Title and meta unchanged.
+commercial-glazier-near-me-west-palm-beach/index.html 1b1eaa2b253acc378272ced550ea3e39cfea1551917f047af18ea0fe72a5d6ed
