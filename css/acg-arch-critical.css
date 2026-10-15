@@ -13,9 +13,12 @@
    holding the h1, and semantic classes (ax-box, ax-btn, ax-kicker, ax-num...) in place of
    inline decoration. */
 @font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
+/* Arimo/Liberation track Inter's hero line breaks, so the swap does not reflow the summary. */
+@font-face{font-family:"Inter Fallback";src:local("Arimo"),local("Liberation Sans");size-adjust:107%;ascent-override:92%;descent-override:24%;line-gap-override:0%}
 :root{--ax-paper:#f4f5f5;--ax-ink:#0a1925;--ax-text:#4f5d68;--ax-soft:#5a6670;--ax-line:#c9d0d5;--ax-line-soft:#dde3e7;--ax-red-text:#b8232c;--ax-panel:#e9edef}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
-body.ax-interior{margin:0;background:var(--ax-paper);color:var(--ax-ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.ax-interior{margin:0;background:var(--ax-paper);color:var(--ax-ink);font-family:Inter,"Inter Fallback",system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.ax-nav,.ax-navigation,.ax-footer{font-family:Inter,"Inter Fallback",system-ui,-apple-system,'Segoe UI',sans-serif}
 body.ax-interior *,body.ax-interior *::before,body.ax-interior *::after{box-sizing:border-box}
 body.ax-interior ::selection{background:var(--ax-red);color:#fff}
 body.ax-interior :focus-visible{outline:3px solid var(--ax-red);outline-offset:4px}
@@ -167,6 +170,7 @@ body.ax-interior :focus-visible{outline:3px solid var(--ax-red);outline-offset:4
 
 .ax-page :is(.acg-quick-answer,.quick-answer,.ax-callout,.callout,.note,.key-takeaway){display:block;margin:0 0 48px;padding:4px 0 4px 28px;border:0;border-left:2px solid var(--ax-red);border-radius:0;background:none;box-shadow:none;max-width:880px}
 .ax-page :is(.acg-quick-answer,.quick-answer) p{font-size:clamp(17px,1.35vw,19px);line-height:1.65;color:var(--ax-ink)}
+.ax-page p.tldr{border-left:2px solid var(--ax-red);padding-left:24px;margin-top:8px}
 
 .ax-page img{max-width:100%;height:auto;border-radius:0}
 .ax-page figure{margin:40px 0;max-width:none}
@@ -268,3 +272,6 @@ body.ax-interior :is(.skip,.skip-to-content):focus{top:0}
    file's 1600x1066. Content is slightly taller (inline strut), so a loaded
    image is unchanged. */
 .ax-page .post-hero-bg{aspect-ratio:1600/1066}
+/* Text-only kickers. Copied from the full sheet so a hero eyebrow does not change height on load. */
+.ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*)){display:block}
+.ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*))::before{display:inline-block;vertical-align:2px;margin-right:12px}

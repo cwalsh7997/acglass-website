@@ -63,7 +63,7 @@ FUNCTIONAL_PROPS = {
     "animation-timing-function",
 }
 CSS_TAG = (
-    '<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261011">\n'
+    '<link rel="stylesheet" href="/css/acg-arch-critical.css?v=20261015">\n'
     '<noscript><link rel="stylesheet" href="/css/acg-arch-interior.css?v=20261011"></noscript>\n'
     '<script>window.addEventListener("load",function(){requestAnimationFrame(function(){requestAnimationFrame(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/acg-arch-interior.css?v=20261011";document.head.appendChild(l)})})});</script>'
 )
