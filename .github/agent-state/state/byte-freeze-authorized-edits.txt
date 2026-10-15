@@ -14,7 +14,9 @@
 # Verified after: 38 anchors open, 38 close. Zero Panther, Verdex or Suffolk refs.
 # 2026-10-14: logo href "/index.html" -> "/" and aria-label em dash replaced
 # with a comma ("ACG, American Commercial Glass home"). Title and meta unchanged.
-impact-windows-palm-beach.html 3da3c327d44935aa75ac6d093875c4daa127f73ac345cccb517b9e97e401009c
+# 2026-10-15: visible copy, og:image:alt, and JSON-LD em dashes replaced with
+# commas, periods, or colons. Header, footer, canonical, and robots unchanged.
+impact-windows-palm-beach.html b3b9e3d48577bdabec9618bce304dea356c1fe391a7401c337b3ff8865fa845b
 
 # commercial-glazier-near-me-west-palm-beach/index.html, authorised 2026-09-28.
 # Midday social-image loop: add twitter:card=summary_large_image and twitter:image
@@ -22,4 +24,7 @@ impact-windows-palm-beach.html 3da3c327d44935aa75ac6d093875c4daa127f73ac345cccb5
 # and body copy are unchanged. Any further byte change to this page fails.
 # 2026-10-14: logo href "/index.html" -> "/" and aria-label em dash replaced
 # with a comma ("ACG, American Commercial Glass home"). Title and meta unchanged.
-commercial-glazier-near-me-west-palm-beach/index.html 1b1eaa2b253acc378272ced550ea3e39cfea1551917f047af18ea0fe72a5d6ed
+# 2026-10-15: title, meta description, og title/description, and visible copy
+# em dashes replaced. Title is "Commercial Glazier in West Palm Beach, FL | ACG 48-Hr Bids"
+# (58 characters). og:title matches. Header, footer, canonical, and robots unchanged.
+commercial-glazier-near-me-west-palm-beach/index.html 49c979f5b1082f1bb5ef2ac75d255eabde3d07cc4dd6bdc0e5bdf7a55143610d
