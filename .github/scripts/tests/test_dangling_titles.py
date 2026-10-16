@@ -104,28 +104,10 @@ RESTORED = {
     ),
 }
 
-# Share titles completed past 60 characters so <title> matches og:title
-# and twitter:title. Any other sitemap title still has to fit the cap.
-COMPLETED_OVER_60 = {
-    "how-long-does-commercial-glazing-take-to-install/index.html": (
-        "How long does commercial glazing take to install in Florida? | ACG"
-    ),
-    "how-to-hire-commercial-glazier-florida/index.html": (
-        "How to hire a commercial glazier in Florida (2026 buyer's guide)"
-    ),
-    "low-e-glass-coatings-commercial-explained/index.html": (
-        "Low-E glass coatings: hard-coat vs soft-coat for commercial glass"
-    ),
-    "miami-dade-noa-glazing.html": (
-        "Miami-Dade NOA glazing: the Florida HVHZ approval system | ACG"
-    ),
-    "multifamily-commercial-glazing-florida/index.html": (
-        "Multifamily Commercial Glazing Florida | Apartments and Condos"
-    ),
-    "occupied-building-glazing-installation-florida/index.html": (
-        "Occupied building glazing installation Florida: retrofit and re-glaze"
-    ),
-}
+# These six document titles used to match share titles past 60 characters.
+# They now fit the 60-character cap, so the exception list is empty.
+# Any sitemap title still has to fit the cap.
+COMPLETED_OVER_60 = {}
 
 FROZEN_TITLES = {
     "index.html": "Commercial Glazing Contractor Florida | ACG",

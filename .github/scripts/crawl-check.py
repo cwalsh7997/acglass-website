@@ -99,30 +99,10 @@ TITLE_MAX = 60
 DESC_MIN = 80
 DESC_MAX = 155
 
-HELD_LONG_TITLE_HASHES: dict[str, str] = {
-    # west-palm-beach/index.html title shortened 2026-09-03 to fit TITLE_MAX.
-    # 2026-10-07: these six document titles match the completed share titles
-    # already live on og:title and twitter:title. Cutting them to 60 characters
-    # would chop the phrase again. Fingerprints are sha256 of the unescaped title.
-    "how-long-does-commercial-glazing-take-to-install/index.html": (
-        "680168bd7a313e474b045cf0e00951e3afe2716ca67936aed47ec033779d3500"
-    ),
-    "how-to-hire-commercial-glazier-florida/index.html": (
-        "284831749c29b91827c7729dc59b13156d23ed80082ea757e1498553d175479f"
-    ),
-    "low-e-glass-coatings-commercial-explained/index.html": (
-        "27eaaa8c3695b042c5a0247810adbb0582aaa78a086754488004d5ac477726e0"
-    ),
-    "miami-dade-noa-glazing.html": (
-        "42de3aa6cd26f4b69ecbe7cc5b06ad7328b85726a7b4e620f9e3e9501c71cf75"
-    ),
-    "multifamily-commercial-glazing-florida/index.html": (
-        "c11372776ccb3c1bc9c916566d4d2aed4bd962ca3e4056aa114c32a243228d14"
-    ),
-    "occupied-building-glazing-installation-florida/index.html": (
-        "2c15a75d9b433aa1e80ac93e3338843f641553f5a434f565c64cacdee40eb4b4"
-    ),
-}
+# west-palm-beach/index.html title shortened 2026-09-03 to fit TITLE_MAX.
+# 2026-10-16: the six document titles previously held over 60 characters
+# now fit TITLE_MAX, so a new over-60 indexable title fails immediately.
+HELD_LONG_TITLE_HASHES: dict[str, str] = {}
 
 # Copy on these pages intersects approval-gated claims. Keep the exception
 # path-specific so another overlength description still fails immediately.
