@@ -1,9 +1,12 @@
-/* Bid-page subset of acg-arch-interior.css (2026-10-10).
-   Used only by bid.html so the plan-upload page does not download interior rules it cannot match. */
-@font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
+/* Bid-page subset of acg-arch-interior.css (2026-10-16).
+   Used only by bid.html so the plan-upload page does not download interior rules it cannot match.
+   block: the hero is the LCP text. swap paints a fallback and then replaces it
+   when Inter arrives, which records LCP at the swap. The woff2 is preloaded. */
+@font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:block}
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Arimo"),local("Liberation Sans");size-adjust:107%;ascent-override:92%;descent-override:24%;line-gap-override:0%;font-display:swap}
 :root{--ax-paper:#f4f5f5;--ax-ink:#0a1925;--ax-text:#4f5d68;--ax-soft:#5a6670;--ax-line:#c9d0d5;--ax-line-soft:#dde3e7;--ax-red-text:#b8232c;--ax-panel:#e9edef}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
-body.ax-interior{margin:0;background:var(--ax-paper);color:var(--ax-ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.ax-interior{margin:0;background:var(--ax-paper);color:var(--ax-ink);font-family:Inter,"Inter Fallback",system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body.ax-interior *,body.ax-interior *::before,body.ax-interior *::after{box-sizing:border-box}
 body.ax-interior ::selection{background:var(--ax-red);color:#fff}
 body.ax-interior :focus-visible{outline:3px solid var(--ax-red);outline-offset:4px}
