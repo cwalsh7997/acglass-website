@@ -12,9 +12,12 @@
    .github/site-checks/arch-interior-migrate.py adds the hooks: .ax-page wrapper, .ax-hero on the block
    holding the h1, and semantic classes (ax-box, ax-btn, ax-kicker, ax-num...) in place of
    inline decoration. */
-@font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:swap}
-/* Arimo/Liberation track Inter's hero line breaks, so the swap does not reflow the summary. */
-@font-face{font-family:"Inter Fallback";src:local("Arimo"),local("Liberation Sans");size-adjust:107%;ascent-override:92%;descent-override:24%;line-gap-override:0%}
+/* block: the hero summary is the LCP text. swap paints a fallback and then
+   replaces it when Inter arrives, which moves the summary and records LCP at
+   the swap. block shows Inter on the first paint of this text. Arial matches
+   Arimo, so iOS and Windows use the same adjusted fallback as Linux. */
+@font-face{font-family:Inter;src:url('/fonts/inter-variable-latin.woff2') format('woff2');font-weight:100 900;font-display:block}
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Arimo"),local("Liberation Sans");size-adjust:107%;ascent-override:92%;descent-override:24%;line-gap-override:0%;font-display:swap}
 :root{--ax-paper:#f4f5f5;--ax-ink:#0a1925;--ax-text:#4f5d68;--ax-soft:#5a6670;--ax-line:#c9d0d5;--ax-line-soft:#dde3e7;--ax-red-text:#b8232c;--ax-panel:#e9edef}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body.ax-interior{margin:0;background:var(--ax-paper);color:var(--ax-ink);font-family:Inter,"Inter Fallback",system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
