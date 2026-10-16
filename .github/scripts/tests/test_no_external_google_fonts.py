@@ -36,9 +36,11 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # 2026-10-01 (Rielly CEO feature): body rebaselined for the one added footer line
 # "Led by Rielly Walsh, CEO and majority owner."; every other fragment unchanged.
 # 2026-10-02: body rebaselined for the footer WBENC wording ("WBENC-certified").
+# 2026-10-14: anchors/body rebaselined for the one added menu link "09 Shop glass" (https://shop.acglass.com/),
+# Connor's request; the page equals main plus that link exactly. Every other fragment unchanged.
 PROTECTED_HASHES = {
-    "anchors": "08cbc65e66beafb717e364479df4ac9dafb7938674d4bd5e20b57471b1ad6973",
-    "body": "c031627cfe21876f7ae72976c609347d8636e74ee38f5deae694121f1ab89beb",
+    "anchors": "ae7767d0c2cd128ed9960fc7f870d45470b5c41260463e669a2a6018371dfddb",
+    "body": "a57929e969d8b835adb36d99a3f643a44b0ea36d6fe75299defee7b79710819e",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "59ccfef5b2b2882acbcdc80aa4bbeb2a4d6c8f3309ce23d3ca6a02fb909baeba",
     "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",
