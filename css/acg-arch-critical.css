@@ -278,3 +278,9 @@ body.ax-interior :is(.skip,.skip-to-content):focus{top:0}
 /* Text-only kickers. Copied from the full sheet so a hero eyebrow does not change height on load. */
 .ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*)){display:block}
 .ax-page :is(.eyebrow,.loc-label,.label,.k-label,.wpb-section-eyebrow,.section-label,.kicker,.overline):not(:has(*))::before{display:inline-block;vertical-align:2px;margin-right:12px}
+
+/* Disambiguation strip (acg-glass.html, what-does-acg-stand-for.html) sits on
+   the paper ground, outside .ax-page. The link's inline color:#fff is ~1.09:1
+   on #f4f5f5. !important beats that inline style. Ink on paper is ~16.3:1.
+   Underline stays so the link is still identifiable. */
+.top-disambig a{color:var(--ax-ink)!important;text-decoration:underline}
