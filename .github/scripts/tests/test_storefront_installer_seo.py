@@ -100,7 +100,17 @@ class KeeperPhraseTests(unittest.TestCase):
             html = read(f"{slug}/index.html")
             with self.subTest(slug=slug):
                 self.assertIn(PHRASE, title_of(html).lower())
-                self.assertIn(PHRASE, desc_of(html).lower())
+                if slug == "storefront-glazier-west-palm-beach-florida":
+                    # CTR copy targets commercial-glass-contractor queries.
+                    # Title and H1 still carry the installer phrase.
+                    self.assertEqual(
+                        desc_of(html),
+                        "Commercial glass contractor in West Palm Beach for GCs. "
+                        "Impact storefront, entrances and curtain wall. "
+                        "FL CGC #1531993. 48-hour bids on documented scopes.",
+                    )
+                else:
+                    self.assertIn(PHRASE, desc_of(html).lower())
                 self.assertIn(PHRASE, h1_of(html).lower())
                 self.assertGreaterEqual(html.lower().count(PHRASE), 3)
                 self.assertFalse("noindex" in robots(html))
