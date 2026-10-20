@@ -56,7 +56,8 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
         # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
         # 2026-10-06: -1 Florida glass statistics soft-merge (this fixture).
-        self.assertGreaterEqual(len(fixture), 339)
+        # 2026-10-20: -24 thin pages in this fixture (6 counties left via sitemap-cities.xml).
+        self.assertGreaterEqual(len(fixture), 315)
 
 
 class LastmodAlignmentTests(unittest.TestCase):

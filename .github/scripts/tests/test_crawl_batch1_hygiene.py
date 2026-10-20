@@ -80,7 +80,8 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         # Fort Lauderdale / Sarasota / Jacksonville hotel-city soft-merge.
         # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
         # 2026-10-06: -1 Florida glass statistics soft-merge (this fixture).
-        self.assertGreaterEqual(len(fixture_locs), 339)
+        # 2026-10-20: -24 thin pages in this fixture (6 counties left via sitemap-cities.xml).
+        self.assertGreaterEqual(len(fixture_locs), 315)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):
@@ -218,7 +219,8 @@ class AiCitationHygieneTests(unittest.TestCase):
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        # 2026-10-20: -30 thin-page soft-merge (722 before).
+        self.assertEqual(len(locs), 692)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
