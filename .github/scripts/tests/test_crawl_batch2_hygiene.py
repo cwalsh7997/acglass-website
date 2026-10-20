@@ -1489,7 +1489,7 @@ class CityCanonicalTests(unittest.TestCase):
             (
                 "index.html",
                 "<title>Commercial Glazing Contractor Florida | ACG</title>",
-                '<h1 id="hero-title"><span class="l1">Commercial glazing.</span>',
+                '<h1 id="hero-title"><span class="l1">Florida commercial glazing.</span>',
             ),
             (
                 "florida-commercial-glazing/index.html",
