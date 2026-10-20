@@ -489,7 +489,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -567,7 +567,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1047,7 +1047,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 6)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1168,7 +1168,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 725 after this soft-merge (728 before: three thin hotel-city pages).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         for rel, (dest, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1217,9 +1217,9 @@ class CityCanonicalTests(unittest.TestCase):
             '<a href="/hospitality-glazing-florida.html">Hotel Glazier in Jacksonville, FL</a>',
             locations,
         )
-        self.assertIn('href="/hotel-glazing-contractor-miami/"', locations)
-        self.assertIn('href="/hotel-glazing-contractor-orlando/"', locations)
-        self.assertIn('href="/hotel-glazing-contractor-tampa/"', locations)
+        self.assertNotIn('href="/hotel-glazing-contractor-miami/"', locations)
+        self.assertNotIn('href="/hotel-glazing-contractor-orlando/"', locations)
+        self.assertNotIn('href="/hotel-glazing-contractor-tampa/"', locations)
         fort = read("storefront-glazier-fort-lauderdale-florida/index.html")
         sarasota = read("storefront-glazier-sarasota-florida/index.html")
         self.assertNotIn("/hotel-glazing-contractor-fort-lauderdale/", fort)
@@ -1233,22 +1233,6 @@ class CityCanonicalTests(unittest.TestCase):
             sarasota,
         )
         for rel, title in (
-            (
-                "hotel-glazing-contractor-miami/index.html",
-                "Hotel Glazier in Miami, FL | ACG - 48-Hr Bids",
-            ),
-            (
-                "hotel-glazing-contractor-orlando/index.html",
-                "Hotel Glazier in Orlando, FL | ACG - 48-Hr Bids",
-            ),
-            (
-                "hotel-glazing-contractor-tampa/index.html",
-                "Hotel Glazier in Tampa, FL | ACG - 48-Hr Bids",
-            ),
-            (
-                "hotel-glazing-contractor-naples/index.html",
-                "Hotel Glazier in Naples, FL | ACG - 48-Hr Bids",
-            ),
             (
                 "hotel-glazing-contractor-florida/index.html",
                 "Hotel Glazing Contractor Florida | Curtain Wall | ACG",
@@ -1283,6 +1267,319 @@ class CityCanonicalTests(unittest.TestCase):
             self.assertIn(title, html, rel)
             self.assertNotIn("noindex", robots(html), rel)
 
+    def test_2026_10_20_thin_pages_soft_merge(self):
+        # Thirty thin pages stay on disk as HTTP 200. Crawl signals only:
+        # noindex,follow, canonical and og:url at the parent, a short visible
+        # parent link, and the URL leaves every sitemap. Titles, H1s, and
+        # JSON-LD url stay. No page deletes. Keeper titles and H1s stay.
+        miami = f"{BASE}/storefront-glazier-miami-florida/"
+        orlando = f"{BASE}/storefront-glazier-orlando-florida/"
+        tampa = f"{BASE}/storefront-glazier-tampa-florida/"
+        naples = f"{BASE}/storefront-glazier-naples-florida/"
+        fort = f"{BASE}/storefront-glazier-fort-lauderdale-florida/"
+        sarasota = f"{BASE}/storefront-glazier-sarasota-florida/"
+        hub = f"{BASE}/florida-commercial-glazing/"
+        pages = {
+            "how-much-does-curtain-wall-cost-per-square-foot/index.html": (
+                f"{BASE}/curtainwall-systems.html",
+                "/curtainwall-systems.html",
+                "How much does curtain wall cost per square foot in Florida",
+                "<h1>How much does curtain wall cost per square foot in Florida 2026?</h1>",
+            ),
+            "how-far-does-acg-travel-for-projects/index.html": (
+                f"{BASE}/service-areas.html",
+                "/service-areas.html",
+                "How far does ACG travel for commercial glazing projects?",
+                "<h1>How far does ACG travel for commercial glazing projects?</h1>",
+            ),
+            "hurricane-glass-replacement-fort-lauderdale/index.html": (
+                fort,
+                "/storefront-glazier-fort-lauderdale-florida/",
+                "Post-hurricane commercial glass replacement Fort Lauderdale",
+                "<h1>Post-hurricane commercial glass replacement Fort Lauderdale</h1>",
+            ),
+            "after-hours-storefront-installation-miami/index.html": (
+                miami,
+                "/storefront-glazier-miami-florida/",
+                "After-hours commercial storefront installation Miami - ACG",
+                "<h1>After-hours commercial storefront installation Miami</h1>",
+            ),
+            "what-makes-acg-different-florida-glazier/index.html": (
+                f"{BASE}/about.html",
+                "/about.html",
+                "What makes ACG different from other Florida commercial",
+                "<h1>What makes ACG different from other Florida commercial glaziers?</h1>",
+            ),
+            "what-is-the-warranty-on-commercial-glass/index.html": (
+                f"{BASE}/commercial-glass-warranty-explained/",
+                "/commercial-glass-warranty-explained/",
+                "Standard warranty on commercial glass and glazing | ACG",
+                "<h1>What is the standard warranty on commercial glass and glazing in Florida?</h1>",
+            ),
+            "can-i-finance-commercial-glazing-florida/index.html": (
+                f"{BASE}/facts.html",
+                "/facts.html",
+                "Can I Finance A Commercial Glazing Scope in Florida? | ACG",
+                "<h1>Can I finance a commercial glazing scope in Florida?</h1>",
+            ),
+            "what-is-a-good-bid-acknowledgment-time/index.html": (
+                f"{BASE}/blog/how-to-get-a-glazing-bid-florida.html",
+                "/blog/how-to-get-a-glazing-bid-florida.html",
+                "What is a good commercial glazing bid acknowledgment time?",
+                "<h1>What is a good commercial glazing bid acknowledgment time?</h1>",
+            ),
+            "how-long-does-commercial-glazing-take-to-install/index.html": (
+                f"{BASE}/facts.html",
+                "/facts.html",
+                "How Long Commercial Glazing Takes to Install | ACG",
+                "<h1>How long does commercial glazing take to install on a Florida commercial project?</h1>",
+            ),
+            "hotel-glazing-contractor-tampa/index.html": (
+                tampa,
+                "/storefront-glazier-tampa-florida/",
+                "Hotel Glazier in Tampa, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Tampa</h1>",
+            ),
+            "hotel-glazing-contractor-miami/index.html": (
+                miami,
+                "/storefront-glazier-miami-florida/",
+                "Hotel Glazier in Miami, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Miami</h1>",
+            ),
+            "can-you-install-glass-on-occupied-buildings/index.html": (
+                f"{BASE}/occupied-building-glazing-installation-florida/",
+                "/occupied-building-glazing-installation-florida/",
+                "Can a commercial glazier install glass on an occupied",
+                "<h1>Can a commercial glazier install glass on an occupied building in Florida?</h1>",
+            ),
+            "can-acg-bid-multifamily-projects-over-2-million/index.html": (
+                f"{BASE}/multifamily-glazing-contractor-florida.html",
+                "/multifamily-glazing-contractor-florida.html",
+                "Multifamily Commercial Glazing Questions | ACG",
+                "<h1>Can ACG bid Florida multifamily commercial glazing scopes over $2 million?</h1>",
+            ),
+            "orlando/downtown-orlando/index.html": (
+                orlando,
+                "/storefront-glazier-orlando-florida/",
+                "Storefront Glazier in Downtown Orlando, FL | ACG",
+                "<h1>Storefront Glazier - Downtown Orlando</h1>",
+            ),
+            "hotel-glazing-contractor-orlando/index.html": (
+                orlando,
+                "/storefront-glazier-orlando-florida/",
+                "Hotel Glazier in Orlando, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Orlando</h1>",
+            ),
+            "miami/flagler-street-miami/index.html": (
+                miami,
+                "/storefront-glazier-miami-florida/",
+                "Storefront Glazier in Downtown Flagler Street, FL | ACG",
+                "<h1>Storefront Glazier - Downtown Flagler Street</h1>",
+            ),
+            "miami/design-district-miami/index.html": (
+                miami,
+                "/storefront-glazier-miami-florida/",
+                "Storefront Glazier in Miami Design District, FL | ACG",
+                "<h1>Storefront Glazier - Miami Design District</h1>",
+            ),
+            "naples/third-street-naples/index.html": (
+                naples,
+                "/storefront-glazier-naples-florida/",
+                "Storefront Glazier in Third Street South, FL | ACG",
+                "<h1>Storefront Glazier - Third Street South</h1>",
+            ),
+            "can-acg-handle-healthcare-glazing-occupied-facility/index.html": (
+                f"{BASE}/healthcare-glazing-florida.html",
+                "/healthcare-glazing-florida.html",
+                "Can ACG install commercial glazing on an occupied Florida",
+                "<h1>Can ACG install commercial glazing on an occupied Florida healthcare facility?</h1>",
+            ),
+            "fort-lauderdale/las-olas-fort-lauderdale/index.html": (
+                fort,
+                "/storefront-glazier-fort-lauderdale-florida/",
+                "Storefront Glazier in Las Olas Boulevard, FL | ACG",
+                "<h1>Storefront Glazier - Las Olas Boulevard</h1>",
+            ),
+            "sarasota/sarasota-downtown-main-street/index.html": (
+                sarasota,
+                "/storefront-glazier-sarasota-florida/",
+                "Storefront Glazier in Downtown Main Street Sarasota | ACG",
+                "<h1>Storefront Glazier - Downtown Main Street Sarasota</h1>",
+            ),
+            "naples/fifth-avenue-naples/index.html": (
+                naples,
+                "/storefront-glazier-naples-florida/",
+                "Storefront Glazier in Fifth Avenue South, FL | ACG",
+                "<h1>Storefront Glazier - Fifth Avenue South</h1>",
+            ),
+            "hotel-glazing-contractor-naples/index.html": (
+                naples,
+                "/storefront-glazier-naples-florida/",
+                "Hotel Glazier in Naples, FL | ACG - 48-Hr Bids",
+                "<h1>Hotel Glazier in Naples</h1>",
+            ),
+            "palm-beach/worth-avenue-palm-beach/index.html": (
+                hub,
+                "/florida-commercial-glazing/",
+                "Storefront Glazier in Worth Avenue, FL | ACG - 48-Hr Bids",
+                "<h1>Storefront Glazier - Worth Avenue</h1>",
+            ),
+            "seminole-county/index.html": (
+                orlando,
+                "/storefront-glazier-orlando-florida/",
+                "Commercial Storefront Glazier in Seminole County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Seminole County</h1>",
+            ),
+            "osceola-county/index.html": (
+                orlando,
+                "/storefront-glazier-orlando-florida/",
+                "Commercial Storefront Glazier in Osceola County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Osceola County</h1>",
+            ),
+            "pasco-county/index.html": (
+                tampa,
+                "/storefront-glazier-tampa-florida/",
+                "Commercial Storefront Glazier in Pasco County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Pasco County</h1>",
+            ),
+            "polk-county/index.html": (
+                tampa,
+                "/storefront-glazier-tampa-florida/",
+                "Commercial Storefront Glazier in Polk County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Polk County</h1>",
+            ),
+            "sarasota-county/index.html": (
+                sarasota,
+                "/storefront-glazier-sarasota-florida/",
+                "Commercial Storefront Glazier in Sarasota County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Sarasota County</h1>",
+            ),
+            "manatee-county/index.html": (
+                sarasota,
+                "/storefront-glazier-sarasota-florida/",
+                "Commercial Storefront Glazier in Manatee County, FL | ACG",
+                "<h1>Commercial Storefront Glazier - Manatee County</h1>",
+            ),
+        }
+        locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
+        child_locs = sitemap_locs()
+        self.assertEqual(len(pages), 30)
+        self.assertEqual(len(locs), 692)
+        for rel, (dest, href, title, h1) in pages.items():
+            html = read(rel)
+            found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
+            self.assertIsNotNone(found, rel)
+            self.assertEqual(found.group(1).strip(), title, rel)
+            self.assertNotIn("\u2014", found.group(1), rel)
+            self.assertIn(h1, html, rel)
+            robots_tags = re.findall(r'<meta\b[^>]*name="robots"[^>]*>', html, re.I)
+            self.assertEqual(len(robots_tags), 1, rel)
+            self.assertIn('content="noindex,follow"', robots_tags[0], rel)
+            self.assertEqual(robots(html), "noindex,follow", rel)
+            self.assertEqual(canonical(html), dest, rel)
+            self.assertIn(f'property="og:url" content="{dest}"', html, rel)
+            self.assertIn(f'<p>See the <a href="{href}">', html, rel)
+            self.assertFalse(REFRESH_RE.search(html), rel)
+            url = f"{BASE}{url_for(REPO_ROOT / rel)}"
+            self.assertNotIn(url, locs, rel)
+            self.assertNotIn(url, child_locs, rel)
+            self.assertIn(f'"url": "{url}"', html, rel)
+            self.assertTrue((REPO_ROOT / rel).is_file(), rel)
+        for rel, title, h1 in (
+            (
+                "index.html",
+                "<title>Commercial Glazing Contractor Florida | ACG</title>",
+                '<h1 id="hero-title"><span class="l1">Florida commercial glazing.</span>',
+            ),
+            (
+                "florida-commercial-glazing/index.html",
+                "<title>Commercial Storefront Installer Florida | Bid in 48 Hrs</title>",
+                "<h1>Commercial storefront installer <em>Florida</em></h1>",
+            ),
+            (
+                "storefront-glazier-miami-florida/index.html",
+                "<title>Commercial Storefront Installer Miami | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> Miami, <br> <span class="accent">Florida.</span></h1>',
+            ),
+            (
+                "storefront-glazier-orlando-florida/index.html",
+                "<title>Commercial Storefront Installer Orlando | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> Orlando, <br> <span class="accent">Florida.</span></h1>',
+            ),
+            (
+                "storefront-glazier-tampa-florida/index.html",
+                "<title>Commercial Storefront Installer Tampa | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> Tampa, <br> <span class="accent">Florida.</span></h1>',
+            ),
+            (
+                "storefront-glazier-naples-florida/index.html",
+                "<title>Commercial Storefront Installer Naples | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> Naples, <br> <span class="accent">Florida.</span></h1>',
+            ),
+            (
+                "storefront-glazier-fort-lauderdale-florida/index.html",
+                "<title>Commercial Storefront Installer Fort Lauderdale | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> Fort Lauderdale, <br> <span class="accent">Florida.</span></h1>',
+            ),
+            (
+                "storefront-glazier-sarasota-florida/index.html",
+                "<title>Commercial Storefront Installer Sarasota | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> Sarasota, <br> <span class="accent">Florida.</span></h1>',
+            ),
+            (
+                "storefront-glazier-west-palm-beach-florida/index.html",
+                "<title>Commercial Storefront Installer West Palm Beach | 48-Hr Bids</title>",
+                '<h1>Commercial Storefront Installer in <br> West Palm Beach, <br> <span class="accent">Florida.</span></h1>',
+            ),
+        ):
+            html = read(rel)
+            self.assertIn(title, html, rel)
+            self.assertIn(h1, html, rel)
+            self.assertNotIn("noindex", robots(html), rel)
+        locations = read("locations.html")
+        for old, new in (
+            (
+                "/hotel-glazing-contractor-miami/",
+                '<a href="/storefront-glazier-miami-florida/">Hotel Glazier in Miami, FL</a>',
+            ),
+            (
+                "/hotel-glazing-contractor-orlando/",
+                '<a href="/storefront-glazier-orlando-florida/">Hotel Glazier in Orlando, FL</a>',
+            ),
+            (
+                "/hotel-glazing-contractor-tampa/",
+                '<a href="/storefront-glazier-tampa-florida/">Hotel Glazier in Tampa, FL</a>',
+            ),
+            (
+                "/miami/flagler-street-miami/",
+                '<a href="/storefront-glazier-miami-florida/">Downtown Flagler Street, FL</a>',
+            ),
+            (
+                "/miami/design-district-miami/",
+                '<a href="/storefront-glazier-miami-florida/">Miami Design District, FL</a>',
+            ),
+            (
+                "/palm-beach/worth-avenue-palm-beach/",
+                '<a href="/florida-commercial-glazing/">Worth Avenue, FL</a>',
+            ),
+            (
+                "/hurricane-glass-replacement-fort-lauderdale/",
+                '<a href="/storefront-glazier-fort-lauderdale-florida/">Post-hurricane commercial glass replacement Fort Lauderdale</a>',
+            ),
+        ):
+            self.assertNotIn(old, locations, old)
+            self.assertIn(new, locations, new)
+        faq = read("faq.html")
+        self.assertNotIn("/how-much-does-curtain-wall-cost-per-square-foot/", faq)
+        self.assertIn(
+            '<a href="/curtainwall-systems.html">How much does curtain wall cost per square foot in Florida</a>',
+            faq,
+        )
+        self.assertIn(
+            '<a href="/facts.html">Can I Finance A Commercial Glazing Scope in Florida?</a>',
+            faq,
+        )
+
     def test_2026_10_06_remote_county_pages_merge_onto_florida_hub(self):
         # Thin Escambia, Leon, Alachua, and Marion county templates stay on
         # disk as HTTP 200. Crawl signals only: noindex,follow, canonical
@@ -1311,7 +1608,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         child_locs = sitemap_locs()
         for rel, (title, h1) in pages.items():
             html = read(rel)
@@ -1404,7 +1701,7 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         child_locs = sitemap_locs()
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         html = read(rel)
         found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
         self.assertIsNotNone(found, rel)
@@ -1583,7 +1880,7 @@ class CityCanonicalTests(unittest.TestCase):
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 722)
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 692)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1673,7 +1970,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1768,7 +2065,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 8)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 722)
+        self.assertEqual(len(locs), 692)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
