@@ -36,7 +36,7 @@ class HomepagePolishTests(unittest.TestCase):
     def test_hero_names_a_written_bid_and_omits_office_cities(self):
         h1 = re.search(r"<h1\b[^>]*>(.*?)</h1>", HOME, re.S).group(1)
         h1_text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", h1)).strip()
-        self.assertEqual("Commercial glazing. Written bid in 48 hours.", h1_text)
+        self.assertEqual("Florida commercial glazing. Written bid in 48 hours.", h1_text)
         sub = re.search(r'<p class="hero-sub">(.*?)</p>', HOME, re.S).group(1)
         self.assertIn("Storefront, curtain wall, and hurricane-impact.", sub)
         self.assertNotIn("West Palm Beach", sub)
