@@ -17,3 +17,8 @@
 # the Ocean Prime card now points at the indexable keeper. Buy American, TAA, and
 # BABA text was not in that line. The diff is that href only.
 services.html 654b6e8856fab0744261c56fb85083b1ee51783d6cc03c96b29403cfd8c1b167
+
+# government-public-sector-glazing.html, authorised 2026-10-20. Owner blanket SEO
+# approval. Title, social titles, meta description, and one garbled FAQ JSON-LD
+# answer only. No Buy American, TAA, or BABA text changed.
+government-public-sector-glazing.html c86d43c9e355168134191240c2354438d52e8fe2390d9d6b3a36f11c85eeacf4
