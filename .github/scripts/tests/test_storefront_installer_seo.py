@@ -28,6 +28,29 @@ KEEPERS = (
     "storefront-glazier-fort-myers-florida",
     "storefront-glazier-sarasota-florida",
 )
+# Meta, og:description, and twitter:description stay identical on these four.
+CONTRACTOR_DESCS = {
+    "storefront-glazier-west-palm-beach-florida": (
+        "Commercial glass contractor in West Palm Beach for GCs. "
+        "Impact storefront, entrances and curtain wall. "
+        "FL CGC #1531993. 48-hour bids on documented scopes."
+    ),
+    "storefront-glazier-naples-florida": (
+        "Commercial glass contractor in Naples for GCs. "
+        "Impact storefront, entrances and curtain wall. "
+        "FL CGC #1531993. 48-hour bids on documented scopes."
+    ),
+    "storefront-glazier-tampa-florida": (
+        "Commercial glass contractor in Tampa for GCs. "
+        "Impact storefront, entrances and curtain wall. "
+        "FL CGC #1531993. 48-hour bids on documented scopes."
+    ),
+    "storefront-glazier-miami-florida": (
+        "Commercial glass contractor in Miami for GCs. "
+        "Impact storefront, entrances and curtain wall. "
+        "FL CGC #1531993. 48-hour bids on documented scopes."
+    ),
+}
 OFFICE_METROS = ("west-palm-beach", "naples", "tampa")
 INSTALLER_TO_KEEPER = {
     "storefront-installer-west-palm-beach.html": "storefront-glazier-west-palm-beach-florida",
@@ -100,14 +123,16 @@ class KeeperPhraseTests(unittest.TestCase):
             html = read(f"{slug}/index.html")
             with self.subTest(slug=slug):
                 self.assertIn(PHRASE, title_of(html).lower())
-                if slug == "storefront-glazier-west-palm-beach-florida":
+                if slug in CONTRACTOR_DESCS:
                     # CTR copy targets commercial-glass-contractor queries.
                     # Title and H1 still carry the installer phrase.
-                    self.assertEqual(
-                        desc_of(html),
-                        "Commercial glass contractor in West Palm Beach for GCs. "
-                        "Impact storefront, entrances and curtain wall. "
-                        "FL CGC #1531993. 48-hour bids on documented scopes.",
+                    expected = CONTRACTOR_DESCS[slug]
+                    self.assertEqual(desc_of(html), expected)
+                    self.assertIn(
+                        f'property="og:description" content="{expected}"', html
+                    )
+                    self.assertIn(
+                        f'name="twitter:description" content="{expected}"', html
                     )
                 else:
                     self.assertIn(PHRASE, desc_of(html).lower())
