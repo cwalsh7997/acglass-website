@@ -108,7 +108,7 @@ MUTATIONS = {
     ),
     # The H1 is split across spans, so the mutation targets the source markup
     # rather than the normalized text the extractor produces.
-    "h1": lambda t: sub(t, '<span class="l1">Commercial glazing.</span>',
+    "h1": lambda t: sub(t, '<span class="l1">Florida commercial glazing.</span>',
                         '<span class="l1">Florida\'s best glass company.</span>'),
     "og:title": lambda t: sub(t, 'property="og:title" content="Commercial',
                               'property="og:title" content="Rewritten Commercial'),

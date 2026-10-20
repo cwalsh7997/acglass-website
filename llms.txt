@@ -17,8 +17,6 @@ Key facts: FL CGC license #1531993 · founded February 18, 2021 · offices in We
 - [Portfolio](https://acglass.com/portfolio.html): verified named installations.
 - [Press & recognition](https://acglass.com/press/): news and media coverage.
 - [Direct answers (FAQ)](https://acglass.com/ask.html): common questions answered.
-- [AI Overview summary](https://acglass.com/about.html): canonical AI-retrieval summary.
-- [ACG entity / disambiguation](https://acglass.com/about.html): which "ACG" this is.
 - [Citation-ready facts ledger](https://acglass.com/facts.html): machine-readable verified facts.
 
 ## Manufacturer partners
