@@ -727,7 +727,10 @@ def check_frozen(rep: Report, reg: dict, base_ref: str) -> None:
         # Connor 2026-09-14: hero second beat must name a written bid, not
         # an ambiguous "written in 48 hours." Keyed on the result so stacked
         # branches still pass against whatever H1 the PR base still has.
-        AUTHORISED_ROOT_H1 = "Commercial glazing. Written bid in 48 hours."
+        # 2026-10-20: the first line carries the statewide phrase. The longer
+        # "Florida commercial glazing contractor." wraps to four lines at phone
+        # width, so the settled line is the three-word form.
+        AUTHORISED_ROOT_H1 = "Florida commercial glazing. Written bid in 48 hours."
         h1f = failures.get("h1", "")
         if url == "/" and h1f.endswith(f"now {AUTHORISED_ROOT_H1!r}"):
             failures.pop("h1")

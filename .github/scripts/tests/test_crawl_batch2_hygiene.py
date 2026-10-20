@@ -2106,7 +2106,7 @@ class HomepageJsonLdTests(unittest.TestCase):
             'property="og:title" content="Commercial Glazing Contractor Florida | ACG"',
             html,
         )
-        self.assertIn('<span class="l1">Commercial glazing.</span>', html)
+        self.assertIn('<span class="l1">Florida commercial glazing.</span>', html)
 
 
 class NashvilleResidualTests(unittest.TestCase):

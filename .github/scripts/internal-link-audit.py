@@ -483,7 +483,9 @@ HTML_ATTR = re.compile(
 # Boca Raton and St. Petersburg storefront pages are indexable keepers.
 # They are not required market hubs, so the homepage is not forced to link them.
 PRIORITY_MARKETS = {
-    "/glazing-contractor-florida.html": ("Florida", 12),
+    # Floor dropped from 12 when the statewide phrase links moved to /.
+    # Five links remain: homepage, services, division 08, Haines City, and the refresh stub.
+    "/glazing-contractor-florida.html": ("Florida", 5),
     "/commercial-glazing-south-florida.html": ("South Florida", 10),
     "/storefront-glazier-west-palm-beach-florida/": ("West Palm Beach", 10),
     "/storefront-glazier-miami-florida/": ("Miami", 10),
@@ -533,6 +535,15 @@ INTENT_TOKENS = (
 # How many distinct pages must describe a market hub with an intent-bearing
 # anchor. See check_anchor_intent for why this is a page count, not a share.
 ANCHOR_INTENT_FLOOR = 6
+# The explainer no longer receives the statewide phrase links. Those point at /.
+INTENT_FLOOR_OVERRIDES = {
+    "/glazing-contractor-florida.html": 5,
+}
+# service-areas sends "ACG as a Florida commercial glazing contractor" to /,
+# the ranking URL for that phrase. The homepage still links the explainer.
+HUB_MARKET_EXEMPT = {
+    "/service-areas.html": {"/glazing-contractor-florida.html"},
+}
 
 # Non-canonical links stranded on the West Palm Beach pages that
 # url-primaries.json freezes: 14 "/index.html" logo hrefs plus 5 links into 301
@@ -879,11 +890,13 @@ def check_hub_coverage(results, outbound, known):
     for hub in MUST_LINK_ALL_MARKETS:
         if hub not in known:
             continue
-        missing = [t for t in PRIORITY_MARKETS if t not in outbound.get(hub, ())]
+        exempt = HUB_MARKET_EXEMPT.get(hub, set())
+        required = [t for t in PRIORITY_MARKETS if t not in exempt]
+        missing = [t for t in required if t not in outbound.get(hub, ())]
         results.append(
             Result(
                 "FAIL",
-                f"{hub} links to all {len(PRIORITY_MARKETS)} priority markets",
+                f"{hub} links to all {len(required)} priority markets",
                 not missing,
                 f"missing={missing}" if missing else "",
             )
@@ -931,11 +944,12 @@ def check_anchor_intent(results, inbound):
             for src, anchors in linkers.items()
             if any(t in a.lower() for a in anchors for t in INTENT_TOKENS)
         )
+        intent_floor = INTENT_FLOOR_OVERRIDES.get(target, ANCHOR_INTENT_FLOOR)
         results.append(
             Result(
                 "WARN",
-                f"{label}: ≥{ANCHOR_INTENT_FLOOR} pages link with an intent-bearing anchor",
-                len(intentful) >= ANCHOR_INTENT_FLOOR,
+                f"{label}: ≥{intent_floor} pages link with an intent-bearing anchor",
+                len(intentful) >= intent_floor,
                 f"{len(intentful)}/{len(linkers)} linking pages",
             )
         )
