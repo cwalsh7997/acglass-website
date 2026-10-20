@@ -54,7 +54,7 @@ PART 2 PRODUCTS
 
 2.1 MANUFACTURERS
 A. Acceptable manufacturers, subject to Florida Product Approval / Miami-Dade NOA verification:
-1. ESWindows (Series ES-50 or approved equivalent).
+1. ESWindows (Series ES-8000 or approved equivalent).
 2. Euro-Wall (DirectSet storefront series).
 3. Other manufacturers with equivalent FPA/NOA documentation, approved in writing by Architect prior to bid.
 
