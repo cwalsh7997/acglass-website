@@ -222,7 +222,8 @@ class AiCitationHygieneTests(unittest.TestCase):
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-20: -30 thin-page soft-merge (722 before).
         # 2026-10-21: -1 best-storefront-contractor-florida.html soft-merge (692 before).
-        self.assertEqual(len(locs), 691)
+        # 2026-10-21: +1 Division 08 glazing guide, now self-canonical (691 before).
+        self.assertEqual(len(locs), 692)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))
