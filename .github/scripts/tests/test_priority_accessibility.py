@@ -65,14 +65,21 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # critical sheet; the full sheet loads on window load. jsonld/hrefs/visible unchanged.
         # head/scripts rebaselined 2026-10-11: cache-bust and apply the full sheet on the
         # second frame after load. jsonld/hrefs/visible unchanged.
-        "head": "2b87f1a9aed09d98592fad05314f5d9e17ff7fd320cb51c273946377cf37b740",
-        "jsonld": "f852722b02bf696556895ae499798e363d3a201035863e44aed0117b0403f452",
-        "scripts": "3c7fcd624eda21da8c3012883149020038fd6409d60e17fef491a98af0f2fc2b",
+        # 2026-10-21: rebaselined for #380, already on main. Title, description, and
+        # WebPage name now say commercial hurricane glass. A body section and a
+        # /send-plans.html link were added, and the Haines City card dropped "HVHZ".
+        # Non-JSON-LD scripts are unchanged; the scripts digest moves because it
+        # includes the JSON-LD script blocks.
+        "head": "e1f3833433e925d584276eb1bef8ac4a8d5b985346c73da731f23d4d581b1c64",
+        "jsonld": "9cca91a3813350532d7b76d649816e1cf67bbe4641520c37b42c0cbc5a700da8",
+        "scripts": "af714a7ef64cc8095c1c6a822919f96a91822196c22778d1edd16508358f8f2f",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
-        "hrefs": "59eda6361e56ff67fe9e64307b6f2a9bad14ca86eae81c9236991aeff2277d77",
+        # hrefs rebaselined 2026-10-21 with the #380 /send-plans.html link above.
+        "hrefs": "31238de291fc09ed2c9a698cf90bfec5ae573195dab86e9aac502d9d614b6057",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
-        "visible": "a7ea7bfbe82f425b360d13887e316e22ec79e2dd1ba7e022d78ef666b434309f",
+        # visible rebaselined 2026-10-21 with the #380 hurricane-glass section and Haines City wording.
+        "visible": "3b3bb781a4bd974bbe286ed993b94c44cf4cca093f1114148a6621a39d7895c7",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
@@ -95,7 +102,10 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # Visible digest updated 2026-09-03 when the Ocean Prime featured card
         # was pulled back to one Euro-Wall door/opening.
-        "hrefs": "0493d4bf8b11f3bc2fb4d0720d4e37865f507e24f0f1a85548d9486f0e1ac9b2",
+        # hrefs rebaselined 2026-10-21 for #380: the existing "Euro-Wall systems"
+        # words are now a link to /euro-wall.html. head, jsonld, scripts, and
+        # visible are unchanged.
+        "hrefs": "d7d7fbd484f5e6afa47d4d9b44e79912192cf72f91e896c3fa0a9df4509b80d2",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "bff37641eb78b5574ad6f446496dca9cd978f07f2396d51a1aaf99e276ecb4a1",
