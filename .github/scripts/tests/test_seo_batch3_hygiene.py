@@ -57,7 +57,8 @@ class SitemapPagesRetirementTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge (sitemap-cities.xml; this fixture unchanged).
         # 2026-10-06: -1 Florida glass statistics soft-merge (this fixture).
         # 2026-10-20: -24 thin pages in this fixture (6 counties left via sitemap-cities.xml).
-        self.assertGreaterEqual(len(fixture), 315)
+        # 2026-10-21: -1 best-storefront-contractor-florida.html soft-merge.
+        self.assertGreaterEqual(len(fixture), 314)
 
 
 class LastmodAlignmentTests(unittest.TestCase):
