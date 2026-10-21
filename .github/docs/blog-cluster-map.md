@@ -39,10 +39,12 @@ These are already near-duplicate aliases. They stay live. They are omitted from 
 | `/blog/how-much-does-commercial-storefront-glass-cost-florida.html` | `/blog/how-much-does-commercial-storefront-glass-cost.html` | Keep, then 301 |
 | `/blog/how-much-does-curtainwall-cost-per-square-foot.html` | `/blog/curtainwall-vs-storefront-cost-guide.html` | Keep, then 301 |
 | `/blog/what-is-a-curtainwall-system.html` | `/blog/curtainwall-systems-explained-commercial-construction.html` | Keep, then 301 |
-| `/blog/what-is-division-08-glazing-construction.html` | `/blog/what-is-division-08-construction.html` | Keep, then 301 |
+| `/blog/what-is-division-08-glazing-construction.html` | `/blog/what-is-division-08-glazing-construction.html` | Keep, self-canonical (2026-10-20 GSC: Google ranks it) |
 | `/blog/best-commercial-storefront-systems-florida.html` | `/commercial-storefront-systems.html` | Already points at the service hub. Keep |
 
 This PR removed those seven alias cards from the index grid so the 226 count matches published posts. The files still resolve.
+
+2026-10-21 update: `/blog/what-is-division-08-glazing-construction.html` is self-canonical. Search Console on 2026-10-20 showed Google ranking that URL (224 impressions, position 7.5). It is listed in `sitemap.xml` and `sitemap-blog.xml`. It is not on the blog index grid, so the 226 index count is unchanged. The other six aliases in the table stay omitted from the sitemaps.
 
 ---
 
@@ -231,8 +233,8 @@ About fifty `*-glazing.html` posts are the same press-release chassis: "ACG deli
 
 | URL | Role | Action |
 | --- | --- | --- |
-| `/blog/what-is-division-08-construction.html` | **Explainer keeper.** Already the target of the glazing-construction alias | Keep |
-| `/blog/what-is-division-08-glazing-construction.html` | Already canonical | Later 301 |
+| `/blog/what-is-division-08-construction.html` | **Explainer keeper** for what Division 08 covers | Keep |
+| `/blog/what-is-division-08-glazing-construction.html` | Glazing-section guide, self-canonical | Keep, self-canonical (2026-10-20 GSC: Google ranks it) |
 | `/blog/division-08-specifications-guide.html` | Spec writing | Keep. Point at `/division-08-scope.html` |
 | `/blog/commercial-glazing-submittal-process-guide.html` | **Submittal keeper** | Keep. This PR added `/glazing-submittal-package.html` |
 | `/glazing-submittal-package.html` | Hub | The page the blog should lose to for "what goes in the package" |
