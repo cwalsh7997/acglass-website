@@ -85,7 +85,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-13: +2 Boca Raton and St. Petersburg storefront keepers
         # 2026-10-20: -30 thin-page soft-merge (722 before).
-        self.assertEqual(len(set(locs)), 692)
+        # 2026-10-21: -1 best-storefront-contractor-florida.html soft-merge (692 before).
+        self.assertEqual(len(set(locs)), 691)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,

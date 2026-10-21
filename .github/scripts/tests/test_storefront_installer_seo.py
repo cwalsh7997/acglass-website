@@ -345,7 +345,7 @@ class CannibalizationTests(unittest.TestCase):
         # installation primary named in url-primaries.json.
         self.assertNotIn('href="/commercial-storefront-installer-florida.html"', guide)
         self.assertIn(
-            'href="/florida-commercial-glazing/">commercial storefront installer</a>',
+            'href="/florida-commercial-glazing/">hire a Florida storefront installation company</a>',
             guide,
         )
         self.assertIn(
