@@ -113,6 +113,9 @@ HELD_LONG_DESCRIPTION_HASHES: dict[str, str] = {
     # limit with approval-gated claims removed (project counts, bonding language,
     # multi-office counts, TN code references). No page needs an overlength
     # exception, so any new long description fails immediately.
+    # 2026-10-21: euro-wall.html ships the exact 10/20 Search Console sentence
+    # (158 characters, three over this cap). The hold is this sentence only.
+    "euro-wall.html": "8cfb75d7538eebec03118710e3a6630a85508c9d7692922101a94b2c212933e2",
 }
 
 

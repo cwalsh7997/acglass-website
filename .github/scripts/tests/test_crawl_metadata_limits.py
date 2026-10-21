@@ -81,7 +81,12 @@ class HeldDescriptionTests(unittest.TestCase):
         # Emptied completely 2026-09-09: index.html's description is now 144
         # chars and fits the 155 limit, so the last overlength exception is gone.
         # Any new long description fails immediately, which is the point.
-        self.assertEqual(set(), set(checker.HELD_LONG_DESCRIPTION_HASHES))
+        # 2026-10-21: euro-wall.html is held for one exact 158-character
+        # sentence from the 10/20 Search Console ship list.
+        self.assertEqual(
+            {"euro-wall.html"},
+            set(checker.HELD_LONG_DESCRIPTION_HASHES),
+        )
 
     def test_repaired_metadata_is_bounded_and_socially_consistent(self):
         for rel, expected in self.REPAIRED_DESCRIPTIONS.items():
