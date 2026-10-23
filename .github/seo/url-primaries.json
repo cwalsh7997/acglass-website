@@ -781,6 +781,68 @@
       ],
       "requires_external_redirect": [],
       "notes": "REVERSIBLE PILOT, approved by ownership, measured at the next GSC gate. The site carries four city-permutation service clusters of 77 pages each (308 URLs). Over the 90-day window 2026-05-30..2026-08-25 those 308 URLs earned 1,892 impressions and 11 clicks combined, and 169 of them earned exactly zero impressions. This entry treats ONLY the all-glass-entrances slug, which earned 129 impressions and 3 clicks across 77 URLs. /all-glass-entrances/ is a new statewide parent hub written for the service intent rather than for a city permutation. The 49 all-glass permutation URLs with zero impressions rel=canonical to it; their content and URLs stay in place and they are NOT noindexed, so the change is a one-line revert per file. The 28 all-glass permutation URLs that did earn impressions are untouched and keep their own canonicals. /all-glass-entrance-doors-florida/ (379 words, zero impressions) is consolidated in the same move because leaving it self-canonical would put it in direct competition with the new hub for the same head terms. Internal links that pointed at the 49 consolidated URLs now point at the hub so link equity flows up; the anchor text was changed from 'All-Glass Entrances - <City>' to 'All-Glass Entrances' so it describes the page it actually resolves to. REVERSAL TRIGGER: if the hub has not picked up the impressions the consolidated set gave up by the next GSC gate, restore the 49 self-canonicals and the sitemap rows and re-point the internal links. Nothing in this entry touches the impact-windows-hurricane slug, which earns 1,211 impressions and is the only permutation cluster with real demand."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "product-approval",
+      "head_terms": [
+        "florida product approval",
+        "florida product approval requirements",
+        "florida building product approval",
+        "florida product approval for glass"
+      ],
+      "primary": "/blog/florida-product-approval-glazing-guide.html",
+      "status": "ratified",
+      "evidence": [
+        "gsc:pages 28-day supplied 2026-10-23: /blog/florida-product-approval-glazing-guide.html 47 impressions, position 9.4",
+        "gsc:pages 28-day supplied 2026-10-23: /blog/what-is-a-product-approval-florida.html 130 impressions, position 29.8",
+        "gsc:queries 28-day: florida product approval 28 @ 29.4; florida product approval requirements 8 @ 18.1; florida building product approval 7 @ 28.1",
+        "gsc:queries 3-month: florida product approval for glass 21 @ 13.9",
+        "content: the glazing guide is the operational GC page (what an FL# document lists, lookup, engineer-of-record, failure modes, submittal contents). The what-is post restates the definition and the sub's FL-number checklist."
+      ],
+      "informational_keep": [
+        {
+          "url": "/blog/what-is-a-product-approval-florida.html",
+          "question": "What must a glazing sub's FL number show before install?"
+        },
+        {
+          "url": "/florida-product-approval-search-guide/",
+          "question": "How do I search an FL# at floridabuilding.org?"
+        },
+        {
+          "url": "/florida-product-approval-vs-noa/",
+          "question": "When does the AHJ want an FL# and when does it want an NOA?"
+        }
+      ],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Title and internal-link differentiation only. No URL, canonical, noindex, or redirect moves. The glazing guide already ranks closest to the head term (position 9.4) and is the page that walks a GC through the approval document, lookup, and submittal. The what-is post keeps the FL-number checklist. The search guide keeps the floridabuilding.org lookup. /florida-product-approval-vs-noa/ is the comparison and is also listed under notice-of-acceptance; it stays self-canonical. /approvals/ is a product-number index and is not this intent's primary."
+    },
+    {
+      "market": "florida-statewide",
+      "intent": "notice-of-acceptance",
+      "head_terms": ["noa", "florida noa", "notice of acceptance"],
+      "primary": "/florida-noa-explained.html",
+      "status": "ratified",
+      "evidence": [
+        "gsc:pages 28-day supplied 2026-10-23: /florida-noa-explained.html 54 impressions, position 24.9",
+        "gsc:pages 28-day supplied 2026-10-23: /miami-dade-noa-explained/ 29 impressions, position 8.5",
+        "gsc:queries 3-month: noa 51 @ 5.8; florida noa 32 @ 6.2",
+        "content: /florida-noa-explained.html is the statewide Notice of Acceptance page (document fields, NOA number format, FPA contrast, project workflow, pitfalls). /miami-dade-noa-explained/ is the shorter HVHZ reading guide and already ranks for that narrower query."
+      ],
+      "informational_keep": [
+        {
+          "url": "/miami-dade-noa-explained/",
+          "question": "How do I read a Miami-Dade NOA for an HVHZ permit?"
+        },
+        {
+          "url": "/florida-product-approval-vs-noa/",
+          "question": "When does the AHJ want an FL# and when does it want an NOA?"
+        }
+      ],
+      "consolidate_in_repo": [],
+      "requires_external_redirect": [],
+      "notes": "Title and internal-link differentiation only. No URL, canonical, noindex, or redirect moves. /miami-dade-noa-explained/ has the better average position (8.5 vs 24.9) but its copy is the HVHZ permit reading, not the statewide Notice of Acceptance. Making it the primary for 'noa' and 'florida noa' would retitle a Miami-Dade page onto a query its body does not hold, and would push the deeper statewide page off the head term. The Miami-Dade page stays the HVHZ sibling. /florida-noa-explained/index.html is already a noindex refresh stub onto this primary and is left as-is. /florida-product-approval-vs-noa/ stays self-canonical on both this intent and product-approval."
     }
   ],
   "seo_targets_reconciliation": [
