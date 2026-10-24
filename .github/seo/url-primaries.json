@@ -366,13 +366,18 @@
     {
       "market": "jacksonville",
       "intent": "commercial-glazing",
-      "head_terms": ["commercial glazing contractor jacksonville"],
-      "primary": null,
-      "status": "blocked-no-primary",
-      "evidence": ["topical:SS4.3", "measurement:markets[jacksonville]"],
+      "head_terms": [
+        "commercial glazing contractor jacksonville"
+      ],
+      "primary": "/commercial-glazing-jacksonville.html",
+      "status": "ratified",
+      "evidence": [
+        "Owner source: .github/seo/jacksonville-scope-2026-10-24.json",
+        "Distinct commercial installation and mobilization scope; existing Jacksonville aliases remain contained."
+      ],
       "consolidate_in_repo": [],
       "requires_external_redirect": [],
-      "notes": "2026-09-30 soft-merge: commercial-glazing-jacksonville.html stays on disk, is noindex,follow, and rel=canonical to /florida-commercial-glazing/. It is no longer a self-canonical primary. The Florida hub is not registered as this market primary, so inbound hrefs to the file stay allowed without a cross-canonical rewrite."
+      "notes": "2026-10-24 draft: promote the existing broad commercial-glazing page after owner confirmation of full installation with planned mobilization. No Jacksonville office or locally stationed crew claim. The storefront head intent still has no separately declared primary. Publication remains subject to exact candidate approval."
     },
     {
       "market": "jacksonville",

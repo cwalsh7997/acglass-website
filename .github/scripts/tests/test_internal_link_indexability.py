@@ -141,7 +141,6 @@ class IndexableLinkTargetTests(unittest.TestCase):
             "/commercial-glazing-gainesville.html",
             "/commercial-glazing-ocala.html",
             "/commercial-glazing-daytona-beach.html",
-            "/commercial-glazing-jacksonville.html",
             "/commercial-glazing-central-florida.html",
             "/commercial-glazing-southwest-florida.html",
             "/commercial-glazing-treasure-coast.html",

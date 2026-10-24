@@ -15,6 +15,8 @@ import re
 import subprocess
 import sys
 
+from _metadata_limits import description_over_limit
+
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 
 r = subprocess.run(["git", "-C", ROOT, "ls-tree", "-r", "--name-only", "HEAD"],
@@ -49,7 +51,7 @@ for p in pages:
             fails.append((p, f"title {len(T)} chars, max 60"))
 
     m = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', d)
-    if m and len(m.group(1)) > 155:
+    if m and description_over_limit(p, m.group(1)):
         fails.append((p, f"description {len(m.group(1))} chars, max 155"))
 
     h1 = len(re.findall(r"<h1\b", d, re.I))

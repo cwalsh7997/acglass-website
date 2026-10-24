@@ -44,7 +44,7 @@ addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
  "headline": "Shop Approval Is Not a Ship Date",
  "description": "Map shop approval, dimensions, finish, deposit, and factory acknowledgment as separate release gates before fabrication starts.",
  "datePublished": "2026-09-12",
- "dateModified": "2026-09-12",
+ "dateModified": "2026-10-24T16:00:00Z",
  "author": {
  "@type": "Person",
  "@id": "https://acglass.com/#connor-walsh",
@@ -63,46 +63,44 @@ addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
  "url": "https://acglass.com/blog/shop-approval-is-not-a-ship-date.html"
 }
 </script>
- <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "Does shop drawing approval start the manufacturing clock?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Often no. Many factories wait for approved shops plus locked dimensions, finish selection, deposit clearance, and a factory acknowledgment of release. Treat each as a separate gate until your PO says otherwise."
- }
- },
- {
- "@type": "Question",
- "name": "What is the difference between shop approval and a ship date?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Shop approval means drawings are accepted for fabrication intent. A ship date is when finished material leaves the plant. Between those points sit release gates and fabrication itself. Do not schedule truck arrival from the approval stamp alone."
- }
- },
- {
- "@type": "Question",
- "name": "Which release gates should a GC track?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Track shop approval, field or structural dimension lock, finish selection, deposit or credit clearance, and factory acknowledgment of the release package. Ask the supplier which gate starts their clock on your order."
- }
- },
- {
- "@type": "Question",
- "name": "Where can I find typical fabrication lead-time ranges?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Use ACG's commercial glazing lead times page for system-level context. This article does not invent lead-time days. Confirm current weeks with your supplier at buyout."
- }
- }
- ]
-}
-</script>
+ <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does shop drawing approval start the manufacturing clock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often no. Many factories wait for approved shops plus locked dimensions, finish selection, deposit clearance, and a factory acknowledgment of release. Treat each as a separate gate until your PO says otherwise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between shop approval and a ship date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shop approval means drawings are accepted for fabrication intent. A ship date is when finished material leaves the plant. Between those points sit release gates and fabrication itself. Do not schedule truck arrival from the approval stamp alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which release gates should a GC track?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Track shop approval, field or structural dimension lock, finish selection, deposit or credit clearance, and factory acknowledgment of the release package. Ask the supplier which gate starts their clock on your order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find typical fabrication lead-time ranges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use ACG’s commercial glazing lead times page for system-level context. This article does not invent lead-time days. Confirm current weeks with your supplier at buyout."
+      }
+    }
+  ]
+}</script>
  <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -185,7 +183,7 @@ addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
  <h2 id="approval-vs-ship">Approval stamp vs ship date</h2>
  <p>Architect or GC approval of shop drawings means the drawings are accepted for fabrication intent. It does not mean aluminum is cutting, glass is ordered, or a truck is booked.</p>
  <p>A ship date is when finished material leaves the plant. Between approval and ship sit release gates and fabrication. Scheduling install from the approval stamp alone is how <a href="/florida-commercial-glazing/">storefront arrives after drywall</a>.</p>
- <p>Ask your supplier one question in writing: <em>Which document and payment state start your manufacturing clock on this order?</em> The answer is supplier-specific. <!-- [UNCERTAIN] Do not assume one universal factory rule. --></p>
+ <p>Ask your supplier one question in writing: <em>Which document and payment state start your manufacturing clock on this order?</em> The answer is supplier-specific. Confirm the release conditions for this order in the supplier's acknowledgment.</p>
 
  <h2 id="release-gates">Release-gate flowchart / table (template)</h2>
  <p>Use this as a PM tracking sheet. Fill dates per project. It is a <strong>template</strong>, not a schedule duration claim.</p>
@@ -229,7 +227,7 @@ addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
  <td>Required deposit cleared or credit terms satisfied per PO</td>
  <td>Buyer / AP</td>
  <td>____/____/____</td>
- <td><!-- [UNCERTAIN] --> Supplier-specific</td>
+ <td> Supplier-specific</td>
  </tr>
  <tr>
  <td>5. Factory acknowledgment</td>
@@ -250,7 +248,7 @@ addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
 
  <h2 id="dimensions">Gate 2: Dimensions locked</h2>
  <p>Many packages need rough opening confirmation from structural or field measure before glass is cut. &ldquo;Per plans&rdquo; is risky when the field opening drifted after steel.</p>
- <p>Write the dimension source into the release: structural drawing revision, field ticket date, or architect directive. If dimensions change after factory ack, expect a stop or remake. <!-- [UNCERTAIN] Remake cost and time are PO-specific. --></p>
+ <p>Write the dimension source into the release: structural drawing revision, field ticket date, or architect directive. If dimensions change after factory ack, expect a stop or remake. Obtain the supplier's written cost and schedule effect before accepting a change.</p>
 
  <h2 id="finish">Gate 3: Finish selection</h2>
  <p>Custom finishes often gate extrusion processing. A color TBD hold can leave approved shops sitting while the plant waits for a finish code.</p>
@@ -258,7 +256,7 @@ addEventListener("load",function(){setTimeout(acgLoadGtag,5000);});
 
  <h2 id="deposit">Gate 4: Deposit / credit</h2>
  <p>Some manufacturers will not enter fabrication until deposit clears or credit is approved. That is a commercial gate, not a drawing gate.</p>
- <p><!-- [UNCERTAIN] Deposit percentages and credit rules are supplier- and order-specific. Do not invent amounts. --></p>
+ <p>Use the order's written deposit, credit and release terms when planning fabrication.</p>
  <p>AP delay after &ldquo;approved shops&rdquo; is a common hidden schedule killer. Put deposit timing on the same tracker as drawing approval.</p>
 
  <h2 id="factory-ack">Gate 5: Factory acknowledgment</h2>

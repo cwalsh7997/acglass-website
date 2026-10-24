@@ -1,5 +1,8 @@
 # Connor cancelled unverified volume totals on 2026-09-14.
-# These strings must NOT appear as company-volume claims on public pages.
+# These strings remain prohibited by default. Connor cleared the existing
+# totals on 2026-10-24. Exact source surfaces and the owner confirmation are
+# bound in .github/seo/public-metrics-2026-10-24.json; the checks preserve only
+# those occurrences. This does not approve new claims or other totals.
 # Do not invent a replacement number. Use qualitative Florida commercial glazing scope.
 PROHIBITED:
 350+

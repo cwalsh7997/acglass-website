@@ -49,12 +49,15 @@ Either path works. The CSV path needs no credentials at all.
 1. Search Console → Performance → Search results.
 2. Set the date range to the last complete week. Search Console finalizes data
    on a 2-3 day lag, so end the window at least 3 days before today.
-3. Add the **Pages** dimension alongside **Queries** if you want cannibalization
-   detection - a queries-only export physically cannot show which URL served
-   which query, and the report will say so rather than guess.
-4. Export → CSV. Save into `.github/seo/data/` as
+3. Choose **Queries** or **Pages**. The standard UI workbook exports those as
+   separate tables; it does not produce paired query-and-page rows. Do not join
+   the two tables by row order or infer which page served a query. Use the API
+   option below or a query-and-page export from Looker Studio for that analysis.
+4. Export to CSV. Save into `.github/seo/data/` as
    `YYYY-MM-DD_YYYY-MM-DD.csv`.
-5. Repeat for the prior week.
+5. Repeat for the prior week with the same filters and equal-length dates.
+   A query-only report measures query movement. A page-only report measures
+   page movement. Cannibalization requires actual paired query-and-page rows.
 
 Header names are matched loosely, so the UI export (`Top queries`, `Clicks`,
 `Impressions`, `CTR`, `Position`), the bulk export, and Looker Studio exports
