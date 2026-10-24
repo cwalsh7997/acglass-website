@@ -372,7 +372,9 @@ class CannibalizationTests(unittest.TestCase):
             home,
         )
         self.assertIn(
-            'href="/florida-commercial-glazing/">Commercial glazing contractor in Jacksonville</a>',
+            # 2026-10-24: the owner-confirmed installation/mobilization page
+            # is now Jacksonville's primary instead of the statewide fallback.
+            'href="/commercial-glazing-jacksonville.html">Commercial glazing contractor in Jacksonville</a>',
             home,
         )
         self.assertIn('href="/florida-commercial-glazing/"', home)
