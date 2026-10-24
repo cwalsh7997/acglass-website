@@ -1,0 +1,1679 @@
+{
+  "approval": {
+    "source": "Connor Walsh reply in active SEO goal thread 01a16e61-26a0-79b0-89e7-c6da401ff25b",
+    "question": "Many existing article graphics also say \u201c0 OSHA recordables.\u201d Your earlier approval covered projects, square feet and EMR. Is the zero-recordables claim current, supported and cleared for public use, or should I remove it from the graphics?",
+    "answer_exact": "It is current, supported and cleared",
+    "recorded_at_utc": "2026-10-24T16:13:08.403486+00:00"
+  },
+  "scope": "Existing metric copy in the listed hash-bound image assets. Prior volume confirmation is in public-metrics-2026-10-24.json. This approval does not verify the rest of each image, approve new metric values or locations, or authorize publication of the website candidate. HTML safety checks retain their original source-bound scope.",
+  "assets": [
+    {
+      "path": "images/infographics/infographic-ada-compliance-commercial-glass-doors.webp",
+      "sha256": "2469bd94b10cbbfcd6c22cd3a42c3febde89e23ae0ff5cd66a1c2890c07b321d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-ada-compliance-commercial-glass-doors.avif",
+      "sha256": "c4368289260d4743f1fadd4438b449107c5ba6f7db78ff48ee189e20a364b1b2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-ai-project-management-commercial-glazing.webp",
+      "sha256": "294a4a59df2c12815d6d42274132316a8c1015b133b2678b124ad2ddf43001c2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-ai-project-management-commercial-glazing.avif",
+      "sha256": "51e7c56f95986e62f5871b6e962e8b1fe2637786638b1e17ea329ed4f99ec3cd",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-automatic-entrance-ada-compliance.webp",
+      "sha256": "b0e96f43d2dc0c0746a880e7d5effbe41325d6e355e41b5508cc412147ba269e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-automatic-entrance-ada-compliance.avif",
+      "sha256": "b538d1f4fe6cd05cdeb2cfa0cbf34c1d287ef40d19984ad2743cf52abe461e5f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-automatic-entrance-systems-commercial-buildings-florida.webp",
+      "sha256": "8750537811f97af64b86d82d7d44618e3be10c7a409de9fa31571e10cc7d8be9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-automatic-entrance-systems-commercial-buildings-florida.avif",
+      "sha256": "ab135dbad943c25602a2afdacc5a030f1e961fefe0abd92d6565faa4001f0287",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-commercial-storefront-systems-florida.webp",
+      "sha256": "d71de7478c884f420f1b44ec3326d4707e95d8b39a84c935828a6db6d84425c2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-commercial-storefront-systems-florida.avif",
+      "sha256": "5f6952397bf8d4b04df31f4f5b07d7d4e2f899334c51ab3ac716f8784fe59e08",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-glass-options-florida-storefronts.webp",
+      "sha256": "7715557c8a19bef736e2742bc3db39c0ab0bb7c3c841200707f98a1a1c7e4868",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-glass-options-florida-storefronts.avif",
+      "sha256": "9a902d9f3d1548f8dc49d72440b5110dd8d5662ae73efa25b8cd81b152795fb0",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-glass-types-florida-commercial-climate.webp",
+      "sha256": "6056e5304ff1b01612157c502ed7726ed58f5bc6918ac4d9ccb9b80114ceca2a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-glass-types-florida-commercial-climate.avif",
+      "sha256": "2a32b8fd2bb16e22395886f83633f621a3c888462f877ec34e71c9df0db1b8c1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-time-replace-commercial-windows-florida.webp",
+      "sha256": "2526b31d7cae4ef4ef9cdb25c1914c7ac35dabdac1738868690dd30b0f1df553",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-best-time-replace-commercial-windows-florida.avif",
+      "sha256": "b56cc8e9181781367af9aae483bcdff4ea66ab48568bae416dae4357a149a347",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-bi-fold-glass-walls-restaurants-hospitality.webp",
+      "sha256": "6dfe7b3301c7ebec167792b9fe585efe7f2f6f510d7ddcd7180a961cbb03b664",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-bi-fold-glass-walls-restaurants-hospitality.avif",
+      "sha256": "57a6c0738fc9a328de0096c13c7913a08b005833f19e8732107f16cd88dc66e8",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-bradley-daytona-multifamily-glazing.webp",
+      "sha256": "03a9eeb3d7a4139e684e49d4a1f2744eac8141ece6050bb397f83e5c3f787300",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-bradley-daytona-multifamily-glazing.avif",
+      "sha256": "2513e19b3b34cba09547e24d2de25752970d0349a0a00dcfd7d67533258aca0d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-adds-property-value-florida.webp",
+      "sha256": "e597217388f2762769ad55697ebe497951da993cfbe4a485faadca9393d64cb6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-adds-property-value-florida.avif",
+      "sha256": "c49034a600450a21fca2710f7f2baf487562e7d52f1292619a9614791ca74b8f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-cleaning-maintenance-florida.webp",
+      "sha256": "eafd5ca8b143ae16f38e4296a7f9f24ca832b1cecfb3b91be88232fa64989f37",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-cleaning-maintenance-florida.avif",
+      "sha256": "b90de456fc6c5ac274c8f13e7583a16a82cc396e2ecfc9a16a016c418ca28dc8",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-customization-options-florida.webp",
+      "sha256": "7b361b70ab9bd073c8e764225d9b217cc2d832b912af5ca7f289b652cef81d0b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-customization-options-florida.avif",
+      "sha256": "37c052b51c437d97699ba064a43d9f7bc2fae54f569a4667e249cbf4e9e4d400",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-insurance-claims-florida.webp",
+      "sha256": "a70be38f5eb91cda0fdd8c14f72eedcd5b2185172e68e629c1af1160739f6a76",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-insurance-claims-florida.avif",
+      "sha256": "83085eaae03192b6d442e128968d26e651f012482ed3215ab637ca6c35be1e30",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-maintenance-schedule-florida.webp",
+      "sha256": "5b42ee152f034c4d417f33909b996b6e5c646a9eded12db5df2638415b388870",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-maintenance-schedule-florida.avif",
+      "sha256": "14e95cb79959545383cdb42bf477e8fd45bb2186d528307bd7d4f9e26e4d2067",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-partition-systems-offices.webp",
+      "sha256": "58b4c009d86e40bcabd4a073422b075017773cd8ef2a7a79f6f1e3512d604944",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-partition-systems-offices.avif",
+      "sha256": "6ed8ac91b12d6eb7ffbf3a216b532cab136e1a7a2b5c3bcae3aa19f11c4559a9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-property-value-florida.webp",
+      "sha256": "9c926941e943255db6de3ca92e2406f9f2b350292a128002e9cb53b1f7ebc593",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-property-value-florida.avif",
+      "sha256": "e398694e64ab3132638d3a72ed898488bf51c6858c40b0e3463cdfe9170eb177",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-repair-costs-florida.webp",
+      "sha256": "28083ffb571bbdf24bf793da961619829dbc6a3eaff320e75465f92107a4d4f5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-repair-costs-florida.avif",
+      "sha256": "4afd248905d8473421e8ff95bad2e3bdd13ddcc941ee7e3a7aa267e03400a6ea",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-replacement-florida.webp",
+      "sha256": "21c1332555560a48edfc8dd4be389c561721814fa26319ce5926eda375fc4820",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-replacement-florida.avif",
+      "sha256": "7209b06ebc6f07ee2e548179ab9034d545f152e41f315b1d9013871c11b5817c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-types-explained.webp",
+      "sha256": "a3dbf48e9c7b6876bb47c1777d4c196baee7edae7bfe78f6436597e0f487e59a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-types-explained.avif",
+      "sha256": "0ebaacabf9b144529c39caf9362dcdd3aa91bca5d95f1ca4a376a5bdb9037df1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-types-guide-florida.webp",
+      "sha256": "d8020d70d054dcc53fdcf6158c5f0101db55a7f3870aae69fb163d7d55398a41",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glass-types-guide-florida.avif",
+      "sha256": "a231cf13db1af53195eb070f461922106c68352e8ecdf58fe5c2e86685ad0dd4",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-contractors-tampa-fl.webp",
+      "sha256": "da16731ccdca4f1fad66e300ca4349815ca907e388bafc9bfb6bd9e3a352dc06",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-contractors-tampa-fl.avif",
+      "sha256": "e2ff2b5cfc9bacfd8c49c7e6ecb97f3ea797d4ddf80d7b57050fc87d7fcec83a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-cost-florida.webp",
+      "sha256": "47d7b43f37a8c02c91d568fb0acfa3fe884294703cfce4c462bb8a9448c395c7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-cost-florida.avif",
+      "sha256": "18cf55da7cfe7071123678151d5d9aa33507469cef37b94283bb66b5813cf398",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-healthcare-florida.webp",
+      "sha256": "f7d66c952614b9ff6c4cb333c1646d2a8ae7bdda423a2f8dbb3dc9103c894de7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-healthcare-florida.avif",
+      "sha256": "ce50c2781eff94ea3a7601cc21596e88625eb4b60d9f593f108ccc9120e57c71",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-inspection-florida.webp",
+      "sha256": "6cfc7e4c0fee2e5ea88a2c991fd69092f3bea1274e0886920c9a2220f59cef93",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-inspection-florida.avif",
+      "sha256": "daddcb3496b5df767ec3609b85dd4a58d0ce4cef8254556c4d1d363ba395aeee",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-lead-times-2026.webp",
+      "sha256": "d3c2a6b470fa8c859409b118895bf3a9ee785ae2d0f2becaba19a901d2e75f4f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-lead-times-2026.avif",
+      "sha256": "c7b8590901483d9f5a2e3b73e992c27e8d336e09dc5225a58445d21fde295907",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-miami-dade-guide.webp",
+      "sha256": "335145f47cb96dc020cf0d2a2177eb6f1be9d948629a633f4300c3a2e0406c59",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-miami-dade-guide.avif",
+      "sha256": "b08b639bac84ce76c0e3210b1f4aee98baef375dde3094837f05b39e7657feb3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-miami-florida.webp",
+      "sha256": "0894417c624d16cb862b61109198cb3027524a4822d974d902c666d9843e13a6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-miami-florida.avif",
+      "sha256": "fda9ae5ba21f4120730b48dab98eca045072ea1202feaca4721b2776630a273a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-orlando-fl.webp",
+      "sha256": "c1e8a88fa71e5f39372219d0d00fab6d03eb5092d48a6ca7b98135dec321b60b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-orlando-fl.avif",
+      "sha256": "3939155dc1c209bb7d6e7af747730855a26cf23d57b18e789e852f4de05d54c7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-project-delays-how-to-avoid.webp",
+      "sha256": "4fff63db0a0276fe334d030b3b9378df8ab1b595fe1181a7dae104bd15dcdc08",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-project-delays-how-to-avoid.avif",
+      "sha256": "919c83b57bfdafc6e36cda10fc6b7f8a5d0e774225f9fceca38ed04ebeb7274f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-project-timeline.webp",
+      "sha256": "bf0e6561b2d5006980abf3c7eabcd42a872755d434a53f68b7a82420f858ab59",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-project-timeline.avif",
+      "sha256": "11373e696ed42070c2e6ecfc10fd3bd87294b2ac1ec6223e6ade6592535d86dd",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-project-turnaround-time-florida.webp",
+      "sha256": "5dd80bf50dc357ac51f4d90d40af58c6498e2f2d26a55365d9620289a8ee59ee",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-project-turnaround-time-florida.avif",
+      "sha256": "1a58798e9788bfd1f7fa1954c0891fe8d62644529bf5d9c704ce36a5ef278f6b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-safety-standards-florida.webp",
+      "sha256": "811ba39faaaf0bf487abdb81513d809f2be2f57e77d2c28879fcb82de3ff223b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-safety-standards-florida.avif",
+      "sha256": "7309982890ef039ba5049de2a47bd9783e85f06bc13b53a25984c1bfaefe3e75",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-subcontractor-florida.webp",
+      "sha256": "7a0dfa07c785b35dd6a99b871247d6a8dfe7ee8c0cd43b876d65e7ea40651713",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-subcontractor-florida.avif",
+      "sha256": "b34fb25f59278004d4b906a9fb6695d222c8f3f9e952787cc26459093d8b8f7e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-submittal-process-guide.webp",
+      "sha256": "ba1e906f6a119634cf92366351be5e67be07f05613da96eaa6754ac8467ea3f1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-submittal-process-guide.avif",
+      "sha256": "4a86f91c4753becf8e549601c58c8073e024a9da4b5aa214e0419e6ef3612548",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-tampa-bay-market-2026.webp",
+      "sha256": "8e05c82f87b5d3709b09f30dbdcba4480e813e55ce58eaa09a2507382a1d207d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-tampa-bay-market-2026.avif",
+      "sha256": "8e392d78cb7c8fe81e33f0527a5a77cbbb8710c751d08f392055bdf435fb67e5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-tampa-bay-what-gcs-need-to-know.webp",
+      "sha256": "cf2c752b96c9acc6fbee274e02a1203da33060f7d741cad25b7d2e6e752f6785",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-tampa-bay-what-gcs-need-to-know.avif",
+      "sha256": "97f19f8b06d9d8e7878981bda94139577340bb2b5d74d86eb53514424437e168",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-warranties-florida.webp",
+      "sha256": "71c8f543e394214f5d945ba8a16d79c4fe67ac91859cce333e0193da8cdef915",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-glazing-warranties-florida.avif",
+      "sha256": "248cd492f62b2010618def2e8d87473d335670984ca782f4fb319a48df61f3b4",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-security-glass-solutions-florida.webp",
+      "sha256": "8de2c91f1aa4fafa82e18ddfd225ddc3a996c16de083300bf1991ef23345307a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-security-glass-solutions-florida.avif",
+      "sha256": "90e77af6c470b94110fe45b2fc125cc6c61b2f26175003e7862256acf6538fc1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-skylights-glass-ceilings-florida.webp",
+      "sha256": "315a9bf5d5bb8dd1ec4eeaa22037e8cf636283575dfff35d3fd4fd5c40584ddd",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-skylights-glass-ceilings-florida.avif",
+      "sha256": "7f47258ef8a2bea14e7c88892d86284ecf294fa061ddd93ddb4ed09e59134492",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-storefront-installation-guide.webp",
+      "sha256": "144041fa95dfe3b4197bbc0b910623f41223ef9445e9cde35b1365be8f2e64d2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-storefront-installation-guide.avif",
+      "sha256": "a750d9e1010733e15197631865a4c49c01e39b641742237bebf9e9a6f96cd269",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-storefront-installation-process.webp",
+      "sha256": "659e5bae055600b4635e9f48443c37704aab6ea1ca3be1a201c80ea3b0e2195a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-storefront-installation-process.avif",
+      "sha256": "cf57ae7cdce9d1719b5e4d3cbfc56c4749d1863ffb59eb53e857ffc58da2dee3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-storm-proofing-windows-florida-guide.webp",
+      "sha256": "33cd5dd1664a4b75a9e8578f2d22efc01a5c7e5b7ae4c68f90b82752adc78118",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-storm-proofing-windows-florida-guide.avif",
+      "sha256": "d77a5d0c21ee2c2d68525c8862f17838eb5a381b856f9abc436b8c5acc525a79",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-window-permits-florida.webp",
+      "sha256": "f96157e2d17db849d5d85406dbdf824ae714d4ad9dda846b662c3d31fda38cec",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-commercial-window-permits-florida.avif",
+      "sha256": "b2414434a4ae6d878657774c456f550468b9df2b2d560f48f3c8823fc0636f9b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-common-window-problems-florida-commercial-buildings.webp",
+      "sha256": "f1c6984009764383b2e8c3195c939ac96cd7448346f5095cc25611a212fdd59e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-common-window-problems-florida-commercial-buildings.avif",
+      "sha256": "b8221fcbc1aa1e33152ab454cdbf7d33be2432ec196814d2aa301eba79c2fe15",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-cost-of-impact-windows-commercial-florida.webp",
+      "sha256": "855727f5adda42e9a46fd13bb55357b465c9f3b511b34cd831b4fb0016186ba5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-cost-of-impact-windows-commercial-florida.avif",
+      "sha256": "5515e114e6f6ce2ca49951c0c91a9b0d2bb0d46c867f5ca197e89c8459e5fbd8",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-curtainwall-systems-explained-commercial-construction.webp",
+      "sha256": "41e90c0bdb9fcacb86e55651555af7bb5513307bccfd8f4fc93cb99f459fe54d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-curtainwall-systems-explained-commercial-construction.avif",
+      "sha256": "b05266667bbc52692a308cfa0b1ff127244ae0e52d97e1995e84d6762e464798",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-decorative-glass-storefront-options-florida.webp",
+      "sha256": "a7c64dd2add18c9a57532c9f50c69bad88a47014e7fcd1249ebcd10ce8597116",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-decorative-glass-storefront-options-florida.avif",
+      "sha256": "f5483f14cf4c0ce3234952ae562a039f3f5cad81ef017d5b8726dab89db05ae5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-division-08-specifications-guide.webp",
+      "sha256": "b47d9dc5c50931a79e282b4e50b85f10ecd70a2f1c8dded81a295a344609a37f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-division-08-specifications-guide.avif",
+      "sha256": "f2bf8cd8d41e129da3e1a1732e076bd1bcf4bfb29af89d7f6dd32da2515b32fc",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-do-windows-block-uv-commercial-florida.webp",
+      "sha256": "ea8204699ff9d43b155e742e947218d805945cd1a2b6a71c045d9acf636484af",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-do-windows-block-uv-commercial-florida.avif",
+      "sha256": "a40c72b4c33c19f8c67039194871719c0d7c950f6bcda54b0663f3e0c18bf33e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-emergency-commercial-glass-replacement-florida.webp",
+      "sha256": "2294aecc47018fdb08920ec70aecb06962de885065fc1d405bd7d0dae833098c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-emergency-commercial-glass-replacement-florida.avif",
+      "sha256": "6cfd09b1e015c0fe8daced0f30324a4a29dac9d6e6caee4f930468ec51ee61e1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-emergency-commercial-glazier-services-florida.webp",
+      "sha256": "211d363c6902ce96b0cbd673b97ea39be0be40510d7eb29754c55be84bfb20a4",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-emergency-commercial-glazier-services-florida.avif",
+      "sha256": "c7605ba1df81c0988810bfd633744f36c66e39dd5d03d519d361684816b96bcb",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-energy-efficient-commercial-glass-florida-code.webp",
+      "sha256": "17fcb7f27378785104e99fc74a2f5737927f715885e818730d743d3cc9e370d0",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-energy-efficient-commercial-glass-florida-code.avif",
+      "sha256": "c6da0085ddf6b5ea59f435d70f30e5e65c4bd6c1d2695b3e58760b04ad20da1a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-energy-efficient-glass-options-florida-businesses.webp",
+      "sha256": "55190da07432a6404ef2640619d31df368ad2d61b4321c69369a1027875fc5cb",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-energy-efficient-glass-options-florida-businesses.avif",
+      "sha256": "46108ea87dccea29d6f475f3e9f2eb91cba3b1d50c3113169c0f26502851fdee",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-eurowall-sliding-glass-door-system.webp",
+      "sha256": "dc2dd73993a3b343a91ee1b477d69753cb5600a64d90f8f7a0f7a6880277d31c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-eurowall-sliding-glass-door-system.avif",
+      "sha256": "2c47c7371b5faa2a0cdef46354ec3e7f366bb4e7d1019062e5df174e5dd1dcc3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-fire-rated-glass-code-compliance.webp",
+      "sha256": "e895da4cb13101e10c2bc43a4e1fb51fbe205b86c9c44553ee25be82eb4373fd",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-fire-rated-glass-code-compliance.avif",
+      "sha256": "7506afd25c0c8a245d52b80f1aae26a37c56a9b5d0bdfc91ad5f103640214533",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-fire-rated-glass-requirements-commercial-buildings.webp",
+      "sha256": "8d1edb3bdb53579e742d472d9273175ea256207e69ddda58353d2e6e924e91a1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-fire-rated-glass-requirements-commercial-buildings.avif",
+      "sha256": "7cb57e4aed26453bbb7a3a8ec265ae4453be2067f25ccfcfc8d9cdfbe0da6c00",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-fire-rated-glass-requirements-florida.webp",
+      "sha256": "f0d81a0d38c2d39ef78580ba115debdac9ce057e8e9af0960df7f98828fd6be9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-fire-rated-glass-requirements-florida.avif",
+      "sha256": "8dd8f034f19a0f93785f4364c25938f030fe59832381f6dedd05aa97b445c254",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-building-code-commercial-glazing-guide.webp",
+      "sha256": "c1287bd58ee9db6233c4ef88ecd29dcee89096017926ca2c326b8a98955800c3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-building-code-commercial-glazing-guide.avif",
+      "sha256": "2da6e903474ad248bbb9cb64c5764f2e057287f469ebe8421ae287582d825306",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-building-code-commercial-windows-2026.webp",
+      "sha256": "53f13978ae101b71e385f0cc1697152c2d78bd24d6ffcd565be073be5fa03359",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-building-code-commercial-windows-2026.avif",
+      "sha256": "374f694e3d0e48839dcb94d3541b80cb0ae6ab8b035c8c2ae7366ff7b8cb5a6e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-building-codes-commercial-glazing-2026.webp",
+      "sha256": "e7571c1ee9ba8fa5e111ac0439e13ce17f093c17a57c7a395fa7e5371747cb8f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-building-codes-commercial-glazing-2026.avif",
+      "sha256": "a7ca5fc3285c6322c7064693b4750b0243febf3039446856cbd2b67758c4e6f4",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-commercial-glazing-hurricane-code.webp",
+      "sha256": "7fd742a57be469a3eba2d4639acce77e84042b8a0e504e8931f5a1a6a36b9e80",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-commercial-glazing-hurricane-code.avif",
+      "sha256": "a1fec49b2eb15cfb4b7b81a437cd4f13972328bde3812f521308e59d4c62c6a0",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-product-approval-glazing-guide.webp",
+      "sha256": "72bd34bea85221998861e11a3f4eb05ffa43efe75a61f03ea2c03ff61e778425",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-florida-product-approval-glazing-guide.avif",
+      "sha256": "78d0c77dcc86e656e6a0db16bacba70e4ee205e7d10eb01de324346bc7cdb120",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-frameless-glass-doors-commercial-spaces.webp",
+      "sha256": "a6713107da3098ce27b113aaa21fae5585ecaedc1e46430c108fb41485c7d0b5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-frameless-glass-doors-commercial-spaces.avif",
+      "sha256": "b5cd6d7a13858abe8275ec85fc62151fead7c1240c6404552211a2b01f94e374",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-glass-partition-walls-office-commercial-guide.webp",
+      "sha256": "5f8892f2f685355f0f10c53d8f74a2a7d69cc8596ddfdcf5d779ddfac7b265d3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-glass-partition-walls-office-commercial-guide.avif",
+      "sha256": "845151976a0166c7502282b92e1b872ad8dfddf67c23ef5781ef06ee676b3988",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-glass-thickness-commercial-pros-cons.webp",
+      "sha256": "e440d305e8583380d0ea44d393c37525c52abca3a5b98b59d8e2832102cc7c10",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-glass-thickness-commercial-pros-cons.avif",
+      "sha256": "137363cd0f4e0f665fc935a87a9e7db46b6000e1e7ab3a13cebbf47d3c5c3dd6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-glazing-subcontractor-scope-letter-guide.webp",
+      "sha256": "395c69de7e38574cddd472426e300e2c053f97be0421da0e47b8fcc428ed81b0",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-glazing-subcontractor-scope-letter-guide.avif",
+      "sha256": "152cce8fb8da7c4fdce8743c2bc156897cc05a2a8ef8e1c6631be0c50ce36fa2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-impact-windows-protect-florida-business.webp",
+      "sha256": "0e768ba548e3a32b7fb9abb2b9ea3182d52c8549cd47322b995e78cee51c501d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-impact-windows-protect-florida-business.avif",
+      "sha256": "b0d4b97d5a0118fc0edae2549eeca768f73756c41b907f2e75ba81fc0dfc083c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-long-do-commercial-windows-last-florida.webp",
+      "sha256": "89dd9b68f09e0d8e8fbf005eb3ddcc6144a5e7a482a47e23fe8f1d772dccde53",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-long-do-commercial-windows-last-florida.avif",
+      "sha256": "71b08d7ce5c6fb64b4cac618d3dc2f61b9fa21a617ada26be69588716043fc1d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-long-does-commercial-glass-installation-take.webp",
+      "sha256": "e4893a46548c9d03f725bb9934763fe63957ee6c124866eb4659d8ed9bfccb11",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-long-does-commercial-glass-installation-take.avif",
+      "sha256": "2408671e54bd298d4bd34e5f81fb639a4b893afd2b4bcb6e5be23d963f9b7273",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-long-does-storefront-installation-take.webp",
+      "sha256": "0f5c6a06a196d674e8914b59daa6c1261c40ee05c8640441a546d2c17a840b7d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-long-does-storefront-installation-take.avif",
+      "sha256": "42b2d8010f7c6bb4d5b8eee7331739d4b77c27da611769306c83084ec7aed673",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-commercial-glazing-cost-florida.webp",
+      "sha256": "94906a323738933e5a5e8c24e446d23079bfe18ef597c70cba52d3acedb8e988",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-commercial-glazing-cost-florida.avif",
+      "sha256": "ae41f4895b197188de69d99f3a0a347b646fc0a56978b4dd4636ffa077139fa9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-commercial-storefront-glass-cost-florida.webp",
+      "sha256": "e16133c6eee472dec51521eeda9154450327d49941da8f656523dc767018aa7b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-commercial-storefront-glass-cost-florida.avif",
+      "sha256": "3237f98b0b43761de8963dea783d6550ce80c00e10ff80540c7cc2c88b5ef137",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-commercial-storefront-glass-cost.webp",
+      "sha256": "696e5faa1823bf7d8cd587133acffc5697fd4a3f350f822f05259c1b63c70966",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-commercial-storefront-glass-cost.avif",
+      "sha256": "f5ebf9be8b17533710f77e55f0e0fe7a3b0b6d247bf54cb4ad728d94bed4d744",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-curtainwall-cost-per-square-foot.webp",
+      "sha256": "9c2b0a72e590eceffb0cd40dc7d39b5163f9887e268a81759f4b3730fa55e7a2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-curtainwall-cost-per-square-foot.avif",
+      "sha256": "58cb1008fe927c9d692ef92947057da0bb19cb895bdd6fb73b3c5fca9d2cdcca",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-impact-glass-cost-commercial-buildings-florida.webp",
+      "sha256": "4d5dc1229ae13324145dd7e04d4e1c7a27d37e3f35db61f63cb8e9f108de885f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-much-does-impact-glass-cost-commercial-buildings-florida.avif",
+      "sha256": "eb810fef21b12f734b0229995452b46eeef7f29f1f1af40b9c4aced97fc3d2d1",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-tinting-affects-commercial-glass-performance.webp",
+      "sha256": "4b64ff2547eab93ccac1a574a082986f90ce07a436decf3e7e4826afd14cfed7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-tinting-affects-commercial-glass-performance.avif",
+      "sha256": "6e907131b9b936f189250505bdccf881af2e6de090c7d7e92475dda816b27119",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-commercial-glass-contractor-florida.webp",
+      "sha256": "34fa612a4d9265bc838816748563314f0f048f49d7b9085352f6ca8b1b90d1be",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-commercial-glass-contractor-florida.avif",
+      "sha256": "3de83f01fb07072c04f888ebee81e2d3ef21c5c7e84a1a9931631571d75f2568",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-commercial-glazier-tampa-bay.webp",
+      "sha256": "ffa56b3e6563fef4aee122264b8bc079dccd4b9c125f61256a8747f78d95df64",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-commercial-glazier-tampa-bay.avif",
+      "sha256": "ca40e94ce902bccd8df571e0241b938351364903d5b6c4fb4ea4c509e9f25793",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-commercial-glazing-contractor-west-palm-beach.webp",
+      "sha256": "5cf282acc8e2853c1e3400a8b3efbe10d10716b19397a9460f17a0a7d390cbaf",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-commercial-glazing-contractor-west-palm-beach.avif",
+      "sha256": "bcb5c2fd321af54c351227eb4dbfd463ca9b48b3dfeb62075f404340852078c7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-glazing-contractor.webp",
+      "sha256": "7dc769c965cc972412350f1a469a591221e638d80efcb9dcd50f17864ae520db",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-glazing-contractor.avif",
+      "sha256": "28a7b2211a77fc0ab9cef4f0ea068912b1dc1b10ef49cf04c78919bff051b8d4",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-glazing-subcontractor.webp",
+      "sha256": "8726e108a301f7baaa8f9eb59fa1f7f546e7bd431edc9578712ba94ec77f4ba6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-choose-glazing-subcontractor.avif",
+      "sha256": "aecd591fdf0bc1bd67de9ef1fd677707ff52047dac8c1b6e3bc976250d75d36d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-evaluate-glazing-subcontractor-bid.webp",
+      "sha256": "bb56662bd98541260a6c63a92de1f1f10cb13367e7cdc068f7d6396ab2903426",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-evaluate-glazing-subcontractor-bid.avif",
+      "sha256": "0f25790d815799f23a03cc99481c720c4d3ab5d1bebd80203dda7ddeb4e87b1f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-get-a-glazing-bid-florida.webp",
+      "sha256": "4e4ebbb11750e13c2e87eceb0c2e5fbdea746aafe36d46cb39b5a9dbf4efe816",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-get-a-glazing-bid-florida.avif",
+      "sha256": "3484e5ae4e30f17892045ba111da2d799e5d1c5fda8f90b68797552c04be294f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-get-quote-commercial-window-replacement-florida.webp",
+      "sha256": "97a0f7241d7f9b94be87f69da201146b24a500119875cce7b4b6c8c53ca91241",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-get-quote-commercial-window-replacement-florida.avif",
+      "sha256": "c4265bd50dff9886a0999ecb480263cfba41e0be8e5c798e345bc8b07a4d73fb",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-read-a-door-schedule.webp",
+      "sha256": "81e4768014465cb156e34061d047043867d52235d0db46ec757373002b982a11",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-read-a-door-schedule.avif",
+      "sha256": "c612b99ecba8a8410a11af01560cd0af112c4df74b853269963f182ab5826e16",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-spec-commercial-storefront.webp",
+      "sha256": "5ec242c8a03eb016a2193853acd9c45b1dc6614ac3a9732b655d1b18df3de3b7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-how-to-spec-commercial-storefront.avif",
+      "sha256": "27cf8a2389017cf607d8f493941f78eed5c64fd119dc4c24cb0f3838d395d635",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-impact-sliding-glass-doors-commercial-florida.webp",
+      "sha256": "45dce7385b5d78776949120e8e8722935a55d07aa55a8e1d687bbcf3095efa10",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-impact-sliding-glass-doors-commercial-florida.avif",
+      "sha256": "55dbda7477ba01b98168c3ccba6668f000770dc97f63df45f99f2b267673a317",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-impact-windows-commercial-building-florida.webp",
+      "sha256": "34058acbfed10892b5a96c0105cbe716d1ad4fc921b58e605076b0a5e58a328c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-impact-windows-commercial-building-florida.avif",
+      "sha256": "f423e5656b1910c09b3623ab0c9d66f0e5765b6d7eae909e1243f19501c93695",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-impact-windows-complete-guide-commercial-florida.webp",
+      "sha256": "71f61b6c1fd28a43e1cc60cd916e2a29bc4f077d8ec9f3202fad0ee13e3f70ea",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-impact-windows-complete-guide-commercial-florida.avif",
+      "sha256": "cfb0f3c13a1b5c746378a5f25dc6c04082054233ab87f9ebfde6b7ab5424d492",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-preparation-commercial-impact-glass.webp",
+      "sha256": "24d5be964cc480b1c7b82bde4ae565ea11f842b89f424e37a090084ee8d6b330",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-preparation-commercial-impact-glass.avif",
+      "sha256": "498c1c91f7fb7e95080716e40064e2a8cba3aa834953f379e119db1be36bd61e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-proof-windows-commercial-florida.webp",
+      "sha256": "4f790d3077ae66be3ddf29aecc4c5ff0288250f68ca91be0575de2bcaea76d43",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-proof-windows-commercial-florida.avif",
+      "sha256": "b4b707f76cd410a28599ae1f5845259430e6d5c233fd70130b21ac3d4884eae7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-replacement-windows-commercial-timing-florida.webp",
+      "sha256": "8ca031c15e715986a5c36d835e0acf21721d224a1f591c7ba6f6f3a6e678f5f3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-replacement-windows-commercial-timing-florida.avif",
+      "sha256": "c2d1344d41222277086a3f3cf41e7bb2ab378b1303c390a6151771a709b686e4",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-window-installers-cost-hiring-florida-commercial.webp",
+      "sha256": "3fdc46646b97ed3829c611126cff00c80e7d8b35d8036b662112d62bb56c972f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hurricane-window-installers-cost-hiring-florida-commercial.avif",
+      "sha256": "d4a7d15a198b513c4c12066da38b548fbb0a7628e81982792c4e6fb4560a3b78",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hvhz-certified-glazing-contractor-florida.webp",
+      "sha256": "7514e504931a722dd70269b6444c4d6326038caa78d016d5abe3c9722d30ffc5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hvhz-certified-glazing-contractor-florida.avif",
+      "sha256": "e1d6f77c27fb0b463a149470fa2820959ab3d10d65e42ed574c5b79c27878b66",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hvhz-glazing-requirements-florida.webp",
+      "sha256": "00fcf008c32973e25dfcfeb8ee948275fbe1f3d9663d47f8f18c0af9801c563d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-hvhz-glazing-requirements-florida.avif",
+      "sha256": "6f715817050ea395547a54797275d21f99c3995dda4ca02203b0388cb3c1ce0e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-impact-rated-glass-requirements-florida-2026.webp",
+      "sha256": "d6c7ed92a5dca961b3614fc296ae2edc8ac0053b8155d1d383b644002a99d405",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-impact-rated-glass-requirements-florida-2026.avif",
+      "sha256": "dafd442ac2dd8248b249d59a4a1a488a47dde6c3dde6e25a51208f41b5f3671a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-impact-rated-windows-commercial-specs-florida.webp",
+      "sha256": "a6f72f6faaa8eaf5f5d2f452364ee77b72c05ceec642fdd39bc0d23dab42fbbc",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-impact-rated-windows-commercial-specs-florida.avif",
+      "sha256": "8eaab151e922f7b8729023f63c4d3aa65017b7ecd23f4a633a89a353a7b970a2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-impact-window-contractor-commercial-florida.webp",
+      "sha256": "bce1d0a5583b19901d89a0c352191808567a3af82c942d7a30388b76a156be2e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-impact-window-contractor-commercial-florida.avif",
+      "sha256": "ce2642b6f143a8d5a2f7047cdd9ed63fab1f0fcbefc00334511ea1a74e2bf256",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-interior-glass-partitions-office-trends.webp",
+      "sha256": "12a18a78ce6c80e2909a87fbf29478823c4c2bbffc889eb1e69477e8a89c9e3e",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-interior-glass-partitions-office-trends.avif",
+      "sha256": "5d99e9e894774ed55e8be869e0979ad705a4ed4e32ce65821fce4e8926002061",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-lucie-at-tradition-clubhouse-glazing.webp",
+      "sha256": "7b6f0d3dfeb5c00e95e01e86cc3c66e53bc5d2abf41b0771e3beb7831b49b685",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-lucie-at-tradition-clubhouse-glazing.avif",
+      "sha256": "e96f4c342d97d96fa52bfdc12dc4addc4ea2dafb246f5a39f41dad623bb492f5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-nannette-walsh-top-chef-martin-county-2026.webp",
+      "sha256": "7f9bff9b1d2b79a15d309e0e9556d17d0a0c8692909f5259df86ba552d1fa2cd",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-nannette-walsh-top-chef-martin-county-2026.avif",
+      "sha256": "9ca8d1c4c4ad0c1cfeacfeefaecda5d7bd710887d631a12e8511ea6740e4e923",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-noise-reducing-glass-florida-businesses.webp",
+      "sha256": "039328107bdbb83687d9626128051c64091c1e5fef6a6499be6877560478c9b6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-noise-reducing-glass-florida-businesses.avif",
+      "sha256": "ada5bbf5751f362e87c8c01991fc8adc42e4301fc6c2629669344cd6945c33fd",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-prepare-building-commercial-glass-installation.webp",
+      "sha256": "27244f11b3003b92398bed98fdcb5d3f1d4664d94237e4032ff04a7a80e6ece9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-prepare-building-commercial-glass-installation.avif",
+      "sha256": "62db24eee1c7dbde8162993c52499bf2c748e91b135ee5bc42eb1d488aeec943",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-professional-installation-commercial-glazing-important.webp",
+      "sha256": "36048379dffbeaa106de4e283b99a08ad71e609896cddc01741255e863f6342d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-professional-installation-commercial-glazing-important.avif",
+      "sha256": "8ce4216cc1a83052b521d326d71a7e569f2248fbefce64f38b1d2f52664d0509",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-questions-to-ask-before-hiring-commercial-glazing-contractor.webp",
+      "sha256": "1549417f645ac91b5d8ac5cea2f1752ec0705c90fc54b3d267d1cb8295055813",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-questions-to-ask-before-hiring-commercial-glazing-contractor.avif",
+      "sha256": "546945025df25aa3cf34b2fb99bdcccc7ec3a942ce22f9c8510d3eb928130fdc",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-questions-to-ask-glazing-subcontractor-before-hiring.webp",
+      "sha256": "2c63cb6546140e7be28b9a11986b48bb40e543e175931fea3036b1fea0f48695",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-questions-to-ask-glazing-subcontractor-before-hiring.avif",
+      "sha256": "8e24bc2434b547f931d5918038a0d10495cdc5f0a8d14a95c306c1eecdc8148c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-reduce-energy-costs-commercial-glazing-florida.webp",
+      "sha256": "e19c83b394ae47119f280744cc1e378d686299e0e8b8225da756ef179504f5f5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-reduce-energy-costs-commercial-glazing-florida.avif",
+      "sha256": "e70fbf3e8915ce8f22d37ab4f5780cb9884e3c3d4930070a1ab5852ff74f8d38",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-reduce-glare-commercial-glass-solutions.webp",
+      "sha256": "2fe7febb906ffcac508cbdeced4dff6a86d1196a9afb826510651b529f09120b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-reduce-glare-commercial-glass-solutions.avif",
+      "sha256": "8dd4d5d386619fd60e58a1c88ece0dbd356645bb57bac64122c4d8f5badd4954",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-reliable-commercial-glass-company-florida.webp",
+      "sha256": "0ba680ed59fe4a4fc557a135c6c394ffbd75d2be0426298f408aa2e662d27031",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-reliable-commercial-glass-company-florida.avif",
+      "sha256": "2b249e90c52e80b13ed7cf893fdb2a6fa8f23c97d4565e16446a924d88376995",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-repair-or-replace-commercial-glass.webp",
+      "sha256": "42a9b59d07a1d5f784e931c86d7d482cd2713f452bbf100a9b1d2e7fceb5fdcc",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-repair-or-replace-commercial-glass.avif",
+      "sha256": "e9c811c0cbedc90e0916f535577c16534165a34e36418168c84aaed73819cbce",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-selecting-curtainwall-contractor-florida.webp",
+      "sha256": "6803e901d4f7d0bb68e5e01a0d50b2d4f162b4688a3442c1f084bd17455cd61a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-selecting-curtainwall-contractor-florida.avif",
+      "sha256": "4c4cfbf46cd14f74efb76778c3c86d9bee04456cda1919daea1afa8979d08386",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-smart-glass-technology-commercial-florida.webp",
+      "sha256": "24e9503466862406232d1e41c0a9b3dd8ef2be2af919c9594624be1d7a2bb5d3",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-smart-glass-technology-commercial-florida.avif",
+      "sha256": "ec1c96337871bb5514735cdf840cb681f95749409b2e56894f6618e914bd2126",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-south-florida-building-code-glazing.webp",
+      "sha256": "e48e21000f0d5db62cd4a1e147fa7eb87e68a34b9f20a2235a44580495a8798a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-south-florida-building-code-glazing.avif",
+      "sha256": "91c62970767df0a2cc35b2d0a1f45f5410147c1159ec1125a60eba68d0674d64",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-storefront-glass-installation-tampa.webp",
+      "sha256": "9817ab875fcdc1c53147622638e1165377c554e1e9b651e3411f2bd3bc0cf054",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-storefront-glass-installation-tampa.avif",
+      "sha256": "8f5e3b88228446c4fd04143d4f4cf1beef2499d2ce4d42bd303768f40cd3ded2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-storefront-glass-replacement-when-to-replace.webp",
+      "sha256": "ce18d6ba46bf436941d37d55e2c4aab8554074fc0e75b7d63c19ecb12f02476c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-storefront-glass-replacement-when-to-replace.avif",
+      "sha256": "7702edcafbdc9407ffa8710f4920d9186c82b20011cfe56bfb84c63828696a23",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-tampa-commercial-construction-boom-glazing.webp",
+      "sha256": "891dc889ca8ec2af5851b106cbe5a1aaf28ce6455e2b145ad098d71e847d4f5c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-tampa-commercial-construction-boom-glazing.avif",
+      "sha256": "08a8c84ab1725eb7cc90e78178b3cca25504631c17870f4514454c5b13835ff6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-uv-protective-glass-commercial-florida.webp",
+      "sha256": "53f6e7687cc0c96d668f8835ca643b749bdc5c08aac411a9430aaa546bf8a114",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-uv-protective-glass-commercial-florida.avif",
+      "sha256": "24d2b9d082000846d64bebeec5633a09281b967364cc573f9612420cf9a2094f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-waxins-eurowall-clematis-street.webp",
+      "sha256": "91dbc8028b2b6e9026d2183df50c371e54f1f7b106f49f8ade79575241f96deb",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-waxins-eurowall-clematis-street.avif",
+      "sha256": "749c0c4666d1c6c49cfeb28c6522103f10edf8ca95de99d10c8a467a5dab9be6",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-weatherproof-commercial-windows-florida.webp",
+      "sha256": "9195545ee19f27a503751abd312a24a68d0cdcb2f7f000f1fec21a71cd4338a2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-weatherproof-commercial-windows-florida.avif",
+      "sha256": "9146a2cf18245c88233deae07fce8293641b2e8ac56d37dd40b63605bf4d309c",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-wesley-chapel-brandon-commercial-construction.webp",
+      "sha256": "daa15d5b7c7067d44ed517f7eb73214313d71e790555a0b6b54e508b9b59fd0f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-wesley-chapel-brandon-commercial-construction.avif",
+      "sha256": "986956076e77b28fabdbde38fd37b67f5c624d7020240d8fb455023cecaacc0d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-are-impact-windows-commercial-guide.webp",
+      "sha256": "d02730c8e17cbccfdf06fd95a4697ef9f7a7cb36e238f056f7576479abaede3b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-are-impact-windows-commercial-guide.avif",
+      "sha256": "bbb3872e5e308117e54de33cebc16eafecd007b14757b4e589eed8cdf7543505",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-does-a-glazing-contractor-do.webp",
+      "sha256": "541aa1ad96f2ea2a340daf1851944852369c0711a82f151812c8e6be45c4b559",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-does-a-glazing-contractor-do.avif",
+      "sha256": "426c47e0bc4a0df25cdbd61f7461e177cc2d0f5396d77128ab4aa2ec59152bef",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-does-a-glazing-subcontractor-do.webp",
+      "sha256": "98adda4495d9022b5d34b6bf302a9d4ff43e6409ebd48813a44ec1ebd86ae5d2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-does-a-glazing-subcontractor-do.avif",
+      "sha256": "796daaec8f21c5fc8e06fbd939e0cc563ca4231c77f5f507e5601f0015ee9864",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-curtainwall-system.webp",
+      "sha256": "34d6b58a53e60f2a81686490879288aec1b5796956efa919ee3d208d7c8658e7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-curtainwall-system.avif",
+      "sha256": "a08ddcc67df3c919704df3d386d7eb09095df79d17224f9afad114e5f113be9a",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-glazing-subcontractor.webp",
+      "sha256": "f6138e3442e44af64f4121e5f8af2939bbe91bf752d825f72ebf58db50a0e2b7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-glazing-subcontractor.avif",
+      "sha256": "509c334d14157d691bf195e95703a4e129fd166a71ebfae41c6c11e3ac9db01f",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-product-approval-florida.webp",
+      "sha256": "f70484f3bd13b53915519214c367ad2e32c68c5147842ad31e3a8ce65c041e11",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-product-approval-florida.avif",
+      "sha256": "9c44022168f2c5a6b23caf38b90889982e012d638d30deb53f88a8bebf37918b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-storefront-glazing-system.webp",
+      "sha256": "f27c9169be4a2d357dcfd1e0bc5e1263a093450d3a5abd25e07b4b74e36ff95d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-storefront-glazing-system.avif",
+      "sha256": "f8bd61cd92af3ad0648c468c42795174b0912df424f86a8c07c0580b2c81f3af",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-window-wall-system.webp",
+      "sha256": "7e3fcc5bb330d699e0f3d97cad711871f51a5674417cafd3064bba4f4077bab2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-a-window-wall-system.avif",
+      "sha256": "030977e537cef3eefe00e84590b6206f7f57d9c4af2ab2dc8ef86c8e40c83247",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-division-08-construction.webp",
+      "sha256": "89564a75aa80cb4a522fdac7878aea80c97e06b5cf725b799af69b8dd3925aa9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-division-08-construction.avif",
+      "sha256": "3fb2d458acae6bf39a81fd71208b763b6f6f75accb1a09b29101ec22acd9e00d",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-division-08-glazing-construction.webp",
+      "sha256": "ca8874e14fde4bc04a99d17ffde1eaedf096ab06f926f60653a714cf8f426997",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-division-08-glazing-construction.avif",
+      "sha256": "828a989eb71d6cff3b589566d5723e97cfacea913fce6a020e818712ec3b5bac",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-low-e-glass-commercial.webp",
+      "sha256": "79f10e41686437657d0d0af90bfa1a2e5a63e5bfe23ffda1423b3479429ac614",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-is-low-e-glass-commercial.avif",
+      "sha256": "99a5e0589c7dc837ab7e98073d10155825db83d0e015176dae91cef68d8fe063",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-to-know-before-replacing-commercial-windows-florida.webp",
+      "sha256": "e3843c9e9e9034820c7e8c7093c1dc168dafe976a06df3d42ea615327109a4cc",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-what-to-know-before-replacing-commercial-windows-florida.avif",
+      "sha256": "0ef010516977ce7021bc6161de8eecc573c549114081347ecbe2ffad147a0206",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-acg-opened-tampa-office.webp",
+      "sha256": "b33fd823e358657e2822b5db5811b9ff66061888e65692107332154232afdcf8",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-acg-opened-tampa-office.avif",
+      "sha256": "b7b198a6b74b18549774d3cdf117feb02ca003f0aa613005c38d543b057e18a7",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-commercial-windows-crack-prevention-florida.webp",
+      "sha256": "eaea4ca93a83affdbe074270cdde85abe546b4f0cf8d657ef364b1b63cceba78",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-commercial-windows-crack-prevention-florida.avif",
+      "sha256": "6f6c3aed830f13a079cdd2faa1e2dcadbf4463243a6bde3b96d35d1a1169a084",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-does-commercial-glass-fog-up-and-how-to-fix-it.webp",
+      "sha256": "533761143384c49238ee51927e359c4e6bc8d51c2cecb78f6aa7146670d6cce2",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-does-commercial-glass-fog-up-and-how-to-fix-it.avif",
+      "sha256": "eede7ee8d7204c8e9d831256c8baf94df96d0c62be936413af23cfe58c6045e9",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-hire-licensed-commercial-glazier-florida.webp",
+      "sha256": "bfccd685f3800fa6dcc4bbcd15dd9cc01797c85cbfebf9215d2fde39aaabd8b8",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-why-hire-licensed-commercial-glazier-florida.avif",
+      "sha256": "c19ecd345e2c4852ba3ad0aa35c88c5ecc0cfc00f121e42116d9744f7665718b",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-window-wall-multifamily-guide.webp",
+      "sha256": "2b6289732dd9c3e8f341116b97e075e310e59970a8b2652fc75e5a8ade9abf64",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-window-wall-multifamily-guide.avif",
+      "sha256": "bf25195e7f78a38df2775bc6e5029cfa6adf317b63bfa46aaedb1901c99cc399",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-window-wall-systems-florida-guide.webp",
+      "sha256": "62ba876e82c320bc775ae4163b2e1020792dd74f5e12bf05c94eb766ed89ba36",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    },
+    {
+      "path": "images/infographics/infographic-window-wall-systems-florida-guide.avif",
+      "sha256": "be8c4797a2dacce7448c4908bf484897c6554a7104f5f3df3a425a7ae55456b5",
+      "metric_copy": "350+ projects delivered, 1M+ square feet installed, 0 OSHA recordables",
+      "screen_method": "WebP metrics identified by OCR. Same-stem AVIF included as an existing asset, without independent pixel review. Approval covers only the listed company metrics where present, not technical content."
+    }
+  ]
+}

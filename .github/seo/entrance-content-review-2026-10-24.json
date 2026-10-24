@@ -1,0 +1,31 @@
+{
+  "status": "DRAFT, unpublished",
+  "reviewed_at_utc": "2026-10-24T16:15:24.329934+00:00",
+  "sources": [
+    "https://www.access-board.gov/ada/chapter/ch04/",
+    "https://www.access-board.gov/ada/guides/chapter-4-entrances-doors-and-gates/"
+  ],
+  "photo_rights": ".github/agent-state/state/image-rights.csv, images/projects/sroa-vero-beach/hero-entrance",
+  "scope": "Three pages only. Original raster assets are preserved. This does not certify other graphics or assign accessibility compliance to a project.",
+  "files": [
+    {
+      "path": "blog/automatic-entrance-ada-compliance.html",
+      "before_sha256": "edb9449de2db9524ac1de0381565430a044b1ec8ebbc4ba2cfe01c3db0a093cf",
+      "after_sha256": "72d0459a595f17150837eb7dc25b2af3879e693978bb6b0f0bba875660bf3f37",
+      "reason": "Correct unbound force/timing claims, unsupported universal accessibility conclusions and corresponding graphic use. Preserve project-specific review and existing owned photo provenance."
+    },
+    {
+      "path": "blog/ada-compliance-commercial-glass-doors.html",
+      "before_sha256": "53774902df546d2fa1685a6aed597dd76fe6fef80ca96dbe36de2ffbb997446d",
+      "after_sha256": "40abcae007581b6b9e0fc8e654d199474b551651603811923b40c9385d441d52",
+      "reason": "Correct unbound force/timing claims, unsupported universal accessibility conclusions and corresponding graphic use. Preserve project-specific review and existing owned photo provenance."
+    },
+    {
+      "path": "automatic-entrance-systems.html",
+      "before_sha256": "843fa545659b777066d76e9e37b7931a46972c591881fb9989b4c7ea18e873d8",
+      "after_sha256": "277c41f026e0afbbde0fc1786aaedc519ca64573887b0ac231d2b8ee243aa74f",
+      "reason": "Remove the same confirmed inaccurate technical graphic from its service-page reuse. The photo illustrates entrance glazing, without claiming an automatic operator is pictured."
+    }
+  ],
+  "quick_answer_review": "Replaced the pre-existing quick-answer boxes with the same complete-opening and project-specific review scope as the revised body. Removed unsupported photo compliance labeling."
+}

@@ -5,7 +5,7 @@
     "answer_exact": "All three are current and cleared",
     "recorded_at_utc": "2026-10-24T15:32:42.658311+00:00"
   },
-  "scope": "Preserve these existing metrics only. Other safety statistics, zero-OSHA claims, changed values, new paths, changed source surfaces and duplicate occurrences remain subject to the original checks. This records metric approval; the website candidate still requires exact publication approval.",
+  "scope": "Preserve these existing HTML metrics only. Other safety statistics, zero-recordables HTML claims, changed values, new paths, changed source surfaces and duplicate occurrences remain subject to the original checks. Existing image metric copy has a separate hash-bound owner confirmation in public-image-metrics-2026-10-24.json. This records metric approval; the website candidate still requires exact publication approval.",
   "approved_source_surfaces": [
     {
       "kind": "volume:350+",
