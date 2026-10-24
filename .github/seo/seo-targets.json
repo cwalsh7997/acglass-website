@@ -183,6 +183,68 @@
           "market": "nashville"
         }
       ]
+    },
+    {
+      "id": "florida-organic-growth",
+      "label": "Florida organic commercial queries and Jacksonville launch",
+      "queries": [
+        {
+          "query": "storefront windows",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "storefront glass",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "commercial storefront windows",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "storefront window installation",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "storefront glazing",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "commercial hurricane glass",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "public sector glazing",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "glazing submittals for gcs",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "commercial glass contractors florida south",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "commercial glass contractors west palm",
+          "market": "florida-statewide"
+        },
+        {
+          "query": "commercial glazing contractor jacksonville",
+          "market": "jacksonville"
+        },
+        {
+          "query": "commercial glass contractor jacksonville",
+          "market": "jacksonville"
+        },
+        {
+          "query": "commercial glazing north florida",
+          "market": "jacksonville"
+        },
+        {
+          "query": "storefront contractor jacksonville",
+          "market": "jacksonville"
+        }
+      ]
     }
   ],
   "markets": [
@@ -353,6 +415,52 @@
       "path": "/acg-vs-competitors.html",
       "label": "ACG vs competitors",
       "role": "comparison"
+    },
+    {
+      "path": "/commercial-glazing-jacksonville.html",
+      "label": "Jacksonville commercial installation",
+      "role": "market-page",
+      "market": "jacksonville"
+    },
+    {
+      "path": "/commercial-storefront-systems.html",
+      "label": "Commercial storefront systems",
+      "role": "service-hub"
+    },
+    {
+      "path": "/blog/what-is-a-storefront-glazing-system.html",
+      "label": "Storefront system explainer",
+      "role": "educational"
+    },
+    {
+      "path": "/blog/storefronts-vs-windows-commercial-buildings.html",
+      "label": "Storefront vs commercial windows",
+      "role": "educational"
+    },
+    {
+      "path": "/blog/how-to-read-a-door-schedule.html",
+      "label": "Door schedule guide",
+      "role": "educational"
+    },
+    {
+      "path": "/blog/how-long-does-storefront-installation-take.html",
+      "label": "Storefront installation timing",
+      "role": "educational"
+    },
+    {
+      "path": "/blog/what-is-division-08-glazing-construction.html",
+      "label": "Division 08 glazing explainer",
+      "role": "educational"
+    },
+    {
+      "path": "/government-public-sector-glazing.html",
+      "label": "Public sector glazing",
+      "role": "sector-hub"
+    },
+    {
+      "path": "/glazing-submittal-package.html",
+      "label": "Glazing submittals",
+      "role": "service-resource"
     }
   ],
   "report": {

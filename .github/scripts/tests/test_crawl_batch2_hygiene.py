@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import unittest
@@ -441,15 +442,15 @@ class CityCanonicalTests(unittest.TestCase):
     def test_jacksonville_and_stuart_roots_noindex_without_touching_keepers(self):
         jax = read("jacksonville/index.html")
         self.assertEqual(robots(jax), "noindex,follow")
-        # The city root stays canonical to the kept HTML file. That file
-        # soft-merges onto the Florida hub, which is the sitemap URL.
+        # The city root remains an alias. The owner-confirmed installation
+        # page is now the distinct regional primary (2026-10-24).
         self.assertEqual(
             canonical(jax), f"{BASE}/commercial-glazing-jacksonville.html"
         )
         jax_page = read("commercial-glazing-jacksonville.html")
-        self.assertEqual(robots(jax_page), "noindex,follow")
+        self.assertNotIn("noindex", robots(jax_page))
         self.assertEqual(
-            canonical(jax_page), f"{BASE}/florida-commercial-glazing/"
+            canonical(jax_page), f"{BASE}/commercial-glazing-jacksonville.html"
         )
         stuart = read("stuart/index.html")
         self.assertEqual(robots(stuart), "noindex,follow")
@@ -489,7 +490,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -567,7 +568,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1047,7 +1048,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 6)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1168,7 +1169,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 725 after this soft-merge (728 before: three thin hotel-city pages).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1464,7 +1465,7 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         child_locs = sitemap_locs()
         self.assertEqual(len(pages), 30)
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, href, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1608,7 +1609,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         child_locs = sitemap_locs()
         for rel, (title, h1) in pages.items():
             html = read(rel)
@@ -1701,7 +1702,7 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         child_locs = sitemap_locs()
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         html = read(rel)
         found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
         self.assertIsNotNone(found, rel)
@@ -1862,13 +1863,12 @@ class CityCanonicalTests(unittest.TestCase):
             "commercial-glazing-gainesville.html",
             "commercial-glazing-ocala.html",
             "commercial-glazing-daytona-beach.html",
-            "commercial-glazing-jacksonville.html",
             "commercial-glazing-central-florida.html",
             "commercial-glazing-southwest-florida.html",
             "commercial-glazing-treasure-coast.html",
         )
         locs = sitemap_locs()
-        self.assertEqual(len(pages), 7)
+        self.assertEqual(len(pages), 6)
         # 725 after the 2026-10-05 hotel-city template soft-merge
         # (728 before: Fort Lauderdale, Sarasota, and Jacksonville removed).
         # 728 after the 2026-10-05 neighborhood stub soft-merge
@@ -1880,7 +1880,7 @@ class CityCanonicalTests(unittest.TestCase):
         # (742 before: five thin city directories removed).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 692)
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 693)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1909,7 +1909,7 @@ class CityCanonicalTests(unittest.TestCase):
         for rel in pages:
             self.assertNotIn(rel, locations)
             self.assertNotIn(rel, florida)
-        self.assertIn(">Jacksonville</a>", locations)
+        self.assertIn('href="/commercial-glazing-jacksonville.html">Jacksonville commercial glazing</a>', locations)
         self.assertIn(">Gainesville</a>", locations)
         self.assertIn(">Ocala</a>", locations)
         home = read("index.html")
@@ -1970,7 +1970,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -2065,7 +2065,7 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 8)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 692)
+        self.assertEqual(len(locs), 693)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -2241,8 +2241,24 @@ class Hard404RedirectStubTests(unittest.TestCase):
             f"{BASE}/storefront-glazier-jacksonville-florida/", sitemap_locs()
         )
         keeper = read("commercial-glazing-jacksonville.html")
-        self.assertEqual(robots(keeper), "noindex,follow")
-        self.assertEqual(canonical(keeper), f"{BASE}/florida-commercial-glazing/")
+        self.assertNotIn("noindex", robots(keeper))
+        self.assertEqual(canonical(keeper), dest)
+        self.assertIn(dest, sitemap_locs())
+
+    def test_jacksonville_promotion_matches_owner_scope_and_has_no_local_office_node(self):
+        html = read("commercial-glazing-jacksonville.html")
+        scope = json.loads(read(".github/seo/jacksonville-scope-2026-10-24.json"))
+        self.assertEqual(scope["answer_exact"], "Bid full installation with planned mobilization")
+        self.assertIn("planned mobilization from our existing Florida offices", html)
+        self.assertNotIn("AI Dispatch", html)
+        self.assertNotIn("first time", html)
+        nodes = [json.loads(s) for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)]
+        service = next(n for n in nodes if n.get("@type") == "Service")
+        self.assertEqual(service["areaServed"]["name"], "Jacksonville")
+        self.assertNotIn("address", service)
+        self.assertFalse(any("LocalBusiness" in n.get("@type", []) for n in nodes))
+        for path in ("sitemap.xml", "sitemap-cities.xml"):
+            self.assertEqual(read(path).count("<loc>https://acglass.com/commercial-glazing-jacksonville.html</loc>"), 1)
 
 
 class EuroWallAliasRedirectStubTests(unittest.TestCase):

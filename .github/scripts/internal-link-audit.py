@@ -158,7 +158,6 @@ ALLOWED_NOINDEX_LINK_TARGETS = {
     "/commercial-glazing-gainesville.html",
     "/commercial-glazing-ocala.html",
     "/commercial-glazing-daytona-beach.html",
-    "/commercial-glazing-jacksonville.html",
     "/commercial-glazing-central-florida.html",
     "/commercial-glazing-southwest-florida.html",
     "/commercial-glazing-treasure-coast.html",
@@ -489,9 +488,9 @@ PRIORITY_MARKETS = {
     "/commercial-glazing-south-florida.html": ("South Florida", 10),
     "/storefront-glazier-west-palm-beach-florida/": ("West Palm Beach", 10),
     "/storefront-glazier-miami-florida/": ("Miami", 10),
-    # The Jacksonville HTML file is noindex and canonical to the Florida hub.
-    # Homepage and service-areas represent that market through the hub.
-    "/florida-commercial-glazing/": ("Jacksonville", 8),
+    # 2026-10-24: owner-confirmed installation and planned mobilization have
+    # a distinct regional primary. Keep the existing inbound floor.
+    "/commercial-glazing-jacksonville.html": ("Jacksonville", 8),
     "/storefront-glazier-tampa-florida/": ("Tampa", 10),
     "/storefront-glazier-orlando-florida/": ("Orlando", 8),
     "/storefront-glazier-naples-florida/": ("Naples", 8),
