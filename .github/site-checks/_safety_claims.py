@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""D2: no numeric safety statistic about ACG may publish.
+"""D2: safety statistics require exact, source-bound owner approval.
+
+On 2026-10-24 Connor confirmed the existing EMR 1.0, three-year average.
+Only the recorded source surfaces are exempt. Changed values, changed
+sentences, new paths and other safety terms still fail the original scan.
 
 The shell regex this replaces ended both branches in [0-9]\\.[0-9], so it
 required a decimal point. "0 OSHA recordable incidents" was live in the body
@@ -21,7 +25,12 @@ And it must not be one of the excluded forms below.
 """
 import os, re, subprocess, sys
 
-ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
+from approved_claims import approved, load_registry
+
+ROOT = (sys.argv[1] if __name__ == "__main__" and len(sys.argv) > 1
+        else os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+APPROVED = load_registry(ROOT)
+APPROVAL_USES = {}
 TERMS = ["EMR", "TRIR", "DART", "recordable", "recordables", "experience modification"]
 SUBJECT = re.compile(r"\b(ACG|American Commercial Glass|we|our|us|the company)\b", re.I)
 
@@ -45,13 +54,11 @@ def sentences(text):
         if s:
             yield s
 
-def scan(path):
-    raw = open(path, encoding="utf-8", errors="replace").read()
+def candidates(raw):
     # strip tags but keep JSON-LD, where the claim also lives
     txt = re.sub(r"<(script(?! type=\"application/ld)|style)\b.*?</\1>", " ", raw, flags=re.S | re.I)
     txt = re.sub(r"<[^>]+>", " ", txt)
     txt = txt.replace("&#x27;", "'").replace("&quot;", '"').replace("&amp;", "&")
-    hits = []
     for s in sentences(txt):
         for term in TERMS:
             for m in re.finditer(r"\b" + re.escape(term) + r"\b", s, re.I):
@@ -62,19 +69,34 @@ def scan(path):
                     continue
                 if not SUBJECT.search(s):
                     continue
-                hits.append((term, re.sub(r"\s+", " ", s)[:180]))
+                yield term, re.sub(r"\s+", " ", s)
                 break
+
+def scan(path):
+    with open(path, encoding="utf-8", errors="replace") as source:
+        raw = source.read()
+    rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+    hits = []
+    for term, sentence in candidates(raw):
+        if approved(APPROVED, "safety:" + term, rel, sentence, APPROVAL_USES):
+            continue
+        hits.append((term, sentence[:180]))
     return hits
 
-files = subprocess.run(["git", "-C", ROOT, "ls-tree", "-r", "--name-only", "HEAD"],
-                       capture_output=True, text=True).stdout.split()
-pages = [f for f in files if f.endswith(".html") and not f.startswith(".github/")]
-total = 0
-for p in pages:
-    fp = os.path.join(ROOT, p)
-    if not os.path.isfile(fp):
-        continue
-    for term, s in scan(fp):
-        print(f"  {p}: [{term}] {s}")
-        total += 1
-print(f"COUNT={total}")
+def main():
+    files = subprocess.run(["git", "-C", ROOT, "ls-tree", "-r", "--name-only", "HEAD"],
+                           capture_output=True, text=True).stdout.split()
+    pages = [f for f in files if f.endswith(".html") and not f.startswith(".github/")]
+    total = 0
+    for p in pages:
+        fp = os.path.join(ROOT, p)
+        if not os.path.isfile(fp):
+            continue
+        for term, s in scan(fp):
+            print(f"  {p}: [{term}] {s}")
+            total += 1
+    print(f"COUNT={total}")
+
+
+if __name__ == "__main__":
+    main()

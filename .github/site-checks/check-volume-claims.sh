@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Company-wide project-count and installed-SF totals are unpublished.
-# Connor cancelled unverified 350+ / 1M+ / 1,000,000+ SF figures on 2026-09-14.
+# Company totals require current approval. The September 14 hold remains the
+# default; Connor cleared the three recorded figures on October 24. Only the
+# exact existing surfaces bound in public-metrics-2026-10-24.json are exempt.
 #
 # Fail if public HTML still publishes those company-volume claims.
 # Leave alone:
@@ -11,15 +12,25 @@
 #   - legacy URL slugs (do not delete pages)
 source "$(dirname "$0")/_lib.sh"
 fail=0
+filter_approved() {
+  local output code
+  output=$(python3 "$ROOT/.github/site-checks/approved_claims.py" "$ROOT" "$1")
+  code=$?
+  if [ "$code" -ne 0 ]; then
+    printf 'approval-registry:0:approval filter failed with exit %s\n' "$code"
+    return 0
+  fi
+  printf '%s\n' "$output"
+}
 
 # 350+ that is not a dollar price ($350+ or $150-$350+).
-bad350=$(gg -nE '350\+' | grep -Ev '\$[0-9,]*350\+' | grep -Ev 'lessons-from-350-|acg-350-projects-milestone' | head -20)
+bad350=$(gg -nE '350\+' | grep -Ev '\$[0-9,]*350\+' | grep -Ev 'lessons-from-350-|acg-350-projects-milestone' | filter_approved 'volume:350+')
 if [ -n "$bad350" ]; then
   printf '%s\n' "$bad350" | cut -c1-160 | sed 's/^/  unpublished 350+ volume claim: /'
   fail=$((fail + $(printf '%s' "$bad350" | grep -c .)))
 fi
 
-bad1m=$(gg -nF '1M+' | head -20)
+bad1m=$(gg -nF '1M+' | filter_approved 'volume:1M+')
 if [ -n "$bad1m" ]; then
   printf '%s\n' "$bad1m" | cut -c1-160 | sed 's/^/  unpublished 1M+ volume claim: /'
   fail=$((fail + $(printf '%s' "$bad1m" | grep -c .)))
@@ -56,7 +67,7 @@ if [ -n "$idx_hits" ]; then
 fi
 
 if [ "$fail" -eq 0 ]; then
-  say "PASS    volume-claims (no unpublished 350+/1M+/1,000,000+ SF company totals)"
+  say "PASS    volume-claims (no unapproved company totals; exact approved copy retained)"
   exit 0
 fi
 say "FAIL    volume-claims: $fail unpublished volume claim(s)"

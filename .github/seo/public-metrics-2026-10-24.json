@@ -1,0 +1,60 @@
+{
+  "approval": {
+    "source": "Connor Walsh reply in active SEO goal thread 01a16e61-26a0-79b0-89e7-c6da401ff25b",
+    "question": "The live site shows 350+ completed projects, 1M+ SF installed and EMR 1.0 (three-year average), but the release controls still withhold these figures. Are all three current and cleared for public use, or which should remain withheld?",
+    "answer_exact": "All three are current and cleared",
+    "recorded_at_utc": "2026-10-24T15:32:42.658311+00:00"
+  },
+  "scope": "Preserve these existing metrics only. Other safety statistics, zero-OSHA claims, changed values, new paths, changed source surfaces and duplicate occurrences remain subject to the original checks. This records metric approval; the website candidate still requires exact publication approval.",
+  "approved_source_surfaces": [
+    {
+      "kind": "volume:350+",
+      "path": "index.html",
+      "sha256": "0d09fbbdd0200e0120ecc6092bb682e8593f1ad276713fa9179b1d216333b50b",
+      "max_occurrences": 1,
+      "source_text": "<section id=\"top\" class=\"hero\" aria-labelledby=\"hero-title\"><div class=\"hero-copy\"><div class=\"hero-kicker\"><span class=\"red-block\" aria-hidden=\"true\"></span>Florida / Division 08</div><h1 id=\"hero-title\"><span class=\"l1\">Florida commercial glazing.</span><br><span class=\"l2\">Written bid in 48 hours.</span></h1><div class=\"hero-description\"><p class=\"hero-sub\">Storefront, curtain wall, and hurricane-impact.<br>Coordinated from drawings to installation.</p><div class=\"hero-actions\"><a class=\"hero-cta\" href=\"/send-plans.html\">Send plans for a 48-hr bid</a><a class=\"hero-work\" href=\"#work\">Explore the work</a></div><p class=\"hero-note\">Drawing set over 9 MB? Email <!--email_off--><a href=\"mailto:connor@acglass.com\">connor@acglass.com</a><!--/email_off--> or invite on BuildingConnected - same 48-hour scope.</p><!--email_off--><a class=\"hero-cap\" href=\"mailto:connor@acglass.com?subject=Capability%20statement%20request\">Request capability statement</a><!--/email_off--><p class=\"hero-scale\"><span>FL CGC #1531993</span><span>WBENC-Certified WBE</span><span>350+ Projects Completed</span><span>1M+ SF Installed</span><span>Founded 2021</span></p></div><div class=\"hero-copy-footer\"><span>AMERICAN COMMERCIAL GLASS</span><a href=\"#intro\" class=\"scroll-link\"><span class=\"scroll-track\" aria-hidden=\"true\"><i></i></span>Scroll to explore</a></div></div><figure class=\"hero-figure\"><div class=\"hero-photo-wrap\"><picture><source type=\"image/avif\" srcset=\"/images/projects/gulfside-twelve/aerial-sunset-beach.avif\"><source type=\"image/webp\" srcset=\"/images/projects/gulfside-twelve/aerial-sunset-beach.webp\"><img class=\"hero-photo\" src=\"/images/projects/gulfside-twelve/aerial-sunset-beach.jpg\" alt=\"Gulfside Twelve at dusk, impact windows and doors across the Gulf-facing facade\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\"></picture></div><figcaption><span><strong>Gulfside Twelve</strong>Fort Myers Beach, FL / Impact windows &amp; doors</span></figcaption></figure></section>"
+    },
+    {
+      "kind": "volume:1M+",
+      "path": "index.html",
+      "sha256": "0d09fbbdd0200e0120ecc6092bb682e8593f1ad276713fa9179b1d216333b50b",
+      "max_occurrences": 1,
+      "source_text": "<section id=\"top\" class=\"hero\" aria-labelledby=\"hero-title\"><div class=\"hero-copy\"><div class=\"hero-kicker\"><span class=\"red-block\" aria-hidden=\"true\"></span>Florida / Division 08</div><h1 id=\"hero-title\"><span class=\"l1\">Florida commercial glazing.</span><br><span class=\"l2\">Written bid in 48 hours.</span></h1><div class=\"hero-description\"><p class=\"hero-sub\">Storefront, curtain wall, and hurricane-impact.<br>Coordinated from drawings to installation.</p><div class=\"hero-actions\"><a class=\"hero-cta\" href=\"/send-plans.html\">Send plans for a 48-hr bid</a><a class=\"hero-work\" href=\"#work\">Explore the work</a></div><p class=\"hero-note\">Drawing set over 9 MB? Email <!--email_off--><a href=\"mailto:connor@acglass.com\">connor@acglass.com</a><!--/email_off--> or invite on BuildingConnected - same 48-hour scope.</p><!--email_off--><a class=\"hero-cap\" href=\"mailto:connor@acglass.com?subject=Capability%20statement%20request\">Request capability statement</a><!--/email_off--><p class=\"hero-scale\"><span>FL CGC #1531993</span><span>WBENC-Certified WBE</span><span>350+ Projects Completed</span><span>1M+ SF Installed</span><span>Founded 2021</span></p></div><div class=\"hero-copy-footer\"><span>AMERICAN COMMERCIAL GLASS</span><a href=\"#intro\" class=\"scroll-link\"><span class=\"scroll-track\" aria-hidden=\"true\"><i></i></span>Scroll to explore</a></div></div><figure class=\"hero-figure\"><div class=\"hero-photo-wrap\"><picture><source type=\"image/avif\" srcset=\"/images/projects/gulfside-twelve/aerial-sunset-beach.avif\"><source type=\"image/webp\" srcset=\"/images/projects/gulfside-twelve/aerial-sunset-beach.webp\"><img class=\"hero-photo\" src=\"/images/projects/gulfside-twelve/aerial-sunset-beach.jpg\" alt=\"Gulfside Twelve at dusk, impact windows and doors across the Gulf-facing facade\" width=\"1920\" height=\"1080\" fetchpriority=\"high\" decoding=\"async\"></picture></div><figcaption><span><strong>Gulfside Twelve</strong>Fort Myers Beach, FL / Impact windows &amp; doors</span></figcaption></figure></section>"
+    },
+    {
+      "kind": "volume:350+",
+      "path": "qualifications.html",
+      "sha256": "8fe5a29d9f08178fddbbfef3a1349079f6647b65ad0c1eeae5ce91e2a31d1d72",
+      "max_occurrences": 1,
+      "source_text": "        <span class=\"m\"><b>Projects</b> 350+ completed</span>"
+    },
+    {
+      "kind": "volume:1M+",
+      "path": "qualifications.html",
+      "sha256": "fb5a069aaa851731df72f02f6c5d187b0835301a8c5090a4a633c69203e31a69",
+      "max_occurrences": 1,
+      "source_text": "        <span class=\"m\"><b>Glazing installed</b> 1M+ SF</span>"
+    },
+    {
+      "kind": "safety:EMR",
+      "path": "index.html",
+      "sha256": "9798d9bd25e08d4640694ce36b3367481f4ffb61b1a3d0dbd2e7ea6d18bb35b3",
+      "max_occurrences": 1,
+      "source_text": "Explore ACG qualifications CGC #1531993 Florida contractor license Woman-owned Rielly Walsh, CEO / 51% majority owner WBENC-certified QTQYMLLL9PS4 Federal UEI 234B0 CAGE code / NAICS 238150 2021 Founded in Florida EMR 1.0 Experience modification rate, three-year average."
+    },
+    {
+      "kind": "safety:experience modification",
+      "path": "index.html",
+      "sha256": "9798d9bd25e08d4640694ce36b3367481f4ffb61b1a3d0dbd2e7ea6d18bb35b3",
+      "max_occurrences": 1,
+      "source_text": "Explore ACG qualifications CGC #1531993 Florida contractor license Woman-owned Rielly Walsh, CEO / 51% majority owner WBENC-certified QTQYMLLL9PS4 Federal UEI 234B0 CAGE code / NAICS 238150 2021 Founded in Florida EMR 1.0 Experience modification rate, three-year average."
+    },
+    {
+      "kind": "safety:EMR",
+      "path": "about.html",
+      "sha256": "33659f05e111a0a772329f7f78d66addca1d020759ea1d29966f992acbf5dc86",
+      "max_occurrences": 1,
+      "source_text": "{\"@type\":\"Question\",\"name\":\"How does American Commercial Glass compare to a typical Florida glazing subcontractor?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"American Commercial Glass runs an owner-operated model with both owners actively on projects, holds a CGC (not just a specialty glazing) license, is 51% woman-owned, runs Procore-native project management, publishes a three-year average EMR of 1.0, and is capable on Davis-Bacon federal work."
+    }
+  ]
+}

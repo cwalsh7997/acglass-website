@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# D2: no numeric safety statistic about ACG publishes. Regression guard.
+# D2: no unapproved numeric safety statistic about ACG publishes.
+# Exact current owner-approved copy is bound in public-metrics-2026-10-24.json.
 #
 # The scan moved to .github/site-checks/_safety_claims.py on 2026-09-09. The shell regex it
 # replaces ended both branches in [0-9]\.[0-9], so it required a decimal point,
@@ -16,6 +17,6 @@ out=$(python3 "$ROOT/.github/site-checks/_safety_claims.py" "$ROOT" 2>&1)
 n=$(printf '%s\n' "$out" | sed -n 's/^COUNT=//p')
 printf '%s\n' "$out" | grep -v '^COUNT=' | grep -v '^$'
 if [ "${n:-1}" -eq 0 ] 2>/dev/null; then
-  say "PASS    safety-claims (no numeric safety statistic published)"; exit 0
+  say "PASS    safety-claims (only exact owner-approved safety copy is exempt)"; exit 0
 fi
 say "FAIL    safety-claims: ${n:-?} numeric claim(s)"; exit 1
