@@ -1,0 +1,195 @@
+{
+  "review_date": "2026-10-24",
+  "scope": [
+    "architect-resources.html",
+    "resources/index.html",
+    "sitemap.xml"
+  ],
+  "manufacturer_sources": [
+    {
+      "url": "https://eswindows.com/product/gw-5250/",
+      "read_at_utc": "2026-10-24T18:58:26.803508+00:00",
+      "status": 200,
+      "final_url": "https://eswindows.com/product/gw-5250/",
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "d6e03c5d3bd2af3cb5c1b056458026e79c7c0b533a3bf3a546741766fce4d30b"
+    },
+    {
+      "url": "https://eswindows.com/product/es-7000-7100/",
+      "read_at_utc": "2026-10-24T18:58:27.286829+00:00",
+      "status": 200,
+      "final_url": "https://eswindows.com/product/es-7000-7100/",
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "c7cea4769f187616a7857e31686befef838dd1ac4a34b16283b71562af800343"
+    },
+    {
+      "url": "https://eswindows.com/product/es-8000/",
+      "read_at_utc": "2026-10-24T18:58:26.960166+00:00",
+      "status": 200,
+      "final_url": "https://eswindows.com/product/es-8000/",
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "93287e9381119848843ffe162ea61d93c83a3be465efdbc1d7d779a2bdd332bd"
+    },
+    {
+      "url": "https://eswindows.com/product/es-8000t/",
+      "read_at_utc": "2026-10-24T18:58:26.762283+00:00",
+      "status": 200,
+      "final_url": "https://eswindows.com/product/es-8000t/",
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "d09f3294459c4ea45733ae9d83737b5c10b3a55374794fdee3b9e11fc78dbb5f"
+    },
+    {
+      "url": "https://eswindows.com/product/es-9000-9100/",
+      "read_at_utc": "2026-10-24T18:58:26.859677+00:00",
+      "status": 200,
+      "final_url": "https://eswindows.com/product/es-9000-9100/",
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "6a179925f366cb752cd1446eb3548dadd86aec10544d041a8f97fab3ffa81992"
+    },
+    {
+      "url": "https://euro-wall.com/products/folding-door-systems/vista-fold-impact-rated/",
+      "read_at_utc": "2026-10-24T18:58:25.799488+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/folding-door-systems/vista-fold-impact-rated/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "c827c617f52ed66b7c357960f423ad8387e334b8aa1478f00218623fe85f4213"
+    },
+    {
+      "url": "https://euro-wall.com/products/folding-door-systems/vista-fold-thermally-broken/",
+      "read_at_utc": "2026-10-24T18:58:26.236685+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/folding-door-systems/vista-fold-thermally-broken/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "ab38e623451f0915eb9cd54d7e341db05da6bca78f2d08c83686a7f7b01ab921"
+    },
+    {
+      "url": "https://euro-wall.com/products/sliding-door-systems/vista-multi-slide/",
+      "read_at_utc": "2026-10-24T18:58:26.521578+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/sliding-door-systems/vista-multi-slide/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "226762d59f2396f5766cae522653989f47ca411f29b1a97ee8e2434f45bc1ff6"
+    },
+    {
+      "url": "https://euro-wall.com/products/vista-pivot/",
+      "read_at_utc": "2026-10-24T18:58:26.843577+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/vista-pivot/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "92cc3ed0e8f2b359e363bda39c8279f6e795d583647a694efd7b6cb712906813"
+    },
+    {
+      "url": "https://euro-wall.com/products/window-systems/vista-tl/",
+      "read_at_utc": "2026-10-24T18:58:27.052299+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/window-systems/vista-tl/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "e9b39d7764eb06fc6ddc1cef64679da319088eeb0057a1f854072d0e55ff3ee0"
+    },
+    {
+      "url": "https://euro-wall.com/products/window-systems/vista-ct/",
+      "read_at_utc": "2026-10-24T18:58:27.052584+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/window-systems/vista-ct/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "1006917c911f12703b59ef20a746a5d132bf4bca04355b90656da903c95dd737"
+    },
+    {
+      "url": "https://euro-wall.com/products/window-systems/vista-ds/",
+      "read_at_utc": "2026-10-24T18:58:27.121954+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/products/window-systems/vista-ds/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "8fd38a7ea1ec450fbffefa7321acf20c68c2fbd895dc416277630fcb7afd0974"
+    },
+    {
+      "url": "https://eswindows.com/library/",
+      "read_at_utc": "2026-10-24T18:58:28.197976+00:00",
+      "status": 200,
+      "final_url": "https://eswindows.com/library/",
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "0a39004720ed01415943bcb9a10ade42fc40293c072f0bf2074131467778e2f9"
+    },
+    {
+      "url": "https://euro-wall.com/support/resources/",
+      "read_at_utc": "2026-10-24T18:58:27.191944+00:00",
+      "status": 200,
+      "final_url": "https://euro-wall.com/support/resources/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "bd3ab1eb59a103e0825abed6c3246f6f104b21a8a4bb4649c8a0faf2111b9adf"
+    }
+  ],
+  "county_document_fields": [
+    {
+      "id": "21091403",
+      "noa_number": "21-0914.03",
+      "product_description": "ES-8000T thermally broken aluminum window wall",
+      "expiration_display": "August 25, 2031",
+      "source_url": "https://www.miamidade.gov/building/library/productcontrol/noa/21091403.pdf",
+      "source_sha256": "52749facddaa2333744cfa11256d93ea788a28bdf22c986a9be06f761d32617c",
+      "read_at_utc": "2026-10-24T18:34:22.416820+00:00",
+      "verified_fields": "Cover-page product description, number and expiration; visually checked.",
+      "limits": "No project-specific design pressure, glazing, anchorage or approval suitability is asserted."
+    },
+    {
+      "id": "23072409",
+      "noa_number": "23-0724.09",
+      "product_description": "Series 7000 aluminum window wall",
+      "expiration_display": "July 25, 2028",
+      "source_url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072409.pdf",
+      "source_sha256": "76d1ea7e1f250f3cff9b675b3134abda0a0e5cab1c8c37dcf798c672d2827fff",
+      "read_at_utc": "2026-10-24T18:34:21.304067+00:00",
+      "verified_fields": "Cover-page product description, number and expiration; visually checked.",
+      "limits": "No project-specific design pressure, glazing, anchorage or approval suitability is asserted."
+    },
+    {
+      "id": "24032107",
+      "noa_number": "24-0321.07",
+      "product_description": "ES-8000 aluminum window wall",
+      "expiration_display": "April 03, 2028",
+      "source_url": "https://www.miamidade.gov/building/library/productcontrol/noa/24032107.pdf",
+      "source_sha256": "43378da11889ebfc2a37dae96e1f99f42bc3dc94a811bbf579c82b9a15312ea1",
+      "read_at_utc": "2026-10-24T18:34:21.739355+00:00",
+      "verified_fields": "Cover-page product description, number and expiration; visually checked.",
+      "limits": "No project-specific design pressure, glazing, anchorage or approval suitability is asserted."
+    },
+    {
+      "id": "23072412",
+      "noa_number": "23-0724.12",
+      "product_description": "Series 9000 aluminum outswing French door",
+      "expiration_display": "December 24, 2028",
+      "source_url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072412.pdf",
+      "source_sha256": "61e9da7eb56798e0bf5f5ae1b8db97a0d7f4eee9785833095ff9d0fe45fc44d3",
+      "read_at_utc": "2026-10-24T18:34:21.696553+00:00",
+      "verified_fields": "Cover-page product description, number and expiration; visually checked.",
+      "limits": "No project-specific design pressure, glazing, anchorage or approval suitability is asserted."
+    },
+    {
+      "id": "23072413",
+      "noa_number": "23-0724.13",
+      "product_description": "ES-9100 aluminum outswing door",
+      "expiration_display": "October 12, 2027",
+      "source_url": "https://www.miamidade.gov/building/library/productcontrol/noa/23072413.pdf",
+      "source_sha256": "278af7ebea20e25af9a871ffb08e130cc1a73b51ad3a8eb0abefaefeefb0ddb0",
+      "read_at_utc": "2026-10-24T18:34:21.973256+00:00",
+      "verified_fields": "Cover-page product description, number and expiration; visually checked.",
+      "limits": "No project-specific design pressure, glazing, anchorage or approval suitability is asserted."
+    }
+  ],
+  "review_decisions": [
+    "Separate manufacturer product pages, county PDFs and resource libraries.",
+    "Remove the ES-8000T approval from the GW-5250 group.",
+    "Correct Vista TL to the manufacturer thin-line window family and Vista CT to casement.",
+    "Remove configuration-unbound pressure, size and approval claims from product summaries.",
+    "Route Euro-Wall documents through current product pages and manufacturer document filters.",
+    "Remove unsupported HSW credit and document-retrieval timing promises.",
+    "Remove bond mentions from the changed resource hub, per owner instruction.",
+    "Add visible hub links to the manufacturer library and the revised automatic entrance checklist.",
+    "Retain ACG storefront and curtainwall specification guides as separately labeled ACG references, rather than manufacturer product documents."
+  ],
+  "limits": [
+    "This does not establish current Google index inclusion or ranking gains.",
+    "No project-specific product approval, design pressure or configuration is offered.",
+    "No manufacturer credentials or restricted library files were accessed or republished."
+  ]
+}
