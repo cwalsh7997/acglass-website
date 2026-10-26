@@ -81,7 +81,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         # visible rebaselined 2026-10-21 with the #380 hurricane-glass section and Haines City wording.
-        "visible": "3b3bb781a4bd974bbe286ed993b94c44cf4cca093f1114148a6621a39d7895c7",
+        # visible rebaselined 2026-10-26: H2 "Authorized on the impact windows & doors"
+        # became "Installed on the ...". head, jsonld, scripts, and hrefs unchanged.
+        "visible": "164f32df5a02b7bcc81ebe9d705b0663e9369895bb7435e23b50cc1bbca36dab",
     },
     "multi-slide-bifold-doors.html": {
         # Rebaselined 2026-08-27 (second pass, first-party authorization sweep):
