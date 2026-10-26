@@ -82,7 +82,8 @@ class ApexSitemapAdvertisingTests(unittest.TestCase):
         # 2026-10-06: -1 Florida glass statistics soft-merge (this fixture).
         # 2026-10-20: -24 thin pages in this fixture (6 counties left via sitemap-cities.xml).
         # 2026-10-21: -1 best-storefront-contractor-florida.html soft-merge.
-        self.assertGreaterEqual(len(fixture_locs), 314)
+        # 2026-10-26: -4 of this fixture (Solarban, PVB/SGP, aluminum extrusion, Gulfside Twelve).
+        self.assertGreaterEqual(len(fixture_locs), 310)
 
 
 class RetiredSitemapUrlTests(unittest.TestCase):
@@ -223,7 +224,8 @@ class AiCitationHygieneTests(unittest.TestCase):
         # 2026-10-20: -30 thin-page soft-merge (722 before).
         # 2026-10-21: -1 best-storefront-contractor-florida.html soft-merge (692 before).
         # 2026-10-21: +1 Division 08 glazing guide, now self-canonical (691 before).
-        self.assertEqual(len(locs), 693)
+        # 2026-10-26: -8 thin/duplicate soft-merge (693 before).
+        self.assertEqual(len(locs), 685)
         cited = []
         for rel in ("llms.txt", "llms-full.txt"):
             cited.extend(re.findall(r"https://acglass.com(/[^)\s]+)", _read(rel)))

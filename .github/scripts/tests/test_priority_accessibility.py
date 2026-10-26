@@ -75,7 +75,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "scripts": "af714a7ef64cc8095c1c6a822919f96a91822196c22778d1edd16508358f8f2f",
         # Rebaselined 2026-09-03 after batch-2 RFQ primary moved to /send-plans.html.
         # hrefs rebaselined 2026-10-21 with the #380 /send-plans.html link above.
-        "hrefs": "31238de291fc09ed2c9a698cf90bfec5ae573195dab86e9aac502d9d614b6057",
+        # hrefs rebaselined 2026-10-26: footer Gulfside Twelve link now points at
+        # /case-study-gulfside-twelve.html. head, jsonld, scripts, visible unchanged.
+        "hrefs": "94f69120af54baddefa51bc265353eb602571e6dfc52d1eadbfa0a0a4fd57fc1",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         # visible rebaselined 2026-10-21 with the #380 hurricane-glass section and Haines City wording.
@@ -105,7 +107,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         # hrefs rebaselined 2026-10-21 for #380: the existing "Euro-Wall systems"
         # words are now a link to /euro-wall.html. head, jsonld, scripts, and
         # visible are unchanged.
-        "hrefs": "d7d7fbd484f5e6afa47d4d9b44e79912192cf72f91e896c3fa0a9df4509b80d2",
+        # hrefs rebaselined 2026-10-26: footer Gulfside Twelve link now points at
+        # /case-study-gulfside-twelve.html. Other digests unchanged.
+        "hrefs": "e02519b9936714570fadfb9b84add04dcdd1050c26307c8614e080e027c90408",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "bff37641eb78b5574ad6f446496dca9cd978f07f2396d51a1aaf99e276ecb4a1",
@@ -119,7 +123,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "head": "3dd0eaf5a1c6960e450d26f2af79cedb39fde5449b0b2a4c7bc88f2d20edc8f3",
         "jsonld": "cf57f2ef73c50d9fdb040a2ff489b1a7e1eaab9bd91e44b065ad2661507ff42d",
         "scripts": "963eafbfa8513bd14dfad0f3f38c1e891acdd0d9368ba988c5b9d63bd73d936a",
-        "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
+        # hrefs rebaselined 2026-10-26: footer Gulfside Twelve link now points at
+        # /case-study-gulfside-twelve.html. Other digests unchanged.
+        "hrefs": "066d237b8d2b17c1c455b0cdc11889a7d8d23535f38c2f806fbeffd7f939b52a",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "6ce5f8e37fb432491afe010510e4c033792fe2072c1a540700084a31986284cd",
@@ -133,7 +139,9 @@ LANDMARK_ONLY_FINGERPRINTS = {
         "head": "bc205e86ef4b324f9250ce3d4157b9703ed0d315c33280c2681f6b921305a29a",
         "jsonld": "e0dda3641a0aacd968c4d7fc5fccdf294bd27c72e1d4d04fe9e4f9ba02f5e6d1",
         "scripts": "c735be55b3414e20be6f2949383558c7575e0b36b1fe63a6b969eef2e30401a0",
-        "hrefs": "0da163b04a4aedddf14188550823e26ee564ef76f5c8e03de0ed8993db365881",
+        # hrefs rebaselined 2026-10-26: footer Gulfside Twelve link now points at
+        # /case-study-gulfside-twelve.html. Other digests unchanged.
+        "hrefs": "066d237b8d2b17c1c455b0cdc11889a7d8d23535f38c2f806fbeffd7f939b52a",
         # visible rebaselined 2026-10-01: sitewide footer line "Led by Rielly Walsh, CEO and majority owner." added; nothing else changed.
         # visible rebaselined 2026-10-02: footer WBENC line now "WBENC-certified" (Connor confirmed certification).
         "visible": "41f2d7289660370f59632548c8122a66eda676babc85255923a995e0c114af97",
