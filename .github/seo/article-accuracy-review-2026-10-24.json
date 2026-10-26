@@ -1,0 +1,110 @@
+{
+  "reviewed_at_utc": "2026-10-24T21:18:08.710638+00:00",
+  "state": "LOCAL_DRAFT_FOR_REVIEW",
+  "base_commit": "7865b5bb83c950cb1c62bbcf68f0fab9d51da941",
+  "scope": [
+    "blog/division-08-specifications-guide.html",
+    "blog/curtainwall-systems-explained-commercial-construction.html"
+  ],
+  "primary_sources": [
+    {
+      "url": "https://www.csiresources.org/standards/overview",
+      "final_url": "https://www.csiresources.org/standards/overview",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:39.774554+00:00",
+      "sha256": "d3748d531e2306f650bab4f6486fb1c43bebe12f55908a35d09b2362913da76a",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/tools/specsintact/Help/SIGeneral/SectionFormat.htm",
+      "final_url": "https://nibs-s3-wbdg3-production.s3.us-east-1.amazonaws.com/tools/specsintact/Help/SIGeneral/SectionFormat.htm",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:39.334467+00:00",
+      "sha256": "3b90226695d9f8fe82330f23f8905919e0d4559c54c22f9a05f44f617e0243f8",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://www2.myfloridalicense.com/building-codes-and-standards/faqs/",
+      "final_url": "https://www2.myfloridalicense.com/building-codes-and-standards/faqs/",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:39.021693+00:00",
+      "sha256": "58f46b0e1b4c016f13716076ade4ff87eb7728db69919ebde78ea33ac5312cf2",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.floridabuilding.org/pr/pr_app_srch.aspx",
+      "final_url": "https://www.floridabuilding.org/pr/pr_app_srch.aspx",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:41.831116+00:00",
+      "sha256": "0c829aa353790a9aebc48450a39ff15de232d74eababe959ce25dbc500596a70",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://nfrc.org/commercial/",
+      "final_url": "https://nfrc.org/commercial/",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:40.075755+00:00",
+      "sha256": "d6e58a0f2f34e99e9bdd7d83534d1238a20f7bd32ea731459d960725e850fa7d",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.kawneer.com/products/curtain-wall/",
+      "final_url": "https://www.kawneer.com/products/curtain-wall/",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:39.867190+00:00",
+      "sha256": "a500a4ef78417a047b24c48829c6d25cf0b778c03a2fc236f5f77848ce596c52",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.ykkap.com/commercial/productguide/curtainwall/",
+      "final_url": "https://www.ykkap.com/commercial/productguide/curtainwall/",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:41.646295+00:00",
+      "sha256": "0808296173809dc162ba492a554c04f9dfe89ddd0e4db6bac5d8515e2bc78e25",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://www.ykkap.com/commercial/product/curtain-walls/ycw-750-ssg/",
+      "final_url": "https://www.ykkap.com/commercial/product/curtain-walls/ycw-750-ssg/",
+      "status": 200,
+      "read_at_utc": "2026-10-24T21:06:41.727799+00:00",
+      "sha256": "aa73c8c06645d600edf11abcefc393fcf9613cb12c5f5364408cb96b3b1eadd0",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "review_decisions": [
+    "Use project-issued section identifiers and CSI's current standards overview; do not reproduce an unverified numeric section hierarchy.",
+    "Reconcile the three-part specification workflow with the official SpecsIntact reference.",
+    "Replace blanket Miami-Dade-only wording with a sourced review of the actual state or local approval path and conditions of use.",
+    "Remove unbound performance thresholds, glass-makeup rules, story-count selection rules and pricing multipliers.",
+    "Retain the substitution-matrix anchor and evidence categories inside the main Division 08 reading path; remove visible editorial scaffolding.",
+    "Keep the approved curtainwall topic graphic; replace only the Division 08 graphic use because its technical copy repeats the approval-path and thermal-threshold issues.",
+    "Preserve navigation, footer, shared RFQ blocks, canonical URLs, titles and the existing visual system.",
+    "Keep the curtainwall FAQ answers identical in visible text and JSON-LD."
+  ],
+  "media": {
+    "division08_replacement": {
+      "file": "images/projects/klus-lighting/interior-curtainwall-view.jpg",
+      "sha256": "4203f4458aaf12eaf91b82d6a0b24053ac6a943bf48638d94f7750403afcd76e",
+      "width": 810,
+      "height": 1080,
+      "source_url": "https://acglass.com/images/projects/klus-lighting/interior-curtainwall-view.jpg",
+      "rights_record": {
+        "image_stem": "images/projects/klus-lighting/interior-curtainwall-view",
+        "encodings": "avif jpg webp",
+        "project_group": "images/projects/klus-lighting",
+        "source_category": "acg_shot",
+        "rights_status": "owned",
+        "evidence_ref": "Connor 2026-09-09: ACG staff, ACG equipment",
+        "note": "Project photography shot by ACG staff on ACG equipment.",
+        "recorded_date": "2026-09-08"
+      }
+    },
+    "curtainwall_retained": {
+      "file": "images/infographics/infographic-curtainwall-systems-explained-commercial-construction.webp",
+      "sha256": "41e90c0bdb9fcacb86e55651555af7bb5513307bccfd8f4fc93cb99f459fe54d",
+      "review": "Visually checked: topic headings and the existing owner-cleared company metric footer. No new technical thresholds or asset changes."
+    }
+  },
+  "limits": "This educational draft does not establish a product's suitability for a project, engineering responsibility, a quote, code acceptance, a manufacturer relationship or an installation commitment."
+}
