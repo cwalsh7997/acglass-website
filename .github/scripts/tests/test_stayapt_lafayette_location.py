@@ -87,7 +87,8 @@ class StayaptLafayetteLocationTests(unittest.TestCase):
         # 2026-10-20: -30 thin-page soft-merge (722 before).
         # 2026-10-21: -1 best-storefront-contractor-florida.html soft-merge (692 before).
         # 2026-10-21: +1 Division 08 glazing guide, now self-canonical (691 before).
-        self.assertEqual(len(set(locs)), 693)
+        # 2026-10-26: -8 thin/duplicate soft-merge (693 before).
+        self.assertEqual(len(set(locs)), 685)
         self.assertIn(
             "https://acglass.com/blog/stayapt-suites-lafayette-glazing.html",
             locs,

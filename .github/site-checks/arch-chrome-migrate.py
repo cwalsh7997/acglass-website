@@ -66,7 +66,7 @@ FOOTER = (
     '</div>'
     '<div class="ax-footer-col"><h2>Work</h2>'
     '<a href="/atlantic-fields-golf-house.html">Atlantic Fields</a>'
-    '<a href="/gulfside-twelve.html">Gulfside Twelve</a>'
+    '<a href="/case-study-gulfside-twelve.html">Gulfside Twelve</a>'
     '<a href="/wild-blue-clubhouse.html">Wild Blue Clubhouse</a>'
     '<a href="/eau-palm-beach-resort.html">Eau Palm Beach Resort</a>'
     '<a href="/cudjoe-key-fire-station.html">Cudjoe Key Fire Station</a>'
