@@ -1374,6 +1374,39 @@ class AuthorizationClaimNounCoverageTests(unittest.TestCase):
                 self.assertTrue(_authorization_fails(html), surface)
 
 
+class VerifiedEsWindowsDistributorTests(unittest.TestCase):
+    """The one verified relationship may be stated. Nearby claims may not."""
+
+    def test_verified_distributor_phrase_is_allowed(self):
+        samples = [
+            "<p>ACG is an authorized ES Windows distributor and installs ESWindows commercial systems.</p>",
+            "<h4>Authorized ES Windows Distributor</h4>",
+            '<span class="accent">Authorized ES Windows distributor.</span>',
+            "<p>ACG serves Sarasota as an authorized ES Windows distributor and installs ESWindows commercial systems.</p>",
+            '<meta name="description" content="FL CGC #1531993. Authorized ES Windows distributor.">',
+        ]
+        for html in samples:
+            with self.subTest(html=html):
+                self.assertEqual(
+                    _authorization_fails(f"<html><body>{html}</body></html>"),
+                    [],
+                )
+
+    def test_nearby_authorization_claims_still_fail(self):
+        samples = [
+            "<p>ACG is an authorized ESWindows installer.</p>",
+            "<p>ACG is an authorized ES Windows installer.</p>",
+            "<p>ACG is an authorized Euro-Wall distributor.</p>",
+            "<h4>Authorized ES Windows partner</h4>",
+            "<p>ACG is an authorized ES Windows dealer.</p>",
+        ]
+        for html in samples:
+            with self.subTest(html=html):
+                self.assertTrue(
+                    _authorization_fails(f"<html><body>{html}</body></html>")
+                )
+
+
 class AuthorizationClaimEditorialTests(unittest.TestCase):
     """Negative controls: third-party / editorial / denial phrasing must pass."""
 

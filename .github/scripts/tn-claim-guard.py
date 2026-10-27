@@ -340,6 +340,24 @@ AUTH_NEGATION_RE = re.compile(
 )
 
 
+# The only verified manufacturer relationship. Exact phrase: a space in
+# "ES Windows" and the noun "distributor". Other nouns (installer, dealer,
+# partner) and every other manufacturer stay prohibited.
+VERIFIED_ES_WINDOWS_DISTRIBUTOR_RE = re.compile(
+    r"authorized\s+ES\s+Windows\s+distributor\b",
+    re.IGNORECASE,
+)
+
+
+def _is_verified_es_windows_distributor(html: str, match: re.Match) -> bool:
+    """True when this grant is the verified ES Windows distributor statement."""
+    text = match.group(0)
+    offset = text.lower().find("authoriz")
+    grant_start = match.start() + (offset if offset >= 0 else 0)
+    window = html[grant_start:grant_start + 48]
+    return bool(VERIFIED_ES_WINDOWS_DISTRIBUTOR_RE.match(window))
+
+
 def _is_negated_authorization(html: str, match: re.Match) -> bool:
     """True when the matched grant word is inside an explicit denial.
 
@@ -529,6 +547,8 @@ def check_prohibited_public_positioning(
             if block_hash in dealer_allow:
                 continue
             if _is_negated_authorization(html, m):
+                continue
+            if _is_verified_es_windows_distributor(html, m):
                 continue
             key = (m.start(), block_hash)
             if key in seen_c:
