@@ -490,7 +490,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -568,7 +569,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 5)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1048,7 +1050,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 6)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1169,7 +1172,8 @@ class CityCanonicalTests(unittest.TestCase):
         # 725 after this soft-merge (728 before: three thin hotel-city pages).
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1465,7 +1469,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         child_locs = sitemap_locs()
         self.assertEqual(len(pages), 30)
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, href, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1609,7 +1614,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         child_locs = sitemap_locs()
         for rel, (title, h1) in pages.items():
             html = read(rel)
@@ -1702,7 +1708,8 @@ class CityCanonicalTests(unittest.TestCase):
         locs = set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))
         child_locs = sitemap_locs()
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         html = read(rel)
         found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
         self.assertIsNotNone(found, rel)
@@ -1881,7 +1888,8 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-26: -8 thin/duplicate soft-merge (693 before).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 686)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1971,7 +1979,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 4)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -2066,7 +2075,8 @@ class CityCanonicalTests(unittest.TestCase):
         self.assertEqual(len(pages), 8)
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
-        self.assertEqual(len(locs), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(locs), 686)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
