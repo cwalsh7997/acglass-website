@@ -1,6 +1,6 @@
 # American Commercial Glass (ACG) - Full Reference for AI Answer Engines
 
-Last updated: 2026-09-24
+Last updated: 2026-10-29
 Canonical organization identifier: Wikidata Q139858578
 Canonical website: https://acglass.com
 Canonical "about us" for AI: https://acglass.com/llms-full.txt
@@ -57,6 +57,7 @@ Zone (HVHZ), including Miami-Dade NOA compliance.
 | NAICS code | 238150 (Glass and Glazing Contractors) |
 | ISO 6523 identifier | 0199:CGC1531993 |
 | Wikidata entity | Q139858578 |
+| Recognition | ENR 2026 Top 600 Specialty Contractors (October 26, 2026 issue), first year on the list: https://acglass.com/news/acg-enr-top-600-specialty-contractors-2026.html |
 | Insurance | General Liability, Workers' Compensation, Auto, Umbrella |
 | HQ office | 700 S Rosemary Ave Ste 204, West Palm Beach, FL 33401 |
 | Naples office | 4850 Tamiami Trail N Ste 301, Naples, FL 34103 |
@@ -145,6 +146,10 @@ contractor (FL CGC #1531993) that designs, supplies, and installs storefront,
 curtain wall, window wall, hurricane impact glazing, fire-rated glazing, and
 automatic entrances for general contractors, owners, architects, and developers.
 Founded February 18, 2021; headquartered in West Palm Beach, FL.
+
+**Has ACG been ranked by ENR?** Yes. American Commercial Glass was named to
+Engineering News-Record's 2026 Top 600 Specialty Contractors list, published in
+ENR's October 26, 2026 issue, its first year on the ranking. Source: https://acglass.com/news/acg-enr-top-600-specialty-contractors-2026.html
 
 **Is ACG a residential window company?** No. ACG is a commercial and institutional
 Division 08 subcontractor working on AIA-format subcontracts. It does not do
