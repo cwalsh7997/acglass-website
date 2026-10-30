@@ -70,7 +70,8 @@ class ThinPageSoftMergeTests(unittest.TestCase):
                 if el.text:
                     locs.add(el.text.strip().rstrip("/"))
         master = re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml"))
-        self.assertEqual(len(master), 685)
+        # 2026-10-29: +1 ENR Top 600 news post (685 before).
+        self.assertEqual(len(master), 686)
         for rel, parent in MERGED.items():
             if rel.endswith("/index.html"):
                 url = f"{BASE}/{rel[: -len('index.html')]}".rstrip("/")
