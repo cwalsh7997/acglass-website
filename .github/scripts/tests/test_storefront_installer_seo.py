@@ -195,13 +195,14 @@ class CannibalizationTests(unittest.TestCase):
             f"{BASE}/storefront-installer-jacksonville.html", sitemap_locs()
         )
 
-    def test_legacy_statewide_installer_noindexes_to_csi_fl(self):
+    def test_legacy_statewide_installer_noindexes_to_florida_hub(self):
+        # Points straight at the hub so there is no 2-hop canonical chain.
         html = read("storefront-installer-florida.html")
         self.assertIn("noindex", robots(html))
         self.assertIn("follow", robots(html))
         self.assertEqual(
             canonical(html),
-            f"{BASE}/commercial-storefront-installer-florida.html",
+            f"{BASE}/florida-commercial-glazing/",
         )
         self.assertNotIn(f"{BASE}/storefront-installer-florida.html", sitemap_locs())
 
