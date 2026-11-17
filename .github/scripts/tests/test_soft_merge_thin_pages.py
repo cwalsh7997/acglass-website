@@ -27,6 +27,12 @@ MERGED = {
     "commercial-glazing-for-hospitality-developers-florida/index.html": f"{BASE}/hospitality-glazing-florida.html",
     "commercial-glazing-owner-direct-restaurant-florida/index.html": f"{BASE}/restaurant-glazing-contractor.html",
     "gulfside-twelve.html": f"{BASE}/case-study-gulfside-twelve.html",
+    # 2026-11-16 batch (sitemap 686 to 681)
+    "impact-windows-5th-avenue-south-naples.html": f"{BASE}/storefront-glazier-naples-florida/",
+    "impact-windows-mercato-naples.html": f"{BASE}/storefront-glazier-naples-florida/",
+    "impact-windows-old-naples.html": f"{BASE}/storefront-glazier-naples-florida/",
+    "impact-windows-pelican-bay-naples.html": f"{BASE}/storefront-glazier-naples-florida/",
+    "eswindows-vs-pgt-impact-windows/index.html": f"{BASE}/blog/pgt-vs-eswindows-commercial-comparison-florida.html",
 }
 
 KEEPER_TITLES = {
@@ -52,7 +58,7 @@ def robots(html: str) -> str:
 
 class ThinPageSoftMergeTests(unittest.TestCase):
     def test_merged_pages_stay_and_point_at_parents(self):
-        self.assertEqual(len(MERGED), 8)
+        self.assertEqual(len(MERGED), 13)
         for rel, parent in MERGED.items():
             html = read(rel)
             self.assertTrue((REPO / rel).is_file(), rel)
@@ -71,7 +77,8 @@ class ThinPageSoftMergeTests(unittest.TestCase):
                     locs.add(el.text.strip().rstrip("/"))
         master = re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml"))
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(master), 686)
+        # 2026-11-16: -5 soft-merged (four Naples impact neighborhoods, ESWindows vs PGT).
+        self.assertEqual(len(master), 681)
         for rel, parent in MERGED.items():
             if rel.endswith("/index.html"):
                 url = f"{BASE}/{rel[: -len('index.html')]}".rstrip("/")

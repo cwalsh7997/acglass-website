@@ -491,7 +491,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -570,7 +570,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1051,7 +1051,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1173,7 +1173,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1470,7 +1470,7 @@ class CityCanonicalTests(unittest.TestCase):
         child_locs = sitemap_locs()
         self.assertEqual(len(pages), 30)
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, href, title, h1) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1615,7 +1615,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         child_locs = sitemap_locs()
         for rel, (title, h1) in pages.items():
             html = read(rel)
@@ -1709,7 +1709,7 @@ class CityCanonicalTests(unittest.TestCase):
         child_locs = sitemap_locs()
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         html = read(rel)
         found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
         self.assertIsNotNone(found, rel)
@@ -1889,7 +1889,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-26: -8 thin/duplicate soft-merge (693 before).
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 686)
+        self.assertEqual(len(set(re.findall(r"<loc>(.*?)</loc>", read("sitemap.xml")))), 681)
         for rel in pages:
             html = read(rel)
             title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -1980,7 +1980,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -2076,7 +2076,7 @@ class CityCanonicalTests(unittest.TestCase):
         # 2026-10-06: -4 remote county soft-merge
         # 2026-10-06: -1 Florida glass statistics soft-merge
         # 2026-10-29: +1 ENR Top 600 news post (685 before).
-        self.assertEqual(len(locs), 686)
+        self.assertEqual(len(locs), 681)
         for rel, (dest, title) in pages.items():
             html = read(rel)
             found = re.search(r"<title[^>]*>(.*?)</title>", html, re.S)
@@ -2640,14 +2640,12 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         "commercial-glazing-melbourne-fl",
         "commercial-glazing-parkland-fl",
         "commercial-glazing-windermere",
-        "impact-windows-5th-avenue-south-naples",
+        # 2026-11-16: four Naples impact-neighborhood templates moved to
+        # ALIASES; their .html files soft-merge onto the Naples keeper.
         "impact-windows-coral-gables",
         "impact-windows-fort-lauderdale",
         "impact-windows-jupiter",
-        "impact-windows-mercato-naples",
-        "impact-windows-old-naples",
         "impact-windows-palm-beach",
-        "impact-windows-pelican-bay-naples",
         "impact-windows-stuart",
         "impact-windows-tampa",
     )
@@ -2667,6 +2665,26 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
             "slimact-installer-florida",
             "/slimpact-installer-florida.html",
             "slimpact-installer-florida.html",
+        ),
+        (
+            "impact-windows-5th-avenue-south-naples",
+            "/storefront-glazier-naples-florida/",
+            "storefront-glazier-naples-florida/index.html",
+        ),
+        (
+            "impact-windows-mercato-naples",
+            "/storefront-glazier-naples-florida/",
+            "storefront-glazier-naples-florida/index.html",
+        ),
+        (
+            "impact-windows-old-naples",
+            "/storefront-glazier-naples-florida/",
+            "storefront-glazier-naples-florida/index.html",
+        ),
+        (
+            "impact-windows-pelican-bay-naples",
+            "/storefront-glazier-naples-florida/",
+            "storefront-glazier-naples-florida/index.html",
         ),
     )
 
@@ -2695,7 +2713,8 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
         # 88 after the 2026-10-01 suburb commercial-glazing soft-merge
         # removed eight templates that are no longer indexable keepers.
         # 87 after the 2026-10-21 best-storefront-contractor-florida soft-merge.
-        self.assertEqual(len(self.STUBS), 87)
+        # 83 after the 2026-11-16 Naples impact-neighborhood soft-merge.
+        self.assertEqual(len(self.STUBS), 83)
         for slug in self.STUBS:
             dest = f"/{slug}.html"
             stub = read(f"{slug}/index.html")
@@ -2716,7 +2735,7 @@ class HighIntentTrailingSlashStubTests(unittest.TestCase):
 
     def test_alias_slash_stubs_refresh_to_keepers(self):
         locs = sitemap_locs()
-        self.assertEqual(len(self.ALIASES), 3)
+        self.assertEqual(len(self.ALIASES), 7)
         self.assertFalse((REPO_ROOT / "slimact-installer-florida.html").is_file())
         for slug, dest, keeper_rel in self.ALIASES:
             stub = read(f"{slug}/index.html")
