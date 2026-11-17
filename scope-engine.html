@@ -557,6 +557,7 @@
       <form id="lead-form" novalidate>
         <!-- honeypot -->
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="se-form-grid">
           <div class="se-field"><label for="lf-name">Full name <span class="req">*</span></label><input id="lf-name" name="name" required autocomplete="name"></div>
@@ -1931,6 +1932,7 @@ function buildLeadPayload() {
   });
   // Honeypot pass-through
   data.append('_gotcha', document.querySelector('input[name="_gotcha"]').value);
+  data.append('_honey', (document.querySelector('#lead-form input[name="_honey"]') || {}).value || '');
 
   // Autoresponse to visitor - formsubmit-compatible field
   data.append('_autoresponse', buildAutoresponse(name));
