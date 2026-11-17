@@ -1629,7 +1629,7 @@ class TennesseePublicInstallClaimScrubTests(unittest.TestCase):
             "ACG holds no Tennessee office and performs no Tennessee field labor",
             source,
         )
-        self.assertIn(
+        self.assertNotIn(
             "field installation is coordinated with in-state install partners",
             source,
         )

@@ -2491,8 +2491,9 @@ class NashvilleResidualTests(unittest.TestCase):
         self.assertNotIn("OSHA 30 trained field crews", html)
         self.assertNotIn("serviceType\": \"Commercial glazing - storefront installation\"", html)
         self.assertIn("storefront systems supply and consulting", html)
-        self.assertIn(
-            "field installation is coordinated with in-state install partners", html
+        self.assertNotIn(
+            "field installation is coordinated with in-state install partners",
+            html,
         )
 
     def test_nashville_storefront_copy_is_not_doubled_furnish_consult(self):
@@ -2535,7 +2536,7 @@ class NashvilleResidualTests(unittest.TestCase):
             "ACG holds no Tennessee office and performs no Tennessee field labor",
             html,
         )
-        self.assertIn(
+        self.assertNotIn(
             "field installation is coordinated with in-state install partners",
             html,
         )
