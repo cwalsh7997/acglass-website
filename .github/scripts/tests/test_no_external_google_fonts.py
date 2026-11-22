@@ -39,9 +39,10 @@ FONT = ROOT / "fonts" / "inter-variable-latin.woff2"
 # 2026-10-26: anchors/body rebaselined because the footer Gulfside Twelve link
 # now points at /case-study-gulfside-twelve.html. forms, images, jsonld,
 # metadata, and scripts are unchanged.
+# 2026-11-22: rebaselined for the site-wide ownership wording update. Only the changed digests were replaced; counts and all other fragments are unchanged.
 PROTECTED_HASHES = {
     "anchors": "048d3721deee5ca8ed9c85eac3e87e4688a0d010ab5e7cf08e36e78ec0ae4c9f",
-    "body": "667cf00b47654a88276b87049fbc106430f8d1b336ebbb1608f1f7b9cde776ed",
+    "body": "734d4dfdd9a5c18bd2e1a204255f7100bdf58df09acac4307a6e0de87a1a6243",
     "forms": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "images": "59ccfef5b2b2882acbcdc80aa4bbeb2a4d6c8f3309ce23d3ca6a02fb909baeba",
     "jsonld": "cf8be9f3f9f118b8ed4260510f3920e4c3a9f3c8c2dff3d7624bbfe7d9097170",
