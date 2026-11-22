@@ -79,3 +79,13 @@ html{scroll-padding-top:6.25rem}
 .coverage-head p,.office-grid article p{color:#5a6670}
 @media(max-width:600px){.hero{height:auto;min-height:0;max-height:none;overflow:visible}.hero-copy{height:auto;padding:112px 6% 36px;justify-content:flex-start}.hero h1{margin-top:10px}.hero-actions{flex-wrap:wrap;align-items:flex-start}.hero-cta{max-width:100%}}
 .hero-scale{display:flex;flex-wrap:wrap;gap:8px 22px;margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.25);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+/* Homepage hero hierarchy, 2026-11-22. Earlier `.hero-description p` layers
+   outrank .hero-note and .hero-scale, so the note and the credentials line
+   rendered at body size; and .l2 inherited the h1's letter-spacing as a pixel
+   value, about -0.10em at its smaller size, so its letters touched. */
+.hero .hero-description p.hero-note{font-size:13px;line-height:1.45;letter-spacing:0;margin:18px 0 0;max-width:46ch;color:rgba(255,255,255,.72)}
+.hero .hero-description p.hero-scale{font-size:12px;line-height:1.5;letter-spacing:.12em;margin:22px 0 0;padding-top:18px;max-width:640px;color:rgba(255,255,255,.88)}
+.hero h1>.l2{letter-spacing:-.04em}
+/* Phone: these line breaks were hidden with no space left between the two
+   sentences ("partner.From"); show the break instead. */
+@media(max-width:600px){.lead br,.systems-heading p br{display:inline}}
