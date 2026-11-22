@@ -16,9 +16,19 @@
 # services.html, authorised 2026-09-24. Connor's blanket SEO approval. One href on
 # the Ocean Prime card now points at the indexable keeper. Buy American, TAA, and
 # BABA text was not in that line. The diff is that href only.
-services.html 654b6e8856fab0744261c56fb85083b1ee51783d6cc03c96b29403cfd8c1b167
 
 # government-public-sector-glazing.html, authorised 2026-10-20. Owner blanket SEO
 # approval. Title, social titles, meta description, and one garbled FAQ JSON-LD
 # answer only. No Buy American, TAA, or BABA text changed.
-government-public-sector-glazing.html c86d43c9e355168134191240c2354438d52e8fe2390d9d6b3a36f11c85eeacf4
+
+# Authorised 2026-11-22. Connor's OK for the site-wide ownership wording update only
+# (footer and ownership lines). No Buy American, TAA or BABA text changed on these pages.
+at-fp-blast-rated-glazing-florida.html 97d378d6dafece258ccb3ebcfc4f4d98d8a583b31af5366c8ca2b23e73a540e5
+blog/ufc-glazing-vs-florida-noa.html 1579ee179bfe578c60376a48a686037b8cb097e157672644758b40f83bad82ea
+davis-bacon-miller-act-glazing-subcontractor.html a5a365f8f278ae6df2ceae3fb33b517e2d3ff2aa69b3ce23dcd5cf7e55623696
+florida-federal-glazing-reference.html 55e08e1f1d489d8c52a51fc54a2b355f497c23be6b34a36af93e2662573e08d1
+government-glazing-contractor-florida.html 1b28851a7120dc6df9201ca78909d18c6150a68c028c5a7db0f477f2ab74900b
+government-public-sector-glazing.html 1728ab72d46d056ee6948105b539baaf83ab6a65d298921c82c117db0d16c859
+services.html 20b08f8cc6aaf098ee040129a42f978eb199630aa3030cb66c0e60709e14da41
+taa-baba-buy-american-act-glazing.html 02b9bd082566b7e61dc7bf8a1831e395c0251e930f025afab852c44caa1ee0fe
+tools/bid-day-glazing-checker.html 25581bfa2efb8cf832a01c6bf4b753e236bd31558d874dd0d31988ce9ddfa270
