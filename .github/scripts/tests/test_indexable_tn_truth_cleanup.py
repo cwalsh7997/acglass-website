@@ -75,22 +75,23 @@ PROTECTED_LINE_MARKERS = re.compile(
 # Recomputed 2026-10-02 (48-hour promise reworded to budget pricing, per Connor): protected lines
 # on the acg-vs pages carry "48-hour budget pricing" in place of "48-hour bids", and a mangled insertion
 # ("a Woman-owned · Rielly Walsh, CEO and 51% majority owner, ... sub") now reads "a woman-owned ... sub".
+# 2026-11-22: rebaselined for the ownership wording correction ("WBENC-certified woman-owned business" -> "Woman-owned business", PR #423). Only the changed digests were replaced; counts and all other fragments are unchanged.
 PROTECTED_LINE_DIGESTS = {
     "acg-vs-giroux-glass.html": (
         16,
-        "491a297c28ca448340b873b2cfb9e30f59ac9d0d2d516314241f677825a09616",
+        "c2cbb04f64f5a8bc5720e0f3a6f4bf49d62ac758ee4b4118c44ddad2234bf9bb",
     ),
     "acg-vs-harmon.html": (
         16,
-        "7169af31de28a2a43496310c4edd5117c4141134df5334198597a97e7c07c540",
+        "d5f82f3e4014d3da3c44d82010486fdec8b75ea9341f27ef840b66489917f8e9",
     ),
     "acg-vs-permasteelisa.html": (
         12,
-        "bfd3b415da4d1a584d995f98e9610060ebf80842ec102e21aab959172465e7ce",
+        "17b07a2736d3bc1560f0a8d7d439a450655c694c929606a9e33d3fd534e5a4cc",
     ),
     "glazing-subcontractor-vs-general-contractor.html": (
         7,
-        "11c278266401df607fb96f9f79763fe5ae6c7d553584dec0723323c1ccd31910",
+        "0b5ffda4bc2c260db12f2e933c7a061c04464ff05104824ad09405521974335f",
     ),
 }
 
