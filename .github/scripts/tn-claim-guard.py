@@ -241,6 +241,21 @@ WBE_CERTIFIED_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Regex B2: the hyphenated form ("WBENC-certified", "WBE-certified"). Regex B needs
+# whitespace before "certified", so this form is covered separately. Same qualifier rule.
+WBE_HYPHEN_CERTIFIED_RE = re.compile(
+    r"\b(?:WBENC|WBE)-certified\b(?![^.]{0,60}(?:pending|in\s+progress|filed))",
+    re.IGNORECASE,
+)
+
+# Regex B3: a "Certified" label placed before WBENC/WBE, as in a credential badge
+# ("<b>Certified</b> &middot; WBENC ..."). Same qualifier rule.
+WBE_LABEL_CERTIFIED_RE = re.compile(
+    r"\bcertified(?:\s*</[a-z]+>)?\s*(?:&middot;|\u00b7|:|-)\s*(?:WBENC|WBE)\b"
+    r"(?![^.]{0,60}(?:pending|in\s+progress|filed))",
+    re.IGNORECASE,
+)
+
 # Regex C: first-party manufacturer-authorization claims, any noun.
 #
 # The original version matched the literal word "dealer" only. The site never
@@ -536,6 +551,14 @@ def check_prohibited_public_positioning(
             "prohibited 'WBE certified' claim without an in-progress "
             f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
         )
+    # B2/B3 - hyphenated form and "Certified" label before WBENC/WBE
+    for rx, form in ((WBE_HYPHEN_CERTIFIED_RE, "hyphenated"), (WBE_LABEL_CERTIFIED_RE, "label")):
+        for _, snippet in _iter_positioning_matches(rx, html):
+            fail(
+                rel,
+                f"prohibited 'WBE certified' claim ({form}) without an in-progress "
+                f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
+            )
 
     # C - first-party authorization claim, any noun (editorial mentions are
     #     fine). Two regexes: the case-insensitive rules and the case-sensitive
