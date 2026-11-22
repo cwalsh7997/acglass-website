@@ -241,6 +241,14 @@ WBE_CERTIFIED_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Regex B2 (added 2026-11-22): the hyphenated form. Regex B requires whitespace
+# before "certified", so "WBENC-certified woman-owned business" ran in the
+# footer of 1,555 pages without a single failure. Same qualifier rule as B.
+WBE_HYPHEN_CERTIFIED_RE = re.compile(
+    r"\b(?:WBENC|WBE)-certified\b(?![^.]{0,60}(?:pending|in\s+progress|filed))",
+    re.IGNORECASE,
+)
+
 # Regex C: first-party manufacturer-authorization claims, any noun.
 #
 # The original version matched the literal word "dealer" only. The site never
@@ -534,6 +542,13 @@ def check_prohibited_public_positioning(
         fail(
             rel,
             "prohibited 'WBE certified' claim without an in-progress "
+            f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
+        )
+    # B2 - hyphenated "WBENC-certified" / "WBE-certified", same qualifier rule
+    for _, snippet in _iter_positioning_matches(WBE_HYPHEN_CERTIFIED_RE, html):
+        fail(
+            rel,
+            "prohibited 'WBE certified' claim (hyphenated) without an in-progress "
             f"qualifier (pending/in progress/filed within 60 chars): …{snippet}…",
         )
 

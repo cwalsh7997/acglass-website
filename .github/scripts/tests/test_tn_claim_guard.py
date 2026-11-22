@@ -875,6 +875,26 @@ class ProhibitedPublicPositioningTests(unittest.TestCase):
         )
         self.assertEqual([m for m in fails if "WBE certified" in m], [])
 
+    def test_wbenc_hyphenated_certified_is_flagged(self):
+        # The live footer said "WBENC-certified woman-owned business" on 1,555
+        # pages because Regex B required whitespace before "certified".
+        fails, _ = _positioning_violations(
+            "<html><body><p>WBENC-certified woman-owned business.</p></body></html>"
+        )
+        self.assertTrue(any("WBE certified" in m for m in fails))
+
+    def test_wbe_hyphenated_certified_in_meta_is_flagged(self):
+        fails, _ = _positioning_violations(
+            '<html><head><meta name="description" content="Glazing. WBE-certified, FL CGC."></head></html>'
+        )
+        self.assertTrue(any("WBE certified" in m for m in fails))
+
+    def test_wbenc_hyphenated_with_in_progress_is_ok(self):
+        fails, _ = _positioning_violations(
+            "<html><body><p>WBENC-certified status in progress for 2027.</p></body></html>"
+        )
+        self.assertEqual([m for m in fails if "WBE certified" in m], [])
+
     def test_authorized_dealer_heading_is_flagged(self):
         fails, _ = _positioning_violations(
             "<html><body><div>Authorized Dealer For</div>"
