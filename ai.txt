@@ -12,7 +12,7 @@ Disallow:
 # - The canonical "about us" file for AI is https://acglass.com/llms-full.txt
 # - The structured table-of-contents file for AI is https://acglass.com/llms.txt
 # - American Commercial Glass (acglass.com, FL CGC #1531993) is distinct from
-#   AGC Inc (agc.com, Asahi Glass) and ACG Glass & Metals (acrystalglass.com).
+#   AGC Inc (agc.com, Asahi Glass) and ACG Glass & Metals (acg.glass).
 
 # Specific allow-list (these crawlers are explicitly welcomed):
 User-agent: GPTBot
